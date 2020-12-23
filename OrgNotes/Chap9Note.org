@@ -1,0 +1,925 @@
+#+LATEX_CLASS: ctexart
+
+#+TITLE: 数项级数
+
+* Bolzano-Weiserstrass 定理：
+
+** 描述：
+
+有界数列必有收敛子列。
+
+** 证明：
+
+假设数列 $\{x_n\}$ 有界：$\forall n \in N^+\Rightarrow a<x_n<b$ 
+
+取 $z_1 \in(a,b)$ ，划分为 $[a,z_1]$ 和 $[z_1,b]$ 长度相等的两个区域（两个区间长度为 $\frac{b-a}{2}$），因为 $\{x_n\}$ 有无穷多项，则必有一个区域包含无穷多个 $\{x_n\}$ 的子项。
+
+定义该区域为 $[a_1,b_1]$，取任意 $y_1=x_i,\ x_i \in [a_1,b_1]$;
+
+...
+
+取 $z_n \in (a_{n-1},b_{n-1})$ ，划分为 $[a_{n-1},z_n]$ 和 $[z_n,b_{n-1}]$ 长度相等的两个区域（两个区间长度为 $\frac{b-a}{2^n}$），因为 $\{x_n\}$ 有无穷多项，则必有一个区域包含无穷多个 $\{x_n\}$ 的子项。
+
+定义该区域为 $[a_n,b_n]$，取任意 $y_n=x_i,\ x_i \in [a_n,b_n]$;
+
+故得到数列 $\{y_n\}$ ，根据柯西收敛原理证明收敛性：
+
+\begin{aligned}
+&\forall \epsilon>0,\ \ N=max\left\{n \left|\frac{b-a}{2^n}<\epsilon\right\}\\
+&\forall n,m>N \\
+&\Rightarrow y_n,y_m \in [a_N,b_N],\ \ b_N-a_N<\frac{b-a}{2}<\epsilon\\
+&\therefore |y_n-y_m|<\epsilon\\
+\end{aligned}
+
+* 上极限与下极限：
+
+** 数列 $\{x_n\}$ 的极限点 $\xi$ 定义：
+
+\begin{aligned}
+&\forall \epsilon>0,\ \ \exists \{y_n\} \in \{x_n\}\\
+&\Rightarrow y_n \in [\xi-\epsilon,\xi+\epsilon]
+\end{aligned}
+
+** 定义 $E=\{\xi\}$ 为所有 $\{x_n\}$ 的子列的极限的集合，因为数列 $\{x_n\}$ 有界，则 $E$ 有界：
+
+*** $sup\{E\}$ 为数列的上极限，记为 $\overline{\lim_{n \to \infty}} x_n$ 
+
+*** $inf\{E\}$ 为数列的下极限，记为 $\underline{\lim_{n\to \infty}} x_n$
+
+* 级数敛散性：
+
+** 正项级数：
+
+*** 若 $\{x_n\}>0$ 则 $S_n=\sum_{i=1}^n x_n$ 单调增加，故收敛充分必要条件是: $sup\left\{S_n\right\}<\infty$
+
+*** 比较判别法：
+
+**** 对于数列 $\{x_n\}$ , $\{y_n\}$ 部分和 $S_n^x=\sum_{i=1}^n x_i$ ， $S_n^y=\sum_{i=1}^n y_i$ ，以及级数 $S^x=\sum_{i=1}^\infty x_i$ ， $S^y=\sum_{i=1}^\infty y_i$ 来说，有以下判别条件：
+
+***** $\exists N<\infty,\ \ \forall n>N,\ \ x_n>Ay_n\ \&\ S^y=\infty\ \ \Rightarrow S^x=\infty$
+
+***** $\exists N<\infty,\ \ \forall n>N,\ \ x_n<Ay_n\ \&\ S^y<\infty\ \ \Rightarrow S^x<\infty$
+
+**** 比较判别法极限形式：
+
+***** 定义：$l=\lim_{n \to \infty} \frac{x_n}{y_n}>0$
+
+***** 推论：
+
+\begin{aligned}
+&\forall \epsilon>0,\ \ \exists N,\ \ \forall n>N \\
+&\Rightarrow \left|\frac{x_n}{y_n}-l\right|<\epsilon\\
+&\therefore -\epsilon<\frac{x_n}{y_n}-l<\epsilon\\
+&\therefore (l-\epsilon)y_n<x_n<(l+\epsilon)y_n\\
+\end{aligned}
+
+若 $0 \leq l<\infty,\ \ \Rightarrow \forall n>N, x_n<(l+\epsilon)y_n$ 则，$S^y$ 收敛 $S^x$ 也收敛
+
+若 $0 < l \leq \infty$ ，取 $0<\epsilon<l, \ \Rightarrow \forall n>N, x_n>\frac{1}{(l-\epsilon)}y_n$ ，则 $S^y$ 发散， $S^x$ 也发散
+
+若 $0<l<\infty$ ，则 $S^y$ ， $S^x$ 同时敛散
+
+*** 柯西判别：
+
+**** 描述：
+
+$\overline{\lim_{n \to \infty}} \sqrt[n]x_n = r$
+
+$r<1,\ \ \Rightarrow S^x<\infty$
+
+$r>1,\ \ \Rightarrow S^x=\infty$
+
+$r=1$ 无法判别
+
+**** 证明
+
+\begin{aligned}
+&r<1\\
+&\forall 0<\epsilon<1-r,\ \  \exists N,\ \ \forall n>N\\
+&\Rightarrow \left|\sqrt[n]x_n-r\right|<\epsilon \Rightarrow -\epsilon<\sqrt[n]x_n-r<\epsilon \Rightarrow \sqrt[n]x_n<r+\epsilon\\
+\therefore& x_n<(r+\epsilon)^n\\
+\because& 1+\epsilon<1\\
+\therefore& \sum_{n=1}^\infty x_n=\sum_{n=1}^N x_n + \sum_{n=N+1}^\infty x_n<\sum_{n=1}^N x_n + \sum_{n=N+1}^\infty (r+\epsilon)^n < \infty \\
+\end{aligned}
+
+\begin{aligned}
+\because &r>1\\
+\therefore &\exists \{y_n\} \in \{x_n\}\Rightarrow y_n >1\\
+\end{aligned}
+
+故在数列 $\{x_n\}$ 中有无限多项 $>1$ ，则 $S=\sum_{n=1}^\infty x_n=\infty$
+
+*** 达朗贝尔判别：
+
+**** 描述：
+
+$\overline{\lim_{n \to \infty}}\frac{x_{n+1}}{x_n}=r<1$ 则 $\sum_{n=1}^\infty x_n$ 收敛
+
+$\underline{\lim_{n \to \infty}}\frac{x_{n+1}}{x_n}=r>1$ 则 $\sum_{n=1}^\infty x_n$ 发散
+
+$\overline{\lim_{n \to \infty}}\frac{x_{n+1}}{x_n} \geq 1$ 或者 $\overline{\lim_{n \to \infty}}\frac{x_{n+1}}{x_n} \leq 1$ 判别法失效
+
+**** 证明：
+
+***** 对于上极限：
+
+\begin{aligned}
+&\forall 0<\epsilon<1-r,\ \ \exists N,\ \ \forall n>N \Rightarrow \frac{x_{n+1}}{x_n}<r+\epsilon\\
+&\therefore x_n<(r+\epsilon)x_{n-1}<(r+\epsilon)^2x_{n-2}<...<(r+\epsilon)^{n-N-1} x_{N+1}\\
+&\therefore \sqrt[n]{x_n}<\sqrt[n]{(r+\epsilon)^{n-N-1} x_{N+1}}\\
+&\therefore \overline{\lim_{n\to \infty}}\sqrt[n]{x_n}<\overline{\lim_{n\to \infty}}\sqrt[n]{(r+\epsilon)^{n-N-1} x_{N+1}}=\overline{\lim_{n\to \infty}}\sqrt[n]{(r+\epsilon)^n}\lim_{n\to \infty}\sqrt[n]{\frac{x_{N+1}}{(r+\epsilon)^{N+1}}}\\
+&\because \lim_{n\to \infty}\sqrt[n]{\frac{x_{N+1}}{(r+\epsilon)^{N+1}}}=1\\
+&\therefore \overline{\lim_{n\to \infty}}\sqrt[n]{x_n}<\overline{\lim_{n\to \infty}}\sqrt[n]{(r+\epsilon)^n}=r+\epsilon<1\\
+\end{aligned}
+
+根据柯西收敛判别法，级数收敛。
+
+另由于 $\epsilon$ 的任意性得：$\overline{\lim_{n\to \infty}}\sqrt[n]{x_n} \leq r = \overline{\lim_{n \to \infty}}\frac{x_{n+1}}{x_n}$
+
+***** 对于下极限：
+
+\begin{aligned}
+&\forall 0<\epsilon<r-1,\ \ \exists N,\ \ \forall n>N \Rightarrow \frac{x_{n+1}}{x_n}>r-\epsilon\\
+&\therefore x_n>(r-\epsilon)x_{n-1}>(r-\epsilon)^2x_{n-2}>...>(r-\epsilon)^{n-N-1} x_{N+1}\\
+&\therefore \underline{\lim_{n\to \infty}}\sqrt[n]{x_n}>\underline{\lim_{n\to \infty}}\sqrt[n]{(r-\epsilon)^{n-N-1} x_{N+1}}=\underline{\lim_{n\to \infty}}\sqrt[n]{(r-\epsilon)^n}\lim_{n\to \infty}\sqrt[n]{\frac{x_{N+1}}{(r-\epsilon)^{N+1}}}\\
+&\because \lim_{n\to \infty}\sqrt[n]{\frac{x_{N+1}}{(r-\epsilon)^{N+1}}}=1\\
+&\therefore \overline{\lim_{n\to \infty}}\sqrt[n]{x_n} \geq \underline{\lim_{n\to \infty}}\sqrt[n]{x_n}>\underline{\lim_{n\to \infty}}\sqrt[n]{(r-\epsilon)^n}=r-\epsilon>1\\
+\end{aligned}
+
+根据柯西收敛法则，级数发散。
+
+另由于 $\epsilon$ 的任意性得：$\underline{\lim_{n \to \infty}}\frac{x_{n+1}}{x_n}= r \leq \underline{\lim_{n\to \infty}}\sqrt[n]{x_n}$
+
+***** 结论：
+
+\begin{aligned}
+\underline{\lim_{n \to \infty}}\frac{x_{n+1}}{x_n} \leq \underline{\lim_{n\to \infty}}\sqrt[n]{x_n} \leq
+\overline{\lim_{n\to \infty}}\sqrt[n]{x_n} \leq  \overline{\lim_{n \to \infty}}\frac{x_{n+1}}{x_n}
+\end{aligned}
+
+*** 拉得判别法：
+
+**** 描述：
+
+定义$\lim_{n \to \infty} n\left(\frac{x_n}{x_{n+1}}-1\right)=r$ ，则：
+
+$r>1$ 级数收敛；
+
+$r<1$ 级数发散；
+
+$r=1$ 判别失效。
+
+**** 证明：
+
+***** Step 1：证明不等式：
+
+\begin{aligned}
+&s>t\\
+&f(x)=1+sx-(1+x)^t\\
+&\therefore f'(x)=s-t(1+x)^{t-1}\\
+&\therefore f'(0)=s-t>0\\
+&\because f(0)=1-1=0\\
+&\therefore \exists \delta,\ \ \forall x \in (0,\delta) \Rightarrow f(x)>0\\
+&\therefore 1+sx>(1+x)^t,\ \ x\in (0,\delta)\\
+\end{aligned}
+
+***** Step 2：证明 $r>1$
+
+\begin{aligned}
+&r>s>t>1\\
+&\exists N,\ \ \forall n>N\Rightarrow n\left(\frac{x_n}{x_{n+1}}-1\right)>s\\
+&\therefore \frac{x_n}{x_{n+1}}-1>\frac{s}{n}\\
+&\therefore \forall n>max(\delta, N)\Rightarrow \frac{x_n}{x_{n+1}}>1+s\frac{1}{n}>(1+\frac{1}{n})^t=\frac{(n+1)^t}{n^t}\\
+&\therefore n^tx_n>(n+1)^tx_{n+1}\\
+& n'=min\left\{n|n>max\left\{\delta,N\right\}\right\},\ \ n'^tx_{n'}=A\\
+&\therefore \forall n>max(\delta, N) \Rightarrow A=n'^tx_{n'}\geq n^tx_n\\
+&\therefore \forall n>max(\delta, N)\Rightarrow x_n \leq \frac{A}{n^t}
+\end{aligned}
+
+因为 $t>1$ 根据P级数 $\frac{A}{n^t}$ 收敛，根据比较判别法 $\{x_n\}$ 收敛
+
+***** Step 3：证明 $r<1$
+
+\begin{aligned}
+&\exists N, \ \ \forall n>N \Rightarrow n\left(\frac{x_n}{x_{n+1}}-1\right)<1\\
+&\therefore \frac{x_n}{x_{n+1}}<\frac{n+1}{n}\Rightarrow nx_n<(n+1)x_{n+1}\\
+& n'=min\left\{n|n>N\right\},\ \ n'x_{n'}=A\\
+&\therefore \forall n>N \Rightarrow A=n'x_{n'}\leq nx_n\\
+&\therefore \forall n>N x_n\geq \frac{A}{n}\\
+\end{aligned}
+
+根据P级数判别法， $\frac{A}{n}$ 发散，故根据比较判别法，数列发散。
+
+*** 积分判别法：
+
+**** 描述：
+
+设函数 $f(x)$ 在 $[a,+\infty]$ 上有定义且为正，若 $f(x)$ 单调递减则 $\int_a^\infty f(x) dx$ 与 $\sum_{n=A}^\infty f(n)$ 同时敛散，此时 $A=[a]+1$
+
+**** 证明
+
+定义符号：
+
+\begin{aligned}
+&u_n=\int_n^{n+1}f(x)dx\\ 
+&S=\sum_{n=A}^\infty u_n\\
+&S_k=\sum_{n=A}^k u_n\\
+\end{aligned}
+
+则有:
+
+\begin{aligned}
+&S_{[l]}=\int_A^{[l]}f(x)dx \leq \int_A^l f(x)dx \leq \int_A^{[l]+1}f(x)dx =S_{[l]+1}\\
+&\therefore S_{[l]} \leq \int_A^l f(x)dx \leq S_{[l]+1}\\
+&\therefore \int_A^{l-1} f(x)dx \leq S_{[l]} \leq \int_A^l f(x)dx\\
+&\because l\to \infty\Rightarrow [l] \sim [l]+1\ \&\ l\sim l-1\\
+&\therefore \lim_{l \to \infty} \int_A^l f(x)dx=\lim_{l \to \infty} \int_A^{l-1} f(x)dx = \int_A^\infty f(x)dx\\
+&\therefore \lim_{l \to \infty} S_{[l]}=\lim_{l \to \infty} S_{[l]+1}=S\\
+\end{aligned}
+
+根据比较判别法 $S$ 与 $\int_A^\infty f(x) dx$ 同时敛散，且极限相等（夹逼定理）。
+
+若 $f(x)$ 单调递减，则：
+
+\begin{aligned}
+&f(n) \geq \int_n^{n+1}f(x)dx \geq f(n+1)\\
+&\therefore f(n) \geq u_n \geq f(n+1)\\
+&\therefore u_{n-1} \geq f(n) \geq u_n\\
+&\because \sum_{n=A}^\infty u_n=\sum_{n=A+1}^\infty u_{n-1}=\int_A^\infty f(x)dx\ \&\ \sum_{n=A}^\infty f(n)=\sum_{n=A-1}^\infty f(n+1)\\
+
+\end{aligned}
+
+故 $\sum_{n=A}^\infty f(n)$ 与 $\int_A^\infty f(x)dx$ 同时敛散
+
+** 任意项级数：
+
+*** 柯西收敛原理：
+
+**** 描述：
+
+\begin{aligned}
+&\forall \epsilon>0,\ \ \exists N,\ \ \forall m>n>N\Rightarrow \left|\sum_{i=n+1}^m x_i\right|<\epsilon
+\end{aligned}
+
+**** 推论1：$\sum_{n=1}^\infty |x_n|$ 收敛，则 $\sum_{n=1}^\infty x_n$ 也收敛，根据三角不等式证明如下：
+
+\begin{aligned}
+&\because \sum_{i=n+1}^m |x_i| \geq \left|\sum_{i=n+1}^m x_i\right|\\
+&\therefore \forall \epsilon>0,\ \ \exists N,\ \ \forall m>n>N\Rightarrow \left|\sum_{i=n+1}^m x_i\right| \leq \sum_{i=n+1}^m |x_i| \leq \epsilon
+\end{aligned}
+
+**** 推论2：级数收敛，通项数列极限为0
+
+\begin{aligned}
+&\because \forall \epsilon>0,\ \ \exists N,\ \ \forall m>n>N\Rightarrow \left|\sum_{i=n+1}^m x_i\right|<\epsilon\\
+&\therefore \forall \epsilon>0,\ \ \exists N,\ \ \forall n>N\Rightarrow \left|x_{n+1}\right|<\epsilon\\
+\end{aligned}
+
+*** A-D判别：
+
+**** Abel变换：
+
+\begin{aligned}
+&B_n=\sum_{i=1}^{n} b_i\\
+&\sum_{i=n}^m a_ib_i = a_nb_n+\sum_{i=n+1}^m a_i(B_i-B_{i-1})=a_1b_1+\sum_{i=n+1}^m a_iB_i- \sum_{i=n+1}^m a_iB_{i-1}\\
+&=a_nb_n+\sum_{i=n+1}^m a_iB_i-\sum_{i=n}^{m-1}a_{i+1}B_i = \sum_{i=n}^{m-1}(a_i-a_{i+1})B_i+a_mB_m\\
+\end{aligned}
+
+**** Abel引理：
+
+若 $a_i$ 单调， $B_k=\sum_n^k b_i$ 有界且 $|B_i| \leq M$ $\Rightarrow \left|\sum_{i=n}^m a_ib_i\right| \leq M(|a_n|+2|a_m|)$
+
+\begin{aligned}
+&\left|\sum_{i=n}^m a_ib_i\right| = \left|\sum_{i=n}^{m-1} B_i(a_i-a_{i+1})+a_mB_m\right|
+< \sum_{i=n}^{m-1}|B_i||(a_i-a_{i+1})|+|a_m||B_m| < \sum_{i=n}^{m-1}M|a_i-a_{i+1}|+|a_m|M=M(\sum_{i=n}^{m-1}|a_i-a_{i+1}|+|a_m|)\\
+&\because \forall i,j\Rightarrow (a_i-a_{i+1})(a_j-a_{j+1})>0\\
+&\therefore M(\sum_{i=n}^{m-1}|a_i-a_{i+1}|+|a_m|)=M\left(\left|\sum_{i=n}^{m-1}a_i-a_{i+1}\right|+|a_m|\right)= M(|a_n+a_m|+|a_m|)
+\leq M(|a_n|+2|a_m|)\\
+\end{aligned}
+
+**** Abel判别：
+
+***** 描述：
+
+若 $a_n$ 有界且单调， $\sum_{i=1}^\infty b_i$ 收敛，则 $\sum_{i=1}^\infty a_ib_i$ 收敛
+
+***** 证明：
+\begin{aligned}
+&\forall \epsilon>0,\ \ \exists N,\ \ \forall m>n>N \Rightarrow |B_k|=\left|\sum_{i=n}^k b_i\right| < \epsilon\\
+& |a_i| \leq K\\
+& \left| \sum_n^m a_i b_i \right| \leq \epsilon (|a_n|+2|a_m|) \leq 3K\epsilon\\
+\end{aligned}
+
+**** Dirichlet判别：
+
+***** 描述：
+
+若 $a_n$ 单调趋于0， $B_n=\sum_1^n b_i$ 有界，则级数 $\sum_{i=1}^\infty a_ib_i$ 收敛。
+
+***** 证明：
+
+\begin{aligned}
+&\lim_{n\to\infty}a_n=0\Rightarrow\forall \epsilon>0,\ \ \Exists N,\ \ \forall n>N\Rightarrow |a_n|<\epsilon\\
+&\because |B_n|<K\\
+&\therefore \left|\sum_n^m b_i\right|=|B_m-B_n| \leq 2K\\
+&\therefore \forall m>n>N \Rightarrow \left| \sum_n^m a_i b_i \right| \leq 2K(|a_n|+2|a_m|) < 6K\epsilon
+\end{aligned}
+
+* 绝对收敛 & 条件收敛：
+
+** 定义符号：
+
+$\sum_{n=1}^\infty x_i$ ：原始级数；
+
+$\sum_{n=1}^\infty x'_i$ ：更序级数；
+
+$S_n=\sum_{i=1}^n x_i$
+
+$S'_n =\sum_{i=1}^n x'_n$
+
+$x_n^+=
+\begin{cases}
+x_n&x_n>0\\
+0&x_n \leq 0
+\end{cases}$
+
+$x_n^-=
+\begin{cases}
+-x_n&x_n<0\\
+0&x_n \geq 0
+\end{cases}$
+
+$x'_n^+=
+\begin{cases}
+x'_n&x'_n>0\\
+0&x'_n \leq 0
+\end{cases}$
+
+$x'_n^-=
+\begin{cases}
+-x'_n&x'_n<0\\
+0&x'_n \geq 0
+\end{cases}$
+
+** 收敛性质
+
+*** 若 $\sum_{n=1}^\infty x_n$ 绝对收敛，则 $\sum_{n=1}^\infty x_n^+\ \&\ \sum_{n=1}^\infty x_n^-$ 收敛
+
+\begin{aligned}
+&\sum_{n=1}^\infty |x_n|=\sum_{n=1}^\infty x_n^+ + \sum_{n=1}^\infty x_n^-\\
+&\because \forall n,\ \ x_n^+>0\ \&\ x_n^->0\\
+&\therefore \sum_{n=1}^\infty x_n^+ \leq \sum_{n=1}^\infty |x_n|
+\ \&\ \sum_{n=1}^\infty x_n^- \leq \sum_{n=1}^\infty |x_n|
+\end{aligned}
+
+根据比较判别法，$\sum_{n=1}^\infty x_n^+\ \&\ \sum_{n=1}^\infty x_n^-$ 收敛
+
+*** 若 $\sum_{n=1}^\infty x_n$ 条件收敛，则 $\sum_{n=1}^\infty x_n^+\ \&\ \sum_{n=1}^\infty x_n^-$ 发散
+
+\begin{aligned}
+\sum_{n=1}^\infty |x_n|=\sum_{n=1}^\infty x_n^+ + \sum_{n=1}^\infty x_n^- &&(1)\\
+\sum_{n=1}^\infty x_n=\sum_{n=1}^\infty x_n^+ - \sum_{n=1}^\infty x_n^-&&(2)\\
+\end{aligned}
+
+若 $\sum_{n=1}^\infty x_n^+$ 或 $\sum_{n=1}^\infty x_n^-$ 收敛，则根据式（2） $\sum_{n=1}^\infty x_n^-$ 或 $\sum_{n=1}^\infty x_n^+$ 也收敛，则根据式（1） $\sum_{n=1}^\infty |x_n|$ 也收敛，与命题矛盾。
+
+** 绝对收敛=>换序级数相等：
+
+*** 正项级数：
+
+\begin{aligned}
+&\because \forall n \in N^+ \Rightarrow x_n \geq 0\ \&\ x'_n \geq 0\\
+&\therefore \sum_{i=1}^n x'_i \leq \sum_{n=1}^\infty x_n\\ 
+&\therefore \lim_{n \to \infty} \sum_{i=1}^n x'_i \leq \sum_{n=1}^\infty x_n\\
+\end{aligned}
+
+同理可证 $\lim_{n \to \infty} \sum_{i=1}^n x_i \leq \sum_{n=1}^\infty x'_n$ ，故 $\sum_{n=1}^\infty x_n \leq \sum_{n=1}^\infty x'_n$
+
+*** 任意项级数：
+
+根据绝对收敛 $\Rightarrow \sum_{i=1}^\infty x_i^+ \ \&\ \sum_{i=1}^\infty x_i^-$ 收敛，则根据正项级数证明 $\Rightarrow \sum_{i=1}^\infty x_i^+=\sum_{i=1}^\infty x'_i^+ \ \&\ \sum_{i=1}^\infty x_i^-=\sum_{i=1}^\infty x'_i^-$
+
+由于 $\sum_{i=1}^\infty x_i=\sum_{i=1}^\infty x_i^+-\sum_{i=1}^\infty x_i^-$ 可以退出 $\sum_{i=1}^\infty x_i=\sum_{i=1}^\infty x'_i$ ， 且 $\sum_{i=1}^\infty x_i$ 绝对收敛。
+
+*** 黎曼定理：
+
+**** 描述：
+
+若 $\sum_{i=1}^\infty x_i$ 条件收敛，则对于任意 $-\infty<a<+\infty$ 存在换序数列 $\sum_{i=1}^\infty x_i=a$
+
+**** 证明：
+
+由于条件 $\sum_{i=1}^n x_i^+=\infty,\ \ \sum_{i=1}^n x_i^-=\infty,\ \ \lim_{i \to \infty} x_i=0$ ，且 $x_n$ 有无限多正，负项
+
+则存在最小 $n_1$ 使得 $a+x_{n_1}^+>\sum_{i=1}^{n_1}x_i^+>a$
+
+同理，存在最小 $m_1$ 使得 $a-x_{m_1}^-<\sum_{i=1}^{n_1} x_i^+ - \sum_{i=1}^{m_1} x_i^-<a$
+
+...
+
+存在最小 $n_k$ 使得 $a+x_{n_k}^+>\sum_{i=1}^{n_k}x_i^+>a$
+
+同理，存在最小 $m_k$ 使得 $a-x_{m_k}^-<\sum_{i=1}^{n_k} x_i^+ - \sum_{i=1}^{m_k} x_i^-<a$
+
+根据柯西收敛原理 $\lim_{i \to \infty} x_i=0$ ，则 $\lim_{i \to \infty} x^+_i=0 \ \&\ \lim_{i \to \infty} x^-_i=0$
+
+换序数列的部分和 $S_n=\sum_{i=1}^n x'_i=\sum_{i=1}^{min(n_k,n)} x_i^+ - \sum_{i=1}^{min(m_k,n)} x_i^-$
+
+根据定义 $a - x^-_{m_k} < S_n < a + x^+_{n_k}$ ，当满足条件 $\{k|m_k,n_k<n\ \&\ m_{k+1},n_{k+1}>n\}$ 
+
+则 $\lim_{n \to \infty} a-x_{m_k}^-=0,\ \ \lim_{n \to \infty} a+x_{n_k}^+=0$ ，故根据夹逼定理 $S_n=\sum_{i=1}^\infty x'_i=a$
+
+* 级数乘积：
+
+** 定义两个级数:
+
+\begin{aligned}
+&X_n=\sum_{i=1}^n x_i\\
+&X=\sum_{i=1}^\infty x_i\\
+&Y_n=\sum_{i=1}^n y_i\\
+&Y=\sum_{i=1}^\infty y_i\\
+\end{aligned}
+
+** 对角线（柯西）乘积：
+
+*** 描述
+\begin{aligned}
+& XY =\sum_{i=1}^\infty C_i\\
+& C_n=\sum_{i+j=n} x_i y_j 
+\end{aligned}
+
+*** $X,\ Y$ 收敛 $\sum_{i=1}^\infty C_i$ 不定收敛：
+
+\begin{aligned}
+&x_n=y_n=\frac{(-1)^{n+1}}{\sqrt{n}}\\
+&C_n=\sum_{i+j=n} \frac{(-1)^{i+1}}{\sqrt{i}} \frac{(-1)^{j+1}}{\sqrt{j}} = \sum_{i+j=n} \frac{(-1)^{i+j+2}}{\sqrt{ij}}
+= (-1)^{n+2}\sum_{i+j=n} \frac{1}{\sqrt{ij}}\\
+&\because \forall i,j \geq 0\Rightarrow\frac{i+j}{2} \geq \sqrt{ij}\Rightarrow \frac{1}{\sqrt{ij}} \geq \frac{2}{i+j}=\frac{2}{n}\\
+&\therefore |C_n|= \sum_{i+j=n} \frac{1}{\sqrt{ij}} \geq \sum_{i+j=n} \frac{2}{n} \geq 2
+\end{aligned}
+
+故根据柯西收敛原理，通项绝对值不趋于零，级数不收敛。
+
+** 正方形乘积：
+
+*** 描述
+
+\begin{aligned}
+&XY=\sum_{i=1}^\infty D_i\\
+&D_n=x_1y_n+x_2y_n+...+x_ny_n+x_ny_{n-1}+...+x_ny_1\\
+\end{aligned}
+
+*** $X,\ Y$ 收敛，则 $\sum_{i=1}^\infty D_i=(\sum_{i=1}^\infty x_i)(\sum_{i=1}^\infty y_i)$ , 因为 $S_n=\sum_{i=1}^n D_i=X_n*Y_n$
+
+** 定理：若 $X,Y$ 绝对收敛，则其乘积的任意排列均收敛于 $\left(\sum_{i=1}^\infty x_i\right) \left(\sum_{i=1}^\infty x_i\right)$ ，证明：
+
+根据正方形乘积敛散性质， $X,Y$ 绝对收敛 $\Rightarrow \sum_{i=1}^\infty D_i=\left(\sum_{i=1}^\infty x_i\right) \left(\sum_{i=1}^\infty x_i\right)$ ，且也绝对收敛；
+
+对于任意排列乘积 $\sum_{k=1}^\infty x_{i_k} y_{i_k}$ 可视为 $\sum_{i=1}^\infty D_i$ 的换序级数，根据绝对收敛级数敛散性 $\Rightarrow \sum_{k=1}^\infty x_{i_k} y_{i_k}=\sum_{i=1}^\infty D_i$
+
+* 无穷乘积：
+
+** 定义 $P_n=\prod_{i=1}^n p_i$ 为无穷乘积 $\prod_{i=1}^\infty p_i$ 的部分乘积，则有 $\prod_{i=1}^\infty =\lim_{n \to \infty} P_n$
+
+*** 推论1：若 $\prod_{i=1}^\infty p_i$ 收敛，则 $\lim_{i \to \infty} p_i =1$ ，证明：  
+
+\begin{aligned}
+&p_n=\frac{P_n}{P_{n-1}}\\
+&\therefore \lim_{n \to \infty} p_n=\lim_{n \to\infty} \frac{P_n}{P_{n-1}}=1\\
+\end{aligned}
+
+*** 推论2：若 $\prod_{i=1}^\infty p_i$ 收敛，则 $\lim_{m \to \infty} \prod_{i=m+1}^\infty p_i =1$ ，证明： 
+
+\begin{aligned}
+&\lim_{m\to\infty} \frac{\prod_{i=1}^\infty p_i}{\prod_{i=1}^m p_i}=1=\prod_{i=m+1}^\infty p_i\\
+\end{aligned}
+
+** 定义 $\prod_{i=1}^\infty p_i$ 发散为 $\prod_{i=1}^\infty p_i=0,\ \prod_{i=1}^\infty p_i=\infty$
+
+** 无穷乘积与无穷级数：
+
+*** 前提定义：
+
+因为 $\lim_{n \to \infty}a_n=0$ 是 $\prod_{i=1}^\infty p_i$ 与 $\sum_{i=1}^\infty a_i$ 收敛的必要条件，则若 $\lim_{n \to \infty}a_n \neq 0$ 则无穷乘积与级数发散，若 $\lim_{n \to \infty}a_n=0$ ，则有：
+
+\begin{aligned}
+&\forall \epsilon >0,\ \ \exists N\Rightarrow \forall n>N, |a_n| < \epsilon\\
+&\therefore \exists N'\Rightarrow \forall n>N', |a_n| <1\\
+\end{aligned}
+
+故有 $\prod_{i=1}^\infty p_i=C\prod_{i=N'+1}^\infty p_i,\ \ -\infty<C<+\infty$ 定义 $\ln \left( \prod_{i=N'+1}^\infty \right)=\sum_{i=N'+1} \ln (p_i)$
+
+*** 定理：$\prod_{i=1}^\infty p_i$ 与 $\sum_{i=N'+1}^\infty \ln(p_i)$ 同时敛散，原因 $\prod_{i=1}^\infty p_i= C\mathrm{e}^{\sum_{i=N'+1}^\infty \ln(p_i)}$
+
+*** <<MARK1>>推论1：若 $p_n=1+a_n$ 且 $a_n$ 不变号，则 $\prod_{i=1}^\infty p_i$ 与 $\sum_{i=N'+1}^\infty a_i$ 同时敛散，证明：
+
+\begin{aligned}
+&\because \lim_{x \to 0} \frac{\ln (1+x)}{x} = \lim_{x \to 0} \frac{(\ln (1+x))'}{x'} = \lim_{x \to 0} \frac{1}{1+x}=1\\
+\end{aligned}
+
+故若 $a_n>0\Rightarrow\ln(1+a_n)>0$ ，且 $\lim_{n \to \infty}a_n=0$ 则 $\lim_{n \to \infty} \frac{\ln (1+a_n)}{a_n}=1$ 
+
+根据正项级数比较判别法的极限形式， $\sum_{i=N'+1}^\infty a_i$ 与 $\sum_{i=N'+1}^\infty \ln(1 +a_n)$ 同时敛散，负号同理，证毕。 
+
+*** 推论2：若 $p_n=1+a_n$ 且 $a_n$ 变号，且 $\sum_{i=N'+1}^\infty a_i$ 收敛，则 $\prod_{i=1}^\infty p_i$ 与 $\sum_{i=N'+1}^\infty a_i^2$ 同时敛散，证明：
+
+\begin{aligned}
+&f(x)=x-ln(1+x)\\
+&f'(x)=1-\frac{1}{1+x}=\frac{x}{1+x}\\
+&\therefore \forall x>0\rightarrow f'(x)>0,\ \ \forall -1<x<0\rightarrow f'(x)<0\\
+&\because f(0)=0\\
+&\therefore f(x)=x-ln(1+x) \geq 0 \Rightarrow x \geq ln(1+x),\ \ x\in (-1,+\infty)\\
+\end{aligned}
+
+故，构造级数 $\sum_{i=N'+1}^\infty a_i-\ln (1 + a_i)$ ，通项 $a_i-\ln (1 + a_i) \geq 0$ ，则根据对数泰勒展开，有：
+
+\begin{aligned}
+\lim_{n\to\infty} \frac{a_n-\ln (1+a_n)}{a_n^2}&=\lim_{n\to\infty} \frac{a_n-(a_n - \frac{a_n^2}{2}+o(a_n))}{a_n^2}\\ 
+&=\lim_{n\to\infty} \frac{ \frac{a_n^2}{2}+o(a_n)}{a_n^2}\\
+&=\frac{1}{2}
+\end{aligned}
+
+同理根据正项级数比较判别法的极限形式 $\sum_{i=N'+1}^\infty a_i^2$ 与 $\sum_{i=N'+1}^\infty a_i-\ln (1 + a_i)$ 同时敛散，则：
+
+若 $\sum_{i=N'+1}^\infty a_i^2$ 收敛，则有 $\sum_{i=N'+1}^\infty a_i-\ln (1 + a_i)$ 收敛，又因为 $\sum_{i=N'+1}^\infty a_i$ 收敛，故 $\sum_{i=N'+1}^\infty \ln(1 +a_i)$ 收敛；
+
+若 $\sum_{i=N'+1}^\infty a_i^2$ 发散，则有 $\sum_{i=N'+1}^\infty a_i-\ln (1 + a_i)$ 发散，又因为 $\sum_{i=N'+1}^\infty a_i$ 收敛，故 $\sum_{i=N'+1}^\infty \ln(1 +a_i)$ 发散，且 $\lim_{n\to\infty} \frac{a_n-\ln (1+a_n)}{a_n^2}=\frac{ +\infty}{ +\infty}=\frac{1}{2}$ 故 $\sum_{i=N'+1}^\infty \ln(1 +a_i)=-\infty$ ；
+
+若 $\sum_{i=N'+1}^\infty \ln(1 +a_i)$ 收敛，因为 $\sum_{i=N'+1}^\infty a_i$ 收敛，故 $\sum_{i=N'+1}^\infty a_i-\ln (1 + a_i)$ 收敛，则有 $\sum_{i=N'+1}^\infty a_i^2$ 收敛；
+
+*** 无穷级数绝对收敛：
+
+**** 定义：
+
+对于无穷乘积 $\prod_{i=1}^\infty p_i$ ，若 $\sum_{i=N'+1}^\infty \ln (p_i)$ 绝对收敛，则无穷乘积绝对收敛；
+
+**** 推论1：若 $\sum_{i=N'+1}^\infty \ln (p_i)$ 绝对收敛，根据任意项级数柯西收敛原理推论1， $\sum_{i=N'+1}^\infty \ln (p_i)$ 本身收敛，又根据无穷乘积与无穷级数等价关系，$\prod_{i=1}^\infty p_i$ 收敛；
+
+**** 推论2：
+
+***** 描述：
+
+以下3命题等价：
+
+$\prod_{i=1}^\infty (1+a_i)$ 绝对收敛；
+
+$\prod_{i=N'+1}^\infty (1+|a_i|)$ 收敛；
+
+$\sum_{i=N'+1}^\infty |a_i|$ 收敛；
+
+
+***** 证明：
+
+若 $\lim_{n\to\infty}a_n \neq 0$ 则上述三式都发散，故当 $\lim_{n\to\infty}a_n = 0$ 时有： 
+
+\begin{aligned}
+&\because \lim_{x\to 0} \frac{\ln (1+x)}{x}=1\\
+&\therefore \lim_{n\to\infty} \frac{|\ln (1+a_n)|}{|a_n|}=\lim_{n\to\infty} \frac{\ln (1+|a_n|)}{|a_n|}=1
+\end{aligned}
+
+根据正项级数比较判别法： $ \sum_{i=1}^\infty |\ln (1+a_n)|,\ \&\ \sum_{i=1}^\infty |a_n|,\ \&\  \sum_{i=1}^\infty \ln (1+|a_n|)$ 同时敛散
+
+* 部分极限证明：
+
+** P级数：
+
+*** 通项：$\frac{A}{n^p}$
+
+*** 敛散性证明:
+
+\begin{aligned}
+&\sum_{n=1}^\infty \frac{1}{n^p}=1+\frac{1}{2^p}+\frac{1}{3^p}+\frac{1}{4^p}+\frac{1}{5^p}+\frac{1}{6^p}+\frac{1}{7^p}+\frac{1}{8^p}+...\\
+&\therefore \sum_{n=1}^\infty \frac{1}{n^p}>1+\frac{1}{2^p}+\frac{1}{4^p}+\frac{1}{4^p}+\frac{1}{8^p}+\frac{1}{8^p}+\frac{1}{8^p}+\frac{1}{8^p}+...\\
+&=1+2^0\frac{1}{2^p}+2^1\frac{1}{(2^2)^p}+2^2\frac{1}{(2^3)^p}+...+2^{i-1}\frac{1}{(2^i)^p}+...\\
+&=1+\sum_{i=1}^\infty 2^{i-1}\frac{1}{(2^i)^p}\\
+&=1+\frac{1}{2}\sum_{i=1}^\infty \frac{1}{(2^{p-1})^n}\\
+&\therefore \sum_{n=1}^\infty \frac{1}{n^p}<1+\frac{1}{2^p}+\frac{1}{2^p}+\frac{1}{4^p}+\frac{1}{4^p}+\frac{1}{4^p}+\frac{1}{4^p}+\frac{1}{4^p}+...\\
+&=1+2^1\frac{1}{2^p}+2^2\frac{1}{(2^2)^p}+2^3\frac{1}{(2^3)^p}+...+2^{i}\frac{1}{(2^i)^p}+...\\
+&=1+\sum_{i=1}^\infty 2^{i}\frac{1}{(2^i)^p}\\
+&=1+\sum_{i=1}^\infty \frac{1}{(2^{p-1})^n}\\
+&\therefore 1+\frac{1}{2}\sum_{i=1}^\infty \frac{1}{(2^{p-1})^n}<\sum_{n=1}^\infty \frac{1}{n^p}<1+\sum_{i=1}^\infty \frac{1}{(2^{p-1})^n}
+\end{aligned}
+
+若$p>1\Rightarrow \frac{1}{n^p}<1+\sum_{i=1}^\infty \frac{1}{(2^{p-1})^n}$ 收敛，且级数为正想级数，故收敛
+
+若$p \leq 1 \Rightarrow 1+\frac{1}{2}\sum_{i=1}^\infty \frac{1}{(2^{p-1})^n}$ 发散，同理级数为正想级数，故发散
+
+** 莱布尼茨级数：
+
+*** 级数定义：
+
+\begin{aligned}
+&\sum_{n=1}^\infty (-1)^{n+1}u_n\\
+&\forall n \in N^{+}\ u_n>0\ \&\ \lim_{n \to \infty}u_n=0\ \&\ u_n>u_{n+1}\\
+\end{aligned}
+
+*** 收敛证明：
+
+\begin{aligned}
+&\left|\sum_{i=n+1}^m (-1)^{i+1}u_i\right|=\left|\sum_{i=n+1}^{n+p} (-1)^{i+1}u_i\right|\\
+&\sum_{i=n+1}^{n+p} (-1)^{i+1}u_i = (-1)^{n+2} \sum_{i=n+1}^{n+p} (-1)^{i-n-1}u_i\\
+\end{aligned}
+
+若 P 为奇数：
+
+\begin{aligned}
+&\because u_n \geq u_{n+1},u_n>0\\
+&\therefore \sum_{i=n+1}^{n+p} (-1)^{i-n-1}u_i=(u_{n+1}-u_{n+2})+(u_{n+3}-u_{n+4})+...+(u_{n+p-2}-u_{n+p-1})+u_{n+p} \geq u_{n+p}>0\\
+&\therefore \sum_{i=n+1}^{n+p} (-1)^{i-n-1}u_i=u_{n+1}-(u_{n+2}-u_{n+3})-(u_{n+4}-u_{n+5})-...-(u_{n+p-1}-u_{n+p}) \leq u_{n+1}\\
+&\because \left|\sum_{i=n+1}^{n+p} (-1)^{i+1}u_i\right| = \left|(-1)^{n+2}\right| \sum_{i=n+1}^{n+p} (-1)^{i-n-1}u_i\\
+&\therefore 0 \leq u_{n+p} \leq \left|\sum_{i=n+1}^{n+p} (-1)^{i+1}u_i\right| \leq u_{n+1}\\
+\end{aligned}
+
+若 P 为偶数：
+
+\begin{aligned}
+&\because u_n \geq u_{n+1},u_n>0\\
+&\therefore \sum_{i=n+1}^{n+p} (-1)^{i-n-1}u_i=(u_{n+1}-u_{n+2})+(u_{n+3}-u_{n+4})+...+(u_{n+p-1}-u_{n+p}) \geq 0\\
+&\therefore \sum_{i=n+1}^{n+p} (-1)^{i-n-1}u_i=u_{n+1}-(u_{n+2}-u_{n+3})-(u_{n+4}-u_{n+5})-...-(u_{n+p-2}-u_{n+p-1})-u_{n+p} \leq u_{n+1}\\
+&\because \left|\sum_{i=n+1}^{n+p} (-1)^{i+1}u_i\right| = \left|(-1)^{n+2}\right| \sum_{i=n+1}^{n+p} (-1)^{i-n-1}u_i\\
+&\therefore 0 \leq \left|\sum_{i=n+1}^{n+p} (-1)^{i+1}u_i\right| \leq u_{n+1}\\
+\end{aligned}
+
+根据数列收敛原则：
+
+\begin{aligned}
+&\forall \epsilon>0,\ \ \exists N,\ \ \forall m>n>N\Rightarrow  0 \leq \left|\sum_{i=n+1}^{m} (-1)^{i+1}u_i\right| \leq u_{n+1}<\epsilon
+\end{aligned}
+
+根据柯西收敛原理，级数收敛。
+
+** 幂级数：
+
+*** 级数定义：
+
+$f(x)=\sum_{i=0}^\infty \frac{x^i}{i!},\ \&\ f(y)=\sum_{i=0}^\infty \frac{y^i}{i!}$ 则，两个级数的柯西乘积为 $\sum_{i=0}^\infty C_i$ 根据定义：
+
+\begin{aligned}
+& C_n = \sum_{i+j=n} \frac{x^i y^j}{i!j!} = \frac{1}{n!}\sum_{i=0}^n \frac{n!}{i!(n-i)!}x^iy^j = \frac{1}{n!}\sum_{i=0}^n C_n^i x^iy^j 
+\end{aligned}
+
+根据二项式展开定理：
+
+\begin{aligned}
+C_n = \frac{1}{n!} (x+y)^n
+\end{aligned}
+
+故，级数柯西乘积为：
+
+\begin{aligned}
+\sum_{i=0}^\infty \frac{(x+y)^i}{i!}\Rightarrow f(x)f(y)=f(x+y)
+\end{aligned}
+
+** $\int_0^{\frac{\pi}{2}} (\sin x)^n dx$ ：
+
+\begin{aligned}
+\int_0^{\frac{\pi}{2}} (\sin x)^n dx &= -\int_0^{\frac{\pi}{2}} (\sin x)^{n-1} d\cos x\\
+&=-\cos x (\sin x)^{n-1}\bigg|_0^{\frac{\pi}{2}}+\int_0^{\frac{\pi}{2}} \cos x d(\sin x)^{n-1}\\
+&= \int_0^{\frac{\pi}{2}} \cos x d(\sin x)^{n-1}\\
+&= (n-1)\int_0^{\frac{\pi}{2}} \cos^2 x \sin^{n-2} x dx\\ 
+&= (n-1)\int_0^{\frac{\pi}{2}} (1-\sin^2 x) \sin^{n-2} x dx\\
+&= (n-1)\int_0^{\frac{\pi}{2}} \sin^{n-2} x dx - (n-1)\int_0^{\frac{\pi}{2}} \sin^{n} x dx\\
+\end{aligned}
+
+设 $I_n=\int_0^{\frac{\pi}{2}} \sin^n x dx$ ，故有 $I_n=(n-1)I_{n-2}-(n-1)I_n\Rightarrow I_n=\frac{n-1}{n}I_{n-2}=\frac{(n-1)(n-3)}{n(n-2)}I_{n-4}...\a$ ，则有：
+
+\begin{aligned}
+&I_{2n}=\frac{(2n-1)!!}{2n!!} \int_0^{\frac{\pi}{2}} \sin^0 x dx=\frac{(2n-1)!!}{2n!!}\frac{\pi}{2}\\
+&I_{2n+1}=\frac{(2n)!!}{(2n+1)!!} \int_0^{\frac{\pi}{2}} \sin x dx=\frac{(2n)!!}{(2n+1)!!}\\
+\end{aligned}
+
+* 部分公式证明：
+
+** Wallice公式：
+
+\begin{aligned}
+P_n&=\prod_{i=1}^n \left(1-\frac{1}{(2i)^2}\right)\\
+&=\prod_{i=1}^n \frac{(2i-1)(2i+1)}{(2i)^2}\\
+&=\frac{(2n-1)!!(2n+1)!!}{((2n)!!)^2}\\
+&=\left(\frac{(2n-1)!!}{(2n)!!}\right)^2 * (2n+1)
+\end{aligned}
+
+根据部分极限证明中 $\int_0^{\frac{\pi}{2}} (\sin x)^n dx$ 的证明：
+
+\begin{aligned}
+&I_{2n}=\frac{(2n-1)!!}{2n!!}\frac{\pi}{2}\\
+&I_{2n+1}=\frac{(2n)!!}{(2n+1)!!}\\
+&\therefore \frac{\pi}{2} P_n=\frac{I_{2n}}{I_{2n+1}}\\
+\end{aligned}
+
+由于当 $m>n$ 时， $\sin ^m (x) \leq \sin ^n (x),\ \  x\in \left[0,\frac{\pi}{2}\right]$ ，故 $\int_0^{\frac{\pi}{2}} (\sin x)^m dx \leq \int_0^{\frac{\pi}{2}} (\sin x)^n dx\Rightarrow I_m\leq I_n$ ，故得不等式：
+\begin{aligned}
+&1\leq\frac{I_{2n}}{I_{2n+1}}\leq \frac{I_{2n-1}}{I_{2n+1}}\\
+&\because \frac{I_{2n-1}}{I_{2n+1}}=\frac{\frac{(2n-2)!!}{(2n-1)!!}}{\frac{(2n)!!}{(2n+1)!!}}=\frac{2n+1}{2n}\\
+&\therefore 1\leq \lim_{n\to\infty} \frac{I_{2n}}{I_{2n+1}} \leq \lim_{n\to\infty} \frac{2n+1}{2n} =1\\
+&\therefore \lim_{n\to\infty} \frac{\pi}{2} P_n = \lim_{n\to\infty} \frac{I_{2n}}{I_{2n+1}}=1\\
+\end{aligned}
+
+故得到Wallice公式：
+
+\begin{aligned}
+\frac{\pi}{2}=\frac{1}{P_n}=\frac{2}{1}*\frac{2}{3}*\frac{4}{3}*\frac{4}{5}*...*\frac{2n}{2n-1}*\frac{2n}{2n+1}*...
+\end{aligned}
+
+** Viete公式：
+
+根据倍角公式：
+
+\begin{aligned}
+\sin x &= 2 \cos \frac{x}{2} \sin \frac{x}{2}\\
+       &= 2^2 \cos \frac{x}{2} \cos \frac{x}{2^2} \sin \frac{x}{2^2}\\
+       &= ...\\
+       &= 2^n \sin \frac{x}{2^n} \prod_{i=1}^n\cos \frac{x}{2^i}\\
+\end{aligned}
+
+定义 $P_n=\prod_{i=1}^n\cos \frac{x}{2^i}$ ，则有：
+
+\begin{aligned}
+&P_n=\frac{\sin x}{2^n \sin \frac{x}{2^n}}=\frac{\frac{x}{2^n}}{\ sin \frac{x}{2^n}} \frac{\sin x}{x}\\
+&\therefore \lim_{n\to\infty} P_n=\frac{\sin x}{x}
+\end{aligned}
+
+带入 $x=\frac{\pi}{2}$ 得到Viete公式 $$\frac{2}{\pi}=\cos\frac{\pi}{4}\cos\frac{\pi}{8}...\cos\frac{\pi}{2^n}... $$
+
+** Stirling公式：
+
+*** 描述： $n! \sim \sqrt{2\pi} n^{n+\frac{1}{2}} e ^{-n},\ (n \to +\infty)$
+
+\begin{aligned}
+\lim_{n\to\infty}\frac{n!}{n^{n+\frac{1}{2}}e^{-n}}=\sqrt{2\pi}
+\end{aligned}
+
+*** 证明：
+
+**** 第一步：给定 $\lim_{n\to\infty} b_n > 0$ 时证明极限
+
+定义：$b_n=\frac{n!}{n^{n+\frac{1}{2}}e^{-n}}=\frac{n!e^{n}}{n^{n+\frac{1}{2}}}$ ，则当 $\lim_{n\to\infty} b_n > 0$ 时，下式成立：
+
+\begin{aligned}
+\lim_{n\to\infty} b_n &= \lim_{n\to\infty} \frac{(b_n)^2}{b_{2n}}\\
+&=\lim_{n\to\infty} \frac{\left[\frac{n!e^{n}}{n^{n+\frac{1}{2}}}\right]^2}{\frac{(2n)!e^{2n}}{(2n)^{2n+\frac{1}{2}}}}\\
+&=\lim_{n\to\infty} \frac{(n!)^2e^{2n}}{n^{2n+1}}\frac{(2n)^{2n+\frac{1}{2}}}{(2n)!e^{2n}}\\
+&=\lim_{n\to\infty} \sqrt{\frac{2}{n}}\frac{[(n!) 2^n]^2}{(2n)!}\\
+&=\lim_{n\to\infty} \sqrt{\frac{2}{n}}\frac{[(2n)!! ]^2}{(2n)!}\\
+&=\lim_{n\to\infty} \sqrt{\frac{2(2n+1)}{n}}\frac{(2n)!!}{(2n-1)!!} \frac{1}{\sqrt{2n+1}}\\
+\end{aligned}
+
+根据Wallice公式中证明 $\lim_{n\to\infty} P_n=\lim_{n\to\infty} \left(\frac{(2n-1)!!}{(2n)!!}\right)^2 * (2n+1) = \frac{2}{\pi}$ 故根据极限四则运算得 $\lim_{n\to\infty}\frac{(2n)!!}{(2n-1)!!}\frac{1}{\sqrt{2n+1}}=\sqrt{\frac {\pi}{2}}$ ，则有:
+
+\begin{aligned}
+\lim_{n\to\infty} b_n &= \lim_{n\to\infty} \sqrt{\frac{2(2n+1)}{n}} \sqrt{\frac {\pi}{2}}\\
+&=\sqrt{2\pi}\\
+\end{aligned}
+
+**** 第二步：证明 $\lim_{n\to\infty} b_n > 0$ 
+
+证明 $\lim_{n\to\infty} b_n \neq 0$ ，定义无穷乘积 $b_n = \prod_{i=2}^n \frac{b_i}{b_{i-1}}$ ，则通项：
+
+\begin{aligned}
+\frac{b_n}{b_{n+1}}&=\frac{\frac{n!e^{n}}{n^{n+\frac{1}{2}}}}{\frac{(n+1)!e^{n+1}}{(n+1)^{n+1+\frac{1}{2}}}}=\frac{n!e^{n}}{n^{n+\frac{1}{2}}} \frac{(n+1)^{n+1+\frac{1}{2}}}{(n+1)!e^{n+1}} \\
+&=\left(\frac{1+n}{n}\right)^{n+\frac{1}{2}}\frac{1}{e}\\
+\end{aligned}
+
+根据泰勒展开：
+
+\begin{aligned}
+&\ln (1-x) =-x-\frac{1}{2}x^2-\frac{1}{3}x^3- ...- \frac{1}{n}x^n -...\\
+&\ln (1+x) =x-\frac{1}{2}x^2+\frac{1}{3}x^3- ...+ (-1)^(n+1) \frac{1}{n}x^n +...\\
+&\ln \left(\frac{1+x}{1-x}\right)=\ln (1+x) - \ln (1-x)=2\left(x+\frac{1}{3}x^3+\frac{1}{5}x^5+...+\frac{1}{2n+1}x^{2n+1}+...\right)\\
+\end{aligned}
+
+取 $x=\frac{1}{2n+1}$ 则有：
+
+\begin{aligned}
+\ln \left(\frac{1+x}{1-x}\right) &= \ln \left(\frac{1+n}{n}\right) = \frac{2}{2n+1}
+\left(1+\frac{1}{3(2n+1)^2}+\frac{1}{5(2n+1)^4}+...+\frac{1}{(2k+1)(2n+1)^{2k}}+...\right)\\
+&< \frac{2}{2n+1}\left(1+\frac{1}{3(2n+1)^2}+\frac{1}{3(2n+1)^4}+...+\frac{1}{3(2n+1)^{2k}}+...\right)\\
+&= \frac{2}{2n+1}\left(1+ \frac{1}{3} \frac{1}{2n(2n+2)}\right)\\
+&= \frac{2}{2n+1}\left(1+ \frac{1}{12n(n+1)} \right)
+\end{aligned}
+
+因为 $\left( n+\frac{1}{2} \right)\ln \left(\frac{1+n}{n}\right)= 1+\frac{1}{3(2n+1)^2}+\frac{1}{5(2n+1)^4}+...+\frac{1}{(2k+1)(2n+1)^{2k}}+... >1$ 结合上述表示：
+
+\begin{aligned}
+&1<\left(n+\frac{1}{2}\right) \ln \left(1+\frac{1}{n}\right)<1+\frac{1}{12n(n+1)}\\
+&\therefore e<\left(1+\frac{1}{n}\right)^{n+\frac{1}{2}}<e^{1+\frac{1}{12n(n+1)}}\\
+&\therefore 1<\left(\frac{n+1}{n}\right) ^{n+\frac{1}{2}}\frac{1}{e}<e^{\frac{1}{12n(n+1)}}=e^{\frac{1}{12}\left(\frac{1}{n}-\frac{1}{n+1}\right)}\\
+&\therefore 1<\frac{b_n}{b_{n+1}}<e^{\frac{1}{12}\left(\frac{1}{n}-\frac{1}{n+1}\right)}\\
+&\therefore b_n>b_{n+1},\ \ b_ne^{-\frac{1}{12n}}<b_{n+1}e^{-\frac{1}{12(n+1)}}
+\end{aligned}
+
+定义数列 $a_n=b_n e^{-\frac{1}{12n}}$ 则 $a_{n+1}>a_n$ ，故有：
+
+\begin{aligned}
+&\because a_1=\frac{e}{e^\frac{1}{12}}=e^{\frac{11}{12}}>0\ \&\ a_{n+1}>a_n\\
+&\therefore a_n > 0\\
+&\because e^{-\frac{1}{12n}}<1\\
+&\therefore b_n>a_n > a_1>0\\
+\end{aligned}
+
+故数列 $b_n$ 有下界（ $b_n>e^{\frac{11}{12}}$ ）且 $b_n$ 单调递减，故必收敛于大于零极限 $\lim_{n\to\infty} b_n=B>0$ ，则第一步证明成立。
+
+** 正弦函数无穷乘积展开
+
+*** 描述：
+
+\begin{aligned}
+&\sin (x)=x\prod_{i=1}^\infty \left( 1-\frac{x^2}{i^2\pi^2} \right)
+\end{aligned}
+
+*** 证明：
+
+**** 第一步：证明多项式形式
+
+\begin{aligned}
+\sin (3x) &= \sin (x+2x)\\
+&=\sin (x) \cos(2x)+\cos(x)\sin(2x)\\
+&=\sin (x) (1-2\sin^2(x)) +2\cos^2(x)\sin(x)\\
+&=\sin(x)\left[(1-2\sin^2(x))+(2-2sin^2(x))\right]\\
+&=\sin(x)(3-4\sin^2(x))\\
+\end{aligned}
+
+\begin{aligned}
+\sin((2n+1)x) &= \sin((2n-1)x+2x)\\
+&=\sin((2n-1)x)\cos(2x) + \cos((2n-1)x)\sin(2x)\\
+&=\sin((2n-1)x)\cos(2x) + \left[\cos((2n-3)x)\cos(2x) + \sin((2n-3)x)\sin(2x)\right]\sin(2x)\\
+&=\sin((2n-1)x)\cos(2x) + \cos((2n-3)x)\sin(2x)\cos(2x) + \sin((2n-3)x)\cos(2x)\cos(2x) - \sin((2n-3)x)\cos(2x)\cos(2x) + \sin((2n-3)x)\sin(2x)\sin(2x)\\
+&=\sin((2n-1)x)\cos(2x) + \cos(2x)\left[\cos((2n-3)x)\sin(2x) + \sin((2n-3)x)\cos(2x)\right] - \sin((2n-3)x)\left[\cos^2(2x) + \sin^2(2x)\right]\\
+&=2\sin((2n-1)x)\cos(2x) + \sin((2n-3)x)\\
+&=2(1-2\sin^2(x))\sin((2n-1)x) + \sin((2n-3)x)\\
+\end{aligned}
+
+故根据数学归纳法， $\sin((2n+1)\phi)=C\sin(\phi)P_n(\sin^2(\phi))$ 其中 $P_n(u)$ 为 $u$ 的 $n$ 次多项式， $C$ 为常数。
+
+其中，函数的根满足 $\sin ((2n+1)\phi) = 0\ \&\ \sin(\phi) \neq 0$ ，由于 $\sin^2(x)=\sin^2\left(x+k\frac{\pi}{2}\right)$ ，我们取 $\sin^2(\phi) = \sin^2 (\frac{k}{2n+1}), k=1,2,...,2n$ 为函数的根;
+
+又因为当 $\phi \to 0$ 时， $\lim_{\phi\to0} P_n(\sin^2(\phi)) = \lim_{\phi\to\0} \frac{\sin((2n+1)\phi)}{\sin(\phi)} = \lim_{\phi\to\0} (2n+1)\frac{\sin((2n+1)\phi)}{(2n+1)\phi)}\frac{\phi}{\sin(\phi)} = 2n+1$ ，故 $C=2n+1$ ，综合上述表述： 
+
+\begin{aligned}
+&P_n(\sin^2(\phi))=(2n+1)\prod_{k=1}^n\left( 1 - \frac{\sin^2(\phi)}{\sin^2(\frac{k\pi}{2n+1})}}\right)\\
+&\therefore \sin((2n+1)\phi)=(2n+1)\sin(\phi)\prod_{k=1}^n\left( 1 - \frac{\sin^2(\phi)}{\sin^2(\frac{k\pi}{2n+1})}}\right)\\
+\end{aligned}
+
+**** 第二步：代入，整理多项式，证明上下限
+
+令 $x=(2n+1)\phi$ 代入上式，并取 $m$ 为某个正整数：
+
+\begin{aligned}
+&\sin(x)=(2n+1)\sin(\frac{x}{2n+1}) \prod_{k=1}^n\left( 1 - \frac{\sin^2(\frac{x}{2n+1})}{\sin^2(\frac{k\pi}{2n+1})}} \right)\\
+&\frac{\sin(x)}{(2n+1)\sin(\frac{x}{2n+1}) \prod_{k=1}^m\left( 1 - \frac{\sin^2(\frac{x}{2n+1})}{\sin^2(\frac{k\pi}{2n+1})}} \right)}= 
+\prod_{k=m+1}^n\left( 1 - \frac{\sin^2(\frac{x}{2n+1})}{\sin^2(\frac{k\pi}{2n+1})}} \right)\\
+\end{aligned}
+
+由于 $\lim_{n\to\infty}\sin^2 \left(\frac{x}{2n+1}\right)=0\ \&\ \lim_{k\to n}\sin^2 \left(\frac{k\pi}{2n+1}\right)=1$ 且单调，故当 $n,m$ 足够大的时候 $0<1 - \frac{\sin^2(\frac{x}{2n+1})}{\sin^2(\frac{k\pi}{2n+1})}} \leq 1 \ k=m+1,m+2,..n$ ，则有:
+
+\begin{aligned}
+0<\prod_{k=m+1}^n\left( 1 - \frac{\sin^2(\frac{x}{2n+1})}{\sin^2(\frac{k\pi}{2n+1})}} \right) \leq 1
+\end{aligned} 
+
+又因为：
+
+\begin{aligned}
+&\because f'(x)=[x-\sin(x)]'=1-\cos(x)>0\ \&\ f(0)=0\\
+&\therefore x \geq \sin(x),\ x \in [0,\pi],\ \ x \leq \sin(x),\ x \in [-\pi,0]\\
+&\therefore x^2 \geq \sin^2(x),\ \ x\in [-\pi,\pi]\\
+&\because -1\leq\sin(x)\leq 1\Rightarrow 0 \leq \sin^2(x) \leq 1\ \&\ x^2>1,\ \ x\in (-\infty,\pi]\union[\pi,+\infty)\\
+&\therefore x^2 \geq \sin^2(x)\\
+&\therefore \left(\frac{x}{2n+1}\right)^2 \geq \sin^2\left(\frac{x}{2n+1}\right)\\
+&\because g'(x)=\left[\sin(x)-\frac{2}{\pi}x\right]'=\cos(x)-\frac{2}{\pi}\begin{cases}
+>0,\ x\in \left[ 0, \arccos \left( \frac{2}{\pi} \right) \right)\\
+=0,\ x = \arccos \left( \frac{2}{\pi} \right)\\
+<0,\ x\in\left( \arccos \left( \frac{2}{\pi} \right),\frac{\pi}{2}\right]\\
+\end{cases}
+\ \&\ g(0)=0,g\left(\frac{\pi}{2}\right)=0\\
+&\therefore \sin(x) \geq \frac{2}{\pi}x>0,\ \ x\in\left[0,\frac{\pi}{2}\right]\\
+&\therefore \sin^2\left(\frac{k\pi}{2n+1}\right) \geq \left(\frac{k\pi}{2n+1}\right)^2\\
+&\therefore 1 \geq \prod_{k=m+1}^n\left( 1 - \frac{\sin^2(\frac{x}{2n+1})}{\sin^2(\frac{k\pi}{2n+1})}} \right) 
+=\frac{\sin(x)}{(2n+1)\sin(\frac{x}{2n+1}) \prod_{k=1}^m\left( 1 - \frac{\sin^2(\frac{x}{2n+1})}{\sin^2(\frac{k\pi}{2n+1})}} \right)}
+\geq \prod_{k=m+1}^n\left( 1 - \frac{x^2}{k^2\pi^2} \right) \geq \prod_{k=m+1}^\infty \left( 1 - \frac{x^2}{k^2\pi^2} \right)\\
+\end{aligned}
+
+**** 第三部：证明整理后极限
+
+因为 $\frac{x^2}{k^2\pi^2}$ 定号，且根据P级数 $\sum_{i=1}^\infty \frac{x^2}{k^2\pi^2}=\frac{x^2}{\pi^2}\sum_{i=1}^\infty \frac{1}{k^2}$ 收敛，根据无穷乘积与无穷级数中推论2， $\prod_{k=m+1}^\infty \left( 1 - \frac{x^2}{k^2\pi^2} \right)$ 收敛；
+
+根据无穷乘积定义推论2，当 $n,m \to \infty$ 时 $\lim_{m\to\infty} \prod_{k=m+1}^\infty \left( 1 - \frac{x^2}{k^2\pi^2} \right)=1$ 则根据夹逼定理：
+
+\begin{aligned}
+&1 \geq \lim_{n,m\to\infty} \frac{\sin(x)}{(2n+1)\sin(\frac{x}{2n+1}) \prod_{k=1}^m\left( 1 - \frac{\sin^2(\frac{x}{2n+1})}{\sin^2(\frac{k\pi}{2n+1})}} \right)}
+\geq \lim_{m\to\infty} \prod_{k=m+1}^\infty \left( 1 - \frac{x^2}{k^2\pi^2} \right)=1,\ \ m<n\\
+&1 \geq \lim_{n\to\infty} \frac{\sin(x)}{(2n+1)\sin(\frac{x}{2n+1}) \prod_{k=1}^\infty\left( 1 - \frac{\sin^2(\frac{x}{2n+1})}{\sin^2(\frac{k\pi}{2n+1})}} \right)}
+\geq 1\\
+&\therefore \lim_{n\to\infty} \frac{\sin(x)}{(2n+1)\sin(\frac{x}{2n+1}) \prod_{k=1}^\infty\left( 1 - \frac{\sin^2(\frac{x}{2n+1})}{\sin^2(\frac{k\pi}{2n+1})}} \right)}=1\\
+&\therefore \lim_{n\to\infty} \frac{\sin(x)}{x\frac{\sin(\frac{x}{2n+1})}{\frac{x}{2n+1}} 
+\prod_{k=1}^\infty\left( 1 - \frac{x^2}{k^2\pi^2}\frac{\frac{\sin^2(\frac{x}{2n+1})}{\left(\frac{x}{2n+1}\right)^2}}
+{\frac{\sin^2(\frac{k\pi}{2n+1})}{\left(\frac{k\pi}{2n+1}\right)^2}}} \right)}=1\\
+\end{aligned}
+
+根据极限四则运算：
+
+\begin{aligned}
+&\frac{\sin(x)}{x\prod_{k=1}^\infty \left( 1- \frac{x^2}{k^2n^2} \right)}=1\\
+&\therefore \sin(x)=x\prod_{k=1}^\infty \left( 1- \frac{x^2}{k^2n^2} \right)\\
+\end{aligned}
+
+证毕。

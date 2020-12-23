@@ -1,0 +1,586 @@
+#+LATEX_CLASS: ctexart
+#+OPTIONS: ^:nil
+#+TITLE: GreenPlum
+#+STARTUP: inlineimages
+
+current mark: MK6
+
+* Table
+
+** [[https://gpdb.docs.pivotal.io/6-1/admin_guide/ddl/ddl-storage.html][Storage Model]]
+
+*** Heap
+
+(1) Heap storage type providing full storage of the table;
+
+(2) Better for smaller tables with frequnt updating and deleting.
+
+#+BEGIN_SRC sql
+CREATE TABLE foo (a int, b text) DISTRIBUTED BY (a);
+#+END_SRC
+
+*** Append Optmized
+
+(1) Eliminates the storage overhead of the per-row update visibility information, saving about 20 bytes per row;
+
+(2) Optimized for bulk data loading, deteriorated for single row inserting;
+
+(3) Best work for tables loaded in batches and accessed by read-only queries;
+
+(4) Cannot UPDATE or DELETE during read or serizalizable transaction;
+
+(5) CLUSTER, DECLARE...FOR UPDATE, and triggers are not supported.
+
+**** Row oriented
+
+(1) Centrolized sotrage for row's data;
+
+(2) Better for queries participate by most of the columns;
+
+(3) Suitable for most general situations.
+
+#+BEGIN_SRC sql
+CREATE TABLE bar (a int, b text) 
+    WITH (appendoptimized=true)
+    DISTRIBUTED BY (a);
+#+END_SRC
+
+**** Column oriented<<MK3>>
+
+(1) Centrolized sotrage for row's data;
+
+(2) Better for queries participate by single column (such as max, min, ave);
+
+(3) Avaliable for [[MK4][column level compression]].
+
+#+BEGIN_SRC sql
+CREATE TABLE bar (a int, b text) 
+    WITH (appendoptimized=true, orientation=column)
+    DISTRIBUTED BY (a);
+#+END_SRC
+
+*** Compression
+
+**** Table level
+
+(1) Applied to entire table;
+
+(2) Support all types of storate model;
+
+(3) Supported algorithms are ZLIB, ZSTD and QUICKLZ.
+
+#+BEGIN_SRC sql
+CREATE TABLE foo (a int, b text) 
+   WITH (appendoptimized=true, compresstype=zlib, compresslevel=5);
+#+END_SRC
+
+NOTE: For compression level, 1 is the fastest method with the least compression, 9 is the opposite.
+
+**** Column level<<MK4>>
+
+(1) Applied only to [[MK3][column orianted table]];
+
+(2) Supported algorithms are RLE_TYPE, ZLIB, ZSTD and QUICKLZ.
+
+#+BEGIN_SRC sql
+CREATE TABLE T1 (
+    c1 int ENCODING (compresstype=zstd),
+    c2 char ENCODING (compresstype=quicklz, blocksize=65536),
+    c3 char
+) WITH (appendoptimized=true, orientation=column);
+#+END_SRC
+
+** [[https://gpdb.docs.pivotal.io/6-1/admin_guide/distribution.html][Distributed]]
+
+(1) The reference that GPDB used to saperate data into each segments;
+
+(2) Avoiding skewness of data, ensure each segment use similar cost to complete its portion of workload; 
+
+(3) Critically relate to join performance since data can be joined locally;
+
+(4) Distribute by same columns of different tables produce local joins;
+
+(5) Support distribute options of by column, Randomsame columns of different tables produce local joins;
+
+(6) UNIQUE and PRIMARY KEY constraints must be distribution key.
+
+*** Analyze data skewness
+
+Listing number of rows in each segment.
+
+#+BEGIN_SRC sql
+SELECT gp_segment_id, COUNT(*) FROM tablename
+GROUP BY gp_segment_id;
+#+END_SRC
+
+Returnning coefficient of variation(CV) of all tables, where $CV=\frac{Standard\_Deviation}{Mean}\times 100=\frac{\sqrt{\sum_{i=1}^n (x_i-\frac{\sum_{i=1}^n x_i}{n})^2}}{\frac{\sum_{i=1}^n x_i}{n}}\times 100$ .
+
+#+BEGIN_SRC sql
+select * from gp_toolkit.gp_skew_coefficients
+#+END_SRC
+
+Returnning percentage of system idle during table scan.
+
+#+BEGIN_SRC sql
+select * from gp_toolkit.gp_skew_idle_fractions
+#+END_SRC
+
+*** By colum
+
+Referencing on specific columns to distribute data, columns with same value will be dispatched to same sagments.
+
+#+BEGIN_SRC sql
+CREATE TABLE rank (
+    id     int, 
+    rank   int, 
+    year   smallint, 
+    gender char(1), 
+    count  int
+) DISTRIBUTED BY (
+    rank, 
+    gender, 
+    year
+);
+#+END_SRC
+
+*** Randomly
+
+Randomly distribute data evenly to each segments.
+
+#+BEGIN_SRC sql
+CREATE TABLE rank (
+    id     int, 
+    rank   int, 
+    year   smallint, 
+    gender char(1), 
+    count  int
+) DISTRIBUTED RANDOMLY;
+#+END_SRC
+
+*** Replication
+
+Each segment will contain the full table, used for small and frequently joined tables.
+
+#+BEGIN_SRC sql
+CREATE TABLE rank (
+    id     int, 
+    rank   int, 
+    year   smallint, 
+    gender char(1), 
+    count  int
+) DISTRIBUTED REPLICATED;
+#+END_SRC
+
+** [[https://gpdb.docs.pivotal.io/6-1/admin_guide/ddl/ddl-partition.html][Partition]]
+
+(1) Separate large tables into relatively small data scale on each segements;
+
+(2) Based on columns, can take reference on Date Range, Numeric range and list partitions;
+
+(3) UNIQUE and PRIMARY KEY constraints must be distribution key.
+
+*** Date Range partition
+
+#+BEGIN_SRC sql
+CREATE TABLE sales (
+    id   int, 
+    date date, 
+    amt  decimal(10,2))
+DISTRIBUTED BY (id)
+PARTITION BY RANGE (date)(
+    START (date '2016-01-01') INCLUSIVE
+    END   (date '2017-01-01') EXCLUSIVE
+    EVERY (INTERVAL '1 day') 
+);
+#+END_SRC
+
+*** Numeric range partition
+
+#+BEGIN_SRC sql
+CREATE TABLE rank (
+    id     int, 
+    rank   int, 
+    year   int, 
+    gender char(1), 
+    count  int
+) DISTRIBUTED BY (id)
+PARTITION BY RANGE (year)( 
+    START   (2006) 
+    END     (2016) 
+    EVERY   (1), 
+    DEFAULT PARTITION extra
+); 
+#+END_SRC
+
+*** List partition
+
+#+BEGIN_SRC sql
+CREATE TABLE rank (
+    id int, 
+    rank int, 
+    year int, 
+    gender char(1), 
+    count int 
+) DISTRIBUTED BY (id)
+PARTITION BY LIST (gender)( 
+    PARTITION girls VALUES ('F'), 
+    PARTITION boys  VALUES ('M'), 
+    DEFAULT PARTITION other 
+);
+#+END_SRC
+
+** [[https://gpdb.docs.pivotal.io/6-1/admin_guide/ddl/ddl-index.html][Index]]
+
+(1) Improve data access times but deteriorate data loading time;
+
+(2) Suitable for querys returning a single record or a small subset of data;
+
+(3) Not efficient for querys returning large data sets;
+
+(4) UNIQUE CONSTRAINT (such as a PRIMARY KEY CONSTRAINT) implicitly creates a UNIQUE INDEX;
+
+(5) Support B-tree, bitmap, GiST, SP-GiST and GIN index type;
+
+#+BEGIN_SRC sql
+CREATE INDEX gender_idx ON employee (gender);
+CREATE INDEX title_bmp_idx ON films USING bitmap (title);
+#+END_SRC
+
+* Load data
+
+** COPY
+
+(1) Postgres command to load bulk data from external files;
+
+(2) Data will be loaded by master and dispatched to segments.
+
+#+BEGIN_SRC sql
+copy d_wac 
+from '/home/gpadmin/gpdb-sandbox-tutorials/faa/L_WORLD_AREA_CODES.csv' 
+CSV header
+#+END_SRC
+
+** [[https://gpdb.docs.pivotal.io/6-1/admin_guide/external/g-using-the-greenplum-parallel-file-server--gpfdist-.html][gpfdist]]
+
+(1) Greenplum utility, set up file server for specific directory for data loading or dump;
+
+(2) When loading data to Greenplum, gpfdist will uncompresses .gz or .bz2 files if exists;
+
+(3) When dumping data to the file directory, compresses .gz files;
+
+(4) Can be setup on master of segement host;
+
+(5) All primary segments access the external file(s) in parallel, speed up the uploading.
+
+*** Terminal
+
+First step is setup gpfdist file server, using gpfdist utility:
+
+#+BEGIN_SRC shell
+gpfdist -d ~/gpdb-sandbox-tutorials/faa -p 8081 > /tmp/gpfdist.log 2>&1 &
+#+END_SRC
+
+| Option | Illustration                                             |
+|--------+----------------------------------------------------------|
+| -d     | Specify file directory (~/gpdb-sandbox-tutorials/faa)    |
+| -p     | Specify port (8081)                                      |
+| >      | Redirect standard out (stdout) to a file (gpfdist.log)   |
+| 2>&1   | Redirect standard error (stderr) to stdout (gpfdist.log) |
+| &      | Run the program in the background                        |
+
+Check if gpfdist is running.
+
+#+BEGIN_SRC shell
+ps -A | grep gpfdist
+#+END_SRC
+
+*** External Table
+
+Secondly, create an external table that direce to gpfdist file server:
+
+#+BEGIN_SRC sql
+create external table ext_load_otp
+(like faa_otp_load)
+location ('gpfdist://192.168.56.103:8081/otp*.gz')
+format 'csv' (header)
+log errors segment reject limit 50000 rows;
+#+END_SRC
+
+| Option               | Illustration                                                                       |
+|----------------------+------------------------------------------------------------------------------------|
+| Like                 | Using the same structure of existing table (faa_otp_load)                          |
+| Location             | [[https://gpdb.docs.pivotal.io/6-1/admin_guide/external/g-gpfdist-protocol.html][gpfdist:// Protocol]] string lists ip(192.168.56.103), port(8081) and files(otp*.gz) |
+| Format               | Specify format(csv) string and loading options(header)                             |
+| Log Errors           | Isolate format errors and continue loading correctly formatted rows                |
+| segment reject limit | Limit of per-segment error rows to reject the command                              |
+
+*** Insertion
+
+After setup the file server and external table, insert the data from external table into local table.
+
+#+BEGIN_SRC sql
+INSERT INTO faa_otp_load 
+SELECT * FROM ext_load_otp;
+#+END_SRC
+
+*** Error dumping
+
+Error rows are dumped into [gp_read_error_log] object and can be accessed by the following command.
+
+#+BEGIN_SRC sql
+select * from gp_read_error_log('ext_load_otp');
+#+END_SRC
+
+* Query
+
+** Basic work flow
+
+(1) Query recieved by master, create and select best executing plan by [[MK4][query optimizer]];
+
+(2) Plan contains steps either slices (that can be runed by segment independently) or motions (that need transferring of data between hosts)
+
+(3) Master dispatch steps to relavent segments and run the job;
+
+(4) Segments perform jobs untill all steps were executed, based on the query, data may sent back to master;
+
+(5) If needed by the query, master will gathering and summarizing data to present the query results.
+
+** Query optimizer<<MK4>>
+
+Query optimizer create and select best executing plan based on [[https://gpdb.docs.pivotal.io/6-1/admin_guide/intro/about_statistics.html][pg_statistic]]<<MK1>> table.
+
+#+BEGIN_SRC sql
+select * from pg_statistic
+#+END_SRC
+
+The content of the table are assumed up-to-date, thus remain unchanged until execution of ANALYZE command.
+
+#+BEGIN_SRC sql
+analyze tablename;
+#+END_SRC
+
+Use [[MK5][gpconfig & gpstop]] to view and change Query optimizer status as follow:
+
+#+BEGIN_SRC shell
+-bash-4.1$ gpconfig -s optimizer
+Values on all segments are consistent
+GUC          : optimizer
+Master  value: off
+Segment value: off
+-bash-4.1$ gpconfig -c optimizer -v on --masteronly
+-bash-4.1$ gpstop -u
+#+END_SRC
+
+** Explain
+
+EXPLAIN SQL commmand explains the method the optimizer has chosen to produce a result set.
+
+#+BEGIN_SRC sql
+EXPLAIN SELECT COUNT(*) FROM sample WHERE id > 100;
+#+END_SRC
+
+The sample results are listed as follow.
+
+#+BEGIN_SRC
+                               QUERY PLAN
+---------------------------------------------------------------------------
+Aggregate  (cost=0.00..462.77 rows=1 width=8)
+ ->  Gather Motion 2:1  (slice1; segments: 2)  (cost=0.00..462.77 rows=1 width=8)
+   ->  Aggregate  (cost=0.00..462.76 rows=1 width=8)
+     ->  Table Scan on sample  (cost=0.00..462.76 rows=500687 width=1) Filter: id > 100
+
+Settings:  optimizer=on
+Optimizer status: PQO version 1.597
+#+END_SRC
+
+The above results shows 4 steps of the plan. Queries are executed from bottom to top. The cost number on each step has a start and stop value(fictional number created by the optimizer, not a number of seconds), and cumulative on each step.
+
+EXPLAIN ANALYZE SQL commmand actually runs the query and the cost numbers reflect the actual timings, but not returning query result.
+
+#+BEGIN_SRC sql
+EXPLAIN ANALYZE SELECT COUNT(*) FROM sample WHERE id > 100;
+#+END_SRC
+
+The returned results are similar to EXPLAIN SQL commmand.
+
+#+BEGIN_SRC
+                             QUERY PLAN
+-----------------------------------------------------------------------------
+ Aggregate  (cost=0.00..462.77 rows=1 width=8)
+   Rows out:  1 rows with 446 ms to end, start offset by 7.846 ms.
+   ->  Gather Motion 2:1  (slice1; segments: 2)  (cost=0.00..462.77 rows=1 width=8)
+         Rows out:  2 rows at destination with 443 ms to first row,446 ms to end, 
+                    start offset by 7.860 ms.
+         ->  Aggregate  (cost=0.00..462.76 rows=1 width=8)
+               Rows out:  Avg 1.0 rows x 2 workers.  Max 1 rows (seg0) with 442 ms to end, 
+                          start offset by 9.000 ms.
+               ->  Table Scan on sample  (cost=0.00..462.76 rows=500687 width=1) Filter: 
+                   id > 100
+                     Rows out: Avg 499950.0 rows x 2 workers. Max 499951 rows
+(seg0) with 88 ms to first row, 169 ms to end, start offset by 9.007 ms.
+ Slice statistics:
+   (slice0)    Executor memory: 159K bytes.
+   (slice1)    Executor memory: 177K bytes avg x 2 workers, 177K bytes max (seg0).
+ Statement statistics:
+   Memory used: 128000K bytes
+ Settings:  optimizer=on
+ Optimizer status: PQO version 1.597
+ Total runtime: 453.855 ms
+#+END_SRC
+
+** Aggregate
+
+*** Key Aggregate 
+
+#+ATTR_LATEX: :align lp{10cm}
+| Parameter      | Explain                                                                                                                                           |
+|----------------+---------------------------------------------------------------------------------------------------------------------------------------------------|
+| enable_sort    | Enable group aggregation mode. Sorting when doing aggregation, and process each group 1 by 1                                                      |
+| enable_hashagg | Enable hash aggregation mode. Process record and locate result into relavent group results, cost extra memroy. NOTE: need to turn off enable_sort |
+
+The above listed key system parameters for aggregation, it can be altered using [[MK5][gpconfig]] instruction.
+
+#+BEGIN_SRC shell
+-bash-4.1$ gpconfig -s enable_hashagg
+Values on all segments are consistent
+GUC          : enable_hashagg
+Master  value: off
+Segment value: off
+-bash-4.1$ gpconfig -c enable_hashagg -v on
+-bash-4.1$ gpstop -u
+-bash-4.1$ gpconfig -s enable_hashagg
+Values on all segments are consistent
+GUC          : enable_hashagg
+Master  value: on
+Segment value: on
+#+END_SRC
+
+* Useful commands
+
+** gpconfig and gpstop<<MK5>>
+
+List all configuration parameters.
+
+#+BEGIN_SRC shell
+gpconfig -l
+#+END_SRC
+
+Highlight key word when listing configuration parameters.
+
+#+BEGIN_SRC shell
+gpconfig -l | grep keyword
+#+END_SRC
+
+View specific configuration parameter.
+
+#+BEGIN_SRC shell
+gpconfig -s parametername
+#+END_SRC
+
+Change specific configuration parameter value.
+
+#+BEGIN_SRC shell
+gpconfig -c parametername -v value
+#+END_SRC
+
+Changing only the master postgresql.conf file.
+
+#+BEGIN_SRC shell
+gpconfig -c parametername -v value --masteronly
+#+END_SRC
+
+Reloads the configration files without restarting server. If failed, server need a mannual restart.
+
+#+BEGIN_SRC shell
+gpstop -u
+#+END_SRC
+
+** Current running queries
+
+#+BEGIN_SRC shell
+SELECT * FROM pg_stat_activity;
+#+END_SRC
+
+** List histroy
+
+#+BEGIN_SRC sql
+SELECT * FROM system_history;
+SELECT * FROM database_history;
+#+END_SRC
+
+** Greenplum version
+
+Shell command
+
+#+BEGIN_SRC shell
+gpssh --version
+#+END_SRC
+
+#+BEGIN_SRC sql
+select version()
+#+END_SRC
+
+** Check segment nodes
+
+[[https://gpdb.docs.pivotal.io/530/ref_guide/system_catalogs/gp_segment_configuration.html][gp_segment_configuration]] table listed information for master(content = -1) and segments.
+
+#+BEGIN_SRC sql
+SELECT * FROM gp_segment_configuration
+#+END_SRC
+
+** List all namespace
+
+[oid] is the object ID used for reference for other tables (such as [[MK1][pg_class]]).
+
+#+BEGIN_SRC sql
+select oid,* from pg_namespace
+#+END_SRC
+
+** List all pgsql objects<<MK2>>
+
+[oid] is the object ID used for reference for other tables (such as [[MK1][pg_statistic]]).
+
+#+BEGIN_SRC sql
+select oid,* from pg_class
+#+END_SRC
+
+** Show table size
+
+Size are returned as byte.
+
+#+BEGIN_SRC sql
+SELECT pg_relation_size('tablename');
+#+END_SRC
+
+** List all partition info
+
+#+BEGIN_SRC sql
+select * from pg_partitions;
+#+END_SRC
+
+** Segment indicator for table
+
+[gp_segment_id] illustrate which segment the exact rows of data reside in by refering to the specified value of  content column in  [[https://gpdb.docs.pivotal.io/530/ref_guide/system_catalogs/gp_segment_configuration.html][gp_segment_configuration]] table. It is an internal column for all tables.
+
+#+BEGIN_SRC sql
+select gp_segment_id,* from otp_r limit 200;
+#+END_SRC
+
+** Show all results
+
+On psql.exe, the program will ask user to put keys in order to print further results. To turn off this feature, use the following command:
+
+#+BEGIN_SRC sql
+\pset pager off
+#+END_SRC
+
+* Useful links:
+
+| Name          | Address                                          |
+|---------------+--------------------------------------------------|
+| Github        | https://github.com/greenplum-db/gpdb             |
+| Documentation | https://gpdb.docs.pivotal.io/6-1/main/index.html |
+| Tutorial      | https://greenplum.org/gpdb-sandbox-tutorials/    |
+
+
+

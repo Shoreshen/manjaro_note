@@ -1,0 +1,2292 @@
+#+LATEX_CLASS: ctexart
+
+#+TITLE: 线性空间
+
+current mark: 87
+
+* 映射
+
+** 定义
+
+若对应法则 $f$ 将集合 $A$ 中的任一元素 $a$ 映射到集合 $B$ 中有唯一的对应元素 $b$ ，则 $A$ 与 $B$ 形成映射关系 $A\mapsto B$
+
+此时 $a$ 为原像 $b$ 为像 $A$ 为定义域 $B$ 为陪域 $f$ 称为 $A$ 到 $B$ 的一个映射
+
+** 值域
+
+$\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 $B$ 中形成的像形成的集合。
+
+** 满射
+
+若映射满足 $\left\{f(a)\right\}=B$ 则称为满射
+
+** 单射
+
+若 $a_1\in A,a_2\in A$ 且 $a_1\ne a_2$ 则有 $f(a_1)\ne f(a_2)$
+
+** 双射
+
+同时满足单射及满射
+
+** 运算
+
+运算为有序元素对的映射，即 $a\in A,b\in B$ 则根据[[~/OneDrive/离散数学/Disc_Math.org][笛卡尔乘积]] $(a,b)\in A\times B$
+
+若 $c\in C$ 则运算本质为 $(a,b)\mapsto c$
+
+* <<MK1>>线性空间
+
+** 定义
+
+若 $V$ 是一个非空集合， $K$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][域]]，若：
+
+（1） $V$ 上定义了加法运算即 $V\times V\mapsto V$ ，记作 $\forall(\vec{a},\vec{b})\subset V,\exists \vec{c}\in V\Rightarrow \vec{a}+\vec{b}=\vec{c}$
+
+（2） $V$ 上定义了 $K$ 与 $V$ 中元素的纯量乘运算即 $K\times V\mapsto V$ ，记作 $\forall k\in K,\forall \vec{a}\in V,\exists \vec{b}\in V\Rightarrow k\vec{a}\Rightarrow \vec{b}$
+
+且满足
+
+（1） 满足加法交换律，即 $(\vec{a},\vec{b})\subset V\Rightarrow a+b=b+a$
+
+（2） 满足加法结合律，即 $(\vec{a},\vec{b},\vec{c})\subset V\Rightarrow (\vec{a}+\vec{b})+\vec{c}=\vec{a}+(\vec{b}+\vec{c})$
+
+（3） 有零元（加法幺元），记作 $\vec{0}\in V$ 且满足 $\vec{0}+\vec{a}=\vec{a},\vec{a}\in V$
+
+（4） 有负元（加法逆元），即 $\forall \vec{a}\in V,\exists \vec{b}\in V\Rightarrow \vec{a}+\vec{b}=\vec{0}$ 且 $\vec{a}$ 的负元记作 $-\vec{a}$
+
+（5） $\forall\vec{a}\in V\Rightarrow 1 \vec{a}=\vec{a}$ 根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]定义 $1\in K$
+
+（6） $\forall(l,k)\subset K, \forall\vec{a}\in V\Rightarrow (lk)\vec{a}=l(k\vec{a})$
+
+（7） $\forall(l,k)\subset K,\forall \vec{a}\in V\Rightarrow (k+l)\vec{a}=k\vec{a}+l\vec{a}$
+
+（8） $\forall k\in K,\forall(\vec{a},\vec{b})\in V\Rightarrow k(\vec{a}+\vec{b})=k\vec{a}+k\vec{b}$
+
+则称 $V$ 是域 $K$ 上的线性空间
+
+** <<MK11>>性质
+
+*** <<MK3>>零元唯一
+
+若 $(\vec{a},\vec{b})\subset V$ 且均为零元，则根据[[MK1][定义]]中（3）有 $\vec{a}+\vec{b}=\vec{b},\vec{b}+\vec{a}=\vec{a}$
+
+根据[[MK1][定义]]中（2）有 $\vec{a}+\vec{b}=\vec{b}+\vec{a}$ 故 $\vec{a}=\vec{b}$ 
+
+*** <<MK2>>负元唯一
+
+若 $\vec{a}\in V$ 且有负元 $\vec{b},\vec{c}$ 则根据[[MK1][定义]]中（3）（4）有 $(\vec{b}+\vec{a})+\vec{c}=\vec{0}+\vec{c}=\vec{c}$
+
+又根据（1）（2） $\vec{b}+(\vec{a}+\vec{c})=\vec{b}+\vec{0}=\vec{0}+\vec{b}=\vec{b}$
+
+*** <<MK5>>零乘元素为零元
+
+即 $0\vec{a}=\vec{0},\vec{a}\in V$ 根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]定义 $0\in K$ 
+
+根据[[MK1][定义]]中（7）对于 $k\in K$ 有 $(0+k)\vec{a}=0\vec{a}+k\vec{a}$ 又由于 $(0+k)=k$ 故有 $0\vec{a}$ 与任意元素相加后为元素本身
+
+根据[[MK3][零元唯一]]可得 $0\vec{a}$ 为零元
+
+*** <<MK4>>任意数乘零元仍为零元
+
+即 $k\vec{0}=\vec{0},k\in K$
+
+对于任意 $\vec{a}\in V$ 根据[[MK1][定义]]中（3）（8）有 $k\vec{a}=k(\vec{0}+\vec{a})=k\vec{0}+\vec{a}$
+
+根据[[MK3][零元唯一]]可得 $k\vec{0}$ 为零元
+
+*** <<MK7>>若 $k\vec{a}$ 为零元，则有 $k=0$ 或 $\vec{a}=\vec{0}$
+
+若 $k\vec{a}=\vec{0}$ 且 $k\ne0$ 则根据（5）（6） $\vec{a}=1\vec{a}=(k^{-1}k)\vec{a}=k^{-1}(k\vec{a})=k^{-1}\vec{0}$
+
+根据[[MK4][数乘零元为零元]] $\vec{a}=k^{-1}\vec{0}=\vec{0}$
+
+*** <<MK6>> $-1\vec{a}$ 为 $\vec{a}$ 的负元
+
+对于 $\vec{a}\in V$ 根据[[MK4][数乘零元为零元]]以及[[MK1][定义]]中（5）（7） $\vec{0}=0\vec{a}=(1+(-1))\vec{a}=1\vec{a}+(-1)\vec{a}=\vec{a}+(-1)\vec{a}$
+
+* 线性子空间
+
+** 线性子空间定义<<MK44>>
+
+若 $V$ 是数域 $K$ 上的线性空间，若 $U\subset V$ 且对于 $V$ 上的加法，乘法也成为 $K$ 上的线性空间
+
+则称 $U$ 是 $V$ 在 $K$ 上的线性子空间
+
+** 线性子空间充要条件<<MK60>>
+
+若 $U\subset V$ 则 $U$ 是 $V$ 在数域 $K$ 上的线性子空间的充要条件是：
+
+（1） $U$ 不为空集
+
+（2） $U$ 对于 $V$ 上的加法封闭，即 $(\vec{a},\vec{b})\subset U\Rightarrow \vec{a}+\vec{b}\in U$
+
+（3） $U$ 对于 $V$ 上的数乘封闭，即 $\vec{a}\in U,k\in K\Rightarrow k\vec{a}\in U$
+
+*** 证明
+
+**** 充分
+
+若 $U$ 是数域 $K$ 上的线性子空间，则
+
+（1） 根据[[MK1][定义]] $U$ 有零元，即 $\vec{0}\in U$ 的出 $U$ 非空
+
+（2） 根据加法定义 $U\times U\mapsto U$ 故 $U$ 加法封闭
+
+（3） 根据数乘定义 $K\times U\mapsto U$ 故 $U$ 数乘封闭
+
+证毕
+
+**** 必要
+
+若 $U\subset V$ 满足条件，且使用 $V$ 的加法和数乘，则[[MK1][定义]]中条件（1），（2），（5）-（8）均成立
+
+则 $U$ 不为空集，定义 $\vec{u}\in U$ 由于数乘封闭，则有 $0\vec{u}\in U$
+
+由于 $u\in V$ 故满足性质[[MK4][零乘元素]]，即 $0\vec{u}=\vec{0}\Rightarrow \vec{0}\in U$ 则（3）满足
+
+同理 $(-1)u\in U$ 且由于 $u\in V$ 故满足性质[[MK6][负一乘]]，即 $-u=(-1)u$ 则 $-u\in U$ 则（4）满足
+
+证毕
+
+** 向量组生成子空间<<MK46>>
+
+若数域 $K$ 上的线性空间 $V$ ，若存在 $(\vec{a}_1,...,\vec{a}_n)\subset V$ 定义 $<\vec{a}_1,...,\vec{a}_n>=\left\{\sum_{i=1}^n k_i\vec{a}_i\big|\forall (k_1,...,k_n)\in K^n\right\}$ 
+
+则 $<\vec{a}_1,...,\vec{a}_n>$ 为 $V$ 的线性子空间，称为 $\vec{a}_1,...,\vec{a}_n$ 生成的子空间
+
+*** 证明
+
+**** 不为空集
+
+由于 $n\geq 1$ 故 $<\vec{a}_1,...,\vec{a}_n>\ne\varnothing$
+
+**** 加法封闭
+
+对于任意 $(\vec{u},\vec{v})\subset<\vec{a}_1,...,\vec{a}_n>$ 根据[[MK1][线性看空间定义]]中的计算性质可得 
+
+\begin{aligned}
+\vec{u}+\vec{v}&=\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^n k'_i\vec{a}_i\\
+&=\sum_{i=1}^n (k_i+k'_i)\vec{a}_i
+\end{aligned}
+
+由于 $(k_1+k'_1,...,k_n+k'_n)\in K^n$ 故必有 $\vec{u}+\vec{v}\in <\vec{a}_1,...,\vec{a}_n>$
+
+**** 数乘封闭
+
+对于任意 $\vec{u}\subset<\vec{a}_1,...,\vec{a}_n>,k\in K$ 有 $k\vec{u}=k\sum_{i=1}^nk_i\vec{a}_i=\sum_{i=1}^nkk_i\vec{a}_i$
+
+由于 $(kk_1,...,kk_n)\in K^n$ 故必有 $k\vec{u}\in <\vec{a}_1,...,\vec{a}_n>$
+
+** 向量组生成子空间的基<<MK50>>
+
+若数域 $K$ 上的线性空间 $V$ 线性子空间 $<\vec{a}_1,...,\vec{a}_n>$ 的基为 $(\vec{a}_1,...,\vec{a}_n)$ 的极大线性无关集
+
+故子空间的维数为极大线性无关组中向量的个数
+
+*** 证明
+
+根据[[MK46][向量组生成子空间]]有 $<\vec{a}_1,...,\vec{a}_n>=\left\{\sum_{i=1}^n k_i\vec{a}_i\big|\forall (k_1,...,k_n)\in K^n\right\}$ 即每个元素可由 $(\vec{a}_1,...,\vec{a}_n)$ 线性表述 
+
+根据[[MK16][性质6]]可得 $(\vec{a}_1,...,\vec{a}_n)$ 可由其极大线性无关组线性表述
+
+又根据[[MK17][传递性]]可得 $<\vec{a}_1,...,\vec{a}_n>$ 可由 $(\vec{a}_1,...,\vec{a}_n)$ 的极大线性无关组线性表述。
+
+且又由于线性无关，故 $<\vec{a}_1,...,\vec{a}_n>$ 的基为 $(\vec{a}_1,...,\vec{a}_n)$ 的极大线性无关组
+
+** 线性子空间相等
+
+若数域 $K$ 上的线性空间 $V$ 有子空间 $<\vec{a}_1,...,\vec{a}_n>$ 和 $<\vec{b}_1,...,\vec{b}_m>$ 
+
+则子空间相等的充要条件为 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{b}_1,...,\vec{b}_m\right\}$ 即两个向量组[[MK13][等价]]
+
+*** 证明
+
+**** 充分
+
+若有 $<\vec{a}_1,...,\vec{a}_n>=<\vec{b}_1,...,\vec{b}_m>$ 则有 $\forall \vec{u}\in<\vec{a}_1,...,\vec{a}_n>\Rightarrow \vec{u}\in<\vec{b}_1,...,\vec{b}_m>$
+
+根据[[MK46][向量组生成子空间]]有 $\forall\vec{u}\in<\vec{b}_1,...,\vec{b}_m>\Rightarrow \vec{u}=\sum_{i=1}^mk_i\vec{b}_i$ 又由于 $\vec{a}_i\in<\vec{a}_1,...,\vec{a}_n>$
+
+故得 $\forall\vec{a}_i\Rightarrow \vec{a}_i=\sum_{i=1}^mk_i\vec{b}_i$ 同理可证  $\forall\vec{b}_i\Rightarrow \vec{a}_i=\sum_{i=1}^mk_i\vec{a}_i$ 
+
+满足向量组[[MK13][等价]]定义，即 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{b}_1,...,\vec{b}_m\right\}$
+
+**** 必要 
+
+若 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{b}_1,...,\vec{b}_m\right\}$ 则有 $\forall\vec{a}_i\Rightarrow \vec{a}_i=\sum_{i=1}^mk_i\vec{b}_i$
+
+根据[[MK46][向量组生成子空间]]有 $\forall\vec{u}\in<\vec{a}_1,...,\vec{a}_n>\Rightarrow \vec{u}=\sum_{i=1}^nk_i\vec{a}_i$
+
+根据[[MK17][传递性]]亦有 $\vec{u}$ 可由 $(\vec{b}_1,...,\vec{b}_m)$ 线性表述，即 $\vec{u}\in<\vec{b}_1,...,\vec{b}_m>$
+
+同理可证 $\forall\vec{v}\in<\vec{b}_1,...,\vec{b}_m>\Rightarrow\forall\vec{v}\in<\vec{a}_1,...,\vec{a}_n>$ 即 $<\vec{a}_1,...,\vec{a}_n>=<\vec{b}_1,...,\vec{b}_m>$  
+
+** 子空间的基<<MK66>>
+
+若 $W$ 是 $V$ 的子空间，若
+
+（1） $\dim(V)=n$ 有限维。
+
+（2） $W=<\vec{a}_1,...,\vec{a}_s>$
+
+则必有 $V$ 的一组基为 $\vec{a}_1,...,\vec{a}_s,\vec{b}_1,...\vec{b}_{n-s}$
+
+*** 证明
+
+根据定义 $\vec{a}_i\in V$ 且由于是 $W$ 的[[MK36][基]]，故线性不相关。
+
+当 $n>s$ 时，若对于任意 $\vec{b}_1\in V$ 均有 $\vec{a}_1,...,\vec{a}_s,\vec{b}_1$ 线性相关，则根据[[MK16][性质6]]可得 $\vec{b}_1=\sum_{i=1}^s k_i\vec{a}_i$ 即 $\vec{a}_1,...,\vec{a}_s$ 为 $V$ 的基，进一步根据[[MK51][定义]]可得 $\dim(V)=s$ 与条件矛盾。
+
+故必有 $\vec{b}_1\in V$ 使得 $\vec{a}_1,...,\vec{a}_s,\vec{b}_1$ 线性不相关。
+
+同理若此时 $n>s+1$ 时必有 $\vec{b}_2\in V$ 使得 $\vec{a}_1,...,\vec{a}_s,\vec{b}_1,\vec{b}_2$ 线性不相关。
+
+依次类推可得一组线性不相关向量 $\vec{a}_1,...,\vec{a}_s,\vec{b}_1,...\vec{b}_{n-s}$ 其中 $\vec{b}_i\in V$ 根据定义亦有 $\vec{a}_i\in V$
+
+故根据[[MK42][命题2]]可得该组不相关向量为 $V$ 的一组基
+
+** 子空间的运算
+
+*** 子空间交
+
+**** 子空间交后亦为子空间<<MK64>>
+
+若 $V_1,V_2$ 是 $V$ 的子空间，则 $V_1\cap V_2$ 亦为 $V,V_1,V_2$ 的子空间
+
+***** 证明
+
+由于[[MK1][线性空间定义]] $\vec{0}\in V_1,\vec{0}\in V_2$ 则有 $V_1\cap V_2\ne\varnothing$
+
+由于[[MK1][线性空间定义]] $(\vec{a},\vec{b})\subset V_1\Rightarrow \vec{a}+\vec{b}\in V_1$ 及 $(\vec{a},\vec{b})\subset V_2\Rightarrow \vec{a}+\vec{b}\in V_2$ 故有 $(\vec{a},\vec{b})\subset V_2\cap V_2\Rightarrow \vec{a}+\vec{b}\in V_1\cap V_2$
+
+由于[[MK1][线性空间定义]] $\vec{a}\in V_1,\forall k\in K\Rightarrow k\vec{a}\in V_1$ 及 $\vec{a}\in V_2,\forall k\in K\Rightarrow k\vec{a}\in V_2$ 故有 $\vec{a}\in V_1\cap V_2,\forall k\in K\Rightarrow k\vec{a}\in V_1\cap V_2$
+
+故根据[[MK60][子空间充要条件]]可得 $V_1\cap V_2\subset V_1,V_1\cap V_2\subset V_2,V_1\cap V_2\subset V$ 亦为线性子空间
+
+**** 性质
+
+***** 交换律
+
+根据集合交运算有 $V_1\cap V_2=V_2\cap V_1$
+
+***** 结合律<<MK73>>
+
+根据集合交运算有 $(V_1\cap V_2)\cap V_3=V_1\cap (V_2\cap V_3)$
+
+*** 子空间和
+
+**** 定义<<MK86>>
+
+子空间和定义为 $V_1+V_2=\left\{\vec{a}_1+\vec{a}_2\big|\vec{a}_1\in V_1,\vec{a}_2\in V_2\right\}$
+
+**** 子空间和亦为子空间<<MK72>>
+
+若 $V_1,V_2$ 是 $V$ 的子空间，则 $V_1+V_2$ 亦为子空间
+
+***** 证明
+
+由于[[MK1][线性空间定义]] $\vec{0}\in V_1,\vec{0}\in V_2$ 则有 $\vec{0}+\vec{0}\in V_1+V_2$ 则有 $V_1+V_2\ne\varnothing$
+
+定义 $(\vec{a}_1+\vec{a}_2,\vec{b}_1+\vec{b}_2)\subset V_1+V_2$ 其中 $(\vec{a}_1,\vec{b}_1)\subset V_1,(\vec{a}_1,\vec{b}_1)\subset V_1$ 根据[[MK1][线性空间定义]] $\vec{a}_1+\vec{b}_1\in V_1, \vec{a}_2+\vec{b}_2\in V_2$ 
+
+同时加法满足结合律，故有 $\vec{a}_1+\vec{a}_2+\vec{b}_1+\vec{b}_2=(\vec{a}_1+\vec{b}_1)+(\vec{a}_2+\vec{b}_2)\in V_1+V_2$
+
+定义 $\vec{a}_1+\vec{a}_2\in V_1+V_2$ 根据[[MK1][线性空间定义]] $\forall k\in K\Rightarrow k\vec{a}_1\in V_1, k\vec{a}_2\in V_2$ 
+
+且数乘满足分配律，故有 $k(\vec{a}_1+\vec{a}_2)=k\vec{a}_1+k\vec{a}_2\in V_1+V_2$ 其中 $k\in K$
+
+**** 性质
+
+***** 交换律
+
+根据[[MK1][线性空间定义]] $V_1+V_2=V_2+V_1$
+
+***** 结合律
+
+根据[[MK1][线性空间定义]] $(V_1+V_2)+V_3=V_1+(V_2+V_3)$
+
+**** 命题1<<MK67>>
+
+若 $V$ 是线性空间 $(\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n)\subset V$ 则有 $<\vec{a}_1,...,\vec{a}_n>+<\vec{b}_1,...,\vec{b}_n>=<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>$
+
+***** 证明
+
+任取 $\vec{\alpha}+\vec{\beta}\in<\vec{a}_1,...,\vec{a}_n>+<\vec{b}_1,...,\vec{b}_n>$ 其中 $\vec{\alpha}\in<\vec{a}_1,...,\vec{a}_n>,\vec{\beta}\in<\vec{b}_1,...,\vec{b}_n>$
+
+则根据[[MK46][向量组生成子空间]]有 $\vec{\alpha}=\sum_{i=1}^nk_i\vec{a}_i\in <\vec{a}_1,...,\vec{a}_n>,\vec{\beta}=\sum_{i=1}^nk'_i\vec{b}_i\in <\vec{b}_1,...,\vec{b}_n>$
+
+故根据[[MK1][线性空间定义]]加法结合律 $\vec{\alpha}+\vec{\beta}=\sum_{i=1}^nk_i\vec{a}_i+\sum_{i=1}^nk'_i\vec{b}_i\in<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>$ 由于任取，故 $<\vec{a}_1,...,\vec{a}_n>+<\vec{b}_1,...,\vec{b}_n>\subset<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>$
+
+任取 $\vec{\alpha}\in<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>$ 则根据[[MK46][向量组生成子空间]]有 $\vec{\alpha}=k_1\vec{a}_1+...+k_n\vec{a}_n+k'_1\vec{b}_1+...+k'_n\vec{b}_n$
+
+根据[[MK1][线性空间定义]]加法结合律 $\vec{\alpha}=\sum_{i=1}^nk_i\vec{a}_i+\sum_{i=1}^nk'_i\vec{b}_i$ 根据[[MK46][向量组生成子空间]] $\vec{\alpha}=\sum_{i=1}^nk_i\vec{a}_i\in <\vec{a}_1,...,\vec{a}_n>,\vec{\beta}=\sum_{i=1}^nk'_i\vec{b}_i\in <\vec{b}_1,...,\vec{b}_n>$
+
+故有 $\vec{\alpha}\in<\vec{a}_1,...,\vec{a}_n>+<\vec{b}_1,...,\vec{b}_n>$ 由于任取，故 $<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>\subset<\vec{a}_1,...,\vec{a}_n>,<\vec{b}_1,...,\vec{b}_n>$
+
+综上所述 $<\vec{a}_1,...,\vec{a}_n>+<\vec{b}_1,...,\vec{b}_n>=<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>$
+
+*** 有限维子空间维数公式<<MK70>>
+
+若 $V_1,V_2$ 是 $V$ 的有限维子空间，则有 $\dim(V_1+V_2)=\dim(V_1)+\dim(V_2)-\dim(V_1\cap V_2)$
+
+**** 证明
+
+根据[[MK51][维数]]定义，其为基中向量的个数。由于 $V_1,V_2$ 有限维，且根据[[MK64][子空间交]]可知 $V_1\cap V_2$ 亦为 $V_1$ 子空间，故根据[[MK47][命题5]]可知 $\dim(V_1\cap V_2)\leq\dim(V_1)$ 亦为有限
+
+故定义 $V_1\cap V_2$ 的基为 $\vec{a}_1,...,\vec{a}_n$ 即 $V_1\cap V_2=<\vec{a}_1,...,\vec{a}_n>$ 。
+
+根据[[MK64][子空间交]]可知 $V_1\cap V_2$ 亦为 $V_1$ 子空间，根据[[MK66][子空间基]]可得 $V_1$ 的一组基为 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u$
+
+同理可得 $V_2$ 的一组基为 $\vec{a}_1,...,\vec{a}_n,\vec{c}_1,...,\vec{c}_v$
+
+根据[[MK67][命题1]]可得 $V_1+V_2=<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{a}_1,...,\vec{a}_n,\vec{c}_1,...,\vec{c}_v>=<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v>$
+
+根据[[MK50][向量生成子空间的基]]可知 $V_1+V_2$ 的基为 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v$ 的极大线性无关组 
+
+接下来求解 $\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^u l_i\vec{b}_i+\sum_{i=1}^v q_i\vec{c}_i=0$ 
+
+根据[[MK1][线性空间定义]]中负元，零元可移项得 $\sum_{i=1}^u l_i\vec{b}_i=\sum_{i=1}^n (-k_i)\vec{a}_i+\sum_{i=1}^v (-q_i)\vec{c}_i$
+
+根据线性表述 $\sum_{i=1}^u l_i\vec{b}_i\in V_1,\sum_{i=1}^n (-k_i)\vec{a}_i+\sum_{i=1}^v (-q_i)\vec{c}_i\in V_2$ 且两个向量相等
+
+故有两个向量均即属于 $V_1$ 又属于 $V_2$ 故 $\sum_{i=1}^u l_i\vec{b}_i\in V_1\cap V_2$ 即 $\sum_{i=1}^u l_i\vec{b}_i$ 可由 $\vec{a}_1,...,\vec{a}_n$ 线性表述，即 $\sum_{i=1}^u l_i\vec{b}_i=\sum_{i=1}^n p_i\vec{a}_i$
+
+同理移项得 $\sum_{i=1}^u l_i\vec{b}_i+\sum_{i=1}^n (-p_i)\vec{a}_i=0$
+
+但由于 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u$ 为 $V_1$ 的基，故线性不相关，根据[[MK8][定义]]当且仅当系数均为 $0$ 时等式成立
+
+故得 $b_1=...=b_u=0$ 进一步求解释可写为 $\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^u l_i\vec{b}_i+\sum_{i=1}^v q_i\vec{c}_i=\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^v q_i\vec{c}_i=0$
+
+同理由于 $\vec{a}_1,...,\vec{a}_n,\vec{c}_1,...,\vec{c}_v$ 是 $V_2$ 的基，亦线性无关，故当且仅当 $b_1=...=b_u=k_1=...=k_n=q_1=...=q_v=0$ 时等式成立
+
+故 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v$ 线性不相关，即为最大线性无关组，故 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v$ 是 $V_1+V_2$ 的基
+
+则有 $\dim(V_1+V_2)=n+u+v,\dim(V_1)=n+u,\dim(V_2)=n+v,\dim(V_1\cap V_2)=n$
+
+故有 $\dim(V_1+V_2)=\dim(V_1)+\dim(V_2)-\dim(V_1\cap V_2)$
+
+*** 直和<<MK83>>
+
+**** 两个子空间直和
+
+***** 定义<<MK68>>
+
+若 $V_1,V_2$ 是 $V$ 的子空间，且对于任意 $\vec{a}\in V_1+V_2$ 可表述为唯一的 $\vec{a}=\vec{b}+\vec{c}$ 其中 $\vec{b}\in V_1,\vec{c}\in V_2$ 均唯一
+
+则称 $V_1+V_2$ 为直和，记为 $V_1\textcircled{+}V_2$
+
+***** 性质<<MK69>>
+
+以下四个条件：
+
+（1） $V_1+V_2$ 为直和
+
+（2） $\vec{0}$ 在 $V_1+V_2$ 中的表述唯一是 $\vec{0}+\vec{0}$
+
+（3） $V_1\cap V_2=\{\vec{0}\}$
+
+（4） 若 $S_1,S_2$ 分别是 $V_1,V_2$ 的基，则有 $S_1\cup S_2$ 是 $V_1+V_2$ 的基
+
+等价
+
+****** 证明
+
+******* （1）推出（2）
+
+根据[[MK68][直和定义]]可得 $\vec{0}$ 表述唯一，且由于 $\vec{0}\in V_1,\vec{0}\in V_2$ 并根据[[MK1][线性空间定义]]中的零元得唯一表述 $\vec{0}=\vec{0}+\vec{0}$
+
+******* （2）推出（3）
+
+根据[[MK64][子空间交]]可得 $V_1\cap V_2$ 亦为子空间。若存在非零向量 $\vec{a}\in V_1\cap V_2$ 则根据[[MK1][线性空间定义]]中数乘封闭及负元可知 $-\vec{a}\in V_1\cap V_2$
+
+且有 $\vec{a}+(-1)\vec{a}=\vec{0}$ 则表述不唯一。故 $V_1\cap V_2=\{\vec{0}\}$
+
+******* （3）推出（1） 
+
+若存在两种表述方式，则有 $\vec{a}=\vec{b}_1+\vec{b}_2=\vec{c}_1+\vec{c}_2$ 其中 $(\vec{b}_1,\vec{c}_1)\subset V_1,(\vec{b}_2,\vec{c}_2)\subset V_2$
+
+移项得 $\vec{b}_1-\vec{c}_1=\vec{c}_2-\vec{b}_2$ 显然 $\vec{b}_1-\vec{c}_1\in V_1,\vec{c}_2-\vec{b}_2\in V_2$ 且 $V_1\cap V_2=\{\vec{0}\}$ 故得 $\vec{b}_1-\vec{c}_1=\vec{c}_2-\vec{b}_2=\vec{0}$
+
+故有 $\vec{b}_1=\vec{c}_1,\vec{c}_2=\vec{b}_2$ 即表述唯一
+
+******* （2）与（4）充要条件
+
+******** 充分
+
+任取 $S_1$ 中有限个向量 $\vec{a}_1,...,\vec{a}_n$ ， $S_2$ 中有限个向量 $\vec{b}_1,...,\vec{b}_m$ 求和式的解 $\sum_{i=1}^nk_i\vec{a}_i+\sum_{i=1}^ml_i\vec{b}_i=\vec{0}$
+
+由于 $S_1,S_2$ 分别是 $V_1,V_2$ 的基，故有 $\sum_{i=1}^nk_i\vec{a}_i\in V_1,\sum_{i=1}^ml_i\vec{b}_i\in V_2$ 根据条件（2）可知 $\sum_{i=1}^nk_i\vec{a}_i=\vec{0},\sum_{i=1}^ml_i\vec{b}_i=\vec{0}$
+
+又由于基，可知线性不相关。故有 $k_1=...=k_n=l_1=...=l_m=0$ 即根据[[MK8][定义]]线性不相关
+
+综上所述 $S_1\cap S_2$ 中任意有限个向量线性不相关，即线性空间定义下[[MK22][线性不相关]]
+
+又根据[[MK36][基的定义]]任意向量均可由基中的有限个向量表述
+
+即 $\forall\vec{a}\in V_1\Rightarrow \vec{a}=\sum_{i=1}^nk_i\vec{a}_i,\vec{a}_i\in V_1$ 同理 $\forall\vec{a}\in V_2\Rightarrow \vec{a}=\sum_{i=1}^nk_i\vec{a}_i,\vec{a}_i\in V_2$ 
+
+即 $\forall\vec{a}\in V_1+V_2\Rightarrow \vec{a}=\sum_{i=1}^nk_i\vec{a}_i+\sum_{i=1}^ml_i\vec{b}_i,\vec{a}\in V_1,\vec{b}_i\in V_2$ 故 $V_1+V_2$ 中任意向量均可由 $S_1\cup S_2$ 中有限个向量线性表述。
+
+综上所述 $S_1\cup S_2$ 是 $V_1+V_2$ 的一个基
+
+******** 必要
+
+若 $\vec{0}=\vec{a}+\vec{b}$ 其中 $\vec{a}\in V_1,\vec{b}\in V_2$ 则根据[[MK36][基的定义]]可得 $\vec{a}=\sum_{i=1}^nk_i\vec{a}_i,\vec{a}_i\in V_1$ 及 $\vec{b}=\sum_{i=1}^ml_i\vec{b}_i,\vec{a}_i\in V_2$
+
+即 $\vec{0}=\sum_{i=1}^nk_i\vec{a}_i+\sum_{i=1}^ml_i\vec{b}_i$ 由于 $S_1\cup S_2$ 是基，则其任意有限个向量均线性不相关，即 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_m$ 线性无关
+
+根据[[MK8][定义]]可得 $k_1=...=k_n=l_1=...=l_m=0$ 故 $\sum_{i=1}^nk_i\vec{a}_i=\vec{0},\sum_{i=1}^ml_i\vec{b}_i=\vec{0}$
+
+即 $\vec{0}$ 表述唯一。
+
+****** 推论
+
+若 $V_1,V_2$ 有限维，则直和与 $\dim(V_1+V_2)=\dim(V_1)+\dim(V_2)$ 等价
+
+******* 证明
+
+根据[[MK69][性质]]可得 $V_1,V_2$ 直和与 $V_1\cap V_2=\{\vec{0}\}$ 等价
+
+根据[[MK70][维数公式]] $\dim(V_1+V_2)=\dim(V_1)+\dim(V_2)-\dim(V_1\cap V_2)$ 
+
+若 $V_1\cap V_2=\{\vec{0}\}$ 则有 $\dim(V_1\cap V_2)=0$ 即 $\dim(V_1+V_2)=\dim(V_1)+\dim(V_2)$ 成立
+
+若 $\dim(V_1+V_2)=\dim(V_1)+\dim(V_2)$ 成立，则有 $\dim(V_1\cap V_2)=0$ 根据[[MK51][维数定义]]仅有基为空时维数为零，即 $V_1\cap V_2=\{\vec{0}\}$ 
+
+综上所述 $V_1\cap V_2=\{\vec{0}\}$ 是 $\dim(V_1+V_2)=\dim(V_1)+\dim(V_2)$ 的充要条件
+
+**** 多个子空间直和
+
+***** 定义
+
+若 $V_1,...,V_n$ 是 $V$ 的子空间，且对于任意 $\vec{a}\in V_1+...+V_n$ 可表述为唯一的 $\vec{a}=\sum_{i=1}^n\vec{b}_i$ 其中 $\vec{b}_i\in V_i$ 均唯一
+
+则称 $V_1+...+V_n$ 为直和，记为 $\textcircled{+}_{i=1}^n V_i=V_1\textcircled{+}...\textcircled{+}V_n$
+
+***** 性质<<MK74>>
+
+以下四个条件：
+
+（1） $\sum_{i=1}^nV_i$ 为直和
+
+（2） $\vec{0}$ 在 $\sum_{i=1}^nV_i$ 中的表述唯一是 $\sum_{i=1}^n\vec{0}$
+
+（3） $\forall i\Rightarrow V_i\cap (\sum_{j\ne i}V_j)=\{\vec{0}\}$
+
+（4） 若 $S_i$ 分别是 $V_i$ 的基，则有 $\cup_{i=1}^n S_i$ 是 $\sum_{i=1}^nV_i$ 的基
+
+等价
+
+****** 证明
+
+******* （1）推导（2）
+
+显然
+
+******* （2）推导（3）
+
+根据[[MK72][子空间和]]及[[MK73][结合律]]可得 $\sum_{j\ne i}V_j$ 亦为子空间，故根据[[MK64][子空间交]]可得 $V_i\cap (\sum_{j\ne i}V_j)$ 亦为子空间
+
+假设（2）不成立，则存在 $i$ 使得 $\vec{a}\in V_i\cap (\sum_{j\ne i}V_j)$ 满足 $\vec{a}\ne\vec{0}$ 。则根据[[MK1][线性空间定义]]中数乘封闭及负元可知 $-\vec{a}\in V_i\cap (\sum_{j\ne i}V_j)$
+
+故根据交集定义可得 $\vec{a}\in V_i,-\vec{a}\in\sum_{j\ne i}V_j$ 又根据[[MK72][子空间和]]及[[MK73][结合律]]可得 $-\vec{a}=\sum_{j\ne i}\vec{b}_j,\vec{b}_j\in V_j$
+
+最终可得 $\vec{0}=\vec{a}+(-\vec{a})=\vec{a}+\sum_{j\ne i}\vec{b}_j$ 由于 $\vec{a}\ne0$ 故于（2）矛盾，所以 $V_i\cap (\sum_{j\ne i}V_j)=\{\vec{0}\}$
+
+******* （3）推导（1）
+
+根据[[MK72][子空间和]]及[[MK73][结合律]]可任取一个 $i$ 使得 $\sum_{i=1}^n V_i=V_i+\sum_{j\ne i}V_j,1\leq j\leq n$ 根据[[MK72][子空间和]]及[[MK73][结合律]]可得 $W_i=\sum_{j\ne i}V_j$ 亦为子空间
+
+又根据条件（3）可得 $V_i\cap (\sum_{j\ne i}V_j)=\{\vec{0}\}\Rightarrow V_i\cap W_i=\{\vec{0}\}$ 
+
+故对于子空间 $V_i,W_i$ 根据[[MK69][性质]]可得对于某一向量 $V_i+W_i$ 的表述方法唯一，即 $V_i$ 的表述方法唯一。
+
+由于 $i$ 任意取，故 $\sum_{i=1}^n V_i$ 的表述方法唯一，即 $\sum_{j\ne i}V_j$ 是[[MK68][直和]]
+ 
+******* （2）和（4）充要条件
+
+******** 充分
+
+根据[[MK72][子空间和]]及[[MK73][结合律]]可得 $\forall\vec{\eta}\in\sum_{i=1}^n V_i\Rightarrow\vec{\eta}=\sum_{i=1}^n\vec{\alpha}_i,\vec{\alpha}_i\in V_i$
+
+根据[[MK36][基的定义]]任意向量均可由基中的有限个向量表述，即 $\alpha_i=\sum_{j=1}^{m_i}k_{ij}\vec{a}_{ij},\vec{a}_{ij}\in S_i$
+
+故 $\forall\vec{\eta}\in\sum_{i=1}^nV_i,\exists \left[\vec{a}_{ij}\in S_i, k_{ij},1\leq j\leq m_i\right]\Rightarrow\vec{\eta}=\sum_{i=1}^n\left(\sum_{j=1}^{m_i}k_{ij}\vec{a}_{ij}\right)$ 即所有向量均可由 $\cup_{i=1}^n S_i$ 中有限个向量线性表述
+
+任取 $S_i$ 中有限个向量 $\vec{a}_{i1},...,\vec{a}_{im_i}$ 求和式 $\sum_{i=1}^n\left(\sum_{j=1}^{m_i}k_{ij}\vec{a}_{ij}\right)=\vec{0}$ 根据[[MK36][基的定义]]有 $\sum_{j=1}^{m_i}k_{ij}\vec{a}_{ij}\in V_i$
+
+根据（2）中 $\vec{0}$ 仅有唯一表述，即 $\sum_{i=1}^n\vec{0}$ 故有 $\sum_{j=1}^{m_i}k_{ij}\vec{a}_{ij}\in V_i=\vec{0}$
+
+又根据[[MK36][基的定义]]可知 $\vec{a}_{i1},...,\vec{a}_{im_i}$ 线性不相关，故当且仅当 $k_{i1}=...=k_{im_i}=0$ 时成立，即所有 $k_{ij}=0$
+
+由此可知 $\vec{a}_{ij}$ 线性不相关，即 $\cup_{i=1}^n S_i$ 线性不相关
+
+综上所述，最终根据[[MK36][基的定义]]可得 $\cup_{i=1}^n S_i$ 是 $\sum_{i=1}^nV_i$ 的一个基
+
+******** 必要
+
+若 $\vec{0}=\sum_{i=1}^n\vec{\alpha}_i$ 则根据[[MK36][基的定义]]可得 $\vec{\alpha}_i=\sum_{j=1}^{m_i}k_{ij}\vec{a}_{ij},\vec{a}_{ij}\in S_i$ 即 $\vec{0}=\sum_{i=1}^n\left(\sum_{j=1}^{m_i}k_{ij}\vec{a}_{ij}\right)$
+
+又由于 $\cup_{i=1}^n S_i$ 亦为基，故线性不相关，故当且仅当 $k_{ij}=0$ 时 $\vec{0}=\sum_{i=1}^n\left(\sum_{j=1}^{m_i}k_{ij}\vec{a}_{ij}\right)$
+
+故亦有 $\vec{\alpha}_i=\sum_{j=1}^{m_i}k_{ij}\vec{a}_{ij},\vec{a}_{ij}\in S_i=\vec{0}$ 故当且仅当 $\vec{\alpha}_i=\vec{0}$ 时 $\vec{0}=\sum_{i=1}^n\vec{\alpha}_i$ 即条件（2）
+
+****** 推论
+
+设 $V_i$ 均为有限维子空间，则直和与 $\dim\left(\sum_{i=1}^n V_i\right)=\sum_{i=1}^n\dim(V_i)$ 等价
+
+******* 证明
+
+******** 充分
+
+若为直和，则根据[[MK74][性质]]可得若 $S_i$ 分别是 $V_i$ 的基，则有 $\cup_{i=1}^n S_i$ 是 $\sum_{i=1}^nV_i$ 的基
+
+根据[[MK51][维数]]定义可得 $\dim(V_i)$ 为 $S_i$ 中向量的个数； $\dim\left(\sum_{i=1}^n V_i\right)$ 为 $\cup_{i=1}^n S_i$ 中向量的个数
+
+又根据[[MK74][性质]]可得 $\forall i\Rightarrow V_i\cap (\sum_{j\ne i}V_j)=\{\vec{0}\}$ 且根据[[MK9][性质1]]可知 $\vec{0}$ 本身线性相关，又根据[[MK36][基的定义]]可得 $S_i$ 中的向量线性无关
+
+故 $\vec{0}\not\in\cup_{i=1}^n S_i$ 故 $\forall i,j\Rightarrow S_i\cap S_j=\varnothing$ 则有 $\cup_{i=1}^n S_i$ 中向量个数等于 $S_i$ 中向量个数之和，即 $\dim\left(\sum_{i=1}^n V_i\right)=\sum_{i=1}^n\dim(V_i)$ 
+ 
+******** 必要
+
+若 $V_i$ 的基为 $S_i$ 则根据[[MK36][基的定义]]及[[MK46][向量生成子空间]]可得 $V_i=<S_i>$ 则根据[[MK67][命题1]]可得 $\sum_{i=1}^nV_i=<\cup_{i=1}^n S_i>$
+
+根据[[MK50][子空间基]]可得 $\sum_{i=1}^nV_i$ 的基为 $\cup_{i=1}^n S_i$ 中的极大线性无关组，且 $\sum_{i=1}^nV_i$ 的维数为基中向量的个数，即极大线性无关组向量的个数
+
+定义 $\cup_{i=1}^n S_i$ 中向量的个数为 $z$
+
+由于是并运算且均为有限子空间，故根据[[MK51][维数]] $\cup_{i=1}^n S_i$ 中至多有 $\sum_{i=1}^n\dim(V_i)$ 个向量，故有 $z\leq\sum_{i=1}^n\dim(V_i)$
+
+由于向量组包含向量的个数大于等于极大线性无关组的个数，故有 $z\geq\dim\left(\sum_{i=1}^n V_i\right)$
+
+又根据条件 $\dim\left(\sum_{i=1}^n V_i\right)=\sum_{i=1}^n\dim(V_i)$ 故只有 $z=\dim\left(\sum_{i=1}^n V_i\right)=\sum_{i=1}^n\dim(V_i)$
+
+故 $\cup_{i=1}^n S_i$ 中极大线性无关组向量的个数等于向量的个数，故 $\cup_{i=1}^n S_i$ 线性无关
+
+且根据[[MK42][命题2]]可得 $\cup_{i=1}^n S_i$ 是 $\sum_{i=1}^nV_i$ 的基，进一步根据[[MK47][性质]]可得 $\sum_{i=1}^nV_i$ 是直和
+
+*** 补空间
+
+**** 定义<<MK71>>
+
+若 $V=V_1\textcircled{+}V_2$ 则 $V_1$ 是 $V_2$ 的补空间， $V_2$ 亦为 $V_1$ 的补空间
+
+**** 命题
+
+若 $\dim(V)=n$ 则 $V$ 的每一个子空间 $U$ 均有补空间
+
+***** 证明
+
+若 $U$ 的基为 $\vec{a}_1,...,\vec{a}_s$ 则根据[[MK46][向量生成子空间]]和[[MK36][基的定义]]可得 $U=<\vec{a}_1,...,\vec{a}_s>$ 且根据[[MK47][命题7]]可得 $s\leq n$
+
+根据[[MK66][子空间基]]可得必定存在 $\vec{a}_1,...,\vec{a}_s,\vec{b}_1,...,\vec{b}_{n-s}$ 是 $V$ 的一组基，同理即 $V=<\vec{a}_1,...,\vec{a}_s,\vec{b}_1,...,\vec{b}_{n-s}>$
+
+定义 $W=<\vec{b}_1,...,\vec{b}_{n-s}>$ 根据[[MK67][命题1]]可得 $U+W=<\vec{a}_1,...,\vec{a}_s>+<\vec{b}_1,...,\vec{b}_{n-s}>=<\vec{a}_1,...,\vec{a}_s,\vec{b}_1,...,\vec{b}_{n-s}>=V$
+
+若 $S_1=<\vec{a}_1,...,\vec{a}_s>,S_2=<\vec{b}_1,...,\vec{b}_{n-s}>$ 分别为 $U,W$ 的基，根据上述证明 $U+W$ 的基为 $<\vec{a}_1,...,\vec{a}_s,\vec{b}_1,...,\vec{b}_{n-s}>=S_1\cap S_2$
+
+故根据[[MK69][直和性质]]得 $U+W$ 为直和，根据[[MK71][定义]]得 $W$ 为 $U$ 的补空间
+
+* 线性空间的基和维数
+
+** 线性相关与线性无关
+
+*** <<MK8>>定义
+
+$V$ 是[[MK1][线性空间]]， $K$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]，有向量组 $\vec{\alpha}_1,...,\vec{\alpha}_n\in V$ 其中 $n\geq 1$ 则：
+
+（1） 若存在一组不全为零的数 $k_1,...,k_n\in K$ 使得 $k_1\vec{\alpha}_1+...+k_n\vec{\alpha}_n=\vec{0}$ 则称向量组线性相关
+
+（2） 若满足 $k_1\vec{\alpha}_1+...+k_n\vec{\alpha}_n=\vec{0},k_1,...,k_n\in K$ 仅为 $k_1=...=k_n=0$ 则称线性无关 
+
+*** 性质
+
+**** <<MK9>>性质1
+
+单个向量线性相关的充要条件是 $\vec{a}=\vec{0}$
+
+由于线性相关线性无关互斥，故单个向量线性无关的充要条件为 $\vec{a}\ne\vec{0}$
+
+***** 证明
+
+****** 充分
+
+若 $\vec{a}=\vec{0}$ 则对于任意 $k\in K$ 根据[[MK4][性质]]有 $k\vec{a}=\vec{0}$ 故线性相关
+
+****** 必要
+
+若线性相关，则有 $k\vec{a}=\vec{0}$ 且 $k\ne0$ 根据[[MK7][性质]]有 $\vec{a}=\vec{0}$
+
+**** <<MK10>>性质2
+
+若 $\vec{a}_1,...,\vec{a}_n\in V$ 有部分组 $(\vec{a}_{i_1},...,\vec{a}_{i_s})\subset(\vec{a}_1,...,\vec{a}_n)$ 满足 $a_{i_1},...,a_{i_s}$ 线性相关，则 $\vec{a}_1,...,\vec{a}_n$ 线性相关
+
+故若 $\vec{a}_1,...,\vec{a}_n\in V$ 线性无关，那么任何一个部分组 $(\vec{a}_{i_1},...,\vec{a}_{i_s})\subset(\vec{a}_1,...,\vec{a}_n)$ 均线性无关
+
+***** 证明
+
+根据[[MK8][线性相关定义]]有不全为零的 $k_{i_1}\vec{a}_{i_1}+...+k_{i_s}\vec{a}_{i_s}=\vec{0}$ 若其余 $k_i$ 均为 $0$ ，则存在不全为零的数组使得 $\sum_{i=1}^n k_i\vec{a}_i=\vec{0}$
+
+故线性相关
+
+**** 性质3
+
+含有 $\vec{0}$ 任意向量组均线性相关
+
+***** 证明
+
+根据[[MK9][性质1]]推出 $\vec{0}$ 线性相关，又因为向量组包含 $\vec{0}$ 则根据[[MK10][性质2]]向量组线性相关
+
+**** 性质4<<MK45>>
+
+若 $\vec{a}_1,...,\vec{a}_n\in V$ 则其线性相关的充要条件是至少有一个向量可用其他向量的线性组合表示，即 $\vec{a}_i=\sum_{j=1,j\ne i}^nk_j\vec{a}_j$
+
+同理，线性无关的充要条件为每个向量均不能由其余向量线性表示。
+
+***** 证明
+
+****** 充分
+
+由于线性相关，故有 $\sum_{j=1}^nk_j\vec{a}_j=\vec{0}$ 其中 $k_1,...,k_n$ 不全为零。假设 $k_i$ 不为零，则根据[[MK1][定义]]以及[[MK11][性质]]
+
+\begin{aligned}
+&\sum_{j=1}^nk_j\vec{a}_j+(-1)k_i\vec{a}_i=\vec{0}+(-1)k_i\vec{a}_i\\
+\Rightarrow&\sum_{j=1,j\ne i}^nk_j\vec{a}_j+\vec{0}=(-1)k_i\vec{a}_i\\
+\Rightarrow&\sum_{j=1,j\ne i}^nk_j\vec{a}_j=(-1)k_i\vec{a}_i\\
+\Rightarrow&\frac{1}{(-1)k_i}\sum_{j=1,j\ne i}^nk_j\vec{a}_j=\vec{a}_i\\
+\Rightarrow&\sum_{j=1,j\ne i}^n\frac{k_j}{(-1)k_i}\vec{a}_j=\vec{a}_i\\
+\end{aligned}
+
+****** 必要
+
+若 $\vec{a}_i=\sum_{j=1,j\ne i}^nk_j\vec{a}_j$ 则根据[[MK1][定义]]以及[[MK11][性质]] $\vec{0}=\vec{a}_i+(-1)\vec{a}_i=\sum_{j=1,j\ne i}^nk_j\vec{a}_j+(-1)\vec{a}_i$
+
+则 $\vec{a}_i$ 的系数不为零，故存在一组非零数使得 $\sum_{j=1}^nk_j\vec{a}_j=\vec{0}$ 
+
+**** 性质5<<MK38>>
+
+若 $\vec{a}_1,...,\vec{a}_n\in V$ 线性不相关的充要条件是若存在 $\vec{B}$ 可以有向量组的线性表述，则该表述唯一，即若 $\vec{B}=\sum_{i=1}^nk_i\vec{a}_i$ 则 $k_1,...,k_n$ 唯一
+
+***** 证明
+
+****** 充分
+
+若线性不相关，则根据[[MK8][线性相关定义]]有当且仅当 $k_1=...=k_n=0$ 时有 $\vec{0}=\sum_{i=1}^nk_i\vec{a}_i$
+
+设 $\vec{B}=\sum_{i=1}^nc_i\vec{a}_i$ 若存在 $\vec{B}=\sum_{i=1}^nd_i\vec{a}_i$ 则有 $\vec{B}+(-1)\vec{B}=\sum_{i=1}^nc_i\vec{a}_i+(-1)\sum_{i=1}^nd_i\vec{a}_i$
+
+故根据[[MK1][定义]]以及[[MK11][性质]]化简为 $\vec{0}=\sum_{i=1}^n(c_i-d_i)\vec{a}_i$ 结合线性不相关定义必为 $(c_1-d_1)=...=(c_n-d_n)=0$
+
+故表述唯一
+
+****** 必要
+
+反正法，若线性相关，则必有两种以上表述，由于线性不相关与线性相关互斥，故唯一表述必为线性不相关。
+
+若 $\vec{B}=\sum_{i=1}^nk_i\vec{a}_i$ 根据[[MK8][线性相关定义]]若线性不相关，则存在 $\vec{0}=\sum_{i=1}^nc_i\vec{a}_i$ 且 $c_1,...,c_n$ 不全为零
+
+故有 $\vec{0}+\vec{B}=\sum_{i=1}^nc_i\vec{a}_i+\sum_{i=1}^nk_i\vec{a}_i$ 根据[[MK1][定义]]以及[[MK11][性质]]化简为 $\vec{B}=\sum_{i=1}^n(c_i+k_i)\vec{a}_i$
+
+由于不全为零，故 $\sum_{i=1}^n(c_i+k_i)\vec{a}_i\ne\sum_{i=1}^nk_i\vec{a}_i$ 
+
+故若线性相关且有 $\vec{B}=\sum_{i=1}^nk_i\vec{a}_i$ 则 $\vec{B}$ 可用向量组的其他线性组合表示。
+
+**** 性质6<<MK16>>
+
+若 $\vec{a}_1,...,\vec{a}_n\in V$ 线性不相关 $\vec{B},\vec{a}_1,...,\vec{a}_n\in V$ 线性相关，则有 $\vec{B}=\sum_{i=1}^nk_i\vec{a}_i$
+
+***** 证明
+
+由于线性相关，则根据[[MK8][线性相关定义]]存在一组不全为零的 $k_i\in K$ 使得 $k_0\vec{B}+\sum_{i=1}^nk_i\vec{a}_i=\vec{0}$
+
+故根据[[MK1][定义]]以及[[MK11][性质]]，其中若 $k_0=0$ 则有 $k_0\vec{B}=\vec{0}\Rightarrow k_0\vec{B}+\sum_{i=1}^nk_i\vec{a}_i=\sum_{i=1}^nk_i\vec{a}_i=\vec{0}$
+
+根据[[MK8][线性相关定义]]由于 $\vec{a}_1,...,\vec{a}_n\in V$ 线性不相关，必有 $k_1=...=k_n=0$ 与条件不符
+
+故必有 $k_0\ne0$ 则有
+
+\begin{aligned}
+&k_0\vec{B}+\sum_{i=1}^nk_i\vec{a}_i=\vec{0}\\
+\Rightarrow&k_0\vec{B}+\sum_{i=1}^nk_i\vec{a}_i+(-1)\sum_{i=1}^nk_i\vec{a}_i=\vec{0}+(-1)\sum_{i=1}^nk_i\vec{a}_i\\
+\Rightarrow&k_0\vec{B}+\vec{0}=(-1)\sum_{i=1}^nk_i\vec{a}_i\\
+\Rightarrow&k_0\vec{B}=(-1)\sum_{i=1}^nk_i\vec{a}_i\\
+\Rightarrow&\vec{B}=\frac{-1}{k_0}\sum_{i=1}^nk_i\vec{a}_i\\
+\Rightarrow&\vec{B}=\sum_{i=1}^n\frac{-k_i}{k_0}\vec{a}_i\\
+\end{aligned}
+
+证毕。
+
+*** 极大线性无关组<<MK15>>
+
+若向量组 $\vec{a}_1,...,\vec{a}_n\in V$ 的极大线性无关组定义为 $(\vec{a}_{i_1},...,\vec{a}_{i_s})\subset(\vec{a}_1,...,\vec{a}_n),s\leq n$ 若 $\vec{a}_{i_1},...,\vec{a}_{i_s}$ 满足
+
+（1） $\vec{a}_{i_1},...,\vec{a}_{i_s}$ 线性无关
+
+（2） 对于任意 $\vec{a}_i\in (\vec{a}_1,...,\vec{a}_n)$ 且 $a_i\not\in(\vec{a}_{i_1},...,\vec{a}_{i_s})$ 则有向量组 $a_i,\vec{a}_{i_1},...,\vec{a}_{i_s}$ 线性相关
+
+则称 $\vec{a}_{i_1},...,\vec{a}_{i_s}$ 为向量组 $\vec{a}_1,...,\vec{a}_n$ 的极大线性无关组 
+
+** 向量组关系
+
+*** 线性表述<<MK12>>
+
+若存在向量组 $\vec{a}_1,...,\vec{a}_n$ 其中每一个向量都能有 $\vec{b}_1,...,\vec{b}_m$ 线性表述，即 $\forall1\leq i\leq n & i\in N^+,\exists k_{i_1},...,k_{i_m}\Rightarrow \vec{a}_i=\sum_{j=1}^m k_{i_j}\vec{b}_j$
+
+则称向量组 $\vec{a}_1,...,\vec{a}_n$ 能被 $\vec{b}_1,...,\vec{b}_m$ 线性表述
+
+*** 等价<<MK13>>
+
+若两个向量组 $\vec{a}_1,...,\vec{a}_n$ 和 $\vec{b}_1,...,\vec{b}_m$ 能互相[[MK12][线性表述]]则称两个向量组等价，记作 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{b}_1,...,\vec{b}_m\right\}$
+
+**** 推论
+
+向量组 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 与其极大线性无关组 $\left\{\vec{a}_{i_1},...,\vec{a}_{i_s}\right\}$ 等价
+
+***** 证明<<MK20>>
+
+对于任意 $\vec{a}_i\in\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 且 $\vec{a}_i\not\in\left\{\vec{a}_{i_1},...,\vec{a}_{i_s}\right\}$ 根据[[MK8][线性相关定义]]可得 $\left\{\vec{a}_i,\vec{a}_{i_1},...,\vec{a}_{i_s}\right\}$ 线性相关
+
+根据[[MK16][性质]]可得 $\vec{a}_i=\sum_{j=1}^sk_j\vec{a}_{i_j}$ 又因为 $\left\{\vec{a}_{i_1},...,\vec{a}_{i_s}\right\}\subset\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 
+
+故向量组 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 可由 $\left\{\vec{a}_{i_1},...,\vec{a}_{i_s}\right\}$ 线性表述
+
+同理由于 $\left\{\vec{a}_{i_1},...,\vec{a}_{i_s}\right\}\subset\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 故向量组 $\left\{\vec{a}_{i_1},...,\vec{a}_{i_s}\right\}$ 可由 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 线性表述
+
+故等价。
+
+*** 向量组等价性质
+
+**** 反身性
+
+向量组 $\vec{a}_1,...,\vec{a}_n$ 与它自身等价
+
+**** 对称性
+
+若 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{b}_1,...,\vec{b}_n\right\}$ 则有 $\left\{\vec{b}_1,...,\vec{b}_n\right\}\cong\left\{\vec{a}_1,...,\vec{a}_n\right\}$
+
+**** 传递性<<MK17>>
+
+若 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{b}_1,...,\vec{b}_m\right\}$ 以及 $\left\{\vec{b}_1,...,\vec{b}_m\right\}\cong\left\{\vec{c}_1,...,\vec{c}_s\right\}$ 则有 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{c}_1,...,\vec{c}_s\right\}$
+
+***** 证明 
+
+根据[[MK13][等价]]定义，任意 $\vec{a}_i\in\{\vec{a}_i,...,\vec{a}_n\}$ 都可表述为 $\vec{a}_i=\sum_{j=1}^m k_{i_j}\vec{b}_j$ 同理亦有 $\vec{b}_j=\sum_{u=1}^s k_{j_u}\vec{c}_u$
+
+故综合上述二式得 $\vec{a}_i=\sum_{j=1}^m k_{i_j}\left\{\sum_{u=1}^s k_{j_u}\vec{c}_u\right\}$ 
+
+由于[[MK1][线性空间定义]]中（1），（7），（8）整理得 $\vec{a}_i=\sum_{u=1}^s \left(\sum_{j=1}^mk_{i_j}k_{j_u}\right)\vec{c}_u$ 
+
+故 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 中任意向量均可由 $\left\{\vec{c}_1,...,\vec{c}_s\right\}$ 的线性组合表示
+
+同理可证 $\left\{\vec{c}_1,...,\vec{c}_s\right\}$ 中任意向量均可由 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 的线性组合表示
+
+故等价成立
+
+***** 推论：线性表述的传递性<<MK21>>
+
+同理可证，若 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 可由 $\left\{\vec{b}_1,...,\vec{b}_m\right\}$ ， $\left\{\vec{b}_1,...,\vec{b}_m\right\}$ 可由 $\left\{\vec{c}_1,...,\vec{c}_s\right\}$ 线性表述
+
+则 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 可由 $\left\{\vec{c}_1,...,\vec{c}_s\right\}$ 线性表述
+
+*** 引理1<<MK37>>
+
+设 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 可由 $\left\{\vec{b}_1,...,\vec{b}_m\right\}$ 线性表述，且 $n>m$ 则有 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 线性相关
+
+**** 证明
+
+根据[[MK8][线性相关]]定义若 $x_1\vec{\alpha}_1+...+x_n\vec{\alpha}_n=\vec{0}$ 且 $x_1,...,x_n\in K$ （ $K$ 为数域）不全为零，则线性相关
+
+根据[[MK12][线性表述]]可得 $\sum_{i=1}^nx_i\vec{a}_i=\sum_{i=1}^nx_i\left\{\sum_{j=1}^mk_{i_j}\vec{b}_j\right\}$
+
+根据[[MK1][线性空间定义]]中（1），（7），（8）整理得 $\sum_{i=1}^nx_i\vec{a}_i=\sum_{j=1}^m\left(\sum_{i=1}^nx_ik_{i_j}\right)\vec{b}_j$
+
+此时若每一个 $\vec{b}_j$ 的系数均为零，即 $\forall 1\leq j\leq m & j\in N\Rightarrow \sum_{i=1}^nx_ik_{i_j} = k_{1_j}x_1+...+k_{n_j}x_n=0$
+
+则组成 $n$ 元齐次线性方程组  $\begin{cases}k_{11}x_1+k_{12}x_2+...+k_{1n}x_n=0&\textcircled{1}\\k_{21}x_1+k_{22}x_2+...+k_{2n}x_n=0&\textcircled{2}\\...\\k_{m1}x_1+k_{m2}x_2+...+k_{mn}x_n=0&\textcircled{m}\end{cases}$
+
+根据定义 $m<n$ 即方程数目小于未知数数目，则根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][线性方程组-齐次线性方程组-推论2]]得方程必有非零解。
+
+即必存在非零的 $x_1,...,x_n\in K$ 使得 $x_1\vec{\alpha}_1+...+x_n\vec{\alpha}_n=\vec{0}$ 成立，即线性相关。 
+
+**** 推论1<<MK14>>
+
+若 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 可由 $\left\{\vec{b}_1,...,\vec{b}_m\right\}$ 线性表述，若 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 线性无关，则必有 $n\leq m$
+
+**** 推论2<<MK18>>
+
+若 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{b}_1,...,\vec{b}_m\right\}$ 且两个向量组均线性无关，则必有 $m=n$
+
+***** 证明
+
+由于 $\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 线性无关且可由 $\left\{\vec{b}_1,...,\vec{b}_m\right\}$ 线性表述，根据[[MK14][推论1]]可得 $n\leq m$
+
+根据等价的对称性，同理可证 $m\leq n$ 综上所述 $m=n$
+
+**** 推论3：秩的定义<<MK19>>
+
+若 $(\vec{a}_{i_1},...,\vec{a}_{i_s})\subset(\vec{a}_1,...,\vec{a}_n),s\leq n$ 是向量组 $\vec{a}_1,...,\vec{a}_n\in V$ 的[[MK15][极大线性无关组]]
+
+若 $(\vec{a}_{j_1},...,\vec{a}_{j_u})\subset(\vec{a}_1,...,\vec{a}_n),u\leq n$ 也是向量组 $\vec{a}_1,...,\vec{a}_n\in V$ 的[[MK15][极大线性无关组]]
+
+则必有 $u=s$ 即同一向量组的最大线性无关组包含的向量个数由其本身的性质决定
+
+改个数亦称为向量组的 *秩* ，记作 $rank(\vec{a}_{i_1},...,\vec{a}_{i_s})$ 。
+
+***** 证明
+
+根据[[MK20][等价推论]]可得 $(\vec{a}_1,...,\vec{a}_n)\cong(\vec{a}_{i_1},...,\vec{a}_{i_s})$ 且 $(\vec{a}_1,...,\vec{a}_n)\cong(\vec{a}_{j_1},...,\vec{a}_{j_s})$
+
+根据[[MK17][传递性]]可得 $(\vec{a}_{i_1},...,\vec{a}_{i_s})\cong(\vec{a}_{j_1},...,\vec{a}_{j_s})$
+
+根据[[MK18][推论2]]可得 $u=s$
+
+*** 向量组秩的性质
+
+**** 性质1
+
+线性无关向量组 $I=\left\{\vec{a}_1,...,\vec{a}_n\right\}$ 秩等于向量的个数 $rank(I)=n$
+
+***** 证明
+
+[[MK15][极大线性无关组]]定义可得 $I$ 的极大线性无关组等于他本身
+
+根据[[MK19][秩的定义]]可得 $rank(I)$ 为极大线性无关组的个数，故有 $rank(I)=n$
+
+**** 性质2<<MK41>>
+
+若向量组 $I$ 可由向量组 $J$ 线性表述则有 $rank(I)\leq rank(J)$
+
+***** 证明
+
+取 $I$ 的极大线性无关组 $I'$ ， $J$ 的极大线性无关组 $J'$
+
+根据[[MK20][等价推论]]可得 $I\cong I',J\cong J'$ 则 $I'$ 可由 $I$ 线性表述 $J$ 可由 $J'$ 线性表述
+
+结合条件以及[[MK21][线性表述传递性]]可得 $I'$ 可由 $J'$ 线性表述
+
+根据[[MK14][推论]]可得 $I'$ 的向量个数小于等于 $J'$ 的向量个数，故有 $rank(I)\leq rank(J)$ 
+
+***** 推论：若两个向量组等价，则秩相等
+
+根据[[MK13][等价定义]]可得互相线性表述，则有 $rank(I)\leq rank(J)$ 及 $rank(J)\leq rank(I)$ 
+
+故最终 $rank(I)=rank(J)$ 
+
+** 线性空间中向量组的定义
+
+$V$ 是数域 $K$ 上的线性空间 $\{\vec{a}_1,...,\vec{a}_n\}\subset V$ 是一个有限子集，$S\subset V$ 为无限子集，则有如下定义
+
+*** 子集线性相关<<MK34>>
+
+$S$ 中有一个有限子集[[MK8][线性相关]]，则 $S$ 线性相关
+
+*** 子集线性无关<<MK22>>
+
+有限子集 $\{\vec{a}_1,...,\vec{a}_n\}$ 或者无限子集 $S$ 中任意一个有限子集均[[MK8][线性无关]] 
+
+另外，空集 $\varnothing$ 定义为线性无关
+
+** 线性空间的基
+
+*** 基的定义<<MK36>>
+
+$V$ 是数域 $K$ 上的线性空间 $S\subset V$ 若满足：
+
+（1） $S$ 本身[[MK22][线性无关]]
+
+（2） $V$ 中的任意向量均可由 $S$ 中的有限多个向量[[MK12][线性表述]]
+
+则称 $S$ 是 $V$ 的一个基，若 $V=\{\vec{0}\}$ 则他的一个基规定为空集 $\varnothing$ （注： $\vec{0}$ 无法由空集线性表述）
+
+*** 定理1<<MK40>>
+
+任何一个数域 $K$ 上的任何一个线性空间，都有基。
+
+**** 证明
+
+***** 偏序关系<<MK27>>
+
+集合 $P$ 上的二元关系 $\leq$ 满足：
+
+（1） 自反性 $a\leq a,\forall a\in P$
+
+（2） 反对称性 $\forall(a,b)\subset P$ 若满足 $a\leq b\ \&\ b\leq a$ 则有 $a=b$
+
+（3） 传递性 $\forall(a,b,c)\subset P$ 若满足 $a\leq b,b\leq c$ 则有 $a\leq c$
+
+则称 $\leq$ 是集合 $P$ 上的偏序关系，具有偏序关系的集合称为偏序集，记作 $(P,\leq)$
+
+****** 全序集<<MK31>>
+
+若偏序集 $(P,\leq)$ 中任意两个元素 $(a,b)\subset P$ 至少成立 $a\leq b,b\leq a$ 中的一个
+
+则称 $P$ 为全序集
+
+****** 链<<MK23>>
+
+若偏序集 $(P,\leq)$ 的一个子集 $T$ 的任意两个元素都存在偏序关系
+
+即 $\forall (a,b)\subset T$ 均有 $a\leq b$ 或者 $b\leq a$ ，此时 $T$ 为全序集，为 $P$ 的全序子集
+
+****** 极大元素/极小元素<<MK24>>
+
+若偏序集 $(P,\leq)$ 有元素 $A\in P$ 且不存在 $B\in P, A\leq B,A\ne B$
+
+则称 $A$ 为偏序集 $(P,\leq)$ 的极大元素
+
+若偏序集 $(P,\leq)$ 有元素 $A\in P$ 且不存在 $B\in P, B\leq A,A\ne B$
+
+则称 $A$ 为偏序集 $(P,\leq)$ 的极小元素
+
+注：极大元不需要与偏序集中任意元素可比，仅需不存在大于它的不同元素即可。
+
+****** 最大元素/最小元素<<MK26>>
+
+若偏序集 $(P,\leq)$ 有元素 $A\in P$ 且 $\forall B\in P\Rightarrow B\leq A$ 则称 $A$ 是 $P$ 的最大元素
+
+若偏序集 $(P,\leq)$ 有元素 $A\in P$ 且 $\forall B\in P\Rightarrow A\leq B$ 则称 $A$ 是 $P$ 的最大元素
+
+注：最大元需要与偏序集中任意元素可比。
+
+****** 上界/下界<<MK25>>
+
+若 $U\subset P$ 存在元素 $t\in P$ 使得 $\forall x\in U\Rightarrow x\leq t$ 则称元素 $t$ 是 $U$ 的上界
+
+若 $U\subset P$ 存在元素 $t\in P$ 使得 $\forall x\in U\Rightarrow t\leq x$ 则称元素 $t$ 是 $U$ 的下界
+
+****** 前段（Initial Segment）<<MK29>>
+
+若 $S$ 为全序集 $T$ 满足：
+
+（1） $T\subset S$
+
+（2） $\forall (u,v)\subset S\ \&\ u\leq v$ 若 $v\in T$ 则有 $u\in T$
+
+即对于给定的 $v\in S, T=\left\{u\big|u\in S,u\leq v\right\}$ ，则称 $T$ 为 $S$ 的前段
+
+当 $T\ne S$ 时称 $T$ 为 $S$ 的真前段
+
+****** 良序关系<<MK30>>
+
+集合 $S$ 上的良序关系定义为：
+
+（1） 该关系使得 $S$ 为全序集
+
+（2） 任意非空子集 $T\subset S$ 都有[[MK26][最小元素]]
+
+满足此定义的集合与偏序关系称为良序集
+
+******* 推论1<<MK33>>
+
+若偏序集 $(P,\leq)$ 中存在良序集 $S\subset P$ 且有[[MK25][上界]] $b\in P,b\not\in S$
+
+则有 $S\cup \{b\}$ 亦为良序集
+
+******** 证明
+
+由于 $S$ 良序，故 $S$ 为[[MK23][全序子集]]，即 $\forall (u,v)\subset S\Rightarrow u\leq v\ \|\ v\leq u$
+
+根据[[MK25][上界]]定义有 $\forall a\in S\Rightarrow a\leq b$
+
+故对于任意 $(a,b)\subset S\cup\{b\}$ 偏序关系仍然成立
+
+由于 $S$ 良序集，故对于任意子集 $U\subset S$ 存在[[MK26][最小元素]] $p$ 
+
+则对于任意 $U'\subset S\cup\{b\}$
+
+若 $b\not\in U'$ 则 $U=U'$ 即 $U'$ 亦有最小元素 $\exists p,\forall a\in U\Rightarrow p\leq a$
+
+若 $b\in U'$ 则 $U'=U\cup\{b\}$ 故 $\forall a\in U\subset S\Rightarrow a\leq b$ 同理对于 $U$ 存在 $p$ 使得 $\forall a\in U\Rightarrow p\leq a$
+
+故根据[[MK27][传递性]]有 $p\leq b$ 故 $\exists p,\forall a\in U'\Rightarrow p\leq a$
+
+综上所述 $S\cup\{b\}$ 亦为良序集
+
+******* 推论2<<MK32>>
+
+定义集合 $C$ ，其元素是偏序集 $(P,\leq)$ 中所有满足以下条件的子集
+
+（1） $\forall S\in C$ 满足 $S\subset P$ 且 $S$ 是良序集
+
+（2） $\forall (X,Y)\subset C$ 满足 $X$ 是 $Y$ 的[[MK29][前段]]，或 $Y$ 是 $X$ 的[[MK29][前段]]其一
+
+则有 $\cup C$ 或者 $\cup_{X\in C} X$ 也是良序的
+
+******** 证明
+
+********* 证明并集为全序集
+
+首先证明是全序集，设 $(x,y)\subset\cup C$ 则必有 $x\in X\in C,y\in Y\in C$ 
+
+则必满足 $X$ 是 $Y$ 的[[MK29][前段]]，或 $Y$ 是 $X$ 的[[MK29][前段]]其一，这里假设 $X$ 是 $Y$ 的前段
+
+则有 $X\subset Y$ 故得 $(x,y)\subset Y$ 由于 $Y$ 满足良序，故必为[[MK31][全序集]]，故必满足 $x\leq y,y\leq x$ 其一。
+
+故 $\cup C$ 是[[MK31][全序集]]
+
+********* 证明并集的任意子集都有最小元素
+
+若 $u_0\in U\subset\cup C$ 则必存在一个 $S_0\in C$ 使得 $u_0\in S_0$
+
+且 $\forall u_1\in U,u_1\leq u_0$ 同理必有 $u_1\in S_1$ 根据命题（2），必有 $S_0,S_1$ 中某个必为另一个的[[MK29][前段]]
+
+假设 $S_0$ 为 $S_1$ 的[[MK29][前段]]，则根据定义 $u_1\leq u_0,u_1\in S_1$ 可得 $u_1\in S_0$
+
+反之亦可证明 $u_1\in S_1\subset S_0$ 即 $u_1\in S_0$
+
+结论即 $\forall u_1\in U,u_1\leq u_0\Rightarrow u_1\in S_0$ 定义 $U'=\left\{u\big|u\in U,u\leq u_0\right\}$
+
+根据上述描述 $\forall u\in U',u\in S_0\Rightarrow U'\subset S_0$ 由于 $S_0$ 良序，故 $U'$ 必有最小元素 $\exists u^*,\forall u'\in U'\Rightarrow u^*\leq u'$
+
+且 $\forall u_2\in U,u_2\not\in U'\Rightarrow u_0\leq u_2$ 根据[[MK27][传递性]] $u^*\leq u_0\leq u_2$
+
+故 $\forall u\in U\Rightarrow u^*\leq u$ 故任意子集 $U\subset\cup C$ 均有最小元素
+
+****** 选择公理<<MK28>>
+
+若 $(X_i)_{i\in I}$ 是一组非空集合，则 $\prod_I X_i$ 也是非空的，即从每个 $X_i,i\in I$ 中选择一个元素 $x_i\in X_i$ 组成新的集合也是非空的。
+
+***** 佐恩定理<<MK35>>
+
+若非空偏序集 $(P,\leq)$ 的每条[[MK23][链]]都有[[MK25][上界]]，则 $P$ 中存在[[MK24][极大元素]]
+
+****** 证明
+
+******* 基本思路
+
+对于非空偏序集 $(P,\leq)$ 假设命题不成立，即全序子集有上界，但 $P$ 中不存在[[MK24][极大元素]]，即满足
+
+（1） 对于任意[[MK23][全序子集]] $S\subset P$ 均有上界，即 $\exists b\in P,\forall a\in S\Rightarrow a\leq b$
+
+（2） $\forall x\in P,\exists b\in P\Rightarrow x\leq b$
+
+于是对于任意给定元素 $p\in P$ 做以下推导从而推出矛盾
+
+******* 定义集合 $B(S)$
+
+定义 $S\subset P$ 是 $P$ 的[[MK23][全序子集]]，则根据命题（1）必有 $p\in P$ 是 $S$ 的上界，即 $\forall a\in S\Rightarrow a\leq p$
+
+根据命题（2）必有 $p'\in P\Rightarrow p\leq p'$ 则根据[[MK27][传递性]] $\forall a\in S\Rightarrow a\leq p\leq p'$
+
+故定义对于任意全序子集 $S$ 有集合 $B(S)=\left\{p\bit|p\in P-S,\forall a\in S\Rightarrow a\leq p\right\}$
+
+******* 定义选择函数 $\phi(S)$
+
+对于[[MK23][全序子集]] $S$ 有对应的集合 $B(S)$ 必为非空集合
+
+故由于[[MK28][选择公理]]可知从 $B(S)$ 中选择一个元素组成新的集合必为非空，即 $\phi(S)=\{p\}$ 且满足 $p\in B(S)$
+
+******* 定义合集集合
+
+对于任意给定的元素 $p\in P$ ，定义集合 $C$ ，其中的元素是所有满足以下条件的 $S\subset P$ 
+
+（1） $S$ 为[[MK30][良序集]]
+
+（2） [[MK26][最小元素]]为 $p$
+
+（3） 若 $T\subset S$ 为[[MK23][全序子集]]的非空[[MK29][真前段]]，则 $S-T$ 的[[MK26][最小元素]]为 $\phi(T)$
+
+首先推断 $C\ne\varnothing$ ，定义 $\{p_1\}=\phi(\{p\})$ 集合 $\{p,p_1\}$ 满足条件。
+
+这里由于函数 $\phi(T)$ 的定义，其取值是与 $S$ 无关的，仅与 $T$ 有关
+
+且 $S-T$ 的最小元素为 $\phi(T)=\{p\}$ ，即 $\forall a\in T\Rightarrow a\leq p$ 即 $p$ 为 $T$ 的[[MK25][上界]]，同理亦为 $S-T$ 的[[MK25][下界]]
+
+故若存在 $a\in S-T$ 且 $a$ 是 $T$ 的上界 $S-T$ 的下界，则 $a\in S-T$ 且 $a=p$
+
+这里给出一个 $C$ 中元素可能的例子，首先定义 $\phi(\{p\})=p_1$ 则有 $p\leq p_1$
+
+同理 $\phi(\{p,p_1\})=p_2$ 则有 $p_1\leq p_1$ 根据[[MK27][传递性]] $p\leq p_1\leq p_2$ 一次类推得 $\{p,p_1,p_2,...\}$
+
+满足关系 $p\leq p_1\leq p_2\leq...\\$ 则 $C=\left\{\{p\},\{p,p_1\},\{p,p_1,p_2\},...\right\}$
+
+故其中每个元素 $S=\{p,p_1,...,p_n\}$ 均有 $p\leq p_1\leq...\leq p_n$ 故 $p$ 为最小元素
+
+且对于任意的[[MK29][真前段]] $T=\{p,p_1,...,p_s\}$ 可得 $\phi(T)=\{p_{s+1}\}$ 为 $S-T=\{p_{s+1},...,p_n\}$ 的下界，且 $p_{s+1}\in S-T$
+
+******* 证明 $C$ 中任意两个元素其中一个为另一个的前段
+
+若 $S,S'\in P$ 定义 $R$ 为最大的 $S,S'$ 的共有[[MK29][前段]]，若 $R$ 为真前段，则有 $\phi(R)\in S-R,\phi(R)\in S'-R$
+
+且 $\phi(R)$ 为 $S-R,S'-R$ 的[[MK26][最小元素]]，则 $R\cup \phi(R)$ 亦为 $S,S'$ 的共有[[MK29][前段]]，与 $R$ 定义冲突。
+
+故 $R$ 必定等于其中一个，即 $S$ 是 $S'$ 的前段，或者 $S'$ 是 $S$ 的前段必成立其一。
+
+******* 定义并集 $U$
+
+定义 $U$ 为所有 $C$ 中所有元素的并集，根据以下三步证明可知 $U$ 亦满足 $C$ 的定义，故 $U\in C$
+
+******** 证明良序
+
+故根据[[MK32][推论]]有 $U$ 亦为[[MK30][良序集]]。
+
+******** 证明最小元素为 $p$
+
+由于 $U\subset U$ 故 $U$ 中有最小元素。由于 $\forall u\in U,\exists S\Rightarrow u\in S$ 且 $\forall u\in S\Rightarrow p\leq u$ 故 $\forall u\in U\Rightarrow p\leq u$
+
+即 $p$ 是 $U$ 的最小元素。
+
+******** 证明满足（3）
+
+若 $T$ 为 $U$ 的非空[[MK29][真前段]]，则 $U-T$ 非空，则对于某个 $u\in U-T$ 必然存在 $S\in C\Rightarrow u\in S$
+
+由于 $U$ 良序，故必为全序，故对于任意 $t\in T$ 必存在 $t$ 与 $u$ 的偏序关系
+
+由于前段的定义以及 $u\not\in T$ 故得 $t\leq u$
+
+且由于 $\forall t\in T\subset U$ 则必有 $\exists S'\in C\Rightarrow t\in S'$ 根据 $C$ 的定义 $S,S'$ 其中一个必为另一个[[MK29][前段]]
+
+无论哪种情况，必有 $t\in S$ 故有 $\forall t\in T,t\in S\Rightarrow T\subset S$
+
+另外若 $\forall (a,b)\subset S$ 若满足 $a\leq b,b\in T$ 根据 $U$ 的定义有 $a\in S\subset U$
+
+且 $T$ 为 $U$ 的[[MK29][前段]] $a\leq b$ 故 $a\in T$ 故 $T$ 满足 $T\subset S$ 及 $\forall (a,b)\subset S,a\leq b,b\in T\Rightarrow a\in T$ 
+
+故 $T$ 亦为 $S$ 的[[MK29][前段]]，故 $S-T$ 的[[MK26][最小元素]]为 $\phi(T)$
+
+且根据定义 $\forall S\in C,T\subset S$ 其 $S-T$ 的最小元素为 $\phi(T)$
+
+根据 $U$ 的定义可得 $U-T$ 的最小元素亦为 $\phi(T)$
+
+******* 推导矛盾
+
+根据给出条件 $U$ 为[[MK23][全序子集]]，即 $U$ 有上界，且 $P$ 无[[MK24][极大元素]]则 $\phi(U)$ 必不为空集，定义 $\{b\}=\phi(U)$
+
+由于[[MK23][全序子集]]及选择函数定义 $\forall u\in U,u\leq b$ 且 $b\not\in U$ 故：
+
+（1） 根据[[MK33][推论1]可得 $U\cup\{b\}$ 亦为良序集
+
+（2） 亦有 $\forall u\in U\cup\{b\}\Rightarrow p\leq u$
+
+（3） 若 $T\subset U\cup \{b\}$ 为非空[[MK29][真前段]]，则 $U-T$ 的[[MK26][最小元素]]为 $\phi(T)$
+
+故 $U\cup\phi(U)$ 亦为满足条件 $C$ 的元素，这与 $U$ 的定义矛盾。
+
+***** 证明定理
+
+****** 定义偏序集
+
+对于一个[[MK1][线性空间]] $V$ 定义偏序集 $(P,\leq)$ 其中 $P$ 的元素是集合 $V$ 的所有子集，偏序关系 $\leq$ 为包含关系，即 
+
+（1） $U\subset V\Rightarrow U\in P$
+
+（2） $U\subset V, L\subset V,U\subset L\Rightarrow U\leq L$
+
+定义 $S\subset P$ 满足若 $L\in S$ 则 $L$ 中的所有元素[[MK22][线性无关]]
+
+同理 $(S,\leq)$ 亦组成[[MK27][偏序集]]
+
+****** 证明任意链有上界
+
+取 $T\subset S$ 为 $S$ 中的任意一条[[MK23][链]]，假设 $T$ 中的元素有 $T=\left\{B_i\big|i\in I\right\}$ 其中 $I$ 为指标集
+
+定义 $B=\cup_{i\in I}B_i$ 则有 $\forall B_i\in T\Rightarrow B_i\subset B\Rightarrow B_i\leq B$
+
+且若 $B$ 线性相关，则根据[[MK34][定义]] $B$ 有一有限子集线性相关，记作 $C=\{a_1,...,a_n\}$
+
+根据 $B$ 的构造可得 $\forall 1\leq j\leq n\Rightarrow a_j\in B_{j}$ 由于 $T$ 为链，故 $T$ [[MK31][全序]]则有 $\forall 1\leq j_1< j_2\leq n$ 必有 $B_{j_1}\leq B_{j_2}$ 或者 $B_{j_2}\leq B_{j_1}$ 其一成立。
+
+结合偏序关系[[MK27][传递性]]，必有一个元素 $B_{j^*}$ 满足 $\forall 1\leq j\leq n\Rightarrow B_j\leq B_j^*$ 即 $B_j\subset B_{j^*}$
+
+故 $\forall a_j\in C\Rightarrow a_j\in B_{j}\subset B_{j^*}$ 则 $C\subset B_{j^*}$ 由于 $B_{j^*}$ 根据定义线性无关，故矛盾。则 $B$ 线性无关，根据 $S$ 的构造 $B\subset S$
+
+综上所述 $\forall B_i\in T,\exists B\in S\Rightarrow B_i\leq B$ 即 $T$ 有上界。
+
+****** 证明结论
+
+根据[[MK35][佐恩引理]] $S$ 中有[[MK24][极大元素]]，定义做 $A$ ，从 $V$ 中任取一个元素 $a$ 
+
+若 $a\in A$ 则 $a$ 可由 $A$ 中的元素线性表述
+
+若 $a\not\in A$ 则根据 $(S,\leq)$ 定义的偏序关系，有 $A\subset A\cup\{a\}\Rightarrow A\leq A\cup\{a\}$ 且 $A\ne A\cup\{a\}$
+
+由于 $A$ 是 $S$ 的[[MK24][极大元素]]，则 $A\cup\{a\}\not\in S$ 根据 $S$ 的构造 $A\cup\{a\}$ 线性相关。
+
+根据[[MK16][线性相关性质]]可得 $a=\sum_{i\in I} k_ia_i,\ \left(a_i\in A,k_i\in K\right)$
+
+综上所述：
+
+（1） $A\in S\Rightarrow A\subset V$
+
+（2） $A$ 线性无关
+
+（3） $\forall a\in V$ 均可由 $A$ 的元素线性表述
+
+故任何线性空间均存在基
+
+*** 定理2<<MK43>>
+
+若 $V$ 是一个线性空间且存在一组[[MK36][基]]包含有限个向量，则 $V$ 的任意两组[[MK36][基]]所包含的向量个数相等
+
+**** 证明
+
+定义 $A=\{a_1,...,a_n\},B=\{b_1,...,b_s\}$ 假设 $s>n$ 
+
+根据[[MK36][基]]的定义任意 $b_i\in B$ 可由 $A$ 线性表述，则根据[[MK12][线性表述]]定义 $B$ 可由 $A$ 线性表述 
+
+故根据[[MK37][引理]] $B$ 线性相关。显然与[[MK36][基]]的定义矛盾。
+
+**** 推论
+
+若 $V$ 的一个基包含无限个向量，则 $V$ 的任何一个基均是无限子集
+
+***** 证明
+
+若任何一个有限，则根据定理2其他基均有限。
+
+*** 定理3<<MK80>>
+
+若 $S=\{v_1,v_2,...\}$ 是线性空间 $V$ 的[[MK36][基]]，则任意 $\vec{\alpha}\in V$ 根据基的[[MK12][线性表述]] $\vec{\alpha}=\sum_{i=1}^nk_iv_i$ 唯一
+
+**** 证明 
+
+根据[[MK36][定义]]可知 $S$ 本身[[MK22][线性无关]]，且表述 $\vec{\alpha}=\sum_{i=1}^nv_i$ 中 $n<\infty$ ，则根据[[MK38][性质5]]可得表述唯一，即 $\vec{\alpha}=\sum_{i=1}^nv_i$ 唯一
+
+** 线性空间的维数<<MK51>>
+
+若数域 $K$ 上的线性空间 $V$ 的一个[[MK36][基]]是由 $n<\infty$ 个向量组成，则称 $n$ 为线性空间的维数，记作 $\dim_K(V)=n$
+
+若数域 $K$ 上线性空间 $V$ 的一个[[MK36][基]]是由 $\infty$ 个向量组成，则称 $V$ 为无限维空间，记作 $\dim_K(V)=\infty$
+
+只含零向量的线性空间，[[MK36][基]]为 $\varnothing$ ，故 $\dim_K(V)=0$
+
+*** 命题1<<MK39>>
+
+若数域 $K$ 上的线性空间 $V$ 维数为 $n$ 则 $V$ 中任意 $s>n$ 个向量线性相关
+
+**** 证明
+
+由于维数定义可得 $V$ 的[[MK36][基]]是由 $n<\infty$ 个向量组成，且对于任意 $(a_1,...,a_s)$ 向量均可由基线性表述
+
+由于 $s>n$ 故根据[[MK37][引理1]]可得 $(a_1,...,a_s)$ 线性相关
+
+*** 命题2<<MK42>>
+
+若数域 $K$ 上的线性空间 $V$ 维数为 $n$ ，则 $V$ 中任意 $n$ 个线性无关的向量均为 $V$ 的基
+
+**** 证明 
+
+设 $(\vec{a}_1,...,\vec{a}_n)\subset V$ 为任意线性无关向量组 $\forall\vec{b}\in V$ 
+
+根据[[MK39][命题1]] $(\vec{a}_1,...,\vec{a}_n,\vec{b})$ 向量个数为 $n+1$ 线性相关
+
+根据[[MK16][性质6]]可得 $\exists (k_1,...,k_n)\Rightarrow \vec{b}=\sum_{i=1}^nk_i\vec{a}_i$
+
+*** 命题3
+
+若数域 $K$ 上的线性空间 $V$ 维数为 $n$ ，若 $V$ 中任意向量均可由 $(\vec{a}_1,...,\vec{a}_n)$ 线性表述
+
+则 $(\vec{a}_1,...,\vec{a}_n)$ 是 $V$ 的一个基
+
+**** 证明
+
+根据[[MK40][定理1]]可得线性空间 $V$ 必有基，故存在 $(\vec{b}_1,...,\vec{b}_n)$ 为 $V$ 的一组基
+
+根据命题 $(\vec{b}_1,...,\vec{b}_n)$ 可由 $(\vec{a}_1,...,\vec{a}_n)$ 线性表述，则根据[[MK41][性质2]]可得 $rank(\vec{a}_1,...,\vec{a}_n)\geq rank(\vec{b}_1,...,\vec{b}_n)$
+
+根据[[MK19][秩的定义]]可得 $(\vec{b}_1,...,\vec{b}_n)$ 的秩为 $n$ 且 $(\vec{a}_1,...,\vec{a}_n)$ 的秩最大为 $n$
+
+故 $(\vec{a}_1,...,\vec{a}_n)$ 必线性不相关
+
+*** 命题4
+
+若数域 $K$ 上的线性空间 $V$ 维数为 $n$ ，则 $V$ 中任意一个线性无关向量组都可以扩充称 $V$ 的一个基
+
+**** 证明
+
+若 $(\vec{a}_1,...,\vec{a}_s)$ 线性无关，若 $s=n$ 则根据[[MK42][命题2]] $(\vec{a}_1,...,\vec{a}_s)$ 是基
+
+若 $s<n$ 则根据[[MK43][定理2]]可得 $(\vec{a}_1,...,\vec{a}_s)$ 不是一个基
+
+由于 $(\vec{a}_1,...,\vec{a}_s)$ 线性不相关，则必存在 $\vec{b}\in V$ 且 $\vec{b}$ 无法被 $(\vec{a}_1,...,\vec{a}_s)$ 线性表述
+
+若 $(\vec{a}_1,...,\vec{a}_s,\vec{b})$ 线性相关，根据[[MK16][性质6]]可得 $\vec{b}=\sum_{i=1}^sk_i\vec{a}_i$ 与不能被线性表述矛盾，故 $(\vec{a}_1,...,\vec{a}_s,\vec{b})$ 必然线性无关
+
+以此类推，可找到向量组 $(\vec{a}_1,...,\vec{a}_s,\vec{b}_1,...\vec{b}_t)$ 线性不相关且 $n=s+t$
+
+根据[[MK42][命题2]]可得 $(\vec{a}_1,...,\vec{a}_s,\vec{b}_1,...\vec{b}_t)$ 为 $V$ 的一组基
+
+*** 命题5<<MK47>>
+
+若数域 $K$ 上的线性空间 $V$ 维数为 $n$ ， $W$ 为 $V$ 的[[MK44][线性子空间]]，则有 $\dim_K(W)\leq\dim_K(V)$
+
+且当 $\dim_K(W)=\dim_K(V)$ 时 $W=V$
+
+**** 证明
+
+根据[[MK39][命题1]]可得任意向量组 $A\subset V$ 当 $A$ 的向量个数 $s>n$ 时有 $A$ 线性相关。
+
+故 $W$ 中不存在 $s>n$ 个向量线性不相关，故 $\dim_K(W)\leq n$
+
+当 $\dim_K(W)=n$ 时，取 $W$ 的一组基 $(\vec{a}_1,...,\vec{a}_n)$ 线性无关，由于子空间，故有 $(\vec{a}_1,...,\vec{a}_n)\subset V$
+
+故 $(\vec{a}_1,...,\vec{a}_n)$ 亦为 $V$ 的基，故对于任意 $\vec{b}\in V$ 均可有 $(\vec{a}_1,...,\vec{a}_n)$ 线性表述
+
+又根据[[MK44][线性子空间]]定义加法乘法亦封闭，故 $(\vec{a}_1,...,\vec{a}_n)$ 的线性组合属于空间 $W$
+
+故 $\forall \vec{b}\in V\Rightarrow \vec{b}\in W$ 又由于子空间，故 $\forall \vec{b}\in W\Rightarrow \vec{b}\in V$ 故有 $W=V$
+
+** 坐标定义
+
+若 $V$ 中有一组基 $(\vec{a}_1,...,\vec{a}_n)$ 则根据[[MK36][基]]的定义，任意一个向量 $\vec{a}\in V$ 均可由基线性表述
+
+故有 $a_1=k_1\vec{a}_1+...+k_n\vec{a}_n$ 且根据[[MK38][性质5]]该表述中 $k_1,...,k_n$ 唯一
+
+故定义 $\left(\begin{matrix}k_1\\k_2\\\vdots\\k_n\end{matrix}\right)$ 为基 $(\vec{a}_1,...,\vec{a}_n)$ 下的坐标
+
+** 极大线性无关集
+
+*** 定义
+
+若数域 $K$ 上的线性空间 $V$ 的子集 $S\subset V$ 若满足
+
+（1） $S$ 本身线性无关
+
+（2） 对于任意 $\vec{b}\in V\ \&\ \vec{b}\not\in S$ （若有）则 $S\cup \{\vec{b}\}$ 线性相关
+
+则称 $S$ 为 $V$ 中的极大线性无关集
+
+*** 极大线性无关集与线性空间的基<<MK65>>
+
+若数域 $K$ 上的线性空间 $V$ 中有 $S\subset V$ ，则 $S$ 是 $V$ 的[[MK36][基]]的充要条件是 $S$ 是 $V$ 的极大线性无关集 
+
+**** 证明
+
+***** 充分
+
+若 $S$ 是 $V$ 的基，则对于任意 $\vec{a}\in V,\vec{a}\not\in S$ 均可由 $S$ 中的有限个元素线性表述
+
+故 $\{\vec{a}\}\cup S$ 根据[[MK45][性质4]]可得线性相关
+
+又由于基本身线性无关，故 $S$ 是 $V$ 的极大线性无关集
+
+***** 必要
+
+****** 当 $V=\{\vec{0}\}$ 时
+
+由于 $\vec{0}$ 本身线性相关，故极大线性无关集为空集（根据[[MK22][定义]]空集为线性无关）
+
+根据[[MK36][基的定义]]可得此时 $V$ 的基亦为空集
+
+****** 其他情况
+
+根据定义， $S$ 线性无关，任意 $\vec{b}\in V\ \&\ \vec{b}\not\in S$ （若有）则 $S\cup \{\vec{b}\}$ 线性相关
+
+根据[[MK34][线性空间线性相关定义]]可得存在一个有限子集 $U\subset S\cup\{\vec{b}\}$ 线性相关
+
+若 $\vec{b}\not\in U$ 则有 $U\subset S$ 根据[[MK22][线性空间线性无关定义]]与 $S$ 线性无关矛盾
+
+故必有 $\vec{b}\in U$ ，则有有限子集 $U-\{\vec{b}\}$ 线性无关， $U$ 线性相关 
+
+故根据[[MK16][性质6]]可得 $\vec{b}$ 可由 $U-\vec{b}$ 线性表述，由于 $U-\vec{b}\subset S$ 即亦可由 $S$ 线性表述，证毕。
+
+* 线性空间同构
+
+** 定义<<MK75>>
+
+若线性空间 $V,S$ 以及[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $K$ 存在[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-双射函数]] $\sigma:V\rightarrow S$ 且满足：
+
+（1） 对于任意 $\alpha\in V, \beta\in S$ 有 $\sigma(\alpha+\beta)=\sigma(\alpha)+\sigma(\beta)$
+
+（2） 对于任意 $k\in K,\alpha\in V$ 有 $\sigma(k\alpha)=k\sigma(\alpha)$
+
+则称线性空间 $V,S$ 同构，记作 $V\cong S$ ， $\sigma$ 成为同构映射
+
+** 性质
+
+定义线性空间 $V,S$ ，[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $K$ 以及[[MK75][同构映射]] $\sigma:V\rightarrow S$ 。向量 $\vec{v}\in V,\vec{s}\in S$
+
+*** 性质1<<MK76>>
+
+若 $\vec{0}_v\in V,\vec{0}_s\in S$ 分别为 $V,S$ 的[[MK1][线性空间零元]]，则 $\sigma(\vec{0}_v)=\vec{0}_s$
+
+**** 证明
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]定义 $0\in K$ 则根据[[MK75][定义]]、[[MK5][零乘元素]] $\sigma(\vec{0}_v)=\sigma(0\vec{v})=0\sigma(\vec{v})=\vec{0}_s$
+
+*** 性质2
+
+$\sigma(-\vec{v})=-\sigma(\vec{v})$
+
+**** 证明
+
+根据[[MK6][性质]]可得 $\sigma(-\vec{v})=\sigma(-1\vec{v})=-1\sigma(\vec{v})=-\sigma(\vec{v})$
+
+*** 性质3<<MK78>>
+
+对于 $v_i\in V,k_i\in K, i=1,2,...,n$ 有 $\sigma\left(\sum_{i=1}^nk_iv_i\right)=\sum_{i=1}^nk_i\sigma(v_i)$ ，根据[[MK75][定义]]证明即可
+
+*** 性质4<<MK77>>
+
+对于 $v_i\in V, i=1,2,...,n$ 则 $v_1,...,v_n$ 现行相关是 $\sigma(v_1),...,\sigma(v_n)$ 现行相关的充要条件
+
+**** 证明
+
+定义 $\vec{0}_v\in V,\vec{0}_s\in S$ 分别为 $V,S$ 的[[MK1][线性空间零元]]
+
+***** 充分
+
+根据[[MK8][定义]]可知存在不全为零的 $k_i\in K,i=1,...,n$ 使得 $\sum_{i=1}^nk_iv_i=\vec{0}_v$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-双射函数]]有 $\sigma\left(\sum_{i=1}^nk_iv_i\right)=\sigma(\vec{0}_v)$ 
+
+根据[[MK77][性质3]] $\sigma\left(\sum_{i=1}^nk_iv_i\right)=\sum_{i=1}^nk_i\sigma(v_i)$
+
+根据[[MK76][性质1]]可得 $\sigma(\vec{0}_v)=\vec{0}_s$ 最终 $\sum_{i=1}^nk_i\sigma(v_i)=\vec{0}_s$
+
+***** 必要
+
+根据[[MK8][定义]]可知存在不全为零的 $k_i\in K,i=1,...,n$ 使得 $\sum_{i=1}^nk_i\sigma(v_i)=\vec{0}_s$
+
+根据[[MK77][性质3]] $\sigma\left(\sum_{i=1}^nk_iv_i\right)=\sum_{i=1}^nk_i\sigma(v_i)$
+
+根据[[MK76][性质1]]可得 $\sigma(\vec{0}_v)=\vec{0}_s$ 则有 $\sigma\left(\sum_{i=1}^nk_iv_i\right)=\sigma(\vec{0}_v)$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-双射函数]]有 $\sum_{i=1}^nk_iv_i=\vec{0}_v$
+
+*** 性质5<<MK79>>
+
+若 $\{v_1,...,v_n\}\subset V$ 则它是 $V$ 的[[MK36][基]]的充要条件为 $\{\sigma(v_1),...,\sigma(v_n)\}$ 是 $S$ 的[[MK36][基]]
+
+**** 证明
+
+根据[[MK36][基]]定义，需满足：
+
+（1） 本身[[MK22][线性无关]]
+
+（2） 可由有限多个向量[[MK12][线性表述]]
+
+根据[[MK77][性质4]]可证条件（1）互为充要。
+
+下面证明（2）充分，必要同理：
+
+若 $\{v_1,...,v_n\}$ 是 $V$ 的基
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-双射函数]]可的对于任意 $s\in S$ 必有唯一对应 $v\in V\rightarrow \sigma(v)=s$
+
+由于 $\{v_1,...,v_n\}$ 是基，则有 $v=\sum_{i=1}^n k_iv_i$
+
+根据[[MK78][性质3]] $s=\sigma(v)=\sigma\left(\sum_{i=1}^nk_iv_i\right)=\sum_{i=1}^nk_i\sigma(v_i)$ 即任意 $s\in S$ 均有 $s=\sum_{i=1}^nk_i\sigma(v_i)$
+
+** 定理
+
+*** 定理1
+
+对于同一[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $K$ ，若线性空间 $V,S$ 的[[MK51][维数]]不等，则不同构；[[MK51][维数]]等，则同构
+
+**** 证明
+
+***** [[MK51][维数]]不等
+
+根据维数定义，即线性空间[[MK36][基]]的元素数。故维数不等，则基不等。
+
+根据[[MK79][性质5]]可知同构空间基数量相等。故矛盾
+
+***** [[MK51][维数]]等
+
+定义 $\{v_1,..v_n\}\subset V,\{s_1,...,s_n\}\subset S$ 分别为线性空间[[MK36][基]],定义 $K$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]。
+
+以下证明存在同构映射
+
+****** 构造映射
+
+则有 $\forall v\in V\rightarrow v=\sum_{i=1}^nk_iv_i$ 故定义映射 $\sigma(v)=\sum_{i=1}^n k_is_i$
+
+对于任意 $s\in S$ 根据[[MK36][基]]定义有 $s=\sum_{i=1}^n k_is_i$ 则有 $\sum_{i=1}^nk_iv_i$ 与之对应
+
+****** 证明双射
+
+对于任意 $v\subset V$ 根据[[MK80][定理3]] $v=\sum_{i=1}^nk_iv_i$ [[MK12][线性表述]]唯一。
+
+故若 $v'\ne v''$ 则其表述 $v'=\sum_{i=1}^nk'_iv_i,v''=\sum_{i=1}^nk''_iv_i$ 必有 $\exists i\rightarrow k'_i\ne k''_i$
+
+同理线性表述 $s=\sum_{i=1}^nk_is_i$ 也唯一，则若 $\exists i\rightarrow k'_i\ne k''_i$ 必有 $\sum_{i=1}^nk'_is_i\ne\sum_{i=1}^nk''_is_i$ 即 $\sigma(v')\ne\sigma(v'')$
+
+综上所述，映射满足：
+
+（1） $\forall s\big(s\in S\rightarrow \exists v(v\in V\land \sigma(v)=s)\big)$
+
+（2） $\forall v'\forall v''\big(v'\ne v''\rightarrow \sigma(v')\ne\sigma(v'')\big)$
+
+满足[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-双射函数]]
+
+****** 证明其他
+
+$v\in V,k\in K$ 若 $kv=k\sum_{i=1}^nk_iv_i=\sum_{i=1}^nkk_iv_i$
+
+则 $\sigma(kv)=\sum_{i=1}^nkk_is_i=k\sum_{i=1}^nk_is_i=k\sigma(v)$
+
+$\{v',v''\}\subset V$ 则有 $v'=\sum_{i=1}^nk'_iv_i,v''=\sum_{i=1}^nk''_iv_i$ 故 $v'+v''=\sum_{i=1}^nk'_iv_i+\sum_{i=1}^nk''_iv_i=\sum_{i=1}^n(k'_i+k''_i)v_i$
+
+故 $\sigma(v'+v'')=\sum_{i=1}^n(k'_i+k''_i)s_i=\sum_{i=1}^nk'_is_i+\sum_{i=1}^nk''_is_i=\simga(v')+\sigma(v'')$
+
+**** 推论
+
+任意的 $n$ 维线性空间均和 $K^n$ 同构， $K^n=<\epsilon_1,...,\epsilon_n>$ 其中 $\epsilon_i$ 为 $i$ 位是 $1$ ，其他为 $0$ 的向量。
+
+** 命题
+
+*** 命题1
+
+若数域 $K$ 上有[[MK1][线性空间]] $V,S$ [[MK75][同构]]，同构映射为 $\sigma:V\rightarrow S$ 且 $U\subset V$ 是 $V$ 的子空间，定义 $\sigma(U)=\left\{\sigma(\vec{u})\big|\vec{u}\in U\right\}\subset S$ 则：
+
+（1） $\sigma(U)$ 是 $S$ 的子空间
+
+（2） $U,\sigma(U)$ 同构，同构映射仍为 $\sigma$
+
+**** 证明
+
+***** 子空间
+
+根据[[MK60][子空间充要条件]]可得
+
+（1） $U\ne\varnothing$ ，即 $\exists u\in U$ ，由于同构映射为[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-双射函数]]，故必有 $\sigma(u)\in\sigma(U)\subset S$ 与之对应。故 $\sigma(U)\ne\varnothing$ 
+
+（2） $\forall \{a,b\}\subset U\rightarrow a+b\subset U$ 根据[[MK75][同构]]定义 $\sigma(a)+\sigma(b)=\sigma(a+b)$ 由于 $\{a,b,a+b\}\subset U$ 故有 $\{\sigma(a),\sigma(b),\sigma(a+b)\}\subset\sigma(U)$ 
+
+（3） $\forall k\in K\land \vec{u}\in U\rightarrow k\vec{u}\in U$ 同理根据同构定义 $k\sigma(\vec{u})=\sigma(k\vec{u})$ 由于 $k\vec{u}\in U\rightarrow k\sigma(\vec{u})\in \sigma(U)$
+
+***** 同构
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-双射函数]]定义以及 $\sigma(U)$ 定义
+
+（1） $\forall s\big(s\in\sigma(U)\rightarrow\exists u(u\in U\land \sigma(u)=s)\big)$
+
+     由于 $\sigma:V\rightarrow S$ 为[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-单射函数]]，故 $a\ne b\rightarrow\sigma(a)\ne\sigma(b)$ 。则在 $U$ 上亦然
+
+     故 $\sigma$ 在 $U$ 上亦为双射函数。
+
+（2） 由于 $\sigma$ 为同构函数，故满足 $\sigma(a+b)=\sigma(a)+\sigma(b),\sigma(ka)=k\sigma(a)$
+
+故为同构，且同构映射为 $\sigma$
+
+*** 命题2（同构传递性）<<MK81>>
+
+若 $V,S,U$ 是数域 $K$ 上的线性空间，且有 $V,S$ [[MK75][同构]]以及 $S,U$ 同构，则有 $V,U$ 同构
+
+**** 证明
+
+$V,S$ [[MK75][同构]]可得存在双射函数 $\sigma_1:V\rightarrow S$
+
+$S,K$ [[MK75][同构]]可得存在双射函数 $\sigma_2:S\rightarrow K$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-双射-传递性]]可得 $\sigma_1\cdot\sigma_2$ ，即[[~/OneDrive/离散数学/Disc_Math.org][函数-函数合成]]，亦为双射函数，且 $\sigma_1\cdot\sigma_2:V\rightarrow U$
+
+对于任意 $k\in K,\vec{v}\in V$ 有 $\sigma_1\cdot\sigma_2(k\vec{v})=\sigma_2(\sigma_1(k\vec{v}))=\sigma_2(k\sigma_1(\vec{v}))=k\sigma_2(\sigma_1(\vec{v}))$
+
+对于任意 $\{\vec{a},\vec{b}\}\subset V$ 有  $\sigma_1\cdot\sigma_2(\vec{a}+\vec{b})=\sigma_2(\sigma_1(\vec{a}+\vec{b}))=\sigma_2(\sigma_1(\vec{a})+\sigma_1(\vec{b}))=\sigma_2(\sigma_1(\vec{a}))+\sigma_2(\sigma_1(\vec{b}))$
+
+故根据[[MK75][同构]]定义 $V,U$ 同构
+
+*** 命题3（同构可逆）<<MK82>>
+
+若 $V,S$ 是数域 $K$ 上的线性空间，且有 $V,S$ [[MK75][同构]]，则有 $S,V$ 同构
+
+**** 证明
+
+根据[[MK75][同构]]定义，存在双射函数 $\sigma:V\rightarrow S$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-逆函数]]可得存在逆函数 $\sigma^{-1}:S\rightarrow V$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-逆函数-双射性质-性质2]]可得 $\sigma^{-1}$ 亦为双射函数
+
+对于任意 $k\in K,\vec{s}\in S$ 存在 $\vec{v}=\sigma^{-1}(\vec{s})\in V$ 根据逆函数定义有 $\sigma(\vec{v})=\vec{s}$ 则 $\sigma^{-1}(k\vec{s})=\sigma^{-1}(\sigma(k\vec{v}))=k\vec{v}=k\sigma^{-1}(\vec{s})$
+
+对于任意 $\{\vec{s}_1,\vec{s}_2\}\subset S$ 存在 $\vec{v}_1=\sigma^{-1}(\vec{s}_1),\vec{v}_2=\sigma^{-1}(\vec{s}_2)$ 根据逆函数定义有 $\sigma(\vec{v}_1)=\vec{s}_1,\sigma(\vec{v}_2)=\vec{s}_2$ 
+
+则 $\sigma^{-1}(\vec{s}_1+\vec{s}_2)=\sigma^{-1}(\sigma(\vec{v}_1)+\sigma(\vec{v}_2))=\sigma^{-1}(\sigma(\vec{v}_1+\vec{v}_2))=\vec{v}_1+\vec{v}_2=sigma^{-1}(\vec{s}_1)+sigma^{-1}(\vec{s}_2)$
+
+故同构
+
+*** 命题4（同构为等价关系）
+
+在数域 $K$ 上所有的线性空间，其同构关系构成[[~/OneDrive/离散数学/Disc_Math.org][关系-二元关系-等价关系]]
+
+**** 证明
+
+根据定义：
+
+（1） 根据[[MK1][线性空间]]定义可得 $V$ 与自身[[MK75][同构]]，其同构函数为 $\sigma(\vec{v})=\vec{v},\vec{v}\in V$
+
+（2） 根据[[MK81][命题2]]，同构有传递性，即 $\forall V\forall S\forall U\big((V\cong S\land S\cong U)\rightarrow(V\cong U)\big)$
+
+（3） 根据[[MK82][命题3]]，同构可逆，即 $\forall V\forall U\big(V\cong U\rightarrow U\congV\big)$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][关系-二元关系-等价关系]]定义，同构关系为等价关系。
+
+* 商空间
+
+** 定义
+
+*** 前提定义
+
+线性空间 $V$ 及其[[MK44][子空间]] $W$
+
+**** 等价关系
+
+对于 $\{\vec{v}_1,\vec{v}_2\}\subset V$ ，若 $\vec{v}_1-\vec{v}_2\in W$ 则该关系为等价关系，记作 $\vec{v}_1R\vec{v}_2$
+
+***** 证明
+
+（1） $\vec{v}-\vec{v}=\vec{0}$ 根据[[MK44][子空间]]定义， $\vec{0}\in W$ 故 $\forall \vec{v}\big(\vec{v}\in V\rightarrow\vec{v}R\vec{v}\big)$
+
+（2） $\vec{v}_1-\vec{v}_2\in W\rightarrow (-1)(\vec{v}_1-\vec{v}_2)\in W\rightarrow \vec{v}_2-\vec{v}_1\in W$ 故 $\forall\vec{v}_1\forall\vec{v}_2\big(\vec{v}_1R\vec{v}_2\rightarrow\vec{v}_2R\vec{v}_1\big)$
+
+（3） $\vec{v}_1-\vec{v}_2\in W\land\vec{v}_2-\vec{v}_3\in W$ 则 $\vec{v}_1-\vec{v}_3=\vec{v}_1-\vec{v}_2+\vec{v}_2-\vec{v}_3$ 根据加法封闭，可得 $\vec{v}_1-\vec{v}_3\in W$ 即 $\forall\vec{v}_1\forall\vec{v}_2\forall\vec{v}_3\big((\vec{v}_1R\vec{v}_2\land\vec{v}_2R\vec{v}_3)\rightarrow\vec{v}_1R\vec{v}_3\big)$
+
+即成立等价关系
+
+**** 定义等价类<<MK84>>
+
+对于任意 $\vec{v}\in V$ 存在[[~/OneDrive/离散数学/Disc_Math.org][关系-二元关系-等价关系-等价类]] 即 $\left\{\vec{\alpha}\big|\vec{\alpha} R\vec{v}\right\}=\left\{\vec{\alpha}\big|\vec{\alpha}-\vec{v}\in W\right\}$ 记作 $\vec{v}+W$
+
+**** 定义等价类零元
+
+定义 $\vec{0}+W=W$ 为等价类零元
+
+**** 定义等价类数乘
+
+定义 $k(\vec{v}+W)=k\vec{v}+W$ 为数量乘法
+
+**** 定义等价类加法
+
+定义
+
+*** 商空间<<MK85>>
+
+线性空间 $V$ 及其[[MK44][子空间]] $W$ ，对于任意 $\vec{v}\in V$ 其[[MK84][等价类]]为 $\vec{v}+W$ ，则定义
+
+（1） $\vec{0}+W=W$ 为等价类零元
+
+（2） $k(\vec{v}+W)=k\vec{v}+W=\{\vec{\alpha}|k\vec{v}-\alpha\in W\}$ 为数量乘法
+
+（3） $(\vec{v}_1+W)+(\vec{v}_2+W)=(\vec{v}_1+\vec{v}_2)+W=\{\vec{\alpha}|\vec{v}_1+\vec{v}_2-\alpha\in W\}$ 为加法，其中 $\{\vec{v}_1,\vec{v}_2\}\subset V$
+
+则等价类 $\vec{v}+W$ 为线性空间，称为 $V$ 关于 $W$ 的商空间，记作 $V/W$
+
+此时线性空间的元素为集合
+
+**** 证明
+
+***** 交换律
+
+对于任意 $\{\vec{v}_1,\vec{v}_2\}\subset V$ 由于 $V$ 是[[MK1][线性空间]]，则有 $\vec{v}_1+\vec{v}_2=\vec{v}_2+\vec{v}_1$ 故：
+
+\begin{aligned}
+&(\vec{v}_1+\vec{v}_2)+W\\
+=&\left\{\vec{\alpha}\big|\vec{v}_1+\vec{v}_2-\alpha\in W\right\}\\
+=&\left\{\vec{\alpha}\big|\vec{v}_2+\vec{v}_1-\alpha\in W\right\}\\
+=&(\vec{v}_2+\vec{v}_1)+W
+\end{aligned}
+
+***** 结合律
+
+对于任意 $\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}\subset V$ 由于 $V$ 是[[MK1][线性空间]]，则有 $(\vec{v}_1+\vec{v}_2)+\vec{v}_3=\vec{v}_1+(\vec{v}_2+\vec{v}_3)$ 故：
+
+\begin{aligned}
+&\big((\vec{v}_1+W)+(\vec{v}_2+W)\big)+(\vec{v}_3+W)\\
+=&\big((\vec{v}_1+\vec{v}_2)+W)\big)+(\vec{v}_3+W)\\
+=&\big((\vec{v}_1+\vec{v}_2)+\vec{v}_3\big)+W\\
+=&\left\{\vec{\alpha}\big|\big((\vec{v}_1+\vec{v}_2)+\vec{v}_3\big)-\alpha\in W\right\}\\
+=&\left\{\vec{\alpha}\big|\big(\vec{v}_1+(\vec{v}_2+\vec{v}_3)\big)-\alpha\in W\right\}\\
+=&\big(\vec{v}_1+(\vec{v}_2+\vec{v}_3)\big)+W\\
+=&(\vec{v}_1+W)+\big((\vec{v}_2+W)+(\vec{v}_3+W)\big)
+\end{aligned}
+
+***** 零元
+
+对于任意 $\vec{v}\in V$ 由于 $V$ 是[[MK1][线性空间]]，则有 $\vec{0}+\vec{v}=\vec{v}$
+
+根据定义 $\vec{0}+W=W$ 为零元，固有 $(\vec{v}+W)+W=(\vec{v}+W)+(\vec{0}+W)=(\vec{v}+\vec{0})+W=\vec{v}+W$
+
+***** 负元
+
+对于任意 $\vec{v}\in V$ 由于 $V$ 是[[MK1][线性空间]]，则存在负元 $-\vec{v}$ 使得 $-\vec{v}+\vec{v}=\vec{0}$
+
+故有 $(-\vec{v}+W)+(\vec{v}+W)=(-\vec{v}+\vec{0})+W=W$ 即加和为零元
+
+***** $1$ 乘
+
+对于任意 $\vec{v}\in V$ 由于 $V$ 是[[MK1][线性空间]]，则 $1\vec{v}=\vec{v}$
+
+根据数乘定义 $1(\vec{v}+W)=1\vec{v}+W=\vec{v}+W$
+
+***** 数乘结合律
+
+对于任意 $\vec{v}\in V$ 由于 $V$ 是[[MK1][线性空间]]，则 $(lk)\vec{v}=l(k\vec{v})$
+
+根据数乘定义 $(lk)(\vec{v}+W)=(lk)\vec{v}+W=l(k\vec{v})+W=l(k\vec{v}+W)=l(k(\vec{v}+W))$
+
+***** 数乘分配
+
+对于任意 $\vec{v}\in V$ 由于 $V$ 是[[MK1][线性空间]]，则 $(l+k)\vec{v}=l\vec{v}+k\vec{v}$
+
+根据数乘定，加法义 
+
+\begin{aligned}
+&(l+k)(\vec{v}+W)\\
+=&(l+k)\vec{v}+W\\
+=&(l\vec{v}+k\vec{v})+W\\
+=&l\vec{v}+W+k\vec{v}+W\\
+=&l(\vec{v}+W)+k(\vec{v}+W)
+\end{aligned}
+
+***** 数乘分配2
+
+对于任意 $\{\vec{v}_1,\vec{v}_2\}\subset V$ 由于 $V$ 是[[MK1][线性空间]]，则 $k(\vec{v}_1+\vec{v}_2)=k\vec{v}_1+k\vec{v}_2$
+
+根据数乘定，加法义 
+
+\begin{aligned}
+&k\big((\vec{v}_1+W)+(\vec{v}_2+W)\big)\\
+=&k\big((\vec{v}_1+\vec{v}_2)+W\big)\\
+=&\big(k(\vec{v}_1+\vec{v}_2)+W\big)\\
+=&\big((k\vec{v}_1+k\vec{v}_2)+W\big)\\
+=&(k\vec{v}_1+W)+(k\vec{v}_2+W)\\
+=&k(\vec{v}_1+W)+k(\vec{v}_2+W)\\
+\end{aligned}
+
+** 定理1
+
+线性空间 $V$ 存在商空间 $V/W$ 则有 $\dim(V/W)=\dim(V)-\dim(W)$
+
+*** 证明
+
+定义 $W$ 的基 $\{\vec{v}_1,...,\vec{v}_s\}$ 根据[[MK66][子空间基]]可知存在一组 $V$ 的基为 $\{\vec{v}_1,...,\vec{v}_s,\vec{v}_{s+1},...,\vec{v}_n\}$
+
+对于任意 $\vec{u}+W\in V/W$ 有 $\vec{u}\in V$ 故有 $\vec{u}=\sum_{i=1}^n k_i\vec{v}_i$ 则 $\vec{u}+W=\sum_{i=1}^n\big(k_i\vec{v}_i+W\big)=\sum_{i=1}^nk_i \big(\vec{v}_i+W\big)$
+
+集合 $\vec{v}_i+W=\{\vec{\alpha}|\vec{v}_i-\vec{\alpha}\in W\}$ 若 $v_i\in W$ 则根据加法封闭，当且仅当 $\vec{\alpha}\in W$ 时 $\vec{v}_i-\vec{\alpha}\in W$
+
+故 $\{\vec{\alpha}|\vec{v}_i-\vec{\alpha}\in W\}=\{\vec{\alpha}|\vec{\alpha}\in W\}=\{\vec{\alpha}|\vec{0}+\vec{\alpha}\in W\}=W$ 即零元
+
+故有 $\vec{u}+W=\sum_{i=1}^n\big(k_i\vec{v}_i+W\big)=\sum_{i=1}^s(\vec{0}+W)+\sum_{i=s+1}^nk_i \big(\vec{v}_i+W\big)=\sum_{i=s+1}^nk_i \big(\vec{v}_i+W\big)$ 即任意 $\vec{u}+W\in V/W$ 可由 $\vec{v}_{s+1}+W,...,\vec{v}_n+W$ [[MK12][线性表述]]
+
+根据[[MK8][线性相关]]定义，求 $\sum_{i=s+1}^nk_i \big(\vec{v}_i+W\big)=\vec{0}+W$ 根据[[MK85][定义]]的加法和数乘 $\sum_{i=s+1}^nk_i \big(\vec{v}_i+W\big)=\left(\sum_{i=s+1}^nk_i\vec{v}_i\right)+W$
+
+由于 $V$ 的基为 $\{\vec{v}_1,...,\vec{v}_s,\vec{v}_{s+1},...,\vec{v}_n\}$ ，故线性无关，则当且仅当 $k_i=0$ 时 $\sum_{i=s+1}^nk_i\vec{v}_i=\vec{0}$
+
+故当且仅当 $k_i=0$ 时 $\sum_{i=s+1}^nk_i \big(\vec{v}_i+W\big)=\vec{0}+W$ 
+
+综上所述：（1）任意 $\vec{u}\in V/W$ 均可由 $\vec{v}_{s+1}+W,...,\vec{v}_n+W$ [[MK12][线性表述]] （2）$\vec{v}_{s+1}+W,...,\vec{v}_n+W$ 线性无关
+
+故 $\vec{v}_{s+1}+W,...,\vec{v}_n+W$ 为 $V/W$ 的基
+
+故 $\dim(V/W)=\dim(V)-\dim(W)$
+
+** 定理2
+
+线性空间 $V$ 存在商空间 $V/W$ 其[[MK36][基]]为 $\{\vec{u}_1+W,...,\vec{u}_t+W\}$ 。定义 $U=<\vec{u}_1,...,\vec{u}_t>$ 则有：
+
+（1） $V=W\textcircled{+}U$ 即 $V$ 为 $U,W$ 的[[MK83][直和]]
+
+（2） $U$ 的[[MK36][基]]为 $\{\vec{u}_1,...,\vec{u}_n\}$
+
+*** 证明
+
+**** 证明直和
+
+对于任意 $\vec{v}\in V$ 对应有 $\vec{v}+W=\{\vec{\alpha}|\vec{v}-\vec{\alpha}\in W\}$ 由于 $V/W$ 其基为 $\{\vec{u}_1+W,...,\vec{u}_t+W\}$ 固有 $\vec{v}+W=\sum_{i=1}^tk_i(\vec{u}_i+W)=\left(\sum_{i=1}^tk_i\vec{u}_i\right)+W$ 
+
+由于 $U=<\vec{u}_1,...,\vec{u}_t>$ 故 $\vec{u}=\sum_{i=1}^tk_i\vec{u}_i\in U$ 则根据[[MK85][定义]]存在 $\vec{w}\in W$ 使得 $\vec{v}-\vec{u}=\vec{w}\in W$
+
+故有对于任意 $\vec{v}\in V$ 有 $\vec{v}=\vec{u}+\vec{a}$ 其中 $\vec{u}\in U\land \vec{w}\in W$
+
+则根据[[MK86][子空间和]] $V=W+U$
+
+定义 $\vec{x}=W\cap U$ ，则由于 $\vec{x}\in U$ 则 $\vec{x}=\sum_{i=1}^t k_i\vec{u}_i$ 且； $\vec{x}\in W$ 则 $\vec{x}\in \vec{0}+W$
+
+故有 $\vec{x}+W=\sum_{i=1}^t k_i\vec{u}_i+W=\sum_{i=1}^tk_i(\vec{u}_i+W)=\vec{0}+W$ 由于 $\{\vec{u}_1+W,...,\vec{u}_t+W\}$ 是商空间的基， $\vec{0}+W$ 是零元
+
+故当且仅当 $k_i=0$ 时成立，故 $\vec{x}=\sum_{i=1}^t 0\vec{u}_i=\vec{0}$ 。即 $W\cap U=\varnothing$
+
+综上所述：（1） $V=W+U$ ；（2） $W\cap U=\varnothing$ 即满足[[MK83][直和]]
+
+**** 证明基
+
+当 $\sum_{i=1}^t k_i\vec{u}_i=\vec{0}$ 则有 $\sum_{i=1}^t k_i\vec{u}_i+W=\vec{0}+W$
+
+根据 $\sum_{i=1}^t k_i\vec{u}_i+W=\sum_{i=1}^tk_i(\vec{u}_i+W)=\vec{0}+W$ 且 $\{\vec{u}_1+W,...,\vec{u}_t+W\}$ 是商空间的基， $\vec{0}+W$ 是零元
+
+故当且仅当 $k_i=0$ 时成立，故 $\{\vec{u}_1,...,\vec{u}_t\}$ 线性不相关。
+
+由于 $U=<\vec{u}_1,...,\vec{u}_t>$ 故 $\{\vec{u}_1,...,\vec{u}_t\}$ 是 $U$ 的基
+
+* 线性空间与矩阵
+
+** 列秩与行秩的定义<<MK55>>
+
+若矩阵 $A=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{m1}&a_{m2}&...&a_{mn}\end{matrix}\right]$ 
+
+定义列元素 $\vec{a}_i=(a_{1i},...,a_{mi}),1\leq i\leq n$ 则称 $<\vec{a}_1,...,\vec{a}_n>$ 为矩阵的[[MK46][列空间]]，且 $\dim_K(<\vec{a}_1,...,\vec{a}_m>)$ ，即列空间的[[MK51][维数]]为矩阵列[[MK19][秩]]
+
+定义行元素 $\vec{a}_i=(a_{i1},...,a_{in}),1\leq i\leq m$ 则称 $<\vec{a}_1,...,\vec{a}_m>$ 为矩阵的[[MK46][行空间]]，且 $\dim_K(<\vec{a}_1,...,\vec{a}_m>)$ ，及行空间的[[MK51][维数]]为矩阵行[[MK19][秩]]
+
+为方便，以下定义 $\dim_K(A_{col})$ 为矩阵列秩 $\dim_K(A_{row})$ 为矩阵行秩
+
+进一步根据[[MK50][子空间基]]可得其行秩为行元素组成向量组的[[MK15][极大线性无关组]]。
+
+** 阶梯矩阵的行秩与列秩<<MK52>>
+
+若[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][线性方程组-其他定义-阶梯矩阵]] $E$ 共有 $r$ 个主元，则有 $\dim_K(A_{col})=\dim_K(A_{row})=r$
+
+*** 证明
+
+根据阶梯矩阵定义，只有前 $r$ 行有非零元素，且每行主元前，主元下的元素均为零。
+
+**** 证明 $\dim_K(A_{col})=r$
+
+定义 $\vec{a}_i=(a_{1i},...,a_{mi}),1\leq i\leq n$ 及主元所在的列元素为 $\vec{a}_{i_j}=(a_{1{i_j}},...,a_{m{i_j}}),1\leq j\leq r$ 
+
+则有 $\vec{a}_{i_j}$ 中第 $j$ 个元素比不为零 $j$ 之后的元素必为零
+
+***** 有主元的列元素<<MK48>>
+
+定义向量组 $(\vec{a}_{i_1},...,\vec{a}_{i_r})$ 若线性相关，则根据[[MK45][性质]]有必有向量能被其他向量线性表述
+
+即 $\vec{a}_{i_u}=\sum_{l\ne u}k_l\vec{a}_{i_l}$ 则 $\forall v<u$ 均有 $\vec{a}_{i_v}$ 的第 $u$ 个元素为零 
+
+又由于 $\vec{a}_{i_u}$ 的第 $u$ 个元素必不为零，故 $k_l,l>u$ 必不全为零
+
+若 $u\ne r$ 由于 $\vec{a}_{i_u},u\ne r$ 的第 $r$ 位不为零，故当 $k_r\ne0$ 时第 $r$ 为必不为零，故必有 $k_r=0$
+
+由于 $k_r=0$ 同理可得 $k_{r-1}=0$ ，一次类推得 $k_l,l>u$ 全为零，与之前结论不符。
+
+若 $u=r$ ，则前 $r-1$ 个元素在第 $r$ 位上均为零，故当 $u=r$ 时任意其他向量的线性组合第 $r$ 为必为零，与 $\vec{a}_{i_r}$ 定义矛盾，故 $u\ne r$ 。
+
+故得出 $\vec{a}_{i_u}$ 无法由其他向量线性表述，即向量组 $(\vec{a}_{i_1},...,\vec{a}_{i_r})$ 线性不相关，故有 $\dim_K(<\vec{a}_{i_1},...,\vec{a}_{i_r}>)=r$
+
+***** 最大列元素
+
+定义 $\vec{e}_i$ 为第 $i$ 位是 $1$ 其他均为 $0$ 共有 $m$ 位的向量，则 $U=<\vec{e}_1,...,\vec{e}_r>$
+
+显然 $\forall\vec{b}\in<\vec{a}_1,...,\vec{a}_n>\Rightarrow \vec{b}\in U$ 且 $(\vec{e}_1,...,\vec{e}_r)$ 中任一向量无法用其他向量线性表述，根据[[MK45][性质]]线性不相关
+
+故 $\dim_K(U)=r$ 即 $U$ 的极大线性无关组包含向量个数为 $r$
+
+***** 结论
+
+由于 $(\vec{a}_{i_1},...,\vec{a}_{i_r})\subset(\vec{a}_1,...,\vec{a}_n)\subset U$ 故有 $<\vec{a}_{i_1},...,\vec{a}_{i_r}>\subset<\vec{a}_1,...,\vec{a}_n>\subset U$
+
+故根据[[MK47][命题5]]得 $r=\dim_K(<\vec{a}_{i_1},...,\vec{a}_{i_r}>)\leq\dim_K(<\vec{a}_1,...,\vec{a}_n>)\leq\dim_K(U)=r$
+
+故得 $\dim_K(<\vec{a}_1,...,\vec{a}_n>)=\dim(A_{col})=r$
+
+**** 证明 $\dim_K(A_{row})=r$
+
+根据定义，仅有前 $r$ 行的行元素含非零元素，定义 $\vec{a}_i=(a_{i1},...,a_{in}),1\leq i\leq m$ 则有 $\forall i>r\Rightarrow \vec{a}_i=\vec{0}$
+
+同理根据[[MK48][之前证明]]可得 $(\vec{a}_1,...,\vec{a}_r)$ 线性无关，故 $\dim_K(<\vec{a}_1,...,\vec{a}_m>)=r$
+
+** 初等行变换与行秩<<MK53>>
+
+矩阵初等行变换不改变矩阵的行秩
+
+*** 证明
+
+**** 第一型
+
+若矩阵 $A\xrightarrow{\textcircled{u}+k\textcircled{v}}B$ 即矩阵 $B$ 为矩阵 $A$ 的第 $u$ 行加上 $k$ 倍的第 $v$ 行 
+
+故定义矩阵 $A$ 的行元素为 $\vec{a}_i$ 则
+
+矩阵 $A$ 的行向量组为 $\vec{A}_{row}=(\vec{a}_1,...,\vec{a}_u,...,\vec{a}_v,...,\vec{a}_n)$
+
+矩阵 $B$ 的行向量组为 $\vec{B}_{row}=(\vec{a}_1,...,\vec{a}_u+k\vec{a}_v,...,\vec{a}_v,...,\vec{a}_n)$
+
+显然 $\vec{B}_{row}$ 可由 $\vec{A}_{row}$ [[MK12][线性表述]]，$\vec{A}_{row}$ 亦可由 $\vec{B}_{row}$ [[MK12][线性表述]]（其中 $\vec{a}_u=(\vec{a}_u+k\vec{a}_v)+(-k)\vec{a}_v$ ）
+
+故可知 $\vec{A}_{row}\cong\vec{B}_{row}$ 根据[[MK37][引理1]]可知 $rank(\vec{A}_{row})\leq rank(\vec{B}_{row})\ \&\ rank(\vec{B}_{row})\leq rank(\vec{A}_{row})$
+
+故有 $rank(\vec{A}_{row})=rank(\vec{B}_{row})$
+
+**** 第二型
+
+若矩阵 $A\xrightarrow{\textcircled{u}\Leftrightarrow\textcircled{v}}B$ 即矩阵 $B$ 为矩阵 $A$ 的第 $u,v$ 行互换，则有
+
+矩阵 $A$ 的行向量组为 $\vec{A}_{row}=(\vec{a}_1,...,\vec{a}_u,...,\vec{a}_v,...,\vec{a}_n)$
+
+矩阵 $B$ 的行向量组为 $\vec{B}_{row}=(\vec{a}_1,...,\vec{a}_v,...,\vec{a}_u,...,\vec{a}_n)$
+
+显然成立 $\vec{A}_{row}\cong\vec{B}_{row}$ 根据[[MK37][引理1]]可知 $rank(\vec{A}_{row})=rank(\vec{B}_{row})$
+
+**** 第三型
+
+若矩阵 $A\xrightarrow{k\textcircled{u}}B$ 即矩阵 $B$ 为矩阵 $A$ 的第 $u$ 行乘以 $k$ 
+
+矩阵 $A$ 的行向量组为 $\vec{A}_{row}=(\vec{a}_1,...,\vec{a}_u,...,\vec{a}_n)$
+
+矩阵 $B$ 的行向量组为 $\vec{B}_{row}=(\vec{a}_1,...,k\vec{a}_u,...,\vec{a}_n)$
+
+显然成立 $\vec{A}_{row}\cong\vec{B}_{row}$ 根据[[MK37][引理1]]可知 $rank(\vec{A}_{row})=rank(\vec{B}_{row})$
+
+** 初等行变换与列秩<<MK54>>
+
+矩阵初等行变换不改变矩阵的列秩
+
+*** 证明
+
+**** 证明初等行变换不改变线性相关性<<MK49>>
+
+定义 $A$ 经过初等行变换得 $B$ ，定义 $\vec{a}_i,\vec{b}_i$ 分别为 $A,B$ 的列向量（元素）
+
+定义一组解 $\sum_{i=1}^nx_i\vec{a}_i=\vec{0}$ 同理定义 $\sum_{i=1}^nx'_i\vec{b}_i=\vec{0}$ 
+
+由于初等行变换为线性方程组的解法，故不改变线性方程组的解，即 $x_i=x'_i$
+
+根据[[MK8][定义]]当 $x_i$ 只有零解时 $(\vec{a}_1,...,\vec{a}_n)$ 线性无关，且由于 $x_i=x'_i$ 可得 $(\vec{b}_1,...,\vec{b}_n)$ 线性无关
+
+反之亦然，可得 $(\vec{a}_1,...,\vec{a}_n),(\vec{b}_1,...,\vec{b}_n)$ 线性相关
+
+**** 证明列秩不变
+
+定义矩阵 $B$ 中的列向量 $(\vec{b}_{j_1},\vec{b}_{j_2},...,\vec{b}_{j_r})$ 为 $B$ 中列向量的[[MK15][极大线性无关组]]
+
+由于行变换不改变列向量的位置，故有对应的 $(\vec{a}_{j_1},\vec{a}_{j_2},...,\vec{a}_{j_r})$
+
+定义由该组向量组成的 $A_1=\left[\vec{a}_{j_1},\vec{a}_{j_2},...,\vec{a}_{j_r}\right]$ 以及 $B_1=\left[\vec{b}_{j_1},\vec{b}_{j_2},...,\vec{b}_{j_r}\right]$ 为这些向量组成的子矩阵
+
+由于向量位置不变，故 $B_1$ 可由 $A_1$ 做完全相同的初等行变换获得。
+
+根据[[MK49][之前证明]] $(\vec{b}_{j_1},\vec{b}_{j_2},...,\vec{b}_{j_r})$ 线性无关，则 $(\vec{a}_{j_1},\vec{a}_{j_2},...,\vec{a}_{j_r})$ 线性无关
+
+任取 $\vec{b}_j$ ，将 $\vec{b}_{j_1},\vec{b}_{j_2},...,\vec{b}_{j_r},\vec{b}_j$ 按照矩阵 $B$ 中的顺序排列，假设 $\vec{b}_{j_1},\vec{b}_{j_2},...,\vec{b}_{j_r},\vec{b}_j$ 组成矩阵$B_2=\left[\vec{b}_{j_1},\vec{b}_{j_2},...,\vec{b}_{j_r},\vec{b}_j\right]$
+
+同样有对应的 $\vec{a}_{j_1},\vec{a}_{j_2},...,\vec{a}_{j_r},\vec{a}_j$ 组成矩阵 $A_2=\left[\vec{a}_{j_1},\vec{a}_{j_2},...,\vec{a}_{j_r},\vec{a}_j\right]$
+
+同理 $B_2$ 可由 $A_2$ 做完全相同的初等行变换获得，且 $B_2$ 线性相关，故 $A_2$ 线性相关。
+
+由于 $\vec{b}_j,\vec{a}_j$ 可任意取，故根据[[MK15][定义]]可知 $(\vec{a}_{j_1},\vec{a}_{j_2},...,\vec{a}_{j_r})$ 为 $A$ 中列向量的极大线性无关组
+
+故根据[[MK19][秩的定义]] $rank(\vec{a}_1,...,\vec{a}_n)=rank(\vec{b}_1,...,\vec{b}_n)=r$
+
+且根据[[MK50][子空间的基]]以及[[MK51][维数定义]]可得 $\dim_K(<\vec{a}_1,...,\vec{a}_n>)=\dim_K(<\vec{b}_1,...,\vec{b}_n>)=r$ ，证毕
+
+** 一般矩阵行秩与列秩<<MK56>>
+
+任意矩阵的行秩等于列秩
+
+*** 证明
+
+由于任意矩阵可经过初等行变换化为阶梯矩阵，且根据[[MK52][阶梯矩阵的行列秩]]可得阶梯矩阵的行秩与列秩相等
+
+且根据[[MK53][初等变换与行秩]]及[[MK54][初等变换与列秩]]可得，初等变换不改变行列秩。
+
+故经初等变换后的阶梯矩阵与原矩阵行列秩相等，故任意矩阵行秩等于列秩
+
+进一步等于阶梯型矩阵非零行数目，且主元所在的列为列向量组的极大线性无关组
+
+*** 定义<<MK87>>
+
+矩阵的行秩与列秩统一称为矩阵的 *秩* 记作 $rank(A)$
+
+*** 推论1<<MK58>>
+
+由于行列向量组最大线性无关组的个数确定，且均等于阶梯矩阵非零行个数
+
+故初等行变换所得阶梯型矩阵非零行个数确定。
+
+*** 推论2
+
+$rank(A)=rank(A')$
+
+*** 推论3
+
+若矩阵 $A$ 经过初等列变换得 $B$ ，可得 $A,B$ 列秩相等，故有 $rank(A)=rank(B)$
+
+即矩阵初等列变换不改变矩阵的秩
+
+** 行列式与线性相关性<<MK57>>
+
+若矩阵 $A$ 为 $n\times n$ 阶矩阵，且 $|A|\ne 0$ 的充要条件是 $A$ 的行列向量线性无关
+
+*** 证明
+
+**** 充分
+
+矩阵 $A$ 可由初等行变换变为阶梯矩阵 $E$ 且根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-上三角矩阵行列式]]当且仅当矩阵 $E$ 为上三角矩阵式时 $|E|\ne0$
+
+根据[[MK48][之前证明]]若 $E$ 是上三角矩阵，则列秩为 $n$ 根据[[MK53][初等变换与行秩]]及[[MK54][初等变换与列秩]]可知 $A$ 的秩为 $n$
+
+又根据[[MK55][列秩与行秩的定义]]可得 $A$ 的列向量，行向量的极大线性无关组个数大于等于 $n$ 且 $A$ 行列向量的个数为 $n$
+
+故 $A$ 的行列向量线性无关
+
+**** 必要
+
+若 $rank(A)=n$ 则根据[[MK58][推论]]可得初等变换到阶梯矩阵后非零行个数为 $n$ ，故阶梯矩阵必为上三角矩阵
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-上三角矩阵行列式]]可得行列式不为零
+
+** 延伸组线性无关<<MK61>>
+
+若 $(\vec{a}_1,...,\vec{a}_n)$ 线性无关，其中 $\vec{a}_i=(a_{i1},...,a_{is})$ 
+
+若定义 $\vec{b}_i=(b_{i1},...,b_{iv})$ 且满足 $\forall a_{ik}\in\vec{a}_i\Rightarrow a_{ik}\in\vec{b}_i$ 为 $\vec{a}_i$ 的延伸向量
+
+对于不同的 $\vec{b}_i$ 中 $\vec{a}_i$ 的元素的位置与其他延伸向量一致。
+
+则有 $(\vec{b}_1,...,\vec{b}_n)$ 亦线性无关，即延伸组线性无关
+
+*** 证明
+
+根据条件每个延伸向量中 $a_{ik}$ 的位置与其他延伸向量一致
+
+故若要 $\sum_{i=1}^nk_i\vec{b}_i=\vec{0}$ ，必须使得对应位置上的 $a_{ik}$ 为零。
+
+由于 $\vec{0}=(0,0,...,0)$ 为矩阵线性空间的零元定义，故每个位置上的元素必为零。
+
+由于 $(\vec{a}_1,...,\vec{a}_n)$ 线性无关，根据[[MK8][定义]]可知当且仅当 $k_1=...=k_n=0$ 时 $\sum_{i=1}^nk_i\vec{a}_i=\vec{0}$
+
+故当且仅当 $k_1=...=k_n=0$ 时 $\sum_{i=1}^nk_i\vec{b}_i=\vec{0}$ 即线性不相关 
+
+** 矩阵的秩与行列式<<MK59>>
+
+矩阵 $A$ 非零（至少有一个元素不为零），其秩等于不为零的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-其他定义-子式]]的最高阶数
+
+*** 证明
+
+定义 $rank(A)=r$ 将 $A$ 经过初等行变换化为阶梯矩阵 $E$
+
+根据[[MK53][初等行变换与行秩]]以及[[MK56][一般矩阵行秩与列秩]]可得：
+
+（1） $E$ 有前 $r$ 个非零行，位于行 $R=(1,2,...,r)$
+
+（2） $E$ 有 $r$ 个主元，位于列 $C=(l_1,l_2,...,l_r)$
+
+**** 证明矩阵 $E$ 的 $R,C$ 的子式不为零
+
+由于有 $r$ 行及 $r$ 个主元，则 $M\left(\begin{matrix}1&2&...&r\\j_1&j_2&...&j_r\end{matrix}\right)$ 对角线必不为零
+
+故根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-上三角矩阵行列式]]子式的值为对角线乘积，故亦不为零。
+
+**** 证明 $E$ 的任意高阶行列式均为零
+
+由于 $E$ 有且仅有前 $r$ 行不为零，故对于任意 $r+1$ 阶子式，必有一行全部为零
+
+定义 $E'$ 为任取的 $E$ 的子矩阵，则 $|E'|$ 为子式，且 $r+1$ 行全部为零
+
+故根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-行乘系数]] $E'$ 的 $r+1$ 行乘以 $0$ 后的行列式为 $0|E'|=0$
+
+又由于 $E'$ 的 $r+1$ 行乘以 $0$ 仍为 $E'$ 故有 $|E'|=0|E'|=0$
+
+其他 $r+u$ 阶子式同理
+
+**** 证明一般矩阵
+
+由于 $E$ 为 $A$ 经过初等行变换获得，故 $A$ 的子矩阵亦可经过同样的初等行变换成为位置对应的 $E$ 的子矩阵
+
+根据[[MK53][初等变换与行秩]]及[[MK54][初等变换与列秩]]可得对于任意 $A$ 的子矩阵，经过初等行变换后成为 $E$ 的子矩阵，其秩不变。
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质]]子矩阵的行列式仅会改变正负，不会改变零与非零
+
+故 $E$ 的 $R,C$ 子式对应的子矩阵亦可由 $A$ 对应位置的子矩阵变换所得。即对应的 $A$ 的子矩阵行列式不为零。
+
+$E$ 的任意更高阶子矩阵亦可由 $A$ 对应位置的子矩阵变换所得。即对应的 $A$ 的子矩阵行列式为零。
+
+证毕
+
+*** 推论1
+
+定义 $rank(A)=r$ 的不为零的 $r$ 阶子式所在的行、列为 $A$ 行、列向量组的[[MK15][极大线性无关组]]
+ 
+**** 证明
+
+由于 $r$ 阶子式不为零，故根据[[MK57][行列式与线性相关]]可得子矩阵的行列向量均线性不相关。
+
+故其[[MK61][延伸组]]亦线性不相关，故得 $r$ 个行、列线性不相关向量组
+
+又因为 $rank(A)=r$ 则极大线性无关组的个数为 $r$ 
+
+综上所述，子式所在的 $r$ 行（列）为矩阵的极大线性无关行（列）向量
+
+*** 推论2
+
+对于方阵 $A_n=[a_{ij}]_{n\times n}$ 取任意一行 $k$ 则有 $|A|=\sum_{i=1}^n a_{ki}A_{ki}$ 和 $0=\sum_{i=1}^n a_{ki}A_{li},l\ne k$
+
+同理取任意一列 $k$ 则有 $|A|=\sum_{i=1}^n a_{ik}A_{ik}$ 和 $0=\sum_{i=1}^n a_{ik}A_{il},l\ne k$
+
+其中 $A_{ij}$ 为 $A_n$ 对于元素 $a_{ij}$ 的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-其他定义-代数余子式]]
+
+**** 证明
+
+仅证明取行 $k$ ，列转置后同理
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-拉普拉斯定理]]可得 $|A|=\sum_{\forall1\leq j\leq n}(-1)^{k+j}a_{kj}\overline{M}\left(\begin{matrix}k\\j\end{matrix}\right)=\sum_{\forall1\leq j\leq n}a_{kj}A_{kj}$
+ 
+可得 $|A|=\sum_{i=1}^n a_{ki}A_{ki}$ 
+
+同理当 $s=\sum_{i=1}^n a_{ki}A_{li},l\ne k$ 时，相当于用 $l$ 行替代 $k$ 行的数据形成新矩阵 $A_n'$
+
+则同理 $|A'_n|=\sum_{i=1}^n a_{ki}A_{li}$ 由于行 $k$ 与 $l$ 得数据一样，故矩阵 $A_n'$ 必定[[MK8][线性相关]]
+
+故根据[[MK57][行列式与线性相关]]可得 $|A_n'|=0$ 
+
+** 线性方程组解
+
+线性方程组有界的充要条件是系数矩阵与[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][线性方程组-其他定义-增广矩阵]]秩相等
+
+*** 证明
+
+**** $\exists x_1,...x_n\Rightarrow x_1\vec{a}_1+...+x_n\vec{a}_n=\vec{b}$ 与 $\vec{b}\in<\vec{a}_1,...,\vec{a}_n>$ 
+
+定义系数矩阵 $A$ 列向量为 $\vec{a}_i$ 常数列为 $\vec{b}$ 故有方程组有解可表述为 $\exists x_1,...x_n\Rightarrow x_1\vec{a}_1+...+x_n\vec{a}_n=\vec{b}$
+
+根据[[MK46][向量组子空间]]定义可得若 $\vec{b}\in<\vec{a}_1,...,\vec{a}_n>$ 则有解，反之亦然。
+
+故 $\vec{b}\in<\vec{a}_1,...,\vec{a}_n>$ 为线性方程组有界的充要条件，即 $\vec{b}$ 可由 $\vec{a}_1,...,\vec{a}_n$ 线性表述
+
+**** $\vec{b}\in<\vec{a}_1,...,\vec{a}_n>$ 与 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{a}_1,...,\vec{a}_n,\vec{b}\right\}$ 
+
+由于上述条件 $\vec{a}_1,...,\vec{a}_n,\vec{b}$ 可由 $\vec{a}_1,...,\vec{a}_n$ 线性表述，若 $\vec{a}_1,...,\vec{a}_n,\vec{b}$ 可由 $\vec{a}_1,...,\vec{a}_n$ 线性表述，则 $\vec{b}$ 可由 $\vec{a}_1,...,\vec{a}_n$ 
+
+显然 $\vec{a}_1,...,\vec{a}_n$ 可由 $\vec{a}_1,...,\vec{a}_n,\vec{b}$ 线性表述
+
+故 $\vec{b}\in<\vec{a}_1,...,\vec{a}_n>$ 的充要条件是 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{a}_1,...,\vec{a}_n,\vec{b}\right\}$ 
+
+**** $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{a}_1,...,\vec{a}_n,\vec{b}\right\}$ 与 $<\vec{a}_1,...,\vec{a}_n>=<\vec{a}_1,...,\vec{a}_n,\vec{b}>$
+
+根据[[MK50][子空间相等]]可得上述条件的充要条件是 $<\vec{a}_1,...,\vec{a}_n>=<\vec{a}_1,...,\vec{a}_n,\vec{b}>$
+
+**** $<\vec{a}_1,...,\vec{a}_n>=<\vec{a}_1,...,\vec{a}_n,\vec{b}>$ 与 $\dim(<\vec{a}_1,...,\vec{a}_n>)=\dim(<\vec{a}_1,...,\vec{a}_n,\vec{b}>)$ 
+
+若 $<\vec{a}_1,...,\vec{a}_n>=<\vec{a}_1,...,\vec{a}_n,\vec{b}>$ 
+
+则有 $\dim(<\vec{a}_1,...,\vec{a}_n>)=\dim(<\vec{a}_1,...,\vec{a}_n,\vec{b}>)$
+
+若 $\dim(<\vec{a}_1,...,\vec{a}_n>)=\dim(<\vec{a}_1,...,\vec{a}_n,\vec{b}>)$ 
+
+由于增加 $\vec{b}$ 后维数不增加，即[[MK15][极大线性无关组]]的个数不变，定义 $U\subset(\vec{a}_1,...,\vec{a}_n)$ 是极大线性无关组。
+
+若 $\vec{b}$ 与 $U$ 线性无关，则必有 $\dim(<\vec{a}_1,...,\vec{a}_n>)\ne\dim(<\vec{a}_1,...,\vec{a}_n,\vec{b}>)$ 与命题矛盾 
+
+故必有 $U\cup\{\vec{b}\}$ 线性相关，根据[[MK16][性质6]]可得 $\vec{b}$ 可被 $U$ 中的向量线性表述
+
+故有 $\vec{b}$ 可被 $\vec{a}_1,...,\vec{a}_n$ 线性表述，故同理 $\left\{\vec{a}_1,...,\vec{a}_n\right\}\cong\left\{\vec{a}_1,...,\vec{a}_n,\vec{b}\right\}\Rightarrow<\vec{a}_1,...,\vec{a}_n>=<\vec{a}_1,...,\vec{a}_n,\vec{b}>$ 
+
+故 $\dim(<\vec{a}_1,...,\vec{a}_n>)=\dim(<\vec{a}_1,...,\vec{a}_n,\vec{b}>)$ 是 $<\vec{a}_1,...,\vec{a}_n>=<\vec{a}_1,...,\vec{a}_n,\vec{b}>$ 的充要条件
+
+*** 推论1
+
+在有解的情况下，系数矩阵的秩等于未知量，则有唯一解；若系数矩阵秩小于未知量，则有无穷解。
+
+**** 证明
+
+***** 唯一解
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-行列式与解的关系]]可得线性方程组唯一解的充要条件为行列式不为零
+
+根据[[MK59][秩与行列式]]可得若行列式不为零，则秩等于系数矩阵行列式的阶
+
+又由于行列式的阶等于未知数个数，故线性方程组有唯一解则系数矩阵的秩等于未知数个数。
+
+***** 无穷解
+
+由于方程组有界，则系数矩阵与增广矩阵秩相同。根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-行列式与解的关系]]可得此时行列式为零
+
+根据[[MK59][秩与行列式]]可得若行列式为零，则秩小于行系数矩阵列式的阶
+
+又由于行列式的阶等于未知数个数，故线性方程组有无穷解则系数矩阵的秩小于未知数个数。
+
+** 齐次线性方程组
+
+*** 解的情况<<MK62>>
+
+$n$ 元齐次线性方程组，有非零解的充要条件是系数矩阵的秩小于未知数的个数。
+
+**** 证明
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-行列式与解的关系-推论]]可得方程组有非零解的充要条件是行列式为零。
+
+根据[[MK59][秩与行列式]]可得若行列式为零，则秩小于行系数矩阵列式的阶
+
+又由于行列式的阶等于未知数个数，故线性方程组有无穷解则系数矩阵的秩小于未知数个数。
+
+*** 齐次线性方程组的解集
+
+定义 $A$ 为齐次线性方程组的系数矩阵，且未知数个数为 $n$ ，其解集为 $W$
+
+则 $W$ 为 $K^n$ 的线性子空间，称为其次线性方程组解空间
+
+**** 证明
+
+定义 $\vec{a}_i$ 为 $A$ 的列向量，故有 $\sum_{i=1}^nx_i\vec{a}_i=\vec{0}$
+
+由于齐次线性方程组，故 $(0,...,0)$ 为其中一解，故 $W\ne\varnothing$
+
+若 $\alpha_1=(x_1,...,x_n),\alpha_2=(y_1,...,y_n)$ 为齐次线性方程组的两组解，则根据[[MK1][线性空间定义]] $\sum_{i=1}^n(x_i+y_i)\vec{a}_i=\sum_{i=1}^nx_i\vec{a}_i+\sum_{i=1}^ny_i\vec{a}_i=\vec{0}+\vec{0}=\vec{0}$
+
+故有 $\alpha_1+\alpha_2\in W$
+
+同理亦有 $\alpha\in W,k\in K$ 则 $\sum_{i=1}^nkx_i\vec{a}_i=k\sum_{i=1}^nx_i\vec{a}_i=\vec{0}$
+
+综上所述 $W\ne\varnothing$ 且加法封闭，乘法封闭，故根据[[MK60][子空间充要条件]]可得 $W$ 为 $K^n$ 的线性子空间
+
+*** 齐次线性方程组解空间维数
+
+定义 $A$ 为齐次线性方程组的系数矩阵，且未知数个数为 $n$ ，其解空间为 $W$
+
+若 $rank(A)=r$ 则 $\dim(W)=n-r$ 且子空间 $W$ 的一个基亦称为其基础解系
+
+**** 证明
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][线性方程组-齐次线性方程组-推论1]]仅可能有无穷解和零解两种情况
+
+***** 无穷解
+
+线性方程组增广矩阵可化为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][线性方程组-其他定义-简化行阶梯型矩阵]]
+
+简化阶梯矩阵的主元与阶梯矩阵相同，根据[[MK52][阶梯矩阵的行秩与列秩]]可得主元个数 $r$
+
+根据[[MK62][解的情况]]可得 $r<n$
+
+故根据简化阶梯矩阵可得 $r$ 组等式，此处设主元分布在前 $r$ 列
+
+则根据简化阶梯矩阵可得方程组 $x_i=\sum_{j=1}^{n-r} b_{ij}x_{r+j}, i=1,2,...,r$
+
+定义向量 $\vec{e}_1=\left(\begin{matrix}1\\0\\\vdots\\0\end{matrix}\right),...,\vec{e}_{n-r}=\left(\begin{matrix}0\\0\\\vdots\\1\end{matrix}\right)$ 显然 $\vec{e}_1,...,\vec{e}_{n-r}$ 线性不相关
+
+根据[[MK61][延伸组]]可知 $\vec{\eta}_1=\left(\begin{matrix}b_{11}\\\vdots\\b_{r1}\\1\\0\\\vdots\\0\end{matrix}\right),...,\vec{\eta}_{n-r}=\left(\begin{matrix}b_{1(n-1)}\\\vdots\\b_{r(n-r)}\\0\\0\\\vdots\\1\end{matrix}\right)$ 亦线性无关。
+
+由于 $\forall\vec{a}\in W$ 比满足 $x_i=\sum_{j=r+1}^n b_{ij}x_j, i=1,2,...,r$ 故可表示为 $\vec{a}=\left(\begin{matrix}\sum_{j=1}^{n-r} b_{1j}x_{r+j}\\\vdots\\\sum_{j=1}^{n-r} b_{rj}x_{r+j}\\x_{r+1}\\\vdots\\x_{n}\end{matrix}\right)=x_{r+1}\left(\begin{matrix}b_{1j}\\\vdots\\b_{rj}\\1\\0\\\vdots\\0\end{matrix}\right)+...+x_n\left(\begin{matrix}b_{1j}\\\vdots\\b_{rj}\\0\\0\\\vdots\\1\end{matrix}\right)=\sum_{j=1}^{n-r}x_{r+j}\vec{\eta}_j$
+
+故任意 $W$ 中的元素都可由 $\vec{\eta}_1,...,\vec{\eta}_{n-r}$ 线性表述，且其本身属于 $W$ 并线性无关，故根据[[MK36][基的定义]]可得 $\vec{\eta}_1,...,\vec{\eta}_{n-r}$ 为 $W$ 的一组基
+
+进一步根据[[MK51][维数定义]]可得其维数为 $n-r$
+
+***** 零解
+
+零解则 $W=\{\vec{0}\}$ 根据[[MK51][维数定义]]可得其维数为 $0$
+
+进一步根据[[MK62][解的情况]]可得 $rank(A)=n$ 故 $\dim(W)=n-rank(A)=n-n=0$ 亦满足
+
+** 非齐次线性方程组
+
+定义 $\sum_{i=1}^n x_i\vec{a}_i=\vec{\beta}$ 为非齐次线性方程组，其解集合为 $U$
+
+定义 $\sum_{i=1}^n x_i\vec{a}_i=0$ 为对应的齐次线性方程组，其解空间为 $W$
+
+*** 定理1<<MK63>>
+
+定义 $\alpha_1=(x_1,...,x_n)\in U,\alpha_2=(y_1,...,y_n)\in U$ 则有 $\alpha_1-\alpha_2\in W$
+
+**** 证明 
+
+根据[[MK1][线性空间定义]] $\sum_{i=1}^n(x_i-y_i)\vec{a}_i=\sum_{i=1}^nx_i\vec{a}_i-\sum_{i=1}^ny_i\vec{a}_i=\vec{\beta}+\vec{\beta}=\vec{0}$
+
+*** 定理2
+
+若有 $\alpha_0=(x_1,...,x_n)\in U$ 则定义 $\alpha_0+W=\left\{\alpha_0+\gamma\big|\forall\gamma\in W\right\}$ 则有 $U=\alpha_0+W$
+
+其中 $\alpha_0+W$ 亦称为 $W$ 的线性流形，或陪集
+
+**** 证明
+
+$\forall\gamma=(z_1,...,z_n)\in W\Rightarrow\alpha_0+\gamma=(x_1+z_1,...,x_n+z_n)$ 
+
+则有 $\sum_{i=1}^n(x_i+z_i)\vec{a}_i=\sum_{i=1}^nx_i\vec{a}_i+\sum_{i=1}^nz_i\vec{a}_i=\vec{\beta}+\vec{0}=\vec{\beta}$ 故 $\alpha_0+\gamma\in U\Rightarrow\alpha_0+W\subset U$
+
+$\forall\alpha\in U$ 由于 $\alpha_0\in U$ 则根据[[MK63][定理1]]有 $\gamma=\alpha-\alpha_0\in W$ 故有 $\alpha=\alpha_0+\gamma\in \alpha_0+W$ 即 $U\subset \alpha_0+W$
+
+故得 $U=\alpha_0+W$
+

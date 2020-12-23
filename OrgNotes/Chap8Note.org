@@ -1,0 +1,555 @@
+#+LATEX_CLASS: ctexart
+#+OPTIONS: ^:nil
+#+TITLE: 反常积分
+
+Current Mark: 1
+
+* 积分中值定理
+
+** 第一积分中值定理：
+
+*** 定理描述:
+
+**** 给定条件：
+
+$f(x)$ 在闭区间 $[a,b]$ 上连续；
+
+$g(x)$ 在 $(a,b)$ 上不变号，且在 $[a,b]$ 上可导
+
+**** 结论：
+
+\begin{aligned}
+\int_a^b f(x)g(x)dx=f(\xi) \int_a^b g(x) dx,\ \ \xi \in [a,b]
+\end{aligned}
+
+*** 证明：仅证明 $g(x)>0$ 情况
+
+根据[[e:/OneDrive/大学物理/Note/DiffEq.org][闭区间连续函数-有界性定理]]可得 $m\leq f(x)\leq M$
+
+若 $m=f(x)=M$ 则 $f(x)$ 为常函数 $f(x)=C\Rightarrow \int_a^b f(x)g(x)dx=C\int_a^b g(x)dx=f(\xi)\int_a^bg(x)dx,\xi\in[a,b]$
+
+\begin{aligned}
+\because &g(x)>0\\
+\therefore &mg(x)< f(x)g(x)< Mg(x)\\
+\therefore &m\int_a^b g(x) dx< \int_a^b f(x)g(x) dx< M\int_a^b g(x) dx\\
+&m< \frac{\int_a^b f(x)g(x) dx}{\int_a^b g(x) dx} < M
+\end{aligned}
+
+由于 $&m< \frac{\int_a^b f(x)g(x) dx}{\int_a^b g(x) dx} < M$ 且 $m\leq f(x)\leq M$ 及 $f(x)$ 闭区间连续
+
+根据[[e:/OneDrive/大学物理/Note/DiffEq.org][闭区间连续函数-介值定理]]，必存在 $\eta\in(a,b)\Rightarrow f(\eta)=\frac{\int_a^b f(x)g(x) dx}{\int_a^b g(x) dx}\Rightarrow f(\eta)\int_a^b g(x) dx=\int_a^b f(x)g(x) dx$
+
+** <<MK1>>第二积分中值定理：
+
+*** 定理描述：
+
+**** 给定条件：
+
+$f(x)$ 在 $[a,b]$ 上可积，$g(x)$ 在 $[a,b]$ 上单调（必可积）
+
+**** 结论:
+
+$\int_a^b f(x)g(x) dx=g(a)\int_a^{\xi} f(x) dx + g(b)\int_{\xi}^b f(x) dx$
+
+*** 证明
+
+**** Abel引理：
+
+\begin{aligned}
+\sum_{n=n_1}^{n_2} a_n(b_n-b_{n-1})&=a_{n_1}(b_{n_1}-b_{n_1-1})+a_{n_1+1}(b_{n_1+1}-b_{n_1+1-1})+...+a_{n_2}(b_{n_2}-b_{n_2-1})\\
+&=-a_{n_1}b_{n_1-1}+b_{n_1}(a_{n_1}-a_{n_1+1})+...+b_{n_2-1}(a_{n_2-1}-a_{n_2})+a_{n_2}b_{n_2}\\
+&=-a_{n_1}b_{n_1-1}+b_{n_1}(a_{n_1}-a_{n_1+1})+...+b_{n_2-1}(a_{n_2-1}-a_{n_2})+b_{n_2}(a_{n_2}-a_{n_2+1})+b_{n_2}a_{n_2+1}\\
+&=\sum_{n_1}^{n_2} b_n(a_n-a_{n+1})-a_{n_1}b_{n_1-1}+b_{n_2}a_{n_2+1}
+\end{aligned}
+
+**** 证明 $\lim_{\lambda \to 0} \sum_{i=1}^n g(\xi_i)\int_{x_{i-1}}^{x_i} f(x) dx = \int_a^b f(x)g(x) dx$
+
+***** 定义符号：
+
+\begin{aligned}
+&P = \left\{x_i|x_i>x_{i-1}\ \&\ x_0=a\ \&\ x_n=b\right\}\\
+&\Delta x_i = x_i-x_{i-1}\\
+&M=sup\{f(x)|x \in [a,b]\}\\
+&M_i=sup\{f(x)|x \in [x_{i-1},x_i]\}\\
+&m=inf\{f(x)|x \in [a,b]\}\\
+&m_i=inf\{f(x)|x \in [x_{i-1},x_i]\}\\
+&N=max\left\{\left|sup\{g(x)\ x \in (a,b)\}\right|,\left|inf\{g(x)\ x \in (a,b)\}\right|\right\}\\
+&\lambda=max\{\Delta x_i\}\\
+&F(x)=\int_a^x f(t) dt\\
+&A =inf\{F(x)|x \in (a,b)\}\\
+&B= sup\{F(x)|x \in (a,b)\}\\
+\end{aligned}
+
+***** 证明:
+
+\begin{aligned}
+& \left|\sum_{i=1}^n g(\xi_i)\int_{x_{i-1}}^{x_i} f(x) dx - \sum_{i=1}^n g(\xi_i) f(\xi_i) \Delta x_i\right|\\
+& = \left|\sum_{i=1}^n g(\xi_i) \left[\int_{x_{i-1}}^{x_i} f(x) dx - f(\xi_i) \Delta x_i\right]\right|\\
+& \leq \sum_{i=1}^n |g(\xi_i)| \left|\int_{x_{i-1}}^{x_i} f(x) dx - f(\xi_i) \Delta x_i\right|\\
+& \\
+& \because m_i\Delta x_i\leq \int_{x_{i-1}}^{x_i} f(x) dx \leq M_i\Delta x_i\\
+& \Rightarrow (m_i-M_i)\Delta x_i \leq m_i\Delta x_i - f(\xi_i) \Delta x_i \leq \int_{x_{i-1}}^{x_i} f(x) dx - f(\xi_i) \Delta x_i \leq M_i\Delta x_i - f(\xi_i) \Delta x_i \leq (M_i-m_i)\Delta x_i\\
+& \therefore \left| \int_{x_{i-1}}^{x_i} f(x) dx - f(\xi_i) \Delta x_i \right| \leq (M_i-m_i)\Delta x_i\\
+& \therefore \left|\sum_{i=1}^n g(\xi_i)\int_{x_{i-1}}^{x_i} f(x) dx - \sum_{i=1}^n g(\xi_i) f(\xi_i) \Delta x_i\right| \leq \sum_{i=1}^n |g(\xi_i)| (M_i-m_i)\Delta x_i
+\end{aligned}
+
+根据定积分可积充要条件 $\lim_{\lambda \to 0} \sum_{i=1}^n (M_i-m_i) \Delta x_i=0$ ,且两个函数的乘积可积，因此:
+
+\begin{aligned}
+& \forall \frac{\epsilon}{N} > 0\ \ \exists \Lambda,\ \forall \lambda<\Lambda:\ \\
+& \sum_{i=1}^n (M_i-m_i) \Delta x_i<\frac{\epsilon}{N},\ \ \forall P,\xi_i \\
+& \therefore \left|\sum_{i=1}^n g(\xi_i)\int_{x_{i-1}}^{x_i} f(x) dx - \sum_{i=1}^n g(\xi_i) f(\xi_i) \Delta x_i\right| \leq 
+\sum_{i=1}^n |g(\xi_i)| (M_i-m_i)\Delta x_i \leq N\sum_{i=1}^n (M_i-m_i)\Delta x_i < \epsilon\\
+& \therefore \lim_{\lambda \to 0} \left\{\sum_{i=1}^n g(\xi_i)\int_{x_{i-1}}^{x_i} f(x) dx - \sum_{i=1}^n g(\xi_i) f(\xi_i) \Delta x_i\right\}=0\\
+& \therefore \lim_{\lambda \to 0} \left\{\sum_{i=1}^n g(\xi_i)\int_{x_{i-1}}^{x_i} f(x) dx\right\} - \int_a^b g(x) f(x) dx=0
+\end{aligned}
+
+**** 证明定理：
+
+\begin{aligned}
+\int_a^b g(x) f(x) dx &= \lim_{\lambda \to 0} \left\{\sum_{i=1}^n g(\xi_i)\int_{x_{i-1}}^{x_i} f(x) dx\right\}\\
+&=\lim_{\lambda \to 0} \left\{\sum_{i=1}^n g(\xi_i)[F(x_i)-F(x_{i-1})]\right\}\\
+&=\lim_{\lambda \to 0} \left\{-g(\xi_1)F(x_0)+\sum_{i=1}^{n-1} F(x_i)[g(\xi_i)-g(\xi_{i+1})] + F(x_n)g(\xi_n)\right\}\\
+&=\lim_{\lambda \to 0} \left\{\sum_{i=1}^{n-1} F(x_i)[g(\xi_i)-g(\xi_{i+1})]\right\} + F(b)g(b^-)-F(a)g(a^+)\\
+\end{aligned}
+
+因为 $g(x)$ 单调，假设$g(x) \geq g(y),\ \ \forall x,y \in (a,b)\ \&\ y>x$ 则 $[g(\xi_i)-g(\xi_{i-1})]\geq 0$ 故有以下推导：
+
+\begin{aligned}
+& A \sum_{i=1}^{n-1}[g(\xi_i)-g(\xi_{i+1})] \leq \sum_{i=1}^{n-1} F(x_i)[g(\xi_i)-g(\xi_{i+1})] \leq B \sum_{i=1}^{n-1}[g(\xi_i)-g(\xi_{i+1})]\\
+& \Rightarrow \sum_{i=1}^{n-1} F(x_i)[g(\xi_i)-g(\xi_{i+1})] = \eta \sum_{i=1}^{n-1}[g(\xi_i)-g(\xi_{i+1})],\ \ \ \eta \in \left[A,B\right]
+\end{aligned}
+
+
+再根据 $F(x)$ 的连续性：
+
+\begin{aligned}
+\sum_{i=1}^{n-1} F(x_i)[g(\xi_i)-g(\xi_{i+1})] &= F(\xi) \sum_{i=1}^{n-1}[g(\xi_i)-g(\xi_{i+1})],\ \ \xi \in (a,b)\\
+&=F(\xi) [g(\xi_1)-g(\xi_n)]
+\end{aligned}
+
+故：
+
+\begin{aligned}
+\int_a^b g(x) f(x) dx &= \lim_{\lambda \to 0} \left\{F(\xi) [g(\xi_1)-g(\xi_n)]}\right\} + F(b)g(b)-F(a)g(a)\\
+&=F(\xi)\lim_{\lambda \to 0} \left\{[g(\xi_1)-g(\xi_n)]}\right\} + F(b)g(b^-)-F(a)g(a^+)\\
+&=F(\xi)[g(a^+)-g(b^-)]+ F(b)g(b^-)\\
+&=g(a^+)\int_a^{\xi}f(x)dx + g(b^-)\int_{\xi}^b f(x)dx
+\end{aligned}
+
+* 反常积分定义：
+
+** 边界无穷积分：
+
+$f(x)$ 在 $[a,+\infty]$ 上有定义，且 $\forall [a,A]$ 可积：
+
+\begin{aligned}
+&F(A)=\int_a^A f(x) dx\\
+&\int_a^{+\infty} f(x) dx = \lim_{A \to +\infty} F(A)
+\end{aligned}
+
+** 函数无界积分：
+
+$f(b)=\infty$ ，且 $A \in [a,b)$ ，$f(x)$ 对于 $\forall A$ 可积：
+
+\begin{aligned}
+&F(A)=\int_a^A f(x) dx\\
+&\int_a^{b} f(x) dx = \lim_{A \to b^-} F(A)
+\end{aligned}
+
+* 区间无限反常积分收敛判别：
+
+** 定义
+
+若 $f(x)$ 在 $[a,+\infty)$ 上可积，反常积分为 $\int_a^{+\infty} f(x)dx=\lim_{A\to\infty}\int_a^A f(x)dx$
+
+** 柯西收敛原理：
+
+*** 描述
+
+反常积分 $\int_a^{\infty}f(x) dx$ 可积的充要条件为 $\forall \epsilon>0,&\exist \delta\geq a,\forall A',A''>\delta,\Rightarrow \left|\int_{A'}^{A''}f(x)dx\right|<\epsilon$
+
+*** 证明
+
+**** 充分
+
+$\int_a^\infty f(x) dx$ 收敛，则有 $\lim_{A\to\infty}\int_a^A f(x) dx=I$ 即 $\forall\epsilon>0,\exists \delta>a,\forall A>\delta\Rightarrow \left|\int_a^A f(x) dx-I\right|<\frac{\epsilon}{2}$
+
+则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]，取 $A',A''>\delta$
+
+\begin{aligned}
+\left|\int_{A'}^{A''}f(x)dx\right|&=\left|\int_a^{A'}f(x)dx-\int_a^{A''}f(x)dx\right|\\
+&=\left|\int_a^{A'}f(x)dx-I-\int_a^{A''}f(x)dx+I\right|\\
+&\leq \left|\int_a^{A'}f(x)dx-I\right|+ \left|\int_a^{A''}f(x)dx-I\right|\\
+&<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon
+\end{aligned}
+
+**** 必要
+
+***** 证明有界 $\Rightarrow$ 有收敛子列收敛于 $K$
+
+取 $\epsilon=1$ 则有 $\exists \delta,\forall A',A''>\delta\Rightarrow \left|\int_{A'}^{A''}f(x)dx\right|<1$ 
+
+取 $\delta+1<A$ 则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]有 $\int_a^A f(x) dx=\int_a^{\delta+1} f(x) dx+\int_{\delta+1}^A f(x) dx$
+
+因为 $\delta+1,A>\delta\Rightarrow \left|\int_{\delta+1}^A f(x) dx\right|<1$
+
+故 $\int_a^A f(x) dx$ 当 $A>\delta+1$ 时有界，且 $\int_a^{\delta+1} f(x) dx-1<\int_a^A f(x) dx<\int_a^{\delta+1} f(x) dx+1$
+
+设 $\{x_n|x_n<b\}$ 为趋向于 $\infty$ 的数列，即 $\lim_{n\to\infty}x_n=\infty$ 即 $\forall G>0,\exists N,\forall n>N\Rightarrow x_n>G$ 取 $G=\delta+1$ 则有 $\forall n>N'\Rightarrow x_n>\delta+1$
+
+则对应有函数序列 $\left\{\int_a^{x_n} f(x) dx\big|n>N'\right\}$ 故映射数列 $\int_a^{x_n} f(x) dx$ 有界 
+
+根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][实数系基本定理-Bolzano-Weierstrass定理]]必有收敛子列 $\int_a^{x_i} f(x) dx,x_i\in\{x_n|n>N'\}$ 且因为 $x_i\in\{x_n|n>N'\}\Rightarrow \lim_{i\to\infty}x_i=\infty$
+
+***** 证明反常积分收敛于 $K$
+
+根据条件 $\forall\epsilon>0,\exists\delta',A',A''>\delta \Rightarrow \left|\int_{A'}^{A''}f(x)dx\right|<\frac{\epsilon}{2}$
+
+因为 $\lim_{i\to\infty}x_i=\infty$ 取 $G=\delta'$ 则有 $\exists I_1,\forall i>I_1\Rightarrow x_i>\delta'$ 
+
+假设 $\lim_{i\to\infty}\int_a^{x_i} f(x) dx=K$ 则有 $\forall\epsilon>0,\exists I_2,\forall i>I_2\Rightarrow \left|\int_a^{x_i}f(x)dx-K\right|<\frac{\epsilon}{2}$
+
+取 $I=max(I_1+1,I_2+1)$ 则有 $x_I>\delta',\left|\int_a^{x_I}f(x)dx-K\right|<\frac{\epsilon}{2}$ 
+
+根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]] $\int_a^A f(x)dx+\int_A^{x_I} f(x)dx=\int_a^{x_I} f(x)dx\Rightarrow \int_a^A f(x)dx=\int_a^{x_I} f(x)dx-\int_A^{x_I} f(x)dx$ 有 
+
+\begin{aligned}
+&\forall\epsilon>0,\exists \delta''=\max(\detla,\delta')>a,\forall A>\delta''\\
+\Rightarrow &\left|\int_a^A f(x)dx-K\right|=\left|\int_a^{x_I} f(x)dx-\int_A^{x_I} f(x)dx-K\right|\\
+&\leq \left|\int_a^{x_I} f(x)dx-K\right|+\left|\int_A^{x_I} f(x)dx\right|\\
+&<\frac{\epsilon}{2}+\left|\int_A^{x_I} f(x)dx\right|\\
+\because &A>\delta',x_I>\delta'\\
+\therefore &\left|\int_A^{x_I} f(x)dx\right|<\frac{\epsilon}{2}\\
+\therefore &\left|\int_a^A f(x)dx-K\right|<\epsilon\\
+\end{aligned}
+
+** 反常积分绝对收敛:
+
+若反常积分满足以下条件，则绝对收敛:
+
+\begin{aligned}
+&\forall \epsilon>0\\
+&\exist A\geq a\\
+&\forall A',A''>A\\ 
+&\Rightarrow 
+\int_{A'}^{A''}|f(x)|dx<\epsilon
+\end{aligned}
+
+由于:
+
+\begin{aligned}
+& \left|\int_{A'}^{A''}f(x)dx\right|<\int_{A'}^{A''}|f(x)|
+dx<\epsilon
+\end{aligned}
+
+故，绝对收敛，原函数也收敛。
+
+** 非负反常积分判别法
+
+*** 比较判别法：
+
+**** 证明：
+
+***** 定义
+
+\begin{aligned}
+&f(x),\phi(x)\geq 0 \\
+&\forall x \in [A^*,\infty],\ \ \ f(x) \leq \phi(x)\\
+&\Rightarrow \forall A',A'' \in [A^*,\infty]\\
+&\int_{A'}^{A''} f(x) dx \leq \int_{A'}^{A''} k\phi(x) dx
+\end{aligned}
+
+***** 当 $\phi(x)$ 收敛时， $f(x)$ 收敛：
+
+\begin{aligned}
+&\forall \epsilon>0\\
+&\exists A\\
+&\forall A',A''>\max(A,A^*,a)\\ 
+&\Rightarrow \int_{A'}^{A''} f(x) dx \leq \int_{A'}^{A''} k\phi(x)dx<k\epsilon
+\end{aligned}
+
+***** 当 $f(x)$ 发散时，$\phi(x)$ 发散：
+
+\begin{aligned}
+&\exists \epsilon>0\\
+&\forall A\geq a\\
+&\exists A',A''>A\\ 
+&\Rightarrow \epsilon<\int_{A'}^{A''} f(x) dx \leq \int_{A'}^{A''} k\phi(x)dx
+\end{aligned}
+
+**** 极限形式:
+
+***** 给定条件:
+
+\begin{aligned}
+&\lim_{x \to \infty} \frac{f(x)}{\phi(x)}=l \\
+&\Rightarrow \\
+&\forall 0<\epsilon_0<l,\ \ \ \exists N,\ \ \ \forall x>N\\
+&\left| \frac{f(x)}{\phi(x)}-l \right| < \epsilon_0 \\
+& (l-\epsilon_0) \phi(x) < f(x) < (l+\epsilon_0) \phi(x) \\
+\end{aligned} 
+
+***** 若 $l<\infty$ ，则 $\phi(x)$ 收敛 $\f(x)$ 收敛；$f(x)$ 发散，$\phi(x)$ 发散:
+
+\begin{aligned}
+&\forall A',A''>N \\
+&0 < \int_{A'}^{A''} f(x) dx < \int_{A'}^{A''} (l+\epsilon_0) \phi(x) dx
+\end{aligned}
+
+***** 若 $l>0$ ，则 $f(x)$ 收敛 $\phi(x)$ 收敛；$\phi(x)$ 发散，$f(x)$ 发散:
+
+\begin{aligned}
+&\forall A',A''>N \\
+&0 < \int_{A'}^{A''}  \phi(x) dx < \int_{A'}^{A''} \frac{1}{(l-\epsilon_0)} 
+f(x) dx
+\end{aligned}
+
+***** 若 $0<l<\infty$ 则，$f(x),\phi(x)$ 同时敛散
+
+** 一般函数（不定号）反常积分判别法：
+
+*** A-D判别法：
+
+**** Abel：
+
+***** 描述：
+
+若 $\int_a^\infty f(x) dx$ 收敛， $g(x)$ 在 $[a,\infty]$ 上有界且单调，则 $\int_a^\infty f(x)g(x)dx$ 收敛
+
+***** 证明：
+
+\begin{aligned}
+&g(x)<G,\ \ \forall x \in [a,\infty]\\
+&\forall \epsilon >0,\ \ \exists A_0,\ \ \forall A',A''>A_0\\
+&\Rightarrow \left| \int_{A'}^{A''}f(x)dx \right|<\frac{\epsilon}{2G}\\
+&\therefore\left| \int_{A'}^{A''}f(x)g(x)dx \right|=\left| g(A')\int_{A'}^{\xi}f(x)dx+g(A'')\int_{\xi}^{A''}f(x)dx \right| \\
+&\because \xi>A_0\\
+&\therefore \left| \int_{A'}^{\xi}f(x)dx \right|<\frac{\epsilon}{2G}\ \ \&\ \ \left| \int_{\xi}^{A''}f(x)dx \right|<\frac{\epsilon}{2G}\\
+&\therefore \left| \int_{A'}^{A''}f(x)g(x)dx \right| \leq |g(A')|\left| \int_{A'}^{\xi}f(x)dx \right| + |g(A'')|\left| \int_{\xi}^{A''}f(x)dx \right|<\epsilon\\
+\end{aligned}
+
+**** Dirichlet:
+
+***** 描述:
+
+若 $\forall A>a\Rightarrow F(A)=\int_a^A f(x) dx$ 有界，$g(x)$ 单调且 $\lim_{x \to \infty} g(x)=0$ 则 $\int_a^\infty f(x)g(x)dx$ 收敛
+
+***** 证明：
+
+\begin{aligned}
+&F(A)<G,\ \ \forall A \in [a,\infty]\\
+&\therefore \left| \int_{A'}^{A''}f(x)dx \right|=|F(A'')-F(A')| \leq |F(A'')| + |F(A')|<2G,\ \ \forall A',A''\in [a,\infty]\\
+&\forall \epsilon >0,\ \ \exists A_0,\ \ \forall x>A_0\\
+&\Rightarrow \left| g(x) \right|<\frac{\epsilon}{4G}\\
+&\therefore\left| \int_{A'}^{A''}f(x)g(x)dx \right|=\left| g(A')\int_{A'}^{\xi}f(x)dx+g(A'')\int_{\xi}^{A''}f(x)dx \right| \\
+&\therefore \left| \int_{A'}^{A''}f(x)g(x)dx \right| \leq |g(A')|\left| \int_{A'}^{\xi}f(x)dx \right| + |g(A'')|\left| \int_{\xi}^{A''}f(x)dx \right|<\epsilon\\
+\end{aligned}
+
+* 无界函数反常积分收敛判别：
+
+** 定义：
+
+若 $f(x)$ 在 $[a,b)$ 上可积，反常积分为 $\int_a^b f(x)dx=\lim_{\eta\to0}\int_a^{b-\eta} f(x)dx$ ，则 $b$ 为奇点
+
+** 柯西收敛定理：
+
+*** 描述
+
+反常积分 $\int_a^b f(x) dx$ 收敛的充分必要条件是 $\forall \epsilon>0, \exists \delta,\forall \eta_2,\eta_1\in(0,\delta)\Rightarrow \left|\int_{b-\eta_1}^{b-\eta_2}f(x)dx\right|<\epsilon$
+
+*** 证明
+
+**** 证明充分
+
+$\int_a^b f(x) dx$ 收敛，则有 $\lim_{A\to b^-}\int_a^A f(x) dx=I$ 即 $\forall\epsilon>0,\exists \delta>0,\forall A \in [b-\delta,b)\Rightarrow \left|\int_a^A f(x) dx-I\right|<\frac{\epsilon}{2}$
+
+则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]，取 $\eta_1,\eta2\in (0,\delta)$
+
+\begin{aligned}
+\left|\int_{b-\eta_1}^{b-\eta_2}f(x)dx\right|&=\left|\int_a^{b-\eta_2}f(x)dx-\int_a^{b-\eta_1}f(x)dx\right|\\
+&=\left|\int_a^{b-\eta_2}f(x)dx-I-\int_a^{b-\eta_1}f(x)dx+I\right|\\
+&\leq \left|\int_a^{b-\eta_2}f(x)dx-I\right|+ \left|\int_a^{b-\eta_1}f(x)dx-I\right|\\
+&<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon
+\end{aligned}
+
+**** 证明必要
+
+***** 证明有界 $\Rightarrow$ 有收敛子列收敛于 $K$
+
+取 $\epsilon=1$ 则有 $\exists \delta,\forall \eta_2,\eta_1\in(0,\delta)\Rightarrow \left|\int_{b-\eta_1}^{b-\eta_2}f(x)dx\right|<1$ 
+
+取 $b-\frac{\delta}{2}<A<b$ 则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]有 $\int_a^A f(x) dx=\int_a^{b-\frac{\delta}{2}} f(x) dx+\int_{b-\frac{\delta}{2}}^A f(x) dx$
+
+因为 $b-A,\frac{\delta}{2}\in(0,\delta)\Rightarrow \left|\int_{b-\frac{\delta}{2}}^A f(x) dx\right|<1$
+
+故 $\int_a^A f(x) dx$ 当 $0<b-A<\frac{\delta}{2}$ 时有界，且 $\int_a^{b-\frac{\delta}{2}} f(x) dx-1<\int_a^A f(x) dx<\int_a^{b-\frac{\delta}{2}} f(x) dx+1$
+
+设 $\{x_n|x_n<b\}$ 为趋向于 $b^-$ 的数列，即 $\lim_{n\to\infty}x_n=b^-$ 即 $\forall \epsilon>0,\exists N,\forall n>N\Rightarrow b-x_n<\epsilon$ 取 $\epsilon=\frac{\delta}{2}$ 则有 $\forall n>N'\Rightarrow b-x_n<\frac{\delta}{2}$
+
+则对应有函数序列 $\left\{\int_a^{x_n} f(x) dx\big|n>N'\right\}$ 故映射数列 $\int_a^{x_n} f(x) dx$ 有界 
+
+根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][实数系基本定理-Bolzano-Weierstrass定理]]必有收敛子列 $\int_a^{x_i} f(x) dx,x_i\in\{x_n|n>N'\}$ 且因为 $x_i\in\{x_n|n>N'\}\Rightarrow \lim_{i\to\infty}x_i=b^-$
+
+***** 证明反常积分收敛于 $K$
+
+根据条件 $\forall\epsilon>0,\exists\delta',\forall0<\eta_2<\eta_1<\delta \Rightarrow \left|\int_{b-\eta_1}^{b-\eta_2}f(x)dx\right|<\frac{\epsilon}{2}$
+
+因为 $\lim_{i\to\infty}x_i=b$ 取 $\epsilon=\delta'$ 则有 $\exists I_1,\forall i>I_1\Rightarrow b-x_i<\delta'\Rightarrow x_i\in(b-\delta',b)$ 
+
+假设 $\lim_{i\to\infty}\int_a^{x_i} f(x) dx=K$ 则有 $\forall\epsilon>0,\exists I_2,\forall i>I_2\Rightarrow \left|\int_a^{x_i}f(x)dx-K\right|<\frac{\epsilon}{2}$
+
+取 $I=max(I_1+1,I_2+1)$ 则有 $x_I\in(b-\delta',b),\left|\int_a^{x_I}f(x)dx-K\right|<\frac{\epsilon}{2}$ 
+
+根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]] $\int_a^A f(x)dx+\int_A^{x_I} f(x)dx=\int_a^{x_I} f(x)dx\Rightarrow \int_a^A f(x)dx=\int_a^{x_I} f(x)dx-\int_A^{x_I} f(x)dx$ 有 
+
+\begin{aligned}
+&\forall\epsilon>0,\exists \delta''=\max(\delta',\delta)>0,\forall A\in(b-\delta'',b)\\
+\Rightarrow &\left|\int_a^A f(x)dx-K\right|=\left|\int_a^{x_I} f(x)dx-\int_A^{x_I} f(x)dx-K\right|\\
+&\leq \left|\int_a^{x_I} f(x)dx-K\right|+\left|\int_A^{x_I} f(x)dx\right|\\
+&<\frac{\epsilon}{2}+\left|\int_A^{x_I} f(x)dx\right|\\
+\because &A\in(b-\delta,b),x_I\in(b-\delta,b)\\
+\therefore &\left|\int_A^{x_I} f(x)dx\right|<\frac{\epsilon}{2}\\
+\therefore &\left|\int_a^A f(x)dx-K\right|<\epsilon\\
+\end{aligned}
+
+** 反常积分绝对收敛:
+
+若反常积分满足以下条件，则绝对收敛:
+
+\begin{aligned}
+&\forall \epsilon>0\\
+&\exist \delta>0\\
+&\forall A',A''\in(b-\delta,b)\\ 
+&\Rightarrow 
+\int_{A'}^{A''}|f(x)|dx<\epsilon
+\end{aligned}
+
+由于:
+
+\begin{aligned}
+& \left|\int_{A'}^{A''}f(x)dx\right|\leq \int_{A'}^{A''}|f(x)|
+dx<\epsilon
+\end{aligned}
+
+故，绝对收敛，原函数也收敛。
+
+** 非负反常积分判别
+
+*** 比较判别法：
+
+**** 证明
+
+***** 定义
+
+\begin{aligned}
+&f(x),\phi(x)\geq 0 \\
+&\forall x \in [a,b),\ \ \ f(x) \leq \phi(x)\\
+&\Rightarrow \forall A',A'' \in [A^*,\infty]\\
+&\int_{A'}^{A''} f(x) dx \leq \int_{A'}^{A''} k\phi(x) dx
+\end{aligned}
+
+***** 当 $\phi(x)$ 收敛时， $f(x)$ 收敛：
+
+\begin{aligned}
+&\forall \epsilon>0\\
+&\exists \delta\\
+&\forall A',A''\in(b-\delta,b)\\ 
+&\Rightarrow \int_{A'}^{A''} f(x) dx \leq \int_{A'}^{A''} k\phi(x)dx<k\epsilon
+\end{aligned}
+
+***** 当 $f(x)$ 发散时， $\phi(x)$ 发散：
+
+\begin{aligned}
+&\exists \epsilon>0\\
+&\forall \delta>0\\
+&\exists A',A''\in(b-\delta,b)\\ 
+&\Rightarrow \epsilon<\int_{A'}^{A''} f(x) dx \leq \int_{A'}^{A''} k\phi(x)dx
+\end{aligned}
+
+**** 极限形式:
+
+***** 给定条件:
+
+\begin{aligned}
+&\lim_{x \to b^-} \frac{f(x)}{\phi(x)}=l \\
+&\Rightarrow \\
+&\forall 0<\epsilon_0<l,\ \ \ \exists \delta,\ \ \ \forall x\in(b-\delta,b)\\
+&\left| \frac{f(x)}{\phi(x)}-l \right| < \epsilon_0 \\
+& (l-\epsilon_0) \phi(x) < f(x) < (l+\epsilon_0) \phi(x) \\
+\end{aligned} 
+
+***** 若 $l<\infty$ ，则 $\phi(x)$ 收敛 $\f(x)$ 收敛；$f(x)$ 发散，$\phi(x)$ 发散:
+
+\begin{aligned}
+&\forall A',A''>N \\
+&0 < \int_{A'}^{A''} f(x) dx < \int_{A'}^{A''} (l+\epsilon_0) \phi(x) dx
+\end{aligned}
+
+***** 若 $l>0$ ，则 $f(x)$ 收敛 $\phi(x)$ 收敛；$\phi(x)$ 发散，$f(x)$ 发散:
+
+\begin{aligned}
+&\forall A',A''>N \\
+&0 < \int_{A'}^{A''}  \phi(x) dx < \int_{A'}^{A''} \frac{1}{(l-\epsilon_0)} 
+f(x) dx
+\end{aligned}
+
+***** 若 $0<l<\infty$ 则，$f(x),\phi(x)$ 同时敛散
+
+** 一般函数（不定号）反常积分判别法：
+
+*** A-D判别法：
+
+**** Abel：
+
+***** 描述：
+
+若 $\int_a^b f(x) dx$ 收敛， $g(x)$ 在 $[a,b)$ 上有界且单调，则 $\int_a^b f(x)g(x)dx$ 收敛
+
+***** 证明：
+
+\begin{aligned}
+&g(x)<G,\ \ \forall x \in [a,b)\\
+&\forall \epsilon >0,\ \ \exists \delta,\ \ \forall A',A''\in(b-\delta,b)\\
+&\Rightarrow \left| \int_{A'}^{A''}f(x)dx \right|<\frac{\epsilon}{2G}\\
+\end{aligned}
+
+根据[[MK1][第二积分中值定理]]
+
+\begin{aligned}
+&\therefore\left| \int_{A'}^{A''}f(x)g(x)dx \right|=\left| g(A')\int_{A'}^{\xi}f(x)dx+g(A'')\int_{\xi}^{A''}f(x)dx \right| \\
+&\because \xi\in(b-\delta,b)\\
+&\therefore \left| \int_{A'}^{\xi}f(x)dx \right|<\frac{\epsilon}{2G}\ \ \&\ \ \left| \int_{\xi}^{A''}f(x)dx \right|<\frac{\epsilon}{2G}\\
+&\therefore \left| \int_{A'}^{A''}f(x)g(x)dx \right| \leq |g(A')|\left| \int_{A'}^{\xi}f(x)dx \right| + |g(A'')|\left| \int_{\xi}^{A''}f(x)dx \right|<\epsilon\\
+\end{aligned}
+
+**** Dirichlet:
+
+***** 描述:
+
+若 $F(A)=\int_a^A f(x) dx$ 有界，$g(x)$ 单调且 $\lim_{x \to b^-} g(x)=0$ 则 $\int_a^{b^-} f(x)g(x)dx$ 收敛
+
+***** 证明：
+
+\begin{aligned}
+&F(A)<G,\ \ \forall A \in [a,b)\\
+&\therefore \left| \int_{A'}^{A''}f(x)dx \right|=|F(A'')-F(A')| \leq |F(A'')| + |F(A')|<2G,\ \ \forall A',A''\in [a,b)\\
+&\forall \epsilon >0,\ \ \exists \delta_0,\ \ \forall x\in(b-\delta,b)\\
+&\Rightarrow \left| g(x) \right|<\frac{\epsilon}{4G}\\
+\end{aligned}
+
+根据[[MK1][第二积分中值定理]]
+
+\begin{aligned}
+&\therefore\left| \int_{A'}^{A''}f(x)g(x)dx \right|=\left| g(A')\int_{A'}^{\xi}f(x)dx+g(A'')\int_{\xi}^{A''}f(x)dx \right| \\
+&\therefore \left| \int_{A'}^{A''}f(x)g(x)dx \right| \leq |g(A')|\left| \int_{A'}^{\xi}f(x)dx \right| + |g(A'')|\left| \int_{\xi}^{A''}f(x)dx \right|<\epsilon\\
+\end{aligned}
+
+* 一致连续为满足以下条件的函数 $f(x)$ ：
+
+\begin{aligned}
+&\forall \epsilon>0,\ \ \exists \delta>0\\
+&\forall x_1,x_2 \in [a,b], |x_1-x_2|<\delta\\
+&\Rightarrow |f(x_1)-f(x_2)|<\epsilon
+\end{aligned}
+

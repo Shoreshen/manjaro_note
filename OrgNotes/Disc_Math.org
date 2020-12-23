@@ -1,0 +1,4942 @@
+#+LATEX_CLASS: ctexart
+
+#+TITLE: 离散数学概论
+
+currnet mark: 275
+
+* 集合论
+
+** 集合定义
+
+*** 集合朴素定义<<MK73>>
+
+做为整体识别的、确定的、互相区别的一些对象的总体。
+
+其中：
+
+（1） 整体识别：不再分割
+
+（2） 确定：属于或者不属于整体
+
+（3） 互相区别：各异的对象
+
+用花括号表示，例如 $A=\{1,2,3\}$
+
+*** 成员/元素<<MK74>>
+
+组成集合的对象，可以是任意具体或抽象的事物。也可以是[[MK73][集合]]。
+
+若 $a$ 是集合 $A$ 的成员，记作 $a\in A$ ，定义其否命题 $\lnot(a\in A)=a\not\in A$
+
+*** 基数<<MK77>>
+
+**** 有限集
+
+[[MK104][有限集]]的基数定义为集合中所含元素的个数。
+
+若有限集合 $A$ 中含有 $n$ 个元素，则 $A$ 的基数为 $n$ ，记作 $|A|=n$
+
+**** 无限集
+
+是比较的概念，定义为以下三种情况：
+
+（1） $A\sim B$ 即两个集合[[MK213][对等]]，则称 $A,B$ 有相同的基数，记作 $|A|=|B|$
+
+（2） $A\sim C\land C\subset B\land C\not\sim A$ 即 $A$ 的基数小于 $B$ 的基数，记作 $|A|>|B|$
+
+（3） $C\sim B\land C\subset A\land C\not\sim B$ 即 $B$ 的基数小于 $A$ 的基数，记作 $|A|<|B|$
+
+其中 $|A|\geq|B|,|A|\leq|B|$ 亦可表示大于或等于，小于或等于
+
+**** 伯恩斯坦定理<<MK265>>
+
+若集合 $A,B$ 满足外 $\overline{\overline{A}}\geq\overline{\overline{B}}\land\overline{\overline{A}}\leq\overline{\overline{B}}$ 则有 $\overline{\overline{A}}=\overline{\overline{B}}$
+
+***** 证明
+
+根据定义，存在 $C\subset A$ 使得 $B\sim C$ 即有双射 $\sigma_1:B\to C$
+
+根据定义，存在 $D\subset B$ 使得 $A\sim D$ 即有双射 $\sigma_2:A\to D$
+
+则对于任意 $b\in B$ 均有 $\sigma_1(b)\in C\subset A$ 且 $\sigma_2(\sigma_1(b))\in D$
+
+根据[[MK218][传递性]]可得复合函数亦为双射，即 $B\sim D$
+
+根据[[MK5][定理]]得对等是等价关系，根据传递性，对称性有 $A\sim D\land D\sim B$ 可得 $A\sim B$ 即 $\overline{\overline{A}}=\overline{\overline{B}}$
+
+*** ZFC公理化集合论
+
+满足[[MK73][朴素定义]]定义，且所有对象均为集合（即[[MK74][元素]]亦为集合），又满足以下公理，则ZFC公理化集合论：
+
+**** 外延公理<<MK80>>
+
+形式语言： $\forall A\forall B\big((A=B)\leftrightarrow\forall x(x\in A\leftrightarrow x\in B)\big)$
+
+即当且仅当 $A,B$ 中具有相同的[[MK74][元素]]，集合 $A,B$ 相等
+
+该公理说明了：
+
+（1） 集合元素的 *无序性*
+
+（2） 集合表示的 *不唯一性*
+
+**** 空集存在<<MK208>>
+
+形式语言： $\exists A\big(\forall x(x\not\in A)\big)$
+
+即存在一个集合 $A$ 他不包含任何[[MK74][元素]]（空集）
+
+**** 无序对公理<<MK82>>
+
+形式语言： $\forall B\forall C\exists A\big((x\in A)\leftrightarrow(x=B\lor x=C)\big)$
+
+即给定集合 $B,C$ ，存在集合 $A=\{B,C\}$
+
+**** 并集公理<<MK209>>
+
+形式语言： $\forall A\exists B\left((B=\cup A)\land \left(B=\left\{a\big|\exists b(a\in b\land b\in A)\right\}\right)\right)$
+
+即对于任意集合 $A$ 存在 $A$ [[MK74][元素]]的[[MK74][元素]]的集合 $B$
+
+**** 幂集公理
+
+形式语言： $\forall A\exists B\forall z\big(z\in B\leftrightarrow z\subset A\big)$
+
+即对于任意结合 $A$ 其[[MK95][幂集]] $B$ 也是集合
+
+**** 无穷公理
+
+形式语言： $\exists A\big(\varnothing\in A\land (x\in A\rightarrow x\cup\{x\}\in A)\big)$
+
+即存在一个集合 $A$ 包含[[MK208][空集]]，且任意元素 $x$ 若 $x\in A$ 则其后继 $x\cup\{x\}=\{x,\{x\}\}$ 也属于 $A$
+
+**** 分离公理模式<<MK81>>
+
+形式语言： $\forall U\exists S\forall x\big((x\in S)\leftrightarrow((x\in U)\land P(x))\big)$
+
+即对于任一集合 $U$ 以及[[MK76][谓词公式]] $P$ ,存在 $S$ 使得 $x\in S$ 的充要条件是 $x\in U\land P(x)$ 。
+
+该公理说明了集合成员的确定性。该公理满足了描述法定义的集合。
+
+可由替换公理以及空集公理证明
+
+**** 替换公理模式
+
+形式语言： $\forall X\exists Y\big(f(x)\in Y\leftrightarrow x\in X\big)$
+
+即对于任意[[MK136][函数]] $f(x)$ 和任意集合 $X$ ，若对于任意 $x\in X$ 来说 $f(x)$ 有定义
+
+则存在集合 $Y$ 使得 $f(x)\in Y$ 是 $x\in X$ 的充要条件
+
+**** 正则公理
+
+形式语言： $\forall A\exists x\big((\exists z(z\in A))\rightarrow \left((x\in A)\land(\lnot\exists y(y\in x\land y\in A))\right)\big)$
+
+即对于任意非空集合 $A$ ，存在元素 $x\in A$ 使得 $x\cap A=\varnothing$ 
+
+注：由于所有[[MK74][元素]]亦为集合，故可由并集操作
+
+***** 推论
+
+****** 不存在包含自身的集合
+
+假设 $A\in A$ 即集合 $A$ 中有一个元素是其自身。
+
+则根据[[MK82][配对公理]]设 $x=A,y=A$ 则存在 $B=\{A\}$ 
+
+此时 $B$ 非空且仅含有一个元素，则 $A\cap B=A\cap \{A\}$
+
+由于 $A\in A,A\in\{A\}$ 故有 $A\cap B=A$ 与正则公理矛盾，故 $A\not\in A$
+
+****** 不存在无限递降的序列
+
+定义无限递降序列 $\\...\in A_n\in...\in A_2\in A_1$ 
+
+根据[[MK82][无序对公理]]可得存在集合 $S'= \{\{A_1\},...\{A_n\},...\}$ 根据[[MK209][并集公理]]可得 $S=\{A_1,...A_n,...\}$ 存在
+
+则根据正则公理，存在一个元素 $A_k\in S$ 使得 $A_k\cup S=\varnothing$
+
+又根据无限序列，有 $A_{k+1}\in A_k$ 同时有 $A_{k+1}\in S$ 则有 $A_k\cap S$ 至少包含 $A_{k+1}$ 与正则公理矛盾。
+
+**** 选择公理<<MK261>>
+
+形式语言： $\forall A\left(\varnothing\not\in A\rightarrow\exists f:A\to\cup x\left(f(x)\in x\right)\right)$
+
+即对于任意不包含空集的[[MK107][集合族]] $A$ ：
+
+（1） 存在一个选择[[MK136][函数]] $f:A\rightarrow\cup x$ 其定义域为 $A$ ，值域为 $A$ 中所有集合的[[MK97][广义并]]（ $\cup x$ ）
+
+（2） 函数满足对于任意 $x\in A$ 均有 $f(x)\in x$
+
+***** 推论
+
+对于任意集合 $A$ 中的每个[[MK74][元素]]选择一个[[MK74][元素]]的[[MK74][元素]]，可组成一个新的集合 $B$
+
+根据选择公理，存在选择函数。则对于任意 $x\in A$ 存在 $\{f(x)\}$ 使得 $f(x)\in x$
+
+根据[[MK82][无序对公理]]及[[MK209][并集公理]]可得 $B=\left\{f(x)\big|x\in A\right\}$ 存在
+
+*** 特殊集合
+
+**** 多重集合<<MK143>>
+
+在[[MK73][集合定义]]上扩展，可包含 *互相不区别* 的对象，即同一[[MK74][元素]]可在集合中出现多次。
+
+用方括号表示，例如 $A=[1,1,1,2,2,3]$
+
+*** 集合族
+
+**** 定义<<MK107>>
+
+集合 $A$ 中的元素都是集合，则 $A$ 称作集合族。
+
+**** 标志集（指标集）<<MK261>>
+
+定义集合族 $C$ 可表示为 $C=\left\{S_d\big|d\in D\right\}$ 那么下标所组成的集合称为 $C$ 的标志集
+
+简化一般记作 $C_D$
+
+** 集合的表示
+
+*** 列举法
+
+列举集合中所有的元素，例如 $A=\{1,2,3\}$
+
+*** 描述法<<MK87>>
+
+利用[[MK75][谓词公式定义]]描述集合中的元素。
+
+例如 $A=\left\{x\big|P(x)\right\}$ 或 $A=\left\{x\big:P(x)\right\}$ 定义为当且仅当[[MK76][谓词公式]] $P(x)=1$ 时，有 $x\in A$ 即 $\forall x(P(x)\leftrightarrow x\in A)=1$ 。
+
+*** 归纳法
+
+**** 归纳定义<<MK100>>
+
+根据以下三个条款：
+
+（1） 基础条款<<MK101>>：规定某些元素为待定义集合成员，集合其它元素可以从基本元素出发逐步确定
+
+（2） 归纳条款<<MK102>>：规定由已确定的集合元素去进一步确定其它元素的规则
+
+（3） 终极条款<<MK103>>：规定待定义集合只含有基础条款和归纳条款所确定的成员
+
+定义的集合。
+
+其中[基础条款]与[归纳条款]为完备性条款，保证无遗漏产生集合所有成员
+
+[终极条款]为纯粹性条款，保证集合中仅包含满足完备性条款的那些对象。
+
+**** 归纳原理（数学归纳法）
+
+若集合 $A$ 以[[MK100][归纳定义]]，若 $P(x)$ 是[[MK76][谓词公式]]其中 $x$ 是命题变元。要证明 $\forall x(x\in A\rightarrow P(x))$ 仅需证明：
+
+（1） [[MK101][基础条款]]中定义的所有元素为真 $P(x^1_0)\land...\land P(x^u_0)=1$
+
+（2） 证明当已确定的元素 $x_1,...,x_k$ 满足 $P$ 时，由[[MK102][归纳条款]]进一步确定的其他元素也满足 $P$ 
+
+      即若其中任一归纳条款为 $\forall x_1...\forall x_k\left((x_1\in A\land...\land x_k\in A)\rightarrow (g_1(x_1,...,x_k)\in A\land...\land g_s(x_1,...,x_k)\in A)\right)$ 
+
+      则有 $\forall x_1...\forall x_s\left((P(x_1)\land...\land P(x_s))\rightarrow (P(g_1(x_1,...,x_k))\land...\land P(g_s(x_1,...,x_k)))\right)$
+ 
+***** 证明
+
+假设集合 $A$ 有[[MK100][归纳定义]]，[[MK76][谓词公式]] $P$ 且两个条件均成立，即：
+
+（1） $P(x^1_0)\land...\land P(x^u_0)=1$
+
+（2） 对于任一归纳条款 $\forall x_1...\forall x_k\left((x_1\in A\land...\land x_k\in A)\rightarrow (g_1(x_1,...,x_k)\in A\land...\land g_s(x_1,...,x_k)\in A)\right)$ 
+
+      均有 $\forall x_1...\forall x_s\left((P(x_1)\land...\land P(x_s))\rightarrow (P(g_1(x_1,...,x_k))\land...\land P(g_s(x_1,...,x_k)))\right)$
+
+对于任意 $y\in A$ 若 $y\in(x^1_0,...,x^u_0)$ 则根据（1）有 $P(y)=1$
+
+若 $y\not\in(x^1_0,...,x^u_0)$ 则由[[MK103][终极条款]]，必于有公式序列 $x^1_0,...,x^u_0,z_1,...,z_n,y$ 
+
+其中 $n<\infty$ ， $z_i$ 可由 $x^1_0,...,x^u_0,z_1,...,z_{i-1}$ 由[[MK102][归纳条款]]导出。
+
+根据条件（2）可得 $P(y)=1$
+
+**** 自然数集合定义
+
+***** 自然数归纳定义<<MK211>>
+
+基础条款： $\varnothing\in N$
+
+归纳条款： 如果 $x\in N$ 则 $x'=x\cup\{x\}\in N$ （即 $0=\varnothing,1=\left\{\varnothing\right\},2=\left\{\varnothing,\left\{\varnothing\right\}\right\},3=\left\{\varnothing,\left\{\varnothing\right\},\left\{\varnothing,\left\{\varnothing\right\}\right\}\right\}$ ）
+
+终极条款： 只有有限次使用上述条款产生的集合为自然数。
+
+***** 自然数加法
+
+若 $x$ 是自然数，则：
+
+（1） $x+0=x$ （ $A\cup\varnothing=A$ ）
+
+（2） $x+y'=(x+y)'$ （ $A+(B\cup \{B\})=(A+B)\cup\{A+B\}$ ）
+
+***** 自然数乘法
+
+若 $x$ 是自然数，则：
+
+（1） $x\times0=0$
+
+（2） $x\times y'=(x\times y)+x$
+
+** 集合的关系
+
+*** 空集
+
+根据[[MK208][空集存在]]公理，不含有任何[[MK74][元素]]的集合称为空集，记作 $\varnothing$
+
+*** 全集
+
+根据定义，包含研究对象全体的集合叫做全集，记作 $U$
+
+全集亦为空集的[[MK92][补集]]
+
+*** 相等
+
+根据[[MK80][外延公理]]，集合间存在相等关系，且等价条件为 $\forall x(x\in A\leftrightarrow x\in B)$
+
+*** 包含（子集）
+
+**** 定义<<MK96>>
+
+若集合 $A$ 的每一个[[MK74][元素]]都是集合 $B$ 的元素，则称 $A$ 为 $B$ 的子集，记作 $A\subset B$ 。
+
+即 $\forall x(x\in A\rightarrow x\in B)\rightarrow A\subset B$
+
+**** 真子集
+
+若 $A\subset B\land A\ne B$ 则称 $A$ 为 $B$ 的真子集
+
+**** 定理1（自反性）<<MK78>>
+
+对于任意集合 $A,B$ 当且仅当 $A\subset B$ 且 $B\subset A$ 时 $A=B$
+
+***** 证明
+
+当 $A=B$ 时，根据[[MK5][外延公理]]，[[MK24][等价等值式]]，[[MK83][当 $B$ 包含 $x$]]以及[[MK71][替换原理]]有：
+
+\begin{aligned}
+&\forall x(x\in A\leftrightarrow x\in B)\\
+{|\!\!\!=\!\!\!|}&\forall x((x\in A\rightarrow x\in B)\land(x\in B\rightarrow x\in A))\\
+{|\!\!\!=\!\!\!|}&\forall x(x\in A\rightarrow x\in B)\land\forall x(x\in B\rightarrow x\in A)\\
+{|\!\!\!=\!\!\!|}&(A\subset B)\land(B\subset A)\\
+\end{aligned}
+
+故得 $A=B{|\!\!\!=\!\!\!|}&(A\subset B)\land(B\subset A)$
+
+**** 定理2（传递性）<<MK94>>
+
+若 $A\subset B\land B\subset C$ 则有 $A\subset C$
+
+***** 证明
+
+根据[[MK56][蕴含传递]]，[[MK83][当 $B$ 包含 $x$]]以及[[MK71][替换原理]]有：
+
+\begin{aligned}
+&A\subset B\land B\subset A\\
+{|\!\!\!=\!\!\!|}&\forall x(x\in A\rightarrow x\in B) \land \forall x(x\in B\rightarrow x\in C)\\
+{|\!\!\!=\!\!\!|}&\forall x((x\in A\rightarrow x\in B)\land(x\in B\rightarrow x\in C))\\
+{|\!\!\!=}&\forall x(x\in A\rightarrow x\in C)\\
+\end{aligned}
+
+**** 定理3
+
+对于任意集合 $A$ ，都存在 $A\in U$ 其中 $U$ 为[[MK84][全总域]]
+
+***** 证明
+
+由于 $x\in U$ 为永真，故有 $x\in A\rightarrow x\in U$ 永真，故 $\forall x(x\in A\rightarrow x\in U)\rightarrow A\subset U$
+
+**** 定理4<<MK79>>
+
+空集是任意集合的子集
+
+***** 证明
+
+对于任意元素 $x$ 表达式 $x\in\varnothing$ 永假式，故 $x\in\varnothing\rightarrow x\in A$ 永真，故 $\forall x(x\in\varnothing\rightarrow x\in A)\rightarrow \varnothing\subset A$
+
+**** 定理5
+
+空集是唯一的
+
+***** 证明
+
+假设存在两个空集 $\varnothing_1,\varnothing_2$ 根据[[MK79][定理4]]可得 $\varnothing_1\subset\varnothing_2,\varnothing_2\subset\varnothing_1$ 又根据[[MK78][定理1]]可得 $\varnothing_1=\varnothing_2$
+
+**** 定理6<<MK93>>
+
+若集合 $A$ 的[[MK77][基数]]为 $|A|=n$ ，则 $A$ 的子集数量为 $2^n$
+
+***** 证明
+
+集合 $A$ 中有 $n$ 个元素，定义子集为 $a$ ，每个元素 $x_i\in A,1\leq i\leq n$ 要么属于 $a$ 要么不属于 $a$
+
+故一共 $n$ 个元素，组合得 $a$ 有 $2^n$ 中可能性。
+
+*** 幂集
+
+**** 定义<<MK95>>
+
+若集合 $A$ ，则其幂集定义为 $\rho(A)=\left\{x\big|x\subset A\right\}$ ，根据[[MK93][定理6]]可得，[[MK104][有限集]]时 $|A|=n$ 时 $|\rho(A)|=2^n$
+
+**** 性质
+
+若 $A,B$ 为集合，则 $A\subset B$ 的充要条件为 $\rho(A)\subset\rho(B)$ ，即 $(A\subset B)\leftrightarrow(\rho(A)\subset \rho(B))$ 
+
+***** 证明
+
+当 $A\subset B$ 时，根据[[MK95][定义]]对于任意 $x$ 有 $x\in \rho(A)\leftrightarrow x\subset A$ 又有 $A\subset B$ 根据[[MK94][传递性]]可得 $x\subset A\land A\subset B\rightarrow x\subset B$ 
+
+根据[[MK95][定义]] $x\subset B\leftrightarrow x\in \rho(B)$ 最终得 $x\in \rho(A)\rightarrow x\in \rho(B)$ ，根据[[MK96][定义]]可得 $A\subset B\rightarrow \rho(A)\subset \rho(B)$
+
+当 $\rho(A)\subset \rho(B)$ 根据[[MK95][定义]] $A\in \rho(A)$ 且根据[[MK96][子集定义]] $A\in \rho(B)$ 同理根据[[MK95][定义]] $A\in \rho(B)\rightarrow A\subset B$
+
+即 $\rho(A)\subset \rho(B)\rightarrow A\subset B$
+
+综上所述 $((A\subset B)\rightarrow (\rho(A)\subset \rho(B)))\land((\rho(A)\subset \rho(B))\rightarrow(A\subset B)){|\!\!\!=\!\!\!|}(A\subset B)\leftrightarrow(\rho(A)\subset \rho(B))$
+
+**** 康托定理
+
+定义 $M$ 是任意一个集合，则有 $|M|<|\rho(M)|$ 即其[[MK95][幂集]]的[[MK77][基数]]严格大于其本身的基数
+
+***** 证明
+
+反正法，若假设成立，则有 $|M|\geq|\rho(M)|$ 显然 $\forall a\in M\rightarrow \{a\}\in\rho(M)$ 存在[[MK139][双射函数]]
+
+且 $\bigcup_{a\in M}\{\{a\}\}\subset\rho(M)$ 为幂集的子集，故 $M$ 与 $\rho(M)$ 子集[[MK213][对等]]， 故 $|M|\not>|\rho(M)|$
+
+则仅有可能 $|M|=|\rho(M)|$ ，根据[[MK213][对等]]存在[[MK139][双射函数]] $\sigma:M\to\rho(M)$ 根据[[MK140][定义]]存在 $\sigma^{-1}:\rho(M)\to M$ 亦为双射
+
+定义集合 $A=\left\{x\big|x\in M\land x\not\in\sigma(x)\right\}$ 显然 $A\subset M$ 故存在 $\sigma^{-1}(A)$ 根据[[MK271][性质1]]可得 $\sigma(\sigma^{-1}(A))=A$
+
+则若 $y=\sigma^{-1}(A)\in A$ 则根据 $A$ 的定义满足 $y\not\in\sigma(y)$ 其中 $\sigma(y)=\sigma(\sigma^{-1}(A))=A$ 
+
+故推出 $y\not\in A$ 矛盾
+
+若 $y=\sigma^{-1}(A)\not\in A$ 则根据 $A$ 的定义满足 $y\in\sigma(y)$ 同理 $\sigma(y)=\sigma(\sigma^{-1}(A))=A$ 
+
+故推出 $y\in A$ 亦矛盾
+
+故假设不成立
+
+*** 等势（对等）<<MK213>>
+
+**** 定义<<MK4>>
+
+若集合 $A,B$ 存在[[MK139][双射函数]] $\sigma:A\to B$ 则称 $A,B$ 集合对等，记作 $A\sim B$
+  
+规定空集与空集对等
+
+**** 定理<<MK260>>
+
+集合对等是[[MK126][等价关系]]
+
+***** 证明
+
+根据等价关系定义证明自反性，对称性以及传递性
+
+若 $\sigma:A\to A$ 为其中每一个元素于自身的映射，则显然满足映射中的双射关系，故 $A\sim A$
+
+若 $A\sim B$ 则存在双射函数 $\sigma:A\sim B$ 则根据[[MK140][函数求逆]]可得存在你函数 $\sigma^{-1}:B\to A$
+
+根据[[MK219][性质2]]可得你函数亦为双射，故有 $B\sim A$
+
+若有 $A\sim B\land B\sim C$ 则存在 $\sigma_1:A\to B,\sigma_2:B\to C$ 两个双射函数
+
+根据[[MK218][传递性]]可得存在双射函数 $\sigma:A\to C$
+
+故满足自反性，对称性以及传递性，即为等价关系
+
+** 集合的计算
+
+*** 定义
+
+以[[MK73][集合]]作为运算对象，结果亦为[[MK73][集合]]的运算。
+
+*** 运算<<262>><<MK262>>
+
+并运算<<MK85>>： $A\cup B=\left\{x\big|x\in A\lor x\in B\right\}$
+
+交运算<<MK86>>： $A\cap B=\left\{x\big|x\in A\land x\in B\right\}$
+
+差运算<<MK89>>： $A- B=\left\{x\big|x\in A\land x\not\in B\right\}$
+
+补运算<<MK92>>： $\overline{A}=U-A=\left\{x\big|x\not\in A\right\}$
+
+广义并<<MK97>>： 若 $C$ 为[[MK107][集合族]]，则定义 $\cup C=\left\{x\big|\exists S(x\in S\land S\in C)\right\}$
+
+广义交<<MK98>>： 若 $C$ 为[[MK107][集合族]]，则定义 $\cap C=\left\{x\big|\forall S(S\in C\rightarrow x\in S)\right\}$
+
+*** 性质
+
+**** 相同集合的广义交并相同<<MK108>>
+
+\begin{aligned}
+A=B{|\!\!\!=}\cup A=\cup B\\
+A=B{|\!\!\!=}\cap A=\cap B\\
+\end{aligned}
+
+***** 证明
+
+仅证明 $A=B{|\!\!\!=}\cup A=\cup B$ 且 $A,B$ 为集合族
+
+根据[[MK80][外延公理]] $A=B{|\!\!\!=\!\!\!|}\forall S(S\in A\leftrightarrow S\in B)$
+
+根据[[MK97][广义并]]可得 $x\in\cup A{|\!\!\!=\!\!\!|}\exists S(x\in S\land S\in A)$
+
+故有 $x\in\cup A{|\!\!\!=\!\!\!|}\exists S(x\in S\land S\in A){|\!\!\!=\!\!\!|}\exists S(x\in S\land S\in B){|\!\!\!=\!\!\!|}x\in\cup B$ 根据[[MK80][外延公理]] $\cup A=\cup B$
+
+**** 集合族运算与交并
+
+\begin{aligned}
+A\cap(\cup C)&=\cup\left\{A\cap S\big|S\in C\right\}\\
+A\cup(\cap C)&=\cap\left\{A\cup S\big|S\in C\right\}\\
+\end{aligned}
+
+**** 集合族运算与差
+
+\begin{aligned}
+A-(\cup C)&=\cap\left\{A-S\big|S\in C\right\}\\
+A-(\cap C)&=\cup\left\{A-S\big|S\in C\right\}\\
+\end{aligned}
+
+***** 证明
+
+仅证 $A-(\cup C)&=\cap\left\{A-S\big|S\in C\right\}$ 根据[[MK98][广义交]] $\cap\left\{A-S\big|S\in C\right\}=\left\{x\big|\forall K\left(K\in\left\{A-S\big|S\in C\right\}\rightarrow x\in K\right)\right\}$
+
+此时对于任意 $S\in C$ 均有对应的 $K=A-S$ 使得 $x\in K$ 替换掉 $K$ 得 $\cap\left\{A-S\big|S\in C\right\}=\left\{x\big|\forall S\left(S\in C\rightarrow x\in S-A\right)\right\}$
+
+根据[[MK97][广义并]]，[[MK89][减]]，[[MK29][分配率]]，[[MK23][蕴含等值]]，[[MK28][德摩根律]]，[[MK98][B不含x]]，[[MK99][量词转换]]，[[MK87][描述定义]]以及[[MK71][替换原理]]可得，对于任意 $x$
+
+\begin{aligned}
+&x\in A-(\cup C)\\
+\leftrightarrow&x\in A\land x\not\in\cup C\\
+\leftrightarrow&x\in A\land x\not\in\left\{x\big|\exists S(x\in S\land S\in C)\right\}\\
+\leftrightarrow&x\in A\land\lnot(\exists S(x\in S\land S\in C))\\
+\leftrightarrow&x\in A\land(\forall S \lnot(x\in S\land S\in C))\\
+\leftrightarrow&x\in A\land(\forall S (x\not\in S\lor S\not\in C))\\
+\leftrightarrow&\forall S(x\in A\land (x\not\in S\lor S\not\in C))\\
+\leftrightarrow&\forall S((x\in A\land x\not\in S)\lor(x\in A\land S\not\in C))\\
+\leftrightarrow&\forall S((x\in A-S)\lor(x\in A\land S\not\in C))\\
+\leftrightarrow&\forall S((x\in A-S\lor x\in A)\land(x\in A-S\lor S\not\in C))\\
+\leftrightarrow&\forall S(x\in A-S\lor S\not\in C)\\
+\leftrightarrow&\forall S(S\not\in C\lor x\in A-S)\\
+\leftrightarrow&\forall S(S\in C\rightarrow x\in A-S)\\
+\leftrightarrow&x\in\cap\left\{A-S\big|S\in C\right\}
+\end{aligned}
+
+即 $\forall x\left(\left(x\in A-(\cup C)\right)\leftrightarrow \left(x\in\cap\left\{A-S\big|S\in C\right\}\right)\right)$ 故根据[[MK80][外延公理]]有 $A-(\cup C)&=\cap\left\{A-S\big|S\in C\right\}$ 
+
+**** 集合族运算与补
+
+\begin{aligned}
+(\cup C)\sim&=\cap\left\{S\sim\big|S\in C\right\}\\
+(\cap C)\sim&=\cup\left\{S\sim\big|S\in C\right\}\\
+\end{aligned}
+
+**** 可数性质<<MK275>>
+
+\begin{aligned}
+&\forall x\left(x\in\bigcup_{i=1}^\infty S_i\leftrightarrow x\in\bigcup_{i\in\mathbb{N}^+} S_i\leftrightarrow \exists i\left(i\in\mathbb{N}^+\land x\in S_i\right)\right)\\
+&\forall x\left(x\in\bigcap_{i=1}^\infty S_i\leftrightarrow x\in\bigcap_{i\in\mathbb{N}^+} S_i\leftrightarrow \forall i\left(i\in\mathbb{N}^+\rightarrow x\in S_i\right)\right)
+\end{aligned}
+
+***** 证明
+
+根据[[MK214][可数]]定义可得必与整数集的子集有一一对应关系，则有 $\bigcup_{i=1}^\infty S_i=\bigcup_{i\in\mathbb{N}^+}S_i$
+
+进一步根据[[MK97][广义并]]以及[[MK98][广义交]]定义，显然证得
+
+**** 等利律（幂等律）
+
+\begin{aligned}
+A\cap A=A\\
+A\cup A=A
+\end{aligned}
+
+**** 交换律<<MK105>>
+
+\begin{aligned}
+A\cap B=B\cap A\\
+A\cup A=B\cup A
+\end{aligned}
+
+**** 结合律<<MK106>>
+
+\begin{aligned}
+(A\cap B)\cap C=A\cap (B\cap C)\\
+(A\cup B)\cup C=A\cup (B\cup C)\\
+\end{aligned}
+
+**** 同一律
+
+\begin{aligned}
+A\cup\varnothing=A\\
+A\cap U=A\\
+\end{aligned}
+
+**** 零律
+
+\begin{aligned}
+A\cap\varnothing=\varnothing\\
+A\cup U=U\\
+\end{aligned}
+
+**** 分配律
+
+\begin{aligned}
+A\cup (B\cap C)&=(A\cup B)\cap (A\cup C)\\
+A\cap (B\cup C)&=(A\cap B)\cup (A\cap C)\\
+\end{aligned}
+
+进一步有：
+
+\begin{aligned}
+A\cup\left(\bigcap_{i=1}^\infty B_i\right)&=\bigcap_{i=1}^\infty\left(A\cup B_i\right)\\
+A\cap\left(\bigcup_{i=1}^\infty B_i\right)&=\bigcup_{i=1}^\infty\left(A\cap B_i\right)\\
+\end{aligned}
+
+***** 证明
+
+****** 有限个<<MK274>>
+
+这里仅证 $A\cup (B\cap C)&=(A\cup B)\cap (A\cup C)$ 其余同理可证
+
+根据[[MK85][并]]以及[[MK86][交]]运算可得 $B\cap C=\left\{x\big|x\in B\land x\in C\right\}$ 以及 $A\cup (B\cap C)=\left\{x\big|x\in A\lor x\in B\cap C\right\}$
+
+根据[[MK90][谓词等价]]，[[MK29][分配率]]，[[MK87][描述法定义]]以及[[MK71][替换原理]]可得对于任意 $x$
+
+\begin{aligned}
+&x\in A\cup (B\cap C)\\
+\leftrightarrow&x\in A\lor x\in B\cap C\\
+\leftrightarrow&x\in A\lor(x\in B\land x\in C)\\
+\leftrightarrow&(x\in A\lor x\in B)\land(x\in A\lor x\in C)\\
+\leftrightarrow&(x\in A\cup B)\land(x\in A\cup C)\\
+\leftrightarrow&x\in(A\cup B)\cap(A\cup C)\\
+\end{aligned}
+
+即 $\forall x:(x\in A\cup (B\cap C))\leftrightarrow(x\in(A\cup B)\cap(A\cup C))$ 根据[[MK80][外延公理]] $A\cup (B\cap C)&=(A\cup B)\cap (A\cup C)$
+
+****** [[MK214][可数]]个
+
+这里仅证 $A\cup\left(\bigcap_{i=1}^\infty B_i\right)&=\bigcap_{i=1}^\infty\left(A\cup B_i\right)$ 其余同理
+
+根据[[MK275][可数性质]]、[[MK246][辖域变化]]、[[MK105][交换律]]以及[[MK262][运算定义]]
+
+\begin{aligned}
+&\forall x\in \left(\bigcap_{i=1}^\infty\left(A\cup B_i\right)\right)\\
+\leftrightarrow&\forall i(i\in\mathbb{N^+}\rightarrow x\in B_i\lor x\in A)\\
+\leftrightarrow&\forall i(i\in\mathbb{N^+}\rightarrow x\in B_i)\lor x\in A\\
+\leftrightarrow&x\in\left(\left(\bigcap_{i=1}^\infty B_i\right)\cup A\right)
+\end{aligned}
+
+根据[[MK80][外延公理]]可得 $A\cup\left(\bigcap_{i=1}^\infty B_i\right)&=\bigcap_{i=1}^\infty\left(A\cup B_i\right)$ 
+
+**** 吸收律
+
+\begin{aligned}
+A\cap (A\cup B)&=A\\
+A\cup (A\cap B)&=A\\
+\end{aligned}
+
+**** 双重否定率
+
+\begin{aligned}
+\overline{\overline{A}}=A\\
+\end{aligned}
+
+**** 特殊集合的差
+
+\begin{aligned}
+A-A=\varnothing\\
+A-\varnothing=A\\
+A-U=\varnothing\\
+\end{aligned}
+
+**** 差分配率
+
+\begin{aligned}
+A-(B\cap C)&=(A-B)\cup (A-C)\\
+A-(B\cup C)&=(A-B)\cap (A-C)\\
+\end{aligned}
+
+***** 证明
+
+仅证 $A-(B\cap C)&=(A- B)\cup (A-C)$ 根据[[MK85][并]]，[[MK86][交]]以及[[MK89][差]]运算定义 $B\cap C=\left\{x\big|x\in B\land x\in C\right\},A-(B\cap C)=\left\{x\big|x\in A\land x\not\in B\cap C\right\}$
+
+则根据[[MK91][谓词等价]]，[[MK74][成员定义]]，[[MK28][德摩根律]]，[[MK29][分配率]]，[[MK87][描述法定义]]以及[[MK71][替换原理]]可得对于任意 $x$
+
+\begin{aligned}
+&x\in A-(B\cap C)\\
+\leftrightarrow&x\in A\land x\not\in B\cap C\\
+\leftrightarrow&x\in A\land\lnot(x\in B\land x\in C)\\
+\leftrightarrow&x\in A\land(x\not\in B\lor x\not\in C)\\
+\leftrightarrow&(x\in A\land x\not\in B)\lor(x\in A\land x\not\in C)\\
+\leftrightarrow&(x\in A-B)\lor(x\in A-C)\\
+\leftrightarrow&x\in (A-B)\cup(A-C)\\
+\end{aligned}
+
+即 $\forall x:x\in A-(B\cap C)\leftrightarrow x\in (A-B)\cup(A-C)$ ，根据[[MK80][外延公理]] $A-(B\cap C)&=(A- B)\cup (A-C)$
+
+**** 矛盾律和排中律
+
+\begin{aligned}
+\overline{U}=\varnothing\\
+\overline{\varnothing}=U\\
+\end{aligned}
+
+**** 自身补运算
+
+\begin{aligned}
+A\cup \overline{A}=U\\
+A\cap \overline{A}=\varnothing\\
+\end{aligned}
+
+**** 德摩根律
+
+\begin{aligned}
+\overline{A\cup B}=\overline{A}\cap \overline{B}\\
+\overline{A\cap B}=\overline{A}\cup \overline{B}\\
+\end{aligned}
+
+进一步有
+
+\begin{aligned}
+\overline{\bigcup_{i=1}^\infty A_i}=\bigcap_{i=1}^\infty\overline{A_i}\\
+\overline{\bigcap_{i=1}^\infty A_i}=\bigcup_{i=1}^\infty\overline{A_i}\\
+\end{aligned}
+
+***** 证明
+
+****** 有限
+
+仅证 $\overline{A\cup B}=\overline{A}\cap\overline{B}$ 根据[[MK85][并]]与[[MK92][补]]运算定义 $\overline{A\cup B}=\left\{x\big|x\not\in A\cup B\right\}$ 以及 $\overline{A}\cap\overline{B}=\left\{x\big|x\not\in A\land x\not\in B\right\}$
+
+根据[[MK74][成员定义]]，[[MK87][描述法定义]]，[[MK90][谓词等价]]，[[MK28][德摩根律]]以及[[MK71][替换原理]]可得对于任意 $x$
+
+\begin{aligned}
+&x\in \overline{A\cup B}\\
+\leftrightarrow&x\not\in(A\cup B)\\
+\leftrightarrow&\lnot(x\in(A\cup B))\\
+\leftrightarrow&\lnot(x\in A\lor x\in B))\\
+\leftrightarrow&\lnot(x\in A)\land\lnot(x\in B)\\
+\leftrightarrow&x\not\in A\land x\not\in B\\
+\leftrightarrow&x\in\overline{A}\cap\overline{B}\\
+\end{aligned}
+
+即 $\forall x\left((x\in\overline{A\cup B})\leftrightarrow(x\in\overline{A}\cap\overline{B})\right)$ ，根据[[MK80][外延公理]] $\overline{A\cup B}=\overline{A}\cap\overline{B}$ 
+
+****** [[MK214][可数]]
+
+仅证 $\overline{\bigcap_{i=1}^\infty A_i}=\bigcup_{i=1}^\infty\overline{A_i}$ 其余同理
+
+根据[[MK275][可数性质]]、[[MK262][运算定义]]、[[MK23][蕴含等式]]、[[MK28][德摩根律]]、[[MK244][量词转换]]可得
+
+\begin{aligned}
+&x\in\bigcup_{i=1}^\infty\overline{A_i}\\
+\leftrightarrow&\exists i\left(i\in\mathbb{N}^+\land x\in \overline{A_i}\right)\\
+\leftrightarrow&\exists i\left(i\in\mathbb{N}^+\land x\not\in A_i\right)\\
+\leftrightarrow&\exists i\left(\lnot\left(i\not\in\mathbb{N}^+\lor x\in A_i\right)\right)\\
+\leftrightarrow&\lnot\forall i\left(i\not\in\mathbb{N}^+\lor x\in A_i\right)\\
+\leftrightarrow&\lnot\forall i\left(i\in\mathbb{N}^+\rightarrow x\in A_i\right)\\
+\leftrightarrow&\lnot\left(x\in\bigcup_{i=1}^\infty A_i\right)\\
+\leftrightarrow&x\in\overline{\bigcup_{i=1}^\infty A_i}\\
+\end{aligned}
+
+根据[[MK80][外延公理]]可得 $\overline{\bigcap_{i=1}^\infty A_i}=\bigcup_{i=1}^\infty\overline{A_i}$ 
+
+**** 补与减
+
+\begin{aligned}
+A-B=A\cap\overline{B}\\
+\end{aligned}
+
+**** 子集与计算
+
+\begin{aligned}
+&A\subset A\cup B\\
+&A\cup B\subset A\\
+&A-B\subset A\\
+&A\subset B\leftrightarrow A-B=\varnothing\leftrightarrow A\cup B=B\leftrightarrow A\cap B=A\\
+&A\subset B\rightarrow B\sim\subset A\sim\\
+\end{aligned}
+
+** 集合分类
+
+*** 有限集<<MK104>>
+
+空集和只含有限多个元素的集合称作有限集
+
+*** 无限集<<MK212>>
+
+不为[[MK104][有限集]]的集合均为无限集
+
+*** 可数集<<MK214>>
+
+根据[[MK211][自然数归纳定义]]所定义的自然数集合 $N$ ，若[[MK212][无限集]]与 $N$ [[MK213][等势]]，则称为可数集。
+
+**** 推论
+
+若 $A,B$ [[MK213][等势]]，则 $A$ 为可数集的充要条件是 $B$ 为可数集
+
+***** 证明
+
+必要条件，若 $B$ 为可数集，则存在[[MK139][双射函数]] $\Phi:N\rightarrow B$ ，又根据等势定义，存在双射函数 $\Psi:B\rightarrow A$
+
+则根据[[MK218][双射传递]]，存在合成映射 $P:N\rightarrow A$ 亦为双射函数
+
+故 $A$ 可数，同理可证充分
+
+**** 定理
+
+***** 定理0
+
+[[MK104][有限集]]不是可数集
+
+****** 证明
+
+若存在[[MK139][双射函数]] $\sigma:\mathbb{N}\to A$ 其中 $A$ 为有限集且 $|A|=n$ 则集合可表述为 $A=\left\{a_1,...,a_n\right\}$
+
+定义 $B=\left\{\sigma(i)\big|i\in\mathbb{N}\land i< k\right\}$ 由于双射，故 $\forall a\in\mathbb{N}\forall b\in\mathbb{N}\left(a\ne b\rightarrow\sigma(a)\ne\sigma(b)\right)$
+
+故有 $|B|=k$ 即[[MK77][基数]]为 $k$ 且 $B\subset A$ 当 $k>n$ 时显然不成立。
+
+***** 定理1<<MK263>>
+
+任意[[MK212][无限集]]合至少包含一个可数子集
+
+****** 证明
+
+假设有无限集 $A$ 则定义 $B=\{A\}$ 根据[[MK104][有限集]]定义可知 $A\ne\varnothing$
+
+故根据[[MK261][选择公理]]可得存在 $f:B\to A$ 使得 $f(A)\in A$
+
+定义 $e_1=f(A)$ 定义 $A_1=A-e_1\subset A$ 为 $A$ 与 $e_1$ 的[[MK262][差]]，则有 $B_1 = \{A_1\}$ 
+
+对于任意 $n\in\mathbb{N}$ 若存在 $A_n$ 则有 $B_n=\{A_n\}$ 此时若 $A_n=\varnothing$ 则有 $A=\{e_1,...,e_{n-1}\}$ 则为有限集
+
+故同理根据选择公里存在 $f:B_n\to A_n$ 使得 $f(A_n)\in A_n$ 则定义 $e_n=f(A_n)\subset A$
+
+综上所属：
+
+（1） 存在 $e_1\in A$
+
+（2） 对于任意 $n$ 若存在 $e_{n-1}$ 则存在 $e_n$
+
+故有集合 $C=\{e_1,...,e_n,...\}$ 则对于任意 $n\in\mathbb{N}$ 定义映射 $f(n)=e_n$
+
+显然是一一对应的[[MK139][双射函数]]，根据[[MK213][对等]]定义可得 $\mathbb{N}\sim C$ 且 $\forall e_i\in C\rightarrow e_i\in A$ 故有 $C\subset A$
+
+***** 定理2<<MK270>>
+
+可数集的任意无限子集仍是可数集
+
+****** 证明
+
+假设集合 $A$ [[MK214][可数]]，则根据[[MK4][对等]]有 $A\sim\mathbb{N}$
+
+假设 $B\subset A$ 且为[[MK212][无限集]]，根据[[MK263][定理1]]其必定包含可数子集，定义为 $C\subset B$ ，则根据[[MK4][对等]]有 $C\sim\mathbb{N}$
+
+根据[[MK260][定理]]对等是[[MK126][等价关系]]，故有[[MK264][传递性]]，故得 $C\sim A$ 
+
+综上所述 $C\subset B\land C\sim A$ 根据[[MK77][基数]]定义可得 $|A|\leq |B|$
+
+又因为 $B\subset A\land B\sim B$ 同理可得 $|B|\leq|A|$
+
+故根据[[MK265][伯恩斯坦定理]]可得 $|A|=|B|$ 根据[[MK77][基数]]定义可得 $A\sim B$
+
+同理根据等价关系传递性有 $B\sim A\sim\mathbb{N}$
+
+****** 推论<<MK266>>
+
+可数集的子集，要么是[[MK214][可数集]]，要么是[[MK104][有限集]]
+
+*** 至多可数集<<MK267>>
+
+即[[MK104][有限集]]和[[MK214][可数集]]的并集，即与正整数集子集对等
+
+**** 定理
+
+***** 定理1<<MK269>>
+
+至多可数个至多可数集的并，仍是至多可数集
+
+即[[MK107][集合族]] $C_D$ 其中 $D$ 是[[MK261][指标集]]，集合 $C,D$ 均为至多可数集
+
+则 $$\bigcup_{d\in D}C_d$$ 亦为至多可数集
+
+****** 证明
+
+******* 前提定义
+
+定义 $d\in D$ 为指标集中某一元素，由于是至多可数集，故存在 $\sigma(d)=i\land i\in\mathbb{N}$ 
+
+进一步定义 $C_i=C_{\sigma(d)}$ 故 $\bigcup_{d\in D}C_d=\bigcup_{i\in\{\sigma(d)|d\in D\}}C_i$
+
+由于 $C_i$ 亦为至多可数集，故必有 $\sigma_i:C_i\to\mathbb{N}$ 则定义 $c_{ij}\in C_i$ 满足 $\sigma_i(c_{ij})=j$
+
+仅证明 $D$ 以及 $C_d,d\in D$ 均为[[MK214][可数集]]，且 $C_d,d\in D$ 无交集的情况。
+
+其他情况根据可视为该情况的子集，故根据[[MK266][推论]]可证得
+
+******* 构建映射
+
+定义 $$\alpha:\bigcup_{d\in D} C_d\to\mathbb{N}$$ 即 $$\alpha:\bigcup_{i\in\{\sigma(d)|d\in D\}}C_i\to\mathbb{N}$$
+
+映射规则为 $\alpha(c_{ij})=\frac{i+j}{2}(i+j-1)-(j-1)$
+
+******* 证明是函数
+
+对于任意 $\{i,j\}\subset\mathbb{N}$ 均有 $\frac{i+j}{2}(i+j-1)-(j-1)$ 且唯一，故是[[MK136][函数]]
+
+******* 证明[[MK137][单射]]
+
+若不是单射，则存在 $\{i,j\}\ne\{i',j'\}$ 使得 $\alpha(c_{ij})-\alpha(c_{i'j'})=0$
+
+若 $i+j=i'+j'$ 则有
+
+\begin{aligned}
+&\alpha(c_{ij})-\alpha(c_{i'j'})\\
+=&\frac{1}{2}\left((i+j)^2-i-2j-(i'+j')^2+i'+2j'\right)\\
+=&\frac{1}{2}\left(i'+j'-(i+j)+j'-j\right)\\
+=&\frac{1}{2}\left(j'-j\right)\\
+\end{aligned}
+
+则有 $j=j'$ 又因为 $i+j=i'+j'$ 故有 $i=i'\land j=j'$ 与条件 $\{i,j\}\ne\{i',j'\}$ 不符
+
+若 $i+j\ne i'+j'$ 则假设 $i+j>i'+j'$ 故有，反之同理 
+
+\begin{aligned}
+&\alpha(c_{ij})-\alpha(c_{i'j'})\\
+=&\frac{1}{2}\left((i+j)^2-i-2j-(i'+j')^2+i'+2j'\right)\\
+=&\frac{1}{2}\left([(i+j)^2-(i'+j')^2]-(i-i')-2(j-j')\right)\\
+=&\frac{1}{2}\left((i+j-i'-j')(i+j+i'+j')-(i-i'+j-j')-(j-j')\right)\\
+=&\frac{1}{2}\left((i+j-i'-j')(i+j+i'+j'-1)-(j-j')\right)\\
+\end{aligned}
+
+由于均为大于 $1$ 正整数且 $i+j>i'+j'$ ，故有 $i+j-i'-j'>1$
+
+由于均为大于 $1$ 正整数，则有 $i+i'+j+j'-1>j+j'>j-j'$
+
+故有 $(i+j-i'-j')(i+j+i'+j'-1)>i+j+i'+j'-1>j-j'$
+
+则有 $\alpha(c_{ij})-\alpha(c_{i'j'})>0$
+
+综上所述，对于任意 $\{i,j\}\ne\{i',j'\}$ 均有 $\alpha(c_{ij})\ne\alpha(c_{i'j'})$ 即单射
+
+******* 证明[[MK138][满射]]
+
+根据高斯公式可得 $\frac{(i+j)(i+j-1)}{2}=\sum_{k=1}^{i+j-1}k$ 则对于任意 $n\in\mathbb{N}$ 存在 $l$ 使得 $\sum_{k=1}^{l-2}k\leq n\land\sum_{k=1}^{l-1}k>n$
+
+故对于该正整数 $n$ 取 $i+j=l$ 以及 $j=\sum_{k=1}^{l-1}k-n+1$ 
+
+由于 $\sum_{k=1}^{l-1}k-\sum_{k=1}^{l-2}k=l-1$ 故有 $0\leq\sum_{k=1}^{l-1}k-n<l-1$ 则 $0\leq j-1<i+j-1$
+
+故有 $1\leq j<i+j$ 满足均为大于等于 $1$ 的正整数条件，则有 
+
+\begin{aligned}
+\alpha(c_{ij})=&\frac{i+j}{2}(i+j-1)-(j-1)\\
+=&\sum_{k=1}^{l-1}k-\left(\sum_{k=1}^{l-1}k-n+1-1\right)\\
+=&n
+\end{aligned}
+
+故对于任意 $n\in\mathbb{N}$ 均有 $\{i>0,j>0\}\subset\mathbb{N}$ 使得 $\alpha(c_{ij})=n$
+
+******* 结论
+
+根据上述证明，存在[[MK139][双射函数]] $$\alpha:\bigcup_{d\in D} C_d\to\mathbb{N}$$ ，故根据[[MK213][定义]]可得 $\bigcup_{d\in D} C_d\sim\mathbb{N}$
+
+进一步根据[[MK214][可数集]]定义可得 $\bigcup_{d\in D} C_d$ 是可数集。
+
+由于其他情况均可视为可数集的子集，根据[[MK266][推论]]可得要么是[[MK214][可数集]]，要么是[[MK104][有限集]]
+
+综上所述 $\bigcup_{d\in D} C_d$ 是至多可数集 
+
+****** 推论
+
+有理数集合是可数集
+
+******* 证明
+
+定义 $A_i=\left\{\frac{n}{i}\big| n\in\mathbb{N}\right\}$ 其中 $i\in\mathbb{N}$ 则定义[[MK107][集合族]] $A_\mathbb{N}$ 
+
+其中显然 $|A_i|=|\mathbb{N}|$ 故 $A_i,\mathbb{N}$ 均为[[MK214][可数集]]，即属于[[MK267][至多可数集]]，故至多可数个至多可数集的并，仍是至多可数集
+
+因为所有有理数均定义为 $\frac{p}{q},\{p,q\}\subset\mathbb{N}$ 故正有理数集合是至多可数集，同理可正负有理数集合为至多可数集
+
+再次使用定理可得有理数集合为至多可数集。显然有理数结合不为[[MK104][有限集]]，则正有理数集合为[[mk214][可数集]]
+
+***** 定理2
+
+有限个至多可数集的[[MK109][直积]]仍是至多可数集
+
+****** 证明
+
+定义 $A=\left\{A_i\big|i\in\mathbb{N}\land i\leq n \land n\in\mathbb{N}\right\}$ 其中 $A_i$ 是[[MK267][至多可数集]]，归纳法证明：
+
+（1） 当 $n=1$ 时即 $A_1$ 本身，显然成立
+
+（2） 当 $n-1$ 成立时，由于 $A_n$ 亦为至多可数集，则必有[[MK139][双射函数]] $\sigma:A_n\to\mathbb{N}$
+
+     定义满足 $a\in A_n\land\sigma(a)=i$ 的元素为 $a_i$ 则有 $A_n=\{a_1,a_2,...,a_n,...\}$
+
+     定义 $A^*=A_1\times...\times A_{n-1}$ 定义 $A_i^*=A_1\times...\times A_{n-1}\times\{a_i\}$ 
+
+     后者是前 $n-1$ 个集合的[[MK109][直积]]的结果与 $\{a_i\}$ 的再次直积，显然 $A^*_i\sim A^*$ [[MK213][对等]]，故根据假设 $A^*_i$ 为至多可数集
+
+     根据[[MK268][分配率]]可得 $A^*\times A_n=A^*\times\bigcup \{a_i\}=\bigcup A^*\times\{a_i\}=\bigcup A^*_i$ 
+
+     由于 $A_n$ 是至多可数集，故根据[[MK269][定理1]]可得 $A^*\times A_n$ 亦为至多可数集
+
+（3） 综上所述，当 $n$ 有限时 $A_1\times...\times A_n$ 为至多可数集
+
+***** 定理3
+
+代数数的全体是可数集
+
+代数数为整系数多项式的[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][因式、可约与根-根]]，若不是，则定义为超越数（例如 $\pi$ ）
+
+****** 证明
+
+******* 证明多项式集合可数
+
+定义 $A_n=\left\{f(x)\big|f(x)=\sum_{i=0}^na_ix^i\land i\in\mathbb{N}\right\}$ 是全体 $n$ 此整系数多项式集合
+
+定义 $\sigma:A_n\to\mathbb{N}^n$ 规则为 $\sigma(f(x))=<a_1,...,a_n>$ 
+
+定义 $g(x)=\sum_{i=0}^nb_ix^i$ 根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][一元多项式-一元多项式运算-相等]]可得若 $f(x)\ne g(x)$ 则至少有一组 $b_k\ne a_k$
+
+根据[[MK144][有序组]]定义可得 $<a_1,...,a_{k-1},a_k,a_{k+1},...,a_n>\ne<a_1,...,a_{k-1},b_k,a_{k+1},...,a_n>$ 故[[MK137][单射]]
+
+则根据单射定义，取 $K=\mathbb{N}^n-\left\{k\big|k\in\mathbb{N}^n\land \lnot\exists f(x)(f(x)\in A_n\land \sigma(f(x))=k)\right\}$ 
+
+即去除 $\mathbb{N}^n$ 中没有原相的元素，则显然 $\sigma':A_n\to K$ 是[[MK139][双射]]且 $K\subset\mathbb{N}^n$ 
+
+显然 $K$ 是无限集，故根据[[MK270][定理2]]可得 $K$ 是[[MK214][可数集]]，故 $A_n$ 亦为可数集
+
+******* 证明根的集合
+
+定义 $B_n$ 是全体 $f(x)\in A_n$ 的根的集合，则定义集合 $A_n\times\{1,2,...,n\}$ 
+
+对于每一个 $f(x)\in A_n$ 定义 $<f(x),k>$ 对应 $f(x)$ 的第 $k$ 个根，显然 $k\in B_n$
+
+则有映射 $\sigma:A_n\times\{1,2,...,n\}\to B_n$ 显然根据定义 $B_n$ 中的元素必为某个 $f(x)\in A_n$ 的根
+
+进一步根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][因式、可约与根-根-根的个数]]可知 $f(x)$ 至多有 $n$ 个根，故 $\sigma$ 是[[MK138][满射]]
+
+定义[[MK107][集合族]] $K=\left\{K_b\big|b\in B_n\right\}$ 其中 $K_b=\left\{a\big|\sigma(a)=b\right\}$
+
+根据[[MK261][选择公理]]存在选择函数 $f(K_b)\in K_b$ 则定义 $K'=\left\{f(K_b)\big|K_b\in K\right\}$
+
+则映射 $\sigma':K'\to B_n$ 是[[MK139][双射]]故根据[[MK213][定义]]可得 $K'\sim B_n$ 显然 $K'$ 是无限集且 $K'\subset A_n\times\{1,2,...,n\}$
+
+由于 $\{1,2,...,n\}$ 是有限集，故是至多可数集。根据定理2可得 $A_n\times\{1,2,...,n\}$ 亦为至多可数集
+
+显然 $K'$ 是[[MK212][无限集]]，故根据[[MK270][定理2]]可得 $K'$ 是[[MK214][可数集]]，故根据[[MK260][对等传递性]] $B_n$ 亦为可数集
+
+显然所有代数数的集合可写为 $\bigcup_{i=1}^\infty B_i$ 根据[[MK269][定理1]]可得其为至多可数集
+
+显然 $\bigcup_{i=1}^\infty B_i$ 是[[MK212][无限集]]故根据[[MK267][至多可数集定义]]代数数全体为可数集
+
+*** 不可数集
+
+若[[MK212][无限集]]不是[[MK214][可数集]]，则称为不可数集
+
+**** 推论<<MK220>>
+
+若 $A,B$ [[MK213][等势]]，则 $A$ 为不可数集的充要条件是 $B$ 为不可数集
+
+***** 证明
+
+必要条件，当 $B$ 不可数时，假设 $A$ 可数。此时存在[[MK139][双射函数]] $\Phi:N\rightarrow A$ 
+
+又根据等势定义，存在双射函数 $\Psi:B\rightarrow A$ 根据[[MK140][逆函数]]可得存在逆函数 $\Psi^{-1}:A\rightarrow B$ 
+
+且 $\Psi^{-1}$ 亦为双射函数。则根据[[MK218][双射传递]]存在合成映射 $P:N\rightarrow B$ 亦为双射函数，则 $B$ 可数，推出矛盾。
+
+故 $B$ 不可数时 $A$ 亦不可数。
+
+充分条件同理。
+
+*** 相关推论
+
+**** $(0,1)$ 为不可数集
+
+假设可数，则 $(0,1)$ 中的数与[[MK211][自然数]]一一对应，故有：
+
+\begin{aligned}
+&1\rightarrow0.a_{11}a_{12}...\\
+&2\rightarrow0.a_{21}a_{22}...\\
+&...\\
+&n\rightarrow0.a_{n1}a_{n2}...\\
+&...\\
+\end{aligned}
+
+其中 $a_{ij}\in\left\{x\big|x\in N\land x\leq 9\right\}$ 是对应的第 $i$ 个数小数位 $j$ 为上的数字
+
+则取 $B=0.b_1b_2...\a$ 同理 $b_j\in\left\{x\big|x\in N\land x\leq 9\right\}$ 且 $b_i\ne a_{ii}$
+
+可以看到，纵然序列无限， $B$ 任然不在序列当中
+
+且 $B\in(0,1)$ 故与集合与[[MK211][自然数]]一一对应矛盾。故不为[[MK213][等势]]，根据[[MK214][定义]]不可数。
+
+**** $[0,1]$ 为不可数集
+
+定义映射 $f:(0,1)\rightarrow[0,1]$ 为 $f(x)=\begin{cases}0&x=\frac{1}{2}\\1&x=\frac{1}{4}\\\frac{1}{2^n}&x=\frac{1}{2^{n+2}},n=3,4,...\\x&x\ne\frac{1}{2^n}\end{cases}$ 
+
+逆函数为 $f^{-1}(y)=\begin{cases}\frac{1}{2}&y=0\\\frac{1}{4}&y=1\\\frac{1}{2^{n+2}}&y=\frac{1}{2^n},n=3,4,...\\y&y\ne\frac{1}{2^n},0,1\end{cases}$ 
+
+故有对于任意 $x\in(0,1)$ 都有唯一对应的 $f(x)\in [0,1]$ ，
+
+对于任意 $y\in[0,1]$ 均有唯一对应的 $x\in(0,1)$ 使得 $x=f^{-1}(y)$
+
+故 $f$ 为[[MK139][双射函数]]，即 $(0,1)$ 与 $[0,1]$ 等势。根据[[MK220][推论]]可得 $[0,1]$ 不可数。
+
+***** 推论
+
+同理可证 $[0,1),(0,1]$ 亦不可数
+
+**** 任意实数区间均不可数
+
+对于任意区间 $(a,b),[a,b],[a,b),(a,b]$ 可由函数 $f(x)=(b-a)x\ \ x\in(0,1),[0,1],[0,1),(0,1]$ 映射。
+
+对于整个实数区间，可由函数 $f(x)=\tan(x)$ 映射。
+
+对于半封闭区间（例如 $[a,\infty)$ ），可由分段函数映射。 
+
+* 命题逻辑
+
+** 命题（Proposition）
+
+*** 定义<<MK1>>
+
+对于 *确定的对象* 来 *做出判断* 的 *陈述句* ，且有[[MK3][真值]]
+
+*** 真值<<MK3>>
+
+当且仅当[[MK1][命题]]的陈述是正确与否满足：
+
+（1） 具有[[MK2][排中律]]；
+
+（2） 是命题的固有属性，唯一且不变
+
+其真值有定义，此时当命题正确时，真值为 $1$ ；错误时真值为 $0$
+
+*** 排中律<<MK2>>
+
+[[MK1][命题]]的[[MK3][真值]]有且仅有一个，即不为真，便为假，反之亦然。
+
+**** 素数有无限个证明
+
+命题为素数有无限个，若命题正确，则素数有有限个。假设 $a_1,...,a_n$ 为所有素数
+
+显然 $2$ 是质数，故 $n\geq 2$
+
+定义 $x=\sum_{i=1}^n a_i+1$ 则有 $x$ 被任意 $a_i$ 除均余 $1$
+
+若 $x$ 是素数，则假设不成立。
+
+若 $x$ 不是素数，由于 $x>1$ ,则 $x$ 可分解成质数的乘积，由于 $a_1,..,a_n$ 均不是其质因子，故存在其他质数可以整除 $x$ 假设亦不成立
+
+综上所述命题为素数有无限个命题为假，根据排中律素数有无限个证明命题为真。
+
+** 逻辑连接词（Logic connective）<<MK6>>
+
+*** 定义<<MK4>>
+
+连接命题，对命题进行计算的词
+
+*** 原子命题<<MK5>>
+
+不含[[MK4][逻辑连接词]]的命题
+
+*** 复合命题
+
+含有[[MK4][逻辑连接词]]及[[MK5][原子命题]]的命题 
+
+*** 5个基本连接词<<MK41>>
+
+若 $p$ 满足[[MK1][命题]]要求，则有如下逻辑连词
+
+**** 否定<<MK221>>
+
+定义符号为 $\lnot$ ，[[MK3][真值]]表：
+
+\begin{tabular}{|l|l|} 
+\hline
+p & \lnot p\\
+\hline
+1&0\\
+0&1\\
+\hline
+\end{tabular}
+
+**** 合取<<MK18>>
+
+定义符号为 $\land$ ，[[MK3][真值]]表：
+
+\begin{tabular}{|l|l|l|} 
+\hline
+p & p & p \land p\\
+\hline
+0&0&0\\
+0&1&0\\
+1&0&0\\
+1&1&1\\
+\hline
+\end{tabular}
+
+**** 析取<<MK16>>
+
+定义符号为 $\lor$ ，[[MK3][真值]]表：
+
+\begin{tabular}{|l|l|l|} 
+\hline
+p & p & p \lor p\\
+\hline
+0&0&0\\
+0&1&1\\
+1&0&1\\
+1&1&1\\
+\hline
+\end{tabular}
+
+**** 蕴含<<MK26>>
+
+定义符号为 $\rightarrow$ ，[[MK3][真值]]表：
+
+\begin{tabular}{|l|l|l|} 
+\hline
+p & p & p \rightarrow p\\
+\hline
+0&0&1\\
+0&1&1\\
+1&0&0\\
+1&1&1\\
+\hline
+\end{tabular}
+
+**** 双向蕴含<<MK27>>
+
+定义符号为 $\leftrightarrow$ ，[[MK3][真值]]表：
+
+\begin{tabular}{|l|l|l|} 
+\hline
+p & p & p \leftrightarrow p\\
+\hline
+0&0&1\\
+0&1&0\\
+1&0&0\\
+1&1&1\\
+\hline
+\end{tabular}
+
+*** 连接词优先级<<MK68>>
+
+优先级从高到低分别为 $\lnot,[\land,\lor],\rightarrow,\leftrightarrow$ 
+
+[[MK3][真值]]运算顺序遵循如下规则：
+
+（1） 优先级高的连词先运算
+
+（2） 同等优先级情况下，左变得连词运算优先级高于右边的连词。
+
+*** 连词完备性
+
+[[MK41][5个常用连词]]的集合被称为完备联结词。
+
+**** 其他功能完备集
+
+***** $\lnot,\lor,\land$ <<MK43>>
+
+根据[[MK42][定理2]]可知任何命题公式均可化为主合取范式。此时逻辑连词仅包含 $\lnot,\lor,\land$
+
+***** $\lnot,\rightarrow$
+
+根据[[MK23][蕴含等式]]可得 $\lnot A\rightarrow B{|\!\!\!=\!\!\!|}\lnot(\lnot A)\lor B{|\!\!\!=\!\!\!|}A\lor B$ 故根据[[MK71][替换原理]]析取 $\lor$ 可由 $\lnot,\rightarrow$ 替换
+
+根据[[MK28][德摩根律]]可得 $A\land B{|\!\!\!=\!\!\!|}\lnot(\lnot A\lor\lnot B){|\!\!\!=\!\!\!|}\lnot(\lnot A)\rightarrow\lnot B{|\!\!\!=\!\!\!|}A\rightarrow\lnot B$ 故根据[[MK71][替换原理]]合取 $\land$ 可由 $\lnot,\rightarrow$ 替换
+
+另可得 $A\leftrightarrow B{|\!\!\!=\!\!\!|}(A\rightarrow B)\land(B\rightarrow A)$ 且 $\land$ 可由 $\lnot,\rightarrow$ 替换。故 $\leftrightarrow$ 亦可由 $\lnot,\rightarrow$ 替换。
+
+***** $\lnot,\lor$ <<MK44>>
+
+根据[[MK28][德摩根律]]可得 $A\land B{|\!\!\!=\!\!\!|}\lnot(\lnot A\land\lnot B)$ 故根据[[MK71][替换原理]]合取 $\land$ 可由 $\lnot,\lor$ 替换。
+
+又由于[[MK43][ $\lnot,\lor,\land$ ]]是完备集，故 $\lnot,\lor$ 亦是完备集。
+
+***** $\downarrow$
+
+定义为 $p\downarrow q{|\!\!\!=\!\!\!|}\lnot(p\lor q)$ 
+
+根据[[MK34][幂等律]] $p\downarrow p{|\!\!\!=\!\!\!|}\lnot(p\lor p){|\!\!\!=\!\!\!|}\lnot p$ 故根据[[MK71][替换原理]] $\lnot$ 可由 $\downarrow$ 替换
+
+根据[[MK12][双重否定]] $p\lor q{|\!\!\!=\!\!\!|}\lnot\lnot(p\lor q){|\!\!\!=\!\!\!|}\lnot(p\downarrow q){|\!\!\!=\!\!\!|}(p\downarrow q)\downarrow(p\downarrow q)$ 故根据[[MK71][替换原理]] $\lor$ 可由 $\downarrow$ 替换
+
+又由于[[MK44][ $\lnot,\lor$ ]]是完备集，故 $\downarrow$ 亦是完备集。
+
+** 命题公式
+
+*** 基本定义<<MK224>>
+
+**** 命题常元<<MK14>>
+
+一个确定的具体的命题，称为命题常元。与[[MK11][命题变元]]对应。
+
+**** 命题变元<<MK11>>
+
+根据[[MK10][定义]]命题公式即为对不同命题的逻辑运算，命题变项为命题公式中可变的命题，即逻辑运算的输入项。
+
+**** 命题公式<<MK10>>
+
+命题公式（又称 *真值函数* 或 *合适公式* ）可按下列[[MK100][归纳定义]]生成:
+
+基础条款：[[MK11][命题变项]]本身是命题公式。
+
+归纳条款：如果 $A$ 是命题公式，则 $\lnot A$ 是命题公式。如果 $A$ 和 $B$ 是命题公式，那么 $A\land B, A\lor B,A\rightarrow B,A\leftrightarrow B$ 都是命题公式。
+
+终极条款：当且仅当有限次地应用以上条款所得到的包含[[MK11][命题变项]]，[[MK6][联结词]]和圆括号（用于判别优先级）的符号串是命题公式。
+
+命题公式的定义是一个递归定义形式。命题公式本身不是命题，没有[[MK3][真值]]，只有对其[[MK11][命题变项]]进行赋值后，它才有[[MK3][真值]]。
+
+若定义命题公式为 $A$ 其[[MK11][命题变项]]为 $p_1,...,p_n$ 则可记作 $A(p_1,...,p_n)$
+
+**** 解释<<MK222>>
+
+一组确定的 $p_1,...,p_n$ 使得 $A(p_1,...,p_n)$ 有确定的值，称为解释，通常记作 $I$ 表示
+
+*** 命题公式分类
+
+**** 原子命题
+
+仅包含[[MK11][命题变元]]的[[MK10][命题公式]]
+
+**** 重言式（永真式）<<MK8>>
+
+若命题公式 $A$ 对所有[[MK11][命题变项]]赋值，[[MK3][真值]]都为 $1$ ，则称命题公式 $A$ 为重言式。
+
+**** 矛盾式（永假式）
+
+若命题公式 $A$ 对所有[[MK11][命题变项]]赋值，[[MK3][真值]]都为 $0$ ，则称命题公式 $A$ 为矛盾式。
+
+**** 可满足式
+
+若命题公式 $A$ 至少对一个[[MK11][命题变项]]赋值，使得[[MK3][真值]]为 $1$ ，则称命题公式 $A$ 为可满足式。[[MK8][永真式]]是可满足时。
+
+*** 命题公式关系
+
+**** 逻辑等价<<MK13>>
+
+假设有命题公式 $A$ 和 $B$ ，其满足对于各自[[MK11][命题变项]]的[[MK3][真值]]计算结果均有 $A\leftrightarrow B=1$ 时便称两个命题公式逻辑等价，记作 $A{|\!\!\!=\!\!\!|}B$ 。
+
+注：逻辑等价符号 ${|\!\!\!=\!\!\!|}$ 仅表示两个公式之间的关系，无真值计算。
+
+***** 逻辑等价式举例<<MK237>>
+
+****** 双重否定<<MK12>>
+
+$\lnot\lnot A{|\!\!\!=\!\!\!|}A$
+
+****** 幂等律<<MK34>>
+
+$A\lor A{|\!\!\!=\!\!\!|}A,A\land A{|\!\!\!=\!\!\!|}A$
+
+****** 交换律<<MK36>>
+
+\begin{aligned}
+A\lor B&{|\!\!\!=\!\!\!|}B\lor A\\
+A\land B&{|\!\!\!=\!\!\!|}B\land A
+\end{aligned}
+
+****** 结合律<<MK59>>
+
+\begin{aligned}
+(A\lor B)\lor C&{|\!\!\!=\!\!\!|}A\lor (B\lor C)\\
+(A\land B)\land C&{|\!\!\!=\!\!\!|}A\land (B\land C)
+\end{aligned}
+
+******* 证明
+
+或[[MK3][真值]]表
+
+\begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & A\lor B & (A\lor B)\lor C & B\lor C & A\lor (B\lor C)\\
+\hline
+0&0&0&0&0&0&0\\
+1&0&0&1&1&0&1\\
+0&1&0&1&1&1&1\\
+0&0&1&0&1&1&1\\
+1&1&0&1&1&1&1\\
+1&0&1&1&1&1&1\\
+0&1&1&1&1&1&1\\
+1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+与[[MK3][真值]]表
+
+\begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & A\land B & (A\land B)\land C & B\land C & A\land (B\land C)\\
+\hline
+0&0&0&0&0&0&0\\
+1&0&0&0&0&0&0\\
+0&1&0&0&0&0&0\\
+0&0&1&0&0&0&0\\
+1&1&0&1&0&0&0\\
+1&0&1&0&0&0&0\\
+0&1&1&0&0&1&0\\
+1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+****** 分配率<<MK29>>
+
+\begin{aligned}
+A\lor (B\land C)&{|\!\!\!=\!\!\!|}(A\lor B)\land (A\lor C)\\
+A\land (B\lor C)&{|\!\!\!=\!\!\!|}(A\land B)\lor (A\land C)
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & A\lor B & A\lor C & B\land C & A\lor (B\land C) & (A\lor B)\land (A\lor C)\\
+\hline
+0&0&0&0&0&0&0&0\\
+1&0&0&1&1&0&1&1\\
+0&1&0&1&0&0&0&0\\
+0&0&1&0&1&0&0&0\\
+1&1&0&1&1&0&1&1\\
+1&0&1&1&1&0&1&1\\
+0&1&1&1&1&1&1&1\\
+1&1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & A\land B & A\land C & B\lor C & A\land (B\lor C) & (A\land B)\lor (A\land C)\\
+\hline
+0&0&0&0&0&0&0&0\\
+1&0&0&0&0&0&0&0\\
+0&1&0&0&0&1&0&0\\
+0&0&1&0&0&1&0&0\\
+1&1&0&1&0&1&1&1\\
+1&0&1&0&1&1&1&1\\
+0&1&1&0&0&1&0&0\\
+1&1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+****** 德摩根律<<MK28>>
+
+\begin{aligned}
+\lnot (A\lor B)&{|\!\!\!=\!\!\!|}\lnot A\land\lnot B\\
+\lnot (A\land B)&{|\!\!\!=\!\!\!|}\lnot A\lor\lnot B\\
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & \lnot A & \lnot B & A\lor B & \lnot (A\lor B) & \lnot A\land\lnot B\\
+\hline
+0&0&1&1&0&1&1\\
+1&0&0&1&1&0&0\\
+0&1&1&0&1&0&0\\
+1&1&0&0&1&0&0\\
+\hline
+\end{tabular}
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & \lnot A & \lnot B & A\land B & \lnot (A\land B) & \lnot A\lor\lnot B\\
+\hline
+0&0&1&1&0&1&1\\
+1&0&0&1&0&1&1\\
+0&1&1&0&0&1&1\\
+1&1&0&0&1&0&0\\
+\hline
+\end{tabular}
+
+****** 吸收律
+
+\begin{aligned}
+A\land (A\lor B)&{|\!\!\!=\!\!\!|}A\\
+A\lor (A\land B)&{|\!\!\!=\!\!\!|}A\\
+\end{aligned} 
+
+******* 证明
+
+        \begin{tabular}{|l|l|l|l|l|} 
+\hline
+A & B & A \land B & A\lor(A\land B)\\
+\hline
+0&0&0&0\\
+1&0&0&1\\
+0&1&0&0\\
+1&1&1&1\\
+\hline
+\end{tabular}
+
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+A & B & A \lor B & A\land(A\lor B)\\
+\hline
+0&0&0&0\\
+1&0&1&1\\
+0&1&1&0\\
+1&1&1&1\\
+\hline
+\end{tabular}
+
+****** 蕴含等式<<MK23>>
+
+\begin{aligned}
+A\rightarrow B&{|\!\!\!=\!\!\!|}\lnot A\lor B
+\end{aligned}
+
+******* 证明 
+
+\begin{tabular}{|l|l|l|l|l|l|} 
+\hline
+A & B & \lnot A & \lnot A\lor B & A\rightarrow B\\
+\hline
+0&0&1&1&1\\
+1&0&0&0&0\\
+0&1&1&1&1\\
+1&1&0&1&1\\
+\hline
+\end{tabular}
+
+****** 等价等值式<<MK24>>
+
+\begin{aligned}
+A\leftrightarrow B&{|\!\!\!=\!\!\!|}(B\rightarrow A)\land (A\rightarrow B){|\!\!\!=\!\!\!|}(\lnot A\lor B)\land(\lnot B\lor A)
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & \lnot A & \lnot B & \lnot A \lor B & \lnot B\lor A & (\lnot A\lor B)\land(\lnot B\lor A) & A\leftrightarrow B\\
+\hline
+0&0&1&1&1&1&1&1\\
+1&0&0&1&0&1&0&0\\
+0&1&1&0&1&0&0&0\\
+1&1&0&0&1&1&1&1\\
+\hline
+\end{tabular}
+
+****** 零率<<MK37>>
+
+\begin{aligned}
+A\lor 1&{|\!\!\!=\!\!\!|}1\\
+A\land 0&{|\!\!\!=\!\!\!|}0
+\end{aligned}
+
+****** 同一律
+
+\begin{aligned}
+A\land 1&{|\!\!\!=\!\!\!|}A\\
+A\lor 0&{|\!\!\!=\!\!\!|}A
+\end{aligned}
+
+****** 排中律<<MK35>>
+
+\begin{aligned}
+A\lor \lnot A&{|\!\!\!=\!\!\!|}1\\
+\end{aligned}
+
+****** 矛盾律<<MK33>>
+
+\begin{aligned}
+A\land \lnot A&{|\!\!\!=\!\!\!|}0\\
+\end{aligned}
+
+****** 蕴含关系
+
+\begin{aligned}
+(A\land B) \rightarrow C&{|\!\!\!=\!\!\!|}A\rightarrow (B \rightarrow C)\\
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & A\land B & B\rightarrow C & (A\land B) \rightarrow C & A\rightarrow (B \rightarrow C)\\
+\hline
+0&0&0&0&1&1&1\\
+1&0&0&0&1&1&1\\
+0&1&0&0&0&1&1\\
+0&0&1&0&1&1&1\\
+1&1&0&1&0&0&0\\
+1&0&1&0&1&1&1\\
+0&1&1&0&1&1&1\\
+1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+****** 假言易位（逆否命题）<<MK9>>
+
+\begin{aligned}
+A\rightarrow B&{|\!\!\!=\!\!\!|}\lnot B\rightarrow \lnot A\\
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline
+A & B & \lnot A & \lnot B & A\rightarrow B & \lnot B\rightarrow \lnot A\\
+\hline
+0&0&1&1&1&1\\
+1&0&0&1&1&1\\
+0&1&1&0&0&0\\
+1&1&0&0&1&1\\
+\hline
+\end{tabular}
+
+****** 归谬论
+
+\begin{aligned}
+(A\rightarrow B)\land(A\rightarrow\lnot B)&{|\!\!\!=\!\!\!|}\lnot A\\
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline
+A & B & A\rightarrow B & \lnot B & A\rightarrow \lnot B & (A\rightarrow B)\land(A\rightarrow\lnot B) & \lnot A\\
+\hline
+0&0&1&1&1&1&1\\
+1&0&0&1&1&0&0\\
+0&1&1&0&1&1&1\\
+1&1&1&0&0&0&0\\
+\hline
+\end{tabular}
+
+****** 等价等值式2<<MK25>>
+
+\begin{aligned}
+A\leftrightarrow B&{|\!\!\!=\!\!\!|}(A\land B)\lor(\lnot A\land\lnot B)\
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & A\land B & \lnot A & \lnot B & \lnot A \land \lnot B & (A\land B)\lor(\lnot A\land\lnot B) & A\leftrightarrow B\\
+\hline
+0&0&0&1&1&1&1&1\\
+1&0&0&0&1&0&0&0\\
+0&1&0&1&0&0&0&0\\
+1&1&1&0&0&0&1&1\\
+\hline
+\end{tabular}
+
+****** 等价否定式
+
+\begin{aligned}
+A\leftrightarrow B&{|\!\!\!=\!\!\!|}\lnot B\leftrightarrow \lnot A\\
+\end{aligned}
+
+**** 逻辑蕴含（逻辑结果）<<MK7>>
+
+假设有命题公式 $A$ 和 $B$ ，其满足对于各自[[MK11][命题变项]]的[[MK3][真值]]计算结果均有 $A\rightarrow B=1$ 时便称两个命题公式逻辑蕴含，记作 $A{|\!\!\!=}B$ 。
+
+注：逻辑蕴含符号 ${|\!\!\!=}$ 仅表示两个公式之间的关系，无真值计算。
+
+***** 逻辑蕴含举例<<MK250>>
+
+****** I1
+
+\begin{aligned}
+A&{|\!\!\!=}A\lor B
+\end{aligned}
+
+****** 简化规则<<MK72>>
+
+\begin{aligned}
+A\land B&{|\!\!\!=}A\\
+A\land B&{|\!\!\!=}B\\
+\end{aligned}
+
+****** 添加规则
+
+\begin{aligned}
+A&{|\!\!\!=}A\lor B\\
+B&{|\!\!\!=}A\lor B\\
+\end{aligned}
+
+****** 二难推论
+
+\begin{aligned}
+(A\lor B)\land(A\rightarrow C)\land(B\rightarrow C)&{|\!\!\!=}C\\
+\end{aligned}
+
+****** 假言推理
+
+\begin{aligned}
+A\land (A\rightarrow B)&{|\!\!\!=}B\\
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|} 
+\hline
+A & B & A\rightarrow B & A\land (A\rightarrow B) & \left(A\land (A\rightarrow B)\right)\rightarrow B\\
+\hline
+0&0&1&0&1\\
+1&0&0&0&1\\
+0&1&1&0&1\\
+1&1&1&1&1\\
+\hline
+\end{tabular}
+
+****** 否定后件
+
+\begin{aligned}
+(A\rightarrow B)\land \lnot B&{|\!\!\!=}\lnot A\\
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & A\rightarrow B & \lnot B & (A\rightarrow B)\land \lnot B & \lnot A & \left((A\rightarrow B)\land \lnot B\right)\rightarrow \lnot A\\
+\hline
+0&0&1&1&1&1&1\\
+1&0&0&1&0&0&1\\
+0&1&1&0&0&1&1\\
+1&1&1&0&0&0&1\\
+\hline
+\end{tabular}
+
+****** 选言三段论
+
+\begin{aligned}
+\lnot A\land(A\lor B)&{|\!\!\!=}B\\
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline
+A & B & \lnot A & A \lor B & \lnot A\land (A\lor B) & \left(\lnot A\land (A\lor B)\right)\rightarrow B\\
+\hline
+0&0&1&0&0&1\\
+1&0&0&1&0&1\\
+0&1&1&1&1&1\\
+1&1&0&1&0&1\\
+\hline
+\end{tabular}
+
+****** 假言三段论（蕴含的传递性）<<MK56>>
+
+\begin{aligned}
+(A\rightarrow B)\land(B\rightarrow C)&{|\!\!\!=}A\rightarrow C\\
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & A\rightarrow B & B\rightarrow C & (A\rightarrow B)\land(B\rightarrow C) & A\rightarrow C & \left((A\rightarrow B)\land(B\rightarrow C)\right)\rightarrow A\rightarrow C\\
+\hline
+0&0&0&1&1&1&1&1\\
+1&0&0&0&1&0&0&1\\
+0&1&0&1&0&0&1&1\\
+0&0&1&1&1&1&1&1\\
+1&1&0&1&0&0&0&1\\
+1&0&1&0&1&0&1&1\\
+0&1&1&1&1&1&1&1\\
+1&1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+****** I7
+
+\begin{aligned}
+(A\rightarrow B)\land(C\rightarrow D)&{|\!\!\!=}(A\land C)\rightarrow (B\land D)\\
+\end{aligned}
+
+******* 证明
+
+定义 $E=\left((A\rightarrow B)\land(C\rightarrow D)\right)\rightarrow\left((A\land C)\rightarrow (B\land D)\right)$
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & D & A\rightarrow B & C\rightarrow D & (A\rightarrow B)\land(C\rightarrow D) & A\land C & B\land D & (A\land C)\rightarrow (B\land D) & E\\
+\hline
+0&0&0&0&1&1&1&0&0&1&1\\
+1&0&0&0&0&1&0&0&0&1&1\\
+0&1&0&0&1&1&1&0&0&1&1\\
+0&0&1&0&1&0&0&0&0&1&1\\
+0&0&0&1&1&1&1&0&0&1&1\\
+1&1&0&0&1&1&1&0&0&1&1\\
+1&0&1&0&0&0&0&1&0&0&1\\
+1&0&0&1&0&1&0&0&0&1&1\\
+0&1&1&0&1&0&0&0&0&1&1\\
+0&1&0&1&1&1&1&0&1&1&1\\
+0&0&1&1&1&1&1&0&0&1&1\\
+1&1&1&0&1&0&0&1&0&0&1\\
+1&1&0&1&1&1&1&0&1&1&1\\
+1&0&1&1&0&1&0&1&0&1&1\\
+0&1&1&1&1&1&1&0&1&1&1\\
+1&1&1&1&1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+****** I8（双向蕴含传递）
+
+\begin{aligned}
+(A\leftrightarrow B)\land(B\leftrightarrow C)&{|\!\!\!=}A\leftrightarrow C\\
+\end{aligned}
+
+******* 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & A\leftrightarrow B & B\leftrightarrow C & (A\leftrightarrow B)\land(B\leftrightarrow C) & A\leftrightarrow C & \left((A\leftrightarrow B)\land(B\leftrightarrow C)\right)\rightarrow A\leftrightarrow C\\
+\hline
+0&0&0&1&1&1&1&1\\
+1&0&0&0&1&0&0&1\\
+0&1&0&0&0&0&1&1\\
+0&0&1&1&0&0&0&1\\
+1&1&0&1&0&0&0&1\\
+1&0&1&0&0&0&1&1\\
+0&1&1&0&1&0&0&1\\
+1&1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+**** 命题公式关系性质
+
+***** 等价传递<<MK39>>
+
+若 $A{|\!\!\!=\!\!\!|}B$ 且 $B{|\!\!\!=\!\!\!|}C$ 则有 $A{|\!\!\!=\!\!\!|}C$  
+
+***** 等价对称
+
+若 $A{|\!\!\!=\!\!\!|}B$ 则有 $B{|\!\!\!=\!\!\!|}A$  
+
+***** 假言易位
+
+若 $A{|\!\!\!=}B$ 则有 $\lnot A{|\!\!\!=}\lnot B$ ，可由[[MK9][假言易位]]证明
+
+***** 蕴含传递
+
+若 $A{|\!\!\!=}B$ 且 $B{|\!\!\!=}C$ 则有 $A{|\!\!\!=}C$  
+
+***** 蕴含可替
+
+若 $A{|\!\!\!=}B$ 且 $A{|\!\!\!=\!\!\!|}A',B{|\!\!\!=\!\!\!|}B'$ 则有 $A'{|\!\!\!=}B'$
+
+*** 重言式带入原理
+
+若命题公式 $A$ 为[[MK8][重言式]]，其中有一个[[MK11][命题变项]] $p$ ，当用命题公式 $B$ 代替 $p$ 时，记作 $A(B/p)$ 仍为重言式。
+
+注：必须全部替换
+
+**** 证明
+
+由于 $A$ 为[[MK8][重言式]]，故 $p$ 无论取何值 $A$ 的[[MK3][真值]]均为 $1$ 故 $B$ 代替所有 $p$ 时，无论取何值 $A$ 真值均为真。
+
+当不全部替换时，可举反例 $A(p)=\lnot p\lor p$ 定义 $B=\lnot p$ 
+
+若仅替换第一个 $p$ 则有 $A'(B(p),p)=\lnot B\lor p=\lnot\lnot p\lor p$ 根据[[MK12][双重否定]]可得 $p{|\!\!\!=\!\!\!|}\lnot\lnot p$
+
+定义 $B=p\lor p$ 根据[[MK71][替换原理]]得 $A'{|\!\!\!=\!\!\!|}B$ 。则当 $p=0$ 时 $B=0$ 根据[[MK13][等价定义]]此时当且仅当 $A'=0$ 时 $A'\leftrightarrow B$ 为 $1$
+
+故 $A'=0$ 根据[[MK8][重言式]]定义 $A'$ 不再是重言式。
+
+*** 命题公式替换原理<<MK71>>
+
+若命题公式 $A$ 含有子公式 $C$ 。另外有命题公式 $D{|\!\!\!=\!\!\!|}C$ ，则将 $D$ 替换 $C$ 后得命题公式 $B$ ，则有 $A{|\!\!\!=\!\!\!|}B$
+
+注：部分替代亦可
+
+**** 证明
+
+命题公式 $A$ 包含子公式 $C$ ，当 $C=0$ 时由于 $D{|\!\!\!=\!\!\!|}C$ 则 $D=0$ ，同理当 $C=1$ 时 $D=1$
+
+故无论是否替换 $C$ ，命题公式中 $C$ 所在的部分的真值均无变化。故根据[[MK2][排中律]] $A$ 的真值亦无变化。
+
+*** 范式
+
+**** 基本术语定义
+
+***** 文字<<MK17>>
+
+[[MK11][命题变元]]以及他们的否定。此时命题常元、变元被称为正文字，他们的否命题称为负文字。
+
+***** 析取子句<<MK19>>
+
+有限个[[MK17][文字]]或若干[[MK17][文字]]的[[MK16][析取]]。
+
+***** 合取子句<<MK20>>
+
+有限个[[MK17][文字]]或若干[[MK17][文字]]的[[MK18][合取]]。
+
+**** 合取范式<<MK21>>
+
+命题公式 $A$ 的合取范式 $A'$ 满足：
+
+（1） $A{|\!\!\!=\!\!\!|}A'$
+
+（2） $A'$ 为[[MK19][析取子句]]或若干有限个[[MK19][析取子句]]的[[MK18][合取]]
+
+**** 析取范式<<MK22>>
+
+命题公式 $A$ 的析取范式 $A'$ 满足：
+
+（1） $A{|\!\!\!=\!\!\!|}A'$
+
+（2） $A'$ 为[[MK20][合取子句]]或若干有限个[[MK20][合取子句]]的[[MK16][析取]]
+
+**** 定理1（范式存在定理）<<MK32>>
+
+任何命题公式都可化为[[MK21][合取范式]]或[[MK22][析取范式]]
+
+***** 证明
+
+对于命题公式 $A$ ：
+
+（1） 可用[[MK23][蕴含等式]]，[[MK24][等价等值式]]，[[MK25][等价等值式2]]将命题公式中的[[MK26][蕴含]]与[[MK27][双向蕴含]]去除
+
+（2） 可用[[MK28][德摩根律]]将否定连接词 $\lnot$ 深入，直至只作用于[[MK17][文字]]
+
+（3） 经过前两步，命题中只含 $\land,\lor$ 以及括号。最后利用[[MK29][分配率]]配出需要的合取（析取）子串。
+
+**** 主合取范式<<MK38>>
+
+命题公式 $A(p_1,...,p_n)$ 的主合取范式 $A'$ 满足：
+
+（1） $A'$ 为 $A$ 的[[MK21][合取范式]]
+
+（2） $A'$ 的每一个[[MK19][析取子句]]满足：
+
+      a）所有的[[MK11][命题变元]]及其[[MK221][否定]]不同时存在
+
+      b）但二者其一正好出现一次
+
+      c）[[MK19][析取子句]]中文[[MK11][命题变元]]的次序一致（ $p_1,...,p_n$ ）
+
+**** 主析取范式<<MK40>>
+
+命题公式 $A$ 的主析取范式 $A'$ 满足：
+
+（1） $A'$ 为 $A$ 的[[MK22][析取范式]]
+
+（2） $A'$ 的每一个[[MK20][合取子句]]满足：
+
+      a）所有的[[MK11][命题变元]]及其[[MK221][否定]]不同时存在
+
+      b）但二者其一正好出现一次
+
+      c）[[MK20][合取子句]]中文[[MK11][命题变元]]的次序一致（ $p_1,...,p_n$ ）
+
+**** 定理2<<MK42>>
+
+任意命题公式 $A$ 的主合取（析取）范式存在且唯一
+
+***** 证明
+
+下面以主合取范式为例证明，主析取范式同理。
+
+****** 证明存在
+
+定义命题 $A(p_1,...,p_n)$ 根据[[MK32][定理1]]可得 $A$ 等价于其[[MK21][合取范式]] $A'$ ，定义 $A'$ 由 $A'_1,...,A'_s$ 的 $s$ 个[[MK19][析取子句]]组成。
+
+利用[[MK71][替换原理]]，可利用以下替换构造主合取范式：
+
+（1） 若 $A'_i$ 中却少某项 $p_j$ 则 $A'_i{|\!\!\!=\!\!\!|}A'_i\lor0$ 根据[[MK33][矛盾律]]及[[MK29][分配率]]可得 $A'_i\lor0{|\!\!\!=\!\!\!|}A'_i\lor(p_j\land \lnot p_j){|\!\!\!=\!\!\!|}(A'_i\lor p_j)\land(A'_i\lor\lnot p_j)$ ，故可补全合取子式中不包含的[[MK11][命题变元]]。
+
+（2） 根据[[MK34][幂等律]] $A_i\land A_i{|\!\!\!=\!\!\!|}A_i$ 结合[[MK36][交换律]]，[[MK59][结合律]]可去除重复的[[MK19][析取子句]] 
+
+（3） 根据[[MK34][幂等律]] $p_j\land p_j{|\!\!\!=\!\!\!|}p_j$ 结合[[MK36][交换律]]，[[MK59][结合律]]可去除 $A_i$ 中 $p_j$ 的重复项
+
+（4） 根据[[MK35][排中律]] $p_j\lor\lnot p_j{|\!\!\!=\!\!\!|}1$ 结合[[MK37][零律]]及[[MK36][交换律]]可得 $A_i{|\!\!\!=\!\!\!|}1$ 且 $A_1\land...\land A_{i-1}\land A_i\land A_{i+1} \land...A_s{|\!\!\!=\!\!\!|}A_1\land...\land A_{i-1}\land A_{i+1} \land...A_s$ 故去除 $p_j,\lnot p_j$ 同时存在的项。
+
+又根据[[MK59][结合律]]，析取与合取可以无视计算顺序，最终可得满足[[MK38][主合取范式]]条件的命题公式。
+
+****** 证明唯一
+
+定义命题 $A(p_1,...,p_n)$ 存在两个不同的[[MK38][主合取范式]] $B,C$ 则必有 $A{|\!\!\!=\!\!\!|}B,A{|\!\!\!=\!\!\!|}C$ 根据[[MK39][等价传递]] $B{|\!\!\!=\!\!\!|}C$
+
+由于 $B,C$ 是两个不同的主合取范式，则必存在至少一个不同个[[MK19][析取子句]]。即存在[[MK19][析取子句]] $B^*_i$ 仅存在 $B$ 或 $C$ 中。不妨设 $B^*_i$ 仅存在 $B$ 中。
+
+由于命题 $A(p_1,...,p_n)$ 且 $B,C$ 为[[MK38][主合取范式]]，故其[[MK19][析取子句]]的形式为 $\textcircled{}p_1\lor\textcircled{ }p_2\lor...\lor\textcircled{ }p_n$ 排列。其中 $\textcircled{ }$ 可放 $\lnot$ 或不放。
+
+对于中某一特定[[MK19][析取子句]] $P_j=q_1\lor...\lor q_n$ ，其中 $q_i=\textcircled{j}_ip_i$ 且 $\textcircled{j}_i$ 为该子句下特定的 $p_i$ 前缀，可为 $\lor$ 或无。
+
+根据[[MK16][析取]]定义，当且仅当 $\forall i\big(((1\leq i\leq n)\land i\in N)\rightarrow q_i=0\big)$ 时 $P_j=0$ 
+
+且此时对于任意 $P_l=1,l\ne j$ ， $P_{l}$ 必存在一个 $q_k$ 使得 $\textcircled{l}_k$ 不同与 $\textcircled{j}_k$ （否则两个子句相同）。由于[[MK38][主合取范式]]定义，必有 $\textcircled{j}_kp_k=\lnot\textcircled{l}_kp_k$
+
+故当 $\textcircled{j}_kp_k=0$ 时 $\textcircled{l}_kp_k=1$ ,则当 $P_j=0$ 时对于任意 $l\ne j$ 均有 $P_l=1$ 。
+
+综上所述，当某一[[MK19][析取子句]]真值为 $0$ 时，其他所有析取子句真值为 $1$ 。
+
+由于 $B,C$ 均为析取子句的合取，故当给定一组[[MK222][解释]] $I$ 使得 $B^*_i=0$ 时， $B=0$ 此时除 $B^*_i$ 外任意[[MK38][主合取范式]]的析取子句真值为 $1$ ，故可得 $C=1$ 。
+
+上述结论与 $B{|\!\!\!=\!\!\!|}C$ 矛盾，故假设不成立，主合取范式唯一。
+
+**** 等值类
+
+若命题公式拥有相同的[[MK38][主析取范式]]，则其运算结果等值，属于同一等值类。
+
+***** 等值类的数量
+
+若命题公式为 $A(p_1,...,p_n)$ ，则其[[MK40][主析取范式]] $A'$ 的[[MK20][合取子式]]形式为 $\textcircled{ }p_1\land\textcircled{ }p_2\land...\land\textcircled{ }p_n$ 其中 $\textcircled{ }$ 可放 $\lnot$ 或不放。
+
+故能表示的不同合取子式的数量为 $2^n$ 。每一个合取子式对于 $A'$ 来说仅有包含和被包含两种互斥可能。故 $A'$ 最多可表达 $2^{2^n}$ 中可能的等值类。
+
+** 命题形式系统
+
+*** 定义<<MK45>>
+
+一个满足以下条件的符号体系：
+
+**** 公理
+
+若干个[[MK8][重言式]]作为公理，即无需证明得真理。
+
+**** 推理规则<<MK58>>
+
+定义为从前提得到结论的思维过程，需满足：
+
+（1） [[MK8][重言式]]可以导出[[MK8][重言式]]的推理规则
+
+（2） 前提条件真值为 $1$ 时，结论真值亦为 $1$ 。
+
+***** 命题逻辑基础推理规则<<MK251>>
+
+规则 $P$ ：在推导的过程中，可随时引入前提集合中的任意一个前提
+
+规则 $T$ ：在推导的过程中，可以随时引入公式 $S$ ，公式 $S$ 是由其前的一个或多个公式推导出来的逻辑结果
+
+规则 $CP$ ：如果能从给定的前提集合 $\Gamma$ 与公式 $P$ 推导出 $S$ ，则能从此前提集合 $\Gamma$ 推导出 $P\rightarrow S$ 。
+
+**** 综合
+
+公理和推理规则能保证正确的前提可以推出正确的结论
+
+*** 证明<<MK46>>
+
+公式序列 $A_1,...,A_m$ 对于任意 $A_i,1\leq i\leq m$ 满足下列任一条件：
+
+（1） $A_i$ 是[[MK45][公理]]
+
+（2） $A_i$ 是由公式序列中 $A_{j_1},...,A_{j_k},j_s\leq i,i\leq s\leq k$ 的条件根据[[MK45][推理规则]]推理而得。
+
+则称公式序列 $A_1,...,A_m$ 是 $A_m$ 的证明，记作 ${|\!-}A_m$ ，且 $A_m$ 被称为 *定理* 。
+
+*** 演绎<<MK47>>
+
+已知 $\Gamma$ 为一个公式集合，有限公式序列 $A_1,...,A_m$ 对于任意 $A_i,1\leq i\leq m$ 满足下列任一条件：
+
+（1） $A_i$ 是[[MK45][公理]]
+
+（2） $A_i$ 是由公式序列中 $A_{j_1},...,A_{j_k},j_s\leq i,i\leq s\leq k$ 的条件根据[[MK58][推理规则]]推理而得。
+
+（3） $A_i\in\Gamma$
+
+则称公式序列 $A_1,...,A_m$ 是 $A_m$ 以 $\Gamma$ 为前提的演绎，记作 $\Gamma{|\!-}A_m$ ，且 $A_m$ 被称 $\Gamma$ 的 *演绎结果* 。
+
+当 $\Gamma=\varnothing$ 时，演绎结果即为[[MK46][定理]]。
+
+*** 推理规则保真性
+
+已知 $\Gamma$ 为一个公式集合，当 $\Gamma$ 中所有公式真值均为 $1$ 时，其[[MK47][演绎结果]]的真值亦为 $1$
+
+**** 证明
+
+根据[[MK47][演绎]]，对于满足条件的公式序列 $A_1,...,A_m$ 若 $A_i$ 是公理或 $A_i\in\Gamma$ 则根据条件 $A_i=1$
+
+若 $A_m$ 是推理结果，则存在前提条件 $A_{j_s},1\leq s\leq k,j_s<m$
+
+由于 $m\leq\infty$ 有限，故 $i$ 有限。且推理的前提条件 $A_{j_s}$ 需满足 $j_s<i$ 
+
+结合[[MK47][演绎]]定义，公式序列中推理过程必然由公理或者 $\Gamma$ 中的命题出发，则在条件下出发命题真值均为 $1$ 
+
+根据[[MK58][推理规则]]，则前提条件真值为 $1$ 时结论必为 $1$ 
+
+则根据条件，真值传递后 $A_m=1$
+
+*** 形式系统的性质
+
+**** 合理性<<MK51>>
+
+若 $A$ 是形式系统的[[MK46][定理]]，则 $A$ 为[[MK8][重言式]]，即 $A=1$
+
+若 $A$ 是形式系统的[[MK47][演绎结果]]，则 $A$ 为前提条件 $\Gamma$ 的[[MK7][逻辑结果]]，即 $\Gamma{|\!\!\!=}A$ 。
+
+即形式系统中的[[MK46][定理]]和[[MK47][演绎结果]]都是合乎逻辑的。
+
+**** 一致性<<MK52>>
+
+不会出现自相矛盾的[[MK46][定理]]，即 $({|\!-}A)\land({|\!-}\lnot A)=0$ 。
+
+**** 完备性<<MK53>>
+
+如果 $A$ 是重言式，则 $A$ 一定是形式系统中的定理，即 $\left\{A=1\right\}{|\!\!\!=}\left\{{|\!-}A\right\}$
+
+如果 $A$ 是 $\Gamma$ 中的[[MK7][逻辑结果]]，则 $A$ 为 $\Gamma$ 的[[MK47][演绎结果]]，即 $\left\{\Gamma{|\!\!\!=}A\right\}{|\!\!\!=}\left\{\Gamma{|\!-}A\right\}$
+
+*** 举例
+
+**** 命题演算系统（PC）
+
+***** 公理<<MK54>>
+
+$A,B,C$ 可代表任意[[MK10][命题公式]]
+
+A1<<MK48>>: $A\rightarrow(B\rightarrow A)$
+
+A2<<MK49>>: $(A\rightarrow(B\rightarrow C))\rightarrow((A\rightarrow B)\rightarrow(A\rightarrow C))$
+
+A3<<MK50>>: $(\lnot A\rightarrow\lnot B)\rightarrow(B\rightarrow A)$
+
+***** 推理规则<<MK55>>
+
+假设公式集合 $\Gamma$ ， 若满足：
+
+（1） $A\in\Gamma$ 或 $A$ 为 $\Gamma$ 的[[MK47][演绎结果]]
+
+（2） 当 $\Gamma$ 中公式真值均为 $1$ 时有 $A\rightarrow B=1$
+
+则 $\Gamma{|\!-}B$ ，即 $B$ 亦为 $\Gamma$ 的[[MK47][演绎结果]]。特别的，当 $\Gamma=\varnothing$ 时 $B$ 为[[MK46][定理]]
+
+****** 推论：推理规则保真性<<MK57>>
+
+已知 $\Gamma$ 为一个公式集合，当 $\Gamma$ 中所有公式真值均为 $1$ 时，其[[MK47][演绎结果]]的真值亦为 $1$
+
+******* 证明
+
+******** 定义 $A_{s_k}$ 
+
+根据[[MK47][演绎结果]]定义假设公式序列 $A_1,...,A_m$ ，取其中任一公式 $A_{s_0}$
+
+根据[[MK54][公理]]中定义，PC系统的公理为[[MK8][重言式]]，且根据条件 $\Gamma$ 中的命题公式真值亦为 $1$
+
+（1） 则若 $A_{s_0}\in\Gamma$ 或 $A_{s_0}$ 为[[MK54][公理]]时 $A_{s_0}=1$
+
+（2） 当 $A_{s_0}$ 为[[MK47][演绎结果]]时必存在 $A_{s_1}\rightarrow A_{s_0}=1,s_1<s_0$
+
+同理 $A_{s_1}$ 或者满足 $A_{s_1}=1$ 或者满足 $A_{s_2}\rightarrow A_{s_1}=1,s_2<s_1$
+
+依次类推直至 $A_{s_k}$ 使得 $A_{s_k}\in\Gamma$ 或者 $A_{s_k}$ 为公理。故得反向序列 $A_{s_0},...,A_{s_k}$ 满足 $A_{s_i}\rightarrow A_{s_{i+1}}=1$ 及 $s_k<...<s_0$
+
+******** 证明 $A_{s_k}$ 的存在性：
+
+由于 $s_0\leq\infty$ 有限，且 $s_i$ 满足 $s_i<s_{i-1}$ 且若 $A_{s_i}$ 不满足 $A_{s_k}$ 条件，则必有 $A_{s_{i+1}}$ 属于公式序列且满足 $A_{s_{i+1}}\rightarrow A_{s_i}=1$ 且 $s_{i+1}<s_i$
+
+由于 $s_{i+1}<s_i$ 可得 $A_{s_{i+1}}\ne A_{s_{i}}$ 且任意 $A_{s_i}$ 于公式序列中排与 $A_{s_0}$ 前，故一共有 $s_0-1$ 个公式排与 $A_{s_0}$ 之前。
+
+假设 $A_{s_k}$ 不存在，则对于任意 $u\in N,u<\infty$ 可经过 $u$ 次类推寻得 $A_{s_u}$ 。当 $u>s_0$ 时需要 $u$ 个公式
+
+然则公式序列中位于 $A_{s_0}$ 前的公式共有 $s_0-1$ 个，且不能重复出现，故矛盾。故必然存在 $A_{s_k}$
+
+******** 证明结论
+
+故根据条件 $A_{s_k}=1$ ，再根据[[MK56][蕴含传递]]以及 $A_{s_{i+1}}\rightarrow A_{s_i}=1$ 可得 $A_{s_i}=1$
+
+***** 性质
+
+****** 合理性
+
+由于[[MK54][公理]]均为[[MK8][重言式]]，且根据[[MK57][保真性]]可得：
+
+（1） 公理导出的结果均为[[MK8][重言式]]
+
+（2） [[MK47][演绎结果]]必为[[MK7][逻辑结果]]
+
+****** 一致性
+
+根据[[MK2][排中律]]不存在 $(B\rightarrow A)\land(B\rightarrow\lnot A)=1$ 故不可能有 $({|\!-}A)\land({|\!-}\lnot A)=1$ 
+
+****** 完备性
+
+略
+
+***** 元定理
+
+证明暂略
+
+****** 演绎定理
+
+$\Gamma{|\!-}A\rightarrow B$ 与 $\Gamma\cup \{A\}{|\!-}B$ 等价
+
+****** 归谬定理
+
+若 $\Gamma\cup \{\lnot A\}{|\!-}B$ 且 $\Gamma\cup \{\lnot A\}{|\!-}\lnot B$ 则有 $\Gamma{|\!-}A$ 
+
+****** 穷举定理
+
+若 $\Gamma\cup \{\lnot A\}{|\!-}B$ 且 $\Gamma\cup \{A\}{|\!-}B$ 则有 $\Gamma{|\!-}B$ 
+
+**** MIU系统
+
+***** 公理
+
+MI
+
+***** 推理规则<<MK59>>
+
+规则1：如果串的最后一个符号是I，则可以加上一个U
+
+规则2：如果串符合Mx，则可以再加上x而生成Mxx，x代表任何一个由M,I,U组成的串
+
+规则3：如果串中出现连续3个I，则可以用U代替III得到新串
+
+规则4：如果串中出现UU，则可以将UU删去得到新串
+
+***** 判定问题
+
+MU是否系统中的串？
+
+****** 证明
+
+定义310系统，M对应3，I对应1，U对应0。则有MI=31，MU=30。此时30能被3整除，31不能。
+
+由于能被3整除的数，各个位上数的和（定义为 $x$ ）必为3的倍数，故根据[[MK59][规则]]：
+
+******* 规则1：
+
+如果串的最后一个符号是1，则可以加上一个3。则若 $x$ 不能被3整除，则 $x+3$ 亦不能
+
+******* 规则2：
+
+如果串符合3x，则可以再加上x而生成3xx，x代表任何一个由3,1,0组成的串
+
+则若 $x$ 不能被3整除，则 $x+x-3$ 亦不能
+
+******* 规则3：
+
+如果串中出现连续三个1，则可以用0代替111得到新串
+
+则若 $x$ 不能被3整除，则 $x-3$ 亦不能
+
+******* 规则4：
+
+如果串中出现00，则可以将00删去得到新串。此时 $x$ 的值不改变。
+
+******* 总结
+
+四个规则均无法从不能被3整除的数中演化出可以被3整除的数。故MU不是定理。
+
+* 谓词逻辑
+
+** 定义
+
+*** 个体词<<MK60>>
+
+在原子命题中可以独立存在的客体（主语、宾语等），称为个体词。
+
+同[[MK224][命题公式]]
+
+**** 个体常元<<MK64>>
+
+表示具体，或特定的个体词。一般用 $a,b,c,...\a$ 或 $a_i,b_j,c_k,...\a$ 表示
+
+**** 个体变元<<MK65>>
+
+表示抽象，或泛指的个体词。一般用 $x,y,z,...\a$ 或 $x_i,y_j,z_k,...\a$ 表示
+
+**** 个体域<<MK69>>
+
+个体词的取值范围。一般用 $D$ 表示
+
+**** 全总域（Universe）<<MK84>>
+
+包含一切个体词的个体域，一般记作 $U$ 。若不标注[[MK69][个体域]]，一般表示全总域。
+
+*** 谓词<<MK61>>
+
+用以刻画[[MK60][个体词]]性质，或[[MK60][个体词]]间关系，即谓词。谓词表示通常以[[MK136][函数]]形式表示。
+
+举例某个谓词以符号 $P$ 表示，其刻画 $n$ 个体词 $x_1,...,x_n$ ，则表示为 $P(x_1,...,x_n)$ 即为 $P:D^n\rightarrow\{0,1\}$
+
+**** 元数<<MK225>>
+
+谓词中可以放置[[MK65][个体变量]]的空位个数，称为谓词的元数。举例中为 $n$
+
+**** 谓词常量<<MK223>>
+
+谓词描述具体的性质或关系。例：小张和小明同岁，可表示为 $F(a,b)$ ，则谓词 $F$ 表同岁这一具体的关系。
+
+**** 谓词变量
+
+谓词描抽象体的性质或关系。例：小张和小明有关系，可表示为 $F(a,b)$ ，则谓词 $F$ 表有关系这一抽象概念。
+
+**** 谓词与命题的转换
+
+当谓词 $P(x_1,...,x_n)$ 中， $P$ 被谓词常量定义， $x_1,...,x_n$ 被[[MK64][个体常元]]代替时，该谓词才会成为命题
+
+***** 零元谓词
+
+当谓词中的不含[[MK65][个体变量]]时，则根据[[MK225][定义]]为零元谓词。此时若谓词本身为[[MK223][谓词常量]]，则谓词是命题。
+
+故所有命题均可用零元谓词来表示。
+
+*** 量词<<MK234>>
+
+描述[[MK60][个体词]]范围的词，例如：
+
+（1） 数量词“所有”（全称量词）记作 $\forall$ ，
+
+（2） 数量词“有”（存在量词）记作 $\exists$
+
+若 $x$ 的[[MK69][个体域]]为 $a_1,...,a_n$ 则
+
+$\forall xP(x),x\in\{a_1,...,a_n\}$ 定义为 $P(a_1)\land...\land P(a_n)$ ， $\lnot\forall xP(x),x\in\{a_1,...,a_n\}$ 定义为 $\lnot(P(a_1)\land...\land P(a_n))$ 
+
+$\exists xP(x),x\in\{a_1,...,a_n\}$ 定义为 $P(a_1)\lor...\lor P(a_n)$ ， $\lnot\exists xP(x),x\in\{a_1,...,a_n\}$ 定义为 $\lnot(P(a_1)\lor...\lor P(a_n))$ 
+
+**** 指导变元
+
+是一个[[MK65][个体变元]]，当量词作用于[[MK60][个体词]]时，同时放在量词后面和[[MK61][谓词]]中：$\forall xP(x),\exists xP(x)$
+
+表示量词作用的[[MK60][个体]]
+
+***** 举例
+
+定义 $x$ 的个体域是所有正整数。则“所有大于2的偶数，均可表示为两个素数之和”的表述为
+
+$\forall x\exists p\exists q\left(Even(x)\land(x>2)\rightarrow Prime(p)\land Prime(q)\right)$
+
+**** 约束变元<<MK226>>
+
+被量词作用的[[MK65][个体变元]]
+
+**** 自由变元<<MK70>>
+
+不被量词作用的[[MK65][个体变元]]
+
+**** 辖域<<MK240>>
+
+量词所作用的谓词或者复合谓词表达式。可用括号表示，亦可用冒号 $:$
+
+**** 量词的顺序
+
+量词（不加括号）固定为从左至右叠加条件
+
+即当有多个量词排列时，其中某一个量词的条件为其左边量词均成立的情况下，该量词成立，以此类推。
+
+**** 表达规则
+
+一般[[MK226][约束变元]]的[[MK69][个体域]]为[[MK84][全总域]]，采用一元谓词标注其特性。例：
+
+所有老虎都要吃人。： $\forall x\big(T(x)\rightarrow P(x)\big)$ 此时 $x\in U$ ，其中 $T(x)$ 表 $x$ 是老虎的一元谓词； $P(x)$ 表 $x$ 吃人一元谓词
+
+** 合式公式定义
+
+*** 包含符号
+
+**** 常量符号<<MK227>>
+
+指[[MK64][个体常量]]，以 $a,b,c,...\a$ 或 $a_i,b_j,c_k,...\a$ 表示
+
+**** 变量符号<<MK228>>
+
+指[[MK65][个体变量]]，以 $x,y,z,...\a$ 或 $x_i,y_j,z_k,...\a$ 表示
+
+**** 函数符号<<MK229>>
+
+$n$ 元函数符号 $f(x_1,...,x_n)$ 指所述[[MK69][个体域]]集合 $D^n\rightarrow D$ 的任一函数
+
+**** 谓词符号<<MK230>>
+
+$n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK69][个体域]]集合 $D^n\rightarrow \{0,1\}$ 的任一谓词
+
+*** 项<<MK231>>
+
+根据[[MK100][归纳定义]]：
+
+基础条款：任意[[MK227][常量]]或[[MK228][变量]]符号是项
+
+归纳条款：若 $f(x_1,...,x_n)$ 是 $n$ 元[[MK229][函数符号]]，且 $t_1,...,t_n$ 是项，则 $f(t_1,...,t_n)$ 也是项
+
+终极条款：只有有限次使用以上两条款产生的符号串是项
+
+*** 原子公式<<MK232>>
+
+若 $P(x_1,...,x_n)$ 是 $n$ 元[[MK230][谓词公式]]，且 $t_1,...,t_n$ 是[[MK231][项]]，则 $P(t_1,...,t_n)$ 是原子公式
+
+根据[[MK230][谓词符号]]可得原子公式亦有[[MK3][真值]]且满足[[MK2][排中律]]。
+ 
+*** 合式公式<<MK233>>
+
+根据[[MK100][归纳定义]]：
+
+基础条款：任意[[MK232][原子公式]]是合式公式
+
+归纳条款：[[MK6][逻辑连接词]]与[[MK234][量词]]作用于合式公式后仍为合式公式，即：
+
+    若 $G,H$ 是合式公式，则 $(G\lor H),(G\land H),(G\rightarrow H),(G\leftrightarrow H)$ 也是合式公式
+
+    若 $G$ 是合式公式，则 $\lnot G,(\forall x)G,(\exists x)G$ 也是合适公式
+
+终极条款：只有有限次使用以上两条款产生的符号串是项
+
+故合式公式为谓词逻辑下的[[MK3][真值]]计算公式，且满足[[MK2][排中律]]。
+
+*** 解释<<MK235>>
+
+一组确定的[[228][变量符号]]，[[MK229][函数符号]]和[[MK230][谓词符号]]使得[[MK233][合式公式]]有确定的值，称为解释，通常记作 $I$ 表示
+
+*** 闭式
+
+任意[[MK233][合式公式]]满足不存在[[MK70][自由变元]]，则称为闭式。
+
+当且仅当合式公式是闭式的时候，才有肯能称为[[MK1][命题]]。
+
+** 合式公式分类
+
+*** 有效公式<<MK236>>
+
+当[[MK233][合式公式]]对任意[[MK235][解释]]，使得[[MK233][合式公式]]的[[MK3][真值]]均为 $1$ 时，称为有效公式。
+
+*** 矛盾公式
+
+当[[MK233][合式公式]]对任意[[MK235][解释]]，使得[[MK233][合式公式]]的[[MK3][真值]]均为 $0$ 时，称为矛盾公式。
+
+*** 可满足公式
+
+至少有一种[[MK235][解释]]，使得[[MK233][合式公式]]的[[MK3][真值]]为 $1$ ，称为可满足式。
+
+** 合式公式关系
+
+*** 谓词公式等价关系
+
+**** 定义<<MK239>>
+
+若 $G\leftrightarrow H$ 是[[MK236][有效公式]]，则公式 $G,H$ 为等价，记作 $G{|\!\!\!=\!\!\!|}H$ 。
+
+同理，此处等价符号为两个[[MK233][合式公式]]的关系，不参与真值计算。
+
+**** 代入实例<<MK248>>
+
+设 $G(P_1,...,P_n)$ 是[[MK10][命题公式]]，其中 $P_1,...,P_n$ 是[[MK11][命题变元]]。
+
+当使用[[MK233][合式公式]] $H_i$ 替换命题变元后，得到新的合式公式 $G(H_1,...,H_n)$ 称为带入实例
+
+***** 定理<<MK238>>
+
+[[MK8][永真式]]的带入实例必为[[MK236][有效公式]]
+
+****** 证明
+
+定义[[MK10][命题公式]] $G(P_1,...,P_n)$ 以及带入实例 $G(H_1,...,H_n)$ 
+
+由于 $H_i$ 是[[MK233][合式公式]]，故 $H_i\in\{0,1\}$ 故根据[[MK8][永真式]]定义，对于任意 $H_i$ 均有 $G(H_1,...,H_n)=1$ 
+
+***** 推论<<MK243>>
+
+根据[[MK238][定理]]可知，[[MK237][命题等价举例]]中的公式，将[[MK11][命题变元]]替换为[[MK233][合式公式]]后，必为[[MK239][等价谓词公式]]
+
+**** 合式公式带入原理<<MK241>>
+
+若[[MK233][合式公式]] $A$ 含有子公式 $C$ 。另外有合式公式 $D{|\!\!\!=\!\!\!|}C$ ，则将 $D$ 替换 $A$ 中的 $C$ 后得合式公式 $B$ ，则有 $A{|\!\!\!=\!\!\!|}B$
+
+注：部分替代亦可
+
+***** 证明
+
+合适公式 $A$ 包含子公式 $C$ ，当 $C=0$ 时由于 $D{|\!\!\!=\!\!\!|}C$ 则 $D=0$ ，同理当 $C=1$ 时 $D=1$
+
+故无论是否替换 $C$ ，公式中 $C$ 所在的部分的真值均无变化。故根据[[MK2][排中律]] $A$ 的真值亦无变化。
+
+**** 谓词公式等价举例
+
+假设 $G(x),H(x)$ 是只含[[MK70][自由变元]] $x$ 的[[MK233][合式公式]]， $S$ 是不含 $x$ 的[[MK233][合式公式]]，则在[[MK84][全总域]]上有：
+
+***** 改名规则<<MK245>>
+
+\begin{aligned}
+\exists xG(x){|\!\!\!=\!\!\!|}\exists yG(y)\\
+\forall xG(x){|\!\!\!=\!\!\!|}\forall yG(y)
+\end{aligned}
+
+***** 量词转换<<MK244>>
+
+\begin{aligned}
+\lnot\exists xG(x){|\!\!\!=\!\!\!|}\forall x \lnot G(x)\\
+\lnot\forall xG(x){|\!\!\!=\!\!\!|}\exists x \lnot G(x)
+\end{aligned}
+
+***** 辖域变化<<MK246>>
+
+\begin{aligned}
+\forall x\big(G(x)\lor S\big){|\!\!\!=\!\!\!|}(\forall xG(x))\lor S\\
+\forall x\big(G(x)\land S\big){|\!\!\!=\!\!\!|}(\forall xG(x))\land S\\
+\exists x\big(G(x)\lor S\big){|\!\!\!=\!\!\!|}(\exists xG(x))\lor S\\
+\exists x\big(G(x)\land S\big){|\!\!\!=\!\!\!|}(\exists xG(x))\land S\\
+\end{aligned}
+
+***** 量词分配律<<MK247>>
+
+\begin{aligned}
+\forall x\big(G(x)\land H(x)\big){|\!\!\!=\!\!\!|}(\forall xG(x))\land(\forall xH(x))\\
+\forall x\big(G(x)\lor H(x)\big){|\!\!\!=\!\!\!|}(\forall xG(x))\lor(\forall xH(x))\\
+\exists x\big(G(x)\land H(x)\big){|\!\!\!=\!\!\!|}(\exists xG(x))\land(\exists xH(x))\\
+\exists x\big(G(x)\lor H(x)\big){|\!\!\!=\!\!\!|}(\exists xG(x))\lor(\exists xH(x))\\
+\end{aligned}
+
+***** 量词交换<<MK252>>
+
+设 $G(x,y)$ 含[[MK70][自由变元]] $x,y$ ，则在[[MK84][全总域]]上有：
+
+\begin{aligned}
+\forall x\forall yG(x,y){|\!\!\!=\!\!\!|}\forall y\forall x \lnot G(x,y)\\
+\exists x\exists yG(x,y){|\!\!\!=\!\!\!|}\exists y\exists x \lnot G(x,y)\\
+\end{aligned}
+
+*** 谓词公式蕴含关系
+
+**** 定义
+
+合式公式 $G\rightarrow H$ 为[[MK236][有效公式]]时，可得 $G$ 蕴含 $H$ ，记作 $G{|\!\!\!=}H$ 。
+
+注：逻辑蕴含符号 ${|\!\!\!=}$ 仅表示两个公式之间的关系，无真值计算。
+
+**** 定理<<MK249>>
+
+同理根据[[MK241][带入原理]]若[[MK224][命题公式]] $A{|\!\!\!=}B$ ，且 $G,H$ 为 $A,B$ 的[[MK248][带入实例]]，则有 $G{|\!\!\!=}H$
+
+***** 证明
+
+根据[[MK7][定义]]有无论 $A,B$ 中的[[MK11][命题变元]]为何值，均有 $A\rightarrow B=1$
+
+由于带入实例仅替换命题变元，且值域亦为 $\{0,1\}$ 故无论带入实例如何改变命题变元的值，均有 $A\rightarrow B=1$
+
+故有 $G{|\!\!\!=}H$
+
+**** 蕴含关系举例
+
+根据[[MK249][定理]]可知，故[[MK250][命题举例]]中的[[MK248][带入实例]]均有效。
+
+其他亦有
+
+\begin{aligned}
+&\forall xG(x){|\!\!\!=}\exists xG(x)\\
+\\
+&\forall xG(x)\lor\forall xH(x){|\!\!\!=}\forall x\big(G(x)\lor H(x)\big)\\
+&\exists xG(x)\land\exists xH(x){|\!\!\!=}\exists x\big(G(x)\land H(x)\big)\\
+\\
+&\forall x\big(G(x)\rightarrow H(x)\big){|\!\!\!=}\forall xG(x)\rightarrow \forall xH(x)\\
+&\forall x\big(G(x)\rightarrow H(x)\big){|\!\!\!=}\exists xG(x)\rightarrow \exists xH(x)\\
+\\
+&\exists x\forall yG(x,y){|\!\!\!=}\forall y\exists xG(x,y)\\
+&\forall x\forall yG(x,y){|\!\!\!=}\exists y\exists xG(x,y)\\
+&\forall x\forall yG(x,y){|\!\!\!=}\exists y\forall xG(x,y)\\
+&\forall x\exists yG(x,y){|\!\!\!=}\exists y\exists xG(x,y)\\
+\end{aligned}
+
+** 前束范式
+
+*** 定义<<MK242>>
+
+[[MK233][合式公式]] $G$ 称为前束范式，若满足：
+
+（1） 所有[[MK234][量词]]均位于公式最前端
+
+（2） 量词的[[MK240][辖域]]延伸至公式末尾
+
+（3） 量词前不含[[MK221][否定连接词]]
+
+*** 求解步骤
+
+根据[[MK241][带入原理]]对于[[MK233][合式公式]]可根据以下步骤求解[[MK242][前束范式]]：
+
+（1） 根据[[MK243][推论]]，利用[[MK23][蕴含等值]]，[[MK24][等价等值]]以及[[MK25][等价等值2]]消去 $\rightarrow,\leftrightarrow$ 符号
+
+（2） 使用[[MK244][量词转换]]将[[MK221][否定连接词]]放入公式内
+
+（3） 使用[[MK245][改名规则]]、[[MK246][辖域变化]]以及[[MK247][量词分配律]]将[[MK234][量词]]移至公式最前，并将[[MK240][辖域]]延伸至公式末尾
+
+** 谓词逻辑推理规则
+
+除[[MK251][命题推理规则]]外，另有如下推理规则：
+
+规则 $US$ ： $\forall xG(x){|\!\!\!=}G(y)$ 其中 $y$ 不为[[MK226][约束变量]]，或 $\forall xG(x)\rightarrow G(c)$ 其中 $c$ 为[[MK64][个体常元]]
+
+规则 $ES$ ： $\exists xG(x){|\!\!\!=}G(c)$ 其中 $c$ 为特定的[[MK64][个体常元]]
+
+规则 $UG$ ： $G(y){|\!\!\!=}\forall xG(x)$ 其中 $y$ 为[[MK65][个体变元]]，若有[[MK235][解释]]使得 $G(y)=1$ 则公式的值与 $y$ 无关，即 $\forall xG(x)$
+
+* 关系与函数
+
+** 基本定义
+
+*** 有序组
+
+**** 定义<<MK144>>
+
+$n$ 元有序组定义为：
+
+（1） 当 $n=2$ 时 $<a_1,a_2>=\left\{\{a_1\},\{a_1,a_2\}\right\}$
+
+（2） 当 $n>2$ 时 $<a_1,...a_n>=<<a_1,...,a_{n-1}>,a_n>$
+
+**** 定理
+
+对于 $n$ 元有序数组 $<a_1,...,a_n>=<b_1,...,b_n>$ 当且仅当 $a_i=b_i,1\leq i\leq n$
+
+***** 证明
+
+******  $n=2$ 时
+
+当 $n=2$ 时 $<a_1,a_2>=\left\{\{a_1\},\{a_1,a_2\}\right\},<b_1,b_2>=\left\{\{b_1\},\{b_1,b_2\}\right\}$
+
+必要性显然，下面证充分性：
+
+根据[[MK108][相同集合族广义交并]]对集合求广义交有 $\left\{\{a_1\},\{a_1,a_2\}\right\}=\left\{\{b_1\},\{b_1,b_2\}\right\}\rightarrow \{a_1\}=\{b_1\}\rightarrow a_1=b_1$
+
+同理对集合求广义并由 $\{a_1,a_2\}=\{b_1,b_2\}$ 又由于 $u=v$ 故有 $a_2=b_2$
+
+******  $n>2$ 时
+
+假设 $<a_1,...,a_{n-1}>=<b_1,...,b_{n-1}>$ 的充要条件是 $a_i=b_i,1\leq i\leq n-1$
+
+显然，当 $a_i=b_i,1\leq i\leq n$ 时 $<a_1,...,a_{n-1}>=<b_1,...,b_{n-1}>$
+
+下面证明充分性：
+
+定义 $<a_1,...,a_{n-1}>=u,<b_1,...,b_{n-1}>=v$ 则有 
+
+\begin{aligned}
+<a_1,...a_n>&=<<a_1,...,a_{n-1}>,a_n>=<u,a_{n}>\\
+<b_1,...,b_n>&=<v,b_n>
+\end{aligned}
+
+若 $<a_1,...,a_n>=<b_1,...,b_n>\rightarrow <u,a_n>=<v,b_n>\rightarrow \left\{\{u\},\{u,a_n\}\right\}=\left\{\{v\},\{v,b_2\}\right\}$
+
+根据[[MK108][相同集合族广义交并]]对集合求广义交有 $\left\{\{u\},\{u,a_n\}\right\}=\left\{\{v\},\{v,b_n\}\right\}\rightarrow \{u\}=\{v\}\rightarrow u=v$
+
+根据前提假设 $u,v$ 均为 $n-1$ 元有序组，故有 $u=v\rightarrow a_i=b_i1\leq i\leq n-1$
+
+同理对集合求广义并由 $\{u,a_n\}=\{v,b_n\}$ 又由于 $u=v$ 故有 $a_n=b_n$
+
+*** 笛卡尔积/直积
+
+**** 定义<<MK109>>
+
+当两个集合做笛卡尔积时定义为 $A_1\times A_2=\left\{<u,v>\big|u\in A_1\land v\in A_2\right\}$ 记作 $A_1\times A_2$
+
+多个结合做笛卡尔积时 $A_1\times...\times A_n=(A_1\times...\times A_{n-1})\times A_n$ 
+
+集合 $A$ 对自己做 $n$ 次笛卡尔积运算可记作 $A^n=A\times...\times A$
+
+**** 性质
+
+***** 空集
+
+\begin{aligned}
+A\times\varnothing=\varnothing\times A=\varnothing
+\end{aligned}
+
+****** 证明
+
+根据[[MK109][定义]]可得 $A\times\varnothing=\left\{<x,y>\big|x\in A\land y\in\varnothing\right\}$ 由于 $y\in\varnothing$ 永假，故有 $\forall x(x\in A\times\varnothing)$ 永假，故 $A\times\varnothing=\varnothing$
+
+***** 分配率<<MK268>>
+
+\begin{aligned}
+A\times(B\cup C)&=(A\times B)\cup(A\times C)\\
+A\times(B\cap C)&=(A\times B)\cap(A\times C)\\
+A\times(B-C)&=(A\times B)-(A\times C)\\
+\end{aligned}
+
+****** 证明
+
+仅证 $A\times(B\cup C)=(A\times B)\cup(A\times C)$ 其他同理
+
+对于任意 $<x,y>$ 有
+
+\begin{aligned}
+&<x,y>\in A\times(B\cup C)\\
+{|\!\!\!=\!\!\!|}&x\in A\land y\in (B\cup C)\\
+{|\!\!\!=\!\!\!|}&x\in A\land (y\in B\lor y\in C)\\
+{|\!\!\!=\!\!\!|}&(x\in A\land y\in B)\lor(x\in A\land y\in C)\\
+{|\!\!\!=\!\!\!|}&(<x,y>\in A\times B)\lor(<x,y>\in A\times C)\\
+{|\!\!\!=\!\!\!|}&<x,y>\in(A\times B)\cup(A\times C)\\
+\end{aligned}
+
+***** 有限集基数
+
+若 $A_1,...,A_n$ 为非空集合，则有 $|A_1\times...\times A_n|=\prod_{i=1}^n|A_i|$
+
+***** 有无限集基数
+
+若 $A_N$ 为非空[[MK107][集合族]]，其中 $N$ 为[[MK214][至多可数集]]，则有其笛卡尔积 $\left|\prod_{i\in N}A_i\right|\geq\max(|A_i|),i=1,2,...,n$
+
+****** 证明
+
+不妨设 $A_k$ 为其中基数最大的集合，由于非空，故乘积必包含对于任意 $a\in A_k$ 展开
+
+对于给定的 $a\in A$ 定义 $\overline{a}$ 为直积有序组中第 $k$ 位是 $a$ 的所有元素的集合
+
+则根据[[MK261][选择公理]]可得存在选择函数 $f:\bigcup_{a\in A_k}\{\overline{a}\}\to \bigcup_{a\in A_k}\overline{a}$ 且有 $\bigcup_{a\in A_k}\overline{a}\subset A_1\times...\times A_n$
+
+故定义函数 $\sigma:\bigcup_{a\in A_k}\left\{f\left(\{\overline{a}\}\right)\right\}\to A_k$ 由于对于任意 $a$ 均存在 $\overline{a}$ 则有 $f\left(\{\overline{a}\}\right)$ 则为[[MK138][满射]]
+
+对于 $b\in A_k\land b\ne a$ 必定 $\overline{b}$ 中有序组第 $k$ 位是 $b$ ，则根据[[MK144][有序组]]定义以及[[MK80][外延公理]]显然有序组不想等。
+
+故为[[MK137][单射]]，即 $\sigma$ 是双射。则根据[[MK77][基数]]定义 $A_k$ 与 $A_1\times...\times A_n$ 子集对等，故有 $|A_k|\leq|A_1\times...\times A_n|$
+
+***** 基数保序
+
+若 $|A_I|\leq|B_I|$ 其中 $I$ 为[[MK214][至多可数集]]，则有 $\left|\prod_{i\in I}A_i\right|\leq\left|\prod_{i\in I}B_i\right|$
+
+****** 证明
+
+由于 $|A_I|\leq|B_I|$ 则根据[[MK273][蕴含双射]]即[[MK77][基数]]定义可知存在单射 $\sigma_i:A_i\to B_i$
+
+则对于任意 $<a_1,a_2,...>\in\prod_{i\in I}A_i$ 则存在 $<\sigma_1(a_1),\sigma_2(a_2),...>\in\prod_{i\in I}B_i$
+
+故同理根据蕴含双射以及基数定义可得 $\left|\prod_{i\in I}A_i\right|\leq\left|\prod_{i\in I}B_i\right|$
+
+** 二元关系
+
+*** 基础定义
+
+**** 定义<<MK114>>
+
+若 $R\subset A\times B$ 则称 $R$ 为集合 $A,B$ 上的二元关系
+
+若 $<x,y>\in R$ 则记作 $xRy$ 其中 $<x,y>$ 为[[MK144][有序组]]
+
+**** 特殊的关系
+
+空关系： $\varnothing\subset A\times B$ 即 $R=\varnothing$
+
+全关系<<MK130>>： $A\times B$
+
+相等关系<<MK123>>： $E_A=\left\{<x,x>\big|x\in A\right\}$
+
+**** 关系的相关概念
+
+定义 $R\subset A\times B$ 则 $R$ 的：
+
+定义域为 $Dom(R)=\left\{x\big|x\in A\land\exists y(<x,y>\in R)\right\}$
+
+值域为 $Ran(R)=\left\{y\big|y\in B\land\exists x(<x,y>\in R)\right\}$
+
+前域为 $A$
+
+陪域为 $B$
+
+**** 二元关系的矩阵表示<<MK110>>
+
+若 $R\subset A\times B$ 且 $A=\{a_1,...,a_n\},B=\{b_1,...,b_m\}$
+
+则定义关系矩阵 $M_{ij},1\leq i\leq n,1\leq j\leq m$ 其中：
+
+$m_{ij}=0$ 当且仅当 $<a_i,b_j>\not\in R$ 即 $\lnot a_iRb_j$
+
+$m_{ij}>0$ 当且仅当 $<a_i,b_j>\in R$ 即 $a_iRb_j$
+
+*** 关系的运算
+
+**** 关系基本运算
+
+***** 定义
+
+若 $R,S\subset A\times B$ 其中 $R,S$ 分别有关系矩阵 $R_{ij}=\{r_{ij}\},S_{ij}=\{s_{ij}\}$ 则：
+
+****** 并 
+
+$R\cup S=\left\{<x,y>\big|xRy\lor xSy\right\}$
+
+关系矩阵为 $M=\{r_{ij}\lor s_{ij}\}$
+
+****** 交 
+
+$R\cap S=\left\{<x,y>\big|xRy\land xSy\right\}$
+
+关系矩阵为 $M=\{r_{ij}\land s_{ij}\}$
+
+****** 差 <<MK113>>
+
+$R-S=\left\{<x,y>\big|xRy\land\lnot xSy\right\}$
+
+关系矩阵为 $M=\{r_{ij}\land \lnot s_{ij}\}$
+
+****** 补<<MK112>>
+
+$\overline{R}=A\times B-R=\left\{<x,y>\big|\lnot xRy\right\}$
+
+关系矩阵为 $M=\{\lnot r_{ij}\}$
+
+****** 逆<<MK111>>
+
+$R^{-1}=\left\{<y,x>\big|xR^{-1}y\right\}$
+
+关系矩阵为 $M=R_{ij}^T$ 为 $R_{ij}$ 的转置
+
+***** 性质
+
+若 $R,S\subset A\times B$ 其中 $R,S$ 分别有关系矩阵 $R_{ij}=\{r_{ij}\},S_{ij}=\{s_{ij}\}$ 则：
+
+****** 性质1
+
+$(R^{-1})^{-1}=R$
+
+******* 证明
+
+根据[[MK111][逆]]的定义以及[[MK114][关系定义]]
+
+\begin{aligned}
+&<x,y>\in (R^{-1})^{-1}\\
+{|\!\!\!=\!\!\!|}&<y,x>\in R^{-1}\\
+{|\!\!\!=\!\!\!|}&<x,y>\in R\\
+\end{aligned}
+
+****** 性质2
+
+$\overline{R^{-1}}=\left(\overline{R}\right)^{-1}$
+
+******* 证明
+
+根据[[MK110][矩阵表示]]，[[MK111][逆]]以及[[MK112][补]]的定义
+
+\begin{aligned}
+&<x,y>\in \overline{R^{-1}}\\
+{|\!\!\!=\!\!\!|}&<x,y>\not\in R^{-1}\\
+{|\!\!\!=\!\!\!|}&<y,x>\not\in R\\
+{|\!\!\!=\!\!\!|}&<y,x>\in \overline{R}\\
+{|\!\!\!=\!\!\!|}&<x,y>\in \left(\overline{R}\right)^{-1}\\
+\end{aligned}
+
+****** 性质3
+
+\begin{aligned}
+(R\cup S)^{-1}&=R^{-1}\cup S^{-1}\\
+(R\cap S)^{-1}&=R^{-1}\cap S^{-1}\\
+(R-S)^{-1}&=R^{-1}-S^{-1}\\
+\end{aligned}
+
+******* 证明
+
+仅证 $(R-S)^{-1}=R^{-1}-S^{-1}$ 其余同理
+
+根据[[MK110][矩阵表示]]，[[MK111][逆]]以及[[MK113][差]]的定义：
+
+\begin{aligned}
+&<x,y>\in (R-S)^{-1}\\
+{|\!\!\!=\!\!\!|}&<y,x>\in R-S\\
+{|\!\!\!=\!\!\!|}&<y,x>\in R\land <y,x>\not\in S\\
+{|\!\!\!=\!\!\!|}&<x,y>\in R^{-1}\land <x,y>\not\in S^{-1}\\
+{|\!\!\!=\!\!\!|}&<x,y>\in R^{-1}-S^{-1}\\
+\end{aligned}
+
+****** 性质4
+
+$R\subset S{|\!\!\!=\!\!\!|}R^{-1}\subset S^{-1}$
+
+******* 证明
+
+根据[[MK111][逆]]的定义以及[[MK96][子集]]定义，对于任意 $<x,y>$
+
+\begin{aligned}
+&R\subset S\\
+{|\!\!\!=\!\!\!|}&\forall <x,y>(<x,y>\in R\rightarrow<x,y>\in S)\\
+{|\!\!\!=\!\!\!|}&\forall <y,x>(<x,y>\in R\rightarrow<x,y>\in S)\\
+{|\!\!\!=\!\!\!|}&R^{-1}\subset S^{-1}\\
+\end{aligned}
+
+**** 关系复合运算
+
+***** 定义<<MK115>>
+
+若 $R\subset A\times B, S\subset B\times C$ 则 $R,S$ 的合成关系 $R\cdot S$ 定义为 $R\cdot S=\left\{<x,z>\big|x\in A\land z\in C\land\exists y(y\in B\land xRy\land ySz)\right\}$
+
+****** 推论<<MK116>>
+
+$R\cdot S=\left\{<x,y>\big|\exists y(xRy\land ySz)\right\}$
+
+******* 证明
+
+由于 $xRy{|\!\!\!=\!\!\!|}<x,y>\subset R$ 又有 $R\subset A\times B$ 
+
+故根据[[MK96][子集定义]]，[[MK114][二元关系]]以及[[MK87][描述法]]定义可得 $<x,y>\in R{|\!\!\!=}<x,y>\in A\times B{|\!\!\!=}x\in A\land y\in B$
+
+同理可得 $ySz{|\!\!\!=}y\in B\land z\in C$ 故根据[[MK98][B不含x]] 
+
+此时当 $\exists y(xRy\land ySz)=1$ 根据[[MK41][连词定义]]可得 $x\in A=1,z\in C=1$ 且 $\exists y(y\in B\land xRy\land ySz)=1$
+
+故得 $x\in A\land z\in C\land\exists y(y\in B\land xRy\land ySz)=1$
+
+当 $\exists y(xRy\land ySz)=0$ 时可得 $\exists y(y\in B\land xRy\land ySz)=0$ 故有 $x\in A\land z\in C\land\exists y(y\in B\land xRy\land ySz)=0$
+
+故得 $x\in A\land z\in C\land\exists y(y\in B\land xRy\land ySz){|\!\!\!=\!\!\!|}\exists y(xRy\land ySz)$
+
+故根据[[MK71][替换原理]]以及[[MK87][描述法]]定义 $R\cdot S=\left\{<x,y>\big|\exists y(xRy\land ySz)\right\}$
+
+***** 矩阵乘法
+
+若 $A=\{a_1,...a_{n_a}\},B=\{b_1,...b_{n_b}\},C=\{c_1,...c_{n_c}\}$ 均为有限集合
+
+定义矩阵的乘法为 $M_{ij}=R_{i_rj_r}\cdot S_{i_sj_s}=\left\{\sum_{k=1}^{n_b}r_{ik}s_{kj}\right\}$
+
+则有 $S\cdot R$ 的关系矩阵为 $M_{ij}$
+
+****** 证明
+
+故根据[[MK110][矩阵表示]]当 $m_{ij}>0$ 时必存在 $r_{ik}>0\land s_{kj}>0$ 即有 $a_iRb_k\land b_kSc_j$
+
+且 $a_i\in A,b_k\in B,c_j\in C$ 组合条件条件既得 $m_{ij}>0\rightarrow a_i\in A\land c_j\in C\land\exists b_k(b_k\in B\land a_iRb_k\land b_kSc_j)$
+
+即 $<a_i,c_j>\in R\cdot S$ 的[[MK115][定义]]
+
+若 $m_{ij}=0$ 则不存在 $r_{ik}>0\land s_{kj}>0$ 即对于任意 $1\leq k\leq n_b$ 均有 $r_{ik}>0\land s_{kj}>0=0$
+
+且 $a_i\in A,b_k\in B,c_j\in C$ 组合条件条件既得 $m_{ij}=0\rightarrow a_i\in A\land c_j\in C\land\lnot\exists b_k(b_k\in B\land a_iRb_k\land b_kSc_j)$
+
+根据[[MK115][定义]]可知 $<a_i,c_j>\not\in R\cdot S$
+
+故根据[[MK110][矩阵表示]] $M_{ij}$ 为 $R\cdot S$ 的关系矩阵
+
+***** 性质
+
+****** 合成与并
+
+\begin{aligned}
+R\cdot(S\cup T)&=(R\cdot S)\cup(R\cdot T)\\
+(S\cup T)\cdot R&=(S\cdot R)\cup(T\cdot R)\\
+\end{aligned}
+
+******* 证明
+
+仅证 $R\cdot(S\cup T)=(R\cdot S)\cup(R\cdot T)$ 其余同理
+
+定义 $R\in A\times B,S\in B\times C,T\in B\times C$ 
+
+根据[[MK115][定义]]，[[MK85][并运算]]，[[MK98][B不包含x]]，[[MK36][交换律]]，[[MK59][结合律]]，[[MK29][分配率]]，[[MK246][辖域变化]]以及[[MK71][替换原理]]对于任意 $<x,y>$
+
+\begin{aligned}
+&<x,y>\in R\cdot(S\cup T)\\
+{|\!\!\!=\!\!\!|}&x\in A\land y\in C\land\exists z(z\in B\land xRz\land(zSy\lor zTy))\\
+{|\!\!\!=\!\!\!|}&\exists z(x\in A\land y\in C\land z\in B\land xRz\land(zSy\lor zTy))\\
+{|\!\!\!=\!\!\!|}&\exists z\left((x\in A\land y\in C\land z\in B\land xRz\land zSy)\lor(x\in A\land y\in C\land z\in B\land xRz\land zTy)\right)\\
+{|\!\!\!=\!\!\!|}&\exists z(x\in A\land y\in C\land z\in B\land xRz\land zSy)\lor\exists z(x\in A\land y\in C\land z\in B\land xRz\land zTy)\\
+{|\!\!\!=\!\!\!|}&\left(x\in A\land y\in C\land\exists z(z\in B\land xRz\land zSy)\right)\lor\left(x\in A\land y\in C\land\exists z(z\in B\land xRz\land zTy)\right)\\
+{|\!\!\!=\!\!\!|}&<x,y>\in(R\cdot S)\cup(R\cdot T)\\
+\end{aligned}
+
+故 $\forall<x,y>(<x,y>\in R\cdot(S\cup T)\leftrightarrow<x,y>\in(R\cdot S)\cup(R\cdot T))=1$ 根据[[MK80][外延公理]]可得 $R\cdot(S\cup T)=(R\cdot S)\cup(R\cdot T)$
+
+****** 合成与交
+
+\begin{aligned}
+R\cdot(S\cap T)&\subset(R\cdot S)\cap(R\cdot T)\\
+(S\cap T)\cdot R&\subset(S\cdot R)\cap(T\cdot R)\\
+\end{aligned}
+
+******* 证明
+
+仅证 $R\cdot(S\cap T)&\subset(R\cdot S)\cap(R\cdot T)$ 其余同理
+
+定义 $R\in A\times B,S\in B\times C,T\in B\times C$ 
+
+根据[[MK115][定义]]，[[MK85][并运算]]，[[MK98][B不包含x]]，[[MK36][交换律]]，[[MK59][结合律]]，[[MK29][分配率]]，[[MK246][辖域变化]]以及[[MK71][替换原理]]对于任意 $<x,y>$
+
+\begin{aligned}
+&<x,y>\in R\cdot(S\cap T)\\
+{|\!\!\!=\!\!\!|}&x\in A\land y\in C\land\exists z(z\in B\land xRz\land(zSy\land zTy))\\
+{|\!\!\!=\!\!\!|}&\exists z(x\in A\land y\in C\land z\in B\land xRz\land(zSy\land zTy))\\
+{|\!\!\!=\!\!\!|}&\exists z\left((x\in A\land y\in C\land z\in B\land xRz\land zSy)\land(x\in A\land y\in C\land z\in B\land xRz\land zTy)\right)\\
+{|\!\!\!=}&\exists z(x\in A\land y\in C\land z\in B\land xRz\land zSy)\land\exists z(x\in A\land y\in C\land z\in B\land xRz\land zTy)\\
+{|\!\!\!=\!\!\!|}&\left(x\in A\land y\in C\land\exists z(z\in B\land xRz\land zSy)\right)\land\left(x\in A\land y\in C\land\exists z(z\in B\land xRz\land zTy)\right)\\
+{|\!\!\!=\!\!\!|}&<x,y>\in(R\cdot S)\cap(R\cdot T)\\
+\end{aligned}
+
+故得 $\forall<x,y>(<x,y>\in R\cdot(S\cap T)\rightarrow<x,y>\in(R\cdot S)\cap(R\cdot T))=1$ 根据[[MK96][子集定义]]可得 $R\cdot(S\cap T)&\subset(R\cdot S)\cap(R\cdot T)$ 
+
+****** 合成与逆
+
+\begin{aligned}
+(R\cdot S)^{-1}=S^{-1}\cdot R^{-1}\\
+\end{aligned}
+
+******* 证明
+
+定义 $R\in A\times B,S\in B\times C,T\in B\times C$ 
+
+根据[[MK115][定义]]以及[[MK111][逆]]运算，[[MK26][交换律]]，[[MK59][结合律]]对于任意 $<x,y>$
+
+\begin{aligned}
+&<x,y>\in(R\cdot S)^{-1}\\
+{|\!\!\!=\!\!\!|}&<y,x>\in(R\cdot S)\\
+{|\!\!\!=\!\!\!|}&y\in A\land x\in C\land\exists z(z\in B\land yRz\land zSx)\\
+{|\!\!\!=\!\!\!|}&y\in A\land x\in C\land\exists z(z\in B\land <y,z>\in R\land <z,x>\in S)\\
+{|\!\!\!=\!\!\!|}&y\in A\land x\in C\land\exists z(z\in B\land <z,y>\in R^{-1}\land <x,z>\in S^{-1})\\
+{|\!\!\!=\!\!\!|}&y\in A\land x\in C\land\exists z(z\in B\land <x,z>\in S^{-1}\land <z,y>\in R^{-1})\\
+{|\!\!\!=\!\!\!|}&<x,y>\in S^{-1}\cdot R^{-1}
+\end{aligned}
+
+根据[[MK80][外延公理]]可得 $(R\cdot S)^{-1}=S^{-1}\cdot R^{-1}$
+
+****** 合成结合律<<MK117>>
+
+\begin{aligned}
+(R\cdot S)\cdot T=R\cdot(S\cdot T)\\
+\end{aligned}
+
+******* 证明
+
+定义 $R\in A\times B,S\in B\times C,T\in C\times D$ 
+
+根据[[MK116][推论]]，[[MK115][关系定义]]，[[MK252][量词交换]]，[[MK246][辖域变化]]，[[MK26][交换律]]，[[MK59][结合律]]以及[[MK71][替换原理]]对于任意 $<x,y>$
+
+\begin{aligned}
+&<x,y>\in(R\cdot S)\cdot T\\
+{|\!\!\!=\!\!\!|}&\exists z(<x,z>\in (R\cdot S)\land<z,y>\in T)\\
+{|\!\!\!=\!\!\!|}&\exists z(\exists w(<x,w>\in R\land <w,z>\in S)\land<z,y>\in T)\\
+{|\!\!\!=\!\!\!|}&\exists z\exists w(<x,w>\in R\land <w,z>\in S\land<z,y>\in T)\\
+{|\!\!\!=\!\!\!|}&\exists w\exists z(<x,w>\in R\land <w,z>\in S\land<z,y>\in T)\\
+{|\!\!\!=\!\!\!|}&\exists w\exists z(<w,z>\in S\land<z,y>\in\land <x,w>\in R)\\
+{|\!\!\!=\!\!\!|}&\exists w(\exists z(<w,z>\in S\land<z,y>\in)\land <x,w>\in R)\\
+{|\!\!\!=\!\!\!|}&\exists w(<x,w>\in R\land \exists z(<w,z>\in S\land<z,y>\in T))\\
+{|\!\!\!=\!\!\!|}&\exists w(<x,w>\in R\land <w,y>\in(S\cdot T))\\
+{|\!\!\!=\!\!\!|}&<x,y>\in R\cdot(S\cdot T)\\
+\end{aligned}
+
+根据[[MK80][外延公理]]可得 $(R\cdot S)\cdot T=R\cdot(S\cdot T)$
+
+****** 合成同一律
+
+若 $R\subset A\times B$ 则有:
+
+\begin{aligned}
+&E_A\cdot R=R\\
+&R\cdot E_B=R\\
+\end{aligned}
+
+**** 关系的幂运算
+
+***** 定义<<MK254>>
+
+若 $R\in A\times A$ 其幂运算定义为：
+
+（1） $R^0=E_A$ 其中 $E_A$ 是[[MK123][相等关系]]
+
+（2） $R^n=R^{n-1}\cdot R$ 即 $R^{n-1}$ 与 $R$ 的[[MK115][合成]]运算
+
+***** 性质
+
+****** 性质1
+
+\begin{aligned}
+R^n\cdot R^m=R^{n+m}
+\end{aligned}
+
+******* 证明
+
+根据[[MK117][结合律]]可得 $R^n\cdot R^m=R^{n+m}$
+
+****** 性质2
+
+\begin{aligned}
+(R^n)^m=R^{nm}
+\end{aligned}
+
+***** 幂关系有限定理<<MK253>>
+
+若 $A$ 的基数为 $n$ 且 $R\in A\times A$ 则存在自然数 $0\leq i\leq j\leq 2^{n^2}$ 使得 $R^i=R^j$
+
+****** 证明
+
+由于基数为 $n$ 则可能的关系矩阵个数为 $2^{n^2}$ 个，故遍历 $2^{n^2}+1$ 次结果中必有相同。 
+
+***** 幂运算收敛性
+
+若 $A$ 的基数为 $n$ 且 $R\in A\times A$ 则 $\cup_{i=1}^\infty R^i=\cup_{i=1}^n R^i$ 此处为[[MK97][广义并]]
+
+****** 证明
+
+显然 $\cup_{i=1}^n R^i\subset \cup_{i=1}^\infty R^i$
+
+根据[[MK105][交换律]]，[[MK106][结合律]]可得 $\cup_{i=1}^\infty R^i=\left(\cup_{i=1}^n R^i\right)\cup\left(\cup_{i=n+1}^\infty R^i\right)$ 显然 $\cup_{i=1}^n R^i\subset \cup_{i=1}^n R^i$
+
+则对于任意 $k>n$ 的幂关系 $R^k$ ，必然存在 $<a,a_1>\in R\land...\land<a_{k-1},b>\in R$
+
+则在 $a=a_0,a_1,...,a_{k-1},a_k=b$ 中有 $k+1$ 个元素，由于 $|A|=n$ 且 $k>n$ 故根据鸽笼原理至少存在两个元素相等
+
+若 $a_i=a_j,0\leq i\leq j\leq k$ 则重新选取关系链  $<a,a_1>\in R\land...<a_{i-1},a_i>\in R\land<a_j,a_{j+1}>\in R\land...\land<a_{k-1},b>\in R$
+
+由于 $a_i=a_j$ 根据[[MK115][复合定义]]以上关系亦可组成幂关系，其指数为 $R^{k_1}$ 其中 $k_1=k-{j-i}$ ，进一步有 $<a,b>=<a_0,b_k>\in R^{k_1}$
+
+只要当 $k>n$ 即可根据以上步骤去除多余项，直至 $k\leq n$ 时，鸽笼原理不满足。
+
+即对于任意 $<a,b>\in R^k$ 总能找到一个 $R^{k'}\land k'\leq n\rightarrow <a,b>\in R^{k'}$
+
+综上说书 $\forall k>n\rightarrow R^k\subset\cup_{i=1}^nR^i$ 故可得 $\cup_{i=1}^\infty R^i=\cup_{i=1}^n R^i$ 
+
+*** 关系性质
+
+**** 定义<<MK125>>
+
+若 $R\subset A\times A$ 则定义如下关系
+
+自反关系<<MK118>>：   $\forall x(x\in A\rightarrow xRx)$ [[MK110][关系矩阵]]对角线为 $1$
+
+反自反关系<<MK119>>： $\forall x(x\in A\rightarrow \lnot xRx)$ [[MK110][关系矩阵]]对角线为 $0$
+
+对称关系<<MK120>>：   $\forall x\forall y(x\in A\land y\in A\land xRy\rightarrow yRx)$  [[MK110][关系矩阵]]为对称矩阵
+
+反对称关系<<MK121>>： $\forall x\forall y(x\in A\land y\in A\land xRy\land yRx\rightarrow x=y)$ 
+
+                    [[MK116][同理可证]]条件等价于 $\forall x\forall y(xRy\land yRx\rightarrow x=y)$
+
+传递关系<<MK122>>：   $\forall x\forall y\forall z(\{x,y,z\}\subset A\land xRy\land yRz\rightarrow xRz)$ 
+
+                    [[MK116][同理可证]]条件等价于 $\forall x\forall y\forall z(xRy\land yRz\rightarrow xRz)$
+
+                    又根据[[MK124][量词顺序]] $\forall x\forall y\forall z(xRy\land yRz\rightarrow xRz){|\!\!\!=\!\!\!|}\forall x\forall z\forall y(xRy\land yRz\rightarrow xRz)$
+
+                    又根据[[MK90][蕴含关系]] $\forall x\forall z\forall y(xRy\land yRz\rightarrow xRz){|\!\!\!=\!\!\!|}\forall x\forall z(\exists y(xRy\land yRz)\rightarrow xRz)$
+
+**** 定理
+
+***** 定理1
+
+$R$ 是[[MK118][自反关系]]当且仅当 $E_A\subset R$
+
+****** 证明
+
+******* 充分
+
+若 $R$ [[MK118][自反]]，则有 $\forall x(x\in A\rightarrow xRx){|\!\!\!=\!\!\!|}\forall x(x\in A\rightarrow <x,x>\in R)$
+
+根据[[mk123][定义]]对于任意 $<x,x>$ 若 $<x,x>\in E_A{|\!\!\!=\!\!\!|}x\in A{|\!\!\!=}<x,x>\in R$
+
+故有 $E_A\subset R$
+
+******* 必要
+
+若 $E_A\subset R$ 则有 对于任意 $<x,x>$ 若 $x\in A{|\!\!\!=\!\!\!|}x\in E_A{|\!\!\!=}<x,x>\in R$
+
+故有 $\forall x(x\in A\rightarrow xRx)$
+
+***** 定理2
+
+$R$ 是[[MK119][反自反]]当且仅当 $E_A\cap R=\varnothing$
+
+****** 证明
+
+充分：若 $R$ [[MK119][反自反]]，则有 $\forall x(x\in A\rightarrow \lnot xRx){|\!\!\!=\!\!\!|}\forall x(x\in A\rightarrow <x,x>\not\in R)$
+
+此时若 $x\in A$ 则有 $<x,x>\in E_A\land <x,x>\not\in R$ ，若 $x\not\in A$ 则有 $<x,x>\not\in E$
+
+故有 $E_A\cap R=\varnothing$ 。
+
+必要证明类似。
+
+***** 定理3
+
+$R$ [[MK120][对称]]当且仅当 $R=R^{-1}$
+
+****** 证明
+
+******* 充分
+
+根据[[MK120][定义]]以及[[MK111][逆运算]]可得对于任意 $<x,y>$
+
+\begin{aligned}
+&<x,y>\in R\\
+{|\!\!\!=}&<y,x>\in R\\
+{|\!\!\!=\!\!\!|}&<x,y>\in R^{-1}\\
+\end{aligned}
+
+且
+
+\begin{aligned}
+&<x,y>\in R^{-1}\\
+{|\!\!\!=\!\!\!|}&<y,x>\in R\\
+{|\!\!\!=\!\!\!|}&<y,x>\in R\\
+\end{aligned}
+
+根据[[MK96][自己定义]]可得 $R\subset R^{-1}\land R^{-1}\subset R$ ，根据[[MK78][定理]]可得 $R=R^{-1}$
+
+******* 必要
+
+根据[[MK96][子集定义]]可得对于任意 $<x,y>$
+
+\begin{aligned}
+&<x,y>\in R\\
+{|\!\!\!=}&<x,y>\in R^{-1}\\
+{|\!\!\!=\!\!\!|}&<y,x>\in R\\
+\end{aligned}
+
+根据[[MK120][定义]]可得 $R$ 对称
+
+***** 定理4
+
+$R$ [[MK121][反对称]]当且仅当 $R\cap R^{-1}\subset E_A$
+
+****** 证明
+
+******* 充分
+
+$R$ [[MK121][反对称]]则有 $\forall x\forall y(xRy\land yRx\rightarrow x=y)$
+
+对于任意 $<x,y>$
+
+\begin{aligned}
+&<x,y>\in R\cap R\sim\\
+{|\!\!\!=\!\!\!|}&<y,x>\in R\land<x,y>\in R\sim\\
+{|\!\!\!=\!\!\!|}&<y,x>\in R\land<y,x>\in R\\
+{|\!\!\!=}&(x=y)\\
+\end{aligned}
+
+又由于 $<x,y>\in R$ 包含条件 $x\in A$ 故得 $<x,y>\in E_A$
+
+根据[[MK96][子集定义]] $R\cap R\sim\subset E_A$
+
+******* 必要
+
+当 $R\cap R\sim\subset E_A$ 时，根据[[MK111][逆运算]]，[[MK86][交运算]]，[[MK96][子集定义]]以及[[MK71][替换原理]]对于任意 $<x,y>$
+
+\begin{aligned}
+&xRy\land yRx\\
+{|\!\!\!=\!\!\!|}&<x,y>\in R\land <y,x>\in R\\
+{|\!\!\!=\!\!\!|}&<x,y>\in R\land <x,y>\in R\sim\\
+{|\!\!\!=\!\!\!|}&<x,y>\in R\cap R\sim\\
+{|\!\!\!=}&<x,y>\in E_A\\
+\end{aligned}
+
+***** 定理5<<MK264>>
+
+$R$ [[MK122][传递]]当且仅当 $R^2\subset R$
+
+****** 证明
+
+******* 充分
+
+$R$ [[MK122][传递]]则 $\forall x\forall y\forall z(xRy\land yRz\rightarrow xRz)$
+
+\begin{aligned}
+&<x,z>\in R^2\\
+{|\!\!\!=\!\!\!|}&<x,z>\in R\cdot R\\
+{|\!\!\!=\!\!\!|}&\exists y(xRy\land yRz)\\
+{|\!\!\!=}&\exists y(xRz)\\
+{|\!\!\!=\!\!\!|}&xRz\\
+\end{aligned}
+
+故根据[[MK96][子集]]定义 $R^2\subset R$
+
+******* 必要
+
+若 $R^2\subset R$ 则根据[[MK96][子集]]定义对于任意 $x,z$ 有 $<x,z>\in R^2{|\!\!\!=}<x,z>\in R$
+
+又根据[[MK115][合成定义]] $<x,z>\in R^2{|\!\!\!=\!\!\!|}&\exists y(xRy\land yRz)$
+
+即对于任意 $<x,z>$ 有 $\exists y(xRy\land yRz){|\!\!\!=}<x,z>\in R$
+
+即 $R$ [[MK122][传递]]
+
+**** 运算封闭性
+
+***** 逆运算
+
+[[MK125][关系基本特性]]对于[[MK111][逆运算]]封闭，即若 $R$ 均拥有某项[[MK125][关系基本特性]]则 $R^{-1}$ 亦有。
+
+***** 交运算
+
+[[MK125][关系基本特性]]对于[[MK86][交运算]]封闭，即若 $R_1,R_2$ 均拥有某项[[MK125][关系基本特性]]则 $R_1\cap R_2$ 亦有。
+
+***** 并运算<<MK133>>
+
+[[MK118][自反]]、[[MK119][反自反]]、[[MK120][对称性]]对并运算封闭，即若 $R_1,R_2$ 均拥有某项上述基本特性则 $R_1\cup R_2$ 亦有。
+
+***** 差运算
+
+[[MK119][反自反]]、[[MK120][对称]]、[[MK121][反对称]]对差运算封闭，即若 $R_1,R_2$ 均拥有某项上述基本特性则 $R_1-R_2$ 亦有。
+
+***** 补运算
+
+[[MK120][对称性]]对补运算封闭，即若 $R_1$ 均拥有某项上述基本特性则 $R_1\sim$ 亦有。
+
+***** 合成运算
+
+[[MK118][自反]]对合成运算封闭，即若 $R_1,R_2$ 均拥有某项上述基本特性则 $R_1\cdot R_2$ 亦有
+
+**** 闭包
+
+***** 定义<<MK255>>
+
+设 $R$ 是集合 $A$ 上的关系，存在一个集合 $R'$ 满足：
+
+（1） $R'$ 是[[MK118][自反]]（或[[MK120][对称]]或[[MK122][传递]]的）
+
+（2） 对于任意 $R\subset R''$ 是[[MK118][自反]]（或[[MK120][对称]]或[[MK122][传递]]的）均有 $R'\subset R''$
+
+则称 $R'$ 是 $R$ 的自反闭包（或对称闭包或传递闭包），记作 $r(R')$ （或者 $s(R)$ 或者 $t(R)$）
+
+***** 求解
+
+****** 自反闭包
+
+若 $R$ 是 $A\times A$ 上的关系，则根据[[MK118][自反]]定义可得 $r(R)=R\cup E_A$ 其中 $E_A$ 为[[MK123][相等关系]]。
+
+****** 对称闭包
+
+若 $R$ 是 $A\times A$ 上的关系，则根据[[MK120][对称]]定义可得 $s(R)=R\cup R^{-1}$ 其中 $R^{-1}$ 为 $R$ 的[[MK111][逆]]。
+
+****** 传递闭包
+
+若 $R$ 是 $A\times A$ 上的关系，则根据[[MK122][传递]]定义可得 $t(R)=\cup_{i=1}^\infty R^i$ 其中 $R^i$ 为 $R$ 的 $i$ 次[[MK254][幂]]
+
+若 $|A|=n$ 则有 $t(R)=\cup_{i=1}^n R^i$
+
+******* 证明
+
+根据定义有 $\forall x\forall y\forall z\big(\{x,y,z\}\subset A\land xRy\land yRz\rightarrow xRz\big)$ 
+
+******** 证明 $t(R)\subset\cup_{i=1}^\infty R$
+
+则根据[[MK254][幂]]运算定义，对于任意 $\{<x,y>,<y,z>\}\in \cup_{i=1}^\infty R^i$ 均有 $<x,z>\in\cup_{i=1}^\infty R^i$ ：
+
+（1） 若 $\{<x,y>,<y,z>\}\in R^k$ 则 $<x,z>\in R^{k+1}$
+
+（2） 若 $<x,y>\in R^j\land <y,z>\in R^k\land j<k$ 则必然有 $\{<x,y>,<y,z_1>,...,<y,z_{k-j}>,<z_{k-1},z>\}\in R^j$ 则同理根据[[MK115][复合运算]]定义 $<x,z_1>\in R^{j+1}$
+
+      以此类推，必有 $<x,z_{k-1}>\in R^k$ 故亦有 $<x,z>\in R^{k+1}$
+
+即 $\cup_{i=1}^\infty R$ 对称，且有 $R\subset \cup_{i=1}^\infty R$ 则根据[[MK255][定义]]可得 $t(R)\subset\cup_{i=1}^\infty R$
+
+******** 证明 $\cup_{i=1}^\infty R\subset t(R)$
+
+对于任意 $n$ 当 $n=1$ 时，显然有 $R^1\subset t(R)$
+
+当 $R^n\subset t(R)$ 时，对于任意 $<x,y>\in R^{n+1}$ 均可推出 $\exists z\big(<x,z>\in R^n\land <z,y>\in R^n\big)$
+
+固有 $\{<x,z><z,y>\}\subset t(R)$ 则有 $<x,y>\in t(R)$
+
+结合 $n=1$ 可得对于任意 $n$ 均有 $R^n\subset t(R)$ 故有 $\cup_{i=1}^\infty R^i\subset t(R)$
+
+******** 结论
+
+综上所属，根据条件有 $\big(\cup_{i=1}^\infty R^i\subset t(R)\big)\land\big(t(R)\subset\cup_{i=1}^\infty R^i\big)$ 根据[[MK78][子集定理]]可得 $t(R)=\cup_{i=1}^\infty R^i$
+
+** 特殊关系
+
+*** 等价关系
+
+**** 定义<<MK126>>
+
+定义集合 $A$ 若：
+
+（1） $R$ 是 $A$ 上的[[MK114][二元关系]]，即 $R\in A\times A$
+
+（2） $R$ 具有[[MK118][自反性]]，[[MK120][对称性]]以及[[MK122][传递性]]，即 $xRx,xRy\rightarrow yRx, xRy\land xRz\rightarrow xRz$
+
+**** 等价类<<MK127>>
+
+若 $R$ 是 $A$ 上的[[MK126][等价关系]]，则对于每一个 $a\in A$ ，集合 $\left\{x\big|x\in A\land aRx\right\}$ 称为 $a$ 在关系 $R$ 上的等价类，记作 $[a]_R$ 
+
+**** 定理1
+
+若 $R$ 是 $A$ 上的[[MK126][等价关系]]，则任意 $\{a,b\}\subset A$ 有 $aRb\leftrightarrow[a]_R=[b]_R$
+
+***** 证明
+
+****** 充分
+
+当 $aRb$ 时，若 $x\in[a]_R$ 则有 $xRa,aRb$ 根据[[MK122][传递性]]可得 $xRb$ 。又根据[[MK127][等价类定义]]可得 $x\in[b]_R$
+
+同理可证若 $x\in[b]_R\rightarrow x\in[a]_R$ 根据[[MK24][等价等值式]]以及[[MK71][替换原理]]可得对于任意 $x$ 有 $x\in[b]_R\leftrightarrow x\in[a]_R=1$
+
+又根据[[MK80][外延公理]]可得 $[a]_R=[b]_R$
+
+****** 必要
+
+根据[[MK118][自反性]] $aRa,bRb$ 必定成立，故有 $a\in[a]_R$
+
+由于 $[a]_R=[b]_R$ 根据[[MK80][外延公理]]可得 $a\in[b]_R$ 故有 $aRb$
+
+**** 定理2<<MK129>>
+
+若 $R$ 是 $A$ 上的[[MK126][等价关系]]，则任意 $\{a,b\}\subset A$ 且 $[a]_R\ne[b]_R$ 时必有 $[a]_R\cap[b]_R=\varnothing$
+
+***** 证明
+
+当 $\{a,b\}\subset A$ 且 $[a]_R\ne[b]_R$ 若存在 $x\in[a]_R\land x\in[b]_R$ 则有 $\forall(y\in[a]_R\rightarrow yRx\rightarrow yRb\rightarrow y\in[b]_R)$
+
+同理可证 $\forall y(y\in[b]_R\rightarrow y\in[a]_R)$ 故根据[[MK24][等价等值式]]以及[[MK71][替换原理]]可得对于任意 $y$ 有 $y\in[b]_R\leftrightarrow y\in[a]_R=1$
+
+即根据[[MK80][外延公理]]可得 $[a]_R=[b]_R$ 与条件矛盾，故不存在 $x\in[a]_R\land x\in[b]_R$ 
+
+即根据[[MK86][交运算]]定义 $[a]_R\cap[b]_R=\varnothing$
+
+*** 划分
+
+**** 定义<<MK128>>
+
+定义非空集合 $A$ 和[[MK107][集合族]] $\pi$ 若满足：
+
+（1） 不空 $\forall(B\in\pi\rightarrow B\ne\varnothing)$
+
+（2） 不漏 $\cup\pi=A$ 此处为[[MK97][广义并]]运算
+
+（3） 不交 $\forall B\forall B'(\{B,B'\}\in\pi\land B\ne B'\rightarrow B\cap B'=\varnothing)$
+
+则称 $\pi$ 是集合 $A$ 的 *划分* ， $\pi$ 中的元素称为 *单元，块(blcok)或类(class)* 。 $\pi$ 亦称为[[MK256][商集]]
+
+定义若 $A=\varnothing$ 则 $\pi=\varnothing$ 是其划分
+
+**** 定理
+
+***** 定理1
+
+若 $R$ 是 $A$ 上的[[MK126][等价关系]]且 $A\ne\varnothing$ 则 $A$ 上的[[MK127][等价类]]构成的集合族 $\pi$ 为 $A$ 的[[MK128][划分]]
+
+****** 证明
+
+根据[[MK118][自反性]]任意等价类 $a\in A$ 都有 $aRa$ ，则根据[[MK127][等价类]]定义可得 $a\in[a]_R$ 即不空
+
+根据[[MK127][等价类]]定义若 $x\in A$ 则必有 $[x]_R$ 存在，且若 $x\in[a]_R$ 其中 $[a]_R$ 为等价类，则必有 $x\in A$
+
+故根据[[MK97][广义并]]定义 $\forall x(x\in A\leftrightarrow \exists[x]_R(x\in[x]_R\land[x]_R\in\pi)\leftrightarrow x\in\cup\pi)$ 
+
+进一步根据[[MK39][等价传递]]以及[[MK71][替换原理]]有 $\forall x(x\in A\leftrightarrow x\in\cup\pi)$
+
+又根据[[MK80][外延公理]]可得 $A=\cup\pi$ 即不漏
+
+根据[[MK129][定理2]]可得 $\forall B\forall B'(\{B,B'\}\in\pi\land B\ne B'\rightarrow B\cap B'=\varnothing)$ 即不交
+
+故根据[[MK128][定义]]可得根据关系 $R$ 所构成的等价类集合族 $\pi$ 为 $A$ 的划分
+
+***** 定理2<<MK132>>
+
+若 $\pi$ 是 $A$ 上的一个[[MK128][划分]]，则存在对应的等价关系 $R$
+
+****** 证明
+
+若 $\pi$ 是 $A$ 上的一个[[MK128][划分]]，则定义关系 $R$ 即对于任意 $\{x,y\}\subset A$ 若存在 $\{x,y\}\subset S\in\pi$ 则有关系 $xRy$
+
+下面证明 $R$ 是等价关系
+
+（1） 自反性：由于 $S\in\pi$ 则根据[[MK128][划分]] $S$ 非空。故若 $x\in S$ 则必有 $xRx$
+
+（2） 对称性：若 $\{x,y\}\subset S\in\pi$ 则根据 $R$ 定义，有 $xRy$
+
+（3） 传递性：若 $xRy,yRz$ 则有 $\{x,y\}\subset S\in\pi\land\{y,z\}\subset S'\in\pi$ 根据[[MK128][定义]]划分必须不交，故 $x\in S\land x\in S'\rightarrow S=S'$ 即 $\{x,y,z\}\in S$ 故有 $xRz$
+
+根据[[MK126][定义]]可得 $R$ 为等价关系。
+
+***** 定理3
+
+若集合 $A$ 非空，则[[MK128][划分]] $\pi$ 对应的等价关系为 $R$ 当且仅当 $R$ 对应的划分为 $\pi$
+
+****** 证明
+
+******* 必要
+
+定义 $\pi$ 对应的等价关系是 $R$ ， $R$ 对应的划分为 $\pi'$
+
+对于任意 $a\in A$ 根据[[MK128][划分]]不漏，存在 $B\in\pi$ 使得 $a\in B$ 同理存在 $a\in[a]_R\in\pi'$
+
+对于任意 $b\in B$ 必有 $b\in B\rightarrow aRb\rightarrow b\in[a]_R$
+
+同理对于任意 $b\in[a]_R\rightarrow aRb\rightarrow b\in B$
+
+根据[[MK24][等价等值式]]以及[[MK71][替换原理]]可得对于任意 $b$ 均有 $b\in B\leftrightarrow b\in[a]_R$
+
+又根据[[MK80][外延公理]]可得 $B=[a]_R$
+
+******* 充分
+
+若 $R$ 对应的划分为 $\pi$ ， $\pi$ 对应的等价关系为 $R'$
+
+若 $xRy\rightarrow \{x,y\}\subset S\in\pi\rightarrow xR'y$
+
+若 $xR'y\rightarrow \{x,y\}\subset S\in\pi\rightarrow xRy$
+
+根据[[MK24][等价等值式]]以及[[MK71][替换原理]]可得对于任意 $x$ 均有 $xRy\leftrightarrow xR'y$ 
+
+根据[[MK114][关系定义]]可得 $<x,y>\in R\leftrightarrow<x,y>\in R'$
+
+又根据[[MK80][外延公理]]可得 $R=R'$
+
+**** 划分细度
+
+若集合 $A$ 上的[[MK128][划分]] $\pi_1,\pi_2$ 若 $\forall B_1\in\pi_1(\exists(B_2\in\pi_2\rightarrow B_1\subset B_2))$ 则称 $\pi_1$ 细于 $\pi_2$ 记作 $\pi_1\leq\pi_2$
+
+**** 细度定理<<MK131>>
+
+集合 $A$ 上的[[MK128][划分]] $\pi_1,\pi_2$ 对应的等价关系为 $R_1,R_2$ 则有 $R_1\subset R_2\leftrightarrow\pi_1\leq\pi_2$
+
+***** 证明 
+
+****** 充分
+
+若 $R_1\subset R_2$ 对于任意 $\{a,b\}\subset A$ 当 $aR_1b$ 时便有 $aR_2b$ 故 $b\in[a]_{R_1}\land b\in[a]_{R_2}$
+
+故有对于任意 $b$ 有 $b\in[a]_{R_1}\rightarrow b\in[a]_{R_2}$ 故根据[[MK96][子集]]的定义有 $[a]_{R_1}\subset[a]_{R_2}$
+
+****** 必要
+
+若 $\pi_1\leq\pi_2$ 故若 $\{x,y\}\subset S_1\in\pi_1$ 则存在 $\{x,y\}\subset S_1\subset S_2\in\pi_2$
+
+故有对于任意 $xR_1y$ 均有 $xR_2y$ 即 $<x,y>\in R_1\rightarrow <x,y>\in R_2$
+
+故根据[[MK96][子集]]的定义 $R_1\subset R_2$
+
+***** 推论
+
+[[MK123][相等关系]]是等价关系对应划分中最“细”的。
+
+相应的最大的等价关系是[[MK130][全关系]]
+
+**** 划分的运算
+
+***** 积划分
+
+$A$ 上的划分 $\pi_1,\pi_2$ 的积划分记作 $\pi_1\cdot\pi_2$ ，该划分满足：
+
+（1） $\pi_1\cdot\pi_2\leq\pi_1\land\pi_1\cdot\pi_2\leq\pi_1$
+
+（2） $\forall \pi(\pi\leq\pi_1\land\pi\leq\pi_1\rightarrow\pi\leq\pi_1\cdot\pi_2)$
+
+****** 推论
+
+若 $R_1,R_2$ 是 $\pi_1,\pi_2$ 对应的等价关系，则有 $\pi_1\cdot\pi_2$ 对应的等价关系是 $R_1\cap R_2$
+
+******* 证明
+
+由于 $R_1\cap R_2\subset R_1$ 根据[[MK131][细度定理]]可得 $\pi_1\cdot\pi_2\leq\pi_1$
+
+同理可得 $\pi_1\cdot\pi_2\leq\pi_2$
+
+若存在 $\pi\leq\pi_1\land\pi\leq\pi_2$ 根据[[MK132][定理2]]可得存在 $R$ 与 $\pi$ 对应
+
+根据[[MK131][细度定理]]可得 $R\subset R_1\land R\subset R_2$ 根据[[MK86][交运算]]可得 $\forall x(x\in R\rightarrow x\in R_1\cap R_2)$
+
+根据[[MK96][子集]]的定义有 $R\subset R_1\cap R_2$
+
+***** 和划分
+
+$A$ 上的划分 $\pi_1,\pi_2$ 的和划分记作 $\pi_1+\pi_2$ ，该划分满足：
+
+（1） $\pi_1\leq\pi_1+\pi_2\land \pi_2\leq\pi_1+\pi_2$
+
+（2） $\forall \pi(\pi_1\leq\pi\land\pi_2\leq\pi\rightarrow\pi_1+\pi_2\leq\pi)$
+
+注：由于[[MK133][封闭性]]显示并运算对于[[MK122][传递性]]不封闭，故和划分不等价于集合并。
+
+****** 传递闭包<<MK134>>
+
+若 $R$ 是 $A$ 上的[[MK114][二元关系]]，则传递闭包 $R_t$ 满足：
+
+（1） $R_t$ 具有传递性，即补足 $R$ 使得 $R\subset R_t$ 且 $\forall x\forall z(\exists y(xR_ty\land yR_tz)\rightarrow xR_tz)$
+
+（2） 若存在 $R'$ 使得 $R\subset R'\land\forall x\forall z(\exists y(xR'y\land yR'z)\rightarrow xR'z)$ 则有 $R_t\subset R'$
+ 
+****** 推论
+
+若 $R_1,R_2$ 是 $\pi_1,\pi_2$ 对应的等价关系，则有 $\pi_1+\pi_2$ 对应的等价关系是 $(R_1\cup R_2)_t$ 即 $R_1\cup R_2$ 的传递闭包
+
+******* 证明
+
+根据[[MK85][并运算]]及[[MK134][传递闭包]]可得 $R_1\subset (R_1\cup R_2)_t\land R_2\subset (R_1\cup R_2)_t$ 根据[[MK131][细度定理]]可得 $\pi_1\leq\pi_1+\pi_2\land \pi_2\leq\pi_1+\pi_2$
+
+若存在 $\pi$ 满足 $\pi_1\leq\pi\land\pi_2\leq\pi$ 根据[[MK132][定理2]]可得存在 $R$ 与 $\pi$ 对应，且 $R$ 具有[[MK122][传递性]]
+
+根据[[MK131][细度定理]]可得 $R_1\subset R\land R_2\subset R$ 根据[[MK85][并运算]]以及[[MK134][传递闭包]]可得 $(R_1\cup R_2)_t\subset R$
+
+根据[[MK131][细度定理]]可得 $\pi_1+\pi_2\leq\pi$
+
+**** 商集<<MK256>>
+
+$R$ 是 $A$ 上的[[MK126][等价关系]]，则称 $A$ 的划分 $\left\{[a]_R\big|a\in A\right\}$ 为 $A$ 的 $R$ 商集，记作 $A/R$
+
+*** 序关系
+
+**** 定义<<MK257>>
+
+定义集合 $A$ 若：
+
+（1） $R$ 是 $A$ 上的[[MK114][二元关系]]，即 $R\in A\times A$
+
+（2） $R$ 具有[[MK118][自反性]]，[[MK121][反对称性]]以及[[MK122][传递性]]，即 $xRx,xRy\land yRx\rightarrow x=y, xRy\land xRz\rightarrow xRz$
+
+则称 $R$ 为 $A$ 上的序关系，且 $A$ 称为有序集，记作 $<A,R>$
+
+**** 可比与覆盖
+
+定义 $R$ 为非空集合 $A$ 上的[[MK257][序]]关系，其中 $\{x,y,z\}\subset A$ 若：
+
+（1） 存在 $xRy$ 或 $yRx$ 则称 $x,y$ 可比
+
+（2） 存在 $xRy$ 且 $\lnot\exists z\big(z\in A\land xRz\land zRy\big)$
+
+**** 元
+
+***** 定义<<MK259>>
+
+若 $<A,\leq>$ 是有序集，且 $B\subset A$ 则 $b$ 是：
+
+$B$ 的最小元： $b\in B\land\forall x(x\in B\rightarrow b\leq x)$
+
+$B$ 的最大元： $b\in B\land\forall x(x\in B\rightarrow x\leq b)$
+
+$B$ 的极小元： $b\in B\land\lnot\exists x(x\in B\land x\ne b\land x\leq b)$ 
+
+$B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land x\ne b\land x\leq b)$ 
+
+***** 定理
+
+（1） $B$ 的最大（小）元必为 $B$ 的极大（小）元
+
+（2） 如果 $B$ 有最大（小）元，则它是唯一的
+
+（3） 如果 $B$ 是有限集，则B的极大（小）元恒存在
+
+（3） 最大（小）元未必存在，存在则唯一
+
+（4） 极大（小）元对有限集必然存在，未必唯一
+
+**** 界
+
+***** 定义
+
+若 $<A,\leq>$ 是有序集，且 $B\subset A$ 则 $b$ 是：
+
+$B$ 的上界： $b\in A\land\forall x(x\in B\rightarrow x\leq b)$ 
+
+$B$ 的下界： $b\in A\land\forall x(x\in B\rightarrow b\leq x)$ 
+
+$B$ 的上确界： $b$ 是上界的最小元 
+
+$B$ 的下确界： $b$ 下界的最大元 
+
+***** 定理
+
+（1） 如果 $b$ 是 $B$ 的最大（小）元，则b是 $B$ 的上（下）确界
+
+（2） 如果 $b$ 是 $B$ 的上（下）界，而且 $b\in B$ ，则 $b$ 一定是 $B$ 的最大（小）元
+
+（3） 如果有上（下）确界，则上（下）确界是唯一的
+
+（4） 上下界未必存在，存在时也未必唯一
+
+（5） 有了上（下）界，也未必存在上（下）确界
+
+****** 证明
+
+只证（5），若存在 $\{c,d\}\in A$ 且两者无法比较，即 $\lnot(c\leq d)\land\lnot(d\leq c)$
+
+若 $c,d$ 均为 $B$ 的上界，则不存在上确界。
+
+**** 链
+
+***** 定义
+
+若 $<A,R>$ 是有序集，且 $B\subset A$ 若：
+
+$B$ 是链： $\forall x\forall y(\{x,y\}\subset B\rightarrow x\leq y\land y\leq x)$
+
+$B$ 是反链<<MK135>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(x\leq y)\land\lnot(y\leq x))$
+
+***** 定理
+
+若 $<A,R>$ 是有序集，且 $B\subset A$ 若 $A$ 中最长的链 $T$ 基数为 $n$ 则 $A$ 可划分为 $n$ 个单元，
+
+每个单元都是一个[[MK135][反链]]
+
+*** 其他序关系
+
+**** 拟序关系
+
+定义集合 $A$ 若：
+
+（1） $R$ 是 $A$ 上的[[MK114][二元关系]]，即 $R\in A\times A$
+
+（2） $R$ 具有[[MK119][反自反性]]以及[[MK122][传递性]]，即 $\lnot xRx,xRy\land yRx\rightarrow x=y, xRy\land xRz\rightarrow xRz$
+
+则称 $R$ 为 $A$ 上的拟序关系，且 $A$ 称为有拟序集，记作 $<A,R>$
+
+***** 推论
+
+非空集合 $A$ 上的拟序关系 $R$ 必然有[[MK121][反对称性]]
+
+****** 证明
+
+假设 $\{x,y\}\subset A$ 有 $xRy,yRx$ 且有 $x\ne y$ ，即不满足反对称性
+
+则根据[[MK122][传递性]]有 $xRy\land yRx\rightarrow xRx$ 与[[MK119][反自反性]]矛盾。
+
+故满足反对称性。
+
+**** 全序关系<<MK258>>
+
+非空集合 $A$ 上有[[MK257][序关系]] $R$ ，若满足 $\forall x\forall y\big((x\in A\land y\in A)\rightarrow(xRy\lor yRx)\big)$
+
+**** 良序关系
+
+非空集合 $A$ 上有[[MK258][全序关系]] $R$ 对于任意 $A$ 的非空子集，均有[[MK259][最小元]]，则称该关系为良序关系
+
+** 函数（映射）
+
+*** 相关定义
+
+**** 函数（映射）定义<<MK136>>
+
+如果 $X,Y$ 为集合 $f\subset X\times Y$ 是[[MK114][二元关系]]，若：
+
+（1） $\forall x(x\in X\rightarrow\exists y(<x,y>\in f))$ 
+
+（2） $\forall y_1\forall y_2(<x,y_1>\in f\land <x,y_2>\in f\rightarrow y_1=y_2)$
+
+则称 $f$ 是 $X$ 到 $Y$ 上的函数
+
+当 $X=X_1\times...\times X_n$ 时 $f$ 称为 $n$ 元函数
+
+记作 $f:X\rightarrow Y$ 特别的当 $<x,y>\in f$ 时可表示为 $y=f(x)$ 此时 $x$ 成为自变量 $y$ 成为因变量
+
+***** 推论1
+
+若 $X,Y$ 的[[MK77][基数]]为 $|X|=m,|Y|=n$ 则可能的函数个数为 $n^m$
+
+****** 证明
+
+定义 $f:X\rightarrow Y$ ，则定义，对于任意一个 $x\in X$ 均有唯一的关系 $<x,y>\in f$
+
+故必然有且仅有 $|X|$ 个元素属于 $f$ ，每个元素可从 $Y$ 中选择一个元素作为对应。
+
+故若 $|X|=m,|Y|=n$ ，则最终有 $n^m$
+
+***** 推论2
+
+若集合 $X=X_1\times...\times X_n,\ Y=Y_1\times...\times Y_m$ 则同理可定义多元函数 $f\in X\times Y$ 满足：
+
+（1） $\forall x(x\in X\rightarrow\exists y(<x,y>\in f))$ 
+
+（2） $\forall y_1\forall y_2(<x,y_1>\in f\land <x,y_2>\in f\rightarrow y_1=y_2)$
+
+此时可记作 $f(x_1,...,x_n)=[y_1,...,y_m]$
+
+**** 函数的相等
+
+若 $f:A\rightarrow B,g:C\rightarrow D$ 是两个函数，若：
+
+（1） $A=C\land B=D$
+
+（2） $\forall x(x\in A\rightarrow f(x)=g(x))$
+
+则称两函数相等 $f=g$ 
+
+**** 函数的包含
+
+若 $f:A\rightarrow B,g:C\rightarrow D$ 是两个函数，若：
+
+（1） $A\subset C\land B=D$
+
+（2） $\forall x(x\in A\rightarrow f(x)=g(x))$
+
+则称两函数相等 $f\subset g$ 
+
+**** 子集的映像（值域）
+
+***** 定义
+
+若 $f:A\rightarrow B,A\subset B$ 则将 $f(A)$ 称作 $A$ 的映像，定义为 $f(A)=\left\{y\big|x\in A\land y=f(x)\right\}$
+
+***** 性质
+
+\begin{aligned}
+f(A\cup B)&=f(A)\cup f(B)\\
+f(A\cap B)&\subset f(A)\cap f(B)\\
+f(A)-f(B)&\subset f(A-B)\\
+\end{aligned}
+
+****** 证明
+
+仅证 $f'(A\cup B)=f'(A)\cup f'(B)$ 
+
+根据[[MK59][结合律]]，[[MK85][并运算]]以及[[MK71][替换原理]]，对于任意 $y$
+
+\begin{aligned}
+&y\in f'(A\cup B)\\
+{|\!\!\!=\!\!\!|}&x\in A\cup B\land y=f(x)\\
+{|\!\!\!=\!\!\!|}&(x\in A\lor x\in B)\land y=f(x)\\
+{|\!\!\!=\!\!\!|}&(x\in A\land y=f(x))\lor(x\in B\land y=f(x))\\
+{|\!\!\!=\!\!\!|}&y\in f'(A)\lor y\in f'(B)\\
+{|\!\!\!=\!\!\!|}&y\in f'(A)\cup f'(B)\\
+\end{aligned}
+
+故根据[[MK80][外延公理]]可得 $f'(A\cup B)=f'(A)\cup f'(B)$ 
+
+*** 特殊的函数类型
+
+**** 单射<<MK137>>
+
+若 $f$ 是 $X$ 到 $Y$ 上的函数，对于任意 $\{x_1,x_2\}\subset X\land x_1\ne x_2$ 均有 $f(x_1)\ne f(x_2)$ 则称 $f$ 为单射函数
+
+***** 传递性<<MK216>>
+
+若 $N,A,B$ 为集合，存在单射函数 $\Phi:N\rightarrow B$ 和 $\Psi:B\rightarrow A$ 则[[MK215][复合函数]] $P:A\rightarrow B$ 亦为单射函数
+
+****** 证明
+
+根据[[MK215][函数合成]]，合成映射 $P:N\rightarrow B\rightarrow A$ 亦为[[MK136][函数]]
+
+根据定义：
+
+（1） 对于任意 $\{x_1,x_2\}\subset N\land x_1\ne x_2$ 均有 $\Phi(x_1)\ne \Phi(x_2)$ 且 $\{\Phi(x_1),\Phi(x_1)\}\subset B$
+
+（2） 对于任意 $\{\Phi(x_1),\Phi(x_2)\}\subset B\land \Phi(x_1)\ne\Phi(x_2)$ 均有 $\Psi(\Phi(x_1))\ne\Psi(\Phi(x_2))$ 
+
+     且 $\{\Psi(\Phi(x_1)),\Psi(\Phi(x_2))\}\subset A$ 
+
+故对于任意 $\{x_1,x_2\}\subset N$ 均有 $\Psi(\Phi(x_1))\ne\Psi(\Phi(x_2))$ 且 $\{\Psi(\Phi(x_1)),\Psi(\Phi(x_2))\}\subset A$ 
+
+故 $P$ 亦为单射函数
+
+***** 蕴含双射<<MK273>>
+
+若 $f$ 是 $X$ 到 $Y$ 上的单射函数的充要条件是存在 $S\subset Y$ 使得 $f:X\to S$ 为双射
+
+****** 证明
+
+******* 充分
+
+由于 $f$ 是[[MK136][函数]]，故对于任意 $x\in X$ 均有 $f(x)\in Y$
+
+则根据[[MK81][分离公理模式]]定义集合 $S=\left\{y\big|\exists x\in X\rightarrow f(x)\in Y\right\}$
+
+则由定义可知 $S$ 对于函数 $f:X\to S$ 满足[[MK138][满射]]，故其为[[MK139][双射]]
+
+******* 必要
+
+显然。
+
+**** 满射<<MK138>>
+
+若 $f$ 是 $X$ 到 $Y$ 上的函数满足 $\forall y(y\in Y\rightarrow\exists x(x\in X\land y=f(x)))$ 则称为满射函数
+
+***** 传递性<<MK217>>
+
+若 $N,A,B$ 为集合，存在满射函数 $\Phi:N\rightarrow B$ 和 $\Psi:B\rightarrow A$ 则[[MK215][复合函数]] $P:A\rightarrow B$ 亦为满射函数
+
+****** 证明
+
+根据[[MK215][函数合成]]，合成映射 $P:N\rightarrow B\rightarrow A$ 亦为[[MK136][函数]]
+
+根据定义：
+
+（1） 对于任意 $y_1\in B$ 均有 $x\in N\land \Phi(x)=y$
+
+（2） 对于任意 $y_2\in A$ 均有 $y_1\in B\land\Psi(y_1)=y_2$ 
+
+故对于任意 $y_2\in A$ 均有 $x\in N\land \Psi(\Phi(x))=y_2$ 
+
+故 $P$ 亦为满射函数
+
+**** 双射<<MK139>>
+
+若 $f$ 是 $X$ 到 $Y$ 上的函数，且 $f$ 既是[[MK137][单射函数]]又是[[MK138][满射函数]]，则称为双射函数，即一一对应。
+
+***** 传递性<<MK218>>
+
+若 $N,A,B$ 为集合，存在双射函数 $\Phi:N\rightarrow B$ 和 $\Psi:B\rightarrow A$ 则[[MK215][复合函数]] $P:A\rightarrow B$ 亦为双射函数
+
+****** 证明
+
+根据[[MK216][单射传递性]]和[[MK217][满射传递性]]可得双射亦传递
+
+*** 函数的计算
+
+**** 函数的复合<<MK215>>
+
+若 $f:X\rightarrow Y,g:Y\rightarrow Z$ 是两个函数，则其[[MK115][合成关系]] $f\cdot g$ 亦为函数，特别当 $<x,z>\in f\cdot g$ 时记作 $z=g(f(x))$
+
+***** 证明
+
+对于任意 $x\in X$ 根据[[MK136][函数定义]]有对应的 $y\in Y$ 使得 $<x,y>\in f$ 同理有 $<y,z>\in g$ 故有 $<x,z>\in f\cdot g$
+
+即 $\forall x(x\in X\rightarrow\exists z(<x,z>\in f\cdot g))$
+
+若 $z_1,z_2$ 满足 $\{<x,z_1>,<x,z_2>\}\subset f\cdot g$ 则根据[[MK115][合成关系]]定义存在 $\{<x,y_1>,<x,y_2>\}\subset Y$
+
+根据[[MK136][函数定义]]有 $y_1=y_2$ 同理亦有 $z_1=z_2$ 即 $\forall z_1\forall z_2(<x,z_1>\in f\cdot g\land <x,z_2>\in f\cdot g\rightarrow z_1=z_2)$
+
+故 $f\cdot z$ 亦为函数
+
+**** 函数求逆
+
+***** 定义<<MK140>>
+
+若 $f$ 是 $X$ 到 $Y$ 上的函数， $f$ 的[[MK111][逆]]记作 $f^{-1}$
+
+则 $f^{-1}$ 为[[MK136][函数]]的充要条件为 $f$ 是[[MK139][双射函数]]，此时 $f^{-1}$ 称为 $f$ 的逆函数
+
+****** 证明
+
+******* 充分
+
+若 $f$ 是双射函数，则一一对应，故逆函数存在
+
+******* 必要
+
+若 $f$ 存在逆函数，则若 $f$ 不是[[MK138][满射]]，则存在 $y\in Y$ 使得 $\forall x(<x,y>\not\in f)$
+
+即 $\exists y(\forall x(<y,x>\not\in f^{-1}))$ 则不满足[[MK136][函数定义]]中第一条
+
+若 $f$ 不是[[MK137][单射]]，则存在 $x_1\ne x_2$ 使得 $<x_1,y>\in f\land<x_2,y>\in f$
+
+则有 $<y,x_1>\in f\sim\land<y,x_2>\in f\sim\land x_1\ne x_2$ 则不满足[[MK136][函数定义]]中第二条
+
+故 $f$ 必为[[MK139][双射函数]]，否则 $f\sim$ 不是函数
+
+***** 双射性质
+
+****** 性质1<<MK271>>
+
+\begin{aligned}
+\left(f^{-1}\right)^{-1}&=f\\
+f^{-1}\cdot f&=E_X\\
+f\cdot f^{-1}&=E_Y\\
+(g\cdot f)^{-1}&=f^{-1}\cdot g^{-1}\\
+\end{aligned}
+
+******* 证明
+
+仅证 $(f\cdot g)^{-1}=g^{-1}\cdot f^{-1}$ 定义 $f:X\rightarrow Y,g:Y\rightarrow Z$ 是两个[[MK139][双射函数]]
+
+根据[[MK140][逆函数定义]]，[[MK36][交换律]]以及[[MK71][替换原理]]可得对于任意 $<z,x>\in (f\cdot g)^{-1}$ 均有
+
+\begin{aligned}
+&<z,x>\in(f\cdot g)^{-1}\\
+{|\!\!\!=\!\!\!|}&<z,x>\in(f\cdot g)\sim\\
+{|\!\!\!=\!\!\!|}&<x,z>\in(f\cdot g)\\
+{|\!\!\!=\!\!\!|}&x\in X\land z\in Z\land\exists y(y\in Y\land <x,y>\in f\land <y,z>\in g)\\
+{|\!\!\!=\!\!\!|}&z\in Z\land x\in X\land\exists y(y\in Y\land <x,y>\in f\sim \land <y,z>\in g\sim)\\
+{|\!\!\!=\!\!\!|}&z\in Z\land x\in X\land\exists y(y\in Y\land <x,y>\in f^{-1} \land <y,z>\in g^{-1})\\
+{|\!\!\!=\!\!\!|}&<z,y>\in f^{-1}\cdot g^{-1}\\
+\end{aligned}
+
+即 $\forall z\forall x\left(<z,x>\in(g\cdot f)^{-1}{|\!\!\!=\!\!\!|}<z,x>\in f^{-1}\cdot g^{-1}\right)$ 由于函数是[[MK114][二元关系]]，故仅包含 $<a,b>$ 项
+
+故即任意 $\forall L\left(L\in(f\cdot g)^{-1}{|\!\!\!=\!\!\!|}L\in f^{-1}\cdot g^{-1}\right)$ ，则根据[[MK80][外延公理]]可得 $(g\cdot f)^{-1}=f^{-1}\cdot g^{-1}$
+
+****** 性质2<<MK219>>
+
+[[MK139][双射函数]]的逆函数亦为双射
+
+******* 证明
+
+略
+
+***** 非双射定义
+
+****** 左逆<<MK142>>
+
+若 $f:X\rightarrow Y,g:Y\rightarrow X$ 是两个函数且 $f\cdot g=E_X$ 则称 $g$ 是 $f$ 的左逆函数
+
+****** 右逆<<MK141>>
+
+若 $f:X\rightarrow Y,g:Y\rightarrow X$ 是两个函数且 $g\cdot f=E_Y$ 则称 $g$ 是 $f$ 的右逆函数
+
+***** 非双射性质
+
+$f$ 有[[MK142][左逆函数]]当且仅当 $f$ 是[[MK137][单射]]
+
+$f$ 有[[MK141][右逆函数]]当且仅当 $f$ 是[[MK138][满射]]
+
+$f$ 有逆函数当且仅当 $f$ 有[[MK142][左逆函数]] $g$ 和[[MK141][右逆函数]] $h$ ，且 $g=h$
+
+****** 证明
+
+仅证 $f$ 有[[MK141][右逆函数]]当且仅当 $f$ 是[[MK138][满射]]
+
+******* 充分
+
+若 $f$ 有[[MK141][右逆函数]]，则存在 $g:Y\rightarrow X$ 使得 $f\cdot g=E_Y$ 即对于任意 $y\in Y$ 均有 $<y,y>\in f\cdot g$
+
+进一步，即对于任意 $y\in Y$ 均存在唯一 $x\in X$ 使得 $<y,x>\in g\land <x,y>\in f$
+
+故 $\forall y(y\in Y\rightarrow\exists x(x\in X\land y=f(x)))$ 即 $f$ 是[[MK138][满射]]
+
+******* 必要
+
+若 $f$ 是[[MK138][满射]]则构造如下[[MK136][函数]] $g(y)=\begin{cases}x\\x_0\end{cases}$ 其中：
+
+（1） $x$ 是指仅有唯一的 $x$ 使得 $f(x)=y$ 成立 
+
+（2） $x_0$ 是指（1）不成立时，任意一个 $x_0$ 使得 $f(x_0)=y$ 成立
+
+根据[[MK138][满射]]定义 $\forall y(y\in Y\rightarrow\exists x(x\in X\land y=f(x)))$ 故可得对于任意 $y$ 均有上述情况之一
+
+故 $f(x)=y$  $g\cdot f(y)=f(g(y))=y$，故 $g\cdot f=E_Y$
+
+* 图论
+
+** 图的定义
+
+*** 基本定义<<MK148>>
+
+由 *节点* 和 *连接节点的边* 构成的离散结构，记作 $G=<V,E>$ 其中：
+
+**** 节点<<MK145>>
+
+$V$ 表示节点的非空[[MK73][集合]]，例如 $V=\{a,b,c\}$
+
+**** 边<<MK146>>
+
+$E$ 表示边的[[MK143][多重集合]]，附带重数属性（同样元素在集合中的个数），其中
+
+（1） 有向边为[[MK144][二元有序组]]，第一分量为起始节点，第二分量为终止节点，例如 $E=[<a,b>,<b,c>]$
+
+（2） 无向边用[[MK77][基数]]为 $2$ 的[[MK73][集合]]表示，表示内容同上，例如 $E=[\{a,b\},\{b,c\},\{a,b\}]$
+
+*** 赋权图
+
+在[[MK148][基本定义]]下增加：
+
+（1） [[MK145][节点]]的权重[[MK136][函数]]： $f: V\rightarrow W$
+
+（2） 或[[MK146][边]]的权重[[MK136][函数]]： $g: E\rightarrow W$
+
+定义的新的离散结构 $G=<V,E,f,g>$ 为赋权图。
+
+*** 正则图
+
+所有[[MK145][节点]]的[[MK152][度]]均相等的[[MK148][图]]为正则图。
+
+** 图的基本概念
+
+有向图<<MK153>>   ： $E$ 中的元素为[[MK146][有向边]]的[[MK148][图]]
+
+无向图<<MK149>>   ： $E$ 中的元素为[[MK156][无向边]]的[[MK148][图]]
+
+有限图<<MK154>>   ： $V,E$ 均为[[MK104][有限集]]，不是有限图便为无限图
+
+重边<<MK150>>     ： $E$ 中[[MK146][重数]]大于 $1$ 的边为重边
+
+重图              ： $E$ 少有一个元素重数大于 $1$ ，不为重图便为单图
+
+环<<MK147>>       ： $E$ 中若有连接同一[[MK145][节点]]的[[MK146][边]]，则称为环。若为[[MK146][有向边]]则称为有向环，不是则为无向环
+
+简单图<<MK180>>   ： 不包含[[MK147][环]]和[[MK150][重边]]的[[MK149][无向图]]
+
+完全图<<MK155>>   ： 任何两个不同结点间都有边关联的[[MK180][简单图]]，记做 $K_n$
+
+正则图            ： 所有[[MK145][节点]]的[[MK152][度]]均相等的[[MK148][图]]为正则图
+
+孤立结点<<MK151>> ： 不是任何边的端点的结点
+
+零图              ： 仅有[[MK151][孤立结点]]构成的[[MK148][图]]
+
+悬挂点            ： [[MK152][度数]] $d(v)=1$ 的[[MK146][节点]]
+
+** 度
+
+*** 定义<<MK152>>
+
+对于[[MK148][图]] $G=<V,E>$ 若 $v\in V$ ，则定义 $d(v)$ 为 $E$ 中包含 $v$ 的元素的个数。
+
+特别的，对于[[MK153][有向图]]进一步定义：
+
+（1） $d^+(v)$ 为 $E$ 中 $v$ 做为起 *始点* 的元素个数，称为出度
+
+（2） $d^-(v)$ 为 $E$ 中 $v$ 做为 *终结* 点的元素个数，称为入度
+
+*** 性质
+
+（1） 所有[[MK145][节点]]的[[MK152][度]]的和为偶数，是[[MK146][边]]的数目的两倍
+
+（2） [[MK153][有向图]]中[[MK152][出度]]和[[MK152][入度]]的总和相等
+
+（3） 对于[[MK154][有限图]]，奇数[[MK152][度]]的[[MK145][节点]]个数必为偶数个
+
+（4） 自然数序列 $(a_1,a_2,...,a_n)$ 是某个图的度序列当且仅当序列中所有数的总和为偶数
+
+**** 证明
+
+仅证（3），设共有 $(a_1,a_2,...,a_n)$ 个[[MK145][节点]]的[[MK152][度]]为奇数，则定义 $d(a_i)=2k_i+1$ 故 $\sum_{i=1}^nd(a_i)=2\left(\sum_{i=1}^nk_i\right)+n$
+
+设共有 $(b_1,b_2,...,b_m)$ 个[[MK145][节点]]的[[MK152][度]]为偶数，则定义 $d(b_i)=2l_i$ 故 $\sum_{i=1}^nd(a_i)=2\left(\sum_{i=1}^nl_i\right)$
+
+故可得节点度的和为 $\sum_{i=1}^nd(a_i)+\sum_{i=1}^md(b_i)=2\left(\sum_{i=1}^nk_i+\sum_{i=1}^ml_i\right)+n$
+
+假设 $n$ 为奇数时，度的总数为奇数，与（1）冲突。故（3）证毕。
+
+** 图的关系
+
+*** 子图<<MK189>>
+
+若 $G_1=<V_1,E_1>,G_2=<V_2,E_2>$ 均为[[MK148][图]]，若满足 $V_1\subset V_2\land E_1\subset E_2$ 则称 $G_1$ 为 $G_2$ 的子图。
+
+特别的当 $G_1\ne G_2$ 时，称为真子图
+
+*** 生成子图
+
+若 $G_1=<V_1,E_1>,G_2=<V_2,E_2>$ 均为[[MK148][图]]，若满足：
+
+（1） $V_1=V_2$
+
+（2） $G_1$ 是 $G_2$ 的[[MK189][子图]]
+
+ 则称 $G_1$ 是 $G_2$ 的生成子图。
+
+*** 补图
+
+若 $G_1=<V_1,E_1>,G_2=<V_2,E_2>$ 均为[[MK148][图]]，若满足：
+
+（1） $V_1=V_2\land E_1\cap E_2=\varnothing$ 
+
+（2） $G'=<V_1,E_1\cup E_2>$ 是[[MK155][完全图]]
+
+则称 $G_1,G_2$ 互为补图。
+
+*** 同构图
+
+若 $G_1=<V_1,E_1>,G_2=<V_2,E_2>$ 均为[[MK148][图]]，若满足：
+
+（1） $|V_1|=|V_2|\land|E_1|=|E_2|$ 即[[MK77][基数]]相等
+
+（2） 如果可以将 $V_1$ 中所有的[[MK146][节点]]一一对应地置换为 $V_2$ 中的[[MK146][节点]]名后得到的图等于 $G_2$
+
+则称 $G_1,G_2$ 互为同构。
+
+** 路径
+
+*** 基本概念
+
+**** 拟路径<<MK156>>
+
+若存在图 $G=<V,E>$ 且 $\{v_1,v_n\}\subset V$ 
+
+若存在[[MK114][有序组]] $<v_1,e_1,v_2,e_2,....e_{n-1},v_n>$ 满足 $e_i\in E\land\left(e_i=<v_{i-1},v_i>\lor e_i={v_{i-1},v_i}\right)$
+
+则称有序组为拟路径。
+
+**** 路径<<MK157>>
+
+若存在图 $G=<V,E>$ 且 $\{v_1,v_n\}\subset V$ ，若存在无重复[[MK146][边]]的[[MK156][拟路径]]，则称该拟路径为 *路径*
+
+特别的，当 $v_1=v_n$ 时，称为 *闭路径* 或 *圈*
+
+**** 通路<<MK158>>
+
+若存在图 $G=<V,E>$ 且 $\{v_1,v_n\}\subset V$ ，若存在无重复[[MK146][边]]且无重复[[MK145][节点]]的的[[MK156][拟路径]]，则称该拟路径为 *路径*
+
+特别的，当 $v_1=v_n$ 时，称为 *回路*
+
+*** 性质
+
+**** 长度（距离）<<MK186>>
+
+[[MK156][拟路径]]，[[MK157][路径]]，[[MK158][通路]]中[[MK147][边]]的个数为拟路径的长度
+
+**** 路径和通路定理<<MK163>>
+
+在有 $n$ 个顶点的图 $G$ 中，如果有顶点 $v_1$ 到 $v_k$ 的[[MK156][拟路径]]，那么 $v_1$ 到 $v_k$ 必有[[MK157][路径]]，并且必有长度不大于 $n-1$ 的[[MK158][通路]]
+
+***** 证明<<MK159>>
+
+若存在[[MK156][拟路径]]则必有序列 $v_1,e_1,....,e_{k-1},v_k$ 
+
+若存在 $e_i=e_j$ 则必有子序列 $v_i,<v_i,v_{i+1}>,v_{i+1},...,v_j,<v_j,v_{j+1}>,v_{j+1}$ 由于条件，则有 $v_i=v_j\land v_{i+1}=v_{j+1}$
+
+则消去中间部分可得 $v_i,<v_i,v_{j+1}>,v_{j+1}$ 不改变起始点或终止点，以此方法可以去除所有重复[[MK146][边]]。
+
+若存在 $v_i=v_j$ 则必有子序列 $e_{i-1},v_i,e_i,...,e_{j-1},v_{j},e_j$ 则亦可消去中间部分组成 $e_{i-1},v_i,e_j$
+
+同理可消除所有重复[[MK145][节点]]
+
+若[[MK156][拟路径]]长度大于 $n-1$ 则必有 $n+1$ 个[[MK145][节点]]在[[MK156][拟路径]]中。
+
+根据鸽笼原理，必有一个重复的节点，同样可以用上述方法消去。
+
+**** 闭路径和回路定理
+
+在有 $n$ 个顶点的图 $G$ 中，如果有顶点 $v_1$ 到 $v_1$ 的[[MK157][闭路径]]，那么 $v_1$ 到 $v_1$ 必有长度不大于 $n$ 的[[MK158][回路]]
+
+***** 证明
+
+若存在闭路径，则有 $v_1,e_1,v_2,e_2,...v_k,e_{k},v_1$ 由于是[[MK157][闭路径]]，故边 $e_i$ 不重复。
+
+若有点 $v_i=v_j$ 则同[[MK159][之前证明]]可以消去。
+
+** 连通性
+
+*** 可达<<MK160>>
+
+若存在图 $G=<V,E>$ 且 $\{v_1,v_n\}\subset V$ 存在[[MK157][路径]]连接 $v_1\rightarrow v_n$ 或 $v_1=v_n$ ，则称 $v_1$ 可达 $v_n$
+
+*** 无向图连通<<MK161>>
+
+若[[MK149][无向图]] $G=<V,E>$ 任意两[[MK145][节点]]都[[MK160][可达]]，则称无向图是连通的。
+
+*** 有向图的连通
+
+**** 强连通
+
+若[[MK153][有向图]] $G=<V,E>$ 任意两[[MK145][节点]]都相互[[MK160][可达]]，则称无向图是强联通。
+
+**** 单向连通
+
+若[[MK153][有向图]] $G=<V,E>$ 任意两[[MK145][节点]]中，至少有一个节点到另一个节点[[MK160][可达]]，则称无向图是单向联通。
+
+**** 弱连通<<MK166>>
+
+若[[MK153][有向图]] $G=<V,E>$ 将所有有向[[MK146][边]]替换成无向[[MK146][边]]，进而形成的[[MK149][无向图]]是联通的，则称有向图为弱连通。
+
+** 图的矩阵表示
+
+*** 邻接矩阵
+
+**** 定义<<MK181>>
+
+对于有限无重边有向图 $G=<V,E>$ 其零解矩阵定义为 $A=\{a_{ij}\}$ 其中 $a_{ij}=\begin{cases}1&<v_i,v_j>\in E\\0&<v_i,v_j>\not\in E\end{cases}$
+
+**** 运算
+
+***** 度
+
+若 $|V|=n$ 则对定点 $v_k\in V$ 其出度为 $d^+(v_k)=\sum_{i=1}^na_{ki}$ 即[[MK181][邻接矩阵]]行的和，入度为 $d^+(v_k)=\sum_{i=1}^na_{ik}$ 即[[MK181][邻接矩阵]]列的和
+
+***** 拟路径
+
+$A^n=A\times...\times A=\left\{a^{(n)}_{ij}\right\}$ 是 $n$ 个[[MK181][邻接矩阵]]相乘，则 $a^{(n)}_{ij}$ 为[[MK145][节点]] $v_i$ 到 $v_j$ 长度为 $n$ 的[[MK156][拟路径]]条数
+
+****** 证明<<MK182>>
+
+[[MK181][邻接矩阵]]与自身相乘 $A\times A=A^2=\left\{a^{(2)}_{ij}\right\}$ 则有 $a^{(2)}_{ij}=\sum_{k=1}^na_{ik}a_{kj}$ 当且仅当 $a_{ik}>0\land a_{kj}>0$ 时 $a_{ik}a_{kj}>0$
+
+故 $a^{(2)}_{ij}$ 为 $v_i$ 到 $v_j$ 经过边数为 $2$ 的[[MK156][拟路径]]条数。
+
+当 $n-1$ 成立时 $A^{n-1}\times A=\left\{a^{(n)}_{ij}\right\}$ 其中 $a^{(n)}_{ij}=\sum_{k=1}^na^{(n-1)}_{ik}a_{kj}$ 
+
+这里面 $a^{(n-1)}_{ik}$ 为 $v_i$ 到 $v_k$ 长度为 $n-1$ 拟路径条数，若此时 $<v_k,v_j>\in E$ 则 $v_i$ 可通过 $a^{(n-1)}_{ik}$ 条拟路径到达 $v_k$ 在由 $v_k$ 到达 $v_j$
+
+故 $a^{(n)}_{ij}$ 为 $v_i$ 到 $v_j$ 长度为 $n$ 的[[MK156][拟路径]]条数
+
+***** 路径
+
+定义 $A^{(2)}=A\land A=\left\{a^{(2)}_{ij}\right\}$ 其中 $a^{(2)}_{ij}=\sum_{k=1}^n a_{ik}\land a_{kj}$ 
+
+定义 $A\lor A'=\left\{a^{[2]}_{ij}\right\}$ 其中 $a^{[2]}_{ij}=a_{ij}\lor a'_{ij}$ 
+
+定义 $B=A\lor A^{(2)}\lor...\lor A^{(|V|)}=\{b_{ij}\}$ 则矩阵 $B$ 为路径矩阵，若 $b_{ij}=1$ 则[[MK145][节点]] $v_i$ 到 $v_j$ 存在[[MK157][路径]]
+
+****** 证明
+
+根据[[MK182][之前证明]]同理可证 $A^{(n)}=\left\{a^{(n)}_{ij}\right\}$ 中 $\left\{a^{(2)}_{ij}\right\}$ 表示[[MK145][节点]] $v_i$ 到 $v_j$ 存在长度为 $n$ 的[[MK156][拟路径]]
+
+则 $b_{ij}$ 表示[[MK145][节点]] $v_i$ 到 $v_j$ 存在拟路径，根据[[MK163][路径定理]]可知必存在路径
+
+****** 推论（可达性矩阵）
+
+定义 $E=\{e_{ij}\}$ 其中 $e_{ij}=\begin{cases}1&i=j\\0&i\ne j\end{cases}$ 则 $P=E\lor B$ 称为[[MK160][可达性]]矩阵
+
+*** 关联矩阵
+
+若[[MK180][简单图]] $G=<V,E>$ 其中 $V=\{v_1,...,v_n\},E=\{e_1,...,e_m\}$ 
+
+则关联矩阵 $A_{mn}=\{a_{ij}\}$ 其中根据[[MK144][有序组]]定义 $a_{ij}=\begin{cases}1&\{v_i\}\in e_j\\0&\{v_i\}\not\in e_j\end{cases}$
+
+** 欧拉图
+
+*** 定义
+
+**** 欧拉图<<MK162>>
+
+若图 $G=<V,E>$ 存在一条通过所有[[MK145][节点]]和[[MK146][边]]的[[MK157][闭路径]]，则称图 $G$ 为欧拉图。
+
+**** 欧拉路径<<MK175>>
+
+若图 $G=<V,E>$ 存在一条通过所有[[MK145][节点]]和[[MK146][边]]的[[MK157][路径]]，则该路径为欧拉路径。
+
+*** 判定
+
+**** 欧拉图
+
+***** 有限无向图
+
+有限无向图为[[MK162][欧拉图]]的充要条件是：图 $G=<V,E>$ 是[[MK161][连通]]的，且所有[[MK145][节点]]的[[MK152][度]]都是偶数
+
+****** 证明
+
+******* 充分<<MK165>>
+
+若图 $G=<V,E>$ 是[[MK162][欧拉图]]，则必有一条[[MK157][闭路径]]，即存在[[MK156][拟路径]] $v_1,e_1,v_2,...,v_k,e_k,v_1$ 
+
+且其中 $e_i$ 不存在重复，且 $E=\{e_1,...,e_k\}$ ，即该闭路径包含所有[[MK146][边]]
+
+根据定义任意 $v_i\in V$ 均存在与[[MK156][拟路径]]中，则必存在 $e_u,v_i,e_v$ 形式的子链中，该形式的度为 $2$ 
+
+故所有[[MK145][节点]]的[[MK152][度]]都是 $2$ 乘以其在拟路径中出现的次数 $n$ ，即 $2n$ 为偶数。
+
+又由于存在[[MK156][拟路径]]连通所有节点，故图是[[MK161][连通图]]
+
+******* 必要<<MK177>>
+
+若图 $G=<V,E>$ 是[[MK161][连通]]的，且所有[[MK145][节点]]的[[MK152][度]]都是偶数，利用数学归纳法证明是欧拉图
+
+******** 当边数 $n=1$
+
+若 $n=1$ 由于其为[[MK161][连通图]]，故必然存在 $v_1,e_1,v_1$ 的[[MK156][拟路径]]，故是[[MK162][欧拉图]]。
+
+******** 当边数 $n\leq K$ 成立时，证明 $n=K+1$ 成立
+
+********* 存在回路
+
+任一[[MK145][节点]] $v_1\in V$ 由于[[MK152][度]]是偶数，故至少有两条不同的[[MK146][边]]连接节点 $v_1$ ，即有 $v_p,v_q$ 通过边 $e_p,e_q$ 与 $v_1$ 相连，且 $v_p\ne v_q$ 。
+
+由于图是[[MK161][连通图]]，故 $v_p,v_q$ 之间存在[[MK157][路径]]，根据[[MK163][定理]]必定存在[[MK158][通路]]，再与 $v_1$ 连接构成在[[MK158][回路]] $v_1,e_p,v_p,...,v_q,e_q,v_1$ 定义为链图 $T=<V_T,E_T>$
+
+若 $E_T=E$ 则该闭路径即为欧拉闭路径，图为欧拉图。
+
+********* 删除回路并构建子图<<MK167>>
+
+在图 $G$ 中删除 $E_T$ 中包含的[[MK146][边]]形成[[MK189][子图]] $G'=<V',E'>$ ，进一步构造 $G'$ 子图
+
+（1） 对于 $v_1$ 开始，若:
+
+      a) 节点 $v$ 在 $G$ 中的[[MK152][度]]为 $2$ ，则在 $G'$ 中为[[MK151][孤立点]]，单独形成 $G'_1=<V'_1,E'_1>$
+
+      b) 节点 $v$ 在 $G$ 中的[[MK152][度]]为大于 $2$ 则在 $G'$ 中必有其他节点与之连通。所有与 $v_1$ 连通的点集为 $V_1$ 定义 $E_i=\left\{\{v_p,v_q\}\big|\{v_p,v_q\}\subset V_i\right\}$ 故构成子图 $G'_1=<V_1,E_1>$ 
+
+（2） 对于 $v_i,i>1$ 若到 $v_{i-1}$ 已构造的子图一共 $k$ 个分别为 $G_1,...,G_k$ ，若 $\exists j(v_i\in V_j\land 1\leq j\leq k)$ 则不构造；若 上述条件不满足，则根据（1）构造子图 $G_{k+1}$
+
+定义共有子图 $G_1,...,G_s$
+
+********* 构造子图的性质<<MK171>>
+
+********** $\forall i\forall j(V'_i\cap V'_j=\varnothing)$ <<MK168>>
+
+若 $V'_i\cap V'_j=v$ 则 $G'_i,G'_j$ 两图连通，则违背包含所有连通点的定义
+
+********** $V=\cup_{i=1}^s V'_i$ <<MK164>>
+
+由于图 $G$ 连通，故在 $G$ 下任意节点 $v$ 必与任意 $v'\in V_T$ 连通，即存在 $v,e_1,...,e_k,v'$ 。
+
+取序列中第一个 $v_i\in V_T$ 形成子序列
+
+若子序列仅为 $v$ 则有 $v\in V_T$ 根据构造子图规则有 $v\in G'_i$
+
+若子序列为 $v,e_1,...,e_{i-1},v_i$ 则由于 $v_i$ 是第一个 $V_T$ 中的元素，则 $e_j=<v_j,v_{j+1}>,1\leq j\leq i-1$ 中至少 $v_j\not\in V_T$ 
+
+则根据定义 $e_j\not\in E_T$ 则 $G'$ 下序列 $v,e_1,...,e_{i-1},v_i$ 任然存在，
+
+故任意 $v\in V$ 均有在 $G'$ 下与之连通的 $v_i\in V_T$ 由于 $v_i\in G'_a$ 且两点连通，则 $v\in G'_a$
+
+********** $\forall i\forall j(E'_i\cap E'_j=\varnothing)$ 
+
+若 $E'_i\cap E'_j=e$ 则 $G'_i,G'_j$ 包含相同节点，与[[MK168][之前性质]]违背
+
+********** $E=E_T \cup \left(\cup_{i=1}^s E'_i\right)$ <<MK170>>
+
+任意边 $e$ 必定连接两个节点 $v_1,v_2$ 由于（2），必有 $\{v_1,v_2\}\subset\cup_{i=1}^s V'_i$
+
+若 $\{v_1,v_2\}\subset V'_i$ 则有 $e\in E'_i$
+
+若 $v_1\in V'_i\land v_2\in V'_j$ 由于[[MK168][之前性质]]必有 $v_1\not\in V'_j\land v_2\not\in V'_i$ 
+
+此时当 $e\in E_T$ 则满足条件，当 $e\not\in E_T$ 则 $e$ 在 $G'$ 下连通 $V_i,V_j$ 与构造定义不符。
+
+********** $\forall v(v\in V'_i\rightarrow \mod[d(v),2]=0)$ <<MK169>>
+
+由于在 $G$ 下对于任意节点的度 $d(v)$ 是偶数，删除回路边所消去的度对于每个节点来说是 $2$ 故在 $G'$ 下每个节点的度亦为偶数
+
+由于子图是构建在 $G'$ 上的，且根据以上性质保留了 $G'$ 中所有的点和边，故对于任意 $v$ 其在 $G'$ 上的度等于其在 $G'_i$ 上的度，亦为偶数。
+
+********* 证明结论
+
+由于 $v_1,e_p,v_p,...,v_q,e_q,v_1$ 本身为[[MK158][回路]]，若删除后所有节点均为孤立，则有
+
+（1） $G'_1,...,G'_q$ 个子图，根据[[MK164][性质2]]可得上述回路遍历了所有节点。
+
+（2） $E=E_T$ 故上述回路遍历了所以边
+
+即上述回路满足欧拉图。
+
+若非上述情况，则对于非孤立的子图 $G'_i$ 中边的数目 $|E'_i|\leq K$ 连通且根据[[MK169][性质5]]所有阶段度为偶数
+
+故根据假设存在满足欧拉图中的[[MK157][闭路径]]，定义为 $T'_i$
+
+故沿 $v_1,e_p,v_p,...,v_q,e_q,v_1$ 经过解点 $v_i$ 时 $v_i\in G'_j$ 则以以下规则替换节点
+
+（1） 若 $G'_i$ 不是孤立图且未曾替换过节点，则利用 $T'_i$ 生成满足欧拉图的闭路径 $v_i,e_1,...,v_i$ 替换对应节点。
+
+（2） 若 $G'_i$ 为孤立点或已经在之前节点替换过，则无需操作。
+
+故形成新序列 $v_1,e^*_1,...,e^*_l,v_1$ 由于[[MK164][性质2]]可知该闭路径遍历所有节点；由于[[MK170][性质4]]可知该路径遍历所有边
+
+且根据定义，对于序列上 $e_i\in E_T$ 仅出现一次 $e_i\in E'_j$ 亦仅出现一次，故满足欧拉图定义。
+
+***** 有限有向图
+
+有限有向图为[[MK162][欧拉图]]的充要条件是：图 $G=<V,E>$ 是[[MK166][弱连通]]的，且所有[[MK145][节点]]的[[MK152][出度]]和入度相等
+
+****** 证明<<MK177>>
+
+******* 充分
+
+同[[MK165][之前证明]]
+
+******* 必要
+
+数学归纳法，由于[[MK152][出度]]和入度相等，故有向[[MK146][边]]至少有两条
+
+******** 当边数 $n=2$ 时
+
+由于出度入度相等，且弱连通，故仅有一种情况 $v_1,e_1,v_2,e_2,v_1$ ，显然满足
+
+******** 当边数 $n\leq K$ 成立时，证明 $n=K+1$ 成立
+
+********* 确定并删除[[MK157][闭路径]]<<MK173>>
+
+定义 $v\in V$ 从 $v_1$ 出发，对于每条边仅经过一次，直到不能继续位置，暂时定义该[[MK157][路径]]为 $v_1,e_1,v_2,...,v_k,e_k,v_{k+1}$ 
+
+对于任意一个经过的点 $v_i$ 来说，由于[[MK152][出度]]和入度相等，即若有边 $e$ 引导路径进入，便有边 $e'$ 引导路径走出节点。
+
+由于[[MK145][节点]]是有限的，故只能回到初始点，则得到[[MK157][闭路径]]，即 $v_1,e_1,v_2,...,v_k,e_k,v_1$ 定义为链图 $T^{(1)}=<V^{(1)}_T,E^{(1)}_T>$
+
+若以上闭路径为欧拉闭路径，则图为欧拉图。
+
+若不是则 将 $G$ 中的包含在 $E_T$ 中的边删除，形成子图 $G^{(1)}=<V,E^{(1)}>$ 
+
+********* 构造子图<<MK174>>
+
+同[[MK167][之前证明]]一样将图分为若干个弱连通子图 $G^{(1)}_1,...,G^{(1)}_s$ 其中 $G^{(1)}_i=<V^{(1)}_i,E^{(1)}_i>$
+
+若 $s=1$ 即一个子图包含了所有点，则重复[[MK173][上一步]]，找到链图 $T^{(2)}=<V^{(2)}_T,E^{(2)}_T>$ 形成子图 $G^{(2)}=<V,E^{(2)}>$ 
+
+继续讲将子图分解为 $G^{(2)}_1,...,G^{(2)}_s$ 其中 $G^{(2)}_i=<V^{(2)}_i,E^{(2)}_i>$
+
+重复直到 $G^{(m-1)}=<V,E^{(m-1)}>$ 找到链图 $T^{(m)}=<V^{(m)}_T,E^{(m)}_T>$ 形成子图 $G^{(m)}=<V,E^{(m)}>$  
+
+继续讲将子图分解为 $G^{(m)}_1,...,G^{(m)}_s$ 其中 $G^{(m)}_i=<V^{(m)}_i,E^{(m)}_i>$ 时满足 $E^{(m)}=\varnothing$ 或 $s>1$ 中的任意一条
+
+若 $E^{(m)}=\varnothing$ 则代表图中有 $m$ 条闭路径，串联所有闭路径即可成为欧拉闭路径，图为欧拉图。
+
+若 $s>1$ 则定义最终定义 $G^{(m)}_i=G'_i$ 且 $V^{(m)}_i=V'_i,E^{(m)}_i=E'_i$ 并进入下一步
+
+********* 构造子图性质<<MK172>>
+
+由于[[MK166][弱连通]]定义，且[[MK171][之前证明]]中的性质不含有向性，故性质：
+
+（1） $\forall i\forall j(V'_i\cap V'_j=\varnothing)$
+
+（2） $V=\cup_{i=1}^s V'_i$
+
+（3） $\forall i\forall j(E'_i\cap E'_j=\varnothing)$
+
+（4） $E=\left(\cup_{i=1}^m E^{(i)}_T\right) \cup \left(\cup_{i=1}^s E'_i\right)$ 
+
+可[[MK171][同理证明]]。另外由于对于闭路径上任何一个节点均有 $e_i,v_i,e_{i+1}$ 的结构，故 $G'$ 所有节点的[[MK152][出度]]和入度相等
+
+由于子图是构建在 $G'$ 上的，且根据以上性质保留了 $G'$ 中所有的点和边，故：
+
+（5） $\forall v(v\in V'_i\rightarrow d^+(v)=v^-(v))$
+
+********* 证明结论
+
+由于 $G'_i$ 构造原理，其为弱连通，根据[[MK172][性质（5）]]其所有[[MK145][节点]]的[[MK152][出度]]和入度相等
+
+由于[[MK174][构造]]时确定 $s>1$ 且根据[[MK172][性质（1）,（2）]]可得对于任一 $G'_i$ 均有 $|V'_i|\leq K$
+
+综上所述 $G'_i$ 满足条件假设，即有欧拉闭路径。
+
+最终由 $v_1$ 沿 $T$ 闭路径触发，前 $i\leq m-1$ 次沿 $T^{(i)}$ 进行，当第 $m$ 次，若：
+
+（1） 经过 $v_i\in G'_j$ 且 $\lnot\exists l(l<i\land v_l\in G'_j)$ 则沿着 $G'_j$ 的欧拉闭路径遍历回到 $v_i$
+
+（2） 若 $v_i$ 是孤立点，则经过。
+
+（3） 若回到 $v_1$ 则结束
+
+上述路径首先遍历 $E^{(i)}_T,i\leq m-1$ ，最后一次遍历 $E^{(m)}_T$ 以及 $G'_i$ 的边一次，根据[[MK172][性质（4）]]可得路径遍历所有边一次。
+
+又由于其最终回到 $v_1$ 即满足[[MK162][欧拉图]]定义
+
+**** 欧拉路径判定
+
+***** 有限无向图
+
+有限无向图有[[MK175][欧拉路径]]的充要条件是：图 $G=<V,E>$ 是[[MK161][连通]]的，且仅有两个[[MK145][节点]]的[[MK152][度]]是奇数
+
+****** 证明
+
+******* 充分
+
+若图 $G=<V,E>$ 有[[MK175][欧拉路径]]，则必有一条[[MK157][路径]]，即存在[[MK156][拟路径]] $v_1,e_1,v_2,...,v_{n-1},e_{n-1},v_n$ 经过所有所有[[MK145][节点]]和[[MK146][边]]
+
+故对于 $v_i\in V\land v_i\ne v_1\land v_i\ne v_n$ 来说，必出现在上述拟路径中，且必有格式 $e_{i},v_i,e_{i+1}$ 每出现一次度增加 $2$
+
+若出现 $n_i$ 次则 $d(v_i)=2n_i$ 即为偶数
+
+对于 $v_1$ 同理 $d(v_1)=2n_i+1$ 为奇数，同理 $v_n$ 亦为奇数。
+
+证毕。
+
+******* 必要
+
+由于[[MK161][连通]]，定义 $v_1,v_n$ 为度是奇数的两个节点。故存在拟路径 $v_1,e_1,v_2,...,v_{n-1},e_{n-1},v_n$
+
+之后证明同[[MK177][欧拉图证明]]
+
+***** 有限有向图
+
+有限有向图有[[MK175][欧拉路径]]的充要条件是：图 $G=<V,E>$ 是[[MK166][弱连通]]的，且有一个[[MK145][节点]]的出[[MK152][度]]比另一个节点的入度大 $1$ ，其余节点出度入度相等
+
+证明与[[MK177][之前证明]]类似
+
+** 哈密尔顿图
+
+*** 定义
+
+**** 哈密尔顿图<<MK179>>
+
+若图 $G=<V,E>$ 存在一条通过所有[[MK145][节点]]的[[MK158][回路]]，则称图 $G$ 为哈密尔顿图。
+
+**** 哈密尔顿通路了<<MK178>>
+
+若图 $G=<V,E>$ 存在一条通过所有[[MK145][节点]]的[[MK158][通路]]，则称图 $G$ 为哈密尔顿图。
+
+*** 判定
+
+**** 哈密尔顿通路
+
+若无向连通图 $G=<V,E>$ 中 $|V|=n$ ，任意两个[[MK145][节点]]的[[MK152][度]]的和大于等于 $n-1$ 
+
+即 $\forall v_1\forall v_2(v_1\in V\land v_2\in V\rightarrow d(v_1)+d(v_2)\geq n-1)$ 则存在[[MK178][哈密尔顿通路]]
+
+**** 哈密尔顿图
+
+若无向连通图 $G=<V,E>$ 中 $|V|=n\geq 3$ ，任意两个[[MK145][节点]]的[[MK152][度]]的和大于等于 $n$ 
+
+即 $\forall v_1\forall v_2(v_1\in V\land v_2\in V\rightarrow d(v_1)+d(v_2)\geq n)$ 则为[[MK179][哈密尔顿图]]
+
+** 二分图
+
+*** 定义<<MK183>>
+
+若[[MK149][无向图]] $G=<V,E>$ 满足：
+
+（1） 有非空集合 $X,Y$ 满足 $(X\subset V\land Y\subset V)\land (X\cup Y=V\land X\cap Y=\varnothing)$
+
+（2） 对于任意 $e=\{v_1,v_2\}\in E$ 满足 $v_1\in X\land v_2\in Y$
+
+则图 $G$ 称为二分图，可记作 $G=<X,E,Y>$
+
+特别当 $X,Y$ 中任意两个[[MK145][节点]]均有[[MK146][边]]相连时，称为完全二分图。
+
+*** 等价条件
+
+[[MK149][无向图]] $G=<V,E>$ 是二分图的等价条件为： $G$ 至少有两个[[MK145][节点]]且所有[[MK158][回路]]的长度（边数和）均为偶数
+
+**** 证明
+
+***** 充分
+
+若 $G=<X,E,Y>$ 是二分图，且定点 $v_1\in X$ 存在[[MK158][回路]]，根据[[MK183][定义]]所有边均连接 $X,Y$
+
+则当且仅当长度为偶数时，顶点落在 $X$ 内，故若存在回路，必为偶数
+
+***** 必要
+
+若[[MK161][无向连通图]]（若非连通，则可分为若干个连通分支图） $G=<V,E>$ 所有回路均为偶数，取任意[[MK145][节点]] $v\in V$ 定义
+
+（1） $X$ 为 $v'\in V$ 且 $v',v$ 之间存在偶数长度[[MK158][通路]]的节点以及 $v$
+
+（2） $Y=V-X$
+
+显然 $v\in X$ 故 $X\ne\varnothing$ 由于 $|V|>2$ 故 $Y\ne\varnothing$
+
+若 $\{v_1,v_2\}\subset X$ 则 $v$ 到 $v_1$ 或 $v_2$ 均有偶数长度的通路或其中一个是 $v$ 自身
+
+此时若存在 $e\in E\land e=\{v_1,v_2\}$ 则 $v$ 有奇数长度[[MK158][回路]]。
+
+同理可证若 $e\in E\land e=\{v_1,v_2\}\land \{v_1,v_2\}\subset Y$ 亦有奇数长度[[MK158][回路]]。
+
+故 $X,Y$ 内部不存在边，即根据[[MK183][定义]]为二分图
+
+*** 匹配
+
+**** 定义<<MK184>>
+
+[[MK183][二分图]] $G=<X,E,Y>$ 若 $M\subset E$ 且任意 $e_1=\{v_1,v'_1\}\land e_2=\{v_2,v'_2\}\land\{e_1,e_2\}\subset E$ 均有 $v_1\ne v_2\land v'_1\ne v'_2$ 即任意两条边无公共端点
+
+则称 $M$ 为匹配。若 $M$ 为边数最多的集合，则称为最大匹配。若 $X,Y$ 中的所有定点均出现在匹配 $M$ 中，则称为完全匹配。
+
+**** 匈牙利算法（求最大匹配）
+
+步骤如下：
+
+（1） 任取一个[[MK184][匹配]] $M$ 
+
+（2） 定义 $S$ 是尚未匹配点的集合
+
+（3） 若 $S=\varnothing$ 则 $M$ 为最大匹配
+
+（4） 取 $u_0\in S$ 为起点，找任一最大[[MK158][通路]]，满足属于 $M$ 和不属于 $M$ 的边交替出现，定义其边的集合为 $P$
+
+（5） 若（4）中通路的终点亦在 $S$ 中，则 $M^{(1)}=(M-P)\cup (P-M)$ 
+
+（6） 若终点不在 $S$ 中，则回到（3）
+
+** 平面图
+
+*** 定义
+
+若[[MK149][无向图]] $G=<V,E>$ 满足：
+
+（1） 可以在一个平面上图示出来
+
+（2） 各[[MK146][边]]仅在顶点处相交
+
+则称为平面图
+
+*** 最小非平面图
+
+顶点数最少的非平面图是 $5$ 个[[MK145][节点]]的[[MK155][完全图]]，即 $K_5$
+
+边数最少的是 $X,Y$ 均有 $3$ 个[[MK145][节点]]的[[MK183][完全二分图]]，即 $K_{3,3}$
+
+*** 平面图等价条件<<MK187>>
+
+$G$ 或者 $G$ 的[[MK189][子图]]作任何同胚操作后得到的图均不能以 $K_5$ 及 $K_{3,3}$ 为子图
+
+*** 同胚操作
+
+在原图的边上增加或者删除二[[MK152][度]]的[[MK145][节点]]。
+
+其本身将一条边分解为一个节点两条边，或做相反操作。不改变图的平面性质。
+
+** 树
+
+*** 定义<<MK185>>
+
+无[[MK150][重边]]，[[MK158][回路]]的[[MK161][无向连通图]]定义为树，其中
+
+（1） 树中的悬挂点称作 *树叶*
+
+（2） 非树叶节点称作 *分支点*
+
+（3） 仅有单个孤立节点的树称作 *空树*
+
+（4） 每个连通分支都是树的图称作 *森林*
+
+（5） 树是森林
+
+*** 性质
+
+**** 树是简单图
+
+根据[[MK185][定义]]，树无回路，即无环。且树为无向无重边图，即满足[[MK180][简单图]]定义
+
+**** 树是二分图 
+
+树 $G=<V,E>$ 取任一 $v\in V$ ，定义 $X$ 为到 $v$ 的[[MK186][距离]]为奇数的[[MK145][节点]]， $Y$ 为到 $v$ 的[[MK186][距离]]为偶数的[[MK145][节点]]
+
+若任一节点 $v'\in X\land v'\in Y$ ，则必有两条不同的[[MK156][拟路径]]连接 $v,v'$ 根据[[MK163][通路定理]]必有两条[[MK158][通路]]形成[[MK158][回路]]
+
+故有 $X\cap Y=\varnothing$
+
+由于[[MK185][树]]为连通图，故所有节点到 $v$ 均存在[[MK157][路径]]，即 $X\cup Y=V$
+
+对于任意 $\{v_1,v_2\}\subset X$ 若 存在边 $e=\{v_1,v_2\}$ 根据 $v_1,v_2$ 均与 $v$ 存在通路，则存在 $v,...,v_1,e,v_2,...,v$ 的回路，与条件不符。
+
+故 $X$ 中的点不连通。综上所述，树为二分图。
+
+**** 树是平面图
+
+根据[[MK185][定义]]树不含[[MK158][回路]]，进一步根据[[MK187][等价条件]] $K_{5},K_{3,3}$ 均含回路，故不可能为树的子图。
+
+故树是平面图。
+
+**** 删去任意一边，图不连通
+
+若删去 $e=\{v_1,v_2\}$ 假设图仍连通，则 $v_1,v_2$ 之间必有[[MK156][拟路径]]。
+
+根据[[MK163][通路定理]]必有[[MK158][通路]]，则原图与 $e$ 形成回路
+
+**** 任意两个不同[[MK145][节点]]间只有一条通路
+
+若有两条，则形成[[MK158][回路]]
+
+*** 生成树
+
+**** 定义<<MK190>>
+
+若图 $T,G$ 满足：
+
+（1） $T$ 是 $G$ 的子图
+
+（2） $T$ 是[[MK185][树]]
+
+则 $T$ 称为 $G$ 的生成树。
+
+**** 定理
+
+任意[[MK161][无向连通图]]至少有一个[[MK190][生成树]]
+
+***** 证明
+
+如果无向连通图 $G$ 有回路，则删去回路上的一条边，然后继续构造直到没有回路
+
+* 抽象代数
+
+** 代数的构建
+
+*** 运算
+
+**** 定义<<MK193>>
+
+运算是集合 $S^n=S\times ...\times S$（即 $n$ 个 $S$ 的[[MK109][笛卡尔积]]）到 $S$ 的[[MK136][函数]] 
+
+通常用 $*$ 表示二元运算，如 $*(x,y)=x*y$
+
+通常用 $\Delta$ 表示一元运算，如 $\Delta x$
+
+**** 基本性质<<MK191>>
+
+所有二元运算均满足：
+
+普遍性： $S$ 中的所有元素均可参与运算
+
+单值性<<MK199>>： $\forall x\forall y\forall x'\forall y'(x=x'\land y=y'\rightarrow x*y=x'*y')$
+
+封闭性： $\forall x\forall y(x\in S\land y\in S\rightarrow x*y\in S)$
+
+**** 一般性质
+
+二元运算可以满足：
+
+结合律<<MK195>>： $\forall x\forall y\forall z\left(\{x,y,z\}\subset S\rightarrow (x*y)*z=x*(y*z)\right)$
+
+交换律<<MK194>>： $\forall x\forall y(\{x,y\}\subset S\rightarrow x*y=y*x)$
+
+分配率<<MK205>>： 对于运算 $*,\#$ 有 $\forall x\forall y\forall z\left(\{x,y,z\}\subset S\rightarrow x*(y\#z)=x*y\#x*z)\right)$ 则称运算 $*$ 对 $\#$ 可分配
+
+*** 代数结构定义<<MK201>>
+
+非空集合 $S$ 上存在若干满足[[MK191][基本性质]]的运算，通常记作 $<S,*,\#,...>$
+
+** 特殊元素
+
+*** 幺元
+
+**** 定义<<MK198>>
+
+[[MK201][代数结构]] $<S,*>$ 上存在元素 $e$ 对于任意 $x\in S$ 均满足 $e*x=x*e=x$ 则 $e$ 为幺元
+
+若仅满足 $x*e=x$ 则为左幺元
+
+若仅满足 $e*x=x$ 则为右幺元
+
+**** 性质
+
+若存在左右幺元，则左幺元等于右幺元，且幺元唯一
+
+***** 证明<<MK192>>
+
+若 $e_1,e_2$ 分别为左，右幺元，则有 $e_1=e_1*e_2=e_2$ 故左右幺元相等。
+
+若存在其他幺元 $e_3$ 同理可证 $e_1=e_3$
+
+*** 零元
+
+**** 定义<<MK203>>
+
+[[MK201][代数结构]] $<S,*>$ 上存在元素 $o$ 对于任意 $x\in S$ 均满足 $o*x=x*o=o$ 则 $o$ 为零元
+
+若仅满足 $x*o=o$ 则为左零元
+
+若仅满足 $o*x=o$ 则为右零元
+
+**** 性质
+
+若存在左右零元，则左零元等于右零元，且零元唯一
+
+***** 证明
+
+同[[MK192][之前证明]]
+
+*** 逆元
+
+**** 定义<<MK197>>
+
+[[MK201][代数结构]] $<S,*>$ 上存在[[MK198][幺元]] $e$ ，若 $x*y=e$ 则：
+
+$x$ 是 $y$ 的左逆元
+
+$y$ 是 $x$ 的右逆元
+
+若[[MK193][运算]]满足[[MK194][交换律]]，则称互为逆元
+
+**** 性质1<<MK202>>
+
+若[[MK201][代数结构]] $<S,*>$ 上 $|S|>1$ 且有幺元 $e$ 零元 $o$ ，则零元没有逆元
+
+***** 证明
+
+若 $o=e$ 则对于任意 $a\in S\land a\ne o$ 均有 $a=a*e=a*o=o$ ，与条件矛盾。由于 $|S|>1$ 故必存在 $a\ne o\land a\in S$ 故 $o\ne e$ 。
+
+假设存在左逆元 $x$ ，则有 $o=x*o=e$ 与 $o\ne e$ 矛盾
+
+**** 性质2<<MK272>>
+
+满足[[MK195][结合律]]的[[MK201][代数结构]]中，逆元唯一
+
+***** 证明
+
+若 $x$ 分别有左右逆元 $l,r$ 则 $r=e*r=(l*x)*r=l*(x*r)=l*e=l$
+
+**** 性质3
+
+满足[[MK195][结合律]]的[[MK201][代数结构]]中，逆元的逆元一定是本身
+
+***** 证明
+
+根据定义若满足 $x*y=y*x=e$ 则 $x$ 的逆元是 $y$
+
+则同理对于 $y$ 来说 $x$ 满足 $y*x=x*y=e$ 即 $x$ 是 $y$ 的逆元
+
+且根据[[MK272][性质2]]可得逆元唯一，故 $x$ 的逆元只能是 $y$ 且 $y$ 的逆元只能是 $x$
+
+故 $x$ 逆元的逆元一定是 $x$
+
+*** 可约元素
+
+**** 定义<<MK196>>
+
+[[MK201][代数结构]] $<S,*>$ 中存在 $a\in S$ 满足：
+
+（1） $\forall x\forall y(a*x=a*y\land x\in S\land y\in S\rightarrow x=y)$ 称为左可约
+
+（2） $\forall x\forall y(x*a=y*a\land x\in S\land y\in S\rightarrow x=y)$ 称为左可约
+
+若同时满足（1）和（2），则 $a$ 称为可约
+
+**** 性质1
+
+满足[[MK195][结合律]]的[[MK201][代数结构]]中，有[[MK197][逆元]]的元素[[MK196][可约]]
+
+***** 证明
+
+根据条件有：
+
+（1） $a$ 存在逆元 $-a$ 
+
+（2） $x*a=y*a$
+
+则根据[[MK199][单值性]]有 $x*a=y*a\land -a=-a\rightarrow x*a*-a=y*a*-a$
+
+又因为满足结合律，则有: 
+
+\begin{aligned}
+x*a*-a&=y*a*-a\\
+x*(a*-a)&=y*(a*-a)\\
+x*e&=y*e\\
+x&=y\\
+\end{aligned}
+
+同理可证左可约，故 $a$ 可约
+
+** 代数结构的关系
+
+*** 同类型定义
+
+两个[[MK201][代数结构]] $<S,*>,<\bar{S},\bar{*}>$ 若满足 $|S|=|\bar{S}|$ 即集合[[MK77][基数]]相等
+
+*** 同态映射<<MK200>>
+
+两个[[MK201][代数结构]] $<S,\Delta,*>,<\bar{S},\bar{\Delta},\bar{*}>$ 若存在[[MK136][函数]] $f:S\rightarrow\bar{S}$ ，对于任意 $\{a,b\}\subset S$ 满足 $h(\Delta a)=\bar{\Delta}h(a)\land h(a*b)=h(a)\bar{ *}h(b)$
+
+则称 $f$ 是 $S$ 到 $S'$ 的同态映射，特别的：
+
+（1） 当 $f$ [[MK137][单射]]时称为单一同态
+
+（2） 当 $f$ [[MK138][满射]]时称为满同态
+
+（3） 当 $f$ [[MK139][双射]]时称为同构映射
+
+*** 同构定义
+
+两个[[MK201][代数结构]] $<S,*>,<\bar{S},\bar{*}>$ 若存[[MK200][同构映射]] $f$ ，则称两个[[MK201][代数结构]]同构。
+
+** 代数结构的类型
+
+*** 半群<<MK206>>
+
+对于[[MK201][代数结构]] $<S,*>$ 来说，若：
+
+（1） 满足[[MK195][结合律]]
+
+则称为半群
+
+*** 独异点
+
+对于[[MK201][代数结构]] $<S,*>$ 来说，若：
+
+（1） 满足[[MK195][结合律]]
+
+（2） 存在[[MK198][幺元]]
+
+则称为独异点
+
+*** 群
+
+对于[[MK201][代数结构]] $<S,*>$ 来说，若：
+
+（1） 满足[[MK195][结合律]]
+
+（2） 存在[[MK198][幺元]]
+
+（3） 每个元素存在[[MK197][逆元]]
+
+则称为群（因为结合律故 $|S|>1$ ，又根据[[MK202][性质1]]可知群没有[[MK203][零元]]）
+
+*** 交换群<<MK204>>
+
+对于[[MK201][代数结构]] $<S,*>$ 来说，若：
+
+（1） 满足[[MK195][结合律]]
+
+（2） 存在[[MK198][幺元]]
+
+（3） 每个元素存在[[MK197][逆元]]
+
+（4） 满足[[MK194][交换律]]
+
+则称为交换群（同上没有零元）
+
+*** 环<<MK207>>
+
+对于[[MK201][代数结构]] $<S,+,*>$ 来说，若：
+
+（1） $<S,+>$ 是[[MK204][交换群]]
+
+（2） $<S,*>$ 是[[MK206][半群]]
+
+（3） 运算 $*$ 对 $+$ [[MK205][可分配]]
+
+则称为环
+
+*** 域
+
+对于[[MK201][代数结构]] $<S,+,*>$ 来说，若：
+
+（1） $<S,+,*>$ 是[[MK207][环]]
+
+（2） $<S-\{0\},*>$ 是[[MK204][交换群]]（ $S-\{0\}$ 表示 $S$ 中去掉[[MK203][零元]]）
+
+则称为域
+
+
+

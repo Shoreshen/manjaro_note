@@ -1,0 +1,963 @@
+#+LATEX_CLASS: ctexart
+
+#+TITLE: TCP/IP
+
+current mark: MK37
+
+* 物理层
+
+** 波特
+
+每秒传输的信号数量，即 $1$ 秒传输 $1$ 个二进制 $1/0$ 则为 $1$ 波特
+
+** 传输方式<<MK1>>
+
+*** 电缆
+
+通过改变电压，传输二进制 $1/0$ 
+
+*** 光纤
+
+通过有五光输入，传输二进制 $1/0$ 
+
+*** 无线电
+
+通过改变波形相位，传输二进制 $1/0$ ，即发送正弦波 $\sin(t)$ 代表 $1$ ,发送正弦波 $\sin(t+\pi)$ 代表 $0$
+
+** 曼彻斯特编码
+
+*** 原因
+
+传统编码，高电压为 $1$ 低电压为 $0$ ，则需要发送端与接收端具有高度同步的时钟。
+
+然而由于现实的物理条件（温度，距离，导电率等）难以达到完美匹配。一旦时钟滑移，传输的信息就没有意义
+
+*** 编码定义
+
+将物理信号的改变作为传输的信号，例如电压升高为 $1$ ，电压降低为 $0$ ，单位时间内检测到升高/降低，便视为信号接收，然后等待下一个信号。
+
+该方法仅需要电压的改变在时钟检测周期的范围内即可，时钟稍有滑移亦可接收正确的信号。
+
+** 网络连接方式
+
+*** 点对点<<MK4>>
+
+1个输出端与1个接收段，中间有[[MK1][传输介质]]
+
+*** 多点
+
+多个输出，输入端
+
+*** 以太网<<MK5>>
+
+所有输出/输入端通过[[MK1][传输介质]]连接到以太网交换机
+
+** Internet<<MK6>>
+
+由多个[[MK4][点对点]]主干网连接数个[[MK5][以太网]]的形式组合而成
+
+* 数据层
+
+** 帧的定义
+
+网络传输中，将多个字节连续传输的一段信号，称为帧。
+
+** 帧的开始协议
+
+*** HDLC
+
+信号量 $01111110b$ 为帧的起点位，且数据段中所有的 $111111b$ 信号均替换为 $1111101b$ 获取数据候替换回
+
+*** 以太网
+
+**** Inter-frame gap
+
+以 $96$ bit 的传输时间的零电压，
+
+**** Preamble<<MK2>>
+
+紧接着 $56$ 个 $10b$ 为时钟校准
+
+**** 开始帧定界符<<MK3>>
+
+连续 $10b$ ，最终以信号 $11b$ 定界开始
+
+**** 数据
+
+ $11b$ 之后的数据为第1个字节的第一位
+
+** 帧的结构<<MK7>>
+
+*** [[MK5][以太网]]
+
+| Struct      | length | Meaning                                               | Example                           |
+|-------------+--------+-------------------------------------------------------+-----------------------------------|
+| Preamble    |        | Start of frame                                        | [[MK2][Preamble]] + [[MK3][Start sig]]              |
+| Destination | 6 byte | MAC address of net device (different each net device) | ff.ff.ff.ff.ff.ff(Broadcast dest) |
+| Source      | 6 byte | MAC address of net device (different each net device) |                                   |
+| Ether Type  | 2 byte | Type of data payload                                  | 0x0080 (IP Packs)                 |
+| Payload     | Varies | Actual sending data                                   |                                   |
+| Check       | 4 byte | Number of lenght in byte (Including check)            |                                   |
+
+*** [[MK4][点对点]] (PPP)
+
+| Struct   | length | Meaning                                    | Example   |
+|----------+--------+--------------------------------------------+-----------|
+| Flag     | 1 byte | Starting flag, fixed                       | 01111110b |
+| Address  | 1 byte | Fixed                                      | 0xff      |
+| Control  | 1 byte | Fixed                                      | 0x03      |
+| Protocal | 2 byte | Type of data payload                       |           |
+| Payload  | Varies | Actual sending data                        |           |
+| Check    | 4 byte | Number of lenght in byte (Including check) |           |
+| Flag     | 1 byte | Ending flat, fixed                         | 01111110b |
+
+* 网络层
+
+** IP地址
+
+*** 定义和来源
+
+由于[[MK6][因特网]]连接方式以及不同环境下[[MK7][帧的结构]]，导致以太网下只能通过MAC地址传输，PPP下则选择不同的传输轨道，没有统一的地址。
+
+故采用IP地址统一编号，IP地址分为:
+
+（1）IPv4： 4个字节（32位）地址
+
+（2）IPv6： 16字节（128位）地址
+
+*** 解析
+
+IP地址为主干路由器分级解析。
+
+主干路由器接收到目标IP地址后，与现有的IP地址列表进行匹配。
+
+列表项：192.168.9.9/23代表匹配目标IP与该表项的前23位，若成功匹配，则发送到该表项对应的通路。
+
+若同时匹配，主干路由器会选择匹配度最好，即匹配字节最长的列表项
+
+*** NAT表<<MK30>>
+
+路由器对应的内部以太网，可以有多个内网 IP
+
+路由器有唯一的公网 IP
+
+路由器通过不同的端口号，对应不同的内网 IP，实现内网信息的分发与接收。
+
+记录内网 IP 与端口对应的表，称为 NAT 表。
+
+** IP访问
+
+IP地址分为公网 IP 和私网 IP。相互之间访问依据以下原则
+
+*** 公网 IP 访问公网 IP，局域网内私网 IP 互相访问
+
+由于公网 IP 唯一，可直接访问
+
+*** 公网 IP 访问私网 IP，或者私网 IP 访问公网 IP
+
+需要借助 [[MK30][NAT]] 表格转换
+
+*** 私网 IP 跨局域网互相访问
+
+NAT 表映射公网 IP
+
+另需公网服务器打通两个公网路由间的访问通道，防止路由器屏蔽陌生 IP z地址。
+
+** 主机数据<<MK12>>
+
+主机为[[MK5][以太网]]中的基本网络单位，是数据的起始或终端。需要传输数据的主机包含：
+
+（1） 本机IP<<MK9>>
+
+（2） 子网掩码，与IP地址长度相等。该以太网下所有IP地址和子网掩码进行逻辑与操作后，值相同。
+
+（2） 网关IP，网关路由的IP地址。通过网关可发送帧到不属于该以太网下的地址<<MK11>>
+
+** ARP包<<MK13>>
+
+由于以太网中只能通过MAC地址，[[MK12][主机数据]]不固定存储网关MAC地址。故需要通过广播网关IP地址，来获取网关MAC地址。
+
+ARP即为请求/应答网关MAC地址的特殊格式的帧。
+
+*** 帧格式：
+
+| Struct      | length | ARP request                       | ARP reply                 |
+|-------------+--------+-----------------------------------+---------------------------|
+| Preamble    |        | [[MK2][Preamble]] + [[MK3][Start sig]]              | Same                      |
+| Destination | 6 byte | ff.ff.ff.ff.ff.ff(Broadcast dest) | IP of the request machine |
+| Source      | 6 byte | [[MK8][Source IP]]                         | [[MK11][Net gate IP]]               |
+| Ether Type  | 2 byte | 0x0806 (ARP Packs)                | 0x0806 (ARP Packs)        |
+| Payload     | Varies | [[MK10][ARP struct]]                        | [[MK10][ARP struct]]                |
+| Check       | 4 byte |                                   |                           |
+
+*** ARP格式<<MK10>>
+
+| Struct                    | length    | ARP request          | ARP reply    |
+|---------------------------+-----------+----------------------+--------------|
+| Hardware address type     | 2 byte    | 0x0001 = MAC address | Same         |
+| Protocol address type     | 2 byte    | 0x0800 = IP address  | Same         |
+| Hardware address length   | 1 byte    | 6                    | Same         |
+| Protocol address length   | 1 byte    | IPv4=4;IPv6=16       | Same         |
+| Operation Code            | 1 byte    | 1                    | 2            |
+| Sender's Hardware address | 6 byte    | Source MAC           | Net gate MAC |
+| Sender's Protocol address | 4/16 byte | Source IP            | Net gate IP  |
+| Target's Hardware address | 6 byte    | 0                    | Source MAC   |
+| Target's Protocol address | 4/16 byte | [[MK11][Net gate IP]]          | Source IP    |
+
+** IP包
+
+*** 定义
+
+IP包为IP协议特有的结构，存放于[[MK7][帧]]的 Payload 结构中
+
+*** IP包的帧结构
+
+| Struct      | length | Data                  |
+|-------------+--------+-----------------------|
+| Preamble    |        | [[MK2][Preamble]] + [[MK3][Start sig]]  |
+| Destination | 6 byte | Net gate MAC (by [[MK13][ARP]]) |
+| Source      | 6 byte | [[MK8][Source IP]]             |
+| Ether Type  | 2 byte | 0x0080 (IP Packs)     |
+| Payload     | Varies | [[MK14][IP struct]]             |
+| Check       | 4 byte |                       |
+
+*** IP结构<<MK14>>
+
+**** IPv4<<MK17>>
+
+***** Header<<MK16>>
+
+| Struct           | length | Data                                     |
+|------------------+--------+------------------------------------------|
+| Version          | 4 bit  | 0100b                                    |
+| Length of header | 4 bit  | 5                                        |
+| Type of service  | 8 bit  |                                          |
+| Total length     | 16 bit | Header + Data, in byte                   |
+| Identification   | 16 bit | Order of IP fragmentation                |
+| Flag             | 3 bit  | Fragmentation enable & availibility flag |
+| Fragment offset  | 13 bit | Offset in byte of fragmentation          |
+| Time to Live     | 8 bit  |                                          |
+| Protocol         | 8 bit  | Protocol for data                        |
+| Checksum         | 16 bit |                                          |
+| Source IP        | 32 bit |                                          |
+| Destination IP   | 32 bit |                                          |
+
+注1：Length of header 中的 5 表示 5*32 个bit
+
+注2：IP头还可能有 32bit 的选填项，但一般不使用
+
+***** Data
+
+数据紧跟Header结构后
+
+**** IPv6<<MK18>>
+
+***** Header
+
+| Struct         | length  | Data                                     |
+|----------------+---------+------------------------------------------|
+| Version        | 4 bit   | 0110b                                    |
+| Priority       | 8 bit   |                                          |
+| Flow lable     | 20 bit  | Order of IP fragmentation                |
+| Payload Length | 16 bit  | Length of [[MK15][data]] + [[MK16][Extend header]] in byte   |
+| Next Header    | 16 bit  |                                          |
+| Flag           | 3 bit   | Fragmentation enable & availibility flag |
+| Source IP      | 128 bit |                                          |
+| Destination IP | 128 bit |                                          |
+
+****** Next Header
+
+******* No Extend header
+
+此时相当于[[MK16][IPv4]]当中的 Protocol，此时 Next Header 具有下列值：
+
+| Value | Type                           |
+|-------+--------------------------------|
+|     6 | TCP (Upper Layer)              |
+|    17 | UDP (Upper Layer)              |
+|    50 | Encapsulating Security Payload |
+|    58 | ICMPv6 (Upper Layer)           |
+|    59 | No next header                 |
+
+******* Extend header
+
+当 Next Header 为下列值时，紧跟 Header 后的为扩展报头
+
+| Value | Type                           |
+|-------+--------------------------------|
+|    41 | Encapsulated IPv6 Header       |
+|     0 | Hop-by-Hop Options Header      |
+|    60 | Destination Option             |
+|    43 | Routing Header                 |
+|    44 | Fragment Header                |
+|    51 | Authentication Header          |
+|    50 | Encapsulating Security Payload |
+
+***** Extend header<<MK16>>
+
+可有多个扩展报头，并且排列组合，每个扩展报头定义下一个扩展报头的类型，或者说明无下一个扩展报头。
+
+建议整体的报头顺序如下：
+
+| Value | Type                           |
+|-------+--------------------------------|
+|    41 | Encapsulated IPv6 Header       |
+|     0 | Hop-by-Hop Options Header      |
+|    60 | Destination Option             |
+|    43 | Routing Header                 |
+|    44 | Fragment Header                |
+|    51 | Authentication Header          |
+|    50 | Encapsulating Security Payload |
+
+***** Data<<MK15>>
+
+数据紧随其后
+
+* 传输层
+
+** TCP包<<MK32>>
+
+若[[MK17][IPv4]]中 Protocol 或[[MK18][IPv6]]中有定义 TCP 包，则两者 Data 中的数据均为 TCP 包。
+
+*** TCP报头<<MK25>>
+
+| Struct           | length | Data                                      |
+|------------------+--------+-------------------------------------------|
+| Source port      | 16 bit |                                           |
+| Destination port | 16 bit |                                           |
+| Seq No           | 32 bit | Current Seq No                            |
+| Ack No           | 32 bit | Acknowladgement with next expected Seq No |
+| Data offset      | 4 bit  | Size of TCP header in byte                |
+| Reserved         | 4 bit  |                                           |
+| CWR              | 1 bit  |                                           |
+| ECE              | 1 bit  |                                           |
+| URG              | 1 bit  |                                           |
+| ACK              | 1 bit  | Mark acknowladgement                      |
+| PSH              | 1 bit  |                                           |
+| RST              | 1 bit  |                                           |
+| SYN              | 1 bit  | Mark synchronization, cost 1 Seq No       |
+| FIN              | 1 bit  | Mark finish connection, cost 1 Seq No     |
+| Window size      | 16 bit |                                           |
+| Checksum         | 16 bit | Including header and data                 |
+| Urgent Pointer   | 16 bit |                                           |
+
+报头后跟随 TCP 包数据
+
+*** TCP传输
+
+**** 三次握手（建立连接）<<MK22>>
+
+***** 第一次<<MK19>>
+
+主机端向服务端发送连接请求，仅有TCP报头无数据。置位 SYN，随机选择初始 Seq No = x，
+
+| Client | Value |
+|--------+-------|
+| SYN    | 1b    |
+| ACK    | 0b    |
+| Seq No | x     |
+| ACK No | 0     |
+
+***** 第二次<<MK20>>
+
+服务端若同意连接请求，向主机端发送应答与连接请求。
+
+置位 ACK 表应答，置位 SYN 表连接请求。
+
+随机生成 Seq No = y，由于[[MK19][第一次]]置位 SYN 消耗 1 个 Seq No，故期待下次 *主机端发送的 Seq No 为 x+1，即 ACK No = x+1*
+
+| Server | Value |
+|--------+-------|
+| SYN    | 1b    |
+| ACK    | 1b    |
+| Seq No | y     |
+| ACK No | x+1   |
+
+***** 第三次
+
+主机端接收到[[MK20][服务器反馈]]，表明服务器端已建立连接（ACK），并要求主机端建立连接（SYN）。
+
+主机端需要发送确认以建立连接。
+
+置位 ACK 表示应答，由于[[MK20][第二次]]置位 SYN 消耗 1 个 Seq No，故期待下次 *服务端发送的 Seq No 为 y+1，即 ACK No = x+1*
+
+| Client | Value |
+|--------+-------|
+| SYN    | 0b    |
+| ACK    | 1b    |
+| Seq No | x+1   |
+| ACK No | y+1   |
+
+**** 传输数据<<MK21>>
+
+此处举例说明，如果建立连接后有两步操作：
+
+（1）主机端向服务器端发送字节为 a 的数据
+
+（2）服务端返回字节为 b 的数据
+
+则有：
+
+***** 第一步
+
+（1） 主机端发送数据，包含 a 字节：Seq No = x+1，即上一次收到应答（ACK）中期望下一次开始的 Seq No
+
+| Client | Value |
+|--------+-------|
+| Seq No | x+1   |
+| ACK No | y+1   |
+
+（2） 服务端收到后，发送应答：同上 Seq No = y+1，置位 ACK，期望下次主机端从 Seq No = x+1+a 开始发送
+
+| Server | Value |
+|--------+-------|
+| ACK    | 1b    |
+| Seq No | y+1   |
+| ACK No | x+1+a |
+
+这么做的好处是若服务端只收到 l 个字节，即丢失 a-l 个字节。则主机端收到应答后，下次会从丢失的字节开始发送。
+
+***** 第二步
+
+（1） 服务端发送数据，包含 b 字节： 由于应答（ACK）不消耗 Seq No，故次数 Seq No = y+1 ，即上一次主机端<<MK23>>
+
+| Server | Value |
+|--------+-------|
+| Seq No | y+1   |
+| ACK No | x+1+a |
+
+（2） 主机端发送应答：，收到上一次服务端的 ACK No = x+1+a，故 Seq No = x+1+a；且希望下次服务端发送来的 Seq No = y+1+b <<MK24>>
+
+| Client | Value |
+|--------+-------|
+| ACK    | 1b    |
+| Seq No | x+1+a |
+| ACK No | y+1+b |
+
+**** 四次挥手<<MK26>>
+
+此处假设客户端发起断开连接申请
+
+***** 第一次
+
+主机端发送TCP包，不包含数据，置位 FIN
+
+经过[[MK22][三次握手]]和[[MK21][传输数据]]后，最后一个[[MK23][服务端发送]]中包含的 ACK No = x+1+a，故：
+
+| Client | Value |
+|--------+-------|
+| FIN    | 1b    |
+| ACK    | 0b    |
+| Seq No | x+1+a |
+| ACK No | y+1+b |
+
+***** 第二次
+
+客户端发送应答，不含数据，置位 ACK
+
+最后一个[[MK24][主机端发送]]中包含的 ACK No = y+1+b，且 FIN 即使没有数据，也需要消耗1个 Seq No，故：
+
+| Server | Value |
+|--------+-------|
+| FIN    | 0b    |
+| ACK    | 1b    |
+| Seq No | y+1+b |
+| ACK No | x+2+a |
+
+此时客户端向服务器已释放，故无法再向服务端发送数据。服务端仍可向客户端发送数据。
+
+事实上，服务端可能确实有未发送完的数据。
+
+客户端收到 ACK 后，等待服务器端终止连接。此过程中，客户端仍然接收服务器端发送的数据。
+
+***** 残余数据
+
+假设服务端仍有 k 字节数据需要发送给客户端，故发送传输：
+
+| Server | Value |
+|--------+-------|
+| Seq No | y+1+b |
+| ACK No | x+1+a |
+
+客户端仍然应答
+
+| Client | Value   |
+|--------+---------|
+| ACK    | 1b      |
+| Seq No | x+2+a   |
+| ACK No | y+1+b+k |
+
+***** 第三次
+
+由服务端发送断开连接请求：
+
+| Server | Value   |
+|--------+---------|
+| FIN    | 1b      |
+| ACK    | 0b      |
+| Seq No | y+1+b+k |
+| ACK No | x+2+a   |
+
+***** 第四次
+
+客户端发送应答
+
+| Client | Value   |
+|--------+---------|
+| FIN    | 0b      |
+| ACK    | 1b      |
+| Seq No | x+2+a   |
+| ACK No | y+1+b+k |
+
+服务端收到应答，正式关闭连接
+
+客户端等待 2×MSL 时长后关闭连接。主要为了保证服务端接收到 ACK。
+
+*** TCP性能
+
+**** 滑动窗口<<MK28>>
+
+***** 定义
+
+由于 TPC 包都需要应答，会影响数据传输性能，故采用滑动窗口机制：
+
+（1） 将数据分段，例如将 16kb 数据分为梅 1kb 一个段
+
+（2） 规定窗口大小，若大小为 4，则一次性发送 4 个段的数据。若此时 Seq No = x，则 4 个段的 Seq No 分别为 x，x+1kb，x+2kb，x+3kb
+
+（3） 当收到段 1 的应答后，开始发送后面的段的数据。
+
+（4） 接收端当且仅当 n(0<n<5) 及 n 以下的段都接收到后，才会发送段 n 的应答信息<<MK27>>
+
+（5） 此时若段 n(0<n<5) 以下的应答已收到，则发送段 5～4+n 的数据
+
+如一个窗口，在满足条件的时候向后面的数据段滑动，故称为滑动窗口
+
+***** 应答处理
+
+****** 丢数据
+
+若某个段未被接收端收到，例如段 2 未被接收端收到，但段 3 收到了。则：
+
+（1）通过发送过来的 Seq No 判断，收到 x 以及 x+2kb，超时后判断为丢包
+
+（2）根据约定，接收端会连续发送 3 个端 1 的 ACK 应答，提示发送端数据丢失
+
+（3）发送端收到 3 个 ACK 后补发段 2
+
+（4）接收端收到段 2 后，由于段 3 也已收到，故发送段 3 的 ACK
+
+****** 丢应答
+
+若丢 ACK 包，后续段的 ACK 仍可抵达。由于接收端的[[MK27][应答机制]]可判断接收端已经收到数据。
+
+**** 快速重传
+
+**** 延迟应答
+
+假设缓冲区为 1mb，接收端收到 500kb 的数据，若立即发送应答，则[[MK29][窗口大小]]为 524kb
+
+若系统处理速度快，仅 10ns 后便可清空缓冲区，则等待 10ns 并发送窗口大小 1mb 的应答更为效率。
+
+延迟应答等待一段时间后应答，留出更大的缓冲区，可以单次发送更多数据。
+
+**** 捎带应答
+
+在数据互传时，发送端可在发送数据时同时附带上一个接收数据的 ACK。
+
+*** TCP可靠性
+
+**** 校验和
+
+即[[MK25][报头]]中 Checksum 用来校验数据是否完整准确。
+
+**** 确认应答
+
+每次传输数据均有 ACK 机制，并有 ACK No 提供已传输的字节数。如[[MK21][传输数据]]中提到的。
+
+**** 超时重传 
+
+若发送端长时间无法收到 ACK 应答，则认为包丢失，会重新发送
+
+**** 连接管理
+
+通过[[MK22][建立连接]]，[[MK21][传输数据]]和[[MK26][断开连接]]来管理网络资源
+
+**** 流量控制<<MK29>>
+
+接收端收到的数据会放置于缓冲区中，逐步被系统处理。
+
+若缓冲区满，则造成丢包等现象。
+
+TCP 通过[[MK25][报头]]中 Window size 来指示缓冲区余量，以控制总流量防止缓冲区溢出
+
+**** 拥塞控制
+
+由于不同的网络状况，一开始就利用[[MK28][滑动窗口]]来发送大数据容易造成不稳定，到时数据紊乱加剧处理资源的消耗。
+
+故启动时，一般设窗口大小为 1，即最小值。若能畅通，则逐步加大窗口大小。
+
+* Socket编程
+
+** Socket 结构
+
+伪文件结构，一个文件描述符，两个缓冲区。
+
+即接收，发送分别有独立缓冲区
+
+** 字节序<<MK31>>
+
+网络字节一律大端字节序
+
+** 结构体
+
+*** IP/端口结构<<MK34>>
+
+**** IPv4
+#+BEGIN_SRC c
+struct sockaddr_in{
+    __SOCKADDR_COMMON (sin_);   /* AF_INET */
+    in_port_t sin_port;         /* Port number. 端口号 */
+    struct in_addr sin_addr;    /* Internet address. IP地址 */
+    unsigned char sin_zero[
+        sizeof (struct sockaddr) -__SOCKADDR_COMMON_SIZE - sizeof (in_port_t) -sizeof (struct in_addr)
+    ];                          /* Pad to size of `struct sockaddr'.  用于填充的0字节 */
+};
+
+/* Internet address. */
+typedef uint32_t in_addr_t;
+
+struct in_addr{
+    in_addr_t s_addr;
+};
+#+END_SRC
+
+**** IPv6
+#+BEGIN_SRC c
+struct sockaddr_in6
+{
+    __SOCKADDR_COMMON (sin6_);  /* AF_INET6 */
+    in_port_t sin6_port;        /* Transport layer port # */
+    uint32_t sin6_flowinfo;     /* IPv6 flow information */
+    struct in6_addr sin6_addr;  /* IPv6 address */
+    uint32_t sin6_scope_id;     /* IPv6 scope-id */
+};
+/* IPv6 address */
+struct in6_addr
+{
+    union
+    {
+        uint8_t __u6_addr8[16];
+    #if defined __USE_MISC || defined __USE_GNU
+        uint16_t __u6_addr16[8];
+        uint32_t __u6_addr32[4];
+    #endif
+    } __in6_u;
+    #define s6_addr __in6_u.__u6_addr8
+    #if defined __USE_MISC || defined __USE_GNU
+        # define s6_addr16      __in6_u.__u6_addr16
+        # define s6_addr32      __in6_u.__u6_addr32
+    #endif
+};
+#+END_SRC
+
+*** epoll
+
+#+BEGIN_SRC c
+struct epoll_event
+{
+    uint32_t events;    /* Epoll events */
+    epoll_data_t data;  /* User data variable */
+} __EPOLL_PACKED;
+typedef union epoll_data
+{
+    void *ptr;
+    int fd;
+    uint32_t u32;
+    uint64_t u64;
+} epoll_data_t;
+#+END_SRC
+
+** 主要函数
+
+*** 字节序函数
+
+用户将主机的字节序转换为网络的字节数，函数如下
+
+#+BEGIN_SRC c
+#include <arpa/inet.h>
+uint32_t htonl(uint32_t hostlong);
+uint16_t htons(uint16_t hostshort);
+uint32_t ntohl(uint32_t netlong);
+uint16_t ntohs(uint16_t netshort);
+#+END_SRC
+
+htonl 代表 host to net long
+
+*** IP地址转换函数
+
+将 IP 地址字符串（点分割，十进制）转换为 4 字节整形。或相反。
+
+同时提供[[MK31][字节序]]调整
+
+#+BEGIN_SRC c
+#include <arpa/inet.h>
+int inet_pton(int af, const char *src, void *dst);
+const char *inet_ntop(int af, const void *src, char *dst, socklen_t cnt);
+#+END_SRC
+
+**** 参数：
+
+inet_pton：
+
+| Param           | Illustration                                          |
+|-----------------+-------------------------------------------------------|
+| int af          | AF_INET = IPv6 address;AF_INET6 = IPv6 address        |
+| const char *src | IP address string                                     |
+| void *dst       | Buff for storing converted IP address with net endian |
+
+inet_ntop：
+
+| Param           | Illustration                                   |
+|-----------------+------------------------------------------------|
+| int af          | AF_INET = IPv6 address;AF_INET6 = IPv6 address |
+| const void *src | IP address with net endian                     |
+| void *dst       | Buff for stroing converted IP address string   |
+| socklen_t cnt   | Length of *dst pointed buff                    |
+
+**** 返回值：
+
+inet_pton： 1 = 成功； 0 = IP 格式错误； -1 = 出错
+
+inet_ntop： 成功则返回字串首地址；出错则返回 NULL
+
+*** socket<<MK33>>
+
+创建Socket描述符，随机分配一个 IP 地址
+
+#+BEGIN_SRC c
+#include <sys/socket.h>
+int socket(int domain, int type, int protocol);
+#+END_SRC
+
+**** 参数
+
+domain 取值如下：
+
+（1）AF_INET = IPv6 address  
+（2）AF_INET6 = IPv6 address 
+（3）AF_UNIX = 本地连接
+
+type 表协议类型：
+
+（1）SOCK_STREAM：流式协议，默认 [[MK32][TCP]] 协议
+（2）SOCK_DGRAM：报式协议，默认 UDP 协议
+（3）其他包括 SOCK_SEQPACKET，SOCK_RAW
+
+protocol 采用的协议,一般取 0 表示协议类型的默认协议，其他有：
+
+（1）IPPROTO_TCP = TCP
+（2）IPPTOTO_UDP = UDP
+（3）其他有 IPPROTO_SCTP，IPPROTO_TIPCTC
+
+**** 返回值
+
+成功：返回文件描述符
+
+失败：返回 -1
+
+*** bind
+
+绑定固定的 IP 及端口号，服务器端使用，保持网络 IP 不变
+
+#+BEGIN_SRC c
+#include <sys/socket.h>
+int bind (int __fd, __CONST_SOCKADDR_ARG __addr, socklen_t __len)
+#+END_SRC
+
+**** 参数
+
+__fd：[[MK33][socket函数]]返回的描述符
+
+__CONST_SOCKADDR_ARG：宏定义，等于 const struct sockaddr *，即[[MK34][IP/端口结构]]
+
+__len：第二个参数的字节长度
+
+**** 返回
+
+成功 = 0
+
+失败 = -1
+
+*** listen
+
+改变 Socket 为监听状态，并设置最大连接数。
+
+#+BEGIN_SRC c
+#include <sys/socket.h>
+int listen (int __fd, int __n)
+#+END_SRC
+
+**** 参数
+
+__fd：Socket 描述符
+
+__n：最大连接数（完成[[MK22][三次握手]]+完成中）
+
+**** 返回
+
+成功：0
+
+失败：-1
+
+*** connnect
+
+向对方发起服务请求，阻塞进程并等待反馈。
+
+#+BEGIN_SRC c
+#include <sys/socket.h>
+int connect (int __fd, __CONST_SOCKADDR_ARG __addr, socklen_t __len)
+#+END_SRC
+
+**** 参数
+
+__fd：本地 socket 描述符
+
+__CONST_SOCKADDR_ARG：宏定义，等于 const struct sockaddr *，即请求连接目标[[MK34][IP/端口结构]]
+
+__len：第二个结构体的长度
+
+**** 返回
+
+成功：0
+
+失败：-1
+
+*** accept
+
+阻塞当前进程并等待 Socket 连接请求。服务器端使用。
+
+#+BEGIN_SRC c
+#include <sys/socket.h>
+int connect (int __fd, __CONST_SOCKADDR_ARG __addr, socklen_t __len)
+#+END_SRC
+
+**** 参数
+
+__fd：用于监听的 Socket 描述符，即用于接收连接请求的 Socket
+
+__CONST_SOCKADDR_ARG：宏定义，等于 const struct sockaddr *，缓冲区，存放函数接收到请求方的[[MK34][IP/端口结构]]
+
+__len：第二个结构体的长度
+
+**** 参数
+
+成功：返回 Socket 描述符，用于和已连接的另一端通信（read，write）
+
+失败：-1
+
+*** read
+
+阻塞进程，直到 Socket 读缓冲区中数据，则读取。用于获取数据。
+
+#+BEGIN_SRC c
+#include <unistd.h> 
+read (int __fd, void *__buf, size_t __nbytes)
+#+END_SRC
+
+**** 参数
+
+__fd：目标 Socket 描述符
+
+__buf：缓冲区
+
+__nbytes：缓冲区大小
+
+**** 返回值
+
+成功：返回读取的字节数
+
+失败：-1
+
+*** write
+
+写缓冲区，用于发送数据
+
+#+BEGIN_SRC c
+#include <unistd.h> 
+size_t write (int __fd, const void *__buf, size_t __n)
+#+END_SRC
+
+**** 参数
+
+__fd：目标 Socket 描述符
+
+__buf：存有数据缓冲区
+
+__nbytes：数据字节大小
+
+**** 返回值
+
+成功：返回写入的字节数
+
+失败：-1
+
+** epoll
+
+epoll 机制用于同时监听多个连接，函数定义
+
+（1）通过epoll_create1函数创建epoll描述符
+
+（2）通过epoll_ctl函数将需要监听的描述符加入到epoll描述符中，并设置监听选项
+
+（3）调用epoll_wait函数，进行监听。可设置时间。
+
+（4）若有监听事件发生，epoll_wait函数返回发生事件的描述符个数，并将他们重排后置于__events中
+
+（5）程序随机对__events循环即可，循环次数为epoll_wait函数返回值
+
+（6）服务结束后，调用close函数关闭epoll描述符
+
+*** 函数
+
+#+BEGIN_SRC c
+#include <sys/epoll.h>
+int epoll_create1 (int __flags)//__flags = 0，则和epoll_create一样，epoll_create的参数在现代内核中已被舍弃
+int epoll_ctl (int __epfd, int __op, int __fd, struct epoll_event *__event);
+int epoll_wait (int __epfd, struct epoll_event *__events, int __maxevents, int __timeout);
+#+END_SRC
+
+上述epoll_ctl()函数中，参数__fd为监视的描述符，参数__event为函数epoll_wait()返回时，放入 __event 结构体的数值
+
+即可以通过一个描述符时间，设置返回另一个描述符
+
+*** 结构
+
+#+BEGIN_SRC c
+struct epoll_event
+{
+    uint32_t events;    /* Epoll events */
+    epoll_data_t data;  /* User data variable */
+} __EPOLL_PACKED;
+typedef union epoll_data
+{
+    void *ptr;
+    int fd;
+    uint32_t u32;
+    uint64_t u64;
+} epoll_data_t;
+#+END_SRC
+
+*** 宏定义
+
+#+BEGIN_SRC c
+#define EPOLLIN EPOLLIN
+#define EPOLLOUT EPOLLOUT
+#define EPOLLET EPOLLET
+/* Valid opcodes ( "op" parameter ) to issue to epoll_ctl().  */
+#define EPOLL_CTL_ADD 1	/* Add a file descriptor to the interface.  */
+#define EPOLL_CTL_DEL 2	/* Remove a file descriptor from the interface.  */
+#define EPOLL_CTL_MOD 3	/* Change file descriptor epoll_event structure.  */
+#+END_SRC
+
+** 基本流程

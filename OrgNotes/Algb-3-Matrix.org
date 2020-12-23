@@ -1,0 +1,1119 @@
+#+LATEX_CLASS: ctexart
+
+#+TITLE: 矩阵运算
+
+current mark: 48
+
+* 矩阵基础
+
+** 矩阵的表述<<MK6>>
+
+定义 $M_{s\times n}(K)$ 为数域 $K$ 上的 $s$ 行 $n$ 列的 *所有* 矩阵的集合
+
+定义 $M=\left[m_{ij}\right]_{s\times n}$ 为第 $i$ 行 $j$ 列上的元素为 $m_{ij}$ 的 $s$ 行 $n$ 列的矩阵
+
+** 矩阵相等<<MK1>>
+
+定义矩阵 $M_{s\times n}(K)=N_{x\times y}(K')$ 为满足：
+
+（1） $s=x\land n=y$ 
+
+（2） 第 $i$ 行 $j$ 列的元素相等
+
+* 矩阵空间
+
+** 矩阵组成的线性空间<<MK10>>
+
+所有矩阵 $M_{s\times n}(K)$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $K$ 上的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间]]，记为 $M_{s\times n}(K)$
+
+*** 证明
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间]]定义：
+
+**** 交换律
+
+根据[[MK1][矩阵相等]]以及[[MK2][矩阵加法]]可得 $M+N=\left[a_{ij}+b_{ij}\right]_{s\times n}=\left[b_{ij}+a_{ij}\right]_{s\times n}=N+M$ 即满足交换律
+
+**** 结合律
+
+根据[[MK1][矩阵相等]]以及[[MK2][矩阵加法]]可得 $(M+N)+L=\left[(a_{ij}+b_{ij})+c_{ij}\right]_{s\times n}=\left[a_{ij}+(b_{ij}+c_{ij})\right]_{s\times n}=M_(N+L)$
+
+**** 零元<<MK9>>
+
+记录 $O=\left[0\right]_{s\times n}$ 为零元
+
+**** 负元
+
+根据[[MK3][矩阵数乘]]定义 $(-1)M = \left[-a_{ij}\right]_{s\times n}$ 为 $M$ 的负元，且 $M+(-1)M=\left[a_{ij}-a_{ij}\right]_{s\times n}=\left[0\right]_{s\times n}$ 为零元
+
+**** 数乘 $1$
+
+根据[[MK3][矩阵数乘]]定义 $1M=\left[1\times a_{ij}\right]_{s\times n}=\left[a_{ij}\right]_{s\times n}$
+
+**** 数乘结合律
+
+根据[[MK3][矩阵数乘]]定义 $(kl)M=\left[(kl)a_{ij}\right]_{s\times n}=\left[k(la_{ij})\right]_{s\times n}=k(lM)$
+
+**** 数乘分配律1
+
+根据[[MK3][矩阵数乘]]定义 $(k+l)M=\left[(k+l)a_{ij}\right]_{s\times n}=\left[ka_{ij}+la_{ij})\right]_{s\times n}=kM+lM$
+
+**** 数乘分配率2
+
+根据[[MK3][矩阵数乘]]以及[[MK2][矩阵加法]]可得 $k(M+N)=\left[k(a_{ij}+b_{ij})\right]_{s\times n}=\left[ka_{ij}+kb_{ij}\right]_{s\times n}=kM+kN$
+
+** 矩阵线性空间的基<<MK20>>
+
+对于矩阵线性空间 $M_{s\times n}(K)$ 其有一组基为集合 $\left\{E_{ij}\big|1\leq i\leq s\land 1\leq j\leq n\right\}$ 中的所有元素
+
+*** 证明
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的基-基的定义]]，做以下证明
+
+**** 任意元素可由基现行表述
+
+定义 $A=[a_{ij}]_{s\times n}$ 为任意矩阵，则根据[[MK2][矩阵加法]]以及[[MK3][矩阵数乘]]可得
+
+$A=\sum_{l=1}^s\left\{\sum_{k=1}^n[D(i,j,l,k)]_{s\times n}\right\}$ 其中 $D(i,j,l,k)=\begin{cases}a_{lk}&i=l\land j=k\\0&i\ne l\lor j\ne k\end{cases}$
+
+根据[[MK8][基本矩阵定义]]可得进一步 $A=\sum_{l=1}^s\left\{\sum_{k=1}^na_{lk}E_{lk}\right\}$
+
+故任意同维度矩阵 $A$ 可由集合 $\left\{E_{ij}\big|1\leq i\leq s\land 1\leq j\leq n\right\}$ 中的元素线性表述
+
+**** 基中的元素线性不相关
+
+根据[[MK9][零元定义]]以及[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-定义]]可得当且仅当 $\forall i\forall j(k_{ij}=0)$ 时有 $\sum_{l=1}^s\left\{\sum_{k=1}^nk_{lk}E_{lk}\right\}=[0]_{s\times n}$ 则线性不相关
+
+其中 $k_{ij}\in K$
+
+由于 $[0]_{s\times n}$ 中每个元素都为零，故若 $k_{ij}\ne 0$ 则有 $\sum_{l=1}^s\left\{\sum_{k=1}^nk_{lk}E_{lk}\right\}\ne[0]_{s\times n}$
+
+总上所述，线性不相关
+
+*** 推论1
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-线性空间的基-定理2]]可得 $M_{s\times n}(K)$ 任意基包含的向量个数为 $sn$
+
+*** 推论2
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-线性空间的维数]]可得 $\dim\left(M_{s\times n}(K)\right)=sn$
+
+** 定理1
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性子空间-子空间的运算-直和]]，线性空间 $M_{n\times n}(K)$ 是其[[MK15][对称子空间]]和[[MK16][斜对称子空间]]的直和
+
+*** 证明
+
+**** 证明相加为直和
+
+定义 $M_{n\times n}(K)$ 的对称子空间为 $S$ 斜对称子空间为 $S$ 根据[[MK10][线性空间定义]]此时 $[0]_{n\times n}$ 为零元
+
+假设 $A+B=[0]_{n\times n}$ 且 $A\in S\land B\in S'$ 对于任意 $A$ 中的元素 $a_{ij}$ 根据[[MK17][对称矩阵定义]]此时 $a_{ji}=a_{ij}$
+
+若 $A+B=[0]_{n\times n}$ 则必满足 $b_{ij}=-a_{ij}\land b_{ji}=-a_{ji}$ 同理根据[[MK18][斜对称矩阵定义]] $b_{ij}=-b_{ji}$
+
+综上所述 $a_{ij}=a_{ji}=-b_{ji}=b_{ij}=-a_{ij}$ 即 $a_{ij}=-a_{ji}$ 则 $a_{ij}=0$
+
+故 $A=B=[0]_{n\times n}$ 则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性子空间-子空间的运算-直和-两个子空间直和-性质]]可得 $S+S'$ 为直和，即  $S+S'=S\textcircled{+}S'$
+
+**** 求子空间得基
+
+定义 $Z_{uv}=[f(i,j)]$ 其中 $f(i,j)=\begin{cases}1&i=u\land j=v\\1&i=v\land j=u\\0&else\end{cases}$ 则 $Z_{uv}$ 满足 $f(i,j)=f(j,i)$ 为对称矩阵
+
+对于任意对称矩阵 $A=[a_{ij}]_{n\times n}$ 中某个元素 $a_{ij}$ 且 $i\leq j$ 可表述为 $a_{ij}Z_{ij}$
+
+故最终 $A=\sum_{i=1}^n\left\{\sum_{j=i}^na_{ij}Z_{ij}\right\}$ 故 $A$ 可由 $\left\{Z_{ij}\big|i\leq j\right\}$ 中的元素线性表述。
+
+且当且仅当 $k_{ij}=0$ 时满足 $[0]_{n\times n}=\sum_{i=1}^n\left\{\sum_{j=i}^nk_{ij}Z_{ij}\right\}$ 因为不同 $i,j$ 导致 $Z_{ij}$ 非零的位置不同，无法相互抵消。
+
+故 $\left\{Z_{ij}\big|i\leq j\right\}$ 为 $S$ 的基。
+
+定义 $Z'_{uv}=[f'(i,j)]$ 其中 $f'(i,j)=\begin{cases}0&i=j\\1&i=u\land j=v\\-1&i=v\land j=u\\0&else\end{cases}$ 
+
+则根据[[MK19][主对角线性质]]以及[[MK18][斜对称矩阵定义]]，同理可证 $\left\{Z'_{ij}\big|i>j\right\}$ 为 $S'$ 的基。
+
+**** 证明基可以互相表述
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性子空间-子空间的运算-直和-两个子空间直和-性质]]可得 $S+S'$ 的基为 $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$
+
+根据[[MK20][矩阵空间基]]可得 $M_{n\times n}(K)$ 的一组基为 $\left\{E_{ij}\big|1\leq i\leq n\land 1\leq j\leq n\right\}$ 
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的维数]]可知 $\dim(M_{n\times n}(K))=n^2=\dim(S+S')$
+
+由于 $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$ 是基，故线性不相关
+
+则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的维数-命题2]] $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$ 亦为 $M_{n\times n}(K)$ 的一组基
+
+即任意 $A\in M_{n\times n}(K)$ 同样可由 $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$ 线性表述，且根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间定义]]线性表述运算封闭
+
+故对于任意 $A\in M_{n\times n}(K)$ 可得 $A\in S+S'$ 由于线性空间本身为集合，则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $M_{n\times n}(K)=S+S'$
+
+* 特殊矩阵
+
+** 单位矩阵<<MK4>>
+
+定义单位矩阵 $I_n=[D(i,j)]_{n\times n}$ 其中 $D(i,j)=\begin{cases}1&i=j\\0&i\ne j\end{cases}$
+
+*** 性质<<MK22>>
+
+\begin{aligned}
+A_{s\times n}I_n&= A_{s\times n}\\
+I_nA_{n\times s}&= A_{s\times n}\\
+\end{aligned}
+
+**** 证明
+
+仅证 $A_{s\times n}I_n&= A_{s\times n}$ 其他同理
+
+根据[[MK6][矩阵定义]]以及[[MK5][矩阵乘法]]可的：
+
+\begin{aligned}
+&A_{s\times n}I_n\\
+=&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{s1}&a_{s2}&...&a_{sn}\end{matrix}\right]\left[\begin{matrix}1&0&...&0\\0&1&...&0\\...&...&...&...\\0&0&...&1\end{matrix}\right]\\
+=&\left[t_{ij}=\sum_{k=1}^n a_{ik}D(k,j)\right]_{s\times n}\\
+=&\left[t_{ij}=a_{ij}\right]_{s\times n}
+\end{aligned}
+
+** 基本矩阵<<MK8>>
+
+单位矩阵定义为 $E_{lk}=[D(i,j)]_{s\times n}$ 其中 $D(i,j)=\begin{cases}1&i=l\land j=k\\0&i\ne l\lor j\ne k\end{cases}$
+
+** 对角矩阵
+
+定义对角矩阵为 $A_n=[D(i,j)]_{n\times n}$ 其中 $D(i,j)=\begin{cases}a_{ij}&i=j\\0&i\ne j\end{cases}$
+
+*** 性质
+
+**** 子空间
+
+所有对角矩阵是[[MK10][线性空间]] $M_{n\times n}(K)$ 的子空间
+
+***** 证明<<MK11>>
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性子空间-线性子空间充要条件]]依次证明
+
+（1）显然对于 $M_{n\times n}(K)$ 对角矩阵不为空集
+
+（2）根据[[MK2][矩阵加法]] $A_n+B_n$ 亦为对角矩阵
+
+（3）根据[[MK3][矩阵数乘]] $kA_n$ 亦为对角矩阵
+
+综上所述，对角矩阵是 $M_{n\times n}(K)$ 的线性子空间
+
+**** 乘法封闭
+
+定义 $A_n,B_n$ 为对角阵，则 $A_nB_n$ 根据[[MK5][矩阵乘法]]亦为对角阵
+
+** 数量矩阵
+
+定义 $kI_n$ 为数量矩阵，其中 $k\in K$ 且 $I_n$ 为[[MK4][单位矩阵]]
+
+*** 性质
+
+**** 子空间
+
+所有数量矩阵是[[MK10][线性空间]] $M_{n\times n}(K)$ 的子空间
+
+***** 证明
+
+同[[MK11][之前证明]]
+
+**** 运算性质
+
+\begin{aligned}
+(k_1I_n)(k_2I_n)&=k_1k_2I_n\\
+(kI_n)A_n&=kA_n\\
+(kI_n)A_n&=A_n(kI_n)
+\end{aligned}
+
+** 上（下）三角矩阵<<MK33>>
+
+定义 $A_n=\left[D(i,j)\right]_{n\times n}$ 若：
+
+（1） $D(i,j)=\begin{cases}a_{ij}&j\geq i\\0&j<i\end{cases}$ 则为上三角矩阵
+
+（2） $D(i,j)=\begin{cases}a_{ij}&j\leq i\\0&j>i\end{cases}$ 则为下三角矩阵
+
+*** 性质
+
+**** 子空间
+
+所有上（下）三角矩阵是[[MK10][线性空间]] $M_{n\times n}(K)$ 的子空间
+
+证明[[MK11][同理]]
+
+**** 乘法封闭
+
+根据[[MK5][矩阵乘法]]定义，任意两个上三角矩阵相乘仍然得上三角矩阵
+
+同理，任意两个下三角矩阵相乘仍然得下三角矩阵
+
+** 对称矩阵
+
+*** 定义<<MK17>>
+
+若 $A_{s\times n}$ 为对称矩阵，则有 $A^T=A$ 即：
+
+（1） $s=n$
+
+（2） $A_{n\times n}^T=A_{n\times n}$
+
+*** 性质
+
+**** 子空间<<MK15>>
+
+所有对称矩阵是[[MK10][线性空间]] $M_{n\times n}(K)$ 的子空间
+
+证明[[MK11][同理]]
+
+**** 计算性质
+
+若 $A=[a_{ij}]_{n\times n}$ 为对称矩阵，则根据[[MK14][矩阵转置]] $a_{ij}=a_{ij}$
+
+** 斜对称矩阵
+
+*** 定义<<MK18>>
+
+若 $A_{s\times n}$ 为斜对称矩阵，则有 $A^T=A$ 即：
+
+（1） $s=n$
+
+（2） $A_{n\times n}^T=-A_{n\times n}$
+
+*** 性质
+
+**** 子空间<<MK16>>
+
+所有斜对称矩阵是[[MK10][线性空间]] $M_{n\times n}(K)$ 的子空间
+
+证明[[MK11][同理]]
+
+**** 主对角线<<MK19>>
+
+斜对称矩阵的主对角线上的元素全部为 $0$
+
+***** 证明
+
+根据定义可得若 $A_n=\left[a_{ij}\right]_{n\times n}$ 为斜对称矩阵，则 $A_n^T=-A_n$
+
+故有 $a_{ij}=-a_{ji}$ 则对角线上的元素有 $a_{ii}=-a_{ii}=0$
+
+** 初等矩阵<<MK13>>
+
+*** 定义
+
+以[[MK4][单位矩阵]]为基础，初等矩阵主要包含一下三种
+
+**** 第一型<<MK12>>
+
+单位矩阵 $I_n\xrightarrow{\textcircled{i}+k\textcircled{j}}P^2_n(i,kj)$ 即单位矩阵得第 $j$ 列乘以 $k$ 加到第 $i$ 行
+ 
+或者 $I_n\xrightarrow[\textcircled{j}+k\textcircled{i}]{} P^1_n(i,kj)$ 即单位矩阵第 $i$ 列乘以 $k$ 加到第 $j$ 列
+
+由于单位矩阵仅对角线上的元素为 $1$ 其余均为 $0$ ，故 $j$ 行仅有 $j$ 列的元素为 $1$ 乘以 $k$ 后加到 $i$ 行，则 $i$ 行 $j$ 列元素变为 $k$
+
+同理 $i$ 列仅有 $i$ 行元素为 $1$ 乘以 $k$ 后加到 $j$ 列后第 $j$ 列 $i$ 行的元素为 $k$
+
+故得 $P^1_n(i,kj)=P^2_n(i,kj)$ 综合把转换后得第一型初等矩阵记作 $P_n(i,kj)$
+
+**** 第二型
+
+单位矩阵 $I_n\xrightarrow{\textcircled{i}\Leftrightarrow\textcircled{j}}P^1_n(i,j)$ 即单位矩阵 $i,j$ 行互换
+
+或者 $I_n\xrightarrow[\textcircled{j}\Leftrightarrow\textcircled{i}]{}P^2_n(i,j)$ 即单位矩阵第 $j,i$ 列互换
+
+[[MK12][同理可证]] $P^2_n(i,j)=P^1_n(i,j)$ 故记作 $P_n(i,j)$
+
+**** 第三型
+
+单位矩阵 $I_n\xrightarrow{k\textcircled{i}}P^1_n(ki)$ 即单位矩阵 $i$ 行乘以 $k$
+
+或者 $I_n\xrightarrow[k\textcircled{i}]{}P^2_n(ki)$ 即单位矩阵第 $i$ 列乘以 $k$
+
+[[MK12][同理可证]] $P^2_n(ki)=P^1_n(ki)$ 故记作 $P_n(ki)$
+
+*** 初等变换<<MK32>>
+
+初等矩阵相当于初等行变换，其中
+
+**** 第一型<<MK30>>
+
+$P_n(i,kj)A_{n\times s}$ 相当于 $A\xrightarrow{\textcircled{i}+k\textcircled{j}}B$
+
+$A_{s\times n}P_n(i,kj)$ 相当于 $A\xrightarrow[\textcircled{i}+k\textcircled{j}]{}B$
+
+***** 证明
+
+仅证右乘，左乘同理
+
+根据[[MK13][定义]] $P_n(u,kv)=\left[f(i,j)\right]_{n\times n}$ 其中 $f(i,j)=\begin{cases}k&i=u\land j=v\\1&i=j\\0&else\end{cases}$
+
+故根据[[MK5][矩阵乘法]]可得 $P_n(u,kv)A_{s\times n}=\left[t_{ij}=\sum_{k=1}^n f(i,k)a_{kj}\right]_{s\times n}$
+
+根据 $f(i,j)$ 的定义，对于任意 $i\ne a$ 可得 $t_{ij}=a_{ij}$
+
+对于 $i=u$ 则有 $f(u,j)=\begin{cases}k&j=v\\1&j=u\\0&else\end{cases}$ 故有 $t_{ij}=ka_{vj}+a_{uj}$ 即矩阵 $A_{n\times s}$ 的第 $v$ 行乘以 $k$ 加上第 $u$ 行
+
+**** 第二型<<MK42>>
+
+$P_n(i,j)$ 右乘矩阵 $A_{n\times s}$ 相当于 $A\xrightarrow{\textcircled{i}\leftrightarrow\textcircled{j}}B$
+
+$P_n(i,j)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[\textcircled{i}\Leftrightarrow\textcircled{j}]{}B$
+
+***** 证明
+
+仅证右乘，左乘同理
+
+根据[[MK13][定义]] $P_n(u,v)=\left[f(i,j)\right]_{n\times n}$ 其中 $f(i,j)=\begin{cases}1&(i=u\land j=v)\lor(i=v\land j=v)\\1&i\ne u\land i\ne v\land i=j\\0&else\end{cases}$
+
+故根据[[MK5][矩阵乘法]]可得 $P_n(u,kv)A_{s\times n}=\left[t_{ij}=\sum_{k=1}^n f(i,k)a_{kj}\right]_{s\times n}$
+
+当 $i\ne u\land i\ne v$ 时有 $t_{ij}=a_{ij}$
+
+当 $i=u$ 时 $f(u,j)=\begin{cases}1&j=v\\0&else\end{cases}$ 故有 $t_{uj}=a_{vj}$ 同理可证当 $i=v$ 时 $t_{vj}=a_{uj}$
+
+综上所述，右乘的结果为矩阵 $A_{n\times s}$ 得 $u,v$ 行互换
+
+**** 第三型<<MK43>>
+
+$P_n(ki)$ 右乘矩阵 $A_{n\times s}$ 相当于 $A\xrightarrow{k\textcircled{i}}B$
+
+$P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}]{}B$
+
+***** 证明
+
+仅证右乘，左乘同理
+
+根据[[MK13][定义]] $P_n(ku)=\left[f(i,j)\right]_{n\times n}$ 其中 $f(i,j)=\begin{cases}k&i=u\land j=u\\1&i=j\\0&else\end{cases}$
+
+故根据[[MK5][矩阵乘法]]可得 $P_n(u,kv)A_{s\times n}=\left[t_{ij}=\sum_{k=1}^n f(i,k)a_{kj}\right]_{s\times n}$
+
+当 $i\ne u$ 时右 $t_{ij}-a_{ij}$
+
+当 $i=u$ 时  $f(u,j)=\begin{cases}k&j=u\\0&else\end{cases}$ 则有 $t_{uj}=ka_{uj}$ 即 $A_{n\times s}$ 的第 $u$ 行乘以 $k$
+
+*** 与矩阵乘法<<MK48>>
+
+初等矩阵 $P$ 与任意 $n$ 阶矩阵 $A$ 相乘有 $|PA|=|AP|=|P||A|$
+
+**** 证明
+
+***** 第一型
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-上三角矩阵行列式]]可得该型初等矩阵行列式 $|P|=1$
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=|A|$
+
+此时 $|PA|=|AP|=|P||A|=1|A|=|A|$ 成立
+
+***** 第二型
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-两行互换]]可得该型初等矩阵行列式 $|P|=-1$
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=-|A|$
+
+此时 $|PA|=|AP|=|P||A|=-1|A|=-|A|$ 成立
+
+***** 第三型
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-行乘系数]]可得该型初等矩阵行列式 $|P|=k$ 其中 $k$ 为对应的系数
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=k|A|$
+
+此时 $|PA|=|AP|=|P||A|=k|A|$ 成立
+
+* 基本运算
+
+** 基本运算定义
+
+*** 矩阵加法<<MK2>>
+
+若 $M=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{m1}&a_{m2}&...&a_{mn}\end{matrix}\right],N=\left[\begin{matrix}b_{11}&b_{12}&...&b_{1n}\\b_{21}&b_{22}&...&b_{2n}\\...&...&...&...\\b_{m1}&b_{m2}&...&b_{mn}\end{matrix}\right]$ 
+
+则定义 $M+N=\left[\begin{matrix}a_{11}+b_{11}&a_{12}+b_{12}&...&a_{1n}+b_{1n}\\a_{21}+b_{21}&a_{22}+b_{22}&...&a_{2n}+b_{2n}\\...&...&...&...\\a_{m1}+b_{m1}&a_{m2}+b_{m2}&...&a_{mn}+b_{mn}\end{matrix}\right]$ 
+
+*** 矩阵数乘<<MK3>>
+
+若 $M=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{m1}&a_{m2}&...&a_{mn}\end{matrix}\right],k\in K$ 则定义 $kM=\left[\begin{matrix}ka_{11}&ka_{12}&...&ka_{1n}\\ka_{21}&ka_{22}&...&ka_{2n}\\...&...&...&...\\ka_{m1}&ka_{m2}&...&ka_{mn}\end{matrix}\right]$
+
+*** 矩阵乘法<<MK5>>
+
+若 $M=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{s1}&a_{s2}&...&a_{sn}\end{matrix}\right],N=\left[\begin{matrix}b_{11}&b_{12}&...&b_{1t}\\b_{21}&b_{22}&...&b_{2t}\\...&...&...&...\\b_{n1}&b_{n2}&...&b_{nt}\end{matrix}\right]$ 
+
+则定义 $MN=\left[t_{ij}=\sum_{k=1}^n a_{ik}b_{kj}\right]_{s\times t}$
+
+*** 矩阵的幂
+
+定义 $A_n$ 为 $n$ 行 $n$ 列的矩阵，则定义 $A^k_n=A_nA_n...A_n$ 即 $A$ 的 $n$ 次幂为 $n$ 个 $A_n$ [[MK5][相乘]]
+
+若 $k=0$ 则 $A^0_n=I_n$ 为 $n$ 阶[[MK4][单位矩阵]]
+
+*** 矩阵转置<<MK14>>
+
+若矩阵 $A=[a_{ij}]$ 则有 $A^t=[b_{ij}=a_{ji}]$ 即行列位置交换
+
+*** 矩阵求逆
+
+若矩阵 $A=[a_{ij}]$ 且[[MK28][可逆]]，则 $A^{-1}_n=\frac{1}{|A_n|}\left([U_{ij}]^T_{n\times n}\right)$ 为其逆矩阵，其中 $U_{ij}$ 定义为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-其他定义-代数余子式]]。
+
+** 基本运算性质
+
+*** 乘法
+
+**** 结合律<<MK21>>
+
+若可乘矩阵 $A,B,C$ 则有 $(AB)C=A(BC)$
+
+***** 证明
+
+定义 $A=[a_{ij}]_{u\times v},B=[b_{ij}]_{v\times w},C=[c_{ij}]_{w\times x}$ 则有
+
+（1） $AB = \left[\sum_{l=1}^v a_{il}b_{lj}\right]_{u\times w}$
+
+（2） $BC = \left[\sum_{l=1}^v b_{il}c_{lj}\right]_{v\times x}$
+
+故进一步有：
+
+（1）  $(AB)C = \left[\sum_{l=1}^w \left\{\left(\sum_{k=1}^v a_{ik}b_{kl}\right) c_{lj}\right\}\right]_{u\times x}$
+
+（2）  $A(BC) = \left[\sum_{l=1}^v\left\{a_{il}\left(\sum_{k=1}^w b_{lk}c_{kj}\right)\right\}\right]_{u\times w}$
+
+由于
+
+\begin{aligned}
+\sum_{l=1}^w\left\{\left(\sum_{k=1}^v a_{ik}b_{kl}\right) c_{lj}\right\}&=\sum_{l=1}^w \left(\sum_{k=1}^v a_{ik}b_{kl}c_{lj}\right)\\
+&=\sum_{l=1}^w \left(a_{i1}b_{1l}c_{lj}+\sum_{k=2}^v a_{ik}b_{kl}c_{lj}\right)\\
+&=\sum_{l=1}^wa_{i1}b_{1l}c_{lj} + \sum_{l=1}^w \left(\sum_{k=2}^v a_{ik}b_{kl}c_{lj}\right)\\
+&=a_{i1}\sum_{l=1}^wb_{1l}c_{lj} + \sum_{l=1}^w \left(\sum_{k=2}^v a_{ik}b_{kl}c_{lj}\right)\\
+&=a_{i1}\sum_{l=1}^wb_{1l}c_{lj}+a_{i2}\sum_{l=1}^wb_{2l}c_{lj}+...+a_{iv}\sum_{l=1}^wb_{vl}c_{lj}\\
+&=\sum_{k=1}^v\left(a_{ik}\sum_{l=1}^wb_{kl}c_{lj}\right)\\
+\end{aligned}
+
+故有 $\sum_{l=1}^w \left\{\left(\sum_{k=1}^v a_{ik}b_{kl}\right) c_{lj}\right\}=\sum_{l=1}^v\left\{a_{il}\left(\sum_{k=1}^w b_{lk}c_{kj}\right)\right\}$ 则 $(AB)C=A(BC)$
+
+**** 分配律
+
+若可乘矩阵 $A,B,C$ 则有 $A(B+C)=AB+AC, (A+B)C=AC+BC$
+
+***** 证明
+
+仅证 $A(B+C)=AB+AC$ ，另一半同理可证
+
+定义 $A=[a_{ij}]_{u\times v},B=[b_{ij}]_{v\times w},C=[c_{ij}]_{v\times w}$ 则有
+
+（1） $B+C=[b_{ij}+c_{ij}]_{v\times w}$
+
+（2） $AB = \left[\sum_{l=1}^v a_{il}b_{lj}\right]_{u\times w}$
+
+（3） $AC = \left[\sum_{l=1}^v a_{il}c_{lj}\right]_{u\times w}$
+
+则有
+
+（1） $AB+AC=\left[\sum_{l=1}^v a_{il}b_{lj}+\sum_{l=1}^v a_{il}c_{lj}\right]_{u\times w}=\left[\sum_{l=1}^v a_{il}(b_{lj}+c_{lj})\right]_{u\times w}$
+
+（2） $A(B+C)=\left[\sum_{l=1}^v a_{il}(b_{lj}+c_{lj})\right]_{u\times w}$
+
+故有 $A(B+C)=AB+AC$ 
+
+**** 单位矩阵相乘得本身
+
+若[[MK4][单位矩阵]] $I_n$ 与矩阵 $A=[a_{ij}]_{n\times s},B=[b_{ij}]_{s\times n}$ 则有 $I_nA=A,BI_n=B$
+
+**** 矩阵秩的关系<<MK24>>
+
+若矩阵 $A,B$ 可以相乘，则有 $rank(AB)\leq\min\left\{rank(A),rank(B)\right\}$ 
+
+其中 $rank(X)$ 表示 $X$ 的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-定义]]
+
+***** 证明
+
+定义 $A=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{s1}&a_{s2}&...&a_{sn}\end{matrix}\right]=\left[\vec{a}_1,...,\vec{a}_n\right]$ 其中 $\vec{a}_i=\left[\begin{matrix}a_{1i}\\a_{2i}\\...\\a_{si}\end{matrix}\right]$ 即矩阵 $A$ 的列向量
+
+定义 $B=\left[\begin{matrix}b_{11}&b_{12}&...&b_{1t}\\b_{21}&b_{22}&...&b_{2t}\\...&...&...&...\\b_{n1}&b_{n2}&...&b_{nt}\end{matrix}\right]$ 则根据[[MK5][乘法定义]]可得 $AB=\left[\begin{matrix}\sum_{i=1}^n\vec{a}_ib_{i1}&\sum_{i=1}^n\vec{a}_ib_{i2}&...&\sum_{i=1}^n\vec{a}_ib_{it}\end{matrix}\right]$
+
+则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][向量组关系-线性表述]]， $AB$ 的列向量可由 $A$ 的列向量线性表述
+
+故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][向量组关系-向量组秩的性质-性质2]]可得 $AB$ 的列秩小于等于 $A$ 的列秩
+
+进一步由于[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-定义]]可的 $rank(AB)\leq rank(A)$
+
+根据[[MK7][转置性质]]可的 $(AB)^T=B^TA^T$ 则根据本性质有 $rank\left((AB)^T\right)=rank\left(B^TA^T\right)\leq rank\left(B^T\right)$
+
+由于[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩]]可的同一矩阵行秩等于列秩，固有 $rank(AB)=rank\left((AB)^T\right),rank(B)=rank\left(B^T\right)$
+
+故亦有 $rank(AB)\leq rank(B)$
+
+综上所述 $rank(AB)\leq\min\left\{rank(A),rank(B)\right\}$ 
+
+*** 数乘<<MK25>>
+
+若 $k\in K$ 其中 $K$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]， $A,B$ 为可相乘的矩阵，则有 $(kA)B=k(AB)=A(kB)$
+
+*** 幂
+
+由定义可的
+
+\begin{aligned}
+A_n^kA_n^l&=A_n^lA_n^k=A_n^{k+l}\\
+\left(A_n^k\right)^l&=A_n^{kl}
+\end{aligned}
+
+*** 转置<<MK7>>
+
+\begin{aligned}
+(A+B)^T&=A^T+B^T\\
+(kA)^T&=kA^T\\
+(AB)^T&=B^TA^T\\
+\end{aligned}
+
+**** 证明
+
+仅证 $(AB)^T&=B^TA^T$ 定义 $A=[a_{ij}]_{s\times n},B=[b_{ij}]_{n\times m}$ 则有
+
+\begin{aligned}
+(AB)^T&=\left[t_{ij}=\sum_{k=1}^n a_{ik}b_{kj}\right]_{s\times m}^T\\
+&=\left[u_{ij}=\sum_{k=1}^n a_{jk}b_{ki}\right]_{m\times s}
+\end{aligned}
+
+同理有
+
+\begin{aligned}
+B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\times s}\\
+&=\left[u_{ij}=\sum_{k=1}^n b'_{ik}a'_{kj}=\sum_{k=1}^n b_{ki}a_{jk}\right]_{m\times s}\\
+\end{aligned}
+
+* 矩阵的逆
+
+** 定义<<MK28>>
+
+矩阵 $A_n$ 行列数均为 $n$ ，若存在矩阵 $B$ 满足 $A_nB=BA_n=I$ 则称 $A$ 为可逆矩阵 $B$ 为 $A$ 的逆矩阵，记作 $A^{-1}$
+
+其中 $I$ 为单位矩阵
+
+** 性质
+
+*** 逆矩阵为行列数相等的方阵<<MK23>>
+
+由于 $A_n$ 行数为 $n$ 则 $A_nB$ 行数亦为 $n$ 。由于 $A_nB=I$ 为单位矩阵，根据[[MK4][定义]]行列相等，故得 $A_nB$ 列数亦为 $n$ 
+
+根据[[MK5][矩阵乘法]]可得 $B$ 的行列数亦为 $n$
+
+*** 逆矩阵唯一<<MK26>>
+
+若 $A_n$ 可逆，则存在唯一逆矩阵
+
+**** 证明
+
+若 $AB=BA=I$ 且 $AC=CA=I$
+
+则根据[[MK21][结合率]]可得 $(BA)C=B(AC)$ 进一步 $IC=BI$
+
+根据[[MK23][之前证明]]可得 $A,B,C,I$ 行列数均相等，故根据[[MK22][单位矩阵性质]]可得 $C=B$
+
+*** 可逆的充要条件<<MK29>>
+
+方阵 $A_n$ 可逆的充要条件为 $|A_n|\ne0$
+
+**** 证明
+
+***** 必要
+
+若 $A_n$ 可逆，则有 $A_nA^{-1}_n=I_n$ 根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-定义]] $I_n$ 列向量均线性不相关
+
+故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论1]]可得 $rank(I_n)=n$
+
+根据[[MK24][乘法性质]]可得 $rank(I_n)=rank(A_nA^{-1}_n)\leq rank(A_n)$ 
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-矩阵的秩与行列式]]可得 $A_n$ 秩最大为 $n$ 即 $rank(A_n)\leq n$ 故得 $rank(A_n)=n$
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-行列式与线性相关性]]可得 $|A_n|\ne0$ 时行列向量线性无关
+
+同理根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-列秩与行秩的定义]]以及[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩]]可得当且仅当行列向量线性无关时 $rank(A_n)=n$
+
+综上所属若 $A_n$ 可逆，则 $rank(A_n)=n$ 则 $|A_n|\ne0$
+
+***** 充分<<MK27>>
+
+构建矩阵 $B=[U_{ij}]^T_{n\times n}$ ，其中 $U_{ij}$ 定义为 $A_n$ 对于元素 $a_{ij}$ 的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-其他定义-代数余子式]]。
+
+根据[[MK5][矩阵乘法]]可得 $A_nB=\left[t_{ij}=\sum_{k=1}^n a_{ik}U_{jk}\right]_{n\times n}$ 
+
+则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-矩阵的秩与行列式-推论2]]可得 $t_{ij}=\begin{cases}|A_n|&i=j\\0&i\ne j\end{cases}$
+
+则根据[[MK3][矩阵数乘]]可得 $\frac{1}{|A_n|}A_nB=I_n$ 根据[[MK25][数乘性质]]可得 $\frac{1}{|A_n|}A_nB=A_n\left(\frac{1}{|A_n|}B\right)=I_n$
+
+类似可证 $\left(\frac{1}{|A_n|}B\right)A_n=I_n$ 且根据[[MK26][唯一性]]可得 $A^{-1}_n=\left(\frac{1}{|A_n|}B\right)$
+
+故当 $|A_n|\ne0$ 时 $\left(\frac{1}{|A_n|}B\right)$ 存在且有定义，故 $A_n$ 可逆
+
+** 定理
+
+*** 定理1
+
+若 $A_n$ 可逆，则 $A^{-1}_n=\frac{1}{|A_n|}\left([U_{ij}]^T_{n\times n}\right)$ ，其中 $U_{ij}$ 定义为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-其他定义-代数余子式]]。
+
+证明与[[MK27][之前]]同理。进一步定义 $A^*=[U_{ij}]^T_{n\times n}$ 成为矩阵 $A$ 的伴随矩阵
+
+*** 定理2<<MK31>>
+
+若 $n$ 阶矩阵 $A_n,B_n$ 满足 $A_nB_n=I_n$ 其中 $I_n$ 是[[MK4][单位矩阵]]，则有 $A_n,B_n$ 可逆且 $A_n^{-1}=B_n,B^{-1}_n=A_n$
+
+**** 证明
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-定义]] $I_n$ 行、列向量均线性不相关，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论1]]可得 $rank(I_n)=n$
+
+根据[[MK24][乘法性质]]可得 $rank(I_n)=rank(A_nB_n)\leq rank(A_n)$ 
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-矩阵的秩与行列式]]可得 $A_n$ 秩最大为 $n$ 即 $rank(A_n)\leq n$ 故得 $rank(A_n)=n$
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-行列式与线性相关性]]可得 $|A_n|\ne0$ 故根据[[MK29][充要条件]]可得 $A_n$ 可逆
+
+即存在 $A_n^{-1}$ 满足 $A_n^{-1}A_n=A_nA_n^{-1}=I_n$ 又根据[[MK26][唯一性]]可得 $B=A_n^{-1}$
+
+同理可证 $B_n$ 可逆且 $B^{-1}_n=A_n$
+
+*** 定理3<<MK36>>
+
+[[MK13][初等矩阵]]均可逆，且有：
+
+\begin{aligned}
+&P_n(i,kj)^{-1}=P_n(i,-kj)\\
+&P_n(i,j)^{-1}=P_n(i,j)\\
+&P_n(ki)^{-1}=P_n\left(\frac{1}{k}i\right)
+\end{aligned}
+
+**** 证明
+
+仅证 $P_n(i,kj)^{-1}=P_n(i,-kj)$ 根据[[MK12][定义]]可得该矩阵位[[MK4][单位矩阵]]第 $i$ 行加上 $j$ 行的 $k$ 倍所得
+
+故仅需在 $i$ 行减去 $j$ 行的 $k$ 倍即得单位矩阵。
+
+根据[[MK30][初等变换]]可得当乘以 $P_n(i,-kj)$ 相当与该初等变换。
+
+*** 定理4<<MK35>>
+
+若矩阵 $S_i,i\in N\land 1\leq i\leq n$ 为 $n$ 个 $k$ 阶可逆矩阵，则有 $\prod_{i=1}^n S_i$ 可逆，且其逆矩阵位 $\prod_{i=n}^1 S^{-1}_i$ （注意：此处第一个位 $S^{-1}_n$ 依次递减）
+
+即可逆矩阵乘法封闭
+
+**** 证明
+
+当 $n=2$ 时根据[[MK21][结合律]] $(S_1S_2)(S^{-1}_2S^{-1}_1)=S_1(S_2S^{-1}_2)S^{-1}_1=S_1IS^{-1}_1=I$ 根据[[MK31][定理2]]可得 $(S_1S_2)$ 可逆，且 $(S_1S_2)^{-1}=S^{-1}_2S^{-1}_1$
+
+当 $n=k+1$ 且 $n=k$ 成立时 $\prod_{i=1}^k S_i$ 可逆且逆矩阵为 $\prod_{i=k}^1 S^{-1}_i$ 
+
+则根据 $n=2$ 时证明 $\left(\prod_{i=k}^1 S_i\right)S_{k+1}$ 可逆，且 $\left[\left(\prod_{i=k}^1 S_i\right)S_{k+1}\right]^{-1}=S^{-1}_{k+1}\left(\prod_{i=k}^1 S^{-1}_i\right)=\left(\prod_{i=k+1}^1 S^{-1}_i\right)$
+
+*** 定理5
+
+若矩阵 $A_n$ 可逆，则其[[MK14][转置]]矩阵 $A^T_n$ 亦可逆，且其逆矩阵为 $\left(A^T_n\right)^{-1}=\left(A^{-1}_n\right)^T$ 
+
+**** 证明
+
+根据[[MK7][转置性质]]可得 $I=I^T=\left(AA^{-1}\right)^T=\left(A^{-1}\right)^TA^T$ 同理可证 $A^T\left(A^{-1}\right)^T=I$
+
+*** 定理6<<MK35>>
+
+若矩阵 $A_n$ 可逆，则必可经过[[MK32][初等变换]]化为[[MK4][单位矩阵]]
+
+**** 证明
+
+由于任意行列式可经过[[MK32][初等变换]]化为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][线性方程组-其他定义-阶梯矩阵]]
+
+则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-阶梯矩阵的行秩与列秩]]可知 $\dim(A_n)=n$ 与主元个数相等
+
+由于 $A_n$ 为 $n$ 行列的方阵，则化为阶梯矩阵后必为[[MK33][上三角矩阵]]
+
+故可通过初等变换：
+
+（1）将所有主元除以自身变为 $1$
+
+（2）从最后一行开始，依次递减消去该行主元同列的所有元素，使其为零
+
+故得单位矩阵
+
+*** 定理7<<MK37>>
+
+方阵 $A_n$ 可逆的充要条件是 $A_n=\prod_{i=1}^n P_i$ 其中 $n$ 为有限数，$P_i$ 为[[MK13][初等矩阵]]
+
+**** 证明
+
+***** 充分
+
+根据[[MK35][定理6]]以及[[MK32][初等变换]]可得 $A_n$ 可逆，则有 $A_n\prod_{i=1}^n P_i=I_n$ 其中 $I_n$ 位 $n$ 阶[[MK4][单位矩阵]]
+
+根据[[MK35][定理4]]可得 $\left(\prod_{i=1}^nP_i\right)^{-1}=\prod_{i=n}^1P^{-1}_i$ 故有 $A_n=A_nI_n=A_n\prod_{i=1}^nP_i\left(\prod_{i=1}^nP_i\right)^{-1}=I_n\left(\prod_{i=1}^nP_i\right)^{-1}=I_n\prod_{i=n}^1P^{-1}_i$
+
+故有 $A_n=\prod_{i=n}^1P^{-1}_i$ 其中 $P^{-1}_n$ 为初等矩阵的逆矩阵
+
+根据[[MK36][定理3]]可得初等矩阵逆矩阵仍为初等矩阵，故证毕。
+
+***** 必要
+
+若 $A_n=\prod_{i=1}^n P_i$ 根据[[MK36][定理3]]初等矩阵可逆，根据[[MK35][定理4]]可得可逆矩阵相乘仍然可逆。
+
+故 $A_n$ 可逆
+
+*** 定理8<<MK46>>
+
+定义矩阵 $A=[a_{ij}]_{s\times n}$ ，另外定义可逆矩阵 $B_s,C_n$ 分别位 $s$ 阶 $n$ 阶可逆矩阵。
+
+则有 $\dim(A)=\dim(B_sA)=\dim(AC_n)$ 即矩阵乘以可逆矩阵，其秩不变
+
+**** 证明
+
+根据[[MK37][定理7]]可得 $AC_n=\prod_{i=1}^u P_i$ 其中 $P_i$ 为[[MK13][初等矩阵]]
+
+根据[[MK32][初等变换]]可得上述乘法可定义为对矩阵 $A$ 做初等变换，
+
+故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论3]]可得初等变换不改变矩阵的秩。
+
+故有 $\dim(A)=\dim(AC_n)$ 同理可证 $\dim(A)=\dim(B_sA)$
+
+*** 定理9
+
+若 $A_n=[a_{ij}]_{n\times n}$ 为可逆矩阵，则定义矩阵 $[A_n\ I]=[f(i,j)]_{n\times 2n}$ 其中 $f(i,j)=\begin{cases}a_{ij}&j\leq n\\1&j>n\land j=i\\0&else\end{cases}$
+
+即矩阵的前 $n$ 行列为 $A_n$ 的元素，第 $n+1$ 列开始为[[MK4][单位矩阵]] $I$ 中的元素
+
+则若 $A_n$ 经过一系列初等行变换 $\prod_{i=1}^z P_i$ 可得 $I$ 则有 $[A_n\ I]$ 经过同样的初等行变换可得 $[I\ A^{-1}_n]$
+
+**** 证明
+
+根据[[MK35][定理6]]可得 $A_n$ 可逆则必有 $\left(\prod_{i=1}^z P_i\right)A_n=I$ 则有  $\left(\prod_{i=1}^z P_i\right)I=\left(\prod_{i=1}^z P_i\right)A_nA^{-1}_n=IA^{-1}_n=A^{-1}_n$
+
+故 $I$ 经过同样 $\prod_{i=1}^z P_i$ 的初等行变换，可得 $A^{-1}_n$
+
+由于 $[A_n\ I]$ 矩阵中所有初等行变换同样操作与 $A_n$ 和 $I$ 上。故若初等行变换 $\prod_{i=1}^z P_i$ 能使 $A_n$ 成为 $I$ 则根据上述证明能使 $I$ 成为 $A^{-1}_n$
+
+* 矩阵分块
+
+** 定义<<MK38>>
+
+定义矩阵 $A=[a_{ij}]_{s\times n}$ 定义 $0=x_1\leq...\leq x_u=s$ 以及 $0=y_1\leq...\leq y_v=n$
+
+则定义 $A_{lk}=[a'_{ij}]_{(x_{l+1}-x_l)\times(y_{k+1}-y_k)}$ 为子矩阵，其中 $a'_{ij}=a_{(x_l+i)(y_k+j)}$
+
+故 $A$ 可分解为由子矩阵构成的 $A=[A_{ij}]_{u\times v}$ 。该过程定义位矩阵的分块
+
+** 性质
+
+*** 分块矩阵乘法<<MK41>>
+
+定义矩阵 $A=[a_{ij}]_{s\times n}$ 以及 $0=x_1\leq...\leq x_u=s,0=y_1\leq...\leq y_v=n$ 以及分块后 $A=[A_{ij}]_{u\times v}$ 
+
+其中 $A_{lk}=[a'_{ij}]_{(x_{l+1}-x_l)\times(y_{k+1}-y_k)}$ ，且 $a'_{ij}=a_{(x_l+i)(y_k+j)}$
+
+定义矩阵 $B=[b_{ij}]_{n\times m}$ 以及 $0=y_1\leq...\leq y_v=n,0=z_1\leq...\leq z_w=m$ 以及分块后 $B=[B_{ij}]_{v\times w}$
+
+其中 $B_{lk}=[b'_{ij}]_{(y_{l+1}-x_l)\times(z_{k+1}-y_k)}$ ，且 $b'_{ij}=b_{(y_l+i)(z_k+j)}$
+
+则有 $AB=C$ 可根据 $0=x_1\leq...\leq x_u=s,0=z_1\leq...\leq z_w=m$ 分块，分块后 $AB=[C_{ij}]_{u\times w}$ 
+
+且 $C_{ij}=\sum_{k=1}^vA_{ik}B_{kj}$
+
+**** 证明 
+
+定义 $C_{qr}=[c_{ij}]_{(x_{q+1}-x_q)\times(z_{r+1}-z_r)}$ 根据[[MK5][矩阵乘法]]可得 $c_{ij}=\sum_{k=1}^na_{(x_q+i)k}b_{k(z_r+j)}=\sum_{k=1}^v\left(\sum_{l=y_k+1}^{y_{k+1}} a_{(x_q+i)l}b_{l(z_r+j)}\right)$
+
+同理可得 $A_{qk}B_{kr}=[d_{ij}]$ 其中 $d_{ij}=\sum_{l=y_k+1}^{y_{k+1}} a'_{il}b'_{lj}=\sum_{l=y_k+1}^{y_{k+1}} a_{(x_q+i)l}b_{l(z_r+j)}$
+
+定义 $C'_{qr}=\sum_{k=1}^vA_{qk}B_{kr}$ 
+
+则根据定义 $A_{qk}$ 为 $x_{q+1}-x_q$ 行 $y_{k+1}-y_k$ 列矩阵
+
+同理可得 $B_{kr}$ 为 $y_{k+1}-y_k$ 行 $z_{r+1}-z_r$ 列矩阵
+
+则根据矩阵乘法可得 $A_{qk}B_{kr}$ 为 $x_{q+1}-x_q$ 行 $z_{r+1}-z_r$ 列矩阵
+
+故根据[[MK2][矩阵加法]] $C'_{qr}$ 存在，且 $C'_{qr}=[c'_{ij}]_{(x_{q+1}-x_q)\times(z_{r+1}-z_r)}$ 
+
+进一步 $c'_{ij}=\sum_{k=1}^v\left(\sum_{l=y_k+1}^{y_{k+1}} a_{(x_q+i)l}b_{l(z_r+j)}\right)$ 即 $c'_{ij}=c_{ij}$
+
+由于 $C'_{qr},C_{qr}$ 均为 $x_{q+1}-x_q$ 行 $z_{r+1}-z_r$ 列矩阵，且 $c'_{ij}=c_{ij}$ 固根据[[MK1][矩阵相等]]有 $C_{ij}=C'_{ij}=\sum_{k=1}^vA_{ik}B_{kj}$
+
+*** 分块矩阵初等变换<<MK44>>
+
+**** 初等行变换<<MK39>>
+
+定义矩阵 $A$ ，可分块为 $A=[A_{ij}]_{s\times n}$ ，则分块矩阵初等行变换分为以下三型
+
+***** 第一型
+
+$A$ 的第 $k$ 分块行左乘矩阵 $P$ 后加到第 $l$ 分块行，即 $A'=[A'_{ij}]_{x\times n}$ 其中 $A'_{ij}=\begin{cases}A_{ij}+PA_{kj}&i=l\\A_{ij}&else\end{cases}$
+
+记作 $A\xrightarrow[]{\textcircled{l}+P\textcircled{k}}A'$
+
+***** 第二型
+
+$A$ 的第 $k,l$ 分块行互换，即 $A'=[A'_{ij}]$ 其中 $A'_{ij}=\begin{cases}A_{kj}&i=l\\A_{lj}&i=k\\A_{ij}&else\end{cases}$
+
+记作 $A\xrightarrow[]{\textcircled{l}\leftrightarrow\textcircled{k}}A'$
+
+***** 第三型
+
+A 的第 $k$ 分块行左乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A ' _{ij}=\begin{cases}PA_{ij}&i=k\\A_{ij}&else\end{cases}$
+
+记作 $A\xrightarrow[]{P\textcircled{k}}A'$
+
+**** 初等列变换<<MK40>>
+
+定义矩阵 $A$ ，可分块为 $A=[A_{ij}]_{s\times n}$ ，则分块矩阵初等列变换分为以下三型
+
+***** 第一型
+
+$A$ 的第 $k$ 分块列右乘矩阵 $P$ 后加到第 $l$ 分块列，即 $A'= [A'_{ij}]_{x\times n}$ 其中 $A'_{ij}=\begin{cases}A_{ij}+A_{ik}P&j=l\\A_{ij}&else\end{cases}$
+
+记作 $A\xrightarrow[\textcircled{l}+P\textcircled{k}]{}A'$
+
+***** 第二型
+
+$A$ 的第 $k,l$ 分块列互换，即 $A'= [A'_{ij}]$ 其中 $A'_{ij}=\begin{cases}A_{ik}&j=l\\A_{il}&j=k\\A_{ij}&else\end{cases}$
+
+记作 $A\xrightarrow[\textcircled{l}\leftrightarrow\textcircled{k}]{}A'$
+
+***** 第三型
+
+A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A ' _{ij}=\begin{cases}A_{ij}P&j=k\\A_{ij}&else\end{cases}$
+
+记作 $A\xrightarrow[\textcircled{k}P]{}A'$
+
+*** 分块初等矩阵<<MK45>>
+
+定义[[MK4][单位矩阵]] $I$ 经过[[MK38][分块]]后 $I=[I_{ij}]$ 其中 $I_{ij}$ 只能为[[MK4][单位矩阵]]或[[MK9][零矩阵]]。
+
+由于子矩阵只能为单位矩阵或零矩阵，故分块行列必须相等，以保证子矩阵仅有对角上的元素为 $1$ 。
+
+且由于根据[[MK3][矩阵乘法]]以及[[MK22][单位矩阵性质]]可得：
+
+（1） 左（右）乘仅需行（列）数特定即可
+
+（2） $P$ 只要可乘，则 $IP=PI=P$
+
+综上所述，该限制不影响初等矩阵功能。
+
+由于每个子矩阵阶可能不同，故必须分行列。
+
+**** 行初等矩阵
+
+分块后行初等矩阵分为以下三型：
+
+***** 第一型
+
+根据[[MK39][初等行变换]]的第一型，定义为 $I$ 的第 $k$ 分块行乘以矩阵 $P$ 加到第 $l$ 行
+
+最终结果 $I'=[I'_{ij}]$ 其中 $I'_{ij}=\begin{cases}P&i=l\land j=k\\I_{ii}&i=j\\ [0] &else\end{cases}$ 其中 $I_{ii}$ 为单位矩阵
+
+根据[[MK41][分块矩阵乘法]]以及[[MK30][之前证明]]可证该 $I'A$ 相当于[[MK39][初等行变换第一型]]
+
+***** 第二型
+
+根据[[MK39][初等行变换]]的第二型，定义为 $I$ 的第 $k,l$ 分块行互换
+
+最终结果 $I'= [I'_{ij}]$ 其中 $I'_{ij}=\begin{cases}[0]&i=j=l\lor i=j=k\\I_{kk}&i=l\land j=k\\I_{ll}&i=k\land j=l\\I_{ij}&else\end{cases}$
+
+根据[[MK41][分块矩阵乘法]]以及[[MK42][之前证明]]可证该 $I'A$ 相当于[[MK39][初等行变换第二型]]
+
+***** 第三型
+
+根据[[MK39][初等行变换]]的第三型，定义为 $I$ 的第 $k$ 分块行乘以可逆矩阵 $P$
+
+最终结果 $I'= [I'_{ij}]$ 其中 $I'_{ij}=\begin{cases}P&i=j=k\\I_{ij}&else\end{cases}$
+
+根据[[MK41][分块矩阵乘法]]以及[[MK42][之前证明]]可证该 $I'A$ 相当于[[MK39][初等行变换第三型]]
+
+**** 列初等矩阵
+
+分块后列初等矩阵分为以下三型：
+
+***** 第一型
+
+根据[[MK40][初等列变换]]的第一型，定义为 $I$ 的第 $k$ 分块列乘以矩阵 $P$ 加到第 $l$ 列
+
+最终结果 $I'= [I'_{ij}]$ 其中 $I'_{ij}=\begin{cases}I_{ij}+P&j=l\land i=k\\I_{ij}&else\end{cases}$
+
+根据[[MK41][分块矩阵乘法]]以及[[MK30][之前证明]]可证该 $AI'$ 相当于[[MK40][初等列变换第一型]]
+
+***** 第二型
+
+根据[[MK40][初等列变换]]的第二型，定义为 $I$ 的第 $k,l$ 分块列互换
+
+最终结果 $I'= [I'_{ij}]$ 其中 $I'_{ij}=\begin{cases}[0]&i=j=l\lor i=j=k\\I_{ll}&i=l\land j=k\\I_{kk}&i=k\land j=l\\I_{ij}&else\end{cases}$
+
+根据[[MK41][分块矩阵乘法]]以及[[MK30][之前证明]]可证该 $AI'$ 相当于[[MK40][初等列变换第二型]]
+
+***** 第三型
+
+根据[[MK40][初等列变换]]的第三型，定义为 $I$ 的第 $k$ 分块列乘以可逆矩阵 $P$
+
+最终结果 $I'= [I'_{ij}]$ 其中 $I'_{ij}=\begin{cases}P&i=j=k\\I_{ij}&else\end{cases}$
+
+根据[[MK41][分块矩阵乘法]]以及[[MK42][之前证明]]可证该 $AI'$ 相当于[[MK40][初等列变换第三型]]
+
+** 定理
+
+*** 定理1<<MK47>>
+
+[[MK45][分块初等矩阵]]均可逆
+
+**** 证明
+
+根据[[MK4][单位矩阵]]定义可得 $I$ 为满秩，即可逆。
+
+则根据[[MK45][分块初等矩阵]]可得，显然第一，二型不改变可逆性。
+
+第三型由于 $P,I_{kk}$ 可逆，则根据[[MK35][定理4]]可得 $I_{kk}P=PI_{kk}=P$ 可逆。则 $\dim(P)=n$ 其中 $n=\dim(I_{kk})$ 
+
+故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论1]]可得调整后 $I'$ 矩阵中 $P$ 分块所在的列线性不相关
+
+且显然除去 $P$ 分块的其他列也线性不相关，故 $I'$ 所有列线性不相关，即满秩，即可逆
+
+*** 定理2
+
+矩阵[[MK44][分块初等变换]]不改变矩阵的秩
+
+**** 证明
+
+根据[[MK45][分块初等矩阵]]可得初等变换相当于乘以相应的初等矩阵。
+
+根据[[MK47][定理1]]可知所有分块初等矩阵均可逆，则根据[[MK46][定理8]]可得矩阵乘以分块初等矩阵不改变秩。
+
+故，矩阵的分块初等变换亦不改变秩。
+
+* 矩阵乘法与行列式
+
+定义矩阵 $A_{s\times n},B_{n\times s}$ 则有：
+
+（1） 当 $s>n$ 时 $|AB|=0$
+
+（2） 当 $s=n$ 时 $|AB|=|A||B|$
+
+（3） 当 $s<n$ 时 $|AB|=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$ 其中 $A,B$ 分别代表子式
+
+** 证明
+
+*** 证明（1）
+
+由于 $n<s$ 则 $A$ 有 $\dim(A)\leq n$
+
+根据[[MK24][乘法性质]]可得 $\dim(AB)\leq \dim(A)\leq n$
+
+由于根据[[MK5][矩阵乘法]]可得 $AB$ 为 $s$ 阶方阵，则 $AB$ 不满秩，故 $|AB|=0$
+
+*** 证明（2）
+
+若 $|A|=0$ 则 $A$ 不满秩，同理根据[[MK24][乘法性质]]可得 $\dim(AB)\leq \dim(A)< n$
+
+故得 $|AB|=0$
+
+若 $|A|\ne 0$ 则 $A$ 满秩，故根据[[MK29][可逆条件]]可得 $A$ 可逆
+
+进一步根据[[MK37][定理7]]可得 $A=\prod_{i=1}^vP_i$ 其中 $P_i$ 为[[MK13][初等矩阵]]
+
+顾得 $|AB|=\left|\prod P_i B\right|$ 根据[[MK48][初等矩阵性质]]以及[[MK21][乘法结合律]]可得 $|AB|=\left|\prod P_i\right||B|=|A||B|$
+
+*** 证明（3）
+
+**** 利用分块矩阵
+
+构造[[MK38][分块矩阵]] $\left[\begin{matrix}A&0_{s}\\I_n&B\end{matrix}\right]$ 其中分块 $I_n$ 为 $n$ 阶[[MK4][单位矩阵]]，且 $0_s$ 为 $s$ 阶[[MK9][零矩阵]]
+
+构造[[MK45][分块初等矩阵]] $\left[\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right]$ 则有：
+
+（1） $I_sA=A$ ，（2） $-AI_n=-A$ ，（3） $0_{n\times s}A=0_{n\times n}$ ，（4） $I_nB=B$
+
+固有  $\left[\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right]\left[\begin{matrix}A&0_s\\I_n&B\end{matrix}\right]=\left[\begin{matrix}A-A&0_s-AB\\0_{n\times n}+I_{n\times n}&0_{n\times s}+B\end{matrix}\right]=\left[\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right]$
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-上三角矩阵行列式]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|=1$ 根据[[MK29][可逆条件]]可得该矩阵可逆，根据[[MK37][定理7]]可得该矩阵可分解为[[MK13][初等矩阵]]相乘
+
+故根据[[MK48][初等矩阵与乘法]]以及[[MK21][乘法结合律]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|$
+
+**** 利用拉普拉斯定理
+
+***** 等式左边矩阵行列式
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-拉普拉斯定理]]，对 $\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|$ 取前 $s$ 行即 $i_l=l,1\leq l\leq s$ ，对其列进行展开
+
+\begin{aligned}
+\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\sum_{u=1}^s i_u+\sum_{u=1}^s j_u}M\left(\begin{matrix}i_1&i_2&...&i_s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}i_1&i_2&...&i_s\\j_1&j_2&...&j_s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)
+\end{aligned}
+
+由于对于任意 $j_l>s$ 其子式 $M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 均有一列元素全为 $0$ ，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-性质-性质3]]可得求子式的矩阵列向量现行相关，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-行列式与线性相关性]]可得其行列式为零，故子式为零，则得
+
+
+\begin{aligned}
+\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)
+\end{aligned}
+
+其中余子式 $\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 可表述为矩阵 $\left[\begin{matrix}I_n&B\end{matrix}\right]$ 去掉 $1\leq j_1\leq...\leq j_s\leq s$ 列后求行列式
+
+由于 $s<n$ 则去掉的列必在 $I_n$ 中，删除后 $I'_{n\times (n-s)}$ 为 $n$ 行 $(n-s)$ 列矩阵，对该 $n-s$ 列再用拉普拉斯定理的推论展开
+
+\begin{aligned}
+\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)=\sum_{\forall1\leq k_1\leq k_2\leq...\leq k_{n-s}\leq n}(-1)^{\sum_{u=1}^{n-s}u+\sum_{u=1}^{n-s}k_u}M'\left(\begin{matrix}k_1&k_2&...&k_{n-s}\\1&2&...&n-s\end{matrix}\right)\overline{M'}\left(\begin{matrix}k_1&k_2&...&k_s\\1&2&...&n-s\end{matrix}\right)
+\end{aligned}
+
+此时仅有未删除的列上有非零元素，他们位于 $K=\left\{k\big|k\not\in \{j_l|1\leq l\leq s\}\land k\leq n\right\}$ 行上
+
+由于单位矩阵仅对角线为 $1$ ，故当且仅当取所有 $k_v\in K$ 时子式 $M'\left(\begin{matrix}k_1&k_2&...&k_{n-s}\\1&2&...&n-s\end{matrix}\right)\ne0$
+
+由于 $I'_{n\times (n-s)}$ 仅有 $(n-s)$ 列且 $\dim(K)=n-s$ 故该情况只有一种。
+
+进一步由于单位矩阵，故取该种情况下行的子矩阵为 $I_{n-s}$ 为 $n-s$ 阶单位矩阵，即 $M'\left(\begin{matrix}k_1&k_2&...&k_{n-s}\\1&2&...&n-s\end{matrix}\right)=|I_{n-s}|=1$
+
+对应余子式为 $\left[\begin{matrix}I'_{n\times (n-s)}&B\end{matrix}\right]$ 矩阵去掉前 $n-s$ 列及 $1\leq k_1\leq...\leq k_{n-s}\leq s$ 行后的矩阵的行列式
+
+即矩阵 $B$ 去掉 $1\leq k_1\leq...\leq k_{n-s}\leq s$ 行后的矩阵的行列式，即矩阵 $B$ 保留 $1\leq j_1\leq...\leq j_s\leq s$ 行的行列式
+
+为更好区分，定义为 $B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$ 则有:
+
+\begin{aligned}
+\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)&=(-1)^{\sum_{u=1}^{n-s}u+\sum_{u=1}^{n-s}k_u}B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=(-1)^{\frac{(n-s)(n-s+1)}{2}+\sum_{u=1}^n u-\sum_{u=1}^s j_u}B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)
+\end{aligned}
+
+替换原式：
+
+\begin{aligned}
+\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)(-1)^{\frac{(n-s)(n-s+1)}{2}+\sum_{u=1}^n u-\sum_{u=1}^s j_u}B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\sum_{u=1}^su+\sum_{u=1}^s j_u+\sum_{u=1}^{n-s}u+\sum_{u=1}^n u-\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\sum_{u=1}^su+\sum_{u=1}^{n-s}u+\sum_{u=1}^n u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s^2+s+(n-s)^2+n-s+n^2+n}{2}}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{2s^2+2n^2-2ns+2n}{2}}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+\end{aligned}
+
+进一步定义子式 $M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)=A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 
+
+则有 $\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$
+
+***** 等式右边矩阵行列式
+
+以同样的方式，对 $\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|$ 取前 $s$ 行展开即 $i_l=l,1\leq l\leq s$ 则列的取值范围是 $\forall 1\leq j_1\leq...\leq j_s\leq n+s$
+
+同理若 $j_l\leq n$ 则其子式必为零，由于取值范围和 $j$ 的个数可得当且仅当 $j_l=n+l$ 时展开项不为零
+
+且根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-行乘系数]] $|-AB|$ 每行有一个 $-1$ 则 $(-1)^s|AB|=|-AB|$ 故：
+
+\begin{aligned}
+\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|&=(-1)^{\sum_{u=1}^su+\sum_{u=1}^s n+u }M\left(\begin{matrix}1&2&...&s\\n+1&n+2&...&n+s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\n+1&n+2&...&n+s\end{matrix}\right)\\
+&=(-1)^{s(1+s)+sn}|-AB||I|\\
+&=(-1)^{sn}|-AB|\\
+&=(-1)^{s+sn}|AB|
+\end{aligned}
+
+***** 对其左右两边
+
+最终有： 
+
+\begin{aligned}
+(-1)^{s+sn}|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+|AB|&=(-1)^{-s-sn}\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n-s-sn}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s(s-1)+n(n+1)-2ns}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+\end{aligned}
+

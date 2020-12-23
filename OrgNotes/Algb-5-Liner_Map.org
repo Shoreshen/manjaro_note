@@ -1,0 +1,126 @@
+#+LATEX_CLASS: ctexart
+
+#+TITLE: 线性映射
+
+current video: P87
+
+current mark: 4
+
+* 线性映射
+
+** 定义<<MK4>>
+
+设 $V,V'$ 是域 $K$ 上的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间-定义]]有[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数]] $\sigma:V\to V'$ 满足：
+
+（1） $\forall a\forall b\left(a\in V\land b\in V\rightarrow \sigma(a+b)=\sigma(a)+\sigma(b)\right)$ 即保持加法
+
+（2） $\forall a\forall k\left(a\in V\land k\in K\rightarrow \sigma(ka)=k\sigma(a)\right)$ 即保持纯量乘法
+
+则称 $\sigma$ 为 $V$ 到 $V'$ 的线性映射，若 $V$ 到自身的线性映射称为现行变换
+
+** 性质
+
+*** 零元映射<<MK2>>
+
+即 $\sigma(\vec{0})=\vec{0}'$ 其中 $\vec{0}$ 是 $V$ 的零元， $\vec{0}'$ 是 $V'$ 的零元
+
+**** 证明
+
+根据上[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间-定义]] $\vec{0}=0\cdot\vec{0}$ 其中 $0\in K\land \vec{0}\in V$ 分别为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][域]]和线性空间上的零元
+
+根据（2）保持纯量乘法可得 $\sigma(\vec{0})=\sigma(0\cdot\vec{0})=0\sigma(\vec{0})$ 
+
+由于 $V'$ 亦为 $K$ 上线性空间，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间-性质-零乘元素为零元]]可得 $0\sigma(\vec{0})$ 是 $V'$ 上的零元，即 $\vec{0}'$
+
+*** 保持逆元
+
+若 $\vec{a}\in V$ 且有 $\vec{a}+(-\vec{a})=0$ 则有 $\sigma(\vec{a})+\sigma(-\vec{a})=\vec{0}'$ 其中 $\vec{0}'$ 是 $V'$ 的零元
+
+**** 证明
+
+根据定义（2）有 $\sigma(\vec{a})+\sigma(-\vec{a})=\sigma(\vec{a})-\sigma(\vec{a})$ 
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间-性质- $-1\vec{a}$ 是 $\vec{a}$ 的负元]] 可得 $\sigma(\vec{a})-\sigma(\vec{a})=\vec{0}'$
+
+*** 线性<<MK1>>
+
+根据定义（1），（2）有 $\sigma\left(\sum_{i=1}^nk_i\vec{a}_i\right)=\sum_{i=1}^nk_i\sigma(\vec{a}_i)$
+
+*** 线性相关
+
+若 $\{\vec{a}_1,...,\vec{a}_n\}\subset V$ 线性相关，则 $\{\sigma(\vec{a}_1),...,\sigma(\vec{a}_n)\}\subset V'$ 亦线性相关
+
+**** 证明
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性相关与线性无关]]可得
+
+若线性相关，则存在一组不全是零元的 $\{k_1,...,k_n\}\subset K$ 使得 $\sum_{i=1}^nk_i\vec{a}_i=\vec{0}$
+
+根据[[MK1][线性]]可得 $\sigma\left(\sum_{i=1}^nk_i\vec{a}_i\right)=\sum_{i=1}^nk_i\sigma(\vec{a}_i)$ 根据[[MK2][零元映射]]得出 $\sigma(\vec{0})=\vec{0}'$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]可得 $\sigma(\vec{0})=\sigma\left(\sum_{i=1}^nk_i\vec{a}_i\right)$ 既有 $\sum_{i=1}^nk_i\sigma(\vec{a}_i)=\vec{0}'$
+
+根据定义线性相关
+
+*** 基的作用<<MK3>>
+
+若 $\dim(V)=n$ 即[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的维数]]是 $n$ 且 $(\vec{a}_1,...,\vec{a}_n)$ 是一组[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的基]]
+
+则根据[[MK1][线性]]有 $\sigma(\vec{b})=\sum_{i=1}^nk_i\sigma(\vec{a}_i)$
+
+*** 映射相等
+
+若存在两个线性映射 $\sigma_1:V\to V',\sigma_2:V\to V'$ 其中 $\dim(V)=n$ 且 $(\vec{a}_1,...,\vec{a}_n)$ 是一组基
+
+若对于任意 $i\in\mathbb{Z}\land1\leq i\leq n$ 均有 $\sigma_1(\vec{a}_i)=\sigma_2(\vec{a}_i)$ ，则对于任意 $\vec{b}\in V$ 均有 $\sigma_1(\vec{b})=\sigma_2(\vec{b})$ 
+
+**** 证明
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的基-基的定义]]可知任意 $\vec{b}\in V$ 均可由基中的向量线性表述
+
+故 $\vec{b}=\sum_{i=1}^nk_i\vec{a}_i$ 则根据[[MK3][基的作用]]可得 $\vec{b}=\sum_{i=1}^nk_i\sigma_1(\vec{a}_i)$ 以及 $\vec{b}=\sum_{i=1}^nk_i\sigma_2(\vec{a}_i)$
+
+由于条件中任意 $i\in\mathbb{Z}\land1\leq i\leq n$ 均有 $\sigma_1(\vec{a}_i)=\sigma_2(\vec{a}_i)$ 则 $\sigma_1(\vec{b})=\sigma_2(\vec{b})$ 
+
+*** 同构映射
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-函数的计算-函数求逆]]可得
+
+线性映射 $\sigma$ 存在逆映射的充要条件是 $\sigma$ 是[[~/OneDrive/离散数学/Disc_Math.org][函数-特殊函数-双射函数]]
+
+** 构造线性映射
+
+若 $V,V'$ 是域 $K$ 上的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间-定义]]且:
+
+(1) $\dim(V)=n$
+
+(2) $\{\vec{a}_1,...,\vec{a}_n\}$ 是 $V$ 上的一组[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的基]]
+
+则任去 $\{\vec{b}_1,...,\vec{b}_n\}\subset V'$ 则映射 $\sigma(\vec{a})=\sigma\left(\sum_{i=1}^nk_i\vec{a}_i\right)=\sum_{i=1}^nk_i\vec{b}_i$ 是[[MK4][线性映射]]
+
+*** 证明
+
+**** 是函数
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的基]]任意 $\vec{a}\in V$ 均有对应的线性表述，即有映射的相
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的基-定理3]]对任意 $\vec{a}\in V$ 其基的线性表述唯一
+
+故对应的 $\sum_{i=1}^nk_i\vec{b}_i$ 亦唯一
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]可得 $\sigma$ 是函数
+
+**** 保持加法
+
+对于任意 $\vec{\alpha}_1+\vec{\alpha}_2,\{\vec{\alpha}_1,\vec{\alpha}_2\}\subset V$ 均有基的线性表述 $\vec{\alpha}_1=\sum_{i=1}^n k_i\vec{a}_i,\vec{\alpha}_2=\sum_{i=1}^n k'_i\vec{a}_i$
+
+则有 $\vec{\alpha}_1+\vec{\alpha}_2=\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^n k'_i\vec{a}_i=\sum_{i=1}^n (k_i+k'_i)\vec{a}_i$
+
+故有 $\sigma(\vec{\alpha}_1+\vec{\alpha}_2)=\sum_{i=1}^n (k_i+k'_i)\vec{b}_i=\sum_{i=1}^n k_i\vec{b}_i+\sum_{i=1}^n k'_i\vec{b}_i=\sigma(\vec{\alpha}_1)+\sigma(\vec{\alpha}_2)$
+
+**** 保持乘法
+
+对于任意 $\vec{\alpha}\in V$ 均有基的线性表述 $\vec{\alpha}=\sum_{i=1}^n k_i\vec{a}_i$
+
+则有 $k\vec{\alpha}=\sum_{i=1}^n kk_i\vec{a}_i$ 故有 $\sigma(k\vec{\alpha})=\sum_{i=1}^n kk_i\vec{b}_i=k\sum_{i=1}^n k_i\vec{b}_i=k\sigma(\vec{\alpha})$ 
+

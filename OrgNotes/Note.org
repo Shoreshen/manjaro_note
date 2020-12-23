@@ -1,0 +1,7 @@
+#+LATEX_CLASS: ctexart
+
+#+TITLE: 笔记
+
+* GETZEN模型
+
+
