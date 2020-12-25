@@ -237,6 +237,22 @@ Then type in usename and password.
 git remote add origin https://github.com/Shoreshen/Hello.git
 ```
 
+## Submoduel
+
+If there exists submodule, git will not automatically clone them.
+
+To clone all submodules using the following command:
+
+```shell
+git submodule update --init --recursive
+```
+
+To add submodule using
+
+```shell
+git submodule add <URL> <PATH>
+```
+
 ## Command
 
 ### submodual

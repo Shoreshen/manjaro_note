@@ -2,9 +2,9 @@
 
 #+TITLE: 实变函数
 
-current video: P22
+current video: P24
 
-current mark: 94
+current mark: 95
 
 * 集合列
 
@@ -1175,6 +1175,8 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 （2） 在外测度可测集上的[[MK61][外测度]]是[[MK56][测度]]
 
+此时称 $S$ 是关于外测度的可测集
+
 *** 证明
 
 **** 可测集满足[[MK56][测度]]
@@ -1424,9 +1426,29 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 故 $\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 存在，即外测度对于任意集合均存在
 
+*** 平移不变性<<MK95>>
+
+对于 $E\subset\mathbb{R}^n$ 有元素 $\vec{x}=\{x_1,...,x_j\}\in\mathbb{R}^n$ 则定义 $E'=\left\{\vec{v}+\vec{x}\big|\vec{v}\in E\right\}$ 则有 $m^*(E)=m^*(E')$
+
+**** 证明
+
+根据[[MK51][外测度]]定义可得 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 
+
+定义 $I_i=\prod_{j=1}^n[a_{i,j},b_{i,j}]$ 此处乘法为[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-直积]]
+
+定义 $I'_i=\prod_{j=1}^n[a_{i,j}+x_j,b_{i,j}+x_j]$ 则根据[[MK52][勒贝格测度]]易证得得 $|I_i|=|I'_i|$
+
+显然另有 $E\subset\bigcup_{i=1}^\infty I_i\rightarrow E'\subset\bigcup_{i=1}^\infty I'_i$ 
+
+故可得对于任意 $E\subset\bigcup_{i=1}^\infty I_$ 均有对应 $E'\subset\bigcup_{i=1}^\infty I'_i$ 且满足 $\sum_{i=1}^\infty |I_i|=\sum_{i=1}^\infty |I'_i|$
+
+故有 $m^*(E)=m^*(E')$
+
 ** 可测集<<MK81>>
 
-根据[[MK65][Caratheodory定理]]可得，若 $S\subset\mathbb{R}^n$ 可测，则 $S$ 则有 $\forall A\subset X\rightarrow m^*(A)=m^*(A\cap S)+m^*(A/S)$
+根据[[MK65][Caratheodory定理]]可得，假设 $S\subset\mathbb{R}^n$ 是关于[[MK51][外测度]]的可测集
+
+则 $S$ 则有 $\forall A\subset X\rightarrow m^*(A)=m^*(A\cap S)+m^*(A/S)$
 
 对于某个欧式空间 $\mathbb{R}^n$ 下的所有可测集定义为 $M_{\mathbb{R}^n}$
 
@@ -1762,31 +1784,31 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 即 $m^*(E)=\sup\left\{m^*(F)\big|F\subset E\land F\in\Theta\right\}$
 
-** Borel集合
+*** Borel集合
 
 由所有 $\mathbb{R}^n$ 上开集[[MK85][生成]]的[[MK50][ $\sigma$ 代数]]
 
-*** 定理1
+**** 定理1
 
 Borel集中元素均为可测集
 
-**** 证明
+***** 证明
 
 根据[[MK87][开集可测]]可得开集均为可测集。
 
 则根据开集[[MK85][生成]]定义以及[[MK84][计算]]可得borel集中的元素均可测
 
-** 零测集
+*** 零测集
 
 [[MK51][外测度]]为零的集合定义为零测集
 
-*** 性质
+**** 性质
 
-**** 可测性<<MK94>>
+***** 可测性<<MK94>>
 
 零测集均为[[MK81][可测集]]
 
-***** 证明
+****** 证明
 
 若 $S\subset\mathbb{R}^n\land m^*(S)=0$ 取任意 $T\subset\mathbb{R}^n$ 可得 $T\cap S\subset S$ 以及 $T/A\subset T$
 
@@ -1800,11 +1822,11 @@ Borel集中元素均为可测集
 
 进一步根据三歧性可得 $m^*(T)=m^*(T\cap S)+m^*(T/S)$ 即[[MK81][可测]]
 
-**** 子集零测
+***** 子集零测
 
 若 $S\subset\mathbb{R}^n\land m^*(S)=0$ 则对于任意 $T\subset S$ 有 $m^*(T)=0$ 且[[MK81][可测]]
 
-***** 证明
+****** 证明
 
 根据[[MK60][单调性]]以及 $T\subset S$ 可得 $m^*(T)\leq m^*(S)=0$
 
@@ -1812,19 +1834,81 @@ Borel集中元素均为可测集
 
 根据[[MK88][可测性]]可得 $T$ 可测 
 
-**** 可数零测
+***** 可数零测
 
 若 $S_i\subset\mathbb{R}^n\land m^*(S_i)=0$ 其中 $i\in\mathbb{N}^+$ 则 $m^*\left(\bigcup_{i=1}^\infty S_i\right)=0$ 
 
 即至多可数个零测集的并仍然零测，且[[MK81][可测]]
 
-***** 证明
+****** 证明
 
 根据[[MK57][次可加性]] $m^*\left(\bigcup_{i=1}^\infty S_i\right)\leq \sum_{i=1}^\infty m^*(S_i)=0$
 
 根据[[MK54][非负性]]可得 $m^*\left(\bigcup_{i=1}^\infty S_i\right)\geq 0$ 根据[[MK5][三歧性]]可得 $m^*\left(\bigcup_{i=1}^\infty S_i\right)=0$
 
 根据[[MK88][可测性]]可得 $\bigcup_{i=1}^\infty S_i$ 可测 
+
+** 不可测集
+
+*** 维塔利集合
+
+**** 构造
+
+***** 建立划分
+
+定义[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系]] $R=\left\{<x,y>\big|x\in\mathbb{R}\land y\in\mathbb{R}\land x-y\in\mathbb{Q}\right\}$ 即两个相差有理数的实数，显然有：
+
+（1） 自反性 $x-x=0\in\mathbb{Q}$
+
+（2） 对称性 $x-y\in\mathbb{Q}\rightarrow x-y=\frac{p}{q}$ 则有 $y-x=-\frac{p}{q}\in\mathbb{Q}$
+
+（3） 传递性 $x-y\in\mathbb{Q}\land y-z\in\mathbb{Q}$ 则有 $x-y+y-z=x-z\in\mathbb{Q}$
+
+故可得 $R$ 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-等价关系]]，根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-划分-定理-定理1]]可得 $R$ 划分 $\mathbb{R}$
+
+***** 定义集合
+
+定义集合 $V'$ 为从每个上述划分中选取一个代表元素，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-选择公理]]可得 $V$ 存在
+
+定义集合 $V=V'\cap[0,1]$ 
+
+取 $[-1,1]$ 中所有的有理数，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理-定理1-推论]]可得有理数是可数集
+
+进一步根据[[MK43][稠密性]]可得 $[-1,1]$ 中所有有理数的集合为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-无限集]]
+
+故定义数列 $\{q_i\},i\in\mathbb{N}$ 为上述有理数列排成的列，进一步定义 $V_k=\left\{v+q_k\big|v\in V\right\}$
+
+定义维塔利集合为 $\bigcup_{k=1}^\infty V_k$
+
+**** 证明不可测
+
+显然 $\{q_i\}\subset [-1,1]$ 且 $V\subset [0,1]$ 故有 $-1\leq v+q_k\leq 2$ 即 $\forall k\in\mathbb{N}^+\rightarrow V_k\subset[-1,2]$ 故有 $\bigcup_{k=1}^\infty V_k\subset[-1,2]$ 
+
+另外对于任意 $x\in[0,1]$ 由于 $V'$ 划分 $\mathbb{R}$ 则有 $V$ 划分 $[0,1]$ ，故 $V$ 中必有 $x$ 的等价类代表元素，定义为 $y$
+
+显然根据关系 $R$ 定义可得 $x-y\in\mathbb{Q}$ 由于 $V\subset [0,1]$ 故有 $y\in[0,1]$ 故得 $|x-y|\leq 1$
+
+即 $-1\leq x-y\leq 1$ 即 $x-y\in[-1,1]$ 则必有 $q_{u}\in\{q_i\}$ 满足 $x-y=q_v$
+
+故有 $\forall x\in[0,1]\rightarrow x\in V_u\subset\bigcup_{i=1}^\infty V_k$ 则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集]]可得 $[0,1]\subset\bigcup_{k=1}^\infty V_k$
+
+故有 $[0,1]\subset\bigcup_{i=1}^\infty V_k\subset [-1,2]$ 根据[[MK60][单调性]]可得 $m^*([0,1])\leq m^*\left(\bigcup_{i=1}^\infty V_k\right)\leq m^*([-1,2])$
+
+根据[[MK79][正规性]]可得 $1\leq m^*\left(\bigcup_{i=1}^\infty V_k\right)\leq 3$ 进一步根据[[MK95][平移不变性]]可得 $m^*(V_k)=m^*(V)=\alpha\in\mathbb{R}$ 
+
+且对于任意 $x'\in V_k$ 存在 $x\in V\rightarrow x+q_k=x'$ 故对于任意 $V_l,l\ne k$ 若 $x'\in V_l$ 则有 $y\in V\rightarrow y+q_l=x'$ 
+
+则有 $x-y=(x'-q_k)-(x'-q_l)=q_k-q_l\in\mathbb{Q}$ 根据集合定义当且仅当 $x=y$ 时有
+
+又因为 $q_k\ne q_l$ 故有 $x+q_k\ne x+q_l$ 又与条件矛盾，故对于任意 $x\in V_k$ 不存在 $l\ne k\rightarrow x\in V_l$ 即集合两两不相交
+
+此时假设外测度为测度，则根据[[MK56][测度]]定义（3）可得 $m^*\left(\bigcup_{i=1}^\infty V_k\right)=\sum_{i=1}^\infty m^*(V_k)=\sum_{i=1}^\infty\alpha$
+
+故有 $1\leq \sum_{i=1}^\infty\alpha\leq 3$ 当且仅当 $\alpha=0$ 时有 $\sum_{i=1}^\infty\alpha=0\leq3$ 但与 $1\leq \sum_{i=1}^\infty\alpha$ 矛盾
+
+综上所述，假设不成立，即外测度不满足可数可加性。故对于集合 $\bigcup_{k=1}^\infty V_k$ 外测度不是测度。  
+
+* 函数
 
 * 拓扑
 
@@ -2056,13 +2140,23 @@ Borel集中元素均为可测集
 
 由于 $P$ 是从 $\mathbb{R}$ 上取的，故显然有 $|P|\leq|\mathbb{R}|$ 根据基数定义中伯恩斯坦定理 $|P|=|\mathbb{R}|$
 
-***** 长度为零
+***** 长度为零（外测度）
 
-第 $n$ 次挖掉的长度为 $\frac{2^{n-1}}{3^n}$ 则挖掉的长度可定义为 $S=\lim_{n\to\infty}\sum_{i=1}^n\frac{2^{n-1}}{3^n}$
+定义 $Z=[0,1]-P$ 则康托集为 $P=[0,1]-Z$
 
-根据等比数列求和公式 $S=\lim_{n\to\infty}\frac{1}{3}\frac{1-\left(\frac{2}{3}\right)^n}{1-\frac{2}{3}}=\frac{1}{3}\frac{1}{1-\frac{2}{3}}=1$
+显然根据定义 $Z$ 为挖去区间的并，且为有限区间，根据[[MK82][区间可测]]、[[MK84][计算]]中（2）可知 $Z$ 是关于[[MK51][外测度]]的[[MK81][可测集]]
 
-故康托三分集的长度为 $d([0,1])-1=0$
+显然挖去的区域是可数个，故定义 $\{K_i\}$ 对应挖去的区域，则 $Z=\bigcup_{i=1}^\infty K_i$ 
+
+进一步由于挖去的区间两两不相交，故根据[[MK84][计算]]中（2）有 $m^*(Z)=\sum_{i=1}^\infty m^*(K_i)$
+
+进一步根据[[MK79][正规性]]可得第 $n$ 次挖掉的长度为 $\frac{2^{n-1}}{3^n}$ 则挖掉的长度可定义为 $S=\lim_{n\to\infty}\sum_{i=1}^n\frac{2^{n-1}}{3^n}$
+
+根据等比数列求和公式 $S=\lim_{n\to\infty}\frac{1}{3}\frac{1-\left(\frac{2}{3}\right)^n}{1-\frac{2}{3}}=\frac{1}{3}\frac{1}{1-\frac{2}{3}}=1<\infty$ 即 $m^*(Z)=1$
+
+同样根据正规性有 $m^*([0,1])=1$ 且 $Z\subset[0,1]$ 
+
+故根据[[MK84][计算]]中（3）可得 $m^*(P)=m^*([0,1])-m^*(Z)=1-1=0$
 
 ** 有限欧式空间开集构造定理<<MK83>>
 
