@@ -1,3 +1,4 @@
+[TOC]
 # Check version
 
 ```shell
@@ -237,6 +238,30 @@ Then type in usename and password.
 git remote add origin https://github.com/Shoreshen/Hello.git
 ```
 
+## Ignore
+
+To ignore files under git workspace, create ignore file:
+
+```shell
+touch ./.gitignore
+```
+
+Add entries to ignore:
+
+```python
+.vscode-ctags #specific file
+
+/edk2/ #Ignore all files under directory ./edk2
+```
+
+To remove already tracked file, need to reset cache
+
+```shell
+git rm -r --cached .
+git add .
+git commit -m"update .gitignore"
+```
+
 ## Submoduel
 
 If there exists submodule, git will not automatically clone them.
@@ -252,6 +277,16 @@ To add submodule using
 ```shell
 git submodule add <URL> <PATH>
 ```
+
+To remove submodule:
+
+1. Remove relative entries in <code>./.gitmodules</code>
+2. Stage change <code>git add .gitmodules</code>
+3. Remove relative entries in <code>.git/config</code>
+4. Run <code>git rm --cached <path/to/submodule></code>
+5. Remove file <code>rm -rf .git/modules/<path/to/submodule></code>
+6. Commit all changes <code>git commit -m "Removed submodule"</code>
+7. Delete the now untracked submodule files <code>rm -rf <path/to/submodule></code>
 
 ## Command
 
@@ -876,6 +911,12 @@ List all images:
 
 ```shell
 docker images
+```
+
+Remove image:
+
+```shell
+docker rmi <IMAGE ID>
 ```
 
 Stop running containor:
