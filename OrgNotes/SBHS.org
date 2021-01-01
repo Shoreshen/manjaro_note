@@ -4,7 +4,7 @@
 
 current video: P24
 
-current mark: 95
+current mark: 102
 
 * 集合列
 
@@ -1444,6 +1444,24 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 故有 $m^*(E)=m^*(E')$
 
+*** 对称不变性
+
+对于 $E\subset\mathbb{R}^n$ 定义 $E'$ 为 $E$ 中所有元素沿某一个面对称组成的集合，则有 $m^*(E)=m^*(E')$
+
+**** 证明
+
+根据[[MK51][外测度]]定义可得 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 
+
+对于任意 $I_i$ 均可取沿同样面对称的集合 $I'_i$ 且根据[[MK13][区间定义]]可得 $\forall\vec{x}\in I_i\rightarrow -\vec{x}\in I'_i$ 
+
+故对于任意 $\bigcup_{i=1}^\infty I_i$ 满足 $E\subset\bigcup_{i=1}^\infty I_i$ 均有 $E'\subset\bigcup_{i=1}^\infty I'$ 且根据[[MK52][测度定义]]可得 $|I_i|=|I'_i|$
+
+综上所属，对于任意 $E\subset\bigcup_{i=1}^\infty I_i$ 均有 $E'\subset\bigcup_{i=1}^\infty I'$ 且 $\sum_{i=1}^\infty |I_i|=\sum_{i=1}^\infty |I'_i|$
+
+故得 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}=\inf\left\{\sum_{i=1}^\infty |I'_i|\big|E\subset\bigcup_{i=1}^\infty I'_i\right\}=m^*(E')$
+
+证毕 
+
 ** 可测集<<MK81>>
 
 根据[[MK65][Caratheodory定理]]可得，假设 $S\subset\mathbb{R}^n$ 是关于[[MK51][外测度]]的可测集
@@ -1528,6 +1546,8 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
      且当 $m^*(S_1)<\infty$ 时有 $m^*(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}m^*(S_i)$
 
+（7） 若 $S$ 可测，则 $\forall\vec{y}\in\mathbb{R}^n$ 有 $S'=\left\{\vec{x}+\vec{y}\big|\vec{x}\in S\right\}$ 亦可测，且 $m^*(S')=m^*(S)$
+
 **** 证明
 
 根据[[MK66][外测度满足证明]]以及[[MK65][Caratheodory定理]]可得 $M$ 构成[[MK50][ $\sigma$ 代数]]且 $m^*:\mathbb{R}^n\to\mathbb{R}$ 是[[MK56][测度]]
@@ -1541,6 +1561,14 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 根据[[MK67][可数交封闭]]可得（4）
 
 根据[[MK73][递增封闭]]以及[[MK75][递减封闭]]可得（5）和（6）
+
+证明（7），由于 $S$ 可测，则有 $\forall A\subset X\rightarrow m^*(A)=m^*(A\cap S)+m^*(A/S)$
+
+对于任意 $A'\in X$ 均有 $A=\left\{\vec{x}-\vec{y}\big|\vec{x}\in A\right\}$ 故对于任意 $A'\cap S'$ 以及 $A'/S'$ 均有 $A\cap S,A/S$ 对应
+
+根据[[MK95][平移不变性]]有 $m^*(S')=m^*(S)\land m^*(A\cap S)=m^*(A'\cap S')\land m^*(A/S)=m^*(A'/S')$
+
+则显然有 $\forall A'\subset X\rightarrow m^*(A')=m^*(A'\cap S')+m^*(A'/S')$ 即 $S'$ 可测，且 $m^*(S')=m^*(S)$
 
 *** 区间可测<<MK82>>
 
@@ -1660,7 +1688,7 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 定义 $G^c=F$ 则有 $m^*(G/E^c)=m^*(E/F)<\epsilon$
 
-*** 正规性定理
+*** 正规性定理<<MK97>>
 
 定义 $\Gamma$ 表示 $\mathbb{R}^n$ 所有开集的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]]，定义 $\Theta$ 为所有闭集的集合族，若 $E\subset\mathbb{R}^n$ 则：
 
@@ -1850,6 +1878,146 @@ Borel集中元素均为可测集
 
 ** 不可测集
 
+不是[[MK81][可测集]]的集合定义为不可测集
+
+*** 引理<<MK98>>
+
+若 $E\subset\mathbb{R}^n$ 是有界的[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-闭集]]且 $0<m^*(E)<\infty$ 定义 $D=\left\{\vec{x}-\vec{y}\big|\vec{x}\in E\land \vec{y}\in E\right\}$
+
+则必有 $\delta>0\land\delta\in\mathbb{R}$ 使得 $O(\vec{0},\delta)\subset D$ 
+
+**** 证明
+
+***** 定义开覆盖
+
+由于 $E$ [[MK81][可测]]故根据[[MK97][正规性]]定理可得 $m^*(E)=\inf\left\{m^*(G)\big|E\subset G\land G\in\Gamma\right\}$
+
+故根据下确界定义，存在[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]] $G$ 使得 $K\subset G\land m^*(G)<2m^*(K)$
+
+取 $G$ 的补集 $G^c$ 根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]可得 $G^c$ 为闭集且 $G^c\cap K=\varnothing$
+
+***** 证明距离大于零
+
+定义 $d(G^c,K)$ 为集合间的[[MK89][度量]]，此时若 $d(G^c,K)=0$ 则必然存在 $\vec{x}$ 满足 $\forall\delta>0,\exists\vec{y}\in G^c\rightarrow y\in O(\vec{x},\delta)$
+
+根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-点的定义-聚点-充要条件1]]可得 $\vec{x}$ 是 $G^c$ 的聚点，结合闭集定义可得 $\vec{x}\in G^c$
+
+同理可证 $\vec{x}\in K$ 与 $G^c\cap K=\varnothing$ 矛盾，故必有 $d(G^c,K)>0$ 定义 $\delta=d(G^c,K)$
+
+***** 证明交集非空
+
+取任意 $\vec{u}\in\mathbb{R}\land d(\vec{u},0})<\delta$ 则根据度量定义 $\forall \vec{y}\in K$ 均有 $O(\vec{y},d(\vec{u},0))\cap G^c=\varnothing$
+
+故定义 $E_{\vec{u}}=\left\{\vec{y}+\vec{u}\big|\vec{y}\in K\right\}$ 同理有 $E_{\vec{u}}\cap G^c =\varnothing$ 故有 $E_{\vec{u}}\subset G$ 故有 $E_{\vec{u}}\cup E\subset G$
+
+此时若 $E_{\vec{u}}\cap E=\varnothing$ 由于 $E$ 为有界闭集，根据[[MK87][开集可测]]以及[[MK84][计算]]中（1）可得 $E$ 可测
+
+进一步根据[[MK84][计算]]中（7）可得 $E_{\vec{u}}$ 可测，故根据计算中（2）可得 $m^*(G)\geq m^*(E_{\vec{u}}\cup E)= m^*(E_{\vec{u}})+m^*(E)=2m^*(E)$
+
+显然与 $G$ 定义不符，故 $E_{\vec{u}}\cap E\ne\varnothing$ 
+
+***** 证明结论
+
+由于 $E_{\vec{u}}\cap E\ne\varnothing$ 则必有 $\vec{x}\in E\land\vec{x}\in E_{\vec{u}}$
+
+根据 $\vec{x}\in E_{\vec{u}}$ 得存在 $\vec{y}\in E\rightarrow \vec{y}+\vec{u}=\vec{x}$ 同时根据 $\vec{x}\in E$ 可得存在 $\{\vec{x},\vec{y}\}\subset K\rightarrow \vec{x}-\vec{y}=\vec{u}$
+
+又根据 $\vec{u}$ 定义为任意满足 $d(\vec{u},0)<\delta$ 即 $O(0,\delta)$ 的任意元素，故 $\forall\vec{u}\in O(0,\delta)\rightarrow\exists\{\vec{x},\vec{y}\}\subset K\rightarrow \vec{x}-\vec{y}=\vec{u}$
+
+根据 $D=\left\{\vec{x}-\vec{y}\big|\vec{x}\in E\land \vec{y}\in E\right\}$ 定义可得 $O(\vec{0},\delta)\subset D$ 
+
+*** 定理1<<MK99>>
+
+对于任意 $E\subset\mathbb{R}^n\land m^*(E)>0$ 且 $E$ 可测，则定义 $D=\left\{\vec{x}-\vec{y}\big|\vec{x}\in E\land \vec{y}\in E\right\}$ 
+
+必有 $\delta>0\land\delta\in\mathbb{R}$ 使得 $O(\vec{0},\delta)\subset D$ 
+
+**** 证明
+
+定义 $B_n=O(0,n)$ 其中 $n\in\mathbb{N}$ 则有 $\mathbb{R}^n=\lim_{n\to\infty}B_n$
+
+由于 $E\subset\mathbb{R}^n\land m^*(E)>0$ 故必有 $k$ 满足 $m^*(E\cap B_k)>0$ 由于 $B_n$ 是开集
+
+故根据[[MK87][开集可测]]、 $E$ 可测以及[[MK84][计算]]（4）可得 $E\cap B_k$ 可测且有界
+
+根据[[MK97][正规性定理]]可得存在有界闭集 $F$ 满足 $m^*(F)>0$ 定义 $D'=\left\{\vec{x}-\vec{y}\big|\vec{x}\in F\land \vec{y}\in F\right\}$ 
+
+则根据[[MK98][引理]]可得存在 $\delta>0\land\delta\in\mathbb{R}$ 使得 $O(\vec{0},\delta)\subset D'$ 由于 $F\subset E$ 即得 $D'\subset D$
+
+综上所述必有 $\delta>0\land\delta\in\mathbb{R}$ 使得 $O(\vec{0},\delta)\subset D$ 
+
+*** 定理2
+
+对于任意 $E\subset\mathbb{R}\land m^*(E)>0$ 且 $E$ 可测，存在不可测子集
+
+**** 证明
+
+***** 建立划分<<MK100>>
+
+定义[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系]] $R=\left\{<x,y>\big|x\in\mathbb{R}\land y\in\mathbb{R}\land x-y\in\mathbb{Q}\right\}$ 即两个相差有理数的实数，显然有：
+
+（1） 自反性 $x-x=0\in\mathbb{Q}$
+
+（2） 对称性 $x-y\in\mathbb{Q}\rightarrow x-y=\frac{p}{q}$ 则有 $y-x=-\frac{p}{q}\in\mathbb{Q}$
+
+（3） 传递性 $x-y\in\mathbb{Q}\land y-z\in\mathbb{Q}$ 则有 $x-y+y-z=x-z\in\mathbb{Q}$
+
+故可得 $R$ 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-等价关系]]，根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-划分-定理-定理1]]可得 $R$ 划分 $\mathbb{R}$
+
+***** 定义集合<<MK96>>
+
+定义集合 $V$ 为从每个上述划分中选取一个代表元素，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-选择公理]]可得 $V$ 存在
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理-定理1-推论]]可得有理数是可数集
+
+故定义数列 $\{q_i\},i\in\mathbb{N}$ 为有理数列排成的列，进一步定义 $V_i=\left\{v+q_i\big|v\in V\right\}$
+
+***** 证明互不相交<<MK101>>
+
+且对于任意 $x'\in V_k$ 存在 $x\in V\rightarrow x+q_k=x'$ 故对于任意 $V_l,l\ne k$ 若 $x'\in V_l$ 则有 $y\in V\rightarrow y+q_l=x'$ 
+
+则有 $x-y=(x'-q_k)-(x'-q_l)=q_k-q_l\in\mathbb{Q}$ 根据集合定义当且仅当 $x=y$ 时有
+
+又因为 $q_k\ne q_l$ 故有 $x+q_k\ne x+q_l$ 又与条件矛盾，故对于任意 $x\in V_k$ 不存在 $l\ne k\rightarrow x\in V_l$ 即集合两两不相交
+
+***** 证明结论<<MK102>>
+
+由于 $R$ 可形成 $\mathbb{R}$ 上的[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-划分]]，故对于任意 $x\in\mathbb{R}$ 均有一个划分与其对应
+
+根据 $V$ 的定义存在 $y\in V\rightarrow y\in[x]_R$ 且必然 $x-y\in\mathbb{Q}$ 根据有利数可列性有 $x-y=q_k$ 继而有 $x\in V_k$
+
+故有 $\mathbb{R}\subset\bigcup_{i=1}^\infty V_i$ 又由于显然 $\mathbb{R}\supset\bigcup_{i=1}^\infty V_i$ 则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集-定理1]]可得 $\mathbb{R}=\bigcup_{i=1}^\infty V_i$
+
+由于 $E\subset\mathbb{R}$ 故有 $E\cap \bigcup_{i=1}^\infty V_i=E$ 根据的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-集合族运算与交并]]可得 $\bigcup_{i=1}^\infty(E\cap V_i)=E\cap\bigcup_{i=1}^\infty V_i$
+
+继而有 $E=\bigcup_{i=1}^\infty(E\cap V_i)$ 故根据[[MK57][次可加性]]有 $m^*(E)\leq\sum_{i=1}^\infty m^*(E\cap V_i)$ 
+
+此时对于任意 $i$ 若 $E\cap V_i$ 均可测，则根据不等式以及 $m^*(E)>0$ 必存在 $k$ 使得 $m^*(E\cap V_k)>0$
+
+根据[[MK96][集合定义]]取任意 $\{x,y\}\subset E\cap V_k$ 其差 $x-y$ 必为无理数
+
+根据[[MK43][有理数稠密性]]可得对于任意 $\delta>0$ 均存在 $z\in\mathbb{Q}\rightarrow z\in(-\delta,\delta)$ 
+
+故不存在 $\delta>0$ 满足 $O(\vec{0},\delta)\subset\left\{\vec{x}-\vec{y}\big|\vec{x}\in E\cap V_k\land \vec{y}\in E\cap V_k\right\}$ 根据[[MK99][定理1]]可得若 $E\cap V_k$ 可测，其测度必为 $0$
+
+这与 $m^*(E\cap V_k)>0$ 条件矛盾，故必存在 $k\in\mathbb{N}^+$ 使得 $E\cap V_k$ 不可测
+
+*** 定理3
+
+对于任意 $E\subset\mathbb{R}^n\land m^*(E)>0$ 且 $E$ 可测，存在不可测子集
+
+**** 证明
+
+对于任意 $\vec{x}=(x_1,...,x_n)$ 针对 $x_1$ 做[[MK100][有理数等价划分]]，从而根据[[MK96][之前规则]]定义集合 $V$ 为划分中的代表元素的集合
+
+进一步定义 $V_i=\left\{(x_1+q_i,...,x_n)\big|x_1\in V\land x_{j\ne1}\in\mathbb{R}\right\}$
+
+则同理可证 $V_i$ [[MK101][互不相交]]，进而定义 $E\cap V_i$
+
+由于[[MK99][定理1]]对于 $\mathbb{R}^n$ 有效，故必有在 $x_1$ 维度上无法取到有理点，[[MK102][同理]]可证明矛盾
+
+故存在 $E\cap V_k$ 不可测
+
 *** 维塔利集合
 
 **** 构造
@@ -1866,11 +2034,15 @@ Borel集中元素均为可测集
 
 故可得 $R$ 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-等价关系]]，根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-划分-定理-定理1]]可得 $R$ 划分 $\mathbb{R}$
 
-***** 定义集合
+***** 定义集合<<MK96>>
 
-定义集合 $V'$ 为从每个上述划分中选取一个代表元素，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-选择公理]]可得 $V$ 存在
+对于任意 $x\in\mathbb{R}$ 根据[[MK30][推论2]]必存在 $n\in\mathbb{N}$ 满足 $n\leq x<n+1$ 即 $0\leq x-n<1\rightarrow x-n\in[0,1]$
 
-定义集合 $V=V'\cap[0,1]$ 
+由于 $n\in\mathbb{N}\subset\mathbb{Q}$ 故根据关系 $R$ 定义可得 $x-n\in[x]_R$ 即对于任意 $x\in\mathbb{R}$ 均存在 $[0,1]$ 上的等价元素
+
+故对于任意 $x\in\mathbb{R}$ 的等价类 $[x]_R$ 存在 $y\in[0,1]\land y\in[x]_R$
+
+故定义集合 $V$ 为从每个上述划分中选取一个 $[0,1]$ 中的代表元素，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-选择公理]]可得 $V$ 存在
 
 取 $[-1,1]$ 中所有的有理数，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理-定理1-推论]]可得有理数是可数集
 
@@ -1884,11 +2056,13 @@ Borel集中元素均为可测集
 
 显然 $\{q_i\}\subset [-1,1]$ 且 $V\subset [0,1]$ 故有 $-1\leq v+q_k\leq 2$ 即 $\forall k\in\mathbb{N}^+\rightarrow V_k\subset[-1,2]$ 故有 $\bigcup_{k=1}^\infty V_k\subset[-1,2]$ 
 
-另外对于任意 $x\in[0,1]$ 由于 $V'$ 划分 $\mathbb{R}$ 则有 $V$ 划分 $[0,1]$ ，故 $V$ 中必有 $x$ 的等价类代表元素，定义为 $y$
+另外对于任意 $x\in[0,1]$ 由于 $V'$ 划分 $\mathbb{R}$ ，故 $x$ 必定属于 $R$ 的某一划分，记作 $[x]_R$
+
+根据 $V$ 的[[MK96][定义]]其为每一个划分在 $[0,1]$ 上选取的一个代表元素，故其中必有 $x$ 的等价类代表元素，定义为 $y$
 
 显然根据关系 $R$ 定义可得 $x-y\in\mathbb{Q}$ 由于 $V\subset [0,1]$ 故有 $y\in[0,1]$ 故得 $|x-y|\leq 1$
 
-即 $-1\leq x-y\leq 1$ 即 $x-y\in[-1,1]$ 则必有 $q_{u}\in\{q_i\}$ 满足 $x-y=q_v$
+即 $-1\leq x-y\leq 1$ 即 $x-y\in[-1,1]$ 则必有 $q_{u}\in\{q_i\}$ 满足 $x-y=q_u$
 
 故有 $\forall x\in[0,1]\rightarrow x\in V_u\subset\bigcup_{i=1}^\infty V_k$ 则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集]]可得 $[0,1]\subset\bigcup_{k=1}^\infty V_k$
 
@@ -1906,7 +2080,7 @@ Borel集中元素均为可测集
 
 故有 $1\leq \sum_{i=1}^\infty\alpha\leq 3$ 当且仅当 $\alpha=0$ 时有 $\sum_{i=1}^\infty\alpha=0\leq3$ 但与 $1\leq \sum_{i=1}^\infty\alpha$ 矛盾
 
-综上所述，假设不成立，即外测度不满足可数可加性。故对于集合 $\bigcup_{k=1}^\infty V_k$ 外测度不是测度。  
+综上所述，假设不成立，即外测度不满足可数可加性。故对于集合 $\bigcup_{k=1}^\infty V_k$ 外测度不是测度。 
 
 * 函数
 

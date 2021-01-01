@@ -78,6 +78,12 @@ pacman -Q -l <pkg name>
 pactree <pkg name>
 ```
 
+### Remove all downloaded packages
+
+```shell
+pacman -Sc
+```
+
 # NordVPN
 
 Using openvpn(installed already):
@@ -951,7 +957,7 @@ docker run -it --rm -e PLAT=manylinux1_x86_64 -v `pwd`:/io quay.io/pypa/manylinu
 Running docker image on background:
 
 ```shell
-docker run -itd -e PLAT=manylinux1_x86_64 -v `pwd`:/io quay.io/pypa/manylinux1_x86_64 /bin/bash
+docker run -itd --user "$$(id -u):$$(id -g)" -e PLAT=manylinux1_x86_64 -v `pwd`:/io quay.io/pypa/manylinux1_x86_64 /bin/bash
 ```
 
 |Option|Illustration|
@@ -962,6 +968,7 @@ docker run -itd -e PLAT=manylinux1_x86_64 -v `pwd`:/io quay.io/pypa/manylinux1_x
 |quay.io/pypa/manylinux1_x86_64|Docker image name|
 |/bin/bash|Run into bash, allow terminal conversation|
 |PLAT=manylinux1_x86_64|Define $PLAT variable|
+|--user "UID:GID"|run command with user id as "UID" and group id as "GID"|
 
 Exit running docker image in terminal:
 
