@@ -1988,7 +1988,9 @@ Borel集中元素均为可测集
 
 故有 $\mathbb{R}\subset\bigcup_{i=1}^\infty V_i$ 又由于显然 $\mathbb{R}\supset\bigcup_{i=1}^\infty V_i$ 则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集-定理1]]可得 $\mathbb{R}=\bigcup_{i=1}^\infty V_i$
 
-由于 $E\subset\mathbb{R}$ 故有 $E\cap \bigcup_{i=1}^\infty V_i=E$ 根据的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-集合族运算与交并]]可得 $\bigcup_{i=1}^\infty(E\cap V_i)=E\cap\bigcup_{i=1}^\infty V_i$
+由于 $E\subset\mathbb{R}$ 故有 $E\cap \bigcup_{i=1}^\infty V_i=E$ 
+
+根据的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-集合族运算与交并]]可得 $\bigcup_{i=1}^\infty(E\cap V_i)=E\cap\bigcup_{i=1}^\infty V_i$
 
 继而有 $E=\bigcup_{i=1}^\infty(E\cap V_i)$ 故根据[[MK57][次可加性]]有 $m^*(E)\leq\sum_{i=1}^\infty m^*(E\cap V_i)$ 
 

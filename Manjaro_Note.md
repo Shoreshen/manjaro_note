@@ -814,6 +814,48 @@ sudo systemctl enable postgresql.service # Start service at boot
 sudo systemctl start postgresql.service # Start service now
 ```
 
+### Upgrade
+
+Once major version is updated, the data created will not be compatible.
+
+To migrate the existing data, should apply step in [here](https://wiki.archlinux.org/index.php/PostgreSQL#Upgrading_PostgreSQL).
+
+Major steps are listed follow:
+
+1. Stop postgresql service:
+   ```shell
+   systemctl stop postgresql.service
+   systemctl status postgresql.service #Make sure service were stopped
+   ```
+2. Upgrade postgresql and install upgrading package
+   ```shell
+   sudo pacman -S postgresql postgresql-libs postgresql-old-upgrade
+   ```
+3. Copy & create relative directorys and change owner
+   ```shell
+   sudo mv /var/lib/postgres/data /var/lib/postgres/olddata
+   sudo mkdir /var/lib/postgres/data /var/lib/postgres/tmp
+   sudo chown postgres:postgres /var/lib/postgres/data /var/lib/postgres/tmp
+   cd /var/lib/postgres/tmp
+   ```
+4. Switch user and initilize new database for current postgresql
+   ```shell
+   sudo -iu postgres
+   initdb -D /var/lib/postgres/data
+   ```
+5. Using "pg_upgrade" to migrate the old data, <code>PG_VERSION</code> refers to the old version, should be same as indicated from <code>postgresql-old-upgrade</code> package:
+   ```shell
+   pg_upgrade -b /opt/pgsql-PG_VERSION/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data
+   ```
+6. Clean old data, start service, re-analyze optimizor and switch back user
+   ```shell
+   sudo ./delete_old_cluster.sh
+   systemctl start postgresql.service
+   systemctl status postgresql.service
+   ./analyze_new_cluster.sh
+   su shore
+   ```
+
 # Time
 
 Open <code>Manjaro-Settings-Manager</code>, double click <code>时间和日期</code>. Make sure settings are as following:
