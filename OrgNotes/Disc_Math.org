@@ -533,8 +533,8 @@ A-(\cap C)&=\cup\left\{A-S\big|S\in C\right\}\\
 **** 集合族运算与补
 
 \begin{aligned}
-(\cup C)\sim&=\cap\left\{S\sim\big|S\in C\right\}\\
-(\cap C)\sim&=\cup\left\{S\sim\big|S\in C\right\}\\
+\overline{\cup C}&=\cap\left\{\overline{S}\big|S\in C\right\}\\
+\overline{\cap C}&=\cup\left\{\overline{S}\big|S\in C\right\}\\
 \end{aligned}
 
 **** 可数性质<<MK275>>

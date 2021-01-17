@@ -2,9 +2,9 @@
 
 #+TITLE: 实变函数
 
-current video: P24
+current video: P25
 
-current mark: 102
+current mark: 137
 
 * 集合列
 
@@ -108,6 +108,981 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 则称集合列有极限，且极限等于上下极限，记作 $\lim_{n\to\infty}A_n$
 
+* 拓扑
+
+** 拓扑定义<<MK39>>
+
+设 $T$ 是 $X$ 的非空子集的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]]若满足：
+
+（1） $X,\varnothing$ 均属于 $T$
+
+（2） $T$ 中任意个元素的并集属于 $T$
+
+（3） $T$ 中有限个元素的交集属于 $T$
+
+则称 $T$ 是 $X$ 上的拓扑， $<X,T>$ 是一个拓扑空间
+
+其中 $T$ 的元素称为开集， $T$ 中元素的补集称为闭集。
+
+*** 定理1<<MK41>>
+
+开集的补集是闭集，闭集的补集是开集
+
+*** 等价闭集定义<<MK129>>
+
+设 $T$ 是 $X$ 的非空子集的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]]
+
+定义闭集为 $t^c:t\in T$ 定义闭集族 $T^c=\left\{t^c\big|t\in T\right\}$ 则 $<X,T>$ 是[[MK39][拓扑空间]]的充要条件是：
+
+（1） $X,\varnothing$ 均属于 $T^c$
+
+（2） $T^c$ 中任意个元素的交封闭
+
+（3） $T^c$ 中有限个元素的并封闭
+
+**** 证明
+
+***** （1)
+
+根据等价条件 $\varnothing\in T\leftrightarrow \varnothing^c=X\in T^c$ 同理可证 $X\in T\leftrightarrow X^c=\varnothing\in T^c$
+
+故结合上述条件 $\varnothing\in T\land X\in T$ 与 $\varnothing\in T^c\land X\in T^c$ 等价
+
+***** （2）&（3）
+
+定义对于[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]] $A$ 的[[~/OneDrive/离散数学/Disc_Math.org][集合论-计算-广义并]]为 $\bigcup A$ 同理定义广义交为 $\bigcap A$
+
+定义 $F\subset T$ 以及 $F^c=\left\{f^c\big|f\in F\right\}$ 根据 $T^c$ 定义显然有 $F^c\subset T^c$
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-计算-性质-集合族运算与补]]可得 $\left(\bigcup F\right)^c=\bigcap\left\{f^c\big|f\in F\right\}=\bigcap F^c$
+
+故对于任意 $F\subset T$ 若 $\bigcup F\in T$ 则有 $\left(\bigcup F\right)^c\in T^c$ 根据上式有 $\left(\bigcup F\right)^c=\bigcap F^c\in T^c$
+
+同理可证 $\forall F^c\subset T^c\big(\bigcap F^c\in T^c\rightarrow \bigcup F\in T\big)$ 则条件（2）等价
+
+同理可证条件（3）等价  
+
+** 子空间<<MK130>>
+
+设 $<X,T>$ 是一个[[MK39][拓扑空间]]，定义 $Y\subset X$ 以及 $T_Y=\left\{x\cap Y\big|x\in T\right\}$ 
+
+则 $<Y,T_Y>$ 亦是一个拓扑空间。称为 $<X,T>$ 的子空间
+
+*** 证明
+
+根据[[MK39][定义]]依次证明
+
+**** （1）
+
+根据[[MK39][定义]] $\varnothing\in T$ 且 $Y\cap\varnothing=\varnothing$ 故有 $\varnothing\in T_Y$
+
+同理 $X\in T$ 由于 $Y\subset X$ 故有 $X\cap Y=Y$ 故有 $Y\in T_Y$
+
+**** （2）&（3）
+
+对于任意 $F\subset T$ 均有 $\bigcup F\in T$ 则有 $Y\cap\bigcup F\in T_y$ 故定义 $F_Y=\left\{f\cap Y\big|f\in F\right\}$ 
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-计算-性质-集合族运算与交并]]有 $Y\cap\bigcup F=\bigcup\left\{f\cap Y\big|f\in F\right\}=\bigcup F_Y$
+
+由于 $T_Y$ 中所有元素均有 $T$ 产生，故（2）成立。同理可证（3）
+
+*** 等价性<<MK131>>
+
+设 $<X,T>$ 是一个[[MK39][拓扑空间]] $<Y,T_Y>$ 是 $<X,T>$ 的子空间
+
+则当 $Y\in T\lor Y^c\in T$ 时有 $x\in T_Y\rightarrow x\in T$
+
+**** 证明
+
+若 $Y\in T$ 则根据定义对于任意 $y\in T_Y$ 存在 $x\in T$ 满足 $x\cap Y=y$ 根据[[MK39][开集公理]]（3）可得 $y\in T$ 
+
+若 $Y^c\in T$ 则可用[[MK129][闭集定义]]证明
+
+** 开覆盖
+
+若 $S\subset X$ ，存在一组[[MK39][开集]] $\{U_\alpha\}\Rightarrow S\subset\cup_\alpha U_\alpha$ ，则称 $\{U_\alpha\}$ 是 $S$ 的开覆盖
+
+** 点的分类
+
+任意 $x\in X$ 定义为拓扑空间的点
+
+*** 聚点<<MK44>>
+
+对于有[[MK38][度量]]的拓扑空间 $<X,T>$ 的点集 $S\subset T$ ，其聚点 $x\in S$ 定义为对于任意 $\delta\in\mathbb{R}\land\delta>0$ 
+
+均存在 $y\in S$ 满足 $d(x,y)<\delta$ 则称 $x$ 是 $S$ 的聚点
+
+为方便，定义 $S$ 所有聚点的集合为 $S'$
+
+** 子集分类
+
+*** 紧集<<MK40>>
+
+若 $S$ 的任意一个[[MK11][开覆盖]]，必有有限子覆盖，即 $\exists U_{\alpha_i}\in \{U_\alpha\},0\leq i\leq p<+\infty\Rightarrow S\subset \cup_{i=0}^p U_{\alpha_i}$ 
+
+则定义 $S$ 为紧集
+
+注： $U_{\alpha_i}$ 为集合 $\{U_\alpha\}$ 的元素
+
+***** 引理
+
+任意紧集的闭子集亦为紧集
+
+****** 证明
+
+若 $M\subset X$ 为紧集，其闭子集 $F\subset M$ 对于任意 $F$ 的开覆盖 $\{U_{\lambda\in\Lambda}\}$ 
+
+根据定义 $F^c$ 为 $F$ 的补集，且有 $F\cup F^c=X$  
+
+可知 $M\subset X=\left(\bigcup_{\lambda\in\Lambda}U_\lambda\right)\cup F^c$ 根据[[MK41][定理1]]以及 $F$ 是闭集的条件可得 $F^c$ 是开集 
+
+则有 $\{U_{\lambda\in\Lambda},F^c\}$ 是 $M$ 的开覆盖，由于 $M$ 是[[MK40][紧集]]则必有有限子覆盖 $\{U_1,...,U_n,F^c\}$
+
+由于 $F^c\cap F=\varnothing$ 且 $F\subset M$ 故 $\bigcup_{i=1}^n U_i$ 必定覆盖 $F$ 即 $F$ 亦有有限子覆盖
+
+*** 完备集<<MK45>>
+
+若 $(T,X)$ 是一个有[[MK38][度量]]的拓扑空间，且 $S\subset X$ ，若 $S=S'$ 即 $S$ 中的任意一点均为 $S$ 的[[MK44][聚点]]
+
+则称 $S$ 是完备集
+
+** 函数
+
+*** 原相
+
+对于满足[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-定义-函数定义]]的函数 $f:X\to Y$ 
+
+其 $G\subset Y$ 的原相定义为 $g(G)=\left\{x\big|f(x)\in G\land x\in X\right\}$
+
+**** 性质<<MK135>>
+
+定义 $Y_\lambda\subset Y$ 则有
+
+（1） $\left\{x\big|f(x)\in\left(\bigcup_{\lambda\in\Lambda} Y_i\right)\land x\in X\right\}=\bigcup_{\lambda\in\Lambda}\left\{x\big|f(x)\in Y_i\land x\in X\right\}$ 
+
+（2） $\left\{x\big|f(x)\in\left(\bigcap_{\lambda\in\Lambda} Y_i\right)\land x\in X\right\}=\bigcap_{\lambda\in\Lambda}\left\{x\big|f(x)\in Y_i\land x\in X\right\}$ 
+
+（3） $\left\{x\big|f(x)\in Y^c\land x\in X\right\}=\left(\left\{x\big|f(x)\in Y\land x\in X\right\}\right)^c$
+
+***** 证明
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]] $\forall x\in X\rightarrow\exists y\left(y\in Y\land f(x)=y\right)$ 
+
+定义 $g(G)=\left\{x\big|f(x)\in G\land x\in X\right\}$ 故有以下证明
+
+****** （1）
+
+则对于任意 $x\in g\left(\bigcup_{\lambda\in\Lambda} Y_i\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-运算]]可得 $f(x)\in\bigcup_{\lambda\in\Lambda} Y_i\leftrightarrow\exists \lambda^*\in\Lambda\rightarrow f(x)\in Y_{\lambda^*}$
+
+故对于任意 $x\in g\left(\bigcup_{\lambda\in\Lambda} Y_i\right)\leftrightarrow\left(\exists \lambda^*\in\Lambda\rightarrow f(x)\in Y_{\lambda^*}\right)\leftrightarrow x\in g(Y_{\lambda^*})\leftrightarrow x\in\bigcup_{\lambda\in\Lambda} g(Y_\lambda)$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $g\left(\bigcup_{i=1}^\infty X_i\right)=\bigcup_{i=1}^\infty g(X_i)$
+
+****** （2）
+
+则对于任意 $x\in g\left(\bigcap_{\lambda\in\Lambda} Y_i\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-运算]]可得 $f(x)\in\bigcap_{\lambda\in\Lambda} Y_i\leftrightarrow\forall\lambda\in\Lambda\rightarrow f(x)\in Y_{\lambda^*}$
+
+故对于任意 $x\in g\left(\bigcap_{\lambda\in\Lambda} Y_i\right)\leftrightarrow\left(\forall \lambda\in\Lambda\rightarrow f(x)\in Y_{\lambda}\right)\leftrightarrow \forall\lambda\left(x\in g(Y_{\lambda})\right)\leftrightarrow x\in\bigcup_{\lambda\in\Lambda} g(Y_\lambda)$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $g\left(\bigcap_{i=1}^\infty X_i\right)=\bigcap_{i=1}^\infty g(X_i)$
+
+****** （3）
+
+则对于任意 $x\in g\left(Y^c\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-运算]]可得 $f(x)\in Y^c\leftrightarrow f(x)\not\in Y$
+
+故对于任意 $x\in g(Y^c)\leftrightarrow f(x)\not\in Y\leftrightarrow x\not\in g(Y)\leftrightarrow (g(Y))^c$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $g(Y^c)=(g(Y))^c$
+
+*** 连续函数<<MK115>>
+
+函数 $f:X\to Y$ 其中 $X,Y$ [[MK39][拓扑空间]]
+
+则连续的拓扑定义为若 $B\subset Y$ 是[[MK39][开集]]，则集合 $\left\{x\big|f(x)\in B\right\}$ 亦为开集
+
+* 度量
+
+** 度量空间<<MK38>>
+
+定义[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-代数的构建-代数结构]] $<X,d>$ 运算 $d:X\times X\to\mathbb{R}$ 满足：
+
+（1） 非负性： $\forall\{x,y\}\subset X\rightarrow d(x,y)\geq0$
+
+（2） 对称性： $\forall\{x,y\}\subset X\rightarrow d(x,y)=d(y,x)$
+
+（3） 三角性： $\forall\{x,y,z\}\subset X\rightarrow d(x,y)+d(y,z)\geq d(x,z)$
+
+则称代数结构 $<X,d>$ 是一个度量空间
+
+*** 性质
+
+**** 自身为零
+
+对于度量空间 $<X,d>$ 若 $x\in X$ 则有 $d(x,x)$ 是所有距离的下确界
+
+***** 证明
+
+据三角性有 $d(x,x)\leq d(x,x)+d(x,x)=2d(x,x)$
+
+两边同[[MK6][减]] $d(x,x)$ 得 $d(x,x)=0$
+
+** 度量子空间
+
+对于[[MK38][度量空间]] $<X,d>$ 存在 $S\subset X$ 且满足 $<S,d>$ 亦为度量空间，则称其为度量子空间
+
+** 子集距离<<MK89>>
+
+对于[[MK38][度量空间]] $<X,d>$ 若存在 $A\subset X\land B\subset X$ 则 $A,B$ 之间的距离是 $\inf\left\{d(a,b)\big|\forall a\in A\land\forall b\in B\right\}$
+
+** 子集的直径
+
+对于[[MK38][度量空间]] $<X,d>$ 若存在 $A\subset X$ 则其直径 $\phi(A)=\sup\left\{d(a,b)\big|\forall \{a,b\}\subset A\right\}$ 
+
+若 $\phi(A)<\infty$ 则定义此类集合是有界集
+
+** 领域<<MK59>>
+
+定义 $\delta\in\mathbb{R}$ 代数结构 $<X,d>$ ，对于点 $x\in X$ 的 $\delta$ 领域定义为 $O(x,\delta)=\left\{y\big|y\in X\land d(x,y)<\delta\right\}$
+
+*** 性质
+
+（1） $x\in O(x,\delta)$
+
+（2） 对于任意 $\{\delta_1,\delta_2\}\subset\mathbb{R}$ 存在 $\delta_3$ 满足 $O(x,\delta_3)\subset O(x,\delta_1)\subset\cap O(x,\delta_2)$
+
+（3） $\forall y\in O(x,\delta)$ 
+
+（4） 若 $\{x,y\}\subset X\land x\ne y$ 则存在 $\delta$ 使得 $O(x,\delta)\cap O(y,\delta)=\varnothing$
+
+* 测度
+
+** $\sigma$ 代数<<MK50>>
+
+集合 $X$ 上的 $\sigma$ 代数记作 $\sigma(X)$ ，是 $\rho(X)$ 即 $X$ 幂集的一个子集，满足：
+
+（1） 包含集合本身 $X\in\sigma(X)$
+
+（2） 任元素合的补封闭 $\forall A\left(A\in\sigma(X)\rightarrow A^c\in\sigma(X)\right)$ 
+
+（3） [[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-可数]]个元素的并封闭 $A_i\in\sigma(X)\rightarrow\bigcup_{i=1}^\infty A_i\in\sigma(X)$
+
+*** 性质
+
+**** 可数交封闭<<MK67>>
+
+设 $X$ 中的子集列 $\{S_i\}$ 满足 $\forall i\in\mathbb{N}^+\rightarrow S_i\in\sigma(X)$ 则有 $\bigcap_{i=1}^\infty S_i\in\sigma(X)$
+
+***** 证明
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质]]中德摩根率可得 $\bigcap_{i=1}^\infty S_i=((\bigcap_{i=1}^\infty S_i)^c)^c=\left(\bigcup_{i=1}^\infty S_i^c\right)^c$
+
+由于 $S_i\in\sigma(X)$ 则有 $S^c_i\in\sigma(X)$ 则根据可数并封闭 $\bigcup_{i=1}^\infty S_i^c\subset\sigma(X)$
+
+最终根据（2）可得 $\bigcap_{i=1}^\infty S_i=\left(\bigcup_{i=1}^\infty S_i^c\right)^c\in\sigma(X)$
+
+**** 差封闭<<MK74>>
+
+若 $\{S_1,S_2\}\subset\sigma(X)$ 则有 $S_1-S_2\in\sigma(X)$ 
+
+进一步若 $S_1,S_2$ [[MK65][外测度可测]] $S_2\subset S_1$ 且 $\varphi(S_2)<\infty$ 则有 $\varphi(S_1-S_2)=\varphi(S_1)-\varphi(S_2)$
+
+***** 证明
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-补与减]]可得 $S_1-S_2=S_1\cap S^c_2$ 根据[[MK50][定义]]中（3）以及[[MK67][交封闭]]得 $S_1\cap S_2^c\in\sigma(X)$
+
+根据[[MK65][Caratheodory定理]]可得若 $S_2$ 外测度可测，则满足 $\varphi(S_1)=\varphi(S_1\cap S_2)+\varphi(S_1-S_2)$
+
+根据 $S_2\subset S_1$ 得 $S_1\cap S_2=S_2$ 则有 $\varphi(S_1)=\varphi(S_2)+\varphi(S_1-S_2)$
+
+此时若 $\varphi(S_2)<\infty$ 则有 $\varphi(S_1-S_2)=\varphi(S_1)-\varphi(S_2)$
+
+**** [[MK69][递增]]集合列[[MK1][极限]]封闭<<MK73>>
+
+若 $\{S_i\}\subset\sigma(X)$ [[MK69][递增]]，则 $\lim_{i\to\infty}S_i\in\sigma(X)$ 
+
+进一步若 $\{S_i\}$ 是[[MK65][外测度可测集列]]，则有 $\varphi(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}\varphi(S_i)$
+
+***** 证明
+
+****** 封闭
+
+根据[[MK70][定理]]可得 $\lim_{n\to\infty}S_n=\cup_{i=1}^\infty S_i$ 且 $\forall i\in\mathbb{N}^+\rightarrow S\in\sigma(X)$ 则根据[[MK50][定义]]（3）可得 $\cup_{i=1}^\infty S_i\in\sigma(X)$
+
+****** 等式
+
+定义 $S_0=\varnothing$ 以及 $S'_i=S_i-S_{i-1}$ 则对于任意 $i\ne j$ 假设 $i>j$
+
+若 $S'_i=\varnothing\lor S'_j=\varnothing$ 则有 $S'_i\cap S'_j=\varnothing$ 
+
+若均不为空集，则根据递增有 $S_j\subset S_{i-1}\subset S_i$ 则有 $\forall x\in S'_j\rightarrow x\in S_j-S_{j-1}\rightarrow x\in S_{i-1}$ 
+
+则有 $x\not\in S'_i$ 故 $S'_i\cap S'_j=\varnothing$ 故 $\{S'_i\}$ 互不相交
+
+由于 $S_1=S'_1-S'_0=S'_1$ 且 $S_i=S'_i\cup S_{i-1}$ 故根据数学归纳法可得 $S_n=\bigcup_{i=1}^n S'_i$
+
+故有 $\lim_{n\to\infty}S_n=\lim_{n\to\infty}\bigcup_{i=1}^n S'_i=\bigcup_{i=1}^\infty S'_i$
+
+根据[[MK65][Caratheodory定理]]由于 $\{S_i\}$ 均外测度可测，则有可数可加性
+
+即 $\varphi(\bigcup_{i=1}^\infty S'_i)=\sum_{i=1}^\infty \varphi(S'_i)=\sum_{i=1}^\infty \varphi(S_i-S_{i-1})=\lim_{n\to\infty}\sum_{i=1}^n \varphi(S_i-S_{i-1})$
+
+则进一步利用可数可加性 $\lim_{n\to\infty}\sum_{i=1}^n \varphi(S_i-S_{i-1})=\lim_{n\to\infty}\varphi\left(\bigcup_{i=1}^n(S_i-S_{i-1})\right)$
+
+由于 $S_{i-1}\subset S_{i}$ 则有 $S_{i}=(S_i-S_{i-1})\cup S_{i-1}$ 且 $S_1-S_0=S_1$
+
+故根据数学归纳法有 $\bigcup_{i=1}^n(S_i-S_{i-1})=S_n$ 最终有 $\varphi(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}\varphi(S_i)$
+
+**** [[MK69][递减]]集合列[[MK1][极限]]封闭<<MK75>>
+
+若 $\{S_i\}\subset\sigma(X)$ [[MK69][递减]]，则 $\lim_{i\to\infty}S_i\in\sigma(X)$
+
+进一步若 $\{S_i\}$ 是[[MK65][外测度可测集列]]且当 $\varphi(S_1)<\infty$ 时有 $\varphi(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}\varphi(S_i)$
+
+***** 证明
+
+****** 封闭
+
+根据[[MK70][定理]]可得 $\lim_{n\to\infty}S_n=\bigcap_{i=1}^\infty S_i$ 且 $\forall i\in\mathbb{N}^+\rightarrow S\in\sigma(X)$ 则根据[[MK71][定理（4）]]有 $\bigcap_{i=1}^\infty S_i\in\sigma(X)$
+
+****** 等式
+
+定义 $S'_{i}=S_1-S_i$ 则 $S'_i$ 是[[MK69][递增]]列，由于 $S_i$ 外测度可测，则根据[[MK65][Caratheodory定理]]可得 $S'_i$ 外测度可测
+
+则根据[[MK73][递增封闭]]有 $\varphi(\lim_{i\to\infty}S'_i)=\lim_{i\to\infty}\varphi(S'_i)$
+
+则进一步 $\varphi(S_1-\lim_{i\to\infty}S_i)=\lim_{i\to\infty}\varphi(S_1-S_i)$ 由于 $S_i\subset S_1$ 且 $\varphi(S_1)<\infty$
+
+则根据[[MK60][单调性]]有 $\forall i\in\mathbb{N}^+\rightarrow\varphi(S_i)<\infty$ 以及 $\varphi(\lim_{i\to\infty}S_i)<\infty$ 
+
+故根据[[MK74][差封闭]]有 $\varphi(S_1)-\varphi(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}[\varphi(S_1)-\varphi(S_i)]$ 
+
+故根据极限四则运算有 $\varphi(S_1)-\varphi(\lim_{i\to\infty}S_i)=\varphi(S_1)-\lim_{i\to\infty}\varphi(S_i)$
+
+再一次根据 $\varphi(S_1)<\infty$ 有 $\varphi(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}\varphi(S_i)$
+
+**** 映射传递<<MK104>>
+
+映射 $f:E\to K,E\subset X$ 取 $X$ 中任意一个[[MK50][ $\sigma$ 代数]] $\Sigma$ 满足 $E\in\Sigma$
+
+定义 $g(X)=\left\{x\big|f(x)\in X\right\}$ 进一步定义 $A=\left\{X\big|g(X)\in\Sigma\land X\subset K\right\}$
+
+则 $A$ 是 $K$ 上的[[MK50][ $\sigma$ 代数]]
+
+***** 证明
+
+根据以下证明， $A$ 满足[[MK50][定义]]，故 $A$ 是 $K$ 上的[[MK50][ $\sigma$ 代数]]
+
+****** 包含本身
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]可得对于任意 $x\in E$ 均有 $y\in K$ 满足 $f(x)=y$
+
+根据 $g(K)=\left\{x\big|f(x)\in K\right\}$ 则结合上述条件可得 $g(K) = E$
+
+显然根据条件 $g(K)=E\in\Sigma$ 且 $K\subset K$ 故有 $K\in A$ 
+
+****** 可数并封闭
+
+定义 $X_i\in A$ 则有 $g\left(\bigcup_{i=1}^\infty X_i\right)=\left\{x\big|f(x)\in\bigcup_{i=1}^\infty X_i\right\}$ 
+
+则对于任意 $x\in g\left(\bigcup_{i=1}^\infty X_i\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-运算]]可得 $f(x)\in\bigcup_{i=1}^\infty X_i\leftrightarrow\exists i\in\mathbb{N}\rightarrow f(x)\in X_i$
+
+故对于任意 $x\in g\left(\bigcup_{i=1}^\infty X_i\right)\leftrightarrow\left(\exist i\in\mathbb{N}^+\rightarrow x\in g(X_i))\leftrightarrow x\in\bigcup_{i=1}^\infty g(X_i)$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $g\left(\bigcup_{i=1}^\infty X_i\right)=\bigcup_{i=1}^\infty g(X_i)$
+
+则显然由于 $X_i\in A$ 故有 $g(X_i)\in\Sigma$ 且 $\Sigma$ 是[[MK50][ $\sigma$ 代数]]故 $g\left(\bigcup_{i=1}^\infty X_i\right)=\bigcup_{i=1}^\infty g(X_i)\in\Sigma$
+
+显然 $\bigcup_{i=1}^\infty X_i\subset K$ 故有 $\left(\forall i\in\mathbb{N}^+\rightarrow X_i\in A\right)\rightarrow\bigcup_{i=1}^\infty X_i\in A$ 故可数并封闭
+
+****** 补集封闭
+
+若 $X\in A$ 则有 $g(X)\in\Sigma\land X\subset K$
+
+根据 $g(X)$ 定义有对于任意 $x\in g(X)\leftrightarrow f(x)\in X$ 则显然有 $x\not\in g(X)\leftrightarrow f(x)\not\in X$
+
+故有 $x\in \left(g(X)\right)^c\leftrightarrow f(x)\in X^c$ 
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $\left(g(X)\right)^c=g(X^c)$
+
+由于 $\Sigma$ 是[[MK50][ $\sigma$ 代数]]且 $g(X)\in\Sigma$ 故 $g(X^c)=(g(X))^c\in\Sigma$
+
+同理显然 $X^c\in K$ 故有 $X\in A\rightarrow X^c\in A$
+
+**** 性质6<<MK121>>
+
+对于集合 $X$ 存在 $F\subset X$ 定义 $G=\left\{F\cap g\big|g\in\sigma(X)\right\}$ 则 $G$ 是 $F$ 上的[[MK50][ $\sigma$ 代数]]
+
+***** 证明
+
+根据以下证明， $G$ 满足[[MK50][定义]]，故 $G$ 是 $F$ 上的[[MK50][ $\sigma$ 代数]]
+
+****** 包含本身
+
+由于 $\sigma(F)$ 是基于 $F$ 产生的 $\sigma$ 代数，故其本身应为 $F$
+
+根据定义有 $X\in\sigma(X)$ 又由于 $F\subset X$ 则有 $F\cap X=F$ ，即满足 $F\in G$
+
+****** 可数并封闭
+
+对于任意 $f_i\in G$ 根据条件有 $\exists x_i\in\sigma(X)\rightarrow x_i\cap F=f_i$
+
+根据[[MK50][定义]]由于 $x_i\in\sigma(X)$ 故有 $\left(\bigcup_{i=1}^\infty x_i\right)\in\sigma(X)$ 故根据 $F$ 定义有 $F\cap\left(\bigcup_{i=1}^\infty x_i\right)\in G$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-分配律]]可得 $F\cap\left(\bigcup_{i=1}^\infty x_i\right)=\bigcup_{i=1}^\infty(x_i\cap F)=\bigcup_{i=1}^\infty f_i\in G$
+
+则有对于任意 $f_i\in G$ 均有 $\bigcup_{i=1}^\infty f_i\in G$
+
+****** 补集封闭<<MK123>>
+
+由于全集不同，故定义 $A^{c_F}$ 为全集为 $F$ 的补集， $A^{c_X}$ 为全集为 $X$ 的补集
+
+对于任意 $g\in G$ 根据 $G$ 定义均有 $x\in\sigma(X)$ 满足 $x\cap F=g$
+
+根据[[MK50][定义]]由于 $x\in\sigma(X)$ 故有 $x^{c_X}\in\sigma(X)$ 则根据定义 $x^{c_X}\cap F\in G$
+
+定义其等价条件 $\left(e\in\left(x^{c_X}\cap F\right)\right)\leftrightarrow\left(e\not\in x\land e\in X\land e\in F\right)$
+
+由于 $F\subset X$ 故有 $\left(e\in\left(x^{c_X}\cap F\right)\right)\leftrightarrow\left(e\not\in x\land e\in X\land e\in F\right)\leftrightarrow\left(e\not\in x\land e\in F\right)$
+
+同理根据：
+
+（1）[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-德摩根律]]
+
+（2）[[~/OneDrive/离散数学/Disc_Math.org][命题逻辑-命题公式-逻辑等价-逻辑等价式举例]]-德摩根律
+
+（3）[[~/OneDrive/离散数学/Disc_Math.org][命题逻辑-命题公式-逻辑等价-逻辑等价式举例]]-分配率
+
+三条定律可有推导 
+
+\begin{aligned}
+e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
+&\leftrightarrow\left(e\not\in(x\cap F)\land e\in F\right)\\
+&\leftrightarrow\left(e\not\in(x\cap F)\land e\in F\right)\\
+&\leftrightarrow\left((e\not\in x\lor e\not\in F)\land e\in F\right)\\
+&\leftrightarrow\left((e\not\in x\land e\in F)\lor(e\not\in F\land e\in F)\right)
+\end{aligned}
+
+显然 $(e\not\in F\land e\in F)$ 永假，故有 $e\in g^{c_F}\leftrightarrow\left(e\not\in x\land e\in F\right)$
+
+根据传递性有 $e\in g^{c_F}\leftrightarrow\left(e\in\left(x^{c_X}\cap F\right)\right)$ 
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]] $g^{c_F}=x^{c_X}\cap F\in G$
+
+故补集封闭
+
+*** 生成<<MK85>>
+
+定义 $\beta\subset\rho(X)$ ，则所有包含 $\beta$ 的 $X$ 上的[[MK50][ $\sigma$ 代数]]之并定义为 $\beta$ 生成的 $\sigma$ 代数，记作 $\sigma_\beta(X)$
+
+即对于任意 $\sigma(X)$ 均有 $\beta\subset\sigma(X)\rightarrow \sigma_\beta(X)\subset\sigma(X)$ 为恒真
+
+**** 存在性
+
+由于 $\rho(X)$ 本身为 $\sigma$ 代数且不为空，进一步由于 $\beta\subset\rho(X)$ 且任意 $\sigma$ 代数均不为空集
+
+故必然存在由 $\beta$ 生成的 $\sigma$ 代数
+
+另显然[[MK50][ $\sigma$ 代数]]之并亦为[[MK50][ $\sigma$ 代数]]
+
+**** 性质<<MK124>>
+
+若 $\Phi\subset\rho(X)$ [[MK85][生成]]了 $X$ 上的[[MK50][ $\sigma$ 代数]] $\sigma_\Phi(X)$ 则对于 $Y\subset X$ 定义集合 $\Psi=\left\{x\cap Y\big|x\in\beta\right\}$
+
+此时由 $\Psi$ [[MK85][生成]]的 $Y$ 上的[[MK50][ $\sigma$ 代数]] $\sigma_\Psi(Y)=\left\{Y\cap x\big|x\in\sigma_\Phi(X)\right\}$
+
+***** 证明
+
+定义 $L=\left\{Y\cap x\big|x\in\sigma_\Phi(X)\right\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集-自反性]]证明以下结论，故有 $L=\sigma_{\Psi}(Y)$
+
+****** $\sigma_\Psi(Y)\subset L$
+
+则根据集合定义对于任意 $y\in\Psi$ 均存在 $x\in\Phi$ 使得 $x\cap Y=y$
+
+根据[[MK85][生成]]定义对于任意 $x\in\Phi$ 均有 $x\in\sigma_\Phi(X)$ 
+
+故对于任意 $y\in\Psi$ 均有 $x\in\sigma_\Phi(X)$ 满足 $x\cap Y=y$ 故有 $y\in L$ 即 $\Psi\subset L$
+
+根据[[MK121][性质6]]可得 $L$ 是 $Y$ 上的[[MK50][ $\sigma$ 代数]]，又根据[[MK85][生成]]定义有 $\Psi\subset L\rightarrow\sigma_\Psi(Y)\subset L$
+
+****** $L\subset\sigma_\Psi(Y)$
+
+定义 $K=\left\{A\big|\big(A\in\sigma_\Phi(X)\big)\land\big((A\cap Y)\in\sigma_{\Psi}(Y)\big)\right\}$ 接下来
+
+******* 证明 $K$ 是 $X$ 上的[[MK50][ $\sigma$ 代数]]
+
+根据以下证明， $K$ 满足[[MK50][定义]]，故 $K$ 是 $X$ 上的[[MK50][ $\sigma$ 代数]]
+
+******** 包含本身
+
+显然 $X\in\sigma_\Phi(X)$ 由于 $Y\subset X$ 故有 $X\cap Y=Y\in\sigma_{\Psi}(Y)$
+
+故有 $X\in K$
+
+******** 可数并封闭
+
+对于任意 $A_i\in K$ 满足 $A_i\in\sigma_{\Phi}(X)$ 且 $(A_i\cap Y)\in\sigma_{\Psi}(Y)$
+
+由于均为[[MK50][ $\sigma$ 代数]]，故有 $\bigcup_{i=1}^\infty A_i\in\sigma_{\Phi}(X)$ 且 $\bigcup_{i=1}^\infty (A_i\cap Y)\in\sigma_{\Psi}(Y)$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][命题逻辑-命题公式-逻辑等价-逻辑等价式举例]]-分配率有 $Y\cap\left(\bigcup_{i=1}^\infty A_i\right)\in\sigma_{\Psi}(Y)$
+
+故结合上述条件 $\bigcup_{i=1}^\infty A_i\in K$
+
+******** 补集封闭
+
+对于任意 $A\in K$ 满足 $A\in\sigma_{\Phi}(X)$ 且 $(A\cap Y)\in\sigma_{\Psi}(Y)$
+
+由于是[[MK50][ $\sigma$ 代数]]，故有 $A^c\in\sigma_{\Phi}(X)$ 另根据[[MK123][之前证明]]可得 $A^c\cap Y\in\sigma_{\Psi}(Y)$
+
+故有 $A^c\in K$
+
+******* 证明结论
+
+根据定义对于任意 $x\in\Phi$ 均有 $x\in\sigma_{\Phi}(X)\land x\cap Y\in\sigma_{\Psi}(Y)$
+
+故有 $\Phi\subset K\rightarrow \sigma_{\Phi}(X)\subset K$ 故对于任意 $x\in\sigma_{\Phi}(X)\rightarrow x\in K$
+
+由于对于任意 $y\in L$ 均存在 $x\in\sigma_{\Phi}(X)$ 满足 $x\cap Y=y$
+
+结合上述条件对于任意 $x\in\sigma_{\Phi}(X)\rightarrow x\in K\rightarrow (x\cap Y)=y\in\sigma_{\Psi}(Y)$
+
+综上所述 $\forall y\in L\rightarrow y\in\sigma_{\Psi}(Y)$ 故 $L\subset\sigma_\Psi(Y)$
+
+*** borel集合
+
+定义[[MK39][拓扑空间]] $<X,T>$ ，则由所有 $x\in T$ (即开集)[[MK85][生成]]的[[MK50][ $\sigma$ 代数]]定义为borel集合，记作 $\mathcal{B}(X)$
+
+**** 等价表述<<MK125>>
+
+定义 $\mathcal{B}(X)$ 为 $X$ 上的[[MK116][borel集]]，则定义 $X$ 上所有闭集（开集的补集）为 $\mathcal{C}$
+
+则 $\mathcal{B}(X)$ 亦可表述为 $\mathcal{C}$ [[MK85][生成]]的[[MK50][ $\sigma$ 代数]]
+
+***** 证明
+
+定义 $\mathcal{C}$ 生成的 $\sigma$ 代数为 $\sigma_{\mathcal{C}}(X)$
+
+对于任意开集 $x\in T$ 均有 $x^c\in\mathcal{C}$ ，根据[[MK50][定义]]中（3）显然有 $x^c\in\sigma_{\mathcal{C}}(X)\rightarrow (x^c)^c=x\in\sigma_{\mathcal{C}}(X)$
+
+故对于任意 $x\in T\rightarrow x\in\sigma_{\mathcal{C}}(X)$ 即 $T\subset\sigma_{\mathcal{C}}(X)$ 
+
+由于 $\mathcal{B}(X)$ 是 $T$ 生成的，故根据[[MK85][定义]]可得 $\mathcal{B}(X)\subset\sigma_{\mathcal{C}}(X)$ 
+
+同理可证 $\sigma_{\mathcal{C}}(X)\subset\mathcal{B}(X)$ 故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集-自反性]]可得 $\sigma_{\mathcal{C}}(X)=\mathcal{B}(X)$ 
+
+**** 连续映射原相一致<<MK117>>
+
+定义 $\mathcal{B}(X)$ 为 $X$ 上的[[MK116][borel集]]，$\mathcal{B}(Y)$ 为 $Y$ 上的[[MK115][borel集]]，且 $<X,T_X>,<Y,T_Y>$ 均为[[MK39][拓扑空间]]
+
+有[[MK115][连续函数]]映射 $f:L\to Y,L\subset X$ 且 $L\in\mathcal{B}(X)$ 定义原相 $g(K)=\left\{k\big|f(k)\in K\right\}$ 
+
+则对于任意 $K\in\beta(Y)$ 均有 $g(K)\in\mathcal{B}(X)$
+
+***** 证明
+
+定义 $A=\left\{K\big|g(K)\in\beta(X)\land K\subset Y\right\}$ 
+
+由于 $L\subset X\land L\in\mathcal{B}(X)$ 且 $\mathcal{B}(X)$ 是[[MK50][ $\sigma$ 代数]]，则根据[[MK104][映射传递]]可得 $A$ 是 $Y$ 上的[[MK50][ $\sigma$ 代数]]
+
+由于映射[[MK115][连续]]，可得对于任意开集 $K\in T_Y$ 可得其原相 $g(K)\in T_X$ 亦为开集
+
+故有 $g(K)\in\mathcal{B}(X)$ ，则对于任意开集有 $K\in T_Y\rightarrow K\in A$
+
+由于borel集合是开集[[MK85][生成]]的[[MK50][ $\sigma$ 代数]]，即包含所有开集的最小 $\sigma$ 代数，故有 $\mathcal{B}(Y)\subset A$
+
+故对于任意 $K\in\mathcal{B}(Y)$ 均有 $K\in A$ 则推出 $g(K)\in\mathcal{B}(X)$ 
+
+即若集合的相是 $Y$ 上borel集合中的元素，则其原相是 $X$ 上borel集的元素
+
+** 测度<<MK56>>
+
+设 $\Gamma$ 是集合 $X$ 的[[MK50][ $\sigma$ 代数]]，函数 $\rho:\Gamma\to\mathbb{R}\cup\{+\infty\}$ 满足：
+
+（1） 非负性： $\forall A\in\Gamma\rightarrow \rho(A)\geq0$
+
+（2） 规范性： $\rho(\varnothing)=0$
+
+（3） 可数可加性： $\rho(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\rho(A_i)$ 注意此处 $i$ 为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-可数]]个，且当 $i\ne j$ 时 $A_i\cap A_j=\varnothing$
+
+则称 $\rho$ 是 $X$ 上的测度，其中 $\Gamma$ 是可测集。
+
+** 外测度<<MK61>>
+
+定义集合 $X$ 则定义映射 $\varphi:\rho(X)\to\mathbb{R}\cup\{\infty\}$ 其中 $\rho(X)$ 是 $X$ 的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-幂集]]
+
+若映射满足：
+
+（1） 非负性： $\forall A\subset X\rightarrow\varphi(A)\geq 0$
+
+（2） 规范性： $\varphi(\varnothing)=0$
+
+（3） 单调性： $A\subset B\rightarrow\varphi(A)\leq\varphi(B)$
+
+（4） 次可数可加性： $\varphi\left(\bigcup_{i=1}^\infty A_i\right)\leq\sum_{i=1}^\infty\varphi(A_i)$
+
+则称 $\varphi$ 是 $X$ 上的外测度
+
+** Caratheodory定理<<MK65>>
+
+对于任意 $S\subset X$ 若满足 $\forall A\subset X\rightarrow\varphi(A)=\varphi(A\cap S)+\varphi(A/S)$ 其中 $\varphi:\rho(X)\to\mathbb{R}$ 是[[MK61][外测度]]
+
+则 $S$ 定义为外测度可测集且：
+
+（1） 所有外测度可测集的集合构成 $X$ 上的[[MK50][ $\sigma$ 代数]]
+
+（2） 在外测度可测集上的[[MK61][外测度]]是[[MK56][测度]]
+
+此时称 $S$ 是关于外测度的可测集
+
+*** 证明
+
+**** 可测集满足[[MK56][测度]]
+
+根据[[MK61][外测度]]以及[[MK56][测度]]定义可得满足非负性及规范性，以下证明可数可加性。
+
+取任意互不相交的可测集序列 $\{A_i\}\subset X$ 取任意 $n\in\mathbb{N}^+$ 则有 $\bigcup_{i=1}^n A_i\subset\bigcup_{i=1}^\infty A_i$
+
+则根据[[MK61][单调性]]有 $\varphi\left(\bigcup_{i=1}^n A_i\right)\leq\varphi\left(\bigcup_{i=1}^\infty A_i\right)$
+
+由于 $A_1\subset X$ 则根据条件 $\varphi\left(\bigcup_{i=1}^n A_i\right)=\varphi\left(\bigcup_{i=1}^n A_i\cap A_1\right)+\varphi\left(\bigcup_{i=1}^n A_i/A_1\right)=\varphi\left(A_1\right)+\varphi\left(\bigcup_{i=2}^n A_i\right)$
+
+依次类推可得 $\varphi\left(\bigcup_{i=1}^n A_i\right)=\sum_{i=1}^n\varphi(A_i)$ 结合上式有 $\varphi\left(\bigcup_{i=1}^\infty A_i\right)\geq\sum_{i=1}^n\varphi(A_i)$
+
+又由于 $n$ 的任意性以及[[MK53][无穷加法]]定义可得 $\varphi\left(\bigcup_{i=1}^\infty A_i\right)\geq\sum_{i=1}^\infty\varphi(A_i)$
+
+又根据[[MK61][次可数可加性]]有 $\varphi\left(\bigcup_{i=1}^\infty A_i\right)\leq\sum_{i=1}^\infty\varphi(A_i)$ 最终根据[[MK5][三歧性]]有 $\varphi\left(\bigcup_{i=1}^\infty A_i\right)=\sum_{i=1}^\infty\varphi(A_i)$
+
+**** 是 $\sigma$ 代数
+
+***** 全集可测
+
+取任意 $A\subset X$ 则有 $\varphi(A\cup X)+\varphi(A/X)=\varphi(A)+\varphi(\varnothing)=\varphi(A)$ 故 $X$ 外测度可测
+
+***** 补集可测<<MK63>>
+
+若 $S$ 外测度可测，则有 $\forall A\subset X\rightarrow\varphi(A)=\varphi(A\cap S)+\varphi(A/S)$ 
+
+则对 $S^c$ 有 $\varphi(A\cap S^c)+\varphi(A/S^c)=\varphi(A/S)+\varphi(A\cap S)=\varphi(A)$ 故若 $S$ 外测度可测，则有 $S^c$ 外测度可测 
+
+***** 可数并可测
+
+****** 有限可加性<<MK62>>
+
+假设 $S_1,S_2$ 均是外测度可测集，取任意 $A\subset X$ 根据[[MK61][次可加性]] $\varphi(A)\leq\varphi(A\cap(S_1\cup S_2))+\varphi(A/(S_1\cup S_2))$
+
+则根据可测集定义，[[MK61][次可加性]]以及[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质]]中分配率、结合律、补与减有：
+
+\begin{aligned}
+\varphi(A)=&\varphi(A\cap S_1)+\varphi(A/S_1)\\
+=&\varphi((A\cap S_1)\cap S_2)+\varphi((A\cap S_1)/ S_2)+\varphi((A/S_1)\cap S_2)+\varphi((A/S_1)/S_2)\\
+\geq&\varphi\big(((A\cap S_1)\cap S_2)\cup((A\cap S_1)/ S_2)\cup((A/S_1)\cap S_2)\big)+\varphi((A/S_1)/S_2)\\
+=&\varphi\big((A\cap (S_1\cap S_2))\cup(A\cap (S_1\cap S_2^c))\cup(A\cap (S_1^c\cap S_2))\big)+\varphi(A\cap(S_1^c\cap S_2^c))\\
+=&\varphi\bigg(A\cap\big((S_1\cap S_2)\cup(S_1\cap S_2^c)\cup(S_1^c\cap S_2)\big)\bigg)+\varphi(A\cap(S_1\cup S_2)^c)\\
+=&\varphi(A\cap(S_1\cup S_2))+\varphi(A/(S_1\cup S_2))\\
+\end{aligned}
+
+综上所述若 $S_1,S_2$ 外测度可测，则 $\forall A\subset X\rightarrow\varphi(A)=\varphi(A\cap(S_1\cup S_2))+\varphi(A/(S_1\cup S_2))$ 
+
+即 $S_1\cup S_2$ 亦外测度可测，则根据数学归纳法可得 $\forall n\in\mathbb{N}^$ 若 $S_1,...,S_n$ 外测度可测，可得 $\bigcup_{i=1}^n S_i$ 外测度可测
+
+****** 不相交集可数并<<MK64>>
+
+取 $\forall n\in\mathbb{N}^$ 根据[[MK62][有限可加性]]对于任意 $A\subset X$ 均有 
+
+\begin{aligned}
+\varphi\left(A\cap\bigcup_{i=1}^nS_i\right)=&\varphi\left(\left(A\cap\bigcup_{i=1}^nS_i\right)\cap S_n\right)+\varphi\left(\left(A\cap\bigcup_{i=1}^nS_i\right)/S_n\right)\\
+=&\varphi\left(A\cap\left(\bigcup_{i=1}^nS_i\cap S_n\right)\right)+\varphi\left(A\cap\left(\bigcup_{i=1}^nS_i\right)\cap S_n^c\right)\\
+=&\varphi\left(A\cap S_n\right)+\varphi\left(A\cap\bigcup_{i=1}^nS_i\cap S_n^c\right)\\
+\end{aligned}
+
+则根据数学归纳法可得 $\varphi\left(A\cap\bigcup_{i=1}^nS_i\right)=\sum_{i=1}^n\varphi(A\cap S_i)$
+
+由于 $\bigcup_{i=1}^nS_i\subset \bigcup_{i=1}^\infty S_i$ 故有 $A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\subset A\cap\left(\bigcup_{i=1}^n S_i\right)^c$ 
+
+根据[[MK61][单调性]]可得 $\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\right)\leq\varphi\left(A\cap\left(\bigcup_{i=1}^n S_i\right)^c\right)$ 故有
+
+\begin{aligned}
+\varphi(A)=&\varphi\left(A\cap\left(\bigcup_{i=1}^n S_i\right)\right)+\varphi\left(A/\left(\bigcup_{i=1}^n S_i\right)\right)\\
+=&\sum_{i=1}^n\varphi(A\cap S_i)+\varphi\left(A\cap\left(\bigcup_{i=1}^n S_i\right)^c\right)\\
+\geq&\sum_{i=1}^n\varphi(A\cap S_i)+\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\right)
+\end{aligned}
+
+由于 $n$ 的任意性可得 $\varphi(A)\geq \sum_{i=1}^\infty\varphi(A\cap S_i)+\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\right)$ 进一步根据[[MK61][次可数可加性]]有
+
+\begin{aligned}
+\varphi(A)\geq&\sum_{i=1}^\infty\varphi(A\cap S_i)+\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\right)\\
+\geq&\varphi\left(\bigcup_{i=1}^\infty (A\cap S_i)\right)+\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\right)\\
+=&\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)\right)+\varphi\left(A/\left(\bigcup_{i=1}^\infty S_i\right)\right)
+\end{aligned}
+
+故有 $\varphi(A)\geq\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)\right)+\varphi\left(A/\left(\bigcup_{i=1}^\infty S_i\right)\right)$ 由于 $A=\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)\right)\cup\left(A/\left(\bigcup_{i=1}^\infty S_i\right)\right)$ 
+
+则由次可数可加性得 $\varphi(A)\leq\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)\right)+\varphi\left(A/\left(\bigcup_{i=1}^\infty S_i\right)\right)$ 
+
+故根据[[MK5][三歧性]]，若 $S_1,...,S_\infty$ 互不相交且外测度可测
+
+则 $\forall A\subset X\rightarrow\varphi(A)=\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)\right)+\varphi\left(A/\left(\bigcup_{i=1}^\infty S_i\right)\right)$ 即其可数个集合的并外测度可测
+
+****** 一般可数并 
+
+对集合列 $\{S_i\}$ 其中 $S_i\subset X$ 且外测度可测。定义 $S'_j=S_j/\bigcup_{i=1}^{j-1} S_i$
+
+根据[[MK63][补集可测]]以及[[MK62][有限可加]]可得由 $S^c_j,\ \bigcup_{i=1}^{j-1} S_i$ 均可测，则 $S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right),\ \left(S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right)\right)^c$ 可测 
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质]]德摩根律 $\left(S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right)^c\right)^c=S_j\cap\left(\bigcup_{i=1}^{j-1} S_i\right)^c=S_j/\left(\bigcup_{i=1}^{j-1} S_i\right)=S'_j$ 
+
+即 $S'_j$ 外而测度可测，另根据定义显然有 $\bigcup_{i=1}^nS'_i=\bigcup_{i=1}^nS_i$ （证明 $\forall x\big(x\in\bigcup_{i=1}^nS_i\leftrightarrow x\in\bigcup_{i=1}^nS'_i\big)$ ）
+
+则对于任意 $n\in\mathbb{N}^+$ 均有 $\bigcup_{i=1}^nS'_i=\bigcup_{i=1}^nS_i\subset\bigcup_{i=1}^\infty S_i$ 故根据 $n$ 任意性有 $\bigcup_{i=1}^\infty S'_i\subset\bigcup_{i=1}^\infty S_i$
+
+同理 $\bigcup_{i=1}^nS_i=\bigcup_{i=1}^nS'_i\subset\bigcup_{i=1}^\infty S'_i$ 则有 $\bigcup_{i=1}^\infty S_i\subset\bigcup_{i=1}^\infty S'_i$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含-定理1]]可得 $\bigcup_{i=1}^\infty S_i=\bigcup_{i=1}^\infty S'_i$
+
+故进一步根据[[MK64][不相交可数可加]]可得 $\bigcup_{i=1}^\infty S'_i$ 外测度可测，即 $\bigcup_{i=1}^\infty S_i$ 亦外测度可测
+
+* 开集构造
+
+** 直线
+
+*** 构成区间<<MK42>>
+
+对于开集 $G\subset\mathbb{R}$ 若 $(\alpha,\beta)\subset G$ 且 $\alpha\not\in G\land\beta\not\in G$ 则称 $(\alpha,\beta)$ 是 $G$ 的构成区间 
+
+*** 开集构造定理<<MK47>>
+
+直线上的开集可表示为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数]]个不相交的[[MK42][构成区间]]的并
+
+**** 证明
+
+***** 不同构成区间不相交
+
+若两个构成区间 $(a_1,b_1),(a_2,b_2)$ 相交，则必有某区间端点落在另一个区间内。
+
+由于 $(a_1,b_1)\subset G\land(a_2,b_2)\subset G$ 则落在区间内的端点亦属于 $G$
+
+这与[[MK42][构成区间]]端点不属于 $G$ 矛盾，故不相交
+
+定义 $T$ 是所有属于 $G$ 的构成区间的集合
+
+***** 构成区间有至多可数个
+
+根据[[MK43][有理数稠密性]]可知，对于任意开区间 $(a,b)$ 均存在一个有理数 $q\in(a,b)$
+
+对每一个构成区间任取一个有理数，则构成[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-单射]]
+
+进一步根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数]]可得 $|T|\leq|\mathbb{Q}|$ 
+
+由于有理数是可数集，故得 $T$ 即是至多可数集
+
+***** 证明结论
+
+定义 $G'=\bigcup_{t\in T}t$ 即所有属于 $G$ 的构成区间的并。
+
+对于任意 $x\in G'$ 必有 $x\in t\subset G$
+
+对于任意 $x\in G$ 定义开区间集合 $A_{x}=\left\{(a,b)\big|x\in (a,b)\land(a,b)\subset G\right\}$
+
+进一步定义 $\{a\}_{x}=\{a|(a,b)\in A_{x}\},\{b\}_{x}=\{b|(a,b)\in A_{x}\}$ 则定义 $\alpha=\inf\{a\}_{x},\beta=\sup\{b\}_{x}$
+
+则任取 $y\in (\alpha,\beta)$ 根据确界定义必存在 $\alpha<a<y<b<\beta\land (a,b)\in A_x$ 则有 $y\in(a,b)\subset G$ ，故有 $(\alpha,\beta)\subset G$ 
+
+若 $\alpha\in G$ 由于 $G$ 是[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]，则存在 $O(\alpha,\delta)\subset G$
+
+结合上述证明可得 $(\alpha-\delta,\beta)\subset G$ 与下确界定义矛盾，故 $\alpha\not\in G$ 同理可证 $\beta\not\in G$
+
+故 $(\alpha,\beta)$ 是 $x$ 在 $G$ 上的构成区间，即 $(\alpha,\beta)\in T$ 故 $x\in G'$
+
+综上所属 $\forall x\in G'\rightarrow x\in G\land \forall x\in G\rightarrow x\in G'$ 
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $G'=G$
+
+*** 闭集的构造<<MK48>>
+
+直线上挖掉至多可数个不相交的[[MK42][构成区间]]的余集是闭集
+
+**** 证明
+
+对于任意闭集 $K\in\mathbb{R}$ 根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]可得其补集 $K^c$ 是开集
+
+相反 $K$ 可以理解为 $\mathbb{R}$ 去除开集 $K^c$ 根据[[MK47][开集构造定理]]可得 $K^c$ 可由至多可数个不相交的开区间的并构成
+
+故任意闭集 $K$ 均可表述为直线 $\mathbb{R}$ 去掉 $K^c$ 等价的至多可数个开区间的并。
+
+*** 完备集的构造<<MK49>>
+
+直线上挖掉至多可数个不相邻的[[MK42][构成区间]]的集合是完备集。
+
+相邻：对于任意 $(a_k,b_k),(a_l,b_l)$ ，若满足 $b_k=a_l$ 则两个区间相邻
+
+**** 证明
+
+***** 前提定义
+
+根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-完备集]]可得不含孤立点的闭集是完备集。
+
+假设点 $x$ 是[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-点的定义-孤立点]]，则根据定义存在 $\delta>0$ 使得去心领域 $O(x,\delta)/x$ 不属于 $S$
+
+根据[[MK48][闭集构造]]可得任意闭集均可表示为为直线 $\mathbb{R}$ 去掉至多可数个开区间的并。
+
+根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]得 $S$ 的补集 $S^c$ 是开集
+
+根据[[MK47][开集构造]]可得 $S^c=\bigcup_{i=1}^\infty(a_i,b_i)$ 其中 $(a_i,b_i)$ 是[[MK42][构成区间]]
+
+***** 不含孤立点的充要条件是没有相邻构成区间
+
+根据德摩根路，我们证明含孤立点的充要条件是有相邻构成区间
+
+****** 充分
+
+若 $(a_k,b_k),(a_l,b_l)$ 相邻，即 $a_l=b_k$ ，则由于 $(a_i,b_i)$ 是[[MK42][构成区间]]，故无相交
+
+假设孤立点 $x\in S$ 则根据定义有 $(x-\delta,x),(x,x+\delta)$ 均不属于 $S$ 故有 $\exists(a_k,b_k)\rightarrow (x-\delta,x)\subset(a_k,b_k)$
+
+同理可得 $\exists(a_l,b_l)\rightarrow (x,x+\delta)\subset(a_l,b_l)$ 且满足 $(a_k,b_k)\cap(a_l,b_l)=\varnothing$ 以及 $x\not\in(a_k,b_k)\land x\not\in(a_l,b_l)$
+
+若 $x\ne a_l$ 根据[[MK5][三歧性]]可得比满足 $x>a_l\lor x<a_l$ 若 $x>a_l$ 结合 $(x,x+\delta)\subset (a_l,b_l)$ 可得 $x\in(a_l,b_l)\subset S^c$ 
+
+与 $x\in S$ 矛盾。若 $x<a_l$ 则与 $(x,x+\delta)\subset(a_l,b_l)$ 矛盾。
+
+故必有 $x=a_l$ 同理可证 $x=b_k$ 故根据[[MK5][传递性]]有 $a_l=b_k$ 即 $(a_k,b_k),(a_l,b_l)$ 相邻
+
+****** 必要
+
+若 $(a_k,b_k),(a_l,b_l)$ 相邻，即 $a_l=b_k$ ，则若存在构成区间 $(a_u,b_u)$ 满足 $b_k\in(a_u,b_u)$
+
+则根据开集定义存在 $(b_k-\delta,b_k+\delta)\subset(a_u,b_u)$ 即 $(b_k-\delta,b_k)\subset (a_u,b_u)$
+
+同理可证，存在 $\gamma$ 满足 $(b_k-\gamma,b_k)\subset(a_k,b_k)$ 则取 $\tau=\min(\delta,\gamma)$ 
+
+故有 $(b_k-\tau,b_k)\subset(a_k,b_k)\land(b_k-\tau,b_k)\subset(a_u,b_u)$ 与构成区间不相交矛盾
+
+故有 $b_k\not\in S^c$ 即 $b_k\in S$ 定义 $\tau=\min(b_l-a_l,b_k-a_k)$ 则有 $O(b_k,\tau)/b_k\in S^c$
+
+即 $b_k$ 是 $S$ 的孤立点。
+
+***** 结论
+
+当挖去至多可数个[[MK42][构成区间]]时，剩余集合是闭集
+
+根据之前证明，当构成区间没有相邻时等价于不含孤立点
+
+故得命题
+
+*** 康托三分集<<MK107>>
+
+若 $E_n=\bigcup_{\lambda\in\Lambda} [a_\lambda,b_\lambda]$ 为若干个闭区间的并，则定义 $E_{n+1}=\bigcup_{\lambda\in\Lambda}\left(\left[a_\lambda,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right]\cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
+
+定义  $E_0=[0,1]$ 则 $P=\lim_{n\to\infty}E_n$ 即为康托三分集
+
+**** 性质
+
+***** 是完备集
+
+康托三分集挖去的均为不相邻的开集，故根据[[MK49][完备集构造]]可得康托三分集是完备集
+
+***** 有连续基数<<MK108>>
+
+根据[[MK33][定理2]]可得，所有实数均有小数表示，此处选择二进制。
+
+根据定义， $E_0=[0,1]$ 定义映射 $0\to0.0,1\to0.1$
+
+若 $E_n=\bigcup_{\lambda\in\Lambda} [a_\lambda,b_\lambda]$ 假设每个 $a_\lambda,b_\lambda$ 均有对应的二进制小数 $\alpha_\lambda,\beta_\lambda$
+
+则在 $E_{n+1}=\bigcup_{\lambda\in\Lambda}\left(\left[a_\lambda,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right]\cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$ 中，
+
+每个端点根据挖去区域的左右，在之前端点映射二进制小数的末尾加 $0$ 或 $1$
+
+即 $a_\lambda=\alpha_\lambda0,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\to\alpha_\lambda1,b_\lambda-a_\lambda}{3}=\beta_\lambda0,b_\lambda=\beta_\lambda1$
+
+由于三分集是无限划分，且所有端点均属于该集合，故实数 $[0,1]$ 内的所有点均有对应的映射
+
+即 $\sigma:P\to[0,1]$ 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数-满射]]，
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数]]可得 $|P|\geq|[0,1]|$ 又根据[[MK36][定理0]]以及传递性可得 $|P|\geq|\mathbb{R}|$
+
+由于 $P$ 是从 $\mathbb{R}$ 上取的，故显然有 $|P|\leq|\mathbb{R}|$ 根据基数定义中伯恩斯坦定理 $|P|=|\mathbb{R}|$
+
+***** 可测且[[MK51][外测度]]为零<<MK119>>
+
+定义 $Z=[0,1]-P$ 则康托集为 $P=[0,1]-Z$
+
+显然根据定义 $Z$ 为挖去区间的并，且为有限区间，根据[[MK82][区间可测]]、[[MK84][计算]]中（2）可知 $Z$ 是关于[[MK51][外测度]]的[[MK81][可测集]]
+
+显然挖去的区域是可数个，故定义 $\{K_i\}$ 对应挖去的区域，则 $Z=\bigcup_{i=1}^\infty K_i$ 
+
+进一步由于挖去的区间两两不相交，故根据[[MK84][计算]]中（2）有 $m^*(Z)=\sum_{i=1}^\infty m^*(K_i)$
+
+进一步根据[[MK79][正规性]]可得第 $n$ 次挖掉的长度为 $\frac{2^{n-1}}{3^n}$ 则挖掉的长度可定义为 $S=\lim_{n\to\infty}\sum_{i=1}^n\frac{2^{n-1}}{3^n}$
+
+根据等比数列求和公式 $S=\lim_{n\to\infty}\frac{1}{3}\frac{1-\left(\frac{2}{3}\right)^n}{1-\frac{2}{3}}=\frac{1}{3}\frac{1}{1-\frac{2}{3}}=1<\infty$ 即 $m^*(Z)=1$
+
+同样根据正规性有 $m^*([0,1])=1$ 且 $Z\subset[0,1]$ 
+
+故根据[[MK84][计算]]中（3）可得 $m^*(P)=m^*([0,1])-m^*(Z)=1-1=0$
+
+** 有限欧式空间开集构造定理<<MK83>>
+
+对于任意[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]] $G\subset\mathbb{R}^n\land n<\infty$ 
+
+其可表述为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数]]个不相交的半开闭[[MK13][区间]]的并
+
+*** 证明
+
+**** 构建二进方体
+
+将 $\mathbb{R}^n$ 空间分割为长度为 $1$ 的矩体区间
+
+则每对应一组 $\vec{x}=(x_1,...,x_n),x_i\in\mathbb{N}$ 均有一个矩体区间 $\prod_{i=1}^n[x_i,x_i+1)\in H_0$ 
+
+其中 $H_0$ 定义为所有矩体的集合，根据[[MK43][有理数稠密性]]可知每个 $H_0$ 中的区间内必有有理点。
+
+由于有理数可数，且 $\mathbb{R}^n$ 中有理点是 $\mathbb{R}$ 中有理点的 $n$ 次直积
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理2]]可得 $H_0$ 是可数集
+
+将 $H_0$ 中所有矩体二分，则矩体的长度为 $\frac{1}{2}$ ，定义此次划分的所有矩体集合为 $H_1$ 同理可证是可数集
+
+依次类推 $H_k$ 的矩长度为 $\left(\frac{1}{2}\right)^k$ 且 $H_k$ 为可数集
+
+**** 构建并集
+
+定义 $\Gamma_0=\left\{J\left|J\in H_0\land J\subset G\right\}$ 进一步定义 $\Gamma_k=\left\{J\left|J\in H_k\land\left(J\subset G/\bigcup_{i=0}^{k-1}\left(\bigcup_{J\in\Gamma_i}J\right)\right)\right\}$
+
+由于 $\Gamma_k\subset H_k$ 且 $H_k$ 可数，则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数-无限集]]可得 $\Gamma_k$ 至多可数
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理1]]可得 $\bigcup_{i=0}^\infty\Gamma_i$ 亦为至多可数
+
+且根据构造，每个 $J\in\bigcup_{i=0}^\infty\Gamma_i$ 是区间，且两两互不相交 
+
+**** 证明结论
+
+根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]定义，对于任意 $x\in G$ 均存在 $\delta\in\mathbb{R}\land\delta>0$ 满足 $O(x,\delta)\subset G$ 
+
+对于正闭矩体 $J$ 包含的点集，距离最远的点为矩体对角端点，距离为 $\sqrt{nl^2}$ 其中 $l$ 为矩体的边长
+
+由于 $\lim_{k\to\infty}\frac{1}{2}^k=0$ 则定义 $l_k=\frac{1}{2}^k$ 必存在 $k'$ 使得 $\sqrt{nl^2_{k'}}<\delta$ 
+
+由于 $H_{k'}$ 划分整个 $\mathbb{R}^n$ 空间，则必存在区间 $x\in J'\in H_{k'}$ 且对于任意 $y\in J'$ 均有 $|y-x|<\sqrt{nl^2_{k'}}<\delta$
+
+故有 $J'\subset O(x,\delta)\subset G$ 故 $J'$ 满足 $J'\in H_{k'}\land J'\subset G$ 
+
+根据二进方体构建规则 $J'$ 与 $\bigcup_{i=0}^{k'-1}\left(\bigcup_{J\in\Gamma_i}J\right)$ 的关系仅存在属于或不属于，故
+
+此时若 $J'\subset \bigcup_{i=0}^{k'-1}\left(\bigcup_{J\in\Gamma_i}J\right)$ 则有 $x\in J'\subset \bigcup_{i=0}^{k'-1}\left(\bigcup_{J\in\Gamma_i}J\right)\subset \bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$ 
+
+若 $J'\not\subset \bigcup_{i=0}^{k'-1}\left(\bigcup_{J\in\Gamma_i}J\right)$ 
+
+则 $J'\in H_{k'}\land\left(J'\subset G/\bigcup_{i=0}^{k'-1}\left(\bigcup_{J\in\Gamma_i}J\right)\right)$ 则 $J'\in\Gamma_{k'}$ 故有 $x\in J'\subset \bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$
+
+故对于任意 $x\in G$ 均有 $x\in\bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$ 由于 $\Gamma_k$ 的构造，对于任意 $J\in\bigcup_{i=0}^\infty\Gamma_i$ 均有 $J\subset G$
+
+故对于任意 $x\in\bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$ 均有 $x\in G$ 
+
+综上所述根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $G=\bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$
+
+证毕
+
 * 实数定义
 
 ** 实数公理
@@ -126,9 +1101,9 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 （3） 分配率： $\forall a\in\mathbb{R}\forall b\in\mathbb{R}\forall c\in\mathbb{R}\left((a+b)\cdot c=a\cdot c+b\cdot c\right)$
 
-（4） 存在加乘法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-幺元]]： $\exists 0\in\mathbb{R}\forall a\in\mathbb{R}\left(0+a=a\right)\land\exists1\in\mathbb{R}\forall a\in\mathbb{R}\left(1\cdot a=a\right)$
+（4） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-幺元]]： $\exists 0\in\mathbb{R}\forall a\in\mathbb{R}\left(0+a=a\right)\land\exists1\in\mathbb{R}\forall a\in\mathbb{R}\left(1\cdot a=a\right)$
 
-（5） 存在加成法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元]]： $\forall a\in\mathbb{R}\exists -a\in\mathbb{R}\left(-a+a=0\right)\land\forall a\in\mathbb{R}\exists a^{-1}\in\mathbb{R}\left(a^{-1}\cdot a=1\right)$
+（5） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元]]： $\forall a\in\mathbb{R}\exists -a\in\mathbb{R}\left(-a+a=0\right)\land\forall a\in\mathbb{R}\exists a^{-1}\in\mathbb{R}\left(a^{-1}\cdot a=1\right)$
 
 **** 不可数加法<<MK53>>
 
@@ -967,323 +1942,6 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 即 $x_1<\frac{m}{n}<x_2$ 证毕
 
-* 度量
-
-** 度量空间<<MK38>>
-
-定义[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-代数的构建-代数结构]] $<X,d>$ 运算 $d:X\times X\to\mathbb{R}$ 满足：
-
-（1） 非负性： $\forall\{x,y\}\subset X\rightarrow d(x,y)\geq0$
-
-（2） 对称性： $\forall\{x,y\}\subset X\rightarrow d(x,y)=d(y,x)$
-
-（3） 三角性： $\forall\{x,y,z\}\subset X\rightarrow d(x,y)+d(y,z)\geq d(x,z)$
-
-则称代数结构 $<X,d>$ 是一个度量空间
-
-*** 性质
-
-**** 自身为零
-
-对于度量空间 $<X,d>$ 若 $x\in X$ 则有 $d(x,x)$ 是所有距离的下确界
-
-***** 证明
-
-据三角性有 $d(x,x)\leq d(x,x)+d(x,x)=2d(x,x)$
-
-两边同[[MK6][减]] $d(x,x)$ 得 $d(x,x)=0$
-
-** 度量子空间
-
-对于[[MK38][度量空间]] $<X,d>$ 存在 $S\subset X$ 且满足 $<S,d>$ 亦为度量空间，则称其为度量子空间
-
-** 子集距离<<MK89>>
-
-对于[[MK38][度量空间]] $<X,d>$ 若存在 $A\subset X\land B\subset X$ 则 $A,B$ 之间的距离是 $\inf\left\{d(a,b)\big|\forall a\in A\land\forall b\in B\right\}$
-
-** 子集的直径
-
-对于[[MK38][度量空间]] $<X,d>$ 若存在 $A\subset X$ 则其直径 $\phi(A)=\sup\left\{d(a,b)\big|\forall \{a,b\}\subset A\right\}$ 
-
-若 $\phi(A)<\infty$ 则定义此类集合是有界集
-
-** 领域<<MK59>>
-
-定义 $\delta\in\mathbb{R}$ 代数结构 $<X,d>$ ，对于点 $x\in X$ 的 $\delta$ 领域定义为 $O(x,\delta)=\left\{y\big|y\in X\land d(x,y)<\delta\right\}$
-
-*** 性质
-
-（1） $x\in O(x,\delta)$
-
-（2） 对于任意 $\{\delta_1,\delta_2\}\subset\mathbb{R}$ 存在 $\delta_3$ 满足 $O(x,\delta_3)\subset O(x,\delta_1)\subset\cap O(x,\delta_2)$
-
-（3） $\forall y\in O(x,\delta)$ 
-
-（4） 若 $\{x,y\}\subset X\land x\ne y$ 则存在 $\delta$ 使得 $O(x,\delta)\cap O(y,\delta)=\varnothing$
-
-* 测度
-
-** $\sigma$ 代数<<MK50>>
-
-集合 $X$ 上的 $\sigma$ 代数记作 $\sigma(X)$ ，是 $\rho(X)$ 即 $X$ 幂集的一个子集，满足：
-
-（1） 包含集合本身 $X\in\sigma(X)$
-
-（2） 任元素合的补封闭 $\forall A\left(A\in\sigma(X)\rightarrow A^c\in\sigma(X)\right)$ 
-
-（3） [[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-可数]]个元素的并封闭 $A_i\in\sigma(X)\rightarrow\bigcup_{i=1}^\infty A_i\in\sigma(X)$
-
-*** 性质
-
-**** 可数交封闭<<MK67>>
-
-设 $X$ 中的子集列 $\{S_i\}$ 满足 $\forall i\in\mathbb{N}^+\rightarrow S_i\in\sigma(X)$ 则有 $\bigcap_{i=1}^\infty S_i\in\sigma(X)$
-
-***** 证明
-
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质]]中德摩根率可得 $\bigcap_{i=1}^\infty S_i=((\bigcap_{i=1}^\infty S_i)^c)^c=\left(\bigcup_{i=1}^\infty S_i^c\right)^c$
-
-由于 $S_i\in\sigma(X)$ 则有 $S^c_i\in\sigma(X)$ 则根据可数并封闭 $\bigcup_{i=1}^\infty S_i^c\subset\sigma(X)$
-
-最终根据（2）可得 $\bigcap_{i=1}^\infty S_i=\left(\bigcup_{i=1}^\infty S_i^c\right)^c\in\sigma(X)$
-
-**** 差封闭<<MK74>>
-
-若 $\{S_1,S_2\}\subset\sigma(X)$ 则有 $S_1-S_2\in\sigma(X)$ 
-
-进一步若 $S_1,S_2$ [[MK65][外测度可测]] $S_2\subset S_1$ 且 $\varphi(S_2)<\infty$ 则有 $\varphi(S_1-S_2)=\varphi(S_1)-\varphi(S_2)$
-
-***** 证明
-
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-补与减]]可得 $S_1-S_2=S_1\cap S^c_2$ 根据[[MK50][定义]]中（3）以及[[MK67][交封闭]]得 $S_1\cap S_2^c\in\sigma(X)$
-
-根据[[MK65][Caratheodory定理]]可得若 $S_2$ 外测度可测，则满足 $\varphi(S_1)=\varphi(S_1\cap S_2)+\varphi(S_1-S_2)$
-
-根据 $S_2\subset S_1$ 得 $S_1\cap S_2=S_2$ 则有 $\varphi(S_1)=\varphi(S_2)+\varphi(S_1-S_2)$
-
-此时若 $\varphi(S_2)<\infty$ 则有 $\varphi(S_1-S_2)=\varphi(S_1)-\varphi(S_2)$
-
-**** [[MK69][递增]]集合列[[MK1][极限]]封闭<<MK73>>
-
-若 $\{S_i\}\subset\sigma(X)$ [[MK69][递增]]，则 $\lim_{i\to\infty}S_i\in\sigma(X)$ 
-
-进一步若 $\{S_i\}$ 是[[MK65][外测度可测集列]]，则有 $\varphi(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}\varphi(S_i)$
-
-***** 证明
-
-****** 封闭
-
-根据[[MK70][定理]]可得 $\lim_{n\to\infty}S_n=\cup_{i=1}^\infty S_i$ 且 $\forall i\in\mathbb{N}^+\rightarrow S\in\sigma(X)$ 则根据[[MK50][定义]]（3）可得 $\cup_{i=1}^\infty S_i\in\sigma(X)$
-
-****** 等式
-
-定义 $S_0=\varnothing$ 以及 $S'_i=S_i-S_{i-1}$ 则对于任意 $i\ne j$ 假设 $i>j$
-
-若 $S'_i=\varnothing\lor S'_j=\varnothing$ 则有 $S'_i\cap S'_j=\varnothing$ 
-
-若均不为空集，则根据递增有 $S_j\subset S_{i-1}\subset S_i$ 则有 $\forall x\in S'_j\rightarrow x\in S_j-S_{j-1}\rightarrow x\in S_{i-1}$ 
-
-则有 $x\not\in S'_i$ 故 $S'_i\cap S'_j=\varnothing$ 故 $\{S'_i\}$ 互不相交
-
-由于 $S_1=S'_1-S'_0=S'_1$ 且 $S_i=S'_i\cup S_{i-1}$ 故根据数学归纳法可得 $S_n=\bigcup_{i=1}^n S'_i$
-
-故有 $\lim_{n\to\infty}S_n=\lim_{n\to\infty}\bigcup_{i=1}^n S'_i=\bigcup_{i=1}^\infty S'_i$
-
-根据[[MK65][Caratheodory定理]]由于 $\{S_i\}$ 均外测度可测，则有可数可加性
-
-即 $\varphi(\bigcup_{i=1}^\infty S'_i)=\sum_{i=1}^\infty \varphi(S'_i)=\sum_{i=1}^\infty \varphi(S_i-S_{i-1})=\lim_{n\to\infty}\sum_{i=1}^n \varphi(S_i-S_{i-1})$
-
-则进一步利用可数可加性 $\lim_{n\to\infty}\sum_{i=1}^n \varphi(S_i-S_{i-1})=\lim_{n\to\infty}\varphi\left(\bigcup_{i=1}^n(S_i-S_{i-1})\right)$
-
-由于 $S_{i-1}\subset S_{i}$ 则有 $S_{i}=(S_i-S_{i-1})\cup S_{i-1}$ 且 $S_1-S_0=S_1$
-
-故根据数学归纳法有 $\bigcup_{i=1}^n(S_i-S_{i-1})=S_n$ 最终有 $\varphi(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}\varphi(S_i)$
-
-**** [[MK69][递减]]集合列[[MK1][极限]]封闭<<MK75>>
-
-若 $\{S_i\}\subset\sigma(X)$ [[MK69][递减]]，则 $\lim_{i\to\infty}S_i\in\sigma(X)$
-
-进一步若 $\{S_i\}$ 是[[MK65][外测度可测集列]]且当 $\varphi(S_1)<\infty$ 时有 $\varphi(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}\varphi(S_i)$
-
-***** 证明
-
-****** 封闭
-
-根据[[MK70][定理]]可得 $\lim_{n\to\infty}S_n=\bigcap_{i=1}^\infty S_i$ 且 $\forall i\in\mathbb{N}^+\rightarrow S\in\sigma(X)$ 则根据[[MK71][定理（4）]]有 $\bigcap_{i=1}^\infty S_i\in\sigma(X)$
-
-****** 等式
-
-定义 $S'_{i}=S_1-S_i$ 则 $S'_i$ 是[[MK69][递增]]列，由于 $S_i$ 外测度可测，则根据[[MK65][Caratheodory定理]]可得 $S'_i$ 外测度可测
-
-则根据[[MK73][递增封闭]]有 $\varphi(\lim_{i\to\infty}S'_i)=\lim_{i\to\infty}\varphi(S'_i)$
-
-则进一步 $\varphi(S_1-\lim_{i\to\infty}S_i)=\lim_{i\to\infty}\varphi(S_1-S_i)$ 由于 $S_i\subset S_1$ 且 $\varphi(S_1)<\infty$
-
-则根据[[MK60][单调性]]有 $\forall i\in\mathbb{N}^+\rightarrow\varphi(S_i)<\infty$ 以及 $\varphi(\lim_{i\to\infty}S_i)<\infty$ 
-
-故根据[[MK74][差封闭]]有 $\varphi(S_1)-\varphi(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}[\varphi(S_1)-\varphi(S_i)]$ 
-
-故根据极限四则运算有 $\varphi(S_1)-\varphi(\lim_{i\to\infty}S_i)=\varphi(S_1)-\lim_{i\to\infty}\varphi(S_i)$
-
-再一次根据 $\varphi(S_1)<\infty$ 有 $\varphi(\lim_{i\to\infty}S_i)=\lim_{i\to\infty}\varphi(S_i)$
-
-*** 生成<<MK85>>
-
-定义 $\beta\subset\rho(X)$ ，则所有包含 $\beta$ 的[[MK50][ $\sigma$ 代数]]之并定义为 $\beta$ 生成的 $\sigma$ 代数
-
-**** 存在性
-
-由于 $\rho(X)$ 本身为 $\sigma$ 代数且不为空，进一步由于 $\beta\subset\rho(X)$ 且任意 $\sigma$ 代数均不为空集
-
-故必然存在由 $\beta$ 生成的 $\sigma$ 代数
-
-** 测度<<MK56>>
-
-设 $\Gamma$ 是集合 $X$ 的[[MK50][ $\sigma$ 代数]]，函数 $\rho:\Gamma\to\mathbb{R}\cup\{+\infty\}$ 满足：
-
-（1） 非负性： $\forall A\in\Gamma\rightarrow \rho(A)\geq0$
-
-（2） 规范性： $\rho(\varnothing)=0$
-
-（3） 可数可加性： $\rho(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\rho(A_i)$ 注意此处 $i$ 为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-可数]]个，且当 $i\ne j$ 时 $A_i\cap A_j=\varnothing$
-
-则称 $\rho$ 是 $X$ 上的测度，其中 $\Gamma$ 是可测集。
-
-** 外测度<<MK61>>
-
-定义集合 $X$ 则定义映射 $\varphi:\rho(X)\to\mathbb{R}\cup\{\infty\}$ 其中 $\rho(X)$ 是 $X$ 的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-幂集]]
-
-若映射满足：
-
-（1） 非负性： $\forall A\subset X\rightarrow\varphi(A)\geq 0$
-
-（2） 规范性： $\varphi(\varnothing)=0$
-
-（3） 单调性： $A\subset B\rightarrow\varphi(A)\leq\varphi(B)$
-
-（4） 次可数可加性： $\varphi\left(\bigcup_{i=1}^\infty A_i\right)\leq\sum_{i=1}^\infty\varphi(A_i)$
-
-则称 $\varphi$ 是 $X$ 上的外测度
-
-** Caratheodory定理<<MK65>>
-
-对于任意 $S\subset X$ 若满足 $\forall A\subset X\rightarrow\varphi(A)=\varphi(A\cap S)+\varphi(A/S)$ 其中 $\varphi:\rho(X)\to\mathbb{R}$ 是[[MK61][外测度]]
-
-则 $S$ 定义为外测度可测集且：
-
-（1） 所有外测度可测集的集合构成 $X$ 上的[[MK50][ $\sigma$ 代数]]
-
-（2） 在外测度可测集上的[[MK61][外测度]]是[[MK56][测度]]
-
-此时称 $S$ 是关于外测度的可测集
-
-*** 证明
-
-**** 可测集满足[[MK56][测度]]
-
-根据[[MK61][外测度]]以及[[MK56][测度]]定义可得满足非负性及规范性，以下证明可数可加性。
-
-取任意互不相交的可测集序列 $\{A_i\}\subset X$ 取任意 $n\in\mathbb{N}^+$ 则有 $\bigcup_{i=1}^n A_i\subset\bigcup_{i=1}^\infty A_i$
-
-则根据[[MK61][单调性]]有 $\varphi\left(\bigcup_{i=1}^n A_i\right)\leq\varphi\left(\bigcup_{i=1}^\infty A_i\right)$
-
-由于 $A_1\subset X$ 则根据条件 $\varphi\left(\bigcup_{i=1}^n A_i\right)=\varphi\left(\bigcup_{i=1}^n A_i\cap A_1\right)+\varphi\left(\bigcup_{i=1}^n A_i/A_1\right)=\varphi\left(A_1\right)+\varphi\left(\bigcup_{i=2}^n A_i\right)$
-
-依次类推可得 $\varphi\left(\bigcup_{i=1}^n A_i\right)=\sum_{i=1}^n\varphi(A_i)$ 结合上式有 $\varphi\left(\bigcup_{i=1}^\infty A_i\right)\geq\sum_{i=1}^n\varphi(A_i)$
-
-又由于 $n$ 的任意性以及[[MK53][无穷加法]]定义可得 $\varphi\left(\bigcup_{i=1}^\infty A_i\right)\geq\sum_{i=1}^\infty\varphi(A_i)$
-
-又根据[[MK61][次可数可加性]]有 $\varphi\left(\bigcup_{i=1}^\infty A_i\right)\leq\sum_{i=1}^\infty\varphi(A_i)$ 最终根据[[MK5][三歧性]]有 $\varphi\left(\bigcup_{i=1}^\infty A_i\right)=\sum_{i=1}^\infty\varphi(A_i)$
-
-**** 是 $\sigma$ 代数
-
-***** 全集可测
-
-取任意 $A\subset X$ 则有 $\varphi(A\cup X)+\varphi(A/X)=\varphi(A)+\varphi(\varnothing)=\varphi(A)$ 故 $X$ 外测度可测
-
-***** 补集可测<<MK63>>
-
-若 $S$ 外测度可测，则有 $\forall A\subset X\rightarrow\varphi(A)=\varphi(A\cap S)+\varphi(A/S)$ 
-
-则对 $S^c$ 有 $\varphi(A\cap S^c)+\varphi(A/S^c)=\varphi(A/S)+\varphi(A\cap S)=\varphi(A)$ 故若 $S$ 外测度可测，则有 $S^c$ 外测度可测 
-
-***** 可数并可测
-
-****** 有限可加性<<MK62>>
-
-假设 $S_1,S_2$ 均是外测度可测集，取任意 $A\subset X$ 根据[[MK61][次可加性]] $\varphi(A)\leq\varphi(A\cap(S_1\cup S_2))+\varphi(A/(S_1\cup S_2))$
-
-则根据可测集定义，[[MK61][次可加性]]以及[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质]]中分配率、结合律、补与减有：
-
-\begin{aligned}
-\varphi(A)=&\varphi(A\cap S_1)+\varphi(A/S_1)\\
-=&\varphi((A\cap S_1)\cap S_2)+\varphi((A\cap S_1)/ S_2)+\varphi((A/S_1)\cap S_2)+\varphi((A/S_1)/S_2)\\
-\geq&\varphi\big(((A\cap S_1)\cap S_2)\cup((A\cap S_1)/ S_2)\cup((A/S_1)\cap S_2)\big)+\varphi((A/S_1)/S_2)\\
-=&\varphi\big((A\cap (S_1\cap S_2))\cup(A\cap (S_1\cap S_2^c))\cup(A\cap (S_1^c\cap S_2))\big)+\varphi(A\cap(S_1^c\cap S_2^c))\\
-=&\varphi\bigg(A\cap\big((S_1\cap S_2)\cup(S_1\cap S_2^c)\cup(S_1^c\cap S_2)\big)\bigg)+\varphi(A\cap(S_1\cup S_2)^c)\\
-=&\varphi(A\cap(S_1\cup S_2))+\varphi(A/(S_1\cup S_2))\\
-\end{aligned}
-
-综上所述若 $S_1,S_2$ 外测度可测，则 $\forall A\subset X\rightarrow\varphi(A)=\varphi(A\cap(S_1\cup S_2))+\varphi(A/(S_1\cup S_2))$ 
-
-即 $S_1\cup S_2$ 亦外测度可测，则根据数学归纳法可得 $\forall n\in\mathbb{N}^$ 若 $S_1,...,S_n$ 外测度可测，可得 $\bigcup_{i=1}^n S_i$ 外测度可测
-
-****** 不相交集可数并<<MK64>>
-
-取 $\forall n\in\mathbb{N}^$ 根据[[MK62][有限可加性]]对于任意 $A\subset X$ 均有 
-
-\begin{aligned}
-\varphi\left(A\cap\bigcup_{i=1}^nS_i\right)=&\varphi\left(\left(A\cap\bigcup_{i=1}^nS_i\right)\cap S_n\right)+\varphi\left(\left(A\cap\bigcup_{i=1}^nS_i\right)/S_n\right)\\
-=&\varphi\left(A\cap\left(\bigcup_{i=1}^nS_i\cap S_n\right)\right)+\varphi\left(A\cap\left(\bigcup_{i=1}^nS_i\right)\cap S_n^c\right)\\
-=&\varphi\left(A\cap S_n\right)+\varphi\left(A\cap\bigcup_{i=1}^nS_i\cap S_n^c\right)\\
-\end{aligned}
-
-则根据数学归纳法可得 $\varphi\left(A\cap\bigcup_{i=1}^nS_i\right)=\sum_{i=1}^n\varphi(A\cap S_i)$
-
-由于 $\bigcup_{i=1}^nS_i\subset \bigcup_{i=1}^\infty S_i$ 故有 $A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\subset A\cap\left(\bigcup_{i=1}^n S_i\right)^c$ 
-
-根据[[MK61][单调性]]可得 $\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\right)\leq\varphi\left(A\cap\left(\bigcup_{i=1}^n S_i\right)^c\right)$ 故有
-
-\begin{aligned}
-\varphi(A)=&\varphi\left(A\cap\left(\bigcup_{i=1}^n S_i\right)\right)+\varphi\left(A/\left(\bigcup_{i=1}^n S_i\right)\right)\\
-=&\sum_{i=1}^n\varphi(A\cap S_i)+\varphi\left(A\cap\left(\bigcup_{i=1}^n S_i\right)^c\right)\\
-\geq&\sum_{i=1}^n\varphi(A\cap S_i)+\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\right)
-\end{aligned}
-
-由于 $n$ 的任意性可得 $\varphi(A)\geq \sum_{i=1}^\infty\varphi(A\cap S_i)+\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\right)$ 进一步根据[[MK61][次可数可加性]]有
-
-\begin{aligned}
-\varphi(A)\geq&\sum_{i=1}^\infty\varphi(A\cap S_i)+\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\right)\\
-\geq&\varphi\left(\bigcup_{i=1}^\infty (A\cap S_i)\right)+\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)^c\right)\\
-=&\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)\right)+\varphi\left(A/\left(\bigcup_{i=1}^\infty S_i\right)\right)
-\end{aligned}
-
-故有 $\varphi(A)\geq\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)\right)+\varphi\left(A/\left(\bigcup_{i=1}^\infty S_i\right)\right)$ 由于 $A=\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)\right)\cup\left(A/\left(\bigcup_{i=1}^\infty S_i\right)\right)$ 
-
-则由次可数可加性得 $\varphi(A)\leq\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)\right)+\varphi\left(A/\left(\bigcup_{i=1}^\infty S_i\right)\right)$ 
-
-故根据[[MK5][三歧性]]，若 $S_1,...,S_\infty$ 互不相交且外测度可测
-
-则 $\forall A\subset X\rightarrow\varphi(A)=\varphi\left(A\cap\left(\bigcup_{i=1}^\infty S_i\right)\right)+\varphi\left(A/\left(\bigcup_{i=1}^\infty S_i\right)\right)$ 即其可数个集合的并外测度可测
-
-****** 一般可数并 
-
-对集合列 $\{S_i\}$ 其中 $S_i\subset X$ 且外测度可测。定义 $S'_j=S_j/\bigcup_{i=1}^{j-1} S_i$
-
-根据[[MK63][补集可测]]以及[[MK62][有限可加]]可得由 $S^c_j,\ \bigcup_{i=1}^{j-1} S_i$ 均可测，则 $S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right),\ \left(S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right)\right)^c$ 可测 
-
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质]]德摩根律 $\left(S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right)^c\right)^c=S_j\cap\left(\bigcup_{i=1}^{j-1} S_i\right)^c=S_j/\left(\bigcup_{i=1}^{j-1} S_i\right)=S'_j$ 
-
-即 $S'_j$ 外而测度可测，另根据定义显然有 $\bigcup_{i=1}^nS'_i=\bigcup_{i=1}^nS_i$ （证明 $\forall x\big(x\in\bigcup_{i=1}^nS_i\leftrightarrow x\in\bigcup_{i=1}^nS'_i\big)$ ）
-
-则对于任意 $n\in\mathbb{N}^+$ 均有 $\bigcup_{i=1}^nS'_i=\bigcup_{i=1}^nS_i\subset\bigcup_{i=1}^\infty S_i$ 故根据 $n$ 任意性有 $\bigcup_{i=1}^\infty S'_i\subset\bigcup_{i=1}^\infty S_i$
-
-同理 $\bigcup_{i=1}^nS_i=\bigcup_{i=1}^nS'_i\subset\bigcup_{i=1}^\infty S'_i$ 则有 $\bigcup_{i=1}^\infty S_i\subset\bigcup_{i=1}^\infty S'_i$
-
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含-定理1]]可得 $\bigcup_{i=1}^\infty S_i=\bigcup_{i=1}^\infty S'_i$
-
-故进一步根据[[MK64][不相交可数可加]]可得 $\bigcup_{i=1}^\infty S'_i$ 外测度可测，即 $\bigcup_{i=1}^\infty S_i$ 亦外测度可测
-
 * 实数(勒贝格)测度
 
 ** 内测度
@@ -1812,11 +2470,11 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 即 $m^*(E)=\sup\left\{m^*(F)\big|F\subset E\land F\in\Theta\right\}$
 
-*** Borel集合
+*** Borel集合<<MK103>>
 
 由所有 $\mathbb{R}^n$ 上开集[[MK85][生成]]的[[MK50][ $\sigma$ 代数]]
 
-**** 定理1
+**** 定理1<<MK122>>
 
 Borel集中元素均为可测集
 
@@ -1826,7 +2484,53 @@ Borel集中元素均为可测集
 
 则根据开集[[MK85][生成]]定义以及[[MK84][计算]]可得borel集中的元素均可测
 
-*** 零测集
+**** 定理2
+
+存在非borel集的可测集
+
+***** 证明
+
+****** 寻找集合<<MK127>>
+
+定义去除端点的[[MK109][康托函数]] $F:(0,1)\to(0,1)$ 则有 $\left\{F(x)|x\in P\right\}$ 是测度为正的可测集
+
+根据[[MK120][定理3]]必有不可测自己 $S\subset\left\{F(x)|x\in P\right\}$ 定义 $G=\left\{x\big|F(x)\in S\right\}$
+
+则有 $x\in G\rightarrow F(x)\in S\rightarrow x\in P$ 即有 $G\subset P$ 以及 $S\not\in\mathcal{B}(\mathbb{R})$
+
+****** 子空间及连续映射<<MK132>>
+
+定义 $\mathbb{R}$ 上所有开集的集合 $\mathcal{O}$ 以及 $\mathcal{M}=\left\{x\cap(0,1)\big|x\in\mathcal{O}\righb\}$
+
+由于 $<\mathbb{R},\mathcal{O}>$ 是[[MK39][拓扑空间]]，故根据[[130][子空间]]可得 $<(0,1),\mathcal{M}>$ 是其子拓扑空间
+
+则 $\mathcal{M}$ 是 $(0,1)$ 上的开集，由于 $(0,1)\subset\mathbb{R}\land(0,1)\in\mathcal{O}$ 故根据[[MK131][等价性]]有 $\forall x\in\mathcal{M}\rightarrow x\in\mathcal{O}$
+
+则根据[[MK109][康托函数]]定义对于任意 $F^{-1}(x)\in\mathcal{O}$ 均有 $x\in\mathcal{O}$
+
+则函数 $F^{-1}$ 满足 $<(0,1),\mathcal{M}>$ 上开集的原相是 $<\mathbb{R},\mathcal{O}>$ 上的开集
+
+即在 $\mathcal{M}$ 为开集的定义下函数 $F^{-1}$ [[MK115][连续]]
+
+故根据[[MK117][连续映射一致]]若 $G\in\mathcal{B}_\mathcal{M}((0,1))$ 则有 $S\in\mathcal{B}(\mathbb{R})$
+
+由于 $S$ 不可测，故根据[[MK122][定理1]] $S\not\in\mathcal{B}(\mathbb{R})$ 故矛盾，则有 $G\not\in\mathcal{B}_\mathcal{M}((0,1))$
+
+****** 证明不是实数上的borel集
+
+定义 $L=\left\{x\cap(0,1)\big|x\in\mathcal{B}(\mathbb{R})\right\}$ 根据[[MK124][性质]]可得 $L$ 是 $\mathcal{M}$ [[MK85][生成]]的 $(0,1)$ 上的[[MK50][ $\sigma$ 代数]]，故有 $L=\mathcal{B}_\mathcal{M}((0,1))$
+
+由于 $G\subset(0,1)$ 故若 $G\in\mathcal{B}(\mathbb{R})$ 则有 $G\cap(0,1)=G\in L=\mathcal{B}_\mathcal{M}((0,1))$ 显然与[[MK132][上一步]]结论矛盾
+
+故 $G\not\in\mathcal{B}(\mathbb{R})$
+
+****** 证明可测
+
+根据[[MK119][之前证明]]可得康托集 $P$ 的外测度为 $0$ 即是[[MK126][零测集]]
+
+根据[[MK127][之前证明]]可得 $G\subset P$ ，则根据[[MK128][子集可测]]得 $G$ 是[[MK81][可测]]的零测集
+
+*** 零测集<<MK126>>
 
 [[MK51][外测度]]为零的集合定义为零测集
 
@@ -1850,7 +2554,7 @@ Borel集中元素均为可测集
 
 进一步根据三歧性可得 $m^*(T)=m^*(T\cap S)+m^*(T/S)$ 即[[MK81][可测]]
 
-***** 子集零测
+***** 子集零测<<MK128>>
 
 若 $S\subset\mathbb{R}^n\land m^*(S)=0$ 则对于任意 $T\subset S$ 有 $m^*(T)=0$ 且[[MK81][可测]]
 
@@ -2004,7 +2708,7 @@ Borel集中元素均为可测集
 
 这与 $m^*(E\cap V_k)>0$ 条件矛盾，故必存在 $k\in\mathbb{N}^+$ 使得 $E\cap V_k$ 不可测
 
-*** 定理3
+*** 定理3<<MK120>>
 
 对于任意 $E\subset\mathbb{R}^n\land m^*(E)>0$ 且 $E$ 可测，存在不可测子集
 
@@ -2084,315 +2788,306 @@ Borel集中元素均为可测集
 
 综上所述，假设不成立，即外测度不满足可数可加性。故对于集合 $\bigcup_{k=1}^\infty V_k$ 外测度不是测度。 
 
-* 函数
+* 实数函数
 
-* 拓扑
+** 连续函数<<MK106>>
 
-** 拓扑定义<<MK39>>
+根据[[~/OneDrive/数学分析/Chap11Note.org][向量值函数-向量值函数连续]]，在不考虑边界点的情况下（只考虑 $B$ 的[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-点的定义-内点]]）
 
-设 $T$ 是 $X$ 的非空子集的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]]若满足：
+若 $f:A\to B,A\subset\mathbb{R}^n\land B\subset\mathbb{R}^m$ 连续，则 $\forall\vec{x}_0\in B\rightarrow\lim_{\vec{x}\to\vec{x}_0}f(\vec{x})=f(\vec{x}_0)$
 
-（1） $X,\varnothing$ 均属于 $T$
+*** 等价定义<<MK105>>
 
-（2） $T$ 中任意个元素的并集属于 $T$
+函数连续的等价定义有：
 
-（3） $T$ 中有限个元素的交集属于 $T$
+（1） $\forall\vec{x}_0\in B\rightarrow\forall\epsilon>0\left(\exists\delta>0\rightarrow O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}\right)$
 
-则称 $T$ 是 $X$ 上的拓扑， $<X,T>$ 是一个拓扑空间
-
-其中 $T$ 的元素称为开集， $T$ 中元素的补集称为闭集。
-
-*** 定理1<<MK41>>
-
-开集的补集是闭集，闭集的补集是开集
-
-** 开覆盖
-
-若 $S\subset X$ ，存在一组[[MK39][开集]] $\{U_\alpha\}\Rightarrow S\subset\cup_\alpha U_\alpha$ ，则称 $\{U_\alpha\}$ 是 $S$ 的开覆盖
-
-** 点的分类
-
-任意 $x\in X$ 定义为拓扑空间的点
-
-*** 聚点<<MK44>>
-
-对于有[[MK38][度量]]的拓扑空间 $<X,T>$ 的点集 $S\subset T$ ，其聚点 $x\in S$ 定义为对于任意 $\delta\in\mathbb{R}\land\delta>0$ 
-
-均存在 $y\in S$ 满足 $d(x,y)<\delta$ 则称 $x$ 是 $S$ 的聚点
-
-为方便，定义 $S$ 所有聚点的集合为 $S'$
-
-** 子集分类
-
-*** 紧集<<MK40>>
-
-若 $S$ 的任意一个[[MK11][开覆盖]]，必有有限子覆盖，即 $\exists U_{\alpha_i}\in \{U_\alpha\},0\leq i\leq p<+\infty\Rightarrow S\subset \cup_{i=0}^p U_{\alpha_i}$ 
-
-则定义 $S$ 为紧集
-
-注： $U_{\alpha_i}$ 为集合 $\{U_\alpha\}$ 的元素
-
-***** 引理
-
-任意紧集的闭子集亦为紧集
-
-****** 证明
-
-若 $M\subset X$ 为紧集，其闭子集 $F\subset M$ 对于任意 $F$ 的开覆盖 $\{U_{\lambda\in\Lambda}\}$ 
-
-根据定义 $F^c$ 为 $F$ 的补集，且有 $F\cup F^c=X$  
-
-可知 $M\subset X=\left(\bigcup_{\lambda\in\Lambda}U_\lambda\right)\cup F^c$ 根据[[MK41][定理1]]以及 $F$ 是闭集的条件可得 $F^c$ 是开集 
-
-则有 $\{U_{\lambda\in\Lambda},F^c\}$ 是 $M$ 的开覆盖，由于 $M$ 是[[MK40][紧集]]则必有有限子覆盖 $\{U_1,...,U_n,F^c\}$
-
-由于 $F^c\cap F=\varnothing$ 且 $F\subset M$ 故 $\bigcup_{i=1}^n U_i$ 必定覆盖 $F$ 即 $F$ 亦有有限子覆盖
-
-*** 完备集<<MK45>>
-
-若 $(T,X)$ 是一个有[[MK38][度量]]的拓扑空间，且 $S\subset X$ ，若 $S=S'$ 即 $S$ 中的任意一点均为 $S$ 的[[MK44][聚点]]
-
-则称 $S$ 是完备集
-
-* 开集构造
-
-** 直线
-
-*** 构成区间<<MK42>>
-
-对于开集 $G\subset\mathbb{R}$ 若 $(\alpha,\beta)\subset G$ 且 $\alpha\not\in G\land\beta\not\in G$ 则称 $(\alpha,\beta)$ 是 $G$ 的构成区间 
-
-*** 开集构造定理<<MK47>>
-
-直线上的开集可表示为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数]]个不相交的[[MK42][构成区间]]的并
+（2） 对于任意 $C\subset B$ 且 $C$ 为[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]，则 $C^{-1}=\left\{\vec{x}\big|f(\vec{x})\in C\right\}$ 仍为开集 
 
 **** 证明
 
-***** 不同构成区间不相交
-
-若两个构成区间 $(a_1,b_1),(a_2,b_2)$ 相交，则必有某区间端点落在另一个区间内。
-
-由于 $(a_1,b_1)\subset G\land(a_2,b_2)\subset G$ 则落在区间内的端点亦属于 $G$
-
-这与[[MK42][构成区间]]端点不属于 $G$ 矛盾，故不相交
-
-定义 $T$ 是所有属于 $G$ 的构成区间的集合
-
-***** 构成区间有至多可数个
-
-根据[[MK43][有理数稠密性]]可知，对于任意开区间 $(a,b)$ 均存在一个有理数 $q\in(a,b)$
-
-对每一个构成区间任取一个有理数，则构成[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-单射]]
-
-进一步根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数]]可得 $|T|\leq|\mathbb{Q}|$ 
-
-由于有理数是可数集，故得 $T$ 即是至多可数集
-
-***** 证明结论
-
-定义 $G'=\bigcup_{t\in T}t$ 即所有属于 $G$ 的构成区间的并。
-
-对于任意 $x\in G'$ 必有 $x\in t\subset G$
-
-对于任意 $x\in G$ 定义开区间集合 $A_{x}=\left\{(a,b)\big|x\in (a,b)\land(a,b)\subset G\right\}$
-
-进一步定义 $\{a\}_{x}=\{a|(a,b)\in A_{x}\},\{b\}_{x}=\{b|(a,b)\in A_{x}\}$ 则定义 $\alpha=\inf\{a\}_{x},\beta=\sup\{b\}_{x}$
-
-则任取 $y\in (\alpha,\beta)$ 根据确界定义必存在 $\alpha<a<y<b<\beta\land (a,b)\in A_x$ 则有 $y\in(a,b)\subset G$ ，故有 $(\alpha,\beta)\subset G$ 
-
-若 $\alpha\in G$ 由于 $G$ 是[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]，则存在 $O(\alpha,\delta)\subset G$
-
-结合上述证明可得 $(\alpha-\delta,\beta)\subset G$ 与下确界定义矛盾，故 $\alpha\not\in G$ 同理可证 $\beta\not\in G$
-
-故 $(\alpha,\beta)$ 是 $x$ 在 $G$ 上的构成区间，即 $(\alpha,\beta)\in T$ 故 $x\in G'$
-
-综上所属 $\forall x\in G'\rightarrow x\in G\land \forall x\in G\rightarrow x\in G'$ 
-
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $G'=G$
-
-*** 闭集的构造<<MK48>>
-
-直线上挖掉至多可数个不相交的[[MK42][构成区间]]的余集是闭集
-
-**** 证明
-
-对于任意闭集 $K\in\mathbb{R}$ 根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]可得其补集 $K^c$ 是开集
-
-相反 $K$ 可以理解为 $\mathbb{R}$ 去除开集 $K^c$ 根据[[MK47][开集构造定理]]可得 $K^c$ 可由至多可数个不相交的开区间的并构成
-
-故任意闭集 $K$ 均可表述为直线 $\mathbb{R}$ 去掉 $K^c$ 等价的至多可数个开区间的并。
-
-*** 完备集的构造<<MK49>>
-
-直线上挖掉至多可数个不相邻的[[MK42][构成区间]]的集合是完备集。
-
-相邻：对于任意 $(a_k,b_k),(a_l,b_l)$ ，若满足 $b_k=a_l$ 则两个区间相邻
-
-**** 证明
-
-***** 前提定义
-
-根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-完备集]]可得不含孤立点的闭集是完备集。
-
-假设点 $x$ 是[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-点的定义-孤立点]]，则根据定义存在 $\delta>0$ 使得去心领域 $O(x,\delta)/x$ 不属于 $S$
-
-根据[[MK48][闭集构造]]可得任意闭集均可表示为为直线 $\mathbb{R}$ 去掉至多可数个开区间的并。
-
-根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]得 $S$ 的补集 $S^c$ 是开集
-
-根据[[MK47][开集构造]]可得 $S^c=\bigcup_{i=1}^\infty(a_i,b_i)$ 其中 $(a_i,b_i)$ 是[[MK42][构成区间]]
-
-***** 不含孤立点的充要条件是没有相邻构成区间
-
-根据德摩根路，我们证明含孤立点的充要条件是有相邻构成区间
+***** [[MK106][定义]]与（1）等价
 
 ****** 充分
 
-若 $(a_k,b_k),(a_l,b_l)$ 相邻，即 $a_l=b_k$ ，则由于 $(a_i,b_i)$ 是[[MK42][构成区间]]，故无相交
+满足定义前提下，对于任意 $\vec{x}_0\in A$ 有以下等价条件
 
-假设孤立点 $x\in S$ 则根据定义有 $(x-\delta,x),(x,x+\delta)$ 均不属于 $S$ 故有 $\exists(a_k,b_k)\rightarrow (x-\delta,x)\subset(a_k,b_k)$
+根据极限定义 $\lim_{\vec{x}\to\vec{x}_0}f(\vec{x})=f(\vec{x}_0)$ 定义为 $\forall \epsilon>0,\exists \delta>0,\forall|\vec{x}-\vec{x}_0|<\delta\Rightarrow |f(\vec{x})-f(\vec{x}_0)|<\epsilon$
 
-同理可得 $\exists(a_l,b_l)\rightarrow (x,x+\delta)\subset(a_l,b_l)$ 且满足 $(a_k,b_k)\cap(a_l,b_l)=\varnothing$ 以及 $x\not\in(a_k,b_k)\land x\not\in(a_l,b_l)$
+由于 $\forall\vec{x}\in O(\vec{x}_0,\delta)\rightarrow|\vec{x}-\vec{x}_0|<\delta$
 
-若 $x\ne a_l$ 根据[[MK5][三歧性]]可得比满足 $x>a_l\lor x<a_l$ 若 $x>a_l$ 结合 $(x,x+\delta)\subset (a_l,b_l)$ 可得 $x\in(a_l,b_l)\subset S^c$ 
+且根据已满足条件有 $\forall|\vec{x}-\vec{x}_0|<\delta\Rightarrow |f(\vec{x})-f(\vec{x}_0)|<\epsilon$
 
-与 $x\in S$ 矛盾。若 $x<a_l$ 则与 $(x,x+\delta)\subset(a_l,b_l)$ 矛盾。
+故 $\forall\vec{x}\in O(\vec{x}_0,\delta)\rightarrow\forall|\vec{x}-\vec{x}_0|<\delta\rightarrow\vec{x}\in\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
-故必有 $x=a_l$ 同理可证 $x=b_k$ 故根据[[MK5][传递性]]有 $a_l=b_k$ 即 $(a_k,b_k),(a_l,b_l)$ 相邻
+故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集]]定义可得 $O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
 ****** 必要
 
-若 $(a_k,b_k),(a_l,b_l)$ 相邻，即 $a_l=b_k$ ，则若存在构成区间 $(a_u,b_u)$ 满足 $b_k\in(a_u,b_u)$
+若已满足条件（1），则对于任意 $\vec{x}_0\in B$ 以及任意 $\epsilon>0$ 均存在 $\delta$ 
 
-则根据开集定义存在 $(b_k-\delta,b_k+\delta)\subset(a_u,b_u)$ 即 $(b_k-\delta,b_k)\subset (a_u,b_u)$
+使得 $O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
-同理可证，存在 $\gamma$ 满足 $(b_k-\gamma,b_k)\subset(a_k,b_k)$ 则取 $\tau=\min(\delta,\gamma)$ 
+根据领域定义有 $\forall\vec{x}\left(|\vec{x}-\vec{x}_0|<\delta\right)\rightarrow\vec{x}\in O(\vec{x}_0,\delta)$
 
-故有 $(b_k-\tau,b_k)\subset(a_k,b_k)\land(b_k-\tau,b_k)\subset(a_u,b_u)$ 与构成区间不相交矛盾
+故根据上述以及集合定义有 $\forall\vec{x}\left(|\vec{x}-\vec{x}_0|<\delta\right)\rightarrow\vec{x}\in\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}\rightarrow\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon$
 
-故有 $b_k\not\in S^c$ 即 $b_k\in S$ 定义 $\tau=\min(b_l-a_l,b_k-a_k)$ 则有 $O(b_k,\tau)/b_k\in S^c$
+故有 $\forall|\vec{x}-\vec{x}_0|<\delta\Rightarrow |f(\vec{x})-f(\vec{x}_0)|<\epsilon$ 根据极限定义即为 $\lim_{\vec{x}\to\vec{x}_0}f(\vec{x})=f(\vec{x})$
 
-即 $b_k$ 是 $S$ 的孤立点。
+故推出 $\forall\vec{x}_0\in B\rightarrow\lim_{\vec{x}\to\vec{x}_0}f(\vec{x})=f(\vec{x}_0)$
 
-***** 结论
+***** （1）与（2）等价
 
-当挖去至多可数个[[MK42][构成区间]]时，剩余集合是闭集
+****** 充分
 
-根据之前证明，当构成区间没有相邻时等价于不含孤立点
+若 $C^{-1}=\varnothing$ 则根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理8]]可得空集是开集，即开集 $C$ 的原相是开集
 
-故得命题
+若 $C^{-1}\ne\varnothing$ 则对于任意 $\vec{x}_0\in C^{-1}$ 均有 $f(\vec{x}_0)\in C$ 由于 $C$ 是开集，故有 $\exists\epsilon>0\rightarrow O(f(\vec{x}_0),\epsilon)\subset C$
 
-*** 康托三分集
+根据领域定义显然有 $\forall f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\leftrightarrow |f(\vec{x})-f(\vec{x}_0)|<\epsilon$
 
-若 $E_n=\bigcup_{\lambda\in\Lambda} [a_\lambda,b_\lambda]$ 为若干个闭区间的并，则定义 $E_{n+1}=\bigcup_{\lambda\in\Lambda}\left(\left[a_\lambda,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right]\cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
+由于满足（2），故存在 $\delta$ 使得 $O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}=\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}$
 
-定义  $E_0=[0,1]$ 则 $P=\lim_{n\to\infty}E_n$ 即为康托三分集
+由于 $f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\subset C$ 故有 $\forall\vec{x}\in\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}\rightarrow\vec{x}\in\left\{\vec{x}\big|f(\vec{x})\in C\right\}$
 
-**** 性质
+即有 $\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}\subset\left\{\vec{x}\big|f(\vec{x})\in C\right\}$ 故 $O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}\subset\left\{\vec{x}\big|f(\vec{x})\in C\right\}$
 
-***** 是完备集
+综上所述，对于任意 $\vec{x}_0\in C$ 均存在 $\delta>0\rightarrow O(\vec{x}_0,\delta)\subset C$ 即 $C$ 的所有点均为[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-点的定义-内点]]
 
-康托三分集挖去的均为不相邻的开集，故根据[[MK49][完备集构造]]可得康托三分集是完备集
+故根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]定义 $C$ 是开集。即（2）推出（1）
 
-***** 有连续基数
+****** 必要
 
-根据[[MK33][定理2]]可得，所有实数均有小数表示，此处选择二进制。
+对于任意 $\vec{x}_0\in B$ 以及 $\epsilon>0$ 定义集合 $Y=\left\{f(\vec{x})\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$ 根据领域定义 $Y=O(f(\vec{x}_0),\epsilon)$
 
-根据定义， $E_0=[0,1]$ 定义映射 $0\to0.0,1\to0.1$
+根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理2]]可得领域为开集，即 $O(f(\vec{x}_0),\epsilon)$ 是开集
 
-若 $E_n=\bigcup_{\lambda\in\Lambda} [a_\lambda,b_\lambda]$ 假设每个 $a_\lambda,b_\lambda$ 均有对应的二进制小数 $\alpha_\lambda,\beta_\lambda$
+若满足（2）则 $\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}=\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}$ 亦为开集
 
-则在 $E_{n+1}=\bigcup_{\lambda\in\Lambda}\left(\left[a_\lambda,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right]\cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$ 中，
+显然 $\left|f(\vec{x}_0)-f(\vec{x}_0)\right|=0<\epsilon$ 故有 $f(\vec{x}_0)\in O(f(\vec{x}_0),\epsilon)\rightarrow\vec{x}\in\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
-每个端点根据挖去区域的左右，在之前端点映射二进制小数的末尾加 $0$ 或 $1$
+故根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]定义有 $\eixsts\delta>0\rightarrow O(\vec{x},\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
-即 $a_\lambda=\alpha_\lambda0,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\to\alpha_\lambda1,b_\lambda-a_\lambda}{3}=\beta_\lambda0,b_\lambda=\beta_\lambda1$
+定义原相 $g(K)=\left\{k\big|f(k)\in K\right\}$ 故推出（1）
 
-由于三分集是无限划分，且所有端点均属于该集合，故实数 $[0,1]$ 内的所有点均有对应的映射
+** 康托函数<<MK109>>
 
-即 $\sigma:P\to[0,1]$ 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数-满射]]，
+若[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数]] $F$ 满足： 
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数]]可得 $|P|\geq|[0,1]|$ 又根据[[MK36][定理0]]以及传递性可得 $|P|\geq|\mathbb{R}|$
+（1） 将[[MK107][康托三分集]] $P$ 映射成[[MK51][外测度]]为正的[[MK81][可测集]]
 
-由于 $P$ 是从 $\mathbb{R}$ 上取的，故显然有 $|P|\leq|\mathbb{R}|$ 根据基数定义中伯恩斯坦定理 $|P|=|\mathbb{R}|$
+（2） 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊函数-双射]]函数
 
-***** 长度为零（外测度）
+（3） 其[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-函数计算-逆]]函数 $F^{-1}$ [[MK106][连续]]
 
-定义 $Z=[0,1]-P$ 则康托集为 $P=[0,1]-Z$
+则称 $F$ 为康托函数
 
-显然根据定义 $Z$ 为挖去区间的并，且为有限区间，根据[[MK82][区间可测]]、[[MK84][计算]]中（2）可知 $Z$ 是关于[[MK51][外测度]]的[[MK81][可测集]]
+*** 例子
 
-显然挖去的区域是可数个，故定义 $\{K_i\}$ 对应挖去的区域，则 $Z=\bigcup_{i=1}^\infty K_i$ 
+定义映射 $g:P\to[0,1]$ 为[[MK108][之前证明]]中定义的 $P\to[0,1]$ 的映射
 
-进一步由于挖去的区间两两不相交，故根据[[MK84][计算]]中（2）有 $m^*(Z)=\sum_{i=1}^\infty m^*(K_i)$
+即康托集中的元素到二进制 $[0,1]$ 区间的映射
 
-进一步根据[[MK79][正规性]]可得第 $n$ 次挖掉的长度为 $\frac{2^{n-1}}{3^n}$ 则挖掉的长度可定义为 $S=\lim_{n\to\infty}\sum_{i=1}^n\frac{2^{n-1}}{3^n}$
+定义 $f:[0,1]\to[0,1]$ 为 $f(x)=\begin{cases}g(x)&x\in P\\\sup\{g(y)\big|y\in P\land y<x\}&x\in[0,1]/P\end{cases}$
 
-根据等比数列求和公式 $S=\lim_{n\to\infty}\frac{1}{3}\frac{1-\left(\frac{2}{3}\right)^n}{1-\frac{2}{3}}=\frac{1}{3}\frac{1}{1-\frac{2}{3}}=1<\infty$ 即 $m^*(Z)=1$
+定义 $F:[0,1]\to[0,1]$ 为 $F(x)=\frac{1}{2}\left(f(x)+x\right)$
 
-同样根据正规性有 $m^*([0,1])=1$ 且 $Z\subset[0,1]$ 
+则 $F:[0,1]\to[0,1]$ 是[[MK109][康托函数]]
 
-故根据[[MK84][计算]]中（3）可得 $m^*(P)=m^*([0,1])-m^*(Z)=1-1=0$
+**** 证明
 
-** 有限欧式空间开集构造定理<<MK83>>
+***** 映射正可测集
 
-对于任意[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]] $G\subset\mathbb{R}^n\land n<\infty$ 
+对于任意 $x\in[0,1]/P$ 均属于构成区间 $x\in(a,b)$ 
 
-其可表述为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数]]个不相交的半开闭[[MK13][区间]]的并
+故根据 $F(x)$ 定义当 $x\in(a,b)\leftrightarrow F(x)\in\left(\frac{1}{2}(a+a),\frac{1}{2}(a+b)\right)$
 
-*** 证明
+根据[[MK79][正规性]]定理可得 $m^*(a,b)=b-a,m^*\left(\frac{1}{2}(a+a),\frac{1}{2}(a+b)\right)=\frac{1}{2}(b-a)$
 
-**** 构建二进方体
+且由于经过 $F$ 映射后均为开集，则任意构成区间经过 $F$ 映射亦可测，且测度为原来集合的 $\frac{1}{2}$ 倍
 
-将 $\mathbb{R}^n$ 空间分割为长度为 $1$ 的矩体区间
+及根据[[MK119][康托集外测度]]证明可得 $[0,1]/P$ 为可数个不相交开区间
 
-则每对应一组 $\vec{x}=(x_1,...,x_n),x_i\in\mathbb{N}$ 均有一个矩体区间 $\prod_{i=1}^n[x_i,x_i+1)\in H_0$ 
+则定义 $G=\left\{F(x)\big|x\in[0,1]/P\right\}=\bigcup_{i=1}^\infty K'_i=\bigcup_{i=1}^\infty \left(\frac{1}{2}(a_i+a_i),\frac{1}{2}(a_i+b_i)\right)$
 
-其中 $H_0$ 定义为所有矩体的集合，根据[[MK43][有理数稠密性]]可知每个 $H_0$ 中的区间内必有有理点。
+显然经过 $F$ 映射后亦为可数个不相交的开区间的并，
 
-由于有理数可数，且 $\mathbb{R}^n$ 中有理点是 $\mathbb{R}$ 中有理点的 $n$ 次直积
+根据可测集[[MK84][计算]]可得 $G$ 亦为[[MK81][可测集]]，且有 $m^*(G)=\sum_{i=1}^\infty m^*(K'_i)=\frac{1}{2}\sum_{i=1}^\infty m^*(K_i)$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理2]]可得 $H_0$ 是可数集
+根据[[MK119][康托集外测度]]证明可得 $m^*([0,1]/P)=1$ 则 $m^*(G)=\frac{1}{2}$
 
-将 $H_0$ 中所有矩体二分，则矩体的长度为 $\frac{1}{2}$ ，定义此次划分的所有矩体集合为 $H_1$ 同理可证是可数集
+显然 $[0,1]\subset\beta(\mathbb{R})$ 根据[[MK103][borel性质]]可得 $[0,1]$ 可测且 $m^*([0,1])=1$
 
-依次类推 $H_k$ 的矩长度为 $\left(\frac{1}{2}\right)^k$ 且 $H_k$ 为可数集
+则根据可测集[[MK84][计算]]（3）可得 $[0,1]/G$ 可测且 $m^*([0,1]/G)=\frac{1}{2}$
 
-**** 构建并集
+由于 $P\subset[0,1]$ 且 $F(x)\in G\leftrightarrow x\in[0,1]P$ 则有 $F(x)\in[0,1]/G\leftrightarrow x\in P$
 
-定义 $\Gamma_0=\left\{J\left|J\in H_0\land J\subset G\right\}$ 进一步定义 $\Gamma_k=\left\{J\left|J\in H_k\land\left(J\subset G/\bigcup_{i=0}^{k-1}\left(\bigcup_{J\in\Gamma_i}J\right)\right)\right\}$
+即 $[0,1]/G=\left\{F(x)|x\in P\right\}$ 即通过 $F$ 康托集的相是 $[0,1]/G$ 且其外测度为 $m^*([0,1]/G)=\frac{1}{2}>0$
 
-由于 $\Gamma_k\subset H_k$ 且 $H_k$ 可数，则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数-无限集]]可得 $\Gamma_k$ 至多可数
+***** 双射函数<<MK111>>
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理1]]可得 $\bigcup_{i=0}^\infty\Gamma_i$ 亦为至多可数
+****** 严格单调递增<<MK113>>
 
-且根据构造，每个 $J\in\bigcup_{i=0}^\infty\Gamma_i$ 是区间，且两两互不相交 
+则对于任意 $x_1<x_2$ 有 $F(x_2)-F(x_1)=\frac{1}{2}((f(x_2)-f(x_1))+(x_2-x_1))$
 
-**** 证明结论
+根据[[MK112][之前证明]]可得 $f(x)$ 递增，故 $f(x_2)-f(x_1)\geq 0$ 故有 $F(x_2)-F(x_1)>0$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]定义，对于任意 $x\in G$ 均存在 $\delta\in\mathbb{R}\land\delta>0$ 满足 $O(x,\delta)\subset G$ 
+即严格单调递增
 
-对于正闭矩体 $J$ 包含的点集，距离最远的点为矩体对角端点，距离为 $\sqrt{nl^2}$ 其中 $l$ 为矩体的边长
+****** 证明双射
 
-由于 $\lim_{k\to\infty}\frac{1}{2}^k=0$ 则定义 $l_k=\frac{1}{2}^k$ 必存在 $k'$ 使得 $\sqrt{nl^2_{k'}}<\delta$ 
+根据[[MK112][证明]]可得 $f(x)$ 为满射，且显然 $u(x)=x$ 亦为满射，故 $F(x)$ 为满射
 
-由于 $H_{k'}$ 划分整个 $\mathbb{R}^n$ 空间，则必存在区间 $x\in J'\in H_{k'}$ 且对于任意 $y\in J'$ 均有 $|y-x|<\sqrt{nl^2_{k'}}<\delta$
+对于任意 $x_1\ne x_2$ 根据[[MK5][三歧性]]必有 $x_1>x_2\lor x_1<x_2$
 
-故有 $J'\subset O(x,\delta)\subset G$ 故 $J'$ 满足 $J'\in H_{k'}\land J'\subset G$ 
+由于[[MK113][严格单调递增]]，故有 $F(x_1)>F(x_2)\lor F(x_1)<F(x_2)$ 进一步根据[[MK5][三歧性]]有 $F(x_1)\ne F(x_2)$
 
-根据二进方体构建规则 $J'$ 与 $\bigcup_{i=0}^{k'-1}\left(\bigcup_{J\in\Gamma_i}J\right)$ 的关系仅存在属于或不属于，故
+即为单射函数，故满足[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊函数-双射]]定义
 
-此时若 $J'\subset \bigcup_{i=0}^{k'-1}\left(\bigcup_{J\in\Gamma_i}J\right)$ 则有 $x\in J'\subset \bigcup_{i=0}^{k'-1}\left(\bigcup_{J\in\Gamma_i}J\right)\subset \bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$ 
+***** 逆函数连续
 
-若 $J'\not\subset \bigcup_{i=0}^{k'-1}\left(\bigcup_{J\in\Gamma_i}J\right)$ 
+****** $f(x)$ 连续
 
-则 $J'\in H_{k'}\land\left(J'\subset G/\bigcup_{i=0}^{k'-1}\left(\bigcup_{J\in\Gamma_i}J\right)\right)$ 则 $J'\in\Gamma_{k'}$ 故有 $x\in J'\subset \bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$
+******* 递增且满射<<MK112>>
 
-故对于任意 $x\in G$ 均有 $x\in\bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$ 由于 $\Gamma_k$ 的构造，对于任意 $J\in\bigcup_{i=0}^\infty\Gamma_i$ 均有 $J\subset G$
+显然根据映射 $g(x)$ 的定义可得 $g(x)$ 递增，则若 $x_1<x_2$ 有 $g(x_1)\leq g(x_2)$
 
-故对于任意 $x\in\bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$ 均有 $x\in G$ 
+则对于任意 $\{x_1,x_2\}\subset[0,1]$ 且 $x_1<x_2$ 均有 $\sup\{y\big|y\in P\land y<x_1\}\leq\sup\{y\big|y\in P\land y<x_2\}$
 
-综上所述根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $G=\bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$
+故有 $\sup\{g(y)\big|y\in P\land y<x_1\}\leq\sup\{g(y)\big|y\in P\land y<x_2\}$
 
-证毕
+结合 $f(x)$ 的定义显然 $f(x)$ 递增。
 
+由于对于任意 $[0,1]$ 中必有 $g(x)$ 的原相，故 $f(x)$ 为满射
+
+******* 连续<<MK110>>
+
+此时若 $f(x)$ 在 $x_0$ 处不连续，由于递增，故对任意 $x>x_0$ 必有 $f(x)\geq f(x_0)$
+
+若 $\lim_{x\to x_0^+}f(x)=K>f(x_0)$ 根据极限定义 $\forall\epsilon>0,\exists\delta,\forall x-x_0<\delta\rightarrow |f(x)-K|<\epsilon$
+
+则取 $\epsilon = \frac{1}{2}(K-f(x_0))$ 根据定义存在 $\delta'$ ，取 $x=x_0+\frac{1}{2}\delta$ 则满足 $x-x_0<\delta$
+
+根据条件有 $|f(x)-K|<\epsilon$ 进一步有 $f(x)>K-\frac{1}{2}(K-f(x_0))$
+
+进一步取任意 $a\in\left(f(x_0),K-\frac{1}{2}(K-f(x_0))\right)$ 由于满射，故存在 $x'$ 满足 $f(x')=a$ 
+
+又根据递增有 $x>x'>x_0$ 故显然有 $x'-x_0<\delta'$ 则根据极限定义有 $|f(x')-K|<\epsilon$
+
+由于 $a<K-\frac{1}{2}(K-f(x_0))\rightarrow a-K<-\frac{1}{2}(K-f(x_0))$
+
+即 $|a-k|>\frac{1}{2}(K-f(x_0))>\epsilon$ 的处矛盾，故假设不成立，即 $\lim_{x\to x_0^+}f(x)=f(x_0)$
+
+同理可证 $\lim_{x\to x_0^-}f(x)=f(x_0)$ 结合得 $\forall x_0\in[0,1]\rightarrow\lim_{x\tox_0}f(x)=f(x_0)$
+
+即满足实数函数[[MK109][连续]]定义
+
+****** $F(x)$ 连续<<MK114>>
+
+根据极限计算有 $\lim_{x\to x_0}F(x)=\lim_{x\to x_0}\frac{1}{2}\left(f(x)+x\right)=\frac{1}{2}\left(\lim_{x\to x_0}f(x)+\lim_{x\to x_0}x\right)$
+
+根据[[MK110][之前证明]]可得 $f(x)$ 连续，显然 $u(x)=x$ 亦连续，故有 $F(x)$ [[MK106][连续]]
+
+****** $F^{-1}(y)$ 连续<<MK118>>
+
+根据[[MK111][之前证明]]可得 $F(x)$ 是双射函数，故根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-函数的计算-求逆-定义]]可得逆函数 $F^{-1}(y)$ 存在
+
+根据之前证明有 $F(x)$ [[MK113][严格递增]]且[[MK114][连续]]，
+
+取任意 $F(x_0)\in(0,1)$ 于任意 $\epsilon>0$ 定义 $x_1=\max(0,x_0-\epsilon),x_2=\min(1,x_0+\epsilon)$
+
+由于是函数，故存在 $F(x_1),F(x_2)$ 由于 $F(x)$ 严格递增，故有 $F(x_1)<F(x_0)<F(x_2)$
+
+取 $\delta = \min(F(x_2)-F(x_0),F(x_0)-F(x_1))$ 
+
+进一步取任意 $F(x)$ 满足 $|F(x)-F(x_0)|<\delta\leftrightarrow F(x_0)-\delta<F(x)<F(x_0)+\delta$
+
+即有 $F(x_1)<F(x)<F(x_2)$ 由于 $F(x)$ 严格递增，故有 $x_1<x<x_2$ 即 $x_0-\epsilon<x<x_0+\epsilon$
+
+综上所属对于任意 $y_0=F(x_0)\in(0,1)$ 有 $\forall\epsilon>0,\exists\delta>0,\forall |F(x)-F(x_0)|<\delta\rightarrow |x-x_0|<\epsilon$
+
+转换后有有 $\forall\epsilon>0,\exists\delta>0,\forall |y-y_0|<\delta\rightarrow |F^{-1}(y)-F^{-1}(y_0)|<\epsilon$
+
+** 广义实值函数<<MK133>>
+
+定义函数 $f:E\to\mathbb{R}\cup\{-\infty,+\infty\}$ 其中 $\{-\infty,+\infty\}$ 满足对于任意 $a\in\mathbb{R}$ 均有：
+
+（1） $a<+\infty\land a>-\infty$
+
+（2） $a+(+\infty)=( +\infty)+a= +\infty\land a+(-\infty)=(-\infty)+a=-\infty$
+
+（3） $a-(+\infty)=-\infty\land a-(-\infty)= +\infty$
+
+（4） $a\cdot(+\infty)=( +\infty)\cdot a=\begin{cases} +\infty&a>0\\-\infty&a<0\end{cases}\land a\cdot(-\infty)=(-\infty)\cdot a=\begin{cases} -\infty&a>0\\ +\infty&a<0\end{cases}$
+
+（5） $\frac{+\infty}{a}=\begin{cases} +\infty&a>0\\-\infty&a<0\end{cases}\land \frac{-\infty}{a}=\begin{cases} -\infty&a>0\\ +\infty&a<0\end{cases}$
+
+对于 $\{-\infty,+\infty\}$ 以及[[MK4][加法幺元]] $0$ 满足：
+
+（1） $(+\infty)+( +\infty)= +\infty\land (-\infty)+(-\infty)= -\infty$
+
+（2） $\frac{a}{+\infty}=\frac{a}{-\infty}=0$
+
+（3） $0\cdot(+\infty)=0\cdot(-\infty)=0$
+
+（4） $(+\infty)\cdot( +\infty)= +\infty\land (-\infty)\cdot( -\infty)= +\infty$
+
+（5） $(-\infty)\cdot( +\infty)=( +\infty)\cdot( -\infty)=-\infty$
+
+对于以下表达式没有定义：
+
+（1） $(+\infty)-( +\infty), (-\infty)-(-\infty), (-\infty)-( +\infty)$
+
+（2） $\frac{a}{0},\frac{+\infty}{0},\frac{-\infty}{0}$
+
+则定义 $f(x),x\in E$ 为广义实值函数
+
+若 $f:E\to\mathbb{R}$ 则定义为有限函数
+
+** 可测函数<<MK134>>
+
+对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}\cup\{-\infty,+\infty\},E\subset X$ 
+
+定义 $E[f>a]=\left\{x\big|f(x)>a\land x\in E\right\}$ 以及 $\matchal{M}\subset\rho(X)$ 是 $X$ 上所有的[[MK65][可测]]集族
+
+则若 $f$ 满足 $\forall a\in\mathbb{R}\rightarrow E[f>a]\in\mathcal{M}$ 则 $f$ 是可测函数
+
+*** 等价定义
+
+以下条件与[[MK134][可测函数]]定义等价：
+
+（1）$\forall a\in\mathbb{R}\rightarrow E[f\leq a]\in\mathcal{M}$
+
+（2）$\forall a\in\mathbb{R}\rightarrow E[f\geq a]\in\mathcal{M}$
+
+（3）$\forall a\in\mathbb{R}\rightarrow E[f>a]\in\mathcal{M}$
+
+**** 证明
+
+根据[[MK65][Caratheodory定理]]可得 $X$ 上所有可测集构成 $X$ 上的[[MK50][ $\sigma$ 代数]]
+
+***** （1）<<MK137>>
+
+根据[[MK135][性质]]（3）可得 $(E[f>a])^c=\left\{x\big|f(x)>a\land x\in E\right\}^c=\left\{x\big|(f(x)>a)^c\land x\in E\right\}=\left\{x\big|f(x)\leq a\land x\in E\right\}$
+
+故有 $(E[f>a])^c=E[f\leq a]$ 同理可证 $(E[f\leq a])^c=E[f>a]$
+
+故根据[[MK50][定义]]中（2）可得互为充要条件
+
+***** （2）<<MK136>>
+
+由于 $f(x)>a=f(x)\in[a,+\infty]$ 定义集合 $\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right)$
+
+则有 $\forall z\in\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]\leftrightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(a-\frac{1}{i},+\infty\right]\right)\leftrightarrow z\in[a,\infty]$
+
+故有 $E[f\geq a]=\left\{x\big|f(x)\in\bigcap_{i=1}^\infty\left(a-\frac{1}{n},+\infty\right]\land x\in E\right\}$
+
+根据[[MK135][性质]]（2）有 $\left\{x\big|f(x)\in\bigcap_{i=1}^\infty\left(a-\frac{1}{n},+\infty\right]\land x\in E\right\}=\bigcap_{i=1}^\infty\left\{x\big|f(x)\in \left(a-\frac{1}{n},+\infty\right]\land x\in X\right\}$
+
+故有 $E[f\geq a]=\bigcap_{i=1}^\infty E\left[f>a-\frac{1}{n}\right]$ 同理可证 $E[f>a]=\bigcap E\left[f\geq a+\frac{1}{n}\right]$
+
+故根据[[MK50][定义]]中（3）可得互为充要条件
+
+***** （3）
+
+根据[[MK136][（2）]]中的结论利[[MK137][（1）]]中的证明方法可得

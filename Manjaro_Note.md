@@ -306,6 +306,27 @@ To first time recursively (including submoduals of submodual) download submodual
 git submodule update --init --recursive
 ```
 
+To set defualt submodule branch:
+
+```shell
+git submodule set-branch --branch <branch name> <submodule path>
+```
+
+To execute command for each submodual recursively:
+
+```shell
+git submodule foreach --recursive '<git command>'
+```
+
+The following command pull the submodules to the latest commit of parent reporsitoy. Not the latest commit of submodule repositories.
+
+```shell
+git pull --recurse-submodules=yes origin master
+```
+e.g.: 
+   *For commit A_1 of rep A, submodule B is at B_1. If rep B has newer commit B_2 and rep A remains, the command will only pull A_1 for rep A and B_1 for rep B.4
+      Which is the same commit as of A to submodule B.*
+
 ### Compare
 
 Documentation in [this](https://git-scm.com/docs/git-diff) link.
