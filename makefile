@@ -70,3 +70,10 @@ commit: cporg
 
 sync: commit
 	git push -u origin master
+
+conn:
+	echo $(PW) | sudo -S ipsec start
+	sudo ipsec up NordVPN
+
+disconn:
+	echo $(PW) | sudo -S ipsec down NordVPN

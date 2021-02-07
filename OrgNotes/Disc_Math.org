@@ -6093,6 +6093,10 @@ $\alpha\Rightarrow^*\beta$ 定义为 $\alpha$ 经过 $k\in\mathbb{N}^+\cup\{0\}$
 
 给定文法 $G=<V_N,V_T,P,s>$ 若有[[MK312][字符串]] $\alpha\in V^*$ 满足 $s\Rightarrow^*\alpha$ 则定义 $\alpha$ 是文法 $G$ 的句型
 
+***** 最右句型
+
+给定文法 $G=<V_N,V_T,P,s>$ 在[[MK381][最右推导]]中产生的句型
+
 **** 句子<<MK333>>
 
 给定文法 $G=<V_N,V_T,P,s>$ 若有[[MK312][字符串]] $\alpha\in V_T^*$ 满足 $s\Rightarrow^*\alpha$ 则定义 $\alpha$ 是文法 $G$ 的句子
@@ -6297,9 +6301,11 @@ $r^*=r^{**}$
 
 （2） $A\to wA,A\to z$ 则定义表达式 $w^*z$ 是[[MK358][闭包]]后的[[MK364][连接]]，根据正则定义亦为正则表达式
 
-（3） $A\to\mathcal{R},A\to\mathcal{D}$ 则定义表达式 $\mathcal{R}|\mathcal{D}$ 是[[MK360][并]]，其中 $\mathcal{R},\mathcal{D}$ 是上述两步生成的正则表达式
+（3） $A\to\mathcal{R},A\to\mathcal{D}$ 则定义表达式 $\mathcal{R}|\mathcal{D}$ 是[[MK360][并]]，其中 $\mathcal{R},\mathcal{D}$ 是其他规则生成的正则表达式
 
-（4） 若存在 $A\to wA$ 且不存在 $A\to z$ 则 $A$ 将生成长度无穷的字符串，不符合定义。
+（4） $A\to\mathcal{R}\mathcal{D}$ 则定义表达式 $\mathcal{R}\mathcal{D}$ 是[[MK364][连接]]，其中 $\mathcal{R},\mathcal{D}$ 是其他规则生成的正则表达式
+
+（5） 若存在 $A\to wA$ 且不存在 $A\to z$ 则 $A$ 将生成长度无穷的字符串，不符合定义。
 
 由于 $|P|<\infty$ 故根据上述四规则可将所有符合定义的 $A$ 为左部的产生式定义成正则表达式 $A=r$
 
@@ -6890,4 +6896,8 @@ $\delta(q,a,z)=\begin{cases}(s_0,\epsilon)&a=z\\(s_0,\beta)&z\in V_N\land f(z,a)
 
 则若栈内顶仍有 $\beta B\gamma$ 的最左句柄，则再次归约。若无，则依次读入直至最左句柄与栈顶相连。
 
-依次类推，根据数学归纳法可证得 $\alpha$ 可依次归约为 $S$
+依次类推，由于 $|\alpha|<\infty$ 故当不无限使用左部右部长度均为 $1$ 的[[MK311][产生式]]时
+
+根据数学归纳法有 $\alpha$ 可依次归约为 $S$
+
+**** 可行前缀
