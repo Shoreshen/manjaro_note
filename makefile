@@ -35,12 +35,14 @@ else
 	cp /etc/resolv.conf ./OpenVPN
 	echo $(PW) | sudo -S rm /etc/resolv.conf
 	sudo cp resolv.conf /etc/
+	sudo chattr +i /etc/resolv.conf
 	cat /etc/resolv.conf
 endif
 
 rec_dns:
 	cat /etc/resolv.conf
-	echo $(PW) | sudo -S rm /etc/resolv.conf
+	echo $(PW) | sudo -S chattr -i /etc/resolv.conf
+	sudo rm /etc/resolv.conf
 	sudo cp ./OpenVPN/resolv.conf /etc/
 	cat /etc/resolv.conf
 
@@ -71,9 +73,13 @@ commit: cporg
 sync: commit
 	git push -u origin master
 
-conn:
+ipsec_restart:
 	echo $(PW) | sudo -S ipsec start
-	sudo ipsec up NordVPN
 
-disconn:
+conn:set_dns ipsec_restart # try 1.1.1.1 and 1.0.0.1 for dns
+	sleep 0.5
+	echo $(PW) | sudo -S ipsec up NordVPN
+
+disconn:rec_dns
+	sleep 0.5
 	echo $(PW) | sudo -S ipsec down NordVPN

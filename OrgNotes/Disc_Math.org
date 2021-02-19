@@ -2,11 +2,11 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 387
+currnet mark: 415
 
 图论: P40
 
-编译原理： P30
+编译原理： P12
 
 * 集合论
 
@@ -186,7 +186,9 @@ currnet mark: 387
 
 在[[MK73][集合定义]]上扩展，可包含 *互相不区别* 的对象，即同一[[MK74][元素]]可在集合中出现多次。
 
-用方括号表示，例如 $A=[1,1,1,2,2,3]$
+其元素定义为[[MK144][有序组]] $<S,n>$ 其中 $S$ 是元素 $n\in\mathbb{N}^+$ 表示重数
+
+用方括号表示，例如 $A=[1,1,1,2,2,3]=\{<1,3>,<2,2>,<3,1>\}$
 
 *** 集合族
 
@@ -210,7 +212,9 @@ currnet mark: 387
 
 利用[[MK75][谓词公式定义]]描述集合中的元素。
 
-例如 $A=\left\{x\big|P(x)\right\}$ 或 $A=\left\{x\big:P(x)\right\}$ 定义为当且仅当[[MK76][谓词公式]] $P(x)=1$ 时，有 $x\in A$ 即 $\forall x(P(x)\leftrightarrow x\in A)=1$ 。
+例如 $A=\left\{x\big|P(x)\right\}$ 或 $A=\left\{x\big:P(x)\right\}$ 
+
+定义为当且仅当[[MK76][谓词公式]] $P(x)=1$ 时，有 $x\in A$ 即 $\forall x(P(x)\leftrightarrow x\in A)=1$ 。
 
 *** 归纳法
 
@@ -5965,7 +5969,7 @@ $V^n$ 定义为字符表 $V$ 的 $n$ 次幂，定义为 $V^0=\{\epsilon\},V^1=V,
 
 连接字符串 $s,t$ 可表示为 $st=aabb$ ，特别的 $s\epsilon=\epsilon s=s$
 
-****** 幂
+****** 幂<<MK396>>
 
 定义 $s$ 的 $n\in\mathbb{N}^+$ 次幂为 $s^n=ss^{n-1}$ 且 $s^1=s,s^0=\epsilon$
 
@@ -6031,13 +6035,15 @@ $V^n$ 定义为字符表 $V$ 的 $n$ 次幂，定义为 $V^0=\{\epsilon\},V^1=V,
 
 ***** 3型<<MK353>>
 
-3型[[MK313][文法]]分为：
+3型文法亦称 *正则文法* 包括右线性和左线性文法
 
-（1） 右线性文法：任意[[MK311][产生式]]均为 $A\to wB$ 或 $A\to w$ 其中 $\{A,B\}\subset V_N,w\in V_N^*$
+****** 右线性文法<<MK413>>
 
-（2） 左线性文法：任意[[MK311][产生式]]均为 $A\to Bw$ 或 $A\to w$ 其中 $\{A,B\}\subset V_N,w\in V_N^*$
+任意[[MK311][产生式]]均为 $A\to wB$ 或 $A\to w$ 其中 $\{A,B\}\subset V_N,w\in V_N^*$
 
-右线性和左线性文法均包含于3型文法，该文法亦称为 *正则文法*
+****** 左线性文法<<MK414>>
+
+任意[[MK311][产生式]]均为 $A\to Bw$ 或 $A\to w$ 其中 $\{A,B\}\subset V_N,w\in V_N^*$
 
 **** 分析树<<MK348>>
 
@@ -6145,29 +6151,169 @@ $L^+=\bigcup_{i=1}^\infty L^i$
 
 ** 词法分析
 
-*** 正则表达式<<MK354>>
+*** 基础定义
 
-定义[[MK315][字母表]] $\Sigma$ ，其产生的正则表达式的构建如下：
+**** 单词<<MK389>>
 
-（1） $\epsilon$ 是正则表达，他表达的语言为 $L(\epsilon)=\{\epsilon\}$
+词法分析的最小单元，一般用 TOKEN 表示。
 
-（2） $\forall a\in\Sigma$ 是正则表达，表示的语言为 $L(a)=\{a\}$
+在[[MK391][限制]]（3）下为[[MK390][界符]]本身或被界符分开的[[MK312][字符串]]
+
+**** 种别<<MK390>>
+
+[[MK389][单词]]的一种有穷[[128][划分]]，并定义每一类划分对应一个种别码。一般种别有：
+
+（1） 基本字：例如 if,while 等特殊含义的字符。有穷，基本字构成的表格为基本字表
+
+（2） 运算符：例如 +,-,*,/ 等含有运算意义的符号
+
+（3） 界符：例如空格，分号，括号，换行符等用于分界不同单词的符号
+
+（4） 常量：例如二进制浮点，整形，字符串等确定的量
+
+（5） 标识符：例如用于表示变量名，数组名，函数名等的字符串
+
+**** 词法分析<<MK388>>
+
+输入：源程序编码
+
+输出：[[MK389][单词]]的[[MK390][种别]] $t$ 以及单词自身值 $v$ 构成的二元组排列成的有穷[[MK144][有序组]]
+
+     例如 $<<t_1,v_1>,<t_2,v_2>,...,<t_n,v_n>>$ 其中 $n<\infty\land n\in\mathbb{N}^$
+
+**** 限制<<MK391>>
+
+为防止超前搜索，一般语法会有以下限制：
+
+（1） 所有[[MK388][基本子]]均不是标识符
+
+（2） 基本字作为标识符处理程序的特殊程序（即识别标识符后查询基本字表）
+
+（3） 单词之间必须有[[MK390][界符]]
+
+**** 输入带<<MK363>>
+
+存放[[MK312][字符串]]的缓冲区，每个单位存放一个字符
+
+**** 读头<<MK378>>
+
+一个指向当前读取的[[MK363][输入带]]上字符的指针
+
+**** 有穷控制器
+
+定义为根据当前状态，读头指向的字符，跳转到下一状态的[[MK367][控制部件]]
+
+控制部件由 $s_0$ 开始通过函数 $\delta(s,r)$ 跳转状态，并由 $r$ 
+
+**** 栈<<MK375>>
+
+先进后出的存放文法符号的存储器
+
+**** $\epsilon$ 闭包<<MK399>>
+
+定义 $S$ 为[[MK367][自动机]]的状态集 $\delta$ 是映射[[MK136][函数]]，定义 $I\subset S$ 则其 $\epsilon$ 闭包记作 $\epsilon\text{-closure}(I)$ 
+
+其构造定义为：
+
+（1） $\forall a\in I\rightarrow a\in\epsilon\text{-closure}$
+
+（2） 存在[[MK144][有序组]] $<\delta(s_0,\epsilon),...,\delta(s_{n},\epsilon)>,n<\infty$ 
+
+     满足 $s_0\in\epsilon\text{-closure}$ 以及 $\delta(s_{i-1},\epsilon)=s_i\lor s_i\in\delta(s_{i-1},\epsilon),1\leq i\leq n$
+
+     则 $\delta(s_{n},\epsilon)\in\epsilon\text{-closure}(I)\lor\forall a\in\delta(s_{n},\epsilon)\rightarrow a\in\epsilon\text{-closure}(I)$
+
+实际计算中由于迭代因素，需要反复使用推则（2），直至集合不再增加
+
+**** 等价状态<<MK410>>
+
+对于[[MK366][DFA]] $M=<S,\Sigma,\delta,t,F>$ 存在 $\{u,v\}\subset S$ 
+
+对于任意[[MK144][有序组]] $<\delta(s_0,a_1),...,\delta(s_{n-1},a_n)>$ 满足：
+
+（1） $\left(s_0=u\right)\land\left(\delta(s_{n-1},a_n)\in F\right)\land\left(s_i\in S,1\leq i\leq n\right)$ 
+
+（2） $\delta(s_{i-1},a_i)=s_i,1\leq i\leq n$
+
+均有对应有序组 $<\delta(s'_0,a_1),...,\delta(s'_{n-1},a_n)>$ 满足：
+
+（1） $\left(s'_0=v\right)\land\left(\delta(s'_{n-1},a_n)\in F\right)\land\left(s'_i\in S,1\leq i\leq n\right)$ 
+
+（2） $\delta(s'_{i-1},a_i)=s'_i,1\leq i\leq n$
+
+反之亦然，则称 $u,v$ 是等价状态，记作 $u\simeq v$ 。
+
+*** 状态转换图<<MK393>>
+
+**** 定义
+
+状态转换图拥有结构 $M=<G,\Sigma,f,T,F>$ ：
+
+（1） 无[[MK150][重边]]的[[MK153][有向图]] $G=<S,E>$
+
+（2） [[MK136][函数]] $f:E\to\rho(\mathcal{R}(\Sigma))$ 
+
+     其中 $\mathcal{R}(\Sigma)$ 是 $\Sigma$ 产生的所有[[MK354][正规式]]集合，且满足 $\forall e\in E\rightarrow |f(e)|<\infty$
+
+（3） 开始状态 $T\subset S$
+
+（4） 最终状态集 $F\subset S$
+
+**** 识别单词<<MK407>>
+
+一个[[MK389][单词]] $\alpha=a_1...a_n$ 可以被状态转换图接受，就表示存在[[MK156][通道]] $t=<v_1,e_1,...,v_n,e_m,v_f>$ 满足：
+
+（1） $t$ 是 $G$ 的有向通道
+
+（2） $v_1\in T\land v_f\in F$
+
+（3） $\forall1\leq i\leq m\left(\exists\sigma_i\in f(e_i)\rightarrow a_1...a_n\in L(\sigma_1...\sigma_m)\right)$ 
+
+此时 $\alpha$ 被状态转换图接受，他的[[MK388][词法分析]]输出为 $<g(v_f),\alpha>$
+
+所有满足上述条件的单词集合定义为 $L(M)$
+
+**** 状态转换矩阵<<MK406>>
+
+若满足对于任意 $e\in E$ 若 $e$ 在映射 $f$ 中有定义则 $|f(e)|=1$
+
+定义[[~/OneDrive/高等代数/Algb-3-Matrix.org][矩阵基础-矩阵的表述]] $M_{|S|\times|\Sigma|}[a_{sa}]$ 其中 $s\in S\land a\in\Sigma$ 
+
+进一步定义 $a_{sa}=\begin{cases}s'&\exists s'\in S\rightarrow f(s,s')=\{a\}\\\varnothing&else\end{cases}$
+
+程序表述中可直接根据 *当前状态和输入字符* 查询矩阵找到后继状态
+
+若输入输入[[MK312][字符串]]结束时状态属于最终状态集，则根据种别函数输出 TOKEN
+
+*** 正规集<<MK392>>
+
+一个由[[MK312][字符串]]为[[MK74][元素]]组成的[[MK73][集合]] $L$ ，满足该集合可由[[MK354][正规式]]表达
+
+*** 正规式<<MK354>>
+
+定义[[MK315][字母表]] $\Sigma$ ，其产生的正规表达式的递归定义如下：
+
+（1） $\epsilon,\varnothing$ 是正则表达，他表达的[[MK392][正规集]]分别为 $L(\epsilon)=\{\epsilon\},L(\varnothing)=\varnothing$
+
+（2） $\forall a\in\Sigma$ 是正则表达，表示的[[MK392][正规集]]为 $L(a)=\{a\}$
 
 （3） 上述两步中的表达式经过有限次[[MK349][运算]]后的结果亦为正则表达
 
+定义 $\mathcal{R}(\Sigma)$ 是[[MK315][字母表]] $\Sigma$ 所产生的所有正规式的集合
+
 **** 运算<<MK349>>
 
-若 $r$ 与 $s$ 均为正则表，以下为其包含的计算。其优先级为括号、闭包、连接、并，自左向右
+若 $r$ 与 $s$ 均为正规表达式，以下为其包含的计算。其优先级为括号、闭包、连接、并，自左向右
 
 ***** 并（或）<<MK360>>
 
-定义为 $r|s=r\cup s$ 其表示的语言为 $L(r|s)=L(r)\cup L(s)$ 即语言的[[MK350][并]]
+定义为 $r|s=r\cup s$ 其表示的[[MK392][正规集]]为 $L(r|s)=L(r)\cup L(s)$ 即语言的[[MK350][并]]
 
 进一步定义 $\bigcup_{i=1}^nr_i$ 为广义并
 
 ***** 连接<<MK364>>
 
-定义为 $rs$ 其表示的语言为 $L(rs)=L(r)L(s)$ 即语言的[[MK351][连接]]
+定义为 $rs$ 其表示的[[MK392][正规集]]为 $L(rs)=L(r)L(s)$ 即语言的[[MK351][连接]]
 
 ***** 幂<<MK355>>
 
@@ -6175,11 +6321,11 @@ $L^+=\bigcup_{i=1}^\infty L^i$
 
 ***** 闭包<<MK358>>
 
-定义为 $r^*$ 其表示的语言为 $L(r^*)=L(r)^*$ 即语言的[[MK352][克林闭包]]
+定义为 $r^*$ 其表示的[[MK392][正规集]]为 $L(r^*)=L(r)^*$ 即语言的[[MK352][克林闭包]]
 
 ***** 括号
 
-定义为 $(r)$ 其表示的语言为 $L((r))=L(r)$ 即其本身
+定义为 $(r)$ 其表示的[[MK392][正规集]]为 $L((r))=L(r)$ 即其本身
 
 **** 代数定律
 
@@ -6187,11 +6333,9 @@ $L^+=\bigcup_{i=1}^\infty L^i$
 
 $r|s=s|r$ 根据[[MK105][集合交换律]]
 
-***** 或结合律
+***** 结合律
 
 $r|(s|t)=(r|s)|t$ 根据[[MK106][集合结合律]]
-
-***** 连接结合律
 
 $r(st)=(rs)t$ 
 
@@ -6277,13 +6421,13 @@ $r^*=r^{**}$
 
 **** 定理
 
-[[MK353][正则文法]]与[[MK354][正则表达]]等价，即：
+[[MK353][正则文法]]与[[MK354][正规式]]等价，即：
 
-（1） 对于任意[[MK353][正则文法]] $G$ 存在等价的[[MK354][正则表达式]] $r$
+（1） 对于任意[[MK353][正则文法]] $G$ 存在等价的[[MK354][正规式]] $r$ 
 
-（2） 对于任意[[MK354][正则表达式]] $r$ 存在等价的[[MK353][正则文法]] $G$
+（2） 对于任意[[MK354][正规式]] $r$ 存在等价的[[MK353][正则文法]] $G$
 
-满足 $G$ 与 $r$ 生成相同的[[MK314][语言]]
+满足 $G$ 与 $r$ 生成相同的[[MK314][语言]]，即 $L(G)=L(r)$
 
 ***** 证明
 
@@ -6361,73 +6505,75 @@ $r^*=r^{**}$
 
 故得[[MK353][正则文法]] $G=<V_N,V_T,P,s>$ 其生成的[[MK314][语言]]满足 $L(G)=L(r)$
 
-*** 自动机
+*** 自动机<<MK367>>
 
-**** 基础定义
+**** 确定有穷自动机（DFA）<<MK366>>
 
-***** 输入带<<MK363>>
-
-存放[[MK312][字符串]]的缓冲区，每个单位存放一个字符
-
-***** 读头<<MK378>>
-
-一个指向当前读取的[[MK363][输入带]]上字符的指针
-
-***** 有穷控制器
-
-定义为根据当前状态，读头指向的字符，跳转到下一状态的[[MK367][控制部件]]
-
-控制部件由 $s_0$ 开始通过函数 $\delta(s,r)$ 跳转状态，并由 $r$ 
-
-***** 栈<<MK375>>
-
-先进后出的存放文法符号的存储器
-
-**** 分类<<MK367>>
-
-***** 确定有穷自动机（DFA）<<MK366>>
-
-定义为多元代数结构 $M=<S,\Sigma,\delta,s_0,F>$ 其中
+定义为多元结构 $M=<S,\Sigma,\delta,t,F>$ 其中
 
 $S$ ：是[[MK104][有限]]的，元素为状态的[[MK73][集合]]
 
 $\Sigma$ ：[[MK363][输入带]]中[[MK312][字符串]]依据的[[MK315][字母表]]，满足 $\epsilon\not\in\Sigma$
 
-$\delta$ ：为 $\delta:S\times\Sigma\to S$ 的[[MK136][函数]]
+$\delta$ ：为 $\delta:S\times\Sigma\cup\{\epsilon\}\to S$ 的[[MK136][函数]]
 
-$s_0$ ：初始状态，满足 $s_0\in S$
+$t$ ：初始状态，满足 $t\in S$
 
 $F$ ：最终状态，满足 $F\subset S$ 可作为结束的状态
 
-***** 非确定有穷自动机（NFA）<<MK362>>
+***** 识别单词<<MK394>>
 
-定义为多元代数结构 $M=<S,\Sigma,\delta,s_0,F>$ 其中
+若一个[[MK389][单词]] $\alpha=a_1...a_n$ 可以被DFA识别
+
+则存在[[MK144][有序组]] $<\delta(s_0,a_1),\delta(s_1,a_2),...,\delta(s_{n-1},a_n)>$ 满足：
+
+（1） $\left(s_0=t\right)\land\left(\delta(s_{n-1},a_n)\in F\right)\land\left(s_i\in S,1\leq i\leq n\right)$ 
+
+（2） $\delta(s_{i-1},a_i)=s_i,1\leq i\leq n$
+
+所有能被 $M$ 识别的单词构成的集合记作 $L(M)$
+
+***** 状态转移矩阵
+
+根据 $\delta:S\times\Sigma\to S$ 的定义可进一步定义[[MK406][转换矩阵]]
+
+即定义 $M_{|S|\times|\Sigma|}[a_{sa}]$ 其中 $s\in S\land a\in\Sigma$ 以及 $a_{sa}=\delta(s,a)$
+
+程序表述中可直接根据 *当前状态和输入字符* 查询矩阵找到后继状态
+
+若输入输入[[MK312][字符串]]结束时状态属于最终状态集，则根据种别函数输出 TOKEN
+
+**** 非确定有穷自动机（NFA）<<MK362>>
+
+定义为多元代数结构 $M=<S,\Sigma,\delta,T,F>$ 其中
 
 $S$ ：是[[MK104][有限]]的，元素为状态的[[MK73][集合]]
 
-$\Sigma$ ：[[MK363][输入带]]中[[MK312][字符串]]依据的[[MK315][字母表]]，满足 $\epsilon\not\in\Sigma$
+$\Sigma$ ：[[MK363][输入带]]中[[MK312][字符串]]依据的[[MK315][字母表]]，满足 $\epsilon\in\Sigma$
 
-$\delta$ ：为 $\delta:S\times\Sigma\to\rho(S)$ 的[[MK136][函数]]，其中 $\rho(S)$ 是[[MK95][幂集]]
+$\delta$ ：为 $\delta:S\times\mathcal{R}(\Sigma)\to\rho(S)$ 的[[MK136][函数]]，其中 $\rho(S)$ 是[[MK95][幂集]] $\mathcal{R}(\Sigma)$ 是 $\Sigma$ 产生的所有[[MK354][正规式]]集合
 
-$s_0$ ：初始状态，满足 $s_0\in S$
+    且有 $\forall s\in S\rightarrow s\in\delta(s,\epsilon)$
 
-$F$ ：最终状态，满足 $F\subset S$ 可作为结束的状态
-
-***** 带有空边的[[MK362][NFA]]
-
-定义为多元代数结构 $M=<S,\Sigma,\delta,s_0,F>$ 其中
-
-$S$ ：是[[MK104][有限]]的，元素为状态的[[MK73][集合]]
-
-$\Sigma$ ：[[MK363][输入带]]中[[MK312][字符串]]依据的[[MK315][字母表]]，满足 $\epsilon\not\in\Sigma$
-
-$\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\to\rho(S)$ 的[[MK136][函数]]，其中 $\rho(S)$ 是[[MK95][幂集]]
-
-$s_0$ ：初始状态，满足 $s_0\in S$
+$T$ ：初始状态，满足 $T\subset S$
 
 $F$ ：最终状态，满足 $F\subset S$ 可作为结束的状态
 
-***** 确定下推自动机（DPDA）<<MK376>>
+***** 识别单词<<MK395>>
+
+若一个[[MK389][单词]] $\alpha=a_1...a_n$ 可以被NFA识别
+
+则存在[[MK144][有序组]] $<\delta(s_0,\sigma_1),\delta(s_1,\sigma_2),...,\delta(s_{m-1},\sigma_m)>$ 满足：
+
+（1） $\left(s_0\in T\right)\land\left(\delta(s_{m-1},\sigma_m)\cap F\ne\varnothing\right)\land\left(s_i\in S,1\leq i\leq m+1\right)$
+
+（2） $s_i\in\delta(s_{i-1},\sigma_i),1\leq i\leq m$
+
+（3） $\sigma_i,1\leq i\leq n$ 是 $\Sigma$ 产生的[[MK354][正规式]]且 $\alpha\in L(\sigma_1...\sigma_m)$
+
+所有能被 $M$ 识别的单词构成的集合记作 $L(M)$
+
+**** 确定下推自动机（DPDA）<<MK376>>
 
 定义为多元代数结构 $M=<S,\Sigma,\Gamma,\delta,s_0,z_0,F>$ 其中
 
@@ -6445,7 +6591,7 @@ $F$ ：最终状态，满足 $F\subset S$ 可作为结束的状态
 
 $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\Gamma^*$ 的动作[[MK136][函数]]
 
-****** 动作函数<<MK380>>
+***** 动作函数<<MK380>>
 
 动作[[MK136][函数]] $\delta$ 的自变量 $<<q,a>,z>\in S\times(\Sigma\cup\{\epsilon\})\times\Gamma$ 表示：
 
@@ -6463,71 +6609,661 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 
 （3） 将 $\gamma$ 自右向左压入[[MK375][栈]]中
 
-**** 自动机产生的语言<<MK368>>
+*** 定理
 
-[[MK367][自动机]] $M$ 由初始状态 $s_0$ 开始通过函数 $\delta(s,r)$ 跳转状态
+**** 等价<<MK368>>
 
-并由 $r$ 连接出[[MK312][字符串]]，最终终止于最终状态 $s\in F$ 的所有字符串定义为其翻译的语言
+[[MK367][自动机]]或[[MK354][正规式]] $M,M'$ 所识别的单词集合 $L(M)=L(M')$ 则称 $M,M'$ 两个自动机/正规式等价
 
-记作 $L(M)$
+**** 定理0<<MK409>>
 
-*** 转换
+（1） 对于任意[[MK362][NFA]] $M$ 存在[[MK393][状态转换图]] $M'$ 与其[[MK368][等价]]
 
-**** [[MK354][正则表达式]]转[[MK362][NFA]]
+（2） 对于任意[[MK393][状态转换图]] $M'$ 存在[[MK362][NFA]] $M$ 与其[[MK368][等价]]
 
-有[[MK315][字母表]] $\Sigma'$ 正则表达式 $r$ 则定义 $M=<S,\Sigma,\delta,s_0,F>$ 其中 $S=\varnothing,\delta=\varnothing,\Sigma=\Sigma'/\{\epsilon\}$
+***** 证明
 
-另有 $F=\varnothing,s_0=\epsilon$ 则 $\Sigma'$ 的正则表达式 $r,w$ 对其[[MK349][运算]]有下列规则：
+****** （1）
 
-（1） 对于[[MK364][连接]]运算 $rw$ 则重新定义 $S$ 为 $S\cup\{s_0,s_1,s_2\}$ 
+对于任意[[MK362][NFA]] $M=<S,\Sigma,\delta,T,F>$ 
 
-     重新定义 $\delta$ 为 $(\delta/\{<<s_0,rw>,\{s_1\}>\})\cup\{<<s_0,r>,\{s_1\}>,<<s_1,w>,\{s_2\}>\}$
+定义 $E=\left\{<s_a,s_b>\big|<<s_a,\sigma>,S_b>\in\delta\land s_b\in S_b\right\}$
 
-（2） 对于[[360][并]]运算 $r|w$ 则重新定义 $S$ 为 $S\cup\{s_0,s_1\}$
+定义 $r(s_a,s_b)=\left\{\sigma\big|<<s_a,\sigma>,S_b>\in\delta\land s_b\in S_b\right\}$ 则定义 $f=\left\{<<s_a,s_b>,r(a,b)>\big|<s_a,s_b>\in E\right\}$
 
-     重新定义 $\delta$ 为 $(\delta/\{<<s_0,r|w>,\{s_1\}>\})\cup\{<<s_0,r>,\{s_1\}>,<<s_0,w>,\{s_1\}>\}$
+由于 $r(s_a,s_b)$ 的定义，故对于给定 $<s_a,s_b>$ 在 $f$ 中有唯一对应的 $r(s_a,s_b)$ 故 $f$ 是[[MK136][函数]]
 
-（3） 对于[[MK358][闭包]]运算 $r^*$ 则重新定义 $S$ 为 $S\cup\{s_0\}$
+定意[[MK393][状态转换图]] $M’=<<S,E>,\Sigma,f,T,F>$
 
-     重新定义 $\delta$ 为 $(\delta/\{<<s_0,r^*>,\{s_1\}>\})\cup\{<<s_0,r>,\{s_0\}>\}$
+对于任意 $\alpha\in L(M)$ 根据[[MK395][定义]]存在 $<\delta(s_0,\sigma_1),...,\delta(s_{m-1},\sigma_m)>$ 满足：
 
-（4） 若 $<<s_0,r>,\{s_1\}>\in\delta$ 则 $\delta\cup\{<<s_0,r>,\{s_2\}>\}$ 不满足[[MK136][函数]]定义
+（1） $\left(s_0\in T\right)\land\left(\delta(s_{m-1},\sigma_m)\cap F\ne\varnothing\right)\land\left(s_i\in S,1\leq i\leq n\right)$
 
-     则定义 $\delta$ 为 $\left(\delta/\{<<s_0,r>,\{s_1\}>,<<s_0,r>,\{s_2\}>\}\right)\cup\{<<s_0,r>,\{s_1,s_2\}>\}$
+（2） $s_i\in\delta(s_{i-1},\sigma_i),1\leq i\leq m$
 
-上述规则显然保持了[[MK354][正则表达式]]产生的语言与[[MK362][NFA]]产生的[[MK368][语言]]的等价性（暂时不证）
+（3） $\sigma_i,1\leq i\leq n$ 是 $\Sigma$ 产生的[[MK354][正规式]]且 $\alpha\in L(\sigma_1...\sigma_m)$
 
-根据上述规则对于 $\Sigma'$ 正则表达式 $r$ 从[[MK349][运算]]最低优先级开始构建 $M$
+根据 $E$ 的定义有对于任意 $s_i\in\delta(s_{i-1},\sigma_i)$ 均有 $<s_{i-1},s_i>\in E$
 
-并定义构建出 $M$ 的开始状态为 $s_0$ 终止状态集为 $F$
+根据 $r(s_{i-1},s_i)$ 的定义对于任意 $s_i\in\delta(s_{i-1},\sigma_i)$ 均有 $\sigma\in r(s_{i-1},s_i)=f(<s_{i-1},s_i>)$ 
 
-**** [[MK362][NFA]]转[[MK366][DFA]]
+由于 $\delta(s_{m-1},\sigma_m)\cap F\ne\varnothing$ 故存在 $s_m\in\delta(s_{m-1},\sigma_m)\cap F$
 
-已知有NFA自动机 $M=<S,\Sigma,\delta,s_0,F>$ 构建DFA自动机 $M'=<S',\Sigma',\delta',s_0',F'>$
+则定义有序组 $t=<s_0,<s_0,s_1>,s_1,....,s_{m-1},<s_{m-1},s_m>,s_m>$ 则有：
 
-首先定义 $\Sigma'=\Sigma,S' =\{s_0\},s_0'=s_0,\delta' =\varnothing$ 由于 $\delta$ 是[[MK136][函数]]，故对每一组 $<s_0,r_{i_0}>,r_{i_0}\in\Sigma,i_0=1,...,n_0$ 
+（1） 显然 $t$ 是[[MK156][通道]]
 
-有且仅有一个 $<<s_0,r_{i_0}>,S_{i_0}>\in\delta,S_{i_0}\subset S$ 
+（2） $s_0\in T\land s_m\in F\land s_i\in S$
 
-重定义 $S'$ 为 $S'\cup\{S_1,...,S_{n_0}\}$ 重定义 $\delta'$ 为 $\delta'\cup\{<<s_0,r_1>,S_{0,1}>,...,<<s_0,r_{n_0}>,S_{n_0}>\}$
+（3） $\sigma_i\in f(<s_{i-1},s_i>)$ 且 $\alpha\in L(\sigma_1...\sigma_m)$
 
-对于每一个 $S_{i_0}$ 定义 $S_{i_0,i_1}=\left\{x\big|<<s,r_{i_1}>,K>\in\delta\land s\in S_{i_0}\land r_{i_1}\in\Sigma'\land x\in K\right\}$
+则根据[[MK407][定义]]有 $\alpha\in L(M')$ 总上所述 $\forall\alpha\in L(M)\rightarrow\alpha\in L(M')$ 即 $L(M)\subset L(M')$
 
-若有 $i_1=1,...,n_1$ 则重定义 $S'$ 为 $S'\cup\{S_{i_0,1},...,S_{i_0,n_1}\}$
+同理对与任意 $<s_a,s_b>\in E$ 均有 $s_b\in\delta(s_a,\sigma)$ 
 
-重定义 $\delta'$ 为 $\delta'\cup\{<<S_{i_0},r_{1}>,S_{i_0,1}>,...,<<S_{i_0},r_{n_1}>,S_{i_0,n_1}>\}$
+对于任意 $\sigma\in f(<s_a,s_b>)$ 则有 $\sigma\in r(s_a,s_b)$ 即有 $s_b\in\delta(s_a,\sigma)$
 
-依次类推，可知：
+故类似可证 $L(M)\subset L(M')$ 故根据[[MK78][自反性]]可得 $L(M)=L(M')$
 
-（1） 对于任意 $<<s,r>,z>\in\delta'$ 不存在 $<<s,r>,y>\in\delta'$ 满足 $z\ne y$ 则 $\delta'$ 是函数
+****** （2）
 
-（2） 对于任意 $<<s,r>,z>\in\delta'$ 均有 $\{s,z\}\subset S'$
+对于任意[[MK393][状态转换图]] $M’=<<S,E>,\Sigma,f,T,F>$ 
 
-（3） 保持了产生[[MK368][语言]]的等价性（暂时不证）
+由于 $<S,E>$ 是无[[MK150][重边]]的[[MK153][有向图]]，故有 $|S|<\infty,|E|<\infty$
 
-由于根据[[MK362][NFA定义]]可知其子集均为有穷结构，故必能构建 $S',\delta'$
+由于有 $\forall e\in E\rightarrow |f(e)|<\infty$ 故对于素有 $f(e_i)=\{\sigma_1,...,\sigma_n\}$ 定义 $f'(e_i)=\{\sigma_1|...|\sigma_n\}$
 
-进一步定义终止状态 $F'$ 则构成[[MK366][DFA]]自动机 $M'=<S',\Sigma',\delta',s_0',F'>$
+根据[[MK354][定义]]可知 $\sigma_1|...|\sigma_n$ 亦为正规式，则 $M''=<<S,E>,\Sigma,f',T,F,g>$ 根据[[MK393][定义]]是状态转换图
+
+根据[[MK408][推论]]可得 $L(M'')=L(M')$ 则定义 $S(s,\sigma)=\left\{u\big|<s,u>\in E\land f(<s,u>)=\{\sigma\}\right\}$
+
+则定义 $\delta=\left\{<<s,\sigma>,S(s,\sigma)>\big|s\in S\}$ 
+
+根据 $S(s,\sigma)$ 构造显然对于给定 $<s,\sigma>$ 在 $\delta$ 中有唯一 $S(s,\sigma)$ 与之对应，故 $\delta$ 是[[MK136][函数]]
+
+则定义 $M=<S,\Sigma,\delta,T,F>$ 满足[[MK362][NFA]]定义，则对于任意 $\alpha\in M$ 
+
+根据[[MK395][定义]]存在[[MK144][有序组]] $<\delta(s_0,\sigma_1),...,\delta(s_{m-1},\sigma_m)>$ 满足：
+
+（1） $\left(s_0\in T\right)\land\left(\delta(s_{m-1},\sigma_m)\cap F\ne\varnothing\right)\land\left(s_i\in S,1\leq i\leq n\right)$
+
+（2） $s_i\in\delta(s_{i-1},\sigma_i),1\leq i\leq m$
+
+（3） $\sigma_i,1\leq i\leq n$ 是 $\Sigma$ 产生的[[MK354][正规式]]且 $\alpha\in L(\sigma_1...\sigma_m)$
+
+根据 $\delta$ 定义对于任意 $\delta(s_{i-1},\sigma_i)=S(s_{i-1},\sigma_i)$ 
+
+进一步根据 $S(s_{i-1},\sigma_i)$ 定义有对于任意 $s_i\in S(s_{i-1},\sigma_i)=\delta(s_{i-1},\sigma_i)$ 存在 $f(<s_{i-1},s_i>)=\{\sigma_i\}$
+
+由于 $\delta(s_{m-1},\sigma_m)\cap F\ne\varnothing$ 故存在 $s_m\in\delta(s_{m-1},\sigma_m)\cap F$
+
+故对于 $s_m\in\delta(s_{m-1},\sigma_m)$ 存在 $f(<s_{m-1},s_m)=\{u\}$
+
+则构造有序组为 $<s_0,<s_0,s_1>,s_1,...,s_{m-1},<s_{m-1},s_m>,s_m>$ 满足：
+
+（1） 是[[MK156][通道]]
+
+（2） $s_0\in T\land s_m\in F$
+
+（3） $f(<s_,s_1>)=\{\sigma_i\}$ 且 $\alpha\in L(\sigma_1...\sigma_m)$
+
+根据[[MK407][定义]]可得 $\alpha\in L(M)$ 即 $\forall\alpha\in L(M)\rightarrow\alpha\in L(M')$ 即 $L(M)\subset L(M')$
+
+同理根据 $S(s,\sigma)$ 定义，若有 $f(s_a,s_b)=\{\sigma\}$ 则有 $s_b\in S(s,\sigma)=\delta(s_a,\sigma)$
+
+则类似可证 $L(M)\subset L(M')$ 故根据[[MK78][自反性]]可得 $L(M)=L(M')$
+
+**** 定理1<<MK397>>
+
+对于[[MK362][NFA]] $M_1=<S_1,\Sigma,\delta_1,T,F>,M_2=<S_2,\Sigma,\delta_2,T,F>$ 若满足以下三组条件任意一组：
+
+第一组：
+
+（1） $<<s_a,\sigma>,S_b>\in\delta_1$ 以及 $\left\{<<s_a,\sigma_a>,\{s'\}>,<<s',\sigma_b>,S_b>\right\}\subset\delta_2$
+
+（2） $\delta_1/\{<<s_a,\sigma>,S_b>\}=\delta_2/\left\{<<s_a,\sigma_a>,\{s'\}>,<<s',\sigma_b>,S_b>\right\}$
+
+（3） $\sigma=\sigma_a\sigma_b$
+
+（4） $S_2=S_1\cup\{s'\}\land s_a\in S_1\land S_b\subset S_1$ 
+
+第二组：
+
+（1） $\left(\left\{<<s_a,\sigma_a>,S_b>,<<s_a,\sigma_b>,S_c>\right\}\subset\delta_1\right)\land\left(S_b\cap S_c\ne\varnothing\right)$
+
+（2） 定义 $S_d=S_b\cap S_c$ 则 $\left\{<<s_a,\sigma_a>,S_b/S_d>,<<s_a,\sigma_b>,S_c/S_d>,<<s_a,\sigma_a|\sigma_b>,S_d>\right\}\subset\delta_2$
+
+（3） $\begin{aligned}
+&\delta_1/\left\{<<s_a,\sigma_a>,S_b>,<<s_a,\sigma_b>,S_c>\right\}\\=&\delta_2/\left\{<<s_a,\sigma_a>,S_b/S_d>,<<s_a,\sigma_b>,S_c/S_d>,<<s_a,\sigma_a|\sigma_b>,S_d>\right\}
+\end{aligned}$
+
+（4） $S_2=S_1\land s_a\in S_1\land S_b\subset S_1\land S_c\subset S_1$
+
+第三组：
+
+（1） $<<s_a,\sigma>,S_b>\in\delta_1$ 以及 $\left\{<<s_a,\epsilon>,\{s'\}>,<<s',\sigma_a>,\{s'\}>,<<s',\epsilon>,S_b>\right\}\subset\delta_2$
+
+（2） $\delta_1/\{<<s_a,\sigma>,S_b>\}=\delta_2/\left\{<<s_a,\epsilon>,\{s'\}>,<<s',\sigma_a>,\{s'\}>,<<s',\epsilon>,S_b>\right\}$
+
+（3） $\sigma=\sigma_a^*$ 
+
+（4） $S_2=S_1\cup\{s'\}\land s_a\in S_1\land S_b\subset S_1$ 
+
+则 $M_1,M_2$ 等价，即 $L(M_1)=L(M_2)$
+
+***** 证明
+
+三组条件分别对应[[MK354][正规式]]的[[MK364][连接]]、[[MK360][并]]以及[[MK358][闭包]]运算对应。这里仅对第一组证明，其他证明类似。
+
+根据[[MK395][定义]]对于任意 $\alpha\in L(M_2)$ 有[[MK144][有序组]] $l=<\delta_2(s_0,\sigma_1),...,\delta_2(s_{m-1},\sigma_m)>$ 满足
+
+（a） $\left(s_0\in T\right)\land\left(\delta_2(s_{m-1},\sigma_m)\cap F\ne\varnothing\right)\land\left(s_i\in S,1\leq i\leq n\right)$
+
+（b） $s_i\in\delta_2(s_{i-1},\sigma_i),1\leq i\leq m$
+
+（c） $\sigma_i,1\leq i\leq n$ 是 $\sigma$ 的[[MK354][正规式]]且 $\alpha\in L(\sigma_1...\sigma_m)$
+
+由于 $S_2=S_1\cup\{s'\}\land\delta_2(s_a,\sigma_a)=\{s'\}$ 以及条件（2）得
+
+在满足上述条件的 $l$ 中 $\delta_2(s_a,\sigma_a),\delta_2(s',\sigma_b)$ 必以该顺序成对出现。则对 $l$ 做以下操作：
+
+（一） 若 $l$ 包含 $\delta_2(s_a,\sigma_a),\delta_2(s',\sigma_b)$ 部分，则替换为 $\delta_1(s_a,\sigma)$ 
+
+（二） 替换 $l$ 中其余 $\delta_1(s_i,\sigma_i)$ 为 $\delta_2(s_i,\sigma_i)$
+
+则替换后记作 $l'=<\delta_1(k_0,\omega_1),...,\delta_1(k_{z-1},\omega_z)>$ 满足
+
+（1） 由于 $l$ 中 $\delta_2(s_a,\sigma_a),\delta_2(s',\sigma_b)$ 必以该顺序成对出现，以及条件（2）
+
+     则有 $k_0=s_0\land\delta_1(k_{z-1},\omega_z)=\delta_2(s_{m-1},\sigma_m)$ 故根据（a）有 $k_0\in T\land (\delta_1(k_{z-1},\omega_z)\cap F\ne\varnothing)$
+
+     同理由于成对顺序出现，替换后不存在 $s'$ 则根据（a）以及条件 $S_1=S_2\cup\{s'\}$ 有 $k_i\in S_1$
+
+（2） 根据（b）以及条件（1）（2）有 $k_i\in\delta_1(k_{i-1},\omega_i),1\leq i\leq z$
+
+（3） 根据[[MK354][定义（3）]]、（c）以及 $\sigma=\sigma_a\sigma_b$ 可知 $\sigma$ 亦为正规式
+
+     故若不发生替换（一）则 $\omega_1...\omega_z=\sigma_1...\sigma_m$
+
+     若发生替换（一）则 $\omega_1...\omega_z=\sigma_1...\sigma...\sigma_m=\sigma_1...\sigma_a\simga_b...\sigma_m=\simga_1......\sigma_m$
+
+最终得 $\forall\alpha\in L(M_2)\rightarrow \alpha\in L(M_1)$ 根据[[MK96][定义]]可得 $L(M_2)\subset L(M_1)$
+
+同理可得 $L(M_1)\subset L(M_2)$ 故根据[[MK78][自反性]]有 $L(M_2)= L(M_1)$
+
+***** 推论<<MK408>>
+
+同理可证对于[[MK393][状态转换图]] $M_1=<<S_1,E_1>,\Sigma,f_1,T,F>,M_2=<<S_2,E_2>,\Sigma,f_2,T,F>$
+
+若满足以下三组条件任意一组：
+
+第一组：
+
+（1） $S_2=S_1\cup\{s'\}$
+
+（2） $E_1/\{<s_a,s_b>,\}=E_2/\{<s_a,s'>,<s',s_b>\}$
+
+（3） $f_1/\{<<s_a,s_b>,\{\sigma\}>\}=f_2/\{<<s_a,s'>,\{\sigma_a\}>,<<s',s_b>,\{\sigma_b\}>\}$
+
+（4） $\sigma=\sigma_a\sigma_b\land\{s_a,s_b\}\subset S$
+
+第二组：
+
+（1） $S_2=S_1\land E_1=E_2$
+
+（3） $f_1/\{<<s_a,s_b>,\{\sigma_1,\sigma_2\}>\}=f_2/\{<<s_a,s_b>,\{\sigma_1|\sigma_2\}\}$
+
+第三组：
+
+（1） $S_2=S_1\cup\{s'\}$
+
+（2） $E_1/\{<s_a,s_b>,\}=E_2/\{<s_a,s'>,<s',s'>,<s',s_b>\}$
+
+（3） $\begin{aligned}&f_1/\{<<s_a,s_b>,\{\sigma^*\}\}\\=&f_2/\{<<s_a,s'>,\{\epsilon\}>,<<s',s'>,\sigma>,<<s',s_b>,\{\epsilon\}>\}\end{aligned}$
+
+则 $M_1,M_2$ 等价，即 $L(M_1)=L(M_2)$
+
+**** 定理2
+
+[[MK354][正规式]]与[[MK362][NFA]]有：
+
+（1） 对于任意[[MK354][正规式]] $r$ 存在等价NFA $M$
+
+（2） 对于任意NFA $M$ 存在等价的正规式 $r$
+
+满足 $L(M)=L(r)$ 即互为[[MK368][等价]]
+
+***** 证明
+
+****** （1）
+
+已有[[MK315][字母表]] $\Sigma$ 生成的正规式 $r$ ，则定义
+
+\begin{aligned}
+S&=\{t,f\}\\
+\delta&=\{<<t,r>,\{f\}>\}\\
+T&=\{t\}\\
+F&=\{f\}
+\end{aligned}
+
+显然对于 $M=<S,\Sigma,\delta,T,F>$ 满足[[MK362][NFA]]定义，且对于任意 $\alpha\in L(r)$ 有 $<\delta(t,r)>$ 满足[[MK395][条件]]
+
+故有 $\forall\alpha\in L(R)\rightarrow\alpha\in L(M)$ 则根据[[MK96][定义]]有 $L(r)\subset L(M)$
+
+类似易证 $L(M)\subset L(r)$ 根据[[MK78][自反性]]可得 $L(M)=L(r)$ 即[[MK368][等价]]
+
+进一步根据[[MK397][定理1]]可按照[[MK349][运算]]的最低优先级拆分运算符，由于 $r$ 为经过有限步运算所得
+
+故最终可有等价 $M=<S',\Sigma,\delta',T',F'>$ 满足：
+
+（1） $L(M')=L(M)$
+
+（2） $\forall<<s_a,\sigma>,S_b>\in\delta'$ 均有 $\sigma\in\Sigma\cup\{\epsilon\}$
+
+****** （2）
+
+对于任意[[MK362][NFA]] $M=<S,\Sigma,\delta,T,F>$ 定义：
+
+\begin{aligned}
+S'&=S\cup\{t,f\}&t\not\in S\land f\not\in S\\
+\delta'&=\delta\cup\{<<t,\epsilon>,T>\}\cup\left\{<<u,\epsilon>,\{f\}>\big|u\in F\right\}\\
+T'&=\{t\}\\
+F'&=\{f\}
+\end{aligned}
+
+定义 $M'=<S',\Sigma,\delta',T',F'>$ 根据[[MK395][定义]]易证 $L(M')=L(M)$
+
+此处暂不证明有限次运用[[MK397][定理1]]可求得等价 $M^*=<S^*,\Sigma,\delta^*,T',F'>$ 满足
+
+\begin{aligned}
+S^*&=\{t,f\}\\
+\delta^*&=\{<<t,r>,\{f\}>\}\\
+\end{aligned}
+
+且有 $L(M^*)=L(M')=L(M)$ 由于 $\delta$ 仅含有一个元素，故有唯一 $<\delta(t,r)>$ 满足[[MK395][条件]]
+
+显然可得 $L(r)=L(M^*)$
+
+**** 定理3<<MK400>>
+
+对于任意[[MK362][NFA]] $M$ 均存在[[MK368][等价]]的[[MK366][DFA]] $M_3$
+
+***** 证明
+
+[[MK366][DFA]]可以有等价[[MK362][NFA]]为显然，以下仅证明NFA有等价DFA
+
+****** 消除计算所得正规式<<MK405>>
+
+定义[[MK362][NFA]] $M=<S,\Sigma,\delta,T,F>$ 由于[[MK354][正规式]]的[[MK349][运算]]均由[[MK364][连接]]、[[MK360][并]]以及[[MK358][闭包]]扩展所得。
+
+且运算次数有限次，故根据[[MK397][定理1]]运用有限次可有等价的 $M_1=<S_1,\Sigma,\delta_1,T_1,F_1>$
+
+满足对于任意 $<<s_a,\sigma>,S_b>\in\delta_1$ 均有 $\sigma$ 是不经过[[MK349][运算]]的[[MK354][正规式]]
+
+故有 $\forall<<s_a,\sigma>,S_b>\in\delta_1$ 均有 $\sigma\in\Sigma\cup\{\epsilon\}$
+
+根据[[MK397][定理1]]有 $L(M_1)=L(M)$ 
+
+****** 添加唯一开始/终结符<<MK404>>
+
+\begin{aligned}
+S_2&=S_1\cup\{t,f\}&t\not\in S_1\land f\not\in S_1\\
+\delta_2&=\delta_1\cup\{<<t,\epsilon>,T_1>\}\cup\left\{<<u,\epsilon>,\{f\}>\big|u\in F_1\right\}\\
+T_2&=\{t\}\\
+F_2&=\{f\}
+\end{aligned}
+
+则有 $M_2=<S_2,\Sigma,\delta_2,T_2,F_2>$ 对于任意 $\alpha\in L(M)$ 根据[[MK316][连接]]可得 $\alpha=\epsilon\alpha\epsilon$
+
+则根据[[MK395][定义]]易证 $L(M_1)=L(M_2)$
+
+****** 子集法
+
+以下仅证明 $L(M_3)\subset L(M_2)$ 类似可证 $L(M_2)\subset L(M_3)$ 进而根据[[MK78][自反性]]可得 $L(M_2)=L(M_3)$
+
+结合[[MK405][第一步]]的 $L(M_1)=L(M)$ 以及[[MK404][第二步]]的 $L(M_1)=L(M_2)$ 可得 $L(M_3)=L(M)$
+
+最终根据[[MK368][等价定义]]可得 $M,M_3$ 等价，其中 $M$ 是[[MK362][NFA]]， $M_3$ 为[[MK366][DFA]]
+
+******* 构造[[MK366][DFA]]<<MK398>>
+
+基于 $M_2=<S_2,\Sigma,\delta_2,T_2,F_2>$ 给定以下基于[[MK399][ $\epsilon$ 闭包]]的状态集 $H$ 的构造方法：
+
+（1） 求解 $\epsilon\text{-closure}(T_2)=\epsilon\text{-closure}(\{t\})$ 定义 $H=\{\epsilon\text{-closure}(T_2)\},\delta_3=\varnothing$
+
+（2） 对每一个 $I\in H$ 定义 $I'=\bigcup\left\{\epsilon\text{-closure}(I_0)\big|(<<s,a>,I_0>\in\delta_2)\land(s\in I)\right\}$ 为[[MK97][广义并]]
+
+     则重定义 $H=H\cup\{I'\},\delta_3=\delta_3\cup\{<<I,a>,I'>\}$
+
+（3） 实际过程中由于相互迭代，需要不断重复（2）直至 $|H|$ 不增长
+
+由于 $|S|<\infty$ 则 $|\rho(S)|<\infty$ ，又由于 $\forall I\subset S\rightarrow\epsilon\text{-closure}(I)\in\rho(S)$ 
+
+故（3）可在有限步（2）后达成。
+
+由于对于一个 $I\in H$ 所有 $\delta_2(s\in I,a)$ 的[[MK399][ $\epsilon$ 闭包]] 均为 $I^*$ 的子集
+
+故 $\delta_3(I,a)$ 有唯一映射 $I^*$ 故 $\delta_3:H\times\Sigma/\{\epsilon\}\to H$ 是[[MK136][函数]]
+
+定义 $T_3=\epsilon\text{-closure}(T_2)\in H,F_3=\left\{I\big|I\in H\land F_2\cap I\ne\varnothing\right\}\subset H$
+
+最终组合成 $M_3=<H,\Sigma/\{\epsilon\},\delta_3,T_3,F_3>$ 满足[[MK366][DFA]]
+
+******* 存在对应[[MK144][有序组]]<<MK403>>
+
+对于 $M_3=<H,\Sigma/\{\epsilon\},\delta_3,T_3,F_3>$ 
+
+******** 假设 $n$ 成立，有 $n+1$ 成立<<MK402>>
+
+假设对于任意 $<\delta_3(T_3,a_1),...,\delta_3(I_{n-1},a_n)>$ 任意 $s\in\delta_3(I_{n-1},a_n)$ 若有 $I_{i+1}=\delta_3(I_i,a_i)$
+
+则存在 $<\delta_2(t_0,w_1),...,\delta_2(t_{k-1},w_k)>$ 满足
+
+（1） $w_i\in\Sigma\land t_0=t\land s\in\delta_2(t_{k-1},w_k)$
+
+（2） $t_i\in\delta_2(t_{i-1},w_i)$
+
+（3） $\{a_1...a_n\}=L(w_1...w_k)$ 其中 $a_1...a_n$ 为[[MK312][字符串]] $w_1...w_k$ 是满足 $w_i\in \Sigma$ 的[[MK354][正规式]]
+
+则对于任意 $<\delta_3(T_3,a_1),...,\delta_3(I_{n-1},a_n),\delta_3(I_n,a_{n+1})>$ 任意 $s'\in\delta_3(I_n,a_{n+1})$ 若有 $I_{i+1}=\delta_3(I_i,a_i)$
+
+则根据 $\delta_3$ 的[[MK401][构造]]有存在 $\delta_2(s,a_{n+1})=I$ 满足 $s\in I_n\land s'\in\epsilon\text{-closure}(I)$
+
+则根据[[MK399][ $\epsilon$ 闭包]]定义存在 $<\delta_2(s_1,\epsilon),...,\delta_2(s_u,\epsilon)>$ 满足 $s_1\in I \land s_i\in\delta(s_{i-1},\epsilon)\land s'\in\delta_2(s_u,\epsilon)$
+
+由于 $I_{i+1}=\delta_3(I_i,a_i)$ 则有 $s\in I_n=\delta_3(I_{n-1},a_n)$ 
+
+结合假设对于 $<\delta_3(T_3,a_1),...,\delta_3(I_{n-1},a_n)>$ 以及 $s\in\delta_3(I_{n-1},a_n)$ 
+
+则存在 $<\delta_2(t_0,w_1),...,\delta_2(t_{k-1},w_k)>$ 满足（1）（2）（3）
+
+则有 $<\delta_2(t_0,w_1),...,\delta_2(t_{k-1},w_k),\delta_2(s,a_{n+1}),\delta_2(s_1,\epsilon),...,\delta_2(s_u,\epsilon)>$ 满足
+
+（1） $w_i\in\Sigma\land\epsilon\in\Sigma\land t_0=t\land s'\in\delta_2(s_u,\epsilon)\land a_{n+1}\in\Sigma$ 
+
+（2） $t_i\in\delta_2(t_{i-1},w_i)\land s\in\delta_2(t_{k-1},w_k)\land s_1\in\delta_2(s,a_{n+1})\land s_i\in\delta(s_{i-1},\epsilon)\land s'\in\delta_2(s_u,\epsilon)$ 
+
+（3） $\{a_1...a_na_{n+1}\}=L(w_1...w_ka_{n+1}\epsilon...\epsilon)$
+
+******** 当 $n=1$ 时
+
+对于任意 $<\delta_3(T_3,a_1)>$ 任意 $s'\in\delta_3(T_3,a_1)$
+
+[[MK402][类似可证]]存在 $<\delta_2(t,\epsilon)...\delta_2(t_{k-1},\epsilon),\delta_2(t_k,a_1)>$ 满组条件（1）（2）（3）
+
+******** 结论
+
+根据数学归纳法可得，对于任意 $n<\infty$ 的 $<\delta_3(T_3,a_1),...,\delta_3(I_{n-1},a_n)>$ 满足 $I_{i+1}=\delta_3(I_i,a_i)$
+
+对于任意的 $s\in\delta_3(I_{n-1},a_n)$ 均有对应的 $<\delta_2(t_0,w_1),...,\delta_2(t_{k-1},w_k)>$ 满足
+
+（1） $w_i\in\Sigma\land t_0=t\land s\in\delta_2(t_{k-1},w_k)$
+
+（2） $t_i\in\delta_2(t_{i-1},w_i)$
+
+（3） $\{a_1...a_n\}=L(w_1...w_k)$ 其中 $a_1...a_n$ 为[[MK312][字符串]] $w_1...w_k$ 是满足 $w_i\in \Sigma$ 的[[MK354][正规式]]
+
+******* 证明结论
+
+根据[[MK398][构造]] $M_3$ 是[[MK366][DFA]]，则对于任意 $\alpha=a_1...a_n\in L(M_3)$ 根据[[MK394][定义]]
+
+存在[[MK144][有序组]] $<\delta_3(I_0,a_1),...,\delta_3(I_{n-1},a_n)>$ 满足：
+
+（1） $\left(I_0=T_3\right)\land\left(\delta_3(I_{n-1},a_n)\in F_3\right)\land\left(I_i\in S_3,1\leq i\leq n\right)$ 
+
+（2） $\delta(I_{i-1},a_i)=I_i,1\leq i\leq n$
+
+由于 $F_2=\{f\}$ 且根据[[MK398][构造]]有 $\delta_3(I_{n-1},a_n)\in F_3\rightarrow \delta_3(I_{n-1},a_n)\cap F_2\ne\varnothing$
+
+则有 $f\in \delta_3(I_{n-1},a_n)$ 则根据条件（2），对于上述有序组以及 $f\in \delta_3(I_{n-1},a_n)$ 
+
+基于[[MK403][之前证明]]可得存在 $<\delta_2(t_0,w_1),...,\delta_2(t_{k-1},w_k)>$ 满足
+
+（1） $w_i\in\Sigma\land t_0=t\land f\in\delta_2(t_{k-1},w_k)$
+
+（2） $t_i\in\delta_2(t_{i-1},w_i)$
+
+（3） $\{a_1...a_n\}=L(w_1...w_k)$ 即 $a_1...a_n\in L(w_1...w_k)$
+
+则根据[[MK395][定义]]以及 $M_2$ 的[[MK404][构造]]可得 $\alpha\in L(M_2)$ 即 $\forall\alpha\in L(M_3)\rightarrow\alpha\in L(M_2)$
+
+则根据[[MK96][定义]]有 $L(M_3)\subset L(M_2)$
+
+**** 定理4
+
+对于[[MK366][DFA]] $M=<S,\Sigma,\delta,t,F>$ 存在 $U=\{u_1,...,u_k\}\subset S$ 满足 $\forall \{u,v\}\subset U\rightarrow u\simeq v$ 
+
+即任意两个元素互为[[MK410][等价状态]] 则定义：
+
+\begin{aligned}
+S'=&S/U\cup\{I\}\\
+\delta_a=&\left\{<<s,a>,o>\big|\delta(s,a)\in U\right\}\\
+\delta_b=&\left\{<<s,a>,o>\big|<<s,a>,o>\in\delta\land s\in U\right\}\\
+\delta_c=&\left\{<<s,a>,I>\big|<<s,a>,o>\in\delta_a\right\}\\
+\delta_d=&\left\{<<I,a>,o>\big|<<s,a>,o>\in\delta_a\right\}\\
+\delta'=&\delta/\delta_a/\delta_b\cup\delta_c\cup\delta_d\\
+t'=&\begin{cases}t&t\not\in U\\I&t\in U\end{cases}\\
+F'=&\begin{cases}F/U\cup I& U\cap F\ne\varnothing\\F&U\cap F =\varnothing\end{cases}
+\end{aligned}
+
+则有[[MK366][DFA]] $M=<S',\Sigma,\delta',t',F'>$ 与 $M$ [[MK368][等价]]，即 $L(M)=L(M')$
+
+***** 证明
+
+对于任意 $\alpha=a_1...a_n\in L(M')$ 根据[[MK394][条件]]存在[[MK144][有序组]] $r'=<\delta'(s_0,a_1),...,\delta'(s_{n-1},a_n)>$ 满足：
+
+（1） $\left(s_0=t'\right)\land\left(\delta'(s_{n-1},a_n)\in F'\right)\land\left(s_i\in S',1\leq i\leq n\right)$ 
+
+（2） $\delta'(s_{i-1},a_i)=s_i,1\leq i\leq n$
+
+以下仅证 $L(M')\subset L(M)$ ，类似可证 $L(M)\subset L(M')$ 则根据[[MK78][自反性]]可得 $L(M)=L(M')$
+
+****** 不含 $I$
+
+若 $\forall i\rightarrow s_i\ne I$ 且 $\delta(s_{n-1},a_n)\ne I$ 则 $s_0=t'$ 故有 $t'=t$
+
+根据 $\delta'$ 定义有 $r=<\delta(s_0,a_1),...,\delta(s_{n-1},a_n)>$ 同样满足上述条件 
+
+****** 终态<<MK411>>
+
+若 $\delta'(s_{n-1},a_n)=I$ 则 $I\in F'$ 根据 $F'$ 构造可得 $F\cap U\ne\varnothing$ 
+
+又根据 $\delta'$ 的构造对于 $\delta'(s_{n-1},a_n)=I$ 有 $\delta_a(s_{n-1},a_n)=o$ 进一步有 $\delta(s_{n-1},a_n)\in U$
+
+对于 $u\in U\cap F$ 根据DFA[[MK366][定义]]有 $\delta(u,\epsilon)=u$ 则 $<\delta(u,\epsilon)>$ 满足根：
+
+（1） $\left(u=u\right)\land\left(\delta(u,\epsilon)\in F\right)\land\left(u\in S\right)$ 
+
+（2） $\delta(s_{i-1},a_i)=s_i,1\leq i\leq n$ 由于长度为 $1$ 故满足
+
+根据 $U$ 定义 $\forall u'\in U$ 均有 $u',u$ 互为[[MK410][等价状态]]故 $<\delta(u',\epsilon)>$ 亦满足所列条件，则有 $\delta(u',\epsilon)\in F$
+
+则对于 $o=\delta(s_{n-1},a_n)\in U$ 亦有 $\delta(o,\epsilon)\in F$ 根据DFA[[MK366][定义]] $\delta(o,\epsilon)=o$ 故有 $o\in F$
+
+则有 $\delta(s_{n-1},a_n)\in F$
+
+****** 中间态<<MK412>>
+
+若有 $s_{i_1}=s_{i_2}=...=s_{i_m}=I$ 满足 $i_1<i_2<...<i_m$ 
+
+根据 $\delta'$ 定义可得对于 $\delta'(s_{i_m},a_{i_m+1})=s_{i_m+1}$ 有 $\delta_b(u,a_{i_m+1})=s_{i_m+1}$ 
+
+进一步有 $\delta(u,a_{i_m+1})=s_{i_m+1}\land u\in U$ 同理对于 $\delta'(s_{i_m-1},a_{i_m})=I$ 有 $\delta(s_{i_m-1},a_{i_m})=v\land v\in U$
+
+由于从 $s_{i_m}$ 后不含 $I$ 故对于 $<\delta'(s_{i_m+1},a_{i_m+1}),...,\delta'(s_n,a_n)>$ 均可与 $\delta$ 替换
+
+结合上述条件，以及 $r'$ 本身性质有 $<\delta(u,a_{i_m+1}),\delta(s_{i_m+1},a_{i_m+1}),...,\delta(s_n,a_n)>$ 满足
+
+（1） $\left(u=u\right)\land\left(\delta(s_n,\epsilon)\in F\right)\land(u\in S)\land(s_{j}\in S,i_m<j<n)$ 
+
+（2） $\delta(s_{i-1},a_i)=s_i,i_m+1\leq i\leq n$
+
+根据 $U$ 定义有 $u,v$ 互为[[MK410][等价状态]]，则存在 $<\delta(v,a_{i_m+1}),\delta(s'_{i_m+1},a_{i_m+1}),...,\delta(s'_n,a_n)>$ 满足：
+
+（1） $\left(v=v\right)\land\left(\delta(s'_{n-1},a_n)\in F\right)\land\left(s'_j\in S,i_m<i< n\right)$ 
+
+（2） $\delta(s'_{i-1},a_i)=s'_i,i_m+1\leq i\leq n$
+
+****** 结论
+
+由于 $r'$ 长度有界，故从最后的 $\delta(s_{n-1},a_n)$ 开始依次根据[[MK411][终太]]和[[MK412][中间态]]规则替换
+
+若遇上连续 $s_k=s_{k+1}=...=s_{k_m}=I$ 则参考 $s_{k-1}$ 根据[[MK412][中间太]]替换。
+
+若 $s_0=I$ 则任取 $t\in U$ 根据[[MK412][中间太]]替换
+
+其余根据 $\delta'$ 定义可直接替换为 $\delta$ 最终有 $<\delta(s'_0,a_1),...,\delta(s'_{n-1},a_n)>$ 满足：
+
+（1） $\left(s'_0=t\right)\land\left(\delta(s'_{n-1},a_n)\in F\right)\land\left(s'_i\in S,1\leq i\leq n\right)$ 
+
+（2） $\delta(s'_{i-1},a_i)=s'_i,1\leq i\leq n$
+
+即根据[[MK394][识别单词]]可知 $\alpha=a_1...a_n\in L(M)$ 即 $\forall \alpha\in L(M')\rightarrow \alpha\in L(M)$
+
+则根据[[MK96][定义]]有 $L(M’)\subset L(M)$
+
+***** 推论
+
+对于[[MK366][DFA]] $M=<S,\Sigma,\delta,t,F>$ 归纳[[MK410][等价状态]]算法：
+
+（1） 将 $S$ 划分为 $I_0=F,I_1=S/I_0$ 
+
+     根据DFA[[MK366][定义]]对于任意 $u\not\in F$ 由于 $\delta(u,\epsilon)=u\not\in F$ 故 $<\delta(u,\epsilon)>$ 不满足[[MK410][等价状态]]条件
+
+     反之有 $\forall u\in F$ 有 $<\delta(u,\epsilon)>$ 满足[[MK410][等价状态]]条件
+
+（2） 当已划分等价状态为 $I_k=\{I_0,...,I_n\}$ 时，对于 $I_i$ 对每一个 $a\in\Sigma$ 取 $I^{(a)}_i=\left\{\delta(s,a)|s\in I_i\right\}$
+
+     则划分 $I_i$ 至 $I_{ij}=\left\{I_i\cap I\big|I\in I_k\right\}$ 进一步定义 $I_{k+1}=(I_k/I_i)\cup I_{ij}$
+
+     反复运用改规则，直至 $|I_{k^*}|$ [[MK77][基数]]不再增加
+
+第二步进一步说明，若存在 $\{z_1,z_2\}\subset I_i$ 满足 $\delta(z_1,a)=z'_1\in I_u\in I_k,\delta(z_2,a)=z'_2\in I_v\in I_k$ 
+
+由于已知 $I_u,I_v$ 中元素非[[MK410][等价状态]]则存在[[MK144][有序组]] $<\delta(s_0,a_1),...,\delta(s_{n-1},a_n)>$ 满足：
+
+（1） $\left(s_0=z’_1\right)\land\left(\delta(s_{n-1},a_n)\in F\right)\land\left(s_i\in S,1\leq i\leq n\right)$ 
+
+（2） $\delta(s_{i-1},a_i)=s_i,1\leq i\leq n$
+
+使得不存在满足相应条件 $s_0=z'_2$ 的有序组，则同理亦有有序组 $<\delta(z_1,a),\delta(s_0,a_1),...,\delta(s_{n-1},a_n)>$ 
+
+使得满足相应条件的 $<\delta(z_2,a),\delta(s'_0,a_1),...,\delta(s'_{n-1},a_n)>$ 不存在
+
+故根据[[MK410][定义]] $z_1,z_2$ 不是等价状态
+
+**** 定理5
+
+（1） 对于任意[[MK413][右线性]]文法或[[MK414][左线性]]文法 $G$ ，均存在[[MK362][NFA]] $M$ 满足 $L(G)=L(M)$
+
+（2） 对于每一个[[MK366][DFA]]或[[MK362][NFA]]均存在一个[[MK413][右线性]]文法 $G_L$ 以及[[MK414][左线性]]文法 $G_R$ 满足 $L(M)=L(G_L)=L(G_R)$
+
+***** 证明
+
+****** （1）
+
+******* 右线性<<MK415>>
+
+设任意[[MK413][右线性]] $G=<V_N,V_T,P,s>$ 则定义 $B(A,\sigma)=\begin{cases}\left\{D\big|A\to \sigma D\in P\right\}\cup\{f\}&A\to\sigma\in P\\\left\{D\big|A\to \sigma D\in P\right\}&A\to\sigma\not\in P\end{cases}$ 
+
+其中 $\{D,A\}\subset V_N\land\sigma\in V_N^*$ 故进一步定义
+
+\begin{aligned}
+S=&V_N\cup\{f\}&f\not\in V_N\\
+\Sigma=&V_T\\
+\delta=&\left\{<<A,\sigma>,B(A,\sigma)>\big|B(A,\sigma)\ne\varnothing\}&A\in V_N\land\sigma\in V_T^*\\
+T=&\{s\}\\
+F=&\{f\}
+\end{aligned}
+
+显然根据 $\delta$ 构造规则对于任意 $A\in V_N\land \sigma\in V_T^*$ 映射 $\delta$ 有且仅有一个相，故 $\delta$ 是[[MK136][函数]]
+
+对于任意 $\sigma\in V_T^*=\Sigma^*$ 根据[[MK328][克林闭包]]与[[MK354][正规式]]定义易证 $\sigma$ 是[[MK315][字母表]]连接产生的正规式
+
+则有[[MK362][NFA]] $M=<S,\Sigma,\delta,T,F>$ 结合其构造规则以及[[MK395][识别单词]]
+
+对于任意 $\alpha=a_1...a_n\in L(M)$ 存在[[MK144][有序组]] $<\delta(s_0,\sigma_1),...,\delta(s_{m-1},\sigma_m)>$ 满足：
+
+（1） $s_0=s\right)\land\left(f\in\delta(s_{m-1},\sigma_m)\right)\land\left(s_i\in S,1\leq i\leq m+1\right)$
+
+（2） $s_i\in\delta(s_{i-1},\sigma_i),1\leq i\leq m$
+
+（3） $\sigma_i,1\leq i\leq n$ 是 $\Sigma$ 产生的[[MK354][正规式]]且 $\alpha\in L(\sigma_1...\sigma_m)$
+
+根据 $\delta$ 构造，对于任意 $s_{i+1}\in\delta(s_i,\sigma_{i+1})$ 均有：
+
+（1） $s_i\in S=V_N\land a_i\in\Sigma=V_T$
+
+（2） $s_{i+1}\in\delta(s_i,\sigma_{i+1})\rightarrow s_{i+1}\in B(s_i,\simga_{i+1})\ne\varnothing\rightarrow \exists (s_i\rightarrow \sigma_{i+1}s_{i+1})\in P$
+
+（3） $f\in\delta(s_{m-1},\sigma_m)\rightarrow f\in B(s_{m-1},\sigma_m)\rightarrow s_{m-1}\to\sigma_m\in P$
+
+则有推导 $s\Rightarrow\sigma_1s_1\Rightarrow\sigma_1\sigma_2s_2\Rightarrow...\Rightarrow\sigma_1...\sigma_{m-1}s_{m-1}\Rightarrow\sigma_1...\sigma_{m}$
+
+由于 $\alpha=a_1...a_n\in\sigma_1...\sigma_m$ 且 $\sigma_i$ 是[[MK315][字母表]]连接产生的正规式易证 $\alpha=\sigma_1...\sigma_m$
+
+故有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G)$ 则根据[[MK96][定义]]有 $L(M)\subset L(G)$
+
+类似易证 $L(G)\subset L(M)$ 则根据[[MK78][自反性]]可得 $L(M)=L(G)$
+
+******* 左线性
+
+设任意[[MK414][左线性]] $G=<V_N,V_T,P,s>$ 则定义 $B(A,\sigma)=\left\{D\big|D\to A\sigma\in P\right\},C(t,\sigma)=\left\{D\big|D\to\sigma\in P\right\}$
+
+其中 $\{A,D\}\subset V_N\land\sigma\in V_N^*$ 故进一步定义
+
+\begin{aligned}
+S=&V_N\cup\{t\}&t\not\in V_N\\
+\Sigma=&V_T\\
+\delta=&\left\{<<A,\sigma>,B(A,\sigma)>\big|B(A,\sigma)\ne\varnothing\}&A\in V_N\land\sigma\in V_T^*\\
+&\cup\{<<t,\sigma>,C(t,\sigma)>\big|C(t,\sigma)\ne\varnothing\}\\
+T=&\{t\}\\
+F=&\{s\}
+\end{aligned}
+
+对于任意 $\alpha=a_1...a_n\in L(M)$ 存在[[MK144][有序组]] $<\delta(s_0,\sigma_1),...,\delta(s_{m-1},\sigma_m)>$ 满足：
+
+（1） $s_0=t\right)\land\left(s\in\delta(s_{m-1},\sigma_m)\right)\land\left(s_i\in S,1\leq i\leq m+1\right)$
+
+（2） $s_i\in\delta(s_{i-1},\sigma_i),1\leq i\leq m$
+
+（3） $\sigma_i,1\leq i\leq n$ 是 $\Sigma$ 产生的[[MK354][正规式]]且 $\alpha\in L(\sigma_1...\sigma_m)$
+
+根据 $\delta$ 构造有：
+
+（1） $s_i\in S=V_N\land a_i\in\Sigma=V_T$
+
+（2） $s_i\in\delta(s_{i-1},\sigma_i)\rightarrow s_i\in B(s_{i-1},\sigma_i)\ne\varnothing\rightarrow (s_i\to s_{i-1}\sigma_i)\in P$
+
+（3） $s\in\delta(s_{m-1},\sigma_m)\rightarrow s\in B(s_{m-1},\sigma_m)\rightarrow (s\to s_{m-1}\sigma_m)\in P$
+
+（4） $s_1\in\delta(s_0,\sigma_1)\rightarrow s_1\in\delta(t,\sigma_1)\rightarrow s_1\in C\rightarrow (s_1\to\sigma_1)\in P$
+
+则有推导 $s\Rightarrow s_{m-1}\sigma_m\Rightarrow s_{m-2}\sigma_{m-1}\sigma_m\Rightarrow...\Rightarrow s_1\sigma_2...\sigma_m\Rightarrow \sigma_1...\sigma_m$
+
+由于 $\alpha=a_1...a_n\in\sigma_1...\sigma_m$ 且 $\sigma_i$ 是[[MK315][字母表]]连接产生的正规式易证 $\alpha=\sigma_1...\sigma_m$
+
+故有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G)$ 则根据[[MK96][定义]]有 $L(M)\subset L(G)$
+
+类似易证 $L(G)\subset L(M)$ 则根据[[MK78][自反性]]可得 $L(M)=L(G)$
+
+****** （2）
+
+对于任意[[MK366][DFA]] $M=<S,\Sigma,\delta,t,F>$ 构造如下[[MK313][文法]]：
+
+******* 右线性
+
+当 $t\not\in F$ 时定义：
+
+（1） $P_1=\left\{A\to aB\big|B\not\in F\land<<A,a>,B>\in\delta\land \{A,B\}\subset S\right\}$
+
+（2） $P_2=\left\{A\to aB|a\big|B\in F\land<<A,a>,B>\in\delta\land \{A,B\}\subset S\right\}$
+
+则定义[[MK313][文法]] $G_R=<S,\Sigma,P_1\cup P_2,t>$ 
+
+******* 左线性
+
+
 
 ** 语法分析
 
@@ -6538,10 +7274,6 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 **** 语法分析<<MK369>>
 
 判断[[MK312][字符串]]是否是给定[[MK313][文法]]产生的[[MK333][句子]]的过程。
-
-**** 自顶向下<<MK370>>
-
-从[[MK312][开始符]] $S$ 开始，尝试[[MK329][推导]]出 $\alpha$ 的[[MK369][语法分析]]过程
 
 **** 自底向上<<MK371>>
 
@@ -6595,67 +7327,17 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 
 两者等价
 
-*** 递归下降分析
+*** 自上而下<<MK370>>
 
-给定[[MK336][上下文无关]]文法 $G=<V_N,V_T,P,S>$ 及输入[[MK312][字符串]] $\alpha$ ，定义 $\alpha[p]$ 代表 $\alpha$ 的第 $p$ 个字符
+**** 定义
 
-**** 定义<<MK372>>
+对于给定[[MK313][文法]] $G=<V_N,V_T,P,S>$ 及输入[[MK312][字符串]] $\alpha$ ，定义 $\alpha[p]$ 代表 $\alpha$ 的第 $p$ 个字符
 
-对每一个[[MK332][非终结符]] $A\in V_T$ 根据其为左部的[[MK311][产生式]] $(A\to\beta)\in P,\beta\in V^*$ 编写函数。
+从[[MK312][开始符]] $S$ 开始，尝试[[MK329][推导]]出 $\alpha$ 的[[MK369][语法分析]]过程
 
-从[[MK347][开始符]] $S$ 开始，依次递归调用编写的函数，如果正确接受了输入字符，则视为语法分析成功
+**** $LL(1)$ 分析
 
-故递归下降是[[MK370][自顶向下]]的分析过程，以下为 $A\in V_N$ 的例子
-
-void $A$(){
-    假设共有 $z$ 个 $(A\to\beta)\in P,\beta\in V^*$ 类型的[[MK311][产生式]]
-    for($n=1\ to\ z$){
-        第 $n$ 个产生式是 $A\to X_1...X_{k_n}$
-        for($i=1\ to\ k_n$){
-            if($X_i\in V_N$){
-                call $X_i$()
-            }else if($X_i=\alpha[p]$){
-                $p=p+1$
-            }else{
-                发生错误
-            }
-        }
-    }
-}
-
-显然为自左向右匹配目标字符串，递归下降是一个[[MK373][最左推导]]的分析过程
-
-**** 预测分析<<MK374>>
-
-是[[MK372][递归下降分析]]的特例，可根据 $\alpha[p]\sim\alpha[p+k]$ 这 $k$ 个目标字符串的子符来选择对应的产生式。
-
-对于能够根据向前分析 $k$ 个字符决定使用哪个产生式的文法称为 $LL(k)$ 文法
-
-预测分析能过确定使用哪个[[MK311][产生式]]，故不需要回溯
-
-**** 文法转换
-
-目的是消除可能的回溯，用等价的 $LL(k)$ 文法替换原文法
-
-***** 提取公因子
-
-对于[[MK311][产生式]] $S\to aAd|aBe,\{a,d,e\}\subset V_T\land \{A,B\}\subset V_N$ 替换为 $S\to aS',S'\to Ad|Be$
-
-***** 消除左递归
-
-****** 直接左递归
-
-对于 $A\to A\alpha|\beta,A\in V_N,\alpha\in V^+,\beta\in V^*$ 且 $\beta$ 不以 $A$ 开始
-
-替换为 $A\to\beta A',A'\to\alpha A'$
-
-****** 间接左递归
-
-见课本
-
-*** $LL(1)$ 分析
-
-**** $LL(1)$ 文法<<MK377>>
+***** $LL(1)$ 文法<<MK377>>
 
 [[MK336][上下文无关]]文法 $G=<V_N,V_T,P,S>$ 满足根据：
 
@@ -6665,7 +7347,7 @@ void $A$(){
 
 便可确定唯一可实现[[MK374][预测分析]]的产生式的文法，定义为 $LL(1)$ [[MK313][文法]]
 
-**** 定理
+***** 定理
 
 给定[[MK336][上下文无关]]文法 $G=<V_N,V_T,P,S>$ 
 
@@ -6673,7 +7355,7 @@ void $A$(){
 
 则该文法一定为 $LL(1)$ 文法。
 
-***** $FIRST$ 集
+****** $FIRST$ 集
 
 给定字串 $\alpha\in(V_N\cup V_T)^+$ 其 $FIRST(\alpha)$ 集定义为
 
@@ -6681,9 +7363,9 @@ void $A$(){
 
 即 $FIRST(\alpha)=\left\{a\big|\alpha\Rightarrow^* a\beta\land\beta\in V^*\land a\in V_T\right\}$
 
-****** 计算
+******* 计算
 
-******* 字符
+******** 字符
 
 给定字符 $X$ 有规则：
 
@@ -6701,7 +7383,7 @@ void $A$(){
 
 直至所有字符的 $FRIST$ 集不在扩大
 
-******* 字串
+******** 字串
 
 给定字符 $X=X_1...X_k$ 有规则：
 
@@ -6711,7 +7393,7 @@ void $A$(){
 
 （3） 若 $\epsilon\in\bigcap_{i=1}^nFIRST(X_i)$ 则 $FRIST(X)$ 包含 $\epsilon$
 
-***** $FOLLOW$ 集
+****** $FOLLOW$ 集
 
 给定 $A\in V_N$ 其 $FOLLOW(A)$ 集定义为
 
@@ -6725,7 +7407,7 @@ void $A$(){
 
 故对于[[MK312][开始符]]恒有 $\#\in FOLLOW(S)$
 
-****** 计算
+******* 计算
 
 给定字符 $X\in V_N$ 有规则：
 
@@ -6739,7 +7421,7 @@ void $A$(){
 
 直至所有字符的 $FOLLOW$ 集不在扩大
 
-***** $SELECT$ 集
+****** $SELECT$ 集
 
 对于任意[[MK311][产生式]] $A\to\alpha,A\in V_T\land\alpha\in V^*$
 
@@ -6747,9 +7429,9 @@ void $A$(){
 
 若 $\epsilon\in FIRST(\alpha)$ 则 $SELECT(A\to\alpha)=(FIRST(\alpha)/\{\epsilon\}\cup FOLLOW(A))$
 
-**** 分析方法
+***** 分析方法
 
-***** 递归下降
+****** 递归下降
 
 根据[[MK372][递归下降分析]]方法建立，在每个[[MK332][非终结符]] $A\in V_N$ 的函数中不再遍历其可能的产生式
 
@@ -6770,17 +7452,17 @@ void $A$()
     }
 }
 
-***** 非递归分析
+****** 非递归分析
 
 [[MK336][上下文无关]]文法 $G=<V_N,V_T,P,s>$ 定义输入[[MK312][字符串]] $\alpha$ ，定义 $\alpha[p]$ 代表 $\alpha$ 的第 $p$ 个字符
 
-****** 构建分析函数<<MK379>>
+******* 构建分析函数<<MK379>>
 
 由于是[[MK377][ $LL(1)$ 文法]]，故根据定义有当前[[MK332][非终结符]]和输入字符确定唯一[[MK311][产生式]]
 
 故可构建[[MK136][函数]] $f:V_N\times V_T\to P$
 
-****** 构建[[MK376][PDA]]
+******* 构建[[MK376][PDA]]
 
 定义[[MK376][PDA]] $M=<S,\Sigma,\Gamma,\delta,s_0,z_0,F>$ 组成部分如下：
 
@@ -6808,9 +7490,67 @@ $\delta(q,a,z)=\begin{cases}(s_0,\epsilon)&a=z\\(s_0,\beta)&z\in V_N\land f(z,a)
 
 当[[MK375][栈]]顶字符 $z\ne\alpha[p]$ 时仅执行[[MK380][动作函数]]
 
-****** 错误
+******* 错误
 
 若[[MK379][分析函数]] $f$ 或[[MK380][动作函数]] $\delta$ 没有定义当前输入，则视为错误
+
+**** 递归下降分析
+
+给定[[MK336][上下文无关]]文法 $G=<V_N,V_T,P,S>$ 及输入[[MK312][字符串]] $\alpha$ ，定义 $\alpha[p]$ 代表 $\alpha$ 的第 $p$ 个字符
+
+***** 定义<<MK372>>
+
+对每一个[[MK332][非终结符]] $A\in V_T$ 根据其为左部的[[MK311][产生式]] $(A\to\beta)\in P,\beta\in V^*$ 编写函数。
+
+从[[MK347][开始符]] $S$ 开始，依次递归调用编写的函数，如果正确接受了输入字符，则视为语法分析成功
+
+故递归下降是[[MK370][自顶向下]]的分析过程，以下为 $A\in V_N$ 的例子
+
+void $A$(){
+    假设共有 $z$ 个 $(A\to\beta)\in P,\beta\in V^*$ 类型的[[MK311][产生式]]
+    for($n=1\ to\ z$){
+        第 $n$ 个产生式是 $A\to X_1...X_{k_n}$
+        for($i=1\ to\ k_n$){
+            if($X_i\in V_N$){
+                call $X_i$()
+            }else if($X_i=\alpha[p]$){
+                $p=p+1$
+            }else{
+                发生错误
+            }
+        }
+    }
+}
+
+显然为自左向右匹配目标字符串，递归下降是一个[[MK373][最左推导]]的分析过程
+
+***** 预测分析<<MK374>>
+
+是[[MK372][递归下降分析]]的特例，可根据 $\alpha[p]\sim\alpha[p+k]$ 这 $k$ 个目标字符串的子符来选择对应的产生式。
+
+对于能够根据向前分析 $k$ 个字符决定使用哪个产生式的文法称为 $LL(k)$ 文法
+
+预测分析能过确定使用哪个[[MK311][产生式]]，故不需要回溯
+
+***** 文法转换
+
+目的是消除可能的回溯，用等价的 $LL(k)$ 文法替换原文法
+
+****** 提取公因子
+
+对于[[MK311][产生式]] $S\to aAd|aBe,\{a,d,e\}\subset V_T\land \{A,B\}\subset V_N$ 替换为 $S\to aS',S'\to Ad|Be$
+
+****** 消除左递归
+
+******* 直接左递归
+
+对于 $A\to A\alpha|\beta,A\in V_N,\alpha\in V^+,\beta\in V^*$ 且 $\beta$ 不以 $A$ 开始
+
+替换为 $A\to\beta A',A'\to\alpha A'$
+
+******* 间接左递归
+
+见课本
 
 *** 移入-归约分析
 
