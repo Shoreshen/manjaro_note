@@ -2,11 +2,11 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 415
+currnet mark: 445
 
 图论: P40
 
-编译原理： P12
+编译原理： P21
 
 * 集合论
 
@@ -3669,13 +3669,13 @@ $B$ 是反链<<MK135>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(
 
 *** 其他序关系
 
-**** 拟序关系
+**** 拟序关系<<MK423>>
 
 定义集合 $A$ 若：
 
-（1） $R$ 是 $A$ 上的[[MK114][二元关系]]，即 $R\in A\times A$
+（1） $R$ 是 $A$ 上的[[MK114][二元关系]]，即 $R\subset A\times A$
 
-（2） $R$ 具有[[MK119][反自反性]]以及[[MK122][传递性]]，即 $\lnot xRx,xRy\land yRx\rightarrow x=y, xRy\land xRz\rightarrow xRz$
+（2） $R$ 具有[[MK119][反自反性]]、[[MK121][反对称性]]以及[[MK122][传递性]]，即 $\lnot xRx,xRy\land yRx\rightarrow x=y, xRy\land xRz\rightarrow xRz$
 
 则称 $R$ 为 $A$ 上的拟序关系，且 $A$ 称为有拟序集，记作 $<A,R>$
 
@@ -4251,11 +4251,13 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 
 若存在图 $G=<V,E>$ 且 $\{v_1,v_n\}\subset V$ 
 
-若存在[[MK104][有限]]的[[MK114][有序组]] $t=<v_1,e_1,v_2,e_2,....e_{n-1},v_n>$ 满足 $e_i\in E\land\left(e_i=<v_{i-1},v_i>\lor e_i={v_{i-1},v_i}\right)$
+若存在[[MK104][有限]]的[[MK114][有序组]] $t=<v_1,e_1,v_2,e_2,....e_{n-1},v_n>$ 满足 $e_i\in E\land\left(e_i=\{v_{i-1},v_i\}\right)$
 
 则称有序组是 $v_1v_n$ 通道
 
-当 $G$ 是[[MK153][有向图]]时，特别称 $t$ 为有向通道
+当 $G$ 是[[MK153][有向图]]，若存在[[MK104][有限]]的[[MK114][有序组]] $t=<v_1,e_1,v_2,e_2,....e_{n-1},v_n>$ 满足 $e_i\in E\land\left(e_i=<v_{i-1},v_i>\right)$
+
+则称有序组是 $v_1v_n$ 通道的有向通道
 
 **** 迹<<MK157>>
 
@@ -4263,7 +4265,7 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 
 特别的，当 $v_1=v_n$ 时，称为 *闭迹*
 
-若 $G=<V,E>$ 是[[MK153][有向图]]，则称 $l$ 为有向迹
+若 $G=<V,E>$ 是[[MK153][有向图]]，则存在无重复[[MK146][边]]的 $v_1v_n$ [[MK156][有向通道]] $l$ ，则称该通道为 $v_1v_n$ 有向迹
 
 ***** 定理<<MK292>>
 
@@ -4285,7 +4287,7 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 
 若存在图 $G=<V,E>$ 且 $\{v_1,v_n\}\subset V$ 若存在无重复[[MK145][节点]]的 $v_1v_n$ [[MK156][通道]] $r$ ，则称该通道为 $v_1v_n$ 路
 
-若 $G=<V,E>$ 是[[MK153][有向图]]，则称 $r$ 为有向路。
+若 $G=<V,E>$ 是[[MK153][有向图]]，则存在无重复[[MK145][节点]]的 $v_1v_n$ [[MK156][有向通道]] $r$ ，则称该通道为 $v_1v_n$ 有向路
 
 若把 $G$ 变为无向图后存在无重复[[MK145][节点]]的 $v_1v_n$ [[MK156][通道]] $r$ ，此时则称 $r$ 为 $G$ 的弱路
 
@@ -4423,6 +4425,8 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 
 若存在图 $G=<V,E>$ 对于 $\{v_1,v_n\}\subset V$ 均存在 $v_1v_n$ [[MK154][路]] ，则称 $v_1$ 可达 $v_n$
 
+若存在[[MK153][有向图]] $G=<V,E>$ 对于 $\{v_1,v_n\}\subset V$ 均存在 $v_1v_n$ [[MK154][有向路]]，则称 $v_1$ 有向可达 $v_n$
+
 **** 长度<<MK186>>
 
 [[MK156][通道]]，[[MK157][迹]]，[[MK154][路]]，[[MK158][圈]]的长度定义为其边的赋权映射和
@@ -4533,7 +4537,7 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 
 **** 通道关系<<MK282>>
 
-是一种[[MK114][二元关系]] $\mathcal{T}\subset V\times V$ 定义为 $<v_a,v_b>\in\mathcal{T}$ 的充要条件为存在 $v_av_b$ [[MK156][通道]]
+是一种[[MK114][二元关系]] $\mathcal{T}\subset V\times V$ 定义为 $<v_a,v_b>\in\mathcal{T}$ 的充要条件为存在 $v_av_b$ [[MK156][通道/有向通道]]
 
 **** 迹关系<<MK283>>
 
@@ -4808,7 +4812,7 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 （5） 若（4）中通路的终点亦在 $S$ 中，则 $M^{(1)}=(M-P)\cup (P-M)$ 
 
 （6） 若终点不在 $S$ 中，则回到（3）
-
+ [[N_1a_aN_2a_2...N_na_nN_{n+1}]] 
 *** 欧拉图
 
 **** 定义
@@ -5226,7 +5230,7 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 
 **** 有向定义
 
-***** 有向树
+***** 有向树<<MK422>>
 
 [[MK166][弱连通]]且无[[MK158][弱圈]]的[[MK148][图]]定义为有向树
 
@@ -5238,15 +5242,17 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 
 （2） $\forall v'\in V/\{v\}\rightarrow d^-(v')=1$
 
+（3） 无[[MK158][弱圈]]
+
 此时 $v$ 成为树根，任意 $v^*\in V\rightarrow d^+(v^*)=0$ 成为树叶
 
 其余的[[MK145][顶点]]定义为分支/节点
 
-****** 等价条件
+****** 等价条件<<MK421>>
 
 若[[MK153][有向图]] $G=<V,E>$ 是有根树的充要条件是
 
-存在 $v\in V$ 满足对于任意 $u\in V/\{v\}$ 均有 $v$ [[MK160][可达]] $u$ 且 $G$ 中没有[[MK158][弱圈]]
+存在 $v\in V$ 满足对于任意 $u\in V/\{v\}$ 均有 $v$ [[MK160][有向可达]] $u$ 且 $G$ 中没有[[MK158][弱圈]]
 
 ******* 证明
 
@@ -5254,21 +5260,21 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 
 若 $G$ 是有根树，则存在树根 $v$ 由于 $d^-(u)=1$ 故必存在 $u_1$ 满足 $e_1=<u_1,u>\in E$
 
-若 $u_1\ne v$ 则有 $d^-(u_1)=1$，则必有 $<u_2,u_1>\in E$
+若 $u_1\ne v$ 则有 $d^-(u_1)=1$ ，则必有 $<u_2,u_1>\in E$
 
-依次类推，由于[[MK145][顶点]] $|V|<\infty$ 故必有以 $u$ 结尾的最长路 $r=<u_k,...,u_1,e_1,u>$
+依次类推，由于[[MK145][顶点]] $|V|<\infty$ 故必有以 $u$ 结尾的最长[[MK154][有向路]] $r=<u_k,...,u_1,e_1,u>$
 
 此时假设 $u_k\ne v$ 则必有 $e=<u_{k+1},u_k>\in E$ 若 $u_{k+1}$ 在 $r$ 上，则有[[MK158][弱圈]]与有根树定义矛盾
 
 若 $u_{k+1}$ 不在 $r$ 上，则有 $r'=<u_{k+1},e,u_k,...,u>$ [[MK186][长度]]大于 $r$ 与最长路矛盾
 
-故假设不成立，必有 $v=u_k$ 则有路 $r=<v,...,u>$ 即 $v$ [[MK160][可达]] $u$ 
+故假设不成立，必有 $v=u_k$ 则有路 $r=<v,...,u>$ 即 $v$ 到 $u$ [[MK160][有向可达]]
 
 无弱圈条件等价，故充分性证毕
 
 ******** 必要
 
-若存在 $v\in V$ 满足对于任意 $u\in V/\{v\}$ 均有 $v$ [[MK160][可达]] $u$ 且 $G$ 中没有[[MK158][弱圈]]
+若存在 $v\in V$ 满足对于任意 $u\in V/\{v\}$ 均有 $v$ 到 $u$ [[MK160][有向可达]]且 $G$ 中没有[[MK158][弱圈]]
 
 假设 $d^-(v)=1$ 则必有 $e=<u,v>\in E$ 由于可达，故存在[[MK154][有向路]] $r=<v,...,u>$
 
@@ -5282,11 +5288,55 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 
 无弱圈条件等价，故必要性证毕
 
+****** 性质1<<MK426>>
+
+对于任意 $u\in V/\{v\}$ 其中 $v$ 是树根，有唯一[[MK154][有向路]] $r=<v,e_1,u_1,...,u_{n-1},e_n,u>$
+
+******* 证明
+
+假设存在两条不同有向路，则有[[MK158][弱圈]]，与定义矛盾，则假设不成立
+
+****** 性质2
+
+对于任意 $\{u,v\}\subset V$ 至多存在一条[[MK154][有向路]] $r=<u,e_1,u_1,...,u_{n-1},e_n,v>$
+
+******* 证明
+
+若存在多条，则有[[MK158][弱圈]]
+
+****** 性质3<<MK428>>
+
+对于任意 $\{u,v\}\subset V$ 若 $\mathcal{D}(u)<\mathcal{D}(v)$ 且 $u$ 到 $v$ [[MK160][有向可达]]
+
+则树根 $r$ 到 $v$ 的[[MK154][有向路]]必经过 $u$
+
+******* 证明
+
+根据[[MK426][性质1]]可得 $r$ 到 $u,v$ 均[[MK160][有向可达]]
+
+假设存在 $r$ 到 $v$ 的[[MK154][有向路]]不经过 $u$ 则有[[MK158][弱圈]]，矛盾故假设不成立
+
+****** 性质4<<MK440>>
+
+对于任意 $\{u,v\}\subset V$ 若有[[MK154][有向路]] $r=<u,e,v>$
+
+则任意 $z\in V\land z\not\in\{u,v\}$ 满足 $z$ 到 $v$ [[MK160][有向可达]]，其[[MK154][有向路]]必经过 $u$
+
+******* 证明
+
+若存在不经过 $u$ 的路，则 $d^-(v)=2$ 与定义矛盾。
+
+***** 叶<<MK424>>
+
+若[[MK341][有根树]] $G=<V,E>$ 若有 $v\in V$ 满足 $d^+(v)=0$ 则定义 $v$ 是 $G$ 的叶
+
+并定义 $\mathcal{L}(V)$ 是 $G$ 所有叶的集合
+
 ***** 深度<<MK343>>
 
 若[[MK341][有根树]] $G=<V,E>$ 以 $v$ 为树根
 
-对于任意 $u\in V/\{v\}$ 定义 $\phi(v,u)$ 即 $u,v$ 的[[MK319][距离]]为 $u$ 的深度
+对于任意 $u\in V/\{v\}$ 定义 $\phi(v,u)$ 即 $u,v$ 的[[MK319][距离]]为 $u$ 的深度，记作 $\mathcal{D}(u)$
 
 ***** 高<<MK345>>
 
@@ -5304,9 +5354,81 @@ $E$ 表示边的[[MK143][多重集合]]，且是[[MK104][有限集]]。附带重
 
 若[[MK341][有根树]] $G=<V,E>$ 若 $<u,v>\in E$ 则称 $v$ 是 $u$ 的父[[MK145][顶点]]， $u$ 是 $v$ 的子顶点
 
+***** 子树<<MK430>>
+
+若[[MK341][有根树]] $G=<V,E>$ 对于任意 $u\in V/\{r\}$ 其中 $r$ 是树根，则定义
+
+（1） $V_s(u)=\left\{x\big|x\in V\land <u,x>\in\mathcal{T}\right\}$ 其中 $\mathcal{T}$ 是[[MK282][通道关系]]
+
+（2） $E_s(u)=\left\{<x,y>\big|\{x,y\}\in V_s(u)\land <x,y>\in E\right\}$
+
+则有[[MK189][子图]] $G_s(u)=<V_s(u),E_s(u)>$ 由于原图不含弱圈，且 $d^-(u)=1$
+
+故易证 $G_s(u)$ 亦为有根树且根为 $u$
+
+***** 兄弟节点<<MK420>>
+
+若[[MK341][有根树]] $G=<V,E>$ 定义 $V'=V/\{r\}$ 即去除[[MK341][根]]
+
+定义[[MK114][关系]] $\mathcal{B}\subset V'\times V'$ 为 $\mathcal{B}=\left\{<v,w>\big|(\exists u\in V\rightarrow\{<u,v>,<u,w>\}\subset E\right\}$
+
+则若 $\{v,w\}\subset V'$ 满足 $v\mathcal{B}w$ 则称 $v,w$ 互为兄弟[[MK145][节点]]
+
+****** 性质
+
+对于任意 $\{v,w,x\}\subset V'$
+
+******* 对称性
+
+显然 $v\mathcal{B}w\rightarrow w\mathcal{B}v$
+
+******* 自反性
+
+显然 $v\mathcal{B}v$
+
+******* 传递性
+
+$v\mathcal{B}w\land w\mathcal{B}x\rightarrow v\mathcal{B}x$
+
+******** 证明 
+
+若有 $v\mathcal{B}w\land w\mathcal{B}x$ 则存在 $\{<p,v>,<p,w>\}\subset E\land \{<q,w>,<q,x>\}\subset E$
+
+根据[[MK341][有根树]]定义，由于 $w\in V'$ 则有 $d^-(w)=1$ 则假设 $p\ne q$ 则 $d^-(w)=2$ 矛盾。
+
+故假设不成立，有 $q=p$ 则有 $\{<p,v>,<p,x>\}\subset E$ 即 $v\mathcal{B}w\land w\mathcal{B}x\rightarrow v\mathcal{B}x$ 
+
+******* 等价关系<<MK425>>
+
+由定义可知 $\mathcal{B}$ 是 $V'$ 上的[[MK114][二元关系]]
+
+结合之前证明，可得 $\mathcal{B}$ 是[[MK126][等价关系]]
+
+则对于任意 $v\in V$ 定义 $[v]_\mathcal{B}$ 是 $v$ 的[[MK127][等价类]]，亦称 $v$ 的兄弟类
+
+******* 划分
+
+根据[[MK425][之前证明]] $\mathcal{B}$ 是 $V'$ 上的[[MK126][等价关系]]，则根据[[MK310][定理1]]得 $\mathcal{B}$ 的兄弟集合划分 $V'$
+
+******* 兄弟节点[[MK343][深度]]相等
+
+若有 $v\mathcal{B}w$ 则有 $\{v,w\}\subset V'$ 根据[[MK421][等价条件]]可得树[[MK341][根]] $r$ 到 $u,v$ 均[[MK160][有向可达]]
+
+由于 $v\mahtcal{B}w$ 故 $v,w$ 分别有唯一射入边 $<u,v>,<u,w>$
+
+根据[[MK341][有根树]]定义必为[[MK422][有向树]]则无[[MK158][弱圈]]，故 $r,u$ 之间存在唯一[[MK154][有向路]]
+
+则显然有 $\phi(r,v)=\phi(r,w)=\phi(r,u)+1$
+
 ***** 有序树<<MK344>>
 
-若[[MK341][有根树]] $G=<V,E>$ 对于任意 $v\in V$ 其子[[MK342][顶点]]均有排序
+若代数结构 $G=<V,E,\prec>$ 满足：
+
+（1） $<V,E>$ 是[[MK341][有根树]]
+
+（2） $\prec\subset V\times V$ 是[[MK423][拟序关系]]
+
+则称 $G$ 为有序树
 
 进一步，若满足 $m\in\mathbb{N}^+$ 且满足 $\forall v\in V\rightarrow d^+(v)\leq m$ 则称为 $m$ 元有序树
 
@@ -5961,6 +6083,8 @@ $V^n$ 定义为字符表 $V$ 的 $n$ 次幂，定义为 $V^0=\{\epsilon\},V^1=V,
 
 通常的若字符串 $s=<a,b,c>$ 其中 $\{a,b,c\}\subset V$ ，则 $s$ 可简记做 $abc$
 
+定义 $|s|$ 为字符串 $s$ 的长度
+
 ***** 运算
 
 定义[[MK312][字符串]] $s=aa,t=bb$
@@ -6033,6 +6157,336 @@ $V^n$ 定义为字符表 $V$ 的 $n$ 次幂，定义为 $V^0=\{\epsilon\},V^1=V,
 
 亦称为上下文无关文法（Context-Free Grammar, CFG）
 
+****** 分析树<<MK348>>
+
+定义[[MK336][2型文法]] $G=<V_N,V_T,P,s>$ 若有四元结构 $D=<M,E,\prec,f>$ 满足 
+
+（1） $<M,E>$ 是[[MK341][有根树]]
+
+（2） $f:M\to (V_N\cup V_T)$ 是[[MK136][函数]]
+
+（3） $\prec\subset V/\{r\}\times V/\{r\}$ 是[[MK423][拟序关系]]，其中 $r$ 是[[MK341][树根]]
+
+（4） $r\in V$ 是[[MK341][根]]，则有 $f(r)\in V_N$ 是[[MK332][非终结符]]
+
+（5） 每个[[MK341][分支]] $v\in M$ 对应一个[[MK311][产生式]] $A_i\to\delta_{1}...\delta_{k},A\in V_N\land\delta_{i}\in V_T\cup V_N$
+
+     满足 $f(v)=A_i$ 以及对于任意 $<v,v_i>\in E\land v_i\in M$ 满足 $f(v_i)=\delta_i$ 
+
+     对于任意 $f(v_i)=\delta_i,f(v_j)=\delta_j$ 满足 $v_i\prec v_j,i<j$
+
+（6） 若 $\delta_a\prec\delta_b\prec\delta_c$ 则对于任意 $\delta_b$ 到 $\delta_d$ [[MK186][有向可达]]均有 $\delta_a\prec\delta_d\prec\delta_c$
+
+则该代数结构定义为语法 $G$ 分析树，并定义自左向右的[[MK341][树叶]]统称为该树的 *产出* 或 *边缘*
+
+****** 定理
+
+******* 定理1<<MK442>>
+
+任意[[MK336][2型文法]] $G=<V_N,V_T,P,s>$ 的任意推导 $\alpha_0\Rightarrow...\Rightarrow\alpha_n$ 
+
+其中 $\alpha_0\in V_N\land\alpha_n=X_1...X_m,X_i\in(V_T\cup V_N)$ ，均有[[MK348][分析树]] $D=<M,E,\prec,f>$ 满足：
+
+（1） $\mathcal{L}(M)$ [[MK424][叶集]]满足 $|\machtal{L}(M)|=m=|\alpha|$
+
+（2） 对于 $\mathcal{L}(M)$ 基于 $\prec$ 存在排序 $\delta_1\prec\delta_2\prec...\prec\delta_m$ 有 $f(\delta_i)=a_i$ 
+
+******** 证明
+
+********* 定义 $D_1$ <<MK439>>
+
+定义 $M_0=\{\delta_{00}\},E_0=\varnothing,f_0=\{<\delta_{00},A>\},\prec_0=\varnothing$ 其中 $A=\alpha_0\in V_N$ 
+
+对于 $\alpha_0\Rightarrow\alpha_1$ 有产生式 $s\to\beta_{01}...\beta_{0k_0}$ 则定义 
+
+\begin{aligned}
+M_1=&M_0\cup\{\delta_{11},...,\delta_{1k_0}\}\\
+E_1=&E_0\cup\left\{<s,\delta_{1j}>\big|1\leq j\leq k_0\right\}\\
+f_1=&f_0\cup\left\{<\delta_{1j},\beta_{0j}>\big|1\leq j\leq k_0\right\}\\
+\prec_1=&\prec_0\cup\left\{<\delta_{1i},\delta_{1j}>\big|1\leq i<j\leq k_0\right\}
+\end{aligned}
+
+显然易证 $D_1=<M_1,E_1,f_1,\prec_1>$ 是[[MK348][分析树]]且满足条件
+
+********* 定义 $D_{i+1}$ <<MK427>>
+
+假设 $D_i$ 是[[MK348][分析树]]且满足条件
+
+对于 $\alpha_i\Rightarrow\alpha_{i+1}$ w有产生式 $A_i\to\beta_{i1}...\beta_{ik_i}$ 其中 $A_i$ 是 $\alpha_i$ 中第 $n_i$ 个元素
+
+根据条件对于 $D_i$ 的叶集 $\mathcal{L}(D_i)$ 有 $|\mathcal{L}(D_i)|=|\alpha_i|$ 且存在排序
+
+则定义 $\delta_{uk}$ 为该排序中第 $n_i$ 个元素，故定义：
+
+\begin{aligned}
+M_{i+1}=&M_i\cup\{\delta_{(u+1)1},...,\delta_{(u+1)k_i}\}\\
+E_{i+1}=&E_i\cup\left\{<\delta_{uk},\delta_{(u+1)j}>\big|1\leq j\leq k_i\right\}\\
+f_{i+1}=&f_i\cup\left\{<\delta_{(u+1)j},\beta_{ij}>\big|1\leq j\leq k_i\right\}\\
+\prec_{i+1}=&\prec_i\cup\left\{<\delta_{(u+1)i},\delta_{(u+1)j}>\big|i<j\right\}\cup\\
+&\left\{<\delta_{(u+1)j},\delta_{vi}>\big|\delta_{uk}\prec_i\delta_{vi}\land 1\leq j\leq k_i\right\}\cup\\
+&\left\{<\delta_{vi},\delta_{(u+1)j}>\big|\delta_{vi}\prec_i\delta_{uk}\land 1\leq j\leq k_i\right\}
+\end{aligned}
+
+则定义 $D_{i+1}=<M_{i+1},E_{i+1},f_{i+1},\prec_{i+1}>$ 
+
+易证 $<M_{i+1},E_{i+1}>$ 是[[MK341][有根树]]， $f$ 是 $M_{i+1}\to(V_N\cup V_T)$ 的[[MK136][函数]]以及 $\prec_{i+1}$ 是[[MK423][拟序关系]]
+
+********* 证明结论
+
+假设 $D_i$ 是[[MK348][分析树]]且满足条件
+
+********** $D_{i+1}$ 是[[MK348][分析树]]
+
+易证 $<M_{i+1},E_{i+1}>$ 是[[MK341][有根树]]， $f_{i+1}$ 是 $M_{i+1}\to(V_N\cup V_T)$ 的[[MK136][函数]]以及 $\prec_{i+1}$ 是[[MK423][拟序关系]]
+
+显然 $D_{i+1}$ 有 $d^-(\delta_{00})=0\land f(\delta_{00})=\alpha_0\in V_N$ 满足[[MK348][（4）]]
+
+由于 $D_{i+1}$ 新增节点 $\{\delta_{(u+1)1},...,\delta_{(u+1)k_i}\}$ 均为 $\delta_{uk}$ 的[[MK186][有向可达]]节点，且有路 $<\delta_{uk},e,\delta_{(u+1)ij}>$
+
+则根据[[MK348][分析树（6）]]若有任意 $\delta_a\prec\delta\prec\delta_c$ 若 $\delta$ 到 $\delta_{(u+1)j}$ 可达，则根据[[MK440][性质4]] $\delta$ 到 $\delta_{(u+1)j}$ 可达
+
+则有 $\delta_a\prec\delta_{uk}\prec\delta_c$ 根据 $\prec_{i+1}$ 定义亦有 $\delta_a\prec\delta_{(u+1)j}\prec\delta_c$ 故满足（6）
+
+定义 $\alpha_i=\tau_{1}...\tau_{z}$ 由于 $D_i$ 满足四个条件，则有对于 $\mathcal{L}(D_i)$ 有：
+
+（1） $|\mathcal{L}(D_i)|=z$ 
+
+（2) 存在排序 $\gamma_{1}\prec...\prec\gamma_{z}$ 满足 $f(\gamma_{ij})=\tau_{j},1\leq j\leq z_i$
+
+由于 $\delta_{uk}$ 是该排序中的第 $n_i$ 个元素， $A_i$ 是 $\alpha_i$ 中自左向右第 $n_i$ 个元素，故有 $f(\delta_{uk})=A_i$ 
+
+且有 $<\delta_{uk},\delta_{(u+1)j}>\in E\land f(\delta_{(u+1)j})=\beta_{ij},1\leq j\leq k_i$ 故满足[[MK348][（2）]]
+
+根据[[MK439][之前描述]] $D_1$ 是分析树，故根据数学归纳法，对于任意 $n<\infty$ 步[[MK329][推导]]
+
+根据[[MK427][之前方法]]构造的四元结构 $D_n=<M_n,E_n,f_n,\prec_n>$ 是分析树
+
+********** $D_{i+1}$ 满足条件
+
+从 $D_i$ 到 $D_{i+1}$ 仅有 $\delta_{uk}$ 从叶变为分支，且新增的 $\delta_{(u+1)j}$ 且满足 $d^+(\delta_{(u+1)j})=0$ 
+
+故 $|\mathcal{L}(D_i)|-1+k_i=|\mathcal{L}(D_{i+1})|$ 易证满足 $|\mathcal{L}(D_{i+1})|=|\alpha_{i+1}|$ 满足（1）
+
+由于[[MK336][2型文法]]，故产生式为替换 $\alpha_i$ 上的[[MK332][非终结符]]，故 $\alpha_i=\tau_1...\tau_{n_i-1}\beta_{i1}...\beta_{ik_i}\tau_{n_i+1}...\tau_{z}$
+
+同理根据 $\prec_{i+1}$ 定义
+
+有 $\gamma_{1}\prec_{i+1}...\prec_{i+1}\gamma_{n_i-1}\delta_{(u+1)1}\prec_{i+1}...\prec_{i+1}\delta_{(u+1)k_i}\prec_{i+1}\gamma_{n_i+1}\prec_{i+1}...\prec_{i+1}\gamma_{z}$
+
+易证满足（2）根据[[MK439][之前描述]] $D_1$ 是分析树，故根据数学归纳法
+
+对于任意 $n<\infty$ 步[[MK329][推导]]根据[[MK427][之前方法]]构造的分析树 $D_n=<M_n,E_n,f_n,\prec_n>$ 满足条件
+
+******* 定理2<<MK444>>
+
+任意[[MK336][2型文法]] $G=<V_N,V_T,P,s>$ 的[[MK348][分析树]] $D=<M,E,\prec,f>$ 
+
+均有对应 $\alpha=X_1...X_m,X_i\in(V_T\cup V_N)$ 满足：
+
+（1） $\mathcal{L}(M)$ [[MK424][叶集]]满足 $|\machtal{L}(M)|=m=|\alpha|$
+
+（2） 对于 $\mathcal{L}(M)$ 基于 $\prec$ 存在排序 $\delta_1\prec\delta_2\prec...\prec\delta_m$ 有 $f(\delta_i)=a_i$ 
+
+（3） $f(r)=\alpha_0\Rightarrow^*\alpha$ 其中 $r$ 是[[MK341][根]]
+
+******** 证明
+
+[[MK341][分支]]个数为 $1$ 时显然
+
+假设分支为 $n$ 个时满足，则分支为 $n+1$ 时可表述为 $n$ 个分支的分析树增加一个分支
+
+任取一个不含分支的分支[[MK145][节点]] $\delta$ ，去除其所有所有[[MK186][有向可达]]节点，根据[[MK441][定理3]]可得仍为[[MK348][分析树]]
+
+新分析树 $D'=<M’,E',\prec',f'>$ 的节点为 $n$ 则根据假设有 $\alpha_n=X_1...X_k$ 满足条件
+
+则根据条件 $\mathcal{L}(M')$ 基于 $\prec'$ 对新分析树有排序 $\delta_1\prec...\prec\delta_k$ 且有 $f'(\delta_i)=X_i$
+
+若 $\delta=\delta_u$ 则有 $f'(\delta_u)=X_u$ 则若 $D$ 中 $\delta$ 对应的[[MK312][产生式]]为 $X\to Y_1...Y_e$ 
+
+则根据[[MK348][分析树]]定义 $X=f'(\delta_u)=X_u$ 故有推导 $\alpha_n\Rightarrow\alpha_{n+1}$
+
+得 $\alpha_{n+1}=X_1...X_{u-1}Y_1...Y_eX_{u+1}...X_k$ 显然有 $f(r)\Rightarrow^*\alpha_n\Rightarrow\alpha_{n+1}$ 故满足条件（3）
+
+则易证 $|\mathcal{L}(M)|=k-1+e=|\alpha_{n+1}|$ 且根据[[MK348][（5）（6）]]以及 $D'$ 满足条件（2）的假设
+
+易证 $D$ 亦满足条件。故根据数学归纳法可证得
+
+******* 定理3<<MK441>>
+
+任意[[MK336][2型文法]] $G=<V_N,V_T,P,s>$ 的[[MK348][分析树]] $D=<M,E,\prec,f>$
+
+有对应 $\alpha=X_1...X_m,X_i\in(V_T\cup V_N)$ 满足：
+
+（1） $\mathcal{L}(M)$ [[MK424][叶集]]满足 $|\machtal{L}(M)|=m=|\alpha|$
+
+（2） 对于 $\mathcal{L}(M)$ 基于 $\prec$ 存在排序 $\delta_1\prec\delta_2\prec...\prec\delta_m$ 有 $f(\delta_i)=a_i$ 
+
+（3） $f(r)=\alpha_0\Rightarrow^*\alpha$ 其中 $r$ 是[[MK341][根]]
+
+对于任意[[MK341][分支]] $\delta\in M/\{r\}\land f(\delta)=A\in V_N$ 其中 $r$ 为树根，定义 $\Delta_\delta$ 为其所有[[MK186][有向可达]]节点的集合，则定义
+
+\begin{aligned}
+E'=&E-\left\{<\delta_a,\delta_b>\big|\{\delta_a,\delta_b\}\in(\Delta_\delta\cup\{\delta\})\right\}\\
+f'=&f-\left\{<\delta',b>\big|\delta'\in\Delta_\delta\right\}\\
+\prec'=&\prec-\left\{<\delta_a,\delta_b}>\big|\delta_b\in\Delta_\delta\right\}\\
+&-\left\{<\delta_a,\delta_b}>\big|\delta_a\in\Delta_\delta\right\}\\
+E^*=&E-E'\\
+f^*=&f-f'\\
+\prec^*=&\prec-\prec'\\
+\end{aligned}
+
+则 $D'=<M/\Delta_\delta,E',\prec',f'>,D^*=<\Delta_\delta\cup\{\delta\},E^*,f^*,\prec^*>$ 仍是 $G$ 的[[MK348][分析树]]
+
+******** 证明
+
+仅证 $D'$ 相关部分， $D^*$ 部分类似可证
+
+由于 $\delta\ne r$ 不是树根，故 $M/\Delta_\delta\ne\varnothing$ 
+
+由于是导出子图且 $<M,E>$ 是有根树，则无[[MK158][弱圈]]，则 $<M/\Delta_\delta,E'>$ 无弱圈
+
+根据[[MK421][等价条件]] $r$ 到任意 $v\in M$ 可达，由于是生成子图，易证 $r$ 到任意 $v\in M/\Delta_\delta$ 可达
+
+同样根据[[MK421][等价条件]] $<M/\Delta_\delta,E'>$ 亦是[[MK341][有根树]]
+
+易证 $f'$ 是 $M/\Delta_\delta$ 到 $V_T\cup V_N$ 的[[MK136][函数]]且 $\prec'$ 是 $M/\Delta_\delta$ 上的[[MK423][拟序关系]]
+
+由于 $\delta\ne r$ 且 $\delta$ 到 $r$ 非有向可达，故 $r\in M/\Delta_\delta$ 则有 $f'(r)=s$
+
+由于 $\delta$ 是 $<M/\Delta_\delta,E'>$ 的[[MK424][叶]]，故
+
+对于任意 $<M/\Delta_\delta,E'>$ 中的分支，其必是 $<M,E>$ 中的分支，故满足[[MK348][（5）]]
+
+若存在 $\delta'\in M/\Delta_\delta$ 不满足[[MK348][（6）]]，易证 $D$ 中亦存在，与 $D$ 是分析树矛盾。
+
+故假设不成立，满足[[MK348][（6）]]
+
+故得 $D'=<M/\Delta_\delta,E',\prec',f'>$ 亦是 $G$ 的[[MK348][分析树]]
+
+******* 定理4<<MK445>>
+
+任意[[MK336][2型文法]] $G=<V_N,V_T,P,s>$ 的[[MK348][分析树]] $D=<M,E,\prec,f>$
+
+有对应 $\alpha=X_1...X_m,X_i\in(V_T\cup V_N)$ 满足：
+
+（1） $\mathcal{L}(M)$ [[MK424][叶集]]满足 $|\machtal{L}(M)|=m=|\alpha|$
+
+（2） 对于 $\mathcal{L}(M)$ 基于 $\prec$ 存在排序 $\delta_1\prec\delta_2\prec...\prec\delta_m$ 有 $f(\delta_i)=a_i$ 
+
+（3） $f(r)=\alpha_0\Rightarrow^*\alpha$ 其中 $r$ 是[[MK341][根]]
+
+对于任意[[MK341][分支]] $\delta\in M/\{r\}\land f(\delta)=A\in V_N$ 其中 $r$ 为树根，定义 $\Delta_\delta$ 为其所有[[MK186][有向可达]]节点的集合
+
+进一步定义 $\delta_i\in\mathcal{L}(M),j\leq i\leq k$ 为 $\delta$ 有向可达的[[MK424][叶]]
+
+则[[MK441][定理3]]中定义的 $D'$ 有：
+
+（1） $|\mathcal{L}(M/\Delta_\delta)|=|\mathcal{L}(M)|+1-(k-j+1)$
+
+（2） $|\mathcal{L}(M/\Delta_\delta)|$ 有基于 $\prec'$ 的排列 $\delta_1\prec'...\prec'\delta_{j-1}\prec'\delta\prec'\delta_{k+1}\prec'\delta_m$
+
+     其中 $f(\delta_i)=X_i\land f(\delta)=A$
+
+（3） $f(r)=\alpha_0\Rightarrow^*X_1...X_{j-1}AX_{k+1}...X_m$ 其中 $r$ 是[[MK341][根]]
+
+[[MK441][定理3]]中定义的 $D^*$ 有：
+
+（1） $|\mathcal{L}(\Delta_\delta)|=k-j+1$
+
+（2） $|\mathcal{L}(\Delta_\delta)|$ 有基于 $\prec^*$ 的排列 $\delta_j\prec^*...\prec^*\delta_{k}$ 其中 $f(\delta_i)=X_i,j\leq i\leq k$
+
+（3） $A\Rightarrow^*X_j...X_k$ 
+
+******** 证明
+
+仅证 $D'$ 相关部分， $D^*$ 部分类似可证
+
+根据定义 $\mathcal{L}(M/\Delta_\delta)$ 对于 $\mathcal{L}(M)$ 去除了 $\delta$ 的可达叶，并新增 $\delta$ 作为叶
+
+故有 $|\mathcal{L}(M/\Delta_\delta)|=|\mathcal{L}(M)|+1-(k-j+1)$ 满足（1）
+
+显然根据[[MK348][（6）]]有对于任意 $\delta'\in\mathcal{L}(M)-\Delta_\delta$ 若有 $\delta'\prec\delta_j$ 则有 $\delta'\prec\delta$
+
+同理若 $\delta_k\prec\delta'$ 则有 $\delta\prec\delta'$
+
+由于对于任意 $\{\delta_a,\delta_b\}\subset(\mathcal{L}(M)-\Delta_\delta)\cup\{\delta\}$ 若 $\delta_a\prec\delta_b$ 则有 $\delta_a\prec'\delta_b$
+
+故对于 $\mathcal{L}(M/\Delta_\delta)$ 有排列 $\delta_1\prec'...\prec'\delta_{j-1}\prec'\delta\prec'\delta_{k+1}\prec'...\prec'\delta_m$
+
+其中 $f(\delta_i)=X_i\land f(\delta)=A$ 故满足（2）
+
+根据[[MK441][定理3]] $D'$ 是 $G$ 的[[MK348][分析树]]，根据[[MK444][定理2]]可得存在 $f(r)\Rightarrow\alpha'$ 
+
+满足 $\alpha'=X_1...X_{j-1}AX_{k+1}...X_m$ 故满足（3）
+
+****** 推导顺序<<MK429>>
+
+定义[[MK336][2型文法]] $G=<V_N,V_T,P,s>$ 取其定义的任意[[MK330][句型]] $\alpha$ 有对应[[MK348][分析树]] $D_\alpha=<M,E,\prec,f>$
+
+则任意[[MK329][推导]] $\alpha'_0\Rightarrow...\Rightarrow\alpha'_n$ 满足：
+
+（1）
+
+（2） $\alpha'_0=s\land n=|M|-|\mathcal{L}(M)|$ 其中 $\mathcal{L}(M)$ 是[[MK424][叶集]]
+
+（3） 所有 $\alpha'_i\Rightarrow\alpha'_{i+1}$ 与所有 $D _\alpha$ 上的[[MK341][分支]]一一对应，且所采用的[[MK312][产生式]]相同
+
+（4） 若[[MK341][分支]] $u$ 到 $v$ [[MK160][有向可达]]，则分别对应的[[MK329][推导]] $\alpha'_{i_u}\Rightarrow\alpha'_{i_u+1},\alpha'_{i_v}\Rightarrow\alpha'_{i_v+1}$ 满足 $i_u<i_v$
+
+则有 $\alpha'_n=\alpha$
+
+******* 证明
+
+对于推导 $\alpha'_0\Rightarrow...\Rightarrow\alpha'_n$ 其中 $n=|M|-|\mathcal{L}(M)|$
+
+显然当 $|M|-|\mathcal{L}(M)|=2$ 时满足条件的推导 $\alpha'_0\Rightarrow...\Rightarrow\alpha'_2$ 成立
+
+则根据[[MK427][之前方法]]基于该推导可构造分析树 $D_n$ ，易证 $D_n=D_\alpha$
+
+假设当 $|M|-|\mathcal{L}(M)|=k$ 时满足条件的推导 $\alpha'_0\Rightarrow...\Rightarrow\alpha'_k$ 成立，且该推导构造的分析树 $D_k$ 有 $D_k=D _\alpha$ 
+
+则当 $|M|-|\mathcal{L}(M)|=k+1$ 时对于任意满足条件的推导 $\alpha_0\Rightarrow...\Rightarrow\alpha_{k+1}$ 
+
+根据条件（4）得 $\alpha'_k\Rightarrow\alpha'_{k+1}$ 对应的 $D _\alpha$ 中的[[MK341][分支]] $\delta^*$ 不含可达[[MK341][分支]]，则可定义：
+
+\begin{aligned}
+P=&\left\{\delta\big|<\delta^*,\delta>\in E\right\}\\
+M^*=&M-\{\delta^*\}-P\\
+E^*=&E-\left\{<\delta^*,\delta>\big|\delta\in P\right\}\\
+f^*=&f-\left\{<\delta,\beta>\big|\delta\in P\right\}\\
+\prec^*=&\prec-\left\{<\delta_{a},\delta_{b}>\big|\{\delta_a,\delta_b\}\subset P\right\}\\
+&-\left\{<\delta_{a},\delta_{b}>\big|\delta_a\prec_i\delta_b\land \delta_b\in P\right\}\\
+&-\left\{<\delta_{a},\delta_{b}>\big|\delta_a\prec_i\delta_b\land \delta_a\in P\right\}
+\end{aligned}
+
+易证 $D^*$ 的[[MK424][叶集]]基于 $\prec^*$ 存在排序 $\delta_1\prec^*\delta_2\prec^*...\prec^*\delta_z$ 有 $^*f(\delta_i)=a^*_i$
+
+定义 $\alpha^*=a^*_1...a^*_z$ ，则易证 $D^*=<M^*,E^*,\prec^*,f^*>$ 是[[MK313][文法]]对于 $\alpha^*$ 的[[MK348][分析树]]
+
+显然有 $|M^*|-|\mathcal{L}(M^*)|=k$ 又由于 $\alpha_0\Rightarrow...\Rightarrow\alpha_{k}$ 对于 $D^*$ 满足四个条件
+
+故根据假设 $\alpha_0\Rightarrow...\Rightarrow\alpha_{k}$ 推导成立且有 $\alpha_k=\alpha^*$ 
+
+显然 $\delta^*$ 对应的产生式对 $\alpha^*$ 进行对应位置的推导得 $\alpha$ 故有 $\alpha'_0\Rightarrow...\Rightarrow\alpha'_k\Rightarrow\alpha'_{k+1}$ 有 $\alpha'_{k+1}=\alpha$
+
+则根据数学归纳法，对于任意 $|M|-|\mathcal{L}(M)|<\infty$ 定理成立 
+
+****** 归约顺序
+
+定义[[MK336][2型文法]] $G=<V_N,V_T,P,s>$ 取其定义的任意[[MK330][句型]] $\alpha$ 有对应[[MK348][分析树]] $D_\alpha=<M,E,\prec,f>$
+
+则任意[[MK331][归约]] $\alpha'_0\Leftarrow...\Leftarrow\alpha'_n$ 满足：
+
+（1） $\alpha'_0=\alpha\land n=|M|-|\mathcal{L}(M)|$ 其中 $\mathcal{L}(M)$ 是[[MK424][叶集]]
+ 
+（2） 所有 $\alpha'_{i+1}\Leftarrow\alpha'_{i}$ 与所有 $D _\alpha$ 上的[[MK341][分支]]一一对应，且所采用的[[MK312][产生式]]相同
+
+（3） 若[[MK341][分支]] $u$ 到 $v$ [[MK160][有向可达]]，则分别对应的[[MK331][归约]] $\alpha'_{i_u+1}\Leftarrow\alpha'_{i_u},\alpha'_{i_v+1}\Leftarrow\alpha'_{i_v}$ 满足 $i_u>i_v$
+
+******* 证明
+
+根据归约定义是推导的你运算，则根据[[MK429][推导顺序]]可直接证明
+
 ***** 3型<<MK353>>
 
 3型文法亦称 *正则文法* 包括右线性和左线性文法
@@ -6044,26 +6498,6 @@ $V^n$ 定义为字符表 $V$ 的 $n$ 次幂，定义为 $V^0=\{\epsilon\},V^1=V,
 ****** 左线性文法<<MK414>>
 
 任意[[MK311][产生式]]均为 $A\to Bw$ 或 $A\to w$ 其中 $\{A,B\}\subset V_N,w\in V_N^*$
-
-**** 分析树<<MK348>>
-
-定义[[MK344][有序树]] $D=<M,E>$ ，定义[[MK336][2型文法]] $G=<V_N,V_T,P,s>$ 两者满足：
-
-（1） [[MK341][根]]是 $s$
-
-（2） 每个[[MK341][分支]]对应一个[[MK311][产生式]]，该分支是产生式的左部，该分支的[[MK342][子节点]]是产生式的右部
-
-     子节点按产生式的顺序自左向右[[MK344][有序]]排列
-
-（3） 每个[[MK341][树叶]]均为[[MK347][终结符]]
-
-则定义该树为CFG语法分析树，并定义自左向右的[[MK341][树叶]]统称为该树的 *产出* 或 *边缘*
-
-***** 推导图形化
-
-定义[[MK336][2型文法]] $G=<V_N,V_T,P,s>$ 定义 $\alpha$ 是 $G$ 的[[MK330][句型]]
-
-则存在[[MK329][推导]] $s\Rightarrow^*\alpha$ 即有 $s\Rightarrow\alpha_1\Rightarrow...\Rightarrow\alpha_n\Rightarrow\alpha$ 则可根据该推导构建分析树
 
 **** 二义性文法
 
@@ -6087,7 +6521,7 @@ $V^n$ 定义为字符表 $V$ 的 $n$ 次幂，定义为 $V^0=\{\epsilon\},V^1=V,
 
 $\alpha\Rightarrow^0\beta$ 定义为 $\alpha$ 经过零步推导得 $\beta$ 此时 $\beta=\alpha$
 
-$\alpha\Rightarrow^+ \beta$ 定义为 $\alpha$ 经过正书步直接推导得 $\beta$
+$\alpha\Rightarrow^+ \beta$ 定义为 $\alpha$ 经过正数步直接推导得 $\beta$
 
 $\alpha\Rightarrow^*\beta$ 定义为 $\alpha$ 经过 $k\in\mathbb{N}^+\cup\{0\}$ 步推导得 $\beta$ 
 
@@ -6418,92 +6852,6 @@ $r^*=r^{**}$
 则有 $r^{**}\subset r^*$ 又由于 $r^{ * *}=(r^ *)^0\cup (r^ *)^1\cup...\a$ 故有 $r^ *\subset r^{ * *}$
 
 同理根据[[MK78][自反性]]可得 $r^*=r^{ * *}$
-
-**** 定理
-
-[[MK353][正则文法]]与[[MK354][正规式]]等价，即：
-
-（1） 对于任意[[MK353][正则文法]] $G$ 存在等价的[[MK354][正规式]] $r$ 
-
-（2） 对于任意[[MK354][正规式]] $r$ 存在等价的[[MK353][正则文法]] $G$
-
-满足 $G$ 与 $r$ 生成相同的[[MK314][语言]]，即 $L(G)=L(r)$
-
-***** 证明
-
-****** （1）
-
-任意[[MK353][正则文法]] $G=<V_N,V_T,P,s>$ ，不妨设满足[[MK353][右线性]]
-
-任意[[MK311][产生式]]均为 $A\to wB$ 或 $A\to w$ 其中 $\{A,B\}\subset V_N,w\in V_N^*$
-
-定义[[MK315][字母表]] $\Sigma=V_T\cup\{\epsilon\}$ 则根据[[MK354][正则表达式]]定义以及[[MK365][运算]]易证 $\forall w\in V_T^*$ 是 $\Sigma$ 产生的正则表达式
-
-定义 $\{w,z\}\subset V_T^*,\{A,B\}\in V_N$ 则有以下规则：
-
-（1） $A\to w$ 则定义 $A$ 等价于正则表达式 $w$ 
-
-（2） $A\to wA,A\to z$ 则定义表达式 $w^*z$ 是[[MK358][闭包]]后的[[MK364][连接]]，根据正则定义亦为正则表达式
-
-（3） $A\to\mathcal{R},A\to\mathcal{D}$ 则定义表达式 $\mathcal{R}|\mathcal{D}$ 是[[MK360][并]]，其中 $\mathcal{R},\mathcal{D}$ 是其他规则生成的正则表达式
-
-（4） $A\to\mathcal{R}\mathcal{D}$ 则定义表达式 $\mathcal{R}\mathcal{D}$ 是[[MK364][连接]]，其中 $\mathcal{R},\mathcal{D}$ 是其他规则生成的正则表达式
-
-（5） 若存在 $A\to wA$ 且不存在 $A\to z$ 则 $A$ 将生成长度无穷的字符串，不符合定义。
-
-由于 $|P|<\infty$ 故根据上述四规则可将所有符合定义的 $A$ 为左部的产生式定义成正则表达式 $A=r$
-
-则以 $A$ 为开始的具有与 $G$ 相同产生式，终结符的[[MK313][文法]]，其产生的语言 $L(G_A)=L(r)$
-
-则依次对 $P$ 中满足上述四规则的产生式定义[[MK354][正则表达式]]
-
-由于 $P$ 是[[MK104][有限集]]则有这些产生式能定义有限个正则表达式 $A_1=r_1,...,A_n=r_n$ 其中 $A_i\in V_N$
-
-且根据[[MK353][正则文法]] $A_1,...,A_n$ 为 $G$ 中所有右部产生[[MK347][终结符]]的[[MK332][非终结符]]，其余产生式右部均包含非终结符
-
-其余均为 $B\to wA,\{A,B\}\subset V_N,w\in V_T^*$ 的形式
-
-然后在未使用过的产生之中，对于任意右部包含 $A_i$ 的产生式 $B\to wA_i$ 可得 $wr_i$ 亦为正则表达式
-
-故代替剩余规则的右部出现的 $A_i$ 为正则表达式 $r_i$ ，再利用上述四规则定义正则表达式并替换。
-
-依次类推直至产生 $s=r$ 即与开始符等价的[[MK354][正则表达式]]，根据之前推理可得 $L(r)=L(G)$
-
-若无法产生 $s=r$ 则说明 $A_1,...,A_n$ 根据 $P$ 产生的语言无法[[MK331][归约]]到 $s$
-
-根据推导规则 $A_1,...,A_n$ 是 $G$ 中所有右部产生[[MK347][终结符]]的[[MK332][非终结符]]
-
-故 $s$ 无法[[MK329][推导]]任何只包含[[MK347][终结符]]的[[MK312][字符串]]，即 $s$ 无法推导任何[[MK333][句子]]
-
-则 $L(G)=\varnothing$ 亦无正则表达式
-
-****** （2）
-
-定义 $x,y$ 是满足[[MK354][正则表达式]]定义中（1）（2）的表达式，根据[[MK365][运算]]构建[[MK311][产生式]]
-
-（1） 对于[[MK364][连接]] $x^ny^m$ 产生的[[MK314][语言]]为 $L(x^ny^m)=\{x^ny^m\}$ 
-
-     则定义产生式 $A\to x^nB,B\to y^m$ 则有 $A\Rightarrow^*x^ny^m$ 产生相同语言
-
-（2） 对于[[MK358][闭包]] $x^*$ 产生的[[MK314][语言]]为 $L(x^*)=\left\{x^n\big|n\in\mathbb{N}^+\cup\{0\}\right\}$ 
-
-     定义产生式 $A\to xA,A\to\epsilon$ 则有 $A\Rightarrow^*x^*$ 产生相同语言
-
-（3） 对于[[MK360][并]] $x|y$ 产生的[[MK314][语言]]为 $L(x|y)=\{x,y\}$
-
-     则定义产生式 $A\to x,A\to y$ 则有 $A\Rightarrow^* x|y$
-
-任意[[MK354][正则表达式]] $r$ 均可由其定义中（1）（2）的表达式经过有限步[[MK365][运算]]获得
-
-则定义 $r$ 中所有满足（1）（2）的表达式的集合为 $V_T$，则上述三规则生成的产生式均满足[[MK353][正则文法]]
-
-将最高优先级的[[MK365][运算]]根据上述三规则，依次对 $r$ 中的运算定义产生式，并将其左部包含在 $V_N$ 中
-
-进一步根据上述三规则替换产生式中的运算，形成 $r_1$ ，则 $r_1$ 可根据上一步中的产生式生成 $L(r)$ 中的句子
-
-依次类推，直至表达式 $r_k$ 中不含运算，则定义产生式 $s\to r_k$ ，并将 $s$ 包含在 $V_N$ 中
-
-故得[[MK353][正则文法]] $G=<V_N,V_T,P,s>$ 其生成的[[MK314][语言]]满足 $L(G)=L(r)$
 
 *** 自动机<<MK367>>
 
@@ -7162,7 +7510,7 @@ F'=&\begin{cases}F/U\cup I& U\cap F\ne\varnothing\\F&U\cap F =\varnothing\end{ca
 
 ****** （1）
 
-******* 右线性<<MK415>>
+******* 右线性
 
 设任意[[MK413][右线性]] $G=<V_N,V_T,P,s>$ 则定义 $B(A,\sigma)=\begin{cases}\left\{D\big|A\to \sigma D\in P\right\}\cup\{f\}&A\to\sigma\in P\\\left\{D\big|A\to \sigma D\in P\right\}&A\to\sigma\not\in P\end{cases}$ 
 
@@ -7208,7 +7556,7 @@ F=&\{f\}
 
 ******* 左线性
 
-设任意[[MK414][左线性]] $G=<V_N,V_T,P,s>$ 则定义 $B(A,\sigma)=\left\{D\big|D\to A\sigma\in P\right\},C(t,\sigma)=\left\{D\big|D\to\sigma\in P\right\}$
+设任意[[MK414][左线性]] $G=<V_N,V_T,P,s>$ 则定义 $B(A,\sigma)=\left\{D\big|D\to A\sigma\in P\right\},C(\sigma)=\left\{D\big|D\to\sigma\in P\right\}$
 
 其中 $\{A,D\}\subset V_N\land\sigma\in V_N^*$ 故进一步定义
 
@@ -7216,7 +7564,7 @@ F=&\{f\}
 S=&V_N\cup\{t\}&t\not\in V_N\\
 \Sigma=&V_T\\
 \delta=&\left\{<<A,\sigma>,B(A,\sigma)>\big|B(A,\sigma)\ne\varnothing\}&A\in V_N\land\sigma\in V_T^*\\
-&\cup\{<<t,\sigma>,C(t,\sigma)>\big|C(t,\sigma)\ne\varnothing\}\\
+&\cup\{<<t,\sigma>,C(\sigma)>\big|C(\sigma)\ne\varnothing\}\\
 T=&\{t\}\\
 F=&\{s\}
 \end{aligned}
@@ -7253,17 +7601,71 @@ F=&\{s\}
 
 ******* 右线性
 
-当 $t\not\in F$ 时定义：
+当 $t\not\in F$ 时，定义：
 
-（1） $P_1=\left\{A\to aB\big|B\not\in F\land<<A,a>,B>\in\delta\land \{A,B\}\subset S\right\}$
+（1） $P_1=\left\{A\to aB\big|\delta(A,a)=B\land \{A,B\}\subset S\right\}$
 
-（2） $P_2=\left\{A\to aB|a\big|B\in F\land<<A,a>,B>\in\delta\land \{A,B\}\subset S\right\}$
+（2） $P_2=\left\{A\to a\big|B\in F\land\delta(A,a)=B\land \{A,B\}\subset S\right\}$
 
-则定义[[MK313][文法]] $G_R=<S,\Sigma,P_1\cup P_2,t>$ 
+则定义[[MK313][文法]] $G_R=<S,\Sigma,P_1\cup P_2,t>$ 则对于任意 $\alpha=a_1...a_n\in L(G_R)$
+
+根据[[MK314][定义]]存在 $t\Rightarrow a_1A_1\Rightarrow a_1a_2A_2\Rightarrow...\Rightarrow a_1...a_{m-1}A_{n-1}\Rightarrow a_1...a_n$ 有：
+
+（1） $((A_i\to a_{i+1} A_{i+1})\in P)\rightarrow \delta(A_i,a_{i+1})=A_{i+1}$
+
+（2） $((A_{n-1}\to a_n)\in P)\rightarrow \delta(A_{n-1},a_n)=A_n\in F$
+
+故存在 $<\delta(A_0,a_1),\delta(A_1,a_2),...,\delta(A_{n-1},a_n)>$ 满足：
+
+（1） $A_0=t\land A_i\in S\land\delta(A_{n-1},a_n)\in F$
+
+（2） $\delta(A_i,a_{i+1})=A_{i+1}$
+
+故根据[[MK394][定义]]有 $\alpha\in L(M)$ ，则有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G_R)$ 则根据[[MK96][定义]]有 $L(M)\subset L(G_R)$
+
+类似易证 $L(G_R)\subset L(M)$ 则根据[[MK78][自反性]]可得 $L(M)=L(G_R)$
+
+当 $t\in F$ 时根据上述证明易见 $L(M)=L(G_R)\cup\{\epsilon\}$ 
+
+则进一步定义 $G'_R=<S\cup\{t'\},\Sigma,P_1\cup P_2\cup\{t'\to\epsilon|t\},t'>$ 显然有 $L(M)=L(G'_R)$
 
 ******* 左线性
 
+当 $t\not\in F$ 时，定义：
 
+（1） $P_1=\left\{B\to Aa\big|\delta(A,a)=B\land \{A,B\}\subset S\right\}$
+
+（2） $P_2=\left\{B\to a\big|A=t\land\delta(A,a)=B\land \{A,B\}\subset S\right\}$
+
+（3） $P_3=\left\{s'\to B\epsilon\big|B\in F\right\}$
+
+则定义[[MK313][文法]] $G_L=<S\cup\{s'\},\Sigma,P_1\cup P_2\cup P_3,s'>$ 
+
+则对于任意 $\alpha=a_1...a_n\in L(M)$ 根据[[MK394][定义]]有 $<\delta(A_0,a_1),\delta(A_1,a_2),...,\delta(A_{n-1},a_n)>$ 满足：
+
+（1） $A_0=t\land \delta(A_{n-1},a_n)\in F\land A_i\in S$
+
+（2） $\delta(A_{i-1},a_i)=A_i$
+
+故根据 $G_L$ 构造规则有：
+
+（1） $\delta(A_{i-1},a_i)=A_i\land A_i\in S\rightarrow((A_i\to A_{i-1}a_n)\in P)$
+
+（2） $\delta(t,a_1)=A_1\rightarrow((A_1\to a_1)\in P)$
+
+（3） $\delta(A_{n-1},a_n)=A_n\in F\rightarrow((s'\to A_n\epsilon)\in P)$
+
+则可知有推导 $s'\Rightarrow A_n\epsilon\Rightarrow A_{n-1}a_n\Rightarrow...\Rightarrow A_1a_2...a_n\epsilon\Rightarrow a_1...a_n\epsilon$ 
+
+根据[[MK316][连接]]有 $a_1...a_n\epsilon=a_1...a_n=\alpha$ 则根据[[MK314][定义]]有 $\alpha\in L(G_L)$
+
+则有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G_L)$ 则根据[[MK96][定义]]有 $L(M)\subset L(G_L)$
+
+类似易证 $L(G_L)\subset L(M)$ 则根据[[MK78][自反性]]可得 $L(M)=L(G_L)$
+
+当 $t\in F$ 时根据上述证明易见 $L(M)=L(G_L)\cup\{\epsilon\}$ 
+
+则进一步定义 $G'_L=<S\cup\{s'\},\Sigma,P_1\cup P_2\cup P_3\cup\{s'\to\epsilon\},s'>$ 显然有 $L(M)=L(G'_L)$
 
 ** 语法分析
 
@@ -7274,10 +7676,6 @@ F=&\{s\}
 **** 语法分析<<MK369>>
 
 判断[[MK312][字符串]]是否是给定[[MK313][文法]]产生的[[MK333][句子]]的过程。
-
-**** 自底向上<<MK371>>
-
-从 $\alpha$ 开始，尝试[[MK331][归约]]出 $S$ 的[[MK369][语法分析]]过程
 
 **** 最右推导、最左归约<<MK381>>
 
@@ -7326,6 +7724,40 @@ F=&\{s\}
 最右归约指在[[MK371][自底向上]]的分析过程中，是最左推导的逆过程
 
 两者等价
+
+**** 短语<<MK437>>
+
+对于[[MK336][上下文无关文法]] $G=<V_N,V_T,P,s>$ 的[[MK330][句型]] $\alpha\beta\omega$ 其中 $\{\alpha,\beta,\omega\}\subset V^*$
+
+若存在 $A\in V_N$ 满足 $A\Rightarrow^+\beta$ 则称 $\beta$ 是句型 $\alpha\beta\omega$ 的短语
+
+是 $s\Rightarrow \alpha\beta\omega$ 对应的[[MK429][分析树]]上[[MK345][高]]大于 $2$ 的[[MK430][子树]]的末端
+
+**** 直接短语<<MK415>>
+
+对于[[MK336][上下文无关文法]] $G=<V_N,V_T,P,s>$ 若有：
+
+（1） $\alpha A\omega$ 是 $G$ 的[[MK330][句型]]，即 $s\Rightarrow^*\alpha A\omega$
+
+（2） $A\Rightarrow\beta$ 即 $A\to\beta\in P$
+
+（3） $\{\beta,\alpha,\omega\}\subset V^*\land A\in V_T$ 
+
+则称 $\beta$ 是句型 $\alpha A\omega$ 相对于[[MK332][非终结符]] $A$ 的直接短语， $A$ 是 $\beta$ 的生成符
+
+**** 句柄<<MK416>>
+
+对于[[MK336][上下文无关文法]] $G=<V_N,V_T,P,s>$ 若 $\beta$ 是[[MK330][句型]] $\alpha$ 所有的[[MK415][直接短语]]中满足：
+
+（1） 开始符位于 $\alpha$ 最左
+
+（2） 满足（1）的[[MK415][直接短语]]中长度最长
+
+的[[MK415][直接短语]]则称 $\beta$ 是句型 $\alpha$ 的句柄
+
+**** 相关推导
+
+对于[[MK336][上下文无关文法]] $G=<V_N,V_T,P,s>$ 存在推导序列 $s\Rightarrow\alpha_1\Rightarrow...\Rightarrow\alpha_n$
 
 *** 自上而下<<MK370>>
 
@@ -7552,6 +7984,420 @@ void $A$(){
 
 见课本
 
+*** 自底向上
+
+**** 定义<<MK371>>
+
+从[[MK333][句子]] $\alpha$ 开始，尝试[[MK331][归约]]出 $S$ 的[[MK369][语法分析]]过程
+
+**** 移入-归约分析
+
+给定[[MK336][上下文无关]]文法 $G=<V_N,V_T,P,S>$ 以及目标[[MK312][字符串]] $\alpha$ 
+
+（1） 若[[MK375][栈]]中字符串包含[[MK416][句柄]] $\beta$ 则将 $\beta$ 出栈，再次压入 $\beta$ 归约后的符号
+
+（2） 若栈中不含句柄，则读入[[MK378][读头]]指向的字符，读头向后移动
+
+若经过有限步（1）（2）后出栈顶为[[MK312][开始符]] $S$ 读头指向字串末尾，则字符串被[[MK311][归约]]
+
+即 $\alpha\in L(G)$
+
+**** 规范归约
+
+对于[[MK336][上下文无关文法]] $G=<V_N,V_T,P,s>$ 的[[MK330][句子]] $\alpha$ 若有[[MK331][归约]] $\alpha_n\Leftarrow...\Leftarrow \alpha_0$ 满足：
+
+（1） $\alpha_n=\alpha$
+
+（2） $\alpha_0=s$ 即[[MK312][开始符]]
+
+（3） 对于任意 $1\leq i\leq n$ 满足 $\alpha_{i-1}$ 是 $\alpha_i$ 将[[MK416][句柄]]替换为其[[MK415][生成符]]所得
+
+则称该归约为规范归约
+
+***** 定理
+
+对于[[MK336][上下文无关文法]]，规范归约的逆过程是[[MK381][最右推导]]
+
+****** 证明
+
+根据定义对于[[MK336][上下文无关文法]] $G=<V_N,V_T,P,s>$ 的[[MK330][句子]] $\alpha$ 若有规范[[MK331][归约]] $\alpha_n\Leftarrow...\Leftarrow \alpha_0$ 则满足：
+
+（1） $\alpha_n=\alpha$
+
+（2） $\alpha_0=s$ 即[[MK312][开始符]]
+
+（3） 对于任意 $1\leq i\leq n$ 满足 $\alpha_{i-1}$ 是 $\alpha_i$ 将[[MK416][句柄]]替换为其[[MK415][生成符]]所得
+
+则有对应推导 $\alpha_0\Rightarrow...\Rightarrow\alpha_n$ 有 $\alpha_n=\alpha\land\alpha_0=s$
+
+进一步由于 $G$ 是[[MK336][上下文无关文法]]且[[MK415][生成符]]必为[[MK312][产生式]]左部，故生成符必为[[MK332][非终结符]]
+
+假设 $\alpha_{i}\Rightarrow \alpha_{i+1}$ 不是[[MK381][最右推导]]，则被推导的非终结符右边仍含有非终结符
+
+则定义 $\alpha_i=\omega_1A\omega_2Bz,\alpha_{i+1}=\omega_1\beta_1\omega_2Bz$ 其中 $z\in V_T^*\land\omega_i\in V^*\land\beta_i\in V^*\land \{A,B\}\subset V_N$ 
+
+且 $B$ 为 $\alpha_i$ 中最右边的非终结符，则 $B$ 在之后的步骤中亦会被推导
+
+则有 $\alpha_j\Rightarrow\alpha_{j+1},j>i$ 可定义 $\alpha_j=\omega_3Bz,\alpha_{j+1}=\omega_3\beta_2z$ 故有 $\omega_1\beta_1\omega_2Bz\Rightarrow^*\omega_3Bz$
+
+由于是上下文无关文法，故若 $j>i+1$ 则定义 $\alpha_{j-1}=\omega_4Bz$ 
+
+则 $\alpha_{j-1}\Rightarrow\alpha_j$ 必使用产生式 $D\to\gamma$ 满足 $D\in V_N$ 在 $\omega_4$ 中且 $\gamma\in V^*$ 在 $\omega_3$ 中
+
+此时 $\gamma$ 是 $\alpha_{j}$ 的[[MK415][直接短语]]
+
+若 $j=i+1$ 则有 $\alpha_i\Rightarrow\alpha_{j}\Rightarrow\alpha_{j+1}$ 表述为 $\omega_1A\omega_2Bz\Rightarrow\omega_1\beta_1\omega_2Bz\Rightarrow\omega_3\beta_2z$  
+
+此时 $\beta_1$ 是 $\alpha_j$ 的[[MK415][直接短语]]
+
+则在对应归约 $\alpha_n\Leftarrow...\Leftarrow \alpha_0$ 中 $\alpha_{j+1}\Leftarrow\alpha_j$ 表述为 $\omega_3\beta_2z\Leftarrow\omega_3Bz$
+
+根据条件（3）有 $\beta_2$ 是 $\alpha_j$ 的[[MK416][句柄]]，显然 $\gamma$ 或 $\beta_1$ 是在句柄左边的[[MK415][直接短语]]
+
+与句柄定义矛盾。故假设不成立。则对于任意 $\alpha_{i}\Rightarrow \alpha_{i+1}$ 必是[[MK381][最右推导]]
+
+**** 算符优先分析
+
+***** 算符文法<<MK417>>
+
+对于[[MK336][上下文无关文法]] $G=<V_N,V_T,P,s>$ 若其[[MK312][产生式]]的右部不含两个连续的[[MK322][非终结符]]
+
+则定义该文法为算符文法，此时称任意[[MK347][终结符]]为算符
+
+****** 定理<<MK419>>
+
+算符文法的任意[[MK330][句型]]中不含两个连续的[[MK322][非终结符]]
+
+******* 证明
+
+定义算符文法 $G=<V_N,V_T,P,s>$ 对于任意一步[[MK329][推导]]的句型 $\alpha_1$ 有 $s\Rightarrow\alpha_1$
+
+则有[[MK312][产生式]] $s\to\alpha_1\in P$ 根据定义有 $\alpha_1$ 不含两个连续的[[MK322][非终结符]]
+
+假设对于任意 $n$ 步推导句型 $\alpha_n$ 满足不含两个连续的[[MK322][非终结符]]
+
+则对于任意 $n+1$ 步推导句型 $\alpha_{n+1}$ 有 $s\Rightarrow^*\alpha_n\Rightarrow\alpha_{n+1}$
+
+由于算符文法是上下文无关文法，故仅会替换 $\alpha_n$ 中的[[MK322][非终结符]]
+
+故对于产生式替换的 $\alpha_n$ 非终结符 $A$ 可表述为 $\alpha_n=\omega_1z_1Az_2\omega_2$ 其中 $A\in V_N\land\omega_i\in V^*\land z_i\in V_T$
+
+产生式为 $A\to\beta\in P$ 推导过程 $\alpha_n\Rightarrow\alpha_{n+1}$ 表述为 $\omega_1z_1Az_2\omega_2\Rightarrow\omega_1z_1\beta z_2\omega_2$
+
+根据算符文法定义对于任意 $A\to\beta\in P$ 其中 $\beta$ 不含两个连续的[[MK322][非终结符]]
+
+结合假设可得 $\alpha_n$ 中的非终结符不连续出现可得 $\omega_i$ 中无连续非终结符
+
+故得 $\alpha_{n+1}=\omega_1z_1\beta z_2\omega_2$ 中不含两个连续的[[MK322][非终结符]]
+
+***** 算符优先级<<MK418>>
+
+对于[[MK417][算符文法]] $G=<V_N,V_T,P,s>$ 对于任意有序排列的[[MK347][终结符]] $<a,b>,\{a,b\}\subset V_T$ 
+
+其优先级定义为：
+
+（1） 若有 $(A\to\omega ab\lambda\in P)\lor(A\to\omega aQb\lambda\in P)$ 
+
+     则定义 $a$ 与 $b$ 优先级相等，记作 $a\doteq b$
+
+（2） 若有 $A\to\omega aR\lambda\in P\land\left(R\Rightarrow^+b\gamma\lor R\Rightarrow^+Qb\gamma\right)$ 
+
+     则定义 $a$ 的优先级低于 $b$ ，记作 $a\lessdot b$
+
+（3） 若有 $A\to\omega Rb\lambda\in P\land\left(R\Rightarrow^+\gamma a\lor R\Rightarrow^+\gamma aQ\right)$
+ 
+     则定义 $a$ 的优先级高于 $b$ ，记作 $a\gtrdot b$
+
+（4） 若无上述三种关系，则不存在优先级关系，记作 $a\oslash b$
+ 
+上述定义中 $\{A,R,Q\}\subset V_N\land \{\omega,\gamma,\lambda\}\subset V^*$
+
+注： $a_i,a_{i+1}$ 的优先级是基于有序排列 $<a,b>$ 定义的，与 $<b,a>$ 的优先级无关
+
+***** 算符优先文法<<MK431>>
+
+对于[[MK417][算符文法]] $G=<V_N,V_T,P,s>$ 取任意一对[[MK347][终结符]] $\forall\{a,b\}\subset V_T$
+
+对于排列 $<a,b>$ 至多满足一种[[MK418][优先级]]，则该文法定义为算符优先文法
+
+***** 算符优先表<<MK436>>
+
+对于[[MK431][算符优先文法]] $G=<V_N,V_T,P,s>$ 定义[[~/OneDrive/高等代数/Algb-3-Matrix.org][矩阵基础-矩阵的表述]] $M_{|V_T|\times|V_T|}[a_{ij}]$
+
+对于 $<v_i,v_j>,\{v_i,v_j\}\subset V_T$ 根据其[[MK418][算符优先级]]定义 $a_{ij}=\begin{cases}1&a\doteq b\\2&a\lessdot b\\3&a\gtrdot b\\0&else\end{cases}$ 
+
+****** FIRSTVT集合<<MK434>>
+
+对于每一个 $R\in V_N$ 有 $FIRSTVT(R)=\left\{a\big|(R\Rightarrow^+a\omega\lor R\Rightarrow Qa\omega)\land(a\in V_T\land Q\in V_N\land\omega\in V^*)\right\}$
+
+则对于任意[[MK311][产生式]]有 $A\to \omega aR\delta,\{\omega,\delta\}\subset V^*$ 则对于 $<a,b>$ [[MK418][可得]] $\forall b\in\FIRSTVT(R)\rightarrow a\lessdot b$
+
+******* 算法<<MK432>>
+
+对于每一个 $R\in V_N$ 循环遍历，并采用以下规则：
+
+（1） 若有 $R\to a\omega\in P\lor R\to Ca\omega\in P$ 则有 $a\in FIRSTVT(R)$
+
+（2） 若有 $b\in FIRSTVT(Q)$ 且有产生式 $R\to Q\delta$ 则有 $b\in FIRSTVT(R)$
+
+其中 $\{a,b\}\subset V_T\land \{\omega,\delta\}\in V^*\land \{Q,C\}\subset V_N$ 
+
+由于[[MK313][语法]] $G$ 为有限结构，故 $FIRSTVT(R)$ 至多包含 $|V_T|$ 个元素
+
+故存在某次遍历后对于任意 $R\in V_T$ 其 $FIRSTVT(R)$ 不增加任意元素
+
+此时停止
+
+******* 程序
+
+排列 $V_N=\{\rho_1,...,\rho_n\},V_T=\{\tau_1,...,\tau_m\}$ 则定义数组 F[n][m] 以及[[MK375][栈]] S
+
+for (i=0;i<n;i++){
+    for (j=0;j<m;j++){
+        F[i][j] = 0
+    }
+}
+for 每一个 $\rho_i\to\beta\in P$ 若有 $\tau_j$ 满足[[MK432][规则]]（1）{
+    F[i][j] = 1
+    push i->S //进栈
+    push j->S //进栈
+}
+while S 栈非空 do{
+    pop i //出栈并存储在 i
+    pop j //出栈并存储在 j
+    for 每一个 $\rho_k\to\beta\in P$ 若对于 $\rho_i$ 满足[[MK432][规则]]（2）{
+        F[k][j] = 1
+        push k
+        push j
+    }
+}
+
+****** LASTVT集合<<MK435>>
+
+对于每一个 $R\in V_N$ 有 $LASTVT(R)=\left\{a\big|(R\Rightarrow^+\omega a\lor R\Rightarrow \omega aQ)\land(a\in V_T\land Q\in V_N\land\omega\in V^*)\right\}$
+
+则对于任意[[MK311][产生式]]有 $A\to \omega Rb\delta,\{\omega,\delta\}\subset V^*$ 则对于 $<a,b>$ [[MK418][可得]] $\forall a\in\LASTVT(B)\rightarrow a\gtrdot b$
+
+******* 算法<<MK433>>
+
+对于每一个 $R\in V_N$ 循环遍历，并采用以下规则：
+
+（1） 若有 $R\to \omega a\in P\lor R\to \omega Ca\in P$ 则有 $b\in LASTVT(R)$
+
+（2） 若有 $a\in LASTVT(Q)$ 且有产生式 $R\to \delta Q$ 则有 $a\in LASTVT(R)$
+
+其中 $\{a,b\}\subset V_T\land \{\omega,\delta\}\in V^*\land \{Q,C\}\subset V_N$ 
+
+由于[[MK313][语法]] $G$ 为有限结构，故 $LASTVT(R)$ 至多包含 $|V_T|$ 个元素
+
+故存在某次遍历后对于任意 $R\in V_T$ 其 $LASTVT(R)$ 不增加任意元素
+
+此时停止
+
+******* 程序
+
+排列 $V_N=\{\rho_1,...,\rho_n\},V_T=\{\tau_1,...,\tau_m\}$ 则定义数组 L[n][m] 以及[[MK375][栈]] S
+
+for (i=0;i<n;i++){
+    for (j=0;j<m;j++){
+        L[i][j] = 0
+    }
+}
+for 每一个 $\rho_i\to\beta\in P$ 若有 $\tau_j$ 满足[[MK433][规则]]（1）{
+    L[i][j] = 1
+    push i->S //进栈
+    push j->S //进栈
+}
+while S 栈非空 do{
+    pop i //出栈并存储在 i
+    pop j //出栈并存储在 j
+    for 每一个 $\rho_k\to\beta\in P$ 若对于 $\rho_i$ 满足[[MK433][规则]]（2）{
+        F[k][j] = 1
+        push k
+        push j
+    }
+}
+
+****** 算法
+
+基于[[MK434][FIRSTVT集合]]以及[[MK435][LASTVT集合]]，对每一个 $R\to\beta\in P$ 循环遍历，并采用以下规则：
+
+（1） 若 $R\to\omgea aQ\delta\land b\in FIRSTVT(Q)$ 则有 $a\lessdot b$
+
+（2） 若 $R\to\omgea Qb\delta\land a\in LASTVT(Q)$ 则有 $a\gtrdot b$
+
+遍历直至于任意 $R\in V_T$ 其 $FIRSTVT(R)$ 不增加任意元素
+
+由于[[MK313][语法]] $G$ 为有限结构，故以上要求可达
+
+****** 程序
+
+排列 $V_T=\{\tau_1,...,\tau_n\}$ 则基于[[MK436][算符优先表]]定义数组 M[n][n] 满足 M[i][j]=$a_{ij}$
+
+for 每一个 $\rho_i\to X_1X_2...X_m\in P$ 
+    for (i=0;i<n;i++){
+        if($X_i\in V_T$ && $X_{i+1}\in V_T$){
+            M[u][v]=1 //其中 $u,v$ 满足 $\tau_u=X_i,\tau_v=X_{i+1}$
+        }
+        if($\{X_i,X_{i+2}\}\in V_T$ && $X_{i+1}\in V_N$ && i<n-2){
+            M[u][v]=1 //其中 $u,v$ 满足 $\tau_u=X_i,\tau_v=X_{i+2}$
+        }
+        if($X_i\in V_T$ && $X_{i+1}\in V_N$){
+            for (j=1;j<n+1;j++){
+                if($\tau_j\in FIRSTVT(X_{i+1})$){
+                    M[u][j]=2 //其中 $u$ 满足 $\tau_u=X_i$
+                }
+            }
+        }
+        if($X_i\in V_N$ && $X_{i+1}\in V_T$){
+            for (j=1;j<n+1;j++){
+                if($\tau_j\in LASTVT(X_{i})$){
+                    M[j][u]=3 //其中 $u$ 满足 $\tau_u=X_{i+1}$
+                }
+            }
+        }
+    }
+
+***** 算符优先分析
+
+对于[[MK431][算符优先文法]]产生的[[MK330][句型]]，优先[[MK331][归约]]最左[[MK438][素短语]]的语法分析方法。
+
+****** 素短语<<MK438>>
+
+对于[[MK431][算符优先文法]] $G=<V_N,V_T,P,s>$ 的[[MK330][句型]] $\alpha\beta\omega$ 若有：
+
+（1） 存在 $A\in V_N$ 满足 $A\Rightarrow^+\beta$ 
+
+（2） $\beta$ 中至少包含一个[[MK347][终结符]]
+
+（3） 不存在 $\delta$ 是[[MK330][句型]] $\alpha\beta\omega$ 的[[MK437][短语]]且 $\delta$ 包含在 $\beta$ 中
+
+则称 $\beta$ 是句型 $\alpha\beta\omega$ 的素短语
+
+****** 定理
+
+对于[[MK431][算符优先文法]] $G=<V_N,V_T,P,s>$ 的任意[[MK330][句型]] $\alpha$ 定义为 $\#\alpha\#=\#N_1a_1N_2a_2...N_na_nN_{n+1}\#$
+
+其中 $N_i\in V_N\cup\{\epsilon\}\land a_i\in V_T$ 
+
+若有满足 $a_{j-1}\lessdot a_j\doteq a_{j+1}\doteq...\doteq a_{j+k}\gtrdot a_{j+k+1}$ 的最左子串 $N_ja_j...N_{j+k}a_{j+k}N_{j+k+1}$ 
+
+则该子串是该句型的最左[[MK438][素短语]]
+
+******* 证明
+
+由于[[MK431][算符优先文法]]是[[MK417][算符文法]]，故是[[MK336][上下文无关文法]]
+
+由于 $\alpha$ 是 $G$ 的[[MK330][句型]]，故有[[MK329][推导]] $s\Rightarrow^*\alpha$ 则有[[MK348][分析树]] $D=<M,E,\prec,f>$
+
+由于是算符优先文法，故对于任意 $a_iN_{i+1}a_{i+1}$ 有且仅有一种[[MK436][优先级]]
+
+******** 是短语
+
+易证存在[[MK343][深度]]最大的[[MK323][分支]] $A$ ，满足 $A$ 到 $a_{j-1}$ ， $A$ 到 $a_{j}$ 均[[MK186][有向可达]]
+
+存在[[MK343][深度]]最大的[[MK323][分支]] $Q$ ，满足 $Q$ 到 $a_{j+k}$ ， $A$ 到 $a_{j+k+1}$ 均[[MK186][有向可达]]
+
+********* $A$ 到 $a_{j-1}$ ， $Q$ 到 $a_{j+k+1}$ [[MK186][长度]]为 $1$
+
+假设 $A$ 到 $a_{j-1}$ 的[[MK154][有向通路]]的[[MK186][长度]]大于 $1$ ，则有分支 $B$ 满足:
+
+(1) $A$ 到 $B$ 有向路长度为 $1$ 
+
+(2) $B$ 有向可达 $a_{j-1}$
+
+(3) $B$ 到 $a_j$ 不可达
+
+此时若 $A$ 到 $a_j$ 通路长度为 $1$ 则其 $A$ 对应的产生式为 $A\to\omega Ba_{j}\delta$ 
+
+且由于 $B$ 到 $a_{j-1}$ 可达，以及 $\alpha$ 中 $a_{j-1}N_ja_j$ 的排序有 $B\Rightarrow^+ \gamma a_{j-1}\lor B\Rightarrow^+ \gamma a_{j-1}Q$
+
+根据[[MK418][定义]]有 $a_{j-1}\gtrdot a_j$ 与条件不符
+
+若 $A$ 到 $a_j$ 通路长度大于 $1$ 则，则亦存在 $C$ 到 $a_j$ 可达，且不可达 $a_{j-1}$
+
+此时有 $A$ 对应的产生式为 $A\to\omega BC\delta\lor A\to\omega BQC\delta$ 不满足[[MK417][算符文法]]定义
+
+故假设不成立 $A$ 到 $a_{j-1}$ 的[[MK154][有向通路]]的[[MK186][长度]]不大于 $1$ ，则等于 $1$
+
+同理易证 $Q$ 到 $a_{j+k+1}$ [[MK186][长度]]为 $1$
+
+********* 存在分支 $B,R$
+
+假设 $A$ 到 $a_j$ [[MK186][长度]]是 $1$ ，则对应产生式有 $A\to\omega a_{j-1}a_{j}\delta$ 
+
+根据[[MK418][定义]]有 $a_{j=1}\doteq a_j$ 与条件不符，则假设不成立 $A$ 到 $a_j$ 距离不是 $1$
+
+故 $A$ 到 $a_j$ 距离大于 $1$ ，同理易证 $Q$ 到 $a_{j+k}$ [[MK186][长度]]大于 $1$
+
+则存在分支 $B$ 满足：
+
+(1) $A$ 到 $B$ 有向路长度为 $1$ 
+
+(2) $B$ 有向可达 $a_j$
+
+(3) $B$ 到 $a_{j-1}$ 不可达
+
+存在分支 $R$ 满足：
+
+(1) $Q$ 到 $R$ 有向路长度为 $1$ 
+
+(2) $R$ 有向可达 $a_{j+k}$
+
+(3) $Q$ 到 $a_{j+k+1}$ 不可达
+
+********* $B=R$
+
+假设 $B\ne R$ 由于 $\alpha$ 是[[MK330][句型]]，则有推导 $s\Rightarrow^*\alpha$ 根据[[MK442][定理1]]存在[[MK348][分析树]] $D$ 其树[[MK341][根]]有 $f(r)=s$
+
+根据[[MK441][定理3]]可得去除 $B,R$ 所有[[MK186][有向可达]]节点后仍可构造分析树 $D'$
+
+根据[[MK445][定理4]]有对应 $f(r)\Rightarrow^*\alpha'$ ，由于 $B,R$ 对应节点是[[MK309][叶]]，故 $\alpha'$ 中包含 $B,R$
+
+由于 $f(r)=s$ 故 $\alpha'$ 是[[MK330][句型]]，则若 $B,R$ 连续出现，则与[[MK419][定理]]矛盾
+
+若 $B,R$ 中间有非终结符 $a_{j+l}$ ，则易证与 $a_j\doteq a_{j+1}\doteq...\doteq a_{j+k}$ 矛盾
+
+故假设不成立，则有 $B=R$ 
+
+********* 证明结论
+
+根据[[MK441][定理3]]可基于 $B,R$ 及其所有[[MK186][有向可达]]节点构造分析树 $D',D^*$
+
+根据[[MK445][定理4]]有 $D'$ 满足 $f(r)\Rightarrow^*N_1a_aN_2a_2...a_{j-1}Ba_{j+k+1}...N_na_nN_{n+1}$
+
+以及 $D^*$ 满足 $B\Rightarrow^* N_ja_j...N_{j+k}a_{j+k}N_{j+k+1}$ 
+
+则根据[[MK437][定义]]可得 $N_ja_j...N_{j+k}a_{j+k}N_{j+k+1}$ 是短语
+
+******** 是素短语
+
+显然 $N_ja_j...N_{j+k}a_{j+k}N_{j+k+1}$ 包含至少一个终结符
+
+易证假设存在[[MK437][短语]] $C\Rightarrow N_na_n...N_ma_mN_{m+1}$ 包含与 $B$ 中
+
+则根据[[MK441][定理3]]可基于 $B$ 及其所有[[MK186][有向可达]]节点构造分析树 $D^*$
+
+易证存在[[MK343][深度]]最大的[[MK323][分支]]对应 $A$ 满足 $A$ 到 $a_n,a_{n-1}$ 均[[MK186][有向可达]]
+
+则[[MK446][同理易证]]：
+
+（1） 存在 $Q$ 满足 $Q$ 到 $a_n$ 有向可达，到 $a_{n-1}$ 不可达
+
+（2） $A$ 到 $a_{n-1}$ 的距离为 $1$
+
+故有 $a_{n-1}\lessdot a_n$ 与条件矛盾，故 $B$ 中不包含任意短语
+
+则根据[[MK438][定义]]可得 $N_ja_j...N_{j+k}a_{j+k}N_{j+k+1}$ 是素短语
+
+****** 缺陷
+
+算符优先分析不保证能接受所有[[MK330][句型]]
+
+若有 $P=\{s\to AcB,A\to ab\in P, B\to ab\in P\}$ 以及[[MK330][句型]] $abcab$
+
+算符优先分析无法确定使用那个产生式归约，故有可能归约为 $BcA$ 导致无法归约到 $s$
+
 *** 移入-归约分析
 
 **** 定义<<MK382>>
@@ -7641,3 +8487,4 @@ void $A$(){
 根据数学归纳法有 $\alpha$ 可依次归约为 $S$
 
 **** 可行前缀
+ [[的[[MK330][句型]] $\alpha A\omega$ 若有：]] 

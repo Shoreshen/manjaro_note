@@ -39,6 +39,10 @@ else
 	cat /etc/resolv.conf
 endif
 
+save_dns:
+	rm ./OpenVPN/resolv.conf
+	cp /etc/resolv.conf ./OpenVPN
+
 rec_dns:
 	cat /etc/resolv.conf
 	echo $(PW) | sudo -S chattr -i /etc/resolv.conf
@@ -74,7 +78,7 @@ sync: commit
 	git push -u origin master
 
 ipsec_restart:
-	echo $(PW) | sudo -S ipsec start
+	echo $(PW) | sudo -S ipsec restart
 
 conn:set_dns ipsec_restart # try 1.1.1.1 and 1.0.0.1 for dns
 	sleep 0.5
@@ -83,3 +87,11 @@ conn:set_dns ipsec_restart # try 1.1.1.1 and 1.0.0.1 for dns
 disconn:rec_dns
 	sleep 0.5
 	echo $(PW) | sudo -S ipsec down NordVPN
+
+nordconn:save_dns
+	echo $(PW) | sudo -S nordvpn c
+
+norddisconn:
+	echo $(PW) | sudo -S nordvpn d
+	sudo rm /etc/resolv.conf
+	sudo cp ./OpenVPN/resolv.conf /etc/	
