@@ -9,6 +9,7 @@ test:
 	@echo $(PW)
 
 cporg: $(ORGNOTES)
+	rm ./OrgNotes/*
 	cp $(ORGNOTES) ./OrgNotes
 
 installall:

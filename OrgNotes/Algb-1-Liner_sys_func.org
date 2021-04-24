@@ -1,4 +1,4 @@
-#+LATEX_CLASS: ctexart
+#+LATEX_HEADER: \usepackage{ctex}
 
 #+TITLE: 线性方程组解
 

@@ -10,13 +10,13 @@ current mark: 137
 
 ** 定义
 
-定义[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 其中[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族-标志集]]是正整数
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 其中[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族-标志集]]是正整数
 
 ** 集合列上下确界
 
-定义[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]] $\{A_i\}_{i\in\mathbb{N}}$
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族-集合族运算]]
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][集合族运算]]
 
 其上确界定义为 $\cup_{i\in\mathbb{N}}A_i$
 
@@ -24,7 +24,7 @@ current mark: 137
 
 ** 集合列上下极限<<MK1>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]] $\{A_i\}_{i\in\mathbb{N}}$ ，则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族-集合族运算]]
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ ，则根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][集合族运算]]
 
 其上极限定义为 $\overline{\lim_{n\to\infty}}A_n=\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)$ 即 $\overline{\lim_{n\to\infty}}A_n=\left\{a\big|\forall i\in\mathbb{N},\exists k\geq i\rightarrow a\in A_k\right\}$
 
@@ -48,7 +48,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ** 单调集列<<MK69>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 定义
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 定义
 
 递增集列满足 $\forall i\in\mathbb{N}\rightarrow A_i\subset A_{i+1}$
 
@@ -104,7 +104,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ** 集合列极限<<MK2>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]] $\{A_i\}_{i\in\mathbb{N}}$ ，若[[MK1][上下极限]]相等，即 $\overline{\lim_{n\to\infty}}A_n=\underline{\lim_{n\to\infty}}A_n$
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ ，若[[MK1][上下极限]]相等，即 $\overline{\lim_{n\to\infty}}A_n=\underline{\lim_{n\to\infty}}A_n$
 
 则称集合列有极限，且极限等于上下极限，记作 $\lim_{n\to\infty}A_n$
 
@@ -112,7 +112,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ** 拓扑定义<<MK39>>
 
-设 $T$ 是 $X$ 的非空子集的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]]若满足：
+设 $T$ 是 $X$ 的非空子集的[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]若满足：
 
 （1） $X,\varnothing$ 均属于 $T$
 
@@ -130,7 +130,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 *** 等价闭集定义<<MK129>>
 
-设 $T$ 是 $X$ 的非空子集的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]]
+设 $T$ 是 $X$ 的非空子集的[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]
 
 定义闭集为 $t^c:t\in T$ 定义闭集族 $T^c=\left\{t^c\big|t\in T\right\}$ 则 $<X,T>$ 是[[MK39][拓扑空间]]的充要条件是：
 
@@ -150,7 +150,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ***** （2）&（3）
 
-定义对于[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]] $A$ 的[[~/OneDrive/离散数学/Disc_Math.org][集合论-计算-广义并]]为 $\bigcup A$ 同理定义广义交为 $\bigcap A$
+定义对于[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $A$ 的[[~/OneDrive/离散数学/Disc_Math.org][集合论-计算-广义并]]为 $\bigcup A$ 同理定义广义交为 $\bigcap A$
 
 定义 $F\subset T$ 以及 $F^c=\left\{f^c\big|f\in F\right\}$ 根据 $T^c$ 定义显然有 $F^c\subset T^c$
 
@@ -1802,7 +1802,7 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 **** 推论1
 
-定义 $A_N$ 是[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]]其中指标集 $N$ ，满足：
+定义 $A_N$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]其中指标集 $N$ ，满足：
 
 （1） 任意 $A_n\land n\in N$ 均与 $\mathbb{R}$ [[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-对等]]
 
@@ -1826,7 +1826,7 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 **** 推论2<<MK37>>
 
-定义 $A_N$ 是[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]]其中指标集 $N$ ，满足：
+定义 $A_N$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]其中指标集 $N$ ，满足：
 
 （1） 任意 $A_n\land n\in N$ 均与 $\mathbb{R}$ [[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-对等]]
 
@@ -2348,7 +2348,7 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 *** 正规性定理<<MK97>>
 
-定义 $\Gamma$ 表示 $\mathbb{R}^n$ 所有开集的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族]]，定义 $\Theta$ 为所有闭集的集合族，若 $E\subset\mathbb{R}^n$ 则：
+定义 $\Gamma$ 表示 $\mathbb{R}^n$ 所有开集的[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]，定义 $\Theta$ 为所有闭集的集合族，若 $E\subset\mathbb{R}^n$ 则：
 
 （1） $E$ 是[[MK81][可测集]]，则有 $m^*(E)=\inf\left\{m^*(G)\big|E\subset G\land G\in\Gamma\right\}=\sup\left\{m^*(F)\big|F\subset E\land F\in\Theta\right\}$
 
