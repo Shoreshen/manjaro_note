@@ -54,6 +54,9 @@ rec_dns:
 split_scrn:
 	xrandr --output HDMI-0 --auto --right-of DP-2
 
+split_scrn_left:
+	xrandr --output HDMI-0 --auto --left-of DP-2
+
 update:
 	echo $(PW) | sudo -S pacman -Syy
 	sudo pacman -Syu

@@ -2,9 +2,9 @@
 
 #+TITLE: 实变函数
 
-current video: P25
+current video: P27
 
-current mark: 137
+current mark: 142
 
 * 集合列
 
@@ -1101,9 +1101,9 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 （3） 分配率： $\forall a\in\mathbb{R}\forall b\in\mathbb{R}\forall c\in\mathbb{R}\left((a+b)\cdot c=a\cdot c+b\cdot c\right)$
 
-（4） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-幺元]]： $\exists 0\in\mathbb{R}\forall a\in\mathbb{R}\left(0+a=a\right)\land\exists1\in\mathbb{R}\forall a\in\mathbb{R}\left(1\cdot a=a\right)$
+（4） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]： $\exists 0\in\mathbb{R}\forall a\in\mathbb{R}\left(0+a=a\right)\land\exists1\in\mathbb{R}\forall a\in\mathbb{R}\left(1\cdot a=a\right)$
 
-（5） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元]]： $\forall a\in\mathbb{R}\exists -a\in\mathbb{R}\left(-a+a=0\right)\land\forall a\in\mathbb{R}\exists a^{-1}\in\mathbb{R}\left(a^{-1}\cdot a=1\right)$
+（5） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]： $\forall a\in\mathbb{R}\exists -a\in\mathbb{R}\left(-a+a=0\right)\land\forall a\in\mathbb{R}\exists a^{-1}\in\mathbb{R}\left(a^{-1}\cdot a=1\right)$
 
 **** 不可数加法<<MK53>>
 
@@ -1181,7 +1181,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 若 $a-b=0$ 则根据[[MK6][减法]]可得 $a+(-b)=0$
 
-则 $(-b)$ 是 $a$ 的[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元]]，且有 $-b$ 亦定义为 $b$ 的逆元
+则 $(-b)$ 是 $a$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]，且有 $-b$ 亦定义为 $b$ 的逆元
 
 由于加法满足结合律，故根据[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元-性质3]]可得 $a,b$ 逆元的逆元均为 $a,b$ 本身 
 
@@ -1308,15 +1308,75 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 故根据三歧性，仅有可能 $(a-b)+(c-d)>0$ 根据推论1即 $a+c>b+d$
 
-**** 逆元相反<<MK29>>
+**** 推论3
 
-若 $a>b$ 则有 $-a<-b$
+ $a>b\land c<0\rightarrow a\cdot c<b\cdot c$
+
+***** 证明
+
+由于 $c<0$ 则 $c$ 的[[MK
+
+**** 加法逆元<<MK29>>
+
+若 $a>b$ 则有 $-b>-a$
 
 同理可有 $a\geq b\rightarrow -b\geq -a$ 等其他
 
 ***** 证明
 
-根据[[MK7][推论1]]可得 $a>b\rightarrow a-b>0$ 则根据计算相容 $a-b-a<-a$ 即得 $-b<-a$
+根据[[MK7][推论1]]可得 $a>b\rightarrow a-b>0$ 则根据计算相容 $a-b-a>-a$ 即得 $-b>-a$
+
+***** 推论<<MK138>>
+
+$a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
+
+****** 证明
+
+根据[[MK17][逆元等价]]可得 $-c=(-1)c$ ，则根据运算相容 $0-c>c-c\rightarrow -c>0\rightarrow (-1)c>0$
+
+由于 $a>b$ 则有 $-b>-a$ 即 $(-1)b>(-1)a$
+
+进一步根据运算相容可得 $(-1)(-1)bc>(-1)(-1)ac$
+
+由于 $-1$ 是 $1$ 的加法[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]，进一步根据[[MK17][逆元等价]]可得 $(-1)(-1)=1$
+
+且 $1$ 是乘法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]，故有 $bc>ac$
+
+**** 乘法逆元1<<MK139>>
+
+（1） 若 $a>0$ 则 $\frac{1}{a}>0$
+
+（2） 若 $a<0$ 则 $\frac{1}{a}<0$
+
+***** 证明
+
+仅证（1），（2）同理可证
+
+则假设 $\frac{1}{a}<0$ 则根据[[MK138][推论]] $0>a\frac{1}{a}=1$
+
+由于 $1>0$ 根据三歧性可得假设不成立，故 $\frac{1}{a}\geq 0$
+
+假设 $\frac{1}{a}=0$ 则根据[[MK4][域公理]]（4）可得 $a\frac{1}{a}=0$ 与 $a\frac{1}{a}=1$ 矛盾，故 $\frac{1}{a}>0$ 
+
+**** 乘法逆元2<<MK140>>
+
+若 $a>b\land a\cdot b>0$ 则 $\frac{1}{b}>\frac{1}{a}$
+
+其余同理
+
+***** 证明
+
+由于 $a\cdot b>0$ 则根据[[MK16][零因子]]易证得 $a\ne0\land b\ne0$
+
+若 $(a>0\land 0>b)\lor(0>a\land b>0)$ 则根据[[MK138][推论]]可得 $0>ab$
+
+若 $a>0\land b>0$ 根据[[MK139][乘法逆元1]]可得 $\frac{1}{a}>0\land\frac{1}{b}>0$
+
+根据运算相容 $a>b\rightarrow a\frac{1}{b}>b\frac{1}{b}\rightarrow a\frac{1}{a}\frac{1}{b}>b\frac{1}{b}\frac{1}{b}\rightarrow \frac{1}{b}>\frac{1}{a}$
+
+若 $a<0\land b<0$ 根据[[MK139][乘法逆元1]]可得 $\frac{1}{a}<0\land\frac{1}{b}<0$
+
+则根据[[MK138][推论]] $a>b\rightarrow b\frac{1}{b}>a\frac{1}{b}\rightarrow a\frac{1}{a}\frac{1}{b}>b\frac{1}{b}\frac{1}{b}\rightarrow \frac{1}{b}>\frac{1}{a}$ ，证毕
 
 **** 绝对值<<MK15>>
 
@@ -3008,7 +3068,9 @@ Borel集中元素均为可测集
 
 转换后有有 $\forall\epsilon>0,\exists\delta>0,\forall |y-y_0|<\delta\rightarrow |F^{-1}(y)-F^{-1}(y_0)|<\epsilon$
 
-** 广义实值函数<<MK133>>
+** 广义实值函数
+
+*** 定义<<MK133>>
 
 定义函数 $f:E\to\mathbb{R}\cup\{-\infty,+\infty\}$ 其中 $\{-\infty,+\infty\}$ 满足对于任意 $a\in\mathbb{R}$ 均有：
 
@@ -3044,11 +3106,67 @@ Borel集中元素均为可测集
 
 若 $f:E\to\mathbb{R}$ 则定义为有限函数
 
+*** 定理
+
+**** 定理1<<MK141>>
+
+\begin{aligned}
+\forall a\in\mathbb{R}&\rightarrow\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]=[a,\infty]\\
+\forall a\in\mathbb{R}&\rightarrow\bigcup_{i=1}^\infty \left(a+\frac{1}{i},+\infty\right]=[a,\infty]\\
+\end{aligned}
+
+***** 证明
+
+仅证第一等式，其余类似可证
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK37][可数性质]]可得 $\forall z\in\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]\leftrightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(a-\frac{1}{i},+\infty\right]\right)$
+
+由于 $\forall i\in\mathbb{N}\rightarrow a-\frac{1}{i}<a$ 则有 $\forall z\in[a,\infty]\rightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(a-\frac{1}{i},\infty\right]\right)$
+
+对于任意 $z$ 满足 $\forall i\in\mathbb{N}\rightarrow z\in\left(a-\frac{1}{i},+\infty\right]$ 假设 $z\not\in [a,\infty]$ 则显然 $z<a$
+
+则 $a-z>0$ 由于 $0\in\mathbb{R}\land a-z\in\mathbb{R}$ 故根据[[MK43][有理数稠密性]]存在 $\{m,n\}\in\mathbb{N}$ 满足 $0<\frac{n}{m}<a-z$
+
+即 $0<\frac{1}{\frac{m}{n}}<a-z$ 由于 $\frac{m}{n}\in\mathbb{R}$ 则根据[[MK19][阿基米德性质]]存在 $i\in\mathbb{N}>\frac{m}{n}$
+
+由于 $\frac{n}{m}>0$ 根据[[MK139][乘法逆元1]]可得 $\frac{m}{n}>0$ 则 $i>\frac{m}{n}>0$ 即 $i\cdot\frac{m}{n}>0$
+
+故根据[[MK140][乘法逆元2]]可得 $0<\frac{1}{i}<\frac{1}{\frac{m}{n}}<a-z$ 即 $z<a-\frac{1}{i}\rightarrow z\not\in\left[a-\frac{1}{i}\right]$
+
+总上所述，若假设成立，则 $\exists i\in\mathbb{N}\rightarrow z\not\in\left[a-\frac{1}{i}\right]$ 显然与 $\forall i\in\mathbb{N}\rightarrow z\in\left(a-\frac{1}{i},+\infty\right]$ 矛盾
+
+则假设 $z<a$ 不成立，故显然 $z\geq a$ 即 $z\in[a,\infty]$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]=[a,\infty]$
+
+**** 定理2<<MK142>>
+
+\begin{aligned}
+\bigcap_{i=1}^\infty \left(i,+\infty\right]&=\{\infty\}\\
+\bigcap_{i=1}^\infty \left[-\infty,-i\right)&=\{-\infty\}\\
+\end{aligned}
+
+***** 证明
+
+仅证（1），显然 $\infty\in\bigcap_{i=1}^\infty \left(i,+\infty\right]$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK37][可数性质]]可得 $\forall z\in\bigcap_{i=1}^\infty \left(i,\infty\right]\leftrightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(i,+\infty\right]\right)$
+
+假设 $z\in\mathbb{R}$ 则根据[[MK19][阿基米德性质]]存在 $i\in\mathbb{N}>z$ 即 $z\not\in(i,\infty]$ 矛盾
+
+故假设不成立 $z\not\in\mathbb{R}$ 则 $z\in\{-\infty,\infty\}$ 显然有：
+
+（1） $\forall i\in\mathbb{N}\rightarrow -\infty\not\in(i,\infty]$
+
+（2） $\forall i\in\mathbb{N}\rightarrow \infty\in(i,\infty]$
+
+故 $z=\infty\rightarrow z\in\{\infty\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $\bigcap_{i=1}^\infty \left(i,+\infty\right]&=\{\infty\}$
+
 ** 可测函数<<MK134>>
 
 对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}\cup\{-\infty,+\infty\},E\subset X$ 
 
-定义 $E[f>a]=\left\{x\big|f(x)>a\land x\in E\right\}$ 以及 $\matchal{M}\subset\rho(X)$ 是 $X$ 上所有的[[MK65][可测]]集族
+定义 $E[f>a]=\left\{x\big|f(x)>a\land x\in E\right\}$ 以及 $\mathcal{M}\subset\rho(X)$ 是 $X$ 上所有的[[MK65][外测度可测集]]族
 
 则若 $f$ 满足 $\forall a\in\mathbb{R}\rightarrow E[f>a]\in\mathcal{M}$ 则 $f$ 是可测函数
 
@@ -3060,7 +3178,7 @@ Borel集中元素均为可测集
 
 （2）$\forall a\in\mathbb{R}\rightarrow E[f\geq a]\in\mathcal{M}$
 
-（3）$\forall a\in\mathbb{R}\rightarrow E[f>a]\in\mathcal{M}$
+（3）$\forall a\in\mathbb{R}\rightarrow E[f<a]\in\mathcal{M}$
 
 **** 证明
 
@@ -3076,18 +3194,47 @@ Borel集中元素均为可测集
 
 ***** （2）<<MK136>>
 
-由于 $f(x)>a=f(x)\in[a,+\infty]$ 定义集合 $\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right)$
+由于 $f(x)\geq a=f(x)\in[a,+\infty]$ 定义集合 $\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]$
 
-则有 $\forall z\in\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]\leftrightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(a-\frac{1}{i},+\infty\right]\right)\leftrightarrow z\in[a,\infty]$
+根据[[MK141][定理1]] $\forall z\in\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]= z\in[a,\infty]$
 
-故有 $E[f\geq a]=\left\{x\big|f(x)\in\bigcap_{i=1}^\infty\left(a-\frac{1}{n},+\infty\right]\land x\in E\right\}$
+故有 $E[f\geq a]=\left\{x\big|f(x)\in\bigcap_{i=1}^\infty\left(a-\frac{1}{i},+\infty\right]\land x\in E\right\}$
 
-根据[[MK135][性质]]（2）有 $\left\{x\big|f(x)\in\bigcap_{i=1}^\infty\left(a-\frac{1}{n},+\infty\right]\land x\in E\right\}=\bigcap_{i=1}^\infty\left\{x\big|f(x)\in \left(a-\frac{1}{n},+\infty\right]\land x\in X\right\}$
+根据[[MK135][性质]]（2）有 $\left\{x\big|f(x)\in\bigcap_{i=1}^\infty\left(a-\frac{1}{i},+\infty\right]\land x\in E\right\}=\bigcap_{i=1}^\infty\left\{x\big|f(x)\in \left(a-\frac{1}{i},+\infty\right]\land x\in X\right\}$
 
-故有 $E[f\geq a]=\bigcap_{i=1}^\infty E\left[f>a-\frac{1}{n}\right]$ 同理可证 $E[f>a]=\bigcap E\left[f\geq a+\frac{1}{n}\right]$
+故有 $E[f\geq a]=\bigcap_{i=1}^\infty E\left[f>a-\frac{1}{i}\right]$ 同理可证 $E[f>a]=\bigcup_{i=1}^\infty E\left[f\geq a+\frac{1}{i}\right]$
 
-故根据[[MK50][定义]]中（3）可得互为充要条件
+故根据[[MK50][定义]]中（3）以及[[MK67][可数交封闭]]可得互为充要条件
 
 ***** （3）
 
-根据[[MK136][（2）]]中的结论利[[MK137][（1）]]中的证明方法可得
+根据[[MK136][（2）]]中的结论，[[MK137][（1）]]中的证明方法可得
+
+**** 推论
+
+若[[MK133][广义实值函数]] $f:E\to\mathbb{R}\cup\{-\infty,+\infty\},E\subset X$ 是[[MK134][可测函数]]
+
+则 $E[f=a]=\left\{x\big|f(x)=a\land x\in E\right\}$ 亦是可测集
+
+***** 证明
+
+当 $a\in(-\infty,\infty)$ 时，根据可测定义有 $E[f>a]\in\mathcal{M}\land E[f\geq a]\in\mathcal{M}$
+
+根据[[MK65][Caratheodory定理]]可得 $X$ 上所有可测集构成 $X$ 上的[[MK50][ $\sigma$ 代数]]
+
+则根据[[MK74][差封闭]]可得 $E[f=a]=E[f\geq a]-E[f>a]\in\mathcal{M}$
+
+若 $a=\infty$ 则定义集合 $\bigcap_{i=1}^\infty(i,\infty]$ 根据[[MK142][定理2]]可得 $\bigcap_{i=1}^\infty(i,\infty]=\{\infty\}$
+
+故有 $E[f=\infty]=\left\{x\big|f(x)\in\{\infty\}\land x\in E\right\}=\left\{x\big|f(x)\in\bigcap_{i=1}^\infty(i,\infty]\land x\in E\right\}$
+
+根据[[MK135][性质]]（2）有 $\left\{x\big|f(x)\in\bigcap_{i=1}^\infty(i,\infty]\land x\in E\right\}=\bigcap_{i=1}^\infty\left\{x\big|f(x)\in \left(i,+\infty\right]\land x\in X\right\}=\bigcap_{i=1}^\infty E[f>i]$
+
+由于可测，故 $E[f>i]\in\mathcal{M}$ 根据[[MK50][定义]]中（3）可得 $E[F=\infty]=\bigcap_{i=1}^\infty E[f>i]\in\mathcal{M}$
+
+同理可证 $E[f=-\infty]\in\mathcal{M}$ 
+
+
+
+
+
