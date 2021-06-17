@@ -4,7 +4,7 @@
 
 P: 31
 
-currnet mark: 156
+currnet mark: 158
 
 freed mark:
 
@@ -2823,7 +2823,7 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 注： $\delta$ 函数可根据[[MK150][状态转移矩阵]]构建数据结构
 
-***** 定理
+***** 定理<<MK157>>
 
 对于[[MK119][LR($k$)文法]] $G=<V_N,V_T,P,s>$ 的任意[[MK20][句型]] $\alpha$ 可以用LR($k$)分析方法归约出 $s$
 
@@ -2863,13 +2863,17 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 ***** SLR分析
 
-针对[[MK119][LR($1$)文法]]的分析方法，考虑未读入的 $1$ 个[[MK1][字符]]来确定唯一后继状态的文法
+给定[[MK119][LR($1$)文法]] $G=<V_N,V_T,P,s>$ ，其根据[[MK118][定义]]构造[[MK128][DFA]]为 $M=<S,\Sigma,\delta,t,F>$ 
 
-对于任意 $v\in F$ 中有[[MK112][项目]] $v=\{f_1,...,f_x,s_1,...,s_y\}$ 
+考虑未读入的 $1$ 个[[MK1][字符]]来确定唯一后继状态的文法
 
-其中 $f_i=A_i\to\beta_i_{(|\beta_i|)}\land s_i=B_i\to\alpha_i_{(k_i)}$ 即 $f_i$ 表示用 $A_i\to\beta_i$ 归约
+对于任意[[MK67][终态]] $v\in F$ 假设 $v=\{f_1,...,f_x,s_1,...,s_y\}$ 其中 $s_i,f_i$ 均为[[MK112][项目]]
 
-以及 $s_i$ 表示需要继续读入[[MK1][字符]]，定义 $Y$ 是当前输入字符，则：
+且 $f_i=A_i\to\beta_i_{(|\beta_i|)}\land s_i=B_i\to\alpha_i_{(k_i)}$
+
+即 $f_i$ 表示用 $A_i\to\beta_i$ 归约， $s_i$ 表示需要继续读入[[MK1][字符]]
+
+定义 $Y$ 是当前输入字符，则：
 
 （1） 若 $Y$ 是 $A_i$ 的[[MK126][ $FOLLOW$ 集]]的元素，则 $f_i$ 为可能的后继状态
 
@@ -2877,21 +2881,47 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 ****** 充分条件
 
-定义 $I=\left\{\alpha_i[k_i+1]\big|1\leq i\leq y\right\}$ 则有 $Z=I\cup\left\{FOLLOW(A_i)\big|1\leq i\leq x\right\}$
+给定[[MK119][LR($1$)文法]] $G=<V_N,V_T,P,s>$ 下的所有[[MK112][项目]]划分为：
 
-则若对于任意 $\{u,v\}\subset Z$ 均有 $u\cap v=\varnothing$ 则可确定唯一后继
+（1） $U=\left\{A\to\alpha_{(k)}\big|A\to\alpha\in P\land k<|\alpha|\right\}$ 即可能移进的项目
+
+（2） $V=\left\{A\to\alpha_{(k)}\big|A\to\alpha\in P\land k=|\alpha|\right\}$ 即可能归约的项目
+
+进一步定义：
+
+（1） $U'=\left\{\{\alpha[k+1]\}\big|A\to\alpha_{(k)}\in U\right\}$
+
+（2） $V'=\left\{FOLLOW(A)\big|A\to\alpha_{(k)}\in V'\right\}$
+
+则有 $Z=V'\cup U'$ 若对于任意 $\{u,v\}\subset Z$ 均有 $u\cap v=\varnothing$ 则可确定唯一后继
 
 ******* 证明
 
-由于不相交，故 $Y$ 至多属于其中一个，若 $Y\in I$
+定义文法 $G$ 根据[[MK118][定义]]构造[[MK128][DFA]] $M=<S,\Sigma,\delta,t,F>$ 
 
-由于 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]且 $v$ 是已经确定的当前状态，故若 $\delta(v,Y)$ 存在
+******** 可能的移进/归约唯一<<MK158>>
 
-则对于 $Y$ 有唯一确定的后继状态 $\delta(v,Y)$ 
+对于任意[[MK20][句型]] $\omega$ ，假设当前状态 $v\in F$ 下一个读入的字符为 $Y$ ，则若：
 
-若 $Y\in FOLLOW(A_i)$ 则可对应唯一[[MK10][产生式]]用于[[MK19][归约]]
+（1） 存在 $x\in V'$ 使得 $Y\in x$ 即存在 $A\to\alpha_{(k)}\in V$ 使得 $Y\in FOLLOW(A)$
 
-故满足[[MK119][LR($1$)文法]]
+     故可能用对应的产生式 $A\to\alpha$ 归约
+
+（2） 存在 $x\in U'$ 使得 $Y\in x$ 即存在 $A\to\alpha_{(k)}\in U$ 使得 $Y=\alpha[k+1]$
+
+     故可能移进 $Y$ 并跳转到 $A\to\alpha_{(k+1)}$ 的[[MK130][有效]]的[[MK112][项目]]
+
+根据条件两两不相交，则可能性唯一。
+
+******** 移进/归约有效
+
+假设[[MK158][上一步]]推测出唯一的移进/归约不能被 $M$ 接受
+
+即 $M$ 不存在可能接收 $Y$ 的后继状态，或归约产生式
+
+由于 $G$ 为定[[MK119][LR($1$)文法]]，则根据[[MK157][定理]]可得 $\omega$ 可以被 $M$ 归约，与上述结论矛盾
+
+故假设不成立，[[MK158][上一步]]推出的可能性是有效归约/移进状态
 
 ***** LR($1$)分析
 
@@ -2908,6 +2938,10 @@ LR($k$)文法不是[[MK43][二义性]]文法
 ******* 证明
 
 易证，暂时省略
+
+***** LALR($1$)分析
+
+
 
 **** 项目
 
@@ -2937,7 +2971,7 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 ****** 定理1<<MK136>>
 
-若 $A\to\beta_{(i)}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK130][有效项目]]，则 $\beta[i]\to\lambda_{(0)},\beta[i]\to\lamdba\in P$ 亦为有效扩展项目
+若 $A\to\beta_{(i)}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK130][有效项目]]，则 $\beta[i]\to\lambda_{(0)},\beta[i]\to\lamdba\in P$ 亦为有效项目
 
 ******* 证明
 
@@ -2993,17 +3027,17 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 定义其扩展项目为二元[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<A\to\beta_{(i)},a>$ 其中 $v$ 是[[MK112][项目]]， $a\in V_T$
 
-为方便表述，记作 $A\to\beta_{(i)}[a]$
+为方便表述，记作 $A\to\beta_{(i),[a]}$
 
 ****** 有效<<MK131>>
 
-一个扩展项目 $A\to\beta_{(i)}[a]$ 满足：
+一个扩展项目 $A\to\beta_{(i),[a]}$ 满足：
 
 （1） $s\Rightarrow^*\alpha A\omega\Rightarrow\alpha\beta\omega$
 
 （2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
 
-（3） $a\in FIRST(\omega)$ 即 $a$ 是 $\omega$ 产生的可能的第一个[[MK9][非终结符]]，即[[MK129][ $FIRST$ 集]]中的元素
+（3） $a\in FIRST(\omega)$ 即 $a$ 是 $\omega$ 产生的可能的第一个[[MK8][终结符]]，即[[MK129][ $FIRST$ 集]]中的元素
 
      特别的根据[[MK134][计算]]得 $FIRST(\epsilon)=\{\#\}$ 故若 $\omega=\epsilon$ 则 $a=\#$
 
@@ -3011,13 +3045,13 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 ****** 定理1<<MK137>>
 
-若 $A\to\beta_{(i)}[a]$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK131][有效扩展项目]]
+若 $A\to\beta_{(i),[a]}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK131][有效扩展项目]]
 
-则 $\beta[i]\to\lambda_{(0)}[b],b\in FIRST(\beta[i+1]...\beta[|\beta|]a)$ 亦为有效扩展项目
+则 $\beta[i]\to\lambda_{(0),[b]},b\in FIRST(\beta[i+1]...\beta[|\beta|]a)$ 亦为有效扩展项目
 
 ******* 证明
 
-对于 $A\to\beta_{(i)}[a]$ 根据[[MK131][定义]]满足
+对于 $A\to\beta_{(i),[a]}$ 根据[[MK131][定义]]满足
 
 （1） $s\Rightarrow\alpha A\omega\Rightarrow\alpha\beta\omega$
 
@@ -3031,17 +3065,17 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 又根据 $b\in FIRST(\beta[i+1]...\beta[|\beta|]\apha)$ 
 
-综上所述 $\beta[i]\to\lambda_{(0)}[b]$ 亦是有效扩展项目，证毕
+综上所述 $\beta[i]\to\lambda_{(0),[b]}$ 亦是有效扩展项目，证毕
 
 ****** 定理2<<MK138>>
 
-若 $A\to\beta_{(i)}[a]$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK131][有效扩展项目]]
+若 $A\to\beta_{(i),[a]}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK131][有效扩展项目]]
 
-则 $A\to\beta_{(i+1)}[a],i<|\beta|$ 亦为有效扩展项目
+则 $A\to\beta_{(i+1),[a]},i<|\beta|$ 亦为有效扩展项目
 
 ******* 证明
 
-对于 $A\to\beta_{(i)}[a]$ 根据[[MK131][定义]]满足
+对于 $A\to\beta_{(i),[a]}$ 根据[[MK131][定义]]满足
 
 （1） $s\Rightarrow\alpha A\omega\Rightarrow\alpha\beta\omega$
 
@@ -3054,6 +3088,7 @@ LR($k$)文法不是[[MK43][二义性]]文法
 故结论成立
 
 **** 前缀
+
 ***** 前缀定义<<MK113>>
 
 若有[[MK3][字符串]] $\alpha$ ，其任意字符串 $\beta$ 满足 $\alpha=\beta\omega$ 其中 $\omega$ 亦为字符串
