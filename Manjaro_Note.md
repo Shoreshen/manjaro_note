@@ -581,7 +581,7 @@ pacman -S emacs
 Install <code>texlive</code> by:
 
 ```shell
-pacman -S texlive-core
+pacman -S texlive-core texlive-langchinese
 ```
 
 ## Themes
