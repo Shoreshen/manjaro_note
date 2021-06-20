@@ -1,0 +1,928 @@
+#+LATEX_CLASS: ctexart
+#+OPTIONS: ^:nil
+#+TITLE: 
+
+* 质点运动：
+
+** 一般运动：
+
+*** 基本物理量定义：
+
+**** 运动方程：
+
+***** 矢量形式：
+
+\begin{aligned}
+&\vec{r}=\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}\\
+\end{aligned}
+
+***** 参数形式：
+
+\begin{aligned}
+&x=x(t)\\
+&y=y(t)\\
+&z=z(t)\\
+\end{aligned}
+
+***** 轨道方程：
+
+解参数形式运动方程得到的曲线 $F(x,y,z)=0$
+
+**** 位移：
+
+***** 定义:
+
+质点从 $A=(x_1,y_1,z_1)$ 运动到 $B=(x_2,y_2,z_2)$ ，则位移为 $\Delta \vec{r}=\vec{r}_B-\vec{r}_A=\vec{AB}$
+
+***** 大小：
+
+\begin{aligned}
+&|\Delta \vec{r}| =\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}
+\end{aligned}
+
+**** 路程:
+
+***** 定义路程符号 $\Delta S$ ：
+
+\begin{aligned}
+\Delta S=\int_{t_0}^{t_1} |\Delta \vec{r}(t)| dt=\int_{t_0}^{t_1} \sqrt{x'(t)^2+y'(t)^2+z'(t)^2} dt\\ 
+\end{aligned}
+
+**** 速度：
+
+***** 平均速度：位移/时间
+
+\begin{aligned}
+\vec{v}=\frac{\Delta \vec{r}}{\Delta t}
+\end{aligned}
+
+***** 平均速率：路程/时间
+
+\begin{aligned}
+\bar{v}=\frac{\Delta S}{\Delta t}
+\end{aligned}
+
+***** 瞬时速度：
+
+\begin{aligned}
+&\vec{v}=\frac{d\vec{r}}{dt}=\frac{dx(t)}{dt}\vec{i}+\frac{dy(t)}{dt}\vec{j}+\frac{dz(t)}{dt}\vec{k}=v_x\vec{i}+v_y\vec{j}+v_z\vec{k}\\
+&|\vec{v}|=\frac{dS}{dt}\\
+\end{aligned}
+
+**** 加速度：
+
+***** 平均加速度：
+
+\begin{aligned}
+\overline{\vec{a}}=\frac{\Delta\vec{v}}{\Delta t}
+\end{aligned}
+
+***** 瞬时加速度：
+
+\begin{aligned}
+\vec{a}=\frac{d\vec{v}}{dt}=\frac{d^2\vec{r}}{dt^2}=\frac{dv_x(t)}{dt}\vec{i}+\frac{dv_y(t)}{dt}\vec{j}+\frac{dv_z(t)}{dt}\vec{k}
+=\frac{d^2x(t)}{dt^2}\vec{i}+\frac{d^2y(t)}{dt^2}\vec{j}+\frac{d^2z(t)}{dt^2}\vec{k} =a_x\vec{i}+a_y\vec{j}+a_z\vec{k} 
+\end{aligned}
+
+***** 大小：
+
+\begin{aligned}
+&|\vec{a}|=\sqrt{a_x^2+a_y^2+a_z^2}
+\end{aligned}
+
+**** 自然坐标系加速度推导：
+
+***** 基本假设及推导
+
+设2维平面坐标系 $(x,o,y)$ ，速度方向（运动方程切线方向）与 $x$ 夹角为 $\theta(t)$ ，曲率为 $K(t)$ ，曲率半径 $R(t)=\frac{1}{K(t)}$
+
+设物体运动的方向单位矢量 $\vec{e}(t)=\cos(\theta(t))\vec{i}+\sin(\theta(t))\vec{j}$ 则 $\vec{v}(t)=v(t)\cdot \vec{e}(t)$
+
+切向沿质点前进的方向为正，法向沿运动轨迹的凹侧为正。
+
+加速度为速度关于时间的导数，则如下推导：
+
+\begin{aligned}
+\vec{a}(t)&=\frac{d\vec{v}(t)}{dt}=\frac{d}{dt}\left\{ v(t)\vec{e}(t) \right\}=\frac{dv(t)}{dt}\vec{e}(t)+v(t)\frac{d\vec{e}(t)}{dt}\\
+&=\frac{dv(t)}{dt}\vec{e}(t)+v(t)\left[-\sin(\theta(t))\vec{i}+\cos(\theta(t))\vec{j}\right]\frac{d\theta(t)}{dt}
+\end{aligned}
+
+***** 第二部分变换
+
+****** 夹角微分变换 $\frac{d\theta(t)}{dt}$
+
+由于时间微元中，物体运动的曲线可看成圆弧，则有几何证明：
+
+（1）变动的角度与前后曲率半径练成的圆心角相等；
+（2）弧长除以曲率半径为变动的角度
+
+故得 $d\theta=\frac{1}{R(t)}dS$ 其中 $dS$ 为路程微元，可视为弧长，则 $\frac{d\theta}{dt}=\frac{1}{R(t)}\frac{dS}{dt}=\frac{v(t)}{R(t)}$ 因为在微元中位移矢量的长度等于路程。
+
+****** 矢量的变换 $-\sin(\theta(t))\vec{i}+\cos(\theta(t))\vec{j}$
+
+由于 $(-\sin(\theta(t))\vec{i}+\cos(\theta(t))\vec{j})\cdot \vec{e}(t) = (\sin(\theta(t))\vec{i}-\cos(\theta(t))\vec{j})\cdot \vec{e}(t) = 0$ 则 $-\sin(\theta(t))\vec{i}+\cos(\theta(t))\vec{j}$ 和 $\sin(\theta(t))\vec{i}-\cos(\theta(t))\vec{j}$ 为垂直于 $\vec{e}(t)$ 的两个单位向量。
+
+故可用 $\vec{e}_n(t)$ 表示运动方向垂直的单位法向量
+
+****** 方向与正负：
+
+******* 若运动轨迹向下凹： 
+
+则 $\theta(t)$ 减小，故 $d\theta<0$ 又由于曲率半径及运动路程恒为正数，则 $\frac{d\theta}{dt}=-\frac{1}{R(t)}\frac{dS}{dt}=-\frac{v(t)}{R(t)}$
+
+法向量为 $\vec{e}_n(t)=\sin(\theta(t))\vec{i}-\cos(\theta(t))\vec{j}$ ，且 $-\sin(\theta(t))\vec{i}+\cos(\theta(t))\vec{j}=-\vec{e}_n(t)$
+
+******* 若运动轨迹向上凹：
+
+则 $\theta(t)$ 增大，故 $d\theta<0$ 又由于曲率半径及运动路程恒为正数，则 $\frac{d\theta}{dt}=\frac{1}{R(t)}\frac{dS}{dt}=\frac{v(t)}{R(t)}$
+
+法向量为 $\vec{e}_n(t)=-\sin(\theta(t))\vec{i}+\cos(\theta(t))\vec{j}$ ，$-\sin(\theta(t))\vec{i}+\cos(\theta(t))\vec{j}=\vec{e}_n(t)$
+
+******* 结论：
+
+不论凹向，恒等式 $(-\sin(\theta(t))\vec{i}+\cos(\theta(t))\vec{j})\frac{d\theta(t)}{dt}=\vec{e}_n(t) \frac{v(t)}{R(t)}$ 成立 
+
+***** 带入
+
+\begin{aligned}
+\vec{a}(t)&=\frac{d\vec{v}(t)}{dt}=\frac{d}{dt}\left\{ v(t)\vec{e}(t) \right\}=\frac{dv(t)}{dt}\vec{e}(t)+v(t)\frac{d\vec{e}(t)}{dt}\\
+&=\frac{dv(t)}{dt}\vec{e}(t)+v(t)\left[-\sin(\theta(t))\vec{i}+\cos(\theta(t))\vec{j}\right]\frac{d\theta(t)}{dt}\\
+&=\frac{dv(t)}{dt}\vec{e}(t)+v(t)\vec{e}_n(t) \frac{v(t)}{R(t)}\\
+&=\frac{dv(t)}{dt}\vec{e}(t)+\frac{v^2(t)}{R(t)}\vec{e}_n(t) \\
+\end{aligned}
+
+其中 $\frac{dv(t)}{dt}$ 为切线方向上的加速度分量  $\frac{v^2(t)}{R(t)}$ 为法线方向上的加速度分量
+
+*** 经典力学运动规律：
+
+**** 牛顿三定律：
+
+***** 性定律：
+
+不收外力下保持静止或匀速直线运动。
+
+***** 动量定律：
+
+$F(t)=\frac{d\vec{p}(t)}{dt},\ \vec{p}(t)=m(t)\vec{v}(t)$ 如果质量随时间保持不变 $F(t)=\frac{d\vec{p}(t)}{dt}=m\frac{d\vec{v}(t)}{dt}=m\vec{a}(t)$
+
+***** 作用力与反作用力：
+
+$F_1=-F_2$ 作用力与反作用力大小相等，方向相反。
+
+**** 万有引力：
+
+\begin{aligned}
+F_1=F_2=G\frac{m_1m_1}{r^2}
+\end{aligned}
+
+其中 $G$ 为万有引力常量 $m_1,m_2$ 为两个物体质量 $r$ 为质点间的半径， $F_1,F_2$ 为万有引力的作用力与反作用力的大小（不带方向）。
+
+**** 惯性力：
+
+假设参考系为非惯性系且受到 $\vec{a}(t)$ 的加速度，则参考系不满足牛顿运动定律。
+
+若不考虑相对论效应 $F=m\vec{a}(t)$ 故惯性力与加速度方向相反，与加速度力大小相同 $F_i=-m\vec{a}(t)$
+
+*** 动量：
+
+**** 定义：
+
+根据牛顿第二运动定律 $F(t)=\frac{d\vec{p}(t)}{dt},\ \vec{p}(t)=m(t)\vec{v}(t)$ 如果质量随时间保持不变 $F(t)=\frac{d\vec{p}(t)}{dt}=m\frac{d\vec{v}(t)}{dt}=m\vec{a}(t)$
+
+**** 冲量：
+
+\begin{aligned}
+\vec{I}=d\vec{p}(t)=F(t)dt
+\end{aligned}
+
+**** 动量守恒：
+
+若系统所受合外力为0，则系统总动量为常数 $\sum_{i=1}^n m_i(t)v_i(t)=C$ 其中 $C$ 是一个与时间无关的常量。
+
+动量守恒不仅适用于宏观领域，也适用于微观（量子）领域。
+
+3维坐标系动量守恒分量形式：
+
+\begin{aligned}
+&p_x(t)=\sum_{i=1}^n m_i(t)v_ix(t)=C_x\Leftrightarrow F_x=0\\
+&p_y(t)=\sum_{i=1}^n m_i(t)v_iy(t)=C_y\Leftrightarrow F_y=0\\
+&p_z(t)=\sum_{i=1}^n m_i(t)v_iz(t)=C_z\Leftrightarrow F_z=0\\
+\end{aligned}
+
+*** 机械能：
+
+**** 功：
+
+***** 定义：
+
+功的定义为 $dW=F(t)\cos(\theta(t))dr=\vec{F}(t)\cdot d\vec{r}$ 功有正负，不分大小。 
+
+功的积分形式 $W(t)=\int_a^b\vec{F}(t) \cdot d\vec{r}$ ，由于 $\vec{v}(t)=\frac{d\vec{r}}{dt}\Rightarrow d\vec{r}=\vec{v}(t)dt$ ，故 $W(t)=\int_{t_1}^{t_2}\vec{F}(t) \cdot \vec{v}(t) dt$
+
+***** 功率：
+
+定义： $P=\frac{dW(t)}{dt}=\frac{d}{dt}\left\{\int_{t_0}^{t}\vec{F}(x) \cdot \vec{v}(x) dx\right\}=\vec{F}(t) \cdot \vec{v}(t)$
+
+**** 动能：
+
+假设和外力 $\vec{F}(t)$ ，初始和末尾速度为 $\vec{v}_0=v_{0x}\vec{i}+v_{0y}\vec{j}+v_{0z}\vec{k},\vec{v}_t=v_{tx}\vec{i}+v_{ty}\vec{j}+v_{tz}\vec{k}$ 时间为 $0,t$ ，则：
+
+\begin{aligned}
+W(t)&=\int_0^t \vec{F}(t) \cdot \vec{v}(t) dt\\
+&=\int_0^t m\vec{a}(t) \cdot \vec{v}(t) dt\\
+&=\int_0^t m\frac{d\vec{v}(t)}{dt} \cdot \vec{v}(t) dt\\
+&=\int_{0}^{t} m\vec{v(t)} \cdot d\vec{v}(t)\
+\end{aligned}
+
+替换积分变量 $t\to \vec{v}$ ，且速度标量定义为 $v_0=\sqrt{v_{0x}^2+v_{0y}^2+v_{0z}^2},\ v_t=\sqrt{v_{tx}^2+v_{ty}^2+v_{tz}^2}$ 则：
+
+\begin{aligned}
+W(t)&=\int_{\vec{v}_0}^{\vec{v}_t} m\vec{v} \cdot d\vec{v}\\
+&=m\int_{\vec{v}_0}^{\vec{v}_t} \left(v_{x}\vec{i}+v_{y}\vec{j}+v_{z}\vec{k}\right) \cdot \left(dv_{x}\vec{i}+dv_{y}\vec{j}+dv_{z}\vec{k}\right)\\
+&=m\int_{\vec{v}_0}^{\vec{v}_t} v_{x}dv_{x}+v_{y}dv_{y}+v_{z}dv_{z} \\
+&=m\left(\int_{v_{0x}}^{v_{tx}} v_{x}dv_{x}+\int_{v_{0y}}^{v_{ty}} v_{y}dv_{y}+\int_{v_{0z}}^{v_{tz}} v_{z}dv_{z}\right)\\
+&=m\frac{1}{2}\left(v_{tx}^2-v_{0x}^2+v_{ty}^2-v_{0y}^2+v_{tz}^2-v_{0z}^2\right)\\
+&=\frac{1}{2}mv_t^2-\frac{1}{2}mv_0^2\\
+\end{aligned}
+
+故质点动能定义 $E_k=\frac{1}{2}mv^2$
+
+**** 势能：
+
+***** 保守力：
+
+闭合路径力场做功为0的力场 $\oint_R \vec{F} \cdot d\vec{r}$
+
+***** 势能定义：
+
+相对位置决定，大小与保守力做功有关。物体在保守立场中 $a,b$ 两点的势能差 $E_{pa}-E_{pb}$ 等于保守力在物体移动过程中做的功 $W_{ab}$
+
+**** 机械能定义：
+
+机械能等于势能与动能的和 $\sum_{i=1}^n E_i =\sum_{i=1}^n E_{ki}+\sum_{i=1}^n E_{pi}$
+
+**** 机械能守恒定律：
+
+系统不收非保守力的情况下，机械能守恒 $\sum_{i=1}^n E_i =\sum_{i=1}^n E_{ki}+\sum_{i=1}^n E_{pi}=C$ 其中 $C$ 为常数
+
+** 圆周运动：
+
+*** 定义：
+
+运动轨迹为半径为 $R$ 的圆
+
+*** 加速度方向：
+
+**** 匀速圆周：
+
+根据自然坐标系推导结果：
+
+\begin{aligned}
+&a_n=\frac{v^2}{R}\\
+&a_\tau=0\\
+\end{aligned}
+
+其中 $a_n$ 为运动法向量分量大小， $a_\tau$ 为运动方向分量大小，上述物理量的大小均与时间无关，仅方向与时间相关。
+
+另可得向心力大小在不考虑相对论效应下 $F=ma=\frac{v^2m}{R}$
+
+**** 一般圆周：
+
+\begin{aligned}
+&a_n(t)=\frac{(v(t))^2}{R}\\
+&a_\tau(t)=\frac{dv(t)}{dt}\\
+\end{aligned}
+
+*** 角速度：
+
+每单位时间内圆心与质点连线划过的角度（弧度）
+
+$\omega(t)=\frac{d\theta(t)}{dt}=\frac{dS(t)}{Rdt}=\frac{v(t)}{R}$
+
+角速度方向为质点旋转方向垂直，右手螺旋定则方向。
+
+*** <<P3>>角动量：
+
+**** 定义：
+
+角动量的定义 $\vec{L}=\vec{r} \times \vec{p}$ 若不考虑相对论效应（质量不变） $\vec{L}=m\vec{r} \times \vec{v}$
+
+**** 力矩：
+
+力矩定义： 
+
+\begin{aligned}
+\vec{M}&=\frac{d\vec{L}}{dt}=\frac{d\vec{r} \times \vec{p}}{dt}=\frac{d\vec{r}}{dt}\times \vec{p}+\vec{r} \times \frac{d\vec{p}}{dt}\\
+&=m\vec{v}\times \vec{v}+\vec{r} \times \frac{d\vec{p}}{dt}\\
+&=\vec{r} \times \vec{F}\\
+\end{aligned}
+
+积分形式：
+
+\begin{aligned}
+\vec{L}_2-\vec{L}_1=\int_{\vec{L}_2}^{\vec{L}_1}dL=\int_{t_2}^{t_1}\vec{M}dt
+\end{aligned}
+
+故角动量的增量为质点所受到的外力矩之和。
+
+**** 角动量守恒定理：
+
+若质点收到的外力矩为零，则质点角动量保持不变 $\vec{L}=\vec{r} \times \vec{p}=C$ ，其中 $C$ 为常数
+
+* 刚体力学：
+
+** 刚体转动：
+
+角位置 $\theta(t)$ ，定义为弧度，则有以下推导：
+
+*** 角速度：
+
+角速度大小定义为：$\omega=\frac{d\theta(t)}{dt}=\frac{v}{r}$ 单位时间角位置变化量；
+
+角速度是 *矢量* 其方向定义为 $\vec{v}(t)=\vec{w}(t) \times \vec{r}$ 其中 $\vec{r}$ 为转动圆心到质点的矢量。
+
+*** 角加速度：
+
+$\vec{\beta }(t)=\frac{d\vec{\omega}(t)}{dt}$ 定义为角速度随时间的变化量；
+
+**** 角加速度和线加速度关系：
+
+\begin{aligned}
+\vec{a}(t)&=\frac{d\vec{v}(t)}{dt}=\frac{d}{dt}\vec{\omega}(t) \times \vec{r}\\
+&=\frac{d\vec{\omega}(t)}{dt}\times \vec{r}+\vec{\omega}(t) \times \frac{d\vec{r}}{dt}\\
+&=\vec{\beta}(t)\times \vec{r}+\vec{\omega}(t) \times \frac{d\vec{r}}{dt}\\
+\end{aligned}
+
+第一项中，角加速度 $\vec{\beta}(t)$ 与矢量 $\vec{r}$ 垂直，且 $\vec{r}$ 由圆心指向圆周运动质点，故 $\vec{\beta}(t)\times \vec{r}=\beta(t)r\vec{e}(t)$ 其中 $\vec{e}(t)$ 为指向切线方向的单位矢量。
+
+第二项中，$d\vec{r}=\lim_{\Delta t\to\0}\frac{\vec{r}(t+\Delta t)-\vec{r}(t)}{\Delta t}$ 为圆周运动中单位时间内质点的位移矢量，方向沿切线方向，大小在极限状态下等于路程大小。
+
+路程函数为 $ds=dr=\frac{d\theta(t)r}{dt}=r\omega(t)$
+
+且由于和线速度 $\vec{v}$ 在同一转动平面内，故垂直于角加速度夹角为90度，则 $\vec{\omega}(t) \times \frac{d\vec{r}}{dt}=\omega^2(t)r\vec{e}_n(t)$ 其中 $\vec{e}_n(t)$ 为法线方向上的矢量。
+
+则有：
+
+\begin{aligned}
+\vec{a}(t)=\beta(t)r\vec{e}(t)+\omega^2(t)r\vec{e}_n(t)
+\end{aligned}
+
+且第一项为切线分量，第二项为法线分量。
+
+*** 力矩:
+
+$\vec{M}=\vec{r}\times\vec{F}$ 其中 $\vec{F}$ 为质点收到的外力
+
+*** <<P1>>刚体定轴转动定律：
+
+**** 定义：
+
+刚体转动的角加速度与合外力距成正比： $M=\sum r_i^2  m_i \beta=J\beta$ ，其中 $r_i$ 为质点半径 $m_i$ 为质点质量。
+
+其中 $J=\sum r^2_i m_i$ 定义为刚体的转动惯量。
+
+**** 证明：
+
+把刚体看成质点系，则质点收到外力和内力（质点间相互作用力，万有引力等）
+
+故对于单个质点 $i$ 在忽略相对论效应下：
+
+\begin{aligned}
+&\vec{f}_i+\vec{F}_i=m_i\vec{a}_i\\
+&\vec{r}_i \times \vec{f}_i+\vec{r}_i \times \vec{F}_i=\vec{r}_i \times m_i\vec{a}_i\\
+\end{aligned}
+
+其中 $\vec{f}_i$ 为质点收到的合内力 $\vec{F}_i$ 为质点收到的合外力 $m_i$ 为质点的质量 $\vec{a}_i$ 为质点运动的加速度
+
+对于刚体质点系：
+
+\begin{aligned}
+&\sum\vec{r}_i \times \vec{f}_i+\sum\vec{r}_i \times \vec{F}_i=\sum\vec{r}_i \times m_i\vec{a}_i\\
+\end{aligned}
+
+由于内力为质点间相互作用力，根据牛顿定律，大小相等方向相反，故内力求和项零，则有
+
+\begin{aligned}
+&\sum\vec{r}_i \times \vec{F}_i=\sum\vec{r}_i \times m_i\vec{a}_i\\
+&\vec{M}=\sum\vec{r}_i \times m_i\vec{a}_{i\tau}+\sum\vec{r}_i \times m_i\vec{a}_{in}\\
+\end{aligned}
+
+其中 $\vec{a}_{i\tau}$ 为切线方向加速度矢量，与 $\vec{r}_i$ 垂直；
+
+$\vec{a}_{in}$ 为法线方向加速度矢量，与 $\vec{r}_i$ 平行，故叉乘为0，所以对于标量：
+
+\begin{aligned}
+&M=\sum r_i^2  m_i \beta_i\\
+\end{aligned}
+
+由于刚体的定义（所有质点间的相互距离不变），各质点的角速度相等：
+
+\begin{aligned}
+&M=\sum r_i^2  m_i \beta=J\beta\\
+\end{aligned}
+
+故推导出刚体定轴转动定律，即刚体转动的角加速度与合外力距成正比。
+
+*** 转动动能：
+
+质量微元动能： $E_ki=\frac{1}{2}m_iv_i^2$ 
+
+则，刚体动能为质量微元动能和: 
+
+\begin{aligned}
+&E_k=\sum \frac{1}{2}m_iv_i^2=\frac{1}{2}\sum m_iv_i^2=\frac{1}{2}\omega^2\sum m_ir_i^2=\frac{1}{2}\omega^2J\\
+\end{aligned}
+
+其中 $J$ 为转动惯量
+
+*** 重力势能
+
+根据地球引力势能 $E_{pi}c=m_igh_i$ ,故刚体的重力势能为:
+
+\begin{aligned}
+E_p&=\sum m_igh_i\\
+&=mg\frac{m_ih_i}{m}\\
+&=mgh_c\\
+\end{aligned}
+
+其中 $m$ 为总质量 $h_c=\frac{m_ih_i}{m}$ 为质量平均高度，即质心的高度。
+
+*** 刚体机械能；
+
+\begin{aligned}
+&E=E_k+E_p=\frac{1}{2}\omega^2J+mgh_c\\
+\end{aligned}
+
+*** <<P2>>力矩的功
+
+\begin{aligned}
+dA_i=F_i \cos\alpha_i ds=F_i\cos\alpha_i r_i d\phi
+\end{aligned}
+
+其中各符号分别表示质点 $i$ 的：
+
+$F_i$ 力
+
+$A_i$ 力做的功
+
+$s_i$ 质点经过路程，极限情况下等于位移 $dr$
+
+$\alpha_i$ 质点经过位移和外力的夹角
+
+$r_i$ 半径
+
+$\phi_i$ 角变化（弧度）
+
+若外力 $\vec{F}_i$ 与半径 $\vec{r}_i$ 夹角为 $\beta_i$ ，由于在极限情况下，位移与半径近似垂直，故 $\cos\alpha_i=\sin\beta_i$ 故 $F_i\cos\alpha_i r_i=F_i \sin\beta_i r_i=M_i$ 为力矩。
+
+故功元可表示为 $dA_i=M_i d\phi$
+
+力做的功表示为 $A_i=\int_{\phi_0}^{\phi_1} M_i d\phi$
+
+和力做的功为 $A=\sum A_i=\int_{\phi_0}^{\phi_1} \sum M_i d\phi$
+
+*** 力矩功率:
+
+\begin{aligned}
+P=\frac{dA}{dt}=\frac{Md\phi}{dt}=M\omega
+\end{aligned}
+
+其中 $\omega$ 为角速度
+
+*** 刚体转动动能定理
+
+根据[[P1][刚体定轴转动定律]] $M_i=r_i^2 m_i \beta$ 其中 $\beta$ 为角加速度 $\frac{d\omega}{dt}$ ，带入[[P2][力矩功]]的公式中:
+
+\begin{aligned}
+\because &dA_i=M_id\phi=r_i^2 m_i\frac{d\omega}{dt}d\phi=r_i^2 m_i\omega d\omega\\
+\therefore & A_i=\int_{\omega_1}^{\omega_2} r_i^2 m_i \omega d\omega=\frac{1}{2}r_i^2 m_i\omega_2^2-\frac{1}{2}r_i^2 m_i\omega_1^2\\
+\therefore & A=\sum A_i=\int_{\omega_1}^{\omega_2} \sum r_i^2 m_i \omega d\omega=\int_{\omega_1}^{\omega_2} J \omega d\omega=\frac{1}{2}J\omega_2^2-\frac{1}{2}J\omega_1^2
+\end{aligned}
+
+即和外力做的功为刚体转动动能的增量。
+
+*** 刚体角动量定理
+
+**** 刚体角动量
+
+根据[[P3][质点角动量定理]]可得： 
+
+\begin{aligned}
+\because &\vec{L}_i=\vec{r}_i \times \vec{p}_i\\
+\therefore &\vec{L}=\sum \vec{r}_i \times \vec{p}_i=\sum \vec{r}_i \times m_i\vec{v}_i\\
+&=\sum \vec{r}_i \times m_i\vec{v}_i
+\end{aligned}
+
+由于刚体转动质点速度与 $\vec{r}$ 垂直，故:
+
+\begin{aligned}
+\vec{L}&=\vec{e}\sum \vec{r}_i \times m_i\vec{v}_i\\
+&=\vec{e}\sum r_im_iv_i\\
+&=\vec{e}\sum r_i^2m_i\omega\\
+&=\vec{e}J\omega\\
+&=J\vec{\omega}\\
+\end{aligned}
+
+**** 刚体角动量定理：
+
+同样根据[[P3][质点角动量定理]]可得：
+
+\begin{aligned}
+\frac{d\vec{L}}{dt}&=\sum \frac{d\vec{L}_i}{dt}\\
+&=\sum \vec{M}_i\\
+&=\vec{M}\\
+\end{aligned}
+
+积分形式：
+
+\begin{aligned}
+\vec{L}_2-\vec{L}_1=\int_{\vec{L}_1}^{\vec{L}_1}d\vec{L}=\int_{t_1}^{t_1}\vec{M}dt=J_2\vec{\omega}_2-J_1\vec{\omega}_1
+\end{aligned}
+
+**** 刚体角动量守恒定律：
+
+若合外力距 $\vec{M}=0$ 则刚体角动量变化量为零。
+
+* 流体力学
+
+** 基本物理概念定义：
+
+*** 流体定义：
+
+形状与容器形状一致且随容器变化而变化
+
+*** 流线：
+
+曲线上任一点切线方向与该点流速方向一致。
+
+*** <<P3>>流管：
+
+如果在运动流体中取一横截面，则通过其周边各点的流线所围成的管状体叫做流管。流管内流线不会穿越流管壁。
+
+*** <<P6>>理想流体：
+
+不具有压缩性和黏滞性。
+
+*** <<P5>>定常流动：
+
+设流体中各点的流速为以下函数 $\vec{v}(x,y,z,t)=(v_x(x,y,z,t),v_y(x,y,z,t),v_z(x,y,z,t))$ ，若函数与时间无关 $\vec{v}(x,y,z,t)=\vec{v}(x,y,z)$ 则称为定常流动。
+
+*** <<P4>>静止流体：
+
+静置的无质量质点在流体中收到的合力为零，即流体中各点在各方向收到的压强处处相等。
+
+** 帕斯卡原理：
+
+*** 描述：
+
+不可压[[P4][缩静止流]]体中任一点受外力产生压力增值后，此压力增值瞬时间传至静止流体各点。
+
+*** 证明：
+
+假设不可压缩流体可动面表面积为 $S_1,S_2$ ， $S_1$ 面受力，产生移动距离 $D_1$ ，$S_2$ 面相应产生移动距离 $D_2$ 由于不可压缩，故有 $S_1D_1=S_2D_2$
+
+假设 $S_1$ 面受力 $F_1$ ， $S_2$ 面相应受力 $F_2$ ，根据能量守恒定理： 
+
+\begin{aligned}
+&\int_0^{T}F_1(t)\frac{dD_1(t)}{dt}dt=\int_0^{T}F_2(t)\frac{dD_2(t)}{dt}dt\\
+\because &S_1D_1=S_2D_2\\
+\therefore & D_2=\frac{S_1D_1}{S_2}\\
+\therefore & \frac{dD_2}{dD_1}=\frac{S_1}{S_2}\\
+\therefore & \int_0^{T}F_1(t)\frac{dD_1(t)}{dt}dt=\int_0^{T}F_2(t)\frac{S_1}{S_2}\frac{dD_1(t)}{dt}dt\\
+& \int_0^{T}\frac{F_1(t)}{S_1}\frac{dD_1(t)}{dt}dt=\int_0^{T}\frac{F_2(t)}{S_2}\frac{dD_1(t)}{dt}dt\\
+\end{aligned}
+
+两边对 $T$ 求微分：
+
+\begin{aligned}
+&\frac{F_1(T)}{S_1}\frac{dD_1(T)}{dt}=\frac{F_2(T)}{S_2}\frac{dD_1(T)}{dt}\\
+&\Rightarrow \frac{F_1(T)}{S_1}=\frac{F_2(T)}{S_2}\\
+\end{aligned}
+
+故不可压缩流体表面的压强增量相等。
+
+** 静止流体的压强公式：
+
+流体自身压强：
+
+$P_{L}=\rho gh$ 其中 $P$ 为压强， $\rho$ 为液体密度， $g$ 为重力加速度常数， $h$ 为测量点到流体表面的距离。
+
+流体总压强 $P_{Total}=P_L+P_{atm}$ ，其中 $P_{atm}$ 为大气压强。
+
+** 连续性原理：
+
+[[P5][定常流动]]的不可压缩流体，在同一时间通过任意流管段的流体质量相等： $S_1v_1=S_2v_2$
+
+** 伯努利方程：
+
+*** 描述：
+
+[[P5][定常流动]]的[[P6][理想流体]]在同一[[P3][流管]]中不同界面处有以下有： $P+\frac{1}{2}\rho v^2+\rho gh=C$ ，其中：
+
+$P$ 为外力压强；
+$\rho$ 为流体密度；
+$g$ 为重力加速度常量； 
+$h$ 为重力势能高度；
+$C$ 为恒定常数。 
+
+*** 推导：
+
+取：
+
+$S_1,S_2$ ：流管中横截面；
+$P_1,P_2$ ：所受外力的压强；
+$v_1,v_2$ ：截面流体流速为；
+$h_1,h_2$ ：截面的平均高度为；
+
+流体密度为 $\rho$ ，且两截面之间没有外力做功。
+
+根据机械能守恒定律，质量为 $m$ 的流体从截面 $S_1$ 到 $S_2$ 机械能增量为 $\frac{1}{2}mv_2^2+mgh_2-\frac{1}{2}mv_1^2+mgh_1$
+
+同理，外力对质量为 $m$ 的流体做的功为 $P_1S_1\frac{V}{S_1}-P_2S_2\frac{V}{S_2}=P_1V-P_2V=P_1\frac{m}{\rho}-P_2\frac{m}{\rho}$
+
+根据能量守恒定律 $
+
+\begin{aligned}
+&P_1\frac{m}{\rho}-P_2\frac{m}{\rho}=\frac{1}{2}mv_2^2+mgh_2-\frac{1}{2}mv_1^2+mgh_1\\
+&P_1\frac{m}{\rho}+\frac{1}{2}mv_1^2+mgh_1=P_2\frac{m}{\rho}+\frac{1}{2}mv_2^2+mgh_2\\
+&P_1+\frac{1}{2}\rho v_1^2+\rho gh_1=P_2+\frac{1}{2}\rho v_2^2+\rho gh_2\\
+\end{aligned}
+
+故 $P+\frac{1}{2}\rho v^2+\rho gh$ 在定常流动的理想流体中为常量。
+
+* 狭义相对论
+
+** 伽利略变换
+
+假设坐标系 $S(x,y,z,t)\ ,\ S'(x',y',z',t')$ 则有：
+
+\begin{aligned}
+\begin{cases}
+&x'=x-ut\\
+&y'=y\\
+&z'=z\\
+&t'=t\\
+\end{cases}
+\begin{cases}
+&u_x'=v_x+u\\
+&u_y'=v_y\\
+&u_z'=v_z\\
+\end{cases}
+\begin{cases}
+&a_x'=a_x\\
+&a_y'=a_y\\
+&a_z'=a_z\\
+\end{cases}
+\end{aligned}
+
+其中 $u$ 为不同坐标系下观察到物体的运动速度， $u$ 为坐标系间的相对运动速度， $a$ 为不同坐标系下观察到物体的加速度。
+
+** 洛伦兹变换（时空坐标）
+
+*** 描述
+
+假设坐标系 $S(x,y,z,t)\ ,\ S'(x',y',z',t')$ 则有：
+
+\begin{aligned}
+\begin{cases}
+&x'=\frac{x-ut}{\sqrt{1-\left(\frac{u}{c}\right)^2}}\\
+&y'=y\\
+&z'=z\\
+&t'=\frac{t-\frac{v}{c^2}x}{\sqrt{1-\left(\frac{u}{c}\right)^2}}\\
+\end{cases}
+\ \ 
+\begin{cases}
+&x=\frac{x'+ut'}{\sqrt{1-\left(\frac{u}{c}\right)^2}}\\
+&y=y'\\
+&z=z'\\
+&t=\frac{t'+\frac{u}{c^2}x'}{\sqrt{1-\left(\frac{u}{c}\right)^2}}\\
+\end{cases}
+\end{aligned}
+
+其中第一列为正变换，第二列为逆变换。
+
+*** 推导
+
+假设 $S'$ 系相对于 $S$ 系沿 $x$ 方向做匀速直线运动，速度为 $u$
+
+故， $y=y',\ z=z'$
+
+又假设时空是均匀的， $S,\ S'$ 系 $x$ 坐标的转换为线性转换，故有在伽利略变换基础上增加转换系数 $k$
+
+\begin{aligned}
+\textcircled{1}
+\begin{cases}
+&x'=k(x-ut)\\
+&x=k(x'+ut')\\
+\end{cases}
+\end{aligned}
+
+假设 $P$ 为被观测点，则当 $P$ 发出光信号的时候到达 $S,\ S'$ 系原点的时刻为:
+
+\begin{cases}
+&x=ct\\
+&x'=ct'
+\end{cases}
+
+带入 $\textcircled{1}$ ：
+
+\begin{aligned}
+\textcircled{1}
+\begin{cases}
+&x'=k(x-ut)\\
+&x=k(x'+ut')\\
+\end{cases}
+=
+\begin{cases}
+&ct'=k(ct-ut)\\
+&ct=k(ct'+ut')\\
+\end{cases}
+=
+\begin{cases}
+&ct'=k(c-u)t\\
+&ct=k(c+u)t'\\
+\end{cases}
+\end{aligned}
+
+两式相乘：
+
+\begin{aligned}
+&c^2tt'=k^2(c-u)(c+u)tt'\\
+&k^2=\frac{c^2}{c^2-u^2}\\
+&k^2=\frac{1}{1-\frac{u^2}{c^2}}\\
+&k=\sqrt{\frac{1}{1-\frac{u^2}{c^2}}}\\
+\end{aligned}
+
+故得到 $x$ 坐标的洛伦兹变换：
+
+\begin{cases}
+&x'=\frac{x-ut}{\sqrt{1-\frac{u^2}{c^2}}}\\
+&x=\frac{x'+ut'}{\sqrt{1-\frac{u^2}{c^2}}}\\
+\end{cases}
+
+将上式与 $k$ 带入 $\textcircled{1}$ 求时间:
+
+\begin{aligned}
+&k(x-ut)=x'\\
+&x-ut=\frac{x'}{k}\\
+&ut=x-\frac{x'}{k}\\
+&t=\frac{1}{u}\left(x-\frac{x'}{k}\right)\\
+&t=\frac{1}{u}\left(k(x'+ut')-\frac{x'}{k}\right)\\
+&t=\frac{k}{u}\left(x'+ut'-\frac{x'}{k^2}\right)\\
+&t=\frac{k}{u}\left(x'+ ut'-x'\left(1-\frac{u^2}{c^2}\right)\right)\\
+&t=k\left(t'+ x'\frac{u}{c^2}\right)\\
+&t=\frac{t'+x'\frac{u}{c^2}}{\sqrt{1-\frac{u}{c^2}}}\\
+\end{aligned} 
+
+同理可证 $t'$ 的转换式： 
+
+\begin{aligned}
+t'=\frac{t-x\frac{u}{c^2}}{\sqrt{1-\frac{u}{c^2}}}\\
+\end{aligned}
+
+故洛伦兹变换推导完毕。
+
+** 速度变换
+
+*** 描述：
+
+\begin{aligned}
+\begin{cases}
+&v'_x=\frac{v_x-u}{1-\frac{u}{c^2}v_x}\\
+&v'_y=\frac{v_y\sqrt{1-\frac{u^2}{c^2}}}{1-\frac{u}{c^2}v_x}\\
+&v'_z=\frac{v_z\sqrt{1-\frac{u^2}{c^2}}}{1-\frac{u}{c^2}v_x}\\
+\end{cases}
+\begin{cases}
+&v_x=\frac{v'_x+u}{1+\frac{u}{c^2}v'_x}\\
+&v_y=\frac{v'_y\sqrt{1+\frac{u^2}{c^2}}}{1+\frac{u}{c^2}v'_x}\\
+&v_z=\frac{v'_z\sqrt{1+\frac{u^2}{c^2}}}{1+\frac{u}{c^2}v'_x}\\
+\end{cases}
+\end{aligned}
+
+*** 推导：
+
+$x$ 方向速度推导：
+
+\begin{aligned}
+v_x'&=\frac{dx'}{dt'}\\
+v_x'&=\frac{dx'}{dx}\frac{dx}{dt}\frac{dt}{dt'}\\
+v_x'&=v_x\frac{1-u\frac{dt}{dx}}{\sqrt{1-\frac{u^2}{c^2}}}\frac{1+\frac{u}{c^2}\frac{dx'}{dt'}}{\sqrt{1-\frac{u^2}{c^2}}}\\
+v_x'&=\frac{1}{1-\frac{u^2}{c^2}}\left(v_x-u\right)\left(1+\frac{u}{c^2}v_x'\right)\\
+v_x'&=\left(v_x-u\right)\frac{c^2+uv_x'}{c^2-u^2}\\
+v_x'&=\left(v_x-u\right)\frac{c^2}{c^2-u^2}+\left(v_x-u\right)\frac{uv_x'}{c^2-u^2}\\
+v_x'-\left(v_x-u\right)\frac{uv_x'}{c^2-u^2}&=\left(v_x-u\right)\frac{c^2}{c^2-u^2}\\
+v_x'\left(1-\left(v_x-u\right)\frac{u}{c^2-u^2}\right)&=\left(v_x-u\right)\frac{c^2}{c^2-u^2}\\
+v_x'\frac{c^2-u^2-uv_x+u^2}{c^2-u^2}&=\left(v_x-u\right)\frac{c^2}{c^2-u^2}\\
+v_x'\frac{c^2-uv_x}{c^2-u^2}&=\left(v_x-u\right)\frac{c^2}{c^2-u^2}\\
+v_x'&=\left(v_x-u\right)\frac{c^2}{c^2-uv_x}\\
+v_x'&=\frac{v_x-u}{1-\frac{u}{c^2}v_x}\\
+\end{aligned}
+
+$y$ 方向速度推导：
+
+\begin{aligned}
+v_y'&=\frac{dy'}{dt'}\\
+&=\frac{dy'}{dy}\frac{dy}{dt}\frac{dt}{dt'}\\
+&=v_y\frac{1+\frac{u}{c^2}\frac{dx'}{dt'}}{\sqrt{1-\frac{u^2}{c^2}}}\\
+&=v_y\frac{1+\frac{u}{c^2}v_x'}{\sqrt{1-\frac{u^2}{c^2}}}\\
+&=v_y\frac{1+\frac{u}{c^2}\frac{v_x-u}{1-\frac{u}{c^2}v_x}}{\sqrt{1-\frac{u^2}{c^2}}}\\
+&=v_y\frac{1+\frac{uv_x-u^2}{c^2-uv_x}}{\sqrt{1-\frac{u^2}{c^2}}}\\
+&=v_y\frac{\frac{c^2-uv_x+uv_x-u^2}{c^2-uv_x}}{\sqrt{1-\frac{u^2}{c^2}}}\\
+&=v_y\frac{1-\frac{u^2}{c^2}}{1-\frac{u}{c^2}v_x}\frac{1}{\sqrt{1-\frac{u^2}{c^2}}}\\
+&=v_y\frac{\sqrt{1-\frac{u^2}{c^2}}}{1-\frac{u}{c^2}v_x}\\
+\end{aligned}
+
+其他方向速度推导同理。
+
+** 质速关系
+
+*** 描述:
+
+\begin{aligned}
+m(u)=\frac{m_0}{\sqrt{1-\frac{u^2}{c^2}}}
+\end{aligned}
+
+其中 $u$ 为相对运动速度， $m_0$ 为物体的静止质量。
+
+*** 推导:
+
+设两个惯性坐标系 $S,\ S'$ 其中 $S'$ 相对于 $S$ 以速度 $u$ 做匀速直线运动
+
+两个相同的质点 $A,\ B$ 分别于 $S,\ S'$ 系中静止，静止时质量为 $m_0$
+
+在 $S$ 系中观察到 $B$ 以速度 $u$ 碰撞 $A$ 碰撞后的质量为 $M$ ，速度为 $v$
+
+在 $S'$ 系中观察到 $A$ 以速度 $-u$ 碰撞 $B$ 碰撞后的质量为 $M'$ ，速度为 $v'$
+
+故可得出 $v=-v'\ \&\ M=M'$ 且根据质量守恒及动量守恒连列方程
+
+\begin{cases}
+&m(u)+m_0=M\\
+&um(u)=Mv\\
+\end{cases}
+
+可求得 $\frac{m(u)+m_0}{m(u)}=\frac{u}{v}$
+
+又根据洛伦兹变换中速度变换式求解 $u$ ：
+
+\begin{aligned}
+\because &-v=\frac{v_x-u}{1-\frac{u}{c^2}v}\\
+&-v+\frac{u}{c^2}v^2=v_x-u\\
+&\frac{u}{c^2}v^2-2v+u=0\\
+\therefore &v=\frac{-(-2)\pm \sqrt{(-2)^2-4\frac{u}{c^2}u}}{2\frac{u}{c^2}}\\
+\because &v<c\\
+\therefore &v=\frac{-(-2)- \sqrt{(-2)^2-4\frac{u}{c^2}u}}{2\frac{u}{c^2}}\\
+&v=\frac{2- \sqrt{4-4\frac{u^2}{c^2}}}{2\frac{u}{c^2}}\\
+&v=\frac{1- \sqrt{1-\frac{u^2}{c^2}}}{\frac{u}{c^2}}\\
+\end{aligned}
+
+带入上式：
+
+\begin{aligned}
+&\frac{m(v)+m_0}{m(v)}=\frac{u}{\frac{1- \sqrt{1-\frac{u^2}{c^2}}}{\frac{u}{c^2}}}\\
+&\frac{m(v)+m_0}{m(v)}=\frac{\frac{u^2}{c^2}}{1- \sqrt{1-\frac{u^2}{c^2}}}\\
+&(m(v)+m_0)\left(1- \sqrt{1-\frac{u^2}{c^2}}\right)=\frac{u^2}{c^2}m(v)\\
+&m(v)\left(1- \sqrt{1-\frac{u^2}{c^2}}\right)-\frac{u^2}{c^2}m(v)=-m_0\left(1- \sqrt{1-\frac{u^2}{c^2}}\right)\\
+&m(v)\left(1- \frac{u^2}{c^2}-\sqrt{1-\frac{u^2}{c^2}}\right)=-m_0\left(1- \sqrt{1-\frac{u^2}{c^2}}\right)\\
+&m(v)\sqrt{1-\frac{u^2}{c^2}}\left(\sqrt{1-\frac{u^2}{c^2}}-1\right)=-m_0\left(1- \sqrt{1-\frac{u^2}{c^2}}\right)\\
+&m(v)\sqrt{1-\frac{u^2}{c^2}}=m_0\\
+&m(v)=\frac{m_0}{\sqrt{1-\frac{u^2}{c^2}}}\\
+\end{aligned}
+
+** 质能关系
+
+*** 描述
+
+物体的动能： $E_k=mc^2-m_0c^2$ 其中 $m$ 为运动质量， $m_0$ 为静止质量
+
+物体的总能量： $E=mc^2$
+
+*** 推导
+
+根据质速关系推导
+
+\begin{aligned}
+\because & m=\frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}\\
+&m^2\left(1-\frac{v^2}{c^2}\right)=m_0^2\\
+&m^2c^2-m^2v^2=m_0c^2\\
+\therefore & \frac{d(m^2c^2-m^2v^2)}{dv}=\frac{d(m_0c^2)}{dv}\\
+&2c^2m\frac{dm}{dv}-2mv\frac{d(mv)}{dv}=0\\
+&2c^2m\frac{dm}{dv}=2mv\frac{d(mv)}{dv}\\
+\therefore &c^2dm=vd(mv)\\
+\end{aligned}
+
+动能为外力做功：
+
+\begin{aligned}
+&E_k=\int_0^R Fdr\\
+\because &F=\frac{dmv}{dt}\\
+\therefore &E_k=\int_0^R \frac{d(mv)}{dt}dr\\
+\because &dr=vdt\\
+\therefore &E_k=\int_0^T \frac{d(mv)}{dt}vdt\\
+&E_k=\int_0^{MV} vd(mv)\\
+&E_k=\int_0^{M} c^2d(m)\\
+&E_k=c^2m-c^2m_0\\
+\end{aligned}
+
+其中 $m_0c^2$ 为物体的静止能量，物体总能量为 $E_k=mc^2$
+ 
