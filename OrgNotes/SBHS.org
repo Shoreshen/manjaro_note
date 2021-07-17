@@ -4,13 +4,13 @@
 
 current video: P27
 
-current mark: 142
+current mark: 167
 
 * 集合列
 
 ** 定义
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 其中[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-集合族-标志集]]是正整数
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 其中[[~/OneDrive/离散数学/Disc_Math.org::MK13][标志集]]是正整数
 
 ** 集合列上下确界
 
@@ -248,51 +248,59 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ** 函数
 
-*** 原相
+*** 原相<<MK151>>
 
-对于满足[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-定义-函数定义]]的函数 $f:X\to Y$ 
+对于满足[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数定义]]的函数 $f:X\to Y$ 
 
-其 $G\subset Y$ 的原相定义为 $g(G)=\left\{x\big|f(x)\in G\land x\in X\right\}$
+其 $G\subset Y$ 的原相定义为 $f^{-1}(G)=\left\{x\big|f(x)\in G\land x\in X\right\}$
+
+注：原相不同于[[~/OneDrive/离散数学/Disc_Math.org::MK203][逆函数]]，逆函数可能不存在。此处仅标识相同，实际问题需要区分。
 
 **** 性质<<MK135>>
 
-定义 $Y_\lambda\subset Y$ 则有
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK194][定义]] $f:X\to Y$ ，定义[[MK151][原相]]为 $f^{-1}(Y_\lambda)=\left\{x\big|f(x)\in Y_\lambda\land x\in X\right\}$
 
-（1） $\left\{x\big|f(x)\in\left(\bigcup_{\lambda\in\Lambda} Y_i\right)\land x\in X\right\}=\bigcup_{\lambda\in\Lambda}\left\{x\big|f(x)\in Y_i\land x\in X\right\}$ 
+（1） $f^{-1}\left(\bigcup_{\lambda\in\Lambda}Y_\lambda\right)=\bigcup_{\lambda\in\Lambda}f^{-1}\left(Y_\lambda\right)$ 
 
-（2） $\left\{x\big|f(x)\in\left(\bigcap_{\lambda\in\Lambda} Y_i\right)\land x\in X\right\}=\bigcap_{\lambda\in\Lambda}\left\{x\big|f(x)\in Y_i\land x\in X\right\}$ 
+（2） $f^{-1}\left(\bigcap_{\lambda\in\Lambda}Y_\lambda\right)=\bigcap_{\lambda\in\Lambda}f^{-1}\left(Y_\lambda\right)$  
 
-（3） $\left\{x\big|f(x)\in Y^c\land x\in X\right\}=\left(\left\{x\big|f(x)\in Y\land x\in X\right\}\right)^c$
+（3） $f^{-1}\left(Y^c\right)=\left(f^{-1}\left(Y\right)\right)^c$ 
 
 ***** 证明
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]] $\forall x\in X\rightarrow\exists y\left(y\in Y\land f(x)=y\right)$ 
-
-定义 $g(G)=\left\{x\big|f(x)\in G\land x\in X\right\}$ 故有以下证明
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数定义]] $\forall x\in X\rightarrow\exists y\left(y\in Y\land f(x)=y\right)$ 故有以下证明
 
 ****** （1）
 
-则对于任意 $x\in g\left(\bigcup_{\lambda\in\Lambda} Y_i\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-运算]]可得 $f(x)\in\bigcup_{\lambda\in\Lambda} Y_i\leftrightarrow\exists \lambda^*\in\Lambda\rightarrow f(x)\in Y_{\lambda^*}$
+则对于任意 $x\in f^{-1}\left(\bigcup_{\lambda\in\Lambda} Y_\lambda\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]可得 $f(x)\in\bigcup_{\lambda\in\Lambda} Y_\lambda\rightarrow\exists \lambda^*\in\Lambda\rightarrow f(x)\in Y_{\lambda^*}$
 
-故对于任意 $x\in g\left(\bigcup_{\lambda\in\Lambda} Y_i\right)\leftrightarrow\left(\exists \lambda^*\in\Lambda\rightarrow f(x)\in Y_{\lambda^*}\right)\leftrightarrow x\in g(Y_{\lambda^*})\leftrightarrow x\in\bigcup_{\lambda\in\Lambda} g(Y_\lambda)$
+进一步有 $x\in f^{-1}(Y_{\lambda^*})$ 由于 $\lambda^*\in\Lambda$ 故有 $f^{-1}(Y_{\lambda^*})\subset\bigcup_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$ 即 $x\in\bigcup_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $g\left(\bigcup_{i=1}^\infty X_i\right)=\bigcup_{i=1}^\infty g(X_i)$
+同理对于任意 $x\in\bigcup_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]可得 $\exists\lambda^*\rightarrow x\in f^{-1}(Y_{\lambda^*})$ 进一步有 $f(x)\in Y_{\lambda^*}$
+
+由于 $\lambda^*\in\Lambda$ 故有 $f(x)\in Y_{\lambda^*}\subset\bigcup_{\lambda\in\Lambda} Y_\lambda$ 即 $f(x)\in\bigcup_{\lambda\in\Lambda} Y_\lambda$ 即 $x\in f^{-1}\left(\bigcup_{\lambda\in\Lambda} Y_\lambda\right)$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $f^{-1}\left(\bigcup_{\lambda\in\Lambda}Y_\lambda\right)=\bigcup_{\lambda\in\Lambda}f^{-1}\left(Y_\lambda\right)$ 
 
 ****** （2）
 
-则对于任意 $x\in g\left(\bigcap_{\lambda\in\Lambda} Y_i\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-运算]]可得 $f(x)\in\bigcap_{\lambda\in\Lambda} Y_i\leftrightarrow\forall\lambda\in\Lambda\rightarrow f(x)\in Y_{\lambda^*}$
+则对于任意 $x\in f^{-1}\left(\bigcap_{\lambda\in\Lambda} Y_\lambda\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]可得 $f(x)\in\bigcap_{\lambda\in\Lambda} Y_\lambda\rightarrow\forall \lambda\in\Lambda\rightarrow f(x)\in Y_{\lambda}$
 
-故对于任意 $x\in g\left(\bigcap_{\lambda\in\Lambda} Y_i\right)\leftrightarrow\left(\forall \lambda\in\Lambda\rightarrow f(x)\in Y_{\lambda}\right)\leftrightarrow \forall\lambda\left(x\in g(Y_{\lambda})\right)\leftrightarrow x\in\bigcup_{\lambda\in\Lambda} g(Y_\lambda)$
+即 $\forall\lambda\in\Lambda\rightarrow x\in f^{-1}(Y_{\lambda})$ 故得 $x\in\bigcap_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $g\left(\bigcap_{i=1}^\infty X_i\right)=\bigcap_{i=1}^\infty g(X_i)$
+同理对于任意 $x\in\bigcap_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]可得 $\forall\lambda\in\Lambda\rightarrow x\in f^{-1}(Y_{\lambda})$ 即 $\forall\lambda\in\Lambda\rightarrow f(x)\in Y_{\lambda}$
+
+故得 $f(x)\in\bigcap_{\lambda\in\Lambda} Y_\lambda$ 即 $x\in f^{-1}\left(\bigcap_{\lambda\in\Lambda} Y_\lambda\right)$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $f^{-1}\left(\bigcap_{\lambda\in\Lambda}Y_\lambda\right)=\bigcap_{\lambda\in\Lambda}f^{-1}\left(Y_\lambda\right)$
 
 ****** （3）
 
-则对于任意 $x\in g\left(Y^c\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-运算]]可得 $f(x)\in Y^c\leftrightarrow f(x)\not\in Y$
+则对于任意 $x\in f^{-1}\left(Y^c\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]可得 $f(x)\in Y^c\leftrightarrow f(x)\not\in Y$
 
-故对于任意 $x\in g(Y^c)\leftrightarrow f(x)\not\in Y\leftrightarrow x\not\in g(Y)\leftrightarrow (g(Y))^c$
+故对于任意 $x\in f^{-1}(Y^c)\leftrightarrow f(x)\not\in Y\leftrightarrow x\not\in f^{-1}(Y)\leftrightarrow x\in(f^{-1}(Y))^c$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $g(Y^c)=(g(Y))^c$
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $f^{-1}(Y^c)=(f^{-1}(Y))^c$
 
 *** 连续函数<<MK115>>
 
@@ -364,7 +372,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 （2） 任元素合的补封闭 $\forall A\left(A\in\sigma(X)\rightarrow A^c\in\sigma(X)\right)$ 
 
-（3） [[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-可数]]个元素的并封闭 $A_i\in\sigma(X)\rightarrow\bigcup_{i=1}^\infty A_i\in\sigma(X)$
+（3） [[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个元素的并封闭 $A_i\in\sigma(X)\rightarrow\bigcup_{i=1}^\infty A_i\in\sigma(X)$
 
 *** 性质
 
@@ -648,7 +656,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 综上所述 $\forall y\in L\rightarrow y\in\sigma_{\Psi}(Y)$ 故 $L\subset\sigma_\Psi(Y)$
 
-*** borel集合
+*** borel集合<<MK153>>
 
 定义[[MK39][拓扑空间]] $<X,T>$ ，则由所有 $x\in T$ (即开集)[[MK85][生成]]的[[MK50][ $\sigma$ 代数]]定义为borel集合，记作 $\mathcal{B}(X)$
 
@@ -702,13 +710,13 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 （2） 规范性： $\rho(\varnothing)=0$
 
-（3） 可数可加性： $\rho(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\rho(A_i)$ 注意此处 $i$ 为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-可数]]个，且当 $i\ne j$ 时 $A_i\cap A_j=\varnothing$
+（3） 可数可加性： $\rho(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\rho(A_i)$ 注意此处 $i$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个，且当 $i\ne j$ 时 $A_i\cap A_j=\varnothing$
 
 则称 $\rho$ 是 $X$ 上的测度，其中 $\Gamma$ 是可测集。
 
 ** 外测度<<MK61>>
 
-定义集合 $X$ 则定义映射 $\varphi:\rho(X)\to\mathbb{R}\cup\{\infty\}$ 其中 $\rho(X)$ 是 $X$ 的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-幂集]]
+定义集合 $X$ 则定义映射 $\varphi:\rho(X)\to\mathbb{R}\cup\{\infty\}$ 其中 $\rho(X)$ 是 $X$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK25][幂集]]
 
 若映射满足：
 
@@ -851,7 +859,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 *** 开集构造定理<<MK47>>
 
-直线上的开集可表示为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数]]个不相交的[[MK42][构成区间]]的并
+直线（ $\mathbb{R}$ ）上的开集可表示为[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的[[MK42][构成区间]]的并
 
 **** 证明
 
@@ -883,19 +891,33 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 对于任意 $x\in G$ 定义开区间集合 $A_{x}=\left\{(a,b)\big|x\in (a,b)\land(a,b)\subset G\right\}$
 
+由于是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]，故 $x$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]故有 $\exists\delta>0\land\delta\in\mathbb{R}\rightarrow(x-\delta,x+\delta)\subset G$ 故 $A\ne\varnothing$
+
 进一步定义 $\{a\}_{x}=\{a|(a,b)\in A_{x}\},\{b\}_{x}=\{b|(a,b)\in A_{x}\}$ 则定义 $\alpha=\inf\{a\}_{x},\beta=\sup\{b\}_{x}$
 
-则任取 $y\in (\alpha,\beta)$ 根据确界定义必存在 $\alpha<a<y<b<\beta\land (a,b)\in A_x$ 则有 $y\in(a,b)\subset G$ ，故有 $(\alpha,\beta)\subset G$ 
+则任取 $y\in (\alpha,\beta)$ 根据确界定义必存在 $\alpha<a<y<b<\beta\land (a,b)\in A_x$
 
-若 $\alpha\in G$ 由于 $G$ 是[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]，则存在 $O(\alpha,\delta)\subset G$
+则有 $y\in(a,b)\subset G$ ，故有 $(\alpha,\beta)\subset G$ 
+
+若 $\alpha\in G$ 由于 $G$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]，则存在 $O(\alpha,\delta)\subset G$
 
 结合上述证明可得 $(\alpha-\delta,\beta)\subset G$ 与下确界定义矛盾，故 $\alpha\not\in G$ 同理可证 $\beta\not\in G$
 
 故 $(\alpha,\beta)$ 是 $x$ 在 $G$ 上的构成区间，即 $(\alpha,\beta)\in T$ 故 $x\in G'$
 
-综上所属 $\forall x\in G'\rightarrow x\in G\land \forall x\in G\rightarrow x\in G'$ 
+综上所属 $\forall x\in G'\rightarrow x\in G\land \forall x\in G\rightarrow x\in G'$ 则根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $G'=G$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $G'=G$
+**** 推论<<MK155>>
+
+对于[[MK143][广义实数]]定义上的直线，开集可有由[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并之后，与 $\pm\infty$ 的组合并组成
+
+***** 证明
+
+根据[[MK152][定理3]]可得广义实数 $\mathbb{R}_e$ 上的开集由 $\mathbb{R}$ 上的开集与 $\pm\infty$ 的组合并组成
+
+由于 $\mathbb{R}$ 上的开集可有由[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并表示。
+
+故综上所述，命题成立
 
 *** 闭集的构造<<MK48>>
 
@@ -1091,7 +1113,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 *** 域公理<<MK4>>
 
-对于任意 $\{a,b\}\subset\mathbb{R}$ 有二元[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-代数的构建-运算]] $a+b$ 与 $a\cdot b$ 定义为加法，乘法，满足：
+对于任意 $\{a,b\}\subset\mathbb{R}$ 有二元[[~/OneDrive/离散数学/Disc_Math.org::MK304][运算]] $a+b$ 与 $a\cdot b$ 定义为加法，乘法，满足：
 
 （0） 封闭性： $\forall a\in\mathbb{R}\forall b\in\mathbb{R}\left(a+b\in\mathbb{R}\land a\cdot b\in\mathbb{R}\right)$
 
@@ -1133,11 +1155,15 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 **** 加法幺元的逆元是其本身
 
-即 $-0=0$ 因为 $0+0=0$ 且根据[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元-性质2]]可得逆元唯一
+即 $-0=0$ 因为 $0+0=0$ 且根据[[~/OneDrive/离散数学/Disc_Math.org::MK316][性质2]]可得逆元唯一
 
 **** 减法定义<<MK6>>
 
 根据[[MK4][域公理]]中加法和逆元可定义减法为 $a-b=a+(-b)$
+
+***** 减法封闭<<MK160>>
+
+根据（5）逆元定义可知 $-b\in\mathbb{R}$ 则根据（0）封闭性可知 $a+(-b)\in\mathbb{R}$
 
 **** 零元<<MK16>>
 
@@ -1433,6 +1459,14 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 高维区间定义为 $\mathbb{R}$ 的笛卡尔积，即定义 $I\subset\mathbb{R}^n$ 为 $\mathbb{R}^n$ 上的区间
 
 则定义 $I=\prod_{i=1}^n[a_i,b_i]$ 即 $n$ 个一维区间 $[a_i,b_i]$ 的笛卡尔积
+
+***** 开区间是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
+
+对于任意 $(a,b)\land\{a,b\}\subset\mathbb{R}$ 若 $a\not<b$ 则有 $(a,b)=\varnothing$ 根据是[[~/OneDrive/数学分析/Chap11Note.org::MK15][定理8]]可得是开集
+
+若 $a<b$ 则对于任意 $x\in(a,b)$ 可得 $a<x<b$ 定义 $\delta=\min\left(\frac{b-x}{2},\frac{x-a}{2}\right)$
+
+易证得 $(x-\delta,x+\delta)\subset(a,b)$ 故 $x$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，根据 $x$ 的任意性可得 $(a,b)$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
 
 *** 连续性公理<<MK3>>
 
@@ -1808,7 +1842,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 *** 定理0<<MK36>>
 
-实数上的任意[[MK13][区间]]均与实数[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-对等]]
+实数上的任意[[MK13][区间]]均与实数[[~/OneDrive/离散数学/Disc_Math.org::MK26][对等]]
 
 **** 证明
 
@@ -1842,7 +1876,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 *** 定理1
 
-实数集合 $\mathbb{R}$ 是[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-不可数集]]
+实数集合 $\mathbb{R}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK324][不可数集]]
 
 **** 证明
 
@@ -2001,6 +2035,109 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 根据[[MK30][推论2]]可得存在 $m-1\leq nx_1<m$ 其中 $m\in\mathbb{N}$ 即 $nx_1<m\leq nx_1+1<nx_2$
 
 即 $x_1<\frac{m}{n}<x_2$ 证毕
+
+** 广义实数<<MK143>>
+
+定义为 $\mathbb{R}_e\cup \{-\infty,+\infty\}$ 其中 $\forall a\in\mathbb{R}\rightarrow -\infty<a<+\infty$
+
+*** 运算性质
+
+**** $\pm\infty$ 对于 $a\in\mathbb{R}$ 的运算<<MK144>>
+
+（1） $a<+\infty\land a>-\infty$
+
+（2） $a+(+\infty)=( +\infty)+a= +\infty\land a+(-\infty)=(-\infty)+a=-\infty$
+
+（3） $a-(+\infty)=-\infty\land a-(-\infty)= +\infty$
+
+（4） $a\cdot(+\infty)=( +\infty)\cdot a=\begin{cases} +\infty&a>0\\-\infty&a<0\end{cases}\land a\cdot(-\infty)=(-\infty)\cdot a=\begin{cases} -\infty&a>0\\ +\infty&a<0\end{cases}$
+
+（5） $\frac{+\infty}{a}=\begin{cases} +\infty&a>0\\-\infty&a<0\end{cases}\land \frac{-\infty}{a}=\begin{cases} -\infty&a>0\\ +\infty&a<0\end{cases}$
+
+**** $\pm\infty$ 对于 $0,+\infty,-\infty$ 的运算
+
+（1） $(+\infty)+( +\infty)= +\infty\land (-\infty)+(-\infty)= -\infty$
+
+（2） $\frac{a}{+\infty}=\frac{a}{-\infty}=0$
+
+（3） $0\cdot(+\infty)=0\cdot(-\infty)=0$
+
+（4） $(+\infty)\cdot( +\infty)= +\infty\land (-\infty)\cdot( -\infty)= +\infty$
+
+（5） $(-\infty)\cdot( +\infty)=( +\infty)\cdot( -\infty)=-\infty$
+
+**** 未定义的运算
+
+（1） $(+\infty)-( +\infty), (-\infty)-(-\infty), (-\infty)-( +\infty)$
+
+（2） $\frac{a}{0},\frac{+\infty}{0},\frac{-\infty}{0}$
+
+*** 区间<<MK146>>
+
+定义 $\{a,b\}\subset\mathbb{R}_e=\mathbb{R}\cup\{-\inftcy,+\infty\}$
+
+则区间为 $[a,b]=\left\{x\big|x\in\mathbb{R}_e\land a \leq x\leq b\right\}$ 以及 $(a,b)=\left\{x\big|x\in\mathbb{R}_e\land a<x<b\right\}$
+
+*** 内点<<MK147>>
+
+定义为[[~/OneDrive/数学分析/Chap11Note.org::MK7][实数内点定义]]的扩展，即对于集合 $S\subset\mathbb{R}_e$ 其内点为 $\exists \delta>0\land\delta\in\mathbb{R}_e\rightarrow O(x,\delta)\subset S$ 
+
+*** 开集<<MK148>>
+
+定义为在 $\mathbb{R}_e\cup \{-\infty,+\infty\}$ 满足[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]的集合，即 $S\subset\mathbb{R}_e$ 且有包含的点均为[[MK147][内点]]的集合
+
+**** 定理1<<MK149>>
+
+对于任意 $S\subset\mathbb{R}$ 若 $+\infty\in S$ 则 $+\infty$ 为 $S$ 的[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]。 $-\infty$ 同理
+
+***** 证明
+
+则取 $\delta=1>0$ 根据[[MK144][运算]]有 $+\infty\pm\delta=+\infty$ 故有 $(b-\delta,b+\delta)=(+\infty, +\infty)$
+
+根据[[MK146][定义]]可得 $(+\infty, +\infty)=\varnothing$ 又根据[[~/OneDrive/离散数学/Disc_Math.org::MK23][定理4]]可得 $\varnothing\subset S$
+
+即 $+\infty$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，同理可证 $-\infty$ 也是内点
+
+**** 定理2<<MK150>>
+
+实数上的开集在[[MK143][广义实数]]中有：
+
+（1） 若集合在 $\mathbb{R}$ 上是开集，则在 $\mathbb{R}_e$ 上仍为开集
+
+（2） 若集合在 $\mathbb{R}$ 上不是开集，则在 $\mathbb{R}_e$ 上仍不是开集
+
+***** 证明
+
+****** （1）
+
+对于 $S\subset\mathbb{R}$ 中的任意一点 $x\in S$ ，若在 $\mathbb{R}$ 上是[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，则 $\exists \delta>0\land\delta\in\mathbb{R}\rightarrow O(x,\delta)\subset S$
+
+由于 $\mathbb{R}\subset\mathbb{R}_e$ 故有 $\delta\in\mathbb{R}_e$ 则有 $\exists \delta>0\land\delta\in\mathbb{R}_e\rightarrow O(x,\delta)\subset S$ 根据[[MK147][定义]]可得是内点
+
+
+$S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[[MK148][开集定义]]
+
+****** （2）
+
+对于 $S\subset\mathbb{R}$ 中的存在非[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]] $x$ ，则有 $\forall\delta>0\land\delta\in\mathbb{R}\rightarrow O(x,\delta)\not\subset S$
+
+当 $\delta'=\infty$ 时对于任意 $\delta\in\mathbb{R}$ 均有 $O(x,\delta)\subset O(x,\delta')$ 则有 $O(x,\delta')\not\in S$
+
+综上所述 $\forall\delta>0\land\delta\in\mathbb{R}_e\rightarrow O(x,\delta)\not\subset S$ 即 $\lnot\exists\delta>0\land\delta\in\mathbb{R}_e\rightarrow O(x,\delta)\subset S$
+
+故 $x$ 在 $\mathbb{R}_e$ 上仍不是[[MK147][内点]]，则不是[[MK148][开集]]
+
+**** 定理3<<MK152>>
+
+定义 $\mathcal{O}_\mathbb{R}$ 为 $\mathbb{R}$ 上的开集，则 $\mathbb{R}_e$ 上的开集为 $\mathcal{O}_{\mathbb{R}_e}=\left\{S,S\cup\{+\infty\},S\cup\{-\infty\},S\cup\{-\infty,+\infty\}\big|S\in\mathcal{O}_\mathbb{R}\right\}$
+
+***** 证明
+
+对于任意 $S\subset\mathbb{R}_e$ 定义 $S'=S\cap\mathbb{R}$ 根据[[MK150][定理2]]可得当且仅当 $S'\in\mathcal{O}_\mathbb{R}$ 时 $S\in\mathcal{O}_{\mathbb{R}_e}$
+
+又根据[[MK149][定理1]]可得当 $S'\in\mathcal{O}_\mathbb{R}$ 时 $\big\{S\cup\{+\infty\},S\cup\{-\infty\},S\cup\{-\infty, +\infty\}\big\}\subset\mathcal{O}_{\mathbb{R}_e}$
+
+由于 $\mathbb{R}_e$ 仅比 $\mathbb{R}$ 多两个元素，故以上为所有可能性。故命题成立
 
 * 实数(勒贝格)测度
 
@@ -3072,39 +3209,23 @@ Borel集中元素均为可测集
 
 *** 定义<<MK133>>
 
-定义函数 $f:E\to\mathbb{R}\cup\{-\infty,+\infty\}$ 其中 $\{-\infty,+\infty\}$ 满足对于任意 $a\in\mathbb{R}$ 均有：
+**** 广义实值函数
 
-（1） $a<+\infty\land a>-\infty$
+定义为 $f:E\to\mathbb{R}\cup\{-\infty,+\infty\}$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，其中 $\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
 
-（2） $a+(+\infty)=( +\infty)+a= +\infty\land a+(-\infty)=(-\infty)+a=-\infty$
+**** 有限函数
 
-（3） $a-(+\infty)=-\infty\land a-(-\infty)= +\infty$
+若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]满足 $f:E\to\mathbb{R}$ 则定义为有限函数
 
-（4） $a\cdot(+\infty)=( +\infty)\cdot a=\begin{cases} +\infty&a>0\\-\infty&a<0\end{cases}\land a\cdot(-\infty)=(-\infty)\cdot a=\begin{cases} -\infty&a>0\\ +\infty&a<0\end{cases}$
+**** 有界函数
 
-（5） $\frac{+\infty}{a}=\begin{cases} +\infty&a>0\\-\infty&a<0\end{cases}\land \frac{-\infty}{a}=\begin{cases} -\infty&a>0\\ +\infty&a<0\end{cases}$
+若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to X\subset\mathbb{R}$ 满足：
 
-对于 $\{-\infty,+\infty\}$ 以及[[MK4][加法幺元]] $0$ 满足：
+（1） 存在 $a\in\mathbb{R}$ 使得 $\forall x\in X\rightarrow x<a$ 则为有上界函数
 
-（1） $(+\infty)+( +\infty)= +\infty\land (-\infty)+(-\infty)= -\infty$
+（2） 存在 $a\in\mathbb{R}$ 使得 $\forall x\in X\rightarrow x>a$ 则为有下界函数
 
-（2） $\frac{a}{+\infty}=\frac{a}{-\infty}=0$
-
-（3） $0\cdot(+\infty)=0\cdot(-\infty)=0$
-
-（4） $(+\infty)\cdot( +\infty)= +\infty\land (-\infty)\cdot( -\infty)= +\infty$
-
-（5） $(-\infty)\cdot( +\infty)=( +\infty)\cdot( -\infty)=-\infty$
-
-对于以下表达式没有定义：
-
-（1） $(+\infty)-( +\infty), (-\infty)-(-\infty), (-\infty)-( +\infty)$
-
-（2） $\frac{a}{0},\frac{+\infty}{0},\frac{-\infty}{0}$
-
-则定义 $f(x),x\in E$ 为广义实值函数
-
-若 $f:E\to\mathbb{R}$ 则定义为有限函数
+均满足则为有界函数
 
 *** 定理
 
@@ -3164,21 +3285,23 @@ Borel集中元素均为可测集
 
 ** 可测函数<<MK134>>
 
-对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}\cup\{-\infty,+\infty\},E\subset X$ 
+对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}_e$ 其中 $\mathbb{R}_e=\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
 
-定义 $E[f>a]=\left\{x\big|f(x)>a\land x\in E\right\}$ 以及 $\mathcal{M}\subset\rho(X)$ 是 $X$ 上所有的[[MK65][外测度可测集]]族
+定义 $E[f>a]=\left\{x\big|f(x)\in(a,+\infty]\land x\in E\right\}$ 即 $(a,\infty]$ 的[[MK151][原相]]
+
+定义 $\mathcal{M}\subset\rho(E)$ 是 $E$ 上所有的[[MK65][外测度可测集]]族
 
 则若 $f$ 满足 $\forall a\in\mathbb{R}\rightarrow E[f>a]\in\mathcal{M}$ 则 $f$ 是可测函数
 
-*** 等价定义
+*** 等价定义<<MK154>>
 
 以下条件与[[MK134][可测函数]]定义等价：
 
-（1）$\forall a\in\mathbb{R}\rightarrow E[f\leq a]\in\mathcal{M}$
+（1）$\forall a\in\mathbb{R}\rightarrow E[f\leq a]=\left\{x\big|f(x)\in[-\infty,a]\land x\in E\right\}\in\mathcal{M}$
 
-（2）$\forall a\in\mathbb{R}\rightarrow E[f\geq a]\in\mathcal{M}$
+（2）$\forall a\in\mathbb{R}\rightarrow E[f\geq a]=\left\{x\big|f(x)\in[a,+\infty]\land x\in E\right\}\in\mathcal{M}$
 
-（3）$\forall a\in\mathbb{R}\rightarrow E[f<a]\in\mathcal{M}$
+（3）$\forall a\in\mathbb{R}\rightarrow E[f<a]=\left\{x\big|f(x)\in[-\infty,a)\land x\in E\right\}\in\mathcal{M}$
 
 **** 证明
 
@@ -3210,9 +3333,9 @@ Borel集中元素均为可测集
 
 根据[[MK136][（2）]]中的结论，[[MK137][（1）]]中的证明方法可得
 
-**** 推论
+**** 推论<<MK157>>
 
-若[[MK133][广义实值函数]] $f:E\to\mathbb{R}\cup\{-\infty,+\infty\},E\subset X$ 是[[MK134][可测函数]]
+若[[MK133][广义实值函数]] $f:E\to\mathbb{R}\cup\{-\infty,+\infty\}$ 是[[MK134][可测函数]]
 
 则 $E[f=a]=\left\{x\big|f(x)=a\land x\in E\right\}$ 亦是可测集
 
@@ -3234,7 +3357,286 @@ Borel集中元素均为可测集
 
 同理可证 $E[f=-\infty]\in\mathcal{M}$ 
 
+*** 定理1
 
+可测函数 $f:E\to\mathbb{R}_e$ 其中 $\mathbb{R}_e=\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
 
+定义 $\mathcal{M}\subset\rho(X)$ 是 $X$ 上所有的[[MK65][外测度可测集]]族， $\mathcal{B}(\mathbb{R}_e)$ 是广义实数上的[[MK153][borel集合]]
 
+则对于任意 $S\in\mathcal{B}(\mathbb{R}_e)$ 均有其[[MK151][原相]] $f^{-1}(S)\in\mathcal{M}$ 即borel集合中元素的原相可测
+
+**** 证明
+
+***** 开区间 $(a,b),\{a,b\}\subset\mathbb{R}$ 原相可测<<MK156>>
+
+对于任意[[MK146][开区间]] $(a,b),\{a,b\}\subset\mathbb{R}$ 有 $(a,b)=[-\infty,b)\cup(a,+\infty]$
+
+故根据[[MK135][性质]]可得 $f^{-1}((a,b))=f^{-1}([-\infty,b)\cup(a,+\infty))=f^{-1}([-\infty,b))\cup f^{-1}((a,+\infty])$
+
+根据[[MK134][可测定义]]以及[[MK154][等价条件]]可知 $f^{-1}([-\infty,b)),f^{-1}((a,+\infty])$ 均可测
+
+则根据[[MK65][Caratheodory定理]]可得 $f^{-1}([-\infty,b))\cup f^{-1}((a,+\infty])$ 亦可测
+
+***** 开区间 $(a,b),\{a,b\}\subset\mathbb{R}_e$ 原相可测<<MK158>>
+
+当 $a\in\mathbb{R},b=+\infty$ 时有 $(a,+\infty)=\bigcup_{i=1}^\infty(a,i)$ 同样根据[[MK135][性质]]有 $f^{-1}\left(\bigcup_{i=1}^\infty(a,i)\right)=\bigcup_{i=1}^\infty f^{-1}((a,i))$
+
+根据[[MK156][之前证明]]可得 $(a,i)$ 可测，故根据[[MK65][Caratheodory定理]]可得可数并 $\bigcup_{i=1}^\infty f^{-1}((a,i))$ 亦可测
+
+同理可证当 $a=-\infty,b\in\mathbb{R}$ 以及 $a=-\infty,b=+\infty$ 时 $(a,b)$ 的[[MK151][原相]]亦可测
+
+*****  $\{+\infty\},\{-\infty\},\{-\infty, +\infty\}$ 原相可测<<MK159>>
+
+有 $f^{-1}(\{-\infty, +\infty\})=f^{-1}(\{-\infty\}\cup \{ +\infty\})$ 根据[[MK135][性质]] $f^{-1}(\{-\infty\}\cup \{ +\infty\})=f^{-1}(\{-\infty\})\cup f^{-1}(\{ +\infty\})$
+
+根据[[MK157][推论]]可得 $f^{-1}(\{-\infty\}),f^{-1}(\{+\infty\})$ 均可测
+
+故根据[[MK65][Caratheodory定理]]可得 $f^{-1}(\{-\infty\})\cup f^{-1}(\{ +\infty\})$ 可测
+
+***** 开集可测
+
+根据[[MK155][推论]]可得任意 $\mathbb{R}_e$ 上的开集可有由[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并之后，与 $\pm\infty$ 的组合并组成
+
+根据定义构成区间为开区间，且则根据[[MK158][之前证明]]可得开区间的原相可测
+
+结合[[MK135][性质]]可得[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并的原相，等价于原相的并
+
+故根据[[MK65][Caratheodory定理]]可得由[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并的原相可测
+
+又根据[[MK159][之前证明]]亦可得 $\{+\infty\},\{-\infty\},\{-\infty, +\infty\}$ 的原相可测
+
+故再一次结合[[MK135][性质]]与[[MK65][Caratheodory定理]]可得组合并之后的原相亦可测
+
+综上所述， $\mathbb{R}_e$ 上的开集 $S$ 的原相 $f^{-1}(S)\in\mathcal{M}$ 是可测集
+
+***** borel集可测
+
+根据[[MK153][borel集合定义]]可得 $\mathcal{B}(\mathbb{R}_e)$ 为 $\mathcal{R}_e$ 上[[MK148][开集]]构成的[[MK50][ $\sigma$ 代数]]
+
+结合[[MK135][性质]]与[[MK65][Caratheodory定理]]可得原相可测
+
+*** 定理2<<MK161>>
+
+[[MK133][广义实值函数]] $f:E\to\mathbb{R}_e$ 是常值函数，即 $\forall x\in E\rightarrow f(x)=c$
+
+则 $f(x)$ 是[[MK134][可测函数]]
+
+**** 证明
+
+对于任意 $a\in\mathbb{R}_e$ 若：
+
+（1） $a\geq c$ 则 $f^{-1}((a,+\infty])=\varnothing$
+
+（2） $a<c$ 则 $f^{-1}((a,+\infty])= E$
+
+根据[[MK65][Caratheodory定理]]可知任意 $E$ 上的外侧度可测集构成 $E$ 上的[[MK50][ $\sigma$ 代数]]
+
+进一步根据[[MK50][ $\sigma$ 代数定义]]可知空集，全集均可测，故证毕。
+
+*** 定理3<<MK164>>
+
+若[[MK133][广义实值函数]] $f(x),g(x)$ 均为[[MK134][可测函数]]，其中 $x\in E$
+
+则 $S=\left\{x\big|f(x)\in(g(x),+\infty]\right\}=\left\{x\big|f(x)>g(x)\right\}$ 是 $E$ 上的[[MK65][外测度可测集]]
+
+**** 证明
+
+定义 $S'=\bigcup_{r\in\mathbb{Q}}\left(\left\{x\big|f(x)>r\right\}\cup\left\{x\big|g(x)<r\right\}\right)=\bigcup_{r\in\mathbb{Q}}\left(f^{-1}((r,+\infty])\cup g^{-1}([-\infty,r))\right)$
+
+则对于任意 $x\in S$ 均有 $f(x)>g(x)$ 可得[[MK13][区间]] $(f(x),g(x))\ne\varnothing$
+
+则根据[[MK43][有理数稠密性]]可知 $\exists r^*\in\mathbb{Q}\rightarrow g(x)<r^*<f(x)$ 即 $x\in\left(f^{-1}((r^*,+\infty])\cup g^{-1}([-\infty,r^*))\right)$ 则有 $x\in S'$
+
+对于任意 $x\in S'$ 均有 $\forall r\in\mathbb{Q}\rightarrow g(x)<r<f(x)$ 即 $g(x)<f(x)$ 即 $x\in S$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $S=S'$ 由于 $f(x),g(x)$ 均为[[MK134][可测函数]]，进一步根据[[MK154][等价定义]]
+
+可得对于任意 $r$ 有 $f^{-1}((r,+\infty]), g^{-1}([-\infty,r))$ 均可测
+
+则根据[[MK65][Caratheodory定理]]可得外测度可测集构成[[MK50][ $\sigma$ 代数]]
+
+根据[[MK50][定义（3）]]可得 $f^{-1}((r,+\infty])\cup g^{-1}([-\infty,r))$ 可测
+
+同样根据[[MK50][定义（3）]]以及[[~/OneDrive/离散数学/Disc_Math.org::MK325][有理数可数]]可得 $S'$ 可测，即 $S$ 可测
+
+*** 四则运算
+
+若 $f(x),g(x)$ 均为[[MK133][广义实值]]的[[MK134][可测函数]]，则：
+
+（1） $f(x)+g(x)$
+
+（2） $f(x)-g(x)$
+
+（3） $f(x)\cdot g(x)$
+
+（4） $\frac{f(x)}{g(x)},g(x)\ne 0$
+
+（5） $|f(x)|$
+
+均为可测函数
+
+**** 证明
+
+***** 当 $g(x)=c$ 是常值函数时<<MK162>>
+
+****** 加减
+
+定义 $h(x)=f(x)+g(x)=f(x)+c$ 则对于任意 $a\in\mathbb{R}_e$ 有
+
+\begin{aligned}
+h^{-1}((a,+\infty])&=\left\{x\big|h(x)\in(a,+\infty]\land a\in\mathbb{R}_e\right\}\\\
+&=\left\{x\big|f(x)+c\in(a,+\infty]\land a\in\mathbb{R}_e\right\}\\
+&=\left\{x\big|f(x)\in(a-c,+\infty]\land a\in\mathbb{R}_e\right\}\\
+&=f^{-1}((a-c,+\infty])
+\end{aligned}
+
+若 $a\in\mathbb{R}$ 则根据[[MK160][减法封闭]]可知 $a-c\in\mathbb{R}$ 若 $a=\pm\infty$ 则根据[[MK144][运算]]可知 $a-c=a\in\mathbb{R}_e$
+
+综上所述 $a-c\in\mathbb{R}_e$ 进一步由于 $f(x)$ 是可测函数
+
+则根据[[MK134][可测定义]]可得对于任意 $a-c\in\mathbb{R}_e$ 均有[[MK151][原相]] $f^{-1}((a-c,+\infty])$ 可测
+
+即对于任意 $a\in\mathbb{R}_e$ 其 $h(x)$ 的[[MK151][原相]] $h^{-1}((a,+\infty])$ 可测
+
+再一次根据[[MK134][可测定义]]可得 $h(x)=f(x)+c$ 为可测函数
+
+进一步根据[[MK6][减法定义]]可得 $h(x)=f(x)-c$ 亦为可测函数
+
+****** 乘除
+
+定义 $h(x)=f(x)\cdot g(x)=f(x)\cdot c$
+
+则对于任意 $a\in\mathbb{R}_e$ 有 $h^{-1}((a,+\infty])=\begin{cases}f^{-1}\left(\left(\frac{a}{c},+\infty\right]\right)&c>0\\f^{-1}\left(\left[-\infty,\frac{a}{c}\right)\right)&c<0\end{cases}$
+
+则若 $a\in\mathbb{R}$ 则根据[[MK4][封闭性]]可得 $\frac{a}{c}\in\mathbb{R}$ ，若 $a=\pm\infty$ 则根据[[MK144][运算]]可知 $\frac{a}{c}=\pm a\in\mathbb{R}_e$
+
+综上所述 $\frac{a}{c}\in\mathbb{R}_e$ 进一步由于 $f(x)$ 是可测函数
+
+则根据[[MK134][可测定义]]以及[[MK154][等价定义]]可得对于任意 $\frac{a}{c}\in\mathbb{R}_e$ 均有[[MK151][原相]] $f^{-1}\left(\left(\frac{a}{c},+\infty\right]\right),f^{-1}\left(\left[-\infty,\frac{a}{c}\right)$ 可测
+
+再一次根据[[MK134][可测定义]]可得 $h(x)=f(x)+c,c\ne0$ 为可测函数
+
+当 $c=0$ 是 $h(x)=0$ 是常值函数，根据[[MK161][定理2]]可得 $h(x)$ 可测
+
+故 $h(x)=f(x)+c$ 为可测函数
+
+进一步根据[[MK9][除法定义]]可得 $h(x)=\frac{f(x)}{c}$ 亦为可测函数
+
+***** $\frac{1}{f(x)}$ 可测<<MK163>>
+
+定义 $h(x)=\frac{1}{f(x)}$ 则有 $h^{-1}((a,+\infty])=\left\{x\big|h(x)\in(a,+\infty]\right\}=\left\{x\bigg|\frac{1}{f(x)}\in(a,+\infty]\right\}$
+
+当 $f(x)>0$ 时有：
+
+（1） 若 $a>0$ 则 $f(x)\in\left(0,\frac{1}{a}\right]$
+
+（2） 若 $a=0$ 则 $f(x)\in(0,+\infty)$
+
+（3） 若 $a<0$ 则 $f(x)\in\left(0,+\infty\right]$
+
+当 $f(x)<0$ 时有：
+
+（1） 若 $a>0$ 则 $f^{-1}((a,+\infty])=\varnothing$
+
+（2） 若 $a=0$ 则 $f^{-1}((a,+\infty])=\varnothing$
+
+（3） 若 $a<0$ 则 $f(x)\in\left(\frac{1}{a},+\infty\right]$
+
+综上所述，对于任意 $a\in\mathbb{R}_e$ 有：
+
+（1） 当 $a>0$ 时 $h^{-1}((a,+\infty])=f^{-1}\left(\left(0,\frac{1}{a}\right]\right)$
+
+（2） 当 $a=0$ 时 $h^{-1}((a,+\infty])=f^{-1}\left(\left(0,+\infty\right]\right)$
+
+（3） 当 $a<0$ 时 $h^{-1}((a,+\infty])=f^{-1}\left(\left(\frac{1}{a},+\infty\right]\right)$
+
+根据[[MK134][可测函数定义]]以及[[MK154][等价定义]]易证得 $f^{-1}\left(\left(0,\frac{1}{a}\right]\right),f^{-1}\left(\left(0,+\infty\right]\right),f^{-1}\left(\left(\frac{1}{a},+\infty\right]\right)$ 均可测
+
+故对于任意 $a\in\mathbb{R}_e$ 均有[[MK151][原相]] $h^{-1}((a,+\infty])$ 可测，则再一次根据[[MK134][可测函数定义]]可得 $h(x)$ 是可测函数
+
+***** $f(x)\pm g(x)$ 可测<<MK165>>
+
+定义 $h(x)=f(x)+g(x)$ 则对于任意 $a\in\mathbb{R}_e$ 有
+
+\begin{aligned}
+h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
+&=\left\{x\big|f(x)\in(a-g(x),+\infty]\right\}\\
+&=\left\{x\big|f(x)>a-g(x)\right\}
+\end{aligned}
+
+根据[[MK162][之前证明]]可得对于任意 $a\in\mathbb{R}_e$ 有 $a-g(x)=a+(-1)\cdot g(x)$ 当 $g(x)$ [[MK134][可测]]是亦可测
+
+进一步根据 $f(x)$ 可测以及[[MK164][定理3]]可知 $\left\{x\big|f(x)>a-g(x)\right\}$ 是可测即
+
+综上所述，对于任意 $a\in\mathbb{R}_e$ 可得 $h^{-1}((a,+\infty])$ 可测，则根据[[MK134][定义]]可得 $h(x)$ 是可测函数
+
+同理可证 $h(x)=f(x)-g(x)$ 亦可测
+
+***** $\left(f(x)\right)^2$ 可测<<MK166>>
+
+定义 $h(x)=f^2(x)$ 则对于任意 $a\in\mathbb{R}_e$ ：
+
+（1） 若 $a>0$ 则有 $h^{-1}((a,+\infty])=f^{-1}([-\infty,-\sqrt{a})\cup(\sqrt{a},+\infty])$
+
+（2） 若 $a\leq 0$ 则有 $h^{-1}((a,+\infty])=E$
+
+根据[[MK135][性质(1)]]可得 $f^{-1}([-\infty,-\sqrt{a})\cup(\sqrt{a},+\infty])=f^{-1}([-\infty,-\sqrt{a}))\cup f^{-1}((\sqrt{a},+\infty])$
+
+根据 $f(x)$ 是[[MK134][可测函数]]以及[[MK154][等价定义]]可得 $f^{-1}([-\infty,-\sqrt{a})), f^{-1}((\sqrt{a},+\infty])$ 均可测
+
+则根据[[MK65][Caratheodory定理]]可得外测度可测集构成[[MK50][ $\sigma$ 代数]]
+
+根据[[MK50][定义（3）]]可得 $f^{-1}([-\infty,-\sqrt{a}))\cup f^{-1}((\sqrt{a},+\infty])$ 可测
+
+由于 $E$ 是全集可测，故综上所述，对于任意 $a\in\mathbb{R}_e$ 有 $h^{-1}((a,+\infty])$ 可测
+
+即 $h(x)=f^2(x)$ 是[[MK134][可测函数]]
+
+***** $f(x)g(x)$ 可测<<MK167>>
+
+根据实数运算有 $f(x)g(x)=\frac{1}{4}((f(x)+g(x))^2-(f(x)-g(x))^2)$
+
+根据[[MK165][之前证明]]可得 $f(x)+g(x),f(x)-g(x)$ 均可侧
+
+进一步根据[[MK166][之前证明]]可得 $(f(x)+g(x))^2,(f(x)-g(x))^2$ 均可测
+
+再次根据[[MK162][之前证明]]可得 $\frac{1}{4}((f(x)+g(x))^2-(f(x)-g(x))^2)$ 可测，即 $f(x)g(x)$ 是[[MK134][可测函数]]
+
+***** $\frac{f(x)}{g(x)}$ 可测
+
+根据[[MK163][之前证明]]可得 $\frac{1}{g(x)}$ 可测，根据[[MK167][之前证明]]可得 $f(x)\frac{1}{g(x)}$ 可测
+
+综上所述 $\frac{f(x)}{g(x)}$ 是[[MK134][可测函数]]
+
+***** $|f(x)|$ 可测
+
+定义 $h(x)=|f(x)|$ 则有对于任意 $a\in\mathbb{R}_e$
+
+（1） 若 $a>0$ 则 $h^{-1}((a,+\infyt])=f^{-1}\left([-\infty,-a)\cup(a,+\infty]\right)$
+
+（2） 若 $a\leq 0$ 则 $h^{-1}((a,+\infty])= E$
+
+根据[[MK135][性质(1)]]可得 $f^{-1}([-\infty,-a)\cup(a,+\infty])=f^{-1}([-\infty,-a))\cup f^{-1}((a,+\infty])$
+
+根据 $f(x)$ 是[[MK134][可测函数]]以及[[MK154][等价定义]]可得 $f^{-1}([-\infty,-a)), f^{-1}((a,+\infty])$ 均可测
+
+则根据[[MK65][Caratheodory定理]]可得外测度可测集构成[[MK50][ $\sigma$ 代数]]
+
+根据[[MK50][定义（3）]]可得 $f^{-1}([-\infty,a))\cup f^{-1}((a,+\infty])$ 可测
+
+由于 $E$ 是全集可测，故综上所述，对于任意 $a\in\mathbb{R}_e$ 有 $h^{-1}((a,+\infty])$ 可测
+
+即 $h(x)=|f(x)|$ 是[[MK134][可测函数]]
+
+*** 确界运算
+
+若存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][之多可数]]个函数 $f_i(x), i\in I$ 定义 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\},\psi(x)=\sup\left\{f_i(x)\big|i\in I\right\}$
+
+则 $\phi(x),\psi(x)$ 仍为[[MK134][可测函数]]
+
+**** 证明
+
+由于 $\phi^{-1}((a,+\infty])=\left\{x\big|\phi(x)\in(a,+\infty]\right\}$ 且 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\}$
+
+即 $\forall x\in \phi^{-1}((a,+\infty])\rightarrow \inf\left\{f_i(x)\big|i\in I\right\}\in(a,+\infty]$ 
 

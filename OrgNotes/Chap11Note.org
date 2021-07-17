@@ -256,7 +256,7 @@ $R^n$ 上 $\vec{x}=(x_1,x_2,...,x_n),\ \vec{y}=(y_1,y_2,...,y_n)$ 的距离定�
 
 *** $S$ 的内点 $S_i$ <<MK7>>
 
-$\exists \delta>0, O(\vec{x},\delta)\subset S$ ，所有内点集合 $S_i$
+$\exists \delta>0\land\delta\in\mathbb{R}\rightarrow O(\vec{x},\delta)\subset S$ ，所有内点集合 $S_i$
  
 *** $S$ 的外点
 
@@ -280,7 +280,7 @@ $\forall \delta>0,\exists A\subset O(\vec{x},\delta)\Rightarrow A\subset S$ 其�
 
 **** <<JDCYTJ1>>充要条件1
 
-$\forall \delta>0,\exists\vec{a}\ne\vec{x}, \vec{a}\in O(\vec{x},\delta)\Rightarrow \vec{a}\in S'$
+$\forall \delta>0,\exists\vec{a}\ne\vec{x}\land\vec{a}\in S\rightarrow \vec{a}\in O(\vec{x},\delta)$
 
 **** <<JDCYTJ2>>充要条件2
 
@@ -359,7 +359,7 @@ $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚�
 已知 $S$ 为闭集，若点 $\vec{x}\in S^c$ 则 $\vec{x}$ 不是 $S$ 的聚点，根据[[JDCYTJ1][聚点充要条件1]]可得不是聚点的充要条件为：
 
 \begin{aligned}
-&\exists \delta>0,\forall\vec{a}\ne\vec{x}, \vec{a}\in O(\vec{x},\delta)\Rightarrow \vec{a}\not\in S\\
+&\exists \delta>0,\forall\vec{a}\ne\vec{x}\land\vec{a}\in S\rightarrow \vec{a}\not\in O(\vec{x},\delta)\\
 \because &\vec{x}\in S^c\\
 \therefore &\vec{x}\not\in S\\
 \therefore &\forall \vec{x}\in S^c,\exists \delta\Rightarrow O(\vec{x},\delta)\not\subset S\\

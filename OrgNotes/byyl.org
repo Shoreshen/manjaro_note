@@ -4,7 +4,7 @@
 
 P: 31
 
-currnet mark: 158
+currnet mark: 168
 
 freed mark:
 
@@ -40,9 +40,11 @@ $V^n$ 定义为字符表 $V$ 的 $n$ 次幂，定义为 $V^0=\{\epsilon\},V^1=V,
 
 通常的若字符串 $s=<a,b,c>$ 其中 $\{a,b,c\}\subset V$ ，则 $s$ 可简记做 $abc$
 
-定义 $|s|$ 为字符串 $s$ 的长度
-
 为方便表述，进一步定义 $s[i]$ 是字符串 $s$ 中第 $i$ 个[[MK1][字符]]
+
+**** 长度<<MK160>>
+
+定义 $|s|$ 为字符串 $s$ 的长度，即所含[[MK1][字符]]的个数
 
 **** 相等<<MK4>>
 
@@ -2697,9 +2699,472 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 *** LR(Left-Reduce)分析
 
+**** 相关定义
+***** 项目
+
+****** 项目定义<<MK112>>
+
+对于[[MK14][上下文无关文法]] $G=<V_N,V_T,P,s>$ 的[[MK10][产生式]] $A\to X_1...X_n\in P$
+
+在任意 $X_i,1\leq i\leq n$ 前/后添加 $\bullet$ 符号，定义为项目
+
+不同产生式不同位置 $\bullet$ 符号定义为不同项目。
+
+例如： $A\to\bullet X_1...X_n,A\to X_1...X_i\bullet X_{i+1}...X_n,A\to X_1...X_n\bullet$ 均为上述产生式不同的项目
+
+为方便表述，若 $A\to\beta=X_i...X_n$ 是产生式，则定义 $A\to\beta_{(i)}$ 是 $\bullet$ 在 $X_i$ 与 $X_{i+1}$ 的项目
+
+且 $A\to\beta_{(0)}=A\to\bullet\beta\land A\to\beta_{(n)}=A\to\beta\bullet$ 其中 $n=|\beta|$ 是[[MK3][字符串]]长度
+
+******* 有效<<MK130>>
+
+一个项目 $A\to\beta_{(i)}$ 满足：
+
+（1） $s\Rightarrow^*\alpha A\omega\Rightarrow\alpha\beta\omega$
+
+（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
+
+则定义该项目对于活前缀 $\alpha\beta_1$ 有效
+
+******* 定理1<<MK136>>
+
+若 $A\to\beta_{(i)}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK130][有效项目]]，则 $\beta[i]\to\lambda_{(0)},\beta[i]\to\lamdba\in P$ 亦为有效项目
+
+******** 证明
+
+对于 $A\to\beta_{(i)}$ 根据[[MK130][定义]]满足
+
+（1） $s\Rightarrow\alpha A\omega\Rightarrow\alpha\beta\omega$
+
+（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
+
+则有 $s\Rightarrow^*\alpha\beta\omega\Rightarrow\alpha\beta[1]...\beta[i-1]\lambda\beta[i+1]...\beta[|\beta|]\omega$
+
+根据[[MK133][定理2]]可得 $\alpha\beta[1]...\beta[i-1]\lambda$ 的任意[[MK113][前缀]]称为活前缀
+
+综上所述 $\beta[i]\to\lambda_{(0)}[b]$ 亦是有效扩展项目，证毕
+
+******* 定理2<<MK135>>
+
+若 $A\to\beta_{(i)}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK130][有效项目]]，则 $A\to\beta_{(i+1)},i<|\beta|$ 亦为有效项目
+
+******** 证明 
+
+对于 $A\to\beta_{(i)}$ 根据[[MK130][定义]]满足
+
+（1） $s\Rightarrow\alpha A\omega\Rightarrow\alpha\beta\omega$
+
+（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
+
+则根据[[MK92][定义]]存在[[MK27][分析树]] $D=<M,E,\prec,f>$ 满足 $D\simeq\alpha A\omega\land f(r)=s$
+
+又根据 $\alpha A\omega\Rightarrow\alpha\beta\omega$ 则根据[[MK36][定理3]]存在 $D'=<M',E',\prec',f'>$ 满足 $D\stackrel{v}\Rightarrow D'$
+ 
+且 $f(v)=f'(v)=A$ 假设 $v$ 不是[[MK92][句柄分支]]，定义 $K'=\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 
+
+则存在 $u\in K'$ 是[[MK92][句柄分支]]，则满足 $u\prec v$ 则根据[[MK27][定义]]可得 $<M',E'>$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][有根树]]
+
+又由于 $\{u,v\}\subset K'$ 故 $\mathcal{S}(u)\subset\mathcal{L}(M')\land\mathcal{S}(v)\subset\mathcal{L}(M')$ 
+
+则无[[~/OneDrive/离散数学/Disc_Math.org::MK238][弱圈]]，故 $\mathcal{S}(u)\cap\mathcal{S}(v)=\varnothing$ 又根据[[MK27][定义（5）]]由 $u\prec v$ 可得 $u'\prec v',\forall u'\in\mathcal{S}(u)\land \forall v'\in\mathcal{S}(u)$
+
+故 $\mathcal{S}(u)$ 在 $\mathcal{L}(M')$ 基于 $\prec$ 的排列在 $\mathcal{S}(v)$ 之前，则 $\alpha$ 中必有 $\mathcal{S}(u)$ 对应的字符串
+
+由于 $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]，则 $\alpha$ 中不含当前分析树 $D'$ 的[[MK92][句柄]]，矛盾
+
+故假设不成立，则不存在 $u\prec v\land u\in K'$ 又根据[[MK93][定理1]]必存在[[MK92][句柄分支]]
+
+故 $v$ 是句柄分支，则 $\beta$ 是[[MK92][句柄]]。故 $\alpha\beta[1]...\beta[i+1],i<|\beta|$ 是[[MK114][活前缀]]
+
+条件（1）天然继承，则 $A\to\beta_{(i+1)},i<|\beta|$ 亦为有效项目
+
+****** 扩展项目<<MK141>>
+
+对于[[MK14][上下文无关文法]] $G=<V_N,V_T,P,s>$ 定义其扩展项目为二元[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<A\to\beta_{(i)},\rho>$
+
+其中 $A\to\beta_{(i)}$ 是[[MK112][项目]]， $\rho\in V_T^*$ 是[[MK8][终结符]]组成的[[MK3][字串]]。为方便表述，记作 $A\to\beta_{(i),[\rho]}$
+
+******* 展望长度<<MK165>>
+
+定义为 $\rho$ 的[[MK160][长度]]的最大值 $c\in\mathbb{N}$ ，即 $|\rho|\leq c$
+
+******* 有效<<MK131>>
+
+一个扩展项目 $A\to\beta_{(i),[\rho]}$ 满足：
+
+（1） $s\Rightarrow^*\alpha A\omega\Rightarrow\alpha\beta\omega$
+
+（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
+
+（3） $\rho\in FIRST(\omega)$ 即 $\rho$ 是 $\omega$ 产生[[MK129][ $FIRST$ 集]]中的元素
+
+     特别的根据[[MK134][计算]]得 $FIRST(\epsilon)=\{\#\}$ 故若 $\omega=\epsilon$ 则 $a=\#$
+
+则定义该项目对于活前缀 $\alpha\beta_1$ 有效
+
+******* 定理1<<MK137>>
+
+若 $A\to\beta_{(i),[a]}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK131][有效扩展项目]]
+
+则 $\beta[i]\to\lambda_{(0),[b]},b\in FIRST(\beta[i+1]...\beta[|\beta|]a)$ 亦为有效扩展项目
+
+******** 证明
+
+对于 $A\to\beta_{(i),[a]}$ 根据[[MK131][定义]]满足
+
+（1） $s\Rightarrow\alpha A\omega\Rightarrow\alpha\beta\omega$
+
+（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
+
+（3） $a\in FIRST(\omega)$ 即 $a$ 是 $\omega$ 产生的可能的第一个[[MK9][非终结符]]，即[[MK129][ $FIRST$ 集]]中的元素
+
+则有 $s\Rightarrow^*\alpha\beta\omega\Rightarrow\alpha\beta[1]...\beta[i-1]\lambda\beta[i+1]...\beta[|\beta|]\omega$
+
+根据[[MK133][定理2]]可得 $\alpha\beta[1]...\beta[i-1]\lambda$ 的任意[[MK113][前缀]]称为活前缀
+
+又根据 $b\in FIRST(\beta[i+1]...\beta[|\beta|]\apha)$ 
+
+综上所述 $\beta[i]\to\lambda_{(0),[b]}$ 亦是有效扩展项目，证毕
+
+******* 定理2<<MK138>>
+
+若 $A\to\beta_{(i),[a]}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK131][有效扩展项目]]
+
+则 $A\to\beta_{(i+1),[a]},i<|\beta|$ 亦为有效扩展项目
+
+******** 证明
+
+对于 $A\to\beta_{(i),[a]}$ 根据[[MK131][定义]]满足
+
+（1） $s\Rightarrow\alpha A\omega\Rightarrow\alpha\beta\omega$
+
+（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
+
+（3） $a\in FIRST(\omega)$ 即 $a$ 是 $\omega$ 产生的可能的第一个[[MK9][非终结符]]，即[[MK129][ $FIRST$ 集]]中的元素
+
+[[MK135][同理可证]] $\alpha\beta[1]...\beta[i+1],i<|\beta|$ 是[[MK114][活前缀]]，其余条件不变
+
+故结论成立
+
+***** 前缀
+
+****** 前缀定义<<MK113>>
+
+若有[[MK3][字符串]] $\alpha$ ，其任意字符串 $\beta$ 满足 $\alpha=\beta\omega$ 其中 $\omega$ 亦为字符串
+
+则称 $\beta$ 是 $\alpha$ 的前缀
+
+****** 活前缀<<MK114>>
+
+若有[[MK20][句型]] $s\Rightarrow^* \alpha\beta\delta$ 其中 $\beta$ 是[[MK92][句柄]]，则 $\alpha\beta$ 的任意[[MK113][前缀]]称为活前缀
+
+******* 定理1<<MK116>>
+
+[[MK14][2型文法]]的任意[[MK10][产生式]] $s\to \beta\in P$ 满足 $s$ 是[[MK11][开始符]]，则
+
+（1） $\beta$ 是句柄
+
+（2） $\beta$ 的任意[[MK113][前缀]]是[[MK114][活前缀]]
+
+******** 证明
+
+由于 $s$ 是开始符，则有对应[[MK18][推导]] $s\Rightarrow\beta$ 则根据[[MK30][推论1]]有分析树 $D\simeq\beta\land f(r)=s$ 
+
+且仅有一个[[~/OneDrive/离散数学/Disc_Math.org::MK293][分支]]节点，则显然[[~/OneDrive/离散数学/Disc_Math.org::MK285][树根]]是唯一分支节点。故根据[[MK92][句柄]]定义可得 $\beta$ 是句柄
+
+则根据[[MK114][活前缀]]定义可得 $\beta$ 的任意[[MK113][前缀]]是[[MK114][活前缀]]
+
+******* 定理2<<MK133>>
+
+若 $X_1...X_n$ 是[[MK20][句型]] $\alpha$ 的[[MK114][活前缀]]，且有 $X_k$ 满足 $X_k\in V_N\land X_k\to Y_1...Y_m\in P$
+
+则 $X_1...X_{k-1}Y_1...Y_m$ 的任意[[MK113][前缀]]亦是活前缀
+
+******** 证明
+
+由于 $\alpha$ 是句型，则根据[[MK92][定义]]存在[[MK27][分析树]] $D=<M,E,\prec,f>$ 满足 $D\simeq\alpha\beta\delta\land f(r)=s$
+
+由于 $X_1...X_n$ 则定义 $X_1...X_q$ 是包含[[MK92][句柄]]的活前缀，根据[[MK114][定义]]有 $n\leq m$ 定义 $\alpha=X_1...X_q\beta$
+
+则存在有 $v'\in\mathcal{L}(M)$ 满足 $f(v)=X_k$ 定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即 $D$ 中[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]
+
+进一步定义 $X_p...X_q$ 是句柄，故有对应[[MK92][句柄分支]] $v\in K$
+
+根据 $X_k\to Y_1...Y_m$ 显然有推导 $\alpha=X_1...X_q\beta\Rightarrow X_1...X_{k-1}Y_1...Y_mX_{k+1}...X_q\beta=\alpha'$
+
+则根据[[MK36][定理3]]有对应[[MK33][分析树推导]] $D\stackrel{v'}\Rightarrow D'=<M',E',\prec',f'>$ 满足 $D'\simeq\alpha'$
+
+且对于 $v'$ 有 $f(v')=X_k$ 定义 $K'=\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 则有 $v'\in K'$ 即在 $D'$ 中[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$
+
+若 $k<p$ 则有 $v'\prec v$ 根据[[MK40][定理2]]有 $v'\prec' v$ 又由于显然任意 $u\in K'\land u\ne v'\land u\ne v\Rightarrow u\in K$
+
+故有 $v\prec u$ 根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK172][传递性]]有 $\forall u\in K'\land u\ne v\Rightarrow v'\prec u$
+
+若 $k\geq p$ 则 $v\not\in K'$ 类似易证亦有 $\forall u\in K'\land u\ne v\Rightarrow v'\prec u$
+
+故 $v'$ 是 $D'$ 的[[MK92][句柄分支]]，则定 $v'$ 为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]的[[MK38][分析子树]]所[[MK28][对应]]的[[MK3][字串]]是[[MK92][句柄]]
+
+显然易证 $\alpha'$ 的句柄是[[MK18][推导]]出的 $X_{k-1}$ 与 $X_{k+1}$ 之间的 $Y_1...Y_m$ 
+
+故根据[[MK114][定义]]可得 $X_1...X_{k-1}Y_1...Y_m$ 的任意[[MK113][前缀]]称为活前缀
+
+******* 定理3<<MK117>>
+
+若 $\alpha\beta$ 是[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 包含[[MK92][句柄]] $\beta$ 的[[MK114][活前缀]]
+
+则存在 $A\in V_N$ 满足
+
+（1） $s\Rightarrow^*\alpha A\delta\Rightarrow\alpha\beta\delta$ 
+
+（2） $\alpha A$ 亦为活前缀
+
+******** 证明
+
+********* (1)
+
+由于是包含句柄 $\beta$ 的活前缀，故有 $s\Rightarrow^* \alpha\beta\delta$ ，其中 $\beta$ 是
+
+则根据[[MK92][定义]]存在[[MK27][分析树]] $D=<M,E,\prec,f>$ 满足 $D\simeq\alpha\beta\delta\land f(r)=s$
+
+定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]
+
+则根据[[MK93][定理1]]有句柄分支 $v$ ，定义 $\mathcal{A}(v)$ 为其所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]节点，定义 $N=M/(\mathcal{A}(v)/\{v\})$
+
+故根据[[MK37][定理4]]有 $D_N\stackrel{v}\Rightarrow D$ 且 $D_N=<M',E',\prec',f'>$ 是 $D$ 的[[MK38][分析子树]]
+
+进一步根据[[MK34][定理2]]有 $D_N\simeq\alpha A\delta\land f'(v)=f(v)=A$ 显然 $D_N,D$ 有相同的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]
+
+故根据[[MK32][推论]]以及[[MK34][定理2]]有 $s\Rightarrow^*\alpha A\delta\Rightarrow\alpha\beta\delta$ 
+
+********* (2)
+
+定义 $D_N$ 及其句柄分支 $u$ ，假设 $\alpha$ 中包含句柄，则 $u$ 到 $v$ 不[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]
+
+由于 $D_N$ 是分析树，故根据[[MK27][定义]] $<M',E'>$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][有根树]]，故根据[[~/OneDrive/离散数学/Disc_Math.org::MK288][性质1]] $r$ 到 $v$ 可达
+
+故存在 $u'\in\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 满足 $u'$ 到 $v$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]
+
+又根据[[MK92][定义]]有 $u\prec' u'$ 由于 $D_N$ 是 $D$ 的[[MK38][分析子树]]，则根据[[MK40][定理2]]有 $u\prec u'$
+
+根据[[MK27][定义（4）]]结合 $u'$ 到 $v$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]有 $u\prec v$
+
+且由于 $u$ 到 $v$ 不[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]，故根据[[MK33][分析树推导]]可得 $u\in K$ 与句柄[[MK92][定义]]矛盾
+
+故假设不成立 $\alpha$ 中不包含句柄，则 $\alpha A$ 是[[MK114][活前缀]]
+
+***** 识别活前缀的自动机<<MK164>>
+
+****** 活前缀自动机<<MK118>>
+
+基于[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 定义[[MK69][NFA]]自动机 $M=<S,\Sigma,\delta,T,F>$ 如下
+
+$S$ ：元素为所有[[MK130][有效项目]]的集合 $\left\{A\to\beta_{(i)}\big|A\to\beta\in P\land0\leq i\leq|\beta|\right\}$
+
+$\Sigma$ ：所有字符 $V_N\cup V_T$
+
+$\delta$ ：包含 $S$ 中[[MK112][项目]]的[[MK8][终结符]]后继和[[MK9][非终结符]]后继 
+
+    $\begin{aligned}&\left\{<<A\to\beta_{(i)},\beta[i+1]>,\{A\to\beta_{(i+1)}\}>\big|A\to\beta_{(i)}\in S\land i+1\leq|\beta|\right\}\\\cup&\left\{<<A\to\beta_{(i-1)},\epsilon>,\left\{\beta[i]\to\lambda_{(0)}\big|\beta[i]\to\lambda\in P\right\}>\big|A\to\beta_{(i-1)}\in S\right\}\end{aligned}$
+
+$T$ ：[[MK11][开始]]符的初始项目 $\left\{s\to\beta_{(0)}\big|s\to\beta\in P\right\}$
+
+$F$ ：[[MK10][产生式]]的最终项目 $\left\{A\to\beta_{(|\beta|)}\big|A\to\beta_{(|\beta|)}\in S\right\}$
+
+******* 定理<<MK120>>
+
+基于[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 定义[[MK69][NFA]]自动机 $M=<S,\Sigma,\delta,T,F>$ 
+
+能够接受所包含[[MK92][句柄]]的[[MK114][活前缀]]
+
+******** 证明
+
+********* $\delta$ 成立<<MK139>>
+
+对于任意 $A\to\beta_{(i)}\in S\land i<|\beta|$ 根据[[MK135][定理2]]可得 $A\to\beta_{(i+1)}$ 亦为[[MK130][有效项目]]
+
+故得 $\delta(A\to\beta_{(i)},\beta[i+1])=\{A\to\beta_{(i)}\}\subset S$
+
+对于任意 $A\to\beta_{(i-1)}\in S\land\beta[i]\to\lambda\in P$ 根据[[MK136][定理1]]可得 $\beta[i]\to\lambda_{(0)}$ 亦为[[MK130][有效项目]]
+
+故得 $\delta(A\to\beta_{(i-1)},\epsilon)=\left\{\beta[i]\to\lambda_{(0)}\big|\beta[i]\to\lambda\in P\right\}\subset S$
+
+又根据构造易证 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]故得 $\delta:S\times\Sigma\to\rho(S)$ 满足[[MK69][定义]]，故成立
+
+********* 一步[[MK18][推导]]<<MK132>>
+
+定义任意一步推导的[[MK20][句型]] $s\Rightarrow\beta$ ，则必有 $s\to \beta\in P$ 
+
+根据[[MK116][定理1]]任意 $s\to \beta\in P$ 则 $\beta$ 是包含[[MK92][句柄]]的[[MK114][活前缀]]，则根据[[MK114][定义]]任意 $\beta$ 的[[MK113][前缀]]亦为活前缀
+
+则任意 $s\to\beta,i\leq|\beta|$ 均满足 $s\Rightarrow^0s\Rightarrow\beta[1]...\beta[i]\beta[i+1]...\beta[|\beta|]$
+
+故根据[[MK130][定义]]可得对于任意 $s\to\beta\in P\land1\leq i\leq |\beta|$ 可得 $s\to\beta_{(i)}$ 是[[MK130][有效项目]]，既有 $s\to\beta_{(i)}\in S$
+
+则有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s\to\beta_{(0)},\beta[1]),...,\delta(s\to\beta_{(|\beta|-1)},\beta[|\beta|]})>$ 满足
+
+（1） $s\to\beta_{(0)}$
+
+（2） $\delta(s\to\beta_{(|\beta|-1)},\beta[|\beta|]})=\{s\to\beta_{(|\beta|)}\}\cap F\ne\varnothing$
+
+（3） $s\to\beta_{(i)}\in S,0\leq i\leq|\beta|$
+
+（4） $s\to\beta_{i}\in\delta(s\to\beta_{i-1},\beta[i])=\{s\to\beta_{i}\}$
+
+（5） $\beta[i]\in\Sigma$ 是[[MK57][正规式]]
+
+则显然 $\beta[1]...\beta[|\beta|]=\beta$ 是 $M$ 能接受的字串，即 $\beta\in M$
+
+*********  $n$ 步推导<<MK124>>
+
+假设 $M$ 能接受任意 $n-1$ 步推导产生的包含[[MK92][句柄]]的[[MK114][活前缀]]
+
+根据定义，对于任意包含[[MK92][句柄]]的[[MK114][活前缀]]均有 $s\Rightarrow^n \alpha\beta\delta,n<\infty$ 其中 $\beta$ 是[[MK92][句柄]]
+
+则根据[[MK114][定义]]任意 $\alpha\beta$ 的[[MK113][前缀]]亦为活前缀，进一步则根据[[MK117][定理3]]有 $s\Rightarrow^{n-1}\alpha A\delta\Rightarrow\alpha\beta\delta$ 
+
+且 $\alpha A$ 亦是活前缀，定义 $\alpha A\lambda$ 是 $\alpha A\delta$ 包含[[MK92][句柄]]的[[MK114][活前缀]]，根据假设 $\alpha A\lambda$ 可以被自动机接受
+
+有 $<\delta(s_0,\alpha[1]),...,\delta(s_{k},A),...,\delta(s_{n-1},\lambda[|\lambda|])>$ 满足[[MK70][识别条件]]
+
+则有 $s_{k}\in S$ 则 $s_{k}$ 是有形式 $B\to\kappa_{(i)}$ 的[[MK130][有效项目]]，且由于 $\alpha$ 不包含句柄
+
+故 $s_{k}\not\in F\rightarrow |\kappa|>i$ 又由于 $A\ne\epsilon$ 且存在 $\delta(s_k,A)$ 故有 $\kappa_{i+1}=A$
+
+根据推导有 $A\to\beta\in P$ 则根据 $\delta$ 定义存在 $A\to\beta_{(0)}\in\delta(s_k,\epsilon)$ 
+
+进一步由于[[MK139][ $\delta$ 成立]]，故有 $A\to\beta_{(i)},0\leq i\leq|\beta|$ 均为[[MK130][有效项目]]
+
+故显然 $<\delta(s_0,\alpha[1]),...,\delta(s_{k},\epsilon),\delta(A\to\beta_{(0)},\beta[1])...,\delta(A\to\beta_{(|\beta|-1)},\beta[|\beta|])>$ 亦满足[[MK70][识别条件]]
+
+********* 结论
+
+根据数学归纳法，对于任意 $n<\infty$ 步[[MK18][推导]]产生的包含[[MK92][句柄]]的[[MK114][活前缀]]均可被自动机接受
+
+又由于任意[[MK114][活前缀]]均有 $s\Rightarrow^n \alpha\beta\delta,n<\infty$ 其中 $\beta$ 是[[MK92][句柄]]，故结论成立
+
+******* 推论<<MK128>>
+
+根据[[MK77][定理3]]可得该[[MK69][NFA]]通过求解[[MK51][ $\epsilon$ 闭包]]具有等价[[MK67][不含空边的DFA]] $M=<S,\Sigma,\delta,t,F>$ 
+
+****** 扩展活前缀自动机<<MK159>>
+
+基于[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ [[MK165][展望长度]] $c$ ，定义[[MK69][NFA]]自动机 $M=<S,\Sigma,\delta,T,F>$ 如下
+
+$S$ ：元素为所有[[MK131][有效扩展项目]]的集合 $\left\{A\to\beta_{(i),[\rho]}\big|A\to\beta\in P\land0\leq i\leq|\beta|\right\}$
+
+$\Sigma$ ：所有字符 $V_N\cup V_T$
+
+$\delta$ ：包含 $S$ 中[[MK141][扩展项目]]的[[MK8][终结符]]后继和[[MK9][非终结符]]后继 
+
+    $\begin{aligned}&\left\{<<A\to\beta_{(i),[\rho]},\beta[i+1]>,\{A\to\beta_{(i+1),[\rho]}\}>\big|A\to\beta_{(i),[\rho]}\in S\right\}\\\cup&\bigg\{\left<<A\to\beta_{(i-1),[\rho]},\epsilon>,\left\{\beta[i]\to\lambda_{(0),[\tau]}\bigg|\beta[i]\to\lambda\in P\land \tau\in FIRST(\beta[i]...\beta[|\beta|]\rho)\land |\tau|\leq c\right\}\right>\\&\bigg|A\to\beta_{(i-1),[\rho]}\in S\bigg\}\end{aligned}$
+
+$T$ ：[[MK11][开始]]符的初始项目 $\left\{s\to\beta_{(0)}[\#]\big|s\to\beta\in P\right\}$
+
+$F$ ：[[MK10][产生式]]的最终项目 $\left\{A\to\beta_{(|\beta|)}[a]\big|A\to\beta_{(|\beta|)}[a]\in S\right\}$
+
+******* 定理<<MK162>>
+
+基于[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 定义的扩展[[MK69][NFA]]自动机 $M=<S,\Sigma,\delta,T,F>$ 
+
+能够接受所包含[[MK92][句柄]]的[[MK114][活前缀]]
+
+******** 证明
+
+********* $\delta$ 成立<<MK140>>
+
+对于任意 $A\to\beta_{(i)}[a]\in S\land i<|\beta|$ 根据[[MK138][定理2]]可得 $A\to\beta_{(i+1)}[a]$ 亦为[[MK130][有效项目]]
+
+故得 $\delta(A\to\beta_{(i)}[a],\beta[i+1])=\{A\to\beta_{(i)}[a]\}\subset S$
+
+对于任意 $A\to\beta_{(i-1)}[a]\in S\land\beta[i]\to\lambda\in P$ 
+
+则根据[[MK137][定理1]]可得 $\beta[i]\to\lambda_{(0)}[b],b\in FIRST(\beta[i]...\beta[|\beta|]a)$ 亦为[[MK130][有效项目]]
+
+故得 $\delta(A\to\beta_{(i-1)}[a],\epsilon)=\left\{\beta[i]\to\lambda_{(0)}[b]\bigg|\beta[i]\to\lambda\in P\land b\in FIRST(\beta[i]...\beta[|\beta|]a)\right\}\subset S$
+
+又根据构造易证 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]故得 $\delta:S\times\Sigma\to\rho(S)$ 满足[[MK69][定义]]，故成立
+
+********* 一步[[MK18][推导]]
+
+定义任意一步推导的[[MK20][句型]] $s\Rightarrow\beta$ ，则必有 $s\to \beta\in P$ 
+
+根据[[MK116][定理1]]任意 $s\to \beta\in P$ 则 $\beta$ 是包含[[MK92][句柄]]的[[MK114][活前缀]]，则根据[[MK114][定义]]任意 $\beta$ 的[[MK113][前缀]]亦为活前缀
+
+则任意 $s\to\beta,i\leq|\beta|$ 均满足 $s\Rightarrow^0s\Rightarrow\beta[1]...\beta[i]\beta[i+1]...\beta[|\beta|]$
+
+根据[[MK5][连接]]运算有 $s=s\epsilon$ 故可得 $s\to\beta_{(i)}[\#],1\leq i\leq|\beta|$ 是[[MK131][扩展有效定义]]
+
+[[MK132][同理可证]]任意一步推导的[[MK20][句型]]可被 $M$ [[MK70][接受识别]]
+ 
+********* $n$ 步推导
+
+假设 $M$ 能接受任意 $n-1$ 步推导产生的包含[[MK92][句柄]]的[[MK114][活前缀]]
+
+根据定义，对于任意包含[[MK92][句柄]]的[[MK114][活前缀]]均有 $s\Rightarrow^n \alpha\beta\delta,n<\infty$ 其中 $\beta$ 是[[MK92][句柄]]
+
+则根据[[MK114][定义]]任意 $\alpha\beta$ 的[[MK113][前缀]]亦为活前缀，进一步则根据[[MK117][定理3]]有 $s\Rightarrow^{n-1}\alpha A\delta\Rightarrow\alpha\beta\delta$ 
+
+且 $\alpha A$ 亦是活前缀，定义 $\alpha A\lambda$ 是 $\alpha A\delta$ 包含[[MK92][句柄]]的[[MK114][活前缀]]，根据假设 $\alpha A\lambda$ 可以被自动机接受
+
+有 $<\delta(s_0,\alpha[1]),...,\delta(s_{k},A),...,\delta(s_{n-1},\lambda[|\lambda|])>$ 满足[[MK70][识别条件]]
+
+则有 $s_{k}\in S$ 则 $s_{k}$ 是有形式 $B\to\kappa_{(i)}[a]$ 的[[MK131][有效扩展项目]]，且由于 $\alpha$ 不包含句柄
+
+故 $s_{k}\not\in F\rightarrow |\kappa|>i$ 又由于 $A\ne\epsilon$ 且存在 $\delta(s_k,A)$ 故有 $\kappa_{i+1}=A$
+
+根据推导有 $A\to\beta\in P$ 则根据 $\delta$ 定义存在 $A\to\beta_{(0)}[b]\in\delta(s_k,\epsilon),b\in FIRST(\delta a)$ 
+
+进一步由于[[MK140][ $\delta$ 成立]]，故有 $A\to\beta_{(i)}[b],0\leq i\leq|\beta|$ 均为[[MK131][有效扩展项目]]
+
+故显然 $<\delta(s_0,\alpha[1]),...,\delta(s_{k},\epsilon),\delta(A\to\beta_{(0)}[b],\beta[1])...,\delta(A\to\beta_{(|\beta|-1)},\beta[|\beta|])>$ 亦满足[[MK70][识别条件]]
+
+********* 结论
+
+根据数学归纳法，对于任意 $n<\infty$ 步[[MK18][推导]]产生的包含[[MK92][句柄]]的[[MK114][活前缀]]均可被自动机接受
+
+又由于任意[[MK114][活前缀]]均有 $s\Rightarrow^n \alpha\beta\delta,n<\infty$ 其中 $\beta$ 是[[MK92][句柄]]，故结论成立
+
+******* 推论<<MK161>>
+
+根据[[MK77][定理3]]可得该[[MK69][NFA]]通过求解[[MK51][ $\epsilon$ 闭包]]具有等价[[MK67][不含空边的DFA]] $M=<S,\Sigma,\delta,t,F>$
+
+******* 直接构建DFA算法
+
+给定于[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 以及[[MK165][展望长度]] $c$
+
+（1） 添加 $S'\to S$ 到 $G$ 中，形成 $G'$ 文法，并定义 $\Sigma=V_N\cup V_T$ 以及 $t=S'$
+
+（2） 计算 $I=\{<S'\to S,\#>\}$ 的[[MK166][闭包]]集合 $C(I)$ ，并定义 $S=\{C(I)\}$
+
+（3） 对 $S$ 中每个元素 $C(I)$ ：
+
+     （a） 对其中每一个 $A\to\alpha X\beta_{(|\alpha|),[\rho]}$ 形式的[[MK141][扩展项目]]
+
+          求 $A\to\alpha X\beta_{(|\alpha|+1),[\rho]}$ 的[[MK166][闭包]]集合 $C'$ 若 $C'\not\in S\land C'\ne\varnothing$ 则定义 $S=S\cup C'$
+
+          进一步增加[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][映射]]关系 $\delta(C(I),X)=C'$ 到原有的 $\delta$ 中
+
+     （b） 若 $C(I)$ 中含有 $A\to\alpha_{(|\alpha|),[\rho]}$ 形式的[[MK141][扩展项目]]，则添加 $C(I)$ 至 $F$ 中标记为[[MK67][终态]]
+
+（4） 重复（3）直至 $S$ 以及 $F$ 的元素不再增多
+
+******** 闭包<<MK166>>
+
+若 $I$ 为元素是[[MK141][扩展项目]]的集合，则 $I$ 的闭包 $C(I)$ 构造为：
+
+（1） $I$ 中的所有元素属于 $C(I)$
+
+（2） 对于任意 $A\to\alpha B\beta_{(|\alpha|),[\rho]}\in C(I)$
+
+     将 $\left\{\beta[i]\to\lambda_{(0),[\tau]}\big|\beta[i]\to\lambda\in P\land \tau\in FIRST(\beta[i]...\beta[|\beta|]\rho)\land |\tau|\leq c\right\}$
+
+     中的所有元素添加到 $C(I)$ 中
+
+（3） 重复步骤（2）直至 $C(I)$ 不再扩大
+
 **** LR($k$)文法<<MK119>>
 
-[[MK14][上下文无关文法]] $G=<V_N,V_T,P,s>$ 定义[[MK128][活前缀自动机]] $M=<S,\Sigma,\delta,t,F>$ 
+[[MK14][上下文无关文法]] $G=<V_N,V_T,P,s>$ 定义根据[[MK164][识别活前缀]]构造[[MK128][DFA]] $M=<S,\Sigma,\delta,t,F>$ 
 
 对于任意[[MK20][句型]] $\alpha$ ，当自左向右依次被 $M$ 读入识别时
 
@@ -2711,7 +3176,7 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 （3） 现状：当前读入的第 $i$ 个字符
 
-来唯一确定已读入的[[MK3][字符串]]是否是当前[[MK20][句型]]的[[MK92][句柄]]，以及[[MK92][句柄分支]]对应的[[MK10][产生式]]
+来唯一确定已读入的[[MK3][字符串]]是否是当前[[MK20][句型]]的[[MK92][句柄]]，若是则能进一步确定[[MK19][归约]]该[[MK92][句柄]]所用的[[MK10][产生式]]
 
 则定义该文法为LR($k$)文法
 
@@ -2741,23 +3206,35 @@ LR($k$)文法的任意[[MK20][句型]]包含唯一[[MK92][句柄]]
 
 故矛盾，则假设不成立
 
-****** 推论<<MK123>>
+****** 推论1<<MK123>>
 
-LR($k$)文法可以确定唯一满足[[MK70][识别条件]]且识别包含[[MK92][句柄]]的[[MK114][活前缀]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]]
+给定LR($k$)文法，其定义的定义[[MK128][活前缀DFA]]或[[MK161][扩展活前缀DFA]]为 $M=<S,\Sigma,\delta,t,F>$ 
+
+则可以确定唯一满足[[MK70][识别条件]]且识别包含[[MK92][句柄]]的[[MK114][活前缀]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]]
 
 ******* 证明
 
+******** 活前缀DFA<<MK163>>
+
 由于[[MK92][句柄]]唯一，则包含[[MK92][句柄]]的[[MK114][活前缀]]唯一，定义为 $\lambda$
 
-根据[[MK120][定理]]可知 $\lambda$ 可以被 $M$ 识别，即存在满足[[MK68][识别条件]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $r=<\delta(s_0,\lambda[1]),...,\delta(s_{n-1},\lambda[n])>$
+根据[[MK120][定理]]以及[[MK77][等价性]]可知 $\lambda$ 可以被 $M$ 识别，即存在满足[[MK68][识别条件]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $r=<\delta(s_0,\lambda[1]),...,\delta(s_{n-1},\lambda[n])>$
 
 假设存在任意有序组 $<\delta(s'_0,\lambda[1]),...,\delta(s'_{n-1},\lambda[n])>$ 亦满足[[MK68][识别条件]]
 
 根据根据[[MK68][识别条件]]开始状态只能为 $s_0=t$ ，故有 $s'_0=s_0$
 
-且 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]函数且第二个参数不为 $\epsilon$ 故对于任意 $s_i=s'_i$ 可得 $\delta(s_i,\lambda[i])=\delta(s'_i,\lambda[i])$ 
+且根据[[MK67][DFA定义]] $\delta:S\times\Sigma\cup\{\epsilon\}\to S$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]函数且第二个参数不为 $\epsilon$
 
-故根据数学归纳法可证 $\delta(s'_i,\lambda_i)=\delta(s_i,\lambda_i)$ 即任意满足识别条件的有序组与 $r$ 相等
+故对于任意 $s_i=s'_i$ 可得 $\delta(s_i,\lambda[i])=\delta(s'_i,\lambda[i])$ 
+
+则根据数学归纳法可证 $\delta(s'_i,\lambda_i)=\delta(s_i,\lambda_i)$ 即任意满足识别条件的有序组与 $r$ 相等
+
+******** 扩展活前缀DFA
+
+同理由于[[MK92][句柄]]唯一，则包含[[MK92][句柄]]的[[MK114][活前缀]]唯一，定义为 $\lambda$
+
+根据[[MK162][定理]]以及[[MK77][等价性]]可知 $\lambda$ 可以被 $M$ 识别，剩余同[[MK63][之前证明]]
 
 ***** 定理2<<MK122>>
 
@@ -2801,7 +3278,9 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 **** LR($k$)分析方法<<MK149>>
 
-对于[[MK119][LR($k$)文法]] $G=<V_N,V_T,P,s>$ 根据[[MK118][定义]]构造[[MK128][DFA]] $M=<S,\Sigma,\delta,t,F>$ 
+***** 定义
+
+对于[[MK119][LR($k$)文法]] $G=<V_N,V_T,P,s>$ 根据[[MK164][识别活前缀]]构造[[MK128][DFA]] $M=<S,\Sigma,\delta,t,F>$ 
 
 定义[[MK50][栈]] $\mathbb{S}$ ，其存储的是双元结构 $<v,X>$ 满足 $v\in S\land X\in\Sigma$ 
 
@@ -2811,9 +3290,9 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 （2） 自左向右扫描字串 $\alpha$ 依次读入自动机
 
-（3） 当读入 $\alpha[i]$ 时定义 $<v_0,X_0>$ 为栈顶元素，向下的第 $i$ 个元素为 $<v_i,X_i>$ 则：
+（3） 当读入 $\alpha[i]$ 时定义 $<v_0,X_0>$ 为栈顶元素，向下的第 $k$ 个元素为 $<v_k,X_k>$ 则：
 
-     a. 若未识别包含[[MK92][句柄]]的[[MK114][活前缀]]，则将 $<\delta(v,\alpha[i]),\alpha[i]>$ 入栈
+     a. 若未识别包含[[MK92][句柄]]的[[MK114][活前缀]]，则将 $<\delta(v_0,\alpha[i]),\alpha[i]>$ 入栈
 
      b. 若识别包含[[MK92][句柄]]的[[MK114][活前缀]]则根据[[MK118][定义]]有 $A\to\beta_{(0)}$ ，则将 $\beta[1]$ 至 $\beta[|\beta|]$ 出栈
 
@@ -2823,15 +3302,15 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 注： $\delta$ 函数可根据[[MK150][状态转移矩阵]]构建数据结构
 
-***** 定理<<MK157>>
+****** 定理<<MK157>>
 
 对于[[MK119][LR($k$)文法]] $G=<V_N,V_T,P,s>$ 的任意[[MK20][句型]] $\alpha$ 可以用LR($k$)分析方法归约出 $s$
 
-****** 证明
+******* 证明
 
 由于是[[MK119][LR($k$)文法]]，则根据[[MK123][之前证明]]可得有唯一[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $r=<\delta(s_0,\alpha[1]),...,\delta(s_{n-1},\alpha[n])>$ 满足[[MK70][识别条件]]
 
-则 $\alpha[1]...\alpha[n]$ 是包含[[MK92][句柄]]的[[MK114][活前缀]]，又根[[MK119][定义]]可唯一确定以[[MK10][产生式]] $A\to\beta=\alpha[u]...\alpha[n]$ 进行[[MK19][归约]]
+则设 $\alpha[1]...\alpha[n]$ 是包含[[MK92][句柄]]的[[MK114][活前缀]]，又根[[MK119][定义]]可唯一确定以[[MK10][产生式]] $A\to\beta=\alpha[u]...\alpha[n]$ 进行[[MK19][归约]]
 
 得归约后的[[MK3][字串]]为 $\alpha_1=\alpha[1]...\alpha[u-1]A\alpha[n+1]...\alpha[|\alpha|]$
 
@@ -2841,7 +3320,7 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 根据[[MK123][推论证明]]类似可证 $s'_i=s_i,0\leq i\leq u-1$ 
 
-最终有 $r'=<\delta(s'_0,\alpha[1]),...,\delta(s'_{u-2},\alpha[u-1]),\delta(s'_{u-1},A)...,\delta(s'_{n-1},\alpha_1[m])>$
+最终有 $r'=<\delta(s_0,\alpha[1]),...,\delta(s_{u-2},\alpha[u-1]),\delta(s_{u-1},A)...,\delta(s'_{n-1},\alpha_1[m])>$
 
 故退回到 $\alpha[u-2]$ 的状态继续识别 $A$ 以及之后的字符可以找到包含[[MK92][句柄]]的[[MK114][活前缀]]并归约句柄。
 
@@ -2923,7 +3402,7 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 故假设不成立，[[MK158][上一步]]推出的可能性是有效归约/移进状态
 
-***** LR($1$)分析
+***** LR($1$)分析<<MK168>>
 
 针对[[MK119][LR($1$)文法]]的分析方法，根据未读入的 $1$ 个[[MK1][字符]]与[[MK141][扩展项目]]中字符的匹配
 
@@ -2941,433 +3420,9 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 ***** LALR($1$)分析
 
+以[[MK168][LR($1$)]]分析法产生[[MK159][扩展活前缀DFA]] $M=<S,\Sigma,\delta,t,F>$
 
-
-**** 项目
-
-***** 项目定义<<MK112>>
-
-对于[[MK14][上下文无关文法]] $G=<V_N,V_T,P,s>$ 的[[MK10][产生式]] $A\to X_1...X_n\in P$
-
-在任意 $X_i,1\leq i\leq n$ 前/后添加 $\bullet$ 符号，定义为项目
-
-不同产生式不同位置 $\bullet$ 符号定义为不同项目。
-
-例如： $A\to\bullet X_1...X_n,A\to X_1...X_i\bullet X_{i+1}...X_n,A\to X_1...X_n\bullet$ 均为上述产生式不同的项目
-
-为方便表述，若 $A\to\beta=X_i...X_n$ 是产生式，则定义 $A\to\beta_{(i)}$ 是 $\bullet$ 在 $X_i$ 与 $X_{i+1}$ 的项目
-
-且 $A\to\beta_{(0)}=A\to\bullet\beta\land A\to\beta_{(n)}=A\to\beta\bullet$ 其中 $n=|\beta|$ 是[[MK3][字符串]]长度
-
-****** 有效<<MK130>>
-
-一个项目 $A\to\beta_{(i)}$ 满足：
-
-（1） $s\Rightarrow^*\alpha A\omega\Rightarrow\alpha\beta\omega$
-
-（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
-
-则定义该项目对于活前缀 $\alpha\beta_1$ 有效
-
-****** 定理1<<MK136>>
-
-若 $A\to\beta_{(i)}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK130][有效项目]]，则 $\beta[i]\to\lambda_{(0)},\beta[i]\to\lamdba\in P$ 亦为有效项目
-
-******* 证明
-
-对于 $A\to\beta_{(i)}$ 根据[[MK130][定义]]满足
-
-（1） $s\Rightarrow\alpha A\omega\Rightarrow\alpha\beta\omega$
-
-（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
-
-则有 $s\Rightarrow^*\alpha\beta\omega\Rightarrow\alpha\beta[1]...\beta[i-1]\lambda\beta[i+1]...\beta[|\beta|]\omega$
-
-根据[[MK133][定理2]]可得 $\alpha\beta[1]...\beta[i-1]\lambda$ 的任意[[MK113][前缀]]称为活前缀
-
-综上所述 $\beta[i]\to\lambda_{(0)}[b]$ 亦是有效扩展项目，证毕
-
-****** 定理2<<MK135>>
-
-若 $A\to\beta_{(i)}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK130][有效项目]]，则 $A\to\beta_{(i+1)},i<|\beta|$ 亦为有效项目
-
-******* 证明 
-
-对于 $A\to\beta_{(i)}$ 根据[[MK130][定义]]满足
-
-（1） $s\Rightarrow\alpha A\omega\Rightarrow\alpha\beta\omega$
-
-（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
-
-则根据[[MK92][定义]]存在[[MK27][分析树]] $D=<M,E,\prec,f>$ 满足 $D\simeq\alpha A\omega\land f(r)=s$
-
-又根据 $\alpha A\omega\Rightarrow\alpha\beta\omega$ 则根据[[MK36][定理3]]存在 $D'=<M',E',\prec',f'>$ 满足 $D\stackrel{v}\Rightarrow D'$
- 
-且 $f(v)=f'(v)=A$ 假设 $v$ 不是[[MK92][句柄分支]]，定义 $K'=\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 
-
-则存在 $u\in K'$ 是[[MK92][句柄分支]]，则满足 $u\prec v$ 则根据[[MK27][定义]]可得 $<M',E'>$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][有根树]]
-
-又由于 $\{u,v\}\subset K'$ 故 $\mathcal{S}(u)\subset\mathcal{L}(M')\land\mathcal{S}(v)\subset\mathcal{L}(M')$ 
-
-则无[[~/OneDrive/离散数学/Disc_Math.org::MK238][弱圈]]，故 $\mathcal{S}(u)\cap\mathcal{S}(v)=\varnothing$ 又根据[[MK27][定义（5）]]由 $u\prec v$ 可得 $u'\prec v',\forall u'\in\mathcal{S}(u)\land \forall v'\in\mathcal{S}(u)$
-
-故 $\mathcal{S}(u)$ 在 $\mathcal{L}(M')$ 基于 $\prec$ 的排列在 $\mathcal{S}(v)$ 之前，则 $\alpha$ 中必有 $\mathcal{S}(u)$ 对应的字符串
-
-由于 $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]，则 $\alpha$ 中不含当前分析树 $D'$ 的[[MK92][句柄]]，矛盾
-
-故假设不成立，则不存在 $u\prec v\land u\in K'$ 又根据[[MK93][定理1]]必存在[[MK92][句柄分支]]
-
-故 $v$ 是句柄分支，则 $\beta$ 是[[MK92][句柄]]。故 $\alpha\beta[1]...\beta[i+1],i<|\beta|$ 是[[MK114][活前缀]]
-
-条件（1）天然继承，则 $A\to\beta_{(i+1)},i<|\beta|$ 亦为有效项目
-
-***** 扩展项目<<MK141>>
-
-对于[[MK14][上下文无关文法]] $G=<V_N,V_T,P,s>$ 
-
-定义其扩展项目为二元[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<A\to\beta_{(i)},a>$ 其中 $v$ 是[[MK112][项目]]， $a\in V_T$
-
-为方便表述，记作 $A\to\beta_{(i),[a]}$
-
-****** 有效<<MK131>>
-
-一个扩展项目 $A\to\beta_{(i),[a]}$ 满足：
-
-（1） $s\Rightarrow^*\alpha A\omega\Rightarrow\alpha\beta\omega$
-
-（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
-
-（3） $a\in FIRST(\omega)$ 即 $a$ 是 $\omega$ 产生的可能的第一个[[MK8][终结符]]，即[[MK129][ $FIRST$ 集]]中的元素
-
-     特别的根据[[MK134][计算]]得 $FIRST(\epsilon)=\{\#\}$ 故若 $\omega=\epsilon$ 则 $a=\#$
-
-则定义该项目对于活前缀 $\alpha\beta_1$ 有效
-
-****** 定理1<<MK137>>
-
-若 $A\to\beta_{(i),[a]}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK131][有效扩展项目]]
-
-则 $\beta[i]\to\lambda_{(0),[b]},b\in FIRST(\beta[i+1]...\beta[|\beta|]a)$ 亦为有效扩展项目
-
-******* 证明
-
-对于 $A\to\beta_{(i),[a]}$ 根据[[MK131][定义]]满足
-
-（1） $s\Rightarrow\alpha A\omega\Rightarrow\alpha\beta\omega$
-
-（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
-
-（3） $a\in FIRST(\omega)$ 即 $a$ 是 $\omega$ 产生的可能的第一个[[MK9][非终结符]]，即[[MK129][ $FIRST$ 集]]中的元素
-
-则有 $s\Rightarrow^*\alpha\beta\omega\Rightarrow\alpha\beta[1]...\beta[i-1]\lambda\beta[i+1]...\beta[|\beta|]\omega$
-
-根据[[MK133][定理2]]可得 $\alpha\beta[1]...\beta[i-1]\lambda$ 的任意[[MK113][前缀]]称为活前缀
-
-又根据 $b\in FIRST(\beta[i+1]...\beta[|\beta|]\apha)$ 
-
-综上所述 $\beta[i]\to\lambda_{(0),[b]}$ 亦是有效扩展项目，证毕
-
-****** 定理2<<MK138>>
-
-若 $A\to\beta_{(i),[a]}$ 对于 $\alpha\beta[1]...\beta[i]$ 是[[MK131][有效扩展项目]]
-
-则 $A\to\beta_{(i+1),[a]},i<|\beta|$ 亦为有效扩展项目
-
-******* 证明
-
-对于 $A\to\beta_{(i),[a]}$ 根据[[MK131][定义]]满足
-
-（1） $s\Rightarrow\alpha A\omega\Rightarrow\alpha\beta\omega$
-
-（2） $\alpha\beta[1]...\beta[i]$ 是[[MK114][活前缀]]
-
-（3） $a\in FIRST(\omega)$ 即 $a$ 是 $\omega$ 产生的可能的第一个[[MK9][非终结符]]，即[[MK129][ $FIRST$ 集]]中的元素
-
-[[MK135][同理可证]] $\alpha\beta[1]...\beta[i+1],i<|\beta|$ 是[[MK114][活前缀]]，其余条件不变
-
-故结论成立
-
-**** 前缀
-
-***** 前缀定义<<MK113>>
-
-若有[[MK3][字符串]] $\alpha$ ，其任意字符串 $\beta$ 满足 $\alpha=\beta\omega$ 其中 $\omega$ 亦为字符串
-
-则称 $\beta$ 是 $\alpha$ 的前缀
-
-***** 活前缀<<MK114>>
-
-若有[[MK20][句型]] $s\Rightarrow^* \alpha\beta\delta$ 其中 $\beta$ 是[[MK92][句柄]]，则 $\alpha\beta$ 的任意[[MK113][前缀]]称为活前缀
-
-****** 定理1<<MK116>>
-
-[[MK14][2型文法]]的任意[[MK10][产生式]] $s\to \beta\in P$ 满足 $s$ 是[[MK11][开始符]]，则
-
-（1） $\beta$ 是句柄
-
-（2） $\beta$ 的任意[[MK113][前缀]]是[[MK114][活前缀]]
-
-******* 证明
-
-由于 $s$ 是开始符，则有对应[[MK18][推导]] $s\Rightarrow\beta$ 则根据[[MK30][推论1]]有分析树 $D\simeq\beta\land f(r)=s$ 
-
-且仅有一个[[~/OneDrive/离散数学/Disc_Math.org::MK293][分支]]节点，则显然[[~/OneDrive/离散数学/Disc_Math.org::MK285][树根]]是唯一分支节点。故根据[[MK92][句柄]]定义可得 $\beta$ 是句柄
-
-则根据[[MK114][活前缀]]定义可得 $\beta$ 的任意[[MK113][前缀]]是[[MK114][活前缀]]
-
-****** 定理2<<MK133>>
-
-若 $X_1...X_n$ 是[[MK20][句型]] $\alpha$ 的[[MK114][活前缀]]，且有 $X_k$ 满足 $X_k\in V_N\land X_k\to Y_1...Y_m\in P$
-
-则 $X_1...X_{k-1}Y_1...Y_m$ 的任意[[MK113][前缀]]亦是活前缀
-
-******* 证明
-
-由于 $\alpha$ 是句型，则根据[[MK92][定义]]存在[[MK27][分析树]] $D=<M,E,\prec,f>$ 满足 $D\simeq\alpha\beta\delta\land f(r)=s$
-
-由于 $X_1...X_n$ 则定义 $X_1...X_q$ 是包含[[MK92][句柄]]的活前缀，根据[[MK114][定义]]有 $n\leq m$ 定义 $\alpha=X_1...X_q\beta$
-
-则存在有 $v'\in\mathcal{L}(M)$ 满足 $f(v)=X_k$ 定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即 $D$ 中[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]
-
-进一步定义 $X_p...X_q$ 是句柄，故有对应[[MK92][句柄分支]] $v\in K$
-
-根据 $X_k\to Y_1...Y_m$ 显然有推导 $\alpha=X_1...X_q\beta\Rightarrow X_1...X_{k-1}Y_1...Y_mX_{k+1}...X_q\beta=\alpha'$
-
-则根据[[MK36][定理3]]有对应[[MK33][分析树推导]] $D\stackrel{v'}\Rightarrow D'=<M',E',\prec',f'>$ 满足 $D'\simeq\alpha'$
-
-且对于 $v'$ 有 $f(v')=X_k$ 定义 $K'=\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 则有 $v'\in K'$ 即在 $D'$ 中[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$
-
-若 $k<p$ 则有 $v'\prec v$ 根据[[MK40][定理2]]有 $v'\prec' v$ 又由于显然任意 $u\in K'\land u\ne v'\land u\ne v\Rightarrow u\in K$
-
-故有 $v\prec u$ 根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK172][传递性]]有 $\forall u\in K'\land u\ne v\Rightarrow v'\prec u$
-
-若 $k\geq p$ 则 $v\not\in K'$ 类似易证亦有 $\forall u\in K'\land u\ne v\Rightarrow v'\prec u$
-
-故 $v'$ 是 $D'$ 的[[MK92][句柄分支]]，则定 $v'$ 为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]的[[MK38][分析子树]]所[[MK28][对应]]的[[MK3][字串]]是[[MK92][句柄]]
-
-显然易证 $\alpha'$ 的句柄是[[MK18][推导]]出的 $X_{k-1}$ 与 $X_{k+1}$ 之间的 $Y_1...Y_m$ 
-
-故根据[[MK114][定义]]可得 $X_1...X_{k-1}Y_1...Y_m$ 的任意[[MK113][前缀]]称为活前缀
-
-****** 定理3<<MK117>>
-
-若 $\alpha\beta$ 是[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 包含[[MK92][句柄]] $\beta$ 的[[MK114][活前缀]]
-
-则存在 $A\in V_N$ 满足
-
-（1） $s\Rightarrow^*\alpha A\delta\Rightarrow\alpha\beta\delta$ 
-
-（2） $\alpha A$ 亦为活前缀
-
-******* 证明
-
-******** (1)
-
-由于是包含句柄 $\beta$ 的活前缀，故有 $s\Rightarrow^* \alpha\beta\delta$ ，其中 $\beta$ 是
-
-则根据[[MK92][定义]]存在[[MK27][分析树]] $D=<M,E,\prec,f>$ 满足 $D\simeq\alpha\beta\delta\land f(r)=s$
-
-定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]
-
-则根据[[MK93][定理1]]有句柄分支 $v$ ，定义 $\mathcal{A}(v)$ 为其所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]节点，定义 $N=M/(\mathcal{A}(v)/\{v\})$
-
-故根据[[MK37][定理4]]有 $D_N\stackrel{v}\Rightarrow D$ 且 $D_N=<M',E',\prec',f'>$ 是 $D$ 的[[MK38][分析子树]]
-
-进一步根据[[MK34][定理2]]有 $D_N\simeq\alpha A\delta\land f'(v)=f(v)=A$ 显然 $D_N,D$ 有相同的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]
-
-故根据[[MK32][推论]]以及[[MK34][定理2]]有 $s\Rightarrow^*\alpha A\delta\Rightarrow\alpha\beta\delta$ 
-
-******** (2)
-
-定义 $D_N$ 及其句柄分支 $u$ ，假设 $\alpha$ 中包含句柄，则 $u$ 到 $v$ 不[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]
-
-由于 $D_N$ 是分析树，故根据[[MK27][定义]] $<M',E'>$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][有根树]]，故根据[[~/OneDrive/离散数学/Disc_Math.org::MK288][性质1]] $r$ 到 $v$ 可达
-
-故存在 $u'\in\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 满足 $u'$ 到 $v$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]
-
-又根据[[MK92][定义]]有 $u\prec' u'$ 由于 $D_N$ 是 $D$ 的[[MK38][分析子树]]，则根据[[MK40][定理2]]有 $u\prec u'$
-
-根据[[MK27][定义（4）]]结合 $u'$ 到 $v$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]有 $u\prec v$
-
-且由于 $u$ 到 $v$ 不[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]，故根据[[MK33][分析树推导]]可得 $u\in K$ 与句柄[[MK92][定义]]矛盾
-
-故假设不成立 $\alpha$ 中不包含句柄，则 $\alpha A$ 是[[MK114][活前缀]]
-
-**** 自动机
-
-***** 活前缀自动机<<MK118>>
-
-基于[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 定义[[MK69][NFA]]自动机 $M=<S,\Sigma,\delta,T,F>$ 如下
-
-$S$ ：元素为所有[[MK130][有效项目]]的集合 $\left\{A\to\beta_{(i)}\big|A\to\beta\in P\land0\leq i\leq|\beta|\right\}$
-
-$\Sigma$ ：所有字符 $V_N\cup V_T$
-
-$\delta$ ：包含 $S$ 中[[MK112][项目]]的[[MK8][终结符]]后继和[[MK9][非终结符]]后继 
-
-    $\begin{aligned}&\left\{<<A\to\beta_{(i)},\beta[i+1]>,\{A\to\beta_{(i+1)}\}>\big|A\to\beta_{(i)}\in S\land i+1\leq|\beta|\right\}\\\cup&\left\{<<A\to\beta_{(i-1)},\epsilon>,\left\{\beta[i]\to\lambda_{(0)}\big|\beta[i]\to\lambda\in P\right\}>\big|A\to\beta_{(i-1)}\in S\right\}\end{aligned}$
-
-$T$ ：[[MK11][开始]]符的初始项目 $\left\{s\to\beta_{(0)}\big|s\to\beta\in P\right\}$
-
-$F$ ：[[MK10][产生式]]的最终项目 $\left\{A\to\beta_{(|\beta|)}\big|A\to\beta_{(|\beta|)}\in S\right\}$
-
-****** 定理<<MK120>>
-
-基于[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 定义[[MK69][NFA]]自动机 $M=<S,\Sigma,\delta,T,F>$ 
-
-能够接受所包含[[MK92][句柄]]的[[MK114][活前缀]]
-
-******* 证明
-
-******** $\delta$ 成立<<MK139>>
-
-对于任意 $A\to\beta_{(i)}\in S\land i<|\beta|$ 根据[[MK135][定理2]]可得 $A\to\beta_{(i+1)}$ 亦为[[MK130][有效项目]]
-
-故得 $\delta(A\to\beta_{(i)},\beta[i+1])=\{A\to\beta_{(i)}\}\subset S$
-
-对于任意 $A\to\beta_{(i-1)}\in S\land\beta[i]\to\lambda\in P$ 根据[[MK136][定理1]]可得 $\beta[i]\to\lambda_{(0)}$ 亦为[[MK130][有效项目]]
-
-故得 $\delta(A\to\beta_{(i-1)},\epsilon)=\left\{\beta[i]\to\lambda_{(0)}\big|\beta[i]\to\lambda\in P\right\}\subset S$
-
-又根据构造易证 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]故得 $\delta:S\times\Sigma\to\rho(S)$ 满足[[MK69][定义]]，故成立
-
-******** 一步[[MK18][推导]]<<MK132>>
-
-定义任意一步推导的[[MK20][句型]] $s\Rightarrow\beta$ ，则必有 $s\to \beta\in P$ 
-
-根据[[MK116][定理1]]任意 $s\to \beta\in P$ 则 $\beta$ 是包含[[MK92][句柄]]的[[MK114][活前缀]]，则根据[[MK114][定义]]任意 $\beta$ 的[[MK113][前缀]]亦为活前缀
-
-则任意 $s\to\beta,i\leq|\beta|$ 均满足 $s\Rightarrow^0s\Rightarrow\beta[1]...\beta[i]\beta[i+1]...\beta[|\beta|]$
-
-故根据[[MK130][定义]]可得对于任意 $s\to\beta\in P\land1\leq i\leq |\beta|$ 可得 $s\to\beta_{(i)}$ 是[[MK130][有效项目]]，既有 $s\to\beta_{(i)}\in S$
-
-则有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s\to\beta_{(0)},\beta[1]),...,\delta(s\to\beta_{(|\beta|-1)},\beta[|\beta|]})>$ 满足
-
-（1） $s\to\beta_{(0)}$
-
-（2） $\delta(s\to\beta_{(|\beta|-1)},\beta[|\beta|]})=\{s\to\beta_{(|\beta|)}\}\cap F\ne\varnothing$
-
-（3） $s\to\beta_{(i)}\in S,0\leq i\leq|\beta|$
-
-（4） $s\to\beta_{i}\in\delta(s\to\beta_{i-1},\beta[i])=\{s\to\beta_{i}\}$
-
-（5） $\beta[i]\in\Sigma$ 是[[MK57][正规式]]
-
-则显然 $\beta[1]...\beta[|\beta|]=\beta$ 是 $M$ 能接受的字串，即 $\beta\in M$
-
-********  $n$ 步推导<<MK124>>
-
-假设 $M$ 能接受任意 $n-1$ 步推导产生的包含[[MK92][句柄]]的[[MK114][活前缀]]
-
-根据定义，对于任意包含[[MK92][句柄]]的[[MK114][活前缀]]均有 $s\Rightarrow^n \alpha\beta\delta,n<\infty$ 其中 $\beta$ 是[[MK92][句柄]]
-
-则根据[[MK114][定义]]任意 $\alpha\beta$ 的[[MK113][前缀]]亦为活前缀，进一步则根据[[MK117][定理3]]有 $s\Rightarrow^{n-1}\alpha A\delta\Rightarrow\alpha\beta\delta$ 
-
-且 $\alpha A$ 亦是活前缀，定义 $\alpha A\lambda$ 是 $\alpha A\delta$ 包含[[MK92][句柄]]的[[MK114][活前缀]]，根据假设 $\alpha A\lambda$ 可以被自动机接受
-
-有 $<\delta(s_0,\alpha[1]),...,\delta(s_{k},A),...,\delta(s_{n-1},\lambda[|\lambda|])>$ 满足[[MK70][识别条件]]
-
-则有 $s_{k}\in S$ 则 $s_{k}$ 是有形式 $B\to\kappa_{(i)}$ 的[[MK130][有效项目]]，且由于 $\alpha$ 不包含句柄
-
-故 $s_{k}\not\in F\rightarrow |\kappa|>i$ 又由于 $A\ne\epsilon$ 且存在 $\delta(s_k,A)$ 故有 $\kappa_{i+1}=A$
-
-根据推导有 $A\to\beta\in P$ 则根据 $\delta$ 定义存在 $A\to\beta_{(0)}\in\delta(s_k,\epsilon)$ 
-
-进一步由于[[MK139][ $\delta$ 成立]]，故有 $A\to\beta_{(i)},0\leq i\leq|\beta|$ 均为[[MK130][有效项目]]
-
-故显然 $<\delta(s_0,\alpha[1]),...,\delta(s_{k},\epsilon),\delta(A\to\beta_{(0)},\beta[1])...,\delta(A\to\beta_{(|\beta|-1)},\beta[|\beta|])>$ 亦满足[[MK70][识别条件]]
-
-******** 结论
-
-根据数学归纳法，对于任意 $n<\infty$ 步[[MK18][推导]]产生的包含[[MK92][句柄]]的[[MK114][活前缀]]均可被自动机接受
-
-又由于任意[[MK114][活前缀]]均有 $s\Rightarrow^n \alpha\beta\delta,n<\infty$ 其中 $\beta$ 是[[MK92][句柄]]，故结论成立
-
-****** 推论<<MK128>>
-
-根据[[MK77][定理3]]可得该[[MK69][NFA]]通过求解[[MK51][ $\epsilon$ 闭包]]具有等价[[MK67][不含空边的DFA]] $M=<S,\Sigma,\delta,t,F>$ 
-
-***** 扩展活前缀自动机
-
-基于[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 定义[[MK69][NFA]]自动机 $M=<S,\Sigma,\delta,T,F>$ 如下
-
-$S$ ：元素为所有[[MK131][有效扩展项目]]的集合 $\left\{A\to\beta_{(i)}\big|A\to\beta\in P\land0\leq i\leq|\beta|\right\}$
-
-$\Sigma$ ：所有字符 $V_N\cup V_T$
-
-$\delta$ ：包含 $S$ 中[[MK112][项目]]的[[MK8][终结符]]后继和[[MK9][非终结符]]后继 
-
-    $\begin{aligned}&\left\{<<A\to\beta_{(i)}[a],\beta[i+1]>,\{A\to\beta_{(i+1)}[a]\}>\big|A\to\beta_{(i)}[a]\in S\right\}\\\cup&\bigg\{<<A\to\beta_{(i-1)}[a],\epsilon>,\left\{\beta[i]\to\lambda_{(0)}[b]\bigg|\beta[i]\to\lambda\in P\land b\in FIRST(\beta[i]...\beta[|\beta|]a)\right\}>\\&\bigg|A\to\beta_{(i-1)}[a]\in S\bigg\}\end{aligned}$
-
-$T$ ：[[MK11][开始]]符的初始项目 $\left\{s\to\beta_{(0)}[\#]\big|s\to\beta\in P\right\}$
-
-$F$ ：[[MK10][产生式]]的最终项目 $\left\{A\to\beta_{(|\beta|)}[a]\big|A\to\beta_{(|\beta|)}[a]\in S\right\}$
-
-****** 定理
-
-基于[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 定义的扩展[[MK69][NFA]]自动机 $M=<S,\Sigma,\delta,T,F>$ 
-
-能够接受所包含[[MK92][句柄]]的[[MK114][活前缀]]
-
-******* 证明
-
-******** $\delta$ 成立<<MK140>>
-
-对于任意 $A\to\beta_{(i)}[a]\in S\land i<|\beta|$ 根据[[MK138][定理2]]可得 $A\to\beta_{(i+1)}[a]$ 亦为[[MK130][有效项目]]
-
-故得 $\delta(A\to\beta_{(i)}[a],\beta[i+1])=\{A\to\beta_{(i)}[a]\}\subset S$
-
-对于任意 $A\to\beta_{(i-1)}[a]\in S\land\beta[i]\to\lambda\in P$ 
-
-则根据[[MK137][定理1]]可得 $\beta[i]\to\lambda_{(0)}[b],b\in FIRST(\beta[i]...\beta[|\beta|]a)$ 亦为[[MK130][有效项目]]
-
-故得 $\delta(A\to\beta_{(i-1)}[a],\epsilon)=\left\{\beta[i]\to\lambda_{(0)}[b]\bigg|\beta[i]\to\lambda\in P\land b\in FIRST(\beta[i]...\beta[|\beta|]a)\right\}\subset S$
-
-又根据构造易证 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]故得 $\delta:S\times\Sigma\to\rho(S)$ 满足[[MK69][定义]]，故成立
-
-******** 一步[[MK18][推导]]
-
-定义任意一步推导的[[MK20][句型]] $s\Rightarrow\beta$ ，则必有 $s\to \beta\in P$ 
-
-根据[[MK116][定理1]]任意 $s\to \beta\in P$ 则 $\beta$ 是包含[[MK92][句柄]]的[[MK114][活前缀]]，则根据[[MK114][定义]]任意 $\beta$ 的[[MK113][前缀]]亦为活前缀
-
-则任意 $s\to\beta,i\leq|\beta|$ 均满足 $s\Rightarrow^0s\Rightarrow\beta[1]...\beta[i]\beta[i+1]...\beta[|\beta|]$
-
-根据[[MK5][连接]]运算有 $s=s\epsilon$ 故可得 $s\to\beta_{(i)}[\#],1\leq i\leq|\beta|$ 是[[MK131][扩展有效定义]]
-
-[[MK132][同理可证]]任意一步推导的[[MK20][句型]]可被 $M$ [[MK70][接受识别]]
- 
-******** $n$ 步推导
-
-假设 $M$ 能接受任意 $n-1$ 步推导产生的包含[[MK92][句柄]]的[[MK114][活前缀]]
-
-根据定义，对于任意包含[[MK92][句柄]]的[[MK114][活前缀]]均有 $s\Rightarrow^n \alpha\beta\delta,n<\infty$ 其中 $\beta$ 是[[MK92][句柄]]
-
-则根据[[MK114][定义]]任意 $\alpha\beta$ 的[[MK113][前缀]]亦为活前缀，进一步则根据[[MK117][定理3]]有 $s\Rightarrow^{n-1}\alpha A\delta\Rightarrow\alpha\beta\delta$ 
-
-且 $\alpha A$ 亦是活前缀，定义 $\alpha A\lambda$ 是 $\alpha A\delta$ 包含[[MK92][句柄]]的[[MK114][活前缀]]，根据假设 $\alpha A\lambda$ 可以被自动机接受
-
-有 $<\delta(s_0,\alpha[1]),...,\delta(s_{k},A),...,\delta(s_{n-1},\lambda[|\lambda|])>$ 满足[[MK70][识别条件]]
-
-则有 $s_{k}\in S$ 则 $s_{k}$ 是有形式 $B\to\kappa_{(i)}[a]$ 的[[MK131][有效扩展项目]]，且由于 $\alpha$ 不包含句柄
-
-故 $s_{k}\not\in F\rightarrow |\kappa|>i$ 又由于 $A\ne\epsilon$ 且存在 $\delta(s_k,A)$ 故有 $\kappa_{i+1}=A$
-
-根据推导有 $A\to\beta\in P$ 则根据 $\delta$ 定义存在 $A\to\beta_{(0)}[b]\in\delta(s_k,\epsilon),b\in FIRST(\delta a)$ 
-
-进一步由于[[MK140][ $\delta$ 成立]]，故有 $A\to\beta_{(i)}[b],0\leq i\leq|\beta|$ 均为[[MK131][有效扩展项目]]
-
-故显然 $<\delta(s_0,\alpha[1]),...,\delta(s_{k},\epsilon),\delta(A\to\beta_{(0)}[b],\beta[1])...,\delta(A\to\beta_{(|\beta|-1)},\beta[|\beta|])>$ 亦满足[[MK70][识别条件]]
-
-******** 结论
-
-根据数学归纳法，对于任意 $n<\infty$ 步[[MK18][推导]]产生的包含[[MK92][句柄]]的[[MK114][活前缀]]均可被自动机接受
-
-又由于任意[[MK114][活前缀]]均有 $s\Rightarrow^n \alpha\beta\delta,n<\infty$ 其中 $\beta$ 是[[MK92][句柄]]，故结论成立
-
-****** 推论
-
-根据[[MK77][定理3]]可得该[[MK69][NFA]]通过求解[[MK51][ $\epsilon$ 闭包]]具有等价[[MK67][不含空边的DFA]] $M=<S,\Sigma,\delta,t,F>$ 
+将 $S$ 中含有同样[[MK112][项目]]，但是展望字串不用的元素合并。
 
 * 属性文法
 
