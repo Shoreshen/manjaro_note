@@ -4,7 +4,7 @@
 
 current video: P27
 
-current mark: 167
+current mark: 172
 
 * 集合列
 
@@ -32,7 +32,7 @@ current mark: 167
 
 注：此处可取无限
 
-*** 推论<<MK3>>
+*** 推论1<<MK3>>
 
 $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
@@ -45,6 +45,12 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 故 $\forall i'\in\mathbb{N}\rightarrow a\in\cup_{k\geq i'}A_k$ 进一步 $a\in\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)$ 根据定义 $a\in\overline{\lim_{n\to\infty}}A_n$
 
 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$ 
+
+*** 推论2
+
+对于数列 $\{a_i\}_{i\in\mathbb{N}}$ 定义 $A_n=\left\{a_i\big|i\geq n\right\}$ 其上下极限可表述为
+
+（1） $\overline{\lim_{i\to\infty}}a_i=\inf\left\{\bigg|i\in\right\}$ 
 
 ** 单调集列<<MK69>>
 
@@ -848,6 +854,10 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含-定理1]]可得 $\bigcup_{i=1}^\infty S_i=\bigcup_{i=1}^\infty S'_i$
 
 故进一步根据[[MK64][不相交可数可加]]可得 $\bigcup_{i=1}^\infty S'_i$ 外测度可测，即 $\bigcup_{i=1}^\infty S_i$ 亦外测度可测
+
+*** 推论1
+
+可数
 
 * 开集构造
 
@@ -2078,6 +2088,20 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 则区间为 $[a,b]=\left\{x\big|x\in\mathbb{R}_e\land a \leq x\leq b\right\}$ 以及 $(a,b)=\left\{x\big|x\in\mathbb{R}_e\land a<x<b\right\}$
 
+**** 引理<<MK168>>
+
+对于任意 $x\in\mathbb{R}_e$ 有：
+
+（1） $x>a\leftrightarrow x\in(a,+\infty]$
+
+***** 证明
+
+对于任意 $x>a$ 若 $x\in\mathbb{R}$ 均有 $x<+\infty$ 故有 $x\in(a,+\infty)$
+
+根据[[MK144][运算]]可知 $+\infty>a$ 即 $x\in(a,+\infty]$
+
+若 $x\in(a,+\infty]$ 显然有 $x>a$ 故（1）成立
+
 *** 内点<<MK147>>
 
 定义为[[~/OneDrive/数学分析/Chap11Note.org::MK7][实数内点定义]]的扩展，即对于集合 $S\subset\mathbb{R}_e$ 其内点为 $\exists \delta>0\land\delta\in\mathbb{R}_e\rightarrow O(x,\delta)\subset S$ 
@@ -2138,6 +2162,80 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 又根据[[MK149][定理1]]可得当 $S'\in\mathcal{O}_\mathbb{R}$ 时 $\big\{S\cup\{+\infty\},S\cup\{-\infty\},S\cup\{-\infty, +\infty\}\big\}\subset\mathcal{O}_{\mathbb{R}_e}$
 
 由于 $\mathbb{R}_e$ 仅比 $\mathbb{R}$ 多两个元素，故以上为所有可能性。故命题成立
+
+*** 数列上下极限<<MK171>>
+
+对于 $\mathbb{R}_e$ 上的数列 $\{x_n\}$ 其[[~/OneDrive/数学分析/Chap9Note.org::MK2][上下极限]]可表述为：
+
+（1） $\overline{\lim_{i\to\infty}}x_i=\inf\left\{\sup\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\}\bigg|i\in\mathbb{N}\right\}$
+
+（2） $\underline{\lim_{n\to\infty}}x_n=\sup\left\{\inf\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\}\bigg|i\in\mathbb{N}\right\}$
+
+**** 证明
+
+仅证（1），同理可证（2）
+
+对于任意 $i\in\mathbb{N}$ 定义 $X_i=\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\},S_i=\sup(X_i)$ 根据[[~/OneDrive/数学分析/Chap11Note.org::MK9][确界存在定理]]可得 $S_i$ 存在
+
+同理可得 $I=\inf\left\{S_i\big|i\in\mathbb{N}\right\}$ 亦存在。
+
+***** 当 $I=-\infty$ 时
+
+则存在 $S_k=-\infty,k\in\mathbb{N}$ 由于是上确界，故 $\forall x_i\in X_k\rightarrow x_i\leq S_k$
+
+进一步由于 $X_k\subset\mathbb{R}_e$ 故可得 $x_i=-\infty,\forall i>k$ 故 $\{x_k,x_{k+1},...\}$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]]且 $-\infty$ 是[[~/OneDrive/数学分析/Chap9Note.org::MK1][极限点]]
+
+且 $\{x_1,...,x_{k-1}\}$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK42][有限集]]，且[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]]定义为取无限个。
+
+故任意子列的极限点均为 $-\infty$ 根据[[~/OneDrive/数学分析/Chap9Note.org::MK2][定义]]可知是上极限
+
+***** 当 $I=+\infty$ 时
+
+由于不存在 $x\in\mathbb{R}_e\rightarrow x>+\infty$ 故 $S_i=+\infty,\forall i\in\mathbb{N}$
+
+则对于 $S_1$ 若 $X_1\cap\mathbb{R}=\varnothing$ 则有 $\forall x\in X_1\rightarrow x=+\infty$ 则 $X_1$ 是常数列，且极限为 $+\infty$
+
+若不为空，则任取 $x_{k_1}\in X_i\cap\mathbb{R}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界定义]]有 $x_{k_1}<+\infty$
+
+继续对 $S_{k_1+1}$ 重复上述步骤，以此类推可得数列 $x_{k_1},x_{k_2},...\a$ 其极限为 $+\infty$
+
+综上所述，存在 $\{x_n\}$ 的子列极限为 $+\infty$ 由于 $+\infty$ 是最大[[MK143][广义实数]]，故必为[[~/OneDrive/数学分析/Chap9Note.org::MK2][上极限]]
+
+***** 当 $I\in\mathbb{R}$ 时
+
+****** 是极限点<<MK170>>
+
+由于当 $i>j$ 时有 $X_i\subset X_j$ 故有 $\sup(X_i)\leq\sup(X_j)$ 即 $S_i\leq S_j,j<i$ 单调递减
+
+由于 $I$ 为下确界，故根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界定理]]可知 $\lim_{i\to\infty}S_i=I$ 且由于 $S_n\geq I$ 
+
+故 $\forall\epsilon>0,\exists N,\forall n\geq N\rightarrow S_n-I<\epsilon$
+
+取 $\epsilon_1=\frac{1}{2}$ 则根据极限定义有 $\exists N_1$ 对于 $n_1>N\rightarrow S_{n_1}-I<\epsilon_1$
+
+进一步根据[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界定义]]可得存在 $x_{k_1}\rightarrow I\leq x_{k_1}\leq S_{n_1}\rightarrow x_{k_1}-I<\epsilon_1$
+
+取 $\epsilon_2=\left(\frac{1}{2}\right)^2$ 同理可得存在 $N_2$ 满足极限定义，则取 $n_2=\max(N_2,k_1)$
+
+即有 $S_{n_2}-I<\epsilon_2$ 则[[~/OneDrive/离散数学/Disc_Math.org::MK326][同理]]可得存在 $x_{k_1}\rightarrow x_{k_2}-I<\epsilon_2$
+
+依次类推可得[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]] $\{x_{k_i}\}$ 满足 $\lim_{i\to\infty}x_{k_1}=I$ 即 $I$ 是数列的[[~/OneDrive/数学分析/Chap9Note.org::MK1][极限点]]
+
+****** 是最大极限点
+
+假设存在[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]] $\{x_{n_i}\}$ 满足 $\lim_{i\to\infty}x_{n_1}=I'>I$
+
+由于 $n_i$ 有无限个且 $n_i\in\mathbb{N}$ 则 $\{n_i\}$ 存在[[~/OneDrive/离散数学/Disc_Math.org::MK185][序关系]]，不妨设 $i<j\rightarrow n_i<n_j$
+
+根据[[MK170][之前证明]]可得 $\lim_{i\to\infty} S_i=I$ 则取 $\epsilon=\frac{I'-I}{2}$ 则 $\exists N$ 任取 $n\geq N$ 满足 $S_n-I<\epsilon$ 即 $S_n<I+\epsilon$
+
+同理可得 $\exists K$ 任取 $k=\max(K,n)$ 满足 $|I'-x_k|<\epsilon$ 即 $x_k>I'-\epsilon$
+
+由于 $\epsilon=\frac{I'-I}{2}$ 故有 $I'-\epsilon=I+\epsilon$ 故有 $x_k>S_n$ 由于 $k\geq n$ 即有 $x_k\in X_n$
+
+故与 $S_n=\sup(X_n)$ 矛盾，假设不成立。即不存在[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]] $\{x_{n_i}\}$ 满足 $\lim_{i\to\infty}x_{n_1}=I'>I$
+
+则 $I$ 是最大[[~/OneDrive/数学分析/Chap9Note.org::MK1][极限点]]，即为[[~/OneDrive/数学分析/Chap9Note.org::MK2][上极限]]
 
 * 实数(勒贝格)测度
 
@@ -3067,6 +3165,28 @@ Borel集中元素均为可测集
 
 定义原相 $g(K)=\left\{k\big|f(k)\in K\right\}$ 故推出（1）
 
+*** 引理1
+
+若存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个[[MK106][连续函数]] $f_i(x), i\in I$ 定义 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\},\psi(x)=\sup\left\{f_i(x)\big|i\in I\right\}$
+
+即为 $f_i(x)$ 的上下[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]，则 $\phi(x),\psi(x)$ 不一定为[[MK106][连续函数]]
+
+**** 证明
+
+定义函数 $f_n(x)=\begin{cases}0&x\leq0\\nx&0<x\leq\frac{1}{n}\\1&x>\frac{1}{n}\end{cases}$ 显然连续。对于任意 $n\in\mathbb{N}$ 当 $0<x\leq\frac{1}{n}$ 时均有 $0<nx\leq1$
+
+故对于任意给定 $x>0$ ，任意 $\epsilon>0$ 存在 $N=[\frac{1-\epsilon}{x}]+1$ 对于任意 $n>N$ 均有 $n>\frac{1-\epsilon}{x}\rightarrow nx>1-\epsilon$
+
+故对于 $0<x\leq\frac{1}{n}$ 有 $-nx<\epsilon-1\rightarrow 1-nx<\epsilon$ 又由于 $nx\leq 1$ 可得 $|1-nx|<\epsilon$
+
+又由于 $x>\frac{1}{n}$ 时 $f_n(x)=1$ 。综上所述，对于任意给定 $x>0$ 其 $\lim_{n\to\infyt}f_n(x)=1$ 。
+
+再根据函数定义可得 $\forall x>0\rightarrow\sup\left\{f_i(x)\big|i\in\mathbb{N}\right\}=1$
+
+显然 $\phi(x)=\begin{cases}0&x\leq0\\1&x>0\end{cases}$ 不[[MK106][连续]]
+
+类似可证 $\psi(x)$ 亦不一定连续
+
 ** 康托函数<<MK109>>
 
 若[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数]] $F$ 满足： 
@@ -3628,15 +3748,54 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 即 $h(x)=|f(x)|$ 是[[MK134][可测函数]]
 
-*** 确界运算
+*** 确界运算<<MK172>>
 
-若存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][之多可数]]个函数 $f_i(x), i\in I$ 定义 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\},\psi(x)=\sup\left\{f_i(x)\big|i\in I\right\}$
+若存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个[[MK134][可测函数]] $f_i(x), i\in I$ 定义 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\},\psi(x)=\sup\left\{f_i(x)\big|i\in I\right\}$
+
+即为 $f_i(x)$ 的上下[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]，则 $\phi(x),\psi(x)$ 仍为[[MK134][可测函数]]
+
+**** 证明
+
+***** $\phi(x)$ 可测<<MK169>>
+
+对于任意 $a\in\mathbb{R}_e$ 有 $\phi^{-1}((a,+\infty])=\left\{x\big|\phi(x)\in(a,+\infty]\right\}$ 且 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\}$
+
+即 $\forall x\in \phi^{-1}((a,+\infty])\rightarrow\inf\left\{f_i(x)\big|i\in I\right\}\in(a,+\infty]$ 根据[[MK168][引理]]得 $\inf\left\{f_i(x)\big|i\in I\right\}>a$
+
+则根据下[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]定义有 $\forall i\in I\rightarrow f_i(x)>a$ 即 $\forall i\in I\rightarrow f_i(x)\in(a,+\infty]\rightarrow\forall i\in I(x\in f_i^{-1}((a,+\infty])$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK35][广义交]]可得 $x\in\bigcap_{i\in I}f_i^{-1}((a,+\infty])$ 综上所述 $\forall x\in \phi^{-1}((a,+\infty])\rightarrow x\in\bigcap_{i\in I}f_i^{-1}((a,+\infty])$
+
+类似易证 $\forall x\in\bigcap_{i\in I}f_i^{-1}((a,+\infty])\rightarrow \phi^{-1}((a,+\infty])$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]] $\phi^{-1}((a,+\infty])=\bigcap_{i\in I}f_i^{-1}((a,+\infty])$
+
+由于 $f_i(x)$ 是可测函数，故根据[[MK134][定义]]可得 $f_i^{-1}((a,+\infty])$ 是[[MK65][外测度可测集]]
+
+根据[[MK65][Caratheodory定理]]可知[[MK65][外测度可测集]]构成[[MK50][ $\sigma$ 代数]]，由于 $I$ 是在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]
+
+故根据[[MK67][可数交封闭]]可得 $\bigcap_{i\in I}f_i^{-1}((a,+\infty])$ 亦可测。
+
+综上所述，对于任意 $a\in\mathbb{R}_e$ 有 $\phi^{-1}((a,+\infty])$ 可测，即 $\phi(x)$ 是[[MK134][可测函数]]
+
+类似通过 $\psi^{-1}([-\infyt,a))=\bigcap_{i\in I}f_i^{-1}([-\infty,a))$ 同理可证 $\psi(x)$ 是[[MK134][可测函数]]
+
+***** $\psi(x)$ 可测
+
+通过 $\psi^{-1}([-\infyt,a))=\bigcap_{i\in I}f_i^{-1}([-\infty,a))$ [[MK169][同理可证]] $\psi(x)$ 是[[MK134][可测函数]]
+
+*** 极限运算
+
+对于[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个[[MK134][可测函数]] $f_i(x), i\in\mathbb{N}$ 其上定义其下极限函数 $\phi(x)=\overline{\lim_{i\to\infty}}f_i(x),\psi(x)=\underline{\lim_{i\to\infty}}f_i(x)$
 
 则 $\phi(x),\psi(x)$ 仍为[[MK134][可测函数]]
 
 **** 证明
 
-由于 $\phi^{-1}((a,+\infty])=\left\{x\big|\phi(x)\in(a,+\infty]\right\}$ 且 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\}$
+则对于给定 $x\in\mathbb{R}_e$ 有[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\{f_i(x)\}$ 其中 $i\in\mathbb{N}$ 
 
-即 $\forall x\in \phi^{-1}((a,+\infty])\rightarrow \inf\left\{f_i(x)\big|i\in I\right\}\in(a,+\infty]$ 
+根据[[MK171][数列极限]]可知 $\overline{\lim_{i\to\infty}}f_i(x)=\inf\left\{\sup\left\{f_k(x)\big|k\geq i\land k\in\mathbb{N}\right\}\bigg|i\in\mathbb{N}\right\}$
 
+根据[[MK172][确界运算]]可知对于任意 $i\in\mathbb{N}$ 有 $\phi_i(x)=\sup\left\{f_k(x)\big|k\geq i\land k\in\mathbb{N}\right\}$ [[MK143][可测]]
+
+同理可知 $\phi(x)=\left\{\phi_i(x)\big|i\in\mathbb{N}\right\}$ 亦[[MK143][可测]]，同理可证 $\psi(x)$ [[MK143][可测]]

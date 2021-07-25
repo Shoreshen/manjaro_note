@@ -2,6 +2,8 @@
 
 #+TITLE: 数项级数
 
+current mark: 2
+
 * Bolzano-Weiserstrass 定理：
 
 ** 描述：
@@ -33,18 +35,17 @@
 
 * 上极限与下极限：
 
-** 数列 $\{x_n\}$ 的极限点 $\xi$ 定义：
+** 极限点<<MK1>>
 
-\begin{aligned}
-&\forall \epsilon>0,\ \ \exists \{y_n\} \in \{x_n\}\\
-&\Rightarrow y_n \in [\xi-\epsilon,\xi+\epsilon]
-\end{aligned}
+对于数列 $\{x_n\}$ 若有极限点 $\xi$ 则存在[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]] $\{y_n\}$ 满足 $\lim_{n\to\infty}y_n=\xi$
 
-** 定义 $E=\{\xi\}$ 为所有 $\{x_n\}$ 的子列的极限的集合，因为数列 $\{x_n\}$ 有界，则 $E$ 有界：
+** 上下极限<<MK2>>
 
-*** $sup\{E\}$ 为数列的上极限，记为 $\overline{\lim_{n \to \infty}} x_n$ 
+定义 $E=\{\xi\}$ 为所有 $\{x_n\}$ [[MK1][极限点]]的集合，则定义：
 
-*** $inf\{E\}$ 为数列的下极限，记为 $\underline{\lim_{n\to \infty}} x_n$
+（1） $\sup\{E\}$ 为数列的上极限，记为 $\overline{\lim_{n \to \infty}} x_n$ 
+
+（2） $\inf\{E\}$ 为数列的下极限，记为 $\underline{\lim_{n\to \infty}} x_n$
 
 * 级数敛散性：
 

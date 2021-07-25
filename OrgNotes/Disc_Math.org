@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 325
+currnet mark: 326
 
 图论: P40
 
@@ -3617,7 +3617,7 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land x\ne b\land x\leq b)$
 
 **** 界
 
-***** 定义
+***** 定义<<MK326>>
 
 若 $<A,\leq>$ 是有序集，且 $B\subset A$ 则 $b$ 是：
 

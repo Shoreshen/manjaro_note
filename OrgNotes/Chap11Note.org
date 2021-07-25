@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK15
+current mark: MK17
 
 * 笛卡尔乘积
 
@@ -53,9 +53,7 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 
 故有 $\beta-x_0=0.00...(a_{n_0+1}-b_1)(a_{n_0+2}-b_2)...<\frac{1}{10^{n_0}}<\epsilon\\$
 
-** 单调有界数列定理
-
-*** 描述
+** 单调有界数列定理<<MK17>>
 
 单调有界数列必收敛于单调确界
 
@@ -64,6 +62,7 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 若 $a_n$ 单调增加有上界，则根据确界存在定理，必有上确界 $\xi$ 满足：
 
 （1） $\forall n\in N^+\Rightarrow a_n\leq\xi$
+
 （2） $\forall \epsilon>0,\exists a_{n^*}\Rightarrow \xi-a_{n^*}<\epsilon$
 
 故取 $N=n^*$ 由于单调递增，则 $\forall n>N\Rightarrow a_n\geq a_{n^*}\Rightarrow \xi-a_{n^*}+a_{n^*}<\epsilon+a_n$
@@ -105,7 +104,7 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 
 有界数列必有收敛子列。
 
-*** 子列定义：
+*** 子列定义<<MK16>>
 
 给定数列 $\{x_n\}$ ，从中任意地选取无限项，按照原来的顺序组成的数列称为数列 $\{x_n\}$ 的一个子列。
 
