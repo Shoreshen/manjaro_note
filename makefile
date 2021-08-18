@@ -1,6 +1,7 @@
 DIF := $(shell cmp /etc/resolv.conf resolv.conf)
-ORGNOTES = $(shell find ~/OneDrive -path ~/OneDrive/manjaro_note -prune -o -name *.org -a -print)
 PW = $(shell cat ~/文档/PW)
+
+cporg: ORGNOTES = $(shell find ~/OneDrive -path ~/OneDrive/manjaro_note -prune -o -name *.org -a -print)
 
 upload:
 	rclone sync ~/OneDrive/Book onedrive:Book

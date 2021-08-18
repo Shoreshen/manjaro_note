@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK17
+current mark: MK18
 
 * 笛卡尔乘积
 
@@ -297,7 +297,7 @@ $\forall \vec{x}\in S\Rightarrow \vec{x}\in S_i$ 即所有 $S$ 包含的点均�
 
 **** 满足拓扑定义
 
-根据[[~/OneDrive/实变函数/SBHS.org][拓扑-拓扑定义]]有[[MK15][定理8]]可得（1）、[[P2][定理3]]可得（2）以及[[P3][定理4]]可得（3）
+根据[[~/OneDrive/实变函数/SBHS.org::MK39][拓扑定义]]有[[MK15][定理8]]可得（1）、[[P2][定理3]]可得（2）以及[[P3][定理4]]可得（3）
 
 故该定义为有效拓扑定义
 
@@ -925,7 +925,7 @@ $D\in R^n$ 映射 $\vec{f}:D\to R^m\Rightarrow \vec{x}=(x_1,...,x_n)\to\vec{z}=(
 
 则 $\lim_{\vec{x}\to\vec{x}_0}\vec{f}(\vec{x})=\vec{A}$
 
-** 向量值函数连续
+** 向量值函数连续<<MK18>>
 
  $\lim_{\vec{x}\to\vec{x}_0}\vec{f}(\vec{x})=\vec{f}(\vec{x}_0)$ 即他的分析表述 $\forall \epsilon>0, \exists \delta>0, \forall 0<|\vec{x}-\vec{x}_0|<\delta\Rightarrow |\vec{f}(\vec{x})-\vec{f}(\vec{x}_0)|<\epsilon$
 

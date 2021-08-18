@@ -2,6 +2,8 @@
 
 #+TITLE: 函数项级数
 
+current mark: 2
+
 * 函数项级数
 
 ** 定义：
@@ -20,9 +22,15 @@ S_n(x)=\sum_{i=1}^n u_i(x)
 
 为函数项级数的部分和。
 
+** 函数项级数收敛<<MK2>>
+
+对于任意给定定义域内 $x$ 均有 $\forall\epsilon>0,\exists N,\forall n>N\rightarrow |S_n(x)-S(x)| <\epsilon$
+
+则称 $S_n(x)$ 收敛与 $S(x)$ 记作 $\lim_{n\to\infty}S_n(x)=S(x)$
+
 ** 函数项级数一致收敛：
 
-*** 定义：
+*** 定义<<MK1>>
 
 \begin{aligned}
 \forall \epsilon>0,\ \ \exists N,\ \ \forall n>N,\ \ \forall x \in D\Rightarrow |S_n(x)-S(x)| <\epsilon

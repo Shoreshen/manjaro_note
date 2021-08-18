@@ -1,10 +1,10 @@
-#+LATEX_CLASS: ctexart
+#+LATEX_CLASS: ctexart][
 
 #+TITLE: 实变函数
 
-current video: P27
+current video: P33
 
-current mark: 172
+current mark: 179
 
 * 集合列
 
@@ -524,7 +524,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 **** 性质6<<MK121>>
 
-对于集合 $X$ 存在 $F\subset X$ 定义 $G=\left\{F\cap g\big|g\in\sigma(X)\right\}$ 则 $G$ 是 $F$ 上的[[MK50][ $\sigma$ 代数]]
+对于集合 $X$ 的任意[[~/OneDrive/离散数学/Disc_Math.org::MK20][子集]] $F\subset X$ 定义 $G=\left\{F\cap g\big|g\in\sigma(X)\right\}$ 则 $G$ 是 $F$ 上的[[MK50][ $\sigma$ 代数]]
 
 ***** 证明
 
@@ -532,9 +532,9 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ****** 包含本身
 
-由于 $\sigma(F)$ 是基于 $F$ 产生的 $\sigma$ 代数，故其本身应为 $F$
+根据[[MK50][定义]]有 $F\in\sigma(F)$ 以及 $X\in\sigma(X)$ 
 
-根据定义有 $X\in\sigma(X)$ 又由于 $F\subset X$ 则有 $F\cap X=F$ ，即满足 $F\in G$
+又由于 $F\subset X$ 则有 $F\cap X=F$ ，即满足 $F\in G$
 
 ****** 可数并封闭
 
@@ -542,7 +542,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 根据[[MK50][定义]]由于 $x_i\in\sigma(X)$ 故有 $\left(\bigcup_{i=1}^\infty x_i\right)\in\sigma(X)$ 故根据 $F$ 定义有 $F\cap\left(\bigcup_{i=1}^\infty x_i\right)\in G$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-分配律]]可得 $F\cap\left(\bigcup_{i=1}^\infty x_i\right)=\bigcup_{i=1}^\infty(x_i\cap F)=\bigcup_{i=1}^\infty f_i\in G$
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK327][分配律]]可得 $F\cap\left(\bigcup_{i=1}^\infty x_i\right)=\bigcup_{i=1}^\infty(x_i\cap F)=\bigcup_{i=1}^\infty f_i\in G$
 
 则有对于任意 $f_i\in G$ 均有 $\bigcup_{i=1}^\infty f_i\in G$
 
@@ -560,11 +560,11 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 同理根据：
 
-（1）[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-德摩根律]]
+（1）[[~/OneDrive/离散数学/Disc_Math.org::MK328][德摩根律]]
 
-（2）[[~/OneDrive/离散数学/Disc_Math.org][命题逻辑-命题公式-逻辑等价-逻辑等价式举例]]-德摩根律
+（2）[[~/OneDrive/离散数学/Disc_Math.org::MK78][德摩根律]]
 
-（3）[[~/OneDrive/离散数学/Disc_Math.org][命题逻辑-命题公式-逻辑等价-逻辑等价式举例]]-分配率
+（3）[[~/OneDrive/离散数学/Disc_Math.org::MK77][分配率]]
 
 三条定律可有推导 
 
@@ -580,7 +580,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 根据传递性有 $e\in g^{c_F}\leftrightarrow\left(e\in\left(x^{c_X}\cap F\right)\right)$ 
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]] $g^{c_F}=x^{c_X}\cap F\in G$
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]] $g^{c_F}=x^{c_X}\cap F\in G$
 
 故补集封闭
 
@@ -600,13 +600,13 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 **** 性质<<MK124>>
 
-若 $\Phi\subset\rho(X)$ [[MK85][生成]]了 $X$ 上的[[MK50][ $\sigma$ 代数]] $\sigma_\Phi(X)$ 则对于 $Y\subset X$ 定义集合 $\Psi=\left\{x\cap Y\big|x\in\beta\right\}$
+若 $\Phi\subset\rho(X)$ [[MK85][生成]]了 $X$ 上的[[MK50][ $\sigma$ 代数]] $\sigma_\Phi(X)$ 则对于 $Y\subset X$ 定义集合 $\Psi=\left\{x\cap Y\big|x\in\Phi\right\}$
 
-此时由 $\Psi$ [[MK85][生成]]的 $Y$ 上的[[MK50][ $\sigma$ 代数]] $\sigma_\Psi(Y)=\left\{Y\cap x\big|x\in\sigma_\Phi(X)\right\}$
+此时由 $\Psi$ [[MK85][生成]]的 $Y$ 上的[[MK50][ $\sigma$ 代数]]满足 $\sigma_\Psi(Y)=\left\{Y\cap x\big|x\in\sigma_\Phi(X)\right\}$
 
 ***** 证明
 
-定义 $L=\left\{Y\cap x\big|x\in\sigma_\Phi(X)\right\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集-自反性]]证明以下结论，故有 $L=\sigma_{\Psi}(Y)$
+定义 $L=\left\{Y\cap x\big|x\in\sigma_\Phi(X)\right\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]证明以下结论，故有 $L=\sigma_{\Psi}(Y)$
 
 ****** $\sigma_\Psi(Y)\subset L$
 
@@ -716,7 +716,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 （2） 规范性： $\rho(\varnothing)=0$
 
-（3） 可数可加性： $\rho(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\rho(A_i)$ 注意此处 $i$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个，且当 $i\ne j$ 时 $A_i\cap A_j=\varnothing$
+（3） 可数可加性： $\rho(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\rho(A_i),A_i\in\Gamma$ 注意此处 $i$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个，且当 $i\ne j$ 时 $A_i\cap A_j=\varnothing$
 
 则称 $\rho$ 是 $X$ 上的测度，其中 $\Gamma$ 是可测集。
 
@@ -736,11 +736,53 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 则称 $\varphi$ 是 $X$ 上的外测度
 
+** 外侧度可测集<<MK174>>
+
+定义结构 $<X,\varphi>$ 其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
+
+对于任意 $S\subset X$ 若满足 $\forall A\subset X\rightarrow\varphi(A)=\varphi(A\cap S)+\varphi(A/S)$
+
+则 $S$ 是 $<X,\varphi>$ 上的外侧度可测集
+
+*** 引理<<MK176>>
+
+定义 $Y\subset X$ 且 $Y$ 是 $<X,\varphi>$ 上的外侧度可测集
+
+若有 $S\subset Y$ 是 $<Y,\varphi>$ 上的外侧度可测集，则 $S$ 亦为 $<X,\varphi>$ 上的外侧度可测集
+
+**** 证明
+
+***** 拆分相等<<MK175>>
+
+由于 $Y$ 在 $<X,\varphi>$ 上可测，故有 $\forall A\subset X\rightarrow\varphi(A)=\varphi(A\cap Y)+\varphi(A/Y)$
+
+由于 $S$ 是 $<Y,\varphi>$ 上的外侧度可测集，同理有 $\forall A'\subset Y\rightarrow\varphi(A')=\varphi(A'\cap S)+\varphi((A'/S)\cap Y)$
+
+由于 $A\cap Y\subset Y$ 故有 $\forall A\rightarrow\varphi(A)=\varphi(A\cap S)+\varphi((A/S)\cap Y)+\varphi(A/Y)$
+
+***** 反证
+
+假设 $S$ 在 $<X,\varphi>$ 上不可测，则存在 $A$ 满足 $\varphi(A)\ne\varphi(A\cap S)+\varphi(A/S)$
+
+由于 $A=(A\cap S)\cup(A/S)$ 故根据[[MK61][次可数可加]]有 $\varphi(A)\leq\varphi(A\cap S)+\varphi(A/S)$
+
+结合假设可得 $\varphi(A)<\varphi(A\cap S)+\varphi(A/S)$
+
+进一步根据[[MK175][拆分相等]]有 $\varphi(A\cap S)+\varphi((A/S)\cap Y)+\varphi(A/Y)<\varphi(A\cap S)+\varphi(A/S)$
+
+整理得 $\varphi(A/S)>\varphi((A/S)\cap Y)+\varphi(A/Y)$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK329][集合计算]]易证得 $((A/S)\cap Y)\cup(A/Y)=A/S$
+
+则根据[[MK61][次可数可加]]必有 $\varphi(A/S)\leq\varphi((A/S)\cap Y)+\varphi(A/Y)$ 与基于假设推出结论矛盾
+
+故假设不成立，即 $S$ 是 $<X,\varphi>$ 上的外侧度可测集
+
 ** Caratheodory定理<<MK65>>
 
-对于任意 $S\subset X$ 若满足 $\forall A\subset X\rightarrow\varphi(A)=\varphi(A\cap S)+\varphi(A/S)$ 其中 $\varphi:\rho(X)\to\mathbb{R}$ 是[[MK61][外测度]]
+定义结构 $<X,\varphi>$ 其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
 
-则 $S$ 定义为外测度可测集且：
+则 $<X,\varphi>$ 上的[[MK174][外测度可测集]]满足：
 
 （1） 所有外测度可测集的集合构成 $X$ 上的[[MK50][ $\sigma$ 代数]]
 
@@ -3087,7 +3129,7 @@ Borel集中元素均为可测集
 
 ** 连续函数<<MK106>>
 
-根据[[~/OneDrive/数学分析/Chap11Note.org][向量值函数-向量值函数连续]]，在不考虑边界点的情况下（只考虑 $B$ 的[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-点的定义-内点]]）
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK18][向量值函数连续]]，在不考虑边界点的情况下（只考虑 $B$ 的[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]）
 
 若 $f:A\to B,A\subset\mathbb{R}^n\land B\subset\mathbb{R}^m$ 连续，则 $\forall\vec{x}_0\in B\rightarrow\lim_{\vec{x}\to\vec{x}_0}f(\vec{x})=f(\vec{x}_0)$
 
@@ -3097,7 +3139,7 @@ Borel集中元素均为可测集
 
 （1） $\forall\vec{x}_0\in B\rightarrow\forall\epsilon>0\left(\exists\delta>0\rightarrow O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}\right)$
 
-（2） 对于任意 $C\subset B$ 且 $C$ 为[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]，则 $C^{-1}=\left\{\vec{x}\big|f(\vec{x})\in C\right\}$ 仍为开集 
+（2） 对于任意 $C\subset B$ 且 $C$ 为[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]，则 $C^{-1}=\left\{\vec{x}\big|f(\vec{x})\in C\right\}$ 仍为开集 
 
 **** 证明
 
@@ -3407,11 +3449,11 @@ Borel集中元素均为可测集
 
 对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}_e$ 其中 $\mathbb{R}_e=\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
 
-定义 $E[f>a]=\left\{x\big|f(x)\in(a,+\infty]\land x\in E\right\}$ 即 $(a,\infty]$ 的[[MK151][原相]]
+定义 $<E,\varphi>$ 其中 $\varphi$ 是 $E$ 上的[[MK61][外侧度]]，进一步定义 $\mathcal{M}\subset\rho(E)$ 是 $E$ 上所有的[[MK65][外测度可测集]]族
 
-定义 $\mathcal{M}\subset\rho(E)$ 是 $E$ 上所有的[[MK65][外测度可测集]]族
+则若 $f$ 满足 $\forall a\in\mathbb{R}\rightarrow f^{-1}((a,+\infty])\in\mathcal{M}$ 则 $f$ 是可测函数。其中 $f^{-1}((a,+\infty])$ 为函数的[[MK151][原相]]
 
-则若 $f$ 满足 $\forall a\in\mathbb{R}\rightarrow E[f>a]\in\mathcal{M}$ 则 $f$ 是可测函数
+注：原相亦可表述为 $E[f>a]=f^{-1}((a,+\infty])$
 
 *** 等价定义<<MK154>>
 
@@ -3477,7 +3519,28 @@ Borel集中元素均为可测集
 
 同理可证 $E[f=-\infty]\in\mathcal{M}$ 
 
-*** 定理1
+*** 正负部
+
+对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}_e$ ，其正部定义为 $f^+(x)=\begin{cases}f(x)&f(x)\geq0\\0&f(x)<0\end{cases}$
+
+同理其负部定义为 $f^-(x)=\begin{cases}-f(x)&f(x)\leq0\\0&f(x)>0\end{cases}$ 显然有 $f(x)=f^+(x)-f^-(x)$
+
+**** 引理1
+
+若 $f(x)$ 是[[MK143][可测函数]]，则 $f^+(x),f^-(x)$ 均可测
+
+***** 证明
+
+定义函数列 $A(x)=\{f_1(x),f_2(x)\}$ 其中 $f_1(x)=f(x),f_2(x)=0$
+
+显然 $\sup(A(x))=\max(f_1(x),f_2(x))=\begin{cases}f(x)&f(x)\geq0\\0&f(x)<0\end{cases}$
+
+根据[[MK161][定理2]]可得 $f_2(x)$ 可测，则根据[[MK172][确界运算]]可得 $\sup(A(x))$ 可测，即[[MK173][正部]]可测
+
+同理可证负部亦[[MK143][可测]]
+*** 定理
+
+**** 定理1
 
 可测函数 $f:E\to\mathbb{R}_e$ 其中 $\mathbb{R}_e=\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
 
@@ -3485,9 +3548,9 @@ Borel集中元素均为可测集
 
 则对于任意 $S\in\mathcal{B}(\mathbb{R}_e)$ 均有其[[MK151][原相]] $f^{-1}(S)\in\mathcal{M}$ 即borel集合中元素的原相可测
 
-**** 证明
+***** 证明
 
-***** 开区间 $(a,b),\{a,b\}\subset\mathbb{R}$ 原相可测<<MK156>>
+****** 开区间 $(a,b),\{a,b\}\subset\mathbb{R}$ 原相可测<<MK156>>
 
 对于任意[[MK146][开区间]] $(a,b),\{a,b\}\subset\mathbb{R}$ 有 $(a,b)=[-\infty,b)\cup(a,+\infty]$
 
@@ -3497,7 +3560,7 @@ Borel集中元素均为可测集
 
 则根据[[MK65][Caratheodory定理]]可得 $f^{-1}([-\infty,b))\cup f^{-1}((a,+\infty])$ 亦可测
 
-***** 开区间 $(a,b),\{a,b\}\subset\mathbb{R}_e$ 原相可测<<MK158>>
+****** 开区间 $(a,b),\{a,b\}\subset\mathbb{R}_e$ 原相可测<<MK158>>
 
 当 $a\in\mathbb{R},b=+\infty$ 时有 $(a,+\infty)=\bigcup_{i=1}^\infty(a,i)$ 同样根据[[MK135][性质]]有 $f^{-1}\left(\bigcup_{i=1}^\infty(a,i)\right)=\bigcup_{i=1}^\infty f^{-1}((a,i))$
 
@@ -3505,7 +3568,7 @@ Borel集中元素均为可测集
 
 同理可证当 $a=-\infty,b\in\mathbb{R}$ 以及 $a=-\infty,b=+\infty$ 时 $(a,b)$ 的[[MK151][原相]]亦可测
 
-*****  $\{+\infty\},\{-\infty\},\{-\infty, +\infty\}$ 原相可测<<MK159>>
+******  $\{+\infty\},\{-\infty\},\{-\infty, +\infty\}$ 原相可测<<MK159>>
 
 有 $f^{-1}(\{-\infty, +\infty\})=f^{-1}(\{-\infty\}\cup \{ +\infty\})$ 根据[[MK135][性质]] $f^{-1}(\{-\infty\}\cup \{ +\infty\})=f^{-1}(\{-\infty\})\cup f^{-1}(\{ +\infty\})$
 
@@ -3513,7 +3576,7 @@ Borel集中元素均为可测集
 
 故根据[[MK65][Caratheodory定理]]可得 $f^{-1}(\{-\infty\})\cup f^{-1}(\{ +\infty\})$ 可测
 
-***** 开集可测
+****** 开集可测
 
 根据[[MK155][推论]]可得任意 $\mathbb{R}_e$ 上的开集可有由[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并之后，与 $\pm\infty$ 的组合并组成
 
@@ -3529,19 +3592,19 @@ Borel集中元素均为可测集
 
 综上所述， $\mathbb{R}_e$ 上的开集 $S$ 的原相 $f^{-1}(S)\in\mathcal{M}$ 是可测集
 
-***** borel集可测
+****** borel集可测
 
 根据[[MK153][borel集合定义]]可得 $\mathcal{B}(\mathbb{R}_e)$ 为 $\mathcal{R}_e$ 上[[MK148][开集]]构成的[[MK50][ $\sigma$ 代数]]
 
 结合[[MK135][性质]]与[[MK65][Caratheodory定理]]可得原相可测
 
-*** 定理2<<MK161>>
+**** 定理2<<MK161>>
 
 [[MK133][广义实值函数]] $f:E\to\mathbb{R}_e$ 是常值函数，即 $\forall x\in E\rightarrow f(x)=c$
 
 则 $f(x)$ 是[[MK134][可测函数]]
 
-**** 证明
+***** 证明
 
 对于任意 $a\in\mathbb{R}_e$ 若：
 
@@ -3553,13 +3616,13 @@ Borel集中元素均为可测集
 
 进一步根据[[MK50][ $\sigma$ 代数定义]]可知空集，全集均可测，故证毕。
 
-*** 定理3<<MK164>>
+**** 定理3<<MK164>>
 
 若[[MK133][广义实值函数]] $f(x),g(x)$ 均为[[MK134][可测函数]]，其中 $x\in E$
 
 则 $S=\left\{x\big|f(x)\in(g(x),+\infty]\right\}=\left\{x\big|f(x)>g(x)\right\}$ 是 $E$ 上的[[MK65][外测度可测集]]
 
-**** 证明
+***** 证明
 
 定义 $S'=\bigcup_{r\in\mathbb{Q}}\left(\left\{x\big|f(x)>r\right\}\cup\left\{x\big|g(x)<r\right\}\right)=\bigcup_{r\in\mathbb{Q}}\left(f^{-1}((r,+\infty])\cup g^{-1}([-\infty,r))\right)$
 
@@ -3579,7 +3642,87 @@ Borel集中元素均为可测集
 
 同样根据[[MK50][定义（3）]]以及[[~/OneDrive/离散数学/Disc_Math.org::MK325][有理数可数]]可得 $S'$ 可测，即 $S$ 可测
 
-*** 四则运算
+**** 定理4<<MK177>>
+
+定义结构 $<E,\varphi>$ 其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
+
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]集 $K=\{E_i\}\subset\rho(E)$ 对于任意 $E_i\in K$ 均满足：
+
+（1） $E_i$ 是 $<X,\varphi>$ 上的[[MK174][外测度可测集]]
+
+（2） $\{E_i\}$ 是对 $E$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]
+
+进一步定义分段函数 $f(x)=f_i(x),\ x\in E_i$
+
+若 $f_i:E_i\to\mathbb{R}_e$ 为 $<E_i,\varphi>$ 上的[[MK134][可测函数]]，则 $f(x)$ 亦为可测函数
+
+***** 证明
+
+由于 $f_i(x)$ 可测，故对于任意 $a\in\mathbb{R}_e$ 均有 $f_i^{-1}((a,+\infty])$ 为 $<E_i,\varphi>$ 上的[[MK174][外测度可测集]]
+
+进一步由于 $E_i\subset E$ 且是 $<E,\varphi>$ 上的[[MK174][外测度可测集]]
+
+故根据[[MK176][引理]]可得 $f_i^{-1}((a,+\infty])$ 亦为 $<E,\varphi>$ 上的[[MK174][外测度可测集]]
+
+根据分段函数定义可得 $f^{-1}((a,+\infty])=\bigcup_{i=1}^\infty f_i^{-1}((a,+\infty])$
+
+根据[[MK65][Caratheodory定理]]可得 $<E,\varphi>$ 上的所有[[MK174][外测度可测集]]构成[[MK50][ $\sigma$ 代数]]
+
+故根据可数并封闭性质可得 $\bigcup_{i=1}^\infty f_i^{-1}((a,+\infty])$ 亦为 $<E,\varphi>$ 上的[[MK174][外测度可测集]]
+
+即分段函数 $f(x)=f_i(x),\ x\in E_i$ 是[[MK134][可测函数]]
+
+**** 定理5
+
+定义结构 $<E,\varphi>$ ，其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]，定义 $f:E\to\mathbb{R}_e$ 为非负[[MK133][广义实值函数]]。则有：
+
+（1） 若 $f(x)$ 为[[MK134][可测函数]]，则存在非负[[MK178][简单函数]]列 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][收敛]]于 $f(x)$ 即 $\lim_{i\to\infty}\phi_i(x)=f(x)$
+
+（2） 若满足（1）且 $f(x)$ 有界，则 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]与 $f(x)$
+
+***** 证明
+
+****** 构建函数
+
+定义函数 $\phi_i(x)\begin{cases}i&f(x)>i\\\frac{j-1}{2^i}&\frac{j-1}{2^i}\leq f(x)<\frac{j}{2^i},j=1,2,...,2^i\end{cases}$
+
+****** 证明（1）<<MK179>>
+
+对于任意 $x\in E$ 若 $f(x)\in\mathbb{R}$ 则根据[[MK19][阿基米德性质]]可得存在 $k_1$ 满足 $k_1>f(x)$
+
+则对于任意 $k>k_1$ , $f(x)$ 必定落在某一分段内，即存在 $j$ 使得 $\frac{j-1}{2^k}\leq f(x)<\frac{j}{2^k}$
+
+由于 $f(x)$ 非负，则有 $f(x)-\phi_k(x)=f(x)-\frac{j-1}{2^k}\leq\frac{j}{2^k}-\frac{j-1}{2^k}=\frac{1}{2^k}$
+
+由于 $\lim_{k\to\infty}\frac{1}{2^k}=0$ ，故对于任意 $\epsilon>0$ 存在 $k_2$ 对于任意 $k>k_2$ 均有 $\frac{1}{2^k}<\epsilon$
+
+综上所述，对于任意给定 $x\in E$ ，对于任意 $\epsilon>0$ 存在 $K=\max(k_1,k_2)$
+
+对于任意 $k>K$ 均有 $f(x)-\phi_k(x)<\epsilon$ 即当 $f(x)\in\mathbb{R}$ 时函数项级数 $\{\phi_i\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][收敛]]于 $f(x)$
+
+若 $f(x)=+\infty$ 则有 $\lim_{k\to\infty}\phi_k(x)=+\infty$
+
+综上所述函数项级数 $\{\phi_i\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][收敛]]于 $f(x)$
+
+****** 证明（2）
+
+由于 $f(x)$ 有界，则存在 $M\in\mathbb{R}$ 满足 $\forall x\in E\rightarrow f(x)\leq M$
+
+进一步根据[[MK19][阿基米德性质]]可得存在 $k_1$ 满足 $k_1>M\geq f(x)$
+
+则对于任意 $\epsilon>0$ ，对于任意 $k>k-1$
+
+根据[[MK179][之前证明]]可得对于任意 $x\in E$ 存在 $j_x$ 满足 $\frac{j_x-1}{2^k}\leq f(x)<\frac{j_x}{2^k}$ 即 $f(x)-\phi_k(x)\leq\frac{1}{2^k}$
+
+同理根据[[MK179][之前证明]]可得存在 $k_2$ 满足 $\forall k>k_2\rightarrow \frac{1}{2^k}<\epsilon$
+
+则 $\forall\epsilon>0$ 定义 $K=\max(k_1,k_2)$ 则 $\forall x\in E,\forall k>K\rightarrow f(x)-\phi_k(x)<\epsilon$ 
+
+即函数项级数 $\{\phi_i\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+
+*** 运算
+
+**** 四则运算
 
 若 $f(x),g(x)$ 均为[[MK133][广义实值]]的[[MK134][可测函数]]，则：
 
@@ -3595,11 +3738,11 @@ Borel集中元素均为可测集
 
 均为可测函数
 
-**** 证明
+***** 证明
 
-***** 当 $g(x)=c$ 是常值函数时<<MK162>>
+****** 当 $g(x)=c$ 是常值函数时<<MK162>>
 
-****** 加减
+******* 加减
 
 定义 $h(x)=f(x)+g(x)=f(x)+c$ 则对于任意 $a\in\mathbb{R}_e$ 有
 
@@ -3622,7 +3765,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|h(x)\in(a,+\infty]\land a\in\mathbb{R}_e\right
 
 进一步根据[[MK6][减法定义]]可得 $h(x)=f(x)-c$ 亦为可测函数
 
-****** 乘除
+******* 乘除
 
 定义 $h(x)=f(x)\cdot g(x)=f(x)\cdot c$
 
@@ -3642,7 +3785,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|h(x)\in(a,+\infty]\land a\in\mathbb{R}_e\right
 
 进一步根据[[MK9][除法定义]]可得 $h(x)=\frac{f(x)}{c}$ 亦为可测函数
 
-***** $\frac{1}{f(x)}$ 可测<<MK163>>
+****** $\frac{1}{f(x)}$ 可测<<MK163>>
 
 定义 $h(x)=\frac{1}{f(x)}$ 则有 $h^{-1}((a,+\infty])=\left\{x\big|h(x)\in(a,+\infty]\right\}=\left\{x\bigg|\frac{1}{f(x)}\in(a,+\infty]\right\}$
 
@@ -3674,7 +3817,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|h(x)\in(a,+\infty]\land a\in\mathbb{R}_e\right
 
 故对于任意 $a\in\mathbb{R}_e$ 均有[[MK151][原相]] $h^{-1}((a,+\infty])$ 可测，则再一次根据[[MK134][可测函数定义]]可得 $h(x)$ 是可测函数
 
-***** $f(x)\pm g(x)$ 可测<<MK165>>
+****** $f(x)\pm g(x)$ 可测<<MK165>>
 
 定义 $h(x)=f(x)+g(x)$ 则对于任意 $a\in\mathbb{R}_e$ 有
 
@@ -3692,7 +3835,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 同理可证 $h(x)=f(x)-g(x)$ 亦可测
 
-***** $\left(f(x)\right)^2$ 可测<<MK166>>
+****** $\left(f(x)\right)^2$ 可测<<MK166>>
 
 定义 $h(x)=f^2(x)$ 则对于任意 $a\in\mathbb{R}_e$ ：
 
@@ -3712,7 +3855,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 即 $h(x)=f^2(x)$ 是[[MK134][可测函数]]
 
-***** $f(x)g(x)$ 可测<<MK167>>
+****** $f(x)g(x)$ 可测<<MK167>>
 
 根据实数运算有 $f(x)g(x)=\frac{1}{4}((f(x)+g(x))^2-(f(x)-g(x))^2)$
 
@@ -3722,13 +3865,13 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 再次根据[[MK162][之前证明]]可得 $\frac{1}{4}((f(x)+g(x))^2-(f(x)-g(x))^2)$ 可测，即 $f(x)g(x)$ 是[[MK134][可测函数]]
 
-***** $\frac{f(x)}{g(x)}$ 可测
+****** $\frac{f(x)}{g(x)}$ 可测
 
 根据[[MK163][之前证明]]可得 $\frac{1}{g(x)}$ 可测，根据[[MK167][之前证明]]可得 $f(x)\frac{1}{g(x)}$ 可测
 
 综上所述 $\frac{f(x)}{g(x)}$ 是[[MK134][可测函数]]
 
-***** $|f(x)|$ 可测
+****** $|f(x)|$ 可测
 
 定义 $h(x)=|f(x)|$ 则有对于任意 $a\in\mathbb{R}_e$
 
@@ -3748,15 +3891,15 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 即 $h(x)=|f(x)|$ 是[[MK134][可测函数]]
 
-*** 确界运算<<MK172>>
+**** 确界运算<<MK172>>
 
 若存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个[[MK134][可测函数]] $f_i(x), i\in I$ 定义 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\},\psi(x)=\sup\left\{f_i(x)\big|i\in I\right\}$
 
 即为 $f_i(x)$ 的上下[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]，则 $\phi(x),\psi(x)$ 仍为[[MK134][可测函数]]
 
-**** 证明
+***** 证明
 
-***** $\phi(x)$ 可测<<MK169>>
+****** $\phi(x)$ 可测<<MK169>>
 
 对于任意 $a\in\mathbb{R}_e$ 有 $\phi^{-1}((a,+\infty])=\left\{x\big|\phi(x)\in(a,+\infty]\right\}$ 且 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\}$
 
@@ -3780,17 +3923,17 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 类似通过 $\psi^{-1}([-\infyt,a))=\bigcap_{i\in I}f_i^{-1}([-\infty,a))$ 同理可证 $\psi(x)$ 是[[MK134][可测函数]]
 
-***** $\psi(x)$ 可测
+****** $\psi(x)$ 可测
 
 通过 $\psi^{-1}([-\infyt,a))=\bigcap_{i\in I}f_i^{-1}([-\infty,a))$ [[MK169][同理可证]] $\psi(x)$ 是[[MK134][可测函数]]
 
-*** 极限运算
+**** 极限运算
 
 对于[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个[[MK134][可测函数]] $f_i(x), i\in\mathbb{N}$ 其上定义其下极限函数 $\phi(x)=\overline{\lim_{i\to\infty}}f_i(x),\psi(x)=\underline{\lim_{i\to\infty}}f_i(x)$
 
 则 $\phi(x),\psi(x)$ 仍为[[MK134][可测函数]]
 
-**** 证明
+***** 证明
 
 则对于给定 $x\in\mathbb{R}_e$ 有[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\{f_i(x)\}$ 其中 $i\in\mathbb{N}$ 
 
@@ -3799,3 +3942,68 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 根据[[MK172][确界运算]]可知对于任意 $i\in\mathbb{N}$ 有 $\phi_i(x)=\sup\left\{f_k(x)\big|k\geq i\land k\in\mathbb{N}\right\}$ [[MK143][可测]]
 
 同理可知 $\phi(x)=\left\{\phi_i(x)\big|i\in\mathbb{N}\right\}$ 亦[[MK143][可测]]，同理可证 $\psi(x)$ [[MK143][可测]]
+
+*** 常用可测函数
+
+**** 常值函数
+
+根据[[MK161][定理2]]可得常值函数可测
+
+**** [[MK106][连续函数]]
+
+[[MK106][连续函数]]是可测函数
+
+***** 证明
+
+若有函数 $f:A\to B,A\subset\mathbb{R}^n\land B\subset\mathbb{R}^m$ 连续，则对于任意 $a\in\mathbb{R}$ [[MK151][原相]] $f^{-1}((a,+\infty])=f^{-1}((a,+\infty))$
+
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]易证得 $(a,+\infty)$ 为 $\mathbb{R}$ 上的开集，根据[[MK105][等价定义]]可得原相 $f^{-1}((a,+\infty])$ 必为 $\mathbb{R}^n$ 上的开集
+
+根据[[MK87][开集可测]]可得原相亦可测，故连续函数是[[MK134][可测函数]]
+
+**** 单调函数
+
+若有函数 $f:A\to\mathbb{R}_e$ 其中 $A\in\mathbb{R}$ 是[[MK13][区间]]且 $f(x)$ 是单调函数，则 $f(x)$ [[MK134][可测]]
+
+***** 证明
+
+设 $f(x)$ 单调递增，故有 $\forall x>y\rightarrow f(x)\geq f(y)$ ，进一步对于任意 $\{x,y\}\subset A$ 若有 $f(x)>f(y)$ 
+
+则反证假设 $x<y$ 以及 $x=y$ 可得 $x>y$
+
+对于任意 $a\in\mathbb{R}_e$ 若[[MK151][原相]] $f^{-1}((a,+\infty])=\varnothing$ 则根据 $\mathbb{R}$ 上的[[MK103][borel集定义]]以及[[MK122][定理1]]可得空集是[[MK81][可测集]]
+
+若不为空集，则取 $x_0$ 为$f^{-1}((a,+\infty])=\varnothing$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK326][下确界]]
+
+故对于任意 $x>x_0$ 假设 $f(x)\leq a$ 则对于任意 $z\in f^{-1}((a,+\infty])$ 则有 $f(z)>a\geq f(x)$
+
+故根据单调性有 $z\geq x>x_0$ 与 $x_0$ 是下确界矛盾。故假设不成，对于任意 $x>x_0$ 有 $f(x)>a$
+
+对于任意 $x<x_0$ 假设 $f(x)>a$ 则存在 $z\in f^{-1}((a,+\infty])$ 则有 $f(z)<f(x)$
+
+故根据单调性有 $z<x<x_0$ 同样与下确界矛盾。故假设不成，对于任意 $x<x_0$ 有 $f(x)\leq a$
+
+由于 $A$ 是区间，故有上下确界，定义为 $A_u,A_v$ 满足 $A_u\leq x_0\leq A_v$
+
+若 $x_0\in f^{-1}((a,+\infty])$ 则根据上述证明，其原相为 $[x_0,A_v]$ 否则为 $(x_0,A_v]$
+
+故根据[[MK][区间可测]]得对于任意 $a\in\mathbb{R}_e$ 其原相可测，即函数[[MK134][可测]]
+
+**** 简单函数<<MK178>>
+
+定义结构 $<E,\varphi>$ 其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
+
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]集 $K=\{E_i\}\subset\rho(E)$ 对于任意 $E_i\in K$ 均满足：
+
+（1） $E_i$ 是 $<X,\varphi>$ 上的[[MK174][外测度可测集]]
+
+（2） $\{E_i\}$ 是对 $E$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]
+
+进一步定义分段函数 $f(x)=f_i(x),\ x\in E_i$ 其中 $f_i(x)=c_i,c_i\in\mathbb{R}_e$ 则 $f(x)$ 亦为[[MK134][可测函数]]
+
+***** 证明
+
+则根据[[MK161][定理2]]可得 $f_i(x)$ 在 $<E_i,\varphi>$ 上为[[MK134][可测函数]]
+
+由于 $E_i$ 均为 $E$ 上的[[MK174][外测度可测集]]，根据[[MK177][定理4]]可得 $f(x)$ 亦为可测函数
+

@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 326
+currnet mark: 329
 
 图论: P40
 
@@ -456,7 +456,7 @@ currnet mark: 326
 
 故满足自反性，对称性以及传递性，即为等价关系
 
-** 集合的计算
+** 集合的计算<<MK329>>
 
 *** 定义
 
@@ -591,7 +591,7 @@ A\cap\varnothing=\varnothing\\
 A\cup U=U\\
 \end{aligned}
 
-**** 分配律
+**** 分配律<<MK327>>
 
 \begin{aligned}
 A\cup (B\cap C)&=(A\cup B)\cap (A\cup C)\\
@@ -701,7 +701,7 @@ A\cup \overline{A}=U\\
 A\cap \overline{A}=\varnothing\\
 \end{aligned}
 
-**** 德摩根律
+**** 德摩根律<<MK328>>
 
 \begin{aligned}
 \overline{A\cup B}=\overline{A}\cap \overline{B}\\
