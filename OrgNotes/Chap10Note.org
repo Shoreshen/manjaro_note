@@ -22,7 +22,7 @@ S_n(x)=\sum_{i=1}^n u_i(x)
 
 为函数项级数的部分和。
 
-** 函数项级数收敛<<MK2>>
+** 函数项级数（逐点）收敛<<MK2>>
 
 对于任意给定定义域内 $x$ 均有 $\forall\epsilon>0,\exists N,\forall n>N\rightarrow |S_n(x)-S(x)| <\epsilon$
 
@@ -35,6 +35,8 @@ S_n(x)=\sum_{i=1}^n u_i(x)
 \begin{aligned}
 \forall \epsilon>0,\ \ \exists N,\ \ \forall n>N,\ \ \forall x \in D\Rightarrow |S_n(x)-S(x)| <\epsilon
 \end{aligned}
+
+其中 $|S_n(x)-S(x)|$ 为 $S_n(x)$ 与 $S(x)$ 的[[~/OneDrive/实变函数/SBHS.org::MK38][度量]]
 
 *** 推论：
 
@@ -199,8 +201,6 @@ a&,m\neq n_i,a\in D
 
 *** 连续性：
 
-**** 描述：
-
 若函数项级数一致收敛，且部分和 $S_n(x)$ 连续，则 $\lim_{x\to x_0}S(x)=S(x_0),x_0\in D$
 
 **** 证明：
@@ -229,9 +229,9 @@ a&,m\neq n_i,a\in D
 
 *** 可积性：
 
-**** 描述：
+若函数项级数一致收敛，且部分和 $S_n(x)$ 连续，则 $\int_a^b S(x) dx=\lim_{n\to\infty}\int_a^b S_n(x) dx$
 
-若函数项级数一致收敛，且部分和 $S_n(x)$ 连续，则 $\int_a^b S(x) dx=\lim_{n\to\infty}\int_a^b S_n(x) dx$ ，且 $\int_a^x S_n(r) dr$ 一致收敛于 $\int_a^x S_n(r) dr$ 。
+且 $\int_a^x S_n(r) dr$ 一致收敛于 $\int_a^x S_n(r) dr$ 。
 
 **** 证明：
 
@@ -260,12 +260,12 @@ a&,m\neq n_i,a\in D
 
 *** 可导性：
 
-**** 描述：
-
 若函数满足以下条件：
 
-（1） $S_n(x)$ 有连续导数 $S_n'(x)$ ；
-（2） $S_n(x)$ 点态收敛于 $S(x)$ ；
+（1） $S_n(x)$ 有连续导数 $S_n'(x)$
+
+（2） $S_n(x)$ 点态收敛于 $S(x)$
+
 （3） $S_n'(x)$ 一致收敛于 $\sigma(x)$
 
 则有 $S'(x)=\sigma(x)$ ，且 $S_n(x)$ 一致收敛于 $S(x)$
@@ -301,13 +301,13 @@ a&,m\neq n_i,a\in D
 
 *** Dini定理：
 
-**** 描述：
-
 若函数项级数（部分和： $S_n(x)$ ）在有界闭区间 $D=[a,b]$ 中满足以下条件：
 
-（1） $S_n(x)$ 点态收敛于 $S(x)$ ；
-（2） $S(x)$ 和 $S_n(x)$ 于 $x\in D$ 上连续；
-（3） 对于固定 $x$ ，有 $S_n(x)$ 关于 $n$ 单调；
+（1） $S_n(x)$ 点态收敛于 $S(x)$
+
+（2） $S(x)$ 和 $S_n(x)$ 于 $x\in D$ 上连续
+
+（3） 对于固定 $x$ ，有 $S_n(x)$ 关于 $n$ 单调
 
 则有 $S_n(x)$ 一致收敛于 $S(x),\ x\in D$ ；
 
@@ -1000,8 +1000,6 @@ R_n(-1)&=\binom \alpha {n+1} (n+1) \int_{x_0}^x(1+t)^{\alpha-n-1}(x-t)^ndt\\
 * 连续函数多项式逼近
 
 ** Weierstrass第一逼近定理
-
-*** 描述
 
 函数 $f(x)$ 在闭区间 $[a,b]$ 上连续，则存在多项式 $P_n(x)$ ，使得
 

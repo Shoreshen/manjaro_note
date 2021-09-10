@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK18
+current mark: MK19
 
 * 笛卡尔乘积
 
@@ -381,14 +381,14 @@ $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚�
 
 在 $R^n$ 上 $S$ 为开集的充要条件是 $S^c$ 是闭集
 
-**** 定理2
+**** 定理2<<MK19>>
 
 领域为开集
 
 ***** 证明
 
 \begin{aligned}
-\forall \vec{a}\in O(\vec{x},\delta),\exists 0<h<\delta\rightarrow O(\vec{a},h)\subset O(x,\delta)
+\forall \vec{a}\in O(\vec{x},\delta),\exists 0<h<\delta-|\vec{a}-\vec{x}|\rightarrow O(\vec{a},h)\subset O(\vec{x},\delta)
 \end{aligned}
 
 **** 定理3<<P2>> 
@@ -477,9 +477,9 @@ $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚�
 
 根据[[MK10][开集定义]]表达式 $\forall \vec{x}\in S\rightarrow \vec{x}\in S_i$ 为真是 $S$ 为开集的等价条件
 
-此处 $\rightarrow$ 为[[~/OneDrive/离散数学/Disc_Math.org][命题逻辑-逻辑连接词-5个基本连接词-蕴含]]
+此处 $\rightarrow$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK60][蕴含]]，由于对于空集 $\vec{x}\in S'$ 永假，
 
-由于对于空集 $\vec{x}\in S'$ 永假，故根据真值表 $\forall \vec{x}\in S\rightarrow \vec{x}\in S_i$ 为真，则根据等价性空集是开集
+故根据真值表 $\forall \vec{x}\in S\rightarrow \vec{x}\in S_i$ 为真，则根据等价性空集是开集
 
 ****** 闭集
 

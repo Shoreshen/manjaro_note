@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 329
+currnet mark: 335
 
 图论: P40
 
@@ -213,6 +213,22 @@ currnet mark: 329
 例如 $A=\left\{x\big|P(x)\right\}$ 或 $A=\left\{x\big:P(x)\right\}$ 
 
 定义为当且仅当[[MK135][谓词公式]] $P(x)=1$ 时，有 $x\in A$ 即 $\forall x(P(x)\leftrightarrow x\in A)=1$ 。
+
+**** 替换引理<<MK330>>
+
+若有 $A=\left\{x\big|P(x)\right\}$ 则 $A=\left\{x\bigg|x\in\left\{z\big|P(z)\right\}\right\}$
+
+***** 证明
+
+定义 $A'=\left\{x\bigg|x\in\left\{z\big|P(z)\right\}\right\}$ 则对于任意 $x^*\in A$ 均满足 $P(x^*)=1$
+
+则显然 $x^*\in\left\{z\big|P(z)\right\}$ 为真，则 $x\in A'$ ，即根据[[MK20][定义]]可得 $A'\subset A$
+
+对于任意 $x^*\in A'$ 必有 $x\in\left\{z\big|P(z)\right\}$ 为真，
+
+由于 $A=\left\{x\big|P(x)\right\}=\left\{z\big|P(z)\right\}$ 即 $x\in A$ ，即根据[[MK20][定义]]可得 $A \subset A'$
+
+故根据[[MK21][自反性]]可得 $A=A'$
 
 *** 归纳法
 
@@ -472,9 +488,11 @@ currnet mark: 329
 
 补运算<<MK33>>： $\overline{A}=U-A=\left\{x\big|x\not\in A\right\}$
 
-广义并<<MK34>>： 若 $C$ 为[[MK12][集合族]]，则定义 $\cup C=\left\{x\big|\exists S(x\in S\land S\in C)\right\}$
+定义 $C$ 为[[MK12][集合族]]，其[[MK13][标志集]]为 $\Lambda$ 则：
 
-广义交<<MK35>>： 若 $C$ 为[[MK12][集合族]]，则定义 $\cap C=\left\{x\big|\forall S(S\in C\rightarrow x\in S)\right\}$
+广义并<<MK34>>：  $\bigcup_{\lambda\in\Lambda} C_\lambda=\left\{x\big|\exists \lambda\in\Lambda\rightarrow x\in C_\lambda\right\}$
+
+广义交<<MK35>>：  $\bigcap_{\lambda\in\Lambda} C_\lambda=\left\{x\big|\forall \lambda\in\Lambda\rightarrow x\in C_\lambda\right\}$
 
 *** 性质
 
@@ -495,18 +513,18 @@ A=B{|\!\!\!=}\cap A=\cap B\\
 
 故有 $x\in\cup A{|\!\!\!=\!\!\!|}\exists S(x\in S\land S\in A){|\!\!\!=\!\!\!|}\exists S(x\in S\land S\in B){|\!\!\!=\!\!\!|}x\in\cup B$ 根据[[MK5][外延公理]] $\cup A=\cup B$
 
-**** 集合族运算与交并
+**** 集合族运算与交并<<MK333>>
 
 \begin{aligned}
-A\cap(\cup C)&=\cup\left\{A\cap S\big|S\in C\right\}\\
-A\cup(\cap C)&=\cap\left\{A\cup S\big|S\in C\right\}\\
+A\cap\left(\bigcup_{\lambda\in\Lambda} C_\lambda\right)&=\bigcup_{\lambda\in\Lambda}A\cap C_\lambda\\
+A\cup\left(\bigcap_{\lambda\in\Lambda} C_\lambda\right)&=\bigcap_{\lambda\in\Lambda}A\cup C_\lambda\\
 \end{aligned}
 
 **** 集合族运算与差
 
 \begin{aligned}
-A-(\cup C)&=\cap\left\{A-S\big|S\in C\right\}\\
-A-(\cap C)&=\cup\left\{A-S\big|S\in C\right\}\\
+A-\left(\bigcup_{\lambda\in\Lambda} C_\lambda\right)&=\bigcup_{\lambda\in\Lambda}A- C_\lambda\\
+A-\left(\bigcap_{\lambda\in\Lambda} C_\lambda\right)&=\bigcap_{\lambda\in\Lambda}A- C_\lambda\\
 \end{aligned}
 
 ***** 证明
@@ -536,11 +554,11 @@ A-(\cap C)&=\cup\left\{A-S\big|S\in C\right\}\\
 
 即 $\forall x\left(\left(x\in A-(\cup C)\right)\leftrightarrow \left(x\in\cap\left\{A-S\big|S\in C\right\}\right)\right)$ 故根据[[MK5][外延公理]]有 $A-(\cup C)&=\cap\left\{A-S\big|S\in C\right\}$ 
 
-**** 集合族运算与补
+**** 集合族运算与补<<MK331>>
 
 \begin{aligned}
-\overline{\cup C}&=\cap\left\{\overline{S}\big|S\in C\right\}\\
-\overline{\cap C}&=\cup\left\{\overline{S}\big|S\in C\right\}\\
+\overline{\bigcup_{\lambda\in\Lambda} C_\lambda}&=\bigcap_{\lambda\in\Lambda}\overline{C_\lambda}\\
+\overline{\bigcap_{\lambda\in\Lambda} C_\lambda}&=\bigcup_{\lambda\in\Lambda}\overline{C_\lambda}\\
 \end{aligned}
 
 **** 可数性质<<MK37>>
@@ -754,21 +772,57 @@ A\cap \overline{A}=\varnothing\\
 
 根据[[MK5][外延公理]]可得 $\overline{\bigcap_{i=1}^\infty A_i}=\bigcup_{i=1}^\infty\overline{A_i}$ 
 
-**** 补与减
+**** 补与减<<MK334>>
 
 \begin{aligned}
 A-B=A\cap\overline{B}\\
 \end{aligned}
 
-**** 子集与计算
+**** 子集与计算<<MK332>>
 
 \begin{aligned}
 &A\subset A\cup B\\
 &A\cup B\subset A\\
 &A-B\subset A\\
 &A\subset B\leftrightarrow A-B=\varnothing\leftrightarrow A\cup B=B\leftrightarrow A\cap B=A\\
-&A\subset B\rightarrow B\sim\subset A\sim\\
+&A\subset B\rightarrow \overline{B}\subset \overline{A}\\
 \end{aligned}
+
+**** [[MK124][量词]]与运算<<MK331>>
+
+\begin{aligned}
+\left\{x\big|\forall y\in Y\rightarrow P(x,y)\right\}=\bigcap_{y\in Y}\left\{x\big|P(x,y)\right\}\\
+\left\{x\big|\exists y\in Y\rightarrow P(x,y)\right\}=\bigcup_{y\in Y}\left\{x\big|P(x,y)\right\}\\
+\end{aligned}
+
+***** 证明
+
+仅证一式，二式同理易证
+
+根据[[MK330][替换引理]]以及[[MK35][广义并]]有：
+
+\begin{aligned}
+&\left\{x\big|\forall y\in Y\rightarrow P(x,y)\right\}\\
+=&\left\{x\bigg|\forall y\in Y\rightarrow x\in\left\{z\big|P(z,y)\right\}\right\}\\
+=&\bigcap_{y\in Y}\left\{x\bigg|x\in\left\{z\big|P(z,y)\right\}\right\}\\
+=&\bigcap_{y\in Y}\left\{x\big|P(x,y)\right\}\\
+\end{aligned}
+
+**** 补与并<<MK335>>
+
+$A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
+
+***** 证明
+
+由于 $A\cap B=C\cap B$ 则有 $x\in A\land x\in B\leftrightarrow x\in C\land x\in B$
+
+对于任意 $a\in\overline{A}\cap B$ 可得 $a\not\in A\land a\in B$
+
+假设 $a\in C$ 则根据 $x\in C\land a\in B$ 可得 $x\in A$ 与 $a$ 的定义矛盾
+
+故假设不成立，则有 $x\not\in C$ 即 $x\not\in C\land x\in B\rightarrow x\in\overline{C}\cap B$ 即 $\overline{A}\cap B\subset\overline{C}\cap B$
+
+同理易证 $\overline{C}\cap B\subset\overline{B}\cap B$ 则根据[[MK21][自反性]]可得 $\overline{A}\cap B=\overline{C}\cap B$
 
 ** 集合分类
 
@@ -2299,9 +2353,13 @@ MU是否系统中的串？
 
 若 $x$ 的[[MK119][个体域]]为 $a_1,...,a_n$ 则
 
-$\forall xP(x),x\in\{a_1,...,a_n\}$ 定义为 $P(a_1)\land...\land P(a_n)$ ， $\lnot\forall xP(x),x\in\{a_1,...,a_n\}$ 定义为 $\lnot(P(a_1)\land...\land P(a_n))$ 
+$\forall xP(x),x\in\{a_1,...,a_n\}$ 定义为 $P(a_1)\land...\land P(a_n)$ ， $\lnot\forall xP(x),x\in\{a_1,...,a_n\}$
 
-$\exists xP(x),x\in\{a_1,...,a_n\}$ 定义为 $P(a_1)\lor...\lor P(a_n)$ ， $\lnot\exists xP(x),x\in\{a_1,...,a_n\}$ 定义为 $\lnot(P(a_1)\lor...\lor P(a_n))$ 
+定义为 $\lnot(P(a_1)\land...\land P(a_n))$ 
+
+$\exists xP(x),x\in\{a_1,...,a_n\}$ 定义为 $P(a_1)\lor...\lor P(a_n)$ ， $\lnot\exists xP(x),x\in\{a_1,...,a_n\}$
+
+定义为 $\lnot(P(a_1)\lor...\lor P(a_n))$ 
 
 **** 指导变元
 

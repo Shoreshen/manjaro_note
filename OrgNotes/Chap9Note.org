@@ -6,8 +6,6 @@ current mark: 2
 
 * Bolzano-Weiserstrass 定理：
 
-** 描述：
-
 有界数列必有收敛子列。
 
 ** 证明：

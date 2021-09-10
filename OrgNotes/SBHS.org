@@ -2,9 +2,13 @@
 
 #+TITLE: 实变函数
 
-current video: P33
+current video: P36
 
-current mark: 179
+current mark: 207
+
+* 几乎处处<<MK190>>
+
+一个性质几乎处处满足，其定义为去除一个零测集后性质满足
 
 * 集合列
 
@@ -138,7 +142,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 设 $T$ 是 $X$ 的非空子集的[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]
 
-定义闭集为 $t^c:t\in T$ 定义闭集族 $T^c=\left\{t^c\big|t\in T\right\}$ 则 $<X,T>$ 是[[MK39][拓扑空间]]的充要条件是：
+定义闭集族 $T^c=\left\{t^c\big|t\in T\right\}$ 则 $<X,T>$ 是[[MK39][拓扑空间]]的充要条件是：
 
 （1） $X,\varnothing$ 均属于 $T^c$
 
@@ -156,11 +160,11 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ***** （2）&（3）
 
-定义对于[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $A$ 的[[~/OneDrive/离散数学/Disc_Math.org][集合论-计算-广义并]]为 $\bigcup A$ 同理定义广义交为 $\bigcap A$
+定义对于[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $A$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK35][广义并]]为 $\bigcup A$ 同理定义广义交为 $\bigcap A$
 
 定义 $F\subset T$ 以及 $F^c=\left\{f^c\big|f\in F\right\}$ 根据 $T^c$ 定义显然有 $F^c\subset T^c$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-计算-性质-集合族运算与补]]可得 $\left(\bigcup F\right)^c=\bigcap\left\{f^c\big|f\in F\right\}=\bigcap F^c$
+则根据[[~/OneDrive/离散数学/Disc_Math.org::MK331][集合族运算与补]]可得 $\left(\bigcup F\right)^c=\bigcap\left\{f^c\big|f\in F\right\}=\bigcap F^c$
 
 故对于任意 $F\subset T$ 若 $\bigcup F\in T$ 则有 $\left(\bigcup F\right)^c\in T^c$ 根据上式有 $\left(\bigcup F\right)^c=\bigcap F^c\in T^c$
 
@@ -188,21 +192,83 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 对于任意 $F\subset T$ 均有 $\bigcup F\in T$ 则有 $Y\cap\bigcup F\in T_y$ 故定义 $F_Y=\left\{f\cap Y\big|f\in F\right\}$ 
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-计算-性质-集合族运算与交并]]有 $Y\cap\bigcup F=\bigcup\left\{f\cap Y\big|f\in F\right\}=\bigcup F_Y$
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK333][集合族运算与交并]]有 $Y\cap\bigcup F=\bigcup\left\{f\cap Y\big|f\in F\right\}=\bigcup F_Y$
 
 由于 $T_Y$ 中所有元素均有 $T$ 产生，故（2）成立。同理可证（3）
 
 *** 等价性<<MK131>>
 
-设 $<X,T>$ 是一个[[MK39][拓扑空间]] $<Y,T_Y>$ 是 $<X,T>$ 的子空间
+设 $<X,T>$ 是一个[[MK39][拓扑空间]] $<Y,T_Y>$ 是 $<X,T>$ 的子空间，
 
-则当 $Y\in T\lor Y^c\in T$ 时有 $x\in T_Y\rightarrow x\in T$
+定义 $T^c=\left\{X-t\big|t\in T\right\},T_Y^c=\left\{Y-t\big|t\in T_Y\right\}$ 则：
+
+（1） 当 $Y\in T$ 时有 $x\in T_Y\rightarrow x\in T$
+
+（2） 当 $Y\in T^c$ 时有 $x\in T_Y^c\rightarrow x\in T^c$
 
 **** 证明
 
-若 $Y\in T$ 则根据定义对于任意 $y\in T_Y$ 存在 $x\in T$ 满足 $x\cap Y=y$ 根据[[MK39][开集公理]]（3）可得 $y\in T$ 
+***** （1）
 
-若 $Y^c\in T$ 则可用[[MK129][闭集定义]]证明
+若 $Y\in T$ 则根据定义对于任意 $y\in T_Y$ 存在 $x\in T$ 满足 $x\cap Y=y$ 根据[[MK39][开集公理]]（3）可得 $y\in T$
+
+***** （2）
+
+根据[[MK195][子空间闭集]]可得对于任意 $t\in T_Y^c$ 存在 $x\in T^c$ 使得 $x\cap Y=t$
+
+由于 $Y\in T^c$ 则根据[[MK129][闭集等价定义]]可得 $x\cap Y\in T^c$ 即 $t\in T^c$
+
+*** 子空间闭集<<MK195>>
+
+设 $<X,T>$ 是一个[[MK39][拓扑空间]] $<Y,T_Y>$ 是 $<X,T>$ 的子空间
+
+则 $<Y,T_Y>$ 上的闭集 $T_Y^c=\left\{x\cap Y\big|x\in T^c\right\}=\left\{Y-t\big|t\in T_Y\right\}$
+
+其中 $T^c=\left\{X-t\big|t\in T\right\}$
+
+**** 证明
+
+根据[[MK41][定理1]]可得开集的补集是闭集，根据[[MK130][子空间]]可得 $x\in T_Y$ 则 $x$ 是 $<Y,T_Y>$ 上的开集
+
+则有 $<Y,T_Y>$ 上的闭集可定义为 $T_Y^c=\left\{Y-t\big|t\in T_Y\right\}$
+
+定义 $Z=\left\{x\cap Y\big|x\in T^c\right\}$ 则根据下列证明以及[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $T_Y^c=Z$
+
+***** $T_Y^c\subset Z$
+
+对于任意 $y\in T_Y^c$ 根据定义有 $t\in T_Y$ 使得 $y=Y-t$
+
+由于 $t\in T_Y$ 且 $<Y,T_Y>$ 是[[MK130][拓扑子空间]]，故有 $x\in T$ 满足 $t=x\cap Y$
+
+故有 $t\subset Y$ ，进一步由于 $Y-t=y$ 可得 $t\cup y=Y$ 以及 $t=Y-y$
+
+则有 $Y-y=x\cap Y$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK334][补与减]]以及[[~/OneDrive/离散数学/Disc_Math.org::MK39][交换律]]可得 $y^c\cap Y=x\cap Y$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK335][补与并]]可得 $y\cap Y=x^c\cap Y$ 又由于 $t\subset Y\land y=Y-t$ 可得 $y\subset Y$
+
+则有 $y\cap Y=t=x^c\cap Y$ 显然 $x^c\in T^c$
+
+综上所述，对于任意 $y\in T^c_Y$ 存在 $x$ 满足 $x\in T^c$ 则 $T_Y^c\subset\left\{x\cap Y\big|x\in T^c\right\}$
+
+***** $Z\subset T_Y^c$
+
+对于任意 $z\in Z$ 即存在 $x^c\in T^c$ 满足 $z=x^c\cap Y$
+
+进一步有 $x\in T$ 即 $x\cap Y\in T_Y$ 故根据 $T^c_Y$ 定义可得 $Y-(x\cap Y)\in T^c_Y$
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org::MK334][补与减]]、[[~/OneDrive/离散数学/Disc_Math.org::MK328][德摩根律]]以及[[~/OneDrive/离散数学/Disc_Math.org::MK327][分配律]]
+
+\begin{aligned}
+&Y-(x\cap Y)\\
+=&Y\cap(x\cap Y)^c\\
+=&Y\cap(x^c\cup Y^c)\\
+=&(Y\cap x^c)\cup(Y\cap Y^c)\\
+=&(Y\cap x^c)\cup\varnothing\\
+=&Y\cap x^c\\
+=&z
+\end{aligned}
+
+即对于任意 $z\in Z\rightarrow z\in T^c_Y$ 即 $Z\subset T_Y^c$
 
 ** 开覆盖
 
@@ -310,15 +376,79 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 *** 连续函数<<MK115>>
 
-函数 $f:X\to Y$ 其中 $X,Y$ [[MK39][拓扑空间]]
+[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:X\to Y$ 其中 $X,Y$ [[MK39][拓扑空间]]
 
 则连续的拓扑定义为若 $B\subset Y$ 是[[MK39][开集]]，则集合 $\left\{x\big|f(x)\in B\right\}$ 亦为开集
+
+**** 等价条件<<MK197>>
+
+[[MK129][闭集]]的原相为闭集
+
+***** 证明
+
+****** 充分
+
+当条件成立是，对于任意开集 $S\subset Y$ 可得 $S^c$ 是闭集
+
+则 $f^{-1}(S^c)=\left\{x\big|f(x)\in S^c\right\}$ 是闭集，则根据[[MK129][闭集定义]]可得 $\left(f^{-1}(S^c)\right)^c$ 是开集
+
+显然 $\left(f^{-1}(S^c)\right)^c=\left\{x\big|f(x)\in S^c\right\}^c=\left\{x\big|f(x)\not\in S^c\right\}=\left\{x\big|f(x)\in S\right\}=f^{-1}(S)$
+
+故 $S$ 的原相 $f^{-1}(S)$ 是开集，即[[MK115][连续]]
+
+****** 必要
+
+当连续时，对于任意闭集 $S\subset Y$ 可得 $S^c$ 是开集
+
+根据[[MK115][连续]]则 $f^{-1}(S^c)=\left\{x\big|f(x)\in S^c\right\}$ 是开集，则根据[[MK129][闭集定义]]可得 $\left(f^{-1}(S^c)\right)^c$ 是闭集
+
+显然 $\left(f^{-1}(S^c)\right)^c=\left\{x\big|f(x)\in S^c\right\}^c=\left\{x\big|f(x)\not\in S^c\right\}=\left\{x\big|f(x)\in S\right\}=f^{-1}(S)$
+
+故 $S$ 的原相 $f^{-1}(S)$ 是闭集
+
+**** 引理1<<MK205>>
+
+定义[[MK39][拓扑空间]] $<X,\tau_X>$ 以及[[MK38][度量空间]] $<Y,d>$ 若有函数列 $\{f_i(x)\}$ 满足：
+
+（1） $f_i:X\to Y$ [[MK115][连续]]
+
+（2） $\{f_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+
+则 $f(x)$ 亦[[MK115][连续]]
+
+***** 证明
+
+取任意 $Y$ 上的[[MK186][开集]] $S\subset Y$ 若 $f^{-1}(S)=\varnothing$ 则根据[[MK39][定义（1）]]可得空集是开集
+
+若 $f^{-1}(S)\ne\varnothing$ ，则任取 $x_0\in f^{-1}(S)$
+
+由于 $S$ 是开集，则存在 $\delta(x_0)$ 满足 $<Y,d>$ 上的[[MK59][领域]] $O(f(x_0),\delta(x_0))\subset S$
+
+进一步取 $z(x_0)=O\left(f(x_0),\frac{\delta(x_0)}{3}\right)$ 则有 $z(x_0)\subset S$ 且根据[[MK187][引理1]] $z(x_0)$ 是[[MK186][开集]]
+
+根据[[MK115][连续定义]]可得[[MK151][原相]] $f_n^{-1}(z_0)$ 亦为开集，定义为 $u(x_0)\in\tau_X$
+
+根据[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]可得存在 $N_{x_0}$ 满足对于任意 $n>N_{x_0},x\in E$ 均有 $d(f_n(x),f(x))<\frac{\delta(x_0)}{3}$
+
+则对于任意 $v\in u(x_0)$ ，则根据[[MK38][三角性]]
+
+有 $d(f(x_0),f(v))\leq d(f(x_0),f_n(x_0))+d(f_n(x_0),f_n(v))+d(f_n(v),f(v))<\delta(x_0)$
+
+即 $\forall v\in u(x_0)\rightarrow v\in O(f(x_0),\delta(x_0))\subset S$ 故有 $u(x_0)\subset f^{-1}(S)$ 且 $x_0\in u(x_0)$
+
+故定义 $K=\bigcup_{x\in f^{-1}(S)}u(x)$ 则有 $\forall x_0\in f^{-1}(S)\rightarrow x_0\in u(x_0)\subset K$ 即 $f^{-1}(S)\subset K$  
+
+对于任意 $k\in K$ 存在 $x\in f^{-1}(S)$ 使得 $k\in u(x)\subset f^{-1}(S)$ 即 $K\subset f^{-1}(S)$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $K=f^{-1}(S)$ 又由于 $K=\bigcup_{x\in f^{-1}(S)}u(x)$ 且 $u(x)\in\tau_X$
+
+则根据[[MK39][定义2]]可得 $K$ 是[[MK39][开集]]
 
 * 度量
 
 ** 度量空间<<MK38>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-代数的构建-代数结构]] $<X,d>$ 运算 $d:X\times X\to\mathbb{R}$ 满足：
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK310][代数结构]] $<X,d>$ 运算 $d:X\times X\to\mathbb{R}$ 满足：
 
 （1） 非负性： $\forall\{x,y\}\subset X\rightarrow d(x,y)\geq0$
 
@@ -367,6 +497,76 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 （3） $\forall y\in O(x,\delta)$ 
 
 （4） 若 $\{x,y\}\subset X\land x\ne y$ 则存在 $\delta$ 使得 $O(x,\delta)\cap O(y,\delta)=\varnothing$
+
+*** 引理1<<MK187>>
+
+领域是[[MK186][开集]]
+
+**** 证明
+
+对于任意 $a\in O(x,\delta)$ 根据定义有 $d(x,a)<\delta$ 
+
+则根据[[MK43][稠密性]]可得存在 $h$ 满足 $0<h<\delta-d(a,x)$
+
+故对于任意 $b\in O(a,h)$ 有 $d(a,b)<h$
+
+则根据[[MK38][三角性]]有 $d(x,b)\leq d(x,a)+d(a,b)<d(x,a)+h<d(a,x)+\delta-d(a,x)=\delta$
+
+即 $b\in O(x,\delta)$ 故有 $O(a,h)\subset O(x,\delta)$
+
+综上所述，对于任意 $a\in O(x,\delta)$ 存在 $h$ 使得 $O(a,h)\subset O(x,\delta)$ 即满足[[MK186][开集]]
+
+** 开集<<MK186>>
+
+对于[[MK38][度量空间]] $<X,d>$ 若有 $S\subset X$ 满足 $\forall x\in S\rightarrow\exists\delta(O(x,\delta)\subset S)$
+
+其中 $O(x,\delta)$ 是[[MK59][领域]]，则定义 $S$ 是度量空间的开集
+
+*** 引理1<<MK188>>
+
+满足[[MK39][拓扑]]定义
+
+**** 证明
+
+***** 空集
+
+根据定义若 $\forall x\in\varnothing\rightarrow\exists\delta(O(x,\delta)\subset\varnothing)$ 则空集是开集
+
+此处 $\rightarrow$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK60][蕴含]]，对于空集 $\vec{x}\in\varnothing$ 永假
+
+则根据真值表 $\forall x\in\varnothing\rightarrow\exists\delta(O(x,\delta)\subset\varnothing)$ 永真，故空集为开集
+
+***** 全集
+
+对于任意 $x'\in O(x,\delta)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK20][定义]]均有 $x'\in X$ 故根据定义必有 $O(x,\delta)\subset X$
+
+即满足 $\forall x\in X\rightarrow\exists\delta(O(x,\delta)\subset X)$ 故 $X$ 是开集
+
+***** 任意交封闭
+
+定义 $<X,d>$ 上开集的集合为 $\mathcal{O}$
+
+对于任意一组 $\left\{S_\lambda\big|\lambda\in\Lambda\land S_\lambda\in\mathcal{O}\right\}$ 任取 $x\in\bigcup_{\lambda\in\Lambda} S_\lambda$ 有
+
+\begin{aligned}
+\because &x\in\bigcup_{\lambda\in\Lambda} S_\lambda\\
+\therefore &\exists \lambda^*\rightarrow x\in S_{\lambda^*}\\
+\because & S_\lambda\in\mathcal{O}\\
+\therefore &\exists \delta\Rightarrow O(x,\delta)\subset S_\lambda \subset\bigcup_{\lambda\in\Lambda} S_\lambda
+\end{aligned}
+
+***** 有限并封闭
+
+定义 $<X,d>$ 上开集的集合为 $\mathcal{O}$
+
+对于任意一组 $\left\{S_i\big|1\leq i\leq n\land S_\lambda\in\mathcal{O}\right\}$ 其中 $n\in\mathbb{N}$ ，任取 $x\in\bigcap_{i=1}^n S_\lambda$ 有
+
+\begin{aligned}
+\because &\forall x \in \bigcap_{i=1}^n S_i\\
+\therefore &\forall i\left(1\leq i\leq n\rightarrow x\in S_i)\\
+\therefore &\exists \delta_i>0\Rightarrow O(x,\delta_i)\subset S_i\\
+\therefore &0<\delta<\min(\delta_i)\Rightarrow O(\vec{x},\delta)\subset \bigcap_{i=1}^n S_i\\
+\end{aligned}
 
 * 测度
 
@@ -722,7 +922,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 ** 外测度<<MK61>>
 
-定义集合 $X$ 则定义映射 $\varphi:\rho(X)\to\mathbb{R}\cup\{\infty\}$ 其中 $\rho(X)$ 是 $X$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK25][幂集]]
+定义集合 $X$ 则定义映射 $\varphi:\rho(X)\to\mathbb{R}^+\cup\{\infty\}$ 其中 $\rho(X)$ 是 $X$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK25][幂集]]
 
 若映射满足：
 
@@ -1181,7 +1381,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 **** 不可数加法<<MK53>>
 
-定义集合 $I$ 则 $\sum_{i\in I}x_i=\sup\left\{\sum_{i\in F}x_i\big|F\subset I\land |F|<\infty\right\}$ 即定义 $F$ 是 $I$ 的可数子集
+定义集合 $I$ 则 $\sum_{i\in I}x_i=\sup\left\{\sum_{i\in F}x_i\big|F\subset I\land |F|<\infty\right\}$ 即定义 $F$ 是 $I$ 的有限子集
 
 则无穷加法的定义为所有满足 $F$ 的加和的上确界
 
@@ -2633,6 +2833,16 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据[[MK83][有限偶是空间开集构造]]可得任意开集可由有限个[[MK13][区间]]的并表述，根据[[MK82][区间可测]]以及[[MK84][计算]]中可数并封闭得 $G$ 亦[[MK81][可测]]
 
+**** 推论<<MK207>>
+
+闭集可测
+
+***** 证明
+
+由于闭集为开集的补集，且根据[[MK65][Caratheodory定理]]可得可测集是[[MK50][ $\sigma$ 代数]]
+
+故可测集的补集亦可测，则闭集可测
+
 *** 引理<<MK92>>
 
 对于 $E\subset\mathbb{R}^n$ 且 $E$ [[MK81][可测]]，有：
@@ -2653,7 +2863,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据确界定义，对于任意 $\forall\epsilon>0\land\epsilon\in\mathbb{R}$ 存在一组开区间 $\{I_i\}$ 满足 $E\subset\bigcup_{i=1}^\infty I_i\land \sum_{i=1}^\infty|I_i|< m^*(E)+\epsilon$
 
-则定义 $G=\bigcup_{i=1}^\infty I_i$ 根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理3]]可得 $G$ 仍为开集
+则定义 $G=\bigcup_{i=1}^\infty I_i$ 根据[[~/OneDrive/数学分析/Chap11Note.org::P2][定理3]]可得 $G$ 仍为开集
 
 根据[[MK57][次可加性]]可得 $m^*(G)\leq \sum_{i=1}^\infty m^*(I_i)<m^*(E)+\epsilon$ 故有 $m^*(G)-m^*(E)<\epsilon$
 
@@ -2661,7 +2871,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 ****** 当 $m^*(E)=\infty$ 时
 
-对于任意 $i\in\mathbb{N}^+$ 定义 $K_i=\prod_{j=1}^n[-i,i]$ 其中 $n$ 为欧式空间的维数，乘法为[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-直积]]
+对于任意 $i\in\mathbb{N}^+$ 定义 $K_i=\prod_{j=1}^n[-i,i]$ 其中 $n$ 为欧式空间的维数，乘法为[[~/OneDrive/离散数学/Disc_Math.org::MK153][直积]]
 
 显然 $K_i$ 是[[MK13][区间]]，根据外测度[[MK79][正则性]]可得 $m^*(K_i)=(2i)^n<\infty$
 
@@ -2679,7 +2889,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据条件（1）可得对于 $E^c$ 有 $\forall\epsilon$ 存在开集 $G$ 满足 $m^*(G/E^c)<\epsilon$ 
 
-由于 $G/E^c=E/G^c$ 且由于 $G$ 是开集，则根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]可得 $G^c$ 是闭集
+由于 $G/E^c=E/G^c$ 且由于 $G$ 是开集，则根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]]可得 $G^c$ 是闭集
 
 定义 $G^c=F$ 则有 $m^*(G/E^c)=m^*(E/F)<\epsilon$
 
@@ -3003,7 +3213,7 @@ Borel集中元素均为可测集
 
 （3） 传递性 $x-y\in\mathbb{Q}\land y-z\in\mathbb{Q}$ 则有 $x-y+y-z=x-z\in\mathbb{Q}$
 
-故可得 $R$ 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-等价关系]]，根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-划分-定理-定理1]]可得 $R$ 划分 $\mathbb{R}$
+故可得 $R$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK176][等价关系]]，根据[[~/OneDrive/离散数学/Disc_Math.org::MK180][定理1]]可得 $R$ 划分 $\mathbb{R}$
 
 ***** 定义集合<<MK96>>
 
@@ -3127,6 +3337,14 @@ Borel集中元素均为可测集
 
 * 实数函数
 
+** 有界与有限<<MK202>>
+
+对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}_e$ 若：
+
+（1） $\forall x\in E\rightarrow -\infty<f(x)<+\infty$ 则有限
+
+（2） $\exists M\in\mathbb{R}\rightarrow\left(\forall x\in E\rightarrow |f(x)|\leq M\right)$ 则有界
+
 ** 连续函数<<MK106>>
 
 根据[[~/OneDrive/数学分析/Chap11Note.org::MK18][向量值函数连续]]，在不考虑边界点的情况下（只考虑 $B$ 的[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]）
@@ -3139,7 +3357,7 @@ Borel集中元素均为可测集
 
 （1） $\forall\vec{x}_0\in B\rightarrow\forall\epsilon>0\left(\exists\delta>0\rightarrow O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}\right)$
 
-（2） 对于任意 $C\subset B$ 且 $C$ 为[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]，则 $C^{-1}=\left\{\vec{x}\big|f(\vec{x})\in C\right\}$ 仍为开集 
+（2） 对于任意 $C\subset B$ 且 $C$ 为[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]，则 $f^{-1}(C)=\left\{\vec{x}\big|f(\vec{x})\in C\right\}$ 仍为开集 
 
 **** 证明
 
@@ -3177,9 +3395,9 @@ Borel集中元素均为可测集
 
 ****** 充分
 
-若 $C^{-1}=\varnothing$ 则根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理8]]可得空集是开集，即开集 $C$ 的原相是开集
+若 $f^{-1}(C)=\varnothing$ 则根据[[~/OneDrive/数学分析/Chap11Note.org::MK15][定理8]]可得空集是开集，即开集 $C$ 的原相是开集
 
-若 $C^{-1}\ne\varnothing$ 则对于任意 $\vec{x}_0\in C^{-1}$ 均有 $f(\vec{x}_0)\in C$ 由于 $C$ 是开集，故有 $\exists\epsilon>0\rightarrow O(f(\vec{x}_0),\epsilon)\subset C$
+若 $f^{-1}(C)\ne\varnothing$ 则对于任意 $\vec{x}_0\in f^{-1}(C)$ 均有 $f(\vec{x}_0)\in C$ 由于 $C$ 是开集，故有 $\exists\epsilon>0\rightarrow O(f(\vec{x}_0),\epsilon)\subset C$
 
 根据领域定义显然有 $\forall f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\leftrightarrow |f(\vec{x})-f(\vec{x}_0)|<\epsilon$
 
@@ -3189,21 +3407,21 @@ Borel集中元素均为可测集
 
 即有 $\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}\subset\left\{\vec{x}\big|f(\vec{x})\in C\right\}$ 故 $O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}\subset\left\{\vec{x}\big|f(\vec{x})\in C\right\}$
 
-综上所述，对于任意 $\vec{x}_0\in C$ 均存在 $\delta>0\rightarrow O(\vec{x}_0,\delta)\subset C$ 即 $C$ 的所有点均为[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-点的定义-内点]]
+综上所述，对于任意 $\vec{x}_0\in C$ 均存在 $\delta>0\rightarrow O(\vec{x}_0,\delta)\subset C$ 即 $C$ 的所有点均为[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]
 
-故根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]定义 $C$ 是开集。即（2）推出（1）
+故根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]定义 $C$ 是开集。即（1）推出（2）
 
 ****** 必要
 
-对于任意 $\vec{x}_0\in B$ 以及 $\epsilon>0$ 定义集合 $Y=\left\{f(\vec{x})\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$ 根据领域定义 $Y=O(f(\vec{x}_0),\epsilon)$
+对于任意 $\vec{x}_0\in A$ 以及 $\epsilon>0$ 定义集合 $Y=\left\{f(\vec{x})\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$ 根据领域定义 $Y=O(f(\vec{x}_0),\epsilon)$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理2]]可得领域为开集，即 $O(f(\vec{x}_0),\epsilon)$ 是开集
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK19][定理2]]可得领域为开集，即 $O(f(\vec{x}_0),\epsilon)$ 是开集
 
 若满足（2）则 $\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}=\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}$ 亦为开集
 
 显然 $\left|f(\vec{x}_0)-f(\vec{x}_0)\right|=0<\epsilon$ 故有 $f(\vec{x}_0)\in O(f(\vec{x}_0),\epsilon)\rightarrow\vec{x}\in\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
-故根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]定义有 $\eixsts\delta>0\rightarrow O(\vec{x},\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
+故根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]定义有 $\eixsts\delta>0\rightarrow O(\vec{x},\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
 定义原相 $g(K)=\left\{k\big|f(k)\in K\right\}$ 故推出（1）
 
@@ -3519,13 +3737,13 @@ Borel集中元素均为可测集
 
 同理可证 $E[f=-\infty]\in\mathcal{M}$ 
 
-*** 正负部
+*** 正负部<<MK99>>
 
 对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}_e$ ，其正部定义为 $f^+(x)=\begin{cases}f(x)&f(x)\geq0\\0&f(x)<0\end{cases}$
 
 同理其负部定义为 $f^-(x)=\begin{cases}-f(x)&f(x)\leq0\\0&f(x)>0\end{cases}$ 显然有 $f(x)=f^+(x)-f^-(x)$
 
-**** 引理1
+**** 引理1<<MK198>>
 
 若 $f(x)$ 是[[MK143][可测函数]]，则 $f^+(x),f^-(x)$ 均可测
 
@@ -3676,15 +3894,33 @@ Borel集中元素均为可测集
 
 定义结构 $<E,\varphi>$ ，其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]，定义 $f:E\to\mathbb{R}_e$ 为非负[[MK133][广义实值函数]]。则有：
 
-（1） 若 $f(x)$ 为[[MK134][可测函数]]，则存在非负[[MK178][简单函数]]列 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][收敛]]于 $f(x)$ 即 $\lim_{i\to\infty}\phi_i(x)=f(x)$
+（1） 若 $f(x)$ 为[[MK134][可测函数]]，则存在非负[[MK178][简单函数]]列 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$ 即 $\lim_{i\to\infty}\phi_i(x)=f(x)$
 
-（2） 若满足（1）且 $f(x)$ 有界，则 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]与 $f(x)$
+（2） 若满足（1）且 $f(x)$ [[MK202][有界]]，则 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
 ***** 证明
 
 ****** 构建函数
 
-定义函数 $\phi_i(x)\begin{cases}i&f(x)>i\\\frac{j-1}{2^i}&\frac{j-1}{2^i}\leq f(x)<\frac{j}{2^i},j=1,2,...,2^i\end{cases}$
+定义函数 $\phi_i(x)\begin{cases}i&f(x)>i\\\frac{j-1}{2^i}&\frac{j-1}{2^i}\leq f(x)<\frac{j}{2^i},j=1,2,...,2^{i-1}\end{cases}$
+
+显然非负
+
+****** 是[[MK178][简单函数]]
+
+则 $\phi_i(x)$ 在每一段 $f(x)\in\left[\frac{j-1}{2^i},\frac{j}{2^i}\right),j=0,1,...,2^{i-1}$ 以及 $f(x)\in[i,+\infty]$ 上均为常值函数
+
+故共分为 $2^i+1<\infty$ 段，显然每一段不相交
+
+根据[[MK154][等价条件]]可得 $f^{-1}([i,+\infty])$ 是 $<E,\varphi>$ 上的可测集
+
+根据[[MK135][性质]] $f^{-1}\left(\left[\frac{j-1}{2^i},\frac{j}{2^i}\right)\right)=f^{-1}\left(\left[\frac{j-1}{2^i},+\infty\right)\cap \left[-\infty,\frac{j}{2^i}\right)\right)=f^{-1}\left(\left[\frac{j-1}{2^i},+\infty\right)\right)\cap f^{-1}\left(\left[-\infty,\frac{j}{2^i}\right)\right)$
+
+同样根据[[MK154][等价条件]]可得 $f^{-1}\left(\left[\frac{j-1}{2^i},+\infty\right)\right), f^{-1}\left(\left[-\infty,\frac{j}{2^i}\right)\right)$ 亦为 $<E,\varphi>$ 上的可测集
+
+则根据[[MK65][Caratheodory定理]]以及[[MK67][可数交封闭]]可得 $f^{-1}\left(\left[\frac{j-1}{2^i},+\infty\right)\right)\cap f^{-1}\left(\left[-\infty,\frac{j}{2^i}\right)\right)$ 是可测集
+
+综上所述，划分的每一段均不想交，且均可测。故 $\phi_i(x)$ 满足[[MK178][简单函数]]定义
 
 ****** 证明（1）<<MK179>>
 
@@ -3720,9 +3956,25 @@ Borel集中元素均为可测集
 
 即函数项级数 $\{\phi_i\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
+***** 推论<<MK200>>
+
+定义 $f:E\to\mathbb{R}_e$ 为一般[[MK133][广义实值函数]]，且[[MK134][可测]]
+
+则定理仍满足
+
+****** 证明
+
+由于可测，故根据[[MK198][引理]]可得 $f^+(x),f^-(x)$ 均可测
+
+由于 $f^+(x),f^-(x)$ 均为非负函数，则有 $\{\phi^+_i(x)\},\{\phi^-_i(x)\}$ 分别满足定理
+
+则显然 $\{\phi^+_i(x)-\phi^-_i(x)\}$ 根据极限运算可得收敛于 $f^+(x)-f^-(x)$
+
+进一步根据[[MK199][正负部定义]]有 $f(x)=f^+(x)-f^-(x)$
+
 *** 运算
 
-**** 四则运算
+**** 四则运算<<MK181>>
 
 若 $f(x),g(x)$ 均为[[MK133][广义实值]]的[[MK134][可测函数]]，则：
 
@@ -3993,7 +4245,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 定义结构 $<E,\varphi>$ 其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]集 $K=\{E_i\}\subset\rho(E)$ 对于任意 $E_i\in K$ 均满足：
+定义[[~/OneDrive/离散数学/Disc_Math.org::MK42][有限]]集 $K=\{E_i\}\subset\rho(E)$ 对于任意 $E_i\in K$ 均满足：
 
 （1） $E_i$ 是 $<X,\varphi>$ 上的[[MK174][外测度可测集]]
 
@@ -4006,4 +4258,543 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 则根据[[MK161][定理2]]可得 $f_i(x)$ 在 $<E_i,\varphi>$ 上为[[MK134][可测函数]]
 
 由于 $E_i$ 均为 $E$ 上的[[MK174][外测度可测集]]，根据[[MK177][定理4]]可得 $f(x)$ 亦为可测函数
+
+** 叶果洛夫定理<<MK180>>
+
+对于任意 $x\in E$ 上的[[MK133][广义实值]]函数列 $\{f_k(x)\}$ 以及函数 $f(x)$ 若满足：
+
+（1） 存在 $E^*$ 满足 $\varphi(E^*)=0$ 且当 $x\in E-E^*$ 时有 $\{f_k(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+
+     即[[MK190][几乎处处]]逐点收敛
+
+（2） $\varphi(E)<\infty$
+
+（3） $\{f_k(x)\},f(x)$ 在 $E$ 上均为[[MK134][可测函数]]
+
+（4） 存在 $E'$ 满足 $\varphi(E')=0$ 且当 $x\in E-E'$ 时有 $f_k(x)<\infty\land f(x)<\infty$
+
+     即[[MK190][几乎处处]]满足[[MK202][有限]]
+
+则对于任意 $\delta>0$ 存在 $E_\delta$ 满足：
+
+（1） $E_\delta\subset E$
+
+（2） $\varphi(E_\delta)<\delta$
+
+（2） 在 $E-E_\delta$ 上有 $\{f_k(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+
+其中 $\varphi(E)$ 定义为 $E$ 的[[MK61][外侧度]]
+
+*** 证明
+
+**** 函数[[MK202][有限]]时<<MK185>>
+
+***** 定义 $E_\delta$
+
+当 $x\in E\rightarrow f_k(x)<\infty\land f(x)<\infty$ 时，定义 $S_N(\epsilon)=\bigcup_{k\geq N}^\infty\left\{x\in E\big||f_k(x)-f(x)|>\epsilon\right\}$
+
+根据[[MK183][引理]]有，对于任意 $\epsilon>0$ 均有 $\lim_{N\to\infty}\varphi\left(S_N(\epsilon)\right)=0$
+
+即对于任意给定 $\epsilon>0$ 对于任意 $\lambda>0$ 存在 $N_{\epsilon,\lambda}\in\mathbb{N}$ 对于任意 $k>N_{\epsilon,\lambda}$ 均有 $\varphi(S_{N_{\epsilon,\delta}}(\epsilon))<\lambda$
+
+则对于任意给定 $\epsilon=\frac{1}{i},i\in\mathbb{N}$ 取 $\lambda=\frac{\delta}{2^i},\delat>0$ 则有 $N_{\delta,i}$ 对于任意 $k>N_{\delta,i}$ 均有 $\varphi\left(S_{N_{\delta,i}}\left(\frac{1}{i}\right)\right)<\frac{\delta}{2^i}$
+
+故定义 $E_\delta=\bigcup_{i=1}^\infty\left\{S_{N_{\delta,i}}\left(\frac{\delta}{i}\right)\right\}=\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{x\in E\big||f_k(x)-f(x)|\geq\frac{1}{i}\right\}$
+
+***** 可测且测度小于 $\delta$
+
+根据[[MK184][之前证明]]可得 $S_{N_{\delta,i}}\left(\frac{\delta}{i}\right)$ 为[[MK65][外测度可测集]]，则根据[[MK65][Caratheodory定理]]可得 $\varphi(E_\delta)$ [[MK65][外测度可测]]
+
+且有 $\varphi(E_\delta)=\sum_{i=1}^\infty\varphi\left(S_{N_{\delta,i}}\left(\frac{\delta}{i}\right)\right)$ 进一步有 $\varphi(E_\delta)<\sum_{i=1}^\infty\frac{\delta}{2^i}=\delta$
+
+***** 余集[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]
+
+集合 $E-E_\delta$ 当 $E$ 为全集时等于 $E_\delta^c$ 即自身的补集
+
+即 $\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{x\in E\big||f_k(x)-f(x)|>\frac{1}{i}\right\}\right)^c$ ，则根据[[~/OneDrive/离散数学/Disc_Math.org::MK331][广义并与补]]可得
+
+\begin{aligned}
+E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{x\in E\big||f_k(x)-f(x)|\geq\frac{1}{i}\right\}\right)^c\\
+=&\bigcap_{i=1}^\infty\left(\bigcup_{k\geq N_{\delta,i}}^\infty\left\{x\in E\big||f_k(x)-f(x)|\geq\frac{1}{i}\right\}\right)^c\\
+=&\bigcap_{i=1}^\infty\bigcap_{k\geq N_{\delta,i}}^\infty\left\{x\in E\big||f_k(x)-f(x)|\geq\frac{1}{i}\right\}^c\\
+=&\bigcap_{i=1}^\infty\bigcap_{k\geq N_{\delta,i}}^\infty\left\{x\in E\big||f_k(x)-f(x)|<\frac{1}{i}\right\}\\
+\end{aligned}
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK331][量词与计算]]可得 $E-E_\delta=\left\{x\in E\big|\forall i\in\mathbb{N},\exists N_{\delta,i},\forall k>N_{\delta,i}\rightarrow|f_k(x)-f(x)|<\frac{1}{i}\right\}$
+
+即对于任意 $x\in E-E_\delta$ 均满足 $\forall i\in\mathbb{N},\exists N_{\delta,i},\forall k>N_{\delta,i}\rightarrow|f_k(x)-f(x)|<\frac{1}{i}$
+
+则对于任意 $\epsilon>0$ 取 $i$ 满足 $\epsilon>\frac{1}{i}$ （根据[[MK43][稠密性]]存在）
+
+即有对于任意 $x\in E-E_\delta$ 均满足 $\exists N_{\delta,i},\forall k>N_{\delta,i}\rightarrow|f_k(x)-f(x)|<\frac{1}{i}<\epsilon$
+
+即[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]定义，证毕
+
+**** 函数非[[MK202][有限]]
+
+根据条件（4），定义 $\bar{E}=E-E'$ 则函数在 $\bar{E}$ 上均有界，则根据[[MK185][之前证明]]存在 $\bar{E}_\delta$ 满足
+
+（1） $\varphi(\bar{E}_\delta)<\delta$
+
+（2） 在 $\bar{E}-\bar{E}_\delta$ 上 $\{f_k(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+
+（3） $\bar{E}_\delta\subset\bar{E}$
+
+则取 $E_\delta=\bar{E}_\delta\cup E'$ 由于 $\bar{E}_\delta$ [[MK65][外测度可测]]且 $\varphi(\bar{E}_\delta)<\delta$ 根据 $\varphi({E'})=0$ 有 $\varphi(E_\delta)<\delta$
+
+且 $E-E_\delta=E-E'\cup\bar{E}_\delta=(E-E')\cup(E-\bar{E}_\delta)=\bar{E}\cup(E-\bar{E}_\delta)$
+
+根据条件有 $\bar{E}_\delta\subset\bar{E}\subset E$ 即 $E-E_\delta=\bar{E}\cup(E-\bar{E}_\delta)=\bar{E}-\bar{E}_\delta$
+
+则根据（2）有一致收敛
+
+*** 引理<<MK183>>
+
+满足[[MK180][叶果洛夫定理]]条件，且当 $x\in E\rightarrow f_k(x)<\infty\land f(x)<\infty$ ，即有限时
+
+对于任意 $\epsilon>0$ 均有 $\lim_{N\to\infty}\varphi\left(\bigcup_{k\geq N}^\infty\left\{x\in E\big||f_k(x)-f(x)|>\epsilon\right\}\right)=0$
+
+其中 $\varphi(E)$ 定义为 $E$ 的[[MK61][外侧度]]
+
+**** 证明
+
+***** 不收敛点集
+
+由于对于任意 $x\in E$ 均有限，故 $|f_k(x)-f(x)|$ 对于任意 $x\in E$ 有定义
+
+则根据[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]定义，其不收敛的点集为 $E^*=\left\{x\big|\exists\epsilon,\forall N,\exists k>N\rightarrow |f_k(x)-f(x)|\geq\epsilon\right\}$
+
+即根据[[~/OneDrive/离散数学/Disc_Math.org::MK331][量词与计算]]可得 $E^*=\bigcup_{\epsilon>0}\bigcap_{N\in\mathbb{N}}\bigcup_{k\geq N}^\infty\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}$
+
+***** 测度为零
+
+则对于任意给定 $\epsilon>0$ 均有 $L(\epsilon)=\bigcap_{N\in\mathbb{N}}\bigcup_{k\geq N}^\infty\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}\subset E^*$
+
+根据[[MK180][条件（1）]]可得 $\varphi(E^*)=0$ 则根据[[MK61][次可数可加]]可得 $\varphi(L(\epsilon))\leq\varphi(E^*)$
+
+同理根据[[MK61][非负性]]可得 $\varphi(L(\epsilon))=0$
+
+***** 变换极限
+
+则根据[[MK70][定理]]可得 $\bigcap_{N\in\mathbb{N}}\bigcup_{k\geq N}^\infty\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}=\lim_{N\to\infty}\bigcup_{k\geq N}^\infty\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}$
+
+故根据上一步证明有 $\varphi\left(\lim_{N\to\infty}\bigcup_{k\geq N}^\infty\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}\right)=0$
+
+***** 是[[MK65][外测度可测集]]<<MK184>>
+
+根据[[MK180][条件（3）]]可得 $f_k(x),f(x)$ 均为[[MK134][可测函数]]，则根据[[MK181][四则运算]]可得 $g(x)=|f_k(x)-f(x)|$ 亦为可测函数
+
+则根据[[MK154][等价定义]]可得 $g^{-1}((\epsilon,+\infty])=\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}$ 是 $E$ 上的[[MK65][外测度可测集]]
+
+进一步根据[[MK65][Caratheodory定理]]可得 $\bigcup_{k\geq N}^\infty\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}$ 亦为 $E$ 的[[MK65][外测度可测集]]
+
+定义 $S_N(\epsilon)=\bigcup_{k\geq N}^\infty\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}$
+
+***** 测度互换
+
+根据[[MK180][条件（2）]]可得 $\varphi(E)<\infty$ 由于 $x\in E$ 故 $S_1(\epsilon)\subset E$ ，根据[[MK61][单调性]]可得 $\varphi(S_1(\epsilon))\leq\varphi(E)<\infty$
+
+显然 $S_N(\epsilon)=\bigcup_{k\geq N}^\infty\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}$ 随着 $N$ 增加而[[MK69][单调递减]]
+
+故根据[[MK75][递减定理]]可得 $\varphi\left(\lim_{N\to\infty}S_N(\epsilon)\right)=\lim_{N\to\infty}\varphi(S_N(\epsilon))=0$
+
+即对于任意 $\epsilon>0$ 均有 $\lim_{N\to\infty}\varphi\left(\bigcup_{k\geq N}^\infty\left\{x\in E\big||f_k(x)-f(x)|>\epsilon\right\}\right)=0$ 证毕
+
+** 依测度收敛<<MK189>>
+
+对于任意 $x\in E$ 上的[[MK133][广义实值]]函数列 $\{f_k(x)\}$ 以及函数 $f(x)$
+
+若满足 $\forall\epsilon>0\rightarrow \lim_{k\to\infty}\varphi\left(\left\{x\big||f_k(x)-f(x)|>\epsilon\right\}\right)=0$ 其中 $\varphi(E)$ 定义为 $E$ 的[[MK61][外侧度]]
+
+则称 $\{f_k(x)\}$ 依测度收敛于 $f(x)$
+
+*** 引理1
+
+[[MK189][依测度收敛]]无法导出[[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]或[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]
+
+**** 证明
+
+对于任意 $k$ 定义 $n$ 为满足 $\sum_{i=1}^n i\geq k$ 的最小正整数，定义 $m=\sum_{i=1}^n i-k$
+
+则定义 $E=(0,1]$ 以及函数 $f_k(x)=\begin{cases}1&x\in\left(\frac{m}{n},\frac{m+1}{n}\right]\\0&x\not\in\left(\frac{m}{n},\frac{m+1}{n}\right]\end{cases}$
+
+则对于任意 $\epsilon\geq1$ 有 $f_k^{-1}((\epsilon,+\infty])=\varnothing$ 对于任意 $1>\epsilon>0$ 有 $f_k^{-1}((\epsilon,+\infty])=\left(\frac{m}{n},\frac{m+1}{n}\right]$
+
+进一步定义 $f(x)=0$ 则有 $|f_k(x)-f(x)|=|f_k(x)-0|=|f_k(x)|=f_k(x)$
+
+即 $f_k^{-1}((\epsilon,+\infty)=\left\{x\big||f_k(x)-f(x)|>\epsilon\right\}$ 根据[[MK52][定义]]（1）、（2）可得 $\varphi\left(\left(\frac{m}{n},\frac{m+1}{n}\right]\right)=\frac{1}{n}$
+
+当 $k\to\infty$ 时显然 $n\to\infty$ 故有 $\frac{1}{n}\to0$ 即 $\lim_{k\to\infty}\varphi\left(\left\{x\big||f_k(x)-f(x)|>\epsilon\right\}\right)=0$
+
+对于任意 $x,n$ 存在唯一 $m$ 使得 $x\in\left(\frac{m}{n},\frac{m+1}{n}\right]$ 此时 $k=a$
+
+当 $k=a+1$ 时有对应 $n',m'$ 易证 $x\not\in\left(\frac{m'}{n'},\frac{m'+1}{n'}\right]$ 显然 $x$ 不收敛
+
+由于 $x$ 的任意性，可得不存在 $x\in E$ 使得 $\{f_k(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]
+
+故 $\{f_k(x)\}$ 处处不收敛，即不是[[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]或[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]
+ 
+*** 引理2
+
+对于任意 $x\in E$ 上的[[MK133][广义实值]]函数列 $\{f_k(x)\}$ 以及函数 $f(x),g(x)$
+
+若有 $\{f_k(x)\}$ [[MK189][依测度收敛]]到 $f(x)$ 以及 $g(x)$ 则 $\varphi\left(\left\{x\in E\big|f(x)\ne g(x)\right\}\right)=0$
+
+其中 $\varphi(E)$ 定义为 $E$ 的[[MK61][外侧度]]
+
+**** 证明
+
+根据三角不等式有 $|f(x)-g(x)|\leq |f(x)-f_k(x)|+|f_k(x)-g(x)|$
+
+即当 $|f(x)-f_k(x)|<\frac{1}{2n}\land|f_k(x)-g(x)|<\frac{1}{2n}$ 时必有 $|f(x)-g(x)|<\frac{1}{n}$
+
+即对于任意 $x\in\left\{x\in E\big||f(x)-f_k(x)|<\frac{1}{n}\right\}\cap\left\{x\in E\big||f_k(x)-g(x)|<\frac{1}{n}\right\}$
+
+均有 $x\in\left\{x\in E\big||f(x)-g(x)|<\frac{1}{n}\right\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK20][子集定义]]
+
+有 $\left\{x\in E\big||f(x)-f_k(x)|<\frac{1}{n}\right\}\cap\left\{x\in E\big||f_k(x)-g(x)|<\frac{1}{n}\right\}\subset\left\{x\in E\big||f(x)-g(x)|<\frac{1}{n}\right\}$
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org::MK332][子集与运算]]、[[~/OneDrive/离散数学/Disc_Math.org::MK331][补与交]]、[[MK61][单调性]]以及[[MK61][次可数可加性]]可得
+
+\begin{aligned}
+&\left\{x\in E\bigg||f(x)-f_k(x)|<\frac{1}{n}\right\}\cap\left\{x\in E\bigg||f_k(x)-g(x)|<\frac{1}{n}\right\}\subset\left\{x\in E\bigg||f(x)-g(x)|<\frac{1}{n}\right\}\\
+\rightarrow&\left\{x\in E\bigg||f(x)-g(x)|<\frac{1}{n}\right\}^c\subset\left(\left\{x\in E\bigg||f(x)-f_k(x)|<\frac{1}{n}\right\}\cup\left\{x\in E\bigg||f_k(x)-g(x)|<\frac{1}{n}\right\}\right)^c\\
+\rightarrow&\left\{x\in E\bigg||f(x)-g(x)|>\frac{1}{n}\right\}\subset\left\{x\in E\bigg||f(x)-f_k(x)|>\frac{1}{n}\right\}\cup\left\{x\in E\bigg||f_k(x)-g(x)|>\frac{1}{n}\right\}\\
+\rightarrow&\varphi\left(\left\{x\in E\bigg||f(x)-g(x)|>\frac{1}{n}\right\}\right)\leq\varphi\left(\left\{x\in E\bigg||f(x)-f_k(x)|>\frac{1}{n}\right\}\cup\left\{x\in E\bigg||f_k(x)-g(x)|>\frac{1}{n}\right\}\right)\\
+\rightarrow&\varphi\left(\left\{x\in E\bigg||f(x)-g(x)|>\frac{1}{n}\right\}\right)\leq\varphi\left(\left\{x\in E\bigg||f(x)-f_k(x)|>\frac{1}{n}\right\}\right)+\\
+&\varphi\left(\left\{x\in E\bigg||f_k(x)-g(x)|>\frac{1}{n}\right\}\right)\\
+\end{aligned}
+
+由于[[MK189][依测度收敛]]，故对于任意 $n\in\mathbb{N}$ 有当 $k\to\infty$ 时 $\varphi\left(\left\{x\in E\big||f(x)-f_k(x)|>\frac{1}{n}\right\}\right)=0$
+
+以及 $\varphi\left(\left\{x\in E\big||f_k(x)-g(x)|>\frac{1}{n}\right\}\right)=0$ 且上述不等式恒成立
+
+进一步根据[[MK61][非负性]]可得对于任意 $n\in\mathbb{N}$ 均有 $\varphi\left(\left\{x\in E\big||f(x)-g(x)|>\frac{1}{n}\right\}\right)=0$
+
+显然 $\frac{1}{n}>0$ 故有 $\left\{x\in E\big||f(x)-g(x)|>\frac{1}{n}\right\}\subset\left\{x\in E\big|f(x)\ne g(x)\right\}$
+
+根据 $n$ 的任意性，通过反证法易证 $\left\{x\in E\big||f(x)-g(x)|>\frac{1}{n}\right\}\supset\left\{x\in E\big|f(x)\ne g(x)\right\}$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $\left\{x\in E\big||f(x)-g(x)|>\frac{1}{n}\right\}=\left\{x\in E\big|f(x)\ne g(x)\right\}$
+
+即有 $\varphi\left(\left\{x\in E\big|f(x)\ne g(x)\right\}\right)=0$ 
+
+*** 引理3
+
+[[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]无法导出[[MK189][依测度收敛]]
+
+**** 证明
+
+***** 若依测度收敛，则只可能依测度收敛到 $f(x)=1$ <<MK192>>
+
+假设 $\{f_k(x)\}$ [[MK189][依测度收敛]]到 $f(x)$ ，则根据[[MK191][里斯定理]]可得存在子列 $\{f_{k_s}(x)\}$
+
+该子列[[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+
+由于[[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]与 $f(x)=1$ 故子列 $\{f_{k_s}(x)\}$ 亦收敛于 $f(x)=1$
+
+故若依测度收敛，则只能收敛于 $f(x)=1$
+
+***** 依测度不收敛到 $f(x)=1$
+
+定义 $x\in E=\mathbb{R}^+$ 函数 $f_k(x)=\begin{cases}1&x\leq k\\0&x>k\end{cases}$ 则对于任意 $x$ 根据[[MK30][推论2]]可得存在 $n\in\mathbb{N}\rightarrow n+1>x$
+
+根据自然数定义可得 $n+1\in\mathbb{N}$ ，即存在 $n\in\mathbb{N}\rightarrow n>x$
+
+则对于任意 $x\in E$ 存在 $n$ 对于任意 $k>n$ 有 $f_k(x)=1$
+
+即 $x\in E$ 上[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]与 $f(x)=1$
+
+另一方面，对于任意 $k$ 均有 $\varphi\left(\left\{x\in E\big||f_k(x)-f(x)|>0.5\right\}\right)=(k,+\infty]$
+
+根据[[MK52][定义1]]可得 $\varphi\left(\left\{x\in E\big||f_k(x)-f(x)|>0.5\right\}\right)=\infty>0$
+
+即不是[[MK189][依测度收敛]]到 $f(x)=1$ 又根据[[MK192][之前证明]]可得只能收敛于 $f(x)$
+
+综上所述，该函数不是依测度收敛
+
+** 勒贝格定理
+
+对于任意 $x\in E$ 上的[[MK133][广义实值]]函数列 $\{f_k(x)\}$ 以及函数 $f(x)$ 若满足
+
+（1） 存在 $E^*$ 满足 $\varphi(E^*)=0$ 且当 $x\in E-E^*$ 时有 $\{f_k(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+
+     即[[MK190][几乎处处]]逐点收敛
+
+（2） $\varphi(E)<\infty$
+
+（3） $\{f_k(x)\},f(x)$ 在 $E$ 上均为[[MK134][可测函数]]
+
+（4） 存在 $E'$ 满足 $\varphi(E')=0$ 且当 $x\in E-E'$ 时有 $f_k(x)<\infty\land f(x)<\infty$
+
+     即[[MK190][几乎处处]]有限
+
+则 $\{f_k(x)\}$ [[MK189][依测度收敛]]于 $f(x)$
+
+*** 证明
+
+上述条件于[[MK180][叶果洛夫定理]]条件相同，故根据[[MK183][引理]]可得
+
+对于任意 $\epsilon>0$ 均有 $\lim_{N\to\infty}\varphi\left(\bigcup_{k\geq N}^\infty\left\{x\in E\big||f_k(x)-f(x)|>\epsilon\right\}\right)=0$
+
+且 $\left\{x\in E\big||f_N(x)-f(x)|>\epsilon\right\}\subset\bigcup_{k\geq N}^\infty\left\{x\in E\big||f_k(x)-f(x)|>\epsilon\right\}$
+
+则根据[[MK61][单调性]]可得 $\varphi\left(\left\{x\in E\big||f_N(x)-f(x)|>\epsilon\right\}\right)\leq\varphi\left(\bigcup_{k\geq N}^\infty\left\{x\in E\big||f_k(x)-f(x)|>\epsilon\right\}\right)$
+
+又根据极限的保序性
+
+有 $\lim_{N\to\infty}\varphi\left(\left\{x\in E\big||f_N(x)-f(x)|>\epsilon\right\}\right)\leq\lim_{N\to\infty}\varphi\left(\bigcup_{k\geq N}^\infty\left\{x\in E\big||f_k(x)-f(x)|>\epsilon\right\}\right)$
+
+进一步根据[[MK61][非负性]]以及极限夹逼定理 $\lim_{N\to\infty}\varphi\left(\left\{x\in E\big||f_N(x)-f(x)|>\epsilon\right\}\right)=0$
+
+即 $\{f_k(x)\}$ [[MK189][依测度收敛]]于 $f(x)$
+
+** 里斯定理<<MK191>>
+
+对于任意 $x\in E$ 上的[[MK133][广义实值]]函数列 $\{f_k(x)\}$ 以及函数 $f(x)$
+
+若 $\{f_k(x)\}$ [[MK189][依测度收敛]] $f(x)$ 则存在子列 $\{f_{k(s)}(x)\}$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+
+*** 证明
+
+**** 构造子列<<MK194>>
+
+取 $s=1$ 时，根据[[MK189][依测度收敛]]有 $$\exists N,\forall k>N\rightarrow\varphi\left(\left\{x\in E\big||f_k(x)-f(x)|>1\right\}\right)<\frac{1}{2}$$
+
+则取 $k(1)=N+1$ ，则有 $$\forall k\geq k(1)\rightarrow\varphi\left(\left\{x\in E\big||f_k(x)-f(x)|>1\right\}\right)<\frac{1}{2}$$
+
+假设对于 $k(s)$ 满足 $$\forall k\geq k(s)\rightarrow\varphi\left(\left\{x\in E\big||f_{k}(x)-f(x)|>\frac{1}{s}\right\}\right)<\frac{1}{2^s}$$
+
+同理根据[[MK189][依测度收敛]]有 $$\exists N,\forall k>N\rightarrow\varphi\left(\left\{x\in E\bigg||f_k(x)-f(x)|>\frac{1}{s+1}\right\}\right)<\frac{1}{2^{s+1}}$$
+
+则取 $k(s+1)=\max(k(s)+1,N+1)$
+
+有故 $$\forall k\geq k(s+1)\rightarrow\varphi\left(\left\{x\in E\big||f_{k}(x)-f(x)|>\frac{1}{s+1}\right\}\right)<\frac{1}{2^{s+1}}$$
+
+故根据数学归纳法可得，存在数列 $k(1),k(2)...\a$ 满足：
+
+（1） $i<j\rightarrow k(i)<k(j)$
+
+（2） $$\forall k\geq k(s)\rightarrow\varphi\left(\left\{x\in E\bigg||f_k(x)-f(x)|>\frac{1}{s}\right\}\right)<\frac{1}{2^{s}}$$
+
+**** 收敛点集<<MK193>>
+
+定义 $$Z=\bigcup_{N\in\mathbb{N}}\bigcap_{s\geq N}\left\{x\in E\bigg||f_{k(s)}(x)-f(x)|<\frac{1}{s}\right\}$$ 则对于任意 $x\in Z$
+
+根据集合定义，满足 $$\exists N,\forall s\geq N\rightarrow |f_{k(s)}(x)-f(x)|<\frac{1}{s}$$
+
+则对于任意 $\epsilon>0$ 存在 $u\in\mathbb{N}$ 满足 $\epsilon>\frac{1}{u}$ 则取 $\hat{N}=\max(N,u)$
+
+则对于任意 $s>\hat{N}$ 均有 $|f_{k(s)}(x)-f(x)|<\frac{1}{u}<\epsilon$ 即当 $x\in Z$ 时 $\{f_{k(s)}(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]与 $f(x)$
+
+**** 不收敛点集是零测集
+
+根据[[MK193][之前证明]]可知收敛点集为 $Z$ ，则不收敛点集为其补集 $Z^c$
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org::MK331][补与交并]]可得 $$Z^c=\bigcap_{N\in\mathbb{N}}\bigcup_{s\geq N}\left\{x\in E\bigg||f_{k(s)}(x)-f(x)|>\frac{1}{s}\right\}$$
+
+对于任意 $n\in\mathbb{N}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK31][交定义]]可得 $$Z^c\subset\bigcup_{s\geq n}\left\{x\in E\bigg||f_{k(s)}(x)-f(x)|>\frac{1}{s}\right\}$$
+
+则根据[[MK61][定义]]中次可数可加性、单调性以及[[MK194][之前证明]]可得
+
+\begin{aligned}
+\varphi(Z^c)\leq&\varphi\left(\bigcup_{s\geq n}\left\{x\in E\bigg||f_{k(s)}(x)-f(x)|>\frac{1}{s}\right\}\right)\\
+\leq&\sum_{s=n}^\infty\varphi\left(\left\{x\in E\bigg||f_{k(s)}(x)-f(x)|>\frac{1}{s}\right\}\right)\\
+<&\sum_{s=n}^\infty\frac{1}{2^s}\\
+=&\frac{1}{2^{n-1}}
+\end{aligned}
+
+再根据[[MK61][定义]]中非负性可得，对于任意 $n\in\mathbb{N}$ 均有 $0\leq\varphi(Z^c)<\frac{1}{2^{n-1}}$
+
+假设若 $\varphi(Z^c)\ne0$ 则 $\varphi(Z^c)>0$ 根据[[MK23][推论]]可得存在 $n\in\mathbb{N}$ 满足 $2^{n-1}>\frac{1}{\varphi(Z^c)}$
+
+变换后得 $\varphi(Z^c)<\frac{1}{2^{n-1}}$ 与 $n$ 的任意性矛盾，故假设不成立
+
+最终得 $\varphi(Z^c)=0$ 即不收敛点是零测集
+
+**** 结论
+
+综上所述，不一致收敛的点是零测集，即 $\{f_{k(s)}(x)\}$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+
+** 鲁津定理
+
+对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}_e$ 满足：
+
+（1） $E\subset\mathbb{R}^n$ [[MK81][可测]]
+
+（2） $f(x)$ 是[[MK134][可测函数]]
+
+（3） $f(x)$ 在 $E$ [[MK190][几乎处处]]满足[[MK202][有限]]
+
+则存在笔记 $F_\delta,\delta\in\mathbb{R}^+$ 满足：
+
+（1） $F_\delta\subset E$
+
+（2） $\varphi(E-F_\delta)<\delta$ 其中 $\varphi$ 为定义在 $\mathbb{R}^n$ 上的[[MK61][外侧度]]
+
+（3） $f(x)$ 在 $F_\delta$ 上是[[MK115][连续函数]]
+
+*** 证明
+
+由于 $E\subset\mathbb{R}^n$ 则定义 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 为其[[MK39][拓扑]]，其中 $\tau(\mathbb{R}^n)$ 是 $\mathbb{R}^n$ 上所有[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]的集合
+
+则根据[[MK130][定义]]可得 $<E,\tau(E)=\left\{E\cap t\big|t\in\tau(\mathbb{R}^n)\right\}>$ 亦为拓扑空间
+
+**** [[MK178][简单函数]]满足<<MK201>>
+
+对于任意简单函数 $f(x)=f_i(x)=c_i,x\in E_i$ 满足：
+
+（1） [[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]] $\{E_1,...,E_s\}$ 满足 $E=\bigcup_{i=1}^s E_i$
+
+（2） $E_i$ 是 $<E,\tau(E)>$ 上的[[MK174][外测度可测集]]
+
+则对于任意 $\delta\in\mathbb{R}^+$ 有
+
+***** 构造闭集 $F$ <<MK196>>
+
+由于 $E_i\subset E\subset\mathbb{R}^n$ 则根据[[MK92][引理]]可得存在 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 上的[[MK129][闭集]] $F_i$ 满足：
+
+（1） $F_i\subset E_i$
+
+（2） $\varphi(E_i-F_i)<\frac{\delta}{s}$
+
+则有 $F_i\subset E_i\subset E$ 定义 $F=\bigcup_{i=1}^n F_i$ 则有 $F\subset E$
+
+***** 证明外侧度 
+
+根据[[MK196][上一步证明]]以及[[MK61][次可数可加性]]可得
+
+\begin{aligned}
+\varphi(E-F)=&\varphi\left(\bigcup_{i=1}^s E_i-\bigcup_{i=1}^s F_i\right)\\
+=&\varphi\left(\bigcup_{i=1}^s(E_i-F_i)\right)\\
+\leq&\sum_{i=1}^s\varphi(E_i-F_i)\\
+<&s\frac{\delta}{s}=\delta
+\end{aligned}
+
+***** 证明连续<<MK203>>
+
+由于 $f_i(x)$ 在 $<E_i,\tau(E_i)>$ 上是常值函数，显然[[MK106][连续]]
+
+则根据[[MK197][等价定义]]，对于 $f_i$ 值域的[[MK39][拓扑空间]]，即 $<\mathbb{R}, \tau(\mathbb{R})>$ 上的[[MK129][闭集]] $C$ 
+
+可得其[[MK151][原相]] $f_i^{-1}(C)$ 是 $<E_i,\tau(E_i)>$ 上的[[MK129][闭集]]
+
+则当 $f_i$ 限定定义域在 $F_i$ 上时，定义先顶后函数为 $g_i(x)=f_i(x),x\in F_i$
+
+则对于任意值域上的闭集 $C$ 其原相为 $g^{-1}_i(C)=\left\{x\in F_i\big|f_i(x)\in C\right\}=F_i\cap f^{-1}(C)$
+
+则依次有：
+
+（1） 由于 $<E_i,\tau(E_i)>$ 是 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 的[[MK130][子空间]]，
+
+     且根据[[MK196][之前步骤]]可得 $F_i$ 是 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 上的[[MK129][闭集]]
+
+     故根据[[MK195][子空间闭集]]可得 $F_i$ 是 $<E_i,\tau(E_i)>$ 上的[[MK129][闭集]]
+
+（2） 根据[[MK129][闭集定义]]中（2）可得 $g^{-1}_i(C)$ 是 $<E_i,\tau(E_i)>$ 上的[[MK129][闭集]]
+
+（3） 同样根据[[MK195][子空间闭集]]可得 $g^{-1}_i(C)$ 是 $<F_i,\tau(F_i)>$ 上的[[MK129][闭集]]
+
+（4） 由于 $F_i$ 是 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 上的[[MK129][闭集]]，则根据[[MK131][等价性]]可得 $g^{-1}_i(C)$ 是 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 上的[[MK129][闭集]]
+
+进一步定义 $g(x)=f_i(x),x\in F_i$ 则对于任意值域上的闭集 $C$ 有 $g^{-1}(C)=\bigcup_{i=1}^s g_i^{-1}(C)$
+
+则根据[[MK129][闭集定义]]中（3）可得 $g^{-1}(C)$ 仍是 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 上的[[MK129][闭集]]
+
+进一步由于 $F\subset\mathbb{R}^n$ ，故根据[[MK195][子空间闭集]]可得 $g^{-1}(C)$ 是 $<F,\tau(F)>$ 上的闭集
+
+综上所述，对于限制在 $F$ 上的 $f(x)$ ，定义为 $g:F\to\mathbb{R}$
+
+任意值域 $<E_i,\tau(E_i)>$ 上的[[MK129][闭集]]的[[MK151][原相]]是其定义域 $<F,\tau(F)>$ 上的闭集
+
+则根据[[MK197][等价定义]]可得 $g(x)$ 是连续函数
+
+**** [[MK202][有限]]可测函数逼近<<MK206>>
+
+根据[[MK200][推论]]可得，对于任意[[MK202][有限]]的[[MK134][可测函数]] $f(x)$ 定义 $g(x)=\frac{f(x)}{1+|f(x)|}$
+
+由于有限，故对于任意 $x\in E$ 有定义且 $|g(x)|<1$ 
+
+则根据[[MK200][推论]]可得存在简单函数列 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $g(x)$ 则
+
+***** 构造满足条件 $F$ <<MK204>>
+
+则根据[[MK201][之前证明]]可得对于任意 $\phi_i(x)$ 存在 $F_{i,\delta}\subset E$ 满足：
+
+（1） $\varphi(E-F_{i,\delta})<\frac{\delta}{2^i}$
+
+（2） $\phi_i(x)$ 在 $<F_{i,\delta}, \tau(F_{i,\delta})>$ 上连续
+
+（3） $F_{i,\delta}$ 是 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 上的[[MK129][闭集]]
+
+则定义 $F=\bigcap_{i=1}^\infty F_{i,\delta}$ ，显然有 $F\subset E$ 且根据[[MK129][闭集定义]]可得 $F$ 是 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 上的[[MK129][闭集]] 
+
+则[[MK203][类似可证]] $F$ 是 $<E, \tau(E)>$ 上的[[MK129][闭集]]，且进一步根据[[~/OneDrive/离散数学/Disc_Math.org::MK328][德摩根律]]以及[[MK61][次可数可加性]]可得
+
+\begin{aligned}
+\varphi(E-F)=&\varphi\left(E-\bigcap_{i=1}^\infty F_{i,\delta}\right)\\
+=&\varphi\left(\bigcup_{i=1}^\infty(E-F_i)\right)\\
+\leq&\sum_{i=1}^\infty\varphi(E-F_{i,\delta})\\
+\leq&\sum_{i=1}^\infty \frac{\delta}{2^i}\\
+=&\delta
+\end{aligned}
+
+且由于 $F\subset F_{i,\delta}$ 则[[MK203][类似可证]] $\phi_i(x)$ 在 $<F,\tau(F)>$ 上[[MK106][连续]]
+
+***** 证明连续
+
+定义 $\phi'_i(x)=\phi_i(x),x\in F$ 定义 $g'(x)=g(x),x\in F$
+
+则有函数列 $\{\phi'_i(x)\}$ 由于对于任意 $x\in F$ 均有 $\phi'_i(x)=\phi_i(x)\land g'(x)=g(x)$
+
+故根据 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $g(x)$ 可得在 $F$ 上 $\{\phi'_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $g'(x)$
+
+且根据[[MK2014][之前证明]]可得 $\phi_i(x)$ 在 $<F,\tau(F)>$ 上[[MK106][连续]]，同理有 $\phi'_i(x)$ 在 $<F,\tau(F)>$ 上[[MK106][连续]]
+
+显然 $\mathbb{R}_e$ 是[[MK38][度量空间]]， $<F,\tau(F)>$ 是[[MK39][拓扑空间]]
+
+则根据[[MK205][引理]]可得 $g'(x)$ 在定义域 $<F,\tau(F)>$ 上连续
+
+即 $g(x)$ 在定义域 $<F,\tau(F)>$ 上连续
+
+***** 证明结论
+
+根据定义 $g(x)=\frac{f(x)}{1+|f(x)|}$ 则
+
+当 $f(x)\geq0$ 时有 $g(x)=f(x)(1-g(x))$ 即 $f(x)=\frac{g(x)}{1-g(x)}$ 且 $g(x)\geq0$
+
+当 $f(x)<0$ 时同理亦有 $g(x)=\frac{g(x)}{1+g(x)}$ 且 $g(x)<0$
+
+故综上所述可得 $f(x)=\frac{g(x)}{1-|g(x)|}$ 由于 $|g(x)|<1$ 即 $g(x)\ne -1$
+
+故对于任意 $g(x)$ 均有 $f(x)$ 有定义
+
+由于 $g(x)$ 在 $<F,\tau(F)>$ 连续，且易证四则运算与绝对值不改变连续性
+
+故有 $f(x)=\frac{g(x)}{1-|g(x)|}$ 在 $<F,\tau(F)>$ 连续
+
+**** [[MK190][几乎处处]]满足[[MK202][有限]]
+
+对于任意几乎处处有限且满足条件的 $f(x)$ 根据定义存在 $E'$ 满足
+
+（1） $f(x)$ 在 $\bar{E}=E-E'$ 上[[MK202][有限]]
+
+（2） $\varphi(E')=0$
+
+则 $f(x)$ 在 $E-E'$ 上存在满足条件 $F_\delta$ 且有 $\varphi(\bar{E}-F_\delta)<\delta$ 以及 $F\subset\bar{E}$
+
+故有 $E-F_\delta=(\bar{E}-F)\cup E'$ 则根据[[MK207][闭集可测]]以及[[MK65][Caratheodory定理]]
+
+有 $\varphi(E-F_\delta)=\varphi((\bar{E}-F_\delta)\cup E')=\varphi(\bar{E}-F_\delta)+\varphi(E')=\varphi(\bar{E}-F_\delta)<\delta$
+
+故 $F$ 对于几乎处处有限函数 $f(x)$ 亦满足
+
+
+
+
+
+
+
+
+
 
