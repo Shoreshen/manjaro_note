@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 335
+currnet mark: 340
 
 图论: P40
 
@@ -595,7 +595,7 @@ A\cup A=B\cup A
 (A\cup B)\cup C=A\cup (B\cup C)\\
 \end{aligned}
 
-**** 同一律
+**** 同一律<<MK336>>
 
 \begin{aligned}
 A\cup\varnothing=A\\
@@ -3687,7 +3687,7 @@ $B$ 的上确界： $b$ 是上界的最小元
 
 $B$ 的下确界： $b$ 下界的最大元 
 
-***** 定理
+***** 定理1
 
 （1） 如果 $b$ 是 $B$ 的最大（小）元，则b是 $B$ 的上（下）确界
 
@@ -3704,6 +3704,78 @@ $B$ 的下确界： $b$ 下界的最大元
 只证（5），若存在 $\{c,d\}\in A$ 且两者无法比较，即 $\lnot(c\leq d)\land\lnot(d\leq c)$
 
 若 $c,d$ 均为 $B$ 的上界，则不存在上确界。
+
+***** 定理2<<MK339>>
+
+若 $\forall b\in B\rightarrow b<c$ 则 $B$ 的上确界 $\sup\{B\}\leq c$
+
+****** 证明
+
+假设 $\sup\{B\}>c$ 则根据定义 $c$ 是 $B$ 的上界
+
+则 $\sup\{B\}$ 不是 $B$ 的最小上界，故不为上确界，矛盾
+
+故假设不成立，则有 $\sup\{B\}\leq c$
+
+***** 定理3<<MK338>>
+
+若 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，定义 $C=\left\{a+b\big|a\in A\land b\in B\right\}$
+
+则有 $\sup\{C\}=\sup\{A\}+\sup\{B\}$
+
+****** 证明
+
+******* 当 $|\sup\{A\}|<\infty\land|\sup\{B\}|<\infty$ 时<<MK337>>
+
+由于 $\forall a\in A\rightarrow a\leq\sup\{A\}$ 以及 $\forall b\in B\rightarrow b\leq\sup\{B\}$
+
+故有 $\forall a\in A,\forall b\in B\rightarrow a+b\leq\sup\{A\}+\sup\{B\}$ 即 $\sup\{A\}+\sup\{B\}$ 是 $C$ 的上界
+
+对于任意 $\epsilon\in\mathbb{R}^+$ 有 $\sup\{A\}-\frac{\epsilon}{2}$ 以及 $\sup\{B\}-\frac{\epsilon}{2}$
+
+根据上确界定义可得存在 $a'\in A$ 满足 $a'>\sup\{A\}-\frac{\epsilon}{2}$ 以及 $b'\in B$ 满足 $b'>\sup\{B\}-\frac{\epsilon}{2}$
+
+即对于任意 $\epsilon>0$ 存在 $a'+b'\in C$ 满足 $a'+b'>\sup\{A\} +\sup\{B\}$
+
+综上所述 $\sup\{A\}+\sup\{B\}$ 是 $C$ 的最小上界，即 $\sup\{C\}=\sup\{A\}+\sup\{B\}$
+
+******* 否则
+
+由于 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 根据[[~/OneDrive/实变函数/SBHS.org::MK224][运算性质]]不能出现 $+\infty+(-\infty)$
+
+则当 $\pm\infty+r$ 或者 $\pm(\infty+\infty)$ 时，显然 $\sup\{A\}+\sup\{B\}=\pm\infty$
+
+[[MK337][同理]]易证 $\sup\{C\}=\sup\{A\}+\sup\{B\}$
+
+***** 定理4<<MK340>>
+
+若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，则定义 $B=\left\{c\cdot a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^+$
+
+则有 $\sup\{B\}=c\cdot\sup\{A\}$
+
+****** 证明
+
+定义 $h_B=\sup\{B\}$ 根据以下证明可得 $\frac{h_B}{c}=\sup\{A\}$
+
+故可得 $\sup\{B\}=c\cdot\sup\{A\}$
+
+******* $\frac{h_B}{c}$ 是 $A$ 的上界
+
+由于是[[MK326][上确界]]，故有 $\forall b\in B\rightarrow h_B\geq b$
+
+进一步根据 $B$ 的定义有 $\forall a\in A\rightarrow\left(\exists b\in B\rightarrow b=c\cdot a\right)$
+
+综上所述 $\forall a\in A\rightarrow h_B\geq c\cdot a\rightarrow\frac{h_B}{c}\geq a$ 即 $\frac{h_B}{c}$ 是 $A$ 的[[MK326][上界]]
+
+******* $\frac{h_B}{c}$ 是 $A$ 上确界
+
+假设 $\frac{h_B}{c}$ 不是 $A$ 的上确界，由于是上界，故存在 $h^*$ 满足 $\forall a\in A\rightarrow h^*\geq a$ 且 $\frac{h_B}{c}>h^*$
+
+则根据 $B$ 的定义有 $\forall b\in B\rightarrow c\cdot h^*\geq c\cdot a$ 则 $c\cdot h^*$ 是 $B$ 的[[MK326][上界]]
+
+则进一步有 $h_B>c\cdot h^*$ 与 $h_B$ 是 $B$ 的[[MK326][上确界]]矛盾
+
+故假设不成立，则 $\frac{h_B}{c}$ 是 $A$ 的上确界
 
 **** 链
 

@@ -1,10 +1,10 @@
-#+LATEX_CLASS: ctexart][
+][#+LATEX_CLASS: ctexart
 
 #+TITLE: 实变函数
 
 current video: P36
 
-current mark: 207
+current mark: 233
 
 * 几乎处处<<MK190>>
 
@@ -12,7 +12,7 @@ current mark: 207
 
 * 集合列
 
-** 定义
+** 定义<<MK214>>
 
 定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 其中[[~/OneDrive/离散数学/Disc_Math.org::MK13][标志集]]是正整数
 
@@ -944,9 +944,19 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 则 $S$ 是 $<X,\varphi>$ 上的外侧度可测集
 
-*** 引理<<MK176>>
+** 外测度空间<<MK212>>
 
-定义 $Y\subset X$ 且 $Y$ 是 $<X,\varphi>$ 上的外侧度可测集
+若结构体 $<X,\varphi>$ 其中 $X$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是 $X$ 上的[[MK61][外测度]]，则定义该结构体为 $X$ 的测度空间
+
+*** 子空间<<MK208>>
+
+定义外侧度空间 $<X,\varphi>$ ，若有 $Y\subset X$ 是 $<X,\varphi>$ 上的[[MK174][外侧度可测集]]
+
+则定义 $<Y,\varphi>$ 是 $<X,\varphi>$ 的外侧度子空间
+
+*** 性质1<<MK176>>
+
+定义 $<Y,\varphi>$ 是 $<X,\varphi>$ 上的[[208][外侧度子空间]]
 
 若有 $S\subset Y$ 是 $<Y,\varphi>$ 上的外侧度可测集，则 $S$ 亦为 $<X,\varphi>$ 上的外侧度可测集
 
@@ -977,6 +987,20 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 则根据[[MK61][次可数可加]]必有 $\varphi(A/S)\leq\varphi((A/S)\cap Y)+\varphi(A/Y)$ 与基于假设推出结论矛盾
 
 故假设不成立，即 $S$ 是 $<X,\varphi>$ 上的外侧度可测集
+
+*** 性质2<<MK209>>
+
+定义 $<Y,\varphi>$ 是 $<X,\varphi>$ 上的[[208][外侧度子空间]]
+
+若 $A\subset Y$ 且是 $<X,\varphi>$ 上的[[MK174][外侧度可测集]]，则 $A$ 亦为 $<Y,\varphi>$ 上的外侧度可测集
+
+**** 证明
+
+若 $A$ 是 $<X,\varphi>$ 上的[[MK174][外侧度可测集]]，则对于任意 $S\subset X$ 均有 $\varphi(A)=\varphi(A\cap S)+\varphi(A/S)$
+
+由于 $Y\subset X$ 则对于任意 $S'\subset Y$ 均有 $S'\subset X$ 故亦有 $\varphi(A)=\varphi(A\cap S')+\varphi(A/S')$
+
+故 $A$ 亦是 $<Y,\varphi>$ 上的外侧度可测集 
 
 ** Caratheodory定理<<MK65>>
 
@@ -1405,7 +1429,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 进一步根据乘法封闭可得 $\forall m\in\mathbb{N}$ 亦有 $m\frac{1}{n}=\frac{m}{n}\in\mathbb{R}$
 
-**** 加法幺元的逆元是其本身
+**** 加法幺元的逆元是其本身<<MK211>>
 
 即 $-0=0$ 因为 $0+0=0$ 且根据[[~/OneDrive/离散数学/Disc_Math.org::MK316][性质2]]可得逆元唯一
 
@@ -1592,7 +1616,23 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 ***** 证明
 
-由于 $c<0$ 则 $c$ 的[[MK
+由于 $c<0$ 则根据[[MK4][域公理5]]可得存在[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]] $c'$ 且根据[[MK17][逆元等价]]可得 $(-1)c'=c$
+
+由于 $c=(-1)c'<0$ 则根据[[MK29][加法逆元]]可得 $(-1)\cdot 0<(-1)\cdot(-1)\cdot c'$
+
+根据[[MK211][之前证明]]可得 $0=(-1)\cdot 0$
+
+由于 $-1$ 是 $1$ 的逆元，则根据[[MK29][加法逆元]]可得 $1=(-1)\cdot(-1)$
+
+进一步根据[[MK4][域公理5]]亦可得 $1\cdot c'=c'$
+
+综上所述 $0<c'$ ，则根据[[MK5][序公里3]]有 $a\cdot c'>b\cdot c'$
+
+故根据[[MK29][加法逆元]]有 $-(a\cdot c')<-(b\cdot c')$ 
+
+根据[[MK4][域公理]]中交换、结合、分配律易证 $a\cdot c=-(a\cdot c')$ 同理 $b\cdot c=-(b\cdot c')$
+
+即可得 $a\cdot c<b\cdot c$
 
 **** 加法逆元<<MK29>>
 
@@ -1856,17 +1896,17 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 满足[[MK4][域公理]]以及[[MK5][序公理]]的前提下，以下六组定理等价：
 
-（1） [[~/OneDrive/数学分析/Chap11Note.org][实数系基本定理-确界存在定理]]（确界亦为实数）
+（1） [[~/OneDrive/数学分析/Chap11Note.org::MK9][确界存在定理]]（确界亦为实数）
 
-（2） [[~/OneDrive/数学分析/Chap11Note.org][实数系基本定理-单调有界数列定理]]（收敛于实数）
+（2） [[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]（收敛于实数）
 
-（3） [[~/OneDrive/数学分析/Chap11Note.org][实数系基本定理-闭区间套定理]]（收敛于实数） + [[MK19][阿基米德性质]]
+（3） [[~/OneDrive/数学分析/Chap11Note.org::MK20][闭区间套定理]]（收敛于实数） + [[MK19][阿基米德性质]]
 
 （4） 有限覆盖定理：闭[[MK13][区间]] $[a,b]$ 上的开覆盖 $H$ 中存在有限个开区间，构成 $[a,b]$ 上的一个覆盖
 
-（5） 聚点定理：若 $S\in\mathbb{R}$ 是[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-无限集]]且有界，则必有[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-点的定义-聚点]]
+（5） 聚点定理：若 $S\in\mathbb{R}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK43][无限集]]且有界，则必有[[~/OneDrive/数学分析/Chap11Note.org::MK8][聚点]]
 
-（6） [[~/OneDrive/数学分析/Chap11Note.org][实数系基本定理-柯西收敛原理]]（收敛于实数） + [[MK19][阿基米德性质]]
+（6） [[~/OneDrive/数学分析/Chap11Note.org::MK21][柯西收敛原理]]（收敛于实数） + [[MK19][阿基米德性质]]
 
 **** 证明
 
@@ -2292,7 +2332,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 定义为 $\mathbb{R}_e\cup \{-\infty,+\infty\}$ 其中 $\forall a\in\mathbb{R}\rightarrow -\infty<a<+\infty$
 
-*** 运算性质
+*** 运算性质<<MK224>>
 
 **** $\pm\infty$ 对于 $a\in\mathbb{R}$ 的运算<<MK144>>
 
@@ -2306,7 +2346,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 （5） $\frac{+\infty}{a}=\begin{cases} +\infty&a>0\\-\infty&a<0\end{cases}\land \frac{-\infty}{a}=\begin{cases} -\infty&a>0\\ +\infty&a<0\end{cases}$
 
-**** $\pm\infty$ 对于 $0,+\infty,-\infty$ 的运算
+**** $\pm\infty$ 对于 $0,+\infty,-\infty$ 的运算<<MK226>>
 
 （1） $(+\infty)+( +\infty)= +\infty\land (-\infty)+(-\infty)= -\infty$
 
@@ -3644,6 +3684,8 @@ Borel集中元素均为可测集
 
 \begin{aligned}
 \bigcap_{i=1}^\infty \left(i,+\infty\right]&=\{\infty\}\\
+\bigcap_{i=1}^\infty \left[i,+\infty\right]&=\{\infty\}\\
+\bigcap_{i=1}^\infty \left[-\infty,-i\right]&=\{-\infty\}\\
 \bigcap_{i=1}^\infty \left[-\infty,-i\right)&=\{-\infty\}\\
 \end{aligned}
 
@@ -3653,7 +3695,9 @@ Borel集中元素均为可测集
 
 根据[[~/OneDrive/离散数学/Disc_Math.org::MK37][可数性质]]可得 $\forall z\in\bigcap_{i=1}^\infty \left(i,\infty\right]\leftrightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(i,+\infty\right]\right)$
 
-假设 $z\in\mathbb{R}$ 则根据[[MK19][阿基米德性质]]存在 $i\in\mathbb{N}>z$ 即 $z\not\in(i,\infty]$ 矛盾
+假设 $z\in\mathbb{R}$ 满足上述性质
+
+则根据[[MK19][阿基米德性质]]存在 $i\in\mathbb{N}>z$ 即 $z\not\in(i,\infty]$ 矛盾
 
 故假设不成立 $z\not\in\mathbb{R}$ 则 $z\in\{-\infty,\infty\}$ 显然有：
 
@@ -3872,7 +3916,7 @@ Borel集中元素均为可测集
 
 进一步定义分段函数 $f(x)=f_i(x),\ x\in E_i$
 
-若 $f_i:E_i\to\mathbb{R}_e$ 为 $<E_i,\varphi>$ 上的[[MK134][可测函数]]，则 $f(x)$ 亦为可测函数
+若 $f_i:E_i\to\mathbb{R}_e$ 为 $<E_i,\varphi>$ 上的[[MK134][可测函数]]，则 $f(x)$ 亦为 $<E,\varphi>$ 上的可测函数
 
 ***** 证明
 
@@ -3880,7 +3924,7 @@ Borel集中元素均为可测集
 
 进一步由于 $E_i\subset E$ 且是 $<E,\varphi>$ 上的[[MK174][外测度可测集]]
 
-故根据[[MK176][引理]]可得 $f_i^{-1}((a,+\infty])$ 亦为 $<E,\varphi>$ 上的[[MK174][外测度可测集]]
+故根据[[MK176][性质1]]可得 $f_i^{-1}((a,+\infty])$ 亦为 $<E,\varphi>$ 上的[[MK174][外测度可测集]]
 
 根据分段函数定义可得 $f^{-1}((a,+\infty])=\bigcup_{i=1}^\infty f_i^{-1}((a,+\infty])$
 
@@ -3890,11 +3934,11 @@ Borel集中元素均为可测集
 
 即分段函数 $f(x)=f_i(x),\ x\in E_i$ 是[[MK134][可测函数]]
 
-**** 定理5
+**** 定理5<<MK230>>
 
 定义结构 $<E,\varphi>$ ，其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]，定义 $f:E\to\mathbb{R}_e$ 为非负[[MK133][广义实值函数]]。则有：
 
-（1） 若 $f(x)$ 为[[MK134][可测函数]]，则存在非负[[MK178][简单函数]]列 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$ 即 $\lim_{i\to\infty}\phi_i(x)=f(x)$
+（1） 若 $f(x)$ 为[[MK134][可测函数]]，则存在递增的非负[[MK178][简单函数]]列 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$ 即 $\lim_{i\to\infty}\phi_i(x)=f(x)$
 
 （2） 若满足（1）且 $f(x)$ [[MK202][有界]]，则 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
@@ -3905,6 +3949,28 @@ Borel集中元素均为可测集
 定义函数 $\phi_i(x)\begin{cases}i&f(x)>i\\\frac{j-1}{2^i}&\frac{j-1}{2^i}\leq f(x)<\frac{j}{2^i},j=1,2,...,2^{i-1}\end{cases}$
 
 显然非负
+
+****** 递增
+
+对于任意 $x\in E\land i\in\mathbb{N}^+$ 可得存在 $j_1\in\mathbb{N}^+$ 使得 $\frac{j_1-1}{2^i}\leq f(x)<\frac{j_1}{2^i}$
+
+则根据定义有 $\phi_i(x)=\frac{j_1-1}{2^i}=\frac{2(j_1-1)}{2^{i+1}}\leq f(x)$
+
+由于 $j_1\in\mathbb{N}^+$ 故有 $2(j_1-1)$ 是非负整数
+
+对于 $\phi_{i+1}(x)$ 根据定义有 $j_2$ 满足 $\frac{j_2-1}{2^{i+1}}\leq f(x)<\frac{j_2}{2^{i+1}}$
+
+同理 $j_2-1$ 亦为非负整数，假设 $j_2-1<2(j_1-1)$
+
+由于均为非负整数，故 $j_2-1+1\not>2(j_1-1)$ 故有 $j_2\leq 2(j_1-1)$
+
+则 $f(x)<\frac{j_2}{2^{i+1}}\leq\frac{2(j_1-1)}{2^{i+1}}=\frac{j_1-1}{2^i}$ 显然与 $\frac{j_1-1}{2^i}\leq f(x)$ 矛盾
+
+故假设不成立，有 $j_2-1\geq2(j_1-1)$ 进一步 $\phi_1(x)=\frac{j_1-1}{2^i}=\frac{2(j_1-1)}{2^{i+1}}\leq\frac{j_2-1}{2^{i+1}}$
+
+进一步根据定义有 $\phi_{i+1}(x)=\frac{j_2-1}{2^{i+1}}$
+
+故有对于任意 $x\in E\land i\in\mathbb{N}^+$ 均有 $\phi_i(x)\leq\phi_{i+1}(x)$ 即递增
 
 ****** 是[[MK178][简单函数]]
 
@@ -4241,6 +4307,10 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 故根据[[MK][区间可测]]得对于任意 $a\in\mathbb{R}_e$ 其原相可测，即函数[[MK134][可测]]
 
+**** 特征函数<<MK221>>
+
+定义特征函数为 $\chi_{A}(x)=\begin{cases}1&x\in A\\0&x\not\in A\end{cases}$ 易证其亦为[[MK178][简单函数]]
+
 **** 简单函数<<MK178>>
 
 定义结构 $<E,\varphi>$ 其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
@@ -4251,13 +4321,53 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 （2） $\{E_i\}$ 是对 $E$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]
 
-进一步定义分段函数 $f(x)=f_i(x),\ x\in E_i$ 其中 $f_i(x)=c_i,c_i\in\mathbb{R}_e$ 则 $f(x)$ 亦为[[MK134][可测函数]]
+定义分段函数 $f(x)$ 满足对于任意 $x\in E_i$ 均有 $f(x)=c_i$ 其中 $c_i\in\mathbb{R}_e$
+
+则 $f(x)$ 是简单函数，且为[[MK134][可测函数]]
+
+亦可定义[[MK221][特征函数]] $\chi_{E_i}(x)$  则简单函数 $f(x)=\sum_{i=1}^{|K|}c_i\cdot\chi_{E_i}(x),c_i\in\mathbb{R}_e$
 
 ***** 证明
 
 则根据[[MK161][定理2]]可得 $f_i(x)$ 在 $<E_i,\varphi>$ 上为[[MK134][可测函数]]
 
 由于 $E_i$ 均为 $E$ 上的[[MK174][外测度可测集]]，根据[[MK177][定理4]]可得 $f(x)$ 亦为可测函数
+
+***** 引理1<<MK210>>
+
+定义函数 $g(x)$ 其定义域为 $A$ 若满足：
+
+（1） $A\subset E$ 且是 $<E,\varphi>$ 上的[[MK174][外测度可测集]]
+
+（2） 对于任意 $x\in A$ 均有 $g(x)=f(x)$
+
+则 $g(x)$ 亦为简单函数
+
+****** 证明
+
+定义 $A_i=E_i\cap A$ 由于均为[[MK174][外测度可测集]]，则根据[[MK65][Caratheodory定理]]以及[[MK67][可数交封闭]]
+
+可得 $A_i$ 是 $<X,\varphi>$ 上的[[MK174][外测度可测集]]，根据[[MK209][性质2]]可得 $A_i$ 亦为[[MK208][子空间]] $<A,\varphi>$ 上的外侧度可测集 
+
+由于 $E_i$ 是 $E$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]，易证 $A_i$ 是 $A$ 的划分
+
+进一步对于任意 $x\in A_i$ 有 $x\in E_i$ 故有 $g(x)=f(x)=c_i$ 故 $g(x)$ 亦为简单函数
+
+***** 引理2<<MK216>>
+
+若 $f(x),g(x)$ 是简单函数，则 $h(x)=\alpha f(x)+\beta g(x)$ 亦为简单函数
+
+****** 证明
+
+由于是简单函数，则有 $f(x)=\sum_{i=1}^ua_i\cdot\chi_{E_i}(x)$ 以及 $g(x)=\sum_{j=1}^vb_j\cdot\chi_{E_j}(x)$
+
+则对于任意 $x\in E$ 由于是[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]则必然存在 $i$ 满足 $x\in E_i$ ，同理存在 $j$ 满足 $x\in E_j$
+
+故 $x\in E_i\cap E_j$ 此时 $h(x)=\alpha a_i+\beta b_j$
+
+综上所述 $h(x)=\sum_{i=1}^u\left(\chi_{E_i}(x)\left(\sum_{j=1}^v(\alpha a_i+\beta b_j)\chi_{E_j}(x)\right)\right)=\sum_{i=1}^u\sum_{j=1}^v\left((\alpha a_i+\beta b_j)\chi_{E_i}(x)\chi_{E_j}(x)\right)$
+
+亦满足简单函数定义
 
 ** 叶果洛夫定理<<MK180>>
 
@@ -4789,12 +4899,582 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 故 $F$ 对于几乎处处有限函数 $f(x)$ 亦满足
 
+* 勒贝格积分
+
+** 非负[[MK178][简单函数]]
+
+*** 定义<<MK213>>
+
+定义结构 $<E,\varphi>$ 其中 $E$ 是定义域 $\varphi$ 是[[MK61][外侧度]]
+
+定义非负[[MK178][简单函数]] $f(x)=\sum_{i=1}^s c_i\chi_{E_i}(x)$ 其中符号定义与[[MK178][之前]]相符，且 $c_i>0$
+
+则其勒贝格积分定义为 $\int_E f(x)dx=\sum_{i=1}^sc_i\varphi(E_i)$
+
+**** 引理
+
+定义 $A\subset E$ 是 $<E,\varphi>$ 上的[[MK174][外测度可测集]]，定义函数 $g(x)$ 其定义域为 $A$
+
+对于任意 $x\in A$ 有 $g(x)=f(x)$ 则 $g(x)$ 的勒贝格积分为 $\int_A f(x)dx=\sum_{i=1}^sc_i\varphi(E_i\cap A)$
+
+***** 证明
+
+根据[[MK210][引理]]可得 $g(x)$ 亦为简单函数，其划分集合为 $A_i=A\cap E_i$
+
+故根据简单函数勒贝格积分定义可得 $\int_A f(x)dx=\sum_{i=1}^sc_i\varphi(E_i\cap A)$ ，证毕
+
+*** 性质
+
+定义[[MK212][外侧度空间]] $<E,\varphi>$ 则
+
+**** 性质1<<MK222>>
+
+定义 $A,B$ 满足 $A\subset E\land B\subset E\land A\cap B=\varnothing$ 且是空间上的[[MK174][外测度可测集]]
+
+则对于非负[[MK178][简单函数]] $f(x)$ 有 $\int_{A\cup B} f(x)dx=\int_A f(x)dx+\int_B f(x)dx$
+
+***** 证明
+
+由于是[[MK174][外测度可测集]]则根据[[MK65][Caratheodory定理]]可得[[MK61][外测度]]是[[MK56][测度]]
+
+则根据[[MK213][定义]]、[[~/OneDrive/离散数学/Disc_Math.org::MK327][分配率]]以及[[MK56][可数可加性]]有
+
+\begin{aligned}
+\int_{A\cup B} f(x)dx=&\sum_{i=1}^sc_i\varphi\big(E_i\cap (A\cup B)\big)\\
+=&\sum_{i=1}^sc_i\varphi\big((E_i\cap A)\cup(E_i\cap B)\big)\\
+=&\sum_{i=1}^sc_i\big(\varphi(E_i\cap A)+\varphi(E_i\cap B)\big)\\
+=&\sum_{i=1}^sc_i\varphi(E_i\cap A)+\sum_{i=1}^sc_i\varphi(E_i\cap B)\\
+=&\int_A f(x)dx+\int_B f(x)dx
+\end{aligned}
+
+**** 性质2<<MK228>>
+
+定义[[MK214][集列]] $\{A_n\}$ 满足：
+
+（1） $\forall i<j\rightarrow A_i\subset A_j$
+
+（2） $\forall i\in\mathbb{N}$ 均有 $A_i$ 是空间上的[[MK174][外测度可测集]]
+
+（3） $\cup_{i=1}^\infty A_i=E$
+
+则对于非负[[MK178][简单函数]] $f(x)$ 有 $\int_Ef(x)dx=\lim_{n\to\infty}\int_{A_n}f(x)dx$
+
+***** 证明
+
+由于条件（1）可得递增集列，则根据[[MK70][定理]]有 $\lim_{n\to\infty}A_n=\cup_{i=1}^\infty A_i$
+
+由于是[[MK174][外测度可测集]]则根据[[MK65][Caratheodory定理]]外侧度可测集是[[MK50][ $\sigma$ 代数]]，且[[MK61][外测度]]是[[MK56][测度]]
+
+则根据[[MK73][定理]]、[[~/OneDrive/离散数学/Disc_Math.org:MK333][集合族并]]以及极限的四则运算有
+
+\begin{aligned}
+\int_{E} f(x)dx=&\int_{\cup_{n=1}^\infty A_n} f(x)dx\\
+=&\sum_{i=1}^s c_i\varphi\left((\cup_{n=1}^\infty A_n)\cap E_i\right)\\
+=&\sum_{i=1}^s c_i\varphi\left(\cup_{n=1}^\infty (A_n\cap E_i)\right)\\
+=&\sum_{i=1}^s c_i\varphi\left(\lim_{n\to\infty} (A_n\cap E_i)\right)\\
+=&\sum_{i=1}^s c_i\left(\lim_{n\to\infty}\left(\varphi(A_n\cap E_i)\right)\right)\\
+=&\lim_{n\to\infty}\left(\sum_{i=1}^s c_i\left(\varphi(A_n\cap E_i)\right)\right)\\
+=&\lim_{n\to\infty}\int_{A_n}f(x)dx
+\end{aligned}
+
+注：由于 $s<\infty$ 有限，故连加可以交换次序
+
+**** 性质3<<MK215>>
+
+定义 ${\alpha,\beta}\not\subset\mathbb{R}^-$ 则对于非负[[MK178][简单函数]] $f(x),g(x)$ 有 $\int_E\alpha f(x)+\beta g(x)dx=\alpha\int_E f(x)dx+\beta\int_E f(x)dx$
+
+***** 证明
+
+由于是非负[[MK178][简单函数]]，则定义 $f(x)$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]集合为 $\{E_i\}$ ， $g(x)$ 则为 $\{E_j\}$
+
+定义 $h(x)=\alpha f(x)+\beta g(x)$ 根据[[MK216][引理2]]以及 ${\alpha,\beta}\not\subset\mathbb{R}^-$ ，可得 $h(x)$ 亦为非负[[MK178][简单函数]]
+
+****** 乘法
+
+由于 $h(x)$ 是非负[[MK178][简单函数]]， ${\alpha,\beta}\not\subset\mathbb{R}^-$ 故当 $\beta=0$ 时有 $h(x)=\alpha f(x)$
+
+故有 $\alpha f(x)$ 亦为非负[[MK178][简单函数]]，则根据[[MK213][定义]]有
+
+\begin{aligned}
+\int_E \alpha f(x)dx=&\sum_{i=1}^u \alpha a_i\varphi(E_i)\\
+=& \alpha\sum_{i=1}^u a_i\varphi(E_i)\\
+=&\alpha\int_Ef(x)dx
+\end{aligned}
+
+****** 加法<<MK218>>
+
+由于是[[MK174][外测度可测集]]则根据[[MK65][Caratheodory定理]]外侧度可测集是[[MK50][ $\sigma$ 代数]]，且[[MK61][外测度]]是[[MK56][测度]]
+
+由于是[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]故有对于任意 $i,j$ 均有 $E_i\subset E\land E_j\subset E$ 则根据[[MK213][定义]]、[[~/OneDrive/离散数学/Disc_Math.org::MK327][分配律]]、[[~/OneDrive/离散数学/Disc_Math.org::MK336][同一律]]
+
+以及[[MK56][可数可加性]]有
+
+\begin{aligned}
+\int_Ef(x)+g(x)dx =&\sum_{i=1}^u\sum_{j=1}^v(\alpha a_i+\beta b_j)\varphi(E_i\cap E_j)\\
+=&\sum_{i=1}^u\sum_{j=1}^v\left(\alpha a_i\varphi(E_i\cap E_j)+\beta b_j\varphi(E_i\cap E_j)\right)\\
+=&\sum_{i=1}^u\sum_{j=1}^v\alpha a_i\varphi(E_i\cap E_j)+\sum_{i=1}^u\sum_{j=1}^v\beta b_j\varphi(E_i\cap E_j)\\
+=&\sum_{i=1}^u\alpha a_i\sum_{j=1}^v\varphi(E_i\cap E_j)+\sum_{j=1}^v\beta b_j\sum_{i=1}^u\varphi(E_i\cap E_j)\\
+=&\sum_{i=1}^u\alpha a_i\varphi\left(\bigcup_{j=1}^v(E_i\cap E_j)\right)+\sum_{j=1}^v\beta b_j\varphi\left(\bigcup_{i=1}^u(E_i\cap E_j)\right)\\
+=&\sum_{i=1}^u\alpha a_i\varphi\left(E_i\cap\bigcup_{j=1}^vE_j\right)+\sum_{j=1}^v\beta b_j\varphi\left(E_j\cap\bigcup_{i=1}^uE_i\right)\\
+=&\sum_{i=1}^u\alpha a_i\varphi\left(E_i\cap E\right)+\sum_{j=1}^v\beta b_j\varphi\left(E_j\cap E\right)\\
+=&\sum_{i=1}^u\alpha a_i\varphi(E_i)+\sum_{j=1}^v\beta b_j\varphi(E_j)\\
+=&\int_Ef(x)dx+\int_Eg(x)dx
+\end{aligned}
+
+****** 结论
+
+综上所述 $$\int_E\alpha f(x)+\beta g(x)dx=\alpha\int_E f(x)dx+\beta\int_E f(x)dx$$
+
+**** 性质4<<MK217>>
+
+若有非负[[MK178][简单函数]] $f(x),g(x)$ 均为 $E\to\mathbb{R}_e$ 的映射，若有 $\forall x\in E\rightarrow f(x)\geq g(x)$
+
+则有 $\int_Ef(x)dx\geq\int_Eg(x)dx$
+
+***** 证明
+
+根据[[MK218][之前证明]]同理易证 $\int_Ef(x)dx-\int_Eg(x)dx=\int_Ef(x)-g(x)dx=\int_Eh(x)dx$
+
+根据[[MK216][引理2]]可得 $h(x)$ 亦为[[MK178][简单函数]]，由于 $\forall x\in E\rightarrow f(x)\geq g(x)$ 故 $h(x)=f(x)-g(x)\geq0$
+
+故有 $h(x)$ 为非负[[MK178][简单函数]]，根据定义必有 $\int_Eh(x)dx\geq0$
+
+综上所述 $\int_Ef(x)dx-\int_Eg(x)dx\geq0\rightarrow\int_Ef(x)dx\geq\int_Eg(x)dx$ 
+
+** 非负[[MK134][可测函数]]
+
+*** 定义<<MK219>>
+
+对于非负[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ 其勒贝格积分定义为 $$\int_Ef(x)dx=\sup\left\{\int_E\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_E(f(x))\right\}$$
+
+其中 $\mathcal{Z}_E(f(x))$ 是 $f(x)$ 的[[MK223][目标函数集]]
+
+即所有在定义域上小于 $f(x)$ 的非负[[MK178][简单函数]]的[[MK213][勒贝格积分]]的上确界
+
+**** 目标函数集<<MK223>>
+
+定义 $\mathcal{S}^+$ 是 $E\to\mathbb{R}_e$ 的所有非负[[MK178][简单函数]]集合，定义非负[[MK134][可测函数]] $f:E\to\mathbb{R}_e$
+
+定义 $\mathcal{Z}_E\left(f(x)\right)=\left\{\phi(x)\big|\left(\forall x\in E\rightarrow\phi(x)\leq f(x)\right)\land\left(\phi\in\mathcal{S}^+\right)\right\}$ 是 $f(x)$ 的目标函数集
+
+即满足 $\forall x\in E\rightarrow\phi(x)\leq f(x)$ 的非负[[MK178][简单函数]]的集合
+
+**** 勒贝格可积
+
+若有非负[[MK134][可测函数]] $f(x)$ 满足 $\int_E f(x)dx<\infty$ 则称其为勒贝格可积
+
+***** 引理1
+
+定义[[MK212][外侧度空间]] $<E,\varphi>$ ，若 $f(x)$ 勒贝格可积，则 $\varphi(f^{-1}(\{+\infty\}))=0$
+
+****** 证明
+
+根据[[MK142][定理2]]可得 $f^{-1}(\{+\infty\})=f^{-1}\left(\bigcap_{k=1}^\infty[k, +\infty]\right)$
+
+根据[[MK135][性质]]可得 $f^{-1}\left(\bigcap_{k=1}^\infty[k, +\infty]\right)=\bigcap_{k=1}^\infty f^{-1}\left([k, +\infty]\right)$
+
+则根据[[MK220][性质1]]有 $$\int_{f^{-1}([k,+\infty])}f(x)dx\geq \int_{f^{-1}([k,+\infty])}ndx$$
+
+显然非负常值函数是非负[[MK178][简单函数]]故根据[[MK213][定义]]可得 $$\int_{f^{-1}([k,+\infty])}kdx=k\varphi(f^{-1}([k,+\infty]))$$
+
+又由于 $f^{-1}([k,+\infty])\subset E$ 故有 $$\int_{f^{-1}([k,+\infty])}f(x)dx=\int_Ef(x)\cdot\chi_{f^{-1}([k,+\infty])}(x)dx$$
+
+定义 $h(x)=f(x)\cdot\chi_{f^{-1}([k,+\infty])}(x)$ 易证 $h(x)$ 是非负[[MK178][简单函数]]
+
+且对于任意 $x\in E$ 均有 $h(x)\leq f(x)$ 则根据[[MK220][性质1]]可得 $$\int_Ef(x)dx\geq\int_{f^{-1}([k,+\infty])}f(x)dx$$
+
+综上所述 $$\int_Ef(x)dx\geq k\varphi(f^{-1}([k,+\infty]))$$ 即 $$\varphi(f^{-1}([k,+\infty]))\leq\frac{1}{k}\int_Ef(x)dx$$
+
+由于 $\forall k\in\mathbb{N}\rightarrow +\infty\in[k, +\infty]$
+
+故根据[[MK61][外侧度定义]]中非负性，单调性，对于任意 $k\in\mathbb{N}$ 均 $\varphi(f^{-1}(\{ +\infty\}))\leq\varphi(f^{-1}([k, +\infty]))$
+
+由于勒贝格可积，故 $$\int_Ef(x)dx<\infty$$ 故有 $$\lim_{k\to\infty}\frac{1}{k}\int_Ef(x)dx=0$$
+
+故得 $\varphi(f^{-1}(\{+\infty\}))=0$
+
+**** 非负[[MK178][简单函数]]证明
+
+若 $f(x)$ 是非负简单函数
+
+则有 $\int_E f(x)dx=\sum_{i=1}^sc_i\varphi(E_i)=\sup\left\{\int_E\varphi(x)dx\big|\left(\forall x\in E\rightarrow\varphi(x)\leq f(x)\right)\land\left(\varphi\in\mathcal(S)^+\right)\right\}$
+
+***** 证明
+
+对于任意满足条件的 $\varphi(x)$ 均有 $0\leq\varphi(x)\leq f(x)$ 且是[[MK178][简单函数]]
+
+故根据[[MK217][性质4]]可得 $\int_E\varphi(x)dx\leq\int_Ef(x)dx$ 则反证法易证
+
+即 $\int_E f(x)dx\geq\sup\left\{\int_E\varphi(x)dx\big|\left(\forall x\in E\rightarrow\varphi(x)\leq f(x)\right)\land\left(\varphi\in\mathcal(S)^+\right)\right\}$
+
+由于 $f(x)\leq f(x)$ 且为简单函数，故亦满足上确界条件
+
+故有 $\int_E f(x)dx\leq\sup\left\{\int_E\varphi(x)dx\big|\left(\forall x\in E\rightarrow\varphi(x)\leq f(x)\right)\land\left(\varphi\in\mathcal(S)^+\right)\right\}$
+
+故根据[[MK5][三岐性]]可得 $\int_E f(x)dx=\sup\left\{\int_E\varphi(x)dx\big|\left(\forall x\in E\rightarrow\varphi(x)\leq f(x)\right)\land\left(\varphi\in\mathcal(S)^+\right)\right\}$
+
+**** 可测子集积分
+
+定义[[MK212][外侧度空间]] $<E,\varphi>$ 若 $f:E\to\mathbb{R}_e$ 是非负[[MK134][可测函数]]
+
+定义 $g:A\to\mathbb{R}_e$ 其中 $A\subset E$ 是 $<E,\varphi>$ 上的[[MK174][外测度可测集]]
+
+则有 $$\int_E f(x)\chi_{A}(x)dx=\int_A g(x)dx$$ 其中 $\chi_A(x)$ 是[[MK221][特征函数]]
+
+***** 证明
+
+根据[[MK221][特征函数]]定义可知其为非负[[MK178][简单函数]]，故亦为非负[[MK134][可测函数]]
+
+则根据[[MK181][可测函数四则运算]]可得 $f(x)\chi_A(x)$ 亦为非负[[MK134][可测函数]]
+
+对于任意[[MK223][目标函数集]]中的元素 $\phi(x)\in\mathcal{Z}_E(f(x)\chi_A(x))$ 均有 $\forall x\in E/A\rightarrow 0\leq\phi(x)\leq f(x)\chi_A(x)=0$ 
+
+即根据[[MK5][三岐性]] $\forall x\in E/A\rightarrow \phi(x)=0$ ，故根据[[MK222][性质1]]以及[[MK213][定义]]有
+
+\begin{aligned}
+\int_E\phi(x)dx&=\int_{(E/A)\cup A}\phi(x)dx\\
+&=\int_{E/A}\phi(x)dx+\int_A\phi(x)dx\\
+&=\int_{E/A}0dx+\int_A\phi(x)dx\\
+&=0\cdot\varphi(E/A)+\int_A\phi(x)dx\\
+&=\int_A\phi(x)dx\\
+\end{aligned}
+
+又根据 $\phi(x)\in\mathcal{Z}_E(f(x)\chi_A(x))$ 可得 $\forall x\in A\rightarrow\phi(x)\leq f(x)\chi_A(x)=g(x)$
+
+即有 $\forall x\in A\rightarrow\phi(x)\leq g(x)$ 。综上所述，根据[[MK220][性质1]]可得对于任意 $\phi(x)\in\mathcal{Z}_E(f(x)\chi_A(x))$
+
+均有 $\int_E\phi(x)dx=\int_A\phi(x)dx\leq\int_Ag(x)dx$
+
+又根据[[~/OneDrive/离散数学/Disc_Math.org::326][确界定义]]易证 $$\int_E f(x)\chi_{A}(x)dx=\sup\left\{\int_E\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_E(f(x)\chi_{A}(x))\right\}\leq\int_A g(x)dx$$
+
+类似易证 $$\int_A g(x)dx=\sup\left\{\int_E\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_A(g(x))\right\}\leq\int_E f(x)\chi_{A}(x)dx$$
+
+最终根据[[MK5][三岐性]]可得 $$\int_E f(x)\chi_{A}(x)dx=\int_A g(x)dx$$  
+
+*** 定理
+
+**** levi定理（单调性）<<MK231>>
+
+定义[[MK212][外侧度空间]] $<E,\varphi>$ ，任意[[MK133][函数]]序列 $\{f_i(x)\}$ 均为 $E\to\mathbb{R}_e$ 的映射
+
+若满足对于任意 $x\in E\land i\in\mathbb{N}^+$
+
+则有 $f_i(x)\leq f_{i+1}(x)$ 则 $$\lim_{i\to\infty}\left\{\int_Ef_i(x)dx\right\}=\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx$$
+
+***** 证明
+
+****** 函数极限存在
+
+由于递增，则对于任意 $x'\in E$ 均有 $f_{i+1}(x')\geq f_i(x')$
+
+故定义数列 $S=\{f_i(x')\}$ 显然有 $S\in\mathbb{R}_e$
+
+若 $S$ 在 $\mathbb{R}$ 上无界，由于递增，故有 $\lim_{i\to\infty}f_i(x')=\infty$
+
+若有界，则根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 存在 $a\in\mathbb{R}$ 满足 $\lim_{i\to\infty}f_i(x')=a$
+
+综上所述，对于任意 $x'\in E$ 均存在极限，故函数极限存在
+
+****** 证明等式
+
+定义 $f(x)=\lim_{i\to\infty}f_i(x)$ 
+
+******* 左边小于等于右边
+
+由于递增，故有对于任意 $i\in\mathbb{N}^+$ 均有 $f(x)\geq f_i(x)$
+
+根据[[MK220][性质1]]可得对于于任意 $i\in\mathbb{N}^+$ 均有 $$\int_Ef(x)dx\geq\int_Ef_i(x)dx$$
+
+即 $$\int_Ef(x)dx$$ 是[[MK143][广义实数]]列 $$\left\{\int_Ef_i(x)dx\right\}$$ 的上界
+
+则显然易证 $$\lim_{i\to\infty}\left\{\int_Ef_i(x)dx\right\}\leq\int_Ef(x)dx=\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx$$
+
+******* 右边小于等于左边
+
+根据[[MK157][推论]]可得 $f^{-1}(+\infty)$ 是 $<E,\varphi>$ 上的[[MK65][外测度可测集]]，则当其
+
+******** 不是[[MK126][零测集]]
+
+当 $f(x)$ 中 $\varphi(f^{-1}(+\infty))>0$ 即无穷的点不为零测集时
+
+故定义简单函数 $\phi_i(x)=\begin{cases}\min\left\{f_i(x)\big|x\in f^{-1}(+\infty)\right\}&f(x)=\infty\\0&f(x)\ne\infty\end{cases}$
+
+则显然有对于任意 $x\in E\land i\in\mathbb{N}^+$ 均有 $f_i(x)\geq\phi_i(x)$ ，定义 $m_i=\min\left\{f_i(x)\big|x\in f^{-1}(+\infty)\right\}$
+
+显然 $\phi_i(x)$ 非负[[MK178][简单函数]]，故根据[[MK213][定义]]以及[[MK144][运算]]可得 $$\int_E\phi_i(x)dx=\varphi(f^{-1}(+\infty))\cdot m_i$$
+
+根据极限运算可得 $\lim_{i\to\infty}\varphi(f^{-1}(+ \infty))\cdot m_i=\varphi(f^{-1}(+\infty))\lim_{i\to\infty}m_i$
+
+由于 $f(x)=\lim_{i\to\infty}f_i(x)$ 且 $\forall x\in f^{-1}(+\infty)\rightarrow f(x)= +\infty$ 故易证 $\lim_{i\to\infty}m_i= +\infty$
+
+又根据[[MK220][性质1]]可得 $$\int_Ef_i(x)dx\geq\int_E\phi_i(x)dx\rightarrow\lim_{i\to\infty}\int_Ef_i(x)dx\geq\lim_{i\to\infty}\int_E\phi_i(x)dx=+\infty$$
+
+则根据[[MK143][定义]]可得 $$\lim_{i\to\infty}\int_Ef_i(x)dx=+\infty$$ 又由于 $$\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx\in\mathbb{R}_e$$
+
+故根据[[MK143][定义]]可得 $$\lim_{i\to\infty}\left\{\int_Ef_i(x)dx\right\}\geq\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx$$
+
+******** 是[[MK126][零测集]]
+
+********* 去除无穷零测集
+
+定义 $E_0=f^{-1}(+\infty),E'=E-E_0$ 故根据[[MK225][性质2]]可得 $$\int_Ef(x)dx =\int_{E'}f(x)dx +\int_{E_0}f(x)dx$$
+
+根据[[MK2233][性质4]]可得 $$\int_{E_0}f(x)dx=0$$ 故有 $$\int_Ef(x)dx =\int_{E'}f(x)dx$$
+
+同理可证 $$\int_Ef_i(x)dx =\int_{E'}f_i(x)dx$$
+
+********* 证明结论
+
+根据[[MK219][定义]] $$\int_{E}f(x)dx=\int_{E'}f(x)dx=\sup\left\{\int_{E'}\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_{E'}(f(x))\right\}$$
+
+则任取 $\phi(x)\in\mathcal{Z}_{E'}(f(x))$ 则任取 $0<c<1$ 则有 $f(x)>c\phi(x)$
+
+定义 $E_i=\left\{x\big|f_i(x)\geq c\phi(x)\land x\in E'\right\}$
+
+********** 集合转换
+
+由于 $\phi(x),f_i(x)$ 均为[[MK134][可测函数]]，则根据[[MK164][定理3]]易证 $E_i$ 亦为 $<E,\varphi>$ 上的[[MK65][外测度可测集]]
+
+对于任意 $x\in E_i$ 均有 $f_{i+1}(x)\geq f_i(x)\geq c\phi(x)$ 故有 $x\in E_{i+1}$ ，根据[[~/OneDrive/离散数学/Disc_Math.org::MK20][子集定义]]可得 $E_i\subset E_i$
+
+定义 $E^*=\bigcup_{i=1}^\infty E_i$ 对于任意 $x\in E'$ 由于 $\lim_{i\to\infty}f_i(x)=f(x)>c\phi(x)$
+
+故存在 $N$ 对于任意 $i^*>N$ 均有 $f_{i^*}(x)>c\phi(x)$ 则有 $x\in E_{i^*}$ 故有 $E'\subset E^*$
+
+又由于对于任意 $x\in E^*$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK34][定义]]存在 $i\in\mathbb{N}^+$ 满足 $x\subset E_i$
+
+进一步根据 $E_i$ 定义可得 $E_i\subset E'$ 故有 $E^*\subset E'$
+
+综上所述，根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $E^*=E'$ 即 $E'=\bigcup_{i=1}^\infty E_i$
+
+********** 推出不等式<<MK229>>
+
+对于任意 $i\in\mathbb{N}^+$ 根据[[MK227][推论]]以及[[MK220][性质1]]可得 $$\int_{E'}f_i(x)dx\geq\int_{E_i}f_i(x)dx\geq\int_{E_i}c\phi(x)dx$$
+
+则根据极限运算可得 $$\lim_{i\to\infty}\int_{E'}f_i(x)dx\geq\lim_{i\to\infty}\int_{E_i}c\phi(x)dx$$
+
+根据 $E'=\bigcup_{i=1}^\infty E_i$ [[MK215][性质3]]、[[MK228][性质2]]以及极限运算可得 $$\lim_{n\to\infty}\int_{E_i}c\phi(x)dx =c\lim_{n\to\infty}\int_{E_i}\phi(x)dx =c\int_{E'}\phi(x)dx$$
+
+最终有 $$\lim_{i\to\infty}\int_{E'}f_i(x)dx\geq c\int_{E'}\phi(x)dx$$
+
+********** 最终结论
+
+假设 $$\lim_{i\to\infty}\int_{E'}f_i(x)dx<\int_{E'}\phi(x)dx$$
+
+则定义 $$c=\frac{\int_{E'}\phi(x)dx-0.5\left(\int_{E'}\phi(x)dx-\lim_{i\to\infty}\int_{E'}f_i(x)dx\right)}{\int_{E'}\phi(x)dx}$$
+
+显然满足 $0<c<1$ 则 $$c\int_E\phi(x)dx=\int_{E'}\phi(x)dx-0.5\left(\int_{E'}\phi(x)dx-\lim_{i\to\infty}\int_{E'}f_i(x)dx\right)$$
+
+故 $$c\int_E\phi(x)dx-\lim_{i\to\infty}\int_{E'}f_i(x)dx=0.5\left(\int_{E'}\phi(x)dx-\lim_{i\to\infty}\int_{E'}f_i(x)dx\right)>0$$
+
+即有 $$\lim_{i\to\infty}\int_{E'}f_i(x)dx<c\int_{E'}\phi(x)dx$$ 与 $c$ 的任意性和[[MK229][之前证明]]矛盾
+
+故假设不成立，则有 $$\lim_{i\to\infty}\int_{E'}f_i(x)dx\geq\int_{E'}\phi(x)dx$$ 进而由 $\phi(x)$ 的任意性
+
+以及[[MK219][定义]]中上确界可得  $$\lim_{i\to\infty}\left\{\int_{E'}f_i(x)dx\right\}\geq\int_{E'}f(x)dx=\int_{E'}\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx$$
+
+**** 定理2
+
+若 $\{f_i(x)\}$ 是[[MK212][外侧度空间]] $<E,\varphi>$ 上的非负[[MK134][可测函数]]列
+
+则有 $$\int_E\left(\sum_{i=1}^\infty f_i(x)\right)dx=\sum_{i=1}^\infty\left(\int_E f_i(x)dx\right)$$
+
+***** 证明
+
+定义 $g_n(x)=\sum_{i=1}^nf_i(x)$ 由于非负，故 $g_n(x)$ 递增
+
+根据[[MK181][性质]]可得 $g_n(x)$ 亦为非负[[MK134][可测函数]]，则有
+
+\begin{aligned}
+\int_E\left(\sum_{i=1}^\infty f_i(x)\right)dx=&\int_E\left(\lim_{n\to\infty} g_n(x)\right)dx\\
+=&\lim_{n\to\infty}\left(\int_E g_n(x)dx\right)\\
+=&\lim_{n\to\infty}\left(\int_E \sum_{i=1}^nf_i(x)dx\right)\\
+=&\lim_{n\to\infty}\left(\sum_{i=1}^n\left(\int_Ef_i(x)dx\right)\right)\\
+=&\sum_{i=1}^\infty\left(\int_Ef_i(x)dx\right)
+\end{aligned}
+
+证毕
+
+**** Faton引理
 
 
 
+*** 性质
 
+定义[[MK212][外侧度空间]] $<E,\varphi>$ 则
 
+**** 性质1<<MK220>>
 
+若有非负[[MK134][可测函数]] $f(x),g(x)$ 均为 $E\to\mathbb{R}_e$ 的映射，若有 $\forall x\in E\rightarrow f(x)\geq g(x)$
 
+则有 $$\int_Ef(x)dx\geq\int_Eg(x)dx$$
 
+***** 证明
 
+根据[[MK219][定义]]可得对于任意 $\phi(x)\in\mathcal{Z}(g(x))$ ，均有 $\phi(x)\leq f(x)$ 且为非负[[MK178][简单函数]]
+
+其中 $\mathcal{Z}(f(x))$ 是 $f(x)$ 的[[MK223][目标函数集]]
+
+则根据有 $\phi(x)\in\mathcal{Z}(f(x))$ 由于 $\int_Ef(x)dx=\sup\left\{\mathcal{Z}(f(x))\right\}$ 故有 $\int_Ef(x)dx\geq\int_E\phi(x)dx$
+
+由于 $\phi(x)$ 的任意性，由反证法易证 $\int_Ef(x)dx\geq\int_Eg(x)dx$
+
+**** 性质2<<MK225>>
+
+若有非负[[MK134][可测函数]] $f(x)$ 为 $E\to\mathbb{R}_e$ 的映射， $A,B$ 均为空间上的的[[MK174][外测度可测集]]
+
+且满足 $A\cap B=\varnothing$ 则有 $$\int_{A\cup B}f(x)dx=\int_Af(x)dx+\int_Bf(x)dx$$
+
+***** 证明
+
+****** 证明左边小于等于右边
+
+对于任意 $\phi(x)\in\mathcal{Z}_{A\cup B}(f(x))$ ，其中 $\mathcal{Z}_{A\cup B}(f(x))$ 是 $f(x)$ 的[[MK223][目标函数集]]
+
+根据其定义可得 $\phi(x)\leq f(x)$ 且 $\phi(x)$ 是非负[[MK178][简单函数]]
+
+故根据[[MK222][性质1]]可得 $\int_{A\cup B}\phi(x)dx=\int_A\phi(x)dx+\int_B\phi(x)dx$
+
+又根据[[MK220][性质1]]可得 $\int_A\phi(x)dx\leq\int_Af(x)dx$ 以及 $\int_B\phi(x)dx\leq\int_Bf(x)dx$
+
+故根据[[MK14][运算相容]]可得 $\int_A\phi(x)dx+\int_B\phi(x)\leq\int_Af(x)dx+\int_Bf(x)dx$
+
+综上所述，对于任意 $\phi(x)\in\mathcal{Z}(f(x))$ 均有 $\int_{A\cup B}\phi(x)dx\leq \int_Af(x)dx+\int_Bf(x)dx$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::326][确界定义]]易证 $$\int_{A\cup B}f(x)dx=\sup\left\{\int_E\phi(x)\bigg|\phi(x)\in\mathcal{Z}_{A\cup B}(f(x))\right\}\leq\int_Af(x)dx+\int_Bf(x)dx$$
+
+****** 证明右边小于等于左边
+
+对于任意 $\phi_1(x)\in\mathcal{Z}_A(f(x)),\phi_2(x)\in\mathcal{Z}_B(f(x))$ 定义 $\phi(x)=\begin{cases}\phi_1(x)&x\in A\\\phi_2(x)&x\in B\end{cases}$
+
+则显然 $\phi(x)$ 是 $A\cup B$ 上的非负[[MK178][简单函数]]
+
+根据[[MK222][性质1]] $\int_{A\cup B}\phi(x)dx=\int_A\phi(x)dx+\int_B\phi(x)dx=\int_A\phi_1(x)dx+\int_B\phi_2(x)dx$
+
+由于 $\phi(x)$ 定义可得 $\forall x\in(A\cup B)\rightarrow \phi(x)\leq f(x)$
+
+则根据[[MK220][性质1]]可得 $\int_{A\cup B}\phi(x)dx\leq\int_{A\cup B}f(x)dx$ 即 $\int_A\phi_1(x)dx+\int_B\phi_2(x)dx\leq\int_{A\cup B}f(x)dx$
+
+定义 $$M_A=\left\{\int_E\phi_1(x)dx\bigg|\phi_1(x)\in\mahtcal{Z}_A(f(x))\right\}$$ ， $$M_B=\left\{\int_E\phi_2dx)dx\bigg|\phi_2(x)\in\mahtcal{Z}_B(f(x))\right\}$$
+
+则可得 $\forall a\in M_A,b\in M_B\rightarrow a+b\leq\int_{A\cup B}f(x)dx$
+
+由于勒贝格积分值为实数，故 $M_A\subset\mathbb{R}_e\land M_B\subset\mathbb{R}_e$ ，则定义 $$M=\left\{a+b\big|a\in M_A\land b\in M_B\right\}$$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $\sup\{M\}\leq\int_{A\cup B}f(x)dx$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK338][定理3]]有 $\sup\{M\}=\sup\{M_A\}+\sup\{M_B\}=\int_Af(x)dx+\int_Bf(x)dx$
+
+综上所述，有 $$\int_Af(x)dx+\int_Bf(x)dx\leq\int_{A\cup B}f(x)dx$$
+
+***** 推论<<MK227>>
+
+若有 $A\subset B$ 则有 $$\int_Af(x)dx\leq\int_Bf(x)dx$$
+
+****** 证明
+
+定义 $E=B-A$ 则有 $E\cup A=B$ 且 $E\cap A=\varnothing$
+
+即 $$\int_Bf(x)dx=\int_Af(x)dx+\int_Ef(x)dx$$ 由于均为非负可测函数
+
+则必有 $$\int_Ef(x)dx\geq\int_E0dx$$ 显然 $0$ 是非负[[MK178][简单函数]]
+
+故根据[[MK213][定义]] $$\int_E0dx=0\varphi(E)=0$$ 故有 $$\int_Ef(x)dx\geq0$$
+
+最终有 $$\int_Bf(x)dx\geq\int_Af(x)dx$$
+
+**** 性质3<<MK232>>
+
+若有非负[[MK134][可测函数]] $f(x),g(x)$ 均为 $E\to\mathbb{R}_e$ 的映射，若 $\{\alpha,\beta\}\subset\mathbb{R}^+$
+
+则有 $$\int_E\left(\alpha f(x)+\beta g(x)\right)dx=\alpha\int_Ef(x)dx+\beta\int_Eg(x)dx$$
+
+***** 证明
+
+****** 证明数乘
+
+******* 当 $\alpha=0$ 时
+
+有 $$\int_E\alpha f(x)dx=\int_E0dx=0=0\cdot\int_E f(x)dx$$ 即有 $$\int_E\alpha f(x)dx=\alpha\int_Ef(x)dx$$
+
+******* 当 $\alpha>0$ 时
+
+根据[[MK219][定义]]可得 $$\int_E\alpha f(x)dx=\sup\left\{\int_E\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_E(\alpha f(x))\right\}$$
+
+******** 集合表述转换
+
+定义 $$A=\left\{\int_E\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_E(\alpha f(x))\right\}$$
+
+定义 $$B=\left\{\int_E\alpha\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}$$
+
+根据[[MK223][目标函数集]]定义可得 $\mathcal{Z}_E\left(f(x)\right)=\left\{\psi(x)\big|\left(\forall x\in E\rightarrow\psi(x)\leq f(x)\right)\land\left(\psi\in\mathcal{S}^+\right)\right\}$
+
+以及 $\mathcal{Z}_E\left(\alpha f(x)\right)=\left\{\phi(x)\big|\left(\forall x\in E\rightarrow\phi(x)\leq\alpha f(x)\right)\land\left(\phi\in\mathcal{S}^+\right)\right\}$
+
+故对于任意 $$\int_E\phi(x)dx\in A$$ 均存在 $\phi(x)\in\mathcal{Z}_E\left(\alpha f(x)\right)$ 满足 $\phi(x)\leq\alpha f(x)\land\phi(x)\in\mathcal{S}^+$
+
+根据[[MK216][引理2]]可得对于任意 $\phi(x)\in\mathcal{Z}_E(\alpha f(x))$ 有 $\psi(x)=\frac{1}{\alpha}\phi(x)$ 亦为简单函数，即 $\psi\in\mathcal{S}^+$
+
+且由于 $\phi(x)\leq\alpha f(x)$ 故有 $\alpha\psi(x)\leq\alpha f(x)\rightarrow\psi(x)\leq f(x)$
+
+即 $\psi(x)\in Z_E(f(x))$ 则有 $$\int_E\alpha\psi(x)dx\in B$$ 由于 $\psi(x)=\frac{1}{\alpha}\phi(x)$ 故有 $$\int_E\alpha\psi(x)dx=\int_E\phi(x)dx$$
+
+则对于任意 $$\int_E\phi(x)dx\in A$$ 均有 $$\int_E\phi(x)dx\in B$$
+
+类似亦可证对于任意 $$\int_E\alpha\psi(x)dx\in B$$ 均有 $$\int_E\alpha\psi(x)dx\in A$$
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $B=A$
+
+故有 $$\int_E\alpha f(x)dx=\sup\left\{\int_E\alpha\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}$$
+
+******** 证明结论
+
+根据[[MK215][性质2]]可得 $$\int_E\alpha\psi(x)dx=\alpha\int_E\psi(x)dx$$
+
+即 $$\int_E\alpha f(x)dx=\sup\left\{\alpha\int_E\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}$$ 由于 $$\int_E\psi(x)dx\in\mathbb{R}_e$$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK340][定理4]]可得 $$\sup\left\{\alpha\int_E\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}=\alpha\sup\left\{\int_E\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}$$
+
+又由于 $$\int_Ef(x)dx=\sup\left\{\int_E\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}$$
+
+故综上所述 $$\int_E\alpha f(x)dx=\alpha\int_Ef(x)dx$$
+
+****** 证明加和
+
+根据[[MK230][定理5]]可得存在递增非负简单函数列 $\{\phi_i(x)\},\{\psi_i(x)\}$
+
+满足 $\lim_{i\to\infty}\phi_i(x)=f(x),\lim_{i\to\infty}\psi_i(x)=g(x)$
+
+且根据[[MK216][引理2]]可得 $\{\phi_i(x)+\psi_i(x)\}$ 亦为简单函数，且显然递增
+
+进一步根据计算运算可得 $\lim_{i\to\infty}\left\{\phi_i(x)+\psi_i(x)\right\}=f(x)+g(x)$
+
+故综上所述，根据[[MK231][levi定理]]、[[MK215][性质3]]以及极限运算可得
+
+\begin{aligned}
+\int_E\left(f(x)+g(x)\right)dx=&\int_E\left(\lim_{i\to\infty}\phi_i(x)+\lim_{i\to\infty}\psi_i(x)\right)dx\\
+=&\int_E\lim_{i\to\infty}\left(\phi_i(x)+\psi_i(x)\right)dx\\
+=&\lim_{i\to\infty}\left\{\int_E\left(\phi_i(x)+\psi_i(x)\right)dx\right\}\\
+=&\lim_{i\to\infty}\left\{\int_E\phi_i(x)dx+\int_E\psi_i(x)dx\right\}\\
+=&\lim_{i\to\infty}\int_E\phi_i(x)dx+\lim_{i\to\infty}\int_E\psi_i(x)dx\\
+=&\int_E\lim_{i\to\infty}\phi_i(x)dx+\int_E\lim_{i\to\infty}\psi_i(x)dx\\
+=&\int_Ef(x)dx+\int_Eg(x)dx\\
+\end{aligned}
+
+证毕
+
+**** 性质4<<MK233>>
+
+若有非负[[MK134][可测函数]] $f(x)$ 为 $E_0\to\mathbb{R}_e$ 的映射，其中 $\varphi(E_0)=0$
+
+则有 $$\int_{E_0}f(x)dx=0$$
+
+***** 证明
+
+由于非负，故显然有 $f(x)\geq 0$ 根据[[MK220][性质1]]可得 $$\int_{E_0}f(x)dx\geq\int_{E_0}0dx=0$$
+
+定义 $\phi(x)=\infty,x\in E_0$ 显然 $\forall x\in E_0\rightarrow\phi(x)\geq f(x)$ 根据[[MK220][性质1]]可得 $$\int_{E_0}\phi(x)dx\geq\int_{E_0}f(x)dx$$
+
+显然 $\phi(x)$ 非负[[MK178][简单函数]]，故根据[[MK213][定义]]、[[MK226][运算]]以及零测集可得 $$\int_{E_0}\phi(x)dx=\varphi(E_0)\cdot+\infty=0$$
+
+综上所述，根据[[MK5][三岐性]]可得 $$\int_{E_0}f(x)dx=0$$

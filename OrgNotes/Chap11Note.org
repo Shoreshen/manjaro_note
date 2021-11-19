@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK19
+current mark: MK21
 
 * 笛卡尔乘积
 
@@ -16,8 +16,6 @@ $Y=\{y_i|i\in V\}$
 * 实数系基本定理
 
 ** 确界存在定理<<MK9>>
-
-*** 描述
 
 任意非空实数集 $S=\{x_n\}$ ，有上界必有实数上确界，有下界必有实数下确界。
 
@@ -71,7 +69,7 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 
 故 $\lim_{n\to\infty}a_n=\xi$
 
-** 闭区间套定理
+** 闭区间套定理<<MK20>>
 
 *** 描述
 
@@ -99,8 +97,6 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 若存在 $\xi'$ 属于所有 $[a_n,b_n]$ ，则有 $\forall n\in N^+\Rightarrow a_n\leq\xi'\leq b_n$ ，故当 $n\to\infty$ ，根据夹逼定理 $\xi'=\xi$
 
 ** Bolzano-Weierstrass定理
-
-*** 描述：
 
 有界数列必有收敛子列。
 
@@ -131,7 +127,7 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 &\therefore |y_n-y_m|<\epsilon\\
 \end{aligned}
 
-** 柯西收敛原理
+** 柯西收敛原理<<MK21>>
 
 *** 描述
 
