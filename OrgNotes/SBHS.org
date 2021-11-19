@@ -4,7 +4,7 @@
 
 current video: P36
 
-current mark: 233
+current mark: 234
 
 * 几乎处处<<MK190>>
 
@@ -49,12 +49,6 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 故 $\forall i'\in\mathbb{N}\rightarrow a\in\cup_{k\geq i'}A_k$ 进一步 $a\in\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)$ 根据定义 $a\in\overline{\lim_{n\to\infty}}A_n$
 
 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$ 
-
-*** 推论2
-
-对于数列 $\{a_i\}_{i\in\mathbb{N}}$ 定义 $A_n=\left\{a_i\big|i\geq n\right\}$ 其上下极限可表述为
-
-（1） $\overline{\lim_{i\to\infty}}a_i=\inf\left\{\bigg|i\in\right\}$ 
 
 ** 单调集列<<MK69>>
 
@@ -5297,7 +5291,31 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 **** Faton引理
 
+若 $\{f_i(x)\}$ 是[[MK212][外侧度空间]] $<E,\varphi>$ 上的非负[[MK134][可测函数]]列
 
+则有 $$\int_E\lim_{n\to\infty}\left\{\inf\left\{f_k(x)\big|k\geq n\land k\in\mathbb{N}^+\right\}\right\}dx\leq\lim_{n\to\infty}\left\{\inf\left\{\int_Ef_k(x)dx\bigg|k\geq n\land k\in\mathbb{N}^+\right\}\right\}$$
+
+***** 证明
+
+定义 $I_i=\left\{f_k(x)\big|k\geq n\land k\in\mathbb{N}^+\right\}$ 以及 $D_i(x)=\inf\left\{I_i\}$
+
+则有 $\forall x\in E\land i\in\mathbb{N}^+$ 满足 $f_k(x)\in I_i\rightarrow f_k(x)\geq D_i(x)$
+
+显然 $I_{i+1}\subset I_i$ 故对于任意 $f_k(x)\in I_{i+1}\rightarrow f_k(x)\in I_i\rightarrow f_k(x)\geq D_i(x)$
+
+又由于 $D_{i+1}(x)=\inf\left\{I_{i+1}\}$ 则有 $D_{i+1}(x)\geq D_i(x)$ 即 $D_i(x)$ 是递增函数列
+
+则根据[[MK231][levi定理]]可得 $$\lim_{i\to\infty}\left\{\int_ED_i(x)dx\right\}=\int_E\lim_{i\to\infty}\left\{D_{i}(x)\right\}dx$$
+
+又根据 $D_i(x)$ 定义可得 $k\geq i\rightarrow f_k(x)\geq D_i(x)$ 则根据[[MK220][性质1]]可得 $$\forall k\geq i\rightarrow\int_Ef_k(x)dx\geq\int_ED_i(x)dx$$
+
+即 $$\inf\left\{\int_Ef_k(x)dx\bigg|k\geq i\land k\in\mathbb{N}^+\right\}\geq\int_ED_i(x)dx$$ 由于均为实数
+
+故根据极限运算可得 $$\lim_{i\to\infty}\left\{\inf\left\{\int_Ef_k(x)dx\bigg|k\geq i\land k\in\mathbb{N}^+\right\}\right\}\geq\lim_{i\to\infty}\left\{\int_ED_i(x)dx\right\}$$
+
+进而 $$\lim_{i\to\infty}\left\{\inf\left\{\int_Ef_k(x)dx\bigg|k\geq i\land k\in\mathbb{N}^+\right\}\right\}\geq\int_E\lim_{i\to\infty}\left\{D_{i}(x)\right\}dx$$ ，又根据 $D_i(x)$ 定义
+
+可得 $$\int_E\lim_{n\to\infty}\left\{\inf\left\{f_k(x)\big|k\geq n\land k\in\mathbb{N}^+\right\}\right\}dx\leq\lim_{n\to\infty}\left\{\inf\left\{\int_Ef_k(x)dx\bigg|k\geq n\land k\in\mathbb{N}^+\right\}\right\}$$
 
 *** 性质
 
@@ -5318,6 +5336,34 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 则根据有 $\phi(x)\in\mathcal{Z}(f(x))$ 由于 $\int_Ef(x)dx=\sup\left\{\mathcal{Z}(f(x))\right\}$ 故有 $\int_Ef(x)dx\geq\int_E\phi(x)dx$
 
 由于 $\phi(x)$ 的任意性，由反证法易证 $\int_Ef(x)dx\geq\int_Eg(x)dx$
+
+***** 推论1
+
+若在 $E$ 上[[MK190][几乎处处]]满足 $f(x)\geq g(x)$ 则亦有 $$\int_Ef(x)dx\geq\int_Eg(x)dx$$
+
+****** 证明
+
+定义 $E=E'\cup E_0$ 其中 $\varphi(E_0)=0$ 且 $\forall x\in E'\rightarrow f(x)\geq g(x)$
+
+故根据[[MK220][性质1]]可得 $$\int_{E'}f(x)dx\geq\int_{E'}g(x)dx$$
+
+则根据[[MK225][性质2]]以及[[MK233][性质4]]可得 $$\int_{E}f(x)dx=\int_{E'}f(x)dx+\int_{E_0}f(x)dx=\int_{E'}f(x)dx$$
+
+同理可证 $$\int_{E}g(x)dx=\int_{E'}g(x)dx$$ 故有 $$\int_Ef(x)dx\geq\int_Eg(x)dx$$
+
+***** 推论2<<MK234>>
+
+若在 $E$ 上[[MK190][几乎处处]]满足 $f(x)=0$ 则亦有 $$\int_Ef(x)dx=0$$
+
+****** 证明
+
+定义 $E=E'\cup E_0$ 其中 $\varphi(E_0)=0$ 且 $\forall x\in E'\rightarrow f(x)=0$
+
+根据[[MK225][性质2]]以及[[MK233][性质4]]可得 $$\int_{E}f(x)dx=\int_{E'}f(x)dx+\int_{E_0}f(x)dx=\int_{E'}f(x)dx$$
+
+显然在 $E'$ 上 $f(x)$ 恒等于 $0$ 是非负[[MK178][简单函数]]
+
+故根据[[MK226][运算]]有 $$\int_{E'}f(x)dx=\varphi(E')\cdot 0=0$$
 
 **** 性质2<<MK225>>
 
@@ -5478,3 +5524,25 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 显然 $\phi(x)$ 非负[[MK178][简单函数]]，故根据[[MK213][定义]]、[[MK226][运算]]以及零测集可得 $$\int_{E_0}\phi(x)dx=\varphi(E_0)\cdot+\infty=0$$
 
 综上所述，根据[[MK5][三岐性]]可得 $$\int_{E_0}f(x)dx=0$$
+
+**** 性质5
+
+若非负[[MK134][可测函数]] $f(x)$ 满足 $$\int_Ef(x)dx=0$$ 则 $f(x)$ 在 $E$ 上[[MK190][几乎处处]]为零
+
+***** 证明
+
+定义 $E'=\left\{x\big|f(x)>0\land x\in E\right\}$ 定义 $E_0=E-E'$
+
+定义 $E_i=\left\{x\big|f(x)\geq\frac{1}{i}\land x\in E\right\}$ 则显然 $E'=\bigcup_{i=1}^\infty E_i$
+
+对于任意 $i\in\mathbb{N}^+$ 可得
+
+根据[[MK220][性质1]]及[[MK213][定义]] $$\int_{E_i}f(x)dx\geq\int_{E_i}\frac{1}{i}dx=\varphi(E_i)\frac{1}{i}$$ ，根据 $E_i\subset E$ 及[[MK227][推论]] $$0=\int_{E}f(x)dx\geq\int_{E_i}f(x)dx$$
+
+最终有 $0\geq\varphi(E_i)\frac{1}{i}\geq0$ ，则根据[[MK5][三岐性]]可得 $\varphi(E_i)\frac{1}{i}=0$ 即 $\varphi(E_i)=0$
+
+又根据[[MK61][次可数可加性]]可得 $\varphi(E')=\varphi\left(\bigcup_{i=1}^\infty E_i\right)\leq\sum_{i=1}^\infty\varphi(E_i)=0$
+
+结合[[MK61][非负性]]以及[[MK5][三岐性]]可得 $\varphi(E')=0$
+
+
