@@ -102,3 +102,6 @@ norddisconn:
 	echo $(PW) | sudo -S nordvpn d
 	sudo rm /etc/resolv.conf
 	sudo cp ./OpenVPN/resolv.conf /etc/	
+
+restart_net:
+	echo $(PW) | sudo -S systemctl restart NetworkManager
