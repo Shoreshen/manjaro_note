@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 340
+currnet mark: 341
 
 图论: P40
 
@@ -520,7 +520,7 @@ A\cap\left(\bigcup_{\lambda\in\Lambda} C_\lambda\right)&=\bigcup_{\lambda\in\Lam
 A\cup\left(\bigcap_{\lambda\in\Lambda} C_\lambda\right)&=\bigcap_{\lambda\in\Lambda}A\cup C_\lambda\\
 \end{aligned}
 
-**** 集合族运算与差
+**** 集合族运算与差<<MK341>>
 
 \begin{aligned}
 A-\left(\bigcup_{\lambda\in\Lambda} C_\lambda\right)&=\bigcup_{\lambda\in\Lambda}A- C_\lambda\\
@@ -3751,9 +3751,11 @@ $B$ 的下确界： $b$ 下界的最大元
 
 若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，则定义 $B=\left\{c\cdot a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^+$
 
-则有 $\sup\{B\}=c\cdot\sup\{A\}$
+则有 $\sup\{B\}=c\cdot\sup\{A\}$ 以及 $\inf\{B\}=c\cdot\inf\{A\}$ 
 
 ****** 证明
+
+仅证上确界，下确界类似易证
 
 定义 $h_B=\sup\{B\}$ 根据以下证明可得 $\frac{h_B}{c}=\sup\{A\}$
 
@@ -4605,7 +4607,7 @@ $E$ 表示边的[[MK11][多重集合]]，且是[[MK42][有限集]]。附带重�
 
 若[[MK221][有向图]] $D=<V,E>$ 有[[MK238][圈]]的充要条件是存在子图 $D_1=<V_1,E_1>$ 
 
-满足 $\forall v\in V_1\rightarrow d^+(v)>0\land d^-(v)》0$ 
+满足 $\forall v\in V_1\rightarrow d^+(v)>0\land d^-(v)>0$ 
 
 ****** 证明
 

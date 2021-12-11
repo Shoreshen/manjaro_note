@@ -4,7 +4,7 @@
 
 current video: P36
 
-current mark: 234
+current mark: 235
 
 * 几乎处处<<MK190>>
 
@@ -596,7 +596,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ***** 证明
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-补与减]]可得 $S_1-S_2=S_1\cap S^c_2$ 根据[[MK50][定义]]中（3）以及[[MK67][交封闭]]得 $S_1\cap S_2^c\in\sigma(X)$
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK334][补与减]]可得 $S_1-S_2=S_1\cap S^c_2$ 根据[[MK50][定义]]中（3）以及[[MK67][交封闭]]得 $S_1\cap S_2^c\in\sigma(X)$
 
 根据[[MK65][Caratheodory定理]]可得若 $S_2$ 外测度可测，则满足 $\varphi(S_1)=\varphi(S_1\cap S_2)+\varphi(S_1-S_2)$
 
@@ -2615,7 +2615,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 *** 正则性<<MK79>>
 
-在[[MK52][勒贝格测度]]定义下，任意有界[[MK13][区间]] $I=\prod_{i=1}^n[a_i,b_i]\in\mathbb{R}^n$ 其中乘法为[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-直积]]
+在[[MK52][勒贝格测度]]定义下，任意有界[[MK13][区间]] $I=\prod_{i=1}^n[a_i,b_i]\subset\mathbb{R}^n$ 其中乘法为[[~/OneDrive/离散数学/Disc_Math.org::MK153][直积]]
 
 其外测度等于区间测度 $m^*(I)=|I|=\prod_{i=1}^n(b_i-a_i)$ 乘法为[[MK4][实数乘法]]
 
@@ -2690,6 +2690,24 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 故得 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}=\inf\left\{\sum_{i=1}^\infty |I'_i|\big|E\subset\bigcup_{i=1}^\infty I'_i\right\}=m^*(E')$
 
 证毕 
+
+*** 倍数性质<<MK235>>
+
+对于 $E\subset\mathbb{R}^n$ 定义 $\alphaE=\left\{\alpha x\big|x\in E\right\}$ 其中 $\alpha\in\mathbb{R}$ 则有 $m^*(\alpha E)=\alpha^n m^*(E)$
+
+**** 证明
+
+根据[[MK51][定义]]可得 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 对于任意一组满足条件的 $\{I_i\}$
+
+对于任意 $\vec{x}\in E$ 存在 $i$ 满足 $\vec{x}=(x_1,...,x_m)\in I_i=\prod_{j=1}^n\left(a_j,b_j\right)$ 即有 $a_j<x_j<b_j$
+
+则根据[[MK5][运算相容]]可得 $\alpha a_j<\alpha x_j<\alpha b_j$ 则易证 $\alpha\vec{x}\in\alpha I_i$ ，进一步易证 $E\subset\bigcup_{i=1}^\infty I_i\leftrightarrow\alpha E\subset\bigcup_{i=1}^\infty\alpha I_i$
+
+则有 $m^*(\alpha E)=\inf\left\{\sum_{i=1}^\infty |\alpha I_i|\big|\alpha E\subset\bigcup_{i=1}^\infty \alpha I_i\right\}=\inf\left\{\sum_{i=1}^\infty |\alpha I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$
+
+根据[[MK52][区间测度]]定义可得 $|\alpha I_i|=\alpha^n|I_i|$ ，则 $m^*(\alpha E)=\inf\left\{\alpha^n\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK340][定理4]]可得 $m^*(\alpha E)=\alpha^n\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}=\alpha^n m^*(E)$
 
 ** 可测集<<MK81>>
 
@@ -2777,9 +2795,13 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 （7） 若 $S$ 可测，则 $\forall\vec{y}\in\mathbb{R}^n$ 有 $S'=\left\{\vec{x}+\vec{y}\big|\vec{x}\in S\right\}$ 亦可测，且 $m^*(S')=m^*(S)$
 
+（8） 若 $S\subset\mathbb{R}^n$ 可测，则 $\forall \alpha\in\mathbb{R}$ 有 $S'=\left\{\alpha\vec{x}\big|\vec{x}\in S\right\}$ 亦可测，且 $m^*(S')=\alpha^n m^*(S)$
+
 **** 证明
 
 根据[[MK66][外测度满足证明]]以及[[MK65][Caratheodory定理]]可得 $M$ 构成[[MK50][ $\sigma$ 代数]]且 $m^*:\mathbb{R}^n\to\mathbb{R}$ 是[[MK56][测度]]
+
+***** （1）~（6）
 
 根据 $\sigma$ 代数定义（2）可得（1）
 
@@ -2791,13 +2813,29 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据[[MK73][递增封闭]]以及[[MK75][递减封闭]]可得（5）和（6）
 
-证明（7），由于 $S$ 可测，则有 $\forall A\subset X\rightarrow m^*(A)=m^*(A\cap S)+m^*(A/S)$
+***** 证明（7）
+
+由于 $S$ 可测，则有 $\forall A\subset X\rightarrow m^*(A)=m^*(A\cap S)+m^*(A/S)$
 
 对于任意 $A'\in X$ 均有 $A=\left\{\vec{x}-\vec{y}\big|\vec{x}\in A\right\}$ 故对于任意 $A'\cap S'$ 以及 $A'/S'$ 均有 $A\cap S,A/S$ 对应
 
 根据[[MK95][平移不变性]]有 $m^*(S')=m^*(S)\land m^*(A\cap S)=m^*(A'\cap S')\land m^*(A/S)=m^*(A'/S')$
 
 则显然有 $\forall A'\subset X\rightarrow m^*(A')=m^*(A'\cap S')+m^*(A'/S')$ 即 $S'$ 可测，且 $m^*(S')=m^*(S)$
+
+***** 证明（8）
+
+由于 $S$ 可测，则有 $\forall A\subset X\rightarrow m^*(A)=m^*(A\cap S)+m^*(A/S)$
+
+当 $\alpha=0$ 时 $S'={0}$ 显然成立，则当 $\alpha\ne0$ 时
+
+对于任意 $A'\in X$ 均有 $A=\left\{\frac{\vec{x}}{\alpha}\big|\vec{x}\in A\right\}$ 故对于任意 $A'\cap S'$ 以及 $A'/S'$ 均有 $A\cap S,A/S$ 对应
+
+根据[[MK235][倍数性质]]有 $m^*(S')=\alpha^n m^*(S)\land\alpha^n m^*(A\cap S)=m^*(A'\cap S')\land\alpha^n m^*(A/S)=m^*(A'/S')$
+
+故有 $m^*(A'\cap S')+m^*(A'/S')=\alpha^n m^*(A\cap S)+\alpha^n m^*(A/S)=\alpha^n m^*(S)=m^*(S')$
+
+即 $S'$ 可测，且 $m^*(S')=\alpha^n m^*(S)$
 
 *** 区间可测<<MK82>>
 
@@ -2913,7 +2951,25 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 由于 $\infty\not\in\mathbb{R}$ 则显然有 $E=\bigcup_{i=1}^\infty E_i$ 根据[[MK90][之前证明]]对于每一个 $E_i$ 均有引理（1）成立
 
-故对于任意 $\forall\epsilon>0\land\epsilon\in\mathbb{R}$ 定义 $G_i$ 为满足 $m^*(G_i-E_i)<\frac{\epsilon}{2^i}$ 的开集，定义 $G=\bigcup_{i=1}^\infty G_i$
+故对于任意 $\forall\epsilon>0\land\epsilon\in\mathbb{R}$ 定义 $G'_i$ 为满足 $m^*(G'_i-E_i)<\frac{\epsilon}{2^i}$ 的开集
+
+进一步定义 $G_i=G'_i\cap K_i$ 由于有 $E_i\subset K_i\land E_i\subset G'_i$ 故显然 $E_i\subset G_i$
+
+且由于 $G_i\subset G'_i$ 故易证 $G_i-E_i\subset G'_i-E_i$ 则根据[[MK57][次可加性]]可得 $m^*(G_i-E_i)\leq m^*(G_i-E_i)<\frac{\epsilon}{2^i}$
+
+定义 $G=\bigcup_{i=1}^\infty G_i$ 则对于任意 $x\in G-E=\bigcup_{i=1}^\infty G_i-E$ 存在 $i^*$ 满足 $x\in G_{i^*}\land x\not\in E$
+
+由于 $E_{i^*}=E\cap K_{i^*}$ 故有 $x\not\in E_{i^*}$ 即 $x\in G_{i^*}-E_{i^*}$ 显然 $x\in\bigcup_{i=1}^\infty(G-E)$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $G-E\subset\bigcup_{i=1}^\infty(G-E)$
+
+同理对于任意 $x\in\bigcup_{i=1}^\infty(G-E)$ 存在 $i^*$ 满足 $x\in G_{i^*}\land x\not\in E_{i^*}$ ，则有 $x\in G$
+
+由于 $G_{i^*}\subset K_{i^*}$ 则有 $x\in K_{i^*}$ ，又由于 $x\not\in E_{i^*}=E\cap K_{i^*}$ 故必有 $x\not\in E$
+
+即 $x\in G-E$ 同理根据[[~/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $\bigcup_{i=1}^\infty(G-E)\subset G-E$
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $G-E=\bigcup_{i=1}^\infty(G-E)$
 
 则有 $m^*(G-E)=m^*\left(\bigcup_{i=1}^\infty(G_i-E_i)\right)\leq\sum_{i=1}^\infty m^*(G_i-E_i)<\sum_{i=1}^\infty\frac{\epsilon}{2^i}=\epsilon$
 
@@ -3123,7 +3179,7 @@ Borel集中元素均为可测集
 
 ****** 证明
 
-若 $S\subset\mathbb{R}^n\land m^*(S)=0$ 取任意 $T\subset\mathbb{R}^n$ 可得 $T\cap S\subset S$ 以及 $T/A\subset T$
+若 $S\subset\mathbb{R}^n\land m^*(S)=0$ 取任意 $T\subset\mathbb{R}^n$ 可得 $T\cap S\subset S$ 以及 $T/S\subset T$
 
 根据[[MK60][单调性]]可得 $m^*(T\cap S)\leq m^*(S)\land m^*(T/S)\leq m^*(T)$ 
 
@@ -3145,7 +3201,7 @@ Borel集中元素均为可测集
 
 根据[[MK54][非负性]]可得 $m^*(T)\geq 0$ 根据[[MK5][三歧性]]可得 $m^*(T)=0$
 
-根据[[MK88][可测性]]可得 $T$ 可测 
+根据[[MK94][可测性]]可得 $T$ 可测 
 
 ***** 可数零测
 
@@ -3159,7 +3215,7 @@ Borel集中元素均为可测集
 
 根据[[MK54][非负性]]可得 $m^*\left(\bigcup_{i=1}^\infty S_i\right)\geq 0$ 根据[[MK5][三歧性]]可得 $m^*\left(\bigcup_{i=1}^\infty S_i\right)=0$
 
-根据[[MK88][可测性]]可得 $\bigcup_{i=1}^\infty S_i$ 可测 
+根据[[MK94][可测性]]可得 $\bigcup_{i=1}^\infty S_i$ 可测 
 
 ** 不可测集
 
