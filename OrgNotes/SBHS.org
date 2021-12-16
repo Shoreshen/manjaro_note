@@ -4,7 +4,7 @@
 
 current video: P36
 
-current mark: 235
+current mark: 251
 
 * 几乎处处<<MK190>>
 
@@ -3759,9 +3759,9 @@ Borel集中元素均为可测集
 
 ** 可测函数<<MK134>>
 
-对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}_e$ 其中 $\mathbb{R}_e=\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e,E\subset X$ 其中 $\mathbb{R}_e=\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
 
-定义 $<E,\varphi>$ 其中 $\varphi$ 是 $E$ 上的[[MK61][外侧度]]，进一步定义 $\mathcal{M}\subset\rho(E)$ 是 $E$ 上所有的[[MK65][外测度可测集]]族
+进一步定义 $\mathcal{M}\subset\rho(X)$ 是 $X$ 上所有的[[MK65][外测度可测集]]族
 
 则若 $f$ 满足 $\forall a\in\mathbb{R}\rightarrow f^{-1}((a,+\infty])\in\mathcal{M}$ 则 $f$ 是可测函数。其中 $f^{-1}((a,+\infty])$ 为函数的[[MK151][原相]]
 
@@ -4087,6 +4087,66 @@ Borel集中元素均为可测集
 则显然 $\{\phi^+_i(x)-\phi^-_i(x)\}$ 根据极限运算可得收敛于 $f^+(x)-f^-(x)$
 
 进一步根据[[MK199][正负部定义]]有 $f(x)=f^+(x)-f^-(x)$
+
+**** 定理6<<MK236>>
+
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e,E\subset X$
+
+若 $\varphi(E)=0$ 则 $f(x)$ 为[[MK134][可测函数]]
+
+***** 证明
+
+对于任意[[MK151][原相]] $f^{-1}((a,\infty]),a\in\mathbb{R}$ 必有 $f^{-1}((a,\infty])\subset E$
+
+根据[[MK94][可测性]]以及[[MK128][子集零测]]可得 $f^{-1}((a,\infty])$ 是[[MK65][外测度可测集]]
+
+故得 $f(x)$ 是[[MK143][可测函数]]
+
+**** 定理7<<MK239>>
+
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[MK143][可测函数]] $f:E\to\mathbb{R}_e,E\subset X$ ，则对于任意 $A\subset E$ 且 $A$ 是[[MK174][可测集]]
+
+定义 $g:A\to\mathbb{R}_e$ 满足 $g(x)=f(x),x\in A$ 则 $g(x)$ 亦是[[MK143][可测函数]]
+
+***** 证明
+
+对于任意 $a\in\mathbb{R},x\in g^{-1}((a,+\infty])$ 均有 $f(x)=g(x)>a\land x\in A\subset E$
+
+即 $x\in f^{-1}((a,\infty])\cap A$ 故有 $g^{-1}((a,+\infty])\subset\left(f^{-1}((a,\infty])\cap A\right)$
+
+类似易证 $\left(f^{-1}((a,\infty])\cap A\right)\subset g^{-1}((a,+\infty])$ 故根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $g^{-1}((a,+\infty])=\left(f^{-1}((a,\infty])\cap A\right)$
+
+由于 $f(x)$ 可测，则有 $A,f^{-1}((a,\infty])$ 均是[[MK174][可测集]]
+
+根据[[MK65][Caratheodory定理]]可测集是[[MK50][ $\sigma$ 代数]]，并根据[[MK67][交封闭]]可得 $f^{-1}((a,\infty])\cap A$ 亦是可测集
+
+综上所述，对于任意 $a\in\mathbb{R}$ 均有 $g^{-1}((a,+\infty])$ 是可测集，故 $g(x)$ 是[[MK143][可测函数]]
+
+**** 定理8<<MK244>>
+
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[MK143][可测函数]] $f:E\to\mathbb{R}_e,E\subset X$
+
+若 $g:E\to\mathbb{R}_e$ 与 $f(x)$ [[MK190][几乎处处]]相等，则 $g(x)$ 亦可测
+
+***** 证明
+
+由于几乎处处相等，则有 $\varphi(E')=\varphi\left(\left\{x\big|f(x)\ne g(x)\right\}\right)=0$
+
+根据[[MK94][可测性]]以及[[MK65][Caratheodory定理]]可得 $E',E-E'$ 均是[[MK174][可测集]]
+
+则对于任意 $a\in\mathbb{R}$ 有 $g^{-1}((a,\infty])\subset E$
+
+故可得 $g^{-1}((a,\infty])=\left(g^{-1}((a,\infty])\cap E'\right)\cup\left(g^{-1}((a,\infty])\cap(E-E')\right)$
+
+由于几乎处处相等，故当 $x\in E-E'$ 时有 $f(x)=g(x)$
+
+则 $g^{-1}((a,\infty])\cap(E-E')=f^{-1}((a,\infty])\cap(E-E')$
+
+由于 $f(x)$ 是可测函数，故有 $f^{-1}((a,\infty])$ 是[[MK174][可测集]]
+
+则易证 $g^{-1}((a,\infty])\cap(E-E')$ 是[[MK174][可测集]]，有根据[[MK128][子集零测]]可得 $g^{-1}((a,\infty])\cap E'$ 亦是[[MK174][可测集]]
+
+综上所述 $g^{-1}((a,\infty])$ 是[[MK174][可测集]]，故 $g(x)$ 是可测函数
 
 *** 运算
 
@@ -4955,7 +5015,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 *** 定义<<MK213>>
 
-定义结构 $<E,\varphi>$ 其中 $E$ 是定义域 $\varphi$ 是[[MK61][外侧度]]
+定义[[MK212][外侧度空间]] $<E,\varphi>$ 其中 $E$ 是定义域 $\varphi$ 是[[MK61][外侧度]]
 
 定义非负[[MK178][简单函数]] $f(x)=\sum_{i=1}^s c_i\chi_{E_i}(x)$ 其中符号定义与[[MK178][之前]]相符，且 $c_i>0$
 
@@ -5095,6 +5155,8 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 *** 定义<<MK219>>
 
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 其中 $X$ 是定义域 $\varphi$ 是[[MK61][外侧度]]
+
 对于非负[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ 其勒贝格积分定义为 $$\int_Ef(x)dx=\sup\left\{\int_E\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_E(f(x))\right\}$$
 
 其中 $\mathcal{Z}_E(f(x))$ 是 $f(x)$ 的[[MK223][目标函数集]]
@@ -5109,13 +5171,13 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 即满足 $\forall x\in E\rightarrow\phi(x)\leq f(x)$ 的非负[[MK178][简单函数]]的集合
 
-**** 勒贝格可积
+**** 勒贝格可积<<MK247>>
 
 若有非负[[MK134][可测函数]] $f(x)$ 满足 $\int_E f(x)dx<\infty$ 则称其为勒贝格可积
 
-***** 引理1
+***** 引理1<<MK238>>
 
-定义[[MK212][外侧度空间]] $<E,\varphi>$ ，若 $f(x)$ 勒贝格可积，则 $\varphi(f^{-1}(\{+\infty\}))=0$
+若 $f(x)$ 勒贝格可积，则 $\varphi(f^{-1}(\{+\infty\}))=0$
 
 ****** 证明
 
@@ -5123,25 +5185,25 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 根据[[MK135][性质]]可得 $f^{-1}\left(\bigcap_{k=1}^\infty[k, +\infty]\right)=\bigcap_{k=1}^\infty f^{-1}\left([k, +\infty]\right)$
 
-则根据[[MK220][性质1]]有 $$\int_{f^{-1}([k,+\infty])}f(x)dx\geq \int_{f^{-1}([k,+\infty])}ndx$$
+由于 $\forall x\in f^{-1}([k,\infty])\rightarrow f(x)\geq k$ 故根据[[MK220][性质1]]有 $$\int_{f^{-1}([k,+\infty])}f(x)dx\geq \int_{f^{-1}([k,+\infty])}kdx$$
 
 显然非负常值函数是非负[[MK178][简单函数]]故根据[[MK213][定义]]可得 $$\int_{f^{-1}([k,+\infty])}kdx=k\varphi(f^{-1}([k,+\infty]))$$
 
-又由于 $f^{-1}([k,+\infty])\subset E$ 故有 $$\int_{f^{-1}([k,+\infty])}f(x)dx=\int_Ef(x)\cdot\chi_{f^{-1}([k,+\infty])}(x)dx$$
+又由于 $f^{-1}([k,+\infty])\subset E$ 故有 $$\int_{f^{-1}([k,+\infty])}kdx=\int_Ek\cdot\chi_{f^{-1}([k,+\infty])}(x)dx$$
 
-定义 $h(x)=f(x)\cdot\chi_{f^{-1}([k,+\infty])}(x)$ 易证 $h(x)$ 是非负[[MK178][简单函数]]
+定义 $h_k(x)=k\cdot\chi_{f^{-1}([k,+\infty])}(x)$ 易证 $h(x)$ 是非负[[MK178][简单函数]]
 
-且对于任意 $x\in E$ 均有 $h(x)\leq f(x)$ 则根据[[MK220][性质1]]可得 $$\int_Ef(x)dx\geq\int_{f^{-1}([k,+\infty])}f(x)dx$$
+且对于任意 $x\in E,k\in\mathbb{N}$ 均有 $h_k(x)\leq f(x)$ 则根据[[MK220][性质1]]可得 $$\int_Ef(x)dx\geq\int_{E}h_k(x)dx$$
 
-综上所述 $$\int_Ef(x)dx\geq k\varphi(f^{-1}([k,+\infty]))$$ 即 $$\varphi(f^{-1}([k,+\infty]))\leq\frac{1}{k}\int_Ef(x)dx$$
+故有 $$\frac{1}{k}\int_Ef(x)dx\geq \varphi(f^{-1}([k,+\infty]))\geq0$$ 根据极限运算
 
-由于 $\forall k\in\mathbb{N}\rightarrow +\infty\in[k, +\infty]$
+由于 $$\int_Ef(x)dx<\infty$$ 有限，故有 $$\lim_{k\to\infty}\left(\frac{1}{k}\int_Ef(x)dx\right)=0$$ 且由于 $$\lim_{k\to\infty}0=0$$
+
+则根据夹逼定理有 $\lim_{k\to\infty}\varphi(f^{-1}([k,+\infty]))=0$ ，由于 $\forall k\in\mathbb{N}\rightarrow +\infty\in[k, +\infty]$
 
 故根据[[MK61][外侧度定义]]中非负性，单调性，对于任意 $k\in\mathbb{N}$ 均 $\varphi(f^{-1}(\{ +\infty\}))\leq\varphi(f^{-1}([k, +\infty]))$
 
-由于勒贝格可积，故 $$\int_Ef(x)dx<\infty$$ 故有 $$\lim_{k\to\infty}\frac{1}{k}\int_Ef(x)dx=0$$
-
-故得 $\varphi(f^{-1}(\{+\infty\}))=0$
+故用反证法以及极限定义易证 $\varphi(f^{-1}(\{+\infty\}))=0$
 
 **** 非负[[MK178][简单函数]]证明
 
@@ -5207,9 +5269,9 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 定义[[MK212][外侧度空间]] $<E,\varphi>$ ，任意[[MK133][函数]]序列 $\{f_i(x)\}$ 均为 $E\to\mathbb{R}_e$ 的映射
 
-若满足对于任意 $x\in E\land i\in\mathbb{N}^+$
+若满足对于任意 $x\in E\land i\in\mathbb{N}^+$ 有 $f_i(x)\leq f_{i+1}(x)$
 
-则有 $f_i(x)\leq f_{i+1}(x)$ 则 $$\lim_{i\to\infty}\left\{\int_Ef_i(x)dx\right\}=\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx$$
+则 $$\lim_{i\to\infty}\left\{\int_Ef_i(x)dx\right\}=\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx$$
 
 ***** 证明
 
@@ -5323,17 +5385,17 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 以及[[MK219][定义]]中上确界可得  $$\lim_{i\to\infty}\left\{\int_{E'}f_i(x)dx\right\}\geq\int_{E'}f(x)dx=\int_{E'}\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx$$
 
-**** 定理2
+***** 推论<<MK240>>
 
 若 $\{f_i(x)\}$ 是[[MK212][外侧度空间]] $<E,\varphi>$ 上的非负[[MK134][可测函数]]列
 
 则有 $$\int_E\left(\sum_{i=1}^\infty f_i(x)\right)dx=\sum_{i=1}^\infty\left(\int_E f_i(x)dx\right)$$
 
-***** 证明
+****** 证明
 
 定义 $g_n(x)=\sum_{i=1}^nf_i(x)$ 由于非负，故 $g_n(x)$ 递增
 
-根据[[MK181][性质]]可得 $g_n(x)$ 亦为非负[[MK134][可测函数]]，则有
+根据[[MK225][性质]]可得 $g_n(x)$ 亦为非负[[MK134][可测函数]]，则有
 
 \begin{aligned}
 \int_E\left(\sum_{i=1}^\infty f_i(x)\right)dx=&\int_E\left(\lim_{n\to\infty} g_n(x)\right)dx\\
@@ -5375,7 +5437,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 *** 性质
 
-定义[[MK212][外侧度空间]] $<E,\varphi>$ 则
+定义[[MK212][外侧度空间]] $<X,\varphi>$ ，[[MK174][外侧度可测集]] $E\subset X$ 则
 
 **** 性质1<<MK220>>
 
@@ -5393,7 +5455,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于 $\phi(x)$ 的任意性，由反证法易证 $\int_Ef(x)dx\geq\int_Eg(x)dx$
 
-***** 推论1
+***** 推论1<<MK246>>
 
 若在 $E$ 上[[MK190][几乎处处]]满足 $f(x)\geq g(x)$ 则亦有 $$\int_Ef(x)dx\geq\int_Eg(x)dx$$
 
@@ -5485,7 +5547,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 最终有 $$\int_Bf(x)dx\geq\int_Af(x)dx$$
 
-**** 性质3<<MK232>>
+**** 性质3（线性）<<MK232>>
 
 若有非负[[MK134][可测函数]] $f(x),g(x)$ 均为 $E\to\mathbb{R}_e$ 的映射，若 $\{\alpha,\beta\}\subset\mathbb{R}^+$
 
@@ -5600,5 +5662,290 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 又根据[[MK61][次可数可加性]]可得 $\varphi(E')=\varphi\left(\bigcup_{i=1}^\infty E_i\right)\leq\sum_{i=1}^\infty\varphi(E_i)=0$
 
 结合[[MK61][非负性]]以及[[MK5][三岐性]]可得 $\varphi(E')=0$
+
+**** 性质6<<MK241>>
+
+若非负[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ ，定义 $E=\bigcup_{i=1}^\infty E_i$ 且 $\forall \{i,j\}\subset\mathbb{N}\rightarrow E_i\cap E_j=\varnothing$
+
+则有 $$\int_Ef(x)dx=\sum_{i=1}^\infty\int_{E_i}f(x)dx$$
+
+***** 证明
+
+根据[[MK234][推论2]]以及[[MK225][性质2]]可得
+
+\begin{aligned}
+\int_Ef(x)\chi_{E_i}(x)dx=&\int_{E_i}f(x)\chi_{E_i}(x)dx+\int_{E/E_i}f(x)\chi_{E_i}(x)dx\\
+=&\int_{E_i}f(x)dx+\int_{E/E_i}0dx\\
+=&\int_{E_i}f(x)dx
+\end{aligned}
+
+故根据[[MK240][推论]]， $E=\bigcup_{i=1}^\infty E_i$ 以及不相交性有
+
+\begin{aligned}
+\sum_{i=1}^\infty\left\{\int_{E_i}f(x)dx\right\}&=\sum_{i=1}^\infty\left\{\int_{E}f(x)\chi_{E_i}(x)dx\right\}\\
+&=\int_{E}\sum_{i=1}^\infty\left(f(x)\chi_{E_i}(x)\right)dx\\
+&=\int_{E}f(x)dx
+\end{aligned}
+
+**** 性质7<<MK245>>
+
+若非负[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ 与非负函数 $g(x)$ [[MK190][几乎处处]]相等
+
+则 $$\int_Ef(x)dx=\int_Eg(x)dx$$
+
+***** 证明
+
+根据[[MK244][定理8]]可得 $g(x)$ 亦为非负[[MK134][可测函数]]
+
+根据[[MK225][性质2]]以及[[MK233][性质4]]可得 $$\int_Ef(x)dx=\int_{E-E'}f(x)dx$$
+
+由于当 $x\in E-E'$ 时有 $f(x)=g(x)$ 故有 $$\int_{E-E'}f(x)dx=\int_{E-E'}g(x)dx$$
+
+同理可得 $$\int_{E-E'}g(x)dx=\int_{E}g(x)dx$$ 故有 $$\int_Ef(x)dx=\int_Eg(x)dx$$ 
+
+** [[MK134][可测函数]]
+
+*** 定义<<MK237>>
+
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 其中 $X$ 是定义域 $\varphi$ 是[[MK61][外侧度]]
+
+[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e,E\subset X$ 是 $<X,\varphi>$ 上的[[MK134][可测函数]]，则根据[[MK198][引理]]可得 $f(x)=f^+(x)-f^-(x)$
+
+其中 $f^+(x),f^-(x)$ 均为 $<X,\varphi>$ 上的非负[[MK134][可测函数]]，则：
+
+（1） 若 $$\left|\int_Ef^+(x)dx\right|<\infty\lor\left|\int_Ef^-(x)dx\right|<\infty$$ 即至少一个有限时，称 $f(x)$ 在 $E$ 上积分确定
+
+（2） 若积分确定，则定义勒贝格积分 $$\int_Ef(x)dx=\int_Ef^+(x)dx-\int_Ef^-(x)dx$$
+
+（3） 若 $$\left|\int_Ef^+(x)dx\right|<\infty\land\left|\int_Ef^-(x)dx\right|<\infty$$ 即均有限时，称 $f(x)$ 在 $E$ 勒贝格可积
+
+（4） 定义所有 $E$ 上的勒贝格可积函数为 $\mathcal{L}(E)$
+
+*** 性质
+
+定义[[MK212][外侧度空间]] $<X,\varphi>$ ，[[MK174][外侧度可测集]] $E\subset X$ 则
+
+**** 性质1<<MK242>>
+
+若 $\varphi(E)=0\land E\ne\varnothing$ 则对于任意[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e$ 均有 $f(x)\in\mathcal{L}(E)$
+
+且 $$\int_Ef(x)dx=0$$
+
+***** 证明
+
+由于零测集，则根据[[MK236][定理6]]可得 $f(x)$ 为[[MK134][可测函数]]，则根据[[MK198][引理]] $f(x)=f^+(x)+f^-(x)$
+
+由于 $f^+(x),f^-(x)$ 均为非负[[MK134][可测函数]]，则根据[[MK233][性质4]]可得 $$\int_Ef^+(x)dx=\int_Ef^-(x)dx=0$$
+
+故勒贝格可积且 $$\int_Ef(x)dx=\int_Ef^+(x)dx-\int_Ef^-(x)dx=0$$
+
+**** 性质2<<MK251>>
+
+若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e$ 满足 $f(x)\in\mathcal{L}(E)$ 则 $f(x)$ 在 $E$ 上[[MK190][几乎处处]]有限
+
+***** 证明
+
+由于 $f(x)\in\mathcal{L}(E)$ 则根据[[MK237][定义]]可得 $$\int_Ef(x)dx=\int_Ef^+(x)dx-\int_Ef^-(x)dx$$
+
+且 $$\left|\int_Ef^+(x)dx\right|<\infty\land\left|\int_Ef^-(x)dx\right|<\infty$$ 
+
+由于均为非负[[MK134][可测函数]]，则根据[[MK238][引理]]可得 $\varphi(f^{(+ ,{-1})}(\{+ \infty\}))=\varphi(f^{( - ,{-1})}(\{+\infty\}))=0$
+
+又由于 $f(x)=f^+(x)-f^-(x)$ 且必有 $f^+(x)=0\lor f^-(x)=0$ 即至少一个为 $0$
+
+故有 $f^{-1}(\{\infty\})\subset\left\{f^{(+ ,{-1})}(\{+ \infty\})\right\}\cup\left\{f^{( - ,{-1})}(\{+\infty\})\right\}$
+
+故根据[[MK61][外侧度定义]]中非负性，次可数可加性可得 $\varphi(f^{-1}(\{+ \infty\}))=0$
+
+**** 性质3
+
+若[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ [[MK237][积分确定]]，则对于任意 $A\subset E$ 且 $A$ 是[[MK174][可测集]]
+
+则定义 $g:A\to\mathbb{R}_e$ 满足 $g(x)=f(x),x\in A$ 则 $g(x)$ 亦有[[MK237][积分确定]]
+
+***** 证明<<MK249>>
+
+由于[[MK237][积分确定]]，故至少有一个有限，不妨设 $$\int_Ef^+(x)dx<\infty$$
+
+根据[[MK239][定理7]]可得 $g(x)$ 亦为[[MK134][可测函数]]，故亦有 $g(x)=g^+(x)-g^-(x)$
+
+显然易证 $$\int_Ag^+(x)dx=\int_Af^+(x)dx$$ 且均为非负[[MK134][可测函数]]
+
+又由于 $A\subset E$ 故根据[[MK227][推论]]可得 $$\int_Ag^+(x)dx\leq\int_Ef^+(x)dx<\infty$$ 
+
+***** 推论<<MK250>>
+
+若[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ [[MK237][勒贝格可积]]，则对于任意 $A\subset E$ 且 $A$ 是[[MK174][可测集]]
+
+则定义 $g:A\to\mathbb{R}_e$ 满足 $g(x)=f(x),x\in A$ 则 $g(x)$ 亦[[MK237][勒贝格可积]]
+
+****** 证明
+
+[[MK249][同理]]易证，略
+
+**** 性质4<<MK243>>
+
+若[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ [[MK237][积分确定]]，且 $E=A\cupB\land A\cap B=\varnothing$
+
+则有 $$\int_Ef(x)dx=\int_Af(x)dx+\int_Bf(x)dx$$
+
+***** 证明
+
+由于[[MK237][积分确定]]故有 $$\int_Ef(x)dx=\int_Ef^+(x)dx-\int_Ef^-(x)dx$$
+
+且由于 $f^+(x),f^-(x)$ 均为非负[[MK134][可测函数]]，故有 $$\int_Ef^\pm(x)dx=\int_Af^\pm(x)dx+\int_Bf^\pm(x)dx$$
+
+故有 $$\int_Ef(x)dx=\left(\int_Af^+(x)dx-\int_Af^-(x)dx\right)-\left(\int_Bf^+(x)dx-\int_Bf^-(x)dx\right)$$
+
+根据[[MK239][定理7]]可得 $f(x)$ 限制在 $A,B$ 上亦为可测函数
+
+故可得 $$\int_Af(x)dx=\int_Af^+(x)dx-\int_Af^-(x)dx,\int_Bf(x)dx=\int_Bf^+(x)dx-\int_Bf^-(x)dx$$
+
+综上所述 $$\int_Ef(x)dx=\int_Af(x)dx+\int_Bf(x)dx$$
+
+**** 性质5（可数可加性）
+
+若[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ [[MK237][积分确定]]，定义 $E=\bigcup_{i=1}^\infty E_i$ 且 $\forall \{i,j\}\subset\mathbb{N}\rightarrow E_i\cap E_j=\varnothing$
+
+则有 $$\int_Ef(x)dx=\sum_{i=1}^\infty\int_{E_i}f(x)dx$$
+
+***** 证明
+
+由于积分确定以及[[MK241][性质6]]，则有
+
+\begin{aligned}
+\int_Ef(x)dx&=\int_Ef^+(x)dx-\int_Ef^-(x)dx\\
+&=\sum_i^\infty\left\{\int_{E_i}f^+(x)dx\right\}-\sum_i^\infty\left\{\int_{E_i}f^-(x)dx\right\}\\
+&=\sum_i^\infty\left\{\int_{E_i}f^+(x)dx-\int_{E_i}f^-(x)dx\right\}\\
+&=\sum_{i=1}^\infty\int_{E_i}f(x)dx
+\end{aligned}
+
+**** 性质6
+
+若[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ [[MK237][积分确定]]，存在函数 $g(x)$ 与 $f(x)$ [[MK190][几乎处处]]相等
+
+则有 $g(x)$ 亦为积分确定，且 $$\int_Ef(x)dx=\int_Eg(x)dx$$
+
+***** 证明
+
+由于几乎处处相等，故得 $\varphi(E')=\varphi\left(\left\{x\big|f(x)\ne g(x)\right\}\right)=0$
+
+****** 积分确定
+
+由于[[MK237][积分确定]]，故至少有一个有限，不妨设 $$\int_Ef^+(x)dx<\infty$$
+
+根据[[MK244][定理8]]可得 $g(x)$ 亦可测，故根据[[MK198][引理]]亦有 $g(x)=g^+(x)-g^-(x)$
+
+[[MK245][性质7]]及上述条件易证得 $$\int_Ef^+(x)dx=\int_Eg^+(x)dx$$ 故 $g(x)$ 积分确定
+
+****** 等式
+
+根据[[MK242][性质1]]以及[[MK243][性质4]]可得 $$\int_Ef(x)dx=\int_{E-E'}f(x)dx$$
+
+由于当 $x\in E-E'$ 时有 $f(x)=g(x)$ 故有 $$\int_{E-E'}f(x)dx=\int_{E-E'}g(x)dx$$
+
+同理可得 $$\int_{E-E'}g(x)dx=\int_{E}g(x)dx$$ 
+
+**** 性质7
+
+若[[MK134][可测函数]] $f:E\to\mathbb{R}_e,g:E\to\mathbb{R}_e$ [[MK237][积分确定]]，且有 $f(x)\leq g(x)$ [[MK190][几乎处处]]成立
+
+故有 $$\int_Ef(x)dx\leq\int_Eg(x)dx$$
+
+***** 证明
+
+由于积分确定，则有 $$\int_Ef(x)dx=\int_Ef^+(x)dx-\int_Ef^-(x)dx$$
+
+以及 $$\int_Eg(x)dx=\int_Eg^+(x)dx-\int_Eg^-(x)dx$$
+
+由于 $f(x)\leq g(x)$ 故有 $f^+(x)\leq g^+(x),f^-(x)\geq g^-(x)$
+
+均为非负可测函数，则根据[[MK246][推论1]]有 $$\int_Ef^+(x)dx\leq\int_Eg^+(x)dx,\int_Ef^-(x)dx\geq\int_Eg^-(x)dx$$
+
+故得 $$\int_Ef(x)dx\leq\int_Eg(x)dx$$
+
+**** 性质8（绝对可积）<<MK248>>
+
+[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ 有 $f(x)\in\mathcal{L}(E)\leftrightarrow |f(x)|\in\mathcal{L}(E)$
+
+且 $$\int_E|f(x)|dx=\int_Ef^+(x)dx+\int_Ef^-(x)dx$$  
+
+***** 证明
+
+由于可测函数，故根据[[MK198][引理]]有 $f(x)=f^+(x)-f^-(x)$
+
+由于勒贝格可积，故[[MK237][积分确定]]，则 $$\int_Ef(x)dx=\int_Ef^+(x)dx-\int_Ef^-(x)dx$$
+
+由于是[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，则通过唯一性易证 $|f(x)|=f^+(x)+f^-(x)$
+
+显然 $|f(x)|$ 是非负[[MK134][可测函数]]，则根据[[MK225][线性]]可得 $$\int_E|f(x)|dx=\int_Ef^+(x)dx+\int_Ef^-(x)dx$$ 
+
+根据[[MK247][定义]]可得当 $$\int_E|f(x)|dx<\infty$$ 时 $|f(x)|$ 勒贝格可积
+
+故当其中任一函数勒贝格可积时有 $$\int_Ef^+(x)dx<\infty\land\int_Ef^-(x)dx<\infty$$
+
+则可推出另一函数勒贝格积分有限，即勒贝格可积
+
+**** 性质10（绝对连续性）
+
+[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ [[MK237][勒贝格可积]] $f(x)\in\mathcal{L}(E)$
+
+对于任意 $\epsilon>0$ 存在 $\delta>0$ 对于任意[[MK174][可测集]] $A$ 满足 $A\subset E\land \varphi(A)<\delta$
+
+则有 $$\left|\int_Af(x)dx\right|\leq\int_A|f(x)|dx<\epsilon$$
+
+***** 证明
+
+****** 左不等式
+
+由于勒贝格可积且 $A$ 是[[MK174][可测集]]，则根据[[MK250][推论]]有 $$\left|\int_Af(x)dx\right|=\left|\int_Af^+(x)dx-\int_Af^-(x)dx\right|$$
+
+根据[[MK248][绝对可积]]有 $$\int_A|f(x)|dx=\int_Af^+(x)dx+\int_Af^-(x)dx$$
+
+且由于 $f^+(x),f^-(x)$ 非负，故易证 $$\left|\int_Af(x)dx\right|\leq\int_A|f(x)|dx$$
+
+****** 右不等式
+
+根据[[MK248][绝对可积]]可得 $$\int_E|f(x)|dx<\infty$$ 根据[[MK251][性质2]]可得 $|f(x)|$ 在 $E$ 上[[MK190][几乎处处]]有限
+
+故得 $\varphi(E')=\varphi\left(\left\{x\big|f(x)=\infty\right\}\right)=0$ 进一步定义 $A\cap E'=A'$
+
+根据[[MK242][性质1]]，[[MK243][性质4]]可得 $$\int_A|f(x)|dx=\int_{A'}|f(x)|dx,\int_E|f(x)|dx=\int_{E'}|f(x)|dx$$
+
+根据[[MK65][Caratheodory定理]]以及 $E,A$ 是[[MK174][可测集]]易证 $\varphi(A)=\varphi(A')$
+
+由于 $|f(x)|$ 是非负[[MK134][可测函数]]，则 $$\int_{E'}|f(x)|dx$$ 根据[[MK219][定义]]是[[MK223][目标函数集]] $\mathcal{Z}_{E'}(f(x))$ 的上确界
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界定义]]可得对于任意 $s>0$ 均有 $\phi(x)\in\mathcal{Z}_{E'}(f(x))$ 满足 $$\int_{E'}\phi(x)dx\leq\int_{E'}f(x)dx<\int_{E'}\phi(x)dx+s$$
+
+取 $s=\frac{\epsilon}{2}$ 即 $$0\leq\int_{E'}f(x)dx-\int_{E'}\phi(x)dx<\frac{\epsilon}{2}$$ 进一步结合[[MK220][性质1]]有
+
+\begin{aligned}
+\int_{E'}f(x)dx-\int_{E'}\phi(x)dx&=\int_{A'}f(x)dx+\int_{E'/A'}f(x)dx-\int_{A'}\phi(x)dx-\int_{E'/A'}\phi(x)dx\\
+&=\int_{A'}f(x)dx-\int_{A'}\phi(x)d+\int_{E'/A'}f(x)dx-\int_{E'/A'}\phi(x)dx\\
+\end{aligned}
+
+又由于 $\phi(x)\in\mathcal{Z}_{E'}(f(x))$ 故根据[[MK225][性质2]] $$\int_{E'/A'}f(x)dx\geq\int_{E'/A'}\phi(x)dx$$
+
+故有 $$\frac{\epsilon}{2}>\int_{E'}f(x)dx-\int_{E'}\phi(x)dx\geq\int_{A'}f(x)dx-\int_{A'}\phi(x)dx$$
+
+由于 $\phi(x)\in\mathcal{Z}_E(f(x))$ 故 $\phi(x)$ 是[[MK187][简单函数]]
+
+由于 $x\in E'\rightarrow|f(x)|<\infty$ 且简单函数仅有有限个不同值，易证存在 $M>0$ 满足 $\forall x\in E'\rightarrow M\geq\phi(x)$
+
+取 $\delta = \frac{\epsilon}{2M}$ 则根据[[MK225][性质2]] $$\int_{A'}\phi(x)dx\leq\int_{A'}Mdx=\varphi(A')M<\frac{\epsilon}{2M}M=\frac{\epsilon}{2}$$
+
+故综上所述，对于任意 $\varphi(A)=\varphi(A')<\delta$ 有
+
+\begin{aligned}
+\int_{A}|f(x)|dx&=\int_{A'}|f(x)|dx\\
+&=\int_{A'}\phi(x)dx+\int_{A'}|f(x)|dx-\int_{A'}\phi(x)dx\\
+&\leq\int_{A'}\phi(x)dx+\int_{E'}|f(x)|dx-\int_{E'}\phi(x)dx\\
+&<\frac{\epsilon}{2}+\frac{\epsilon}{2}\\
+&=\epsilon
+\end{aligned}
+
+
+
 
 
