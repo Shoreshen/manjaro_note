@@ -130,18 +130,14 @@ nameserver 192.168.0.1
 
 ```
 Could you please try connecting to these servers:
-Japan #558 - 139.162.81.152 - jp558.nordvpn.com
-Japan #560 - 139.162.81.202 - jp560.nordvpn.com
-Japan #560 - 139.162.81.138 - jp560.nordvpn.com
-Japan #598 - 139.162.81.129 - jp598.nordvpn.com
-Japan #598 - 139.162.81.204 - jp598.nordvpn.com
-Japan #598 - 139.162.81.166 - jp598.nordvpn.com
-Japan #598 - 139.162.81.219 - jp598.nordvpn.com
-Japan #599 - 139.162.81.145 - jp599.nordvpn.com
-Japan #599 - 139.162.81.241 - jp599.nordvpn.com
-United States #5783 - 74.207.240.10 - us5783.nordvpn.com
-United States #5784 - 74.207.254.242 - us5784.nordvpn.com
-United States #5784 - 74.207.240.91 - us5784.nordvpn.com
+Japan #2563 - 139.162.127.30 - jp558.nordvpn.com
+Japan #2564 - 139.162.127.32 - jp560.nordvpn.com
+Japan #2565 - 139.162.127.58 - jp598.nordvpn.com
+Japan #2566 - 139.162.127.62 - jp599.nordvpn.com
+Japan #2567 - 139.162.127.65 - jp558.nordvpn.com
+Japan #2568 - 139.162.127.67 - jp560.nordvpn.com
+Japan #2569 - 139.162.127.75 - jp598.nordvpn.com
+Japan #2570 - 139.162.127.98 - jp599.nordvpn.com
 ```
 
 # Chromium keyring

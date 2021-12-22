@@ -4,7 +4,7 @@
 
 current video: P36
 
-current mark: 251
+current mark: 253
 
 * 几乎处处<<MK190>>
 
@@ -3850,6 +3850,29 @@ Borel集中元素均为可测集
 根据[[MK161][定理2]]可得 $f_2(x)$ 可测，则根据[[MK172][确界运算]]可得 $\sup(A(x))$ 可测，即[[MK173][正部]]可测
 
 同理可证负部亦[[MK143][可测]]
+
+**** 引理2<<MK252>>
+
+若 $f(x)$ 是[[MK143][可测函数]]，则 $|f(x)|=f^+(x)+f^-(x)$
+
+***** 证明
+
+由于是[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，则对于任意 $x\in E$ 可得存在唯一 $f(x)\in\mathbb{R}_e$ 满足 $<x,f(x)>\in f$ 
+
+根据[[MK5][三岐性]]可知 $f(x),0$ 仅有一种序关系，故：
+
+（1） 当 $f(x)>0$ 时根据[[MK99][定义]]可得 $f^-(x)=0\land f^+(x)>0$ 即 $f(x)=f^+(x)+f^-(x)$
+
+（2） 当 $f(x)<0$ 时根据[[MK99][定义]]可得 $f^-(x)>0\land f^+(x)=0$ 即 $f(x)=f^+(x)+f^-(x)$
+
+（3） 当 $f(x)=0$ 时根据[[MK99][定义]]可得 $f^-(x)=f^+(x)=0$
+
+根据绝对值定义，当 $f(x)\geq 0$ 时 $f(x)=|f(x)|$ 
+
+当 $f(x)<0$ 时 $-f(x)=|f(x)|$ 即 $|f(x)|=f^+(x)+f^-(x)$
+
+综上所述，对于任意 $f(x)$ 均有 $|f(x)|=f^+(x)+f^-(x)$
+
 *** 定理
 
 **** 定理1
@@ -5876,7 +5899,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于勒贝格可积，故[[MK237][积分确定]]，则 $$\int_Ef(x)dx=\int_Ef^+(x)dx-\int_Ef^-(x)dx$$
 
-由于是[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，则通过唯一性易证 $|f(x)|=f^+(x)+f^-(x)$
+根据[[MK252][引理2]]可得 $|f(x)|=f^+(x)+f^-(x)$
 
 显然 $|f(x)|$ 是非负[[MK134][可测函数]]，则根据[[MK225][线性]]可得 $$\int_E|f(x)|dx=\int_Ef^+(x)dx+\int_Ef^-(x)dx$$ 
 
@@ -5945,7 +5968,85 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 &=\epsilon
 \end{aligned}
 
+**** 性质11（线性）
 
+[[MK134][可测函数]] $f:E\to\mathbb{R}_e,g:E\to\mathbb{R}_e$ 满足 $\{f(x),g(x)\}\subset\mathcal{L}(E)$
 
+则对于任意 $\{\alpha,\beta\}\subset\mathbb{R}$ 均有 $\alpha f(x)+\beta g(x)\in\mathcal{L}(E)$
+
+且 $$\int_E\left(\alpha f(x)+\beta g(x)\right)dx=\alpha\int_Ef(x)dx+\beta\int_Eg(x)dx$$
+
+***** 证明
+
+根据下述证明可得线性
+
+****** 数乘
+
+由于均为可测函数，则根据[[MK198][引理1]]与[[MK252][引理2]]可得 $f(x)=f^+(x)-f^-(x)\land |f(x)|=f^+(x)+f^-(x)$
+
+即可得 $f^+(x)=\frac{f(x)+|f(x)|）}{2},f^-(x)=\frac{f(x)-|f(x)|）}{2}$
+
+同理可得 $g^+(x)=\frac{g(x)+|g(x)|）}{2},g^-(x)=\frac{t(x)-|g(x)|）}{2}$
+
+故根据以下证明，对于任意 $\alpha\in\mathbb{R}$ 均有 $$\int_E\alpha f(x)dx=\alpha\int_Ef(x)dx$$
+
+******* 若 $\alpha=0$
+
+显然有 $$\int_E\alpha f(x)dx=\int_E0dx$$ [[MK237][勒贝格可积]]且 $$\int_E\alpha f(x)dx=\alpha\int_Ef(x)dx=0$$
+
+******* 若 $\alpha>0$ <<MK253>>
+
+定义 $h(x)=\alpha f(x)$ 则 $h^+(x)=\frac{h(x)+|h(x)|}{2}=\alpha\frac{f(x)+|f(x)|}{2}=\alpha f^+(x)$
+
+同理易证 $h^-(x)=\alpha f^-(x)$ 由于 $f^+(x)<\infty\land f^-(x)<\infty$ 故有 $h^+(x)<\infty\land h^-(x)<\infty$
+
+即 $\alpha f(x)=h(x)\in\mathcal{L}(E)$ [[MK237][勒贝格可积]]
+
+且由于 $h^+(x),h^-(x),f^+(x),f^-(x)$ 均为非负[[MK134][可测函数]]，故根据[[MK232][线性]]以及[[MK237][定义]]可得
+
+\begin{aligned}
+\int_E\alpha f(x)dx&=\int_Eh(x)dx\\
+&=\int_Eh^+(x)dx+\int_Eh^-(x)dx\\
+&=\int_E\alpha f^+(x)dx+\int_E\alpha f^-(x)dx\\
+&=\alpha\left(\int_Ef^+(x)dx+\int_Ef^-(x)dx\right)\\
+&=\alpha\int_Ef(x)dx
+\end{aligned}
+
+******* 若 $\alpha<0$
+
+定义 $h(x)=\alpha f(x)=-|\alpha|f(x)$ 则 $h^+(x)=\frac{h(x)+|h(x)|}{2}=-|\alpha|\frac{f(x)-|f(x)|}{2}=\alpha f^-(x)$
+
+同理可证 $h^-(x)=\alpha f^+(x)$ 则[[MK253][同理可证]] $$\int_E\alpha f(x)dx=\alpha\int_Ef(x)dx$$
+
+****** 加法
+
+定义 $h(x)=f(x)+g(x)$ 根据[[MK181][运算]]可得 $h(x)$ 是[[MK134][可测函数]]
+
+******* [[MK237][勒贝格可积]]
+
+根据[[MK22][三角不等式]]有 $|h(x)|=|f(x)+g(x)|<|f(x)|+|g(x)|$
+
+由于 $\{f(x),g(x)\}\subset\mathcal{L}(E)$ 根据[[MK248][绝对可积]]得 $|f(x)|<\infty\land|g(x)|<\infty$
+
+故有 $|h(x)|<\infty$ [[MK237][勒贝格可积]]，故同理可证 $h(x)\in\mathcal{L}(E)$
+
+******* 等式
+
+由于 $h(x)$ 是[[MK134][可测函数]]，则有 $h(x)=h^+(x)-h^-(x)$
+
+同理 $f(x)=f^+(x)-f^-(x)\land g(x)=g^+(x)-g^-(x)$
+
+故有 $h^+(x)-h^-(x)=f^+(x)-f^-(x)+g^+(x)-g^-(x)$
+
+移项可得 $h^+(x)+f^-(x)+g^-(x)=f^+(x)+g^+(x)+h^-(x)$
+
+由于均为非负[[MK134][可测函数]]，故根据[[MK232][线性]]以及[[MK237][定义]]可得
+
+\begin{aligned}
+&\int_E\left(h^+(x)+f^-(x)+g^-(x)\right)dx=\int_E\left(f^+(x)+g^+(x)+h^-(x)\right)dx\\
+\leftrightarrow&\int_Eh^+(x)dx+\int_Ef^-(x)dx+\int_Eg^-(x)dx=\int_Ef^+(x)dx+\int_Eg^+(x)dx+\int_Eh^-(x)dx\\
+\leftrightarrow&\int_Eh^+(x)dx-\int_Eh^-(x)dx=\left(\int_Ef^+(x)dx-\int_Ef^-(x)dx\right)+\left(\int_Eg^+(x)dx-\int_Eg^-(x)dx\right)\\
+\leftrightarrow&\int_Eh(x)dx=\int_Ef(x)dx+\int_Eg(x)dx
+\end{aligned}
 
 
