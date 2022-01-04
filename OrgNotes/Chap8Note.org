@@ -10,19 +10,17 @@ Current Mark: 1
 
 *** 定理描述:
 
-**** 给定条件：
-
-$f(x)$ 在闭区间 $[a,b]$ 上连续；
+若 $f(x)$ 在闭区间 $[a,b]$ 上连续；
 
 $g(x)$ 在 $(a,b)$ 上不变号，且在 $[a,b]$ 上可导
 
-**** 结论：
-
-\begin{aligned}
+则有 \begin{aligned}
 \int_a^b f(x)g(x)dx=f(\xi) \int_a^b g(x) dx,\ \ \xi \in [a,b]
 \end{aligned}
 
-*** 证明：仅证明 $g(x)>0$ 情况
+*** 证明
+
+仅证明 $g(x)>0$ 情况
 
 根据[[e:/OneDrive/大学物理/Note/DiffEq.org][闭区间连续函数-有界性定理]]可得 $m\leq f(x)\leq M$
 
@@ -41,15 +39,9 @@ $g(x)$ 在 $(a,b)$ 上不变号，且在 $[a,b]$ 上可导
 
 ** <<MK1>>第二积分中值定理：
 
-*** 定理描述：
+若 $f(x)$ 在 $[a,b]$ 上可积，$g(x)$ 在 $[a,b]$ 上单调（必可积）
 
-**** 给定条件：
-
-$f(x)$ 在 $[a,b]$ 上可积，$g(x)$ 在 $[a,b]$ 上单调（必可积）
-
-**** 结论:
-
-$\int_a^b f(x)g(x) dx=g(a)\int_a^{\xi} f(x) dx + g(b)\int_{\xi}^b f(x) dx$
+则有 $$\int_a^b f(x)g(x) dx=g(a)\int_a^{\xi} f(x) dx + g(b)\int_{\xi}^b f(x) dx$$
 
 *** 证明
 

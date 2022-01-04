@@ -2,7 +2,7 @@
 
 #+TITLE: 函数项级数
 
-current mark: 2
+current mark: 5
 
 * 函数项级数
 
@@ -27,6 +27,28 @@ S_n(x)=\sum_{i=1}^n u_i(x)
 对于任意给定定义域内 $x$ 均有 $\forall\epsilon>0,\exists N,\forall n>N\rightarrow |S_n(x)-S(x)| <\epsilon$
 
 则称 $S_n(x)$ 收敛与 $S(x)$ 记作 $\lim_{n\to\infty}S_n(x)=S(x)$
+
+** 函数项级数绝对收敛<<MK5>>
+
+对于函数项级数 $S_n(x)=\sum_{i=1}^nf_i(x)$ 定义 $S'_n(x)=\sum_{i=1}^n|f_i(x)|$
+
+则绝对收敛即存在 $S'(x)$ 满足 $\lim_{n\to\infty}S'_n(x)=S'(x)$ 即 $S'(x)$ [[MK2][逐点收敛]]与 $S'(x)$
+
+*** 引理<<MK4>>
+
+若函数项级数 $S_n(x)=\sum_{i=1}^nf_i(x)$ 绝对收敛，则 $S_n(x)$ [[MK2][逐点收敛]]
+
+**** 证明
+
+定义 $S'_n(x)=\sum_{i=1}^n|f_i(x)|$ 由于绝对收敛，故对于任意给定 $x_0$ 数列 $S'(x_0)$ 收敛
+
+则根据[[~/OneDrive/数学分析/Chap9Note.org::MK3][柯西收敛原理]]可得 $\forall \epsilon>0,\exists N,\forall m>n>N\Rightarrow\left|\sum_{i=n+1}^m |f_i(x_0)|\right|<\epsilon$
+
+由于每一项均为非负实数，故有 $\sum_{i=n+1}^m |f_i(x_0)|<\epsilon$
+
+则根据[[~/OneDrive/实变函数/SBHS.org::MK22][三角不等式]] $\left|\sum_{i=n+1}^m f_i(x_0)\right|\leq\sum_{i=n+1}^m |f_i(x_0)|<\epsilon$
+
+又根据[[~/OneDrive/数学分析/Chap9Note.org::MK3][柯西收敛原理]]可得数列 $S(x_0)$ 收敛，结合 $x_0$ 的任意性可得 $S_n(x)$ [[MK2][逐点收敛]]
 
 ** 函数项级数一致收敛：
 
@@ -120,8 +142,6 @@ a&,m\neq n_i,a\in D
 
 **** 柯西收敛原理：
 
-***** 描述：
-
 函数项级数 $\sum_{n=1}^\infty u_n(x)$ 一致收敛的充要条件是:
 
 \begin{aligned}
@@ -147,9 +167,17 @@ a&,m\neq n_i,a\in D
 &\lim_{m\to\infty}\left|S_n(x)-S_m(x)\right|=\left|S_n(x)-S(x)\right|\leq \frac{\epsilon}{2} <\epsilon\\
 \end{aligned}
 
-**** Weierstrass判别：
+***** 推论
 
-***** 描述：
+若函数项级数 $S_n(x)=\sum_{i=1}^nf_i(x)$ 绝对收敛，即存在 $f(x)$ 满足 $\lim_{n\to\infty}\sum_{i=1}^n|f_i(x)|=f(x)$
+
+则函数项级数 $S_n(x)$ [[MK1][一致收敛]]
+
+****** 证明
+
+由于绝对收敛
+
+**** Weierstrass判别：
 
 若 $\forall x\in D,|u_n(x)|\leq a_n$ ，且 $\sum_{n=1}^\infty a_n$ 收敛，则 $\sum_{n=1}^\infty u_n(x)$ 一致收敛。
 
@@ -168,9 +196,9 @@ a&,m\neq n_i,a\in D
 
 ***** Abel:
 
-****** 描述：
+若函数项级数满足 $a_n(x)$ 对于任何 $x\in D$ 单调有界 $a_n(x)<K$ ，$\sum_{i=1}^\infty b_i(x)$ 一致收敛
 
-若函数项级数满足 $a_n(x)$ 对于任何 $x\in D$ 单调有界 $a_n(x)<K$ ，$\sum_{i=1}^\infty b_i(x)$ 一致收敛，则 $\sum_{i=1}^\infty a_i(x)b_i(x)$ 一致收敛。
+则 $\sum_{i=1}^\infty a_i(x)b_i(x)$ 一致收敛。
 
 ****** 证明：
 
@@ -184,9 +212,9 @@ a&,m\neq n_i,a\in D
 
 ***** Dirichlet:
 
-****** 描述:
+若函数项级数满足 $a_n(x)$ 对于任何 $x\in D$ 一致单调趋于 $0$
 
-若函数项级数满足 $a_n(x)$ 对于任何 $x\in D$ 一致单调趋于0，$\sum_{i=1}^n b_i(x)$ 对于任何 $x\in D$ 有界 $|\sum_{i=1}^n b_i(x)|<K$ ，则 $\sum_{i=1}^\infty a_i(x)b_i(x)$ 一致收敛。
+$\sum_{i=1}^n b_i(x)$ 对于任何 $x\in D$ 有界 $|\sum_{i=1}^n b_i(x)|<K$ ，则 $\sum_{i=1}^\infty a_i(x)b_i(x)$ 一致收敛。
 
 ****** 证明：
 
@@ -1007,7 +1035,7 @@ $\forall \epsilon>0,\ \exists N,\ \forall n>N,\forall x\in[a,b]\Rightarrow |f(x)
 
 *** 证明
 
-**** 二项式展开：
+**** 二项式展开<<MK3>>
 
 \begin{aligned}
 (a+b)^n=\sum_{i=0}^n C_n^i a^ib^{n-i}

@@ -2,7 +2,7 @@
 #+OPTIONS: ^:nil
 #+TITLE: 定积分
 
-currnet mark: 8
+currnet mark: 9
 
 * 定积分定义
 
@@ -49,7 +49,9 @@ $\Rightarrow \bigg| \sum_{i=1}^n f(\xi_i)\Delta x_i - I \bigg| < \epsilon$
 
 根据极限定义，当 $\xi_k=c$ 时需满足 $\forall \epsilon > 0,\exists \delta > 0,\forall (P,\ \xi_i)\Rightarrow \left|\sum_{i\in N^+,1\leq i\leq,i\ne k} n f(\xi_i)\Delta x_i+f(\xi_k)\Delta x_k-I\right|<\epsilon$ 
 
-因为 $\left|\sum_{i_2\in N^+,1\leq i_2\leq,i_2\ne k} n f(\xi_{i_2})\Delta x_{i_2}-I\right|=\left| \sum_{i_1=1}^n f(\xi_{i_1})\Delta x_{i_1} - I \right| < \epsilon$ 有界，故 $\left|\sum_{i\in N^+,1\leq i\leq,i\ne k} n f(\xi_i)\Delta x_i+f(\xi_k)\Delta x_k-I\right|=+\infty>\epsilon$ 
+因为 $\left|\sum_{i_2\in N^+,1\leq i_2\leq,i_2\ne k} n f(\xi_{i_2})\Delta x_{i_2}-I\right|=\left| \sum_{i_1=1}^n f(\xi_{i_1})\Delta x_{i_1} - I \right| < \epsilon$ 有界
+
+故 $\left|\sum_{i\in N^+,1\leq i\leq,i\ne k} n f(\xi_i)\Delta x_i+f(\xi_k)\Delta x_k-I\right|=+\infty>\epsilon$ 
 
 故不满足 $\forall (P,\xi_i)$ 推出矛盾，则 $f(x)$ 必有界
 
@@ -151,7 +153,9 @@ $\overline S(P') - L < \frac{\epsilon}{2}$
 
 $\overline S(P^*) - \overline S(P') \leq 0$ [[L1][定理1]]
 
-因为 $\Delta x'_i \geq \lambda \geq \Delta x_i$ 故对于一个区间 $\left[x_{i-1},x_i\right]$ 中，$P^*$ 最多比 $P$ 增加一个分点 $x'_j$ , 且最多 $n'-1$ 个区间内可插入新的分点, 所以:
+因为 $\Delta x'_i \geq \lambda \geq \Delta x_i$ 故对于一个区间 $\left[x_{i-1},x_i\right]$ 中，$P^*$ 最多比 $P$ 增加一个分点 $x'_j$ ,
+
+且最多 $n'-1$ 个区间内可插入新的分点, 所以:
 
 \begin{aligned}
 \overline S(P) - \overline S(P^*) &= \sum_{i=1}^n M_i(x_i-x_{i-1}) - \sum_{j=1}^{n^*} M_j(x^*_j-x^*_{j-1}) \\
@@ -311,7 +315,9 @@ $\forall P\ (\lambda<\delta)\text{,\ } P: a=x_1<x_2<...<x_n$
 
 构造分点: $P^*: a=x^*_0<x^*_1<...<x_{n^*}^*,\ \ \{x_i^*\} = \{x_i,x'_i \}$
 
-因为 $\Delta x'_i \geq \lambda \geq \Delta x_i$ 故对于一个区间 $\left[x_{i-1},x_i\right]$ 中，$P^*$ 最多比 $P$ 增加一个分点 $x'_j$ , 且最多 $n'-1$ 个区间内可插入新的分点, 所以:
+因为 $\Delta x'_i \geq \lambda \geq \Delta x_i$ 故对于一个区间 $\left[x_{i-1},x_i\right]$ 中，$P^*$ 最多比 $P$ 增加一个分点 $x'_j$ ,
+
+且最多 $n'-1$ 个区间内可插入新的分点, 所以:
 
 \begin{aligned}
 \sum_{i=1}^n \omega_i \Delta x_i - \sum_{j=1}^{n^*} \omega^*_j \Delta x^*_j &= \sum_{i=1}^n \omega_i(x_i-x_{i-1}) - \sum_{j=1}^{n^*} \omega^*_j(x^*_j-x^*_{j-1}) \\
@@ -369,7 +375,9 @@ $\sum_{i=1}^n \omega_i \Delta x_i=\sum_{i=1}^k \omega^*_i \Delta x_i+\sum_{1\leq
 &\sum_{1\leq i\leq n,\{x^*_i\}\cap \{[x_{i-1},x_i]\}=\varnothing }\omega_i \Delta x_i=\sum_{j=1}^{k+1}\left\{\sum_{i=u_{j-1}}^{l_j} \omega_i \Delta x_i\right\}\\
 \end{aligned}
 
-其中，任何一个 $\sum_{i=u_{j-1}}^{l_j} \omega_i \Delta x_i$ 可看成在 $[x_{u_{j-1}},x_{l_j}]$ 上的连续函数，则根据[[MK3][推论1]]以及[[MK1][可积充要条件2]] $\forall \epsilon>0,\exists \delta_j,\forall \lambda<\delta_j\Rightarrow \forall P,\sum_{i=u_{j-1}}^{l_j} \omega_i \Delta x_i<\frac{\epsilon}{2(k+1)}$
+其中，任何一个 $\sum_{i=u_{j-1}}^{l_j} \omega_i \Delta x_i$ 可看成在 $[x_{u_{j-1}},x_{l_j}]$ 上的连续函数，
+
+则根据[[MK3][推论1]]以及[[MK1][可积充要条件2]] $\forall \epsilon>0,\exists \delta_j,\forall \lambda<\delta_j\Rightarrow \forall P,\sum_{i=u_{j-1}}^{l_j} \omega_i \Delta x_i<\frac{\epsilon}{2(k+1)}$
 
 则当 $\lambda<min(\delta_j)$ 时
 
@@ -395,7 +403,9 @@ $\sum_{i=1}^n \omega_i \Delta x_i=\sum_{i=1}^k \omega^*_i \Delta x_i+\sum_{1\leq
 
 *** 描述
 
-若 $f(x),g(x)$ 在区间 $[a,b]$ 上可积，则有 $\int_a^b Af(x)+Bg(x)dx$ 在 $[a,b]$ 上也可积且 $\int_a^b Af(x)+Bg(x)dx=A\int_a^b f(x)dx+B\int_a^b g(x)dx$
+若 $f(x),g(x)$ 在区间 $[a,b]$ 上可积，则有 $\int_a^b Af(x)+Bg(x)dx$
+
+在 $[a,b]$ 上也可积且 $\int_a^b Af(x)+Bg(x)dx=A\int_a^b f(x)dx+B\int_a^b g(x)dx$
 
 *** 证明
 
@@ -409,7 +419,9 @@ $\forall (P,\ \xi_i)$ 写出黎曼和为 $\lim_{\lambda \to 0}\sum_{i=1}^n [Af(\
 
 *** 推论
 
-若 $f(x)$ 在区间 $[a,b]$ 上可积， $g(x)$ 仅在有限点与 $f(x)$ 取值不同，则 $g(x)$ 也在 $[a,b]$ 上可积且 $\int_a^b f(x) dx=\int_a^b g(x)dx$
+若 $f(x)$ 在区间 $[a,b]$ 上可积， $g(x)$ 仅在有限点与 $f(x)$ 取值不同，
+
+则 $g(x)$ 也在 $[a,b]$ 上可积且 $\int_a^b f(x) dx=\int_a^b g(x)dx$
 
 **** 证明
 
@@ -429,9 +441,13 @@ $\forall (P,\ \xi_i)$ 写出黎曼和为 $\lim_{\lambda \to 0}\sum_{i=1}^n [Af(\
 &=\epsilon\\
 \end{aligned}
 
-综上所述 $\forall \epsilon>0, \exists \delta, \forall \lambda<\delta\Rightarrow \forall(P,\xi_i),\left|\sum_{i=1}^n \left\{f(\xi_i)-g(\xi_i)\right\}\Delta x_i-0\right|<\epsilon$ 即为 $f(x)-g(x)$ 在 $[a,b]$ 上可积，且积分为 $0$ 的定义
+综上所述 $\forall \epsilon>0, \exists \delta, \forall \lambda<\delta\Rightarrow \forall(P,\xi_i),\left|\sum_{i=1}^n \left\{f(\xi_i)-g(\xi_i)\right\}\Delta x_i-0\right|<\epsilon$
 
-则记作 $\int_a^b f(x)-g(x) dx=0$ 又根据定积分线性性质 $f(x),f(x)-g(x)$ 可积，则 $f(x)+g(x)-f(x)=g(x)$ 也可积
+即为 $f(x)-g(x)$ 在 $[a,b]$ 上可积，且积分为 $0$ 的定义
+
+则记作 $\int_a^b f(x)-g(x) dx=0$ 又根据定积分线性性质 $f(x),f(x)-g(x)$ 可积，
+
+则 $f(x)+g(x)-f(x)=g(x)$ 也可积
 
 且 $\int_a^b f(x)+g(x)-f(x)dx=\int_a^b g(x)dx=\int_a^b f(x)dx+\int_a^b f(x)-g(x)dx=\int_a^b f(x)dx$
 
@@ -454,7 +470,9 @@ $\forall (P,\ \xi_i)$ 写出黎曼和为 $\lim_{\lambda \to 0}\sum_{i=1}^n [Af(\
 &\leq M[|g(x_1)-g(x_2)|+|f(x_1)-f(x_2)|]$
 \end{aligned}
 
-定义在区间 $[x_{i-1},x_i]$ 中 $f(x)g(x)$ 当 $\omega_i=f(x_{i_M})g(x_{i_M})-f(x_{i_m})g(x_{i_m}),\omega_i^f,\omega_i^g$ 分别为函数 $f(x)g(x),f(x),g(x)$ 的振幅，则
+定义在区间 $[x_{i-1},x_i]$ 中 $f(x)g(x)$ 当 $\omega_i=f(x_{i_M})g(x_{i_M})-f(x_{i_m})g(x_{i_m}),\omega_i^f,\omega_i^g$
+
+分别为函数 $f(x)g(x),f(x),g(x)$ 的振幅，则
 
 \begin{aligned}
 &\lim_{\lambda \to 0} \sum_{i=1}^n \omega_i \Delta x_i=\lim_{\lambda \to 0} \sum_{i=1}^n [f(x_{i_M})g(x_{i_M})-f(x_{i_m})g(x_{i_m})] \Delta x_i\\
@@ -533,7 +551,9 @@ $\forall \epsilon >0,\exists \delta,\forall \lambda<\delta\Rightarrow \forall P_
 
 $\forall \epsilon >0,\exists \delta,\forall \lambda<\delta\Rightarrow \forall P_2, \sum_{i=1}^n \omega_i \Delta x_i<\frac{\epsilon}{2}$ 对于 $x\in[c,b]$
 
-则 $\forall \epsilon >0,\exists P\Rightarrow \forall P, \sum_{i=1}^n \omega_i \Delta x_i=\sum_{i=1}^k \omega_i \Delta x_i+\sum_{i=k+1}^n \omega_i \Delta x_i<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon$ 当 $P$ 的划分为上述 $P_1,P_2$ 的组合时 
+则 $\forall \epsilon >0,\exists P\Rightarrow \forall P, \sum_{i=1}^n \omega_i \Delta x_i=\sum_{i=1}^k \omega_i \Delta x_i+\sum_{i=k+1}^n \omega_i \Delta x_i<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon$
+
+当 $P$ 的划分为上述 $P_1,P_2$ 的组合时 
 
 故根据[[MK2][定积分可积充要条件3]]推出 $f(x)$ 在 $[a,b]$ 可积
 
@@ -628,10 +648,44 @@ $\int_a^b f(x) dx=F(b)-F(a)$
 若满足：
 
 \begin{aligned}
-\forall \epsilon>0,\ \exists \delta,\ \forall |x-x_0|<\delta \Rightarrow |f(x)-A|<\epsilon
+\forall \epsilon>0,\ \exists \delta,\ \forall |x-x_0|<\delta\land x_0\ne x \Rightarrow |f(x)-A|<\epsilon
 \end{aligned}
 
-则 $\lim_{x\to x_0}f(x_0)=A$ 根据定义 $A$ 为有界实数。
+则 $\lim_{x\to x_0}f(x_0)=A$ 根据定义 $A$ 为有界实数
+
+*** 引理<<MK9>>
+
+假设[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to Y,E\cup Y\subset\mathbb{R}$
+
+对于任意 $x_0\in E$ 若对于任意数列 $\{h_n\}\subset\mathbb{R}$ 满足 $\forall n(h_n\ne0\land x_0+h_n\in E)\land\lim_{n\to\infty}h_n=0$ 
+
+均有 $\lim_{n\to\infty}f(x_0+h_n)=a$ 则函数在 $x_0$ 点极限存在且 $\lim_{x\to x_0}f(x_0)=a$ 
+
+**** 证明
+
+***** 充分
+
+假设 $\lim_{x\to x_0}f(x_0)$ 不收敛于 $a$ 则有 $\exists\epsilon_0,\forall \delta>0,\exists |x-x_0|\land x\ne x_0<\delta\rightarrow |f(x)-a|>\epsilon_0$
+
+则取 $\delta_1=\frac{1}{2}$ 故存在 $x_1$ 满足条件，进而取 $\delta_2=\frac{|x_1-x_0|}{2^2}$ 则有 $x_2$ 满足条件
+
+由于 $|x_0-x_1|<\frac{1}{2}$ 故有 $\delta_2<\frac{1}{2^2}$ 进而有 $|x_0-x_2|<\delta_2<\frac{1}{2^2}$
+
+假设 $x_i$ 满足 $|x_0-x_i|<\frac{1}{2^i}$ 则取 $\delta_{i+1}=\frac{|x_0-x_i|}{2^{i+1}}$ 则存在 $x_{i+1}$ 满足条件
+
+则有 $|x_0-x_{i+1}|<\delta_i<\frac{1}{2^{i+2}}<\frac{1}{2^{i+1}}$ 则根据数学归纳法可得 $\forall i\in\mathbb{N}\rightarrow |x_0-x_i|<\frac{1}{2^i}$
+
+则定义 $h_i=x_i-x_0$ 则显然有 $\lim_{i\to\infty}h_i=0$ 由于 $x_i\ne x_0$ 故有 $h_i\ne0$
+
+显然 $x_i\in E$ 故有 $x_0+h_i=x_i$ 即有 $x_0+h_i\in E$
+
+故根据条件可得 $\lim_{i\to\infty}f(x_0+h_i)=a$ 由于 $\forall i\rightarrow |f(x_0+h_i)-a|=|f(x_i)-a|>\epsilon_0$
+
+显然矛盾，故假设不成立，即可得 $\lim_{x\to x_0}f(x_0)=a$ 
+
+***** 必要
+
+显然
 
 ** 连续函数定义
 
@@ -675,9 +729,13 @@ f(x_0)=\lim_{x\to x_0}f(x)
 
 当 $\delta=\frac{1}{n},\ n\in N^+$ 时，存在点列 $x_n,y_n\in[a,b]:|x_n-y_n|<\frac{1}{n},\ |f(x_n)-f(y_n)|>\epsilon$
 
-根据[[E:\OneDrive\数学分析\Note\Chapter 9\Series.org][Bolzano-Weierstrass定理]]，有界数列 $x_n$ 必有收敛子列，得出 $\lim_{n_k\to\infty}x_{n_k}=\xi,\ \xi\in[a,b]$ ，与之对应 $y_{n_k}$ 使得 $|f(x_{n_k})-f(y_{n_k})|>\epsilon$
+根据[[E:\OneDrive\数学分析\Note\Chapter 9\Series.org][Bolzano-Weierstrass定理]]，有界数列 $x_n$ 必有收敛子列
 
-又因为 $\lim_{n_k\to\infty}\frac{1}{n_k}=0,\ 0<|x_{n_k}-y_{n_k}|<\frac{1}{n_k}$ ，根据夹逼定理 $\lim_{n_k\to\infty} |x_{n_k}-y_{n_k}|=0$ 根据极限四则运算 $\lim_{n_k\to\infty}x_{n_k}=\lim_{n_k\to\infty}y_{n_k}=\xi$ 
+得出 $\lim_{n_k\to\infty}x_{n_k}=\xi,\ \xi\in[a,b]$ ，与之对应 $y_{n_k}$ 使得 $|f(x_{n_k})-f(y_{n_k})|>\epsilon$
+
+又因为 $\lim_{n_k\to\infty}\frac{1}{n_k}=0,\ 0<|x_{n_k}-y_{n_k}|<\frac{1}{n_k}$ ，根据夹逼定理 $\lim_{n_k\to\infty} |x_{n_k}-y_{n_k}|=0$
+
+根据极限四则运算 $\lim_{n_k\to\infty}x_{n_k}=\lim_{n_k\to\infty}y_{n_k}=\xi$ 
 
 由于 $f(x)$ 在 $\xi$ 点有定义且连续，即 $\lim_{n_k\to\infty}f(x_{n_k})=\lim_{n_k\to\infty}f(y_{n_k})=f(\xi)$ 
 
@@ -687,9 +745,9 @@ f(x_0)=\lim_{x\to x_0}f(x)
 
 * 定积分换元法
 
-已有定积分 $\int_a^b f(x)dx$ ，若 $x=G(y),\ \frac{dx}{dy}=g(y)$ ，且 $g(y)$ 在 $y\in [c,d]$ 中连续，$f(x)$ 有界，则 $\int_a^b f(x)dx=\int_c^d f[G(y)]g(y)dy$ 
+已有定积分 $\int_a^b f(x)dx$ ，若 $x=G(y),\ \frac{dx}{dy}=g(y)$ ，且 $g(y)$ 在 $y\in [c,d]$ 中连续，$f(x)$ 有界
 
-其中 $a=G(c),b=G(d)$
+则 $\int_a^b f(x)dx=\int_c^d f[G(y)]g(y)dy$ 其中 $a=G(c),b=G(d)$
 
 ** 证明
 
@@ -752,9 +810,13 @@ $\forall \epsilon>0,\ \exists T>0,\ \forall |\xi-y|<T\ \&\ y\in[c,d] \Rightarrow
 
 *** 证明极限相减等于零：
 
-由于定积分可积条件为黎曼和与取点和划分无关，且 $x,\ y$ 一一对应，故对于任意划分 $P_y$ 必有 $P_x$ 与之对应，对于任意 $\xi_{yi}$ 必有 $\xi_{xi}$ 与之对应
+由于定积分可积条件为黎曼和与取点和划分无关，且 $x,\ y$ 一一对应
 
-故对于任意划分 $P_y:c=y_0<y_1..<y_n=d$ ，取对应划分 $P_x:x_i=G(y_i)$ ，对于任意取点 $\xi_{yi}\in[y_i,y_{i+1}]$ 取对应取点 $\xi_{xi}=G(\xi_{yi})$
+故对于任意划分 $P_y$ 必有 $P_x$ 与之对应，对于任意 $\xi_{yi}$ 必有 $\xi_{xi}$ 与之对应
+
+故对于任意划分 $P_y:c=y_0<y_1..<y_n=d$ ，取对应划分 $P_x:x_i=G(y_i)$
+
+对于任意取点 $\xi_{yi}\in[y_i,y_{i+1}]$ 取对应取点 $\xi_{xi}=G(\xi_{yi})$
 
 根据极限可加性:
 
@@ -937,9 +999,10 @@ $\bigg| \sqrt{(x_1^2 + x_2^2)} - \sqrt{(y_1^2 + y_2^2)} \bigg| \leq \bigg|x_1 - 
 \begin{aligned}
 &\forall \epsilon>0,\ \ \exists \delta,\ \ \forall \lambda<\delta\\
 &\sum_{i=1}^n \Omega_i^x \Delta t_i < \frac{\epsilon}{2},\ \ \sum_{i=1}^n \Omega_i^y \Delta t_i < \frac{\epsilon}{2}\\
-&\Rightarrow \bigg| \sum_{i=1}^n \sqrt{x'(\eta_i)^2 + y'(\sigma_i)^2 } \Delta t_i - \sum_{i=1}^n \sqrt{x'(\xi_i)^2 + y'(\xi_i)^2 } \Delta t_i \bigg| \leq \sum_{i=1}^n \Omega_i^x \Delta t_i + \sum_{i=1}^n \Omega_i^y \Delta t_i \leq \epsilon \\
-&\Rightarrow \lim_{\lambda \to 0}\left\{\sum_{i=1}^n \sqrt{x'(\eta_i)^2 + y'(\sigma_i)^2 } \Delta t_i - \sum_{i=1}^n \sqrt{x'(\xi_i)^2 + y'(\xi_i)^2 } \Delta t_i\right\}=\lim_{\lambda \to 0}\left\{\sum_{i=1}^n \sqrt{x'(\eta_i)^2 + y'(\sigma_i)^2 } \Delta t_i\right\} - \lim_{\lambda \to 0}\left\{\sum_{i=1}^n \sqrt{x'(\xi_i)^2 + y'(\xi_i)^2 } \Delta t_i\right\}=0 \\
-&\Rightarrow \lim_{\lambda \to 0}\left\{\sum_{i=1}^n \sqrt{x'(\eta_i)^2 + y'(\sigma_i)^2 } \Delta t_i\right\} = \lim_{\lambda \to 0}\left\{\sum_{i=1}^n \sqrt{x'(\xi_i)^2 + y'(\xi_i)^2 } \Delta t_i\right\} \\
+\Rightarrow& \bigg| \sum_{i=1}^n \sqrt{x'(\eta_i)^2 + y'(\sigma_i)^2 } \Delta t_i - \sum_{i=1}^n \sqrt{x'(\xi_i)^2 + y'(\xi_i)^2 } \Delta t_i \bigg| \leq \sum_{i=1}^n \Omega_i^x \Delta t_i + \sum_{i=1}^n \Omega_i^y \Delta t_i \leq \epsilon \\
+\Rightarrow& \lim_{\lambda \to 0}\left\{\sum_{i=1}^n \sqrt{x'(\eta_i)^2 + y'(\sigma_i)^2 } \Delta t_i - \sum_{i=1}^n \sqrt{x'(\xi_i)^2 + y'(\xi_i)^2 } \Delta t_i\right\}\\
+&=\lim_{\lambda \to 0}\left\{\sum_{i=1}^n \sqrt{x'(\eta_i)^2 + y'(\sigma_i)^2 } \Delta t_i\right\} - \lim_{\lambda \to 0}\left\{\sum_{i=1}^n \sqrt{x'(\xi_i)^2 + y'(\xi_i)^2 } \Delta t_i\right\}=0 \\
+\Rightarrow& \lim_{\lambda \to 0}\left\{\sum_{i=1}^n \sqrt{x'(\eta_i)^2 + y'(\sigma_i)^2 } \Delta t_i\right\} = \lim_{\lambda \to 0}\left\{\sum_{i=1}^n \sqrt{x'(\xi_i)^2 + y'(\xi_i)^2 } \Delta t_i\right\} \\
 \end{aligned}
 
 *** 结论:
@@ -996,14 +1059,15 @@ $L=\int_{T_1}^{T_2}\sqrt{x'(t)^2+y'(t)^2} dt$
 
 \begin{aligned}
 &\pi \bigg| \sum_{i=1}^n \pi [y(t_{i-1})+y(t_i)] * \sqrt{x(\eta_i)^2 + y(\sigma_i)^2} \Delta t_i - \sum_{i=1}^n \pi [y(\xi_i)+y(\xi_i)] * \sqrt{x(\xi_i)^2 + y(\xi_i)^2} \Delta t_i \bigg| \\
-&\leq 2\pi \bigg| \sum_{i=1}^n M_i * \sqrt{x(\eta_i)^2 + y(\sigma_i)^2} \Delta t_i - \sum_{i=1}^n m_i * \sqrt{x(\xi_i)^2 + y(\xi_i)^2} \Delta t_i \right\} \bigg| \\
-&= 2\pi \bigg| \sum_{i=1}^n \sqrt{(M_i x(\eta_i))^2 + (M_i y(\sigma_i))^2} \Delta t_i - \sum_{i=1}^n \sqrt{(m_i x(\xi_i))^2 + (m_i y(\xi_i))^2} \Delta t_i \right\} \bigg| \\
-&\leq 2\pi \sum_{i=1}^n \bigg| \sqrt{(M_i x(\eta_i))^2 + (M_i y(\sigma_i))^2} - \sqrt{(m_i x(\xi_i))^2 + (m_i y(\xi_i))^2} \bigg| \Delta t_i \\
-&\leq 2\pi \left\{ \sum_{i=1}^n \bigg| M_i x(\eta_i)-m_i x(\xi_i) \bigg| \Delta t_i + \sum_{i=1}^n \bigg| M_i y(\sigma_i)-m_i y(\xi_i) \bigg| \Delta t_i \right\}\\
-&= 2\pi \left\{ \sum_{i=1}^n \bigg| M_i x(\eta_i)-M_i x(\xi_i)+M_i x(\xi_i)-m_i x(\xi_i) \bigg| \Delta t_i + \sum_{i=1}^n \bigg| M_i y(\sigma_i)-M_i y(\xi_i) + M_i y(\xi_i) -m_i y(\xi_i) \bigg| \Delta t_i \right\}\\
-&\leq 2\pi \left\{ \sum_{i=1}^n \bigg| M_i (x(\eta_i)- x(\xi_i))\bigg| \Delta t_i+ \sum_{i=1}^n \bigg| x(\xi_i)(M_i - m_i) \bigg| \Delta t_i + \sum_{i=1}^n \bigg| M_i (y(\sigma_i) - y(\xi_i)) \bigg| \Delta t_i + \sum_{i=1}^n \bigg| y(\xi_i) (M_i - m_i) \bigg| \Delta t_i \right\} \\
-&\leq 2\pi \left\{ M \sum_{i=1}^n \Omega_i^x \Delta t_i + |M|^x \sum_{i=1}^n \Omega_i^y \Delta t_i + M \sum_{i=1}^n \Omega_i^y \Delta t_i + |M|^y \sum_{i=1}^n \Omega_i^y \Delta t_i \right\} \\
-&= 2\pi \left\{  M \sum_{i=1}^n \Omega_i^x \Delta t_i +(|M|^x + M + |M|^y) \sum_{i=1}^n \Omega_i^y \Delta t_i \right\} \\
+\leq& 2\pi \bigg| \sum_{i=1}^n M_i * \sqrt{x(\eta_i)^2 + y(\sigma_i)^2} \Delta t_i - \sum_{i=1}^n m_i * \sqrt{x(\xi_i)^2 + y(\xi_i)^2} \Delta t_i \right\} \bigg| \\
+=& 2\pi \bigg| \sum_{i=1}^n \sqrt{(M_i x(\eta_i))^2 + (M_i y(\sigma_i))^2} \Delta t_i - \sum_{i=1}^n \sqrt{(m_i x(\xi_i))^2 + (m_i y(\xi_i))^2} \Delta t_i \right\} \bigg| \\
+\leq& 2\pi \sum_{i=1}^n \bigg| \sqrt{(M_i x(\eta_i))^2 + (M_i y(\sigma_i))^2} - \sqrt{(m_i x(\xi_i))^2 + (m_i y(\xi_i))^2} \bigg| \Delta t_i \\
+\leq& 2\pi \left\{ \sum_{i=1}^n \bigg| M_i x(\eta_i)-m_i x(\xi_i) \bigg| \Delta t_i + \sum_{i=1}^n \bigg| M_i y(\sigma_i)-m_i y(\xi_i) \bigg| \Delta t_i \right\}\\
+=& 2\pi \left\{ \sum_{i=1}^n \bigg| M_i x(\eta_i)-M_i x(\xi_i)+M_i x(\xi_i)-m_i x(\xi_i) \bigg| \Delta t_i + \sum_{i=1}^n \bigg| M_i y(\sigma_i)-M_i y(\xi_i) + M_i y(\xi_i) -m_i y(\xi_i) \bigg| \Delta t_i \right\}\\
+\leq& 2\pi \left\{ \sum_{i=1}^n \bigg| M_i (x(\eta_i)- x(\xi_i))\bigg| \Delta t_i+ \sum_{i=1}^n \bigg| x(\xi_i)(M_i - m_i) \bigg| \Delta t_i + \sum_{i=1}^n \bigg| M_i (y(\sigma_i) - y(\xi_i)) \bigg| \Delta t_i +\\
+&\sum_{i=1}^n \bigg| y(\xi_i) (M_i - m_i) \bigg| \Delta t_i \right\} \\
+\leq& 2\pi \left\{ M \sum_{i=1}^n \Omega_i^x \Delta t_i + |M|^x \sum_{i=1}^n \Omega_i^y \Delta t_i + M \sum_{i=1}^n \Omega_i^y \Delta t_i + |M|^y \sum_{i=1}^n \Omega_i^y \Delta t_i \right\} \\
+=& 2\pi \left\{  M \sum_{i=1}^n \Omega_i^x \Delta t_i +(|M|^x + M + |M|^y) \sum_{i=1}^n \Omega_i^y \Delta t_i \right\} \\
 \end{aligned}
 
 由于光滑曲线设定，$x(t)$ ，$y(t)$ 可积:
@@ -1118,7 +1182,9 @@ K_x=\frac{|f''(x)|}{\left\{ 1+f'(x)^2\right\}^{\frac{3}{2}}}
 
 定义 $\lambda=\frac{p(\alpha)}{q_1(\alpha)}$ ，根据定义 $q_1(\alpha)\ne0$ ,则 $\alpha$ 是函数 $p(x)-q_1(x)$ 的一个实根，则有 $p(x)-\lambda q_1(x)=(x-\alpha)p_1(x)$ 
 
-由于 $q_1(x)$ 次数为 $n-u$ 其中 $u>=1$ ， $p(x)$ 次数根据[[MK20][真分式定义]]为 $m<n$ 故 $p_1(x)$ 次数为 $\max(n-u-1,m-1)<n-1$
+由于 $q_1(x)$ 次数为 $n-u$ 其中 $u>=1$
+
+$p(x)$ 次数根据[[MK20][真分式定义]]为 $m<n$ 故 $p_1(x)$ 次数为 $\max(n-u-1,m-1)<n-1$
 
 故有 $\frac{p(x)}{q(x)}=\frac{(x-\alpha)p_1(x)+\lambda q_1(x)}{(x-\alpha)^uq_1(x)}=\frac{\lambda}{(x-\alpha)^u}+\frac{p_1(x)}{(x-\alpha)^{u-1}q_1(x)}$ 
 
@@ -1126,7 +1192,9 @@ K_x=\frac{|f''(x)|}{\left\{ 1+f'(x)^2\right\}^{\frac{3}{2}}}
 
 若 $\beta\pm i\gamma$ 是 $q(x)$ 一对共轭复根，重数为 $v$ ，即 $q(x)=\left[(x-\beta)^2+\gamma^2\right]^vq^1(x)$ ，
 
-则存在实数 $\xi,\eta$ 及多项式 $p^1(x)$ 次数小于 $\left[(x-\beta)^2+\gamma^2\right]^{v-1}q^1(x)$ ，即 $n-1$ 次，使得 $\frac{p(x)}{q(x)}=\frac{\xi x+\eta}{\left[(x-\beta)^2+\gamma^2\right]^v}+\frac{p^1(x)}{\left[(x-\beta)^2+\gamma^2\right]^{v-1}q_1(x)}$ 成立
+则存在实数 $\xi,\eta$ 及多项式 $p^1(x)$ 次数小于 $\left[(x-\beta)^2+\gamma^2\right]^{v-1}q^1(x)$ ，即 $n-1$ 次，
+
+使得 $\frac{p(x)}{q(x)}=\frac{\xi x+\eta}{\left[(x-\beta)^2+\gamma^2\right]^v}+\frac{p^1(x)}{\left[(x-\beta)^2+\gamma^2\right]^{v-1}q_1(x)}$ 成立
 
 *** 证明 
 
@@ -1134,19 +1202,27 @@ K_x=\frac{|f''(x)|}{\left\{ 1+f'(x)^2\right\}^{\frac{3}{2}}}
 
 由于分母分子均为多项式，则等式展开后形式为 $\frac{f_1(\beta,\gamma)+ig_1(\beta,\gamma)}{f_2(\beta,\gamma)+ig_2(\beta,\gamma)}$ 分子分母同乘 $f_2(\beta,\gamma)-ig_2(\beta,\gamma)$ 
 
-得 $\frac{f_1(\beta,\gamma)f_2(\beta,\gamma)+g_1(\beta,\gamma)g_2(\beta,\gamma)}{f_2(\beta,\gamma)+g_2(\beta,\gamma)}+i\frac{-f_1(\beta,\gamma)g_2(\beta,\gamma)+f_2(\beta,\gamma)g_1(\beta,\gamma)}{f_2(\beta,\gamma)+g_2(\beta,\gamma)}$ ，其中 $f_1(\beta,\gamma),f_2(\beta,\gamma),g_1(\beta,\gamma),g_2(\beta,\gamma)$ 均为多项式函数
+得 $\frac{f_1(\beta,\gamma)f_2(\beta,\gamma)+g_1(\beta,\gamma)g_2(\beta,\gamma)}{f_2(\beta,\gamma)+g_2(\beta,\gamma)}+i\frac{-f_1(\beta,\gamma)g_2(\beta,\gamma)+f_2(\beta,\gamma)g_1(\beta,\gamma)}{f_2(\beta,\gamma)+g_2(\beta,\gamma)}$ ，
 
-由于 $i,\gamma$ 同次，且 $i^2=-1$ ，故 $f_1(\beta,\gamma),f_2(\beta,\gamma)$ 中每一项必为 $\gamma$ 的偶次项（包含零次），即 $f_1(\beta,\gamma)=f_1(\beta,-\gamma),f_2(\beta,\gamma)=f_2(\beta,-\gamma)$
+其中 $f_1(\beta,\gamma),f_2(\beta,\gamma),g_1(\beta,\gamma),g_2(\beta,\gamma)$ 均为多项式函数
+
+由于 $i,\gamma$ 同次，且 $i^2=-1$ ，故 $f_1(\beta,\gamma),f_2(\beta,\gamma)$ 中每一项必为 $\gamma$ 的偶次项（包含零次）
+
+即 $f_1(\beta,\gamma)=f_1(\beta,-\gamma),f_2(\beta,\gamma)=f_2(\beta,-\gamma)$
 
 同理， $g_1(\beta,\gamma),g_2(\beta,\gamma)$ 中每一项必为 $\gamma$ 的奇次项，则有 $g_1(\beta,\gamma)=-g_1(\beta,-\gamma),g_2(\beta,\gamma)=-g_2(\beta,-\gamma)$
 
-又因为  $\frac{f_1(\beta,\gamma)-ig_1(\beta,\gamma)}{f_2(\beta,\gamma)-ig_2(\beta,\gamma)}$ 分子分母同乘 $f_2(\beta,\gamma)+ig_2(\beta,\gamma)$ 得 $\frac{f_1(\beta,\gamma)f_2(\beta,\gamma)+g_1(\beta,\gamma)g_2(\beta,\gamma)}{f_2(\beta,\gamma)+g_2(\beta,\gamma)}+i\frac{f_1(\beta,\gamma)g_2(\beta,\gamma)-f_2(\beta,\gamma)g_1(\beta,\gamma)}{f_2(\beta,\gamma)+g_2(\beta,\gamma)}$ 
+又因为  $\frac{f_1(\beta,\gamma)-ig_1(\beta,\gamma)}{f_2(\beta,\gamma)-ig_2(\beta,\gamma)}$ 分子分母同乘 $f_2(\beta,\gamma)+ig_2(\beta,\gamma)$
+
+得 $\frac{f_1(\beta,\gamma)f_2(\beta,\gamma)+g_1(\beta,\gamma)g_2(\beta,\gamma)}{f_2(\beta,\gamma)+g_2(\beta,\gamma)}+i\frac{f_1(\beta,\gamma)g_2(\beta,\gamma)-f_2(\beta,\gamma)g_1(\beta,\gamma)}{f_2(\beta,\gamma)+g_2(\beta,\gamma)}$ 
 
 故若 $\frac{p(\beta+i\gamma)}{q^1(\beta+i\gamma)}=\xi(\beta+i\gamma)+\eta$ 则 $\frac{p(\beta-i\gamma)}{q^1(\beta-i\gamma)}=\xi(\beta-i\gamma)+\eta$
 
 得出 $\beta\pm i\gamma$ 是函数 $p(x)-(\xi x+\eta)q^1(x)$ 的共轭复根，则有 $p(x)-(\xi x+\eta)q^1(x)=\left[(x-\beta)^2+\gamma^2\right]p^1(x)$ 
 
-由于 $q^1(x)$ 次数为 $n-v$ 其中 $v>=1$ ， $p(x)$ 次数根据[[MK20][真分式定义]]为 $m<n$ 故 $p^1(x)$ 次数为 $\max(n-v-1,m-1)<n-1$
+由于 $q^1(x)$ 次数为 $n-v$ 其中 $v>=1$ ，
+
+$p(x)$ 次数根据[[MK20][真分式定义]]为 $m<n$ 故 $p^1(x)$ 次数为 $\max(n-v-1,m-1)<n-1$
 
 则有  $\frac{p(x)}{q(x)}=\frac{\left[(x-\beta)^2+\gamma^2\right]p^1(x)+(\xi x+\eta)q^1(x)}{\left[(x-\beta)^2+\gamma^2\right]^vq^1(x)}=\frac{\xi x+\eta}{\left[(x-\beta)^2+\gamma^2\right]^v}+\frac{p^1(x)}{\left[(x-\beta)^2+\gamma^2\right]^{v-1}q_1(x)}$ 
 
@@ -1189,7 +1265,9 @@ I_1&=\int\frac{1}{(x^2+a^2)^n}dx\\
 
 *** 证明
 
-由于 $\frac{p(x)}{q(x)}=\frac{p(x)}{\Pi_{k=1}^i (x-\alpha_k)^{u_k}\Pi_{k=1}^j\left[(x-\beta_k)^2+\gamma_k^2\right]^{v_j}}$ 则可根据[[MK21][引理1]]及[[MK22][引理2]]函数可化为 $\frac{p(x)}{q(x)}=\sum_{k=1}^i\sum_{r=1}^{u_k}\frac{\lambda_{kr}}{(x-\alpha_k)^r}+\sum_{k=1}^i\sum_{r=1}^{u_k}\frac{\xi_{kr} x+\eta_{kr}}{\left[(x-\beta_k)^2+\gamma_k^2\right]^r}$
+由于 $\frac{p(x)}{q(x)}=\frac{p(x)}{\Pi_{k=1}^i (x-\alpha_k)^{u_k}\Pi_{k=1}^j\left[(x-\beta_k)^2+\gamma_k^2\right]^{v_j}}$
+
+则可根据[[MK21][引理1]]及[[MK22][引理2]]函数可化为 $\frac{p(x)}{q(x)}=\sum_{k=1}^i\sum_{r=1}^{u_k}\frac{\lambda_{kr}}{(x-\alpha_k)^r}+\sum_{k=1}^i\sum_{r=1}^{u_k}\frac{\xi_{kr} x+\eta_{kr}}{\left[(x-\beta_k)^2+\gamma_k^2\right]^r}$
 
 故根据不定积分线性 $\int\frac{p(x)}{q(x)}dx=\sum_{k=1}^i\sum_{r=1}^{u_k}\int\frac{\lambda_{kr}}{(x-\alpha_k)^r}dx+\sum_{k=1}^i\sum_{r=1}^{u_k}\int\frac{\xi_{kr} x+\eta_{kr}}{\left[(x-\beta_k)^2+\gamma_k^2\right]^r}dx$
 
@@ -1210,11 +1288,12 @@ I_1&=\int\frac{1}{(x^2+a^2)^n}dx\\
 定义 $v=x-\beta_k$ 则有 $\frac{dv}{dx}=1\Rightarrow dv=dx$
 
 \begin{aligned}
-\int\frac{\xi_{kr} x+\eta_{kr}}{\left[(x-\beta_k)^2+\gamma_k^2\right]^r}dx&=\frac{\xi_{kr}}{2}\int\frac{ 2x+2\frac{\eta_{kr}}{\xi_{kr}}}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx\\
-&=\frac{\xi_{kr}}{2}\int\frac{ 2x-2\beta_k+2\beta_k+2\frac{\eta_{kr}}{\xi_{kr}}}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx\\
-&=\frac{\xi_{kr}}{2}\int\frac{ 2x-2\beta_k}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx+\frac{\xi_{kr}}{2}\left(2\beta_k+2\frac{\eta_{kr}}{\xi_{kr}}\right)\int\frac{1}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx\\
-&=\frac{\xi_{kr}}{2}\int\frac{ 2x-2\beta_k}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx+\left(\beta_k\xi_{kr}+\eta_{kr}\right)\int\frac{1}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx\\
-&=\frac{\xi_{kr}}{2}\int\frac{1}{u^r}du+\left(\beta_k\xi_{kr}+\eta_{kr}\right)\int\frac{1}{\left[v^2+\gamma_k^2\right]^r}dv\\
+\int\frac{\xi_{kr} x+\eta_{kr}}{\left[(x-\beta_k)^2+\gamma_k^2\right]^r}dx=&\frac{\xi_{kr}}{2}\int\frac{ 2x+2\frac{\eta_{kr}}{\xi_{kr}}}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx\\
+=&\frac{\xi_{kr}}{2}\int\frac{ 2x-2\beta_k+2\beta_k+2\frac{\eta_{kr}}{\xi_{kr}}}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx\\
+=&\frac{\xi_{kr}}{2}\int\frac{ 2x-2\beta_k}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx+\\
+&\frac{\xi_{kr}}{2}\left(2\beta_k+2\frac{\eta_{kr}}{\xi_{kr}}\right)\int\frac{1}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx\\
+=&\frac{\xi_{kr}}{2}\int\frac{ 2x-2\beta_k}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx+\left(\beta_k\xi_{kr}+\eta_{kr}\right)\int\frac{1}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx\\
+=&\frac{\xi_{kr}}{2}\int\frac{1}{u^r}du+\left(\beta_k\xi_{kr}+\eta_{kr}\right)\int\frac{1}{\left[v^2+\gamma_k^2\right]^r}dv\\
 \end{aligned}
 
 其中 $\int\frac{1}{u^r}du=\begin{cases}\ln |u|+C&r=1\\\frac{-1}{r-1}\frac{1}{u^{r-1}}&r\geq 2\end{cases}$ 故 $\int\frac{ 2x-2\beta_k}{\left[x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right]^r}dx=\begin{cases}\ln |x^2-2\beta_kx+\beta_k^2+\gamma_k^2|+C&r=1\\\frac{-1}{r-1}\frac{1}{\left(x^2-2\beta_kx+\beta_k^2+\gamma_k^2\right)^{r-1}}&r\geq 2\end{cases}$

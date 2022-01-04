@@ -2,7 +2,7 @@
 #+OPTIONS: ^:nil
 #+TITLE: 微分方程
 
-Current Mark: 19
+Current Mark: 20
 
 * 连续函数
 
@@ -170,7 +170,7 @@ $$\forall \epsilon>0, \exists \delta>0, \forall |x_1-x_2|<\delta,x\in D\Rightarr
 
 * 导数基本知识
 
-** 函数可导定义
+** 函数可导定义<<MK20>>
 
 $\lim_{x\to x_0} \frac{f(x)-f(x_0)}{x-x_0}=a,-\infty<a<+\infty$
 
@@ -181,7 +181,9 @@ $\lim_{x\to x_0} \frac{f(x)-f(x_0)}{x-x_0}=a,-\infty<a<+\infty$
 \therefore &\lim_{x\to x_0}\left\{f(x)-f(x_0)\right\}=\lim_{x\to x_0}\left\{(x-x_0)\frac{f(x)-f(x_0)}{x-x_0}\right\}\\
 \end{aligned}
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 11/Note11.org][多元连续函数极限四则运算乘法]]可得
+由于[[MK20][可导]]可得 $\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$ 存在且不为无穷，显然 $\lim_{x\to x_0}(x-x_0)=0$
+
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK22][多元函数乘法]]可得
 
 \begin{aligned}
 &\lim_{x\to x_0}\left\{(x-x_0)\frac{f(x)-f(x_0)}{x-x_0}\right\}=\lim_{x\to x_0}\left\{(x-x_0)\right\}\lim_{x\to x_0}\left\{\frac{f(x)-f(x_0)}{x-x_0}\right\}\\
@@ -190,7 +192,7 @@ $\lim_{x\to x_0} \frac{f(x)-f(x_0)}{x-x_0}=a,-\infty<a<+\infty$
 \therefore &\lim_{x\to x_0}\left\{f(x)-f(x_0)\right\}=0\\
 \end{aligned}
 
-又根据[[e:/OneDrive/数学分析/Note/Chapter 11/Note11.org][多元连续函数极限四则运算加法]]可得
+又根据[[~/OneDrive/数学分析/Chap11Note.org::MK22][多元函数加减法]]可得
 
 \begin{aligned}
 &\lim_{x\to x_0}\left\{f(x)-f(x_0)\right\}=\lim_{x\to x_0}f(x)-\lim_{x\to x_0}f(x_0)=\lim_{x\to x_0}f(x)-f(x_0)=0\\

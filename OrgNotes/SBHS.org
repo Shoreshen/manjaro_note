@@ -1,10 +1,10 @@
-][#+LATEX_CLASS: ctexart
+#+LATEX_CLASS: ctexart
 
 #+TITLE: 实变函数
 
 current video: P36
 
-current mark: 253
+current mark: 276
 
 * 几乎处处<<MK190>>
 
@@ -1395,7 +1395,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 （4） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]： $\exists 0\in\mathbb{R}\forall a\in\mathbb{R}\left(0+a=a\right)\land\exists1\in\mathbb{R}\forall a\in\mathbb{R}\left(1\cdot a=a\right)$
 
-（5） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]： $\forall a\in\mathbb{R}\exists -a\in\mathbb{R}\left(-a+a=0\right)\land\forall a\in\mathbb{R}\exists a^{-1}\in\mathbb{R}\left(a^{-1}\cdot a=1\right)$
+（5） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]： $\forall a\in\mathbb{R}\rightarrow\exists (-a)\in\mathbb{R}\left(-a+a=0\right)\land\forall (a\in\mathbb{R}\land a\ne0)\rightarrow\exists a^{-1}\in\mathbb{R}\left(a^{-1}\cdot a=1\right)$
 
 **** 不可数加法<<MK53>>
 
@@ -1513,10 +1513,6 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 根据[[MK4][域公理]]中乘法和乘法逆元，定义除法为 $a\div b=a\cdot\frac{1}{b}$
 
-**** 整数幂定义<<MK20>>
-
-若 $a\in\mathbb{R},b\in\mathbb{N}^+$ 则定义 $a^b=a\cdot...\cdot a$ 即 $b$ 个 $a$ 相乘，若 $a^0=1\land a^1=a$
-
 *** 序公理<<MK5>>
 
 对于任意 $\{a,b,c\}\subset\mathbb{R}$ 存在[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系]] $>$ 满足：
@@ -1604,7 +1600,7 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 故根据三歧性，仅有可能 $(a-b)+(c-d)>0$ 根据推论1即 $a+c>b+d$
 
-**** 推论3
+**** 推论3<<MK265>>
 
  $a>b\land c<0\rightarrow a\cdot c<b\cdot c$
 
@@ -1766,7 +1762,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 则有 $\exists c\in\mathbb{R}\left(\forall x\in A\forall y\in B(x\leq c\leq y)\right)$
 
-**** 充要条件<<MK18>>
+**** 确界存在（充要条件）<<MK18>>
 
 满足[[MK4][域公理]]以及[[MK5][序公理]]的前提下，连续性公理的充要条件是确界存在定理，即有上界必有上确界，有下界必有下确界
 
@@ -1885,6 +1881,68 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 即对于任意 $a\geq 0$ 成立存在 $i\in\mathbb{N}$ 满足 $i\leq a\leq i+1$
 
 则对于 $a<0$ 是 $-a$ 的逆元，可根据[[MK29][逆元相反]]推论证明
+
+***** 推论3<<MK254>>
+
+对于任意 $a\in\mathbb{R}\land a>0$ 存在 $i\in\mathbb{N}$ 满足 $i>0\land \frac{1}{i}>a$
+
+****** 证明
+
+由于 $a>0$ ，则根据[[MK4][域公理]]（5）可得逆元存在，故 $\frac{1}{a}\in\mathbb{R}$
+
+根据[[MK19][阿基米德性质]]可得存在 $i$ 满足 $i>\frac{1}{a}$ ，则根据[[MK140][乘法逆元]]可得 $\frac{1}{i}<a$
+
+*** 特殊运算定义
+
+**** 整数幂定义<<MK20>>
+
+若 $a\in\mathbb{R},b\in\mathbb{N}^+$ 则定义 $a^b=a\cdot...\cdot a$ 即 $b$ 个 $a$ 相乘，若 $a^0=1\land a^1=a$
+
+**** 开整数方定义<<MK257>>
+
+对于任意 $t\in\mathbb{R}\land t\geq0\land m\in\mathbb{N}$ 定义 $\sqrt[m]{t}=\alpha$ 则有 $\alpha^m=t$
+
+**** 有理数幂定义<<MK258>>
+
+若 $a\in\mathbb{R}\land a>0,\{p,q\}\subset\mathbb{N}$ 则定义 $a^{\frac{q}{p}}=(\sqrt[p]{a})^q$ 即 $a$ [[MK257][开分母次方]]后的[[MK20][分子次幂]]
+
+**** 正实数次幂定义<<MK259>>
+
+对于任意 $a\in\mathbb{R}\land a>0,b\in\mathbb{R}\land b>0$ 根据[[MK33][定理2]]存在一组 $\{c_i\}$ 满足：
+
+（1） $c_0\in\mathbb{N}$
+
+（2） 当 $i>0$ 时 $c_i\in\mathbb{N}\land0\leq c_i\leq9$
+
+（3） $c_0+\sum_{i=1}^\infty\frac{c_i}{10^i}=b$
+
+则定义 $a^b=\lim_{n\to\infty}a^{c_0+\sum_{i=1}^n\frac{c_i}{10^i}}$ 且有 $a^b\in\mathbb{R}$
+
+***** 证明
+
+显然对于任意 $n>1$ 定义 $S_n=c_0+\sum_{i=1}^n\frac{c_i}{10^i}$ 进一步定义数列 $\{a^{S_n}\}$
+
+则易证 $S_n\in\mathbb{Q}$ 是有理数，且有 $S_{n+1}-S_n=\frac{c_{n+1}}{10^{n+1}}>0$ 即 $S_{n+1}>S_n$
+
+不妨设 $a>1$ 则根据[[MK258][有理幂定义]]易证 $a^{S_{n}}/a^{S_{n-1}}=a^{\frac{c_n}{10^{n}}}>1$ 故根据[[MK5][运算相容]]可得 $a^{S_n}>a^{S_{n-1}}$
+
+又根据[[MK19][阿基米德性质]]可得存在 $K\in\mathbb{N}$ 满足 $K>b$ 不妨设 $a>0$
+
+故对于任意 $n$ 均易证 $a^{S_n}\leq a^K$ 进一步易证 $\lim_{n\to\infty}a^{S_n}\leq a^K$
+
+综上所述，数列 $\{a^{S_n}\}$ 单调递增且有上界，根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 $\lim_{n\to\infty}a^{S_n}\in\mathbb{R}$
+
+同理易证当 $0<a<1$ 以及 $a=1$ 时同样有 $\lim_{n\to\infty}a^{S_n}\in\mathbb{R}$
+
+**** 负实数次幂定义
+
+对于任意 $a\in\mathbb{R}\land a>0,b\in\mathbb{R}\land b>0$ 定义 $a^{-b}=\frac{1}{a^b}$
+
+**** 实数对数定义<<MK260>>
+
+对于任意 $b\in\mathbb{R}$ 若满足 $e^a=b$ 则定义 $\ln b=a$
+
+其中 $e$ 是自然底数， $e^a$ 是 $e$ 的 $a$ 次[[MK259][幂]]
 
 ** 完备性等价定理<<MK31>>
 
@@ -2310,6 +2368,98 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 同样根据[[MK31][闭区间套]]可得 $\lim_{u\to\infty}x_u=n+\sum_{i=1}^\infty\frac{a_i}{K^i}=\xi=a$ 
 
+*** 定理3<<MK256>>
+
+对于任意 $t\in\mathbb{R}\land t\geq0\land m\in\mathbb{N}$ 均有 $\sqrt[m]{t}\in\mathbb{R}$
+
+**** 证明
+
+定义 $S=\left\{c\big|c^m\leq t\land c\in\mathbb{R}\right\}$ 则有 $\alpha=\sup\{S\}$ 根据[[MK18][确界存在]]可得 $\alpha\in\mathbb{R}$
+
+***** 假设 $\alpha^m<t$ <<MK255>>
+
+由于 $n\in\mathbb{N}\rightarrow n\geq1$ ，故有 $\frac{1}{n}\leq 1$ ，且易证 $\alpha^{m-i}\tbinom{m}{i}>0$ ，故根据[[~/OneDrive/数学分析/Chap10Note.org::MK3][二项式展开]]可得
+
+\begin{aligned}
+\left(a+\frac{1}{n}\right)^m=&\sum_{i=0}^m\alpha^{m-i}\left(\frac{1}{n}\right)^{i}\tbinom{m}{i}\\
+=&\alpha^m+\sum_{i=1}^m\alpha^{m-i}\left(\frac{1}{n}\right)^{i}\tbinom{m}{i}\\
+=&\alpha^m+\frac{1}{n}\sum_{i=1}^m\alpha^{m-i}\left(\frac{1}{n}\right)^{i-1}\tbinom{m}{i}\\
+\leq&\alpha^m+\frac{1}{n}\sum_{i=1}^m\alpha^{m-i}\tbinom{m}{i}=\alpha^m+\frac{1}{n}A\\
+\end{aligned}
+
+由于 $\alpha^m\in\mathbb{R}\land\left(a+\frac{1}{n}\right)^m\in\mathbb{R}$ 故易证 $A\in\mathbb{R}$
+
+由于 $\alpha^m<t\rightarrow t-\alpha^m>0$ 故有 $\frac{t-\alpha^m}{A}>0$ 根据[[MK254][推论3]]存在 $n^*\in\mathbb{N}$ 满足 $\frac{1}{n^*}<\frac{t-\alpha^m}{A}$
+
+整理后可得 $t>\alpha^m+\frac{A}{n^*}$ 显然 $\alpha^m+\frac{A}{n^*}\in\mathbb{R}$ 进一步根据之前不等式整理
+
+\begin{aligned}
+\alpha^m+\frac{A}{n^*}=&\alpha^m+\frac{1}{n^*}\sum_{i=1}^m\alpha^{m-i}\tbinom{m}{i}\\
+\geq&\alpha^m+\frac{1}{n^*}\sum_{i=1}^m\alpha^{m-i}\left(\frac{1}{n^*}\right)^{i-1}\tbinom{m}{i}\\
+=&\left(a+\frac{1}{n^*}\right)^m
+\end{aligned}
+
+显然 $\left(a+\frac{1}{n^*}\right)^m\in\mathbb{R}$ 故定义 $c=\alpha+\frac{1}{n^*}$ 显然有 $c\in\mathbb{R}\land c>\alpha$ 且 $c^m\leq\alpha^m+\frac{A}{n^*}<t$
+
+显然与 $\alpha$ 是上[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]的定义不符，故假设不成立
+
+***** 假设 $\alpha^m>t$
+
+[[MK255][同理]]由于 $\frac{1}{n}\leq 1$ 以及 $\alpha^{m-i}\tbinom{m}{i}>0$ 且易证 $\left(-\frac{1}{n}\right)^{2i}>0\land\left(-\frac{1}{n}\right)^{2i+1}<0$ ，故根据[[~/OneDrive/数学分析/Chap10Note.org::MK3][二项式展开]]可得
+
+\begin{aligned}
+\left(a-\frac{1}{n}\right)^m=&\sum_{i=0}^m\alpha^{m-i}\left(-\frac{1}{n}\right)^{i}\tbinom{m}{i}\\
+=&\alpha^m+\sum_{i=1}^m\alpha^{m-i}\left(-\frac{1}{n}\right)^{i}\tbinom{m}{i}\\
+\geq&\alpha^m+\sum_{2i-1\leq m\land i\geq1}\alpha^{m-(2i-1)}\left(-\frac{1}{n}\right)^{2i-1}\tbinom{m}{2i-1}\\
+=&\alpha^m-\frac{1}{n}\sum_{2i-1\leq m\land i\geq1}\alpha^{m-(2i-1)}\left(-\frac{1}{n}\right)^{2i-2}\tbinom{m}{2i-1}\\
+\geq&\alpha^m-\frac{1}{n}\sum_{2i-1\leq m\land i\geq1}\alpha^{m-(2i-1)}\tbinom{m}{2i-1}\\
+=&\alpha^m-\frac{1}{n}A
+\end{aligned}
+
+显然易证 $A\in\mathbb{R}$ 故根据 $\alpha^m>t$ 有 $\frac{\alpha^m-t}{A}>0$ 根据[[MK254][推论3]]存在 $n^*\in\mathbb{N}$ 满足 $\frac{1}{n^*}<\frac{\alpha^m-t}{A}$
+
+整理后可得 $\alpha^m-\frac{1}{n^*}A>t$ [[MK255][同理]]可得 $\left(\alpha-\frac{1}{n^*}\right)^m>t$ 与[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]定义矛盾，假设不成立
+
+***** 结论
+
+根据之前证明，结合[[MK5][三岐性]]可得 $\alpha^m=t$ 由于 $\alpha\in\mathbb{R}$ 故可得 $\sqrt[m]{t}\in\mathbb{R}$
+
+*** 定理4<<MK261>>
+
+对于任意 $a\in\mathbb{R}\land a>0$ 均有其[[MK260][对数]] $\ln a\in\mathbb{R}$
+
+**** 证明
+
+定义 $S=\left\{c\big|e^c\leq a\land c\in\mathbb{R}\right\}$ 则有 $\alpha=\sup\{S\}$ 根据[[MK18][确界存在]]可得 $\alpha\in\mathbb{R}$
+
+***** 假设 $e^\alpha<a$
+
+则根据[[MK43][稠密性]]可得存在 $A\in\mathbb{Q}$ 满足 $e^\alpha<A<a$ 显然 $e^\alpha>0$ 故根据[[MK5][运算相容]]可得 $1<\frac{A}{e^\alpha}$
+
+易证 $\lim_{n\to\infty}e^\frac{1}{n}=1$ 且有 $\forall n\in\mathbb{N}\rightarrow e^\frac{1}{n}>1$
+
+故结合极限定义可得存在 $N$ 对于任意 $n>N$ 均有 $1<e^\frac{1}{n}<\frac{A}{e^\alpha}$
+
+故根据[[MK5][运算相容]]可得 $e^\alpha<e^{\alpha+\frac{1}{n}}<A$ 显然 $\frac{1}{n}\in\mathbb{R}$ 故存在 $t=\alpha+\frac{1}{n}$
+
+满足 $t>\alpha$ 且 $e^t<A<a$ 显然与上[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]的定义不符，故假设不成立
+
+***** 假设 $e^\alpha>a$
+
+根据[[MK43][稠密性]]可得存在 $A\in\mathbb{Q}$ 满足 $e^\alpha>A>a>0$ 故根据[[MK5][运算相容]]可得 $1>\frac{A}{e^\alpha}$
+
+易证 $\lim_{n\to\infty}e^{-\frac{1}{n}}=1$ 且有 $\forall n\in\mathbb{N}\rightarrow e^{-\frac{1}{n}}=\frac{1}{e^{\frac{1}{n}}}<1$
+
+故结合极限定义可得存在 $N$ 对于任意 $n>N$ 均有 $1>e^{-\frac{1}{n}}>\frac{A}{e^\alpha}$
+
+故根据[[MK5][运算相容]]可得 $e^\alpha>e^{\alpha-\frac{1}{n}}>A$ 显然 $\frac{1}{n}\in\mathbb{R}$ 故存在 $t=\alpha-\frac{1}{n}$
+
+满足 $t<\alpha$ 且 $e^t>A>a$ 显然与上[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]的定义不符，故假设不成立
+
+***** 结论
+
+根据之前证明，结合[[MK5][三岐性]]可得 $e^\alpha=a$ 由于 $\alpha\in\mathbb{R}$ 故可得 $\ln a=\alpha\in\mathbb{R}$
+
 *** 有理数稠密性<<MK43>>
 
 对于任意 $\{x_1,x_2\}\subset\mathbb{R}$ 且 $x_1<x_2$ 可得存在 $x\in\mathbb{Q}$ 满足 $x_1<x<x_2$
@@ -2512,6 +2662,58 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 故与 $S_n=\sup(X_n)$ 矛盾，假设不成立。即不存在[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]] $\{x_{n_i}\}$ 满足 $\lim_{i\to\infty}x_{n_1}=I'>I$
 
 则 $I$ 是最大[[~/OneDrive/数学分析/Chap9Note.org::MK1][极限点]]，即为[[~/OneDrive/数学分析/Chap9Note.org::MK2][上极限]]
+
+**** 引理1
+
+对于 $\mathbb{R}_e$ 上的数列 $\{x_n\}$ 其[[~/OneDrive/数学分析/Chap9Note.org::MK2][上下极限]]的等价表述为：
+
+（1） $\overline{\lim_{i\to\infty}}x_i=\lim_{n\to\infty}\sup\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\}$
+
+（2） $\underline{\lim_{n\to\infty}}x_n=\lim_{n\to\infty}\inf\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\}$
+
+***** 证明
+
+仅证（1），同理可证（2）
+
+定义 $S_k=\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\},\alpha_k=\sup(S_k)$ 由于对于任意 $i>j$ 均有 $S_i\subset S_j$
+
+故显然有 $\alpha_i\leq\alpha_j$ 即 $A=\{\alpha_i\}$ 为单调递减数列，则根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]必收敛于数列的下确界
+
+即 $\lim_{i\to\infty}=\inf(A)$ 证毕
+
+**** 引理2<<MK270>>
+
+若 $\{x_i\}$ 为非负函数，则有 $\underline{\lim_{i\to\infty}}-x_i=-\overline{\lim_{i\to\infty}}x_i$
+
+***** 证明
+
+与[[MK266][函数极限证明]]类似易证
+
+*** 函数数列极限<<MK267>>
+
+对于函数列 $\{f_i(x)\},i\in\mathbb{N}$ 定义：
+
+上极限： $\overline{\lim_{i\to\infty}}f_i(x)=\lim_{i\to\infty}\sup\left\{f_i(x)\big|i\geq n\right\}$ 其中 $\sup\{A\}$ 表示函数集合 $A$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK342][函数上确界]]
+
+下极限： $\underline{\lim_{i\to\infty}}f_i(x)=\lim_{i\to\infty}\inf\left\{f_i(x)\big|i\geq n\right\}$ 其中 $\inf\{A\}$ 表示函数集合 $A$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK342][函数下确界]]
+
+**** 引理<<MK271>>
+
+若 $\{f_i(x)\}$ 为非负函数，则有 $\underline{\lim_{i\to\infty}}-f_i(x)=-\overline{\lim_{i\to\infty}}f_i(x)$
+
+***** 证明<<MK266>>
+
+定义 $g_n(x)=\inf\left\{-f_i(x)\big|i\geq n\right\}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK342][函数下确界]]则有 $\underline{\lim_{i\to\infty}}-f_i(x)=\lim_{n\to\infty}g_n(x)$
+
+则根据定义对于任意 $x'$ 均有 $g_n(x')=\inf\left\{-f_i(x')\big|i\geq n\right\}$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK343][定理6]]可得 $-\inf\left\{-f_i(x')\big|i\geq n\right\}=\sup\left\{(-1)\cdot(-f_i(x'))\big|i\geq n\right\}$
+
+即 $\inf\left\{-f_i(x')\big|i\geq n\right\}=-\sup\left\{f_i(x')\big|i\geq n\right\}$ 又根据 $x'$ 的任意性可得 $g_n(x)=-\sup\left\{f_i(x)\big|i\geq n\right\}$ 
+
+则根据极限四则运算 $\lim_{n\to\infty}g_n(x)=\lim_{n\to\infty}-\sup\left\{f_i(x)\big|i\geq n\right\}=-\lim_{n\to\infty}\sup\left\{f_i(x)\big|i\geq n\right\}$
+
+结合上下极限定义可得有 $\underline{\lim_{i\to\infty}}-f_i(x)=-\overline{\lim_{i\to\infty}}f_i(x)$
 
 * 实数(勒贝格)测度
 
@@ -4171,6 +4373,36 @@ Borel集中元素均为可测集
 
 综上所述 $g^{-1}((a,\infty])$ 是[[MK174][可测集]]，故 $g(x)$ 是可测函数
 
+**** 定理9（对数可测）
+
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}^+,E\subset X$
+
+则 $\ln f(x)$ 为[[MK143][可测函数]]是 $f(x)$ 为[[MK143][可测函数]]的充要条件
+
+***** 证明
+
+定义 $h(x)=\ln f(x)$ 由于对于任意 $x$ 均有 $f(x)\in\mathbb{R}^+$ ，则根据[[MK261][定理4]]可得 $h(x)=\ln f(x)\in\mathbb{R}$
+
+****** 充分
+
+根据 $h(x)$ 定义以及[[MK260][对数定义]]可得 $f(x)=e^{h(x)}$
+
+对于任意 $a\in\mathbb{R}$ 有 $f^{-1}((a,\infty])=\left\{x\big|h(x)\geq\ln a\right\}=h^{-1}((\ln a,+\infty])$
+
+又根据[[MK261][定理4]]可得 $\ln a\in\mathbb{R}$ 由于 $h$ 是[[MK143][可测函数]]故有 $h^{-1}((\ln a,+\infty])$ 是[[MK174][可测集]]
+
+综上所述，对于任意 $a\in\mathbb{R}$ 均有 $f^{-1}((a,\infty])$ 是[[MK174][可测集]]，即 $f(x)$ 是[[MK143][可测函数]]
+
+****** 必要
+
+对于任意 $a\in\mathbb{R}$ 有 $h^{-1}((a,\infty])=\left\{x\big|f(x)\geq e^a\right\}=f^{-1}((e^a,+\infty])$
+
+由于 $e\in\mathbb{R}\land f(x)\in\mathbb{R}^+$ 则根据[[MK259][实数幂]]定义可知 $e^a\in\mathbb{R}$
+
+由于 $f$ 是[[MK143][可测函数]]故有 $f^{-1}((e^a,+\infty])$ 是[[MK174][可测集]]
+
+综上所述，对于任意 $a\in\mathbb{R}$ 均有 $h^{-1}((a,\infty])$ 是[[MK174][可测集]]，即 $h(x)$ 是[[MK143][可测函数]]
+
 *** 运算
 
 **** 四则运算<<MK181>>
@@ -4378,9 +4610,9 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 通过 $\psi^{-1}([-\infyt,a))=\bigcap_{i\in I}f_i^{-1}([-\infty,a))$ [[MK169][同理可证]] $\psi(x)$ 是[[MK134][可测函数]]
 
-**** 极限运算
+**** 极限运算<<MK268>>
 
-对于[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个[[MK134][可测函数]] $f_i(x), i\in\mathbb{N}$ 其上定义其下极限函数 $\phi(x)=\overline{\lim_{i\to\infty}}f_i(x),\psi(x)=\underline{\lim_{i\to\infty}}f_i(x)$
+对于[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个[[MK134][可测函数]] $f_i(x), i\in\mathbb{N}$ 其上定义其[[MK267][下极限函数]] $\phi(x)=\overline{\lim_{i\to\infty}}f_i(x),\psi(x)=\underline{\lim_{i\to\infty}}f_i(x)$
 
 则 $\phi(x),\psi(x)$ 仍为[[MK134][可测函数]]
 
@@ -4649,7 +4881,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 若满足 $\forall\epsilon>0\rightarrow \lim_{k\to\infty}\varphi\left(\left\{x\big||f_k(x)-f(x)|>\epsilon\right\}\right)=0$ 其中 $\varphi(E)$ 定义为 $E$ 的[[MK61][外侧度]]
 
-则称 $\{f_k(x)\}$ 依测度收敛于 $f(x)$
+则称 $\{f_k(x)\}$ 对于 $k$ 依测度收敛于 $f(x)$ 记作 $f_k(x)\stackrel{k}{\Rightarrow} f(x)$
 
 *** 引理1
 
@@ -4657,7 +4889,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 **** 证明
 
-对于任意 $k$ 定义 $n$ 为满足 $\sum_{i=1}^n i\geq k$ 的最小正整数，定义 $m=\sum_{i=1}^n i-k$
+对于任意 $k$ 定义 $n$ 为满足 $\sum_{i=1}^n i\geq k$ 的最小正整数，定义 $m=\sum_{i=1}^n i-k\leq n$
 
 则定义 $E=(0,1]$ 以及函数 $f_k(x)=\begin{cases}1&x\in\left(\frac{m}{n},\frac{m+1}{n}\right]\\0&x\not\in\left(\frac{m}{n},\frac{m+1}{n}\right]\end{cases}$
 
@@ -4756,6 +4988,26 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 综上所述，该函数不是依测度收敛
 
+*** 引理4<<MK273>>
+
+若有 $f_k(x)\stackrel{k}{\Rightarrow} f(x)$ 即 $\{f_k(x)\}$ [[MK189][依测度收敛]]于 $f(x)$ 
+
+则对于 $\{f_k(x)\}$ 的任意子列 $f_{k(i)}(x)$ 亦有 $\forall\epsilon>0\rightarrow \lim_{i\to\infty}\varphi\left(\left\{x\big||f_{k(i)}(x)-f(x)|>\epsilon\right\}\right)=0$
+
+即 $f_{k(i)}(x)\stackrel{i}{\Rightarrow} f(x)$
+
+**** 证明
+
+由于 $f_k(x)\Rightarrow f(x)$ 故有 $\forall\epsilon>0\rightarrow \lim_{k\to\infty}\varphi\left(\left\{x\big||f_k(x)-f(x)|>\epsilon\right\}\right)=0$ 
+
+即对于任意 $\epsilon>0$ 有 $\forall\delta>0,\exists N,\forall k>N\rightarrow \varphi\left(\left\{x\big||f_k(x)-f(x)|>\epsilon\right\}\right)<\delta$
+
+由于 $\{f_{k(i)}\}$ 亦为数列，故 $\lim_{i\to\infty}k(i)=\infty$ 则对于任意 $N$ 存在 $I$ 使得 $\forall i>I\rightarrow k(i)>N$
+
+即得对于任意 $\epsilon>0$ 有 $\forall\delta>0,\exists I,\forall i>I\rightarrow \varphi\left(\left\{x\big||f_{k(i)}(x)-f(x)|>\epsilon\right\}\right)<\delta$
+
+综上所述亦有 $f_{k(i)}(x)$ 随 $i$ [[MK189][依测度收敛]]于 $f(x)$ 
+
 ** 勒贝格定理
 
 对于任意 $x\in E$ 上的[[MK133][广义实值]]函数列 $\{f_k(x)\}$ 以及函数 $f(x)$ 若满足
@@ -4796,7 +5048,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 对于任意 $x\in E$ 上的[[MK133][广义实值]]函数列 $\{f_k(x)\}$ 以及函数 $f(x)$
 
-若 $\{f_k(x)\}$ [[MK189][依测度收敛]] $f(x)$ 则存在子列 $\{f_{k(s)}(x)\}$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+若 $\{f_k(x)\}$ [[MK189][依测度收敛]] $f(x)$ 则存在子列 $\{f_{k(s)}(x)\}$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
 
 *** 证明
 
@@ -4828,7 +5080,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 则对于任意 $\epsilon>0$ 存在 $u\in\mathbb{N}$ 满足 $\epsilon>\frac{1}{u}$ 则取 $\hat{N}=\max(N,u)$
 
-则对于任意 $s>\hat{N}$ 均有 $|f_{k(s)}(x)-f(x)|<\frac{1}{u}<\epsilon$ 即当 $x\in Z$ 时 $\{f_{k(s)}(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]与 $f(x)$
+则对于任意 $s>\hat{N}$ 均有 $|f_{k(s)}(x)-f(x)|<\frac{1}{u}<\epsilon$ 即当 $x\in Z$ 时 $\{f_{k(s)}(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]与 $f(x)$
 
 **** 不收敛点集是零测集
 
@@ -5430,15 +5682,17 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 证毕
 
-**** Faton引理
+**** Faton引理<<MK269>>
 
 若 $\{f_i(x)\}$ 是[[MK212][外侧度空间]] $<E,\varphi>$ 上的非负[[MK134][可测函数]]列
 
-则有 $$\int_E\lim_{n\to\infty}\left\{\inf\left\{f_k(x)\big|k\geq n\land k\in\mathbb{N}^+\right\}\right\}dx\leq\lim_{n\to\infty}\left\{\inf\left\{\int_Ef_k(x)dx\bigg|k\geq n\land k\in\mathbb{N}^+\right\}\right\}$$
+则有 $$\int_E\left(\underline{\lim_{n\to\infty}}f_k(x)\right)dx\leq\underline{\lim_{n\to\infty}}\left\{\int_Ef_k(x)dx\right\}$$
+
+即函数[[MK267][下极限函数]]的积分小于等于积分的[[MK171][下极限]]
 
 ***** 证明
 
-定义 $I_i=\left\{f_k(x)\big|k\geq n\land k\in\mathbb{N}^+\right\}$ 以及 $D_i(x)=\inf\left\{I_i\}$
+定义 $I_i=\left\{f_k(x)\big|k\geq n\land k\in\mathbb{N}^+\right\}$ 以及 $D_i(x)=\inf\left\{I_i\}$ 即函数集合 $I_i$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK342][函数下确界]]
 
 则有 $\forall x\in E\land i\in\mathbb{N}^+$ 满足 $f_k(x)\in I_i\rightarrow f_k(x)\geq D_i(x)$
 
@@ -5909,7 +6163,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 则可推出另一函数勒贝格积分有限，即勒贝格可积
 
-**** 性质10（绝对连续性）
+**** 性质10（绝对连续性）<<MK263>>
 
 [[MK134][可测函数]] $f:E\to\mathbb{R}_e$ [[MK237][勒贝格可积]] $f(x)\in\mathcal{L}(E)$
 
@@ -5968,7 +6222,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 &=\epsilon
 \end{aligned}
 
-**** 性质11（线性）
+**** 性质11（线性）<<MK262>>
 
 [[MK134][可测函数]] $f:E\to\mathbb{R}_e,g:E\to\mathbb{R}_e$ 满足 $\{f(x),g(x)\}\subset\mathcal{L}(E)$
 
@@ -6049,4 +6303,230 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 \leftrightarrow&\int_Eh(x)dx=\int_Ef(x)dx+\int_Eg(x)dx
 \end{aligned}
 
+*** 定理
+
+定义[[MK212][外侧度空间]] $<X,\varphi>$ ，[[MK174][外侧度可测集]] $E\subset X$ 则
+
+**** 勒贝格控制收敛定理<<MK275>>
+
+若 $\{f_n(x)\}$ 满足：
+
+（1） 是一列[[MK134][可测函数]]
+
+（2） [[MK190][几乎处处]]满足 $\lim_{n\to\infty}f_n(x)=f(x)$ 即[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+
+（3） 存在非负函数 $F(x)\in\mathcal{L}(E)$ （[[MK237][勒贝格可积]]）且 $\forall n\in\mathbb{N}\rightarrow\left(\forall x\in E\rightarrow|f_n(x)|\leq F(x)\right)$
+
+则有 $$\lim_{n\to\infty}\int_Ef_n(x)dx=\int_Ef(x)dx$$ 即极限积分可互换
+
+***** 证明
+
+****** 转换定义域<<MK264>>
+
+由于 $F(x)\in\mathcal{L}(x)$ 则根据[[MK251][性质2]]可得 $F(x)$ 在 $E$ 上[[MK190][几乎处处]]有限
+
+由于对于任意 $n$ 均有 $|f_n(x)|\leq F(x)$ 故易证 $f_n(x),f(x)$ 在 $E$ 上亦[[MK190][几乎处处]]有限
+
+则定义 $E_1=F^{-1}({\infty})$ ，以及 $E_2=\left\{x\big|\lim_{n\to\infty}f_n(x)\ne f(x)\right\}$ 即不收敛点集
+
+由于均为几乎处处满足，故有 $\varphi(E_1)=\varphi(E_2)=0$
+
+进一步根据[[MK61][非负性、次可加性]]有 $0\leq\varphi(E_1\cup E_2)\leq\varphi(E_1)+\varphi(E_2)=0$
+
+根据[[MK5][三岐性]]可得 $\varphi(E_1\cup E_2)=0$ ，则定义当 $E'=E-\left(E_1\cup E_2\right)$
+
+故根据[[MK242][性质1]]可得 $$\int_Ef_n(x)dx=\int_{E'}f_n(x)dx\land\int_Ef(x)dx=\int_{E'}f(x)dx$$
+
+即若有 $$\lim_{n\to\infty}\int_{E'}f_n(x)dx=\int_{E'}f(x)dx$$ 则有 $$\lim_{n\to\infty}\int_Ef_n(x)dx=\int_Ef(x)dx$$
+
+****** 转换条件<<MK272>>
+
+对于任意数列 $\{a_n\}\subset\mathbb{R}$ 若有 $\lim_{n\to\infty}|a_n|=0$
+
+则根据极限定义有 $\forall\epsilon>0,\exists N,\forall n>N\rightarrow ||a_n|-0|=|a_n|=|a_n-0|<\epsilon$ 等价于 $\lim_{n\to\infty}a_n=0$
+
+故进一步根据极限运算、[[MK262][线性]]以及[[MK263][绝对连续性]]
+
+\begin{aligned}
+&\lim_{n\to\infty}\int_{E'}f_n(x)dx=\int_{E'}f(x)dx\\
+\leftrightarrow&\lim_{n\to\infty}\int_{E'}f_n(x)dx-\int_{E'}f(x)dx=0\\
+\leftrightarrow&\lim_{n\to\infty}\left\{\int_{E'}f_n(x)dx-\int_{E'}f(x)dx\right\}=0\\
+\leftrightarrow&\lim_{n\to\infty}\left\{\int_{E'}\left(f_n(x)dx-f(x)\right)dx\right\}=0\\
+\leftrightarrow&\lim_{n\to\infty}\left|\int_{E'}\left(f_n(x)dx-f(x)\right)dx\right|=0\\
+\end{aligned}
+
+又由于 $$\left|\int_{E'}\left(f_n(x)dx-f(x)\right)dx\right|\geq 0$$ 且 $$\left|\int_{E'}\left(f_n(x)dx-f(x)\right)dx\right|\leq\int_{E'}\left|f_n(x)dx-f(x)\right|dx$$
+
+故根据极限保序性可得 $$0\leq\lim_{n\to\infty}\left|\int_{E'}\left(f_n(x)dx-f(x)\right)dx\right|\leq\lim_{n\to\infty}\int_{E'}\left|f_n(x)dx-f(x)\right|dx$$
+
+故若 $$\lim_{n\to\infty}\int_{E'}\left|f_n(x)dx-f(x)\right|dx=0$$ 根据夹逼定理有 $$\lim_{n\to\infty}\left|\int_{E'}\left(f_n(x)dx-f(x)\right)dx\right|=0$$
+
+即结合[[MK264][之前证明]]可得若 $$\lim_{n\to\infty}\int_{E'}\left|f_n(x)dx-f(x)\right|dx=0\rightarrow\lim_{n\to\infty}\int_Ef_n(x)dx=\int_Ef(x)dx$$
+
+****** 证明结论<<MK274>>
+
+定义 $g_n(x)=|f_n(x)-f(x)|$
+
+由于 $\lim_{n\to\infty}f_n(x)=f(x)$ 且 $f_i(x)$ 是[[MK134][可测函数]]，则根据[[MK268][极限运算]]可得 $f(x)$ 亦为可测函数
+
+且根据[[MK181][可测函数运算]]可得 $g_n(x)$ 亦为[[MK134][可测函数]]，由于 $F(x)$ [[MK237][勒贝格可积]]，故 $F(x)$ 亦为[[MK134][可测函数]]
+
+进一步由于对于任意 $n$ 均有 $|f_n(x)|\leq F(x)$ 故 $g_n(x),F(x)$ 均非负，且易证 $|f(x)|\leq F(x)$
+
+根据[[MK22][三角不等式]]有 $g_n(x)=|f_n(x)-f(x)|\leq|f_n(x)|+|f(x)|\leq 2F(x)$
+
+最终有 $\{2F(x)-g_n(x)\}$ 是非负[[MK134][可测函数]]列
+
+由于 $F(x)$ 与 $n$ 无关，故根据极限运算，则根据[[MK269][Faton引理]]、[[MK270][数列引理]]、[[MK271][函数引理]]以及[[MK262][线性]]有
+
+\begin{aligned}
+&\int_{E'}\left(\underline{\lim_{n\to\infty}}\left(2F(x)-g_n(x)\right)\right)dx\leq\underline{\lim_{n\to\infty}}\left\{\int_{E'}2F(x)-g_n(x)dx\right\}\\
+\leftrightarrow&\int_{E'}\left(2F(x)-\overline{\lim_{n\to\infty}}g_n(x)\right)\right)dx\leq\underline{\lim_{n\to\infty}}\left\{\int_{E'}2F(x)dx-\int_{E'}g_n(x)dx\right\}\\
+\leftrightarrow&\int_{E'}2F(x)dx-\int_E\overline{\lim_{n\to\infty}}g_n(x)dx\leq\int_{E'}2F(x)dx-\overline{\lim_{n\to\infty}}\int_{E'}g_n(x)dx\\
+\leftrightarrow&\overline{\lim_{n\to\infty}}\int_{E'}g_n(x)dx\leq\int_E\overline{\lim_{n\to\infty}}g_n(x)dx
+\end{aligned}
+
+由于 $\lim_{n\to\infty}f_n(x)=f(x)$ 故得 $\overline{\lim_{n\to\infty}}g_n(x)=\overline{\lim_{n\to\infty}}|f_n(x)-f(x)|=0$
+
+最终得 $$\overline{\lim_{n\to\infty}}\int_{E'}g_n(x)dx\leq0$$ 又根据 $g(x)$ 非负以及[[MK220][性质1]]可得 $$\int_{E'}g_n(x)dx\geq0$$
+
+则易证 $$\lim_{n\to\infty}\int_{E'}g_n(x)dx\geq0$$ 又由于 $$\lim_{n\to\infty}}\int_{E'}g_n(x)dx\leq\overline{\lim_{n\to\infty}}\int_{E'}g_n(x)dx\leq0$$
+
+最终根据夹逼定理 $$\lim_{n\to\infty}\int_{E'}g_n(x)dx=0$$ 进一步根据[[MK272][之前结论]]可得 $$\lim_{n\to\infty}\int_Ef_n(x)dx=\int_Ef(x)dx$$ 
+
+***** 引理1
+
+若 $\{f_n(x)\}$ 满足：
+
+（1） 是一列[[MK134][可测函数]]
+
+（2） $f_n(x)\stackrel{i}{\Rightarrow}f(x)$ 即[[MK189][依测度收敛]]于 $f(x)$
+
+（3） 存在非负函数 $F(x)\in\mathcal{L}(E)$ （[[MK237][勒贝格可积]]）且 $\forall n\in\mathbb{N}\rightarrow\left(\forall x\in E\rightarrow|f_n(x)|\leq F(x)\right)$
+
+则有 $$\lim_{n\to\infty}\int_Ef_n(x)dx=\int_Ef(x)dx$$ 即极限积分可互换
+
+****** 证明
+
+定义 $$g_n=\int_{E'}\left|f_n(x)dx-f(x)\right|dx$$ ，根据定义 $g_n\geq 0$ ，则假设 $$\lim_{n\to\infty}g_n\ne0$$ 
+
+则根据定义，存在 $\epsilon_0>0$ 满足 $\forall N\in\mathbb{N},\exists n_0>N\rightarrow g_n>\epsilon_0$
+
+则易证存在子列 $\{g_{n_i}\}$ 满足 $\forall i\rightarrow g_{n_i}>\epsilon_0$ 根据[[MK273][引理4]]可得 $f_{n_i}(x)\stackrel{i}{\Rightarrow} f(x)$ [[MK189][依测度收敛]]
+
+进一步根据[[MK191][里斯定理]]可得存在子列 $$\lim_{k\to\infty}f_{n_{i_k}}(x)=f(x)$$
+
+则有根据[[MK274][之前证明]]可得 $$\lim_{k\to\infty}\int_{E'}\left|f_{n_{i_k}}(x)dx-f(x)\right|dx=0$$ 即 $$\lim_{k\to\infty}g_{n_{i_k}}=0$$
+
+由于 $\forall i\rightarrow g_{n(i)}>\epsilon_0$ 则有 $$\lim_{k\to\infty}g_{n_{i_k}}\geq\epsilon_0>0$$ 矛盾，故可得假设不成立
+
+即 $$\lim_{n\to\infty}g_n=\lim_{n\to\infty}\int_{E'}\left|f_n(x)dx-f(x)\right|dx=0$$
+
+则根据[[MK272][之前证明]]可得 $$\lim_{n\to\infty}\int_{E'}\left|f_n(x)dx-f(x)\right|dx=0\rightarrow\lim_{n\to\infty}\int_Ef_n(x)dx=\int_Ef(x)dx$$
+
+***** 引理2
+
+若 $\{f_i(x)\}$ 满足：
+
+（1） 是一列[[MK134][可测函数]]
+
+（2） $$\sum_{i=1}^\infty\int_E|f_i(x)|dx<\infty$$
+
+则可得 $$\lim_{n\to\infty}\int_E\sum_{i=1}^nf_i(x)dx=\int_E\sum_{i=1}^\infty f_i(x)dx$$
+
+****** 证明
+
+根据定义可得 $\sum_{i=1}^\infty f_i(x)=\lim_{n\to\infty}\sum_{i=1}^nf_i(x)$
+
+则定义 $S_n(x)=\sum_{i=1}^nf_i(x)$ 以及控制函数 $F(x)=\sum_{i=1}^\infty|f_i(x)|$ 
+
+根据以下证明以及[[MK275][控制收敛定理]]可得 $$\lim_{n\to\infty}\int_ES_n(x)dx=\int_E\left(\lim_{n\to\infty}S_n(x)\right)dx$$
+
+即 $$\lim_{n\to\infty}\int_E\sum_{i=1}^nf_i(x)dx=\int_E\sum_{i=1}^\infty f_i(x)dx$$
+
+******* $F(x)$ 是控制函数，且[[MK247][勒贝格可积]]
+
+定义 $F(x)=\sum_{i=1}^n|f_i(x)|$ ，则根据[[MK22][三角不等式]]易证 $|S_n(x)|=\left|\sum_{i=1}^nf_i(x)\right|\leq\sum_{i=1}^n|f_i(x)|$
+
+由于 $\sum_{i=1}^n|f_i(x)|$ 显然递增，故可得 $\forall n\in\mathbb{N}\rightarrow \sum_{i=1}^n|f_i(x)|\leq\sum_{i=1}^\infty|f_i(x)|=F(x)$
+
+根据[[MK181][四则运算]]以及[[MK268][极限运算]]可得 $\sum_{i=1}^\infty|f_i(x)|$ 亦为可测函数
+
+则根据[[MK240][推论]]有 $$\int_E\left(\sum_{i=1}^\infty |f_i(x)|\right)dx=\sum_{i=1}^\infty\left(\int_E |f_i(x)|dx\right)$$
+
+显然当 $$\sum_{i=1}^\infty\int_E|f_i(x)|dx<\infty$$ 时 $F(x)=\sum_{i=1}^\infty|f_i(x)|$ 有[[MK247][勒贝格可积]]
+
+******* [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]
+
+根据[[MK251][性质2]]可得若 $F(x)$ [[MK247][勒贝格可积]]，则 $F(x)$ 在 $E$ 上[[MK190][几乎处处]]有限
+
+则定义 $x\in E'$ 时 $F(x)$ 有限，根据几乎处处性质有 $\varphi(E-E')=0$
+
+进一步有 $S_n(x)$ 在 $E'$ 上[[~/OneDrive/数学分析/Chap10Note.org::MK5][绝对收敛]]，则根据[[~/OneDrive/数学分析/Chap10Note.org::MK4][引理]]可得 $S_n(x)$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]
+
+定义 $\lim_{n\to\infty}S_n(x)=S(x)$ 当 $x\in E'$ 时
+
+******* 是可测函数
+
+由于 $f_i(x)$ 可测，根据[[MK172][四则运算]]可得对于任意 $n\in\mathbb{N}$ 可得 $S_n(x)$ 亦为[[MK134][可测函数]]
+
+***** 引理3
+
+若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f(x,t)$ 满足：
+
+（1） $f:E\times[a,b]\to\mathbb{R}$ 为实值函数
+
+（2） 对于任意 $t'\in(a,b)$ 均有 $f(x,t')\in\mathcal{L}(E)$ [[MK237][勒贝格可积]]
+
+（3） 对于任意 $x'\in E$ 均有 $f(x',t)$ 在 $t\in(a,b)$ 上[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][可导]]
+
+（4） 存在 $F(x)\in\mathcal{L}(E)$ 满足对于任意 $x'\in E$ 均有 $\forall t\in(a,b)\rightarrow \left|\frac{\partial f(x',t)}{\partial{t}}\right|\leq F(x')$
+
+则有 $$\frac{d}{d t}\left(\int_Ef(x,t)dx\right)=\int_E\frac{\partial f(x,t)}{\partial t}dx$$
+
+****** 证明
+
+******* 证明（1）（2）<<MK276>>
+
+对于任意 $t'\in(a,b)$ 对于任意 $\{h_n\}$ 满足 $\forall n\rightarrow (h_n\ne0\land t'+h_n\in(a,b))\land\lim_{n\to\infty}h_n=0$
+
+由条件（3）则易证 $\lim_{n\to\infty}\frac{f(x,t'+h_n)-f(x,t')}{h_n}=\frac{\partial f(x,t')}{\partial t}$ 则定义 $g_n(x)=\frac{f(x,t'+h_n)-f(x,t')}{h_n},g(x)=\frac{\partial f(x,t')}{\partial t}$
+
+由于 $\forall t\rightarrow f(x,t)\in\mathcal{L}(E)$ 即有 $f(x,t'),f(x,t'+h_n)$ 是[[MK134][可测函数]]
+
+根据[[MK181][四则运算]]可得 $g_n(x)$ 亦为可测函数且 $\lim_{n\to\infty}g_n(x)=g(x)$ 
+
+******* 证明（3）
+
+对于任意 $x'\in E$ ，由于条件（3），根据根据[[~/OneDrive/大学物理/Note/DiffEq.org::MK1][可导必连续]]可得 $f(x',t)$ 在 $t\in(a,b)$ 上[[MK106][连续]]
+
+由于 $t'\in(a,b)\land\forall n(t'+h_n\in(a,b))$ 故可得 $f(x',t)$ 在 $t\in[t',t'+h_n]$ 上连续 $t\in(t',t'+h_n)$ 上可导
+
+则根据[[~/OneDrive/大学物理/Note/DiffEq.org::MK5][中值定理]]可得存在 $\theta\in[0,1]$ 满足 $g(x')=\frac{f(x',t'+h_n)-f(x,t')}{h_n}=\frac{\partial f(x',t' +\theta h_n)}{\partial t}$
+
+由于条件（4）可得 $\forall n\rightarrow |g_n(x')|\leq F(x')$
+
+综上所述，对于任意 $x'\in E$ 均有 $\forall n\rightarrow |g_n(x')|\leq F(x')$ 故可得 $\forall n\rightarrow |g_n(x)|\leq F(x)$
+
+******* 结论
+
+综上所述，对于任意 $t'\in(a,b)$ 以及任意[[MK276][满足条件]]的 $\{h_n\}$ 均可证：
+
+（1） $g_n(x)=\frac{f(x,t'+h_n)-f(x,t')}{h_n}$ 是一列[[MK134][可测函数]]
+
+（2） 存在 $g(x)=\frac{\partial f(x,t')}{\partial t}$ 满足 $\forall x\in E\rightarrow\lim_{n\to\infty}g_n(x)=g(x)$
+
+（3） 存在 $F(x)$ 满足 $\forall n\rightarrow |g_n(x)|\leq F(x)$
+
+即根据[[MK275][控制收敛定理]]可得 $$\lim_{n\to\infty}\int_Eg_n(x)dx=\int_Eg(x)dx$$
+
+即 $$\lim_{n\to\infty}\int_E\frac{f(x,t'+h_n)-f(x,t')}{h_n}dx=\int_E\frac{\partial f(x,t')}{\partial t}dx$$
+
+进一步根据[[MK262][线性]]可得 $$\lim_{n\to\infty}\int_E\frac{f(x,t'+h_n)-f(x,t')}{h_n}dx=\lim_{n\to\infty}\left\{\frac{\int_Ef(x,t'+h_n)dx-\int_Ef(x,t')dx}{h_n}\right\}$$
+
+进一步根据 $\{h_n\}$ 的任意性以及[[~/OneDrive/数学分析/Chap7Note.org::MK9][引理]]可得 $$\lim_{h\to0}\left\{\frac{\int_Ef(x,t'+h)dx-\int_Ef(x,t')dx}{h}\right\}=\int_E\frac{\partial f(x,t')}{\partial t}dx$$
+
+根据[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数定义]]可得 $$\frac{d}{d t}\left(\int_Ef(x,t')dx\right)=\int_E\frac{\partial f(x,t')}{\partial t}dx$$
+
+最终结合 $t'$ 的任意性可得 $$\frac{d}{d t}\left(\int_Ef(x,t)dx\right)=\int_E\frac{\partial f(x,t)}{\partial t}dx$$
 

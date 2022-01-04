@@ -1518,7 +1518,7 @@ $0(x)$ 可约
 
 则根据[[~/OneDrive/复变函数/Cplx_fc.org][导数、微分与解析-解析]]可得函数 $\Phi(\tau)$ 解析。
 
-根据[[~/OneDrive/复变函数/Cplx_fc.org][构建复数-模-性质]]以及[[~/OneDrive/复变函数/Cplx_fc.org][构建复数-函数极限]]可得 $\lim_{|\tau|\to\infty}\frac{1}{\tau^i}=0,i\in\mathbb{N}$
+根据[[~/OneDrive/复变函数/Cplx_fc.org][构建复数-模-性质]]以及[[~/OneDrive/复变函数/Cplx_fc.org::MK57][函数极限]]可得 $\lim_{|\tau|\to\infty}\frac{1}{\tau^i}=0,i\in\mathbb{N}$
 
 则有 $$\lim_{|\tau|\to\infty}\Phi(\tau)=\lim_{|\tau|\to\infty}\frac{\frac{1}{\tau^n}}{a_n+\sum_{i=0}^{n-1}a_i\frac{1}{\tau^{n-i}}}=0$$ 则根据定义，存在 $M$ 对于任意 $|\tau|>M$ 均有 $\left|\Phi(\tau)\right|<1$
 

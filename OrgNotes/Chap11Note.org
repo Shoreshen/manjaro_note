@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK21
+current mark: MK23
 
 * 笛卡尔乘积
 
@@ -25,7 +25,7 @@ $Y=\{y_i|i\in V\}$
 
 对于任意 $x_n\in S$ ，构建 $x_n=a_{n0}.a_{n1}a_{n2}a_{n3}...\\$ 其中 $a_{n0}$ 为整数部分， $a_{n1}$ 为第一位小数，以此类推。
 
-由于有上界，故必定存在 $k\in\mathbb{R}$ 大于任意 $x_n\in S$ ，则 $a_{n0}$ 不可能为无限大，故必有最大值，
+由于有上界，故必定存在 $k\in\mathbb{R}$ 大于任意 $x_n\in S$ ，则 $a_{n0}$ 不可能为无限大，故 $a_{n0}$ 必有最大值
 
 对于 $a_{ni},i>0$ 其取值范围是整数 $0$ 至 $9$ ，亦必有最大值
 
@@ -37,7 +37,7 @@ $a_1=\max(a_{n1}),\forall x_n\in S_0$ ，则构建 $S_1=\{x_n|[x_n]=a_0,x_n\in S
 
 最终构建非空数集 $S\supset S_0 \supset S_1...\supset S_n \supset ...\\$
 
-且构建确界 $\beta=a_0.a_1a_2a_2...\\$ 根据[[~/OneDrive/实变函数/SBHS.org][实数公理-推论]]可得 $\beta\in\mathbb{R}$
+且构建确界 $\beta=a_0.a_1a_2a_2...\\$ 根据[[~/OneDrive/实变函数/SBHS.org::MK33][定理2]]可得 $\beta\in\mathbb{R}$
 
 **** 确界满足 $\forall x\in S\Rightarrow \beta\geq x$
 
@@ -767,7 +767,7 @@ $R^n$ 上点列 $\{\vec{x}_n\}$ 收敛的充要条件是 $\forall \epsilon>0,\ex
 
 ** 多元函数极限四则运算
 
-*** 加减法
+*** 加减法<<MK22>>
 
 \begin{aligned}
 &\lim_{\vec{x}\to\vec{x}_0}f(\vec{x})=A,\lim_{\vec{x}\to\vec{x}_0}g(\vec{x})=B\\
@@ -785,7 +785,7 @@ $R^n$ 上点列 $\{\vec{x}_n\}$ 收敛的充要条件是 $\forall \epsilon>0,\ex
 \therefore &\lim_{\vec{x}\to\vec{x}_0}\{f(\vec{x})+g(\vec{x})\}=A+B\\
 \end{aligned}
 
-*** 乘法
+*** 乘法<<MK23>>
 
 \begin{aligned}
 &\lim_{\vec{x}\to\vec{x}_0}f(\vec{x})=A,\lim_{\vec{x}\to\vec{x}_0}g(\vec{x})=B\\
@@ -1020,7 +1020,7 @@ $D\in R^n$ 映射 $\vec{f}:D\to R^m\Rightarrow \vec{x}=(x_1,...,x_n)\to\vec{z}=(
 
 若连续函数 $\vec{f}(\vec{x})=\vec{y}, \vec{x}\in K\subset R^n, S=\{\vec{y}\}\subset R^m$ 若 $K$ 是紧集，
 
-则 $\vec{f}(\vec{x})$ 一致连续，此处添加一元函数[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][函数一致连续-康托定理]]的链接
+则 $\vec{f}(\vec{x})$ 一致连续，此处添加一元函数[[~/OneDrive/数学分析/Chap7Note.org::K3][康托定理]]的链接
 
 *** 证明
 

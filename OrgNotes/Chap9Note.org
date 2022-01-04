@@ -2,7 +2,7 @@
 
 #+TITLE: 数项级数
 
-current mark: 2
+current mark: 3
 
 * Bolzano-Weiserstrass 定理：
 
@@ -12,13 +12,17 @@ current mark: 2
 
 假设数列 $\{x_n\}$ 有界：$\forall n \in N^+\Rightarrow a<x_n<b$ 
 
-取 $z_1 \in(a,b)$ ，划分为 $[a,z_1]$ 和 $[z_1,b]$ 长度相等的两个区域（两个区间长度为 $\frac{b-a}{2}$），因为 $\{x_n\}$ 有无穷多项，则必有一个区域包含无穷多个 $\{x_n\}$ 的子项。
+取 $z_1 \in(a,b)$ ，划分为 $[a,z_1]$ 和 $[z_1,b]$ 长度相等的两个区域（两个区间长度为 $\frac{b-a}{2}$），
+
+因为 $\{x_n\}$ 有无穷多项，则必有一个区域包含无穷多个 $\{x_n\}$ 的子项。
 
 定义该区域为 $[a_1,b_1]$ ，取任意 $y_1=x_i,\ x_i \in [a_1,b_1]$;
 
 ...
 
-取 $z_n \in (a_{n-1},b_{n-1})$ ，划分为 $[a_{n-1},z_n]$ 和 $[z_n,b_{n-1}]$ 长度相等的两个区域（两个区间长度为 $\frac{b-a}{2^n}$），因为 $\{x_n\}$ 有无穷多项，则必有一个区域包含无穷多个 $\{x_n\}$ 的子项。
+取 $z_n \in (a_{n-1},b_{n-1})$ ，划分为 $[a_{n-1},z_n]$ 和 $[z_n,b_{n-1}]$ 长度相等的两个区域（两个区间长度为 $\frac{b-a}{2^n}$），
+
+因为 $\{x_n\}$ 有无穷多项，则必有一个区域包含无穷多个 $\{x_n\}$ 的子项。
 
 定义该区域为 $[a_n,b_n]$，取任意 $y_n=x_i,\ x_i \in [a_n,b_n]$;
 
@@ -41,9 +45,9 @@ current mark: 2
 
 定义 $E=\{\xi\}$ 为所有 $\{x_n\}$ [[MK1][极限点]]的集合，则定义：
 
-（1） $\sup\{E\}$ 为数列的上极限，记为 $\overline{\lim_{n \to \infty}} x_n$ 
+（1） $\sup\{E\}$ 为数列的上极限，记为 $\overline{\lim_{n \to \infty}} x_n=\lim_{n\to\infty}\sup\left\{x_i\big|i\geq n\right\}$ 
 
-（2） $\inf\{E\}$ 为数列的下极限，记为 $\underline{\lim_{n\to \infty}} x_n$
+（2） $\inf\{E\}$ 为数列的下极限，记为 $\underline{\lim_{n\to \infty}} x_n=\lim_{n\to\infty}\inf\left\{x_i\big|i\geq n\right\}$
 
 * 级数敛散性：
 
@@ -252,9 +256,7 @@ $r=1$ 判别失效。
 
 ** 任意项级数：
 
-*** 柯西收敛原理：
-
-**** 描述：
+*** 柯西收敛原理<<MK3>>
 
 \begin{aligned}
 &\forall \epsilon>0,\ \ \exists N,\ \ \forall m>n>N\Rightarrow \left|\sum_{i=n+1}^m x_i\right|<\epsilon
@@ -401,8 +403,6 @@ $x'_n^-=
 由于 $\sum_{i=1}^\infty x_i=\sum_{i=1}^\infty x_i^+-\sum_{i=1}^\infty x_i^-$ 可以退出 $\sum_{i=1}^\infty x_i=\sum_{i=1}^\infty x'_i$ ， 且 $\sum_{i=1}^\infty x_i$ 绝对收敛。
 
 *** 黎曼定理：
-
-**** 描述：
 
 若 $\sum_{i=1}^\infty x_i$ 条件收敛，则对于任意 $-\infty<a<+\infty$ 存在换序数列 $\sum_{i=1}^\infty x_i=a$
 
