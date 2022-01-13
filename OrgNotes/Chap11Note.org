@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK23
+current mark: MK24
 
 * 笛卡尔乘积
 
@@ -291,7 +291,7 @@ $\exists \{\vec{x}_k\} \in S,\vec{x}_k\ne \vec{x}\Rightarrow \lim_{k\to\infty} \
 
 $\forall \vec{x}\in S\Rightarrow \vec{x}\in S_i$ 即所有 $S$ 包含的点均为 $S$ 的[[MK7][内点]]
 
-**** 满足拓扑定义
+**** 满足拓扑定义<<MK24>>
 
 根据[[~/OneDrive/实变函数/SBHS.org::MK39][拓扑定义]]有[[MK15][定理8]]可得（1）、[[P2][定理3]]可得（2）以及[[P3][定理4]]可得（3）
 
@@ -304,6 +304,12 @@ $\forall \vec{x}\in S\Rightarrow \vec{x}\in S_i$ 即所有 $S$ 包含的点均�
 *** 闭集定义<<MK13>>
 
 $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚点]]，或 $S$ 没有聚点
+
+**** 满足拓扑定义
+
+根据[[P1][定理1]]可得闭集 $S$ 的补集 $S^c$ 是[[MK10][开集]]，由于[[MK24][满足拓扑定义]]，故亦为拓扑开集
+
+则根据[[~/OneDrive/实变函数/SBHS.org::MK41][拓扑闭集定义]]可得 $(S^c)^c=S$ 亦为拓扑定义闭集
 
 *** 紧集<<MK5>>
 

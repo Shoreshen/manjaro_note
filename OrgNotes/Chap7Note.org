@@ -2,7 +2,7 @@
 #+OPTIONS: ^:nil
 #+TITLE: 定积分
 
-currnet mark: 9
+currnet mark: 20
 
 * 定积分定义
 
@@ -57,11 +57,11 @@ $\Rightarrow \bigg| \sum_{i=1}^n f(\xi_i)\Delta x_i - I \bigg| < \epsilon$
 
 * 定积分可积定理
 
-** 基础定义:
+** 基础定义<<MK14>>
 
 函数: $f(x)$ 在 $\left[a,b\right]$ 上有界
 
-划分: $P: a=x_0<x_1<x_2<...<x_{n-1}<b=x_n$ 
+划分: $P=\left\{x_i\big|x_1=a\land x_n=b\land(\forall u>v\rightarrow x_u>x_v)\land0\leq i\leq n\land i\in\mathbb{N}\right\}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]
 
 符号: $\Delta x_i=x_i-x_{i-1}$;
 
@@ -84,8 +84,6 @@ $\Rightarrow \bigg| \sum_{i=1}^n f(\xi_i)\Delta x_i - I \bigg| < \epsilon$
 达布小和: $\underline S(P) = \sum_{i=1}^n m_i \Delta x_i$
 
 ** <<L1>> 定理1: 
-
-*** 定义:
 
 给定划分 $P$ 中，增加分点 $\Rightarrow$ 大和不增，小和不减:
 
@@ -111,8 +109,6 @@ $m_{ik} \Delta x_{ik}  + m_{ki} \Delta x_{ki} \geq m_i (\Delta x_{ik} + \Delta x
 
 ** 定理2:
 
-*** 表述:
-
 $\forall (P_1, P_2) \Rightarrow m(b-a) < \underline S(P_1) < \overline S(P_2) < M(b-a)$
 
 *** 证明:
@@ -127,9 +123,7 @@ $m(b-a) \leq \underline S(P_0) \leq \underline S(P_1) \leq \underline
 S(P) \leq \overline S(P) \leq \overline S(P_2) \leq \overline S(P_0) = M(b-a)$
 
 ** 达布定理:
-
-*** 表述:
-对于: $L = inf \left\{ \overline S(P') \bigg| P' \in \forall P \right\}$ , $l = sup \left\{ \underline S(P') \bigg| P' \in \forall P \right\}$ ，
+对于: $L = \inf \left\{ \overline S(P') \bigg| P' \in \forall P \right\}$ , $l = \sup \left\{ \underline S(P') \bigg| P' \in \forall P \right\}$ ，
 
 $\Rightarrow \lim_{\lambda \to 0} \overline S(P) = L &,\ & \lim_{\lambda \to 0} \underline S(P) = l,\forall P$
 
@@ -182,19 +176,19 @@ $\Rightarrow \forall \epsilon>0 ,\ \  \exists \delta,\ \  \forall P(\lambda<\del
 
 $\lim_{\lambda \to 0} \underline S(P) = l$
 
-** 定积分可积充要条件1:
-
-*** 描述：
+** 定积分可积充要条件1<<MK20>>
 
  $L=l\Leftrightarrow \lim_{\lambda \to 0}{\sum_{i=1}^n f(\xi_i)\Delta x_i} = L$
 
-*** 证明充分:
+*** 证明
+
+**** 证明充分:
 
 $l \leq \lim_{\lambda \to 0}{\sum_{i=1}^n f(\xi_i)\Delta x_i} \leq L
 \ ,\  L=l \Rightarrow \lim_{\lambda \to 0}{\sum_{i=1}^n f(\xi_i)\Delta
 x_i} = L$ by 夹逼定理
 
-*** 证明必要:
+**** 证明必要:
 
 \begin{aligned}
 &\forall \epsilon>0,\  \exists \delta,\ \forall P\ \&\  \forall \xi_i \in [x_{i-1},x_i]\\
@@ -212,14 +206,14 @@ $l=I$
 
 ** <<MK1>>定积分可积充要条件2:
 
-*** 描述:
-
 \begin{aligned}
 &\omega_i=M_i-m_i \\
 &\lim_{\lambda \to 0} \overline S(P)=\lim_{\lambda \to 0} \underline S(P) \Leftrightarrow \forall P:\lim_{\lambda \to 0} \sum_{i=1}^n \omega_i \Delta x_i = 0
 \end{aligned}
 
-*** 证明充分:
+*** 证明
+
+**** 证明充分:
 
 
 \begin{aligned}
@@ -230,7 +224,7 @@ $l=I$
 &\therefore \forall \lambda < min(\delta_1, \delta_2) \Rightarrow \forall P,\ \overline S(P) - I + I - \underline S(P)=\overline S(P)-\underline S(P)=\sum_{i=1}^n \omega_i \Delta x_i<\epsilon 
 \end{aligned}
 
-*** 证明必要:
+**** 证明必要:
 
 \begin{aligned}
 &\because \lim_{\lambda \to 0} \sum_{i=1}^n \omega_i \Delta x_i = 0\ \&\ \underline S(P) \leq l = I = L \leq \overline S(P)\\
@@ -277,16 +271,16 @@ $\forall \epsilon>0$ 取 $\lambda=\frac{\epsilon}{2[f(b)-f(a)]}$
 
 ** <<MK2>>定积分可积充要条件3:
 
-*** 描述:
-
 \begin{aligned}
 &\omega_i=M_i-m_i \\
 &\forall \epsilon > 0, \exists P:\ \sum_{i=1}^n \omega_i \Delta x_i < \epsilon \Leftrightarrow\forall P: \lim_{\lambda \to 0} \sum_{i=1}^n \omega_i \Delta x_i = 0
 \end{aligned}
 
-*** 证明充分:
+*** 证明
 
-**** 准备工作:
+**** 证明充分:
+
+***** 准备工作:
 
 假设 $P^*$ 为在分点 $P$ 上增加分点，根据[[L1][定理1]] (增加分点，大和不增，小和不减):
 
@@ -303,7 +297,7 @@ $\forall \epsilon>0$ 取 $\lambda=\frac{\epsilon}{2[f(b)-f(a)]}$
 &\omega_i=M_i-m_i \geq 0
 \end{aligned}
 
-**** 证明:
+***** 证明:
 
 $\forall \epsilon >0,\ \exists P'\Rightarrow 0 \leq \sum_{i=1}^{n'} \omega_i \Delta x'_i < \frac{\epsilon}{2}$
 
@@ -342,7 +336,7 @@ $\forall P\ (\lambda<\delta)\text{,\ } P: a=x_1<x_2<...<x_n$
 &\left\{ \forall \epsilon > 0, \exists P:\ \sum_{i=1}^n \omega_i \Delta x_i < \epsilon \right\} \Rightarrow \left\{ \forall \epsilon>0,\ \exists \delta,\ \forall \lambda<\delta \Rightarrow \forall P:\ \sum_{i=1}^n \omega_i \Delta x_i \leq \epsilon \right\}
 \end{aligned}
 
-*** 证明必要
+**** 证明必要
 
 由[[MK1][可积充要条件2]]可知定积分可积 $\Rightarrow \lim_{\lambda \to 0} \sum_{i=1}^n \omega_i \Delta x_i = 0$
 
@@ -350,7 +344,7 @@ $\forall P\ (\lambda<\delta)\text{,\ } P: a=x_1<x_2<...<x_n$
 
 且因为 $\omega_i\geq0$ 则有 $\forall\epsilon>0 \exists P(\lambda<\delta)\Righarrow \sum_{i=1}^n \omega_i \Delta x_i<\epsilon$
 
-*** 推论
+*** 推论1
 
 函数 $f(x)$ 在闭区间 $[a,b]$ 上只有 $k<\infty$ 个不连续点，则 $f(x)$ 必可积
 
@@ -396,6 +390,58 @@ $\sum_{i=1}^n \omega_i \Delta x_i=\sum_{i=1}^k \omega^*_i \Delta x_i+\sum_{1\leq
 &<\frac{\epsilon}{2}+\frac{\epsilon}{2}\\
 &=\epsilon\\
 \end{aligned}
+
+*** 推论2<<MK13>>
+
+若闭区间 $[a,b]$ 上的有界函数 $f(x)$ 可积的充要条件是
+
+存在一列满足 $\lim_{n\to\infty}\lambda_n=0$ 的划分 $\{P_n\}$ 有 $\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\omega_{n,i}\Delta x_{n,i}=0$
+
+其中 $\lambda_n=\max\{\Delta x_{n,i}\}$ ， $|P_n|$ 为划分中元素的个数， $\omega_{n,i}=\Omega([x_{n,i-1},x_{n,i}])$ 是区间的[[MK16][振幅]]
+
+**** 证明
+
+***** 充分
+
+即存在满足条件的一列划分 $P=\{P_n\}$ 使得 $\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\omega_{n,i}\Delta x_{n,i}=0$
+
+即 $\forall\epsilon>0,\exists N,\forall n> N\land P_n\in P\rightarrow \sum_{i=1}^{|P_n|-1}\omega_{n,i}\Delta x_{n,i}<\epsilon$
+
+则满足[[MK2][充要条件3]]，故 $f(x)$ 可积
+
+***** 必要
+
+若 $f(x)$ 可积，则满足[[MK2][充要条件3]]，即 $\forall \epsilon > 0, \exists P:\ \sum_{i=1}^{|P|-1} \omega_i \Delta x_i < \epsilon$
+
+则对于任意 $n\in\mathbb{N}$ 取 $\epsilon=\frac{1}{n}$ 根据条件存在 $P_n$ 满足 $\sum_{i=1}^{|P_n|-1} \omega_{n,i} \Delta x_{n,i} < \frac{1}{n}$
+
+则定义 $P=\left\{P_n\big|n\in\mathbb{N}\right\}$ 则对于任意 $\delta>0$ 根据[[~/OneDrive/实变函数/SBHS.org::MK254][推论3]]可得存在 $z\in\mathbb{N}$ 使得 $\frac{1}{z}<\delta$
+
+则进而有 $\sum_{i=1}^{|P_z|-1} \omega_{z,i} \Delta x_{z,i} < \frac{1}{z}<\delta$ 故有 $\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\omega_{n,i}\Delta x_{n,i}=0$
+
+*** 推论3<<MK18>>
+
+若闭区间 $[a,b]$ 上的有界函数 $f(x)$ 可积的充要条件是
+
+对于任意一列满足 $\lim_{n\to\infty}\lambda_n=0$ 的划分 $\{P_n\}$ 有 $\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\omega_{n,i}\Delta x_{n,i}=0$
+
+其中 $\lambda_n=\max\{\Delta x_{n,i}\}$ ， $|P_n|$ 为划分中元素的个数， $\omega_{n,i}=\Omega([x_{n,i-1},x_{n,i}])$ 是区间的[[MK16][振幅]]
+
+**** 证明
+
+***** 充分
+
+因为对于任意，故存在一列满足条件的划分 $\{P_n\}$ 使得 $\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\omega_{n,i}\Delta x_{n,i}=0$
+
+故根据[[MK13][推论2]]可得 $f(x)$ 可积
+
+***** 必要
+
+由于可积，故根据[[MK1][充要条件2]]可得 $\forall\epsilon>0,\exists\Lambda,\forall\lambda<\Lambda\rightarrow\forall P:\sum_{i=1}^n \omega_i \Delta x_i<\epsilon$
+
+对于任意划分列 $\{P_n\}$ 均有 $\lim_{n\to\infty}\lambda_n=0$ 即存在 $N$ 对于任意 $n>N$ 均有 $\lambda_n<\Lambda$
+
+即 $\forall n>N\rightarrow \sum_{i=1}^{|P_n|-1}\omega_{n,i}\Delta x_{n,i}<\epsilon$ 故有 $\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\omega_{n,i}\Delta x_{n,i}=0$
 
 * 定积分基本性质
 
@@ -641,6 +687,116 @@ $\int_a^b f(x) dx=F(b)-F(a)$
 
 又因为 $\left\{\int f(t) dt\right\}'=f(t)$ 则 $\int f(t) dt$ 满足原函数条件，可作为 $F(x) =\int f(t) dt$
 
+* 函数振幅<<MK16>>
+
+定义集合振幅 $\Omega(E)=\sup\left\{|f(s)-f(t)|\big|\{s,t\}\subset E\right\}$ 
+
+则[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f(x)$ 在 $x_0$ 点的振幅定义为 $\omega_f(x_0)=\lim_{\delta\to0^+}\Omega(O(x_0,\delta))$
+
+** 引理1<<MK10>>
+
+对于任意 $X\subset Y$ 均有 $\Omega(X)\leq\Omega(Y)$
+
+*** 证明
+
+假设 $\Omega(X)>\Omega(Y)$ 则根据确界定义存在 $\{s',t'\}\subset X$ 满足 $|f(s')-f(t')|>\Omega(Y)$
+
+由于 $X\subset Y$ 故有 $\{s',t'\}\subset Y$ 则有 $|f(s')-f(t')|\in \left\{|f(s)-f(t)|\big|\{s,t\}\subset Y\right\}$
+
+与 $\Omega(Y)$ 是 $\left\{|f(s)-f(t)|\big|\{s,t\}\subset Y\right\}$ 的上确界矛盾，假设不成立。
+
+故有 $\Omega(X)\leq\Omega(Y)$
+
+** 引理2<<MK11>>
+
+函数 $f(x)$ 在 $x_0$ 振幅亦可表示为 $\omega_f(x_0)=\inf\left\{\Omega(O(x_0,\delta))\big|\delta>0\right\}$
+
+*** 证明
+
+定义 $\alpha=\lim_{\delta\to0^+}\Omega(O(x_0,\delta)),\beta=\inf\left\{\Omega(O(x_0,\delta))\big|\delta>0\right\}$
+
+则根据以下证明以及[[~/OneDrive/实变函数/SBHS.org::MK5][三岐性]]可得 $\alpha=\beta$
+
+**** 假设 $\alpha>\beta$
+
+由于是下确界，故存在 $\beta<\Omega(O(x_0,\delta'))<\alpha$ 取 $\epsilon_0=\alpha-\Omega(O(x_0,\delta'))$
+
+由于对于任意 $\delta<\delta'$ 均有 $O(x_0,\delta)\subset O(x_0,\delta')$ 则根据[[MK10][引理1]]有 $\Omega(O(x_0,\delta))\leq\Omega(O(x_0,\delta'))$
+
+综上所述 $\forall\delat>\delta<\delta'\rightarrow|\Omega(O(x_0,\delta))-\alpha|\geq\epsilon_0$ 显然与 $\alpha=\lim_{\delta\to0}\Omega(O(x_0,\delta))$ 矛盾
+
+故假设不成立
+
+**** 假设 $\alpha<\beta$
+
+则根据定义取 $\epsilon=\beta-\alpha$ 存在 $\delta'$ 对于任意 $0<\delta<\delta'$ 均有 $|\Omega(O(x_0,\delta))-\alpha|<\epsilon$
+
+即有 $\Omega(O(x_0,\delta))<\beta$ 由于 $\delta>0$ 显然与 $\beta$ 是 $\left\{\Omega(O(x_0,\delta))\big|\delta>0\right\}$ 的下确界矛盾
+
+故假设不成立
+
+** 引理3<<MK17>>
+
+函数 $f(x)$ 在 $x_0$ 点，对于任意 $[a,b]\subset\mathbb{R}$ 满足 $x\in(a,b)$ 则有 $\omega_f(x_0)\leq\Omega([a,b])$
+
+*** 证明
+
+由于 $(a,b)$ 是开区间，故根据[[~/OneDrive/实变函数/SBHS.org::MK277][引理]]可得是开集，则 $x_0$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，进一步存在 $\eta>0$ 满足 $O(x_0,\eta)\subset[a,b]$
+
+又根据[[MK10][引理1]]可得 $\Omega(O(x_0,\eta))\leq\Omega([a,b])$ 同理由于 $\eta>0$ 则根据[[MK11][引理2]]可得 $\Omega([a,b])\geq\Omega(O(x_0,\eta))\geq\omega_f(x_0)$
+
+** 引理4<<MK15>>
+
+函数 $f(x)$ 在 $x_0$ 振幅亦可表示为 $\omega_f(x_0)=\lim_{(b-a)\to0}\left\{\Omega([a,b])\big|x_0\in(a,b)\subset\mathbb{R}\right\}$
+
+*** 证明
+
+定义 $\alpha=\lim_{\delta\to0^+}\Omega(O(x_0,\delta))$ 则 $\forall\epsilon>0,\exists\delta',\forall0<\delta<\delta'\rightarrow|\Omega(O(x_0,\delta))-\alpha|<\epsilon$
+
+由于 $\delta>0$ 故根据[[MK11][引理2]]可得 $\Omega(O(x_0,\delta))>\alpha$ 即 $\forall\epsilon>0,\exists\delta',\forall0<\delta\leq\frac{\delta'}{2}\rightarrow\Omega(O(x_0,\delta))-\alpha<\epsilon$
+
+则取 $\tau=\frac{\delta'}{5}$ 则对于任意 $[a,b]$ 满足 $b-a<\tau\land x_0\in(a,b)$ 均易证 $[a,b]\subset O\left(x_0,\frac{\delta'}{2}\right)$
+
+根据[[MK10][引理1]]可得 $\Omega([a,b])\leq\Omega\left(O\left(x_0,\frac{\delta'}{2}\right)\right)$ 即 $\Omega([a,b])-\alpha\leq\Omega\left(O\left(x_0,\frac{\delta'}{2}\right)\right)-\alpha<\epsilon$
+
+根据[[MK17][引理3]]可得 $\alpha\leq\Omega([a,b])$ 最终有 $0\leq\Omega([a,b])-\alpha<\epsilon$ 即 $|\Omega((a,b))-\alpha|<\epsilon$ 
+
+综上所述，对于任意 $\epsilon>0$ 存在 $\tau$ 对于任意满足 $x\in[a,b]\land b-a<\tau$ 的区间 $[a,b]$
+
+均有 $\Omega([a,b])-\alpha<\epsilon$ 即满足 $\lim_{(b-a)\to0}\left\{\Omega([a,b])\big|x_0\in[a,b]\subset\mathbb{R}\right\}=\alpha$ 的定义
+
+** 引理5<<MK19>>
+
+振幅 $\omega_f(x_0)=0$ 是函数 $f(x)$ 在 $x_0$ [[MK12][连续]]的充要条件
+
+*** 证明
+
+**** 充分
+
+若 $\omega_f(x_0)=0$ 则有 $\forall\epsilon>0,\exists\delta',\forall0<\delta<\delta'\rightarrow\Omega(O(x_0,\delta))<\epsilon$
+
+由于 $\Omega(O(x_0,\delta))=\sup\left\{|f(s)-f(t)|\big|\{s,t\}\subset O(x_0,\delta)\right\}$
+
+故对于任意 $|x-x_0|<\delta$ 均有 $|f(x)-f(x_0)|\leq\Omega(O(x_0,\delta))<\epsilon$
+
+综上所述满足 $f(x_0)=\lim_{x\to x_0}f(x)$ 定义，故在 $x_0$ 点连续
+
+**** 必要
+
+若在 $x_0$ [[MK12][连续]]则 $f(x_0)=\lim_{x\to x_0}f(x)$ 即 $\forall\epsilon>0,\exists\delta',\forall|x-x_0|<\delta\Rightarrow |f(x)-f(x_0)|<\frac{\epsilon}{2}$
+
+则对于任意 $\{s,t\}\subset O(x_0,\delta')$ 均有 $|f(s)-f(x_0)|<\frac{\epsilon}{2}$ 以及 $|f(t)-f(x_0)|<\frac{\epsilon}{3}$
+
+则根据[[~/OneDrive/实变函数/SBHS.org::MK22][三角不等式]]有 $|f(s)-f(x_0)+f(x_0)-f(t)|\leq|f(s)-f(x_0)|+|f(x_0)-f(t)|<\frac{2\epsilon}{3}$
+
+即可得 $\forall \{s,t\}\subset O(x_0,\delta')\rightarrow |f(s)-f(t)|<\frac{2\epsilon}{3}$
+
+由于 $\Omega(O(x_0,\delta'))=\sup\left\{|f(s)-f(t)|\big|\{s,t\}\subset O(x_0,\delta)\right\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK340][定理4]]可得 $\Omega(O(x_0,\delta'))\leq\frac{2\epsilon}{3}<\epsilon$ 
+
+结合非负性以及[[MK10][引理1]]可得对于任意 $\delta<\delta'$ 有 $\Omega(O(x_0,\delta))\leq\Omega(O(x_0,\delta'))<\epsilon$ 
+
+综上所述 $\forall\epsilon,\exists\delta',\forall0<\delta<\delta'\rightarrow\Omega(O(x_0,\delta))<\epsilon$ 即 $\omega_f(x_0)=\lim_{\delta\to0^+}\Omega(O(x_0,\delta))=0$
+
 * 函数一致连续：
 
 ** 函数极限定义
@@ -687,7 +843,7 @@ $\int_a^b f(x) dx=F(b)-F(a)$
 
 显然
 
-** 连续函数定义
+** 连续函数定义<<MK12>>
 
 \begin{aligned}
 f(x_0)=\lim_{x\to x_0}f(x)

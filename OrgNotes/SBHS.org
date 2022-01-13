@@ -4,7 +4,7 @@
 
 current video: P36
 
-current mark: 276
+current mark: 287
 
 * 几乎处处<<MK190>>
 
@@ -998,15 +998,13 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 ** Caratheodory定理<<MK65>>
 
-定义结构 $<X,\varphi>$ 其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 其中 $X$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
 
-则 $<X,\varphi>$ 上的[[MK174][外测度可测集]]满足：
+则 $<X,\varphi>$ 上所有[[MK174][外测度可测集]] $\mathcal{M}$ 有如下行至：
 
-（1） 所有外测度可测集的集合构成 $X$ 上的[[MK50][ $\sigma$ 代数]]
+（1） $\mathcal{M}$ 集合构成 $X$ 上的[[MK50][ $\sigma$ 代数]]
 
-（2） 在外测度可测集上的[[MK61][外测度]]是[[MK56][测度]]
-
-此时称 $S$ 是关于外测度的可测集
+（2） 在 $\mathcal{M}$ 上的[[MK61][外测度]]满足[[MK56][测度]]要求
 
 *** 证明
 
@@ -1030,7 +1028,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 ***** 全集可测
 
-取任意 $A\subset X$ 则有 $\varphi(A\cup X)+\varphi(A/X)=\varphi(A)+\varphi(\varnothing)=\varphi(A)$ 故 $X$ 外测度可测
+取任意 $A\subset X$ 则有 $\varphi(A\cap X)+\varphi(A/X)=\varphi(A)+\varphi(\varnothing)=\varphi(A)$ 故 $X$ 外测度可测
 
 ***** 补集可测<<MK63>>
 
@@ -1103,7 +1101,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 根据[[MK63][补集可测]]以及[[MK62][有限可加]]可得由 $S^c_j,\ \bigcup_{i=1}^{j-1} S_i$ 均可测，则 $S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right),\ \left(S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right)\right)^c$ 可测 
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质]]德摩根律 $\left(S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right)^c\right)^c=S_j\cap\left(\bigcup_{i=1}^{j-1} S_i\right)^c=S_j/\left(\bigcup_{i=1}^{j-1} S_i\right)=S'_j$ 
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK328][德摩根律]] $\left(S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right)^c\right)^c=S_j\cap\left(\bigcup_{i=1}^{j-1} S_i\right)^c=S_j/\left(\bigcup_{i=1}^{j-1} S_i\right)=S'_j$ 
 
 即 $S'_j$ 外而测度可测，另根据定义显然有 $\bigcup_{i=1}^nS'_i=\bigcup_{i=1}^nS_i$ （证明 $\forall x\big(x\in\bigcup_{i=1}^nS_i\leftrightarrow x\in\bigcup_{i=1}^nS'_i\big)$ ）
 
@@ -1111,7 +1109,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 同理 $\bigcup_{i=1}^nS_i=\bigcup_{i=1}^nS'_i\subset\bigcup_{i=1}^\infty S'_i$ 则有 $\bigcup_{i=1}^\infty S_i\subset\bigcup_{i=1}^\infty S'_i$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含-定理1]]可得 $\bigcup_{i=1}^\infty S_i=\bigcup_{i=1}^\infty S'_i$
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][定理1]]可得 $\bigcup_{i=1}^\infty S_i=\bigcup_{i=1}^\infty S'_i$
 
 故进一步根据[[MK64][不相交可数可加]]可得 $\bigcup_{i=1}^\infty S'_i$ 外测度可测，即 $\bigcup_{i=1}^\infty S_i$ 亦外测度可测
 
@@ -1742,7 +1740,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 则定义 $I=\prod_{i=1}^n[a_i,b_i]$ 即 $n$ 个一维区间 $[a_i,b_i]$ 的笛卡尔积
 
-***** 开区间是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
+***** 开区间是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]<<MK277>>
 
 对于任意 $(a,b)\land\{a,b\}\subset\mathbb{R}$ 若 $a\not<b$ 则有 $(a,b)=\varnothing$ 根据是[[~/OneDrive/数学分析/Chap11Note.org::MK15][定理8]]可得是开集
 
@@ -1884,7 +1882,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 ***** 推论3<<MK254>>
 
-对于任意 $a\in\mathbb{R}\land a>0$ 存在 $i\in\mathbb{N}$ 满足 $i>0\land \frac{1}{i}>a$
+对于任意 $a\in\mathbb{R}\land a>0$ 存在 $i\in\mathbb{N}$ 满足 $i>0\land \frac{1}{i}<a$
 
 ****** 证明
 
@@ -3405,7 +3403,7 @@ Borel集中元素均为可测集
 
 根据[[MK94][可测性]]可得 $T$ 可测 
 
-***** 可数零测
+***** 可数零测<<MK278>>
 
 若 $S_i\subset\mathbb{R}^n\land m^*(S_i)=0$ 其中 $i\in\mathbb{N}^+$ 则 $m^*\left(\bigcup_{i=1}^\infty S_i\right)=0$ 
 
@@ -3741,13 +3739,13 @@ Borel集中元素均为可测集
 
 ** 康托函数<<MK109>>
 
-若[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数]] $F$ 满足： 
+若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $F$ 满足： 
 
 （1） 将[[MK107][康托三分集]] $P$ 映射成[[MK51][外测度]]为正的[[MK81][可测集]]
 
-（2） 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊函数-双射]]函数
+（2） 是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射]]函数
 
-（3） 其[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-函数计算-逆]]函数 $F^{-1}$ [[MK106][连续]]
+（3） 其[[~/OneDrive/离散数学/Disc_Math.org::MK203][逆]]函数 $F^{-1}$ [[MK106][连续]]
 
 则称 $F$ 为康托函数
 
@@ -4632,17 +4630,53 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 根据[[MK161][定理2]]可得常值函数可测
 
-**** [[MK106][连续函数]]
+**** [[MK106][连续函数]]<<MK283>>
 
 [[MK106][连续函数]]是可测函数
 
 ***** 证明
 
-若有函数 $f:A\to B,A\subset\mathbb{R}^n\land B\subset\mathbb{R}^m$ 连续，则对于任意 $a\in\mathbb{R}$ [[MK151][原相]] $f^{-1}((a,+\infty])=f^{-1}((a,+\infty))$
+若有函数 $f:A\to B,A\subset\mathbb{R}^n\land B\subset\mathbb{R}$ 连续
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]易证得 $(a,+\infty)$ 为 $\mathbb{R}$ 上的开集，根据[[MK105][等价定义]]可得原相 $f^{-1}((a,+\infty])$ 必为 $\mathbb{R}^n$ 上的开集
+则对于任意 $a\in\mathbb{R}$ [[MK151][原相]] $f^{-1}((a,+\infty])=f^{-1}((a,+\infty))\cup f^{-1}(\{\infty\}})$
 
-根据[[MK87][开集可测]]可得原相亦可测，故连续函数是[[MK134][可测函数]]
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集定义]]可得 $\{+\infty\}$ 是闭集，故根据[[MK197][等价条件]]可得对于连续函数 $f^{-1}(\{\infty\}})$ 是闭集
+
+根据[[MK207][闭集可测]]可得 $f^{-1}(\{\infty\}})$ 是[[MK174][可测集]]
+
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]易证得 $(a,+\infty)$ 为 $\mathbb{R}$ 上的开集，根据[[MK105][等价定义]]可得原相 $f^{-1}((a,+\infty))$ 必为 $\mathbb{R}^n$ 上的开集
+
+根据[[MK87][开集可测]]可得 $f^{-1}((a,+\infty))$ 亦是[[MK174][可测集]]
+
+根据[[MK65][Caratheodory定理]]以及[[MK50][并封闭]]可得 $f^{-1}((a,+\infty))\cup f^{-1}(\{\infty\}})$ 亦为[[MK174][可测集]]
+
+综上所述，对于任意 $a\in\mathbb{R}$ 均有 $f^{-1}((a,\infty])$ 是[[MK174][可测集]]，故是连续函数是[[MK134][可测函数]]
+
+***** 推论<<MK284>>
+
+若函数 $f:E\to\mathbb{R}$ [[MK190][几乎处处]]有[[MK106][连续]]，则 $f(x)$ 亦为[[MK134][可测函数]]
+
+****** 证明
+
+定义 $E'$ 是 $f(x)$ 在 $E$ 上的不连续点集，根据几乎处处性质有 $\varphi(E')=0$ 
+
+根据条件有 $f(x)$ 在 $E-E'$ 上连续，则定义 $<E-E',\varphi>$ 是 $<E,\varphi>$ 的[[208][外侧度子空间]]
+
+根据[[MK283][连续函数性质]]可得 $f(x)$ 在 $<E-E',\varphi>$ 是[[MK134][可测函数]]
+
+即对于任意 $\alpha\in\mathbb{R}$ 均有 $f^{-1}((\alpha,+\infty])\cap(E-E')$ 是 $<E-E',\varphi>$ 上的[[MK174][可测集]]
+
+则根据[[MK176][性质1]]可得 $f^{-1}((\alpha,+\infty])\cap(E-E')$ 亦是 $<E,\varphi>$ 上的[[MK174][可测集]]
+
+显然 $f^{-1}((\alpha,+\infty])=\left(f^{-1}((\alpha,+\infty])\cap(E-E')\right)\cup\left(f^{-1}((\alpha,+\infty])\cap E'\right)$
+
+根据几乎处处性质可得 $\varphi(E')=0$ 有由于 $\left(f^{-1}((\alpha,+\infty])\cap E'\right)\subset E'$ 
+
+故根据[[MK128][子集零测]]以及[[MK94][可测性]]可得 $\left(f^{-1}((\alpha,+\infty])\cap E'\right)$ 亦为可测集
+
+根据[[MK65][Caratheodory定理]]以及[[MK50][并封闭]]可得 $f^{-1}((\alpha,+\infty])$ 亦是 $<E,\varphi>$ 上的[[MK174][可测集]]
+
+又根据 $\alpha$ 的任意性可得 $f(x)$ 是[[MK134][可测函数]]
 
 **** 单调函数
 
@@ -5746,20 +5780,6 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 同理可证 $$\int_{E}g(x)dx=\int_{E'}g(x)dx$$ 故有 $$\int_Ef(x)dx\geq\int_Eg(x)dx$$
 
-***** 推论2<<MK234>>
-
-若在 $E$ 上[[MK190][几乎处处]]满足 $f(x)=0$ 则亦有 $$\int_Ef(x)dx=0$$
-
-****** 证明
-
-定义 $E=E'\cup E_0$ 其中 $\varphi(E_0)=0$ 且 $\forall x\in E'\rightarrow f(x)=0$
-
-根据[[MK225][性质2]]以及[[MK233][性质4]]可得 $$\int_{E}f(x)dx=\int_{E'}f(x)dx+\int_{E_0}f(x)dx=\int_{E'}f(x)dx$$
-
-显然在 $E'$ 上 $f(x)$ 恒等于 $0$ 是非负[[MK178][简单函数]]
-
-故根据[[MK226][运算]]有 $$\int_{E'}f(x)dx=\varphi(E')\cdot 0=0$$
-
 **** 性质2<<MK225>>
 
 若有非负[[MK134][可测函数]] $f(x)$ 为 $E\to\mathbb{R}_e$ 的映射， $A,B$ 均为空间上的的[[MK174][外测度可测集]]
@@ -5979,6 +5999,44 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 由于当 $x\in E-E'$ 时有 $f(x)=g(x)$ 故有 $$\int_{E-E'}f(x)dx=\int_{E-E'}g(x)dx$$
 
 同理可得 $$\int_{E-E'}g(x)dx=\int_{E}g(x)dx$$ 故有 $$\int_Ef(x)dx=\int_Eg(x)dx$$ 
+
+**** 性质8<<MK281>>
+
+非负[[MK134][可测函数]] $f(x)$ 满足 $$\int_Ef(x)dx=0$$ 的充要条件是 $f(x)=0$ 在 $E$ 上[[MK190][几乎处处]]成立
+
+***** 证明
+
+****** 充分
+
+若 $$\int_Ef(x)dx=0$$ 取任意 $\epsilon>0$ 定义 $E=E'\cup f^{-1}((\epsilon,\infty])$ 其中 $f^{-1}((\epsilon,\infty])$ 是[[MK151][原相]]
+
+根据[[MK225][性质2]]有 $$\int_{E}f(x)dx=\int_{E'}f(x)dx+\int_{f^{-1}((\epsilon,\infty])}f(x)dx$$
+
+由于 $f^{-1}((\epsilon,\infty])\subset E$ 根据[[MK227][推论]]有 $$0\leq\int_{f^{-1}((\epsilon,\infty])}f(x)dx\leq\int_{E}f(x)dx$$ 则根据[[MK5][三岐性]] $$\int_{f^{-1}((\epsilon,\infty])}f(x)dx=0$$  
+
+由于 $\forall x\in f^{-1}((\epsilon,\infty])\rightarrow f(x)\geq\epsilon$ 故有 $$\int_{f^{-1}((\epsilon,\infty])}f(x)dx\geq\int_{f^{-1}((\epsilon,\infty])}\epsilon dx\geq0$$ \
+
+同理根据[[MK5][三岐性]] $$\int_{f^{-1}((\epsilon,\infty])}\epsilon dx=0$$ 根据[[MK213][定义]]有 $$\int_{f^{-1}((\epsilon,\infty])}\epsilon dx=\varphi(f^{-1}((\epsilon,\infty]))\cdot \epsilon$$
+
+由于 $\epsilon>0$ 故有 $\varphi(f^{-1}((\epsilon,\infty]))=0$ 即 $\forall\epsilon>0\rightarrow\varphi(f^{-1}((\epsilon,\infty])=0$
+
+则定义 $E^*=\bigcup_{n=1}^\infty f^{-1}\left(\left(\frac{1}{n},\infty\right]\right)$ 根据上述证明可得对于任意 $n\in\mathbb{N}$ 均有 $\varphi\left(f^{-1}\left(\left(\frac{1}{n},\infty\right]\right)\right)=0$ 
+
+则根据[[MK61][次可加性]]有 $\varphi(E^*)\leq \sum_{i=1}^\infty\varphi\left(f^{-1}\left(\left(\frac{1}{n},\infty\right]\right)\right)=0$ 又根据[[MK61][非负性]]以及[[MK5][三岐性]]有 $\varphi(E^*)=0$
+
+对于任意 $x>0$ 根据[[MK254][推论3]]可得存在 $i\in\mathbb{N}$ 满足 $x>\frac{1}{i}$ 即有 $x\in f^{-1}\left(\left(\frac{1}{i},\infty\right]\right)$
+
+进而 $x\in E^*$ 进一步可得 $f^{-1}((0,\infty])\subset E^*$ 则根据[[MK61][单调性]]可得 $\varphi(f^{-1}((0,\infty]))\subset \varphi(E^*)$
+
+又根据[[MK61][非负性]]以及[[MK5][三岐性]]有 $\varphi(f^{-1}((0,\infty]))=0$
+
+****** 必要
+
+定义 $E=E'\cup E_0$ 其中 $\forall x\in E'\rightarrow f(x)=0$ ，根据几乎处处性质有 $\varphi(E_0)=0$ 
+
+根据[[MK225][性质2]]以及[[MK233][性质4]]可得 $$\int_{E}f(x)dx=\int_{E'}f(x)dx+\int_{E_0}f(x)dx=\int_{E'}f(x)dx$$
+
+显然在 $E'$ 上 $f(x)$ 恒等于 $0$ 是非负[[MK178][简单函数]]，故根据[[MK226][运算]]有 $$\int_{E'}f(x)dx=\varphi(E')\cdot 0=0$$
 
 ** [[MK134][可测函数]]
 
@@ -6307,7 +6365,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 定义[[MK212][外侧度空间]] $<X,\varphi>$ ，[[MK174][外侧度可测集]] $E\subset X$ 则
 
-**** 勒贝格控制收敛定理<<MK275>>
+**** 定理1：勒贝格控制收敛定理<<MK275>>
 
 若 $\{f_n(x)\}$ 满足：
 
@@ -6529,4 +6587,211 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 根据[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数定义]]可得 $$\frac{d}{d t}\left(\int_Ef(x,t')dx\right)=\int_E\frac{\partial f(x,t')}{\partial t}dx$$
 
 最终结合 $t'$ 的任意性可得 $$\frac{d}{d t}\left(\int_Ef(x,t)dx\right)=\int_E\frac{\partial f(x,t)}{\partial t}dx$$
+
+***** 引理4<<MK280>>
+
+闭区间 $[a,b]\subset\mathbb{R}$ 上的[[MK202][有界]]函数 $f(x)$ 定义划分点集 $P_n=\{x_{n,i}\}$ 满足 $a=x_{n,0}<...<x_{n,|P_n|}=b$
+
+定义 $\lambda_n=\max\left\{x_{n,i}-x_{n,i-1}\big|\{x_{n,i},x_{n,i-1}\}\subset P_n\right\}$ 则对于任意一列满足 $\lim_{n\to\infty}\lambda_n=0$ 的划分列 $\{P_n\}$
+
+均有 $$\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\Omega([x_{n,i-1},x_{n,i}])(x_{n,i}-x_{n,i-1})=(\mathcal{L})\int_{[a,b]}\omega_f(x)dx$$ 其中
+
+（1） $\Omega(E)=\sup\left\{|f(s)-f(t)|\big|\{s,t\}\subset E\right\}$ 是集合的[[~/OneDrive/数学分析/Chap7Note.org::MK16][振幅]]
+
+（2） $\omega_f(x)$ 是点的[[~/OneDrive/数学分析/Chap7Note.org::MK16][振幅]]
+
+（3） $(\mathcal{L})$ 代表[[MK237][勒贝格积分]]
+
+****** 证明
+
+定义函数 $\phi_n(x)=\sum_{i=1}^{|P_n|-1}\Omega([x_{n,i-1},x_{n,i}])\chi_{[x_{n,i-1},x_{n,i}]}(x)$ 其中 $\chi_{[x_{n,i-1},x_{n,i}]}(x)$ 是[[MK221][特征函数]]
+
+则根据[[MK79][正规性]]可得 $\varphi([x_{n,i-1},x_{n,i}])=x_{n,i-1}-x_{n,i}$ ，其中 $\varphi$ 是[[MK61][外测度]]
+
+则根据[[MK213][定义]]可得 $$\sum_{i=1}^{|P_n|-1}\Omega([x_{n,i-1},x_{n,i}])(x_{n,i}-x_{n,i-1})=(\mathcal{L})\int_{[a,b]}\phi_n(x)dx$$
+
+则有 $$\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\Omega([x_{n,i-1},x_{n,i}])(x_{n,i}-x_{n,i-1})=\lim_{n\to\infty}(\mathcal{L})\int_{[a,b]}\phi_n(x)dx$$
+
+根据下述三点证明以及[[MK275][控制收敛定理]]可得 $$\lim_{n\to\infty}(\mathcal{L})\int_{[a,b]}\phi_n(x)dx=(\mathcal{L})\int_{[a,b]}\omega_f(x)dx$$ 证毕
+
+******* 可测函数列
+
+显然 $\{\phi_n(x)\}$ 均为非负[[MK178][简单函数]]，即为[[MK134][可测函数]]
+
+******* 逐点收敛于 $\omega_f(x)$ <<MK279>>
+
+则固定任意 $\epsilon>0$ ，对于任意 $x_0\not\in\bigcup_{n=1}^\infty P_n$ 定义 $\omega_f(x_0)$ 是 $x_0$ 点的[[~/OneDrive/数学分析/Chap7Note.org::MK16][振幅]]
+
+根据[[~/OneDrive/数学分析/Chap7Note.org::MK15][引理4]]可得存在 $\Delta>0$ 对于任意 $|b-a|<\Delta\land x_0\in(a,b)$ 均有 $\Omega([a,b])-\omega_f(x_0)<\epsilon$
+
+又由于 $\lim_{n\to\infty}\lambda_n=0$ 则存在 $N$ 对于任意 $n'>N$ 满足 $\lambda_{n'}<\Delta$
+
+由于 $P_{n'}$ 划分 $[a,b]$ 且 $x_0\not\in\bigcup_{n=1}^\infty P_n$ 故必有 $x_{n',i}\in P_{n'}$ 满足 $x_0\in(x_{n',i-1},x_{n',i})$
+
+又由于 $x_{n',i}-x_{n',i}\leq\lambda_{n'}<\Delta$ 故有 $\Omega([x_{n',i-1},x_{n',i}])-\omega_f(x_0)<\epsilon$
+
+又根据[[~/OneDrive/数学分析/Chap7Note.org::MK17][引理3]]以及 $x_0\in(x_{n',i-1},x_{n',i})$ 可得 $\Omega([x_{n',i-1},x_{n',i}])\geq\omega_f(x_0)$
+
+故有 $|\Omega([x_{n',i-1},x_{n',i}])-\omega_f(x_0)|<\epsilon$ 又根据 $\phi_n(x)$ 定义可得 $\phi_{n'}(x_0)=\Omega([x_{n',i-1},x_{n',i}])$
+
+故最终，综上所述 $\forall\epsilon>0,\exists N,\forall n>N\land x\not\in\bigcup_{n=1}^\infty P_n\rightarrow |\phi_{n'}(x_0)-\omega_f(x_0)|<\epsilon$
+
+即对于任意 $x_0\not\in\bigcup_{n=1}^\infty P_n$ 有 $\phi_n(x)$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $\omega_f(x)$
+
+又根据[[~/OneDrive/数学分析/Chap7Note.org::MK14][定义]]可得 $P_n=\{x_i\}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]，则易证 $\forall n\in\mathbb{N}\rightarrow\varphi(P_n)=0$
+
+则根据[[MK278][可数零测]]可得 $\varphi\left(\bigcup_{n=1}^\infty P_n\right)=0$ 。故可得 $\phi_n(x)$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $\omega_f(x)$
+
+******* 控制函数<<MK286>>
+
+由于 $f(x)$ [[MK202][有界]]，故存在 $M\in\mathbb{R}$ 满足 $\forall x\in[a,b]\rightarrow |f(x)|\leq M$
+
+根据定义对于任意 $\{u,v\}\subset[a,b]$ 均有 $\Omega([u,v])=\sup\left\{|f(s)-f(t)|\big|\{s,t\}\subset[u,v]\right\}$
+
+根据[[MK22][三角不等式]]可得对于任意 $\{s,t\}\subset[u,v]$ 有 $|f(s)-f(t)|\leq|f(s)|+|-f(t)|\leq 2M<2M+1$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $\Omega([u,v])\leq 2M+1$ 由 $u,v$ 的任意性可得 $\forall n\in\mathbb{N},\forall x\in[a,b]\rightarrow|\phi_n(x)|\leq 2M+1$
+
+故定义 $F(x)=2M+1$ 显然是非负[[MK178][简单函数]]，即为[[MK134][可测函数]]
+
+根据[[MK213][定义]]以及[[MK79][正规性]] $$\int_{[a,b]}2M+1dx=(2M+1)(b-a)$$ 由于 $\{a,b\}\subset\mathbb{R}$
+
+即根据[[MK160][减法封闭]] $(b-a)\in\mathbb{R}$ 则根据[[MK144][性质]]有 $b-a<\infty$ 又由于 $2M+1\in\mathbb{R}$
+
+继而根据[[MK4][封闭性]]有 $(2M+1)(b-a)\in\mathbb{R}$ 同理根据[[MK144][性质]] $(2M+1)(b-a)<\infty$
+
+即 $$\int_{[a,b]}F(x)dx<\infty$$ [[MK247][勒贝格可积]]
+
+***** 引理5<<MK287>>
+
+若闭区间 $[a,b]\subset\mathbb{R}$ 上的[[MK202][有界]]函数 $f(x)$ [[MK190][几乎处处]]有[[MK106][连续]]，定义：
+
+（1） 划分点集 $P_n=\{x_{n,i}\}$ 满足 $a=x_{n,0}<...<x_{n,|P_n|}=b$
+
+（2） $\lambda_n=\max\left\{x_{n,i}-x_{n,i-1}\big|\{x_{n,i},x_{n,i-1}\}\subset P_n\right\}$
+
+（3） 取点点集 $S_n=\{\xi_{n,i}\}$ 满足 $\xi_{n,i}\in(x_{n,i-1},x_{n,i})$ 
+
+则对于任意一列满足 $\lim_{n\to\infty}\lambda_n=0$ 的划分列 $\{P_n\}$ 与取点 $\{S_n\}$
+
+均有 $$\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}f(\xi_{n,i})(x_{n,i}-x_{n,i-1})=(\mathcal{L})\int_{[a,b]}f(x)dx$$
+
+****** 证明
+
+根据[[MK285][证明]]可知 $f(x)\in\mathcal{L}([a,b])$ [[MK237][勒贝格可积]]
+
+定义 $E'$ 是 $f(x)$ 在 $[a,b]$ 上的不连续点集，根据几乎处处性质有 $\varphi(E')=0$
+
+定义函数 $\phi_n(x)=\sum_{i=1}^{|P_n|-1}f(\xi_{n,i})\chi_{[x_{n,i-1},x_{n,i}]}(x)$ 其中 $\chi_{[x_{n,i-1},x_{n,i}]}(x)$ 是[[MK221][特征函数]]
+
+则根据[[MK79][正规性]]可得 $\varphi([x_{n,i-1},x_{n,i}])=x_{n,i-1}-x_{n,i}$ ，其中 $\varphi$ 是[[MK61][外测度]]
+
+则根据[[MK213][定义]]可得 $$\sum_{i=1}^{|P_n|-1}f(\xi_{n,i})(x_{n,i}-x_{n,i-1})=(\mathcal{L})\int_{[a,b]}\phi_n(x)dx$$
+
+根据下述三点证明以及[[MK275][控制收敛定理]]可得 $$\lim_{n\to\infty}(\mathcal{L})\int_{[a,b]}\phi_n(x)dx=(\mathcal{L})\int_{[a,b]}f(x)dx$$ 证毕
+
+******* 可测函数列
+
+显然 $\{\phi_n(x)\}$ 均为非负[[MK178][简单函数]]，即为[[MK134][可测函数]]
+
+******* 逐点收敛于 $f(x)$
+
+根据[[~/OneDrive/数学分析/Chap7Note.org::MK14][定义]]可得 $P_n=\{x_i\}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]，则易证 $\forall n\in\mathbb{N}\rightarrow\varphi(P_n)=0$
+
+则根据[[MK278][可数零测]]可得 $\varphi\left(\bigcup_{n=1}^\infty P_n\right)=0$ ，去除不连续点，定义 $E^*=E'\cup\left(\bigcup_{n=1}^\infty P_n\right)$
+
+则根据[[MK278][并零测]]可得 $\varphi(E^*)=0$ 则对于任意 $x_0\in E^*$ 由于[[MK106][连续]]
+
+故有 $\forall\epsilon>0,\exists\delta>0,\forall |x-x_0|<\delta\rightarrow |f(x)-f(x_0)|<\epsilon$
+
+又由于 $\lim_{n\to\infty}\lambda_n=0$ 故有 $\exists N,\forall n>N\rightarrow \lambda_n<\frac{\delta}{3}$
+
+由于 $P_n$ 划分 $[a,b]$ 且 $x_0\not\in\bigcup_{n=1}^\infty P_n$ 故必存在 $i$ 满足 $x_0\in(x_{n,i-1},x_{n,i})$
+
+根据定义亦存在 $\xi_{n,i}\in(x_{n,i-1},x_{n,i})$ 满足 $\phi_n(x_0)=f(\xi_{n,i})$
+
+则显然 $|\xi_{n,i}-x_0|\leq(x_{n,i}-x_{n,i-1})\leq\lambda_n<\frac{\delta}{3}<\delta$ 故有 $|\phi_n(x_0)-f(x_0)|=|f(\xi_{n,i})-f(x_0)|<\epsilon$
+
+综上所述，对于任意 $x_0\in E^*$ 均有 $\forall\epsilon>0,\exists N,\forall n>N\rightarrow|\phi_n(x_0)-f(x_0)|<\epsilon$
+
+结合 $\varphi(E^*)=0$ 可得 $\phi_n(x)$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $\omega_f(x)$
+
+******* 控制函数
+
+由于 $f(x)$ [[MK202][有界]]，故存在 $M\in\mathbb{R}$ 满足 $\forall x\in[a,b]\rightarrow |f(x)|\leq M$
+
+故定义 $F(x)=M$ 显然是非负[[MK178][简单函数]]，即为[[MK134][可测函数]]
+
+根据[[MK213][定义]]以及[[MK79][正规性]] $$\int_{[a,b]}Mdx=M(b-a)$$ 由于 $\{a,b\}\subset\mathbb{R}$
+
+[[MK286][同理易证]] $$\int_{[a,b]}F(x)dx<\infty$$ [[MK247][勒贝格可积]]
+
+**** 定理2：黎曼可积充要条件<<MK282>>
+
+闭区间 $[a,b]\subset\mathbb{R}$ 上的[[MK202][有界]]函数 $f(x)$ [[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]的充要条件是
+
+$f(x)$ 在 $[a,b]$ 上几乎处处连续
+
+***** 证明
+
+根据[[~/OneDrive/数学分析/Chap7Note.org::MK18][推论3]]可得若黎曼可积，其充要条件是
+
+对于任意一列满足 $\lim_{n\to\infty}\lambda_n=0$ 的划分 $\{P_n\}$ 使得 $\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\Omega([x_{n,i-1},x_{n,i}])(x_{n,i}-x_{n,i-1})=0$
+
+又根据[[MK280][引理4]]有对于任意满足条件划分列，均有 $$\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\Omega([x_{n,i-1},x_{n,i}])(x_{n,i}-x_{n,i-1})=(\mathcal{L})\int_{[a,b]}\omega_f(x)dx$$
+
+即 $$(\mathcal{L})\int_{[a,b]}\omega_f(x)dx=0$$ 由于 $\omega_f(x)$ 是[[~/OneDrive/数学分析/Chap7Note.org::MK16][振幅]]，故根据其定义非负
+
+则根据[[MK281][性质8]]可得 $\omega_f(x)$ 不为零的点是[[MK126][零测集]]是 $$(\mathcal{L})\int_{[a,b]}\omega_f(x)dx=0$$ 的充要条件
+
+又根据[[~/OneDrive/数学分析/Chap7Note.org::MK19][引理5]]可得 $\omega_f(x)\ne0$ 充要条件是函数 $f(x)$ 在 $x$ 点不连续
+
+综上所述，易证 $f(x)$ 在 $[a,b]$ 上几乎处处连续是[[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]的充要条件
+
+**** 定理3：黎曼可积与勒贝格可积
+
+闭区间 $[a,b]\subset\mathbb{R}$ 上的[[MK202][有界]]函数 $f(x)$ [[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]的，则有：
+
+（1） $f(x)$ 在 $E=[a,b]$ 上[[MK237][勒贝格可积]]
+
+（2） $$(\mathcal{L})\int_{[a,b]}f(x)dx=(\mathcal{R})\int_a^bf(x)dx$$ 即[[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼积分]]等于[[MK237][勒贝格积分]]
+
+***** 证明
+
+由于 $f(x)$ 黎曼可积，故根据[[MK282][充要条件]]可得 $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]有[[MK106][连续]]
+
+则定义 $E'$ 是 $f(x)$ 在 $[a,b]$ 上的不连续点集，根据几乎处处性质有 $\varphi(E')=0$ 
+
+****** 证明 $f(x)\in\mathcal{L}([a,b])$ <<MK285>>
+
+根据几乎处处连续以及[[MK284][推论]]可得 $f(x)$ 是[[MK134][可测函数]]
+
+由于有界，故必有 $M\in\mathbb{R}$ 使得 $\forall x\in[a,b]\rightarrow |f(x)|\leq M$
+
+根据[[MK198][引理]]可得 $f(x)=f^+(x)-f^-(x)$ ，定义 $F(x)=M$ 根据[[MK161][定理2]]可得是可测函数
+
+根据[[MK213][定义]]以及[[MK79][正则性]]可得 $$(\mathcal{L})\int_{[a,b]}F(x)dx=M\cdot(b-a)<\infty$$
+
+显然有 $\forall x\in[a,b]\rightarrow f^+(x)\leq M\land f^-(x)\leq M$
+
+则根据[[MK220][性质1]]可得 $$(\mathcal{L})\int_{[a,b]}f^+(x)dx\leq(\mathcal{L})\int_{[a,b]}F(x)dx\land(\mathcal{L})\int_{[a,b]}f^-(x)dx\leq(\mathcal{L})\int_{[a,b]}F(x)dx$$
+
+即均小于无穷，则[[MK237][勒贝格可积]]
+
+****** 证明相等
+
+定义划分列 $\{P_n\}$ 
+
+（1） 划分点集 $P_n=\{x_{n,i}\}$ 满足 $a=x_{n,0}<...<x_{n,|P_n|}=b$
+
+（2） $\lambda_n=\max\left\{x_{n,i}-x_{n,i-1}\big|\{x_{n,i},x_{n,i-1}\}\subset P_n\right\}$
+
+（3） 取点点集 $S_n=\{\xi_{n,i}\}$ 满足 $\xi_{n,i}\in(x_{n,i-1},x_{n,i})$
+
+若满足 $\lim_{n\to\infty}\lambda_n=0$ 则根据[[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]定义 $$(\mathcal{R})\int_a^bf(x)dx=\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}f(\xi_{n,i})(x_{n,i}-x_{n,i-1})$$
+
+则根据[[MK287][引理5]]可得 $$\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}f(\xi_{n,i})(x_{n,i}-x_{n,i-1})=(\mathcal{L})\int_{[a,b]}f(x)dx$$
+
+故可得 $$(\mathcal{L})\int_{[a,b]}f(x)dx=(\mathcal{R})\int_a^bf(x)dx$$ 
+
 
