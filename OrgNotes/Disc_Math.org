@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 343
+currnet mark: 345
 
 图论: P40
 
@@ -2706,7 +2706,9 @@ A\times\varnothing=\varnothing\times A=\varnothing
 
 ****** 证明
 
-根据[[MK153][定义]]可得 $A\times\varnothing=\left\{<x,y>\big|x\in A\land y\in\varnothing\right\}$ 由于 $y\in\varnothing$ 永假，故有 $\forall x(x\in A\times\varnothing)$ 永假，故 $A\times\varnothing=\varnothing$
+根据[[MK153][定义]]可得 $A\times\varnothing=\left\{<x,y>\big|x\in A\land y\in\varnothing\right\}$ 由于 $y\in\varnothing$ 永假
+
+故有 $\forall x(x\in A\times\varnothing)$ 永假，故 $A\times\varnothing=\varnothing$
 
 ***** 分配率<<MK154>>
 
@@ -2714,11 +2716,18 @@ A\times\varnothing=\varnothing\times A=\varnothing
 A\times(B\cup C)&=(A\times B)\cup(A\times C)\\
 A\times(B\cap C)&=(A\times B)\cap(A\times C)\\
 A\times(B-C)&=(A\times B)-(A\times C)\\
+\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)&=\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty I_i\times I'_j\right)\\
 \end{aligned}
 
 ****** 证明
 
-仅证 $A\times(B\cup C)=(A\times B)\cup(A\times C)$ 其他同理
+仅证以下，其他类似
+
+（1） $A\times(B\cup C)=(A\times B)\cup(A\times C)$
+
+（2） $\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)=\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty I_i\times I'_j\right)$
+
+******* （1）
 
 对于任意 $<x,y>$ 有
 
@@ -2730,6 +2739,18 @@ A\times(B-C)&=(A\times B)-(A\times C)\\
 {|\!\!\!=\!\!\!|}&(<x,y>\in A\times B)\lor(<x,y>\in A\times C)\\
 {|\!\!\!=\!\!\!|}&<x,y>\in(A\times B)\cup(A\times C)\\
 \end{aligned}
+
+******* （2）
+
+对于任意 $<x,y>\in\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)$ 可得 $x\in\bigcup_{n=1}^\infty I_n\land y\in \bigcup_{n=1}^\infty I'_n$
+
+即等价于存在 $\{i,j\}\subset\mathbb{N}$ 满足 $x\in I_i\land y\in I'_j$ 即等价于 $<x,y>\in I_i\times I'_j$
+
+则有 $x\in\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty I_i\times I'_j\right)$ 则有 $\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)\subset\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty I_i\times I'_j\right)$
+
+同理易证 $\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)\supset\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty I_i\times I'_j\right)$
+
+则根据[[MK21][自反性]]可得 $\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)=\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty I_i\times I'_j\right)$
 
 ***** 有限集基数
 
@@ -2764,6 +2785,42 @@ A\times(B-C)&=(A\times B)-(A\times C)\\
 则对于任意 $<a_1,a_2,...>\in\prod_{i\in I}A_i$ 则存在 $<\sigma_1(a_1),\sigma_2(a_2),...>\in\prod_{i\in I}B_i$
 
 故同理根据蕴含双射以及基数定义可得 $\left|\prod_{i\in I}A_i\right|\leq\left|\prod_{i\in I}B_i\right|$
+
+***** 直积与补集<<MK344>>
+
+若 $A\subset X,B\subset Y$ 其中 $X,Y$ 分别为 $A,B$ 的全集
+
+则有 $X\times B^c\cup A^c\times Y=(A\times B)^c$
+
+****** 证明
+
+若 $<x,y>\in (A\times B)^c$ 等价于 $<x,y>\not\in A\times B$ 根据直积定义可得等价于 $x\not\in A\lor y\not\in B$
+
+若 $<x,y>\in X\times B^c\cup A^c\times Y$ 则等价于 $(x\in X\land y\not\in B)\lor(x\not\in A\land y\in Y)$
+
+由于 $X,Y$ 是全集，即必有 $x\in X\land y\in Y$ 故有条件等价于 $x\not\in A\lor y\not\in B$
+
+***** 直积与差<<MK345>>
+
+若 $A_1\subset X,A_2\subset X,B_1\subset Y,B_2\subset Y$ 其中 $X,Y$ 分别为 $A_1,A_2,B_1,B_2$ 的全集
+
+则有 $(A_1\times B_1)-(A_2\times B_2)=A_1\times(B_1-B_2)\cap(A_1-A_2)\times B_1$
+
+****** 证明
+
+若 $<x,y>\in(A_1\times B_1)-(A_2\times B_2)$ 即等价于 $<x,y>\in A_1\times B_1\land<x,y>\not\in A_2\times B_2$
+
+进一步等价于 $(x\in A_1\land y\in B_1)\land\lnot(x\in A_2\land y\in B_2)$
+
+根据[[MK78][德摩根律]]、[[MK77][分配率]]以及[[MK75][交换律]]
+
+\begin{aligned}
+&(x\in A_1\land y\in B_1)\land\lnot(x\in A_2\land y\in B_2)\\
+{|\!\!\!=\!\!\!|}&(x\in A_1\land y\in B_1)\land(x\not\in A_2\lor y\not\in B_2)\\
+{|\!\!\!=\!\!\!|}&((x\in A_1\land y\in B_1)\land x\not\in A_2)\lor((x\in A_1\land y\in B_1)\land y\not\in B_2)\\
+{|\!\!\!=\!\!\!|}&(x\in (A_1-A_2)\land y\in B_1)\lor(x\in A_1\land y\in(B_1-B_2))\\
+{|\!\!\!=\!\!\!|}&<x,y>\in(A_1-A_2)\times B_1\cup A_1\times(B_1-B_2)
+\end{aligned}
 
 ** 二元关系
 

@@ -129,15 +129,14 @@ nameserver 192.168.0.1
 ## Strongswan servers
 
 ```
-Could you please try connecting to these servers:
-Japan #2563 - 139.162.127.30 - jp558.nordvpn.com
-Japan #2564 - 139.162.127.32 - jp560.nordvpn.com
-Japan #2565 - 139.162.127.58 - jp598.nordvpn.com
-Japan #2566 - 139.162.127.62 - jp599.nordvpn.com
-Japan #2567 - 139.162.127.65 - jp558.nordvpn.com
-Japan #2568 - 139.162.127.67 - jp560.nordvpn.com
-Japan #2569 - 139.162.127.75 - jp598.nordvpn.com
-Japan #2570 - 139.162.127.98 - jp599.nordvpn.com
+us7617 - 45.33.42.24 - us5784.nordvpn.com
+us7618 - 45.33.42.106 - us5783.nordvpn.com
+us7619 - 45.33.42.125 - us5784.nordvpn.com
+us7620 - 96.126.97.42 - us5783.nordvpn.com
+us7623 - 96.126.97.51 - us5784.nordvpn.com
+us7625 - 96.126.97.64 - us5784.nordvpn.com
+us7626 - 96.126.97.90 - us5783.nordvpn.com
+us7627 - 96.126.97.96 - us5784.nordvpn.com
 ```
 
 # Chromium keyring

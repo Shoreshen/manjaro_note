@@ -2,7 +2,7 @@
 #+OPTIONS: ^:nil
 #+TITLE: 反常积分
 
-Current Mark: 1
+Current Mark: 2
 
 * 积分中值定理
 
@@ -131,7 +131,7 @@ $g(x)$ 在 $(a,b)$ 上不变号，且在 $[a,b]$ 上可导
 
 * 反常积分定义：
 
-** 边界无穷积分：
+** 边界无穷积分<<MK2>>
 
 $f(x)$ 在 $[a,+\infty]$ 上有定义，且 $\forall [a,A]$ 可积：
 

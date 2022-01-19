@@ -4,7 +4,7 @@
 
 current video: P36
 
-current mark: 287
+current mark: 295
 
 * 几乎处处<<MK190>>
 
@@ -60,7 +60,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 *** 定理<<MK70>>
 
-单调集列有[[MK2][极限]]，且对于递增 $\lim_{n\to\infty}A_n=\cup_{i=1}^\infty A_i$ 对于递减 $\lim_{n\to\infty}A_n=\cap_{i=1}^\infty A_i$ 
+单调集列有[[MK2][极限]]，且对于递增 $\lim_{n\to\infty}A_n=\bigcup_{i=1}^\infty A_i$ 对于递减 $\lim_{n\to\infty}A_n=\bigcap_{i=1}^\infty A_i$ 
 
 **** 证明
 
@@ -1112,10 +1112,6 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][定理1]]可得 $\bigcup_{i=1}^\infty S_i=\bigcup_{i=1}^\infty S'_i$
 
 故进一步根据[[MK64][不相交可数可加]]可得 $\bigcup_{i=1}^\infty S'_i$ 外测度可测，即 $\bigcup_{i=1}^\infty S_i$ 亦外测度可测
-
-*** 推论1
-
-可数
 
 * 开集构造
 
@@ -2743,7 +2739,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 由于 $I\subset\bigcup_{i=1}^\infty I_i$ ，则对于任意 $I'_k\subset I\rightarrow I'_k\subset\bigcup_{i=1}^\infty I_i$ 故有 $\sum_{i=1}^\infty |I_i|\geq|I|$
 
-** 外测度<<MK51>>
+** 勒贝格外测度<<MK51>>
 
 若 $E\subset\mathbb{R}^n$ 其外测度定义为可数个开区间覆盖的最小测度，即 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 
 
@@ -2813,13 +2809,15 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 故根据定义下确界是最大下界，故有 $m^*(A)\leq m^*(B)$ 
 
-*** 正则性<<MK79>>
+*** 性质
+
+**** 正则性<<MK79>>
 
 在[[MK52][勒贝格测度]]定义下，任意有界[[MK13][区间]] $I=\prod_{i=1}^n[a_i,b_i]\subset\mathbb{R}^n$ 其中乘法为[[~/OneDrive/离散数学/Disc_Math.org::MK153][直积]]
 
 其外测度等于区间测度 $m^*(I)=|I|=\prod_{i=1}^n(b_i-a_i)$ 乘法为[[MK4][实数乘法]]
 
-**** 证明
+***** 证明
 
 定义区间具体描述 $I=\prod_{i=1}^n[a_i,b_i]$ 为有界闭区间
 
@@ -2839,11 +2837,11 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 对于开区间，半开半闭区间区间，其在勒贝格测度下定义其测度等于闭区间，故同理可证
 
-*** 存在性
+**** 存在性
 
 对于任意 $E\subset\mathbb{R}^n$ 其外测度 $m^*(E)$ 存在
 
-**** 证明
+***** 证明
 
 对于任意 $i\in\mathbb{N}^+$ 定义 $K_i=\prod_{j=1}^n[-i,i]$ 其中 $n$ 为欧式空间的维数，乘法为[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-直积]]
 
@@ -2855,11 +2853,11 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 故 $\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 存在，即外测度对于任意集合均存在
 
-*** 平移不变性<<MK95>>
+**** 平移不变性<<MK95>>
 
 对于 $E\subset\mathbb{R}^n$ 有元素 $\vec{x}=\{x_1,...,x_j\}\in\mathbb{R}^n$ 则定义 $E'=\left\{\vec{v}+\vec{x}\big|\vec{v}\in E\right\}$ 则有 $m^*(E)=m^*(E')$
 
-**** 证明
+***** 证明
 
 根据[[MK51][外测度]]定义可得 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 
 
@@ -2873,11 +2871,11 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 故有 $m^*(E)=m^*(E')$
 
-*** 对称不变性
+**** 对称不变性
 
 对于 $E\subset\mathbb{R}^n$ 定义 $E'$ 为 $E$ 中所有元素沿某一个面对称组成的集合，则有 $m^*(E)=m^*(E')$
 
-**** 证明
+***** 证明
 
 根据[[MK51][外测度]]定义可得 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 
 
@@ -2891,11 +2889,11 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 证毕 
 
-*** 倍数性质<<MK235>>
+**** 倍数性质<<MK235>>
 
 对于 $E\subset\mathbb{R}^n$ 定义 $\alphaE=\left\{\alpha x\big|x\in E\right\}$ 其中 $\alpha\in\mathbb{R}$ 则有 $m^*(\alpha E)=\alpha^n m^*(E)$
 
-**** 证明
+***** 证明
 
 根据[[MK51][定义]]可得 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 对于任意一组满足条件的 $\{I_i\}$
 
@@ -3037,6 +3035,142 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 即 $S'$ 可测，且 $m^*(S')=\alpha^n m^*(S)$
 
+*** 直积
+
+若 $X\in\mathbb{R}^p,Y\in\mathbb{R}^q$ 分别为 $<\mathbb{R}^p,\varphi>,<\mathbb{R}^q,\varphi>$ 的[[MK81][可测集]]，其中 $\varphi$ 是[[MK51][勒贝格外侧度]]
+
+且 $p+q<\infty$ 则有 $X\times Y$ 是 $<\mathbb{R}^{p+q},\varphi>$ 上的[[MK81][可测集]]，其中乘法为[[~/OneDrive/离散数学/Disc_Math.org::MK153][直积]]
+
+**** 证明
+
+***** 开集的直积是开集<<MK291>>
+
+若 $X,Y$ 均为[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]则对于任意 $(\vec{x}_0,\vec{y}_0)\in X\times Y$ 其中 $\vec{x}_0\in X,\vec{y}_0\in Y$
+
+由于均为开集，则存在 $\delta_1,\delta_2$ 满足 $O_p(\vec{x}_0,\delta_1)\in X,O_q(\vec{y}_0,\delta_2)\in Y$ 其中 $O_n$ 表示 $\mathbb{R}^n$ 中的[[MK59][邻域]]
+
+则取 $\delta=\min\{\delta_1,\delta_2\}$ 对于任意 $(\vec{x},\vec{y})\in O_{p+q}((\vec{x}_0,\vec{y}_0),\delta)$
+
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK25][距离定义]]有 $\sqrt{\sum_{i=1}^p(x_i-x_{0,i})^2+\sum_{i=1}^q(y_i-y_{0,i})^2}<\delta$ 即 $\sum_{i=1}^p(x_i-x_{0,i})^2+\sum_{i=1}^q(y_i-y_{0,i})^2<\delta^2$ 
+
+由于均为正数，故有 $\sum_{i=1}^p(x_i-x_{0,i})^2<\delta^2\leq\delta_1^2\land \sum_{i=1}^q(y_i-y_{0,i})^2<\delta^2<\delta_2^2$
+
+即有 $\vec{x}\in X\land \vec{y}\in Y$ 即 $(\vec{x},\vec{y})\in X\times Y$ 由于任意性，故可得 $O_{p+q}((\vec{x}_0,\vec{y}_0),\delta)\subset X\times Y$
+
+即 $(\vec{x}_0,\vec{y}_0)$ 是 $X\times Y$ 的[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，又由于 $(\vec{x}_0,\vec{y}_0)$ 任意性可得 $X\times Y$ 是 $\mathbb{R}^{p+q}$ 上的[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
+
+***** 闭集的直积是闭集<<MK293>>
+
+若 $X,Y$ 均为[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]]，则根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]] $X^c,Y^c$ 均为开集，根据[[~/OneDrive/离散数学/Disc_Math.org::MK344][直积与补]]可得 $(X\times Y)^c=\mathbb{R}^p\times Y^c\cup X^c\times\mathbb{R}^q$
+
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK26][全集是开集]]可得 $\mathbb{R}^p,\mathbb{R}^q$ 均为开集，根据[[MK291][之前证明]]可得 $(X\times Y)^c$ 是 $\mathbb{R}^{p+q}$ 上的[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
+
+根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]]可得 $X\times Y$ 是闭集
+
+***** 构造开集与闭集<<MK294>>
+
+由于可测，根据[[MK292][引理2]]可得对于任意 $\epsilon>0\land\epsilon\in\mathbb{R}$ 存在闭集 $F,F'$ 开集 $G,G'$
+
+满足 $F\subset X\subset G\land \varphi(G-F)<\epsilon$ 以及 $F'\subset Y\subset G'\land \varphi(G'-F')<\epsilon$
+
+则有 $F\times F'\subset X\times Y\subset G\times G'$ 根据[[MK291][开集封闭]]以及[[MK293][闭集封闭]] $F\times F'$ 是闭集 $G\times G'$ 是开集
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK345][直积与差]]可得 $(G\times G')-(F\times F')=G\times(G'-F')\cup(G-F)\times G'$
+
+则根据[[MK61][次可加性]]有 $\varphi((G\times G')-(F\times F'))\leq\varphi(G\times(G'-F'))+\varphi((G-F)\times G')$
+
+根据[[MK82][开集可测]]、[[MK207][闭集可测]]以及[[MK84][计算]]易证 $G,G-F,G'-F',G'$ 均为可测集
+
+***** 差集测度<<MK295>>
+
+根据[[MK51][定义]]可得 $\forall\epsilon>0$ 存在[[MK13][开区间]] $\{I_n\}$ 满足 $G\subset\bigcup_{n=1}^\infty I_n\land\sum_{n=1}^\infty \varphi(I_n)-\varphi(G)<\epsilon$
+
+同理存在 $\{I'_n\}$ 满足 $G'-F'\subset\bigcup_{n=1}^\infty I'_n\land\sum_{n=1}^\infty\varphi(I'_n)-\varphi(G'-F')<\epsilon$
+
+故有 $G\times(G'-F')\subset\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)$
+
+根据[[MK61][单调性]] $\varphi\left(G\times(G'-F')\right)\leq\varphi\left(\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)\right)$ 
+
+进一步根据[[~/OneDrive/离散数学/Disc_Math.org::MK154][分配律]]易证 $\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)=\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty I_i\times I'_j\right)$
+
+又根据[[MK79][正则性]]易证 $\varphi(I_i\times I'_j)=\varphi(I_i)\varphi(I'_j)$
+
+根据[[MK61][次可加性]]易证 $\varphi\left(\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty I_i\times I'_j\right)\right)\leq\sum_{i=1}^\infty\sum_{j=1}^\infty\varphi(I_i\times I'_j)=\sum_{i=1}^\infty\sum_{j=1}^\infty\varphi(I_i)\varphi(I'_j)$
+
+又根据[[MK4][乘法结合律，交换律]]易证 $\sum_{i=1}^\infty\sum_{j=1}^\infty\varphi(I_i)\varphi(I'_j)=\left(\sum_{i=1}^\infty\varphi(I_i)\right)\left(\sum_{j=1}^\infty\varphi(I'_j)\right)$
+
+即有 $\varphi(G\times(G'-F'))\leq\left(\sum_{i=1}^\infty\varphi(I_i)\right)\left(\sum_{j=1}^\infty\varphi(I'_j)\right)$ 其中 $I_n$ 是区间
+
+同理可证 $\varphi((G-F)\times G')\leq\left(\sum_{i=1}^\infty\varphi(J_i)\right)\left(\sum_{j=1}^\infty\varphi(J'_j)\right)$ 其中 $J_n$ 是区间
+
+结合[[MK294][之前证明]]结论 $\varphi((G\times G')-(F\times F'))\leq\varphi(G\times(G'-F'))+\varphi((G-F)\times G')$
+
+故有 $\varphi((G\times G')-(F\times F'))\leq\left(\sum_{i=1}^\infty\varphi(I_i)\right)\left(\sum_{j=1}^\infty\varphi(I'_j)\right)+\left(\sum_{i=1}^\infty\varphi(J_i)\right)\left(\sum_{j=1}^\infty\varphi(J'_j)\right)$
+
+***** 若 $\varphi(X)<\infty\land\varphi(Y)<\infty$
+
+对于任意 $\epsilon^*>0$ 由于可测，则根据[[MK92][引理]]可得存在 $G_u,G'_u$ 满足 $\varphi(G_u)<\varphi(X)+0.5,\varphi(G'_u)<\varphi(Y)+0.5$
+
+又取 $\epsilon=\frac{\epsilon^*}{4(\varphi(X)+1)}$ 则根据[[MK294][之前证明]]可得存在 $F'\subset Y\subset G'_v\land\varphi(G'_v-F')<\frac{\epsilon^*}{4(\varphi(X)+1)}$
+
+同理存在 $F\subset X\subset G_v\land\varphi(G_v-F)<\frac{\epsilon^*}{4(\varphi(Y)+1)}$
+
+取 $G'=G'_u\cap G'_v,G=G_u\cap G_v$ 则有 $G'-F'\subset G'_v-F'$ 及 $G-F\subset G_v-F$
+
+根据[[MK61][单调性]] $\varphi(G'-F')\leq\varphi(G'_v-F')<\frac{\epsilon^*}{4(\varphi(X)+1)}$ 及 $\varphi(G-F)\leq\varphi(G_v-F)<\frac{\epsilon^*}{4(\varphi(Y)+1)}$
+
+同理亦有 $\varphi(G')\leq\varphi(G'_u)<\varphi(Y)+0.5$ 及 $\varphi(G)\leq\varphi(G_u)<\varphi(X)+0.5$
+
+故根据[[MK51][定义]]取 $\epsilon=0.5$ 则有 $\sum_{i=1}^\infty\varphi(I_i)<\varphi(G)+0.5<\varphi(X)+1$
+
+又由于 $G'-F'$ 是可测集，则根据[[MK51][定义]]取 $\epsilon=\frac{\epsilon^*}{4(\varphi(X)+1)}$
+
+则有 $\sum_{j=1}^\infty\varphi(I'_j)<\varphi(G'-F')+\frac{\epsilon^*}{4(\varphi(X)+1)}$ 即有 $\sum_{j=1}^\infty\varphi(I'_j)<\frac{\epsilon^*}{2(\varphi(X)+1)}$ 
+
+由于[[MK61][非负性]]，故有 $\left(\sum_{i=1}^\infty\varphi(I_i)\right)\left(\sum_{j=1}^\infty\varphi(I'_j)\right)\leq\left(\varphi(X)+1\right)\frac{\epsilon^*}{2(\varphi(X)+1)}=\frac{\epsilon^*}{2}$
+
+同理可证 $\left(\sum_{i=1}^\infty\varphi(J_i)\right)\left(\sum_{j=1}^\infty\varphi(J'_j)\right)<\frac{\epsilon^*}{2}$
+
+又根据[[MK295][之前证明]]可得 $\varphi((G\times G')-(F\times F'))<\epsilon^*$
+
+根据[[MK291][开集封闭]]以及[[MK293][闭集封闭]] $F\times F'$ 是闭集 $G\times G'$ 是开集
+
+即对于任意 $\epsilon>0$ 存在开集 $G\times G'$ 闭集 $F\times F'$ 满足 $F\times F'\subset X\times Y\subset G\times G'$ 
+
+以及 $\varphi((G\times G')-(F\times F'))<\epsilon$ 故根据[[MK292][引理2]]可得 $X\times Y$ 是可测集
+
+***** 若不是都有界
+
+定义 $K^p_i=\prod_{j=1}^p[-i,i],K^q_i=\prod_{j=1}^q[-i,i]$ 进而定义 $X\cap K^p_i=X_i\land Y\cap K^q_i=Y_i$
+
+则 $\varphi(X_i)<\infty\land\varphi(Y_i)<\infty$ 即有 $X_i\times Y_i$ 是[[MK81][可测集]]
+
+由于 $X_i\subset X_{i+1}\land Y_i\subset Y_{i+1}$ 故易证 $X_i\times Y_i\subset X_{i+1}\times Y_{i+1}$
+
+即 $X_i\times Y_i$ 为[[MK69][递增]]的可测集列，则根据[[MK84][计算]]（5）可得 $\lim_{i\to\infty}X_i\times Y_i$ 可测
+
+又根据[[MK70][定理]]可得 $\lim_{i\to\infty}X_i\times Y_i=\bigcup_{i=1}^\infty(X_i\times Y_i)$
+
+对于任意 $<\vec{x},\vec{y}>\in X\times Y$ 等价于 $\vec{x}\in X\land \vec{y}\in Y$
+
+定义 $\vec{x}=(x_1,...,x_p)$ 故根据[[MK19][阿基米德性质]]对于每一个 $x_i$ 存在 $n_i>x_i$
+
+由于 $p<\infty$ 故存在 $n$ 大于所有 $x_i$ 则有 $\vec{x}\in K^p_n$ 即 $\vec{x}\in X_n$
+
+同理可证存在 $m$ 使得 $\vec{y}\in Y_m$ 则取 $z=\max\{n,m\}$ 故有 $<x,y>\in X_z\times Y_z$
+
+即 $X\times Y\subset \bigcup_{i=1}^\infty(X_i\times Y_i)$
+
+又对于任意 $<\vec{x},\vec{y}>\in\bigcup_{i=1}^\infty(X_i\times Y_i)$ 则存在 $n$ 满足 $<\vec{x},\vec{y}>\in X_n\times Y_n$
+
+即 $(\vec{x}\in X\land\vec{x}\in K^p_n)\land(\vec{y}\in X\land\vec{y}\in K^q_n)$ 显然满足 $\vec{x}\in X\land\vec{y}\in Y$
+
+即有 $<\vec{x},\vec{y}>\in X\times Y$ 即 $X\times Y\supset \bigcup_{i=1}^\infty(X_i\times Y_i)$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $X\times Y=\bigcup_{i=1}^\infty(X_i\times Y_i)$ 结合 $\bigcup_{i=1}^\infty(X_i\times Y_i)$ 可测
+
+故有 $X\times Y$ 亦可测
+
 *** 区间可测<<MK82>>
 
 对于任意[[MK13][区间]] $I\subset\mathbb{R}^n\land n<\infty$ 可得 $I$ 是可测集
@@ -3115,7 +3249,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 故可测集的补集亦可测，则闭集可测
 
-*** 引理<<MK92>>
+*** 引理1<<MK92>>
 
 对于 $E\subset\mathbb{R}^n$ 且 $E$ [[MK81][可测]]，有：
 
@@ -3183,6 +3317,80 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 定义 $G^c=F$ 则有 $m^*(G/E^c)=m^*(E/F)<\epsilon$
 
+*** 引理2<<MK292>>
+
+定义[[MK212][外侧度空间]] $<\mathbb{R}^n,\varphi>$ 其中 $\varphi$ 是[[MK51][勒贝格外侧度]]，则对于任意 $E\subset\mathbb{R}^n$
+
+$E$ [[MK81][可测]]的充要条件是 $\forall\epsilon>0\land\epsilon\in\mathbb{R}$ 均存在开集 $G$ 以及闭集 $F$
+
+满足 $F\subset E\subset G\land\varphi(G-F)<\epsilon$
+
+**** 证明
+
+***** 充分
+
+当 $E$ 是[[MK81][可测集]]时，根据[[MK92][引理1]]可得，对于任意 $\epsilon>0$ 存在开集 $G$ 满足 $E\subset G\land\varphi(G-E)<\frac{\epsilon}{2}$
+
+存在闭集 $F$ 满足 $F\subset E\land\varphi(E-F)<\frac{\epsilon}{2}$ 则易证 $G-F=(G-E)\cup(E-F)$
+
+故根据[[MK61][次可加性]]可得 $\varphi(G-F)\leq\varphi(G-E)+\varphi(E-F)<\epsilon$
+
+***** 必要
+
+若对于任意 $\epsilon$ 均存在开集 $G$ 闭集 $F$ 满足 $F\subset E\subset G\land \varphi(G-F)<\epsilon$
+
+****** 取集合列<<MK290>>
+
+取 $\epsilon=1$ 则有 $G_1,F_1$ 满足 $F_1\subset E\subset G_1\land \varphi(G_1-F_1)<1$
+
+取 $\epsilon=\frac{1}{2^n}$ 若有 $G_{n-1},F_{n-1}$ 满足 $F_{n-1}\subset E\subset G_{n-1}\land \varphi(G_{n-1}-F_{n-1})<\frac{1}{2^{n-1}}$
+
+则根据条件存在 $G'_n,F'_n$ 满足 $F'_{n}\subset E\subset G'_{n}\land \varphi(G'_{n}-F'_{n})<\frac{1}{2^{n}}$
+
+进一步取 $G_n=G'_n\cap G_{n-1},F_n=F'_n\cup F_{n-1}$ 则 $G_n-F_n=\left(G'_n\cap G_{n-1}\right)-\left(F'_n\cup F_{n-1}\right)$
+
+则对于任意 $x\in G_n-F_n$ 均有 $x\in G'_n\land x\in G_{n-1}\land x\not\in F'_n\land x\not\in F_{n-1}$
+
+即绝对满足 $x\in G'_n\land x\not\in F'_n$ 即 $x\in G'_n-F'_n$ 则有 $G_n-F_n\subset G'_n-F'_n$
+
+则根据[[MK61][单调性]]可得 $\varphi(G_n-F_n)\leq\varphi(G'_n-F'_n)<\frac{1}{2^n}$ 且有 $G_n\subset G_{n-1}\land F_{n-1}\subset F_n$
+
+又由于 $x\in G_{n-1}\land x\not\in F_{n-1}$ 故有 $G_n-F_n\subset G_{n-1}-F_{n-1}$
+
+根据传递性可得对于任意 $i<j$ 均有 $G_j\subset G_i\land F_j\subset F_i\land G_i-F_i\subset G_{j}-F_{j}$
+
+****** 差集零测
+
+由于 $\{G_n\},\{F_n\}$ 满足 $\varphi(G_n-F_n)<\frac{1}{2^n}$ 则有 $\lim_{n\to\infty}\varphi(G_n-F_n)=0$
+
+根据[[MK290][之前证明]]可知 $\forall i<j\rightarrow F_i\land G_i-F_i\subset G_{j}-F_{j}$ 即[[MK69][递减]]集列
+
+又由于 $\varphi(G_n-F_n)<\frac{1}{2^n}<\infty$ 则根据[[MK84][计算]]（6）可得 $\lim_{n\to\infty}\varphi(G_n-F_n)=\varphi\left(\lim_{n\to\infty}(G_n-F_n)\right)$
+
+又根据 $G_n-F_n$ [[MK69][递减]]以及[[MK70][定理]]可得 $\lim_{n\to\infty}(G_n-F_n)=\bigcap_{n=1}^\infty(G_n-F_n)$
+
+定义集合 $Z=\bigcap_{n=1}^\infty G_n-\bigcup_{n=1}^\infty F_n$ 则对于任意 $x\in Z$ 均有 $x\in\bigcap_{n=1}^\infty G_n\land x\in\bigcup_{n=1}^\infty F_n$
+
+即 $\forall n\in\mathbb{N}\rightarrow x\in G_n\land x\not\in F_n$ 即对于任意 $n\in\mathbb{N}$ 均有 $x\in G_n\land x\not\in F_n$
+
+故得 $Z\subset \bigcap_{n=1}^\infty(G_n-F_n)$ 根据[[MK91][非负性]]和[[MK61][单调性]]可得 $0\leq\varphi(Z)\leq\varphi\left(\lim_{n\to\infty}(G_n-F_n)\right)=0$
+
+即有 $\varphi(Z)=\varphi(\bigcap_{n=1}^\infty G_n-\bigcup_{n=1}^\infty F_n)=0$ 定义 $F=\bigcup_{n=1}^\infty F_n,G=\bigcap_{n=1}^\infty G_n$
+
+****** 结论
+
+由于 $\forall x\in F=\bigcup_{n=1}^\infty F_n$ 均存在 $n'\in\mathbb{N}$ 满足 $x\in F_{n'}\subset E$ 故有 $F\subset E$ 同理易证 $E\subset G$
+
+由于[[MK87][开集可测]]以及[[MK207][闭集可测]]，故有 $F_n,G_n$ 均是[[MK81][可测集]]，则根据[[MK65][Caratheodory定理]]可得可测集形成[[MK50][ $\sigma$ 代数]]
+
+则根据[[MK50][可数并封闭]]以及[[MK67][可数交封闭]]可得 $F,G$ 均为[[MK81][可测集]]
+
+显然 $E=(E\cap F)\cup((E-F))$ 由于 $F\subset E$ 则有 $E\cap F=F$ 是可测集
+
+由于 $F\subset E\subset G$ 故易证 $E-F\subset G-F$ 由于 $\varphi(G-F)=0$ 是[[MK126][零测集]]
+
+则根据[[MK128][子集零测]]以及[[MK94][可测性]]可得 $E-F$ 仍为可测集，则根据[[MK50][可数并封闭]] $E=F\cup((E-F))$ 是可测集  
+ 
 *** 正规性定理<<MK97>>
 
 定义 $\Gamma$ 表示 $\mathbb{R}^n$ 所有开集的[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]，定义 $\Theta$ 为所有闭集的集合族，若 $E\subset\mathbb{R}^n$ 则：
@@ -3281,7 +3489,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 由于 $G_i$ 为开集，故根据[[MK87][开集可测]]可得可测
 
-同理 $F_i$ 为闭集，结合[[MK84][计算]]中（1）以及[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]可得亦可测
+同理 $F_i$ 为闭集，结合[[MK84][计算]]中（1）以及[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]]可得亦可测
 
 根据[[MK84][计算]]中（2）和（4）可得 $A,B$ 亦可测，结合 $m^*(B)<\infty$ 有 $m^*(A)-m^*(B)=m^*(A-B)=0$
 
@@ -5984,6 +6192,20 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 &=\int_{E}f(x)dx
 \end{aligned}
 
+***** 推论<<MK289>>
+
+若非负[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ ，定义 $E=\lim_{i\to\infty}E_i$ 以及对于任意 $i<j$ 有 $E_i\subset E_j$
+
+则有 $$\int_Ef(x)dx=\lim_{i\to\infty}\int_{E_i}f(x)dx$$
+
+****** 证明
+
+定义 $E_i'=E_i-E_{i-1}$ 以及 $E'_1=E_1$ 易证 $\forall n\in\mathbb{N}\rightarrow E_n =\bigcup_{i=1}^n E'_i$
+
+且 $\{E'_i\}$ 两两不想交，则根据[[MK241][性质6]]有 $$\int_Ef(x)dx=\sum_{i=1}^\infty\int_{E'_i}f(x)dx=\lim_{n\to\infty}\sum_{i=1}^n\int_{E'_i}f(x)dx$$
+
+再根据 $\forall n\in\mathbb{N}\rightarrow E_n =\bigcup_{i=1}^n E'_i$ 以及[[MK241][性质6]]有 $$\lim_{n\to\infty}\sum_{i=1}^n\int_{E'_i}f(x)dx =\lim_{n\to\infty}\int_{E_n}f(x)dx$$
+
 **** 性质7<<MK245>>
 
 若非负[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ 与非负函数 $g(x)$ [[MK190][几乎处处]]相等
@@ -6748,7 +6970,7 @@ $f(x)$ 在 $[a,b]$ 上几乎处处连续
 
 综上所述，易证 $f(x)$ 在 $[a,b]$ 上几乎处处连续是[[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]的充要条件
 
-**** 定理3：黎曼可积与勒贝格可积
+**** 定理3：黎曼可积与勒贝格可积<<MK288>>
 
 闭区间 $[a,b]\subset\mathbb{R}$ 上的[[MK202][有界]]函数 $f(x)$ [[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]的，则有：
 
@@ -6793,5 +7015,38 @@ $f(x)$ 在 $[a,b]$ 上几乎处处连续
 则根据[[MK287][引理5]]可得 $$\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}f(\xi_{n,i})(x_{n,i}-x_{n,i-1})=(\mathcal{L})\int_{[a,b]}f(x)dx$$
 
 故可得 $$(\mathcal{L})\int_{[a,b]}f(x)dx=(\mathcal{R})\int_a^bf(x)dx$$ 
+
+***** 推论
+
+设 $f(x)$ 是在区间 $[a,+\infty)$ 上的非负实值函数，若满足：
+
+（1） $\forall A>a$ 均有 $f(x)$ 在 $[a,A]$ 上[[MK202][有界]]且[[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]
+
+（2） $$(\mathcal{R})\int_a^\infty f(x)dx=\lim_{A\to\infty}(\mathcal{R})\int_a^A f(x)dx$$ 收敛
+
+则有：
+
+（1） $f(x)$ 在 $[a,\infty)$ 上[[MK237][勒贝格可积]]
+
+（2） $$(\mathcal{R})\int_a^\infty f(x)dx=(\mathcal{L})\int_{[a,\infty)} f(x)dx$$
+
+****** 证明
+
+任取数列 $\{A_n\}$ 满足：
+
+（1） $\forall n\in\mathbb{N}\rightarrow A_n>a$
+
+（2） $\forall\{i,j\}\subset\mathbb{N}\left(i<j\rightarrow A_i<A_j\right)$
+
+（3） $\lim_{n\to\infty} A_n=\infty$
+
+则易证对于任意 $i<j$ 均有 $[a,A_i]\subset[a,A_j]$
+
+故根据[[MK289][推论]]有 $$\int_{[a,\infty)}(\mathcal{L})f(x)dx =\lim_{n\to\infty}(\mathcal{L})\int_{[a,A_n]}f(x)dx$$
+
+又根据[[MK288][定理3]]和条件（1）可得 $$(\mathcal{L})\int_{[a,A_n]}f(x)dx=(\mathcal{R})\int_a^{A_n}f(x)dx$$
+
+最终根据[[~/OneDrive/数学分析/Chap8Note.org::MK2][反常积分定义]]可得 $$\lim_{n\to\infty}(\mathcal{R})\int_a^{A_n}f(x)dx=(\mathcal{R})\int_a^\infty f(x)dx$$
+
 
 
