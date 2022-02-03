@@ -4,7 +4,7 @@
 
 current video: P36
 
-current mark: 295
+current mark: 316
 
 * 几乎处处<<MK190>>
 
@@ -1309,9 +1309,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 ** 有限欧式空间开集构造定理<<MK83>>
 
-对于任意[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]] $G\subset\mathbb{R}^n\land n<\infty$ 
-
-其可表述为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数]]个不相交的半开闭[[MK13][区间]]的并
+对于任意[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]] $G\subset\mathbb{R}^n\land n<\infty$ 其可表述为[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的半开闭[[MK13][区间]]的并
 
 *** 证明
 
@@ -2837,7 +2835,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 对于开区间，半开半闭区间区间，其在勒贝格测度下定义其测度等于闭区间，故同理可证
 
-**** 存在性
+**** 存在性<<MK296>>
 
 对于任意 $E\subset\mathbb{R}^n$ 其外测度 $m^*(E)$ 存在
 
@@ -2907,6 +2905,108 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据[[~/OneDrive/离散数学/Disc_Math.org::MK340][定理4]]可得 $m^*(\alpha E)=\alpha^n\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}=\alpha^n m^*(E)$
 
+**** 等测包<<MK297>>
+
+对于任意 $E\subset\mathbb{R}^n$ 存在 $G\subset\mathbb{R}^n$ 满足：
+
+（1） $E\subset G$
+
+（2） $\varphi(E)=\varphi(G)$ 其中 $\varphi$ 是[[MK51][勒贝格外侧度]]
+
+（3） $G\in G_\delta$ 即 $G$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个开集的交（可测）
+
+***** 证明
+
+根据[[MK296][存在性]]可得 $\varphi(E)$ 存在，则根据[[MK51][定义]] $\varphi(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$
+
+则对于任意 $n\in\mathbb{N}$ 均存在 $\{I_{n,i}\}$ 满足 $E\subset\bigcup_{i=1}^\infty I_{n,i}\land0<\sum_{i=1}^\infty|I_{n,i}|<\varphi+\frac{1}{n}$
+
+由于 $I$ 均为开集，则根据[[MK87][开集可测]]以及[[MK65][Caratheodory定理]]可得 $\varphi(\bigcup_{i=1}^\infty I_{n,i})=\sum_{i=1}^\infty |I_{n,i}|$
+
+根据[[~/OneDrive/数学分析/Chap11Note.org::P2][定理3]]可得 $E'_n=\bigcup_{i=1}^\infty I_{n,i}$ 亦为开集，进一步定义 $E_n=\bigcap_{i=1}^n E'_n$ 易证：
+
+（1） $E\subset E_n$
+
+（2） $\varphi(E_n)-\varphi(E)<\frac{1}{n}$
+
+（3） $\forall i\forall j\left(i<j\rightarrow E_i\subset E_j\right)$ 即[[MK69][递减]]
+
+定义 $G=\lim_{n\to\infty}E_n=\bigcap_{i=1}^\infty E'_n$ 由于 $E'_n$ 是开集，故 $G\in G _\delta$ 是可数开集的交
+
+且由于 $\forall n\in\mathbb{N}\rightarrow E\subset E_n$ 则 $\forall x\in E,\forall n\in\mathbb{N}\rightarrow x\in E_n$ 即根据[[~/OneDrive/离散数学/Disc_Math.org::MK35][广义交]]定义有 $E\subset G$
+
+此时若 $\varphi(E)=\infty$ 则根据[[MK60][单调性]]可得 $\varphi(E_n)\geq\varphi(E)$ 即 $\varphi(E_n)=\infty$ 则有 $\varphi(G)=\infty$ ，证毕
+
+若 $\varphi(E)<\infty$ 则根据[[MK84][计算（6）]]可得 $\varphi(\lim_{n\to\infty}E_n)=\lim_{n\to\infty}\varphi(E_n)$
+
+又由于 $E\subset E_n$ 则根据[[MK60][单调性]]可得 $\varphi(E)\leq\varphi(E_n)$ 且有 $\varphi(E_n)<\varphi(E)+\frac{1}{n}$
+
+则根据夹逼定理易证 $\varphi(G)=\varphi(E)$
+
+***** 推论<<MK301>>
+
+任意[[MK81][可测集]] $E\subset\mathbb{R}^n\land\varphi(E)<\infty$ 均有 $E=G-E_0$ 其中 $G\in G_\delta$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个开集的交, $E_0$ 是[[MK126][零测集]]
+
+****** 证明
+
+根据[[MK297][等测包]]可得存在 $G\in G_\delta$ 满足 $E\subset G\land\varphi(E)=\varphi(G)$
+
+由于 $E$ 是[[MK81][可测集]]且 $\varphi(E)<\infty$ 则根据[[MK84][计算（3）]]可得 $\varphi(G-E)=\varphi(G)-\varphi(E)=0$
+
+则 $E_0=G-E$ 是[[MK126][零测集]]，且有 $E=G-E_0$
+
+**** 直积定理
+
+对于任意 $X\in\mathbb{R}^p,Y\in\mathbb{R}^q$ 均有 $\varphi(X\times Y)=\varphi(X)\varphi(Y)$
+
+***** 证明
+
+****** 假设 $\varphi(X\times Y)>\varphi(X)\varphi(Y)$ <<MK305>>
+
+则根据[[MK51][定义]]可得存在 $\{I^p_i\},\{I^q_i\}$ 满足：
+
+（1） $I^p_i\subset\mathbb{R}^p,I^q_i\subset\mathbb{R}^q$ 均为[[MK13][区间]]
+
+（2） $X\subset\bigcup_{i=1}^\infty I^p_i\land Y\subset\bigcup_{i=1}^\infty I^q_i$
+
+（3） $\varphi\left(\bigcup_{i=1}^\infty I^p_i\right)\varphi\left(\bigcup_{i=1}^\infty I^q_i\right)<\varphi(X,Y)$
+
+显然 $X\times Y\subset \left(\bigcup_{i=1}^\infty I^p_i\right)\times\left(\bigcup_{i=1}^\infty I^q_i\right)$ 且根据[[~/OneDrive/离散数学/Disc_Math.org::MK154][分配律]]可得 $\left(\bigcup_{i=1}^\infty I^p_i\right)\times\left(\bigcup_{i=1}^\infty I^q_i\right)=\bigcup_{i=1}^\infty\bigcup_{j=1}^\infty(I^p_j\times I^q_j)$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK346][定理1]]可得 $\bigcup_{i=1}^\infty\bigcup_{j=1}^\infty(I^p_j\times I^q_j)$ 仍为据[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个区间的并，由于均为[[MK81][可测集]]，则根据[[MK56][可数可加性]]
+
+有 $\varphi\left(\bigcup_{i=1}^\infty\bigcup_{j=1}^\infty(I^p_j\times I^q_j)\right)=\sum_{i=1}^\infty\sum_{j=1}^\infty\varphi(I^p_i\times I^q_j)$ 显然 $I^p_i\times I^q_j$ 根据[[MK13][定义]]亦为区间
+
+则根据[[MK51][勒贝格外侧度定义]]易证 $\varphi(I^p_i\times I^q_j)=\varphi(I^p_i)\varphi(I^q_j)$
+
+根据[[MK4][乘法结合律，交换律]]易证 $\sum_{i=1}^\infty\sum_{j=1}^\infty\varphi(I^p_i)\varphi(I^q_j)=\left(\sum_{i=1}^\infty\varphi(I^p_i)\right)\left(\sum_{j=1}^\infty\varphi(I^q_j)\right)$
+
+又根据[[MK56][可数可加性]]可得 $\varphi\left(\left(\bigcup_{i=1}^\infty I^p_j\right)\times\left(\bigcup_{j=1}^\infty I^q_j\right)\right)=\varphi\left(\bigcup_{i=1}^\infty I^p_i\right)\varphi\left(\bigcup_{i=1}^\infty I^q_i\right)<\varphi(X\times Y)$
+
+又由于 $X\times Y\subset \left(\bigcup_{i=1}^\infty I^p_i\right)\times\left(\bigcup_{i=1}^\infty I^q_i\right)$ 根据[[MK60][单调性]] $\varphi(X\times Y)\leq\varphi\left(\left(\bigcup_{i=1}^\infty I^p_j\right)\times\left(\bigcup_{j=1}^\infty I^q_j\right)\right)$
+
+显然矛盾，故假设不成理，可得 $\varphi(X\times Y)\leq\varphi(X)\varphi(Y)$
+
+****** 结论
+
+根据[[MK297][等测包]]可得存在 $G\in G_\delta$ 满足 $X\times Y\subset G\land\varphi(G)=\varphi(X\times Y)$
+
+则有 $\varphi(G)<\varphi(X)\varphi(Y)$ 定义 $G(x)=\left\{y\big|x\in\mathbb{R}^p\land y\in\mathbb{R}^q\land <x,y>\in G\right\}$
+
+由于 $\forall x\in X$ 均有 $\forall y\in Y\rightarrow <x,y>\in X\times Y\subset G$ 即 $\forall x\in X\rightarrow Y\subset G(x)$
+
+根据[[MK60][单调性]]有 $\varphi(Y)\leq\varphi(G(x))$
+
+定义 $G_x=\left\{x\big|x\in\mathbb{R}^p\land \exists y\in\mathbb{R}^q\rightarrow <x,y>\in G\right\}$ 由于 $X\times Y\subset G$
+
+则对于任意 $x\in X$ 均存在 $y\in Y$ 满足 $<x,y>\in X\times Y\subset G$ 即有 $X\subset G_x$
+
+则根据[[MK220][性质1]]以及[[MK246][推论]]有 $$\varphi(G)=\int_{\mathbb{R}^p}\varphi(G(x))dx\geq\int_{X}\varphi(G(x))dx\geq\int_{X}\varphi(Y)dx$$
+
+由于 $Y$ 不随 $x$ 变化，故为非负[[MK178][简单函数]]，则根据[[MK213][定义]]可得 $$\int_{X}\varphi(Y)dx=\varphi(X)\varphi(Y)$$
+
+即 $\varphi(G)=\varphi(X\times Y)\geq\varphi(X)\varphi(Y)$ 结合[[MK305][之前证明]]以及[[MK5][三岐性]]可得 $\varphi(X\times Y)=\varphi(X)\varphi(Y)$
+
 ** 可测集<<MK81>>
 
 根据[[MK65][Caratheodory定理]]可得，假设 $S\subset\mathbb{R}^n$ 是关于[[MK51][外测度]]的可测集
@@ -2971,7 +3071,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 *** 计算<<MK84>>
 
-可测及对于[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的运算-运算]]中定义的计算有以下性质：
+可测及对于[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]中定义的计算有以下性质：
 
 （1） 若 $S$ 可测，则 $S^c$ 可测
 
@@ -3037,13 +3137,155 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 *** 直积
 
+**** 定理1（截面定理）<<MK310>>
+
+对于任意 $E\subset\mathbb{R}^{p+q}$ 是[[MK81][可测集]]，定义 $E(x)=\left\{y\big|x\in\mathbb{R}^p\land y\in\mathbb{R}^q\land <x,y>\in E\right\}$ 则有：
+
+（1） 对于 $x\in\mathbb{R}^p$ [[MK190][几乎处处]]有 $E(x)$ 是 $\mathbb{R}^q$ 中的[[MK81][可测集]]
+
+（2） 定义 $f(x)=\varphi(E(x))$ 则 $f(x)$ 是 $\mathbb{R}^p$ 上[[MK190][几乎处处]]有定义的[[MK134][可测函数]]
+
+（3） $$\varphi(E)=\int_{\mathbb{R}^p}f(x)dx$$
+
+其中 $\varphi$ 是[[MK51][勒贝格外侧度]]
+
+***** 证明
+
+******  $\varphi(E)<\infty$ <<MK304>>
+
+******* 半开闭[[MK13][区间]]<<MK298>>
+
+若 $E$ 是半开闭区间，则易证存在 $I^p,I^q$ 满足：
+
+（1） $E=I^p\times I^q$
+
+（2） $I^p\subset\mathbb{R}^p,I^q\subset\mathbb{R}^q$ 是各自空间上的半开闭区间
+
+其中乘法为[[~/OneDrive/离散数学/Disc_Math.org::MK153][直积]]，则 $\forall x\in\mathbb{R}^p$ 有 $f(x)=\begin{cases}\varphi(I^q)&x\in I^p\\0&x\not\in I^p\end{cases}$
+
+由于 $I^q$ 不随 $x$ 变化，则有 $f(x)$ 是[[MK178][简单函数]]，即[[MK134][可测函数]]。且根据[[MK82][区间可测]]可得 $I^q$ 是[[MK81][可测集]]
+
+进一步根据[[MK213][定义]]可得 $$\int_{I^p}f(x)dx=\varphi(I^p)\varphi(I^q)$$ 根据[[MK51][外侧度定义]]易证 $\varphi(I^p)\varphi(I^q)=\varphi(I^p\times I^q)=\varphi(E)$
+
+******* 开集<<MK299>>
+
+若 $E$ 是开集，则根据[[MK83][开集构造]]可得存[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的半开闭[[MK13][区间]]满足 $E=\bigcup_{i\in Z}I_i,Z\subset\mathbb{N}$
+
+[[MK298][同理]]可得 $I_i=I^p_i\times I^q_i$ 则有 $E(x)=\bigcup_{i\in Z}I^q_i$ 
+
+由于区间的截面仍为区间，故根据[[MK82][区间可测]]以及[[MK84][计算（2）]]易证 $\bigcup_{i\in Z}I^q_i$ 是[[MK81][可测集]]，即 $E(x)$ 是[[MK81][可测集]]
+
+又由于互不相交，则根据[[MK56][可数可加性]]有 $f(x)=\sum_{i=1}^{|Z|}\varphi(I^q_i)\chi_{I^p_i}(x)$ 其中 $\chi_{I^p_i}(x)$ 是[[MK221][特征函数]]
+
+显然 $\varphi(I^q_i)\chi_{I^p_i}(x)$ 是[[MK134][可测函数]]，则根据[[MK181][运算]]可得 $\forall n\in\mathbb{N}$ 有 $\sum_{i=1}^n\varphi(I^q_i)\chi_{I^p_i}(x)$ 是[[MK134][可测函数]]
+
+进一步根据[[MK268][极限运算]]可得 $f(x)$ 可测，则根据[[MK240][推论]]、[[MK51][外侧度定义]]以及[[MK56][可数可加性]]易证
+
+\begin{aligned}
+\int_{\mathbb{R}^n}f(x)dx=&\int_{\mathbb{R}^n}\left(\sum_{i=1}^{|Z|}\varphi(I^q_i)\chi_{I^p_i}(x)\right)dx\\
+=&\sum_{i=1}^{|Z|}\left(\int_{\mathbb{R}^n}\varphi(I^q_i)\chi_{I^p_i}(x)dx\right)
+=\sum_{i=1}^{|Z|}\left(\varphi(I^p_i)\varphi(I^q_i)\right)\\
+=&\sum_{i=1}^{|Z|}\varphi\left(I^p_i\times I^q_i\right)
+=\varphi\left(\bigcup_{i=1}^{|Z|}I_i\right)=\varphi(E)
+\end{aligned}
+
+******* $E\in G_\delta$ <<MK300>>
+
+由于是 $G_\delta$ 集合，则易证存在 $E=\bigcap_{i=1}^\infty G_i$ 其中 $G_i$ 均为开集且 $\forall i\in\mathbb{N}\rightarrow G_{i+1}\subset G_i\land\varphi(G_1)<\infty$
+
+定义 $G_i(x)=\left\{y\big|x\in\mathbb{R}^p\land y\in\mathbb{R}^q\land <x,y>\in G_i\right\}$ ，则根据[[MK299][之前证明]]有：
+
+（1） $G_i(x)$ 是[[MK81][可测集]]
+
+（2） $f_i(x)=\varphi(G_i(x))$ 是[[MK134][可测函数]]
+
+（3）$$\int_{\mathbb{R}^p}f_i(x)dx=\varphi(G_i)$$
+
+根据[[MK65][Caratheodory定理]]以及[[MK67][可数交封闭]]可得 $\bigcup_{i\in Z}G_i(x)$ 是[[MK81][可测集]]
+
+由于 $G_i$ [[MK69][递减]]，则有 $\bigcap_{i=1}^n G_i=G_n$ 则 $E=\bigcap_{i=1}^\infty G_i=\lim_{n\to\infty}G_n$
+
+则有 $E(x)=\lim_{n\to\infty}G_n(x)$ 由于[[MK69][递减]]且 $\varphi(G_1)<\infty$ 则根据[[MK84][计算（6）]]有 $\varphi(E(x))=\lim_{n\to\infty}\varphi(G_n(x))$
+
+即 $f(x)=\lim_{n\to\infty}f_n(x)$ 由于 $f_n(x)$ 是[[MK134][可测函数]]，则根据[[MK268][极限运算]]易证 $f(x)$ 是[[MK134][可测函数]]
+
+由于 $$\int_{\mathbb{R}^p}f_1(x)dx=\varphi(G_1)<\infty$$ 且 $\forall i\in\mathbb{N}\rightarrow G_i\subset G_1$ 则易证 $G_i(x)\subset G_1(x)$
+
+故 $\forall i\in\mathbb{N}$ 均有 $\forall x\rightarrow f_i(x)\leq f_1(x)$ 则根据[[MK275][控制收敛定理]]以及[[MK84][计算（6）]]
+
+\begin{aligned}
+\int_Ef(x)dx=&\lim_{n\to\infty}\int_Ef_n(x)dx\\
+=&\lim_{i\to\infty}\varphi(G_i)=\varphi\left(\lim_{i\to\infty}G_i\right)\\
+=&\varphi(E)
+\end{aligned}
+
+******* 零测集<<MK302>>
+
+若 $\varphi(E)=0$ 则根据[[MK297][等测包]]可得存在 $G\in G_\delta$ 满足 $E\subset E\land\varphi(G)=\varphi(E)=0$
+
+进一步有 $\forall x\in\mathbb{R}^p\rightarrow E(x)\subset G(x)$ 根据[[MK60][单调性]]有 $\forall x\in\mathbb{R}^p\rightarrow\varphi(E(x))\leq\varphi(G(x))$
+
+根据[[MK300][之前证明]]有 $\varphi(G(x))$ 是[[MK134][可测函数]]，且 $$\int_{\mathbb{R}^p}\varphi(G(x))dx=\varphi(G)=0$$
+
+又根据[[MK220][性质1]]可得  $$\int_{\mathbb{R}^p}\varphi(G(x))dx\geq\int_{\mathbb{R}^p}\varphi(E(x))dx\geq0$$
+
+则根据[[MK5][三岐性]]可得 $$\int_{\mathbb{R}^p}\varphi(E(x))dx=0=\varphi(E)$$
+
+由于 $\varphi(E(x))\geq0$ 故根据[[MK303][性质5]]可得 $\varphi(E(x))$ 在 $\mathbb{R}^p$ 上[[MK190][几乎处处]]为零
+
+******* 一般可测集
+
+根据[[MK301][推论]]可得 $E$ 可写成 $E=G-E_0$ 其中 $G\in G_\delta\land\varphi(E_0)=0\land\varphi(G)=\varphi(E)$
+
+则有 $E(x)=G(x)-E_0(x)$ 根据[[MK302][之前证明]]可得 $\varphi(E_0(x))$ 在 $\mathbb{R}^p$ 上[[MK190][几乎处处]]为零
+
+定义 $E'\subset\mathbb{R}^p$ 是 $\varphi(E_0(x))>0$ 的点集，则 $\varphi(E')=0$
+
+进一步定义 $R=\mathbb{R}-E'$ 则对于任意 $x\in R$ 均有 $\varphi(E_0(x))=0$
+
+根据[[MK94][可测性]]可得 $E_0(x)$ 是 $\mathbb{R}^q$ 上的[[MK81][可测集]]，又根据[[MK300][之前证明]]可得 $G(x)$ 亦为可测集
+
+故可得 $E(x)=G(x)-E_0(x)$ 在 $R$ 上是[[MK81][可测集]]，由于 $\varphi(E')=0$
+
+即对于 $x\in\mathbb{R}^p$ [[MK190][几乎处处]]有 $E(x)$ 是 $\mathbb{R}^q$ 中的[[MK81][可测集]]
+
+对于任意 $x\in R$ 均有 $G(x),E_0(x)$ 可测且 $\varphi(E_0(x))=0<\infty$
+
+则有 $\varphi(E(x))=\varphi(G(x))-\varphi(E_0(x))=\varphi(G(x))$ 根据[[MK300][之前证明]]可得 $\varphi(G(x))$ 是[[MK134][可测函数]]
+
+最后有 $$\int_{\mathbb{R}^p}\varphi(E(x))dx=\int_{R}\varphi(G(x))dx=\varphi(G)=\varphi(E)$$
+
+******  $\varphi(E)=\infty$
+
+定义 $E_n=\left(\prod_{i=1}^{p+q}[-n,n]\right)\cap E$ 则 $\varphi(E_n)<\infty$ 显然 $E_n$ 是[[MK81][可测集]]且 $E=\lim_{i\to\infty} E_i$
+
+根据[[MK304][有限证明]]可得 $\forall i\in\mathbb{N}$ 均有 $E_i$ 满足条件，则 $x\in Z_i$ 时满足 $E_i(x)$ 不是[[MK81][可测集]]
+
+根据条件（1）可得 $\varphi(Z_i)=0$ 定义 $Z=\bigcup_{i=1}^\infty Z_i$ 根据[[MK278][可数零测]]可得 $\varphi(Z)=0$
+
+定义 $R=\mathbb{R}^p-Z$ 则对于任意 $x\in R\land i\in\mathbb{N}$ 均有 $E_i(x)$ 是 $\mathbb{R}^q$ 中的[[MK81][可测集]]
+
+且易证 $\forall i\in\mathbb{N}\rightarrow E_{i}(x)\subset E_{i+1}(x)$ [[MK69][递增]]则根据[[MK84][计算（5）]]可得 $E(x)=\lim_{i\to\infty}E_i(x)$ 是 $\mathbb{R}^q$ 中的[[MK81][可测集]]
+
+同理去除某个零测集后，根据[[MK268][极限运算]]可得 $E(x)=\lim_{i\to\infty}\varphi(E_i(x))$ 亦为[[MK134][可测函数]]
+
+最终对于任意 $i\in\mathbb{N}$ 均有 $$\varphi(E_i)=\int_{\mathbb{R}^p}\varphi(E_i(x))dx$$ 由于 $E_i\subset E$ 则有 $\varphi(E_i)\leq\varphi(E)$
+
+则根据[[MK220][性质1]]可得 $$\forall i\in\mathbb{N}\rightarrow\int_{\mathbb{R}^p}\varphi(E_i(x))dx\leq\int_{\mathbb{R}^p}\varphi(E(x))dx$$
+
+且又由于[[MK69][递增]]以及[[MK84][计算（5）]]有 $$\varphi(E)=\varphi\left(\lim_{i\to\infty}E_i\right)=\lim_{i\to\infty}E_i\varphi(E_i)=\lim_{i\to\infty}\int_{\mathbb{R}^p}\varphi(E_i(x))dx=\infty$$
+
+则必有 $$\int_{\mathbb{R}^p}\varphi(E(x))dx=\infty=\varphi(E)$$
+
+**** 定理2（封闭性）<<MK307>>
+
 若 $X\in\mathbb{R}^p,Y\in\mathbb{R}^q$ 分别为 $<\mathbb{R}^p,\varphi>,<\mathbb{R}^q,\varphi>$ 的[[MK81][可测集]]，其中 $\varphi$ 是[[MK51][勒贝格外侧度]]
 
 且 $p+q<\infty$ 则有 $X\times Y$ 是 $<\mathbb{R}^{p+q},\varphi>$ 上的[[MK81][可测集]]，其中乘法为[[~/OneDrive/离散数学/Disc_Math.org::MK153][直积]]
 
-**** 证明
+***** 证明
 
-***** 开集的直积是开集<<MK291>>
+****** 开集的直积是开集<<MK291>>
 
 若 $X,Y$ 均为[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]则对于任意 $(\vec{x}_0,\vec{y}_0)\in X\times Y$ 其中 $\vec{x}_0\in X,\vec{y}_0\in Y$
 
@@ -3051,7 +3293,9 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 则取 $\delta=\min\{\delta_1,\delta_2\}$ 对于任意 $(\vec{x},\vec{y})\in O_{p+q}((\vec{x}_0,\vec{y}_0),\delta)$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK25][距离定义]]有 $\sqrt{\sum_{i=1}^p(x_i-x_{0,i})^2+\sum_{i=1}^q(y_i-y_{0,i})^2}<\delta$ 即 $\sum_{i=1}^p(x_i-x_{0,i})^2+\sum_{i=1}^q(y_i-y_{0,i})^2<\delta^2$ 
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK25][距离定义]]有 $\sqrt{\sum_{i=1}^p(x_i-x_{0,i})^2+\sum_{i=1}^q(y_i-y_{0,i})^2}<\delta$
+
+即 $\sum_{i=1}^p(x_i-x_{0,i})^2+\sum_{i=1}^q(y_i-y_{0,i})^2<\delta^2$ 
 
 由于均为正数，故有 $\sum_{i=1}^p(x_i-x_{0,i})^2<\delta^2\leq\delta_1^2\land \sum_{i=1}^q(y_i-y_{0,i})^2<\delta^2<\delta_2^2$
 
@@ -3059,7 +3303,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 即 $(\vec{x}_0,\vec{y}_0)$ 是 $X\times Y$ 的[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，又由于 $(\vec{x}_0,\vec{y}_0)$ 任意性可得 $X\times Y$ 是 $\mathbb{R}^{p+q}$ 上的[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
 
-***** 闭集的直积是闭集<<MK293>>
+****** 闭集的直积是闭集<<MK293>>
 
 若 $X,Y$ 均为[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]]，则根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]] $X^c,Y^c$ 均为开集，根据[[~/OneDrive/离散数学/Disc_Math.org::MK344][直积与补]]可得 $(X\times Y)^c=\mathbb{R}^p\times Y^c\cup X^c\times\mathbb{R}^q$
 
@@ -3067,7 +3311,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]]可得 $X\times Y$ 是闭集
 
-***** 构造开集与闭集<<MK294>>
+****** 构造开集与闭集<<MK294>>
 
 由于可测，根据[[MK292][引理2]]可得对于任意 $\epsilon>0\land\epsilon\in\mathbb{R}$ 存在闭集 $F,F'$ 开集 $G,G'$
 
@@ -3081,7 +3325,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据[[MK82][开集可测]]、[[MK207][闭集可测]]以及[[MK84][计算]]易证 $G,G-F,G'-F',G'$ 均为可测集
 
-***** 差集测度<<MK295>>
+****** 差集测度<<MK295>>
 
 根据[[MK51][定义]]可得 $\forall\epsilon>0$ 存在[[MK13][开区间]] $\{I_n\}$ 满足 $G\subset\bigcup_{n=1}^\infty I_n\land\sum_{n=1}^\infty \varphi(I_n)-\varphi(G)<\epsilon$
 
@@ -3107,7 +3351,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 故有 $\varphi((G\times G')-(F\times F'))\leq\left(\sum_{i=1}^\infty\varphi(I_i)\right)\left(\sum_{j=1}^\infty\varphi(I'_j)\right)+\left(\sum_{i=1}^\infty\varphi(J_i)\right)\left(\sum_{j=1}^\infty\varphi(J'_j)\right)$
 
-***** 若 $\varphi(X)<\infty\land\varphi(Y)<\infty$
+****** 若 $\varphi(X)<\infty\land\varphi(Y)<\infty$
 
 对于任意 $\epsilon^*>0$ 由于可测，则根据[[MK92][引理]]可得存在 $G_u,G'_u$ 满足 $\varphi(G_u)<\varphi(X)+0.5,\varphi(G'_u)<\varphi(Y)+0.5$
 
@@ -3139,7 +3383,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 以及 $\varphi((G\times G')-(F\times F'))<\epsilon$ 故根据[[MK292][引理2]]可得 $X\times Y$ 是可测集
 
-***** 若不是都有界
+****** 若不是都有界
 
 定义 $K^p_i=\prod_{j=1}^p[-i,i],K^q_i=\prod_{j=1}^q[-i,i]$ 进而定义 $X\cap K^p_i=X_i\land Y\cap K^q_i=Y_i$
 
@@ -4834,7 +5078,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 *** 常用可测函数
 
-**** 常值函数
+**** 常值函数<<MK306>>
 
 根据[[MK161][定理2]]可得常值函数可测
 
@@ -5960,7 +6204,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 **** 性质1<<MK220>>
 
-若有非负[[MK134][可测函数]] $f(x),g(x)$ 均为 $E\to\mathbb{R}_e$ 的映射，若有 $\forall x\in E\rightarrow f(x)\geq g(x)$
+若有非负[[MK134][可测函数]] $f(x)$ 及任意函数 $g(x)$ 均为 $E\to\mathbb{R}_e$ 的映射，若有 $\forall x\in E\rightarrow f(x)\geq g(x)$
 
 则有 $$\int_Ef(x)dx\geq\int_Eg(x)dx$$
 
@@ -5968,11 +6212,15 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 根据[[MK219][定义]]可得对于任意 $\phi(x)\in\mathcal{Z}(g(x))$ ，均有 $\phi(x)\leq f(x)$ 且为非负[[MK178][简单函数]]
 
-其中 $\mathcal{Z}(f(x))$ 是 $f(x)$ 的[[MK223][目标函数集]]
+其中 $\mathcal{Z}(g(x))$ 是 $g(x)$ 的[[MK223][目标函数集]]，假设 $$\int_Ef(x)dx<\int_Eg(x)dx$$
 
-则根据有 $\phi(x)\in\mathcal{Z}(f(x))$ 由于 $\int_Ef(x)dx=\sup\left\{\mathcal{Z}(f(x))\right\}$ 故有 $\int_Ef(x)dx\geq\int_E\phi(x)dx$
+则根据[[MK219][定义]]可得存在一组 $\phi_g(x)$ 对于任意 $\phi_f(x)\in\mathcal{Z}(f(x))$ 均有 $$\int_E\phi_f(x)dx<\int_E\phi_g(x)dx$$
 
-由于 $\phi(x)$ 的任意性，由反证法易证 $\int_Ef(x)dx\geq\int_Eg(x)dx$
+又由于 $\forall x\rightarrow \phi_g(x)<g(x)$ 则有 $\phi_g(x)<\phi_f(x)$ 则 $\phi_g(x)\in\mathcal{Z}(f(x))$
+
+这与任意 $\phi_f(x)\in\mathcal{Z}(f(x))$ 有 $$\int_E\phi_f(x)dx<\int_E\phi_g(x)dx$$ 矛盾
+
+故假设不成立，即 $$\int_Ef(x)dx\geq\int_Eg(x)dx$$
 
 ***** 推论1<<MK246>>
 
@@ -6148,7 +6396,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 综上所述，根据[[MK5][三岐性]]可得 $$\int_{E_0}f(x)dx=0$$
 
-**** 性质5
+**** 性质5<<MK303>>
 
 若非负[[MK134][可测函数]] $f(x)$ 满足 $$\int_Ef(x)dx=0$$ 则 $f(x)$ 在 $E$ 上[[MK190][几乎处处]]为零
 
@@ -7047,6 +7295,243 @@ $f(x)$ 在 $[a,b]$ 上几乎处处连续
 又根据[[MK288][定理3]]和条件（1）可得 $$(\mathcal{L})\int_{[a,A_n]}f(x)dx=(\mathcal{R})\int_a^{A_n}f(x)dx$$
 
 最终根据[[~/OneDrive/数学分析/Chap8Note.org::MK2][反常积分定义]]可得 $$\lim_{n\to\infty}(\mathcal{R})\int_a^{A_n}f(x)dx=(\mathcal{R})\int_a^\infty f(x)dx$$
+
+**** 定理4：几何意义<<MK312>>
+
+若 $f(x)$ 为，[[MK174][外侧度可测集]] $E\subset\mathbb{R}^n$ 上的非负[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，定义 $G(E,f)=\left\{<x,y>\big|x\in E\land y\in[0,f(x))\right\}$ 则有：
+
+（1） $f(x)$ 为[[MK134][可测函数]]的充要条件为 $G(E,f)$ 是 $\mathbb{R}^{n+1}$ 上的[[MK81][可测集]]
+
+（2） $f(x)$ 为[[MK134][可测函数]]时有 $$\int_Ef(x)dx=\varphi(G(E,f))$$ 其中 $\varphi$ 是[[MK51][勒贝格外侧度]]
+
+***** 证明
+
+****** 证明（1）充分<<MK311>>
+
+******* [[MK306][常值函数]]<<MK308>>
+
+若 $f(x)=c$ 是常值函数，则 $G(E,f)=\left\{<x,y>\big|x\in E\land y\in[0,c)\right\}=E\times [0,c)$
+
+由于 $E$ 是 $\mathbb{R}^n$ 上的[[MK81][可测集]]，则根据[[MK307][封闭性]]以及[[MK82][区间可测]]可得 $G(E,f)=E\times [0,c)$ 是可测集
+
+******* [[MK178][简单函数]]<<MK309>>
+
+根据定义有 $f(x)=\sum_{i=1}^s c_i\chi_{E_i}(x)$ ，其中 $\{E_i\}$ 是对 $E$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]且 $E_i$ 是 $\mathbb{R}^n$ 上的[[MK81][可测集]]
+
+则定义 $G(E_i,f)=\left\{<x,y>\big|x\in E\land y\in[0,f(x))\right\}$ 则易证 $G(E,f)=\bigcup_{i=1}^sG(E_i,f)$
+
+根据简单函数定义可得 $G(E_i,f)=\left\{<x,y>\big|x\in E\land y\in[0,c_i)\right\}=E_i\times[0,c_i)$
+
+[[MK308][同理可证]] $G(E_i,f)$ 是可测集，根据[[MK65][Caratheodory定理]]以及[[MK50][可数并封闭]]
+
+可得 $G(E,f)=\bigcup_{i=1}^sG(E_i,f)$ 是可测集
+
+******* 可测函数
+
+若 $f(x)$ 是[[MK134][可测函数]]，则根据[[MK230][定理5]]可得存在递增[[MK178][简单函数]]列 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+
+对于任意 $<x,y>\in G(E,f)$ 有 $y<f(x)$ ，则由于[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]存在 $i'$ 满足 $y<\phi_{i'}(x)$
+
+即 $<x,y>\in G(E,\phi_i)$ 故有 $G(E,f)\subset\bigcup_{i=1}^\infty G(E,\phi_i)$
+
+由于递增函数，且逐点收敛，故根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]易证 $\forall x\rightarrow f(x)=\sup\{\phi_i(x)\}$
+
+即 $\forall i\rightarrow f(x)\geq\phi_i(x)$ 则对于任意 $<x,y>\in\bigcup_{i=1}^\infty G(E,\phi_i)$ 均有 $x\in E\land y<f(x)$
+
+即 $<x,y>\in G(E,f)$ 则有 $\bigcup_{i=1}^\infty G(E,\phi_i)\subset G(E,f)$ 最终根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $G(E,f)=\bigcup_{i=1}^\infty G(E,\phi_i)$
+
+则根据[[MK309][之前证明]]可得 $G(E,\phi_i)$ 是[[MK81][可测集]]，则根据[[MK84][计算（2）]]可得 $G(E,f)$ 亦为可测集
+
+****** 证明（1）必要
+
+若 $G(E,f)=Z=\left\{<x,y>\big|x\in E\land y\in[0,f(x))\right\}$ 是可测集
+
+则根据[[MK310][截面定理]]可得 $g(x)=\varphi\left(Z(x)\right)$ 是 $\mathbb{R}^n$ 上关于 $x$ [[MK190][几乎处处]]有定义的[[MK134][可测函数]]
+
+假设 $g(x)$ 在 $R$ 上有定义，则根据[[MK190][几乎处处]]性质有 $\varphi(\mathbb{R}^n-R)=0$ ，易证 $R$ 是可测集
+
+则对于任意 $a\in\mathbb{R}$ 均有 $g^{-1}((a,+\infty])$ 是 $\mathbb{R}^n$ 上的可测集，其中 $g^{-1}((a,+\infty])$ 为函数的[[MK151][原相]]
+
+当 $x\in E\cap R$ 时任意 $y\in[0,f(x))$ 均有 $<x,y>\in Z$ 故此时 $Z(x)=[0,f(x))$ 且根据[[MK79][正规性]] $g(x)=f(x)$
+
+故 $(E\cap R)\cap g^{-1}((a,+\infty])=f^{-1}((a,+\infty])\cap(E\cap R)$
+
+由于 $E,R$ 亦为可测集，则有 $(E\cap R)\cap g^{-1}((a,+\infty])$ 亦为可测集
+
+由于 $f(x)$ 定义与为 $E$ 故 $f^{-1}((a,+\infty])=\left(f^{-1}((a,+\infty])\cap(E\cap R)\right)\cup\left(f^{-1}((a,+\infty])\cap(E-E\cap R)\right)$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK347][差分配]] $E-E\cap R=(E-E)\cup(E-R)=E-R$ 由于 $E\subset\mathbb{R}^n$ 即有 $E-R\subset\mathbb{R}^n-R$ 
+
+由于 $\varphi(\mathbb{R}^n-R)=0$ 故根据[[MK128][子集零测]]可得 $\varphi(E-E\cap R)=0$
+
+显然亦有 $\left(f^{-1}((a,+\infty])\cap(E-E\cap R)\right)\subset (E-E\cap R)$
+
+进一步结合[[MK94][可测性]]以及[[MK128][子集零测]]可得 $\left(f^{-1}((a,+\infty])\cap(E-E\cap R)\right)$ 亦为可测集
+
+综上所述，对于任意 $a\in\mathbb{R}$ 均有 $f^{-1}((a,+\infty])$ 是[[MK81][可测集]]，即 $f(x)$ 是[[MK134][可测函数]]
+
+****** 证明（2）
+
+根据[[MK311][之前证明]]可得 $Z=G(E,f)$ 是 $\mathbb{R}^{n+1}$ 上的[[MK81][可测集]]
+
+定义 $Z(x)=\left\{y\big|x\in\mathbb{R}^p\land y\in\mathbb{R}^q\land <x,y>\in Z\right\}$ 则根据[[MK310][截面定理]]可得 $$\varphi(G(E,f))=\int_{\mathbb{R}^p}\varphi(Z(x))dx$$
+
+当 $x\not\in E$ 时，对于任意 $y\in\mathbb{R}$ 均有 $<x,y>\not\in Z$ 即 $Z(x)=\varnothing$
+
+根据[[MK225][性质2]]可得 $$\int_{\mathbb{R}^p}\varphi(Z(x))dx=\int_{\mathbb{R}^p-E}\varphi(\varnothing)dx+\int_{E}\varphi(Z(x))dx=\int_{E}\varphi(Z(x))dx$$
+
+当 $x\in E$ 时根据定义若 $y\in[0,f(x))$ 则有 $<x,y>\in G(E,f)$ 即 $Z(x)=[0,f(x))$
+
+根据[[MK79][正规性]] $\varphi([0,f(x)))=f(x)$ 即 $$\int_{E}\varphi(Z(x))dx=\int_{E}f(x)dx$$ 证毕
+
+***** 推论1<<MK314>>
+
+若[[MK134][可测函数]] $f(x)$ [[MK237][勒贝格可积]]，则 $\varphi(G(E,f^+)),\varphi(G(E,f^-))$ 均有限
+
+****** 证明
+
+显然
+
+***** 推论2<<MK313>>
+
+若[[MK134][可测函数]] $f(x)$ [[MK237][勒贝格可积]]，则 $$\int_Ef(x)dx=\varphi(G(E,f^+))-\varphi(G(E,f^-))$$
+
+其中 $f^+(x),f^-(x)$ 是 $f(x)$ 的[[MK99][正负部]]
+
+****** 证明
+
+由于[[MK237][勒贝格可积]]，则根据[[MK237][定义]] $$\int_Ef(x)dx=\int_Ef^+(x)dx-\int_Ef^-(x)dx$$
+
+由于 $f^+(x),f^-(x)$ 根据[[MK198][引理]]均为非负[[MK134][可测函数]]，根据[[MK314][推论1]]可得均有限
+
+则有 $$\int_Ef(x)dx=\varphi(G(E,f^+))-\varphi(G(E,f^-))$$
+
+**** 定理5：fubini定理
+
+定义 $A\subset\mathbb{R}^p,B\subset\mathbb{R}^q$ 均为[[MK81][可测集]]，定义 $\vec{p}=(\vec{x},\vec{y}),\vec{x}\in A\land\vec{y}\in B$ 以及函数 $f(\vec{p})$ 
+
+（1） 若 $f(\vec{p})$ 在 $A\times B$ 上是非负[[MK134][可测函数]]，则对于 $\vec{x}\in A$ [[MK190][几乎处处]]有
+
+     $f((\vec{x},\vec{y}))$ 作为 $\vec{y}$ 的函数几乎处处[[MK134][可测]]，且 $$\int_{A\times B}f(\vec{p})d\vec{p}=\int_{A}\left(\int_{B}f((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}$$
+
+（2） 若 $f(\vec{p})$ 在 $A\times B$ 上[[MK237][可积]]，则对于 $\vec{x}\in A$ [[MK190][几乎处处]]有
+
+     $f(\vec{x},\vec{y})$ 作为 $\vec{y}$ 的函数在 $B$ 上[[MK237][可积]]， $$\int_Bf(\vec{x},\vec{y})dy$$ 作为 $\vec{x}$ 的函数在 $A$ 上可积
+
+     且 $$\int_{A\times B}f(\vec{p})d\vec{p}=\int_{A}\left(\int_{B}f((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}$$
+
+***** 证明
+
+****** 证明（1）<<MK315>>
+
+则定义 $G(A\times B,f)=\left\{<\vec{p},r>\big|\vec{p}\in A\times B\land r\in[0,f(\vec{p}))\right\}$ 根据
+
+进一步有 $G(A\times B,f)=\left\{<\vec{x},\vec{q}>\big|\vec{x}\in A\land\vec{q}\in B\times[0,f((\vec{x},\vec{y})))\right\}$ 定义 $E=B\times[0,f((\vec{x},\vec{y})))$
+
+则有 $G(A\times B,f)=A\times E$，且根据[[MK312][定理4]]可得 $G(A\times B,f)$ 是 $\mathbb{R}^{p+q+1}$ 上的[[MK81][可测集]]
+
+******* 可测
+
+根据[[MK310][截面定理]]，对于任意 $\vec{x}\in\mathbb{R}^p$ 几乎处处有 $B\times[0,f((\vec{x},\vec{y})))$ 是可测集
+
+定义 $\vec{x}\in R_1$ 时成立，则任取 $\vec{x}_0\in R\cap A$ 有 $B\times[0,f((\vec{x}_0,\vec{y})))$ 是可测集
+
+进一步根据[[MK310][截面定理]]，对于任意 $\vec{y}\in\mathbb{R}^q$ 几乎处处有 $\varphi([0,f((\vec{x}_0,\vec{y}))))$ 是[[MK134][可测函数]]
+
+根据[[MK79][正规性]]以及 $f(\vec{x},\vec{y})$ 非负可得 $\varphi([0,f(\vec{x}_0,\vec{y}))=f(\vec{x}_0,\vec{y})$
+
+即对于任意 $\vec{x}\in A$ 几乎处处有：
+
+对于任意 $\vec{y}\in B$ 几乎处处可得 $f(\vec{x},\vec{y})$ 是[[MK134][可测函数]]
+
+******* 等式
+
+则根据[[MK312][定理4]]有 $$\int_{A\times B}f(\vec{p})d\vec{p}=\varphi(G(A\times B,f))$$ 
+
+则根据[[MK310][截面定理]]有 $$\varphi(G(A\times B,f))=\int_{R^p}\varphi\left(B\times[0,f(\vec{x},\vec{y}))\right)d\vec{x}$$
+
+当 $\vec{x}\not\in A$ 时不存在 $<\vec{y},r>$ 满足 $<\vec{x},<\vec{y},r>>\in A\times E$ 故根据[[MK225][性质2]]
+
+易证 $$\int_{\mathbb{R}^p}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}=\int_{\mathbb{R}^p-A}\varphi(\varnothing)d\vec{x}+\int_{A}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}=\int_{A}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}$$
+
+同理根据[[MK310][截面定理]]，对于任意 $\vec{x}\in A$ 几乎处处有 $B\times[0,f((\vec{x},\vec{y})))$ 是可测集，则定义 $x\in A'$ 时成立
+
+则有 $\varphi(A-A')=0$ 则根据[[MK225][性质2]]以及[[MK233][性质4]]易证 $$\int_{A}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}=\int_{A'}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}$$
+
+任取 $\vec{x}_0\in A'$ 定义 $G(B,[0,f(\vec{x}_0,\vec{y}))=\left\{<\vec{y},r>\big|\vec{y}\in B\land r\in[0,f(\vec{x}_0,\vec{y}))\right\}$
+
+显然有 $G(B,[0,f(\vec{x}_0,\vec{y}))=B\times[0,f((\vec{x}_0,\vec{y})))$ 根据[[MK310][截面定理]] $$\int_{B}\varphi([0,f(\vec{x}_0,\vec{y}))d\vec{y}=\varphi(B\times[0,f((\vec{x}_0,\vec{y}))))$$
+
+则可得 $$\int_{A'}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}=\int_{A'}\left(\int_B\varphi([0,f(\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}$$
+
+根据[[MK79][正规性]]以及 $f(\vec{x},\vec{y})$ 非负可得 $\varphi([0,f(\vec{x},\vec{y}))=f(\vec{x},\vec{y})$ 即 $$\int_{A\times B}f(\vec{p})d\vec{p}=\int_{A}\left(\int_{B}f((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}$$
+
+****** 证明（2）
+
+由于 $f(\vec{p})$ [[MK237][勒贝格可积]]，则根据[[MK237][定义]]可得 $$\int_{A\times B}f(\vec{p})d\vec{p}=\int_{A\times B}f^+(\vec{p})d\vec{p}-\int_{A\times B}f^-(\vec{p})d\vec{p}$$
+
+以及 $f(\vec{p})=f^+(\vec{p})-f^-(\vec{p})$ 其中 $f^+(\vec{p}),f^-(\vec{p})$ 根据[[MK198][引理]]均为非负[[MK134][可测函数]]
+
+******* 等式<<MK316>>
+
+则根据[[MK315][非负证明]]可得 $$\int_{A\times B}f^+(\vec{p})d\vec{p}=\int_{A}\left(\int_{B}f^+((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}$$
+
+以及 $$\int_{A\times B}f^-(\vec{p})d\vec{p}=\int_{A}\left(\int_{B}f^-((\vec{x},\vec{y}))d\vec{x}\right)d\vec{y}$$
+
+则根据[[MK262][线性]]有
+
+\begin{aligned}
+&\int_{A\times B}f(\vec{p})d\vec{p}\\
+=&\int_{A\times B}f^+(\vec{p})d\vec{p}-\int_{A\times B}f^-(\vec{p})d\vec{p}\\
+=&\int_{A\times B}f^+(\vec{p})d\vec{p}=\int_{A}\left(\int_{B}f^+((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}-\int_{A\times B}f^-(\vec{p})d\vec{p}=\int_{A}\left(\int_{B}f^-((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}\\
+=&\int_{A}\left(\int_{B}f^+((\vec{x},\vec{y}))d\vec{y}-\int_{B}f^-((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}\\
+=&\int_{A}\left(\int_{B}(f^+((\vec{x},\vec{y}))-f^-((\vec{x},\vec{y})))d\vec{y}\right)d\vec{x}\\
+=&\int_{A}\left(\int_{B}f((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}
+\end{aligned}
+
+******* 可积
+
+由于 $f(\vec{p})$ [[MK237][勒贝格可积]]，则根据[[MK237][定义]]可得 $$\int_{A\times B}f^+(\vec{p})d\vec{p}<\infty\land\int_{A\times B}f^-(\vec{p})d\vec{p}<\infty$$
+
+且根据[[MK315][之前证明]]可得 $$\int_{A\times B}f^+(\vec{p})d\vec{p}=\int_{A}\left(\int_{B}f^+((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}<\infty$$
+
+根据[[MK247][定义]]可得 $$\int_{B}f^+((\vec{x},\vec{y}))d\vec{y}$$ 在 $A$ 上[[MK247][勒贝格可积]]
+
+则根据[[MK238][引理]]以及[[MK315][之前证明]]可得 $$\int_{B}f^+((\vec{x},\vec{y}))d\vec{y}$$ 对于任意 $\vec{x}\in A$ 几乎处处有限
+
+且 $f^+((\vec{x},\vec{y}))$ 是关于 $\vec{y}$ 在 $B$ 上的[[MK134][可测函数]]，定义 $\vec{x}\in A'$ 时满足
+
+故有对于任意 $\vec{x}_0\in A_1$ 均有 $$\int_{B}f^+((\vec{x}_0,\vec{y}))d\vec{y}<\infty$$ 且 $f^+((\vec{x}_0,\vec{y}))$ 是可测函数 
+
+进一步根据[[MK247][定义]]可得 $f^+((\vec{x}_0,\vec{y}))$ 在 $B$ 上[[MK237][可积]]
+
+同理可证 $$\int_{A}\left(\int_{B}f^-((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}<\infty$$ 以及对于任意 $\vec{x}_0\in A_2$ 均有：
+
+（1） $f^-((\vec{x}_0,\vec{y}))$ 在 $B$ 上[[MK237][可积]]
+
+（2） $f^-((\vec{x}_0,\vec{y}))$ 关于 $\vec{y}$ 在 $B$ 上的[[MK134][可测函数]]
+
+******** $f(\vec{x},\vec{y})$ 作为 $\vec{y}$ 的函数在 $B$ 上[[MK237][可积]]
+
+则任取 $x\in A_1\cap A_2$ 则有 $f^+((\vec{x}_0,\vec{y})), f^-((\vec{x}_0,\vec{y}))$ 在 $B$ 上[[MK237][可积]]（积分有限）
+
+且根据[[MK181][计算]]有 $f((\vec{x}_0,\vec{y}))=f^+((\vec{x}_0,\vec{y}))-f^-((\vec{x}_0,\vec{y}))$ 亦为可测函数
+
+则根据[[MK237][定义]]可得对于任意 $\vec{x}\in A_1\cap A_2$ 均有 $f(\vec{x},\vec{y})$ 关于 $\vec{y}$ 在 $B$ 上[[MK237][勒贝格可积]]
+
+根据[[MK190][几乎处处]]易证 $\varphi(A-A_1\cap A_2)=0$
+
+即对于 $\vec{x}\in A$ [[MK190][几乎处处]]有 $f(\vec{x},\vec{y})$ 作为 $\vec{y}$ 的函数在 $B$ 上[[MK237][可积]]
+
+******** $$\int_Bf(\vec{x},\vec{y})dy$$ 作为 $\vec{x}$ 的函数在 $A$ 上可积
+
+定义 $$g(\vec{x})=\int_Bf(\vec{x},\vec{y})dy$$ 则根据[[MK99][正负部定义]]可得 $$g^+(x)=\int_Bf^+(\vec{x},\vec{y})dy\land g^+(x)=\int_Bf^-(\vec{x},\vec{y})dy$$
+
+由于 $$\int_{A}\left(\int_{B}f^-((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}<\infty\land\int_{A}\left(\int_{B}f^+((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}<\infty$$
+
+则根据[[MK237][定义]]可得 $g(\vec{x})$ 在 $A$ 上可积
+
+
 
 
 

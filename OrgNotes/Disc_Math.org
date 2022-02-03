@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 345
+currnet mark: 347
 
 图论: P40
 
@@ -680,7 +680,7 @@ A-\varnothing=A\\
 A-U=\varnothing\\
 \end{aligned}
 
-**** 差分配率
+**** 差分配率<<MK347>>
 
 \begin{aligned}
 A-(B\cap C)&=(A-B)\cup (A-C)\\
@@ -918,7 +918,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 即[[MK42][有限集]]和[[MK44][可数集]]的并集，即与正整数集子集对等
 
-**** 定理
+**** 定理<<MK346>>
 
 ***** 定理1<<MK49>>
 

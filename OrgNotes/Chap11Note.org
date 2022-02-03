@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK26
+current mark: MK27
 
 * 笛卡尔乘积
 
@@ -153,7 +153,7 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 
 ** 向量空间的定义
 
-*** 定义空间集合
+*** 定义空间集合<<MK27>>
 
 $R$ 为实数全体，定义 $R^n=R\times R\times...\times R=\{(x_1,x_2,...,x_n)|x_i\in R\}$
 

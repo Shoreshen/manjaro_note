@@ -61,6 +61,7 @@ split_scrn_left:
 update:
 	echo $(PW) | sudo -S pacman -Syy
 	sudo pacman -Syu
+	sudo pamac update
 
 version:
 	cat /etc/lsb-release 
