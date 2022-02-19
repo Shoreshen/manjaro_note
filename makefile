@@ -106,3 +106,10 @@ norddisconn:
 
 restart_net:
 	echo $(PW) | sudo -S systemctl restart NetworkManager
+
+brightness:
+	xrandr -q | grep connected
+	@echo "Please select displayer and brightness (1.1 means 1.1 times of current brightness): "; \
+	read displayer; \
+	read bright; \
+	xrandr --output $$displayer --brightness $$bright
