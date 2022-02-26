@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK27
+current mark: MK29
 
 * 笛卡尔乘积
 
@@ -96,7 +96,7 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 
 若存在 $\xi'$ 属于所有 $[a_n,b_n]$ ，则有 $\forall n\in N^+\Rightarrow a_n\leq\xi'\leq b_n$ ，故当 $n\to\infty$ ，根据夹逼定理 $\xi'=\xi$
 
-** Bolzano-Weierstrass定理
+** Bolzano-Weierstrass定理<<MK29>>
 
 有界数列必有收敛子列。
 
@@ -427,7 +427,7 @@ $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚�
 
 因为 $\cap_\alpha S_\alpha=\cup_\alpha S_\alpha^c$ 有根据[[P1][之前证明]] $S_\alpha^c$ 为开集，则根据[[P2][之前证明]]任意 $\cup_\alpha S_\alpha^c$ 为开集，则其补集为闭集
 
-**** 定理6
+**** 定理6<<MK28>>
 
 有限个闭集 $\{S_i|1\leq i \leq k\}$ 的并集 $\cup_{i=1}^k S_i$ 为闭集
 
@@ -573,8 +573,6 @@ $R^n$ 上有界无限点集 $S$ 至少有一个聚点
 故根据[[JDCYTJ2][聚点充要条件2]]得出， $\vec{x}$ 为聚点。
 
 *** 柯西收敛原理
-
-**** 描述
 
 $R^n$ 上点列 $\{\vec{x}_n\}$ 收敛的充要条件是 $\forall \epsilon>0,\exist N,\forall n,m>N\Rightarrow |\vec{x}_n-\vec{x}_m|<\epsilon$
 

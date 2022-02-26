@@ -2,9 +2,9 @@
 
 #+TITLE: 实变函数
 
-current video: P36
+current video: P51
 
-current mark: 316
+current mark: 325
 
 * 几乎处处<<MK190>>
 
@@ -1726,7 +1726,9 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 **** 区间<<MK13>>
 
-若 $\{a,b\}\subset\mathbb{R}\land a<b$ 则定义 $[a,b]=\left\{x\big|x\in\mathbb{R}\land a \leq x\leq b\right\}$ 以及 $(a,b)=\left\{x\big|x\in\mathbb{R}\land a<x<b\right\}$
+若 $\{a,b\}\subset\mathbb{R}$ 则定义 $[a,b]=\left\{x\big|x\in\mathbb{R}\land a \leq x\leq b\right\}$ 以及 $(a,b)=\left\{x\big|x\in\mathbb{R}\land a<x<b\right\}$
+
+其中 $a,b$ 成为区间的端点
 
 ***** 高维区间<<MK55>>
 
@@ -2741,7 +2743,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 若 $E\subset\mathbb{R}^n$ 其外测度定义为可数个开区间覆盖的最小测度，即 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 
 
-其中 $|I_i|$ 为[[MK13][开区间]] $I_i$ 的[[MK56][测度]]
+其中 $|I_i|$ 为[[MK13][开区间]] $I_i$ 的[[MK52][测度]] 且 $\forall\{i,j\}\subset\mathbb{N}\rightarrow I_i\cap I_j=\varnothing$
 
 *** 满足[[MK61][定义]]<<MK66>>
 
@@ -2834,6 +2836,14 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 根据 $\epsilon$ 任意性可得 $m^*(I)\geq |I|$ 故根据[[MK5][三歧性]]可得 $m^*(I)=|I|$
 
 对于开区间，半开半闭区间区间，其在勒贝格测度下定义其测度等于闭区间，故同理可证
+
+***** 单点零测<<MK318>>
+
+对于任意 $x\in\mathbb{R}^n$ 有 $\varphi(\{x\})=0$
+
+****** 证明
+
+显然根据[[MK13][区间定义]]易证 $x=\prod_{i-1}^n[x,x]$ ，又根据正规性 $\varphi\left(\prod_{i=1}^n[x,x]\right)=0$
 
 **** 存在性<<MK296>>
 
@@ -7531,8 +7541,212 @@ $f(x)$ 在 $[a,b]$ 上几乎处处连续
 
 则根据[[MK237][定义]]可得 $g(\vec{x})$ 在 $A$ 上可积
 
+* 微分与勒贝格积分
 
+** 维塔利覆盖<<MK317>>
 
+对于任意 $E\subset\mathbb{R}$ ，若 $V$ 满足：
 
+（1） $\forall v\in V$ 均有 $v$ 是[[MK13][区间]]且 $\varphi(v)>0$
 
+（2） $\forall x\in E,\forall\epsilon>0,\exists I_x\in V\rightarrow x\in I_x\land\varphi(I_x)<\epsilon$
 
+则称 $V$ 是 $E$ 的维塔利覆盖。其中 $\varphi(E)$ 是 $E$ 在 $\mathbb{R}$ 上的[[MK51][勒贝格外侧度]]
+
+*** 等价定义
+
+对于任意 $E\subset\mathbb{R}$ ，若 $V$ 满足：
+
+（1） $\forall v\in V$ 均有 $v$ 是[[MK13][区间]]且 $\varphi(v)>0$
+
+（2） 对于任意 $x\in E$ 存在一列区间 $\{I_n\}\subset V$ 满足
+
+     a） $\lim_{n\to\infty}\varphi(I_n)=0$
+
+     b） $\forall n\in\mathbb{N}\rightarrow x\in I_n$
+
+则称 $V$ 是 $E$ 的维塔利覆盖
+
+**** 证明
+
+***** 充分
+
+由于 $\lim_{n\to\infty}I_n=0$ 即有 $\forall\epsilon>0,\exists N,\forall n>N\rightarrow \varphi(I_n)<\epsilon$
+
+且由于 $x\in I_n$ 故满足[[MK317][条件（2）]]，其余条件一致，故充分证毕
+
+***** 必要
+
+取 $\epsilon_1=1$ 则存在 $I_1$ 满足 $x\in I_1\land \varphi(I_1)<1$
+
+取 $\epsilon_i=\min\left(\frac{1}{2^{i-1}},\varphi(I_{i-1})\right),i\geq 2$ 根据[[MK317][条件（1）]]有 $\varphi(I_{i-1})>0$
+
+又由于 $\frac{1}{2^{i-1}}>0$ 即可得 $\epsilon_i>0$ 且 $\epsilon_i<\frac{1}{2^{i-1}}$ 又根据[[MK317][条件（2）]]存在 $I_i$ 满足 $x\in I_i\land \varphi(I_i)<\frac{1}{2^{i-1}}$
+
+故可得 $\forall i\in\mathbb{N},\exists I_i\rightarrow x\in I_i\land0<\varphi(I_i)<\frac{1}{2^{i-1}}$ 由于 $\lim_{i\to\infty}\frac{1}{2^{i-1}}=0$
+
+根据夹逼定理 $\lim_{i\to\infty}I_i=0$ 又由于 $x\in I_i$ 故满足等价条件（2），必要证毕 
+
+*** 引理<<MK320>>
+
+对于任意 $E\subset\mathbb{R}$ 存在其维塔利覆盖 $V$ ，则对于任意 $x\in E$ 存在开集 $U$ 满足 $x\in U$
+
+则对于任意 $\epsilon>0$ 有 $I^*\in V$ 满足 $x\in I^*\land I^*\subset U\land \varphi(I^*)<\epsilon$
+
+**** 证明
+
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]可得存在 $\delta>0$ 满足 $(x-\delta,x+\delta)\subset U$
+
+则取 $\epsilon^*=\min\left(\frac{\delta}{2},\epsilon\right)$ 故有 $I^*=[a,b]$ 满足 $x\in I^*\land \varphi(I^*)=b-a<\epsilon^*$
+
+则有 $a\leq x\leq b$ 且对于任意 $y\in I^*$ 亦有 $a\leq y\leq b$ 不妨设 $y>x$
+
+则有 $y\leq b\land -x\leq -a$ 则根据[[MK32][推论2]]可得 $0<y-x<b-a$
+
+反之当 $x>y$ 时同理亦有 $0<x-y<b-a$ 综上所述，即 $\forall y\in I^*\rightarrow |y-x|<\epsilon^*$
+
+故有 $y\in (x-\delta,x+\delta)$ 即有 $I^*\subset U$
+
+** 维塔利覆盖定理
+
+对于任意 $E\subset\mathbb{R}$ 有：
+
+（1） $\varphi(E)<\infty$
+
+（2） 存在 $V$ 是 $E$ 的[[MK317][维塔利覆盖]]
+
+则存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]集 $\{I_n\}\subset V$ 满足:
+
+（1） $\forall\{i,j\}\subset\mathbb{N}\rightarrow I_i\cap I_j=\varnothing$
+
+（2） $\varphi\left(E-\bigcup_{i}^\infty I_n\right)=0$
+
+其中 $\varphi(E)$ 是 $E$ 在 $\mathbb{R}$ 上的[[MK51][勒贝格外侧度]]
+
+*** 证明
+
+**** 转换闭集覆盖<<MK319>>
+
+对于任意 $I\in V$ 定义 $\overline{I}$ 是 $I$ 同[[MK13][端点]]的闭区间，进一步定义 $\overline{V}=\left\{\overline{I}\big|I\in V\right\}$
+
+易证 $\overline{V}$ 亦为 $E$ 的[[MK317][维塔利覆盖]]，则若存在一列[[MK13][区间]] $\{\overline{I}_n\}\subset \overline{V}$ 满足:
+
+（1） $\forall\{i,j\}\subset\mathbb{N}\rightarrow \overline{I}_i\cap \overline{I}_j=\varnothing$
+
+（2） $\varphi\left(E-\bigcup_{i}^\infty \overline{I}_i\right)=0$
+
+则根据[[MK13][定义]]可得，开区间以及半开闭区间相对闭区间可能不包含端点，则显然 $I_i\cap I_j=\varnothing$
+
+则定义 $I_i$ 的端点为 $a_i,b_i$ 则有 $\bigcup_{i=1}^\infty\overline{I}_i-\bigcup_{i=1}^\infty I_i\subset\bigcup_{i=1}^\infty\{a_i,b_i\}$ 根据[[MK318][单点零测]]可得 $\varphi(\{a_i\})=\varphi(\{b_i\})=0$
+
+根据[[MK278][可数零测]]可得 $\varphi(\{a_i,b_i\})=0$ 以及 $\varphi\left(\bigcup_{i=1}^\infty\{a_i,b_i\}\right)=0$ 根据[[MK128][子集零测]]可得 $\varphi\left(\bigcup_{i=1}^\infty\overline{I}_i-\bigcup_{i=1}^\infty I_i\right)=0$
+
+显然根据区间定义有 $I_i\subset\overline{I}_i$ 故易证 $\bigcup_{i=1}^\infty I_i\subset\bigcup_{i=1}^\infty\overline{I}_i$ 则根据[[~/OneDrive/离散数学/Disc_Math.org::MK332][子集性质]]有 $\bigcup_{i=1}^\infty \overline{I}_i=\bigcup_{i=1}^\infty I_i\cup\left(\bigcup_{i=1}^\infty\overline{I}_i-\bigcup_{i=1}^\infty I_i\right)$
+
+进一步根据[[~/OneDrive/离散数学/Disc_Math.org::MK347][差分配]]以及[[~/OneDrive/离散数学/Disc_Math.org::MK327][分配率]]易证 $\left(E-\bigcup_{i}^\infty \overline{I}_i\right)\cup\left(\bigcup_{i=1}^\infty\overline{I}_i-\bigcup_{i=1}^\infty I_i\right)=E-\bigcup_{i}^\infty I_i$
+
+同理根据[[MK278][可数零测]]可得 $\varphi\left(E-\bigcup_{i}^\infty I_i\right)=0$ 。综上所述，若能证明 $\overline{V}$ 满足条件，则 $V$ 满足条件
+
+**** 缩小覆盖<<MK321>>
+
+根据[[MK297][等测包]]可得存在[[MK8][可测集]] $E^*$ 满足 $\varphi(E^*)=\varphi(E)<\infty\land E\subset E^*$
+
+进一步根据[[MK92][引理1]]可得存在 $U$ 满足 $E^*\subset U$ 且 $\varphi(U-E)<1$
+
+进一步根据[[MK84][计算（3）]]有 $\varphi(U)-\varphi(E)<1\rightarrow\varphi(U)<\varphi(E)+1<\infty$ 即有 $E\subset U\land\varphi(U)<\infty$
+
+根据[[MK319][上一步]]中定义的 $\overline{V}$ 进一步定义 $W=\left\{I\big|I\in\overline{V}\land I\subset U\right\}$ 可得 $W\subset U$
+
+根据[[MK320][引理]]可得对于任意 $x\in E$ 均存在 $I\in\overline{V}\land I\subset U$ 即 $I\in W$ 满足 $x\in I$ ，即 $W$ 是 $E$ 的覆盖
+
+同样根据[[MK320][引理]]可得对于任意 $x\in E$ 任意 $\epsilon>0$ 存在 $I\in\overline{V}\land I\subset U$ 满足 $x\in I\land\varphi(I)<\epsilon$
+
+综上所述，可得 $W\subset\overline{V}$ 且 $W$ 亦为 $E$ 的[[MK317][维塔利覆盖]]。
+
+且由于 $W\subset\overline{V}$ 故若 $W$ 中存在满足条件的在一列[[MK13][区间]]，则 $\overline{V}$ 中亦存在
+
+又由于 $W\subset U$ 可得 $\varphi(W)<\varphi(U)<\infty$
+
+**** 构造区间列<<MK322>>
+
+对于[[MK321][之前证明]]中集合 $W$ 任取 $I_1\in W$
+
+对于任意 $I_n$ 定义 $K_n=\left\{I\big|I\in W\land I\subset\left(\bigcup_{i=1}^n I_n\right)^c\right\}$ 定义 $r_n =\sup\left\{\varphi(I)\big|I\in K_n\right\}$
+
+由于 $\forall I\in W$ 均有 $I\subset U$ 故根据[[MK60][单调性]] $\varphi(I)\leq\varphi(U)<\infty$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $r_n\leq\varphi(U)<\infty$
+
+若 $E-\bigcup_{i=1}^nI_i=\varnothing$ 则 $\{I_1,...,I_n\}$ 满足条件
+
+若 $E-\bigcup_{i=1}^nI_i\ne\varnothing$ 则存在 $x\in E-\bigcup_{i=1}^nI_1$
+
+根据[[MK319][之前定义]]可得 $I_i\in W$ 均是[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]]，则根据[[~/OneDrive/数学分析/Chap11Note.org::MK28][定理6]]可得 $\bigcup_{i=1}^n I_i$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]]，即根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]] $\left(\bigcup_{i=1}^n I_i\right)^c$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK334][补与减]]可得 $E-\bigcup_{i=1}^nI_i=E\cap\left(\bigcup_{i=1}^nI_i\right)^c$ 即 $x\in\left(\bigcup_{i=1}^n I_i\right)^c$
+
+则根据[[MK320][引理]]可得存在 $I^*\in W\land I^*\in\left(\bigcup_{i=1}^n I_i\right)^c$ 即 $K_n$ 非空，则 $r_n$ 有定义
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界定义]]存在 $I_{n+1}$ 满足 $\varphi(I_{n+1})>\frac{r_n}{2}\land I_{n+1}\in K_n$
+
+进一步根据 $K_n$ 定义可得 $(I_{n+1}\in W)\land\left(\forall 1\leq i\leq n\rightarrow I_i\cap I_{n+1}=\varnothing\right)$
+
+综上所述，若存在 $n$ 使得 $E-\bigcup_{i=1}^nI_i=\varnothing$ 则 $\{I_1,...,I_n\}$ 满足条件
+
+反之则有集合列 $\{I_n\}$ 满足 $\forall\{i,j\}\subset\mathbb{N}\rightarrow I_i\cap I_j=\varnothing$
+
+由于 $\{I_n\}\subset W$ 故根据[[MK60][单调性]]以及[[MK321][之前证明]]可得 $\varphi\left(\bigcup_{i=1}^\infty I_i\right)<\varphi(W)<\infty$
+
+进一步根据[[MK82][区间可测]]以及[[MK656][Caratheodory定理]]可得 $\varphi\left(\bigcup_{i=1}^\infty I_i\right)=\sum_{i=1}^\infty \varphi(I_i)<\infty$
+
+**** 证明零测<<MK325>>
+
+对于任意 $y\in E-\bigcup_{i=1}^\infty I_i$ 均满足对于任意 $k>1$ 有 $y\not\in\bigcup_{i=1}^k I_i$ 即 $y\in\left(\bigcup_{i=1}^k I_i\right)^c$
+
+根据上一步证明类似可证 $\left(\bigcup_{i=1}^k I_n\right)^c$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]，则根据[[MK320][引理]]可得存在 $I^*\in W\land y\in I^*$
+
+***** 存在 $I_{n_y}$ 满足 $I_{n_y}\cap I^*\ne\varnothing$ <<MK324>>
+
+假设 $I^*\cap\bigcup_{i=1}^\infty I_i=\varnothing$ 即有 $\forall n\rightarrow I^*\subset\left(\bigcup_{i=1}^n I_i\right)^c$ 又由于 $I^*\in W$
+
+则根据[[MK322][之前定义]]有 $I^*\in K_n$ 则 $\varphi(I^*)\leq r_n$ 进一步根据[[MK322][之前证明]]可得 $\sum_{i=1}^\infty \varphi(I_i)<\infty$
+
+根据[[MK54][非负性]]易证 $S_z=\sum_{i=1}^z \varphi(I_i)$ 单调递增，故根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 $S_z$ 收敛
+
+最终根据[[~/OneDrive/数学分析/Chap9Note.org::MK5][推论4]]可得 $\lim_{z\to\infty}\varphi(I_z)=0$ 由于 $I_z>\frac{r_{z-1}}{2}$ 即可得 $\lim_{z\to\infty}r_z=0$
+
+则由 $n$ 的任意性易证 $\varphi(I^*)=0$ 显然与 $I^*\in W$ 矛盾，故假设不成立
+
+则存在 $I_n$ 满足 $I_n\cap I^*\ne\varnothing$ 定义区间 $I_{n_y}$ 满足 $I_{n_y}\cap I^*\ne\varnothing\land I^*\cap\bigcup_{i=1}^{n_y-1} I_i=\varnothing$
+
+***** 存在常数 $c$ 使得 $y$ 属于 $I_{n_y}$ 扩大 $c$ 倍的区间<<MK323>>
+
+由于 $I_{n_y}\cap I^*\ne\varnothing$ 则定义 $I_{n_y}=[x-z,x+z], I^*=[a,b]$ 则易证 $|x-y|\leq(b-a)+\frac{2z}{2}$
+
+根据[[MK79][正则性]]可得 $|y-x|\leq\varphi(I^*)+\frac{1}{2}\varphi(I_{n_y})$ 且 $z=\frac{\varphi(I_{n_y})}{2}$
+
+由于 $I^*\cap\bigcup_{i=1}^{n_y-1} I_i=\varnothing\land I^*\in W$ 则有 $I^*\in K_{n_y-1}$ 进而 $\varphi(I^*)\leq r_{n_y-1}$
+
+又根据 $I_{n_y}$ 的[[MK322][构造过程]]可得 $\varphi(I_{n_y})>\frac{r_{n_y-1}}{2}$ 故有 $\varphi(I^*)<2r_{n_y-1}$
+
+综上所述 $|y-x|<\frac{5}{2}\varphi(I_{n_y})=5z$ 定义 $J_{n_y}=\left[x-5z,x+5z\right]$ 则有 $y\in J_{n_y}$
+
+结合之前证明可得，对于任意 $y\in E-\bigcup_{i=1}^\infty I_i$ 任意 $k>1$ 均存在 $J_{n_y}$ 满足 $y\in J_{n_y}\land\varphi(J_{n_y})=5\varphi(I_{n_y})$
+
+***** 证明零测
+
+根据[[MK323][之前结论]]可得对于任意 $y\in E-\bigcup_{i=1}^\infty I_i$ 任意 $k>1$ 均有 $y\in\bigcup_{i=k}^\infty J_i$
+
+则有对于任意 $k>1$ 均可得 $E-\bigcup_{i=1}^\infty I_i\subset\bigcup_{i=k}^\infty J_i$ 根据[[MK60][单调性]] $\varphi\left(E-\bigcup_{i}^\infty I_n\right)\leq\varphi\left(\bigcup_{i=k}^\infty J_i\right)$
+
+根据[[MK82][区间可测]]、[[MK656][Caratheodory定理]]以及[[MK322][之前证明]]可得 $\varphi\left(\bigcup_{i=k}^\infty J_i\right)=\sum_{i=k}^\infty\varphi(J_i)=5\sum_{i=k}^\infty\varphi(I_i)$
+
+根据[[MK324][之前证明]] $S_z=\sum_{i=1}^z \varphi(I_i)$ 为收敛级数，则根据[[~/OneDrive/数学分析/Chap9Note.org::MK5][推论3]]可得 $\lim_{k\to\infty}\sum_{i=k}^\infty\varphi(I_i)=0$
+
+则根据 $k$ 的任意性以及 $\varphi\left(E-\bigcup_{i}^\infty I_n\right)\leq5\sum_{i=k}^\infty\varphi(I_i)$ 易证 $\varphi\left(E-\bigcup_{i}^\infty I_n\right)=0$
+
+**** 证明结论
+
+根据[[MK325][零测证明]]以及[[MK322][构造区间列]]可得 $W$ 中存在满足条件的区间列
+
+又根据[[MK321][缩小覆盖]]可得 $\overline{V}$ 中存在满足条件区间列
+
+最后根据[[MK319][转换覆盖]]可得 $V$ 中存在满足条件的区间列 $\{I_n\}$

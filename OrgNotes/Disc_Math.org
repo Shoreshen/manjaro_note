@@ -786,6 +786,7 @@ A-B=A\cap\overline{B}\\
 &A-B\subset A\\
 &A\subset B\leftrightarrow A-B=\varnothing\leftrightarrow A\cup B=B\leftrightarrow A\cap B=A\\
 &A\subset B\rightarrow \overline{B}\subset \overline{A}\\
+&A\subset B\rightarrow B=A\cup(A-B)
 \end{aligned}
 
 **** [[MK124][量词]]与运算<<MK331>>
@@ -3778,7 +3779,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 ***** 定理2<<MK339>>
 
-若 $\forall b\in B\rightarrow b<c$ 则 $B$ 的上确界 $\sup\{B\}\leq c$
+若 $\forall b\in B\rightarrow b\leq c$ 则 $B$ 的上确界 $\sup\{B\}\leq c$
 
 ****** 证明
 

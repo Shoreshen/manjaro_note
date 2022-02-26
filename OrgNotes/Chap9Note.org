@@ -2,9 +2,9 @@
 
 #+TITLE: 数项级数
 
-current mark: 3
+current mark: 5
 
-* Bolzano-Weiserstrass 定理：
+* Bolzano-Weiserstrass定理
 
 有界数列必有收敛子列。
 
@@ -53,7 +53,7 @@ current mark: 3
 
 ** 正项级数：
 
-*** 若 $\{x_n\}>0$ 则 $S_n=\sum_{i=1}^n x_n$ 单调增加，故收敛充分必要条件是: $sup\left\{S_n\right\}<\infty$
+*** 若 $\{x_n\}>0$ 则 $S_n=\sum_{i=1}^n x_n$ 单调增加，故收敛充分必要条件是: $\sup\left\{S_n\right\}<\infty$
 
 *** 比较判别法：
 
@@ -84,8 +84,6 @@ current mark: 3
 
 *** 柯西判别：
 
-**** 描述：
-
 $\overline{\lim_{n \to \infty}} \sqrt[n]x_n = r$
 
 $r<1,\ \ \Rightarrow S^x<\infty$
@@ -113,8 +111,6 @@ $r=1$ 无法判别
 故在数列 $\{x_n\}$ 中有无限多项 $>1$ ，则 $S=\sum_{n=1}^\infty x_n=\infty$
 
 *** 达朗贝尔判别：
-
-**** 描述：
 
 $\overline{\lim_{n \to \infty}}\frac{x_{n+1}}{x_n}=r<1$ 则 $\sum_{n=1}^\infty x_n$ 收敛
 
@@ -161,8 +157,6 @@ $\overline{\lim_{n \to \infty}}\frac{x_{n+1}}{x_n} \geq 1$ 或者 $\overline{\li
 \end{aligned}
 
 *** 拉得判别法：
-
-**** 描述：
 
 定义$\lim_{n \to \infty} n\left(\frac{x_n}{x_{n+1}}-1\right)=r$ ，则：
 
@@ -215,8 +209,6 @@ $r=1$ 判别失效。
 
 *** 积分判别法：
 
-**** 描述：
-
 设函数 $f(x)$ 在 $[a,+\infty]$ 上有定义且为正，若 $f(x)$ 单调递减则 $\int_a^\infty f(x) dx$ 与 $\sum_{n=A}^\infty f(n)$ 同时敛散，此时 $A=[a]+1$
 
 **** 证明
@@ -258,9 +250,37 @@ $r=1$ 判别失效。
 
 *** 柯西收敛原理<<MK3>>
 
-\begin{aligned}
-&\forall \epsilon>0,\ \ \exists N,\ \ \forall m>n>N\Rightarrow \left|\sum_{i=n+1}^m x_i\right|<\epsilon
-\end{aligned}
+数项级数 $S_n=\sum_{i=1}^nx_i$ 收敛的充要条件是 $\forall \epsilon>0,\exists N,\forall m>n>N\Rightarrow \left|\sum_{i=n}^m x_i\right|<\epsilon$
+
+**** 证明
+
+***** 充分
+
+若满足 $\forall \epsilon>0,\exists N,\forall m>n>N\Rightarrow \left|\sum_{i=n}^m x_i\right|=|S_m-S_n|<\epsilon$
+
+取 $\epsilon=1$ 则存在 $N$ 满足条件，则有对于任意 $m>N+1$ 均有 $|S_m-S_{N+1}|<1$
+
+由于 $S_{N+1}\in\mathbb{R}$ 即 $S_m\in(S_{N+1}-1,S_{N+1}+1)$ 则显然数列 $\{S_n\}$ 有界
+
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK29][Bolzano-Weiserstrass定理]]必有收敛子列，假设子列 $\{S_{k_1},S_{k_2},...\}$ 收敛与 $A$
+
+则有 $\forall\epsilon>0,\exists K,\forall n>K\rightarrow\left|S_{k_n}-A\right|<\epsilon$ 又存在 $N$ 满足 $\forall m>n>N\rightarrow|S_m-S_n|<\epsilon$
+
+由于 $\{S_{k_1},S_{k_2},...\}$ 是数列，故存在 $z\in\mathbb{N}$ 使得 $k_z>N$ 进一步定义 $y=\max(z,K+1)$
+
+则取 $N^*=\max(k_y,N)$ 则对于任意 $n>N^*$ 有 $|S_{k_y}-A|<\epsilon\land |S_n-S_{k_y}|$
+
+故根据三角不等式 $|S_n-A|\leq|S_{k_y}-A|+|S_n-S_{k_y}|<2\epsilon$
+
+***** 必要
+
+若收敛于 $A$ ，则有 $\forall\frac{\epsilon}{2}>0,\exists N,\forall n>N\rightarrow\left|S_n-A\right|<\frac{\epsilon}{2}$
+
+则任取 $m>n>N$ 有 $\left|S_n-A\right|<\frac{\epsilon}{2}\land\left|S_m-A\right|<\frac{\epsilon}{2}$
+
+根据三角不等式 $\left|S_m-A\right|+\left|S_n-A\right|\geq\left|(S_m-A)-(S_n-A)\right|=\left|S_m-S_n\right|=\left|\sum_{i=n}^m x_i\right|$
+
+即有 $\left|\sum_{i=n}^m x_i\right|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon$
 
 **** 推论1：$\sum_{n=1}^\infty |x_n|$ 收敛，则 $\sum_{n=1}^\infty x_n$ 也收敛，根据三角不等式证明如下：
 
@@ -275,6 +295,40 @@ $r=1$ 判别失效。
 &\because \forall \epsilon>0,\ \ \exists N,\ \ \forall m>n>N\Rightarrow \left|\sum_{i=n+1}^m x_i\right|<\epsilon\\
 &\therefore \forall \epsilon>0,\ \ \exists N,\ \ \forall n>N\Rightarrow \left|x_{n+1}\right|<\epsilon\\
 \end{aligned}
+
+**** 推论3<<MK4>>
+
+数项级数 $S_n=\sum_{i=1}^nx_i$ 收敛，则 $\lim_{k\to\infty}\sum_{i=k}^\infty x_i=0$
+
+***** 证明
+
+根据[[MK3][柯西收敛原理]]可得 $\forall\frac{\epsilon}{2}>0,\exists N,\forall m>n>N\Rightarrow \left|\sum_{i=n}^m x_i\right|<\frac{\epsilon}{2}$
+
+假设 $\left|\sum_{i=n}^\infty x_i\right|>\frac{\epsilon}{2}$ 则定义 $\left|\sum_{i=n}^\infty x_i\right|=A$ 亦可写为 $\lim_{u\to\infty}\left|\sum_{i=n}^u x_i\right|=A>\frac{\epsilon}{2}$
+
+根据极限定义 $\forall\delta>0,\exists U,\forall u>U\rightarrow\left|\left|\sum_{i=n}^u x_i\right|-A\right|<\delta$ 进一步取 $\delta=A-\frac{\epsilon}{2}$
+
+即有 $\left|\left|\sum_{i=n}^u x_i\right|-A\right|<A-\frac{\epsilon}{2}$ 即 $\left|\sum_{i=n}^u x_i\right|-A>\frac{\epsilon}{2}-A$
+
+即存在 $u>n>N$ 满足 $\left|\sum_{i=n}^u x_i\right|>\frac{\epsilon}{2}$ 显然与柯西收敛原理矛盾，即有 $\left|\sum_{i=n}^\infty x_i\right|\leq\frac{\epsilon}{2}<\epsilon$
+
+综上所述 $\forall\epsilon,\exists N,\forall n>N\rightarrow |\sum_{i=n}^\infty x_i|<\epsilon$ 即 $\lim_{k\to\infty}\sum_{i=k}^\infty x_i=0$
+
+**** 推论4<<MK5>>
+
+数项级数 $S_n=\sum_{i=1}^nx_i$ 收敛，则 $\lim_{k\to\infty}x_n=0$
+
+***** 证明
+
+根据[[MK3][柯西收敛原理]]可得 $\forall \epsilon>0,\exists N,\forall m>n>N\Rightarrow \left|\sum_{i=n}^m x_i\right|<\epsilon$
+
+则有 $|x_{N+i}+x_{N+i+1}|<\epsilon\land|x_{N+i}+x_{N+i+1}+x_{N+i+2}|<\epsilon$ 其中 $i\in\mathbb{N}-\{0\}$
+
+由于 $|x_{N+i+2}|=|(x_{N+i}+x_{N+i+1}+x_{N+i+2})-(x_{N+i}+x_{N+i+1})|$
+
+则根据三角不等式 $|x_{N+i+2}|=\leq|x_{N+i}+x_{N+i+1}+x_{N+i+2}|+|x_{N+i}+x_{N+i+1}|<2\epsilon$
+
+故对于任意 $n>N+2$ 均有 $|x_n|<2\epsilon$ ，证毕 
 
 *** A-D判别：
 
@@ -300,8 +354,6 @@ $r=1$ 判别失效。
 
 **** Abel判别：
 
-***** 描述：
-
 若 $a_n$ 有界且单调， $\sum_{i=1}^\infty b_i$ 收敛，则 $\sum_{i=1}^\infty a_ib_i$ 收敛
 
 ***** 证明：
@@ -312,8 +364,6 @@ $r=1$ 判别失效。
 \end{aligned}
 
 **** Dirichlet判别：
-
-***** 描述：
 
 若 $a_n$ 单调趋于0， $B_n=\sum_1^n b_i$ 有界，则级数 $\sum_{i=1}^\infty a_ib_i$ 收敛。
 
