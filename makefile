@@ -86,7 +86,7 @@ sync: commit
 ipsec_restart:
 	echo $(PW) | sudo -S ipsec restart
 
-conn:set_dns ipsec_restart # try 1.1.1.1 and 1.0.0.1 for dns
+conn: ipsec_restart # try 1.1.1.1 and 1.0.0.1 for dns
 	sleep 0.5
 	echo $(PW) | sudo -S ipsec up NordVPN
 
@@ -94,7 +94,7 @@ disip:
 	echo $(PW) | sudo -S ipsec down NordVPN
 
 # First disconnnect strongswan, then revert dns
-disconn:disip rec_dns
+disconn:disip
 
 nordconn:save_dns
 	echo $(PW) | sudo -S nordvpn c

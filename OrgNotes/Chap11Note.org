@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK29
+current mark: MK31
 
 * 笛卡尔乘积
 
@@ -127,9 +127,33 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 &\therefore |y_n-y_m|<\epsilon\\
 \end{aligned}
 
-** 柯西收敛原理<<MK21>>
+*** 推论<<MK30>>
 
-*** 描述
+任意数列 $\{s_n\}$ 均有[[MK29][子列]]满足 $\lim_{i\to\infty}s_{n_i}=A\in\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 为[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]
+ 
+**** 证明
+
+若 $\{s_n\}$ 有界，则根据[[MK29][定理]]可得
+
+若无界，则必有 $\forall a\in\mathbb{R}^+,\exists n\in\mathbb{N}\rightarrow |s_n|>|a|$
+
+故有数列 $\{s_{n_i}\}$ 满足对于任意 $i\in\mathbb{N}$ 均有 $|s_{n_i}|>i$
+
+则定义 $\{s_{n_v}\}$ 为 $\{s_{n_i}\}$ 中所有小于零的元素， $\{s_{n_u}\}$ 为剩余所有大于零的元素 
+
+则由于 $\{s_{n_i}\}$ 是可数集，则 $\{s_{n_v}\},\{s_{n_u}\}$ 必有一个无限集[[~/OneDrive/离散数学/Disc_Math.org::MK43][无限集]]
+
+以下仅对 $\{s_{n_u}\}$ 为无限集时证明， $\{s_{n_v}\}$ 为无限集时同理可证
+
+由于 $\lim_{u\to\infty}n_u=\infty$ 故对于任意 $G>0$ 存在 $u^*$ 对于任意 $u>u^*$ 有 $n_u>G$
+
+故有 $s_{n_u}>n_u>G$ 
+
+综上所属 $\forall G>0,\exists u^*,\forall u>u^*\rightarrow s_{n_u}>G$
+
+即 $\lim_{u\to\infty}s_{n_u}=\infty\in\mathbb{R}_e$
+
+** 柯西收敛原理<<MK21>>
 
 数列 $S=\{x_n\}$ 收敛的充要条件 $\forall \epsilon>0,\exists N,\forall n,m>N\Rightarrow |x_n-x_m|<\epsilon$
 
@@ -1051,6 +1075,40 @@ $D\in R^n$ 映射 $\vec{f}:D\to R^m\Rightarrow \vec{x}=(x_1,...,x_n)\to\vec{z}=(
 对于任意 $\vec{y}',\vec{y}''\in S$ 存在函数原相 $\vec{f}(\vec{x}')=\vec{y}',\vec{f}(\vec{x}'')=\vec{y}'',\{\vec{x}',\vec{x}''\}\subset K$ 因为 $K$ 为连通集，故存在连续映射 $\Gamma(u),u\in [0,1],\Gamma(0)=\vec{x}',\Gamma(1)=\vec{x}''$
 
 根据[[MK6][向量值函数复合推论]]复合函数 $\vec{f}(\Gamma(u))=\vec{f}\cdot\Gamma(u)$ 亦为连续函数，且 $\vec{f}\cdot\Gamma(0)=\vec{y}',\vec{f}\cdot\Gamma(1)=\vec{y}''$ 故 $S$ 为连通集
+
+* 海涅定理<<MK31>>
+
+函数 $f(x)=y,x\in\mathbb{R}\land y\in\mathbb{R}$ 则 $\lim_{x\to x_0}f(x_0)=A$ 的充要条件是：
+
+对于任意数列 $\{h_n\}$ 满足 $\lim_{n\to\infty}|h_n|=0$ 均有 $\lim_{n\to\infty}f(x+h_n)=A$
+
+其中 $A\in\mathbb{R}_e$ 为[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]
+
+** 证明
+
+根据 $\lim_{n\to\infty}h_n=0$ 可得 $\forall \epsilon>0,\exists N,\forall n>N\rightarrow |h_n|<\epsilon$
+
+仅证 $A\in\mathbb{R}$ 部分，当 $A=+\infty$ 或 $A=-\infty$ 是类似易证
+
+*** 充分
+
+由于 $\lim_{x\to x_0}f(x_0)=A$ 则有 $\forall \delta>0,\exists \tau,\forall |x-x_0|<\tau\rightarrow |f(x)-A|<\delta$
+
+对于任意满足条件的数列 $\{h_n\}$ 亦有 $\forall \epsilon>0,\exists N,\forall n>N\rightarrow |h_n|<\epsilon$
+
+即取 $\epsilon=\tau$ 则对于任意 $n>N$ 均有 $|h_n|<\tau$
+
+又由于 $|x_0+h_n-x_0|=|h_n|$ 即有 $\lim_{n\to\infty}f(x+h_n)=A$
+
+*** 必要
+
+假设 $\lim_{x\to x_0}f(x_0)\ne A$ 则 $\exists \delta>0,\forall \tau,\exists |x'-x_0|<\tau\rightarrow |f(x)-A|>\delta$
+
+则取 $\tau_n=\frac{1}{n}$ 则有 $x'_n$ 满足 $|h_n|=|x'_n-x_0|<\frac{1}{n}\land |f(x+h_n)-A|>\delta$
+
+显然 $\lim_{n\to\infty}|h_n|=0$ 且 $\lim_{n\to\infty}f(x+h_n)\ne A$
+
+即与条件矛盾，故假设不成立
 
 
 

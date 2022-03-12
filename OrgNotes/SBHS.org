@@ -4,7 +4,7 @@
 
 current video: P51
 
-current mark: 325
+current mark: 337
 
 * 几乎处处<<MK190>>
 
@@ -1283,9 +1283,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 由于三分集是无限划分，且所有端点均属于该集合，故实数 $[0,1]$ 内的所有点均有对应的映射
 
-即 $\sigma:P\to[0,1]$ 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数-满射]]，
-
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数]]可得 $|P|\geq|[0,1]|$ 又根据[[MK36][定理0]]以及传递性可得 $|P|\geq|\mathbb{R}|$
+即 $\sigma:P\to[0,1]$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK198][满射]]，则根据[[~/OneDrive/离散数学/Disc_Math.org::MK3][基数]]可得 $|P|\geq|[0,1]|$ 又根据[[MK36][定理0]]以及传递性可得 $|P|\geq|\mathbb{R}|$
 
 由于 $P$ 是从 $\mathbb{R}$ 上取的，故显然有 $|P|\leq|\mathbb{R}|$ 根据基数定义中伯恩斯坦定理 $|P|=|\mathbb{R}|$
 
@@ -3879,6 +3877,24 @@ Borel集中元素均为可测集
 
 根据[[MK94][可测性]]可得 $\bigcup_{i=1}^\infty S_i$ 可测 
 
+***** 零测不变<<MK331>>
+
+对于任意 $E\subset\mathbb{R}^n$ 以及 $Z\subset E\land \varphi(Z)=0$ 均有 $\varphi(E-Z)=\varphi(E)$
+
+****** 证明
+
+由于 $E-Z\subset E$ 故根据[[MK60][单调性]]可得 $\varphi(E-Z)\leq\varphi(E)$
+
+根据[[MK297][等测包]]可得存在[[MK81][可测集]] $G$ 满足 $E-Z\subset G\land\varphi(E-Z)=\varphi(G)$
+
+根据[[MK94][可测性]]可得 $Z$ 亦为可测集，则易证 $G\cup Z$ 亦为可测集，且有 $\varphi(G\cup Z)=\varphi(Z)+\varphi(G)=\varphi(G)$
+
+由于 $E=(E-Z)\cup Z$ 且 $E-Z\subset G$ 则有 $E=((E-Z)\cup Z)\subset(G\cup Z)$
+
+故根据[[MK60][单调性]] $\varphi(E)\leq\varphi(G\cup Z)=\varphi(G)=\varphi(E-Z)$ 即 $\varphi(E)\leq\varphi(E-Z)$
+
+即有 $\varphi(E)=\varphi(E-Z)$
+
 ** 不可测集
 
 不是[[MK81][可测集]]的集合定义为不可测集
@@ -4198,6 +4214,78 @@ Borel集中元素均为可测集
 显然 $\phi(x)=\begin{cases}0&x\leq0\\1&x>0\end{cases}$ 不[[MK106][连续]]
 
 类似可证 $\psi(x)$ 亦不一定连续
+
+** 单调函数
+
+*** 定理1<<MK334>>
+
+[[MK13][区间]] $(a,b)$ 上的单调函数 $f(x)$ 定义域 $Y\subset\mathbb{R}$ 的任意不连续点 $x_0$ 有：
+
+（1） $\lim_{x\to x_0^-}f(x)=A<\infty$
+
+（2） $\lim_{x\to x_0^+}f(x)=B<\infty$
+
+（3） $B>A$
+
+**** 证明
+
+不妨设函数递增，递减同理可证
+
+***** 证明（1）（2）
+
+由于递增 $\forall x<x_0\rightarrow f(x)\leq f(x_0)$ 由于定义域属于 $\mathbb{R}$ 故 $f(x)<\infty$
+
+故集合 $L=\left\{f(x)\big|a<x<x_0\right\}$ 有上界，根据[[~/OneDrive/数学分析/Chap11Note.org::MK9][确界存在定理]]存在上确界 $A=\sup(L)$
+
+则对于任意 $\epsilon>0$ 存在 $x_0-\delta\in L$ 使得 $A-f(x_0-\delta)<\epsilon$
+
+又由于递增，故有 $\forall (x>x_0-\delta\land x\in L)\rightarrow f(x)>f(x_0-\delta)$
+
+由于 $A$ 是上确界，故有 $f(x)<A$ 结合 $f(x)>f(x_0-\delta)$ 可得 $A-f(x)<\epsilon$
+
+综上所述 $\forall\epsilon>0,\exists\delta,\forall x_0-x>\delta\rightarrow A-f(x)<\epsilon$ 且 $A\leq f(x_0)<\infty$
+
+即 $\lim_{x\to x_0^-}f(x)=A<\infty$
+
+类似亦可证 $\lim_{x\to x_0^+}f(x)=B=\inf\left(\left\{f(x)\big|x_0<x<b\right\}\right)<\infty$
+
+***** 证明（3）
+
+根据证明可得 $A=\sup\left(\left\{f(x)\big|a<x<x_0\right\}\right),B=\inf\left(\left\{f(x)\big|x_0<x<b\right\}\right)$
+
+定义 $L=\left\{f(x)\big|a<x<x_0\right\},U=\left\{f(x)\big|x_0<x<b\right\}$
+
+由于递增可得 $\forall f(x)\in L\rightarrow f(x)\leq f(x_0)$ 以及 $\forall f(x)\in U\rightarrow f(x)\geq f(x_0)$
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理1]]可得 $A\leq f(x_0)\leq B$ 当 $A=f(x_0)=B$ 时显然有 $\lim_{x\to x_0}f(x)=f(x_0)$
+
+即点 $x_0$ [[MK106][连续]]，与条件不符，故根据[[MK5][三岐性]]必有 $B>A$
+
+*** 定理2<<MK335>>
+
+[[MK13][区间]] $(a,b)$ 上的单调函数 $f(x)$ 定义域 $Y\subset\mathbb{R}$ 的不连续点集是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]
+
+**** 证明
+
+定义不连续点集 $E$ 则根据[[MK334][定理1]]可得对于任意 $x_0\in E$ 其上下极限 $A_{x_0}<B_{x_0}$
+
+则根据[[MK43][有理数稠密性]]可得存在 $A_{x_0}<r(x_0)<B_{x_0}$
+
+对于任意 $x_1\in E\land x_1\ne x_0$ 不放设 $x_1>x_0$ 则存在上下极限 $A_{x_1}<B_{x_1}$
+
+由于递增故取 $x'$ 满足 $x_0<x'<x_1$ 故 $f(x')\in\left\{f(x)\big|x_0<x<b\right\}\land f(x')\in\left\{f(x)\big|a<x<x_1\right\}$
+
+由于 $B_{x_0}=\inf\left(\left\{f(x)\big|x_0<x<b\right\}\right),A_{x_1}=\sup\left(\left\{f(x)\big|a<x<x_1\right\}\right)$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界定义]]有 $B_{x_0}\leq f(x')\leq A_{x_1}$ 于是乎同样取 $r(x_1)$ 可得 $r(x_1)>A_{x_1}>B_{x_0}>r(x_0)$
+
+同理可证若 $x_1<x_0$ 则有 $r(x_1)<r(x_0)$
+
+综上所述，对于任意一个 $x_0\in E$ 均有唯一对应的有理数 $r(x_0)\in\mathbb{Q}$
+
+即存在 $K\subset\mathbb{Q}$ 使得 $|E|=|K|$ [[~/OneDrive/离散数学/Disc_Math.org::MK26][对等]]，根据[[~/OneDrive/离散数学/Disc_Math.org::MK355][定理8]]可得 $|K|\leq|\mathbb{Q}|$
+
+又根据[[~/OneDrive/离散数学/Disc_Math.org::MK325][推论]]可得 $\mathbb{Q}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK48][可数集]]，则易证 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]] 
 
 ** 康托函数<<MK109>>
 
@@ -7210,7 +7298,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 闭区间 $[a,b]\subset\mathbb{R}$ 上的[[MK202][有界]]函数 $f(x)$ [[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]的充要条件是
 
-$f(x)$ 在 $[a,b]$ 上几乎处处连续
+$f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ***** 证明
 
@@ -7227,6 +7315,14 @@ $f(x)$ 在 $[a,b]$ 上几乎处处连续
 又根据[[~/OneDrive/数学分析/Chap7Note.org::MK19][引理5]]可得 $\omega_f(x)\ne0$ 充要条件是函数 $f(x)$ 在 $x$ 点不连续
 
 综上所述，易证 $f(x)$ 在 $[a,b]$ 上几乎处处连续是[[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]的充要条件
+
+***** 推论<<MK330>>
+
+单调有界函数[[MK190][几乎处处]]连续
+
+****** 证明
+
+根据[[~/OneDrive/数学分析/Chap7Note.org::MK21][推论2]]可得单调有界函数黎曼可积，则根据定理可得几乎处处连续
 
 **** 定理3：黎曼可积与勒贝格可积<<MK288>>
 
@@ -7607,7 +7703,7 @@ $f(x)$ 在 $[a,b]$ 上几乎处处连续
 
 故有 $y\in (x-\delta,x+\delta)$ 即有 $I^*\subset U$
 
-** 维塔利覆盖定理
+** 维塔利覆盖定理<<MK327>>
 
 对于任意 $E\subset\mathbb{R}$ 有：
 
@@ -7750,3 +7846,248 @@ $f(x)$ 在 $[a,b]$ 上几乎处处连续
 又根据[[MK321][缩小覆盖]]可得 $\overline{V}$ 中存在满足条件区间列
 
 最后根据[[MK319][转换覆盖]]可得 $V$ 中存在满足条件的区间列 $\{I_n\}$
+
+** 列导数<<MK326>>
+
+对于函数 $f:X\to Y,X\subset\mathbb{R}\land Y\subset\mathbb{R}$ 对于某个 $x_0\in X$
+
+若存在一列 $\{h_n\}\subset\mathbb{R}$ 满足：
+
+（1） $\forall n\in\mathbb{N}\rightarrow h_n\ne0$
+
+（2） $\lim_{n\to\infty}h_n=0$
+
+（3） $\lim_{n\to\infty}\frac{f(x_0+h_n)-f(x_0)}{h_n}=A\in\mathbb{R}_e$ 存在，其中 $\mathbb{R}_e$ 是[[MK143][广义实数]]
+
+则称 $A$ 是列 $\{h_n\}$ 在 $f(x)$ 上关于点 $x_0$ 的列导数，记作 $\mathcal{D}_h(f(x_0))=A$
+
+*** 推论1
+
+对于任意 $[a,b]$ 上的函数 $f(x)$ 中的任意 $x_0\in[a,b]$ 必存在列导数
+
+**** 证明
+
+若 $x=a$ 定义 $h_n=\frac{b-x_0}{n}$ 若 $x\in(a,b]$ 则定义 $h_n=-\frac{x_0-a}{n}$
+
+则易证 $\lim_{n\to\infty}h_n=0\land h_n\ne0$ 且 $x_0+h_n\in[a,b]$ 故定义 $d_n=\frac{f(x_0+h_n)-f(x_0)}{h_n}$
+
+则根据[[~/OneDrive/数学分析/Chap11Note.org::MK30][推论]]可得必有收敛子列 $\lim_{i\to\infty}d_{n_i}=A$
+
+易证 $h_{n_i}\ne0\land \lim_{i\to\infty}h_{n_i}=0$ 故满足列导数定义
+
+*** 推论2<<MK336>>
+
+对于任意 $[a,b]$ 上的函数 $f(x)$ 中的任意 $x_0\in[a,b]$
+
+若不存在[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]，则必有两个[[MK326][列导数]]不相等
+
+**** 证明
+
+假设所有列导数的极限都相等，定义函数 $g(h)=\frac{f(x+h)-f(x)}{h}$
+
+则根据[[~/OneDrive/数学分析/Chap11Note.org::MK31][海涅定理]]可得若 $\lim_{h\to0}g(h)=A$ 故存在[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]
+
+与条件矛盾，假设不成立
+
+** 引理<<MK337>>
+
+若 $f(x)$ 是闭[[MK13][区间]] $[a,b]$ 上的严格增函数，即 $x_1>x_2\rightarrow f(x_1)>f(x_2)$
+
+则对于任意 $E\subset[a,b]$ ，存在 $p,q\subset\mathbb{R}^+\cap\{0\}$ ，若对于任意 $x\in E$ 均满足：
+
+（1） 存在一个[[MK326][列导数]] $\mathcal{D}_h(f(x))\leq p$ 则有 $\varphi(f(E))\leq p\cdot\varphi(E)$
+
+（2） 存在一个[[MK326][列导数]] $\mathcal{D}_{h}(f(x))\geq q$ 则有 $\varphi(f(E))\geq q\cdot\varphi(E)$ 
+
+*** 证明
+
+**** 证明（1）<<MK333>>
+
+***** 开集包含<<MK329>>
+
+根据[[MK65][Caratheodory定理]]可得 $\mathbb{R}$ 上的可测集构成[[MK50][ $\sigma$ 代数]]
+
+根据[[MK297][等测包]]以及[[MK67][可数交封闭]]可得存在一个可测集 $E'$ 满足 $E\subset E'\land \varphi(E)=\varphi(E')$
+
+根据[[MK92][引理1]]可得对于任意 $\delta>0$ 存在开集 $G$ 满足 $E'\subset G\land\varphi(G-E')<\delta$
+
+又由于 $E\subset[a,b]$ 根据[[MK60][单调性]]可得 $\varphi(E)\leq b-a<\infty$ 故根据[[MK84][计算]]可得 $\varphi(G)<\varphi(E)+\delta$
+
+***** 构建覆盖<<MK328>>
+
+对于任意 $\epsilon^*>0$ 定义 $p^*=p+\epsilon^*$ 则有 $p^*>p$
+
+对于任意 $x_0\in E$ 存在一个[[MK326][列导数]] $\mathcal{D}_h(f(x_0))\leq p$ 则存在[[MK326][满足条件]]的数列 $\{h_n\}\subset\mathbb{R}$
+
+又由于 $x_0\in E\subset G$ 则存在 $\delta_{x_0}$ 使得 $(x_0-\delta_{x_0},x_0+\delta_{x_0})\subset G$
+
+由于 $\{h_n\}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK43][无限集]]且 $\forall n\in\mathbb{N}\rightarrow h_n\ne0$ ，则至少存在一个同号子列 $\{h'_n\}$ ，易证同样[[MK326][满足条件]]
+
+则当 $\{h'_n\}\subset\mathbb{R}^+$ 时有：
+
+（1） $\forall\epsilon_1>0,\exists J_{x_0},\forall n>J_{x_0}\rightarrow \left|\frac{f(x_0+h'_n)-f(x_0)}{h'_n}-A\right|<\epsilon_1$ 由于递增 $\frac{f(x_0+h_n)-f(x_0)}{h'_n}<A+\epsilon$
+
+（2） $\forall\epsilon_2>0,\exists K_{x_0},\forall n>K_{x_0}\rightarrow h'_n<\epsilon_2$
+
+取 $\epsilon_1=\frac{\epsilon^*}{2},\epsilon_2=\frac{\delta_{x_0}}{2}$ 则得对应的 $J_{x_0},K_{x_0}$ 进一步取 $N_{x_0}=\max\left(J_{x_0},K_{x_0}\right)$
+
+则对于任意 $n>N_{x_0}$ 定义 $I_n(x_0)=[x_0,x_0+h'_n],\Delta_n(x_0)=[f(x_0),f(x_0+h'_n)]$
+
+由于严格递增，故根据[[MK79][正规性]] $\Delta_n(x_0)=f(x_0+h'_n)-f(x_0)>0$  
+
+由于 $n>J_{x_0}$ ，且根据条件可得 $A\leq p$ 且 $p>0$ 则有 $\frac{f(x_0+h_n)-f(x_0)}{h'_n}<p+\epsilon<p^*$
+
+根据假设 $h'_n>0$ 则有 $f(x_0+h_n)-f(x_0)<p^*h'_n$
+
+又根据[[MK79][正规性]]可得 $\varphi(I_n(x_0))=h'_n\land\varphi(\Delta_n(x_0))=f(x_0+h_n)-f(x_0)$ 故有 $\varphi(\Delta_n(x_0))<p^*\varphi(I_n(x_0))$
+
+由于 $n>K_{x_0}$ 则有 $h'_n<\frac{\delta_{x_0}}{2}$ 进而 $I_n(x_0)=[x_0,x_0+h'_n]\subset(x_0-\delta_{x_0},x_0+\delta_{x_0})\subset G$
+
+同理当 $\{h'_n\}\subset\mathbb{R}^-$ 时对于任意 $n>N_{x_0}$ 存在 $I_n(x_0)=[x_0+h'_n,x_0],\Delta_n(x_0)=[f(x_0+h'_n),f(x_0)]$
+
+满足 $\varphi(\Delta_n(x_0))<p^*\varphi(I_n(x_0))$ 且 $I_n(x_0)\subset G$ 以及 $\Delta_n(x_0)>0$  
+
+由于 $\lim_{n\to\infty}h_n=0$ 则易证 $\lim_{n\to\infty}\varphi(\Delta_n(x_0))=\lim_{n\to\infty}\left|f(x_0+h_n)-f(x_0)\right|=0$
+
+即 $\forall\epsilon>0,\exists N,\forall n>N\rightarrow \varphi(\Delta_n(x_0))<\epsilon$ 又由于 $f(x_0)\in\Delta_n(x_0)$
+
+故 $V=\left\{\Delta_n(x_0)|x_0\in E\land n>N_{x_0}\right\}$ 是 $f(E)$ 的一个[[MK317][维塔利覆盖]]
+
+***** 证明结论
+
+根据[[MK327][维塔利覆盖定理]]可得存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]集 $\{\Delta_i(x_i)\}\subset V$ 满足 $\varphi\left(f(E)-\bigcup_{i}^\infty \Delta_i(x_i)\right)=0$
+
+且 $\forall\{i,j\}\subset\mathbb{N}\rightarrow \Delta_i(x_i)\cap \Delta_j(x_j)=\varnothing$
+
+显然有 $f(E)=\left(f(E)\cap\left(\bigcup_{i}^\infty \Delta_i(x_i)\right)\right)\cup\left(f(E)-\bigcup_{i}^\infty \Delta_i(x_i)\right)$
+
+根据[[MK57][次可加性]]有 $\varphi(f(E))\leq\varphi\left(f(E)\cap\left(\bigcup_{i}^\infty \Delta_i(x_i)\right)\right)+\varphi\left(f(E)-\bigcup_{i}^\infty \Delta_i(x_i)\right)=\varphi\left(f(E)\cap\left(\bigcup_{i}^\infty \Delta_i(x_i)\right)\right)$
+
+显然有 $\left(f(E)\cap\left(\bigcup_{i}^\infty \Delta_i(x_i)\right)\right)\subset\bigcup_{i}^\infty \Delta_i(x_i)$ 则根据[[MK60][单调性]]有 $\varphi(f(E))\leq\varphi\left(\bigcup_{i}^\infty \Delta_i(x_i)\right)$
+
+由于[[MK82][区间可测]]，[[MK84][计算]]以及[[MK328][之前证明]]
+
+有 $\varphi\left(\bigcup_{i}^\infty \Delta_i(x_i)\right)=\sum_{i=1}^\infty\varphi(\Delta_i(x_i))<p^*\sum_{i=1}^\infty\varphi(I_i(x_i))=p^*\varphi\left(\bigcup_{i}^\infty I_i(x_i)\right)$
+
+又由于 $I_i(x_i)\subset G$ 则根据[[MK60][单调性]]有 $\varphi\left(\bigcup_{i}^\infty I_i(x_i)\right)\leq\varphi(G)$ 即 $\varphi(f(E))<p^*\varphi(G)$
+
+又根据[[MK329][之前证明]]可得 $p^*=p+\epsilon^*$ 以及 $\varphi(G)=\varphi(E)+\delta$ 且 $\epsilon^*,\delta$ 是任意非零实数
+
+则假设 $\varphi(f(E))>p\varphi(E)$ 则取 $\epsilon^*=\frac{1}{2}\left(\frac{\varphi(f(E))}{\varphi(E)}-p\right),\delta=\frac{1}{2}\frac{\varphi(f(E))-p\varphi(E)}{p+\frac{\varphi(f(E))}{\varphi(E)}}$ 则有
+
+\begin{aligned}
+&\varphi(f(E))<p^*\varphi(G)\\
+\Rightarrow&\varphi(f(E))<(p+\epsilon^*)(\varphi(E)+\delta)\\
+\Rightarrow&\varphi(f(E))<\frac{1}{2}\left(p+\frac{\varphi(f(E))}{\varphi(E)}\right)(\varphi(E)+\delta)\\
+\Rightarrow&\varphi(f(E))<\frac{1}{2}\left(p\varphi(E)+\varphi(f(E))+\delta p+\delta\frac{\varphi(f(E))}{\varphi(E)}\right)\\
+\Rightarrow&\varphi(f(E))<p\varphi(E)+\delta\left(p+\frac{\varphi(f(E))}{\varphi(E)}\right)\\
+\Rightarrow&\varphi(f(E))<p\varphi(E)+\frac{1}{2}(\varphi(f(E))-p\varphi(E))\\
+\Rightarrow&\varphi(f(E))<p\varphi(E)
+\end{aligned}
+
+与假设矛盾，故假设不成立，即根据[[MK5][三岐性]]有 $\varphi(f(E))\leq p\varphi(E)$ 
+
+**** 证明（2）
+
+假设存在 $x_1\ne x_2$ 满足 $f(x_1)=f(x_2)$ 则根据[[MK5][三岐性]]必有 $x_1>x_2\lor x_1<x_2$
+
+由于严格递增，则无论那种均有 $f(x_1)\ne f(x_2)$ 与假设矛盾
+
+故假设不成立，即不存在 $x_1\ne x_2$ 使得 $f(x_1)=f(x_2)$ ，故 $f(x)$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK195][单射函数]]
+
+显然 $f(x)$ 亦是[[~/OneDrive/离散数学/Disc_Math.org::MK198][满射函数]]，则 $f(x)$ 亦是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]]，故存在[[~/OneDrive/离散数学/Disc_Math.org::MK203][逆函数]] $f^{-1}(y)$ 且亦为严格递增函数
+
+当 $q=0$ 时根据[[MK54][非负性]]有 $\varphi(f(E))\geq 0$ 则当 $q>0$ 时作以下证明
+
+***** 取等测度的连续集<<MK332>>
+
+根据[[MK330][推论]]可得若 $f(x)$ 在 $[a,b]$ 上严格递增，则其不连续点是[[MK126][零测集]]
+
+定义其不连续点集为 $Z$ 进一步定义 $Z'=Z\cap E$ ，由于 $Z'\subset Z$ 根据[[MK128][子集零测]]可得 $\varphi(Z')=0$
+
+由于 $Z'\subset E$ 根据[[MK331][零测不变]]可得 $\varphi(E-Z')=\varphi(E)$ 故定义 $E^*=E-Z'$
+
+则对于任意 $x\in E^*$ 可得 $f(x)$ [[MK106][连续]]， $E^*\subset E$ 以及 $\varphi(E^*)=\varphi(E)$
+
+***** 不连续点的相零测
+
+由于 $f(x)$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]] $E=E^*\cap Z'$ 故根据[[~/OneDrive/离散数学/Disc_Math.org::MK356][相分离]]可得 $f(E)=f(E^*)\cup f(Z')$
+
+由于 $f(x)$ 双射，故 $f(Z')\sim Z'$ 根据[[MK335][定理2]]可得 $Z'$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]，则 $f(Z')$ 以为至多可数集
+
+根据[[MK318][单点零测]]以及[[MK278][可数并零测]]可得 $f(Z')$ 亦为零测集，根据[[MK331][零测不变]]可得 $\varphi(f(E)-f(Z))=\varphi(f(E))$
+
+又由于 $f(E^*)=f(E)-f(Z')$ 故有 $\varphi(f(E))=\varphi(f(E^*))$
+
+***** 证明结论
+
+对于任意 $y_0\in f(E^*)$ 均存在 $x_0\in E^*\subset E$ 使得 $f(x_0)=y_0$ 进一步有 $f^{-1}(y_0)=x_0$
+
+由于存在列导数 $\mathcal{D}_{h}(f(x_0))\geq q$ ，则存在[[MK326][满足条件]]的数列 $\{h_n\}$
+
+则定义 $\{k_n\}=\left\{f(x_0+h_n)-f(x_0)\big|n\in\mathbb{N}\right\}$ 则有 $y_0+k_n=f(x_0+h_n)$ 即有 $f^{-1}(y_0+k_n)=x_0+h_n$
+
+由于 $\forall n\in\mathbb{N}\rightarrow h_n>0$ 且严格递增，故有 $\forall n\in\mathbb{N}\rightarrow k_n>0$
+
+由于 $x_0\in E^*$ 故根据[[MK332][之前证明]]可得 $f(x)$ 在 $x_0$ 点[[MK106][连续]]，即 $\lim_{x\to x_0}=f(x_0)$
+
+又由于 $\lim_{n\to\infty}h_n=0$ 故根据极限运算 $\lim_{n\to\infty}x_0+h_n=x_0$ 继而易证 $\lim_{n\to\infty}f(x_0+h_n)=f(x_0)$
+
+又根据极限运算 $\lim_{n\to\infty}k_n=\lim_{n\to\infty}f(x_0+h_n)-f(x_0)=0$
+
+则有 $\lim_{n\to\infty}\frac{f^{-1}(y_0+k_n)-f^{-1}(y_0)}{k_n}=\lim_{n\to\infty}\frac{x_0+h_n-x_0}{f(x_0+h_n)-f(x_0)}=\lim_{n\to\infty}\frac{1}{\frac{f(x_0+h_n)-f(x_0)}{h_n}}$
+
+根据极限四则运算有 $\lim_{n\to\infty}\frac{f^{-1}(y_0+k_n)-f^{-1}(y_0)}{k_n}=\frac{1}{\mathcal{D}_{h}(f(x_0))}$ 由于 $\mathcal{D}_h(f(x_0))\geq q>0$
+
+故有 $\lim_{n\to\infty}\frac{f^{-1}(y_0+k_n)-f^{-1}(y_0)}{k_n}=\frac{1}{\mathcal{D}_{h}(f(x_0))}\leq\frac{1}{q}$ 即存列导数 $\mathcal{D}_k(f^{-1}(y))\leq\frac{1}{q}$
+
+综上所述，对于函数 $f^{-1}(y)$ 有集合 $f(E^*)$ 对于任意 $y_0\in f(E^*)$ 存在一个列导数 $\mathcal{D}_k(f^{-1}(y))\leq\frac{1}{q}$
+
+则根据[[MK333][证明（1）]]可得 $\varphi(f^{-1}(f(E^*)))\leq \frac{1}{q}\varphi(f(E^*))$ 即 $q\varphi(E^*)\leq\varphi(f(E^*))$
+
+则根据之前证明可得 $q\varphi(E)\leq\varphi(f(E))$
+
+** 勒贝格定理
+
+若 $f(x)$ 是闭[[MK13][区间]] $[a,b]$ 上的单调函数，则有
+
+（1） $f(x)$ 在 $[a,b]$ 上几乎处处存在[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]（可以是无穷）
+
+（2） $f(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]
+
+（3） 若 $f(x)$ 是增函数，则有 $$\int_{[a,b]}f'(x)dx\leq f(b)-f(a)$$
+
+*** 证明
+
+**** 证明（1）
+
+设 $g(x)=f(x)+x$ 若 $g(x)$ 可导，则有 $g'(x)=\lim_{x\to x_0}\frac{g(x)-f(x)}{x-x_0}=A\in\mathbb{R}_e$
+
+进一步有 $g'(x)=\lim_{x\to x_0}\frac{f((x)-f(x_0))-(x-x_0)}{x-x_0}$
+
+根据极限运算易得 $g'(x)-1=\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}=f(x)$
+
+即若 $g(x)$ 存在导数，则 $f(x)$ 存在导数，则定义 $g(x)$ 上不存在导数点集为 $E$
+
+则对于 $x_0\in E$ 根据[[MK336][推论2]]可得至少存在两个不相等的列导数，假设 $\mathcal{D}_{h_1}(x_0)>\mathcal{D}_{h_2}(x_0)$
+
+根据[[MK43][有理数稠密性]]可得存在有理数 $p,q$ 满足 $\mathcal{D}_{h_1}(x_0)>p>q>\mathcal{D}_{h_2}(x_0)$
+
+定义 $E_{p,q}=\left\{x|x\in E\land \mathcal{D}_{h_1}(x_0)>p>q>\mathcal{D}_{h_2}(x_0)\right\}$
+
+则根据上述说法显然 $E\subset\bigcup_{<p,q>\in\mathbb{Q}\times\mathbb{Q}}E_{p,q}$
+
+由于严格递增，易证列导数必为正，则有 $r>0$ 则对于 $E_r$ 根据[[MK337][引理]]有
+
+（1） $\varphi(f(E_{p,q}))\leq q\varphi(E_{p,q})$
+
+（2） $\varphi(f(E_{p,q}))\geq p\varphi(E_{p,q})$
+
+即有 $p\varphi(E_{p,q})\leq\varphi(f(E_{p,q}))\leq q\varphi(E_{p,q})$ 又由于 $q<p$ 故必有 $\varphi(E_{p,q})=0$ 
+
+又根据[[~/OneDrive/离散数学/Disc_Math.org::MK358][推论2]]可得 $\mathbb{Q}\times\mathbb{Q}$ 亦为可数集，故根据[[MK278][可数并零测]]可得 $\varphi\left(\bigcup_{<p,q>\in\mathbb{Q}\times\mathbb{Q}}E_{p,q}\right)=0$
+
+又根据[[MK54][非负性]]和[[MK60][单调性]]有 $0\leq\varphi(E)\leq\varphi\left(\bigcup_{<p,q>\in\mathbb{Q}\times\mathbb{Q}}E_{p,q}\right)$ 即得 $\varphi(E)=0$
+
+
+

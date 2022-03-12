@@ -2,7 +2,7 @@
 #+OPTIONS: ^:nil
 #+TITLE: 定积分
 
-currnet mark: 20
+currnet mark: 21
 
 * 定积分定义
 
@@ -255,17 +255,21 @@ $l=I$
 
 则有 $\sum_{i=1}^n\omega_i\Delta x_i<\sum_{i=1}^n\epsilon_2\Delta x_i=\epsilon_2\sum_{i=1}^n\Delta x_i=\frac{\epsilon_1}{b-a}(b-a)=\epsilon_1$
 
-*** 推论2
+*** 推论2<<MK21>>
 
-若 $f(x)$ 在闭区间 $[a,b]$ 单调，则 $f(x)$ 必可积
+若 $f(x)$ 在闭区间 $[a,b]$ 单调且有界，则 $f(x)$ 必在 $[a,b]$ 上可积
 
 **** 证明
 
-因为单调有界，则 $f(a)\leq f(x)\leq f(b),x\in[a,b]$ 故有 $0\leq f(x_1)-f(x_2)\leq f(b)-f(a),x_2>x_1,\{x_2,x_2\}\subset[a,b]$
+因为单调有界，则 $f(a)\leq f(x)\leq f(b),x\in[a,b]$
+
+故有 $0\leq f(x_2)-f(x_1)\leq f(b)-f(a),x_2>x_1,\{x_2,x_2\}\subset[a,b]$
 
 且 $\sum_{i=1}^n\omega_i=\sum_{i=1}^n(f(x_i)-f(x_{i-1}))=f(x_n)-f(x_0)=f(b)-f(a)$
 
-$\forall \epsilon>0$ 取 $\lambda=\frac{\epsilon}{2[f(b)-f(a)]}$ 
+由于有界，则可得 $\{f(b),f(a)\}\subset\mathbb{R}$ 则根据[[~/OneDrive/实变函数/SBHS.org::MK4][封闭性]]可得 $f(b)-f(a)\in\mathbb{R}$
+
+即 $f(b)-f(a)<\infty$ ，则 $\forall \epsilon>0$ 取 $\lambda=\frac{\epsilon}{2[f(b)-f(a)]}$ 
 
 则有 $\sum_{i=1}^n\omega_i\Delta x_i\leq\sum_{i=1}^n\omega_i\frac{\epsilon}{2[f(b)-f(a)]}=\frac{\epsilon}{f(b)-f(a)}\sum_{i=1}^n\omega_i=\frac{\epsilon}{2[f(b)-f(a)]}[f(b)-f(a)]=\frac{\epsilon}{2}<\epsilon$
 

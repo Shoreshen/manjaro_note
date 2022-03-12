@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 347
+currnet mark: 358
 
 图论: P40
 
@@ -38,33 +38,85 @@ currnet mark: 347
 
 若有限集合 $A$ 中含有 $n$ 个元素，则 $A$ 的基数为 $n$ ，记作 $|A|=n$
 
-**** 无限集
+**** 无限集<<MK348>>
 
 是比较的概念，定义为以下三种情况：
 
 （1） $A\sim B$ 即两个集合[[MK26][对等]]，则称 $A,B$ 有相同的基数，记作 $|A|=|B|$
 
-（2） $A\sim C\land C\subset B\land C\not\sim A$ 即 $A$ 的基数小于 $B$ 的基数，记作 $|A|>|B|$
+（2） $A\sim C\land C\subset B\land A\not\sim B$ 即 $A$ 的基数小于 $B$ 的基数，记作 $|A|>|B|$
 
-（3） $C\sim B\land C\subset A\land C\not\sim B$ 即 $B$ 的基数小于 $A$ 的基数，记作 $|A|<|B|$
+（3） $C\sim B\land C\subset A\land A\not\sim B$ 即 $B$ 的基数小于 $A$ 的基数，记作 $|A|<|B|$
 
-其中 $|A|\geq|B|,|A|\leq|B|$ 亦可表示大于或等于，小于或等于
+（4） $|A|\leq|B|$ 表示 $\left(|A|<|B|\lor |A|=|B|\right)\land|A|\not>|B|$
+
+（5） $|A|\geq|B|$ 表示 $\left(|A|>|B|\lor |A|=|B|\right)\land|A|\not<|B|$
+
+***** 推论1<<MK353>>
+
+（1） 若 $|A|=|B|$ 则有 $|A|\not < |B|\land |A|\not>|B|$
+
+（2） 若 $|A|>|B|\lor|A|<|B|$ 则有 $|A|\ne|B|$
+
+****** 证明
+
+根据[[MK348][定义]]（2）和（3）显然
+
+***** 推论2<<MK354>>
+
+关系 $|A|=|B|,|A|>|B|,|A|<|B|$ 至多只有一种成立
+
+****** 证明
+
+当 $|A|=|B|$ 时根据[[MK353][推论1]]可得其他均不成立
+
+当 $|A|<|B|$ 时根据[[MK353][推论1]]可得 $|A|\ne|B|$
+
+假设 $|A|>|B|$ 则根据[[MK348][定义]]（4）和（5）可得满足 $|A|\leq|B|\land|A|\geq|B|$
+
+则根据[[MK4][伯恩斯坦定理]]可得 $|A|=|B|$ 显然与[[MK353][推论1]]，故假设不成立
+
+同理可证 $|A|>|B|$ 时其他均不成立
 
 **** 伯恩斯坦定理<<MK4>>
 
-若集合 $A,B$ 满足外 $\overline{\overline{A}}\geq\overline{\overline{B}}\land\overline{\overline{A}}\leq\overline{\overline{B}}$ 则有 $\overline{\overline{A}}=\overline{\overline{B}}$
+若集合 $A,B$ 满足 $|A|\geq|B|\land|A|\leq|B|$ 则有 $|A|=|B|$
 
 ***** 证明
 
-根据定义，存在 $C\subset A$ 使得 $B\sim C$ 即有双射 $\sigma_1:B\to C$
+根据定义，存在 $A_0\subset A$ 使得 $B\sim A_0$ 即有[[MK200][双射]] $\psi:B\to A_0$
 
-根据定义，存在 $D\subset B$ 使得 $A\sim D$ 即有双射 $\sigma_2:A\to D$
+则定义 $A_1=A-A_0$ 又根据定义存在双射 $\phi:A_1\to B_1$
 
-则对于任意 $b\in B$ 均有 $\sigma_1(b)\in C\subset A$ 且 $\sigma_2(\sigma_1(b))\in D$
+同理亦有 $\psi(B_1)=A_2$ 由于 $\psi:B\to A_0$ 固有 $A_2\subset A_0$ ，则 $A_1\cap A_2=\varnothing$
 
-根据[[MK201][传递性]]可得复合函数亦为双射，即 $B\sim D$
+同理亦有 $\phi(B_2)=A_3,\psi(A_3)=B_3...\a$
 
-根据[[MK28][定理]]得对等是等价关系，根据传递性，对称性有 $A\sim D\land D\sim B$ 可得 $A\sim B$ 即 $\overline{\overline{A}}=\overline{\overline{B}}$
+对于任意 $n\in\mathbb{N}$ 若有 $A_1,...,A_{n+1}$ 互不相交， $B_1,...,B_n$ 互不相交
+
+若 $\phi(A_{n+1})=B_{n+1}$ 于任意一个 $B_i,1\leq i\leq n$ 相交，定义其中一个交点为 $\omega$
+
+则存在 $\delta_1\in A_{n+1},\delta_2\in A_i$ 满足 $\phi(\delta_1)=\phi(\delta_2)=\omega$ 与 $\phi$ 是双射矛盾。
+
+同理对于 $\psi(B_{n+1})=A_{n+2}$ 亦可证 $A_{n+2}$ 不与任何 $A_i,1\leq i\leq n+1$ 相交
+
+则通过数学归纳法可得 $\forall \{i,j\}\subset\mathbb{N}\rightarrow A_i\cap A_j=\varnothing\land B_i\cap B_j=\varnothing$
+
+由于 $\forall i\in\mathbb{N}\rightarrow\psi(B_i)=A_{i+1}$ 且 $\psi$ 是双射函数，根据[[MK352][定理3]]有 $B_i\sim A_{i+1}$ ，即根据[[MK349][定理2]]有 $\bigcup_{i=1}^\infty B_i\sim \bigcup_{i=2}^\infty A_i$
+
+易证 $\psi\left(\bigcup_{i=1}^\infty B_i\right)=\bigcup_{i=2}^\infty A_i$ ，又由于 $\psi(B)=A_0$ 故根据[[MK352][定理3]] $\left(B-\bigcup_{i=1}^\infty B_i\right)\sim\left(A_0-\bigcup_{i=2}^\infty A_i\right)$
+
+根据 $A_1$ 的定义有 $A=A_0\cup A_1$ 则易证 $A_0-\bigcup_{i=2}^\infty A_i=A-\bigcup_{i=1}^\infty A_i$
+
+故有 $\left(B-\bigcup_{i=1}^\infty B_i\right)\sim\left(A-\bigcup_{i=1}^\infty A_i\right)$
+
+又由于 $\phi$ 为双射，根据[[MK352][定理3]]可得 $A_i\sim B_i$ ，故根据[[MK349][定理2]]有 $\bigcup_{i=1}^\infty B_i\sim \bigcup_{i=1}^\infty A_i$
+
+最终根据[[MK349][定理2]]有 $\left\{\left(B-\bigcup_{i=1}^\infty B_i\right)\cup\left(\bigcup_{i=1}^\infty B_i\right)\right\}\sim\left\{\left(A_0-\bigcup_{i=2}^\infty A_i\right)\cup\left(\bigcup_{i=1}^\infty A_i\right)\right\}$
+
+显然 $A=\left(A_0-\bigcup_{i=2}^\infty A_i\right)\cup\left(\bigcup_{i=1}^\infty A_i\right)\land B=\left(B-\bigcup_{i=1}^\infty B_i\right)\cup\left(\bigcup_{i=1}^\infty B_i\right)$
+
+最终证得 $A\sim B$ 即 $|A|=|B|$
 
 *** ZFC公理化集合论
 
@@ -398,6 +450,20 @@ currnet mark: 347
 
 故一共 $n$ 个元素，组合得 $a$ 有 $2^n$ 中可能性。
 
+**** 定理7<<MK355>>
+
+若 $A\subset B$ 则有 $|A|\leq|B|$
+
+***** 证明
+
+由于 $A\subset B$ 则定义映射 $\phi(a)=a,a\in A$ 显然是[[MK200][双射函数]]
+
+此时若 $A\sim B$ 则有 $|A|=|B|$ ，若 $A\not\sim B$ 则有 $|A|<|B|$
+
+又根据[[MK354][推论2]]可得 $|A|=|B|,|A|>|B|,|A|<|B|$ 仅有一种成立
+
+故可得 $|A|\not>|B|$
+
 *** 幂集
 
 **** 定义<<MK25>>
@@ -452,7 +518,7 @@ currnet mark: 347
   
 规定空集与空集对等
 
-**** 定理<<MK28>>
+**** 定理1<<MK28>>
 
 集合对等是[[MK176][等价关系]]
 
@@ -471,6 +537,46 @@ currnet mark: 347
 根据[[MK201][传递性]]可得存在双射函数 $\sigma:A\to C$
 
 故满足自反性，对称性以及传递性，即为等价关系
+
+**** 定理2<<MK349>>
+
+若有 $\forall i\in\mathbb{N}\rightarrow A_i\sim B_i$ 且 $\{A_n\}$ 中任意两个集合互不相交， $\{B_n\}$ 中任意两个集合互不相交
+
+则有 $\bigcup_{i=1}^\infty A_i\sim \bigcup_{i=1}^\infty B_i$
+
+***** 证明
+
+根据[[MK27][定义]]可得有[[MK200][双射]] $\phi_i:A_i\to B_i$ 则定义[[MK194][映射]] $\phi=\bigcup_{i=1}^\infty\phi_i$
+
+根据[[MK350][并双射]]可得 $\phi$ 亦是[[MK200][双射]]，即 $\bigcup_{i=1}^\infty A_i\sim \bigcup_{i=1}^\infty B_i$
+
+**** 定理3<<MK352>>
+
+若 $A\sim B$ 即存在 $\phi:A\to B$ 是[[MK200][双射函数]]，则对于 $C\subset A$
+
+（1） $C\sim \phi(C)$ 且双射函数 $\phi'=\left\{<x,y>\big|<x,y>\in\phi\land x\in C\right\}$
+
+（2） $A-C\sim B-\phi(C)$ 且双射函数 $\phi'=\left\{<x,y>\big|<x,y>\in\phi\land x\in A-C\right\}$
+
+***** 证明
+
+对于（1）根据[[MK351][子双射]]可得 $\phi'$ 以为双射函数，即可得 $C\sim \phi(C)$
+
+对于任意 $x\not\in C$ 可得 $\phi(x)$ 假设 $\phi(x)\in\phi(C)$ ，则存在 $x'\in C$ 使得 $\phi(x')=\phi(x)$
+
+即 $\phi$ 不是[[MK195][单射]]，与条件矛盾，故假设不成立，即 $x\not\in C\rightarrow \phi(x)\not\in\phi(C)$
+
+同理易证 $\phi(x)\not\in\phi(C)\rightarrow x\not\in C$
+
+定义 $D=A-C$ 则对于任意 $x\in D$ 显然 $\phi(x)\in B$ 又由于 $x\not\in C$ 且双射，故有 $\phi(x)\not\in\phi(C)$
+
+即有 $\phi(D)\subset B-\phi(C)$ 同理对于任意 $y\in B-\phi(C)$ 可得 $\phi^{-1}(y)\in A$
+
+又由于 $y\not\in\phi(C)$ 则有 $\phi^{-1}(y)\not\in C$ 即 $\phi^{-1}(B-\phi(C))=A-C$
+
+则有 $\phi(D)=\phi(A-C)=\phi\left(\phi^{-1}(B-\phi(C))\right)=B-\phi(C)$
+
+则运用（1）有 $A-C=D\sim\phi(D)=B-\phi(C)$ 证毕
 
 ** 集合的计算<<MK329>>
 
@@ -1016,7 +1122,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 综上所述 $\bigcup_{d\in D} C_d$ 是至多可数集 
 
-****** 推论<<MK325>>
+****** 推论1<<MK325>>
 
 有理数集合是可数集
 
@@ -1029,6 +1135,18 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 因为所有有理数均定义为 $\frac{p}{q},\{p,q\}\subset\mathbb{N}$ 故正有理数集合是至多可数集，同理可正负有理数集合为至多可数集
 
 再次使用定理可得有理数集合为至多可数集。显然有理数结合不为[[MK42][有限集]]，则正有理数集合为[[MK44][可数集]]
+
+****** 推论2<<MK358>>
+
+两个至多可数集的[[MK357][直积]]仍是可数集
+
+******* 证明
+
+定义 $A,B$ 是至多可数集，对于任意 $a\in A$ 定义 $C_a=\left\{<a,b>\big|b\in B\right\}$
+
+进而定义 $Z=\bigcup_{a\in A}C_a$ 易证 $Z=A\times B$
+
+根据定理可得 $Z$ 是至多可数集，即 $A\times B$ 亦为至多可数集
 
 ***** 定理2
 
@@ -2687,7 +2805,7 @@ $n$ 元有序组定义为：
 
 同理对集合求广义并由 $\{u,a_n\}=\{v,b_n\}$ 又由于 $u=v$ 故有 $a_n=b_n$
 
-*** 笛卡尔积/直积
+*** 笛卡尔积/直积<<MK357>>
 
 **** 定义<<MK153>>
 
@@ -3717,7 +3835,7 @@ $B$ 的最大元： $b\in B\land\forall x(x\in B\rightarrow x\leq b)$
 
 $B$ 的极小元： $b\in B\land\lnot\exists x(x\in B\land x\ne b\land x\leq b)$ 
 
-$B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land x\ne b\land x\leq b)$ 
+$B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land x\ne b\land b\leq x)$ 
 
 ***** 定理
 
@@ -3779,9 +3897,13 @@ $B$ 的下确界： $b$ 下界的最大元
 
 ***** 定理2<<MK339>>
 
-若 $\forall b\in B\rightarrow b\leq c$ 则 $B$ 的上确界 $\sup\{B\}\leq c$
+（1） 若 $\forall b\in B\rightarrow b\leq c$ 则 $B$ 的上确界 $\sup\{B\}\leq c$
+
+（2） 若 $\forall b\in B\rightarrow b\geq c$ 则 $B$ 的上确界 $\inf\{B\}\geq c$
 
 ****** 证明
+
+仅证（1），（2）同理可证
 
 假设 $\sup\{B\}>c$ 则根据定义 $c$ 是 $B$ 的上界
 
@@ -3983,7 +4105,7 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$
 
 **** 良序关系
 
-非空集合 $A$ 上有[[MK193][全序关系]] $R$ 对于任意 $A$ 的非空子集，均有[[MK186][最小元]]，则称该关系为良序关系
+非空集合 $A$ 上有[[MK193][全序关系]] $R$ 对于任意 $A$ 的非空子集，均有[[MK186][极小元]]，则称该关系为良序关系
 
 ** 函数（映射）
 
@@ -4002,6 +4124,8 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$
 当 $X=X_1\times...\times X_n$ 时 $f$ 称为 $n$ 元函数
 
 记作 $f:X\rightarrow Y$ 特别的当 $<x,y>\in f$ 时可表示为 $y=f(x)$ 此时 $x$ 成为自变量 $y$ 成为因变量
+
+基于上述定义，进一步对于任意 $Z\subset X$ 定义 $f(Z)=\left\{f(x)\big|x\in Z\right\}$
 
 ***** 推论1
 
@@ -4148,11 +4272,63 @@ f(A)-f(B)&\subset f(A-B)\\
 
 ***** 传递性<<MK201>>
 
-若 $N,A,B$ 为集合，存在双射函数 $\Phi:N\rightarrow B$ 和 $\Psi:B\rightarrow A$ 则[[MK202][复合函数]] $P:A\rightarrow B$ 亦为双射函数
+若 $N,A,B$ 为集合，存在双射函数 $\Phi:A\rightarrow N$ 和 $\Psi:N\rightarrow B$ 则[[MK202][复合函数]] $P=\Phi\cdot\Psi:A\rightarrow B$ 亦为双射函数
 
 ****** 证明
 
 根据[[MK196][单射传递性]]和[[MK199][满射传递性]]可得双射亦传递
+
+***** 并双射<<MK350>>
+
+定义 $\phi_i:A_i\to B_i$ 是双射函数，则 $\phi=\bigcup_{i=1}^\infty\phi_i$ 以为双射函数
+
+****** 证明
+
+对于任意 $\{x,y\}\subset\bigcup_{i=1}^\infty A_i$ 根据[[MK34][广义并定义]]必有 $x\in A_i,y\in A_j$
+
+则根据 $\{A_n\}$ 互不相交有 $x\ne y$ ，则有 $\phi(x)\in B_i,\phi(y)\in B_j$
+
+若 $i\ne j$ 则根据 $\{B_n\}$ 互不相 有 $\phi(x)\ne\phi(y)$
+
+若 $i=j\land x\ne y$ 则根据 $\phi_i$ 是双射可得 $\phi_i(x)\ne\phi_i(y)$ 故 $\phi$ 是[[MK195][单射]]
+
+又由于对于任意 $y\in\bigcup_{i=1}^\infty B_i$ 有 $y\in B_i$ 则由于 $\phi_i$ 是双射，故存在 $x\in A_i$ 满足 $\phi_i(x)=y$
+
+即 $\phi$ 是[[MK198][满射]]，则 $\phi$ 是[[MK200][双射]]
+
+***** 子双射<<MK351>>
+
+定义 $\phi:A\to B$ 是双射函数，对于任意 $C\subset A$ 定义 $\phi'=\left\{<x,y>\big|<x,y>\in\phi\land x\in C\right\}$
+
+则有 $\phi'$ 仍为双射函数
+
+****** 证明
+
+假设 $\phi'$ 不是[[MK198][满射]]，则存在 $y\in\phi(C)$ 使得 $\forall x\in C\rightarrow \phi'(x)\ne y$
+
+又由于 $\phi$ 是双射，则存在 $x\in A$ 使得 $\phi(x)=y$ 若 $x\not\in C$ 则与 $\phi'$ 定义矛盾
+
+故假设不成里 $\phi'$ 是满射
+
+假设 $\phi'$ 不是[[MK195][单射]]，则存在 $\{x_1,x_2\}\subset C$ 使得 $\phi'(x_1)=\phi'(x_2)=y$
+
+则根据 $\phi'$ 定义则有 $\phi(x_1)=\phi(x_2)=y$ 与 $\phi$ 是双射矛盾，假设不成立
+
+综上所术 $\phi'$ 亦为双射
+
+***** 相分离<<MK356>>
+
+定义 $\phi:A\to B$ 是双射函数，若 $A=\bigcup_{i=1}^\infty A_i$ 且 $A_i$ 互不相交
+
+则有 $B=\bigcup_{i=1}^\infty\phi(A_i)$
+
+****** 证明
+
+对于任意 $b\in\bigcup_{i=1}^\infty\phi(A_i)$ 可得 $b\in\phi(A_i)$ 即存在 $a\in A_i\rightarrow \phi(a)=b\in B$
+
+则 $B\subset\bigcup_{i=1}^\infty\phi(A_i)$ 又由于任意 $a\in A$ 均有 $\phi(a)\in B$ 故有 $\bigcup_{i=1}^\infty\phi(A_i)\subset B$
+
+故根据[[MK21][自反性]]可得 $B=\bigcup_{i=1}^\infty\phi(A_i)$
 
 *** 函数的计算
 
