@@ -4,7 +4,7 @@
 
 current video: P51
 
-current mark: 337
+current mark: 344
 
 * 几乎处处<<MK190>>
 
@@ -5124,7 +5124,9 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 **** 确界运算<<MK172>>
 
-若存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个[[MK134][可测函数]] $f_i(x), i\in I$ 定义 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\},\psi(x)=\sup\left\{f_i(x)\big|i\in I\right\}$
+若存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个[[MK134][可测函数]] $f_i(x), i\in\mathbb{N}\land x\in E$
+
+定义 $\phi(x)=\inf\left\{f_i(x)\big|i\in\mathbb{N}\right\},\psi(x)=\sup\left\{f_i(x)\big|i\in\mathbb{N}\right\}$
 
 即为 $f_i(x)$ 的上下[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]，则 $\phi(x),\psi(x)$ 仍为[[MK134][可测函数]]
 
@@ -5132,11 +5134,11 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 ****** $\phi(x)$ 可测<<MK169>>
 
-对于任意 $a\in\mathbb{R}_e$ 有 $\phi^{-1}((a,+\infty])=\left\{x\big|\phi(x)\in(a,+\infty]\right\}$ 且 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\}$
+对于任意 $a\in\mathbb{R}_e$ 有 $\phi^{-1}((a,+\infty])=\left\{x\big|\phi(x)\in(a,+\infty]\right\}$ 且 $\phi(x)=\inf\left\{f_i(x)\big|i\in\mathbb{N}\right\}$
 
-即 $\forall x\in \phi^{-1}((a,+\infty])\rightarrow\inf\left\{f_i(x)\big|i\in I\right\}\in(a,+\infty]$ 根据[[MK168][引理]]得 $\inf\left\{f_i(x)\big|i\in I\right\}>a$
+即 $\forall x\in \phi^{-1}((a,+\infty])\rightarrow\inf\left\{f_i(x)\big|i\in I\right\}\in(a,+\infty]$ 根据[[MK168][引理]]有 $\phi(x)=\inf\left\{f_i(x)\big|i\in\mathbb{N}\right\}>a$
 
-则根据下[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]定义有 $\forall i\in I\rightarrow f_i(x)>a$ 即 $\forall i\in I\rightarrow f_i(x)\in(a,+\infty]\rightarrow\forall i\in I(x\in f_i^{-1}((a,+\infty])$
+则根据下[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]定义有 $\forall i\in\mathbb{N}\rightarrow f_i(x)>a$ 即 $\forall i\in\mathbb{N}\rightarrow f_i(x)\in(a,+\infty]\rightarrow\forall i\in \mathbb{N}(x\in f_i^{-1}((a,+\infty])$
 
 根据[[~/OneDrive/离散数学/Disc_Math.org::MK35][广义交]]可得 $x\in\bigcap_{i\in I}f_i^{-1}((a,+\infty])$ 综上所述 $\forall x\in \phi^{-1}((a,+\infty])\rightarrow x\in\bigcap_{i\in I}f_i^{-1}((a,+\infty])$
 
@@ -5228,7 +5230,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 又根据 $\alpha$ 的任意性可得 $f(x)$ 是[[MK134][可测函数]]
 
-**** 单调函数
+**** 单调函数<<MK340>>
 
 若有函数 $f:A\to\mathbb{R}_e$ 其中 $A\in\mathbb{R}$ 是[[MK13][区间]]且 $f(x)$ 是单调函数，则 $f(x)$ [[MK134][可测]]
 
@@ -6382,7 +6384,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 综上所述，有 $$\int_Af(x)dx+\int_Bf(x)dx\leq\int_{A\cup B}f(x)dx$$
 
-***** 推论<<MK227>>
+***** 推论1<<MK227>>
 
 若有 $A\subset B$ 则有 $$\int_Af(x)dx\leq\int_Bf(x)dx$$
 
@@ -6706,7 +6708,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 综上所述 $$\int_Ef(x)dx=\int_Af(x)dx+\int_Bf(x)dx$$
 
-**** 性质5（可数可加性）
+**** 性质5（可数可加性）<<MK343>>
 
 若[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ [[MK237][积分确定]]，定义 $E=\bigcup_{i=1}^\infty E_i$ 且 $\forall \{i,j\}\subset\mathbb{N}\rightarrow E_i\cap E_j=\varnothing$
 
@@ -6723,7 +6725,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 &=\sum_{i=1}^\infty\int_{E_i}f(x)dx
 \end{aligned}
 
-**** 性质6
+**** 性质6<<MK342>>
 
 若[[MK134][可测函数]] $f:E\to\mathbb{R}_e$ [[MK237][积分确定]]，存在函数 $g(x)$ 与 $f(x)$ [[MK190][几乎处处]]相等
 
@@ -8049,17 +8051,21 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ** 勒贝格定理
 
-若 $f(x)$ 是闭[[MK13][区间]] $[a,b]$ 上的单调函数，则有
+若 $f(x)$ 是闭[[MK13][区间]] $[a,b]$ 上的单调实值函数，则有
 
 （1） $f(x)$ 在 $[a,b]$ 上几乎处处存在[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]（可以是无穷）
 
-（2） $f(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]
+（2） 导函数 $f'(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]
 
 （3） 若 $f(x)$ 是增函数，则有 $$\int_{[a,b]}f'(x)dx\leq f(b)-f(a)$$
 
 *** 证明
 
-**** 证明（1）
+**** 证明（1）<<MK339>>
+
+仅对增函数证明，递减函数同理可证
+
+***** 构建严格递增函数<<MK338>>
 
 设 $g(x)=f(x)+x$ 若 $g(x)$ 可导，则有 $g'(x)=\lim_{x\to x_0}\frac{g(x)-f(x)}{x-x_0}=A\in\mathbb{R}_e$
 
@@ -8069,13 +8075,15 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 即若 $g(x)$ 存在导数，则 $f(x)$ 存在导数，则定义 $g(x)$ 上不存在导数点集为 $E$
 
+***** 证明结论
+
 则对于 $x_0\in E$ 根据[[MK336][推论2]]可得至少存在两个不相等的列导数，假设 $\mathcal{D}_{h_1}(x_0)>\mathcal{D}_{h_2}(x_0)$
 
 根据[[MK43][有理数稠密性]]可得存在有理数 $p,q$ 满足 $\mathcal{D}_{h_1}(x_0)>p>q>\mathcal{D}_{h_2}(x_0)$
 
 定义 $E_{p,q}=\left\{x|x\in E\land \mathcal{D}_{h_1}(x_0)>p>q>\mathcal{D}_{h_2}(x_0)\right\}$
 
-则根据上述说法显然 $E\subset\bigcup_{<p,q>\in\mathbb{Q}\times\mathbb{Q}}E_{p,q}$
+则根据上述说法显然 $E\subset\bigcup_{<p,q>\in\mathbb{Q}^+\times\mathbb{Q}^+}E_{p,q}$
 
 由于严格递增，易证列导数必为正，则有 $r>0$ 则对于 $E_r$ 根据[[MK337][引理]]有
 
@@ -8085,9 +8093,82 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 即有 $p\varphi(E_{p,q})\leq\varphi(f(E_{p,q}))\leq q\varphi(E_{p,q})$ 又由于 $q<p$ 故必有 $\varphi(E_{p,q})=0$ 
 
-又根据[[~/OneDrive/离散数学/Disc_Math.org::MK358][推论2]]可得 $\mathbb{Q}\times\mathbb{Q}$ 亦为可数集，故根据[[MK278][可数并零测]]可得 $\varphi\left(\bigcup_{<p,q>\in\mathbb{Q}\times\mathbb{Q}}E_{p,q}\right)=0$
+又根据[[~/OneDrive/离散数学/Disc_Math.org::MK358][推论2]]可得 $\mathbb{Q}^+\times\mathbb{Q}^+$ 亦为可数集，故根据[[MK278][可数并零测]]可得 $\varphi\left(\bigcup_{<p,q>\in\mathbb{Q}\times\mathbb{Q}}E_{p,q}\right)=0$
 
 又根据[[MK54][非负性]]和[[MK60][单调性]]有 $0\leq\varphi(E)\leq\varphi\left(\bigcup_{<p,q>\in\mathbb{Q}\times\mathbb{Q}}E_{p,q}\right)$ 即得 $\varphi(E)=0$
 
+故 $g(x)$ 在 $[a,b]$ 上不可导的点是零测集 $E$ ，又根据[[MK338][之前证明]]可得 $g(x_0)$ 可导有 $f(x_0)$ 可导
 
+故 $f(x)$ 在 $[a,b]-E$ 上可导，故 $f(x)$ 的不可导点 $U$ 必满足 $U\subset E$
+ 
+又根据[[MK128][子集零测]]易证 $f(x)$ 的不可导点以为零测集
 
+**** 证明（2）（3）
+
+仅对增函数证明，递减函数通过[[MK262][线性]]可构建 $$\int_{[a,b]}f'(x)dx=-\int_{[a,b]}-f'(x)dx$$ 来同理证明
+
+***** 定义等价函数<<MK341>>
+
+定义 $f_z(x)=\begin{cases}f(x)&x\in[a,b]\\f(b)&x>b\end{cases}$ 易证仅当 $x\geq b$ 时导数不相等 $f_z'(x)\ne f'(x)$
+
+则根据[[MK318][单点零测]]、[[MK343][可数可加]]以及[[MK242][性质1]] $$\int_{[a,b]}f'(x)dx=\int_{[a,b]}f_z'(x)dx$$
+
+又易证 $x>b$ 时 $f'_z(x)=0$ 即可导
+
+根据[[MK339][证明（1）]]可得 $f(x)$ 在 $[a,b]$ 上不可导点为零测集 $E$
+
+则定义 $g(x)=\begin{cases}f'_z(x)&x\not\in E\land x\in[a,+\infty)\\0&x\in E\end{cases}$ 和 $g_n(x)=\begin{cases}\frac{f_z(x+\frac{1}{n})-f_z(x)}{\frac{1}{n}}&x\not\in E\land x\in[a,+\infty)\\0&x\in E\end{cases}$
+
+显然 $f_z(x)$ 是单调函数，根据[[MK340][单调函数可测]]可知 $f(x)$ 为[[MK134][可测函数]]
+
+根据[[MK181][运算]]易证 $\frac{f_z(x+\frac{1}{n})-f_z(x)}{\frac{1}{n}}$ 亦为可测函数，又根据[[MK161][定理2]]可得常值函数可测
+
+故根据[[MK177][定理4]]可得 $g_n(x)$ 亦为可测函数
+
+由于当 $x\not\in E\land x\in[a,+\infty)$ 时 $f_z(x)$ 导数存在且 $\lim_{n\to\infty}\frac{1}{n}=0$
+
+故当 $x\not\in E\land x\in[a,+\infty)$ 根据[[~/OneDrive/数学分析/Chap11Note.org::MK31][海涅定理]]可得 $\lim_{n\to\infty}\frac{f_z(x+\frac{1}{n})-f_z(x)}{\frac{1}{n}}=f'_z(x)$
+
+即有 $\lim_{n\to\infty}g_n(x)=g(x)$ 故根据[[MK268][极限运算]]可得 $g(x)$ 亦为可测函数
+
+由于 $E$ 是零测集，故有 $g(x),f_z'(x)$ 在 $[a,+\infty)$ 上[[MK190][几乎处处]]相等
+
+则根据[[MK342][性质6]]可得 $$\int_{[a,b]}f'(x)dx=\int_{[a,b]}g(x)dx$$ 且根据[[MK244][定理8]]可得 $f'_z(x)$ 亦为可测函数
+
+又由于 $f'_z(x)$ 在 $[a,b]$ 上与 $f'(x)$ 除点 $b$ 外相等，故 $f'(x)$ 在 $[a,b]$ 上是可测函数
+
+根据 $\lim_{n\to\infty}g_n(x)=g(x)$ 进一步可有 $$\int_{[a,b]}\lim_{n\to\infty}g_n(x)dx=\int_{[a,b]}f'_z(x)dx$$
+
+***** 证明结论
+
+由于递增函数，故有 $f'(x)\geq0$ 则根据[[MK341][之前证明]]可得在 $[a,b)-E$ 上 $g_n(x)=f'(x)$ 且可测
+
+故根据[[MK269][Faton引理]]可得 $$\int_{[a,b]}\lim_{n\to\infty}g_n(x)dx\leq\underline{\lim_{n\to\infty}}\left\{\int_{[a,b]}g_n(x)dx\right\}$$
+
+则根据 $g_n(x)$ 定义以及[[MK232][线性]]可得 $$\int_{[a,b]}g_n(x)dx=n\left(\int_{[a,b]}f_z\left(x+\frac{1}{n}\right)dx-\int_{[a,b]}f_z(x)dx\right)$$
+
+显然有 $$\int_{\left[a+\frac{1}{n},b+\frac{1}{n}\right]}f_z(x)dx=\int_{[a,b]}f_z\left(x+\frac{1}{n}\right)dx$$ 又根据[[MK225][性质2]]
+
+有 $$\int_{\left[a,b\right]}f_z(x)dx+\int_{\left[b,b+\frac{1}{n}\right]}f_z(x)dx=\int_{\left[a,a+\frac{1}{n}\right]}f_z(x)dx+\int_{\left[a+\frac{1}{n},b+\frac{1}{n}\right]}f_z(x)dx$$
+
+即有 $$\int_{\left[a+\frac{1}{n},b+\frac{1}{n}\right]}f_z(x)dx=\int_{\left[a,b\right]}f_z(x)dx+\int_{\left[b,b+\frac{1}{n}\right]}f_z(x)dx-\int_{\left[a,a+\frac{1}{n}\right]}f_z(x)dx$$
+
+即可得 $$\int_{[a,b]}g_n(x)dx=n\left(\int_{\left[b,b+\frac{1}{n}\right]}f_z(x)dx-\int_{\left[a,a+\frac{1}{n}\right]}f_z(x)\right)$$
+
+显然 $f_z(x)$ 在 $x\in\left(b,b+\frac{1}{n}\right]$ 是常值函数 $f_z(x)=f(b)$ ，易证 $$\int_{\left[b,b+\frac{1}{n}\right]}f_z(x)dx=\frac{f(b)}{n}$$
+
+又由于 $f_z(x)$ 递增，故对于任意 $x\geq a$ 均有 $f_z(x)\geq f_z(a)$
+
+则根据[[MK220][性质1]]可得 $$\int_{\left[a,a+\frac{1}{n}\right]}f_z(x)\right)\geq\int_{\left[a,a+\frac{1}{n}\right]}f_z(a)\right)=\frac{f(a)}{n}$$ 即 $$-\int_{\left[a,a+\frac{1}{n}\right]}f_z(x)\right)\leq-\frac{f(a)}{n}$$
+
+综上所述 $$\int_{[a,b]}g_n(x)dx\leq n\left(\frac{f(b)}{n}-\frac{f(a)}{n}\right)=f(b)-f(a)$$
+
+又根据极限保序性有 $$\underline{\lim_{n\to\infty}}\left\{\int_{[a,b]}g_n(x)dx\right\}\leq f(b)-f(a)$$
+
+结合[[MK341][之前证明]]有 $$\int_{[a,b]}f'(x)dx\leq f(b)-f(a)$$
+
+又由于 $f(x)$ 是 $[a,b]$ 上的实值函数，故有 $\{f(b),f(a)\}\subset\mathbb{R}$
+
+根据[[MK4][计算封闭]]易证 $f(b)-f(a)\in\mathbb{R}$ 即 $$\int_{[a,b]}f'(x)dx<+\infty$$
+
+又根据[[MK341][之前证明]]可得 $f'(x)$ 是可测函数，故根据[[MK247][定义]]可得 $f'(x)$ 在 $[a,b]$ 上勒贝格可积 

@@ -1083,3 +1083,9 @@ cd pandas-0.24.2
 ```shell
 auditwheel repair dist/pandas-0.24.2-cp27-cp27m-linux_x86_64.whl --plat manylinux1_x86_64 -w /io/
 ```
+
+# Stop system beep
+
+```shell
+xset -b
+```

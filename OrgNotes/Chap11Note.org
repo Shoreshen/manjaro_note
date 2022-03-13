@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK31
+current mark: MK33
 
 * 笛卡尔乘积
 
@@ -939,7 +939,7 @@ $$\forall \epsilon>0,\exists \delta>0,\forall |\vec{x}-\vec{x}_0|<\delta\Rightar
 
 * 向量值函数
 
-** 定义
+** 定义<<MK32>>
 
 $D\in R^n$ 映射 $\vec{f}:D\to R^m\Rightarrow \vec{x}=(x_1,...,x_n)\to\vec{z}=(z_1,...,z_m)$ 记为 $\vec{f}(\vec{x})=\vec{z}\Rightarrow \begin{cases}&f_1(x_1,...,x_n)=z_1\\&...\\&f_m(x_1,...,x_n)=z_n\end{cases}$
 
@@ -948,6 +948,38 @@ $D\in R^n$ 映射 $\vec{f}:D\to R^m\Rightarrow \vec{x}=(x_1,...,x_n)\to\vec{z}=(
 对于向量值函数 $\vec{f}(\vec{x})=\vec{z},\vec{x}\in D\subset R^n, \vec{z} \in R^m$ 若有 $\forall \epsilon>0, \exists \delta>0, \forall 0<|\vec{x}-\vec{x}_0|<\delta\Rightarrow |\vec{f}(\vec{x})-\vec{A}|<\epsilon$
 
 则 $\lim_{\vec{x}\to\vec{x}_0}\vec{f}(\vec{x})=\vec{A}$
+
+*** 推论<<MK33>>
+
+向量值函数 $\vec{f}(\vec{x})$ 极限存在 $\lim_{\vec{x}\to\vec{x}_0}\vec{f}(\vec{x})=\vec{A}=(A_1,...,A_m)$ 的充要条件是
+
+对于每一个分量函数 $f_i(\vec{x})$ 均有 $\lim_{\vec{x}\to\vec{x}_0}f_i(\vec{x})=A_i$
+
+**** 证明
+
+***** 充分
+
+若有 $\lim_{\vec{x}\to\vec{x}_0}\vec{f}(\vec{x})=\vec{A}$ 即 $\forall \epsilon>0,\exists \tau>0,\forall |\vec{x}-\vec{x}_0|<\tau\rightarrow \left|\vec{f}(\vec{x})-\vec{A}\right|<\epsilon$
+
+则根据[[MK25][距离定义]]可得 $\left|\vec{f}(\vec{x})-\vec{A}\right|=\sqrt{\sum_{i=1}^m\left(f_i(\vec{x})-A_i\right)^2}$ 
+
+易证对于任意 $i$ 均有 $\left|\vec{f}(\vec{x})-\vec{A}\right|\geq\left|f_i(\vec{x})-A_i\right|$
+
+综上所述  $\forall \epsilon>0,\exists \tau>0,\forall |\vec{x}-\vec{x}_0|<\tau\rightarrow |f_i(\vec{x})-A_i\right|\leq\left|\vec{f}(\vec{x})-\vec{A}\right|<\epsilon$ 证毕
+
+***** 必要
+
+若对于任意 $f_i(\vec{x})$ 均有 $\lim_{\vec{x}\to\vec{x}_0}f_i(\vec{x})=A_i$
+
+则 $\forall \epsilon_i>0,\exists \tau_i>0,\forall |\vec{x}-\vec{x}_0|<\tau_i\rightarrow \left|f_i(\vec{x})-A_i\right|<\epsilon_i$
+
+又根据[[MK25][距离定义]]易证 $\left|\vec{f}(\vec{x})-\vec{A}\right|<\sqrt{\sum_{i=1}^m\epsilon_i^2}$ 则对于任意 $\epsilon^*>0$ 取 $\epsilon_1=\epsilon^*$
+
+取 $\epsilon_i=\sqrt{(\epsilon^*)^2-\sum_{k=1}^{i-1}\epsilon^2_k}$ 则易证 $\sum_{i=1}^m\epsilon_i^2=\sum_{i=1}^{m-1}\epsilon_i^2+(\epsilon^*)^2-\sum_{k=1}^{i-1}\epsilon^2_k=(\epsilon^*)^2$
+
+当 $m=1$ 时亦有 $\epsilon_1^2=(\epsilon^*)^2$ 此时取 $\tau=\min(\{\tau_i\})$ 则可得 $\left|\vec{f}(\vec{x})-\vec{A}\right|<\epsilon^*$
+
+综上所述 $\forall \epsilon^*>0,\exists \tau=\min(\{\tau_i\})>0,\forall |\vec{x}-\vec{x}_0|<\tau\rightarrow \left|\vec{f}(\vec{x})-\vec{A}\right|<\epsilon^*$
 
 ** 向量值函数连续<<MK18>>
 
@@ -1078,35 +1110,41 @@ $D\in R^n$ 映射 $\vec{f}:D\to R^m\Rightarrow \vec{x}=(x_1,...,x_n)\to\vec{z}=(
 
 * 海涅定理<<MK31>>
 
-函数 $f(x)=y,x\in\mathbb{R}\land y\in\mathbb{R}$ 则 $\lim_{x\to x_0}f(x_0)=A$ 的充要条件是：
+函数 $\vec{f}(\vec{x})=\vec{y},x\in\mathbb{R}^n\land \vec{y}\in\mathbb{R}^m$ 则 $\lim_{\vec{x}\to\vec{x}_0}\vec{f}(\vec{x}_0)=A$ 的充要条件是：
 
-对于任意数列 $\{h_n\}$ 满足 $\lim_{n\to\infty}|h_n|=0$ 均有 $\lim_{n\to\infty}f(x+h_n)=A$
+对于任意点列 $\{\vec{h}_n\}\subset\mathbb{R}^n$ 满足 $\lim_{n\to\infty}|\vec{h}_n|=0$ 均有 $\lim_{n\to\infty}\vec{f}(\vec{x}+\vec{h}_n)=\vec{A}$
 
-其中 $A\in\mathbb{R}_e$ 为[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]
+其中 $\vec{A}\in\mathbb{R}_e^m$ 为[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]] ， $|\vec{h}_n|$ 是点 $\vec{h}_n$ 到原点的[[MK25][距离]]
 
 ** 证明
 
-根据 $\lim_{n\to\infty}h_n=0$ 可得 $\forall \epsilon>0,\exists N,\forall n>N\rightarrow |h_n|<\epsilon$
+根据 $\lim_{n\to\infty}\vec{h}_n=0$ 可得 $\forall \epsilon>0,\exists N,\forall n>N\rightarrow |\vec{h}_n|<\epsilon$
 
-仅证 $A\in\mathbb{R}$ 部分，当 $A=+\infty$ 或 $A=-\infty$ 是类似易证
+根据[[MK33][推论]]可得其充要条件为对于每一个分量函数 $f_i(\vec{x})$ 均有 $\lim_{\vec{x}\to\vec{x}_0}f_i(\vec{x})=A_i$
+
+即 $\forall\epsilon_i>0,\exists\tau_i,\forall|\vec{x}-\vec{x}_0|<\tau_i\rightarrow \left|f_i(\vec{x})-A_i\right|<\epsilon_i$
+
+此处仅对 $A_i\in\mathbb{R}$ 证明， $A_i=+\infty\lor A_i=-\infty$ 的情况利用极限定义类似可证
 
 *** 充分
 
-由于 $\lim_{x\to x_0}f(x_0)=A$ 则有 $\forall \delta>0,\exists \tau,\forall |x-x_0|<\tau\rightarrow |f(x)-A|<\delta$
+由于 $\lim_{\vec{x}\to \vec{x}_0}f_i(\vec{x}_0)=A_i$ 则有 $\forall \delta_i>0,\exists \tau,\forall |\vec{x}-\vec{x}_0|<\tau_i\rightarrow |f_i(\vec{x})-A_i|<\delta_i$
 
-对于任意满足条件的数列 $\{h_n\}$ 亦有 $\forall \epsilon>0,\exists N,\forall n>N\rightarrow |h_n|<\epsilon$
+对于任意满足条件的数列 $\{\vec{h}_n\}$ 亦有 $\forall \epsilon>0,\exists N,\forall n>N\rightarrow |\vec{h}_n|<\epsilon$
 
-即取 $\epsilon=\tau$ 则对于任意 $n>N$ 均有 $|h_n|<\tau$
+即取 $\epsilon_i=\tau_i$ 则对于任意 $n>N$ 均有 $|\vec{h}_n|<\tau_i$
 
-又由于 $|x_0+h_n-x_0|=|h_n|$ 即有 $\lim_{n\to\infty}f(x+h_n)=A$
+又由于 $|\vec{x}_0+\vec{h}_n-\vec{x}_0|=|\vec{h}_n|$ 即有 $\lim_{n\to\infty}f_i(\vec{x}+\vec{h}_n)=A_i$
 
 *** 必要
 
-假设 $\lim_{x\to x_0}f(x_0)\ne A$ 则 $\exists \delta>0,\forall \tau,\exists |x'-x_0|<\tau\rightarrow |f(x)-A|>\delta$
+当任意点列 $\{\vec{h}_n\}\subset\mathbb{R}^n$ 满足 $\lim_{n\to\infty}|\vec{h}_n|=0$ 均有 $\lim_{n\to\infty}\vec{f}(\vec{x}+\vec{h}_n)=\vec{A}$ 时：
 
-则取 $\tau_n=\frac{1}{n}$ 则有 $x'_n$ 满足 $|h_n|=|x'_n-x_0|<\frac{1}{n}\land |f(x+h_n)-A|>\delta$
+假设 $\lim_{\vec{x}\to \vec{x}_0}f_i(\vec{x})\ne A_i$ 则 $\exists \delta_i>0,\forall \tau_i,\exists |\vec{x}'-\vec{x}_0|<\tau_i\rightarrow |f_i(\vec{x})-A_i|>\delta_i$
 
-显然 $\lim_{n\to\infty}|h_n|=0$ 且 $\lim_{n\to\infty}f(x+h_n)\ne A$
+则取 $\tau_n=\frac{1}{n}$ 则有 $\vec{x}'_n$ 满足 $|\vec{h}_n|=|\vec{x}'_n-\vec{x}_0|<\frac{1}{n}\land |f_i(\vec{x}_0+\vec{h}_n)-A_i|>\delta_i$
+
+显然存在点列 $\{\vec{h}_n\}$ 满足 $\lim_{n\to\infty}|\vec{h}_n|=0$ 时有 $\lim_{n\to\infty}f_i(\vec{x}+\vec{h}_n)\ne A_i$
 
 即与条件矛盾，故假设不成立
 
