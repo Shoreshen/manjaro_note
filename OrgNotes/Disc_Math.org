@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 358
+currnet mark: 381
 
 图论: P40
 
@@ -102,9 +102,13 @@ currnet mark: 358
 
 则通过数学归纳法可得 $\forall \{i,j\}\subset\mathbb{N}\rightarrow A_i\cap A_j=\varnothing\land B_i\cap B_j=\varnothing$
 
-由于 $\forall i\in\mathbb{N}\rightarrow\psi(B_i)=A_{i+1}$ 且 $\psi$ 是双射函数，根据[[MK352][定理3]]有 $B_i\sim A_{i+1}$ ，即根据[[MK349][定理2]]有 $\bigcup_{i=1}^\infty B_i\sim \bigcup_{i=2}^\infty A_i$
+由于 $\forall i\in\mathbb{N}\rightarrow\psi(B_i)=A_{i+1}$ 且 $\psi$ 是双射函数，根据[[MK352][定理3]]有 $B_i\sim A_{i+1}$ ，
 
-易证 $\psi\left(\bigcup_{i=1}^\infty B_i\right)=\bigcup_{i=2}^\infty A_i$ ，又由于 $\psi(B)=A_0$ 故根据[[MK352][定理3]] $\left(B-\bigcup_{i=1}^\infty B_i\right)\sim\left(A_0-\bigcup_{i=2}^\infty A_i\right)$
+即根据[[MK349][定理2]]有 $\bigcup_{i=1}^\infty B_i\sim \bigcup_{i=2}^\infty A_i$
+
+易证 $\psi\left(\bigcup_{i=1}^\infty B_i\right)=\bigcup_{i=2}^\infty A_i$ ，又由于 $\psi(B)=A_0$
+
+故根据[[MK352][定理3]] $\left(B-\bigcup_{i=1}^\infty B_i\right)\sim\left(A_0-\bigcup_{i=2}^\infty A_i\right)$
 
 根据 $A_1$ 的定义有 $A=A_0\cup A_1$ 则易证 $A_0-\bigcup_{i=2}^\infty A_i=A-\bigcup_{i=1}^\infty A_i$
 
@@ -629,36 +633,27 @@ A\cup\left(\bigcap_{\lambda\in\Lambda} C_\lambda\right)&=\bigcap_{\lambda\in\Lam
 **** 集合族运算与差<<MK341>>
 
 \begin{aligned}
-A-\left(\bigcup_{\lambda\in\Lambda} C_\lambda\right)&=\bigcup_{\lambda\in\Lambda}A- C_\lambda\\
-A-\left(\bigcap_{\lambda\in\Lambda} C_\lambda\right)&=\bigcap_{\lambda\in\Lambda}A- C_\lambda\\
+A-\left(\bigcup_{\lambda\in\Lambda} C_\lambda\right)&=\bigcap_{\lambda\in\Lambda}(A- C_\lambda)\\
+A-\left(\bigcap_{\lambda\in\Lambda} C_\lambda\right)&=\bigcup_{\lambda\in\Lambda}(A- C_\lambda)\\
 \end{aligned}
 
 ***** 证明
 
-仅证 $A-(\cup C)&=\cap\left\{A-S\big|S\in C\right\}$ 根据[[MK35][广义交]] $\cap\left\{A-S\big|S\in C\right\}=\left\{x\big|\forall K\left(K\in\left\{A-S\big|S\in C\right\}\rightarrow x\in K\right)\right\}$
+仅证 $A-\bigcup_{\lambda\in\Lambda} C=\bigcap_{\lambda\in\Lambda}(A-C_\lambda)$
 
-此时对于任意 $S\in C$ 均有对应的 $K=A-S$ 使得 $x\in K$ 替换掉 $K$ 得 $\cap\left\{A-S\big|S\in C\right\}=\left\{x\big|\forall S\left(S\in C\rightarrow x\in S-A\right)\right\}$
+则对于任意 $x\in A-\bigcup_{\lambda\in\Lambda} C$ 有 $x\in A\land x\not\in\bigcup_{\lambda\in\Lambda} C_\lambda$
 
-根据[[MK34][广义并]]，[[MK32][减]]，[[MK77][分配率]]，[[MK79][蕴含等值]]，[[MK78][德摩根律]]，[[MK35][B不含x]]，[[MK144][量词转换]]，[[MK14][描述定义]]以及[[MK91][替换原理]]可得，对于任意 $x$
+根据[[MK35][广义交]] $x\in A\land\forall\lambda\in\Lambda\rightarrow x\not\in C_\lambda$
 
-\begin{aligned}
-&x\in A-(\cup C)\\
-\leftrightarrow&x\in A\land x\not\in\cup C\\
-\leftrightarrow&x\in A\land x\not\in\left\{x\big|\exists S(x\in S\land S\in C)\right\}\\
-\leftrightarrow&x\in A\land\lnot(\exists S(x\in S\land S\in C))\\
-\leftrightarrow&x\in A\land(\forall S \lnot(x\in S\land S\in C))\\
-\leftrightarrow&x\in A\land(\forall S (x\not\in S\lor S\not\in C))\\
-\leftrightarrow&\forall S(x\in A\land (x\not\in S\lor S\not\in C))\\
-\leftrightarrow&\forall S((x\in A\land x\not\in S)\lor(x\in A\land S\not\in C))\\
-\leftrightarrow&\forall S((x\in A-S)\lor(x\in A\land S\not\in C))\\
-\leftrightarrow&\forall S((x\in A-S\lor x\in A)\land(x\in A-S\lor S\not\in C))\\
-\leftrightarrow&\forall S(x\in A-S\lor S\not\in C)\\
-\leftrightarrow&\forall S(S\not\in C\lor x\in A-S)\\
-\leftrightarrow&\forall S(S\in C\rightarrow x\in A-S)\\
-\leftrightarrow&x\in\cap\left\{A-S\big|S\in C\right\}
-\end{aligned}
+根据[[MK75][交换率]] $(\forall\lambda\in\Lambda\rightarrow x\not\in C_\lambda)\land x\in A$
 
-即 $\forall x\left(\left(x\in A-(\cup C)\right)\leftrightarrow \left(x\in\cap\left\{A-S\big|S\in C\right\}\right)\right)$ 故根据[[MK5][外延公理]]有 $A-(\cup C)&=\cap\left\{A-S\big|S\in C\right\}$ 
+根据[[MK145][辖域变化]] $\forall\lambda\in\Lambda\rightarrow (x\not\in C_\lambda\land x\in A)$ 即有 $\forall\lambda\in\Lambda\rightarrow (x\in(A-C_\lambda))$  
+
+又根据[[MK34][广义并]] $x\in\bigcup_{\lambda\in\Lambda}(A-C_\lambda)$ 故有 $A-\bigcup_{\lambda\in\Lambda} C\subset\bigcap_{\lambda\in\Lambda}(A-C_\lambda)$
+
+同理易证 $\bigcap_{\lambda\in\Lambda}(A-C_\lambda)\subset A-\bigcup_{\lambda\in\Lambda} C$
+
+根据[[MK21][自反性]]有 $A-\bigcup_{\lambda\in\Lambda} C=\bigcap_{\lambda\in\Lambda}(A-C_\lambda)$
 
 **** 集合族运算与补<<MK331>>
 
@@ -883,6 +878,24 @@ A\cap \overline{A}=\varnothing\\
 \begin{aligned}
 A-B=A\cap\overline{B}\\
 \end{aligned}
+
+**** 连续减<<MK359>>
+
+$A-B-C=A-B\cup C$
+
+***** 证明
+
+若 $x\in A-B$ 则等价于 $x\in A\land x\not\in B$
+
+则 $x\in (A-B)-C$ 则满足 $x\in A-B$ 同时亦有 $x\not\in C$
+
+即 $x\in A\land x\not\in B\land x\not\in C$
+
+若 $x\not\in B\cup C$ 则根据[[MK30][并运算]]可得 $x\not\in B\land x\not\in C$
+
+则 $x\in A-B\cup C$ 定义为 $x\in A\land x\not\in B\land x\not\in C$
+
+故两者等价，即 $A-B-C=A-B\cup C$
 
 **** 子集与计算<<MK332>>
 
@@ -3637,6 +3650,10 @@ $R$ [[MK172][传递]]则 $\forall x\forall y\forall z(xRy\land yRz\rightarrow xR
 
 定义若 $A=\varnothing$ 则 $\pi=\varnothing$ 是其划分
 
+**** 有理划分<<MK360>>
+
+定义非空集合 $A$ 和其[[MK179][划分]] $\pi$ ，若 $\pi$ 是[[MK48][至多可数集]]，则称 $\pi$ 是 $A$ 的有理划分
+
 **** 定理
 
 ***** 定理1<<MK180>>
@@ -3988,6 +4005,26 @@ $B$ 的下确界： $b$ 下界的最大元
 类似可证 $\forall\epsilon>0\rightarrow\left((\exists a'\in A)\rightarrow(a<-\alpha+\epsilon)\right)$
 
 则显然可得 $-\alpha$ 是 $A$ 的[[MK326][下确界]]
+
+***** 定理7<<MK361>>
+
+若 $A\subset\mathbb{R}\land B\subset\mathbb{R}$ 且 $\forall a\in A,\forall b\in B\rightarrow a+b\leq c$
+
+则有 $\sup(A)+\sup(C)\leq c$
+
+****** 证明
+
+根据[[MK326][定义]]可得 $\forall\epsilon>0,\exists a^*\in A\rightarrow a^*+\frac{\epsilon}{2}>\sup(A)$
+
+同理 $\forall\epsilon>0,\exists b^*\in B\rightarrow b^*+\frac{\epsilon}{2}>\sup(B)$
+
+故有 $\sup(A)+\sup(B)<a^*+b^*+\epsilon\leq c+\epsilon$
+
+即对于任意 $\epsilon>0$ 均有 $\sup(A)+\sup(B)<c+\epsilon$ 假设 $\sup(A)+\sup(B)>c$
+
+则取 $\epsilon=\sup(A)+\sup(B)-c$ 则有 $0<0$ 显然与[[~/OneDrive/实变函数/SBHS.org::MK5][三岐性]]矛盾
+
+故假设不成立，即有 $\sup(A)+\sup(C)\leq c$
 
 **** 链
 
@@ -4722,6 +4759,18 @@ $E$ 表示边的[[MK11][多重集合]]，且是[[MK42][有限集]]。附带重�
 当 $G$ 是[[MK221][有向图]]，若存在[[MK42][有限]]的[[MK155][有序组]] $t=<v_1,e_1,v_2,e_2,....e_{n-1},v_n>$ 满足 $e_i\in E\land\left(e_i=<v_i,v_{i+1}>\right)$
 
 则称有序组是 $v_1v_n$ 通道的有向通道
+
+***** 取边<<MK364>>
+
+若 $t=<v_1,e_1,v_2,e_2,....e_{n-1},v_n>$ 则定义 $E(t)=\{e_1,...,e_{n-1}\}$
+
+为通道 $t$ 中所有边的集合
+
+***** 取节点<<MK365>>
+
+若 $t=<v_1,e_1,v_2,e_2,....e_{n-1},v_n>$ 则定义 $E(t)=\{v_1,...,v_n\}$
+
+为通道 $t$ 中所有节点的集合
 
 **** 迹<<MK233>>
 
@@ -6522,3 +6571,292 @@ x&=y\\
 （2） $<S-\{0\},*>$ 是[[MK320][交换群]]（ $S-\{0\}$ 表示 $S$ 中去掉[[MK313][零元]]）
 
 则称为域
+
+* 电路设计
+
+** DFG（数据流图）
+
+*** 定义<<MK362>>
+
+定义为[[MK221][有向图]] $G=<V,E,f,g>$ 其中
+
+（1） $V$ 为[[MK209][节点]]集合，表示计算/功能模块，是[[MK42][有限集]]
+
+（2） 存在 $S\in V$ 为数据输入节点集合，存在若敢 $F\subset V$ 为数据输出节点集合
+
+（3） $E$ 为有向[[MK211][边]]集合，表示数据流动先后顺序，是[[MK42][有限集]]
+
+（4） $f$ 为节点[[MK216][赋权函数]]，表示关联计算时间
+
+（5） $g$ 为边[[MK216][赋权函数]]，表示该边的延迟（通常由dff类寄存器产生）
+
+     若无延迟设备，则定义为 $f(e)=0,e\in E$
+
+通常表述粒度为：
+
+（1） 细粒度：节点 $v\in V$ 只包含加/乘等基本运算单元
+
+（2） 粗粒度：节点 $v\in V$ 包含复杂的功能模块
+
+*** 函数表示<<MK381>>
+
+[[MK362][DFG]]表示一组功能单元的电路组合，以及单元间连接的延迟
+
+理想情况下，电路会无限工作，即在离散时间 $t\in\mathbb{N}$ 时刻接受 $x_t$ 输出 $y_t$
+
+基于现实 $y_t$ 的值取决于 $x_{t},...,x_{t-n}$ 其中 $n\in\mathbb{N}\cup 0$ 由电路性质决定
+
+且当 $x_t,...,x_{t-n}$ 确定时 $y_t$ 确定，即满足满足[[MK194][函数定义]]
+
+故对于任意[[MK362][DFG]] $G$ 故可将其视为函数 $P_G:\prod_{i=1}^{n} X_G\times\to Y_G$ 其中
+
+（1） $X_G$ 为输入信号所有可能的集合
+
+（2） $Y_G$ 为输出信号所有可能的集合
+
+（3） 此处乘法为[[MK153][笛卡尔积]]
+
+故可有等价函数 $P_G(x_{t},...,x_{t-n})=y_t$
+
+*** 等价<<MK380>>
+
+对于不同的[[MK362][DFG]] $G_1,G_2$ ，定义其[[MK381][函数表示]] $P_{G_1},P_{G_2}$ 满足：
+
+（1） $X_{G_1}=X_{G_2}$
+
+（2） $\exists c\in\mathbb{W},\forall x\in X_{G_1}\rightarrow P_{G_1}(x_{t},...,x_{t-n})=P_{G_1}(x_{t-c},...,x_{t-n-c})$
+
+则称 $G_1,G_2$ 等价
+
+*** 延迟单元<<MK369>>
+
+定义为[[MK362][DFG]] $G=<V,E,f,g>$ 中边赋权大于 $0$ 的边集合
+
+即 $E^*_G=\left\{e\big|e\in E\land g(e)>0\right\}$
+
+*** 路径<<MK363>>
+
+[[MK362][DFG]] $G=<V,E,f,g>$ 中任意两个节点 $\{u,v\}\subset C$ 间的任一[[MK232][有向通道]] $r_{uv}$
+
+若满足单次电平信号在有限时间内可由 $u$ 通过 $r_{uv}$ 传播至 $v$ 则 $r_{uv}$ 是 $G$ 中 $u$ 到 $v$ 的路径
+
+进一步定义 $G$ 中路径集合为 $\mathcal{R}_G$ 实践证明 $\mathcal{R}_G$ 是有限集
+
+*** 时延路径<<MK371>>
+
+[[MK362][DFG]] $G=<V,E,f,g>$ 中的[[MK363][路径]] $r$ 若满足 $i=\sum_{e\in E(r_{uv})}g(e)$
+
+则称 $r$ 是时延为 $i$ 的路径，反之对于 $r$ 其 *路径时延* 为 $i$
+
+定义 $\tau_G(i)=\left\{r\big|r\in\mahtcal{R}_G\land i=\sum_{e\in E(r_{uv})}g(e)\right\}$ 为时延为 $i$ 的路径的集合
+
+*** 路径时间<<MK366>>
+
+[[MK362][DFG]] $G=<V,E,f,g>$ 中任意[[MK363][路径]] $r_{uv}$
+
+其路径时间定义为 $t(r)=\sum_{v\in V(r_{uv})}f(v)+\sum_{e\in E(r_{uv})}g(e)$
+
+其中 $E(r)$ 为[[MK364][取边]]运算， $V(r)$ 为[[MK365][取节点]]运算
+
+*** 关键路径<<MK370>>
+
+对于[[MK362][DFG]] $G=<V,E,f,g>$ 定义 $T_{E'}=\left\{t(r)\big|r\in\tau_G(0)\right\}$
+
+是 $G$ 中零[[MK371][时延路径]]的[[MK366][路径时间]]集合，根据[[MK362][DFG定义]]易证 $T_{E'},\tau_G(0)$ 为有限集
+
+则易证存在 $r\in\tau_G(0)$ 满足 $t_{\infty}(G)=\max(T_{E'})$ 则 $r$ 定义为 $G$ 的关键路径
+
+*** 时钟周期<<MK376>>
+
+即系统工作的时钟周期，系统必须在一个周期内完成[[MK369][延迟单元]]间的电平信号传输
+
+故可得时钟周期 $T_{clk}\leq t_\infty(G)$ 即时钟周期小于等于[[MK370][关键路径]]的[[MK366][路径时间]]
+
+** 迭代边界
+
+*** 定义
+
+定义为[[MK362][DFG]] $G=<V,E,f,g>$ 中的最大[[MK368][环路边界]] $T_\infty=\max\left(\left\{T_{LB}(r)\big|r\in L(G)\land T_{LB}(r)\ne\infty\right\}\right)$
+
+其中 $L(G)$ 为 $G$ 中所有[[MK367][环路]]集合 
+
+**** 迭代
+
+定义为[[MK362][DFG]]中所有节点执行一次的过程
+
+**** 迭代周期
+
+电路系统处理一个输入样点，并输出结果所用的时间，表示为符号 $T_{it}$
+
+**** 时钟周期
+
+电路系统时钟信号提供的工作周期，表示为符号 $T_{\text{clk}}$
+
+电路系统时钟频率为周期的倒数 $f=\frac{1}{T_{\text{clk}}}$
+
+**** 环路<<MK367>>
+
+定义为[[MK362][DFG]] $G=<V,E,f,g>$ 的[[MK238][圈]]，定义 $L(G)$ 为 $G$ 中所有环路集合
+
+**** 环路边界<<MK368>>
+
+定义为[[MK362][DFG]] $G=<V,E,f,g>$ 中的[[MK367][环路]] $r_{uu}$ 的节点的时延 $T_L(r)=\sum_{v\in V(r)}f(v)$
+
+与边的时延 $W_L(r)=\sum_{e\in E(r)}G(e)$ 的比值 $T_{LB}(r)=\frac{T_L(r)}{W_L(r)}$
+
+其中 $E(r)$ 为[[MK364][取边]]运算， $V(r)$ 为[[MK365][取节点]]运算
+
+*** 求解（LPM）
+
+对于[[MK362][DFG]] $G=<V,E,f,g>$ 其[[MK369][延迟单元]]个数为 $n=|E^*_G|$
+
+**** 定义矩阵
+
+对于任意[[MK369][延迟单元]] $e_i=<v_i,u_i>\land e_j=<v_j,u_j>\land\{e_i,e_j\}\subset E^*_G$
+
+则定义 $Z=\left\{t(r_{u_iv_j})\big|r_{u_iv_j}\in\tau_G(m-1)\right\}$ 对于矩阵元素 $l_{ij}^m=\begin{cases}-1&Z=\varnothing\\\max(Z)&|Z|>0\end{cases}$
+
+即从[[MK369][延迟单元]] $e_i$ 到 $e_j$ [[MK366][路径时间]]最长的 $m-1$ [[MK371][时延路径]]，若无通路则取 $-1$
+
+最终定义矩阵 $L^m=\{l_{ij}^m\}$ 其中 $i=$
+
+**** 初始矩阵 & 计算方法<<MK372>>
+
+即矩阵 $L^1=\{l^1_{ij}\}$ 其中 $i\leq n\land j\leq n$
+
+则定义计算 $L^m=L_1*L^{m-1}=\{l^m_{ij}\}$ 定义 $z_{ij}(k)=\begin{cases}-1&l^1_{ik}=-1\lor l^{m-1}_{kj}=-1\\l^1_{ik}+l^{m-1}_{kj}&\text{others}\end{cases}$
+
+则 $l^2_{ij}=\max\left(\left\{z_k\big|1\leq k\leq n\land k\in\mathbb{N}\right\}\right)$
+ 
+**** 矩阵意义<<MK373>>
+
+定义 $e_i=<u_i,v_i>$ 满足 $g(e_i)>0$
+
+则对于 $L^m$ 若对角线上 $l^m_{ii}\ne-1$ 则根据[[MK372][定义]]
+
+可得 $l^m_{ii}$ 是[[MK371][路径时延]]为 $m-1$ 且[[MK366][路径时间]]最长的 $v_i$ 到 $u_i$ 的[[MK363][路径]] $r_{v_iu_i}$
+
+进一步可得 $\frac{l^m_{ii}}{m}$ 即为 $r_{v_iu_i}$ 的[[MK368][环路边界]]
+
+**** 可能环路<<MK374>>
+
+对于[[MK369][延迟单元]] $e_i=<u_i,v_i>$ 来说，若存在单次信号由 $v_i$ 到 $u_i$ 的[[MK363][路径]]
+
+则该路径 $r_{v_iu_i}$ 可能不经过、经过若干或经过所有其他[[MK369][延迟单元]]
+
+即 $r_{v_iu_i}$ 可能经过 $0$ 至 $n-1$ 个除 $e_i$ 外的延迟单元
+
+**** 信号往复（不比往复前大）<<MK375>>
+
+当 $r_{v_iu_i}$ 至多经过 $k-1<n-1$ 个其他[[MK369][延迟单元]]时，则在 $L^{k}$ 之后信号出现往复
+
+假设存在 $m>k$ 使得对于任意 $j\leq k$ 均有 $\frac{l^m_{ii}}{m}>\frac{l^j_{ii}}{j}$
+
+进一步定义 $s\in\mathbb{N}$ 满足 $sk<m\leq(s+1)k\leq n$ 即信号从 $L^{sk+1}$ 开始最新一轮往复
+
+故 $l^m_{ii}$ 时信号往复了 $s$ 轮后继续经过了 $z=m-sk$ 个[[MK369][延迟单元]]
+
+每一轮往复耗时 $l^k_{ii}$ 经过 $k$ 个[[MK369][延迟单元]]，即有 $\frac{l^m_{ii}}{m}=\frac{sl^k_{ii}+l^z_{ii}}{sk+z}$ 定义 $x=\frac{l^z_{ii}}{z}$
+
+定义 $f(x)=\frac{sl^k_{ii}+xz}{sk+z}$ 由于均为正数，显然求导可得递增
+
+当 $x=\frac{l^k_{ii}}{k}$ 时可得 $f(x)=\frac{l^k_{ii}}{k}$ 故当且仅当 $x>\frac{l^k_{ii}}{k}$ 时有 $f(x)>\frac{l^k_{ii}}{k}$
+
+由于 $x=\frac{l^z_{ii}}{z}$ 且 $\frac{l^m_{ii}}{m}>\frac{l^k_{ii}}{k}$ 故有 $x=\frac{l^z_{ii}}{z}>\frac{l^k_{ii}}{k}$
+
+同理定义 $y=\frac{l^k_{ii}}{k}$ 则有 $g(y)=\frac{sky+l^z_{ii}}{sk+z}$ 由于均为正数故 $g(y)$ 递增
+
+与之前类似可证当当且仅当 $y>\frac{l^z_{ii}}{z}$ 时有 $g(y)>\frac{l^z_{ii}}{z}$
+
+结合 $y=\frac{l^k_{ii}}{k}$ 以及 $\frac{l^m_{ii}}{m}>\frac{l^z_{ii}}{z}$ 可得 $y=\frac{l^k_{ii}}{k}>\frac{l^z_{ii}}{z}$ 
+
+总上所述，由于 $\forall j\leq k\rightarrow \frac{l^m_{ii}}{m}>\frac{l^j_{ii}}{j}$ 故有 $\frac{l^k_{ii}}{k}>\frac{l^z_{ii}}{z}\land \frac{l^z_{ii}}{z}>\frac{l^k_{ii}}{k}$ 与[[~/OneDrive/离散数学/Disc_Math.org::MK5][三岐性]]矛盾
+
+故假设不成立，则不存在 $m>k$ 满足 $\forall j\leq k\rightarrow \frac{l^m_{ii}}{m}>\frac{l^j_{ii}}{j}$ 
+
+**** 最终取值
+
+根据[[MK375][信号往复]]可得往复后的 $\frac{l^m_{ii}}{m}$ 不可能大于所有往复前的 $\frac{l^m_{ii}}{m}$ 
+
+根据[[MK374][可能环路]]可得最多只能经过 $n-1$ 个[[MK369][延迟单元]]
+
+综上所述，只需计算 $L^1,...,L^n$ 并取 $T_\infty=\max\left(\left\{\frac{l^m_{ii}}{m}\big|1\leq i\leq n\land 1\leq m\leq n\right\}\right)$
+
+** 并行
+
+每个周期输入 $n$ 个数据，复制 $n$ 倍硬件资源同时处理这 $n$ 个数据。
+
+由于硬件资源复制，故[[MK370][关键路径]]一般保持不变
+
+** 流水线
+
+在[[MK366][路径]]中插入寄存器来减少[[MK370][关键路径]]长度，从而降低[[MK376][时钟周期]]
+
+*** 割集<<MK378>>
+
+存在[[MK362][DFG]] $G=<V,E,f,g>$ 一组边 $E'\subset E$
+
+使得 $G'=<V,E-E'>$ 此时 $G'$ 存在不是[[MK257][弱联通]]的子图
+
+则定义 $E'$ 是 $G$ 的割集
+
+*** 前馈割集
+
+若[[MK362][DFG]] $G=<V,E,f,g>$ 的[[MK378][割集]] $E'$ 将 $G$ 划分为 $2$ 个非[[MK257][弱联通]]的[[MK229][子图]]
+
+定义为 $G_1=<V_1,E_1>,G_2=<V_2,E_2>$ 则定义：
+
+（1） $E_a(i)=\left\{e\big|e=<u,v>\in E'\land (v\in V_i\lor u\in V_i)\land u\not\in S\land v\not\in F\right\}$
+
+（2） $E_b(i)=\left\{e\big|e=<u,v>\in E'\land u\in V_i\land u\not\in S\land v\not\in F\right\}$
+
+（3） $E_c(i)=\left\{e\big|e=<u,v>\in E'\land v\in V_i\land u\not\in S\land v\not\in F\right\}$
+
+其中 $S,F$ 为[[MK362][数据输入/输出]]节点集合，则若满足：
+
+（1） $S\subset V_1\land F\subset V_2$
+
+（2） $E_a(1)=E_b(1)\land E_a(2)=E_c(2)$
+
+则定义 $E'$ 是 $G$ 的前馈割集。
+
+即对于数据输入子图 $V_1$ 来说，所有 $E'$ 中的边均为数据流出方向
+
+对于数据输出子图 $V_2$ 来说，所有 $E'$ 中的边均为数据流入方向
+
+*** 定理
+
+若 $E'$ 是[[MK362][DFG]] $G=<V,E,f,g>$ 的[[MK379][前馈割集]]，则在 $E'$ 上添加统一时钟寄存器
+
+即定义 $g'(e)=\begin{cases}g(e)+1&e\in E'\\g(e)&e\not\in E'\end{cases}$ 以及 $G'=<V,E,f,g'>$
+
+则 $G'$ 与 $G$ [[MK380][等价]]
+
+**** 证明
+
+定义 $G_1=<V_1,E_1>,G_2=<V_2,E_2>$ 其中 $S\subset V_1\land F\subset V_2$
+
+定义 $E'=\{<u_i,v_i>\}$ 则对于任意 $i$ 均有 $u_i\in V_1\land v_i\in V_2$
+
+由于 $G_1,G_2$ 在去除 $E'$ 后非[[MK257][弱联通]]，故可得 $\{v_i\}$ 接受的信号为 $G_2$ 的输入信号集
+
+以及 $G_1$ 的所有信号输出集。则根据[[MK381][函数表示]]定义 $y_t=P_{G_1}(x_{t},...,x_{t-n}),P_{G_2}(y_{t},...,y_{t-m})$
+
+则有 $P_G(x_{t},...,x_{t-n})=P_{G_2}\big(y_t,...,y_{t-m}\big)$
+
+即 $P_G(x_{t},...,x_{t-n})=P_{G_2}\big(P_{G_1}(x_{t},...,x_{t-n}),...,P_{G_1}(x_{t-m},...,x_{t-n-m})\big)$
+
+又由于 $G'$ 在 $E'$ 的所有边上增加 $1$ 延迟
+
+故有 $P_{G'}(x_{t},...,x_{t-n})=P_{G_2}\big(P_{G_1}(x_{t-1},...,x_{t-n-1}),...,P_{G_1}(x_{t-m-1},...,x_{t-n-m-1})\big)$
+
+即：
+
+\begin{aligned}
+P_{G'}(x_{t+1},...,x_{t-n+1})=&P_{G_2}\big(P_{G_1}(x_{t},...,x_{t-n}),...,P_{G_1}(x_{t-m},...,x_{t-n-m})\big)\\
+=&P_G(x_{t},...,x_{t-n})$
+\end{aligned}
+
+故满足[[MK380][等价]]定义
+
+

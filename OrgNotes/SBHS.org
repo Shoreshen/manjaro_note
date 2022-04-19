@@ -4,7 +4,7 @@
 
 current video: P51
 
-current mark: 344
+current mark: 366
 
 * 几乎处处<<MK190>>
 
@@ -44,11 +44,19 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 根据定义 $\underline{\lim_{n\to\infty}}A_n=\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)$ 故对于任意 $a\in\underline{\lim_{n\to\infty}}A_n$ 有 $a\in\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)$ 
 
-即 $\exists i\rightarrow \left(\forall k>i\rightarrow a\in A_k\right)$ 则 $\forall i'\in\mathbb{N}$ 定义并集 $\cup_{k\geq i'}A_k$ 取 $l=\max\{i,i'\}$ 则有 $a\in A_l\land A_l\subset\cup_{k>i'}A_k$
+即 $\exists i\rightarrow \left(\forall k>i\rightarrow a\in A_k\right)$ 则 $\forall i'\in\mathbb{N}$ 定义并集 $\cup_{k\geq i'}A_k$ 取 $l=\max\{i,i'\}$
+
+则有 $a\in A_l\land A_l\subset\cup_{k>i'}A_k$
 
 故 $\forall i'\in\mathbb{N}\rightarrow a\in\cup_{k\geq i'}A_k$ 进一步 $a\in\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)$ 根据定义 $a\in\overline{\lim_{n\to\infty}}A_n$
 
 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$ 
+
+** 集合列的极限
+
+当 $\underline{\lim_{n\to\infty}}A_n=\overline{\lim_{n\to\infty}}A_n$ 时，
+
+定义集合列的极限为 $A=\lim_{n\to\infty}A_n=\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ** 单调集列<<MK69>>
 
@@ -1205,13 +1213,13 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 ***** 前提定义
 
-根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-完备集]]可得不含孤立点的闭集是完备集。
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK34][完备集]]可得不含孤立点的闭集是完备集。
 
-假设点 $x$ 是[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-点的定义-孤立点]]，则根据定义存在 $\delta>0$ 使得去心领域 $O(x,\delta)/x$ 不属于 $S$
+假设点 $x$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK14][孤立点]]，则根据定义存在 $\delta>0$ 使得去心领域 $O(x,\delta)/x$ 不属于 $S$
 
 根据[[MK48][闭集构造]]可得任意闭集均可表示为为直线 $\mathbb{R}$ 去掉至多可数个开区间的并。
 
-根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]得 $S$ 的补集 $S^c$ 是开集
+根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]]得 $S$ 的补集 $S^c$ 是开集
 
 根据[[MK47][开集构造]]可得 $S^c=\bigcup_{i=1}^\infty(a_i,b_i)$ 其中 $(a_i,b_i)$ 是[[MK42][构成区间]]
 
@@ -1257,11 +1265,93 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 *** 康托三分集<<MK107>>
 
-若 $E_n=\bigcup_{\lambda\in\Lambda} [a_\lambda,b_\lambda]$ 为若干个闭区间的并，则定义 $E_{n+1}=\bigcup_{\lambda\in\Lambda}\left(\left[a_\lambda,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right]\cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
+若 $E'_ n=\bigcup_{\lambda\in\Lambda_n} [a_\lambda,b_\lambda]$ 为若干个互不相交的闭区间的并，
 
-定义  $E_0=[0,1]$ 则 $P=\lim_{n\to\infty}E_n$ 即为康托三分集
+则定义 $E_ n=\bigcup_{\lambda\in\Lambda_n}\left(a_\lambda+\frac{b_\lambda-a_\lambda}{3},b_\lambda-\frac{b_\lambda-a_\lambda}{3}\right)$ 以及 $E'_{n+1}=E'_n-E_n$
+
+根据[[MK347][证明]] $E'_ n-E_ n=\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
+
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK40][结合律]]可得 $E'_ {n+1}=\bigcup_{\lambda\in\Lambda_{n+1}}[a_{\lambda},b_\lambda]$ 
+
+定义 $E'_0=[0,1]$ 则 $P=[0,1]-\bigcup_{i=1}^\infty E_n$ 即为康托三分集
 
 **** 性质
+
+***** 减后相等<<MK347>>
+
+ $E_n-E'_ n=\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
+
+****** 证明
+
+对于任意 $x\in E_n-E'_ n$
+
+满足 $\left(\exists\lambda^*\in\Lambda\rightarrow x\in[a_{\lambda^*},b_{\lambda^*}]\right)\land\left(\forall\lambda\in\Lambda\rightarrow x\not\in\left(a_\lambda+\frac{b_\lambda-a_\lambda}{3},b_\lambda-\frac{b_\lambda-a_\lambda}{3}\right)\right)$
+
+由于 $\left(a_\lambda+\frac{b_\lambda-a_\lambda}{3},b_\lambda-\frac{b_\lambda-a_\lambda}{3}\right)\subset[a_\lambda,b_\lambda]$ 且 $[a_\lambda,b_\lambda]$ 互不相交
+
+显然 $\forall\lambda\in\Lambda\land\lambda\ne\lambda^*\left(x\in[a_{\lambda^*},b_{\lambda^*}]\rightarrow x\not\in\left(a_\lambda+\frac{b_\lambda-a_\lambda}{3},b_\lambda-\frac{b_\lambda-a_\lambda}{3}\right)\right)$
+
+则上述条件等价于 $\left(\exists\lambda^*\in\Lambda\rightarrow x\in[a_{\lambda^*},b_{\lambda^*}]\right)\land\left(x\not\in\left(a_{\lambda^*}+\frac{b_{\lambda^*}-a_{\lambda^*}}{3},b_{\lambda^*}-\frac{b_{\lambda^*}-a_{\lambda^*}}{3}\right)\right)$
+
+即存在 $\lambda^*$ 满足 $x\in[a_{\lambda^*},b_{\lambda^*}]\land x\not\in\left(a_{\lambda^*}+\frac{b_{\lambda^*}-a_{\lambda^*}}{3},b_{\lambda^*}-\frac{b_{\lambda^*}-a_{\lambda^*}}{3}\right)$
+
+即 $x\in\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda,b_\lambda\right]-\left(a_{\lambda}+\frac{b_{\lambda}-a_{\lambda}}{3},b_{\lambda}-\frac{b_{\lambda}-a_{\lambda}}{3}\right)\right)$
+
+则有 $E_n-E'_ n\subset\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
+
+对于任意 $x\in\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
+
+则存在 $\lambda^*$ 满足 $x\in[a_{\lambda^*},b_{\lambda^*}]\land x\not\in\left(a_{\lambda^*}+\frac{b_{\lambda^*}-a_{\lambda^*}}{3},b_{\lambda^*}-\frac{b_{\lambda^*}-a_{\lambda^*}}{3}\right)$
+
+同理由于 $\forall\lambda\in\Lambda\land\lambda\ne\lambda^*\left(x\in[a_{\lambda^*},b_{\lambda^*}]\rightarrow x\not\in\left(a_\lambda+\frac{b_\lambda-a_\lambda}{3},b_\lambda-\frac{b_\lambda-a_\lambda}{3}\right)\right)$
+
+则有 $\forall\lambda\in\Lambda\rightarrow x\not\in\left(a_\lambda+\frac{b_\lambda-a_\lambda}{3},b_\lambda-\frac{b_\lambda-a_\lambda}{3}\right)$
+
+即 $\left(\exists\lambda^*\in\Lambda\rightarrow x\in[a_{\lambda^*},b_{\lambda^*}]\right)\land\left(\forall\lambda\in\Lambda\rightarrow x\not\in\left(a_\lambda+\frac{b_\lambda-a_\lambda}{3},b_\lambda-\frac{b_\lambda-a_\lambda}{3}\right)\right)$
+
+即 $x\in E_n-E'_ n$ 故有 $\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)\subset E_n-E'_ n$
+
+则根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $E_n-E'_ n=\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
+
+***** 有限相等<<MK348>>
+
+$E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
+
+****** 证明
+
+根据[[MK107][定义]]可得 $E'_n=E'_{n-1}-E_{n-1}$
+
+则根据数学归纳法可得 $E'_n=E'_0-E_1-...-E_{n-1}$
+
+又根据[[~/OneDrive/离散数学/Disc_Math.org::MK359][连续减]]可得 $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
+
+***** 包含端点<<MK349>>
+
+对于任意 $E'_n$ 其包含的闭区间的端点属于 $P$
+
+****** 证明
+
+根据[[MK107][定义]]可得任意 $E_n$ 均为 $E'_n$ 中闭区间内的开区间构成
+
+则显然 $E_n$ 的端点不属于 $E'_n$
+
+根据[[MK348][有限相等]]可得 $E'_n=E'_0-\bigcup_{i=1}^{n-1} E'_i$
+
+则显然对于任意 $m<n$ 均有 $E_n$ 的端点不属于 $E'_m$
+
+对于任意 $n$ 定义 $E'_ n=\bigcup_{\lambda\in\Lambda_{mn}}[a_{\lambda},b_\lambda]$ 定义 $Z_n=\left\{a_\lambda,b_\lambda\big|\lambda\in\Lambda_n\right\}$
+
+则根据[[MK347][减后相等]] $E'_ {n+1}=\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)=\bigcup_{\lambda\in\Lambda_{n+1}}[a_{\lambda},b_\lambda]$
+
+定义 $Z_{n+1}=\left\{a_\lambda,b_\lambda\big|\lambda\in\Lambda_{n+1}\right\}$ 则显然有 $Z_n\subset Z_n+1$
+
+则根据数学归纳法可得对于任意 $m>n$ 均有 $Z_n\subset Z_m$
+
+则又根据定义可得 $E_m$ 不包含 $E'_m$ 中的端点，故可得 $Z_m\cap E_m=\varnothing$
+
+故对于任意 $m>n$ 均有 $Z_n\cap E_m=\varnothing$
+
+综上所述，对于任意 $E'_n$ 其包含的闭区间的端点属于 $P$
 
 ***** 是完备集
 
@@ -1271,21 +1361,23 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 根据[[MK33][定理2]]可得，所有实数均有小数表示，此处选择二进制。
 
-根据定义， $E_0=[0,1]$ 定义映射 $0\to0.0,1\to0.1$
+根据定义， $E'_0=[0,1]$ 定义映射 $0\to0.0,1\to0.1$
 
-若 $E_n=\bigcup_{\lambda\in\Lambda} [a_\lambda,b_\lambda]$ 假设每个 $a_\lambda,b_\lambda$ 均有对应的二进制小数 $\alpha_\lambda,\beta_\lambda$
+若 $E'_n=\bigcup_{\lambda\in\Lambda_n} [a_{\lambda_n},b_{\lambda_n}]$ 假设每个 $a_{\lambda_n},b_{\lambda_n}$ 均有对应的二进制小数 $\alpha_{\lambda_n},\beta_{\lambda_n}$
 
-则在 $E_{n+1}=\bigcup_{\lambda\in\Lambda}\left(\left[a_\lambda,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right]\cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$ 中，
+则在 $E'_ {n+1}=\bigcup_{\lambda\in\Lambda}\left(\left[a_\lambda,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right]\cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$ 中，
 
 每个端点根据挖去区域的左右，在之前端点映射二进制小数的末尾加 $0$ 或 $1$
 
-即 $a_\lambda=\alpha_\lambda0,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\to\alpha_\lambda1,b_\lambda-a_\lambda}{3}=\beta_\lambda0,b_\lambda=\beta_\lambda1$
+即 $a_\lambda\to\alpha_\lambda0,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\to\alpha_\lambda1,b_\lambda-a_\lambda}{3}\to\beta_\lambda0,b_\lambda\to\beta_\lambda1$
 
-由于三分集是无限划分，且所有端点均属于该集合，故实数 $[0,1]$ 内的所有点均有对应的映射
+由于三分集是无限划分，故表达的二进制小数可延伸至[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]位
+
+又根据[[MK349][包含端点]]可得所有 $E'_n$ 的端点均属于 $P$ ，故实数 $[0,1]$ 内的所有点均有对应的映射
 
 即 $\sigma:P\to[0,1]$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK198][满射]]，则根据[[~/OneDrive/离散数学/Disc_Math.org::MK3][基数]]可得 $|P|\geq|[0,1]|$ 又根据[[MK36][定理0]]以及传递性可得 $|P|\geq|\mathbb{R}|$
 
-由于 $P$ 是从 $\mathbb{R}$ 上取的，故显然有 $|P|\leq|\mathbb{R}|$ 根据基数定义中伯恩斯坦定理 $|P|=|\mathbb{R}|$
+由于 $P$ 是从 $\mathbb{R}$ 上取的，故显然有 $|P|\leq|\mathbb{R}|$ 根据基数定义中[[~/OneDrive/离散数学/Disc_Math.org::MK4][伯恩斯坦定理]] $|P|=|\mathbb{R}|$
 
 ***** 可测且[[MK51][外测度]]为零<<MK119>>
 
@@ -2494,7 +2586,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 （5） $(-\infty)\cdot( +\infty)=( +\infty)\cdot( -\infty)=-\infty$
 
-**** 未定义的运算
+**** 未定义的运算<<MK351>>
 
 （1） $(+\infty)-( +\infty), (-\infty)-(-\infty), (-\infty)-( +\infty)$
 
@@ -3147,7 +3239,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 **** 定理1（截面定理）<<MK310>>
 
-对于任意 $E\subset\mathbb{R}^{p+q}$ 是[[MK81][可测集]]，定义 $E(x)=\left\{y\big|x\in\mathbb{R}^p\land y\in\mathbb{R}^q\land <x,y>\in E\right\}$ 则有：
+对于任意 $E\subset\mathbb{R}^{p+q}$ 是[[MK81][可测集]]，定义 $E(x)=\left\{y\big|y\in\mathbb{R}^q\land <x,y>\in E\right\}$ 则有：
 
 （1） 对于 $x\in\mathbb{R}^p$ [[MK190][几乎处处]]有 $E(x)$ 是 $\mathbb{R}^q$ 中的[[MK81][可测集]]
 
@@ -3173,7 +3265,9 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 由于 $I^q$ 不随 $x$ 变化，则有 $f(x)$ 是[[MK178][简单函数]]，即[[MK134][可测函数]]。且根据[[MK82][区间可测]]可得 $I^q$ 是[[MK81][可测集]]
 
-进一步根据[[MK213][定义]]可得 $$\int_{I^p}f(x)dx=\varphi(I^p)\varphi(I^q)$$ 根据[[MK51][外侧度定义]]易证 $\varphi(I^p)\varphi(I^q)=\varphi(I^p\times I^q)=\varphi(E)$
+进一步根据[[MK213][定义]]可得 $$\int_{I^p}f(x)dx=\varphi(I^p)\varphi(I^q)$$
+
+根据[[MK51][外侧度定义]]易证 $\varphi(I^p)\varphi(I^q)=\varphi(I^p\times I^q)=\varphi(E)$
 
 ******* 开集<<MK299>>
 
@@ -3249,9 +3343,9 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 定义 $E'\subset\mathbb{R}^p$ 是 $\varphi(E_0(x))>0$ 的点集，则 $\varphi(E')=0$
 
-进一步定义 $R=\mathbb{R}-E'$ 则对于任意 $x\in R$ 均有 $\varphi(E_0(x))=0$
+进一步定义 $R=\mathbb{R}^p-E'$ 则对于任意 $x\in R$ 均有 $\varphi(E_0(x))=0$
 
-根据[[MK94][可测性]]可得 $E_0(x)$ 是 $\mathbb{R}^q$ 上的[[MK81][可测集]]，又根据[[MK300][之前证明]]可得 $G(x)$ 亦为可测集
+此时，根据[[MK94][可测性]]可得 $E_0(x)$ 是 $\mathbb{R}^q$ 上的[[MK81][可测集]]，又根据[[MK300][之前证明]]可得 $G(x)$ 亦为可测集
 
 故可得 $E(x)=G(x)-E_0(x)$ 在 $R$ 上是[[MK81][可测集]]，由于 $\varphi(E')=0$
 
@@ -4113,6 +4207,28 @@ Borel集中元素均为可测集
 
 （2） $\exists M\in\mathbb{R}\rightarrow\left(\forall x\in E\rightarrow |f(x)|\leq M\right)$ 则有界
 
+*** 引理1<<MK352>>
+
+非空[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]]上的有限函数必有界
+
+**** 证明
+
+对于任意 $E\subset\mathbb{R}^n$ 是非空闭集，任意 $f:E\to\mathbb{R}$ 为 $E$ 到 $\mathbb{R}$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]
+
+假设无界，则满足 $\forall a\in\mathbb{R},\exists x\in E\rightarrow f(x)>a$
+
+定义 $[a_i,b_i]$ 是 $E$ 在第 $i$ 维度投影的最小，最大值
+
+则取所有 $\frac{a_i+b_i}{2}$ 所在的面作为截面，将 $E$ 分成 $2^n$ 个划分
+
+对于 $a_1=1$ 任取一个划分满足存在 $x$ 属于该划分且 $f(x)>a_1$ 定义该划分为 $E_1$
+
+以此类推，可以有 $E_1,E_2,...\a$ 显然满足[[~/OneDrive/数学分析/Chap11Note.org::KTDL][闭区间套]]条件
+
+故存在唯一一点 $x\in\bigcup_{i=1}^\infty E_i$ 根据条件必有 $f(x)=\infty$
+
+由于 $x\in E_1\subset E$ 故与 $f(x)$ 在 $E$ 上有界矛盾，故假设不成立
+
 ** 连续函数<<MK106>>
 
 根据[[~/OneDrive/数学分析/Chap11Note.org::MK18][向量值函数连续]]，在不考虑边界点的情况下（只考虑 $B$ 的[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]）
@@ -4227,9 +4343,11 @@ Borel集中元素均为可测集
 
 （3） $B>A$
 
+（4） $B\geq f(x_0)\geq A$
+
 **** 证明
 
-不妨设函数递增，递减同理可证
+不妨设函数递增，递减同理可证。结论（4）反证法易证
 
 ***** 证明（1）（2）
 
@@ -4299,13 +4417,13 @@ Borel集中元素均为可测集
 
 则称 $F$ 为康托函数
 
-*** 例子
+*** 例子<<MK346>>
 
 定义映射 $g:P\to[0,1]$ 为[[MK108][之前证明]]中定义的 $P\to[0,1]$ 的映射
 
 即康托集中的元素到二进制 $[0,1]$ 区间的映射
 
-定义 $f:[0,1]\to[0,1]$ 为 $f(x)=\begin{cases}g(x)&x\in P\\\sup\{g(y)\big|y\in P\land y<x\}&x\in[0,1]/P\end{cases}$
+定义 $f:[0,1]\to[0,1]$ 为 $f(x)=\begin{cases}g(x)&x\in P\\\sup\left\{g(y)\big|y\in P\land y<x\right\}&x\in[0,1]/P\end{cases}$
 
 定义 $F:[0,1]\to[0,1]$ 为 $F(x)=\frac{1}{2}\left(f(x)+x\right)$
 
@@ -4365,11 +4483,13 @@ Borel集中元素均为可测集
 
 ****** $f(x)$ 连续
 
-******* 递增且满射<<MK112>>
+******* 递增且[[~/OneDrive/离散数学/Disc_Math.org::MK198][满射]]<<MK112>>
 
 显然根据映射 $g(x)$ 的定义可得 $g(x)$ 递增，则若 $x_1<x_2$ 有 $g(x_1)\leq g(x_2)$
 
-则对于任意 $\{x_1,x_2\}\subset[0,1]$ 且 $x_1<x_2$ 均有 $\sup\{y\big|y\in P\land y<x_1\}\leq\sup\{y\big|y\in P\land y<x_2\}$
+则对于任意 $\{x_1,x_2\}\subset[0,1]$
+
+且 $x_1<x_2$ 均有 $\sup\{y\big|y\in P\land y<x_1\}\leq\sup\{y\big|y\in P\land y<x_2\}$
 
 故有 $\sup\{g(y)\big|y\in P\land y<x_1\}\leq\sup\{g(y)\big|y\in P\land y<x_2\}$
 
@@ -4381,19 +4501,23 @@ Borel集中元素均为可测集
 
 此时若 $f(x)$ 在 $x_0$ 处不连续，由于递增，故对任意 $x>x_0$ 必有 $f(x)\geq f(x_0)$
 
-若 $\lim_{x\to x_0^+}f(x)=K>f(x_0)$ 根据极限定义 $\forall\epsilon>0,\exists\delta,\forall x-x_0<\delta\rightarrow |f(x)-K|<\epsilon$
+若 $\lim_{x\to x_0^+}f(x)=K>f(x_0)$
 
-则取 $\epsilon = \frac{1}{2}(K-f(x_0))$ 根据定义存在 $\delta'$ ，取 $x=x_0+\frac{1}{2}\delta$ 则满足 $x-x_0<\delta$
+根据极限定义 $\forall\epsilon>0,\exists\delta,\forall x-x_0<\delta\rightarrow |f(x)-K|<\epsilon$
+
+则取 $\epsilon = \frac{1}{2}(K-f(x_0))$ 根据定义存在 $\delta'$ ，取 $x=x_0+\frac{1}{2}\delta'$ 则满足 $x-x_0<\delta'$
 
 根据条件有 $|f(x)-K|<\epsilon$ 进一步有 $f(x)>K-\frac{1}{2}(K-f(x_0))$
 
-进一步取任意 $a\in\left(f(x_0),K-\frac{1}{2}(K-f(x_0))\right)$ 由于满射，故存在 $x'$ 满足 $f(x')=a$ 
+进一步取任意 $a\in\left(f(x_0),K-\frac{1}{2}(K-f(x_0))\right)$ 显然 $a\in[0,1]$
+
+由于 $f(x)$ 值域为 $[0,1]$ 且[[~/OneDrive/离散数学/Disc_Math.org::MK198][满射]]，故存在 $x'$ 满足 $f(x')=a$ 
 
 又根据递增有 $x>x'>x_0$ 故显然有 $x'-x_0<\delta'$ 则根据极限定义有 $|f(x')-K|<\epsilon$
 
 由于 $a<K-\frac{1}{2}(K-f(x_0))\rightarrow a-K<-\frac{1}{2}(K-f(x_0))$
 
-即 $|a-k|>\frac{1}{2}(K-f(x_0))>\epsilon$ 的处矛盾，故假设不成立，即 $\lim_{x\to x_0^+}f(x)=f(x_0)$
+即 $|a-K|>\frac{1}{2}(K-f(x_0))>\epsilon$ 的处矛盾，故假设不成立，即 $\lim_{x\to x_0^+}f(x)=f(x_0)$
 
 同理可证 $\lim_{x\to x_0^-}f(x)=f(x_0)$ 结合得 $\forall x_0\in[0,1]\rightarrow\lim_{x\tox_0}f(x)=f(x_0)$
 
@@ -4769,7 +4893,7 @@ Borel集中元素均为可测集
 
 ****** 构建函数
 
-定义函数 $\phi_i(x)\begin{cases}i&f(x)>i\\\frac{j-1}{2^i}&\frac{j-1}{2^i}\leq f(x)<\frac{j}{2^i},j=1,2,...,2^{i-1}\end{cases}$
+定义函数 $\phi_i(x)\begin{cases}i&f(x)>i\\\frac{j-1}{2^i}&\frac{j-1}{2^i}\leq f(x)<\frac{j}{2^i},j=1,2,...,i\times 2^{i-1}\end{cases}$
 
 显然非负
 
@@ -4815,7 +4939,7 @@ Borel集中元素均为可测集
 
 对于任意 $x\in E$ 若 $f(x)\in\mathbb{R}$ 则根据[[MK19][阿基米德性质]]可得存在 $k_1$ 满足 $k_1>f(x)$
 
-则对于任意 $k>k_1$ , $f(x)$ 必定落在某一分段内，即存在 $j$ 使得 $\frac{j-1}{2^k}\leq f(x)<\frac{j}{2^k}$
+则对于任意 $k>k_1$ , $f(x)$ 必定落在 $\phi_k(x)$ 某一分段内，即存在 $j$ 使得 $\frac{j-1}{2^k}\leq f(x)<\frac{j}{2^k}$
 
 由于 $f(x)$ 非负，则有 $f(x)-\phi_k(x)=f(x)-\frac{j-1}{2^k}\leq\frac{j}{2^k}-\frac{j-1}{2^k}=\frac{1}{2^k}$
 
@@ -5697,17 +5821,17 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 综上所述，不一致收敛的点是零测集，即 $\{f_{k(s)}(x)\}$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
-** 鲁津定理
+** 鲁津定理<<MK361>>
 
 对于[[MK133][广义实值函数]] $f:E\to\mathbb{R}_e$ 满足：
 
 （1） $E\subset\mathbb{R}^n$ [[MK81][可测]]
 
-（2） $f(x)$ 是[[MK134][可测函数]]
+（2） $f(x)$ 是[[MK134][可测函数]] [[[a,b-t]]] 
 
 （3） $f(x)$ 在 $E$ [[MK190][几乎处处]]满足[[MK202][有限]]
 
-则存在笔记 $F_\delta,\delta\in\mathbb{R}^+$ 满足：
+则对于任意 $\delta\in\mathbb{R}$ 存在闭集 $F_\delta$ 满足：
 
 （1） $F_\delta\subset E$
 
@@ -6128,11 +6252,13 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 **** levi定理（单调性）<<MK231>>
 
-定义[[MK212][外侧度空间]] $<E,\varphi>$ ，任意[[MK133][函数]]序列 $\{f_i(x)\}$ 均为 $E\to\mathbb{R}_e$ 的映射
+定义[[MK212][外侧度空间]] $<E,\varphi>$ ，任意非负[[MK134][可测函数]]序列 $\{f_i(x)\}$ 均为 $E\to\mathbb{R}_e$ 的映射
 
 若满足对于任意 $x\in E\land i\in\mathbb{N}^+$ 有 $f_i(x)\leq f_{i+1}(x)$
 
 则 $$\lim_{i\to\infty}\left\{\int_Ef_i(x)dx\right\}=\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx$$
+
+或 $$\lim_{i\to\infty}\left\{\int_Ef_i(x)dx\right\}=\infty\land\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx=\infty$$
 
 ***** 证明
 
@@ -6140,13 +6266,33 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于递增，则对于任意 $x'\in E$ 均有 $f_{i+1}(x')\geq f_i(x')$
 
-故定义数列 $S=\{f_i(x')\}$ 显然有 $S\in\mathbb{R}_e$
+故定义数列 $S=\{f_i(x')\}$ 显然有 $S\subset\mathbb{R}_e$
 
 若 $S$ 在 $\mathbb{R}$ 上无界，由于递增，故有 $\lim_{i\to\infty}f_i(x')=\infty$
 
 若有界，则根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 存在 $a\in\mathbb{R}$ 满足 $\lim_{i\to\infty}f_i(x')=a$
 
 综上所述，对于任意 $x'\in E$ 均存在极限，故函数极限存在
+
+****** 均为无穷<<MK366>>
+
+根据[[MK157][推论]]可得 $f^{-1}(+\infty)$ 是 $<E,\varphi>$ 上的[[MK65][外测度可测集]]，则当 $\varphi(f^{-1}() +\infty)>0$ 时
+
+故定义简单函数 $\phi_i(x)=\begin{cases}\min\left\{f_i(x)\big|x\in f^{-1}(+\infty)\right\}&f(x)=\infty\\0&f(x)\ne\infty\end{cases}$
+
+则显然有对于任意 $x\in E\land i\in\mathbb{N}^+$ 均有 $f_i(x)\geq\phi_i(x)$ ，定义 $m_i=\min\left\{f_i(x)\big|x\in f^{-1}(+\infty)\right\}$
+
+显然 $\phi_i(x)$ 非负[[MK178][简单函数]]，故根据[[MK213][定义]]以及[[MK144][运算]]可得 $$\int_E\phi_i(x)dx=\varphi(f^{-1}(+\infty))\cdot m_i$$
+
+根据极限运算可得 $\lim_{i\to\infty}\varphi(f^{-1}(+ \infty))\cdot m_i=\varphi(f^{-1}(+\infty))\lim_{i\to\infty}m_i$
+
+由于 $f(x)=\lim_{i\to\infty}f_i(x)$ 且 $\forall x\in f^{-1}(+\infty)\rightarrow f(x)= +\infty$ 故易证 $\lim_{i\to\infty}m_i= +\infty$
+
+又根据[[MK220][性质1]]可得 $$\int_Ef_i(x)dx\geq\int_E\phi_i(x)dx\rightarrow\lim_{i\to\infty}\int_Ef_i(x)dx\geq\lim_{i\to\infty}\int_E\phi_i(x)dx=+\infty$$
+
+则根据[[MK143][定义]]可得 $$\lim_{i\to\infty}\int_Ef_i(x)dx=+\infty$$
+
+又根据[[MK220][性质1]]有 $$\forall i\in\mathbb{N}\rightarrow\int_E\phi_i(x)dx\leq \int_Ef(x)dx$$ 即 $$\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx=\infty$$ 
 
 ****** 证明等式
 
@@ -6164,31 +6310,11 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 ******* 右边小于等于左边
 
-根据[[MK157][推论]]可得 $f^{-1}(+\infty)$ 是 $<E,\varphi>$ 上的[[MK65][外测度可测集]]，则当其
+根据[[MK366][之前证明]]可得 $f^{-1}(+\infty)$ 是 $<E,\varphi>$ 上的[[MK65][外测度可测集]]
 
-******** 不是[[MK126][零测集]]
+且当 $\varphi(f^{-1}(x))>0$ 时两边均为无穷，故仅需考虑 $\varphi(f^{-1}(x))=0$ 的情况 
 
-当 $f(x)$ 中 $\varphi(f^{-1}(+\infty))>0$ 即无穷的点不为零测集时
-
-故定义简单函数 $\phi_i(x)=\begin{cases}\min\left\{f_i(x)\big|x\in f^{-1}(+\infty)\right\}&f(x)=\infty\\0&f(x)\ne\infty\end{cases}$
-
-则显然有对于任意 $x\in E\land i\in\mathbb{N}^+$ 均有 $f_i(x)\geq\phi_i(x)$ ，定义 $m_i=\min\left\{f_i(x)\big|x\in f^{-1}(+\infty)\right\}$
-
-显然 $\phi_i(x)$ 非负[[MK178][简单函数]]，故根据[[MK213][定义]]以及[[MK144][运算]]可得 $$\int_E\phi_i(x)dx=\varphi(f^{-1}(+\infty))\cdot m_i$$
-
-根据极限运算可得 $\lim_{i\to\infty}\varphi(f^{-1}(+ \infty))\cdot m_i=\varphi(f^{-1}(+\infty))\lim_{i\to\infty}m_i$
-
-由于 $f(x)=\lim_{i\to\infty}f_i(x)$ 且 $\forall x\in f^{-1}(+\infty)\rightarrow f(x)= +\infty$ 故易证 $\lim_{i\to\infty}m_i= +\infty$
-
-又根据[[MK220][性质1]]可得 $$\int_Ef_i(x)dx\geq\int_E\phi_i(x)dx\rightarrow\lim_{i\to\infty}\int_Ef_i(x)dx\geq\lim_{i\to\infty}\int_E\phi_i(x)dx=+\infty$$
-
-则根据[[MK143][定义]]可得 $$\lim_{i\to\infty}\int_Ef_i(x)dx=+\infty$$ 又由于 $$\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx\in\mathbb{R}_e$$
-
-故根据[[MK143][定义]]可得 $$\lim_{i\to\infty}\left\{\int_Ef_i(x)dx\right\}\geq\int_E\left\{\lim_{i\to\infty}f_{i}(x)\right\}dx$$
-
-******** 是[[MK126][零测集]]
-
-********* 去除无穷零测集
+******** 去除无穷零测集
 
 定义 $E_0=f^{-1}(+\infty),E'=E-E_0$ 故根据[[MK225][性质2]]可得 $$\int_Ef(x)dx =\int_{E'}f(x)dx +\int_{E_0}f(x)dx$$
 
@@ -6196,7 +6322,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 同理可证 $$\int_Ef_i(x)dx =\int_{E'}f_i(x)dx$$
 
-********* 证明结论
+******** 证明结论
 
 根据[[MK219][定义]] $$\int_{E}f(x)dx=\int_{E'}f(x)dx=\sup\left\{\int_{E'}\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_{E'}(f(x))\right\}$$
 
@@ -6204,7 +6330,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 定义 $E_i=\left\{x\big|f_i(x)\geq c\phi(x)\land x\in E'\right\}$
 
-********** 集合转换
+********* 集合转换
 
 由于 $\phi(x),f_i(x)$ 均为[[MK134][可测函数]]，则根据[[MK164][定理3]]易证 $E_i$ 亦为 $<E,\varphi>$ 上的[[MK65][外测度可测集]]
 
@@ -6220,7 +6346,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 综上所述，根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $E^*=E'$ 即 $E'=\bigcup_{i=1}^\infty E_i$
 
-********** 推出不等式<<MK229>>
+********* 推出不等式<<MK229>>
 
 对于任意 $i\in\mathbb{N}^+$ 根据[[MK227][推论]]以及[[MK220][性质1]]可得 $$\int_{E'}f_i(x)dx\geq\int_{E_i}f_i(x)dx\geq\int_{E_i}c\phi(x)dx$$
 
@@ -6230,7 +6356,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 最终有 $$\lim_{i\to\infty}\int_{E'}f_i(x)dx\geq c\int_{E'}\phi(x)dx$$
 
-********** 最终结论
+********* 最终结论
 
 假设 $$\lim_{i\to\infty}\int_{E'}f_i(x)dx<\int_{E'}\phi(x)dx$$
 
@@ -6272,7 +6398,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 若 $\{f_i(x)\}$ 是[[MK212][外侧度空间]] $<E,\varphi>$ 上的非负[[MK134][可测函数]]列
 
-则有 $$\int_E\left(\underline{\lim_{n\to\infty}}f_k(x)\right)dx\leq\underline{\lim_{n\to\infty}}\left\{\int_Ef_k(x)dx\right\}$$
+则有 $$\int_E\left(\underline{\lim_{i\to\infty}}f_i(x)\right)dx\leq\underline{\lim_{i\to\infty}}\left\{\int_Ef_i(x)dx\right\}$$
 
 即函数[[MK267][下极限函数]]的积分小于等于积分的[[MK171][下极限]]
 
@@ -6572,7 +6698,9 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 **** 性质8<<MK281>>
 
-非负[[MK134][可测函数]] $f(x)$ 满足 $$\int_Ef(x)dx=0$$ 的充要条件是 $f(x)=0$ 在 $E$ 上[[MK190][几乎处处]]成立
+非负[[MK134][可测函数]] $f(x)$ 满足 $$\int_Ef(x)dx=0$$ 且 $\phi(E)>0$
+
+则其充要条件是 $f(x)=0$ 在 $E$ 上[[MK190][几乎处处]]成立
 
 ***** 证明
 
@@ -7406,7 +7534,9 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 **** 定理4：几何意义<<MK312>>
 
-若 $f(x)$ 为，[[MK174][外侧度可测集]] $E\subset\mathbb{R}^n$ 上的非负[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，定义 $G(E,f)=\left\{<x,y>\big|x\in E\land y\in[0,f(x))\right\}$ 则有：
+若 $f(x)$ 为[[MK174][外侧度可测集]] $E\subset\mathbb{R}^n$ 上的非负[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]
+
+定义 $G(E,f)=\left\{<x,y>\big|x\in E\land y\in[0,f(x))\right\}$ 则有：
 
 （1） $f(x)$ 为[[MK134][可测函数]]的充要条件为 $G(E,f)$ 是 $\mathbb{R}^{n+1}$ 上的[[MK81][可测集]]
 
@@ -7532,47 +7662,51 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ****** 证明（1）<<MK315>>
 
-则定义 $G(A\times B,f)=\left\{<\vec{p},r>\big|\vec{p}\in A\times B\land r\in[0,f(\vec{p}))\right\}$ 根据
+定义 $G(A\times B,f)=\left\{<\vec{p},r>\big|\vec{p}\in A\times B\land r\in[0,f(\vec{p}))\right\}$ 根据
 
-进一步有 $G(A\times B,f)=\left\{<\vec{x},\vec{q}>\big|\vec{x}\in A\land\vec{q}\in B\times[0,f((\vec{x},\vec{y})))\right\}$ 定义 $E=B\times[0,f((\vec{x},\vec{y})))$
+由于 $f(\vec{p})$ 非负[[MK134][可测]]，则由[[MK312][定理4]]可得 $G(A\times B,f)$ 是 $\mathbb{R}^{p+q+1}$ 上的[[MK81][可测集]]
 
-则有 $G(A\times B,f)=A\times E$，且根据[[MK312][定理4]]可得 $G(A\times B,f)$ 是 $\mathbb{R}^{p+q+1}$ 上的[[MK81][可测集]]
+进一步有 $G(A\times B,f)=\left\{<\vec{x},\vec{y},r>\big|\vec{x}\in A\land y\in B\land r\in[0,f((\vec{x},\vec{y})))\right\}$
 
 ******* 可测
 
-根据[[MK310][截面定理]]，对于任意 $\vec{x}\in\mathbb{R}^p$ 几乎处处有 $B\times[0,f((\vec{x},\vec{y})))$ 是可测集
+根据[[MK310][截面定理]]，对于任意 $\vec{x}\in\mathbb{R}^p$ 几乎处处
 
-定义 $\vec{x}\in R_1$ 时成立，则任取 $\vec{x}_0\in R\cap A$ 有 $B\times[0,f((\vec{x}_0,\vec{y})))$ 是可测集
+有 $Z(\vec{x})=\left\{<\vec{y},r>\big|y\in B\land r\in[0,f((\vec{x},\vec{y})))\right\}$ 是可测集
+
+定义 $\vec{x}\in R$ 时成立，则任取 $\vec{x}_0\in R\cap A$ 有 $Z(\vec{x}_0)$ 是可测集
 
 进一步根据[[MK310][截面定理]]，对于任意 $\vec{y}\in\mathbb{R}^q$ 几乎处处有 $\varphi([0,f((\vec{x}_0,\vec{y}))))$ 是[[MK134][可测函数]]
 
 根据[[MK79][正规性]]以及 $f(\vec{x},\vec{y})$ 非负可得 $\varphi([0,f(\vec{x}_0,\vec{y}))=f(\vec{x}_0,\vec{y})$
 
-即对于任意 $\vec{x}\in A$ 几乎处处有：
-
-对于任意 $\vec{y}\in B$ 几乎处处可得 $f(\vec{x},\vec{y})$ 是[[MK134][可测函数]]
+即对于任意 $\vec{x}\in A$ 几乎处处有：对于任意 $\vec{y}\in B$ 几乎处处可得 $f(\vec{x},\vec{y})$ 是[[MK134][可测函数]]
 
 ******* 等式
 
-则根据[[MK312][定理4]]有 $$\int_{A\times B}f(\vec{p})d\vec{p}=\varphi(G(A\times B,f))$$ 
+则根据[[MK312][定理4]]有 $$\int_{A\times B}f(\vec{p})d\vec{p}=\varphi(G(A\times B,f))$$
 
-则根据[[MK310][截面定理]]有 $$\varphi(G(A\times B,f))=\int_{R^p}\varphi\left(B\times[0,f(\vec{x},\vec{y}))\right)d\vec{x}$$
+定义 $Z(\vec{x})=\left\{<\vec{y},r>\big|y\in B\land r\in[0,f((\vec{x},\vec{y})))\right\}$ 
+
+则根据[[MK310][截面定理]]有 $$\varphi(G(A\times B,f))=\int_{R^p}\varphi\left(Z(\vec{x})\right)d\vec{x}$$
 
 当 $\vec{x}\not\in A$ 时不存在 $<\vec{y},r>$ 满足 $<\vec{x},<\vec{y},r>>\in A\times E$ 故根据[[MK225][性质2]]
 
-易证 $$\int_{\mathbb{R}^p}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}=\int_{\mathbb{R}^p-A}\varphi(\varnothing)d\vec{x}+\int_{A}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}=\int_{A}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}$$
+易证 $$\int_{\mathbb{R}^p}\varphi(Z(\vec{x}))d\vec{x}=\int_{\mathbb{R}^p-A}\varphi(\varnothing)d\vec{x}+\int_{A}\varphi(Z(\vec{x}))d\vec{x}=\int_{A}\varphi(Z(\vec{x}))d\vec{x}$$
 
-同理根据[[MK310][截面定理]]，对于任意 $\vec{x}\in A$ 几乎处处有 $B\times[0,f((\vec{x},\vec{y})))$ 是可测集，则定义 $x\in A'$ 时成立
+同理根据[[MK310][截面定理]]，对于任意 $\vec{x}\in A$ 几乎处处有 $Z(\vec{x})$ 是可测集，则定义 $\vec{x}\in A'$ 时成立
 
-则有 $\varphi(A-A')=0$ 则根据[[MK225][性质2]]以及[[MK233][性质4]]易证 $$\int_{A}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}=\int_{A'}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}$$
+则有 $\varphi(A-A')=0$ 则根据[[MK225][性质2]]以及[[MK233][性质4]]易证 $$\int_{A}\varphi(Z(\vec{x}))d\vec{x}=\int_{A'}\varphi(Z(\vec{x}))d\vec{x}$$
 
 任取 $\vec{x}_0\in A'$ 定义 $G(B,[0,f(\vec{x}_0,\vec{y}))=\left\{<\vec{y},r>\big|\vec{y}\in B\land r\in[0,f(\vec{x}_0,\vec{y}))\right\}$
 
-显然有 $G(B,[0,f(\vec{x}_0,\vec{y}))=B\times[0,f((\vec{x}_0,\vec{y})))$ 根据[[MK310][截面定理]] $$\int_{B}\varphi([0,f(\vec{x}_0,\vec{y}))d\vec{y}=\varphi(B\times[0,f((\vec{x}_0,\vec{y}))))$$
+显然有 $G(B,[0,f(\vec{x}_0,\vec{y}))=Z(\vec{x}_0)$ 根据[[MK310][截面定理]] $$\int_{B}\varphi([0,f(\vec{x}_0,\vec{y}))d\vec{y}=\varphi(Z(\vec{x}_0))$$
 
 则可得 $$\int_{A'}\varphi(B\times[0,f(\vec{x},\vec{y}))d\vec{x}=\int_{A'}\left(\int_B\varphi([0,f(\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}$$
 
-根据[[MK79][正规性]]以及 $f(\vec{x},\vec{y})$ 非负可得 $\varphi([0,f(\vec{x},\vec{y}))=f(\vec{x},\vec{y})$ 即 $$\int_{A\times B}f(\vec{p})d\vec{p}=\int_{A}\left(\int_{B}f((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}$$
+根据[[MK79][正规性]]以及 $f(\vec{x},\vec{y})$ 非负可得 $\varphi([0,f(\vec{x},\vec{y}))=f(\vec{x},\vec{y})$
+
+即 $$\int_{A\times B}f(\vec{p})d\vec{p}=\int_{A}\left(\int_{B}f((\vec{x},\vec{y}))d\vec{y}\right)d\vec{x}$$
 
 ****** 证明（2）
 
@@ -7891,7 +8025,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 与条件矛盾，假设不成立
 
-** 引理<<MK337>>
+*** 引理<<MK337>>
 
 若 $f(x)$ 是闭[[MK13][区间]] $[a,b]$ 上的严格增函数，即 $x_1>x_2\rightarrow f(x_1)>f(x_2)$
 
@@ -7901,11 +8035,11 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 （2） 存在一个[[MK326][列导数]] $\mathcal{D}_{h}(f(x))\geq q$ 则有 $\varphi(f(E))\geq q\cdot\varphi(E)$ 
 
-*** 证明
+**** 证明
 
-**** 证明（1）<<MK333>>
+***** 证明（1）<<MK333>>
 
-***** 开集包含<<MK329>>
+****** 开集包含<<MK329>>
 
 根据[[MK65][Caratheodory定理]]可得 $\mathbb{R}$ 上的可测集构成[[MK50][ $\sigma$ 代数]]
 
@@ -7915,7 +8049,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 又由于 $E\subset[a,b]$ 根据[[MK60][单调性]]可得 $\varphi(E)\leq b-a<\infty$ 故根据[[MK84][计算]]可得 $\varphi(G)<\varphi(E)+\delta$
 
-***** 构建覆盖<<MK328>>
+****** 构建覆盖<<MK328>>
 
 对于任意 $\epsilon^*>0$ 定义 $p^*=p+\epsilon^*$ 则有 $p^*>p$
 
@@ -7955,7 +8089,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 故 $V=\left\{\Delta_n(x_0)|x_0\in E\land n>N_{x_0}\right\}$ 是 $f(E)$ 的一个[[MK317][维塔利覆盖]]
 
-***** 证明结论
+****** 证明结论
 
 根据[[MK327][维塔利覆盖定理]]可得存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]集 $\{\Delta_i(x_i)\}\subset V$ 满足 $\varphi\left(f(E)-\bigcup_{i}^\infty \Delta_i(x_i)\right)=0$
 
@@ -7989,7 +8123,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 与假设矛盾，故假设不成立，即根据[[MK5][三岐性]]有 $\varphi(f(E))\leq p\varphi(E)$ 
 
-**** 证明（2）
+***** 证明（2）
 
 假设存在 $x_1\ne x_2$ 满足 $f(x_1)=f(x_2)$ 则根据[[MK5][三岐性]]必有 $x_1>x_2\lor x_1<x_2$
 
@@ -8001,7 +8135,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 当 $q=0$ 时根据[[MK54][非负性]]有 $\varphi(f(E))\geq 0$ 则当 $q>0$ 时作以下证明
 
-***** 取等测度的连续集<<MK332>>
+****** 取等测度的连续集<<MK332>>
 
 根据[[MK330][推论]]可得若 $f(x)$ 在 $[a,b]$ 上严格递增，则其不连续点是[[MK126][零测集]]
 
@@ -8011,7 +8145,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 则对于任意 $x\in E^*$ 可得 $f(x)$ [[MK106][连续]]， $E^*\subset E$ 以及 $\varphi(E^*)=\varphi(E)$
 
-***** 不连续点的相零测
+****** 不连续点的相零测
 
 由于 $f(x)$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]] $E=E^*\cap Z'$ 故根据[[~/OneDrive/离散数学/Disc_Math.org::MK356][相分离]]可得 $f(E)=f(E^*)\cup f(Z')$
 
@@ -8021,7 +8155,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 又由于 $f(E^*)=f(E)-f(Z')$ 故有 $\varphi(f(E))=\varphi(f(E^*))$
 
-***** 证明结论
+****** 证明结论
 
 对于任意 $y_0\in f(E^*)$ 均存在 $x_0\in E^*\subset E$ 使得 $f(x_0)=y_0$ 进一步有 $f^{-1}(y_0)=x_0$
 
@@ -8067,9 +8201,9 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ***** 构建严格递增函数<<MK338>>
 
-设 $g(x)=f(x)+x$ 若 $g(x)$ 可导，则有 $g'(x)=\lim_{x\to x_0}\frac{g(x)-f(x)}{x-x_0}=A\in\mathbb{R}_e$
+设 $g(x)=f(x)+x$ 若 $g(x)$ 可导，则有 $g'(x)=\lim_{x\to x_0}\frac{g(x)-g(x_0)}{x-x_0}=A\in\mathbb{R}_e$
 
-进一步有 $g'(x)=\lim_{x\to x_0}\frac{f((x)-f(x_0))-(x-x_0)}{x-x_0}$
+进一步有 $g'(x)=\lim_{x\to x_0}\frac{(f(x)-f(x_0))-(x-x_0)}{x-x_0}$
 
 根据极限运算易得 $g'(x)-1=\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}=f(x)$
 
@@ -8077,15 +8211,19 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ***** 证明结论
 
-则对于 $x_0\in E$ 根据[[MK336][推论2]]可得至少存在两个不相等的列导数，假设 $\mathcal{D}_{h_1}(x_0)>\mathcal{D}_{h_2}(x_0)$
+则对于 $x_0\in E$ 根据[[MK336][推论2]]可得至少存在两个不相等的列导数，假设 $\mathcal{D}_{h_1}(f(x_0))>\mathcal{D}_{h_2}(f(x_0))$
 
-根据[[MK43][有理数稠密性]]可得存在有理数 $p,q$ 满足 $\mathcal{D}_{h_1}(x_0)>p>q>\mathcal{D}_{h_2}(x_0)$
+根据[[MK43][有理数稠密性]]可得存在有理数 $p,q$ 满足 $\mathcal{D}_{h_1}(f(x_0))>p>q>\mathcal{D}_{h_2}(f(x_0))$
 
-定义 $E_{p,q}=\left\{x|x\in E\land \mathcal{D}_{h_1}(x_0)>p>q>\mathcal{D}_{h_2}(x_0)\right\}$
+定义 $E_{p,q}=\left\{x|x\in E\land \mathcal{D}_{h_1}(f(x))>p>q>\mathcal{D}_{h_2}(f(x))\right\}$
 
-则根据上述说法显然 $E\subset\bigcup_{<p,q>\in\mathbb{Q}^+\times\mathbb{Q}^+}E_{p,q}$
+则对于任意 $x_0\in E$ 必存在 $E_{p,q}$ 满足 $x_0\in E_{p,q}$ 故有 $E\subset\bigcup_{<p,q>\in\mathbb{Q}^+\times\mathbb{Q}^+}E_{p,q}$
 
-由于严格递增，易证列导数必为正，则有 $r>0$ 则对于 $E_r$ 根据[[MK337][引理]]有
+由于严格递增，易证列导数必为正，则有 $p>0,q>0$ 则根据 $E_{p,q}$ 的定义
+
+对于任意 $x_0\in E_{p,q}$ 均存在两个列导数满足 $\mathcal{D}_{h_1}(f(x_0))>p>q>\mathcal{D}_{h_2}(f(x_0))$
+
+故根据[[MK337][引理]]有
 
 （1） $\varphi(f(E_{p,q}))\leq q\varphi(E_{p,q})$
 
@@ -8172,3 +8310,625 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 根据[[MK4][计算封闭]]易证 $f(b)-f(a)\in\mathbb{R}$ 即 $$\int_{[a,b]}f'(x)dx<+\infty$$
 
 又根据[[MK341][之前证明]]可得 $f'(x)$ 是可测函数，故根据[[MK247][定义]]可得 $f'(x)$ 在 $[a,b]$ 上勒贝格可积 
+
+*** 推论1
+
+对于任意 $E\subset[a,b]$ 其中 $\{a,b\}\subset\mathbb{R}$ 且 $\varphi(E)=0$ 是[[MK126][零测集]]
+
+存在 $[a,b]$ 上的增函数 $f(x)$ 满足对于任意 $x_0\in E$ 均有 $f'(x)=\infty$
+
+即 $f(x)$ 在 $E$ 上的[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]为无穷
+
+**** 证明
+
+***** 构造函数<<MK345>>
+
+由于 $E$ 是零测集，则根据[[MK94][可测性]]以及[[MK92][引理1]]可得存在一列开集 $G_n$ ，对于任意 $n\in\mathbb{N}$
+
+（1） $E\subset G_n$
+
+（2） $\varphi(G_n)<\frac{1}{2^n}$
+
+（3） $G_i\subset G_j,i>j$ 
+
+定义 $K_n(x)=[a,x]\cap G_n$ 以及 $f_n(x)=\varphi(K_n(x))$
+
+则对于任意 $x_1<x_2$ 均有 $K_n(x_1)\subset K_n(x_2)$ 根据[[MK60][单调性]]有 $f_n(x_1)\leq f_n(x_2)$
+
+对于任意 $x_0\in[a,b]$ 均有 $f_n(x_0+h)-f_n(x_0)=\varphi([a,x_0+h]\cap G_n)-\varphi([a,x_0]\cap G_n)$
+
+根据[[MK79][正规性]]有 $\varphi([a,b])=b-a<\infty$ 以及 $[a,x]\cap G_n\subset[a,b]$ 即有 $\varphi([a,x_0]\cap G_n)<\infty$
+
+故根据[[MK84][计算]]
+
+得 $\varphi([a,x_0+h]\cap G_n)-\varphi([a,x_0]\cap G_n)=\varphi(([a,x_0+h]\cap G_n)-([a,x_0]\cap G_n))$
+
+显然终有 $f_n(x_0+h)-f_n(x_0)=\varphi([x_0,x_0+h]\cap G_n)$
+
+又由于 $[x_0,x_0+h]\cap G_n\subset[x_0,x_0+h]$
+
+故有 $f_n(x_0+h)-f_n(x_0)\leq \varphi([x_0,x_0+h])=h$ ，同理可证 $f_n(x_0)-f_n(x_0-h)\leq h$
+
+综上所述 $\forall\epsilon>0,\exists h=\frac{\epsilon}{2},\forall |x-x_0|<h\rightarrow |f_n(x)-f_n(x_0)|\leq h<\epsilon$
+
+即 $\lim_{x\to x_0}f(x)=f(x_0)$ 故[[MK106][连续]]，定义 $f(x)=\sum_{i=1}^\infty f_i(x)$
+
+显然 $|f_i(x)|\leq\frac{1}{2^n}$ 且 $\sum_{i=1}^\infty\frac{1}{2^i}<\infty$ 故根据[[~/OneDrive/数学分析/Chap10Note.org::MK6][判别法]]可得 $\sum_{i=1}^\infty f_i(x)$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+
+则根据[[MK205][引理1]]可得 $f(x)$ 连续，且由于 $f_n(x)$ 单调递增，故 $f(x)$ 亦为单调递增函数
+
+***** 证明结论
+
+对于任意 $x_0\in[a,b)\cap E$ 有 $x\in G_n,n\in\mathbb{N}$ ，则给定任意 $k\in\mathbb{N}$ 
+
+由于 $x_0\in G_k$ 则根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]存在 $\delta_k$ 对于任意 $0<h<\delta_k$ 均有 $[x,x_0+h]\subset G_k$
+
+又根据[[MK345][定义]]可得 $[x,x_0+h]\subset G_i,\forall i\leq k$ 即 $[x_0,x_0+h]\cap G_i=[x_0,x_0+h],\forall i\leq k$
+
+故根据[[MK345][之前证明]]以及[[MK79][正规性]]有
+
+\begin{aligned}
+\frac{f(x_0+h)-f(x_0)}{h}=&\frac{1}{h}\left(\sum_{i=1}^\infty f_i(x_0+h)-\sum_{i=1}^\infty f_i(x_0)\right)\\
+=&\frac{1}{h}\sum_{i=1}^\infty\left(f_i(x_0+h)-f_i(x_0)\right)\\
+\geq&\frac{1}{h}\sum_{i=1}^k\left(f_i(x_0+h)-f_i(x_0)\right)\\
+=&\frac{1}{h}\sum_{i=1}^k\left(\varphi([a,x_0+h]\cap G_n)-\varphi([a,x_0]\cap G_n)\right)\\
+=&\frac{1}{h}\sum_{i=1}^k\varphi([x_0,x_0+h]\cap G_n)\\
+=&\frac{1}{h}\sum_{i=1}^k\varphi([x_0,x_0+h])\\
+=&\frac{1}{h}\sum_{i=1}^kh=k\\
+\end{aligned}
+
+综上所属 $\forallk\in\mathbb{N},\exists\delta_k,\forall h<\delta_k\rightarrow\left|\frac{f(x_0+h)-f(x_0)}{h}\right|\geq k$
+
+即 $\lim_{x\to x_0^+}\frac{f(x_0+h)-f(x_0)}{h}=\infty$ 同理可证 $\lim_{x\to x_0^-}\frac{f(x_0+h)-f(x_0)}{h}=\infty$
+
+即对于任意 $x_0\in[a,b)\cap E$ 均有 $f'(x_0)=\infty$
+
+*** 推论2
+
+[[MK346][康拓函数]] $f(x)$ 满足 $$\int_{[0,1]}f'(x)dx< f(1)-f(0)$$
+
+**** 证明
+
+根据康拓集 $P$ 上函数的[[MK108][定义]]可得 $f(0)=0,f(1)=1$
+
+对于任意 $x\in[0,1]-P$ 根据[[MK107][定义]]可得 $x\in \bigcup_{i=1}^\infty E_n$
+
+则存在 $n\in\mathbb{N}$ 满足 $x\in E_n=\bigcup_{\lambda\in\Lambda_n}\left(a_\lambda+\frac{b_\lambda-a_\lambda}{3},b_\lambda-\frac{b_\lambda-a_\lambda}{3}\right)$
+
+即存在 $\lambda\in\Lambda_n$ 满足 $x\in Z=\left(a_\lambda+\frac{b_\lambda-a_\lambda}{3},b_\lambda-\frac{b_\lambda-a_\lambda}{3}\right)$
+
+根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]可得存在 $\delta>0$ 满足 $(x-\delta,x+\delta)\subset Z$
+
+即 $O(x,\delta)=(x-\delta,x+\delta)\cap P=\varnothing$
+
+故根据[[MK346][函数定义]]可得当 $x'\in O(x,\delta)$ 时 $f(x')=\sup\left\{g(y)\big|y\in P\land y<x'\right\}$
+
+定义 $A(x')=\left\{y\big|y\in P\land y<x'\right\}$ 对于任意 $x^*\in O(x,\delta)$ 均有 $x^*\not\in P$
+
+故可得 $A(x')=A(x-\delta)$ 即当 $x'\in O(x,\delta)$ 时 $f(x')=\sup(A(x-\delta))$ 为常值
+
+则显然有 $f'(x)=0$ 故对于任意 $x\in [0,1]-P$ 均有 $f'(x)=0$
+
+又根据[[MK119][是零测集]]可得 $\varphi(P)=0$ 则根据[[MK225][性质2]]、[[MK233][性质4]]
+
+可得 $$\int_{[0,1]}f'(x)dx=\int_{[0,1]-P}f'(x)dx+\int_{P}f'(x)dx=\int_{[0,1]-P}f'(x)dx$$
+
+显然 $f'(x)$ 在 $[0,1]-P$ 上是非负[[MK178][简单函数]]
+
+最后根据上述证明以及[[MK213][定义]]可得 $$\int_{[0,1]-P}f'(x)dx=\varphi([0,1]-P)\times0=0$$
+
+故有 $$0=\int_{[a,b]}f'(x)dx\leq f(1)-f(0)=1$$
+
+** 有界变差函数
+
+*** 定义<<MK350>>
+
+对于任意一个 $[a,b]$ 上的[[~/OneDrive/离散数学/Disc_Math.org::MK360][有理划分]] $T=\{[a_0,a_1],[a_1,a_2],...\}$
+
+定义 $Z_{T,[a,b]}(f)=\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|$ 为划分 $T$ 下的变差
+
+若存在 $M_f\in\mathbb{R}$ 满足对于任意划分 $T$ 均有 $Z_T\leq M_f$ 则称 $f(x)$ 为有界变差函数
+
+定义 $[a,b]$ 上的所有有理划分集合为 $\mathcal{T}$ ，定义 $Z_{[a,b]}(f)=\left\{Z_T(f)\big|T\in\mathcal{T}\right\}$
+
+则定义 $\overunderset{b}{a}{V}(f)=\sup(Z(f))$ 是 $f(x)$ 在 $[a,b]$ 上的全变差
+
+故有界变差函数进一步可定义为 $\overunderset{b}{a}{V}(f)<+\infty$
+
+*** 性质
+
+**** 性质1<<MK353>>
+
+任意满足[[MK350][定义2]]的函数为有界函数
+
+***** 证明
+
+假设任意一点 $x\in[a,b]$ 满足 $f(x)=\infty$ 则取划分 $T=\{[a,x],[x,b]\}$
+
+则当 $f(a)\in\mathbb{R}$ 时 $Z_T=\infty$ ，当 $f(a)=\infty$ 时根据[[MK351][预算定义]]可得 $Z_T$ 无定义
+
+故与条件矛盾，假设不成立，故有 $\forall x\in[a,b]\rightarrow f(x)<\infty$
+
+由于 $[a,b]$ 是闭区间，故根据[[MK352][引理1]]可得 $f(x)$ 有界
+
+**** 性质2（线性）<<MK355>>
+
+若 $f(x),g(x)$ 在 $[a,b]$ 上满足[[MK350][定义2]]，则：
+
+（1） $f(x)+g(x)$ 满足[[MK350][定义2]]
+
+（2） $c\times f(x),c\in\mathbb{R}$ 满足[[MK350][定义2]]
+
+***** 证明（1）
+
+定义 $h(x)=f(x)+g(x)$ 对于任意划分 $T$ 根据[[MK22][三角不等式]]
+
+\begin{aligned}
+Z_T(h)=&\sum_{i=1}^n\left|h(a_i)-h(a_{i-1})\right|\\
+=&\sum_{i=1}^n\left|f(a_i)+g(a_i)-f(a_{i-1})-g(a_{i-1})\right|\\
+\leq&\sum_{i=1}^n\left(\left|f(a_i)-f(a_{i-1})\right|+\left|g(a_i)-g(a_{i-1})\right|\right)\\
+=&\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|+\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|\\
+\leq&M_f+M_g
+\end{aligned}
+
+***** 证明（2）
+
+定义 $h(x)=cf(x)$ 对于任意划分 $T$
+
+有 $Z_T(h)=\sum_{i=1}^n\left|cf(a_i)-cf(a_{i-1})\right|=c\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|$
+
+由于 $\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|<M_f$ 故有 $c\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|<cM_f$
+
+显然根据[[MK4][封闭性]]可得 $cM_f\in\mathbb{R}$
+
+**** 性质3
+
+若 $f(x),g(x)$ 在 $[a,b]$ 上满足[[MK350][定义2]]，则 $f(x)g(x)$ 亦满足[[MK350][定义2]]
+
+***** 证明
+
+定义 $h(x)=f(x)g(x)$ 对于任意划分 $T$ 根据[[MK22][三角不等式]]
+
+\begin{aligned}
+Z_T(h)=&\sum_{i=1}^n\left|h(a_i)-h(a_{i-1})\right|\\
+=&\sum_{i=1}^n\left|f(a_i)g(a_i)-f(a_{i-1})g(a_{i-1})\right|\\
+=&\sum_{i=1}^n\left|f(a_i)g(a_i)+f(a_i)g(a_{i-1})-f(a_i)g(a_{i-1})-f(a_{i-1})g(a_{i-1})\right|\\
+=&\sum_{i=1}^n\left|f(a_i)(g(a_i)-g(a_{i-1}))+g(a_{i-1})(f(a_i)-f(a_{i-1}))\right|\\
+\leq&\sum_{i=1}^n\left(\left|f(a_i)(g(a_i)-g(a_{i-1}))\right|+\left|g(a_{i-1})(f(a_i)-f(a_{i-1}))\right|\right)\\
+=&\sum_{i=1}^n|f(a_i)||(g(a_i)-g(a_{i-1}))|+\sum_{i=1}^n|g(a_{i-1})||(f(a_i)-f(a_{i-1}))|\\
+\end{aligned}
+
+根据[[MK353][性质1]]可得 $f(x),g(x)$ 有界，定义 $M$ 为两个函数的界
+
+结合 $Z_T(f)<\infty,Z_T(g)<\infty$ 则有
+
+\begin{aligned}
+Z_T(h)\leq&\sum_{i=1}^n|f(a_i)||(g(a_i)-g(a_{i-1}))|+\sum_{i=1}^n|g(a_{i-1})||(f(a_i)-f(a_{i-1}))|\\
+\leq&M\sum_{i=1}^n|(g(a_i)-g(a_{i-1}))|+M\sum_{i=1}^n|(f(a_i)-f(a_{i-1}))|\\
+<&MM_g+MM_f
+\end{aligned}
+
+显然根据[[MK4][封闭性]]可得 $MM_g+MM_f\in\mathbb{R}$
+
+**** 性质4<<MK356>>
+
+若 $f(x)$ 在 $[a,b]$ 上满足[[MK350][定义2]]，则
+
+（1） 对于任意 $[c,d]\subset [a,b]$ 有 $f(x)$ 在 $[c,d]$ 上亦满足[[MK350][定义2]]
+
+（2） 对于任意 $a<c<b$ 有 $\overunderset{b}{a}{V}(f)=\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+***** 证明（1）
+
+对于 $[c,d]$ 上的任意一组划分 $T'$ 均可与 $[a,c],[d,b]$ 组成新的 $[a,b]$ 上的划分 $T$
+
+则根据定义有 $|f(c)-f(a)|+|f(d)-f(b)|+Z_{T'}(f)<M_f$
+
+又根据[[MK353][性质1]]可得有界，故可得 $|f(c)-f(a)|+|f(d)-f(b)|<M\in\mathbb{R}$
+
+则显然 $Z_{T'}(f)<M_f+M$ 根据[[MK4][封闭性]]可得 $M_f+M\in\mathbb{R}$
+
+***** 证明（2）
+
+根据以下证明以及[[MK5][三岐性]]可得 $\overunderset{b}{a}{V}(f)=\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+****** 证明 $\overunderset{b}{a}{V}(f)\leq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+对于任意 $[a,b]$ 上的划分 $T$ 可得 $Z_T(f)=\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|$
+
+若 $c$ 是 $T$ 中某一区间的端点 $a_k$ 则根据[[MK350][定义2]]有
+
+\begin{aligned}
+Z_T(f)=&\sum_{i=1}^k\left|f(a_i)-f(a_{i-1})\right|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
+\leq&\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)
+\end{aligned}
+
+若 $c$ 不是端点，则由于 $c\in[a,b]$ 且 $T$ 是划分，股存在 $c\in[a_{k-1},a_k]$
+
+则根据[[MK350][定义2]]以及[[MK22][三角不等式]]有
+
+\begin{aligned}
+Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
+=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)+f(c)-f(c)-f(a_{k-1})|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
+\leq&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(c)|\\
+&+|f(c)-f(a_{k-1})|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
+\leq&\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)
+\end{aligned}
+
+即由 $T$ 的任意性以及[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $\overunderset{b}{a}{V}(f)\leq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+****** 证明 $\overunderset{b}{a}{V}(f)\geq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+对于任意 $[a,c]$ 上的划分 $T_\alpha$ 以及任意 $[c,b]$ 上的划分 $T_\beta$
+
+显然存在 $T=T_\alpha\cup T_\beta$ 是 $[a,b]$ 上的划分，故存在 $Z_{T,[a,b]}(f)=Z_{T_\alpha,[a,c]}(f)+Z_{T_\beta,[c,b]}(f)$
+
+显然由于 $Z_{T,[a,b]}(f)\in Z_{[a,b]}(f)$ 故可得 $Z_{T_\alpha,[a,c]}(f)+Z_{T_\beta,[c,b]}(f)\leq\overunderset{b}{a}{V}(f)$
+
+即由 $T$ 的任意性以及[[~/OneDrive/离散数学/Disc_Math.org::MK361][定理7]]可得 $\overunderset{b}{a}{V}(f)\geq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+*** Jordan分解（定义1）<<MK354>>
+
+若 $f(x)$ 是 $[a,b]$ 上的[[MK202][有限]]函数满足：
+
+（1） $f(x)=g(x)-h(x)$
+
+（2） $g(x),h(x)$ 在 $[a,b]$ 上均为增函数
+
+则称 $f(x)$ 是有界变差函数
+
+**** 等价性<<MK357>>
+
+[[MK354][Jordan分解]]与[[MK350][定义2]]等价
+
+***** 证明充分
+
+若满足[[MK354][定义1]]则有 $f(x)=g(x)-h(x)$
+
+由于递增，故易证对于任意划分 $T$ 均有 $Z_{T,[a,b]}(g)=g(b)-g(a),Z_{T,[a,b]}(h)=h(b)-h(a)$
+
+由于 $f(x)$ 有限，显然 $g(x),h(x)$ 亦有限，则根据[[MK352][引理1]]可得 $g(x),h(x)$ 有界
+
+故有对于任意 $T$ 均有 $Z_{T,[a,b]}(g)<\infty\land Z_{T,[a,b]}(h)<\infty$ 即 $g(x),h(x)$ 满足[[MK350][定义2]]
+
+根据[[MK355][线性]]可得 $f(x)=g(x)-h(x)$ 亦满足[[MK350][定义2]]
+
+***** 证明必要<<MK358>>
+
+若 $f(x)$ 满足[[MK350][定义2]]，则定义 $g(x)=\overunderset{x}{\text{a}}{V}(f)$ 根据[[MK350][定义2]]可得对于任意 $a\leq u< v\leq b$ 均有 $\overunderset{v}{u}{V}(f)\geq 0$
+
+又根据[[MK356][性质4]]有 $g(v)-g(u)=\overunderset{v}{u}{V}(f)$ 故 $g(x)$ 是递增函数 
+
+定义 $h(x)=g(x)-f(x)$ 则根据[[MK356][性质4]]，对于任意 $a\leq u< v\leq b$
+
+有 $h(v)-h(u)=\overunderset{v}{u}{V}(f)-(f(v)-f(u))$ 显然 $T=\{[u,v]\}$ 亦为 $[u,v]$ 上的一种划分
+
+显然有 $\overunderset{v}{u}{V}(f)\geq|f(v)-f(u)|\geq(f(v)-f(u))$
+
+故 $h(x)$ 亦为增函数，则有 $f(x)=g(x)-h(x)$ 满足[[MK354][定义1]]
+
+**** 不唯一性
+
+[[MK350][有界变差]]函数 $f(x)$ 的[[MK354][Jordan分解]]不唯一
+
+***** 证明
+
+根据[[MK357][等价性]]可得 $f(x)=g(x)-h(x)$ 则对于任意一个增函数 $u(x)$
+
+均有 $g'(x)=g(x)+u(x),h'(x)=h(x)+u(x)$ 均为增函数
+
+且 $f(x)=g'(x)-h'(x)$
+
+**** 正规分解
+
+对于[[MK350][有界变差]]函数 $f(x)$ 定义：
+
+（1） 正变差函数 $P(x)=\frac{1}{2}\left(\overunderset{x}{a}{V}(f)+f(x)-f(a)\right)$
+
+（2） 负变差函数 $Q(x)=\frac{1}{2}\left(\overunderset{x}{a}{V}(f)-\left(f(x)-f(a)\right)\right)$
+
+则 $f(x)=P(x)-Q(x)$ 是[[MK354][Jordan分解]]，并定义该分解为 $f(x)$ 的正规分解
+
+***** 证明
+
+定义 $x_1>x_2$ 则有 $P(x_1)-P(x_2)=\frac{1}{2}\left(\overunderset{x_1}{a}{V}(f)-\overunderset{x_2}{a}{V}(f)+f(x_1)-f(x_2)\right)$
+
+根据[[MK356][性质4]]有 $P(x_1)-P(x_2)=\frac{1}{2}\left(\overunderset{x_1}{x_2}{V}(f)+f(x_1)-f(x_2)\right)$
+
+根据[[MK358][类似证明]]可得 $\overunderset{x_1}{x_2}{V}(f)\geq-(f(x_1)-f(x_2))$ 则有 $P(x_1)-P(x_2)\geq0$
+
+故 $P(x)$ 递增，同理可证 $Q(x)$ 递增，故有 $f(x)=P(x)-Q(x)$ 是[[MK354][Jordan分解]]
+
+*** 定理
+
+[[MK350][有界变差]]函数 $f(x)$ 可以分解为 $g(x)+h(x)$
+
+其中 $g(x)$ 是阶梯函数， $h(x)$ 是连续函数
+
+**** 证明
+
+***** 证明增函数<<MK359>>
+
+****** 构造函数
+
+对于任意增函数 $f(x)$ 根据[[MK335][定理2]]可得其不连续点是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]
+
+则定义不连续点集 $Z=\{z_1,z_2...\}$
+
+以及左右极限 $\lim_{x\to x^-}f(x)=f(x^-),\lim_{x\to x^+}f(x)=f(x^+)$
+
+定义 $\phi_i(x)=\begin{cases}1&x\geq z_i\\0&x< z_i\end{cases},\psi_i(x)=\begin{cases}1&x> z_i\\0&x\leq z_i\end{cases}$
+
+则定义 $g(x)=\sum_{i=1}^{|Z|}\left(\phi_i(x)(f(z_i)-f(z_i^-))+\psi_i(x)(f(z_i^+)-f(z_i))\right)$
+
+显然 $g(x)$ 是阶梯函数，则定义 $h(x)=f(x)-g(x)$ 
+
+****** 证明结论
+
+任取 $z_k$ 定义 $Z_k=\left\{z\big|z\in Z\land z<z_k\right\}$ 则易证
+
+（1） $g(z_k^-)=\sum_{z_i\in Z_k}\left(\phi_i(x)(f(z_i)-f(z_i^-))+\psi_i(x)(f(z_i^+)-f(z_i))\right)$
+
+（2） $g(z_k)=(f(z_k)-f(z_k^-))+g(z_k^-)$
+
+（3） $g(z_k^+)=(f(z_k)-f(z_k^-))+(f(z_k^+)-f(z_k))+g(z_k^-)=(f(z_k^+)-f(z_k^-))+g(z_k^-)$
+
+根据[[MK334][定理1]]有 $f(z_k^-)\geq f(z_k)\geq f(z_k^+)$ 即有
+
+（1） $h(z^-_k)=f(z_k^-)-g(z_k^-)$
+
+（2） $h(z_k)=f(z_k)-((f(z_k)-f(z_k^-))+g(z_k^-)=f(z_k^-)-g(z_k^-)$
+
+（3） $h(z_k^+)=f(z_k^+)-((f(z_k^+)-f(z_k^-))+g(z_k^-))=f(z_k^-)-g(z_k^-)$
+
+即有 $h(z_k^-)=h(z_k)=h(z_k^+)$ 故 $h(x)$ 在 $z_k$ 点连续
+
+由于 $g(x)$ 是阶梯函数，故结合定义可得当且仅当 $x\in Z$ 时 $g(x)$ 不连续
+
+又由于 $f(x)$ 亦仅在 $x\in Z$ 时不连续，故易证 $f(x)-g(x)$ 仅在 $x\in Z$ 时不连续
+
+又根据 $k$ 的任意性可得 $h(x)$ 连续
+
+***** 有界变差函数
+
+根据[[MK354][Jordan分解]]可得 $f(x)=g(x)-h(x)$ 其中 $g(x),h(x)$ 均为增函数 
+
+则根据[[MK359][之前证明]]可得 $g(x)=g'(x)+g^*(x),h(x)=h'(x)+h^*(x)$
+
+其中 $g'(x),h'(x)$ 是阶梯函数 $g^*(x),h^*(x)$ 是连续函数
+
+则易证 $g'(x)-h'(x)$ 仍为阶梯函数， $g^*(x)-h^*(x)$ 仍为连续函数
+
+故有 $f(x)=(g'(x)-h'(x))+(g^*(x)-h^*(x))$
+
+** 平均连续性
+
+若 $f(x)$ 是 $[a,b]$ 上的[[MK237][勒贝格可积]]函数，假设 $x\not\in[a,b]\rightarrow f(x)=0$
+
+则有 $$\lim_{t\to0}\int_{\mathbb{R}}\left|f(x+t)-f(x)\right|dx=0$$
+
+*** 证明
+
+显然 $f(x)$ 在 $\mathbb{R}$ 上勒贝格可积，假设 $t>0$ ， $t<0$ 同理可证， $t=0$ 显然为 $0$
+
+同样若 $t>b-a$ 或 $a=b$ 时积分亦为 $0$ 故不考虑该情况
+
+由于 $x\not\in[a,b]\rightarrow f(x)=0$ 且非负可测，则根据[[MK225][性质2]]、[[MK219][定义]]有
+
+\begin{aligned}
+\int_{\mathbb{R}}\left|f(x+t)-f(x)\right|dx=&\int_{(-\infty,a-t)}\left|f(x+t)-f(x)\right|dx+\int_{[a-t,b-t]}\left|f(x+t)-f(x)\right|dx\\&
++\int_{(a-t, +\infty)}\left|f(x+t)-f(x)\right|dx\\
+=&\int_{[a-t,b-t]}\left|f(x+t)-f(x)\right|dx\\
+=&\int_{[a-t,a]}\left|f(x+t)-f(x)\right|dx+\int_{[a,b-t]}\left|f(x+t)-f(x)\right|dx\\
+&+\int_{[b-t,b]}\left|f(x+t)-f(x)\right|dx\\
+=&\int_{[a-t,a]}\left|f(x+t)\right|dx+\int_{[a,b-t]}\left|f(x+t)-f(x)\right|dx+\int_{[b-t,b]}\left|f(x)\right|dx
+\end{aligned}
+
+且根据[[MK248][绝对可积]]与[[MK262][线性]]可得上述三个积分均[[MK247][勒贝格可积]]，则对于任意 $\epsilon>0$ 有：
+
+**** 处理两边<<MK360>>
+
+根据[[MK248][绝对可积]]可得 $|f(x)|$ 亦为勒贝格可积，由于 $|f(x)|\geq0$
+
+故根据[[MK219][定义]]可得存在非负[[MK178][简单函数]] $\phi_1(x),\phi_2(x)$ 满足
+
+（1） $$\int_{[a-t,a]}\left|f(x+t)\right|dx-\int_{[a-t,a]}\phi_1(x+t)dx<\epsilon$$
+
+（2） $$\int_{[b-t,b]}\left|f(x)\right|-\int_{[b-t,b]}\phi_2(x)dx<\epsilon$$
+
+由于[[MK247][勒贝格可积]]，则均有 $$\int_{[a-t,a]}\left|f(x+t)\right|dx<\infty\land\int_{[b-t,b]}\left|f(x)\right|<\infty$$
+
+故定义 $Z_1=\left\{x\big|\phi_1(x+t)=\infty\right\},Z_2=\left\{x\big|\phi_2(x)=\infty\right\}$
+
+易证 $\varphi(Z_1)=\varphi(Z_2)=0$ 且根据[[MK178][定义]] $\phi_1(x),\phi_2(x)$ 将集合划分为[[~/OneDrive/离散数学/Disc_Math.org::MK42][有限]]集
+
+故易证 $\phi_1(x)$ 在 $[a-t,a]-Z_1$ 上有界 $M_1$ ，同理 $\phi_2(x)$ 在 $[b-t,a]-Z_2$ 上有界 $M_2$
+
+即根据[[MK220][性质1]]、[[MK225][性质2]]以及[[MK233][性质4]]可得
+
+\begin{aligned}
+\int_{[a-t,a]}\left|f(x+t)\right|dx<&\int_{[a-t,a]}\phi_1(x+t)dx+\epsilon\\
+=&\int_{[a-t,a]-Z_1}\phi_1(x+t)dx+\int_{Z_1}\phi_1(x+t)dx+\epsilon\\
+=&\int_{[a-t,a]-Z_1}\phi_1(x+t)dx+\epsilon\\
+\leq&\int_{[a-t,a]-Z_1}M_1dx+\epsilon\\
+=&tM_1+\epsilon
+\end{aligned}
+
+同理 $$\int_{[b-t,b]}\left|f(x)\right|<tM_2+\epsilon$$ 则取 $t_1(\epsilon)=\frac{\epsilon}{\max(M_1,M_2)}$
+
+则对于任意 $t<t_1(\epsilon)$ 有 $$\int_{[a-t,a]}\left|f(x+t)\right|dx+\int_{[b-t,b]}\left|f(x)\right|dx<4\epsilon$$
+
+**** 处理中间
+
+***** 非连续部分
+
+****** 简单函数约束<<MK362>>
+
+类似[[MK360][之前证明]]可得，存在非负[[MK178][简单函数]] $\phi_3(x)$ 以及集合 $Z_3$ 满足
+
+（1） $$\int_{[a,b]}\left|f(x)\right|dx<\int_{[a,b]}\phi_3(x)dx+\epsilon$$
+
+（2） $\phi_3(x)$ 在 $[a,b]-Z_3$ 上有界 $|\phi_3(x)|\leq M_3$
+
+（3） $\varphi(Z_3)=0$ 是零测集
+
+（4） $\forall x\in[a,b]\rightarrow f(x)\geq\phi_3(x)$
+
+故根据[[MK22][三角不等式]]、[[MK220][性质1]]、[[MK227][推论]]、[[MK303][性质5]]以及 $x\not\in[a,b]\rightarrow f(x)=0$ 可得对于任意 $t>0$ 有
+
+\begin{aligned}
+\int_{[a,b]}\left|f(x+t)-f(x)\right|dx\leq&\int_{[a,b]}|f(x+t)|-|f(x)|dx\\
+=&\int_{[a,b]}|f(x+t)|dx+\int_{[a,b]}|f(x)|dx\\
+=&\int_{[a+t,b+t]}|f(x)|dx+\int_{[a,b]}|f(x)|dx\\
+\leq&\int_{[a,b+t]}|f(x)|dx+\int_{[a,b]}|f(x)|dx\\
+=&\int_{[a,b]}|f(x)|dx+\int_{[a,b]}|f(x)|dx\\
+<&2\int_{[a,b]}\phi_3(x)dx+2\epsilon\\
+=&2\int_{[a,b]}\phi_3(x)dx+2\epsilon\\
+\end{aligned}
+
+存在函数 $\phi_3(x)$ 以及 $M_3>0$
+
+满足对于任意 $t>0$ 均有 $$\int_{[a,b]}\left|f(x+t)-f(x)\right|dx<2\int_{[a,b]}\phi_3(x)dx+2\epsilon$$
+
+****** 不连续积分提取<<MK363>>
+
+则对于任意闭集 $F\subset[a,b]$ 满足 $\varphi([a,b]-F)<\frac{\epsilon}{M_3}$ 可得对于任意 $t>0$ 有：
+
+定义 $Z(t,F)=\left\{x\big|x+t\in[a,b]-F\right\}$ 则根据[[MK225][性质2]]有
+
+\begin{aligned}
+&\int_{[a,b]}\left|f(x+t)-f(x)\right|dx\\
+=&\int_{[a,b]-F}\left|f(x+t)-f(x)\right|dx+\int_{F}\left|f(x+t)-f(x)\right|dx\\
+=&\int_{[a,b]-F}\left|f(x+t)-f(x)\right|dx+\int_{F-Z(t,F)}\left|f(x+t)-f(x)\right|dx\\
+&+\int_{F\cap Z(t,F)}\left|f(x+t)-f(x)\right|dx\\
+=&\int_{([a,b]-F)\cup(F\cap Z(t,F))}\left|f(x+t)-f(x)\right|dx+\int_{F-Z(t,F)}\left|f(x+t)-f(x)\right|dx\\
+\end{aligned}
+
+定义 $V=([a,b]-F)\cup(F\cap Z(t,F))$ 显然 $V\subset[a,b]$ 且 $F-Z(t,F)=[a,b]-V$
+
+故根据[[MK225][性质2]]、[[MK262][线性]]，结合 $f(x)\geq\phi_3(x)$ 以及[[MK362][之前证明]]可得对于任意 $t$ 有：
+
+\begin{aligned}
+&\int_{[a,b]}\left|f(x+t)-f(x)\right|dx<2\int_{[a,b]}\phi_3(x)dx+2\epsilon\\
+\Rightarrow&\int_{[a,b]}\left|f(x+t)-f(x)\right|dx-\int_{[a,b]}2\phi_3(x)dx<2\epsilon\\
+\Rightarrow&\int_{[a,b]}\left|f(x+t)-f(x)\right|-2\phi_3(x)dx<2\epsilon\\
+\Rightarrow&\int_{[a,b]-V}\left|f(x+t)-f(x)\right|-2\phi_3(x)dx+\int_{V}\left|f(x+t)-f(x)\right|-2\phi_3(x)dx<2\epsilon\\
+\Rightarrow&\int_{V}\left|f(x+t)-f(x)\right|-2\phi_3(x)dx<2\epsilon\\
+\Rightarrow&\int_{V}\left|f(x+t)-f(x)\right|dx<\int_{V}2\phi_3(x)dx+2\epsilon\\
+\Rightarrow&\int_{V}\left|f(x+t)-f(x)\right|dx<\int_{V-Z_3}2\phi_3(x)dx+2\epsilon\\
+\Rightarrow&\int_{V}\left|f(x+t)-f(x)\right|dx<\varphi(V-Z_3)2M_3+2\epsilon\\
+\end{aligned}
+
+综上所述，对于任意给定闭集 $F$ 满足 $\varphi([a,b]-F)<\frac{\epsilon}{M_3}$ 时
+
+对于任意 $t>0$ 有 $$\int_{([a,b]-F)\cup(F\cap Z(t,F))}\left|f(x+t)-f(x)\right|dx<\varphi(V-Z_3)2M_3+2\epsilon$$
+
+****** 构建 $\epsilon$ 不等式<<MK364>>
+
+对于[[MK363][满足定义]]的 $F$ ，根据[[MK207][推论]]、[[MK84][计算]]以及 $\varphi([a,b])<\infty$ 可得[[MK363][上步中的集合]]均为[[MK81][可测集]]
+
+又根据[[MK362][之前证明]]可得 $\varphi(Z_3)=0$ 即有 $\varphi(V-Z_3)=\varphi(V)$
+
+则对于任意 $t$ 显然 $Z(t,F)$ 是 $[a,b]-F$ 的平移，则根据[[MK95][平移不变]]可得 $\varphi(Z(t,F))=\varphi([a,b]-F)$
+
+又由于 $F\cap Z(t,F)\subset Z(t,F)$ 故根据[[MK60][单调性]]可得 $\varphi(Z(t,F)\cap F)\leq\varphi(Z(t,F))$
+
+又根据[[MK57][次可加性]]有 $\varphi(V)\leq\varphi([a,b]-F)+\varphi(F\cap Z(t,F))\leq2\varphi([a,b]-F)<\frac{2\epsilon}{M_3}$
+
+又根据[[MK363][之前证明]]对于任意 $t$ 有 $$\int_{([a,b]-F)\cup(F\cap Z(t,F))}\left|f(x+t)-f(x)\right|dx<\varphi(V-Z_3)2M_3+2\epsilon$$
+
+故最终有 $$\int_{([a,b]-F)\cup(F\cap Z(t,F))}\left|f(x+t)-f(x)\right|dx<\frac{2\epsilon}{M_3}M_3+\epsilon=5\epsilon$$
+
+又由于显然 $[a,b-t]\cap([a,b]-F)\cup(F\cap Z(F))\subset([a,b]-F)\cup(F\cap Z(F))$ 根据[[MK227][推论]]
+
+故有 $$\int_{[a,b-t]\cap([a,b]-F)\cup(F\cap Z(F))}\left|f(x+t)-f(x)\right|dx<5\epsilon$$
+
+综上所属，若给定任意闭集 $F$ 满足 $\varphi([a,b]-F)<\frac{\epsilon}{M_3}$ 对于任意 $t>0$
+
+均有 $$\int_{[a,b-t]\cap([a,b]-F)\cup(F\cap Z(F))}\left|f(x+t)-f(x)\right|dx<5\epsilon$$
+
+且易证 $\big((F-Z(t,F))\cap[a,b-t]\big)\cup \big([a,b-t]\cap([a,b]-F)\cup(F\cap Z(F))\big)=[a,b-t]$
+
+***** 中间部分结论<<MK365>>
+
+根据[[MK361][鲁津定理]]可得存在闭集 $F\subset[a,b]$ 满足
+
+（1） $x\in F$ 时 $f(x)$ [[MK106][连续]]
+
+（2） $\varphi([a,b]-F)<\frac{\epsilon}{M_3}$
+
+又根据[[~/OneDrive/数学分析/Chap7Note.org::K3][康拓定理]]可得 $f(x)$ 在 $F$ 上一致连续
+
+即 $\forall\epsilon>0,\exists t_2,\forall |x-y|<t_2\Rightarrow |f(x)-f(y)|<\frac{\epsilon}{b-a}$
+
+又由于 $Z(t,F)=\left\{x\big|x+t\in[a,b]-F\right\}$ 故当 $x\in (F-Z(t,F))\cap [a,b-t]$ 时 $x+t\in F$
+
+显然亦有 $x\in F$ 故对于任意 $t<t_2(\epsilon)$ 根据[[MK220][性质1]]、[[MK25][性质2]]、[[MK227][推论]]以及[[MK364][之前证明]]有
+
+\begin{aligned}
+&\int_{[a,b-t]}\left|f(x+t)-f(x)\right|dx\\
+=&\int_{(F-Z(t,F))\cap[a,b-t]}\left|f(x+t)-f(x)\right|dx+\int_{[a,b-t]\cap([a,b]-F)\cup(F\cap Z(F))}\left|f(x+t)-f(x)\right|dx\\
+<&\int_{(F-Z(t,F))\cap[a,b-t]}\left|f(x+t)-f(x)\right|dx+5\epsilon\\
+\leq&\int_{(F-Z(t,F))\cap[a,b-t]}\frac{\epsilon}{b-a}dx+5\epsilon\\
+\leq&\int_{[a,b]}\frac{\epsilon}{b-a}dx+5\epsilon\\
+=&\varphi([a,b])\frac{\epsilon}{b-a}+5\epsilon\\
+=&6\epsilon
+\end{aligned}
+
+**** 结论
+
+综上所属，根据[[MK360][两端]]和[[MK365][中间]]部分的证明可得对于任意 $\epsilon>0$
+
+对于任意 $t<\min(t_1(\epsilon),t_2(\epsilon))$ 有
+
+\begin{aligned}
+&\int_{\mathbb{R}}\left|f(x+t)-f(x)\right|dx\\
+=&\left(\int_{[a-t,a]}\left|f(x+t)\right|dx+\int_{[b-t,b]}\left|f(x)\right|dx\right)+\left(\int_{[a,b-t]}\left|f(x+t)-f(x)\right|dx\right)\\
+<&4\epsilon+6\epsilon\\
+=&10\epsilon
+\end{aligned}
+
+即 $$\forall\epsilon>0,\exists t',\forall 0<t<t'\rightarrow \int_{\mathbb{R}}\left|f(x+t)-f(x)\right|dx<\epsilon$$
+
+即 $$\lim_{t\to0^+}\int_{\mathbb{R}}\left|f(x+t)-f(x)\right|dx=0$$
+
+同理易证 $$\lim_{t\to0^-}\int_{\mathbb{R}}\left|f(x+t)-f(x)\right|dx=0$$
+
+即有 $$\lim_{t\to0}\int_{\mathbb{R}}\left|f(x+t)-f(x)\right|dx=0$$
+
+** 引理
+
+若 $f(x)$ 是 $[a,b]$ 上的[[MK237][勒贝格可积]]函数，假设 $x\not\in[a,b]\rightarrow f(x)=0$
+
+则对于 $x\in[a,b]$ 上[[MK190][几乎处处]]有 $$\lim_{h\to0}\frac{1}{h}\int_{[0,h]}\left|f(x+t)-f(x)\right|dt=0$$
+
+*** 证明
+
+仅证 $h>0$ 的情况 $h<0$ 类似可证，根据条件结合[[MK281][性质8]]
+
+可得其充要条件为 $$\int_{[a,b]}\left\{\lim_{h\to0^+}\frac{1}{h}\int_{[0,h]}\left|f(x+t)-f(x)\right|dt\right\}dx=0$$
+
+定义 $h(\vec{z})=\left|f(x+t)-f(x)\right|$ 其中 $\vec{z}=<x,t>$
+
+
+
+则 $$\int_{[a,b]\times[0,b-a]}$$
+
+由于 $f(x)$ 勒贝格可积，故 $f(x)$ 为[[MK134][可测函数]]，故对于任意 $a\in\mathbb{R}$ 有 $f^{-1}([a,+\infty))$ 是 $\mathbb{R}$ 上的[[MK81][可测集]]
+
+
+
+
+
+
+
+
+
+
+定义 $h(x,t)=f(x+t)-f(x)$
+
+则对于任意 $a\in\mathbb{R}$ 可得 $h^{-1}([a,\infty))=\left\{<x,t>\big|f(x+t)-f(x)\geq a\right\}$
+
+
+
+由于 $h>0$ 则根据[[

@@ -2,19 +2,19 @@
 #+OPTIONS: ^:nil
 #+TITLE: 反常积分
 
-Current Mark: 2
+Current Mark: 3
 
 * 积分中值定理
 
-** 第一积分中值定理：
-
-*** 定理描述:
+** 第一积分中值定理<<MK3>>
 
 若 $f(x)$ 在闭区间 $[a,b]$ 上连续；
 
 $g(x)$ 在 $(a,b)$ 上不变号，且在 $[a,b]$ 上可导
 
-则有 \begin{aligned}
+则有
+
+\begin{aligned}
 \int_a^b f(x)g(x)dx=f(\xi) \int_a^b g(x) dx,\ \ \xi \in [a,b]
 \end{aligned}
 

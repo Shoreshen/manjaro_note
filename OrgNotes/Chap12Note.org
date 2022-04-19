@@ -2,7 +2,7 @@
 
 #+TITLE: 多元函数微分
 
-current mark: MK27
+current mark: MK28
 
 * 矩阵基本知识
 
@@ -433,7 +433,7 @@ a_{1n}&...&a_{n(j-1)}&b_n&a_{n(j+1)}&...&a_{nn}\\
 
 存在，则称 $f(\vec{x})$ 在 $\vec{x}_0$ 点沿 $\vec{v}$ 方向的导数为 $A$
 
-*** 全微分
+*** 全微分<<MK28>>
 
 函数 $z=f(\vec{x})=f(x_1,x_2,...,x_n),\vec{x}\in D$ 为 $R^n$ 到 $R$ 的映射
 

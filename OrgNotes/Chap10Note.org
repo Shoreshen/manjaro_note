@@ -2,7 +2,7 @@
 
 #+TITLE: 函数项级数
 
-current mark: 5
+current mark: 6
 
 * 函数项级数
 
@@ -177,7 +177,7 @@ a&,m\neq n_i,a\in D
 
 由于绝对收敛
 
-**** Weierstrass判别：
+**** Weierstrass判别<<MK6>>
 
 若 $\forall x\in D,|u_n(x)|\leq a_n$ ，且 $\sum_{n=1}^\infty a_n$ 收敛，则 $\sum_{n=1}^\infty u_n(x)$ 一致收敛。
 

@@ -2,7 +2,7 @@
 #+OPTIONS: ^:nil
 #+TITLE: 定积分
 
-currnet mark: 21
+currnet mark: 22
 
 * 定积分定义
 
@@ -634,8 +634,6 @@ $\forall \epsilon >0,\exists \delta,\forall \lambda<\delta\Rightarrow \forall P_
 
 ** <<L1>>定理1:
 
-*** 描述:
-
 设 $f(x)$ 在 $[a,b]$ 上可积，构造函数:
 
 $F(x)=\int_a^x f(t) dt$
@@ -645,9 +643,9 @@ $F(x)=\int_a^x f(t) dt$
 (1) $F(x)$ 在 $[a,b]$ 上连续;
 (2) 若 $f(x)$ 连续，则 $F(x)$ 可导，且导数为 $F'(x)=f(x)$
 
-*** 证明连续:
+*** 连续:
 
-根据[[MK7][积分可加性]]及[[e:/OneDrive/大学物理/Note/DiffEq.org][闭区间连续函数-连续函数定义]]:
+根据[[MK7][积分可加性]]及[[~/OneDrive/大学物理/Note/DiffEq.org::MK2][连续函数定义]]:
 
 \begin{aligned}
 &\lim_{\Delta x \to 0}F(x+\Delta x)-F(x)\\
@@ -655,9 +653,9 @@ $F(x)=\int_a^x f(t) dt$
 &=0
 \end{aligned}
 
-*** 证明导数:
+*** 导数:
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][积分中值定理-第一积分中值定理]]:
+根据[[~/OneDrive/数学分析/Chap8Note.org::MK3][第一积分中值定理]]:
 
 \begin{aligned}
 &F(x+\Delta x)-F(x)\\
@@ -671,8 +669,6 @@ $F(x)=\int_a^x f(t) dt$
 \end{aligned}
 
 ** 牛顿莱布尼茨公式：
-
-*** 描述：
 
 若 $F(x)$ 是 $f(x)$ 的一个原函数，$f(x)$ 连续则：
 
@@ -853,11 +849,13 @@ $\int_a^b f(x) dx=F(b)-F(a)$
 f(x_0)=\lim_{x\to x_0}f(x)
 \end{aligned}
 
-** 一致性连续定义
+** 一致性连续定义<<MK22>>
 
 \begin{aligned}
 &\forall \epsilon>0,\ \exists \delta>0, \forall |x-y|<\delta\Rightarrow |f(x)-f(y)|<\epsilon
 \end{aligned}
+
+注意 $x,y$ 必须在定义域内
 
 ** 有界性定理
 
@@ -871,27 +869,27 @@ f(x_0)=\lim_{x\to x_0}f(x)
 
 ** <<K3>>康托定理（闭区间连续函数一定一致连续）
 
-若函数 $f(x)$ 在闭区间 $[a,b]$ 上连续，则 $f(x)$ 在 $[a,b]$ 上一致连续。
+有界闭集 $E$ 上的连续函数 $f(x)$ 必定[[MK22][一致连续]]
 
 *** 证明：
 
 一致连续定义：
 
 \begin{aligned}
-&\forall \epsilon>0,\ \exists \delta, \forall |x-y|<\delta\ \&\ x,y\in [a,b]\Rightarrow |f(x)-f(y)|<\epsilon
+&\forall \epsilon>0,\exists \delta, \forall |x-y|<\delta\Rightarrow |f(x)-f(y)|<\epsilon
 \end{aligned}
 
 故用反证法，则：
 
 \begin{aligned}
-&\exists \epsilon>0,\ \forall \delta>0, \exists |x-y|<\delta\ \&\ x,y\in [a,b]\Rightarrow |f(x)-f(y)|>\epsilon
+&\exists \epsilon>0,\forall \delta>0, \exists |x-y|<\delta\Rightarrow |f(x)-f(y)|>\epsilon
 \end{aligned}
 
-当 $\delta=\frac{1}{n},\ n\in N^+$ 时，存在点列 $x_n,y_n\in[a,b]:|x_n-y_n|<\frac{1}{n},\ |f(x_n)-f(y_n)|>\epsilon$
+当 $\delta=\frac{1}{n},\ n\in N^+$ 时，存在点列 $x_n,y_n\in E:|x_n-y_n|<\frac{1}{n},\ |f(x_n)-f(y_n)|>\epsilon$
 
-根据[[E:\OneDrive\数学分析\Note\Chapter 9\Series.org][Bolzano-Weierstrass定理]]，有界数列 $x_n$ 必有收敛子列
+由于有界，根据[[E:\OneDrive\数学分析\Note\Chapter 9\Series.org][Bolzano-Weierstrass定理]]，有界数列 $x_n$ 必有收敛子列
 
-得出 $\lim_{n_k\to\infty}x_{n_k}=\xi,\ \xi\in[a,b]$ ，与之对应 $y_{n_k}$ 使得 $|f(x_{n_k})-f(y_{n_k})|>\epsilon$
+得出 $\lim_{n_k\to\infty}x_{n_k}=\xi,\ \xi\in E$ ，与之对应 $y_{n_k}$ 使得 $|f(x_{n_k})-f(y_{n_k})|>\epsilon$
 
 又因为 $\lim_{n_k\to\infty}\frac{1}{n_k}=0,\ 0<|x_{n_k}-y_{n_k}|<\frac{1}{n_k}$ ，根据夹逼定理 $\lim_{n_k\to\infty} |x_{n_k}-y_{n_k}|=0$
 
