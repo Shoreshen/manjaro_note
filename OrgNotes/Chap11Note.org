@@ -2,7 +2,7 @@
 
 #+TITLE: Euclid空间上的极限与连续
 
-current mark: MK34
+current mark: MK35
 
 * 笛卡尔乘积
 
@@ -515,6 +515,28 @@ $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚�
 
 根据本定理以及[[P1][定理1]]可得全集 $\mathbb{R}^n$ 既是开集也是闭集
 
+**** 定理9<<MK35>>
+
+若[[MK13][闭集]] $S$ 存在上确界 $\sup(S)$ 则必有 $x\in S$ 满足 $x=\sup(S)$
+
+同理若存在下确界 $\inf(S)$ 则必有 $x\in S$ 满足 $x=\inf(S)$
+
+***** 证明
+
+仅证上确界，根据确界定义可得 $\forall\epsilon>0,\exists x\in S\rightarrow \sup(S)-x<\epsilon$
+
+故取 $\epsilon_1=1$ 则有 $x_1$ ，以此类推取 $\epsilon_n=\min\left(\frac{\epsilon_{n-1}}{2},\sup(S)-x_{n-1}\right)$
+
+若存在 $x_n=\sup(S)$ 则定理证毕，若不存在，则有数列 $\{x_1,x_2,...\}$
+
+且有 $x_i<x_{i+1}$ 且由于 $\sup(S)-x_i<\epsilon_i<\frac{1}{2^i}$
+
+又由于是上确界，故有 $\forall x_i\rightarrow\sup(S)\geq x_i$
+
+综上所述 $\lim_{i\to\infty}x_i=\sup(S)$ 故根据[[JDCYTJ2][充要条件]]可得 $\sup(S)$ 是[[MK8][聚点]]
+
+则根据[[MK13][闭集定义]] $\sup(S)\in S$
+
 ** Euclid空间基本定理
 
 *** <<KTDL>>康托闭区域套定理
@@ -613,8 +635,6 @@ $R^n$ 上点列 $\{\vec{x}_n\}$ 收敛的充要条件是 $\forall \epsilon>0,\ex
 根据实数系柯西收敛原理可得 $\lim_{k\to\infty}a_{ik}=A_i$ 所有维度都收敛，故 $\lim_{k\to\infty}\vec{x}=\vec{A}$
 
 *** Heine-Borel定理
-
-**** 描述
 
 在 $R^n$ 中 $S$ 为紧集的充要条件是 $S$ 是有界闭集
 
@@ -1056,19 +1076,23 @@ $D\in R^n$ 映射 $\vec{f}:D\to R^m\Rightarrow \vec{x}=(x_1,...,x_n)\to\vec{z}=(
 
 若连续函数 $\vec{f}(\vec{x})=\vec{y}, \vec{x}\in K\subset R^n, S=\{\vec{y}\}\subset R^m$ 若 $K$ 是紧集，
 
-则必定 $\exists \vec{\eta}_i,\vec{\xi}_i\in S, f_i(\vec{\eta}_i) \leq f_i(\vec{x})\leq f_i(\vec{\xi}_i),i=1,2,...,m$
+则其分量函数必定 $\exists \vec{\eta}_i,\vec{\xi}_i\in S, f_i(\vec{\eta}_i) \leq f_i(\vec{x})\leq f_i(\vec{\xi}_i),i=1,2,...,m$
 
 *** 证明
 
-因为 $\lim_{\vec{x}\to \vec{x}_0}\vec{f}(\vec{x})=\vec{f}(\vec{x}_0)$ 故有 $\lim_{\vec{x}\to \vec{x}_0}\f_i(\vec{x})=f_i(\vec{x}_0)$ 故 $f_i(\vec{x})$ 亦连续，设 $f_i(\vec{x})=y_i,S_i=\{y_i\}$  
+因为 $\lim_{\vec{x}\to \vec{x}_0}\vec{f}(\vec{x})=\vec{f}(\vec{x}_0)$ 故有 $\lim_{\vec{x}\to \vec{x}_0}f_i(\vec{x})=f_i(\vec{x}_0)$
+
+故 $f_i(\vec{x})$ 亦连续，设 $f_i(\vec{x})=y_i,S_i=\{y_i\}$  
 
 根据[[MK4][多元函数有界性定理]]可得映射 $S_i$ 有界闭集，故 $f_i(\vec{x})$ 有界
 
 由于 $f_i(\vec{x})$ 映射结果为实数，故根据确界存在定理，有界必有确界。
 
-上确界定义 $\forall \delta>0, \exists f_i(\vec{x})\Rightarrow f_i(\vec{x})\in \left(sup\{f_i(\vec{x})\}-\delta,sup\{f_i(\vec{x})\}\right]$ 故根据[[JDCYTJ1][聚点充要条件]]可得 $sup\{f_i(\vec{x})\}$ 为 $S_i$ 聚点
+上确界定义 $\forall \delta>0, \exists f_i(\vec{x})\Rightarrow f_i(\vec{x})\in \left(\sup\{f_i(\vec{x})\}-\delta,\sup\{f_i(\vec{x})\}\right]$
 
-又因为 $S_i$ 为闭集，故 $sup\{f_i(\vec{x})\}\in S_i$
+故根据[[JDCYTJ1][聚点充要条件]]可得 $\sup\{f_i(\vec{x})\}$ 为 $S_i$ 聚点
+
+又因为 $S_i$ 为闭集，故 $\sup\{f_i(\vec{x})\}\in S_i$
 
 下确界同理，故 $\exists \vec{\eta}_i,\vec{\xi}_i\in S, f_i(\vec{\eta}_i) \leq f_i(\vec{x})\leq f_i(\vec{\xi}_i),i=1,2,...,m$
 
