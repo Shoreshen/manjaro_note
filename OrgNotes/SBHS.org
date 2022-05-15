@@ -9058,15 +9058,15 @@ F'(x_0)-f(x_0)=&\lim_{h\to 0}\frac{1}{h}\left(\int_{[a,x_0+h]}f(x)dx-\int_{[a,x_
 
 **** 引理2<<MK380>>
 
-若 $f(x)$ 是 $[a,b]$ 上的[[MK237][勒贝格可积]]函数，则对于任意 $\epsilon>0$ 存在 $[a,b]$ 上的[[MK106][连续函数]] $g(x)$ 满足：
+若 $f(x)$ 是[[MK81][可测集]] $E\subset\mathbb{R}$ 上的[[MK237][勒贝格可积]]函数，则对于任意 $\epsilon>0$ 存在 $[a,b]$ 上的[[MK106][连续函数]] $g(x)$ 满足：
 
-（1） $g(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]
+（1） $g(x)$ 在 $E$ 上[[MK237][勒贝格可积]]
 
-（2） $$\int_{[a,b]}|f(x)-g(x)|dx<\epsilon$$
+（2） $$\int_{E}|f(x)-g(x)|dx<\epsilon$$
 
 ***** 证明
 
-由于 $f(x)$ 是 $[a,b]$ 上的[[MK237][勒贝格可积]]函数，故必为[[MK134][可测函数]]
+由于 $f(x)$ 是 $E$ 上的[[MK237][勒贝格可积]]函数，故必为[[MK134][可测函数]]
 
 ****** 非负[[MK134][可测]]<<MK376>>
 
@@ -9074,9 +9074,9 @@ F'(x_0)-f(x_0)=&\lim_{h\to 0}\frac{1}{h}\left(\int_{[a,x_0+h]}f(x)dx-\int_{[a,x_
 
 ******* 寻找界<<MK373>>
 
-若 $f(x)$ 为非负函数，由于勒贝格可积，故必为[[MK134][可测函数]]，且根据[[MK247][定义]]可得 $$\int_{[a,b]}f(x)dx<\infty$$
+若 $f(x)$ 为非负函数，由于勒贝格可积，故必为[[MK134][可测函数]]，且根据[[MK247][定义]]可得 $$\int_{E}f(x)dx<\infty$$
 
-根据[[MK220][性质1]]存在非负[[MK178][简单函数]] $\phi(x)$ 满足 $$0<\int_{[a,b]}f(x)dx-\int_{[a,b]}\phi(x)dx<\epsilon$$
+根据[[MK220][性质1]]存在非负[[MK178][简单函数]] $\phi(x)$ 满足 $$0<\int_{E}f(x)dx-\int_{E}\phi(x)dx<\epsilon$$
 
 由于非负，则根据[[MK369][性质9]]可得 $\phi(x)$ 几乎处处有限，定义 $x\in Z_\phi\rightarrow\phi(x)=\infty$
 
@@ -9086,174 +9086,90 @@ F'(x_0)-f(x_0)=&\lim_{h\to 0}\frac{1}{h}\left(\int_{[a,x_0+h]}f(x)dx-\int_{[a,x_
 
 由于 $f(x)$ 勒贝格可积，则根据[[MK369][性质9]]可得 $f(x)$ 几乎处处有限
 
-又根据[[MK82][区间可测]]有 $[a,b]$ 可测， $f(x)$ 可测，故根据[[MK361][鲁津定理]]可得存在[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]] $F$ 满足：
+又根据定义 $E$ 可测， $f(x)$ 可测，故根据[[MK361][鲁津定理]]可得存在[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]] $F$ 满足：
 
 （1） $f(x)$ 在 $F$ 上连续
 
-（2） $F\subset [a,b]\land\varphi([a,b]-F)<\frac{\epsilon}{M_\phi}$ 其中 $M$ 是[[MK373][之前证明]]的界
+（2） $F\subset E\land\varphi(E-F)<\frac{\epsilon}{M_\phi}$ 其中 $M$ 是[[MK373][之前证明]]的界
 
-由于 $F$ 是闭集，故根据[[~/OneDrive/数学分析/Chap11Note.org::MK2][推论]]可得 $F$ 是紧集，
+定义 $F$ 上函数 $f'(x)=\begin{cases}M_\phi&f(x)>M_\phi\\f(x)&f(x)\leq M_\phi\end{cases}$
 
-故根据[[~/OneDrive/数学分析/Chap11Note.org::MK4][有界性定理]]可得 $f(x)$ 在 $F$ 上亦有界 $M_F>0$
+显然由于 $f(x)$ 在 $F$ 上连续，易证 $f'(x)$ 在 $F$ 上亦连续。则对于任意 $x\in E-F$
 
-则定义 $g(x)$ ，当 $x\in F$ 时有 $g(x)=f(x)$ 当 $x\in [a,b]-F$ 时：
+定义 $S(x)=\sup\left(F\cap [-\infty,x]\right),I(x)=\inf\left(F\cap [x,+\infty]\right)$
 
-定义 $Z=(a,b)\cap F^c$ 由于 $F$ 是闭集，故根据[[MK41][定理1]]有 $F^c$ 是开集
+由于 $F$ 是闭集，根据[[~/OneDrive/数学分析/Chap11Note.org::P4][定理5]]可得 $F\cap[-\infty,x],F\cap[x,+\infty]$ 均为闭集
 
-又根据[[~/OneDrive/数学分析/Chap11Note.org::P3][定理4]]可得 $Z$ 亦为开集，根据[[MK47][开集构造]]可得 $Z=\bigcup_{i=1}^\infty I_i$ 其中 $I_i=(a_i,b_i)$ 是[[MK42][构成区间]]
+进一步由于[[~/OneDrive/数学分析/Chap11Note.org::MK35][定理9]]可得 $S(x)\in F\cap[-\infty,x]\land I(x)\in F\cap[x,+\infty]$ 继而 $S(x)\in F\land I(x)\in F$
 
-又根据[[~/OneDrive/离散数学/Disc_Math.org::MK334][补与减]]可得 $[a,b]-F=[a,b]\cap F^c$ 故根据[[MK82][区间可测]]
+则 $f'(S(x)),f'(I(x))$ 有定义，
 
-有 $\varphi([a,b]-F)=\varphi([a,b]\cap F^c)=\varphi((a,b)\cap F^c)=\varphi(Z)=\sum_{i=1}^\infty\varphi(I_i)$
+则定义函数 $g(x)=\begin{cases}f'(x)&x\in F\\\frac{f'(I(x))-f'(S(x))}{I(x)-S(x)}(x-S(x))+f'(S(x))&x\in E-F\end{cases}$
 
-定义 $\tau(I_i)=\min\left(\varphi(Z),\frac{\epsilon}{M_F}\right)\frac{\varphi(I_i)}{\varphi(Z)}$ 由于 $M_F>0\land\epsilon>0$ 
+由于是直线函数，故显然当 $x\in(S(x),I(x))$ 时连续
 
-故有 $\tau(I_i)\leq\varphi(I_i)\land\tau(I_i)\leq\frac{\epsilon}{M_F}\frac{\varphi(I_i)}{\varphi(Z)}$ ，
+且亦有 $\lim_{x\to I(x)^-}g(x)=g(I(x)),\lim_{x\to S(x)^+}g(x)=g(S(x))$
 
-故对于任意 $x\in(a,b)-F$ 存在 $I_i$ 满足 $x\in I_i$
+则易证对于任意 $x\in E$ 均有函数 $g(x)$ 连续，则根据[[MK283][连续函数]] $g(x)$ 是[[MK143][可测函数]]
 
-******** 若 $a_i\not\in F\land b_i\not\in F$ <<MK374>>
+又由于 $0\leq g(x)\leq M_\phi$ 故显然[[MK247][勒贝格可测]]
 
-由于显然 $Z\subset[a,b]$ 故 *假设存在*  $a\leq a^*<a_i\land a^*\in F$
+由于 $f'(x)\leq M_\phi$ 故当 $x\in F$ 时有 $g(x)=f'(x)\leq M_\phi$
 
-则取 $F\cap [a^*,a_i]\ne\varnothing$ 显然为闭集，且 $a_i$ 是上界，故必有上确界。
+当 $x\in E-F$ 时有 $g(x)<\max(f'(S(x)),f'(I(x)))$
 
-由于 $a_i\not\in F$ 根据[[~/OneDrive/数学分析/Chap11Note.org::MK35][定理9]]可得上确界不为 $a_i$
+故亦有 $g(x)\leq M_\phi$ 即 $g(x)$ 在 $E$ 上有 $g(x)\leq M_\phi$
 
-故显然存在 $a^*\leq a'<a_i$ 是 $F\cap [a^*,a_i]$ 的上确界
+进一步根据 $f'(x)$ 的定义可得在 $F-Z_\phi$ 上 $f(x)\geq f'(x)\geq \phi(x)$
 
-显然 $(a_i,b_i)\cap F=\varnothing$ ，故有 $(a',b_i)\cap F=\varnothing$ 由于[[MK42][构成区间]]是开区间且互不相交，
+进而有 $|f(x)-\phi(x)|\geq|f'(x)-\phi(x)|$
 
-则当 $(a_i,b_i)$ 为构成区间时，易证任意不与 $(a_i,b_i)$ 的开区间无法包含 $a_i$ 与 $I_i$ 是[[MK42][构成区间]]矛盾
+根据[[MK220][性质1]]可得 $$\int_{F-Z_\phi}|f(x)-\phi(x)|dx\geq\int_{F-Z_\phi}|f'(x)-\phi(x)|dx=\int_{F}|f'(x)-\phi(x)|dx$$
 
-故若 $a_i\not\in F$ 不存在 $a\leq a^*<a_i\land a^*\in F$ 则仅有可能 $I_i=(a,b_i)$
-
-同理可证若 $b\not\in F$ 则有 $I_i=(a,b)$ 此时 $F=\varnothing$ 无意义，故不考虑
-
-******** 若 $a_i\not\in F\land b_i\in F$ <<MK375>>
-
-[[MK374][同理可证]]若 $a_i\not\in F$ 则有 $I_i=(a,b_i)$
-
-同样定义 $I_{i,1}=(a,b_i-\tau(I_i)],I_{i,2}=(b_i-\tau(I_i),b_i)$ 当：
-
-（1） $x\in I_{i,0}$ 时 $g(x)=0$
-
-（2） $x\in I_{i,>0}$ 时 $g(x)=\frac{f(b_i)}{\tau(I_i)}(x-(b_i-\tau(I_i)))$
-
-（3） $x=a$ 时 $g(x)=0$
-
-显然 $g(x)$ 在 $[a,b_i)$ 上连续，且 $\lim_{x\to b_i}=f(b_i)$ 由于 $b_i\in F$ 且当 $x\in F\rightarrow g(x)=f(x)$
-
-故 $g(x)$ 在 $b_i$ 亦连续，即 $g(x)$ 在 $[a_i,b_i]$ 上连续，此时 $a_i=a$
-
-显然 $I_i=I_{i,0}\cup I_{i,>0}$ 且 $\varphi(I_{i,>0})=\tau(I_i)$
-
-******** 若 $b_i\not\in F\land a_i\in F$
-
-[[MK374][同理可证]]若 $b\not\in F$ 则有 $I_i=(a_i,b)$
-
-同样定义 $I_{i,1}=(a_i,a_i+\tau(I_i)],I_{i,2}=(a_i+\tau(I_i),b_i)$ 当：
-
-（1） $x\in I_{i,>0}$ 时 $g(x)=\frac{f(a_i)}{\tau(I_i)}((a_i+\tau(I_i))-x)$
-
-（2） $x\in I_{i,0}$ 时 $g(x)=0$
-
-（3） $x=b$ 时 $g(x)=0$
-
-显然 $g(x)$ 在 $(a_i,b]$ 上连续，且 $\varphi((a_i,b_i])=\varphi((a_i,b))$
-
-且[[MK375][同理]]亦有 $g(x)$ 在 $[a_i,b_i]$ 上连续以及 $$\int_{(a_i,b]}g(x)dx=\int_{I_{i,>0}}g(x)dx$$
-
-******** 若 $a_i\in F\land b_i\in F$
-
-则将 $I_i$ 分为三段 $I_{i,1}=\left(a_i,a_i+\fra{\tau(I_i)}{2}\right),I_{i,2}=\left[a_i+\fra{\tau(I_i)}{2},b_i-\fra{\tau(I_i)}{2}\right]$
-
-以及 $I_{i,3}=\left(b_i-\fra{\tau(I_i)}{2},b_i\right)$ 则有：
-
-（1） $x\in I_{i,1}$ 时 $g(x)=\frac{f(a_i)}{\frac{\tau(I_i)}{2}}\left(\left(a_i+\frac{\tau(I_i)}{2}\right)-x\right)$
-
-（2） $x\in I_{i,0}$ 时 $g(x)=0$
-
-（3） $x\in I_{i,3}$ 时 $g(x)=\frac{f(b_i)}{\frac{\tau(I_i)}{2}}\left(x-\left(b_i-\frac{\tau(I_i)}{2}\right)\right)$
-
-这里定义 $I_{i,>0}=I_{i,1}\cup I_{i,3}$
-
-显然 $g(x)$ 在 $I_i$ 上连续，且[[MK375][同理]]亦有 $g(x)$ 在 $[a_i,b_i]$ 上连续
-
-以及 $$\int_{(a_i,b_i)}g(x)dx=\int_{I_{i,>0}}g(x)dx$$
-
-******** 结论及性质
-
-综上所述，当 $x\in F$ 时 $g(x)$ 连续，当 $x\in [a,b]-F$ 时根据[[MK37][之前证明]]必存在 $I_i=(a_i,b_i)$
-
-满足 $x\in I_i\lor x\in[a,b_i)\lor x\in(a_i,b]$ 由于根据上述证明 $g(x)$ 在 $[a_i,b_i]$ 上连续
-
-即对于任意 $x\in[a,b]-F$ 亦有 $g(x)$ 连续，则 $g(x)$ 在 $[a,b]$ 上连续
-
-根据 $Z=\bigcup_{i=1}^\infty I_i$ 以及[[MK375][之前证明]]的 $I_i=I_{i,0}\cup I_{i,>0}$
-
-易证 $Z=Z_{0}\cup Z_{>0}=\left(\bigcup_{i=1}^\infty I_{i,0}\right)\cup\left(\bigcup_{i=1}^\infty I_{i,>0}\right)$ 且当 $x\in Z_0$ 时 $g(x)=0$
-
-由于均为区间，故根据[[MK82][区间可测]]可得均为[[MK81][可测集]]，
-
-则根据[[MK375][之前证明]]易证 $\varphi(Z_0)=\sum_{i=1}^\infty\varphi(I_{i,0})=\sum_{i=1}^\infty\tau(I_i)$ 且根据[[MK220][性质1]]、[[MK225][性质2]]
-
-以及 $\varphi(Z)=\sum_{i=1}^\infty\varhpi(I_i)$ 可得
-
-\begin{aligned}
-\int_{[a,b]-F}|g(x)|dx=&\int_{Z_0}|g(x)|dx+\int_{Z_{>0}}|g(x)|dx\\
-\leq&\int_{Z_{>0}}M_Fdx=M_F\sum_{i=1}^\infty\tau(I_i)\\
-\leq&M_F\sum_{i=1}^\infty\frac{\epsilon}{M_F}\frac{\varphi(I_i)}{\varphi(Z)}\\
-=&M_F\frac{\epsilon}{M_F}\frac{\sum_{i=1}^\infty\varphi(I_i)}{\varphi(Z)}\\
-=&\epsilon
-\end{aligned}
-
-又由于 $F\subset[a,b]$ 且 $f(x)$ 勒贝格可积有 $$\int_{F}g(x)dx=\int_{F}f(x)dx\leq\int_{[a,b]}f(x)dx<\infty$$
-
-结合 $[a,b]=([a,b]-F)\cup F$ 有 $g(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]
+又根据[[MK227][推论1]]可得 $$\int_{F-Z_\phi}|f(x)-\phi(x)|dx\leq\int_E|f(x)-\phi(x)|dx<\epsilon$$ 故有 $$\int_F|f'(x)-\phi(x)|dx<\epsilon$$
 
 ******* 证明结论
 
 根据[[MK220][性质1]]、[[MK225][性质2]]、[[MK232][线性]]，[[MK22][三角不等式]]以及前两步证明中的
 
-（1） $$0<\int_{[a,b]}f(x)dx-\int_{[a,b]}\phi(x)dx<\epsilon$$
+（1） $$0<\int_{E}f(x)dx-\int_{E}\phi(x)dx=\int_{E}|f(x)-\phi(x)|dx<\epsilon$$
 
-（2） $$\int_{[a,b]-F}|g(x)|dx\leq\epsilon$$
+（2） $\forall x\in E\rightarrow g(x)\leq M_\phi$
 
-（3） $F\subset [a,b]\land\varphi([a,b]-F)<\frac{\epsilon}{M_\phi}$
+（3）  $$\int_F|g(x)-\phi(x)|dx<\epsilon$$
 
-有如下推导
+（4） $F\subset E\land\varphi(E-F)<\frac{\epsilon}{M_\phi}$
+
+则有如下推导
 
 \begin{aligned}
-\int_{[a,b]}|f(x)-g(x)dx|dx=&\int_{F}|f(x)-g(x)dx|dx+\int_{[a,b]-F}|f(x)-g(x)dx|dx\\
-=&\int_{[a,b]-F}|f(x)-\phi(x)+\phi(x)-g(x)dx|dx\\
-\leq&\int_{[a,b]-F}|f(x)-\phi(x)|dx+\int_{[a,b]-F}|\phi(x)|dx+\int_{[a,b]-F}|g(x)|dx\\
-\leq&\int_{[a,b]}|f(x)-\phi(x)|dx+\int_{[a,b]-F-Z_\phi}|\phi(x)|dx+\epsilon\\
-<&\epsilon+\int_{[a,b]-F-Z_\phi}M_\phi dx+\epsilon\\
-\leq&\epsilon+\varphi([a,b]-F-Z_\phi)M_\phi dx+\epsilon\\
-=&\epsilon+\varphi([a,b]-F)M_\phi+\epsilon\\
-\leq&\epsilon+\frac{\epsilon}{M_\phi}M_\phi+\epsilon\\
-=&3\epsilon
+\int_{E}|f(x)-g(x)dx|dx=&\int_{F}|f(x)-g(x)dx|dx+\int_{E-F}|f(x)-g(x)dx|dx\\
+\leq&\epsilon+\int_{E-F}|f(x)+\phi(x)-\phi(x)-g(x)dx|dx\\
+\leq&\epsilon+\int_{E-F}|f(x)+\phi(x)|dx+\int_{E-F-Z_\phi}|\phi(x)|dx+\int_{E-F}|g(x)|dx\\
+\leq&\epsilon+\int_{E}|f(x)-\phi(x)|dx+\int_{E-F}M_\phi dx+\int_{E-F}M_\phi dx\\
+<&\epsilon+\epsilon+2\varphi(E-F)M_\phi\\
+\leq&\epsilon+\epsilon+2\frac{\epsilon}{M_\phi}M_\phi\\
+\leq&4\epsilon
 \end{aligned}
 
-即对于任意 $\epsilon>0$ 存在连续函数 $g(x)$ 满足 $$\int_{[a,b]}|f(x)-g(x)dx|dx<\epsilon$$
+即对于任意 $\epsilon>0$ 存在连续函数 $g(x)$ 满足 $$\int_{E}|f(x)-g(x)dx|dx<\epsilon$$
 
 ****** 可测
 
-根据[[MK237][定义]]有 $$\int_{[a,b]}f(x)dx=\int_{[a,b]}f^+(x)dx-\int_{[a,b]}f^-(x)dx$$
+根据[[MK237][定义]]有 $$\int_{E}f(x)dx=\int_{E}f^+(x)dx-\int_{E}f^-(x)dx$$
 
 其中 $f^+(x),f^-(x)$ 为非负[[MK134][可测函数]]，根据[[MK376][之前证明]]对于任意 $\epsilon>0$
 
-存在 $g^+(x),g^-(x)$ 在 $[a,b]$ 上连续且
+存在 $g^+(x),g^-(x)$ 在 $E$ 上连续且
 
-满足 $$\int_{[a,b]}|f^+(x)-g^+(x)|dx<\epsilon,\int_{[a,b]}|f^-(x)-g^-(x)|dx<\epsilon$$
+满足 $$\int_{E}|f^+(x)-g^+(x)|dx<\epsilon,\int_{E}|f^-(x)-g^-(x)|dx<\epsilon$$
 
 则定义 $g(x)=g^+(x)-g^-(x)$ 故有
 
 \begin{aligned}
-\int_{[a,b]}|f(x)-g(x)dx|dx=&\int_{[a,b]}|f^+(x)-f^-(x)-(g^+(x)-g^-(x))|dx\\
-=&\int_{[a,b]}|(f^+(x)-g^+(x))-(f^-(x)-g^-(x))|dx\\
-\leq&\int_{[a,b]}|f^+(x)-g^+(x)|dx-\int_{[a,b]}|f^-(x)-g^-(x)|dx\\
+\int_{E}|f(x)-g(x)dx|dx=&\int_{E}|f^+(x)-f^-(x)-(g^+(x)-g^-(x))|dx\\
+=&\int_{E}|(f^+(x)-g^+(x))-(f^-(x)-g^-(x))|dx\\
+\leq&\int_{E}|f^+(x)-g^+(x)|dx-\int_{E}|f^-(x)-g^-(x)|dx\\
 <&2\epsilon
 \end{aligned}
 
