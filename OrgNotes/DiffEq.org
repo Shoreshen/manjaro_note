@@ -170,9 +170,11 @@ $$\forall \epsilon>0, \exists \delta>0, \forall |x_1-x_2|<\delta,x\in D\Rightarr
 
 * 导数基本知识
 
-** 函数可导定义<<MK20>>
+** 定义<<MK20>>
 
-$\lim_{x\to x_0} \frac{f(x)-f(x_0)}{x-x_0}=a,-\infty<a<+\infty$
+函数 $f(x)$ 在 $x_0$ 上的导数
+
+定义为 $f'(x_0)=\lim_{x\to x_0} \frac{f(x)-f(x_0)}{x-x_0}=a,-\infty<a<+\infty$
 
 ** <<MK1>>可导必连续
 

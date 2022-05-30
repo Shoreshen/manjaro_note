@@ -1,4 +1,4 @@
-#+LATEX_HEADER: \usepackage{ctex}
+#+LATEX_HEADER:
 
 #+TITLE: 离散数学概论
 

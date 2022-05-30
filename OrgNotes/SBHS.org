@@ -4,7 +4,7 @@
 
 current video: P51
 
-current mark: 382
+current mark: 395
 free: 
 
 * 几乎处处<<MK190>>
@@ -4566,11 +4566,11 @@ Borel集中元素均为可测集
 
 定义为 $f:E\to\mathbb{R}\cup\{-\infty,+\infty\}$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，其中 $\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
 
-**** 有限函数
+**** 有限函数<<MK383>>
 
 若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]满足 $f:E\to\mathbb{R}$ 则定义为有限函数
 
-**** 有界函数
+**** 有界函数<<MK386>>
 
 若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to X\subset\mathbb{R}$ 满足：
 
@@ -4639,6 +4639,525 @@ Borel集中元素均为可测集
 （2） $\forall i\in\mathbb{N}\rightarrow \infty\in(i,\infty]$
 
 故 $z=\infty\rightarrow z\in\{\infty\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $\bigcap_{i=1}^\infty \left(i,+\infty\right]&=\{\infty\}$
+
+** 绝对连续函数<<MK384>>
+
+设 $f(x)$ 是 $[a,b]$ 上的[[MK383][有限函数]]，若对于任意 $\epsilon>0$ 均存在 $\delta>0$ 满足
+
+任取[[~/OneDrive/离散数学/Disc_Math.org:MK48][至多可数]]个 $[a,b]$ 上互不相交的开区间 $\{(a_i,b_i)\}$ 若满足 $\sum_{i=1}^n(b_i-a_i)<\delta$
+
+则均有 $\sum_{i=1}^n|f(a_i)-f(b_i)|<\epsilon$ 。则称 $f(x)$ 是 $[a,b]$ 上的绝对连续函数
+
+*** 定理1<<MK388>>
+
+设 $f(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]，则函数 $$F(x)=\int_{[a,x]}f(t)dt$$ 是[[MK384][绝对连续函数]]
+
+其中 $x\in[a,b]$
+
+**** 证明
+
+由于[[MK237][勒贝格可积]]故有 $$\int_{[a,b]}f^+(x)dx<\infty\land\int_{[a,b]}f^-(x)dx<\infty$$
+
+根据[[MK198][引理1]]可得 $f^+(x),f^-(x)$ 均为非负可测函数，则根据[[MK227][推论1]]可得对于任意 $a\leq x\leq b$
+
+均有 $$\int_{[a,x]}f^+(t)dt<\infty\land\int_{[a,x]}f^-(t)dt<\infty$$ 则根据[[MK4][封闭性]]可得 $F(x)<\infty$
+
+故有 $F(x)$ 是 $[a,b]$ 上的[[MK383][有限函数]]。则对于任意 $\epsilon>0$ 根据[[MK263][绝对连续性]]可得存在 $\delta>0$
+
+对于对于任意[[MK174][可测集]] $A$ 满足 $A\subset E\land \varphi(A)<\delta$ 则有 $$\int_A|f(x)|dx<\epsilon$$
+
+故对于任意互不相交的开区间 $\{(a_i,b_i)\}$ 根据[[MK262][线性]]有 $$\left|F(a_i)-F(b_i)\right|=\left|\int_{[a_i,b_i]}f(x)dx\right|$$
+
+根据[[MK262][线性]]以及[[MK372][推论]]
+
+有 $$\sum_{i=1}^n\left|F(a_i)-F(b_i)\right|=&\sum_{i=1}^n\left|\int_{[a_i,b_i]}f(x)dx\right|\leq&\sum_{i=1}^n\int_{[a_i,b_i]}|f(x)|dx\leq&\int_{\bigcup_{i=1}^n[a_i,b_i]}|f(x)|dx$$
+
+根据[[MK82][区间可测]]、[[MK79][正规性]]以及[[MK57][次可加性]]有 $\varphi\left(\bigcup_{i=1}^n[a_i,b_i]\right)\leq\sum_{i=1}^n\varphi((a_i,b_i))=\sum_{i=1}^n(b_i-a_i)<\delta$
+
+则有 $$\int_{\bigcup_{i=1}^n[a_i,b_i]}|f(x)|dx<\epsilon$$ 即 $$\sum_{i=1}^n\left|F(a_i)-F(b_i)\right|<\epsilon$$ 即是绝对连续函数
+
+*** 定理2<<MK387>>
+
+设 $f(x)$ 是 $[a,b]$ 上的[[MK384][绝对连续函数]]，则 $f(x)$ 是 $[a,b]$ 上的[[MK350][有界变差函数]]
+
+**** 证明
+
+由于是绝对连续函数，故对于 $\epsilon=1$ 存在 $\delta>0$ 对于任意[[~/OneDrive/离散数学/Disc_Math.org:MK48][至多可数]]个互不相交的开区间 $\{(a_i,b_i)\}$
+
+若满足 $\sum_{i=1}^n(b_i-a_i)<\delta$ 则均有 $\sum_{i=1}^n|f(a_i)-f(b_i)|<\epsilon$
+
+由于 $\delta\in\mathbb{N}\land\delta>0$ 易证存在整数 $N$ 满足 $\frac{b-a}{N}<\delta$ 并平均划分 $[a,b]$ 为 $N$ 个区间
+
+定义为 $[a_i,b_i]$ ，其中 $a_1=a,b_{N}=b,a_{i+1}=b_i$ ，且每个区间长度 $b_i-a_i=\frac{b-a}{N}$
+
+则对于 $[a_i,b_i]$ 上的任意[[~/OneDrive/离散数学/Disc_Math.org::MK360][有理划分]] $T=\{[a_{ij},b_{ij}]\}$ 根据条件均满足 $Z_{T,[a_i,b_i]}(f)<1$
+
+故根据[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $\sup(Z_{[a_i,b_i]}(f))\leq1$ 其中 $Z_{[a_i,b_i]}(f)=\left\{Z_{T,[a_i,b_i]}(f)\big|T\in\mathcal{T}_i\right\}$ 即 $\overunderset{b_i}{a_i}{V}(f)\leq1$
+
+根据[[MK356][性质4]]可得 $\overunderset{b}{a}{V}(f)=\overunderset{b_1}{a_1}{V}(f)+\overunderset{b}{a_2}{V}(f)$ 同理又有 $\overunderset{b}{a}{V}(f)=\overunderset{b_1}{a_1}{V}(f)+\overunderset{b_2}{a_2}{V}(f)+\overunderset{b}{a_3}{V}(f)$
+
+依次类推，根据数学归纳法易证对于任意 $n\in\mathbb{N}$ 均有 $\overunderset{b}{a}{V}(f)=\sum_{i=1}^n\overunderset{b_i}{a_i}{V}(f)$
+
+由于 $N\in\mathbb{N}$ 则有 $\overunderset{b}{a}{V}(f)=\sum_{i=1}^N\overunderset{b_i}{a_i}{V}(f)$ 又由于 $\overunderset{b_i}{a_i}{V}(f)\leq1$ 故有 $\overunderset{b}{a}{V}(f)\leq N$
+
+则根据[[MK350][定义]]可得 $f(x)$ 是有界变差函数
+
+*** 定理3<<MK395>>
+
+函数 $f(x)$ 在 $[a,b]$ 上满足：
+
+（1） $f(x)$ 是[[MK384][绝对连续函数]]
+
+（2） $f'(x)=0$ 在 $[a,b]$ 上[[MK190][几乎处处]]成立
+
+则有 $f(x)=f(a)$ 是常值函数
+
+**** 证明
+
+根据条件（2）定义 $E\subset[a,b]$ 满足 $\varphi([a,b]-E)=0\land \forall x\in E\rightarrow f'(x)=0$
+
+对于任意 $x_0\in[a,b]$ 若 $x_0=a$ 则有 $f(x_0)=f(a)$ 否则
+
+定义 $E_{x_0}=E\cap[a,x_0]$ ，易证 $f(x)$ 在 $[a,x_0]$ 上亦为绝对连续，任取 $\epsilon>0$
+
+***** 前置证明<<MK391>>
+
+故对于任意 $\epsilon>0$ 存在 $\delta$ 任取[[~/OneDrive/离散数学/Disc_Math.org:MK48][至多可数]]个 $[a,x_0]$ 上互不相交的开区间 $\{(a_i,b_i)\}$
+
+若满足 $\sum_{i=1}^n(b_i-a_i)<\delta$ 则有 $\sum_{i=1}^n|f(a_i)-f(b_i)|<\epsilon$
+
+由于 $f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}$ 则对于任意 $x\in E_{x_0}$ 均有 $\lim_{h\to0}\frac{f(x+h)-f(x)}{h}=0$
+
+即 $\forall\epsilon^*>0,\exists\tau,\forall |h-0|<\min(\tau,1)\rightarrow \left|\frac{f(x+h)-f(x)}{h}\right|<\epsilon^*$
+
+进一步取 $\epsilon^*=\frac{\epsilon}{b-a}$ 则有 $|f(x+h)-f(x)|<\frac{\epsilon}{b-a}|h|$
+
+***** 构建区间
+
+定义 $I_{x_0}=\left\{[x,x+h]\big|0<|h|<\min(\tau,1)\land x\in E_{x_0}\land x+h\in[a,x_0]\right\}$ 显然满足：
+
+（1） $\varphi([x,x+h])>0$
+
+（2） $\forall x\in E_{x_0},\forall\epsilon>0,\exists I_x=\left[x,x+\min\left(0.9,\frac{\epsilon}{2}\right)\right]\in I_{x_0}\rightarrow \phi(I_x)<\epsilon$
+
+根据[[MK317][定义]]可得 $I_{x_0}$ 是 $E_{x_0}$ 的维塔利覆盖，根据[[MK390][推论]]存在互不相交的有限区间集 $Z_{x_0}=\{I_{i,x_0}\}$
+
+满足 $\varphi(E_{x_0}-\bigcup_{i=1}^n I_{i,x_0})<\delta$ 定义 $I_{i,x_0}=[u_i,u_i+h_i]$
+
+易证 $[a,x_0]-E_{x_0}\subset [a,b]-E\land \varphi([a,b]-E)=0$ 根据[[MK][子集零测]]可得 $\varphi([a,x_0]-E_{x_0})=0$
+
+易证 $[a,x_0]-\bigcup_{i=1}^nI_{i,x_0}\subset \left(E_{x_0}-\bigcup_{i=1}^n I_{i,x_0}\right)\cup ([a,x_0]-E_{x_0})$ 根据[[MK57][次可加性]]以及[[MK84][计算]]
+
+有 $\varphi([a,x_0]-\bigcup_{i=1}^nI_{i,x_0})\leq\varphi\left(E_{x_0}-\bigcup_{i=1}^n I_{i,x_0}\right)+\varphi([a,x_0]-E_{x_0})=\varphi\left(E_{x_0}-\bigcup_{i=1}^n I_{i,x_0}\right)$
+
+即有 $\varphi([a,x_0]-\bigcup_{i=1}^nI_{i,x_0})<\delta$
+
+定义 $K_{x_0}=[a,x_0]-\bigcup_{i=1}^nI_{i,x_0}$ 由于 $I_{i,x_0}$ 是闭区间且有限，故易证 $K_{x_0}$ 亦为有限个开区间的并
+
+故易证 $K_{x_0}=(a,u_1)\cup\left(\bigcup_{i=1}^{n-1}(u_{i}+h_i,u_{i+1})\right)\cup (u_{n+1},x_0)$
+
+***** 证明结论
+
+由于 $\varphi(K)<\delta$ 根据[[MK391][之前证明]]
+
+可得 $|f(u_1)-f(a)|+\sum_{i=1}^{n-1}|f(u_{i+1})-f(u_i+h_i)|+|f(x_0)-f(u_n+h_n)|<\epsilon$
+
+又由于 $I_{i,x_0}$ 互不相交且 $I_{i,x}\subset[a,x_0]\subset[a,b]$ 故有 $\bigcup_{i=1}^nI_{i,x_0}\subset[a,b]$
+
+根据[[MK84][计算]] $\varphi(\bigcup_{i=1}^nI_{i,x_0})=\sum_{i=1}^n\varphi(I_{i,x_0})=\sum_{i=1}^n|h_i|\leq\varphi([a,b])=b-a$
+
+根据[[MK391][之前证明]]即有
+
+\begin{aligned}
+&|f(u_1)-f(a)|+\sum_{i=1}^{n-1}|f(u_{i+1})-f(u_i+h_i)|+|f(x_0)-f(u_n+h_n)|+\sum_{i=1}^n|f(u_i+h_i)-f(u_i)|\\
+\leq&\epsilon+\sum_{i=1}^n|h_i|\frac{\epsilon}{b-a}\\
+=&\epsilon+\frac{\epsilon}{b-a}\sum_{i=1}^n|h_i|\\
+\leq&\epsilon+\frac{\epsilon}{b-a}(b-a)\\
+=&2\epsilon
+\end{aligned}
+
+又由于 $n$ 有限，则易证上式中为有限个绝对值和，故根据[[MK22][三角不等式]]
+
+\begin{aligned}
+&|f(u_1)-f(a)|+\sum_{i=1}^{n-1}|f(u_{i+1})-f(u_i+h_i)|+|f(x_0)-f(u_n+h_n)|+\sum_{i=1}^n|f(u_i+h_i)-f(u_i)|\\
+\geq&\left|(f(u_1)-f(a))+\sum_{i=1}^{n-1}(f(u_{i+1})-f(u_i+h_i))+(f(x_0)-f(u_n+h_n))+\sum_{i=1}^n(f(u_i+h_i)-f(u_i))\right|\\
+=&\left|(f(u_1)-f(a))-f(u_1)+f(u_n+h_n)+(f(x_0)-f(u_n+h_n))\right|\\
+=&\left|f(x_0)-f(a)\right|
+\end{aligned}
+
+综上所述，对于任意 $\epsilon>0$ 均有 $|f(x_0)-f(a)|\leq2\epsilon$ 即可得 $f(x_0)-f(a)=0$
+
+又由于 $x_0$ 的任意性可得 $f(x)=f(a)$ 是常值函数
+
+*** 定理4<<MK394>>
+
+函数 $f(x)$ 是 $[a,b]$ 上的[[MK384][绝对连续函数]]的充要条件为在 $[a,b]$ 上：
+
+（1） [[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]] $f'(x)$ [[MK190][几乎处处]]存在，且
+
+（2） $f'(x)$ [[MK237][勒贝格可积]]
+
+**** 证明
+
+***** 充分
+
+根据[[MK387][定理2]]可得 $f(x)$ 是 $[a,b]$ 上的[[MK350][有界变差函数]]
+
+根据[[MK385][定理2]]可得有界变差函数满足：
+
+（1） 导数 $f'(x)$ 在 $[a,b]$ 上几乎处处存在
+
+（2） 其导数 $f'(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]
+
+***** 必要
+
+根据[[MK388][定理1]]可得若 $f'(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]，则函数 $$F(x)=\int_{[a,x]}f'(t)dt$$ 是[[MK384][绝对连续函数]]
+
+根据[[MK389][定理2]]可得 $$f(x)=\int_{[a,x]}f'(t)dt+f(a)=F(x)+f(a)$$
+
+易证常值函数绝对连续，故根据[[MK382][运算]]有 $f(x)$ 亦为绝对连续函数
+
+*** 运算<<MK392>>
+
+若 $f(x),g(x)$ 是 $[a,b]$ 上的[[MK384][绝对连续函数]]则 $f(x)+g(x),f(x)-g(x),cf(x)$ 均为绝对连续函数
+
+其中 $c\in\mathbb{R}$
+
+**** 证明
+
+减法可由以下两种计算求得
+
+***** 加法
+
+若 $f(x),g(x)$ 绝对连续，则有对于任意 $\epsilon$ 存在 $\delta_f,\delta_g$ 满足对于任意互不相交
+
+的有限个开区间 $\{(a_i,b_i)\}$ 满足 $\sum_{i=1}^n(b_i-a_i)<\min(\delta_f,\delta_g)$
+
+均有 $\sum_{i=1}^n|f(a_i)-f(b_i)|<\frac{\epsilon}{2}\land \sum_{i=1}^n|g(a_i)-g(b_i)|<\frac{\epsilon}{2}$ 则根据[[MK22][三角不等式]]
+
+有 $\sum_{i=1}^n|(f(a_i)+g(a_i))-(f(b_i)+g(b_i))|\leq\sum_{i=1}^n\left(|f(a_i)-f(b_i)|+|g(a_i)-g(b_i)|\right)$
+
+即 $\sum_{i=1}^n|(f(a_i)+g(a_i))-(f(b_i)+g(b_i))|\leq\sum_{i=1}^n|f(a_i)-f(b_i)|+\sum_{i=1}^n|g(a_i)-g(b_i)|<\epsilon$
+
+故 $f(x)+g(x)$ 亦为绝对连续函数
+
+***** 数乘
+
+若 $f(x)$ 绝对连续，则有对于任意 $\epsilon$ 存在 $\delta$ 满足对于任意互不相交
+
+的有限个开区间 $\{(a_i,b_i)\}$ 满足足 $\sum_{i=1}^n(b_i-a_i)<\delta$ 均有 $\sum_{i=1}^n|f(a_i)-f(b_i)|<\frac{\epsilon}{|c|}$
+
+则有  $\sum_{i=1}^n|cf(a_i)-cf(b_i)|=|c|\sum_{i=1}^n|f(a_i)-f(b_i)|<\epsilon$
+
+故 $cf(x)$ 亦为绝对连续函数
+
+** 有界变差函数
+
+*** 定义<<MK350>>
+
+对于任意一个 $[a,b]$ 上的[[~/OneDrive/离散数学/Disc_Math.org::MK360][有理划分]] $T=\{[a_0,a_1],[a_1,a_2],...\}$
+
+定义 $Z_{T,[a,b]}(f)=\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|$ 为划分 $T$ 下的变差
+
+若存在 $M_f\in\mathbb{R}$ 满足对于任意划分 $T$ 均有 $Z_T\leq M_f$ 则称 $f(x)$ 为有界变差函数
+
+定义 $[a,b]$ 上的所有有理划分集合为 $\mathcal{T}$ ，定义 $Z_{[a,b]}(f)=\left\{Z_{T,[a,b]}(f)\big|T\in\mathcal{T}\right\}$
+
+则定义 $\overunderset{b}{a}{V}(f)=\sup(Z_{[a,b]}(f))$ 是 $f(x)$ 在 $[a,b]$ 上的全变差
+
+故有界变差函数进一步可定义为 $\overunderset{b}{a}{V}(f)<+\infty$
+
+*** 性质
+
+**** 性质1<<MK353>>
+
+任意满足[[MK350][定义2]]的函数为有界函数
+
+***** 证明
+
+假设任意一点 $x\in[a,b]$ 满足 $f(x)=\infty$ 则取划分 $T=\{[a,x],[x,b]\}$
+
+则当 $f(a)\in\mathbb{R}$ 时 $Z_T=\infty$ ，当 $f(a)=\infty$ 时根据[[MK351][预算定义]]可得 $Z_T$ 无定义
+
+故与条件矛盾，假设不成立，故有 $\forall x\in[a,b]\rightarrow f(x)<\infty$
+
+由于 $[a,b]$ 是闭区间，故根据[[MK352][引理1]]可得 $f(x)$ 有界
+
+**** 性质2（线性）<<MK355>>
+
+若 $f(x),g(x)$ 在 $[a,b]$ 上满足[[MK350][定义2]]，则：
+
+（1） $f(x)+g(x)$ 满足[[MK350][定义2]]
+
+（2） $c\times f(x),c\in\mathbb{R}$ 满足[[MK350][定义2]]
+
+***** 证明（1）
+
+定义 $h(x)=f(x)+g(x)$ 对于任意划分 $T$ 根据[[MK22][三角不等式]]
+
+\begin{aligned}
+Z_T(h)=&\sum_{i=1}^n\left|h(a_i)-h(a_{i-1})\right|\\
+=&\sum_{i=1}^n\left|f(a_i)+g(a_i)-f(a_{i-1})-g(a_{i-1})\right|\\
+\leq&\sum_{i=1}^n\left(\left|f(a_i)-f(a_{i-1})\right|+\left|g(a_i)-g(a_{i-1})\right|\right)\\
+=&\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|+\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|\\
+\leq&M_f+M_g
+\end{aligned}
+
+***** 证明（2）
+
+定义 $h(x)=cf(x)$ 对于任意划分 $T$
+
+有 $Z_T(h)=\sum_{i=1}^n\left|cf(a_i)-cf(a_{i-1})\right|=c\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|$
+
+由于 $\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|<M_f$ 故有 $c\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|<cM_f$
+
+显然根据[[MK4][封闭性]]可得 $cM_f\in\mathbb{R}$
+
+**** 性质3
+
+若 $f(x),g(x)$ 在 $[a,b]$ 上满足[[MK350][定义2]]，则 $f(x)g(x)$ 亦满足[[MK350][定义2]]
+
+***** 证明
+
+定义 $h(x)=f(x)g(x)$ 对于任意划分 $T$ 根据[[MK22][三角不等式]]
+
+\begin{aligned}
+Z_T(h)=&\sum_{i=1}^n\left|h(a_i)-h(a_{i-1})\right|\\
+=&\sum_{i=1}^n\left|f(a_i)g(a_i)-f(a_{i-1})g(a_{i-1})\right|\\
+=&\sum_{i=1}^n\left|f(a_i)g(a_i)+f(a_i)g(a_{i-1})-f(a_i)g(a_{i-1})-f(a_{i-1})g(a_{i-1})\right|\\
+=&\sum_{i=1}^n\left|f(a_i)(g(a_i)-g(a_{i-1}))+g(a_{i-1})(f(a_i)-f(a_{i-1}))\right|\\
+\leq&\sum_{i=1}^n\left(\left|f(a_i)(g(a_i)-g(a_{i-1}))\right|+\left|g(a_{i-1})(f(a_i)-f(a_{i-1}))\right|\right)\\
+=&\sum_{i=1}^n|f(a_i)||(g(a_i)-g(a_{i-1}))|+\sum_{i=1}^n|g(a_{i-1})||(f(a_i)-f(a_{i-1}))|\\
+\end{aligned}
+
+根据[[MK353][性质1]]可得 $f(x),g(x)$ 有界，定义 $M$ 为两个函数的界
+
+结合 $Z_T(f)<\infty,Z_T(g)<\infty$ 则有
+
+\begin{aligned}
+Z_T(h)\leq&\sum_{i=1}^n|f(a_i)||(g(a_i)-g(a_{i-1}))|+\sum_{i=1}^n|g(a_{i-1})||(f(a_i)-f(a_{i-1}))|\\
+\leq&M\sum_{i=1}^n|(g(a_i)-g(a_{i-1}))|+M\sum_{i=1}^n|(f(a_i)-f(a_{i-1}))|\\
+<&MM_g+MM_f
+\end{aligned}
+
+显然根据[[MK4][封闭性]]可得 $MM_g+MM_f\in\mathbb{R}$
+
+**** 性质4<<MK356>>
+
+若 $f(x)$ 在 $[a,b]$ 上满足[[MK350][定义2]]，则
+
+（1） 对于任意 $[c,d]\subset [a,b]$ 有 $f(x)$ 在 $[c,d]$ 上亦满足[[MK350][定义2]]
+
+（2） 对于任意 $a<c<b$ 有 $\overunderset{b}{a}{V}(f)=\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+***** 证明（1）
+
+对于 $[c,d]$ 上的任意一组划分 $T'$ 均可与 $[a,c],[d,b]$ 组成新的 $[a,b]$ 上的划分 $T$
+
+则根据定义有 $|f(c)-f(a)|+|f(d)-f(b)|+Z_{T'}(f)<M_f$
+
+又根据[[MK353][性质1]]可得有界，故可得 $|f(c)-f(a)|+|f(d)-f(b)|<M\in\mathbb{R}$
+
+则显然 $Z_{T'}(f)<M_f+M$ 根据[[MK4][封闭性]]可得 $M_f+M\in\mathbb{R}$
+
+***** 证明（2）
+
+根据以下证明以及[[MK5][三岐性]]可得 $\overunderset{b}{a}{V}(f)=\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+****** 证明 $\overunderset{b}{a}{V}(f)\leq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+对于任意 $[a,b]$ 上的划分 $T$ 可得 $Z_T(f)=\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|$
+
+若 $c$ 是 $T$ 中某一区间的端点 $a_k$ 则根据[[MK350][定义2]]有
+
+\begin{aligned}
+Z_T(f)=&\sum_{i=1}^k\left|f(a_i)-f(a_{i-1})\right|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
+\leq&\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)
+\end{aligned}
+
+若 $c$ 不是端点，则由于 $c\in[a,b]$ 且 $T$ 是划分，股存在 $c\in[a_{k-1},a_k]$
+
+则根据[[MK350][定义2]]以及[[MK22][三角不等式]]有
+
+\begin{aligned}
+Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
+=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)+f(c)-f(c)-f(a_{k-1})|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
+\leq&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(c)|\\
+&+|f(c)-f(a_{k-1})|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
+\leq&\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)
+\end{aligned}
+
+即由 $T$ 的任意性以及[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $\overunderset{b}{a}{V}(f)\leq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+****** 证明 $\overunderset{b}{a}{V}(f)\geq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+对于任意 $[a,c]$ 上的划分 $T_\alpha$ 以及任意 $[c,b]$ 上的划分 $T_\beta$
+
+显然存在 $T=T_\alpha\cup T_\beta$ 是 $[a,b]$ 上的划分，故存在 $Z_{T,[a,b]}(f)=Z_{T_\alpha,[a,c]}(f)+Z_{T_\beta,[c,b]}(f)$
+
+显然由于 $Z_{T,[a,b]}(f)\in Z_{[a,b]}(f)$ 故可得 $Z_{T_\alpha,[a,c]}(f)+Z_{T_\beta,[c,b]}(f)\leq\overunderset{b}{a}{V}(f)$
+
+即由 $T$ 的任意性以及[[~/OneDrive/离散数学/Disc_Math.org::MK361][定理7]]可得 $\overunderset{b}{a}{V}(f)\geq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+
+*** Jordan分解（定义1）<<MK354>>
+
+若 $f(x)$ 是 $[a,b]$ 上的[[MK202][有限]]函数满足：
+
+（1） $f(x)=g(x)-h(x)$
+
+（2） $g(x),h(x)$ 在 $[a,b]$ 上均为增函数
+
+则称 $f(x)$ 是有界变差函数
+
+**** 等价性<<MK357>>
+
+[[MK354][Jordan分解]]与[[MK350][定义2]]等价
+
+***** 证明充分
+
+若满足[[MK354][定义1]]则有 $f(x)=g(x)-h(x)$
+
+由于递增，故易证对于任意划分 $T$ 均有 $Z_{T,[a,b]}(g)=g(b)-g(a),Z_{T,[a,b]}(h)=h(b)-h(a)$
+
+由于 $f(x)$ 有限，显然 $g(x),h(x)$ 亦有限，则根据[[MK352][引理1]]可得 $g(x),h(x)$ 有界
+
+故有对于任意 $T$ 均有 $Z_{T,[a,b]}(g)<\infty\land Z_{T,[a,b]}(h)<\infty$ 即 $g(x),h(x)$ 满足[[MK350][定义2]]
+
+根据[[MK355][线性]]可得 $f(x)=g(x)-h(x)$ 亦满足[[MK350][定义2]]
+
+***** 证明必要<<MK358>>
+
+若 $f(x)$ 满足[[MK350][定义2]]，则定义 $g(x)=\overunderset{x}{\text{a}}{V}(f)$ 根据[[MK350][定义2]]可得对于任意 $a\leq u< v\leq b$ 均有 $\overunderset{v}{u}{V}(f)\geq 0$
+
+又根据[[MK356][性质4]]有 $g(v)-g(u)=\overunderset{v}{u}{V}(f)$ 故 $g(x)$ 是递增函数 
+
+定义 $h(x)=g(x)-f(x)$ 则根据[[MK356][性质4]]，对于任意 $a\leq u< v\leq b$
+
+有 $h(v)-h(u)=\overunderset{v}{u}{V}(f)-(f(v)-f(u))$ 显然 $T=\{[u,v]\}$ 亦为 $[u,v]$ 上的一种划分
+
+显然有 $\overunderset{v}{u}{V}(f)\geq|f(v)-f(u)|\geq(f(v)-f(u))$
+
+故 $h(x)$ 亦为增函数，则有 $f(x)=g(x)-h(x)$ 满足[[MK354][定义1]]
+
+**** 不唯一性
+
+[[MK350][有界变差]]函数 $f(x)$ 的[[MK354][Jordan分解]]不唯一
+
+***** 证明
+
+根据[[MK357][等价性]]可得 $f(x)=g(x)-h(x)$ 则对于任意一个增函数 $u(x)$
+
+均有 $g'(x)=g(x)+u(x),h'(x)=h(x)+u(x)$ 均为增函数
+
+且 $f(x)=g'(x)-h'(x)$
+
+**** 正规分解
+
+对于[[MK350][有界变差]]函数 $f(x)$ 定义：
+
+（1） 正变差函数 $P(x)=\frac{1}{2}\left(\overunderset{x}{a}{V}(f)+f(x)-f(a)\right)$
+
+（2） 负变差函数 $Q(x)=\frac{1}{2}\left(\overunderset{x}{a}{V}(f)-\left(f(x)-f(a)\right)\right)$
+
+则 $f(x)=P(x)-Q(x)$ 是[[MK354][Jordan分解]]，并定义该分解为 $f(x)$ 的正规分解
+
+***** 证明
+
+定义 $x_1>x_2$ 则有 $P(x_1)-P(x_2)=\frac{1}{2}\left(\overunderset{x_1}{a}{V}(f)-\overunderset{x_2}{a}{V}(f)+f(x_1)-f(x_2)\right)$
+
+根据[[MK356][性质4]]有 $P(x_1)-P(x_2)=\frac{1}{2}\left(\overunderset{x_1}{x_2}{V}(f)+f(x_1)-f(x_2)\right)$
+
+根据[[MK358][类似证明]]可得 $\overunderset{x_1}{x_2}{V}(f)\geq-(f(x_1)-f(x_2))$ 则有 $P(x_1)-P(x_2)\geq0$
+
+故 $P(x)$ 递增，同理可证 $Q(x)$ 递增，故有 $f(x)=P(x)-Q(x)$ 是[[MK354][Jordan分解]]
+
+*** 定理1
+
+[[MK350][有界变差]]函数 $f(x)$ 可以分解为 $g(x)+h(x)$
+
+其中 $g(x)$ 是阶梯函数， $h(x)$ 是连续函数
+
+**** 证明
+
+***** 证明增函数<<MK359>>
+
+****** 构造函数
+
+对于任意增函数 $f(x)$ 根据[[MK335][定理2]]可得其不连续点是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]
+
+则定义不连续点集 $Z=\{z_1,z_2...\}$
+
+以及左右极限 $\lim_{x\to x^-}f(x)=f(x^-),\lim_{x\to x^+}f(x)=f(x^+)$
+
+定义 $\phi_i(x)=\begin{cases}1&x\geq z_i\\0&x< z_i\end{cases},\psi_i(x)=\begin{cases}1&x> z_i\\0&x\leq z_i\end{cases}$
+
+则定义 $g(x)=\sum_{i=1}^{|Z|}\left(\phi_i(x)(f(z_i)-f(z_i^-))+\psi_i(x)(f(z_i^+)-f(z_i))\right)$
+
+显然 $g(x)$ 是阶梯函数，则定义 $h(x)=f(x)-g(x)$ 
+
+****** 证明结论
+
+任取 $z_k$ 定义 $Z_k=\left\{z\big|z\in Z\land z<z_k\right\}$ 则易证
+
+（1） $g(z_k^-)=\sum_{z_i\in Z_k}\left(\phi_i(x)(f(z_i)-f(z_i^-))+\psi_i(x)(f(z_i^+)-f(z_i))\right)$
+
+（2） $g(z_k)=(f(z_k)-f(z_k^-))+g(z_k^-)$
+
+（3） $g(z_k^+)=(f(z_k)-f(z_k^-))+(f(z_k^+)-f(z_k))+g(z_k^-)=(f(z_k^+)-f(z_k^-))+g(z_k^-)$
+
+根据[[MK334][定理1]]有 $f(z_k^-)\geq f(z_k)\geq f(z_k^+)$ 即有
+
+（1） $h(z^-_k)=f(z_k^-)-g(z_k^-)$
+
+（2） $h(z_k)=f(z_k)-((f(z_k)-f(z_k^-))+g(z_k^-)=f(z_k^-)-g(z_k^-)$
+
+（3） $h(z_k^+)=f(z_k^+)-((f(z_k^+)-f(z_k^-))+g(z_k^-))=f(z_k^-)-g(z_k^-)$
+
+即有 $h(z_k^-)=h(z_k)=h(z_k^+)$ 故 $h(x)$ 在 $z_k$ 点连续
+
+由于 $g(x)$ 是阶梯函数，故结合定义可得当且仅当 $x\in Z$ 时 $g(x)$ 不连续
+
+又由于 $f(x)$ 亦仅在 $x\in Z$ 时不连续，故易证 $f(x)-g(x)$ 仅在 $x\in Z$ 时不连续
+
+又根据 $k$ 的任意性可得 $h(x)$ 连续
+
+***** 有界变差函数
+
+根据[[MK354][Jordan分解]]可得 $f(x)=g(x)-h(x)$ 其中 $g(x),h(x)$ 均为增函数 
+
+则根据[[MK359][之前证明]]可得 $g(x)=g'(x)+g^*(x),h(x)=h'(x)+h^*(x)$
+
+其中 $g'(x),h'(x)$ 是阶梯函数 $g^*(x),h^*(x)$ 是连续函数
+
+则易证 $g'(x)-h'(x)$ 仍为阶梯函数， $g^*(x)-h^*(x)$ 仍为连续函数
+
+故有 $f(x)=(g'(x)-h'(x))+(g^*(x)-h^*(x))$
+
+*** 定理2<<MK385>>
+
+设 $f(x)$ 是闭区间 $[a,b]$ 上的[[MK350][有界变差]]函数，则：
+
+（1） 导数 $f'(x)$ 在 $[a,b]$ 上几乎处处存在
+
+（2） 其导数 $f'(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]
+
+**** 证明
+
+根据[[MK354][Jordan分解]]可得 $f(x)=g(x)-h(x)$ 其中 $g(x),h(x)$ 均为增函数
+
+显然 $g(x),h(x)$ 是闭区间 $[a,b]$ 上的单调函数，故根据[[MK382][勒贝格定理]]有：
+
+（1） $g(x),h(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]存在[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]
+
+（2） 导函数 $g'(x),h'(x)$ 在 $[a,b]$ 上均[[MK237][勒贝格可积]]
+
+则根据导数运算法则有 $f'(x)=g'(x)-h'(x)$ 即 $f'(x)$ 亦几乎处处存在
+
+根据[[MK262][线性]]可得 $$\int_{[a,b]}f'(x)dx=\int_{[a,b]}g'(x)dx-\int_{[a,b]}h'(x)dx$$
+
+由于勒贝格可积，故有 $$\int_{[a,b]}g'(x)dx<\infty\land\int_{[a,b]}h'(x)dx<\infty$$
+
+根据[[MK4][封闭性]]可得 $$\int_{[a,b]}f'(x)dx<\infty$$ 即 $f'(x)$ 亦为勒贝格可积函数
 
 ** 可测函数<<MK134>>
 
@@ -6811,7 +7330,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 （2） 若积分确定，则定义勒贝格积分 $$\int_Ef(x)dx=\int_Ef^+(x)dx-\int_Ef^-(x)dx$$
 
-（3） 若 $$\left|\int_Ef^+(x)dx\right|<\infty\land\left|\int_Ef^-(x)dx\right|<\infty$$ 即均有限时，称 $f(x)$ 在 $E$ 勒贝格可积
+（3） 若 $$\int_Ef^+(x)dx<\infty\land\int_Ef^-(x)dx<\infty$$ 即均有限时，称 $f(x)$ 在 $E$ 勒贝格可积
 
 （4） 定义所有 $E$ 上的勒贝格可积函数为 $\mathcal{L}(E)$
 
@@ -6988,9 +7507,9 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 根据[[MK237][定义]]可得 $$\int_Ef(x)dx=\int_Ef^+(x)dx-\int_Ef^-(x)dx$$
 
-又由[[MK198][引理]]可得 $f^+(x),f^-(x)$ 均为非负可测函数
+又由[[MK198][引理]]可得 $f^+(x),f^-(x)$ 均为非负可测函数，显然 $|f(x)|=f^+(x)+f^-(x)$
 
-结合[[MK371][性质7]]可得结论
+故结合[[MK371][性质7]]可得结论
 
 **** 性质10（绝对连续性）<<MK263>>
 
@@ -7926,6 +8445,8 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 （2） $\varphi\left(E-\bigcup_{i}^\infty I_n\right)=0$
 
+（3） $\varphi\left(\bigcup_{i=1}^\infty I_i\right)=\sum_{i=1}^\infty \varphi(I_i)<\infty$
+
 其中 $\varphi(E)$ 是 $E$ 在 $\mathbb{R}$ 上的[[MK51][勒贝格外侧度]]
 
 *** 证明
@@ -8000,7 +8521,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 由于 $\{I_n\}\subset W$ 故根据[[MK60][单调性]]以及[[MK321][之前证明]]可得 $\varphi\left(\bigcup_{i=1}^\infty I_i\right)<\varphi(W)<\infty$
 
-进一步根据[[MK82][区间可测]]以及[[MK656][Caratheodory定理]]可得 $\varphi\left(\bigcup_{i=1}^\infty I_i\right)=\sum_{i=1}^\infty \varphi(I_i)<\infty$
+进一步根据[[MK82][区间可测]]以及[[MK656][Caratheodory定理]]可得 $\varphi\left(\bigcup_{i=1}^\infty I_i\right)=\sum_{i=1}^\infty \varphi(I_i)<\infty$ 即证明（3）
 
 **** 证明零测<<MK325>>
 
@@ -8012,7 +8533,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 假设 $I^*\cap\bigcup_{i=1}^\infty I_i=\varnothing$ 即有 $\forall n\rightarrow I^*\subset\left(\bigcup_{i=1}^n I_i\right)^c$ 又由于 $I^*\in W$
 
-则根据[[MK322][之前定义]]有 $I^*\in K_n$ 则 $\varphi(I^*)\leq r_n$ 进一步根据[[MK322][之前证明]]可得 $\sum_{i=1}^\infty \varphi(I_i)<\infty$
+则根据[[MK322][之前定义]]对于任意 $n\in\mathbb{N}$ 有 $I^*\in K_n$ 则 $\varphi(I^*)\leq r_n$ 进一步根据[[MK322][之前证明]]可得 $\sum_{i=1}^\infty \varphi(I_i)<\infty$
 
 根据[[MK54][非负性]]易证 $S_z=\sum_{i=1}^z \varphi(I_i)$ 单调递增，故根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 $S_z$ 收敛
 
@@ -8055,6 +8576,34 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 又根据[[MK321][缩小覆盖]]可得 $\overline{V}$ 中存在满足条件区间列
 
 最后根据[[MK319][转换覆盖]]可得 $V$ 中存在满足条件的区间列 $\{I_n\}$
+
+*** 推论<<MK390>>
+
+对于任意 $E\subset\mathbb{R}$ 有：
+
+（1） $\varphi(E)<\infty$
+
+（2） 存在 $V$ 是 $E$ 的[[MK317][维塔利覆盖]]
+
+则对于任意 $\epsilon>0$ 存在[[~/OneDrive/离散数学/Disc_Math.org::MK42][有限]]个区间 $I_1,I_2,...,I_n}$ 使得
+
+（1） $\forall\{i,j\}\subset\mathbb{N}\rightarrow I_i\cap I_j=\varnothing$
+
+（2） $\varphi\left(E-\bigcup_{i}^n I_n\right)<\epsilon$
+
+**** 证明
+
+根据[[MK327][覆盖定理]]可得存在 $\{I_i\}$ 满足 $\varphi(E-\bigcup_{i=1}^\infty I_i)=0$ 以及 $\varphi\left(\bigcup_{i=1}^\infty I_i\right)=\sum_{i=1}^\infty \varphi(I_i)<\infty$
+
+根据[[MK54][非负性]]易证 $S_z=\sum_{i=1}^z \varphi(I_i)$ 单调递增，故根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 $S_z$ 收敛
+
+故有 $\lim_{z\to\infty}S_z=\sum_{i=1}^\infty \varphi(I_i)=\varphi(E)$ 故根据极限定义 $\forall\epsilon>0,\exists N,\forall n>N\rightarrow \varphi(E)-S_n<\epsilon$
+
+则有 $\varphi(E)-\sum_{i-1}^{N+1}\varphi(I_i)<\epsilon$ 由于递增 $\sum_{i=1}^{N+1} \varphi(I_i)\leq\sum_{i=1}^\infty \varphi(I_i)<\infty$
+
+由于[[MK82][区间可测]]故根据[[MK84][计算（3）]]以及[[MK84][计算（2）]]可得 $\varphi(E)-\sum_{i-1}^{N+1}\varphi(I_i)=\varphi(E)-\varphi(\sum_{i-1}^{N+1}I_i)=\varphi(E-\sum_{i-1}^{N+1}I_i)$
+
+最存在 $I_1,...,I_{N+1}$ 满足 $\varphi(E-\sum_{i-1}^{N+1}I_i)<\epsilon$
 
 ** 列导数<<MK326>>
 
@@ -8492,288 +9041,6 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 故有 $$0=\int_{[a,b]}f'(x)dx\leq f(1)-f(0)=1$$
 
-** 有界变差函数
-
-*** 定义<<MK350>>
-
-对于任意一个 $[a,b]$ 上的[[~/OneDrive/离散数学/Disc_Math.org::MK360][有理划分]] $T=\{[a_0,a_1],[a_1,a_2],...\}$
-
-定义 $Z_{T,[a,b]}(f)=\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|$ 为划分 $T$ 下的变差
-
-若存在 $M_f\in\mathbb{R}$ 满足对于任意划分 $T$ 均有 $Z_T\leq M_f$ 则称 $f(x)$ 为有界变差函数
-
-定义 $[a,b]$ 上的所有有理划分集合为 $\mathcal{T}$ ，定义 $Z_{[a,b]}(f)=\left\{Z_T(f)\big|T\in\mathcal{T}\right\}$
-
-则定义 $\overunderset{b}{a}{V}(f)=\sup(Z(f))$ 是 $f(x)$ 在 $[a,b]$ 上的全变差
-
-故有界变差函数进一步可定义为 $\overunderset{b}{a}{V}(f)<+\infty$
-
-*** 性质
-
-**** 性质1<<MK353>>
-
-任意满足[[MK350][定义2]]的函数为有界函数
-
-***** 证明
-
-假设任意一点 $x\in[a,b]$ 满足 $f(x)=\infty$ 则取划分 $T=\{[a,x],[x,b]\}$
-
-则当 $f(a)\in\mathbb{R}$ 时 $Z_T=\infty$ ，当 $f(a)=\infty$ 时根据[[MK351][预算定义]]可得 $Z_T$ 无定义
-
-故与条件矛盾，假设不成立，故有 $\forall x\in[a,b]\rightarrow f(x)<\infty$
-
-由于 $[a,b]$ 是闭区间，故根据[[MK352][引理1]]可得 $f(x)$ 有界
-
-**** 性质2（线性）<<MK355>>
-
-若 $f(x),g(x)$ 在 $[a,b]$ 上满足[[MK350][定义2]]，则：
-
-（1） $f(x)+g(x)$ 满足[[MK350][定义2]]
-
-（2） $c\times f(x),c\in\mathbb{R}$ 满足[[MK350][定义2]]
-
-***** 证明（1）
-
-定义 $h(x)=f(x)+g(x)$ 对于任意划分 $T$ 根据[[MK22][三角不等式]]
-
-\begin{aligned}
-Z_T(h)=&\sum_{i=1}^n\left|h(a_i)-h(a_{i-1})\right|\\
-=&\sum_{i=1}^n\left|f(a_i)+g(a_i)-f(a_{i-1})-g(a_{i-1})\right|\\
-\leq&\sum_{i=1}^n\left(\left|f(a_i)-f(a_{i-1})\right|+\left|g(a_i)-g(a_{i-1})\right|\right)\\
-=&\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|+\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|\\
-\leq&M_f+M_g
-\end{aligned}
-
-***** 证明（2）
-
-定义 $h(x)=cf(x)$ 对于任意划分 $T$
-
-有 $Z_T(h)=\sum_{i=1}^n\left|cf(a_i)-cf(a_{i-1})\right|=c\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|$
-
-由于 $\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|<M_f$ 故有 $c\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|<cM_f$
-
-显然根据[[MK4][封闭性]]可得 $cM_f\in\mathbb{R}$
-
-**** 性质3
-
-若 $f(x),g(x)$ 在 $[a,b]$ 上满足[[MK350][定义2]]，则 $f(x)g(x)$ 亦满足[[MK350][定义2]]
-
-***** 证明
-
-定义 $h(x)=f(x)g(x)$ 对于任意划分 $T$ 根据[[MK22][三角不等式]]
-
-\begin{aligned}
-Z_T(h)=&\sum_{i=1}^n\left|h(a_i)-h(a_{i-1})\right|\\
-=&\sum_{i=1}^n\left|f(a_i)g(a_i)-f(a_{i-1})g(a_{i-1})\right|\\
-=&\sum_{i=1}^n\left|f(a_i)g(a_i)+f(a_i)g(a_{i-1})-f(a_i)g(a_{i-1})-f(a_{i-1})g(a_{i-1})\right|\\
-=&\sum_{i=1}^n\left|f(a_i)(g(a_i)-g(a_{i-1}))+g(a_{i-1})(f(a_i)-f(a_{i-1}))\right|\\
-\leq&\sum_{i=1}^n\left(\left|f(a_i)(g(a_i)-g(a_{i-1}))\right|+\left|g(a_{i-1})(f(a_i)-f(a_{i-1}))\right|\right)\\
-=&\sum_{i=1}^n|f(a_i)||(g(a_i)-g(a_{i-1}))|+\sum_{i=1}^n|g(a_{i-1})||(f(a_i)-f(a_{i-1}))|\\
-\end{aligned}
-
-根据[[MK353][性质1]]可得 $f(x),g(x)$ 有界，定义 $M$ 为两个函数的界
-
-结合 $Z_T(f)<\infty,Z_T(g)<\infty$ 则有
-
-\begin{aligned}
-Z_T(h)\leq&\sum_{i=1}^n|f(a_i)||(g(a_i)-g(a_{i-1}))|+\sum_{i=1}^n|g(a_{i-1})||(f(a_i)-f(a_{i-1}))|\\
-\leq&M\sum_{i=1}^n|(g(a_i)-g(a_{i-1}))|+M\sum_{i=1}^n|(f(a_i)-f(a_{i-1}))|\\
-<&MM_g+MM_f
-\end{aligned}
-
-显然根据[[MK4][封闭性]]可得 $MM_g+MM_f\in\mathbb{R}$
-
-**** 性质4<<MK356>>
-
-若 $f(x)$ 在 $[a,b]$ 上满足[[MK350][定义2]]，则
-
-（1） 对于任意 $[c,d]\subset [a,b]$ 有 $f(x)$ 在 $[c,d]$ 上亦满足[[MK350][定义2]]
-
-（2） 对于任意 $a<c<b$ 有 $\overunderset{b}{a}{V}(f)=\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
-
-***** 证明（1）
-
-对于 $[c,d]$ 上的任意一组划分 $T'$ 均可与 $[a,c],[d,b]$ 组成新的 $[a,b]$ 上的划分 $T$
-
-则根据定义有 $|f(c)-f(a)|+|f(d)-f(b)|+Z_{T'}(f)<M_f$
-
-又根据[[MK353][性质1]]可得有界，故可得 $|f(c)-f(a)|+|f(d)-f(b)|<M\in\mathbb{R}$
-
-则显然 $Z_{T'}(f)<M_f+M$ 根据[[MK4][封闭性]]可得 $M_f+M\in\mathbb{R}$
-
-***** 证明（2）
-
-根据以下证明以及[[MK5][三岐性]]可得 $\overunderset{b}{a}{V}(f)=\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
-
-****** 证明 $\overunderset{b}{a}{V}(f)\leq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
-
-对于任意 $[a,b]$ 上的划分 $T$ 可得 $Z_T(f)=\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|$
-
-若 $c$ 是 $T$ 中某一区间的端点 $a_k$ 则根据[[MK350][定义2]]有
-
-\begin{aligned}
-Z_T(f)=&\sum_{i=1}^k\left|f(a_i)-f(a_{i-1})\right|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
-\leq&\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)
-\end{aligned}
-
-若 $c$ 不是端点，则由于 $c\in[a,b]$ 且 $T$ 是划分，股存在 $c\in[a_{k-1},a_k]$
-
-则根据[[MK350][定义2]]以及[[MK22][三角不等式]]有
-
-\begin{aligned}
-Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
-=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)+f(c)-f(c)-f(a_{k-1})|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
-\leq&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(c)|\\
-&+|f(c)-f(a_{k-1})|+\sum_{i=k+1}^n\left|f(a_i)-f(a_{i-1})\right|\\
-\leq&\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)
-\end{aligned}
-
-即由 $T$ 的任意性以及[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $\overunderset{b}{a}{V}(f)\leq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
-
-****** 证明 $\overunderset{b}{a}{V}(f)\geq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
-
-对于任意 $[a,c]$ 上的划分 $T_\alpha$ 以及任意 $[c,b]$ 上的划分 $T_\beta$
-
-显然存在 $T=T_\alpha\cup T_\beta$ 是 $[a,b]$ 上的划分，故存在 $Z_{T,[a,b]}(f)=Z_{T_\alpha,[a,c]}(f)+Z_{T_\beta,[c,b]}(f)$
-
-显然由于 $Z_{T,[a,b]}(f)\in Z_{[a,b]}(f)$ 故可得 $Z_{T_\alpha,[a,c]}(f)+Z_{T_\beta,[c,b]}(f)\leq\overunderset{b}{a}{V}(f)$
-
-即由 $T$ 的任意性以及[[~/OneDrive/离散数学/Disc_Math.org::MK361][定理7]]可得 $\overunderset{b}{a}{V}(f)\geq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
-
-*** Jordan分解（定义1）<<MK354>>
-
-若 $f(x)$ 是 $[a,b]$ 上的[[MK202][有限]]函数满足：
-
-（1） $f(x)=g(x)-h(x)$
-
-（2） $g(x),h(x)$ 在 $[a,b]$ 上均为增函数
-
-则称 $f(x)$ 是有界变差函数
-
-**** 等价性<<MK357>>
-
-[[MK354][Jordan分解]]与[[MK350][定义2]]等价
-
-***** 证明充分
-
-若满足[[MK354][定义1]]则有 $f(x)=g(x)-h(x)$
-
-由于递增，故易证对于任意划分 $T$ 均有 $Z_{T,[a,b]}(g)=g(b)-g(a),Z_{T,[a,b]}(h)=h(b)-h(a)$
-
-由于 $f(x)$ 有限，显然 $g(x),h(x)$ 亦有限，则根据[[MK352][引理1]]可得 $g(x),h(x)$ 有界
-
-故有对于任意 $T$ 均有 $Z_{T,[a,b]}(g)<\infty\land Z_{T,[a,b]}(h)<\infty$ 即 $g(x),h(x)$ 满足[[MK350][定义2]]
-
-根据[[MK355][线性]]可得 $f(x)=g(x)-h(x)$ 亦满足[[MK350][定义2]]
-
-***** 证明必要<<MK358>>
-
-若 $f(x)$ 满足[[MK350][定义2]]，则定义 $g(x)=\overunderset{x}{\text{a}}{V}(f)$ 根据[[MK350][定义2]]可得对于任意 $a\leq u< v\leq b$ 均有 $\overunderset{v}{u}{V}(f)\geq 0$
-
-又根据[[MK356][性质4]]有 $g(v)-g(u)=\overunderset{v}{u}{V}(f)$ 故 $g(x)$ 是递增函数 
-
-定义 $h(x)=g(x)-f(x)$ 则根据[[MK356][性质4]]，对于任意 $a\leq u< v\leq b$
-
-有 $h(v)-h(u)=\overunderset{v}{u}{V}(f)-(f(v)-f(u))$ 显然 $T=\{[u,v]\}$ 亦为 $[u,v]$ 上的一种划分
-
-显然有 $\overunderset{v}{u}{V}(f)\geq|f(v)-f(u)|\geq(f(v)-f(u))$
-
-故 $h(x)$ 亦为增函数，则有 $f(x)=g(x)-h(x)$ 满足[[MK354][定义1]]
-
-**** 不唯一性
-
-[[MK350][有界变差]]函数 $f(x)$ 的[[MK354][Jordan分解]]不唯一
-
-***** 证明
-
-根据[[MK357][等价性]]可得 $f(x)=g(x)-h(x)$ 则对于任意一个增函数 $u(x)$
-
-均有 $g'(x)=g(x)+u(x),h'(x)=h(x)+u(x)$ 均为增函数
-
-且 $f(x)=g'(x)-h'(x)$
-
-**** 正规分解
-
-对于[[MK350][有界变差]]函数 $f(x)$ 定义：
-
-（1） 正变差函数 $P(x)=\frac{1}{2}\left(\overunderset{x}{a}{V}(f)+f(x)-f(a)\right)$
-
-（2） 负变差函数 $Q(x)=\frac{1}{2}\left(\overunderset{x}{a}{V}(f)-\left(f(x)-f(a)\right)\right)$
-
-则 $f(x)=P(x)-Q(x)$ 是[[MK354][Jordan分解]]，并定义该分解为 $f(x)$ 的正规分解
-
-***** 证明
-
-定义 $x_1>x_2$ 则有 $P(x_1)-P(x_2)=\frac{1}{2}\left(\overunderset{x_1}{a}{V}(f)-\overunderset{x_2}{a}{V}(f)+f(x_1)-f(x_2)\right)$
-
-根据[[MK356][性质4]]有 $P(x_1)-P(x_2)=\frac{1}{2}\left(\overunderset{x_1}{x_2}{V}(f)+f(x_1)-f(x_2)\right)$
-
-根据[[MK358][类似证明]]可得 $\overunderset{x_1}{x_2}{V}(f)\geq-(f(x_1)-f(x_2))$ 则有 $P(x_1)-P(x_2)\geq0$
-
-故 $P(x)$ 递增，同理可证 $Q(x)$ 递增，故有 $f(x)=P(x)-Q(x)$ 是[[MK354][Jordan分解]]
-
-*** 定理
-
-[[MK350][有界变差]]函数 $f(x)$ 可以分解为 $g(x)+h(x)$
-
-其中 $g(x)$ 是阶梯函数， $h(x)$ 是连续函数
-
-**** 证明
-
-***** 证明增函数<<MK359>>
-
-****** 构造函数
-
-对于任意增函数 $f(x)$ 根据[[MK335][定理2]]可得其不连续点是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]
-
-则定义不连续点集 $Z=\{z_1,z_2...\}$
-
-以及左右极限 $\lim_{x\to x^-}f(x)=f(x^-),\lim_{x\to x^+}f(x)=f(x^+)$
-
-定义 $\phi_i(x)=\begin{cases}1&x\geq z_i\\0&x< z_i\end{cases},\psi_i(x)=\begin{cases}1&x> z_i\\0&x\leq z_i\end{cases}$
-
-则定义 $g(x)=\sum_{i=1}^{|Z|}\left(\phi_i(x)(f(z_i)-f(z_i^-))+\psi_i(x)(f(z_i^+)-f(z_i))\right)$
-
-显然 $g(x)$ 是阶梯函数，则定义 $h(x)=f(x)-g(x)$ 
-
-****** 证明结论
-
-任取 $z_k$ 定义 $Z_k=\left\{z\big|z\in Z\land z<z_k\right\}$ 则易证
-
-（1） $g(z_k^-)=\sum_{z_i\in Z_k}\left(\phi_i(x)(f(z_i)-f(z_i^-))+\psi_i(x)(f(z_i^+)-f(z_i))\right)$
-
-（2） $g(z_k)=(f(z_k)-f(z_k^-))+g(z_k^-)$
-
-（3） $g(z_k^+)=(f(z_k)-f(z_k^-))+(f(z_k^+)-f(z_k))+g(z_k^-)=(f(z_k^+)-f(z_k^-))+g(z_k^-)$
-
-根据[[MK334][定理1]]有 $f(z_k^-)\geq f(z_k)\geq f(z_k^+)$ 即有
-
-（1） $h(z^-_k)=f(z_k^-)-g(z_k^-)$
-
-（2） $h(z_k)=f(z_k)-((f(z_k)-f(z_k^-))+g(z_k^-)=f(z_k^-)-g(z_k^-)$
-
-（3） $h(z_k^+)=f(z_k^+)-((f(z_k^+)-f(z_k^-))+g(z_k^-))=f(z_k^-)-g(z_k^-)$
-
-即有 $h(z_k^-)=h(z_k)=h(z_k^+)$ 故 $h(x)$ 在 $z_k$ 点连续
-
-由于 $g(x)$ 是阶梯函数，故结合定义可得当且仅当 $x\in Z$ 时 $g(x)$ 不连续
-
-又由于 $f(x)$ 亦仅在 $x\in Z$ 时不连续，故易证 $f(x)-g(x)$ 仅在 $x\in Z$ 时不连续
-
-又根据 $k$ 的任意性可得 $h(x)$ 连续
-
-***** 有界变差函数
-
-根据[[MK354][Jordan分解]]可得 $f(x)=g(x)-h(x)$ 其中 $g(x),h(x)$ 均为增函数 
-
-则根据[[MK359][之前证明]]可得 $g(x)=g'(x)+g^*(x),h(x)=h'(x)+h^*(x)$
-
-其中 $g'(x),h'(x)$ 是阶梯函数 $g^*(x),h^*(x)$ 是连续函数
-
-则易证 $g'(x)-h'(x)$ 仍为阶梯函数， $g^*(x)-h^*(x)$ 仍为连续函数
-
-故有 $f(x)=(g'(x)-h'(x))+(g^*(x)-h^*(x))$
-
 ** 平均连续性
 
 若 $f(x)$ 是 $[a,b]$ 上的[[MK237][勒贝格可积]]函数，假设 $x\not\in[a,b]\rightarrow f(x)=0$
@@ -9031,30 +9298,29 @@ F(x_2)-F(x_1)=&\int_{[a,x_2]}f(t)dx-\int_{[a,x_1]}f(t)dx\\
 根据导数定义、[[MK213][积分定义]]、[[MK243][性质4]]可得
 
 \begin{aligned}
-F'(x_0)-f(x_0)=&\lim_{h\to 0}\frac{1}{h}\left(\int_{[a,x_0+h]}f(x)dx-\int_{[a,x_0]}f(x)dx\right)-f(x_0)\\
-=&\lim_{h\to 0}\frac{1}{h}\int_{[x_0,x_0+h]}f(x)dx-f(x_0)\\
-=&\lim_{h\to 0}\frac{1}{h}\left(\int_{[x_0,x_0+h]}f(x)dx-hf(x_0)\right)\\
-=&\lim_{h\to 0}\frac{1}{h}\int_{[x_0,x_0+h]}f(x)-f(x_0)dx\\
-=&\lim_{h\to 0}\frac{1}{h}\int_{[x_0,x_0+h]}f(x_0+t)-f(x_0)dt
+|F'(x_0)-f(x_0)|=&\left|\lim_{h\to 0}\frac{1}{h}\left(\int_{[a,x_0+h]}f(x)dx-\int_{[a,x_0]}f(x)dx\right)-f(x_0)\right|\\
+=&\left|\lim_{h\to 0}\frac{1}{h}\int_{[x_0,x_0+h]}f(x)dx-f(x_0)\right|\\
+=&\left|\lim_{h\to 0}\frac{1}{h}\left(\int_{[x_0,x_0+h]}f(x)dx-hf(x_0)\right)\right|\\
+=&\left|\lim_{h\to 0}\frac{1}{h}\int_{[x_0,x_0+h]}f(x)-f(x_0)dx\right|\\
+=&\left|\lim_{h\to 0}\frac{1}{h}\int_{[x_0,x_0+h]}f(x_0+t)-f(x_0)dt\right|
 \end{aligned}
 
 由于[[MK106][连续]]，故有 $\lim_{x\to x_0}f(x)=f(x_0)$ 则对于任意 $\epsilon>0$
 
 有 $\exists \delta>0,\forall|\vec{x}-\vec{x}_0|<\delta\Rightarrow |f(\vec{x})-f(\vec{x}_0)|<\epsilon$ 故当 $h<\delta$ 时
 
-根据[[MK372][推论]]以及[[MK213][积分定义]]有
+有 $-\epsilon<f(\vec{x})-f(\vec{x}_0)<\epsilon$ 根据[[MK372][推论]]以及[[MK213][积分定义]]有
 
 \begin{aligned}
 &\frac{1}{h}\int_{[x_0,x_0+h]}f(x_0+t)-f(x_0)dt\\
-\leq&\frac{1}{h}\int_{[x_0,x_0+h]}|f(x_0+t)-f(x_0)|dt\\
-\leq&\frac{1}{h}\int_{[x_0,x_0+h]}\epsilon dt\\
-\leq&\frac{1}{h}h\epsilon\\
-=&\epsilon
+\Rightarrow&\frac{1}{h}\int_{[x_0,x_0+h]}-\epsilon dt\leq\frac{1}{h}\int_{[x_0,x_0+h]}f(x_0+t)-f(x_0)dt\leq\frac{1}{h}\int_{[x_0,x_0+h]}\epsilon dt\\
+\Rightarrow&-\frac{1}{h}h\epsilon\leq\frac{1}{h}\int_{[x_0,x_0+h]}f(x_0+t)-f(x_0)dt\leq\frac{1}{h}h\epsilon\\
+\Rightarrow&-\epsilon\leq\frac{1}{h}\int_{[x_0,x_0+h]}f(x_0+t)-f(x_0)dt\leq\epsilon\\
 \end{aligned}
 
-综上所述，对于任意 $\epsilon>0$ 存在 $\delta$ 对于任意 $h<\delta$ 均有 $$\frac{1}{h}\int_{[x_0,x_0+h]}f(x_0+t)-f(x_0)dt<\epsilon$$
+综上所述，对于任意 $\epsilon>0$ 存在 $\delta$ 对于任意 $h<\delta$ 均有 $$\left|\frac{1}{h}\int_{[x_0,x_0+h]}f(x_0+t)-f(x_0)dt-0\right|<\epsilon$$
 
-即 $F'(x_0)-f(x_0)=0$
+即 $|F'(x_0)-f(x_0)|=0$
 
 **** 引理2<<MK380>>
 
@@ -9175,9 +9441,9 @@ F'(x_0)-f(x_0)=&\lim_{h\to 0}\frac{1}{h}\left(\int_{[a,x_0+h]}f(x)dx-\int_{[a,x_
 
 证毕
 
-*** 定理
+*** 定理1<<MK393>>
 
-设 $f(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]，则其[[MK377][不定积分]] $$F(x)=\int_{[a,x]}f(t)dt+C$$
+设 $f(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]，则其[[MK377][不定积分]] $$F(x)=\int_{[a,x]}f(t)dt+C$$ 其中 $C\in\mathbb{R}$ 是任意常数
 
 在 $[a,b]$ 上[[MK190][几乎处处]]有 $F'(x)=f(x)$
 
@@ -9238,3 +9504,23 @@ F'(x_0)-f(x_0)=&\lim_{h\to 0}\frac{1}{h}\left(\int_{[a,x_0+h]}f(x)dx-\int_{[a,x_
 则有 $\epsilon$ 任意性可得 $$\int_{[a,b]}\left|F'(x)-f(x)\right|dx=0$$ 结合[[MK303][性质5]]可得
 
 在 $[a,b]$ 上几乎处处有 $F'(x)-f(x)=0$ 即 $F'(x)=f(x)$
+
+*** 定理2<<MK389>>
+
+设 $f(x)$ 是 $[a,b]$ 上的[[MK384][绝对连续函数]]，则有 $$f(x)=\int_{[a,x]}f'(t)dt+f(a)$$
+
+**** 证明
+
+定义 $$h(x)=\int_{[a,x]}f'(t)dt-f(x)$$ 则有 $$h'(x)=\frac{d}{dx}\left(\int_{[a,x]}f'(t)dt\right)-f'(x)$$
+
+根据[[MK393][定理1]]可得 $$h'(x)=f'(x)-f'(x)=0$$ 即对于任意 $x\in[a,b]$ 均有 $h'(x)=0$
+
+根据条件 $f(x)$ 是[[MK384][绝对连续函数]]，根据[[MK394][定理3]]可得 $f'(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]
+
+根据[[MK388][定理1]]可得 $$\int_{[a,x]}f'(t)dt$$ 是[[MK384][绝对连续函数]]，故根据[[MK392][运算]]可得 $$h(x)=\int_{[a,x]}f'(t)dt-f(x)$$ 是绝对连续函数
+
+进一步根据[[MK395][定理3]]可得 $h(x)=h(a)=-f(a)$ 即有 $$-f(a)=\int_{[a,x]}f'(t)dt-f(x)$$
+
+故最终可得 $$f(x)=\int_{[a,x]}f'(t)dt+f(a)$$
+
+
