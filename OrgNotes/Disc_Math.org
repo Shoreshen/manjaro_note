@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 381
+currnet mark: 390
 
 图论: P40
 
@@ -218,21 +218,17 @@ currnet mark: 381
 
 **** 选择公理<<MK10>>
 
-形式语言： $\forall A\left(\varnothing\not\in A\rightarrow\exists f:A\to\cup x\left(f(x)\in x\right)\right)$
+对于任意不包含空集的[[MK12][集合族]] $A=\left\{S_i\big|i\in I\right\}$ 存在选择[[MK194][函数]] $f:A\to\bigcup_{i\in I}S_i$ 满足 $f(S_i)\in S_i$
 
-即对于任意不包含空集的[[MK12][集合族]] $A$ ：
-
-（1） 存在一个选择[[MK194][函数]] $f:A\rightarrow\cup x$ 其定义域为 $A$ ，值域为 $A$ 中所有集合的[[MK34][广义并]]（ $\cup x$ ）
-
-（2） 函数满足对于任意 $x\in A$ 均有 $f(x)\in x$
+形式语言： $\forall A\left(S_i\ne\varnothing\land S_i\in A\rightarrow\exists (f:A\to\bigcup S_i)\rightarrow\left(f(S_i)\in S_i\right)\right)$
 
 ***** 推论
 
 对于任意集合 $A$ 中的每个[[MK2][元素]]选择一个[[MK2][元素]]的[[MK2][元素]]，可组成一个新的集合 $B$
 
-根据选择公理，存在选择函数。则对于任意 $x\in A$ 存在 $\{f(x)\}$ 使得 $f(x)\in x$
+根据选择公理，存在选择函数。则对于任意 $S\in A$ 存在 $\{f(S)\}$ 使得 $f(S)\in S$
 
-根据[[MK7][无序对公理]]及[[MK8][并集公理]]可得 $B=\left\{f(x)\big|x\in A\right\}$ 存在
+根据[[MK7][无序对公理]]及[[MK8][并集公理]]可得 $B=\left\{f(S)\big|S\in A\right\}$ 存在
 
 *** 特殊集合
 
@@ -3820,9 +3816,7 @@ $A$ 上的划分 $\pi_1,\pi_2$ 的和划分记作 $\pi_1+\pi_2$ ，该划分满�
 
 $R$ 是 $A$ 上的[[MK176][等价关系]]，则称 $A$ 的划分 $\left\{[a]_R\big|a\in A\right\}$ 为 $A$ 的 $R$ 商集，记作 $A/R$
 
-*** 序关系
-
-**** 定义<<MK185>>
+*** 偏序关系<<MK185>>
 
 定义集合 $A$ 若：
 
@@ -3840,9 +3834,9 @@ $R$ 是 $A$ 上的[[MK176][等价关系]]，则称 $A$ 的划分 $\left\{[a]_R\b
 
 （2） 存在 $xRy$ 且 $\lnot\exists z\big(z\in A\land xRz\land zRy\big)$
 
-**** 元
+**** 元素
 
-***** 定义<<MK186>>
+***** 元<<MK186>>
 
 若 $<A,\leq>$ 是有序集，且 $B\subset A$ 则 $b$ 是：
 
@@ -3854,7 +3848,7 @@ $B$ 的极小元： $b\in B\land\lnot\exists x(x\in B\land x\ne b\land x\leq b)$
 
 $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land x\ne b\land b\leq x)$ 
 
-***** 定理
+****** 定理
 
 （1） $B$ 的最大（小）元必为 $B$ 的极大（小）元
 
@@ -3866,9 +3860,7 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land x\ne b\land b\leq x)$
 
 （4） 极大（小）元对有限集必然存在，未必唯一
 
-**** 界
-
-***** 定义<<MK326>>
+***** 界<<MK326>>
 
 若 $<A,\leq>$ 是有序集，且 $B\subset A$ 则 $b$ 是：
 
@@ -3880,7 +3872,7 @@ $B$ 的上确界： $b$ 是上界的最小元
 
 $B$ 的下确界： $b$ 下界的最大元 
 
-***** [[MK194][函数]]的界<<MK342>>
+****** [[MK194][函数]]的界<<MK342>>
 
 若 $<X,\leq>$ 是有序集，且 $Y\subset X$  
 
@@ -3894,7 +3886,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 是 $I$ 的上确界： 则有对于任意 $x'\in E$ 均有 $g(x')$ 是 $\{f(x')\}$ 的[[MK326][下确界]]
 
-***** 定理1
+****** 定理1
 
 （1） 如果 $b$ 是 $B$ 的最大（小）元，则b是 $B$ 的上（下）确界
 
@@ -3906,19 +3898,19 @@ $B$ 的下确界： $b$ 下界的最大元
 
 （5） 有了上（下）界，也未必存在上（下）确界
 
-****** 证明
+******* 证明
 
 只证（5），若存在 $\{c,d\}\in A$ 且两者无法比较，即 $\lnot(c\leq d)\land\lnot(d\leq c)$
 
 若 $c,d$ 均为 $B$ 的上界，则不存在上确界。
 
-***** 定理2<<MK339>>
+****** 定理2<<MK339>>
 
 （1） 若 $\forall b\in B\rightarrow b\leq c$ 则 $B$ 的上确界 $\sup\{B\}\leq c$
 
 （2） 若 $\forall b\in B\rightarrow b\geq c$ 则 $B$ 的上确界 $\inf\{B\}\geq c$
 
-****** 证明
+******* 证明
 
 仅证（1），（2）同理可证
 
@@ -3928,15 +3920,15 @@ $B$ 的下确界： $b$ 下界的最大元
 
 故假设不成立，则有 $\sup\{B\}\leq c$
 
-***** 定理3<<MK338>>
+****** 定理3<<MK338>>
 
 若 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，定义 $C=\left\{a+b\big|a\in A\land b\in B\right\}$
 
 则有 $\sup\{C\}=\sup\{A\}+\sup\{B\}$
 
-****** 证明
+******* 证明
 
-******* 当 $|\sup\{A\}|<\infty\land|\sup\{B\}|<\infty$ 时<<MK337>>
+******** 当 $|\sup\{A\}|<\infty\land|\sup\{B\}|<\infty$ 时<<MK337>>
 
 由于 $\forall a\in A\rightarrow a\leq\sup\{A\}$ 以及 $\forall b\in B\rightarrow b\leq\sup\{B\}$
 
@@ -3950,7 +3942,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 综上所述 $\sup\{A\}+\sup\{B\}$ 是 $C$ 的最小上界，即 $\sup\{C\}=\sup\{A\}+\sup\{B\}$
 
-******* 否则
+******** 否则
 
 由于 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 根据[[~/OneDrive/实变函数/SBHS.org::MK224][运算性质]]不能出现 $+\infty+(-\infty)$
 
@@ -3958,13 +3950,13 @@ $B$ 的下确界： $b$ 下界的最大元
 
 [[MK337][同理]]易证 $\sup\{C\}=\sup\{A\}+\sup\{B\}$
 
-***** 定理4<<MK340>>
+****** 定理4<<MK340>>
 
 若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，则定义 $B=\left\{c\cdot a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^+$
 
 则有 $\sup\{B\}=c\cdot\sup\{A\}$ 以及 $\inf\{B\}=c\cdot\inf\{A\}$ 
 
-****** 证明
+******* 证明
 
 仅证上确界，下确界类似易证
 
@@ -3972,7 +3964,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 故可得 $\sup\{B\}=c\cdot\sup\{A\}$
 
-******* $\frac{h_B}{c}$ 是 $A$ 的上界
+******** $\frac{h_B}{c}$ 是 $A$ 的上界
 
 由于是[[MK326][上确界]]，故有 $\forall b\in B\rightarrow h_B\geq b$
 
@@ -3980,7 +3972,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 综上所述 $\forall a\in A\rightarrow h_B\geq c\cdot a\rightarrow\frac{h_B}{c}\geq a$ 即 $\frac{h_B}{c}$ 是 $A$ 的[[MK326][上界]]
 
-******* $\frac{h_B}{c}$ 是 $A$ 上确界
+******** $\frac{h_B}{c}$ 是 $A$ 上确界
 
 假设 $\frac{h_B}{c}$ 不是 $A$ 的上确界，由于是上界，故存在 $h^*$ 满足 $\forall a\in A\rightarrow h^*\geq a$ 且 $\frac{h_B}{c}>h^*$
 
@@ -3990,13 +3982,13 @@ $B$ 的下确界： $b$ 下界的最大元
 
 故假设不成立，则 $\frac{h_B}{c}$ 是 $A$ 的上确界
 
-***** 定理6<<MK343>>
+****** 定理6<<MK343>>
 
 若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，则定义 $-A=\left\{-a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^-$
 
 则有 $\sup\{-A\}=-\inf\{A\}$
 
-****** 证明
+******* 证明
 
 定义 $\alpha=\sup\{-A\}$ 则有 $\forall a'\in-A\rightarrow a'\leq\alpha$ 且 $\forall\epsilon>0\rightarrow\left((\exists -a'\in-A)\rightarrow(\alpha-\epsilon<-a')\right)$
 
@@ -4006,13 +3998,13 @@ $B$ 的下确界： $b$ 下界的最大元
 
 则显然可得 $-\alpha$ 是 $A$ 的[[MK326][下确界]]
 
-***** 定理7<<MK361>>
+****** 定理7<<MK361>>
 
 若 $A\subset\mathbb{R}\land B\subset\mathbb{R}$ 且 $\forall a\in A,\forall b\in B\rightarrow a+b\leq c$
 
 则有 $\sup(A)+\sup(C)\leq c$
 
-****** 证明
+******* 证明
 
 根据[[MK326][定义]]可得 $\forall\epsilon>0,\exists a^*\in A\rightarrow a^*+\frac{\epsilon}{2}>\sup(A)$
 
@@ -4026,25 +4018,239 @@ $B$ 的下确界： $b$ 下界的最大元
 
 故假设不成立，即有 $\sup(A)+\sup(C)\leq c$
 
-**** 链
-
-***** 定义
+***** 链<<MK386>>
 
 若 $<A,R>$ 是有序集，且 $B\subset A$ 若：
 
-$B$ 是链： $\forall x\forall y(\{x,y\}\subset B\rightarrow x\lor y\land y\leq x)$
+$B$ 是链： $\forall x\forall y(\{x,y\}\subset B\rightarrow xRy\lor yRx)$
 
-$B$ 是反链<<MK187>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(x\leq y)\land\lnot(y\leq x))$
+$B$ 是反链<<MK187>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(xRy)\land\lnot(yRx))$
 
-***** 定理
+****** 定理
 
 若 $<A,R>$ 是有序集，且 $B\subset A$ 若 $A$ 中最长的链 $T$ 基数为 $n$ 则 $A$ 可划分为 $n$ 个单元，
 
 每个单元都是一个[[MK187][反链]]
 
-*** 其他序关系
+***** 前段<<MK385>>
 
-**** 拟序关系<<MK188>>
+若 $<S,\leq>$ 为[[MK193][全序集]]，任意 $T$ 满足：
+
+（1） $T\subset S$
+
+（2） $\forall (u,v)\subset S\ \&\ u\leq v$ 若 $v\in T$ 则有 $u\in T$
+
+即对于给定的 $v\in S\rightarrow T=\left\{u\big|u\in S,u\leq v\right\}$ ，则称 $T$ 为 $S$ 的前段
+
+当 $T\ne S$ 时称 $T$ 为 $S$ 的真前段
+
+****** 推论<<MK382>>
+
+设 $<S,\leq>$ 为[[MK193][全序集]]，若 $T=\{a\}$ 其中 $a$ 是 $S$ 的[[MK186][最小元]]，则 $T$ 为 $S$ 的前段
+
+******* 证明
+
+定义 $T=\{a\}$ 由于[[MK193][全序集]]，故满足[[MK168][自反性]]即有 $a\leq a$ 又由于 $a$ 是 $S$ 的最小元
+
+故 $\forall c\in S\rightarrow a\leq c$ 
+
+**** 基于偏序的序关系
+
+***** 全序关系<<MK193>>
+
+若[[MK185][偏序集]] $(P,\leq)$ 中任意两个元素 $(a,b)\subset P$ 至少成立 $a\leq b,b\leq a$ 中的一个
+
+则称 $<P,\leq>$ 为全序集
+
+***** 良序关系<<MK384>>
+
+集合 $S$ 上的二元关系 $\leq$ 满足：
+
+（1） $<S,\leq>$ 为[[MK193][全序集]]
+
+（2） 任意非空子集 $T\subset S$ 都有[[MK196][最小元]]
+
+满足此定义的集合与偏序关系称为良序集，记作 $<S,\leq>$
+
+**** 相关定理
+
+***** 定理1<<MK389>>
+
+若[[MK185][偏序集]] $<P,\leq>$ 中存在[[MK384][良序集]] $<S,\leq>$ 满足 $S\subset P$ 且有[[MK326][上界]] $b\in P,b\not\in S$
+
+则有 $S\cup \{b\}$ 亦为良序集
+
+****** 证明
+
+由于 $<S,\leq>$ 是[[MK384][良序集]]，故 $<S,\leq>$ 为[[MK193][全序集]] $\forall \{u,v\}\subset S\Rightarrow u\leq v\lor v\leq u$
+
+根据[[MK326][上界]]定义有 $\forall a\in S\Rightarrow a\leq b$ 故显然 $<S\cup\{b\},\leq>$ 仍为[[MK193][全序集]]
+
+则对于任意 $U'\subset S\cup\{b\}$ 取 $U=U'\cap S$ 由于 $S$ 良序集，故对于任意子集 $U\subset S$ 存在[[MK196][最小元]] $p$
+
+若 $a\in U'\land a\ne p$ ，若 $a\ne b$ 则 $a\in U$ 若 $a=b$ 则由于是上界，故有 $p\leq b$
+
+即 $p$ 是 $U'$ 的[[MK196][最小元]]综上所述 $S\cup\{b\}$ 亦为良序集
+
+***** 定理2<<MK383>>
+
+定义集合 $C$ ，其元素是[[MK193][偏序集]] $<P,\leq>$ 中所有满足以下条件的子集
+
+（1） $\forall S\in C$ 满足 $S\subset P$ 且 $<S,\leq>$ 是[[MK384][良序集]]
+
+（2） $\forall \{X,Y\}\subset C$ 满足 $X$ 是 $Y$ 的[[MK385][前段]]或 $Y$ 是 $X$ 的[[MK385][前段]]
+
+则有 $<\bigcup C,\leq>$ 或者 $<\bigcup_{X\in C} X>$ 也是[[MK384][良序集]]
+
+****** 证明
+
+******* 并集为全序集
+
+首先证明是全序集，设 $(x,y)\subset\cup C$ 则必有 $x\in X\in C,y\in Y\in C$ 
+
+则必满足 $X$ 是 $Y$ 的[[MK385][前段]]，或 $Y$ 是 $X$ 的[[MK385][前段]]其一，这里假设 $X$ 是 $Y$ 的前段
+
+则有 $X\subset Y$ 故得 $\{x,y\}\subset Y$ 由于 $<Y,\leq>$ 是[[MK384][良序集]]，故必为[[MK193][全序集]]，故必满足 $x\leq y,y\leq x$ 其一。
+
+故 $\cup C$ 为[[MK193][全序集]]
+
+******* 任意子集都有[[MK196][最小元]]
+
+若 $u_0\in U\subset\cup C$ 则必存在一个 $S_0\in C$ 使得 $u_0\in S_0$
+
+且 $\forall u_1\in U$ 同理必有 $u_1\in S_1$ 根据命题（2），必有 $S_0,S_1$ 中某个必为另一个的[[MK385][前段]]
+
+假设 $S_0$ 为 $S_1$ 的[[MK385][前段]]，则 $\{u,v\}\subset S_1$ ，又由于 $<S_1,\leq>$ 良序，故 $<S_1,\leq>$ 全序
+
+即 $\forall u_1\in U\rightarrow u_1\leq u_0\lor u_0\leq u_1$ 根据[[MK172][传递性]]易证 $<U,\leq>$ 为[[MK193][全序集]]
+
+若 $u_1\leq u_0$ 根据[[MK385][前段]]定义可得 $u_1\in S_0$ 即 $\forall u_1\in U,u_1\leq u_0\Rightarrow u_1\in S_0$
+
+由于 $<S_0,\leq>$ 是[[MK384][良序集]]，故存在[[MK196][最小元]] $u^*$ 满足 $\forall u\in S_0\rightarrow u^*\leq u$
+
+故对于任意 $u\in U$ 若 $u\leq u_0$ 则有 $u\in S_0$ 故有 $u^*\leq u$
+
+若 $u_0\leq u$ 则根据根据[[MK172][传递性]] $u^*\leq u_0\leq u$ 综上所述 $\forall u\in U\rightarrow u^*\leq u$
+
+假设 $S_1$ 为 $S_0$ 的[[MK385][前段]]同理可证上述结论
+
+综上所述，任意子集 $U\subset\cup C$ 均有最小元素 $u^*$ 且 $<U,\leq>$ 为[[MK193][全序集]]
+
+即 $<U,\leq>$ 是[[MK384][良序集]]
+
+***** 佐恩引理<<MK390>>
+
+若非空偏序集 $<P,\leq>$ 的每条[[MK386][链]]都有[[MK326][上界]]，则 $P$ 中存在[[MK186][极大元]]
+
+****** 证明
+
+******* 反证假设<<MK387>>
+
+对于非空偏序集 $<P,\leq>$ 假设命题不成立，即全序子集有上界，但 $P$ 中不存在[[MK186][极大元]]，即满足
+
+（1） 对于任意[[MK193][全序集]] $<S,\leq>$ 满足 $S\subset P$ 均有上界，即 $\exists b\in P,\forall a\in S\Rightarrow a\leq b$
+
+（2） $\forall x\in P,\exists b\in P\Rightarrow x\leq b$
+
+其中（1）是给定条件，（2）是假设。于是对于任意给定元素 $p\in P$ 做以下推导从而推出矛盾
+
+******* 定义集合 $B(S)$
+
+定义 $S\subset P$ 是 $P$ 的[[MK193][全序集]]，则根[[MK387][据命题（1）]]必有 $p\in P$ 是 $S$ 的上界，即 $\forall a\in S\Rightarrow a\leq p$
+
+对于任意全序子集 $<S,\leq>$ 定义集合 $B(S)=\left\{p\bit|p\in P-S\land\forall a\in S\Rightarrow a\leq p\right\}$
+
+根据[[MK387][命题（2）]]必有 $p'\in P\Rightarrow p\leq p'$ 则根据[[MK172][传递性]] $\forall a\in S\Rightarrow a\leq p\leq p'$
+
+又由于 $p$ 是 $S$ 的上界，故必有 $p'\not\in S$ 即 $p'\in B(S)$ 故 $B(S)\ne\varnothing$
+
+******* 定义函数 $\phi(S)$
+
+对于的[[MK193][全序子集]] $<S,\leq>$ 有对应的集合 $B(S)$ 必为非空集合
+
+故由于[[MK10][选择公理]]可知存在选择函数 $\psi(B(S))\in B(S)$ 则定义 $\phi(S)=\psi(B(S))$ 显然满足 $\phi(S)\in B(S)$
+
+根据 $B(S)$ 的定义有 $\forall s\in S\rightarrow s\leq\phi(S)$
+
+******* 定义集合<<MK388>>
+
+对于任意给定的元素 $p_0\in P$ ，定义集合 $C$ ，其中的元素是所有满足以下条件的 $S\subset P$ 
+
+（1） $S$ 是[[MK384][良序集]]
+
+（2） [[MK186][最小元]]为 $p_0$
+
+（3） 若 $T\subset S$ 是[[MK193][全序子集]]的非空[[MK385][真前段]]，则 $S-T$ 的[[MK186][最小元]]为 $\phi(T)$
+
+首先推断 $C\ne\varnothing$ ，定义 $\{p_1\}=\phi(\{p_0\}),\phi(\{p_0,p_1\})=p_2$ 定义 $S_3=\{p_0,p_1,p_2\}$ 显然 $<S,\leq>$ 是[[MK384][良序集]]
+
+且最小元为 $p$ ，$S$ 的真前段有且仅有 $\{p_0\},\{p_0,p_1\}$ 显然 $S-T$ 的最小元为 $\phi(T)$ ，故满足条件。
+
+显然对于任意 $S_n=\{p_0,...,p_n\}$ 若 $S_n\in C$ 则定义 $S_{n+1}=\{p_0,...,p_n,\phi(S_n)\}$ 易证 $S_{n+1}\in C$
+
+则根据数学归纳法，对于任意 $S_n,n\geq3$ 均有 $S_n\in C$
+
+******* 证明 $C$ 中任意两个元素其中一个为另一个的前段
+
+若 $S,S'\in P$ 定义 $R$ 为最大的 $S,S'$ 的共有[[MK385][前段]]，由[[MK388][ $C$ 的定义]]可得 $p_0\in S\cap S'$
+
+根据[[MK382][推论]]可得 $\{p_0\}$ 是 $S,S'$ 的公共前段，故 $R\ne\varnothing$ 。若 $R$ 为真前段，则有 $\phi(R)\in S-R,\phi(R)\in S'-R$
+
+且 $\phi(R)$ 为 $S-R,S'-R$ 的[[MK26][最小元素]]，则 $R\cup \phi(R)$ 亦为 $S,S'$ 的共有[[MK29][前段]]，与 $R$ 定义冲突。
+
+故 $R$ 必定等于其中一个，即 $S$ 是 $S'$ 的前段，或者 $S'$ 是 $S$ 的前段必成立其一。
+
+******* 定义并集 $U$
+
+定义 $U$ 为所有 $C$ 中所有元素的并集，根据以下三步证明可知 $U$ 亦满足 $C$ 的定义，故 $U\in C$
+
+******** 证明良序
+
+根据[[MK383][定理2]]可得 $<U,\leq>$ 亦是[[MK384][良序集]]
+
+******** 证明最小元是 $p_0$
+
+对于任意 $x\in U$ 根据定义必有 $S\subset U$ 满足 $x\in S\land S\in C$
+
+由于对于任意 $S\in C$ 均有 $p_0$ 是 $S$ 的最小元，则有 $p_0\leq x$
+
+******** 证明（3）
+
+若 $T$ 为 $U$ 的非空[[MK385][真前段]]，则 $U-T$ 非空，则对于某个 $u\in U-T$ 必然存在 $S\in C\Rightarrow u\in S$
+
+由于 $U$ 良序，故必为全序，故对于任意 $t\in T$ 必存在 $t$ 与 $u$ 的偏序关系
+
+由于前段的定义以及 $u\not\in T$ 故得 $t\leq u$
+
+且由于 $\forall t\in T\subset U$ 则必有 $\exists S'\in C\Rightarrow t\in S'$ 根据 $C$ 的定义 $S,S'$ 其中一个必为另一个的[[MK29][前段]]
+
+无论哪种情况，必有 $t\in S$ 故有 $\forall t\in T\rightarrow t\in S$ 故有 $T\subset S$
+
+另外若 $\forall (a,b)\subset S$ 若满足 $a\leq b,b\in T$ 则根据 $T$ 为 $U$ 的[[MK29][前段]]有 $a\leq b$ 故 $a\in T$
+
+故 $T$ 满足 $T\subset S$ 及 $\forall (a,b)\subset S,a\leq b,b\in T\Rightarrow a\in T$ 
+
+故 $T$ 亦为 $S$ 的[[MK29][前段]]，故 $S-T$ 的[[MK26][最小元素]]为 $\phi(T)$
+
+且根据定义 $\forall S\in C\land T\subset S$ 其 $S-T$ 的最小元素为 $\phi(T)$
+
+根据 $U$ 的定义可得 $U-T$ 的最小元素亦为 $\phi(T)$
+
+******* 推导矛盾
+
+由于 $U$ 是良序，故为全序。则根据条件 $U$ 有上界，且 $P$ 无[[MK186][极大元]]则 $\phi(U)$ 必不为空集，定义 $\{b\}=\phi(U)$
+
+由于 $<U,\leq>$ 是全续集，及选择函数定义有 $\forall u\in U,u\leq b$ 且 $b\not\in U$ 故：
+
+（1） 根据[[MK389][定理1]]可得 $<U\cup\{b\},\leq>$ 亦为良序集
+
+（2） 亦有 $\forall u\in U\cup\{b\}\Rightarrow p_0\leq u$
+
+（3） 若 $T\subset U\cup \{b\}$ 为非空[[MK385][真前段]]，则 $U-T$ 的[[MK186][最小元]]为 $\phi(T)$
+
+故 $U\cup\phi(U)$ 亦为满足条件 $C$ 的元素，这与 $U$ 的定义矛盾，故[[MK387][假设]]不成立，即 $<P,\leq>$ 中有最大元
+
+*** 拟序关系<<MK188>>
 
 定义集合 $A$ 若：
 
@@ -4054,11 +4260,11 @@ $B$ 是反链<<MK187>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(
 
 则称 $R$ 为 $A$ 上的拟序关系，且 $A$ 称为有拟序集，记作 $<A,R>$
 
-***** 推论
+**** 推论
 
 非空集合 $A$ 上的拟序关系 $R$ 必然有[[MK171][反对称性]]
 
-****** 证明
+***** 证明
 
 假设 $\{x,y\}\subset A$ 有 $xRy,yRx$ 且有 $x\ne y$ ，即不满足反对称性
 
@@ -4066,7 +4272,7 @@ $B$ 是反链<<MK187>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(
 
 故满足反对称性。
 
-***** 元<<MK189>>
+**** 元<<MK189>>
 
 若 $<A,<>$ 是拟序集，且 $B\subset A$ 则 $b$ 是：
 
@@ -4078,7 +4284,7 @@ $B$ 的极小元： $b\in B\land\lnot\exists x(x\in B\land x< b)$
 
 $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$ 
 
-****** 定理<<MK190>>
+***** 定理<<MK190>>
 
 （1） $B$ 的最大（小）元必为 $B$ 的极大（小）元
 
@@ -4090,7 +4296,7 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$
 
 （4） 极大（小）元对有限集必然存在，未必唯一
 
-***** 排列<<MK191>>
+**** 排列<<MK191>>
 
 若 $<A,<>$ 是拟序集，存在有序组 $<a_1,...,a_n>$ 满足：
 
@@ -4102,7 +4308,7 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$
 
 则定义 $a_1<...<a_n$ 为 $A$ 基于 $<$ 排列
 
-****** 定理<<MK192>>
+***** 定理<<MK192>>
 
 对于拟序集 $<A,\prec>$ ：
 
@@ -4110,11 +4316,11 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$
 
 （2） 排列唯一
 
-******* 证明
+****** 证明
 
 根据定义 $A$ 有基于 $\prec$ 的排列 $\delta_1\prec...\prec\delta_k$ 即有有序组 $r=<\delta_1,...,\delta_k>$ 满足 $\delta_i\prec\delta_{i+1}$
 
-******** （1）
+******* （1）
 
 由于是[[MK188][拟序关系]]，则对于任意 $i\ne j\land i<j$ 根据 $\delta_i\prec...\prec\delta_j$ 以及[[MK172][传递性]]有 $\delta_i\prec\delta_j$
 
@@ -4122,7 +4328,7 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$
 
 故根据鸽笼原理，每一个 $A$ 中的元素在 $r$ 上正好出现一次
 
-******** （2）
+******* （2）
 
 根据定义 $A$ 有基于 $\prec$ 的排列 $\delta_1\prec...\prec\delta_k$ 即有有序组 $r=<\delta_1,...,\delta_k>$ 满足 $\delta_i\prec\delta_{i+1}$
 
@@ -4135,14 +4341,6 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$
 进一步根据传递性有 $\delta’_k\prec\delta'_{k'}$ 以及 $\delta’_{k'}\prec\delta'_{k}$ 与[[MK171][反对称性]]矛盾，则假设不成立
 
 即不存在 $r'$
-
-**** 全序关系<<MK193>>
-
-非空集合 $A$ 上有[[MK185][序关系]] $R$ ，若满足 $\forall x\forall y\big((x\in A\land y\in A)\rightarrow(xRy\lor yRx)\big)$
-
-**** 良序关系
-
-非空集合 $A$ 上有[[MK193][全序关系]] $R$ 对于任意 $A$ 的非空子集，均有[[MK186][极小元]]，则称该关系为良序关系
 
 ** 函数（映射）
 
@@ -6363,9 +6561,7 @@ $G$ 或者 $G$ 的[[MK229][子图]]作任何同胚操作后得到的图均不能
 
 ** 特殊元素
 
-*** 幺元
-
-**** 定义<<MK311>>
+*** 幺元<<MK311>>
 
 [[MK310][代数结构]] $<S,*>$ 上存在元素 $e$ 对于任意 $x\in S$ 均满足 $e*x=x*e=x$ 则 $e$ 为幺元
 
@@ -6383,9 +6579,7 @@ $G$ 或者 $G$ 的[[MK229][子图]]作任何同胚操作后得到的图均不能
 
 若存在其他幺元 $e_3$ 同理可证 $e_1=e_3$
 
-*** 零元
-
-**** 定义<<MK313>>
+*** 零元<<MK313>>
 
 [[MK310][代数结构]] $<S,*>$ 上存在元素 $o$ 对于任意 $x\in S$ 均满足 $o*x=x*o=o$ 则 $o$ 为零元
 
@@ -6401,9 +6595,7 @@ $G$ 或者 $G$ 的[[MK229][子图]]作任何同胚操作后得到的图均不能
 
 同[[MK312][之前证明]]
 
-*** 逆元
-
-**** 定义<<MK314>>
+*** 逆元<<MK314>>
 
 [[MK310][代数结构]] $<S,*>$ 上存在[[MK311][幺元]] $e$ ，若 $x*y=e$ 则：
 
@@ -6445,9 +6637,7 @@ $y$ 是 $x$ 的右逆元
 
 故 $x$ 逆元的逆元一定是 $x$
 
-*** 可约元素
-
-**** 定义<<MK317>>
+*** 可约元素<<MK317>>
 
 [[MK310][代数结构]] $<S,*>$ 中存在 $a\in S$ 满足：
 

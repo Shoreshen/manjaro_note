@@ -6,45 +6,43 @@ current video: P87
 
 current mark: 4
 
-* 线性映射
+* 线性映射<<MK4>>
 
-** 定义<<MK4>>
-
-设 $V,V'$ 是域 $K$ 上的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间-定义]]有[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数]] $\sigma:V\to V'$ 满足：
+设 $\mathcal{V}=<V,K,+,\times>,\mathcal{V}'=<V',K,+',\times'>$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，有[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $\sigma:V\to V'$ 满足：
 
 （1） $\forall a\forall b\left(a\in V\land b\in V\rightarrow \sigma(a+b)=\sigma(a)+\sigma(b)\right)$ 即保持加法
 
 （2） $\forall a\forall k\left(a\in V\land k\in K\rightarrow \sigma(ka)=k\sigma(a)\right)$ 即保持纯量乘法
 
-则称 $\sigma$ 为 $V$ 到 $V'$ 的线性映射，若 $V$ 到自身的线性映射称为现行变换
+则称 $\sigma$ 为 $\mathcal{V}$ 到 $\mathcal{V}'$ 的线性映射，若 $\mathcal{V}$ 到自身的线性映射称为线性变换
 
 ** 性质
 
 *** 零元映射<<MK2>>
 
-即 $\sigma(\vec{0})=\vec{0}'$ 其中 $\vec{0}$ 是 $V$ 的零元， $\vec{0}'$ 是 $V'$ 的零元
+即 $\sigma(\vec{0})=\vec{0}'$ 其中 $\vec{0}$ 是 $\mathcal{V}$ 的零元， $\vec{0}'$ 是 $\mathcal{V}'$ 的零元
 
 **** 证明
 
-根据上[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间-定义]] $\vec{0}=0\cdot\vec{0}$ 其中 $0\in K\land \vec{0}\in V$ 分别为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][域]]和线性空间上的零元
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\vec{0}=0\cdot\vec{0}$ 其中 $0\in K\land \vec{0}\in V$ 分别为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][域]]和线性空间上的零元
 
 根据（2）保持纯量乘法可得 $\sigma(\vec{0})=\sigma(0\cdot\vec{0})=0\sigma(\vec{0})$ 
 
-由于 $V'$ 亦为 $K$ 上线性空间，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间-性质-零乘元素为零元]]可得 $0\sigma(\vec{0})$ 是 $V'$ 上的零元，即 $\vec{0}'$
+由于 $\mathcal{V}'$ 亦为 $K$ 上线性空间，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK4][零乘元素为零元]]可得 $0\sigma(\vec{0})$ 是 $\mathcal{V}'$ 上的零元，即 $\vec{0}'$
 
 *** 保持逆元
 
-若 $\vec{a}\in V$ 且有 $\vec{a}+(-\vec{a})=0$ 则有 $\sigma(\vec{a})+\sigma(-\vec{a})=\vec{0}'$ 其中 $\vec{0}'$ 是 $V'$ 的零元
+若 $\vec{a}\in V$ 且有 $\vec{a}+(-\vec{a})=0$ 则有 $\sigma(\vec{a})+\sigma(-\vec{a})=\vec{0}'$ 其中 $\vec{0}'$ 是 $\mathcal{V}'$ 的零元
 
 **** 证明
 
 根据定义（2）有 $\sigma(\vec{a})+\sigma(-\vec{a})=\sigma(\vec{a})-\sigma(\vec{a})$ 
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间-性质- $-1\vec{a}$ 是 $\vec{a}$ 的负元]] 可得 $\sigma(\vec{a})-\sigma(\vec{a})=\vec{0}'$
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK5][数乘负元]] 可得 $\sigma(\vec{a})-\sigma(\vec{a})=\vec{0}'$
 
 *** 线性<<MK1>>
 
-根据定义（1），（2）有 $\sigma\left(\sum_{i=1}^nk_i\vec{a}_i\right)=\sum_{i=1}^nk_i\sigma(\vec{a}_i)$
+根据定义（1），（2）有 $\sigma\left(\sum_{i=1}^nk_i\vec{a}_i\right)=\sum_{i=1}^nk_i\sigma(\vec{a}_i)$ 其中 $n\in\mathbb{N}$
 
 *** 线性相关
 
@@ -52,19 +50,17 @@ current mark: 4
 
 **** 证明
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性相关与线性无关]]可得
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性相关与线性无关]]定义可得若线性相关，则存在一组不全是零元的 $\{k_1,...,k_n\}\subset K$
 
-若线性相关，则存在一组不全是零元的 $\{k_1,...,k_n\}\subset K$ 使得 $\sum_{i=1}^nk_i\vec{a}_i=\vec{0}$
+使得 $\sum_{i=1}^nk_i\vec{a}_i=\vec{0}$ 根据[[MK1][线性]]可得 $\sigma\left(\sum_{i=1}^nk_i\vec{a}_i\right)=\sum_{i=1}^nk_i\sigma(\vec{a}_i)$ 根据[[MK2][零元映射]]得出 $\sigma(\vec{0})=\vec{0}'$
 
-根据[[MK1][线性]]可得 $\sigma\left(\sum_{i=1}^nk_i\vec{a}_i\right)=\sum_{i=1}^nk_i\sigma(\vec{a}_i)$ 根据[[MK2][零元映射]]得出 $\sigma(\vec{0})=\vec{0}'$
-
-根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]可得 $\sigma(\vec{0})=\sigma\left(\sum_{i=1}^nk_i\vec{a}_i\right)$ 既有 $\sum_{i=1}^nk_i\sigma(\vec{a}_i)=\vec{0}'$
-
-根据定义线性相关
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数定义]]可得 $\sigma(\vec{0})=\sigma\left(\sum_{i=1}^nk_i\vec{a}_i\right)$ 既有 $\sum_{i=1}^nk_i\sigma(\vec{a}_i)=\vec{0}'$ 根据定义向量组 $\sigma(a_1),...,\sigma(a_n)$ 线性相关
 
 *** 基的作用<<MK3>>
 
-若 $\dim(V)=n$ 即[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的维数]]是 $n$ 且 $(\vec{a}_1,...,\vec{a}_n)$ 是一组[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的基]]
+若 $\dim(V)=n$ 即[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK51][线性空间的维数]]
+
+是 $n$ 且 $(\vec{a}_1,...,\vec{a}_n)$ 是一组[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的基]]
 
 则根据[[MK1][线性]]有 $\sigma(\vec{b})=\sum_{i=1}^nk_i\sigma(\vec{a}_i)$
 

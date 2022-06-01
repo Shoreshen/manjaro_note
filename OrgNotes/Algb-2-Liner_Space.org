@@ -34,15 +34,13 @@ $\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 
 
 若 $c\in C$ 则运算本质为 $(a,b)\mapsto c$
 
-* <<MK1>>线性空间
-
-** 定义
+* 线性空间<<MK1>>
 
 若 $V$ 是一个非空集合， $K$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][域]]，若：
 
 （1） $V$ 上定义了加法运算即 $V\times V\mapsto V$ ，记作 $\forall(\vec{a},\vec{b})\subset V,\exists \vec{c}\in V\Rightarrow \vec{a}+\vec{b}=\vec{c}$
 
-（2） $V$ 上定义了 $K$ 与 $V$ 中元素的纯量乘运算即 $K\times V\mapsto V$ ，记作 $\forall k\in K,\forall \vec{a}\in V,\exists \vec{b}\in V\Rightarrow k\vec{a}\Rightarrow \vec{b}$
+（2） $V$ 上定义了[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 与 $V$ 中元素的数乘运算即 $K\times V\mapsto V$ ，记作 $\forall k\in K,\forall \vec{a}\in V,\exists \vec{b}\in V\Rightarrow k\vec{a}=\vec{b}$
 
 且满足
 
@@ -54,7 +52,7 @@ $\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 
 
 （4） 有负元（加法逆元），即 $\forall \vec{a}\in V,\exists \vec{b}\in V\Rightarrow \vec{a}+\vec{b}=\vec{0}$ 且 $\vec{a}$ 的负元记作 $-\vec{a}$
 
-（5） $\forall\vec{a}\in V\Rightarrow 1 \vec{a}=\vec{a}$ 根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]定义 $1\in K$
+（5） $\forall\vec{a}\in V\Rightarrow 1 \vec{a}=\vec{a}$ 根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]]定义 $1\in K$
 
 （6） $\forall(l,k)\subset K, \forall\vec{a}\in V\Rightarrow (lk)\vec{a}=l(k\vec{a})$
 
@@ -62,7 +60,7 @@ $\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 
 
 （8） $\forall k\in K,\forall(\vec{a},\vec{b})\in V\Rightarrow k(\vec{a}+\vec{b})=k\vec{a}+k\vec{b}$
 
-则称 $V$ 是域 $K$ 上的线性空间
+则称 $V$ 是域 $K$ 上的线性空间，记作 $\mathcal{V}=<V,K,+,\times>$
 
 ** <<MK11>>性质
 
@@ -104,9 +102,7 @@ $\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 
 
 对于 $\vec{a}\in V$ 根据[[MK4][数乘零元为零元]]以及[[MK1][定义]]中（5）（7） $\vec{0}=0\vec{a}=(1+(-1))\vec{a}=1\vec{a}+(-1)\vec{a}=\vec{a}+(-1)\vec{a}$
 
-* 线性子空间
-
-** 线性子空间定义<<MK44>>
+* 线性子空间<<MK44>>
 
 若 $V$ 是数域 $K$ 上的线性空间，若 $U\subset V$ 且对于 $V$ 上的加法，乘法也成为 $K$ 上的线性空间
 
@@ -589,15 +585,13 @@ $\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 
 
 * 线性空间的基和维数
 
-** 线性相关与线性无关
+** 线性相关与线性无关<<MK8>>
 
-*** <<MK8>>定义
-
-$V$ 是[[MK1][线性空间]]， $K$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]，有向量组 $\vec{\alpha}_1,...,\vec{\alpha}_n\in V$ 其中 $n\geq 1$ 则：
+ $\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]， $K$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]，有向量组 $\vec{\alpha}_1,...,\vec{\alpha}_n\in V$ 其中 $n\geq 1$ 则：
 
 （1） 若存在一组不全为零的数 $k_1,...,k_n\in K$ 使得 $k_1\vec{\alpha}_1+...+k_n\vec{\alpha}_n=\vec{0}$ 则称向量组线性相关
 
-（2） 若满足 $k_1\vec{\alpha}_1+...+k_n\vec{\alpha}_n=\vec{0},k_1,...,k_n\in K$ 仅为 $k_1=...=k_n=0$ 则称线性无关 
+（2） 若满足 $k_1\vec{\alpha}_1+...+k_n\vec{\alpha}_n=\vec{0},k_1,...,k_n\in K$ 当且仅当 $k_1=...=k_n=0$ 则称线性无关 
 
 *** 性质
 
@@ -886,321 +880,57 @@ $S$ 中有一个有限子集[[MK8][线性相关]]，则 $S$ 线性相关
 
 另外，空集 $\varnothing$ 定义为线性无关
 
-** 线性空间的基
+** 线性空间的基<<MK36>>
 
-*** 基的定义<<MK36>>
-
-$V$ 是数域 $K$ 上的线性空间 $S\subset V$ 若满足：
+$\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]且 $S\subset V$ 若满足：
 
 （1） $S$ 本身[[MK22][线性无关]]
 
 （2） $V$ 中的任意向量均可由 $S$ 中的有限多个向量[[MK12][线性表述]]
 
-则称 $S$ 是 $V$ 的一个基，若 $V=\{\vec{0}\}$ 则他的一个基规定为空集 $\varnothing$ （注： $\vec{0}$ 无法由空集线性表述）
+则称 $S$ 是 $\mathcal{V}$ 的一个基，若 $V=\{\vec{0}\}$ 则他的基规定为空集 $\varnothing$ （注： $\vec{0}$ 无法由空集线性表述）
 
 *** 定理1<<MK40>>
 
-任何一个数域 $K$ 上的任何一个线性空间，都有基。
+任何[[MK1][线性空间]] $\mathcal{V}=<V,K,+,\times>$ 都有基。
 
 **** 证明
 
-***** 偏序关系<<MK27>>
+***** 定义偏序集
 
-集合 $P$ 上的二元关系 $\leq$ 满足：
-
-（1） 自反性 $a\leq a,\forall a\in P$
-
-（2） 反对称性 $\forall(a,b)\subset P$ 若满足 $a\leq b\ \&\ b\leq a$ 则有 $a=b$
-
-（3） 传递性 $\forall(a,b,c)\subset P$ 若满足 $a\leq b,b\leq c$ 则有 $a\leq c$
-
-则称 $\leq$ 是集合 $P$ 上的偏序关系，具有偏序关系的集合称为偏序集，记作 $(P,\leq)$
-
-****** 全序集<<MK31>>
-
-若偏序集 $(P,\leq)$ 中任意两个元素 $(a,b)\subset P$ 至少成立 $a\leq b,b\leq a$ 中的一个
-
-则称 $P$ 为全序集
-
-****** 链<<MK23>>
-
-若偏序集 $(P,\leq)$ 的一个子集 $T$ 的任意两个元素都存在偏序关系
-
-即 $\forall (a,b)\subset T$ 均有 $a\leq b$ 或者 $b\leq a$ ，此时 $T$ 为全序集，为 $P$ 的全序子集
-
-****** 极大元素/极小元素<<MK24>>
-
-若偏序集 $(P,\leq)$ 有元素 $A\in P$ 且不存在 $B\in P, A\leq B,A\ne B$
-
-则称 $A$ 为偏序集 $(P,\leq)$ 的极大元素
-
-若偏序集 $(P,\leq)$ 有元素 $A\in P$ 且不存在 $B\in P, B\leq A,A\ne B$
-
-则称 $A$ 为偏序集 $(P,\leq)$ 的极小元素
-
-注：极大元不需要与偏序集中任意元素可比，仅需不存在大于它的不同元素即可。
-
-****** 最大元素/最小元素<<MK26>>
-
-若偏序集 $(P,\leq)$ 有元素 $A\in P$ 且 $\forall B\in P\Rightarrow B\leq A$ 则称 $A$ 是 $P$ 的最大元素
-
-若偏序集 $(P,\leq)$ 有元素 $A\in P$ 且 $\forall B\in P\Rightarrow A\leq B$ 则称 $A$ 是 $P$ 的最大元素
-
-注：最大元需要与偏序集中任意元素可比。
-
-****** 上界/下界<<MK25>>
-
-若 $U\subset P$ 存在元素 $t\in P$ 使得 $\forall x\in U\Rightarrow x\leq t$ 则称元素 $t$ 是 $U$ 的上界
-
-若 $U\subset P$ 存在元素 $t\in P$ 使得 $\forall x\in U\Rightarrow t\leq x$ 则称元素 $t$ 是 $U$ 的下界
-
-****** 前段（Initial Segment）<<MK29>>
-
-若 $S$ 为全序集 $T$ 满足：
-
-（1） $T\subset S$
-
-（2） $\forall (u,v)\subset S\ \&\ u\leq v$ 若 $v\in T$ 则有 $u\in T$
-
-即对于给定的 $v\in S, T=\left\{u\big|u\in S,u\leq v\right\}$ ，则称 $T$ 为 $S$ 的前段
-
-当 $T\ne S$ 时称 $T$ 为 $S$ 的真前段
-
-****** 良序关系<<MK30>>
-
-集合 $S$ 上的良序关系定义为：
-
-（1） 该关系使得 $S$ 为全序集
-
-（2） 任意非空子集 $T\subset S$ 都有[[MK26][最小元素]]
-
-满足此定义的集合与偏序关系称为良序集
-
-******* 推论1<<MK33>>
-
-若偏序集 $(P,\leq)$ 中存在良序集 $S\subset P$ 且有[[MK25][上界]] $b\in P,b\not\in S$
-
-则有 $S\cup \{b\}$ 亦为良序集
-
-******** 证明
-
-由于 $S$ 良序，故 $S$ 为[[MK23][全序子集]]，即 $\forall (u,v)\subset S\Rightarrow u\leq v\ \|\ v\leq u$
-
-根据[[MK25][上界]]定义有 $\forall a\in S\Rightarrow a\leq b$
-
-故对于任意 $(a,b)\subset S\cup\{b\}$ 偏序关系仍然成立
-
-由于 $S$ 良序集，故对于任意子集 $U\subset S$ 存在[[MK26][最小元素]] $p$ 
-
-则对于任意 $U'\subset S\cup\{b\}$
-
-若 $b\not\in U'$ 则 $U=U'$ 即 $U'$ 亦有最小元素 $\exists p,\forall a\in U\Rightarrow p\leq a$
-
-若 $b\in U'$ 则 $U'=U\cup\{b\}$ 故 $\forall a\in U\subset S\Rightarrow a\leq b$ 同理对于 $U$ 存在 $p$ 使得 $\forall a\in U\Rightarrow p\leq a$
-
-故根据[[MK27][传递性]]有 $p\leq b$ 故 $\exists p,\forall a\in U'\Rightarrow p\leq a$
-
-综上所述 $S\cup\{b\}$ 亦为良序集
-
-******* 推论2<<MK32>>
-
-定义集合 $C$ ，其元素是偏序集 $(P,\leq)$ 中所有满足以下条件的子集
-
-（1） $\forall S\in C$ 满足 $S\subset P$ 且 $S$ 是良序集
-
-（2） $\forall (X,Y)\subset C$ 满足 $X$ 是 $Y$ 的[[MK29][前段]]，或 $Y$ 是 $X$ 的[[MK29][前段]]其一
-
-则有 $\cup C$ 或者 $\cup_{X\in C} X$ 也是良序的
-
-******** 证明
-
-********* 证明并集为全序集
-
-首先证明是全序集，设 $(x,y)\subset\cup C$ 则必有 $x\in X\in C,y\in Y\in C$ 
-
-则必满足 $X$ 是 $Y$ 的[[MK29][前段]]，或 $Y$ 是 $X$ 的[[MK29][前段]]其一，这里假设 $X$ 是 $Y$ 的前段
-
-则有 $X\subset Y$ 故得 $(x,y)\subset Y$ 由于 $Y$ 满足良序，故必为[[MK31][全序集]]，故必满足 $x\leq y,y\leq x$ 其一。
-
-故 $\cup C$ 是[[MK31][全序集]]
-
-********* 证明并集的任意子集都有最小元素
-
-若 $u_0\in U\subset\cup C$ 则必存在一个 $S_0\in C$ 使得 $u_0\in S_0$
-
-且 $\forall u_1\in U,u_1\leq u_0$ 同理必有 $u_1\in S_1$ 根据命题（2），必有 $S_0,S_1$ 中某个必为另一个的[[MK29][前段]]
-
-假设 $S_0$ 为 $S_1$ 的[[MK29][前段]]，则根据定义 $u_1\leq u_0,u_1\in S_1$ 可得 $u_1\in S_0$
-
-反之亦可证明 $u_1\in S_1\subset S_0$ 即 $u_1\in S_0$
-
-结论即 $\forall u_1\in U,u_1\leq u_0\Rightarrow u_1\in S_0$ 定义 $U'=\left\{u\big|u\in U,u\leq u_0\right\}$
-
-根据上述描述 $\forall u\in U',u\in S_0\Rightarrow U'\subset S_0$ 由于 $S_0$ 良序，故 $U'$ 必有最小元素 $\exists u^*,\forall u'\in U'\Rightarrow u^*\leq u'$
-
-且 $\forall u_2\in U,u_2\not\in U'\Rightarrow u_0\leq u_2$ 根据[[MK27][传递性]] $u^*\leq u_0\leq u_2$
-
-故 $\forall u\in U\Rightarrow u^*\leq u$ 故任意子集 $U\subset\cup C$ 均有最小元素
-
-****** 选择公理<<MK28>>
-
-若 $(X_i)_{i\in I}$ 是一组非空集合，则 $\prod_I X_i$ 也是非空的，即从每个 $X_i,i\in I$ 中选择一个元素 $x_i\in X_i$ 组成新的集合也是非空的。
-
-***** 佐恩定理<<MK35>>
-
-若非空偏序集 $(P,\leq)$ 的每条[[MK23][链]]都有[[MK25][上界]]，则 $P$ 中存在[[MK24][极大元素]]
-
-****** 证明
-
-******* 基本思路
-
-对于非空偏序集 $(P,\leq)$ 假设命题不成立，即全序子集有上界，但 $P$ 中不存在[[MK24][极大元素]]，即满足
-
-（1） 对于任意[[MK23][全序子集]] $S\subset P$ 均有上界，即 $\exists b\in P,\forall a\in S\Rightarrow a\leq b$
-
-（2） $\forall x\in P,\exists b\in P\Rightarrow x\leq b$
-
-于是对于任意给定元素 $p\in P$ 做以下推导从而推出矛盾
-
-******* 定义集合 $B(S)$
-
-定义 $S\subset P$ 是 $P$ 的[[MK23][全序子集]]，则根据命题（1）必有 $p\in P$ 是 $S$ 的上界，即 $\forall a\in S\Rightarrow a\leq p$
-
-根据命题（2）必有 $p'\in P\Rightarrow p\leq p'$ 则根据[[MK27][传递性]] $\forall a\in S\Rightarrow a\leq p\leq p'$
-
-故定义对于任意全序子集 $S$ 有集合 $B(S)=\left\{p\bit|p\in P-S,\forall a\in S\Rightarrow a\leq p\right\}$
-
-******* 定义选择函数 $\phi(S)$
-
-对于[[MK23][全序子集]] $S$ 有对应的集合 $B(S)$ 必为非空集合
-
-故由于[[MK28][选择公理]]可知从 $B(S)$ 中选择一个元素组成新的集合必为非空，即 $\phi(S)=\{p\}$ 且满足 $p\in B(S)$
-
-******* 定义合集集合
-
-对于任意给定的元素 $p\in P$ ，定义集合 $C$ ，其中的元素是所有满足以下条件的 $S\subset P$ 
-
-（1） $S$ 为[[MK30][良序集]]
-
-（2） [[MK26][最小元素]]为 $p$
-
-（3） 若 $T\subset S$ 为[[MK23][全序子集]]的非空[[MK29][真前段]]，则 $S-T$ 的[[MK26][最小元素]]为 $\phi(T)$
-
-首先推断 $C\ne\varnothing$ ，定义 $\{p_1\}=\phi(\{p\})$ 集合 $\{p,p_1\}$ 满足条件。
-
-这里由于函数 $\phi(T)$ 的定义，其取值是与 $S$ 无关的，仅与 $T$ 有关
-
-且 $S-T$ 的最小元素为 $\phi(T)=\{p\}$ ，即 $\forall a\in T\Rightarrow a\leq p$ 即 $p$ 为 $T$ 的[[MK25][上界]]，同理亦为 $S-T$ 的[[MK25][下界]]
-
-故若存在 $a\in S-T$ 且 $a$ 是 $T$ 的上界 $S-T$ 的下界，则 $a\in S-T$ 且 $a=p$
-
-这里给出一个 $C$ 中元素可能的例子，首先定义 $\phi(\{p\})=p_1$ 则有 $p\leq p_1$
-
-同理 $\phi(\{p,p_1\})=p_2$ 则有 $p_1\leq p_1$ 根据[[MK27][传递性]] $p\leq p_1\leq p_2$ 一次类推得 $\{p,p_1,p_2,...\}$
-
-满足关系 $p\leq p_1\leq p_2\leq...\\$ 则 $C=\left\{\{p\},\{p,p_1\},\{p,p_1,p_2\},...\right\}$
-
-故其中每个元素 $S=\{p,p_1,...,p_n\}$ 均有 $p\leq p_1\leq...\leq p_n$ 故 $p$ 为最小元素
-
-且对于任意的[[MK29][真前段]] $T=\{p,p_1,...,p_s\}$ 可得 $\phi(T)=\{p_{s+1}\}$ 为 $S-T=\{p_{s+1},...,p_n\}$ 的下界，且 $p_{s+1}\in S-T$
-
-******* 证明 $C$ 中任意两个元素其中一个为另一个的前段
-
-若 $S,S'\in P$ 定义 $R$ 为最大的 $S,S'$ 的共有[[MK29][前段]]，若 $R$ 为真前段，则有 $\phi(R)\in S-R,\phi(R)\in S'-R$
-
-且 $\phi(R)$ 为 $S-R,S'-R$ 的[[MK26][最小元素]]，则 $R\cup \phi(R)$ 亦为 $S,S'$ 的共有[[MK29][前段]]，与 $R$ 定义冲突。
-
-故 $R$ 必定等于其中一个，即 $S$ 是 $S'$ 的前段，或者 $S'$ 是 $S$ 的前段必成立其一。
-
-******* 定义并集 $U$
-
-定义 $U$ 为所有 $C$ 中所有元素的并集，根据以下三步证明可知 $U$ 亦满足 $C$ 的定义，故 $U\in C$
-
-******** 证明良序
-
-故根据[[MK32][推论]]有 $U$ 亦为[[MK30][良序集]]。
-
-******** 证明最小元素为 $p$
-
-由于 $U\subset U$ 故 $U$ 中有最小元素。由于 $\forall u\in U,\exists S\Rightarrow u\in S$ 且 $\forall u\in S\Rightarrow p\leq u$ 故 $\forall u\in U\Rightarrow p\leq u$
-
-即 $p$ 是 $U$ 的最小元素。
-
-******** 证明满足（3）
-
-若 $T$ 为 $U$ 的非空[[MK29][真前段]]，则 $U-T$ 非空，则对于某个 $u\in U-T$ 必然存在 $S\in C\Rightarrow u\in S$
-
-由于 $U$ 良序，故必为全序，故对于任意 $t\in T$ 必存在 $t$ 与 $u$ 的偏序关系
-
-由于前段的定义以及 $u\not\in T$ 故得 $t\leq u$
-
-且由于 $\forall t\in T\subset U$ 则必有 $\exists S'\in C\Rightarrow t\in S'$ 根据 $C$ 的定义 $S,S'$ 其中一个必为另一个[[MK29][前段]]
-
-无论哪种情况，必有 $t\in S$ 故有 $\forall t\in T,t\in S\Rightarrow T\subset S$
-
-另外若 $\forall (a,b)\subset S$ 若满足 $a\leq b,b\in T$ 根据 $U$ 的定义有 $a\in S\subset U$
-
-且 $T$ 为 $U$ 的[[MK29][前段]] $a\leq b$ 故 $a\in T$ 故 $T$ 满足 $T\subset S$ 及 $\forall (a,b)\subset S,a\leq b,b\in T\Rightarrow a\in T$ 
-
-故 $T$ 亦为 $S$ 的[[MK29][前段]]，故 $S-T$ 的[[MK26][最小元素]]为 $\phi(T)$
-
-且根据定义 $\forall S\in C,T\subset S$ 其 $S-T$ 的最小元素为 $\phi(T)$
-
-根据 $U$ 的定义可得 $U-T$ 的最小元素亦为 $\phi(T)$
-
-******* 推导矛盾
-
-根据给出条件 $U$ 为[[MK23][全序子集]]，即 $U$ 有上界，且 $P$ 无[[MK24][极大元素]]则 $\phi(U)$ 必不为空集，定义 $\{b\}=\phi(U)$
-
-由于[[MK23][全序子集]]及选择函数定义 $\forall u\in U,u\leq b$ 且 $b\not\in U$ 故：
-
-（1） 根据[[MK33][推论1]可得 $U\cup\{b\}$ 亦为良序集
-
-（2） 亦有 $\forall u\in U\cup\{b\}\Rightarrow p\leq u$
-
-（3） 若 $T\subset U\cup \{b\}$ 为非空[[MK29][真前段]]，则 $U-T$ 的[[MK26][最小元素]]为 $\phi(T)$
-
-故 $U\cup\phi(U)$ 亦为满足条件 $C$ 的元素，这与 $U$ 的定义矛盾。
-
-***** 证明定理
-
-****** 定义偏序集
-
-对于一个[[MK1][线性空间]] $V$ 定义偏序集 $(P,\leq)$ 其中 $P$ 的元素是集合 $V$ 的所有子集，偏序关系 $\leq$ 为包含关系，即 
+对于一个[[MK1][线性空间]] $V$ 定义[[~/OneDrive/离散数学/Disc_Math.org::MK185][偏序集]] $<P,\leq>$ 其中 $P$ 的元素是集合 $V$ 的所有子集，偏序关系 $\leq$ 为包含关系，即 
 
 （1） $U\subset V\Rightarrow U\in P$
 
 （2） $U\subset V, L\subset V,U\subset L\Rightarrow U\leq L$
 
-定义 $S\subset P$ 满足若 $L\in S$ 则 $L$ 中的所有元素[[MK22][线性无关]]
+定义 $S\subset P$ 满足若 $L\in S$ 则 $L$ 中的所有元素[[MK22][线性无关]]，易证 $<S,\leq>$ 亦组成[[~/OneDrive/离散数学/Disc_Math.org::MK185][偏序集]]
 
-同理 $(S,\leq)$ 亦组成[[MK27][偏序集]]
+***** 证明任意链有上界
 
-****** 证明任意链有上界
+取 $T\subset S$ 为 $S$ 中的任意一条[[~/OneDrive/离散数学/Disc_Math.org::MK386][链]]，假设 $T=\left\{B_i\big|i\in I\right\}$ 其中 $I$ 为指标集，定义 $B=\cup_{i\in I}B_i$
 
-取 $T\subset S$ 为 $S$ 中的任意一条[[MK23][链]]，假设 $T$ 中的元素有 $T=\left\{B_i\big|i\in I\right\}$ 其中 $I$ 为指标集
+则有 $\forall B_i\in T\Rightarrow B_i\subset B\Rightarrow B_i\leq B$ ，假设 $B$ 线性相关。则根据[[MK34][定义]] $B$ 有一组有限子集线性相关
 
-定义 $B=\cup_{i\in I}B_i$ 则有 $\forall B_i\in T\Rightarrow B_i\subset B\Rightarrow B_i\leq B$
+记作 $C=\{a_1,...,a_n\}$ 。根据 $B$ 的构造可得 $\forall 1\leq j\leq n\Rightarrow \exists B_j\in T\rightarrow a_j\in B_{j}$
 
-且若 $B$ 线性相关，则根据[[MK34][定义]] $B$ 有一有限子集线性相关，记作 $C=\{a_1,...,a_n\}$
+由于 $T$ 为链，故 $T$ [[~/OneDrive/离散数学/Disc_Math.org::MK193][全序]]则有 $\forall 1\leq j_1< j_2\leq n$ 必有 $B_{j_1}\leq B_{j_2}$ 或者 $B_{j_2}\leq B_{j_1}$ 其一成立。
 
-根据 $B$ 的构造可得 $\forall 1\leq j\leq n\Rightarrow a_j\in B_{j}$ 由于 $T$ 为链，故 $T$ [[MK31][全序]]则有 $\forall 1\leq j_1< j_2\leq n$ 必有 $B_{j_1}\leq B_{j_2}$ 或者 $B_{j_2}\leq B_{j_1}$ 其一成立。
+结合偏序关系[[~/OneDrive/离散数学/Disc_Math.org::MK172][传递性]]，必有一个元素 $B_{j^*}$ 满足 $\forall 1\leq j\leq n\Rightarrow B_j\leq B_j^*$ 即 $B_j\subset B_{j^*}$
 
-结合偏序关系[[MK27][传递性]]，必有一个元素 $B_{j^*}$ 满足 $\forall 1\leq j\leq n\Rightarrow B_j\leq B_j^*$ 即 $B_j\subset B_{j^*}$
+故 $\forall a_j\in C\Rightarrow a_j\in B_{j}\subset B_{j^*}$ 则 $C\subset B_{j^*}$ 由于 $B_{j^*}$ 根据定义线性无关，故矛盾。
 
-故 $\forall a_j\in C\Rightarrow a_j\in B_{j}\subset B_{j^*}$ 则 $C\subset B_{j^*}$ 由于 $B_{j^*}$ 根据定义线性无关，故矛盾。则 $B$ 线性无关，根据 $S$ 的构造 $B\subset S$
+则 $B$ 线性无关，根据 $S$ 的构造 $B\subset S$ ，综上所述 $\forall B_i\in T,\exists B\in S\Rightarrow B_i\leq B$ 即 $T$ 有上界。
 
-综上所述 $\forall B_i\in T,\exists B\in S\Rightarrow B_i\leq B$ 即 $T$ 有上界。
+***** 证明结论
 
-****** 证明结论
-
-根据[[MK35][佐恩引理]] $S$ 中有[[MK24][极大元素]]，定义做 $A$ ，从 $V$ 中任取一个元素 $a$ 
+根据[[~/OneDrive/离散数学/Disc_Math.org::MK390][佐恩引理]] $S$ 中有[[~/OneDrive/离散数学/Disc_Math.org::MK186][极大元]]，定义做 $A$ ，从 $V$ 中任取一个元素 $a$ 
 
 若 $a\in A$ 则 $a$ 可由 $A$ 中的元素线性表述
 
-若 $a\not\in A$ 则根据 $(S,\leq)$ 定义的偏序关系，有 $A\subset A\cup\{a\}\Rightarrow A\leq A\cup\{a\}$ 且 $A\ne A\cup\{a\}$
+若 $a\not\in A$ 则根据 $<S,\leq>$ 定义的偏序关系，有 $A\subset A\cup\{a\}\Rightarrow A\leq A\cup\{a\}$ 且 $A\ne A\cup\{a\}$
 
-由于 $A$ 是 $S$ 的[[MK24][极大元素]]，则 $A\cup\{a\}\not\in S$ 根据 $S$ 的构造 $A\cup\{a\}$ 线性相关。
+由于 $A$ 是 $S$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK186][极大元]]，则 $A\cup\{a\}\not\in S$ 根据 $S$ 的构造 $A\cup\{a\}$ 线性相关。
 
 根据[[MK16][线性相关性质]]可得 $a=\sum_{i\in I} k_ia_i,\ \left(a_i\in A,k_i\in K\right)$
 
@@ -1244,9 +974,9 @@ $V$ 是数域 $K$ 上的线性空间 $S\subset V$ 若满足：
 
 ** 线性空间的维数<<MK51>>
 
-若数域 $K$ 上的线性空间 $V$ 的一个[[MK36][基]]是由 $n<\infty$ 个向量组成，则称 $n$ 为线性空间的维数，记作 $\dim_K(V)=n$
+[[MK1][线性空间]] $\mathcal{V}=<V,K,+,\times>$ 的一个[[MK36][基]]是由 $n<\infty$ 个向量组成，则称 $n$ 为线性空间的维数，记作 $\dim_K(V)=n$
 
-若数域 $K$ 上线性空间 $V$ 的一个[[MK36][基]]是由 $\infty$ 个向量组成，则称 $V$ 为无限维空间，记作 $\dim_K(V)=\infty$
+[[MK1][线性空间]] $\mathcal{V}=<V,K,+,\times>$ 的一个[[MK36][基]]是由 $\infty$ 个向量组成，则称 $V$ 为无限维空间，记作 $\dim_K(V)=\infty$
 
 只含零向量的线性空间，[[MK36][基]]为 $\varnothing$ ，故 $\dim_K(V)=0$
 

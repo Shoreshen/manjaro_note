@@ -1,4 +1,4 @@
-#+LATEX_HEADER: \usepackage{ctex}
+#+LATEX_HEADER:
 
 #+TITLE: 线性方程组解
 
@@ -6,13 +6,13 @@ currnet mark: 24
 
 * 域<<MK24>>
 
-设[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][环-其他定义-交换环]] $<U,+,\cdot>$ 满足：
+设[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK12][交换环]] $<U,+,\cdot>$ 满足：
 
-（1） 存在乘法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-幺元]]，定义为 $1$  
+（1） 存在乘法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]，定义为 $1$  
 
-（2） $1$ 不等于加法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-幺元]]（定义为 $0$ ）
+（2） $1$ 不等于加法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]（定义为 $0$ ）
 
-（3） $\forall a\left(a\in U\land a\ne0\rightarrow\exists y(y\in U\land a\cdot y=1)\right)$ 即任意不等于加法幺元的元素存在乘乘法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元]]
+（3） $\forall a\left(a\in U\land a\ne0\rightarrow\exists y(y\in U\land a\cdot y=1)\right)$ 即任意不等于加法幺元的元素存在乘乘法[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]
 
 则该代数结构定义为域
 
@@ -36,7 +36,7 @@ currnet mark: 24
 
 其中 $1<a<m,1<b<m$ 且均为正整数，由于 $m$ 为最小正整数，故 $ae\ne0\land be\ne0$
 
-根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][环-其他定义-交换环]]中加乘法分配率，对于任意 $\{z_1,z_2\}\subset U$ 有：
+根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK12][交换环]]中加乘法分配率，对于任意 $\{z_1,z_2\}\subset U$ 有：
 
 \begin{aligned}
 (az_1)(bz_2)=&\left(\sum_{i=1}^az_1\right)\left(\sum_{i=1}^bz_2\right)\\
@@ -52,7 +52,7 @@ currnet mark: 24
 
 根据环中乘法结合律可得 $(ae)^{-1}\left((ae)(be)\right)=\left((ae)^{-1}(ae)\right)be=ebe=be$ 
 
-根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][环-其他定义-零因子-定理]]可得 $(ae)^{-1}0=0$
+根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK16][定理]]可得 $(ae)^{-1}0=0$
 
 故有 $be=0$ 与条件矛盾，故 $m$ 不能为合数 
 
@@ -72,7 +72,7 @@ currnet mark: 24
 
 *** 证明是交换环
 
-根据复数上的加法/乘法，以及[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][环-其他定义-交换环]]可知
+根据复数上的加法/乘法，以及[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK12][交换环]]可知
 
 （1） 加法满足结合律
 
