@@ -4,9 +4,7 @@
 
 current mark: 86
 
-* 环
-
-** 定义<<MK10>>
+* 环<<MK10>>
 
 若非空集合 $U$ 上定义有加法（ $+$ ）、乘法（ $\cdot$ ）计算且满足：
 
@@ -14,9 +12,9 @@ current mark: 86
 
 （2） 加法交换律： $\forall\{a,b\}\subset U\rightarrow a+b=b+a$ 
 
-（3） 存在加法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-幺元]]： $\exists 0\in U\rightarrow\left((\forall a\in U)\rightarrow(a+0=0+a=a)\right)$ 记作零元
+（3） 存在加法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]： $\exists 0\in U\rightarrow\left((\forall a\in U)\rightarrow(a+0=0+a=a)\right)$ 记作零元
 
-（4） 存在加法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元]]： $\forall a\in U(\exists b\in U\rightarrow a+b=b+a=0)$ 其中 $0$ 是加法幺元 
+（4） 存在加法[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]： $\forall a\in U(\exists b\in U\rightarrow a+b=b+a=0)$ 其中 $0$ 是加法幺元 
 
 （5） 乘法结合律： $\forall \{a,b,c\}\subset U\rightarrow (ab)c=a(bc)$ 
 
@@ -24,7 +22,7 @@ current mark: 86
 
 （7） 加法和乘法运算封闭，即 $\forall \{a,b\}\subset U\rightarrow a+b\in U\land ab\in U$ 
 
-则称 $<U,+,\cdot>$ 是一个环（ring）
+则称 $\mathcal{U}=<U,+,\cdot>$ 是一个环（ring）
 
 ** 其他定义
 
@@ -34,33 +32,23 @@ current mark: 86
 
 *** 单位元<<MK11>>
 
-若 $U$ 是环，存在元素 $e\in U$ 与环中的乘法满足[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-幺元]]定义，则称 $e$ 为单位元
+若 $U$ 是环，存在元素 $e\in U$ 与环中的乘法满足[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]定义，则称 $e$ 为单位元
 
-且根据[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-幺元-性质]]可得 $e$ 唯一
+且根据[[~/OneDrive/离散数学/Disc_Math.org::MK312][性质]]可得 $e$ 唯一
 
-*** 零因子<<MK9>>
+** 零元定理<<MK9>>
 
-定义若存在 $a\in U$ 满足
+任意[[MK12][交换环]] $\mathcal{U}=<U,+,\cdot>$ 存在乘法[[~/OneDrive/离散数学/Disc_Math.org::MK313][零元]]，且等于[[MK10][环定义]]中加法幺元
 
-（1） $ab=0,b\in U$ 则称 $a$ 左零因子
+*** 证明
 
-（1） $ba=0,b\in U$ 则称 $a$ 右零因子
-
-若同事满足，则称零因子
-
-**** 定理<<MK16>>
-
-[[MK10][环定义]]中加法幺元是[[MK9][零因子]]
-
-***** 证明
-
-定义 $\foral a\in U$ 由零元定义可得 $0=0+0$ 则有 $a0=a(0+0)=a0+a0$
+定义 $\foral a\in U$ 由加法幺元（记作 $0$ ）定义可得 $0=0+0$ 则有 $a0=a(0+0)=a0+a0$
 
 由于乘法封闭，故 $a0\in U$ ，根据定义有逆元 $-a0$ 满足 $a0+(-a0)=0$
 
 则有 $a0+(-a0)=a0+a0+(-a0)\rightarrow 0=a0$ 
 
-同理可证 $0a=0$ 综上所述 $0$ 是零因子 
+同理根据乘法交换律可证 $0a=0$ 综上所述 $0$ 是零因子 
 
 ** 子环
 
@@ -524,7 +512,7 @@ $f(x)-g(x)=0(x)\rightarrow f(x)=g(x)$
 
 ****** 证明
 
-根据[[MK15][一元多项式环]]可得 $0(x)$ 是 $K[x]$ 的零元，根据[[MK16][定理]]可得零元是零因子，即 $0(x)f(x)=0(x)$
+根据[[MK15][一元多项式环]]可得 $0(x)$ 是 $K[x]$ 的零元，根据[[MK9][定理]]可得零元是零因子，即 $0(x)f(x)=0(x)$
 
 故得结论 $f(x)\mid 0(x)$
 
@@ -534,7 +522,7 @@ $f(x)-g(x)=0(x)\rightarrow f(x)=g(x)$
 
 ****** 证明
 
-根据定义必须满足 $f(x)=0(x)h(x)$ 根据[[MK16][定理]] $\forall h(x)\in K[x]\rightarrow 0(x)h(x)=0(x)$
+根据定义必须满足 $f(x)=0(x)h(x)$ 根据[[MK9][定理]] $\forall h(x)\in K[x]\rightarrow 0(x)h(x)=0(x)$
 
 故得定理
 

@@ -8,7 +8,7 @@ currnet mark: 24
 
 设[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK12][交换环]] $<U,+,\cdot>$ 满足：
 
-（1） 存在乘法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]，定义为 $1$  
+（1） 存在乘法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]，定义为 $1$ （根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK9][定理]]存在乘法零元，等于加法幺元，记作 $0$ ）
 
 （2） $1$ 不等于加法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]（定义为 $0$ ）
 
