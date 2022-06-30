@@ -129,14 +129,16 @@ nameserver 192.168.0.1
 ## Strongswan servers
 
 ```
-United States #7648 - 96.126.97.207 - us5783.nordvpn.com
-United States #7649 - 96.126.97.209 - us5784.nordvpn.com
-United States #7650 - 96.126.97.191 - us5783.nordvpn.com
-United States #7651 - 96.126.97.143 - us5784.nordvpn.com
-United States #7652 - 96.126.97.45 - us5783.nordvpn.com
-United States #7653 - 96.126.97.22 - us5784.nordvpn.com
-United States #7654 - 96.126.97.26 - us5783.nordvpn.com
-United States #7655 - 96.126.97.38 - us5784.nordvpn.com
+172.104.106.200 - jp598.nordvpn.com
+139.162.111.224 - jp599.nordvpn.com
+139.162.118.94 - jp599.nordvpn.com
+45.79.111.177 - us5783.nordvpn.com
+45.79.111.208 - us5784.nordvpn.com
+45.79.64.4 - us5784.nordvpn.com
+45.79.64.48 - us5783.nordvpn.com
+178.79.134.237 - uk2326.nordvpn.com
+109.74.193.212 - uk2326.nordvpn.com
+176.58.98.210 - uk2326.nordvpn.com
 ```
 
 # Chromium keyring

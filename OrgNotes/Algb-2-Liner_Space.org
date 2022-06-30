@@ -102,6 +102,60 @@ $\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 
 
 对于 $\vec{a}\in V$ 根据[[MK4][数乘零元为零元]]以及[[MK1][定义]]中（5）（7） $\vec{0}=0\vec{a}=(1+(-1))\vec{a}=1\vec{a}+(-1)\vec{a}=\vec{a}+(-1)\vec{a}$
 
+** 运算
+
+*** 幂运算
+
+$\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]，则定义 $V^n=V\times...\times V$ 即 $n<\infty$ 个 $V$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK357][笛卡尔积]]
+
+则定义：
+
+（1） $\forall\{<a_1,...,a_n>,<b_1,...,b_n>\}\subset V^n$ 均有 $<a_1,...,a_n>\hat{+}<b_1,...,b_n>=<a_1+b_1,...,a_n+b_n>$
+
+（2） $\forall<a_1,...,a_n>\in V^n$ 以及 $\forall k\in K$ 均有 $k\hat{\cdot}<a_1,...,a_n>=<ka_1,...,ka_n>$ 
+
+则定义 $\mathcal{V}^n=<V^n,K,\hat{+},\hat{\cdot}>$ 为线性空间的幂运算，且 $\mathcal{V}^n$ 亦为线性空间
+
+**** 证明
+
+由于 $\mathcal{V}$ 是线性空间，故满足[[MK1][运算规律]]，定义 $[a_i]=<a_1,...,a_n>\land[b_i]=<b_1,...,b_n>$
+
+则根据如下证明可得 $\mathcal{V}^n$ 为线性空间
+
+***** 加法交换律
+
+对于任意 $\{[a_i],[b_i]\}\subset V^n$ 有 $[a]_i\hat{+}[b]_i=[a_i+b_i]=[b_i+a_i]=[b_i]\hat{ +}[a_i]$
+
+***** 加法结合律
+
+对于任意 $\{[a_i],[b_i],[c_i]\}\subset V^n$ 有 $([a_i]\hat{+}[b_i])\hat{ +}[c_i]=[(a_i+b_i)+c_i]=[a_i+(b_i+c_i)]=[a_i]\hat{ +}([b_i]\hat{ +}[c_i])$
+
+***** 加法幺元
+
+定义 $[0]=<0,...,0>$ 为加法幺元，则有对于任意 $[a_i]\in V^n$ 均有 $[0]+[a_i]=[a_i]+[0]=[a_i+0]=[a_i]$
+
+***** 加法逆元
+
+对于任意 $[a_i]\in V^n$ 有 $[-a_i]\in V^n$ 则有 $[a_i]\hat{+}[-a_i]=[a_i+(-a_i)]=[0]$
+
+***** 数乘幺元
+
+对于任意 $[a_i]\in V^n$ 有 $1\hat{\cdot}[a_i]=[1a_i]=[a_i]$
+
+***** 数乘结合律
+
+对于任意 $\{l,k\}\subset K$ 任意 $[a_i]\in V^n$ 有 $(lk)[a_i]=[(lk)a_i]=[l(ka_i)]=l[ka_i]=l(k[a_i])$
+
+***** 数乘分配律1
+
+对于任意 $\{l,k\}\subset K$ 任意 $[a_i]\in V^n$ 有 $(l+k)[a_i]=[(l+k)a_i]=[la_i+ka_i]=[la_i]\hat{+}[ka_i]=l[a_i]\hat{ +}k[a_i]$
+
+***** 数乘分配律2
+
+对于任意 $k\subset K$ 任意 $\{[a_i],[b_i]\}\subset V^n$
+
+有 $k([a_i]\hat{+}[b_i])=k[a_i+b_i]=[k(a_i+b_i)]=[ka_i+kb_i]=[ka_i]\hat{ +}[kb_i]=k[a_i]\hat{ +}k[b_i]$
+
 * 线性子空间<<MK44>>
 
 若 $\mathcal{V}=<V,K,+,\cdot>$ 是数域 $K$ 上的[[MK1][线性空间]]，若 $U\subset V$ 满足 $\mathcal{V}'=<V,K,+,\cdot>$ 亦为线性空间  
@@ -307,6 +361,54 @@ $\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 
 
 根据集合交运算有 $(\mathcal{V}_1\cap\mathcal{V}_2)\cap\mathcal{V}_3=\mathcal{V}_1\cap(\mathcal{V}_2\cap\mathcal{V}_3)$
 
+***** 维数
+
+若 $\mathcal{V}_1,\mathcal{V}_2$ 是 $\mathcal{V}$ 的[[MK51][有限维]]子空间，则有 $\dim(\mathcal{V}_1+\mathcal{V}_2)=\dim(\mathcal{V}_1)+\dim(\mathcal{V}_2)-\dim(\mathcal{V}_1\cap \mathcal{V}_2)$
+
+****** 证明
+
+根据[[MK51][维数]]定义，其为基中向量的个数。由于 $\mathcal{V}_1,\mathcal{V}_2$ 有限维，且根据[[MK64][子空间交]]可知 $\mathcal{V}_1\cap \mathcal{V}_2$ 亦为 $\mathcal{V}_1$ 子空间
+
+则根据[[MK47][命题5]]可知 $\dim(\mathcal{V}_1\cap \mathcal{V}_2)\leq\dim(\mathcal{V}_1)$ 亦为有限
+
+故定义 $\mathcal{V}_1\cap \mathcal{V}_2$ 的基为 $\vec{a}_1,...,\vec{a}_n$ 即 $V_1\cap V_2=\text{span}(\{\vec{a}_1,...,\vec{a}_n\})$
+
+根据[[MK64][子空间交]]可知 $\mathcal{V}_1\cap \mathcal{V}_2$ 亦为 $\mathcal{V}_1$ 子空间，根据[[MK66][子空间基]]可得 $\mathcal{V}_1$ 的一组基为 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u$
+
+同理可得 $V_2$ 的一组基为 $\vec{a}_1,...,\vec{a}_n,\vec{c}_1,...,\vec{c}_v$ 根据[[MK67][命题1]]
+
+得 $V_1+V_2=\text{span}(\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{a}_1,...,\vec{a}_n,\vec{c}_1,...,\vec{c}_v\})=\text{span}(\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v\})$
+
+定义 $\mathcal{V}'=\mathcal{V}_1+\mathcal{V}_2=<V_1+V_2,K,+,\cdot>$ 根据[[MK86][子空间和]]可得亦为线性空间
+
+根据[[MK50][向量生成子空间的基]]可知 $\mathcal{V}'$ 的基为 $\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v\}$ 的[[MK15][极大线性无关组]] 
+
+接下来求解 $\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^u l_i\vec{b}_i+\sum_{i=1}^v q_i\vec{c}_i=0$ 
+
+根据[[MK1][线性空间定义]]中负元，零元可移项得 $\sum_{i=1}^u l_i\vec{b}_i=\sum_{i=1}^n (-k_i)\vec{a}_i+\sum_{i=1}^v (-q_i)\vec{c}_i$
+
+根据线性表述 $\sum_{i=1}^u l_i\vec{b}_i\in V_1,\sum_{i=1}^n (-k_i)\vec{a}_i+\sum_{i=1}^v (-q_i)\vec{c}_i\in V_2$
+
+根据 $\sum_{i=1}^u l_i\vec{b}_i=\sum_{i=1}^n (-k_i)\vec{a}_i+\sum_{i=1}^v (-q_i)\vec{c}_i$ 可得 $\sum_{i=1}^u l_i\vec{b}_i\in V_2$ 终有 $\sum_{i=1}^u l_i\vec{b}_i\in V_1\cap V_2$ 
+
+则 $\sum_{i=1}^u l_i\vec{b}_i$ 可由 $\mathcal{V}_1\cap \mathcal{V}_2$ 的基 $\vec{a}_1,...,\vec{a}_n$ 线性表述，即 $\sum_{i=1}^u l_i\vec{b}_i=\sum_{i=1}^n p_i\vec{a}_i$
+
+同理移项得 $\sum_{i=1}^u l_i\vec{b}_i+\sum_{i=1}^n (-p_i)\vec{a}_i=0$ 但由于 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u$ 为 $V_1$ 的基，故线性不相关
+
+根据[[MK8][定义]]当且仅当系数均为 $0$ 时等式成立，故得 $b_1=...=b_u=0$
+
+进一步求解释可写为 $\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^u l_i\vec{b}_i+\sum_{i=1}^v q_i\vec{c}_i=\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^v q_i\vec{c}_i=0$
+
+同理由于 $\vec{a}_1,...,\vec{a}_n,\vec{c}_1,...,\vec{c}_v$ 是 $V_2$ 的基，亦线性无关，
+
+故当且仅当 $b_1=...=b_u=k_1=...=k_n=q_1=...=q_v=0$ 时等式成立
+
+故 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v$ 线性不相关，即为最大线性无关组，故 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v$ 是 $\mathcal{V}'$ 的基
+
+则有 $\dim(\mathcal{V}_1+\mathcal{V}_2)=n+u+v,\dim(\mathcal{V}_1)=n+u,\dim(\mathcal{V}_2)=n+v,\dim(\mathcal{V}_1\cap \mathcal{V}_2)=n$
+
+故有 $\dim(\mathcal{V}_1+\mathcal{V}_2)=\dim(\mathcal{V}_1)+\dim(\mathcal{V}_2)-\dim(\mathcal{V}_1\cap \mathcal{V}_2)$
+
 *** 子空间和<<MK86>>
 
 定义 $V_1+V_2=\left\{\vec{a}_1+\vec{a}_2\big|\vec{a}_1\in V_1\land\vec{a}_2\in V_2\right\}$
@@ -345,63 +447,37 @@ $\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 
 
 **** 命题1<<MK67>>
 
-若 $V$ 是线性空间 $(\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n)\subset V$ 则有 $<\vec{a}_1,...,\vec{a}_n>+<\vec{b}_1,...,\vec{b}_n>=<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>$
+若 $\mathcal{V}=<V,K,+,\cdot>$ 是[[MK1][线性空间]] $(\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n)\subset V$
+
+则定义 $\mathcal{V}_1=<\text{span}(\{\vec{a}_1,...,\vec{a}_n\}),K,+,\cdot>,\mathcal{V}_2=<\text{span}(\{\vec{b}_1,...,\vec{b}_n\}),K,+,\cdot>$ 
+
+则有 $\text{span}(\{\vec{a}_1,...,\vec{a}_n\})+\text{span}(\{\vec{b}_1,...,\vec{b}_n\})=\text{span}(\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n\})$
+
+进而 $\mathcal{V}_1+\mathcal{V}_2=<\text{span}(\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n\}),K,+,\cdot>$
 
 ***** 证明
 
-任取 $\vec{\alpha}+\vec{\beta}\in<\vec{a}_1,...,\vec{a}_n>+<\vec{b}_1,...,\vec{b}_n>$ 其中 $\vec{\alpha}\in<\vec{a}_1,...,\vec{a}_n>,\vec{\beta}\in<\vec{b}_1,...,\vec{b}_n>$
+任取 $\vec{\alpha}+\vec{\beta}\in\text{span}(\{\vec{a}_1,...,\vec{a}_n\})+\text{span}(\{\vec{b}_1,...,\vec{b}_n\})$ 其中 $\vec{\alpha}\in\text{span}(\{\vec{a}_1,...,\vec{a}_n>\}),\vec{\beta}\in\text{span}(\{\vec{b}_1,...,\vec{b}_n\})$
 
-则根据[[MK46][向量组生成子空间]]有 $\vec{\alpha}=\sum_{i=1}^nk_i\vec{a}_i\in <\vec{a}_1,...,\vec{a}_n>,\vec{\beta}=\sum_{i=1}^nk'_i\vec{b}_i\in <\vec{b}_1,...,\vec{b}_n>$
+则根据[[MK46][向量组生成子空间]]有 $\vec{\alpha}=\sum_{i=1}^nk_i\vec{a}_i,\vec{\beta}=\sum_{i=1}^nk'_i\vec{b}_i$
 
-故根据[[MK1][线性空间定义]]加法结合律 $\vec{\alpha}+\vec{\beta}=\sum_{i=1}^nk_i\vec{a}_i+\sum_{i=1}^nk'_i\vec{b}_i\in<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>$ 由于任取，故 $<\vec{a}_1,...,\vec{a}_n>+<\vec{b}_1,...,\vec{b}_n>\subset<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>$
+故根据[[MK1][线性空间定义]]加法结合律 $\vec{\alpha}+\vec{\beta}=\sum_{i=1}^nk_i\vec{a}_i+\sum_{i=1}^nk'_i\vec{b}_i\in\text{span}(\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n\})$
 
-任取 $\vec{\alpha}\in<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>$ 则根据[[MK46][向量组生成子空间]]有 $\vec{\alpha}=k_1\vec{a}_1+...+k_n\vec{a}_n+k'_1\vec{b}_1+...+k'_n\vec{b}_n$
+由于任取，故 $\text{span}(\{\vec{a}_1,...,\vec{a}_n\})+\text{span}(\{\vec{b}_1,...,\vec{b}_n\})\subset\text{span}(\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n\})$
 
-根据[[MK1][线性空间定义]]加法结合律 $\vec{\alpha}=\sum_{i=1}^nk_i\vec{a}_i+\sum_{i=1}^nk'_i\vec{b}_i$ 根据[[MK46][向量组生成子空间]] $\vec{\alpha}=\sum_{i=1}^nk_i\vec{a}_i\in <\vec{a}_1,...,\vec{a}_n>,\vec{\beta}=\sum_{i=1}^nk'_i\vec{b}_i\in <\vec{b}_1,...,\vec{b}_n>$
+任取 $\vec{\alpha}\in\text{span}(\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n\})$ 则根据[[MK46][向量组生成子空间]]有 $\vec{\alpha}=k_1\vec{a}_1+...+k_n\vec{a}_n+k'_1\vec{b}_1+...+k'_n\vec{b}_n$
 
-故有 $\vec{\alpha}\in<\vec{a}_1,...,\vec{a}_n>+<\vec{b}_1,...,\vec{b}_n>$ 由于任取，故 $<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>\subset<\vec{a}_1,...,\vec{a}_n>,<\vec{b}_1,...,\vec{b}_n>$
+根据[[MK1][线性空间定义]]加法结合律 $\vec{\alpha}=\sum_{i=1}^nk_i\vec{a}_i+\sum_{i=1}^nk'_i\vec{b}_i$
 
-综上所述 $<\vec{a}_1,...,\vec{a}_n>+<\vec{b}_1,...,\vec{b}_n>=<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n>$
+根据[[MK46][向量组生成子空间]] $\vec{\alpha}=\sum_{i=1}^nk_i\vec{a}_i\in\text{span}(\{\vec{a}_1,...,\vec{a}_n\}),\vec{\beta}=\sum_{i=1}^nk'_i\vec{b}_i\in\text{span}(\{\vec{b}_1,...,\vec{b}_n\})$
 
-*** 有限维子空间维数公式<<MK70>>
+故有 $\vec{\alpha}\in\text{span}(\{\vec{a}_1,...,\vec{a}_n\})+\text{span}(\{\vec{b}_1,...,\vec{b}_n\})$
 
-若 $V_1,V_2$ 是 $V$ 的有限维子空间，则有 $\dim(V_1+V_2)=\dim(V_1)+\dim(V_2)-\dim(V_1\cap V_2)$
+由于任取，故 $\text{span}(\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n\})\subset\text{span}(\{\vec{a}_1,...,\vec{a}_n\})+\text{span}(\{\vec{b}_1,...,\vec{b}_n\})$
 
-**** 证明
+综上所述 $\text{span}(\{\vec{a}_1,...,\vec{a}_n\})+\text{span}(\{\vec{b}_1,...,\vec{b}_n\})=\text{span}(\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n\})$
 
-根据[[MK51][维数]]定义，其为基中向量的个数。由于 $V_1,V_2$ 有限维，且根据[[MK64][子空间交]]可知 $V_1\cap V_2$ 亦为 $V_1$ 子空间，故根据[[MK47][命题5]]可知 $\dim(V_1\cap V_2)\leq\dim(V_1)$ 亦为有限
-
-故定义 $V_1\cap V_2$ 的基为 $\vec{a}_1,...,\vec{a}_n$ 即 $V_1\cap V_2=<\vec{a}_1,...,\vec{a}_n>$ 。
-
-根据[[MK64][子空间交]]可知 $V_1\cap V_2$ 亦为 $V_1$ 子空间，根据[[MK66][子空间基]]可得 $V_1$ 的一组基为 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u$
-
-同理可得 $V_2$ 的一组基为 $\vec{a}_1,...,\vec{a}_n,\vec{c}_1,...,\vec{c}_v$
-
-根据[[MK67][命题1]]可得 $V_1+V_2=<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{a}_1,...,\vec{a}_n,\vec{c}_1,...,\vec{c}_v>=<\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v>$
-
-根据[[MK50][向量生成子空间的基]]可知 $V_1+V_2$ 的基为 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v$ 的极大线性无关组 
-
-接下来求解 $\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^u l_i\vec{b}_i+\sum_{i=1}^v q_i\vec{c}_i=0$ 
-
-根据[[MK1][线性空间定义]]中负元，零元可移项得 $\sum_{i=1}^u l_i\vec{b}_i=\sum_{i=1}^n (-k_i)\vec{a}_i+\sum_{i=1}^v (-q_i)\vec{c}_i$
-
-根据线性表述 $\sum_{i=1}^u l_i\vec{b}_i\in V_1,\sum_{i=1}^n (-k_i)\vec{a}_i+\sum_{i=1}^v (-q_i)\vec{c}_i\in V_2$ 且两个向量相等
-
-故有两个向量均即属于 $V_1$ 又属于 $V_2$ 故 $\sum_{i=1}^u l_i\vec{b}_i\in V_1\cap V_2$ 即 $\sum_{i=1}^u l_i\vec{b}_i$ 可由 $\vec{a}_1,...,\vec{a}_n$ 线性表述，即 $\sum_{i=1}^u l_i\vec{b}_i=\sum_{i=1}^n p_i\vec{a}_i$
-
-同理移项得 $\sum_{i=1}^u l_i\vec{b}_i+\sum_{i=1}^n (-p_i)\vec{a}_i=0$
-
-但由于 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u$ 为 $V_1$ 的基，故线性不相关，根据[[MK8][定义]]当且仅当系数均为 $0$ 时等式成立
-
-故得 $b_1=...=b_u=0$ 进一步求解释可写为 $\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^u l_i\vec{b}_i+\sum_{i=1}^v q_i\vec{c}_i=\sum_{i=1}^n k_i\vec{a}_i+\sum_{i=1}^v q_i\vec{c}_i=0$
-
-同理由于 $\vec{a}_1,...,\vec{a}_n,\vec{c}_1,...,\vec{c}_v$ 是 $V_2$ 的基，亦线性无关，故当且仅当 $b_1=...=b_u=k_1=...=k_n=q_1=...=q_v=0$ 时等式成立
-
-故 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v$ 线性不相关，即为最大线性无关组，故 $\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_u,\vec{c}_1,...,\vec{c}_v$ 是 $V_1+V_2$ 的基
-
-则有 $\dim(V_1+V_2)=n+u+v,\dim(V_1)=n+u,\dim(V_2)=n+v,\dim(V_1\cap V_2)=n$
-
-故有 $\dim(V_1+V_2)=\dim(V_1)+\dim(V_2)-\dim(V_1\cap V_2)$
+由于 $\mathcal{V}_1,\mathcal{V}_2$ 均为子空间，又根据[[MK86][子空间和]]可得 $<\text{span}(\{\vec{a}_1,...,\vec{a}_n,\vec{b}_1,...,\vec{b}_n\}),K,+,\cdot>$ 亦为线性空间
 
 *** 直和<<MK83>>
 
@@ -1312,7 +1388,7 @@ $\sigma(-\vec{v})=-\sigma(\vec{v})$
 
 *** 性质4<<MK77>>
 
-对于 $v_i\in V, i=1,2,...,n$ 则 $v_1,...,v_n$ 现行相关是 $\sigma(v_1),...,\sigma(v_n)$ 现行相关的充要条件
+对于 $v_i\in V, i=1,2,...,n$ 则 $v_1,...,v_n$ 线性相关是 $\sigma(v_1),...,\sigma(v_n)$ 现行相关的充要条件
 
 **** 证明
 

@@ -2,7 +2,7 @@
 
 #+TITLE: 矩阵运算
 
-current mark: 48
+current mark: 52
 
 * 矩阵基础
 
@@ -24,25 +24,43 @@ current mark: 48
 
 ** 矩阵组成的线性空间<<MK10>>
 
-所有矩阵 $M_{s\times n}(K)$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $K$ 上的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间]]，记为 $M_{s\times n}(K)$
+$\mathcal{V}=<M_{s\times n}(K),K,+,\cdot>$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间]]，记为 $M_{s\times n}(K)$
+
+其中 $+$ 是[[MK2][矩阵乘法]]， $\cdot$ 是[[MK3][矩阵数乘]]
 
 *** 证明
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间]]定义：
+由于 $K$ 亦是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]]，故为[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK12][交换环]]，即矩阵中的元素满足：
+
+（1） 加法结合律
+
+（2） 加法交换律
+
+（3） 存在加法幺元 $0$
+
+（4） 存在加法逆元 $-a$
+
+（5） 存在乘法幺元 $1$
+
+（6） 乘法结合律
+
+（7） 乘法分配率
+
+则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间]]定义以及以下证明可得 $\mathcal{V}$ 是线性空间
 
 **** 交换律
 
-根据[[MK1][矩阵相等]]以及[[MK2][矩阵加法]]可得 $M+N=\left[a_{ij}+b_{ij}\right]_{s\times n}=\left[b_{ij}+a_{ij}\right]_{s\times n}=N+M$ 即满足交换律
+根据[[MK1][矩阵相等]]以及[[MK2][矩阵加法]]可得 $M+N=\left[a_{ij}+b_{ij}\right]_{s\times n}=\left[b_{ij}+a_{ij}\right]_{s\times n}=N+M$
 
 **** 结合律
 
 根据[[MK1][矩阵相等]]以及[[MK2][矩阵加法]]可得 $(M+N)+L=\left[(a_{ij}+b_{ij})+c_{ij}\right]_{s\times n}=\left[a_{ij}+(b_{ij}+c_{ij})\right]_{s\times n}=M_(N+L)$
 
-**** 零元<<MK9>>
+**** 加法幺元<<MK9>>
 
 记录 $O=\left[0\right]_{s\times n}$ 为零元
 
-**** 负元
+**** 加法逆元
 
 根据[[MK3][矩阵数乘]]定义 $(-1)M = \left[-a_{ij}\right]_{s\times n}$ 为 $M$ 的负元，且 $M+(-1)M=\left[a_{ij}-a_{ij}\right]_{s\times n}=\left[0\right]_{s\times n}$ 为零元
 
@@ -64,11 +82,13 @@ current mark: 48
 
 ** 矩阵线性空间的基<<MK20>>
 
-对于矩阵线性空间 $M_{s\times n}(K)$ 其有一组基为集合 $\left\{E_{ij}\big|1\leq i\leq s\land 1\leq j\leq n\right\}$ 中的所有元素
+对于矩阵线性空间 $\mathcal{V}=<M_{s\times n}(K),K,+,\cdot>$
+
+其有一组基为集合 $\left\{E_{ij}\big|1\leq i\leq s\land 1\leq j\leq n\right\}$ 中的所有元素
 
 *** 证明
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的基-基的定义]]，做以下证明
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK36][基的定义]]，做以下证明
 
 **** 任意元素可由基现行表述
 
@@ -82,7 +102,7 @@ $A=\sum_{l=1}^s\left\{\sum_{k=1}^n[D(i,j,l,k)]_{s\times n}\right\}$ 其中 $D(i,
 
 **** 基中的元素线性不相关
 
-根据[[MK9][零元定义]]以及[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-定义]]可得当且仅当 $\forall i\forall j(k_{ij}=0)$ 时有 $\sum_{l=1}^s\left\{\sum_{k=1}^nk_{lk}E_{lk}\right\}=[0]_{s\times n}$ 则线性不相关
+根据[[MK9][零元定义]]以及[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][定义]]可得当且仅当 $\forall i\forall j(k_{ij}=0)$ 时有 $\sum_{l=1}^s\left\{\sum_{k=1}^nk_{lk}E_{lk}\right\}=[0]_{s\times n}$ 则线性不相关
 
 其中 $k_{ij}\in K$
 
@@ -92,11 +112,11 @@ $A=\sum_{l=1}^s\left\{\sum_{k=1}^n[D(i,j,l,k)]_{s\times n}\right\}$ 其中 $D(i,
 
 *** 推论1
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-线性空间的基-定理2]]可得 $M_{s\times n}(K)$ 任意基包含的向量个数为 $sn$
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK43][定理2]]可得 $M_{s\times n}(K)$ 任意基包含的向量个数为 $sn$
 
-*** 推论2
+*** 推论2<<MK52>>
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-线性空间的维数]]可得 $\dim\left(M_{s\times n}(K)\right)=sn$
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK51][线性空间的维数]]可得 $\dim\left(\mathcal{V}\right)=sn$
 
 ** 定理1
 
@@ -422,7 +442,7 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 此时 $|PA|=|AP|=|P||A|=k|A|$ 成立
 
-* 基本运算
+* 基本运算<<MK49>>
 
 ** 基本运算定义
 
@@ -458,7 +478,25 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 ** 基本运算性质
 
-*** 乘法
+*** 加法<<MK50>>
+
+**** 交换律
+
+若矩阵 $A,B$ 可加，则有 $A+B=B+A$
+
+***** 证明
+
+易证，略
+
+**** 结合律
+
+若矩阵 $A,B,C$ 两两可加，则有 $(A+B)+C=A+(B+C)$ 
+
+***** 证明
+
+易证，略
+
+*** 乘法<<MK51>>
 
 **** 结合律<<MK21>>
 
@@ -586,9 +624,9 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 ** 定义<<MK28>>
 
-矩阵 $A_n$ 行列数均为 $n$ ，若存在矩阵 $B$ 满足 $A_nB=BA_n=I$ 则称 $A$ 为可逆矩阵 $B$ 为 $A$ 的逆矩阵，记作 $A^{-1}$
+矩阵 $A_n$ 行列数均为 $n$ ，若存在矩阵 $B$ 满足 $A_nB=BA_n=I$
 
-其中 $I$ 为单位矩阵
+则称 $A$ 为可逆矩阵 $B$ 为 $A$ 的逆矩阵，记作 $A^{-1}$ 其中 $I$ 为单位矩阵
 
 ** 性质
 

@@ -18,7 +18,7 @@ current mark: 86
 
 （5） 乘法结合律： $\forall \{a,b,c\}\subset U\rightarrow (ab)c=a(bc)$ 
 
-（6） 分配率： $\forall \{a,b,c\}\subset U\rightarrow(a(b+c)=ab+ac)\land((b+c)a=ba+bc)$ 
+（6） 乘法分配率： $\forall \{a,b,c\}\subset U\rightarrow(a(b+c)=ab+ac)\land((b+c)a=ba+bc)$ 
 
 （7） 加法和乘法运算封闭，即 $\forall \{a,b\}\subset U\rightarrow a+b\in U\land ab\in U$ 
 
