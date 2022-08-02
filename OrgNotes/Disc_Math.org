@@ -2,7 +2,10 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 390
+currnet mark: 434
+
+free mark:MK126,MK127,MK134,MK136,MK137,MK138,MK139,MK140,MK141,MK142,MK149,MK150
+ 
 
 图论: P40
 
@@ -1147,7 +1150,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 ****** 推论2<<MK358>>
 
-两个至多可数集的[[MK357][直积]]仍是可数集
+两个至多可数集的[[MK153][直积]]仍是可数集
 
 ******* 证明
 
@@ -1297,57 +1300,15 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 * 命题逻辑
 
-** 命题（Proposition）
+** 命题与命题表达式
 
-*** 定义<<MK51>>
+*** 符号
 
-对于 *确定的对象* 来 *做出判断* 的 *陈述句* ，且有[[MK52][真值]]
+**** 逻辑符号（逻辑连词）<<MK56>>
 
-*** 真值<<MK52>>
+表[[MK55][命题符号]]的逻辑关系，为 $\{(,),\lnot,\to\}$ 具体如下：
 
-当且仅当[[MK51][命题]]的陈述是正确与否满足：
-
-（1） 具有[[MK53][排中律]]；
-
-（2） 是命题的固有属性，唯一且不变
-
-其真值有定义，此时当命题正确时，真值为 $1$ ；错误时真值为 $0$
-
-*** 排中律<<MK53>>
-
-[[MK51][命题]]的[[MK52][真值]]有且仅有一个，即不为真，便为假，反之亦然。
-
-**** 素数有无限个证明
-
-命题为素数有无限个，若命题正确，则素数有有限个。假设 $a_1,...,a_n$ 为所有素数
-
-显然 $2$ 是质数，故 $n\geq 2$
-
-定义 $x=\sum_{i=1}^n a_i+1$ 则有 $x$ 被任意 $a_i$ 除均余 $1$
-
-若 $x$ 是素数，则假设不成立。
-
-若 $x$ 不是素数，由于 $x>1$ ,则 $x$ 可分解成质数的乘积，由于 $a_1,..,a_n$ 均不是其质因子，故存在其他质数可以整除 $x$ 假设亦不成立
-
-综上所述命题为素数有无限个命题为假，根据排中律素数有无限个证明命题为真。
-
-** 逻辑连接词（Logic connective）<<MK54>>
-
-连接命题，对命题进行计算的词
-
-*** 原子命题<<MK55>>
-
-不含[[MK54][逻辑连接词]]的命题
-
-*** 复合命题
-
-含有[[MK54][逻辑连接词]]及[[MK55][原子命题]]的命题 
-
-*** 5个基本连接词<<MK56>>
-
-若 $p$ 满足[[MK51][命题]]要求，则有如下逻辑连词
-
-**** 否定<<MK57>>
+***** 否定<<MK57>>
 
 定义符号为 $\lnot$ ，[[MK52][真值]]表：
 
@@ -1360,7 +1321,26 @@ p & \lnot p\\
 \hline
 \end{tabular}
 
-**** 合取<<MK58>>
+***** 蕴含<<MK60>>
+
+定义符号为 $\to$ ，[[MK52][真值]]表：
+
+\begin{tabular}{|l|l|l|} 
+\hline
+p & p & p \rightarrow p\\
+\hline
+0&0&1\\
+0&1&1\\
+1&0&0\\
+1&1&1\\
+\hline
+\end{tabular}
+
+***** 推导连词<<MK434>>
+
+推导连词可由[[MK57][否定]]与[[MK60][蕴含]]推导所得，故不影响之后定理的证明
+
+****** 合取<<MK58>>
 
 定义符号为 $\land$ ，[[MK52][真值]]表：
 
@@ -1375,7 +1355,15 @@ p & p & p \land p\\
 \hline
 \end{tabular}
 
-**** 析取<<MK59>>
+为方便书写，定义连续合取 $(\phi_1\land...\land\phi_n)=(\phi_1\land(\phi_2\land...\land\phi_n))$
+
+******* 推导过程
+
+对于[[MK51][表达式]] $\{s_1,s_2\}\subset\mathcal{L}_0$ 定义表达式 $z=(\lnot((\lnot s_1)\to(\lnot s_2)))$
+
+则根据[[MK52][表达式真值]]有 $\bar{v}(z)=H_{\lnot}(H_{\to}(H_{\lnot}(\bar{v}(s_1)),H_{\lnot}(\bar{v}(s_2))))$ 根据[[MK403][逻辑函数]]定义可得 $\bar{v}(z)$ 与合取真值相同
+
+****** 析取<<MK59>>
 
 定义符号为 $\lor$ ，[[MK52][真值]]表：
 
@@ -1390,22 +1378,15 @@ p & p & p \lor p\\
 \hline
 \end{tabular}
 
-**** 蕴含<<MK60>>
+为方便书写，定义连续析取 $(\phi_1\lor...\lor\phi_n)=(\phi_1\lor(\phi_2\lor...\lor\phi_n))$
 
-定义符号为 $\rightarrow$ ，[[MK52][真值]]表：
+******* 推导过程
 
-\begin{tabular}{|l|l|l|} 
-\hline
-p & p & p \rightarrow p\\
-\hline
-0&0&1\\
-0&1&1\\
-1&0&0\\
-1&1&1\\
-\hline
-\end{tabular}
+对于[[MK51][表达式]] $\{s_1,s_2\}\subset\mathcal{L}_0$ 定义表达式 $z=((\lnot s_1)\to s_2)$
 
-**** 双向蕴含<<MK61>>
+则根据[[MK52][表达式真值]]有 $\bar{v}(z)=H_{\to}(H_{\lnot}(\bar{v}(s_1)),\bar{v}(s_2))$ 根据[[MK403][逻辑函数]]定义可得 $\bar{v}(z)$ 与析取真值相同
+
+****** 双向蕴含<<MK61>>
 
 定义符号为 $\leftrightarrow$ ，[[MK52][真值]]表：
 
@@ -1420,131 +1401,721 @@ p & p & p \leftrightarrow p\\
 \hline
 \end{tabular}
 
-*** 连接词优先级<<MK62>>
+******* 推导过程
 
-优先级从高到低分别为 $\lnot,[\land,\lor],\rightarrow,\leftrightarrow$ 
+对于[[MK51][表达式]] $\{s_1,s_2\}\subset\mathcal{L}_0$ 定义表达式 $z=((s_1\to s_2)\land(s_2\to s_1))$ 其中 $\land$ 为[[MK58][合取]]
 
-[[MK52][真值]]运算顺序遵循如下规则：
+则根据[[MK52][表达式真值]]有 $\bar{v}(z)=H_{\land}(H_{\to}(s_1\to s_2),H_{\to}(s_2\to s_1))$ 根据[[MK403][逻辑函数]]定义可得 $\bar{v}(z)$ 与双向蕴含真值相同
 
-（1） 优先级高的连词先运算
+其中 $H_{\land}$ 为合取的[[MK402][逻辑函数]]
 
-（2） 同等优先级情况下，左变得连词运算优先级高于右边的连词。
+***** 逻辑函数<<MK402>>
 
-*** 连词完备性
+[[MK57][否定]]函数 $H_{\lnot}:\{T,F\}\to\{T,F\}$ 满足 $H_{\lnot}(T)=F\land H_{\lnot}(F)=T$
 
-[[MK56][5个常用连词]]的集合被称为完备联结词。
+[[MK60][蕴含]]函数 $H_{\to}:\{T,F\}\times\{T,F\}\to\{T,F\}$ 满足 $H_{\to}(T,F)=F$
 
-**** 其他功能完备集
+       以及 $H_{\to}(T,T)=H_{\to}(F,F)=H_{\to}(F,T)=T$
 
-***** $\lnot,\lor,\land$ <<MK63>>
+[[MK58][合取]]函数 $H_{\land}:\{T,F\}\times\{T,F\}\to\{T,F\}$ 满足 $H_{\land}(T,T)=T$ 以及 $H(T,F)_{\land}=H_{\land}(F,F)=H_{\land}(F,T)=F$
 
-根据[[MK100][定理2]]可知任何命题公式均可化为主合取范式。此时逻辑连词仅包含 $\lnot,\lor,\land$
+[[MK59][析取]]函数 $H_{\lor}:\{T,F\}\times\{T,F\}\to\{T,F\}$ 满足 $H_{\lor}(T,T)=T$ 以及 $H(T,F)_{\lor}=H_{\lor}(F,F)=H_{\lor}(F,T)=F$
 
-***** $\lnot,\rightarrow$
+[[MK61][双向蕴含]]函数 $H_{\leftrightarrow}:\{T,F\}\times\{T,F\}\to\{T,F\}$ 满足 $H_{\leftrightarrow}(T,T)=H_{\leftrightarrow}(F,F)=T$
 
-根据[[MK79][蕴含等式]]可得 $\lnot A\rightarrow B{|\!\!\!=\!\!\!|}\lnot(\lnot A)\lor B{|\!\!\!=\!\!\!|}A\lor B$ 故根据[[MK91][替换原理]]析取 $\lor$ 可由 $\lnot,\rightarrow$ 替换
+           以及 $H_{\leftrightarrow}(F,T)=H_{\leftrightarrow}(T,F)=T$
 
-根据[[MK78][德摩根律]]可得 $A\land B{|\!\!\!=\!\!\!|}\lnot(\lnot A\lor\lnot B){|\!\!\!=\!\!\!|}\lnot(\lnot A)\rightarrow\lnot B{|\!\!\!=\!\!\!|}A\rightarrow\lnot B$ 故根据[[MK91][替换原理]]合取 $\land$ 可由 $\lnot,\rightarrow$ 替换
+**** 原子命题<<MK55>>
 
-另可得 $A\leftrightarrow B{|\!\!\!=\!\!\!|}(A\rightarrow B)\land(B\rightarrow A)$ 且 $\land$ 可由 $\lnot,\rightarrow$ 替换。故 $\leftrightarrow$ 亦可由 $\lnot,\rightarrow$ 替换。
+[[MK57][逻辑符号]]的操作变量，无法用其他原子命题或逻辑符号的组合表示
 
-***** $\lnot,\lor$ <<MK64>>
+为[[MK42][有限集]]，例如 $A=\left\{a_i\big|i\in I\land I\subset\mathbb{N}\right\}$
 
-根据[[MK78][德摩根律]]可得 $A\land B{|\!\!\!=\!\!\!|}\lnot(\lnot A\land\lnot B)$ 故根据[[MK91][替换原理]]合取 $\land$ 可由 $\lnot,\lor$ 替换。
+*** 基本符号集<<MK392>>
 
-又由于[[MK63][ $\lnot,\lor,\land$ ]]是完备集，故 $\lnot,\lor$ 亦是完备集。
+定义 $\Sigma=\{\lnot,\to\}\cup A$ 其中 $A$ 为[[MK55][命题符号]]集合
 
-***** $\downarrow$
+则基本符号集定义为 $\Sigma^*=\bigcup_{i\in\mathbb{N}}\Sigma^i$ 其中 $\Sigma^i$ 是[[MK153][笛卡尔积]]的幂
 
-定义为 $p\downarrow q{|\!\!\!=\!\!\!|}\lnot(p\lor q)$ 
+对于任意 $s=<s_1,...,s_n>\in\Sigma^*$ 根据[[MK151][有序组]]可简化表述为 $s=s_1...s_n$
 
-根据[[MK74][幂等律]] $p\downarrow p{|\!\!\!=\!\!\!|}\lnot(p\lor p){|\!\!\!=\!\!\!|}\lnot p$ 故根据[[MK91][替换原理]] $\lnot$ 可由 $\downarrow$ 替换
+进一步定义 $s[i]=s_i$ 为有序组 $s$ 上第 $i$ 个元素
 
-根据[[MK73][双重否定]] $p\lor q{|\!\!\!=\!\!\!|}\lnot\lnot(p\lor q){|\!\!\!=\!\!\!|}\lnot(p\downarrow q){|\!\!\!=\!\!\!|}(p\downarrow q)\downarrow(p\downarrow q)$ 故根据[[MK91][替换原理]] $\lor$ 可由 $\downarrow$ 替换
+**** 性质<<MK416>>
 
-又由于[[MK64][ $\lnot,\lor$ ]]是完备集，故 $\downarrow$ 亦是完备集。
+基本符号集 $\Gamma^*$ 是[[MK44][可数集]]
 
-** 命题公式
+***** 证明
 
-*** 基本定义<<MK65>>
+由于[[MK55][原子命题]]是[[MK42][有限集]]，故可得对于任意 $n\in\mathbb{N}$ 有 $\Sigma^i$ 亦为有限集
 
-**** 命题常元<<MK66>>
+则根据[[MK49][定理1]]可得 $\Sigma^*=\bigcup_{i\in\mathbb{N}}\Sigma^i$ 是[[MK48][之多可数集]]，显然 $\Sigma^*$ 不是有限集
 
-一个确定的具体的命题，称为命题常元。与[[MK67][命题变元]]对应。
+故可得 $\Sigma^*$ 是可数集
 
-**** 命题变元<<MK67>>
+*** 准语言<<MK393>>
 
-根据[[MK68][定义]]命题公式即为对不同命题的逻辑运算，命题变项为命题公式中可变的命题，即逻辑运算的输入项。
+对于任意 $L\subset\Sigma^*$ 其中 $\Sigma^*$ 是[[MK392][基本符号基]]，若满足：
 
-**** 命题公式<<MK68>>
+（1） $\forall a_i\in A$ 有 $a_i\in L$
 
-命题公式（又称 *真值函数* 或 *合适公式* ）可按下列[[MK15][归纳定义]]生成:
+（2） $\forall s\in L$ 有 $(\lnot s)=<(,\lnot,s,)>\in L$
 
-基础条款：[[MK67][命题变项]]本身是命题公式。
+（3） $\forall \{s_1,s_2\}\subset L$ 有 $(s_1\to s_2)=<(,s_1,\to,s_2,)>\in L$
 
-归纳条款：如果 $A$ 是命题公式，则 $\lnot A$ 是命题公式。如果 $A$ 和 $B$ 是命题公式，那么 $A\land B, A\lor B,A\rightarrow B,A\leftrightarrow B$ 都是命题公式。
+则 $L$ 为 $\Sigma$ 的准语言，以符号 $L_0$ 表示，进一步定义 $\Sigma$ 的所有准语言集合为 $\mathcal{L}$
 
-终极条款：当且仅当有限次地应用以上条款所得到的包含[[MK67][命题变项]]，[[MK54][联结词]]和圆括号（用于判别优先级）的符号串是命题公式。
+*** 命题语言<<MK394>>
 
-命题公式的定义是一个递归定义形式。命题公式本身不是命题，没有[[MK52][真值]]，只有对其[[MK67][命题变项]]进行赋值后，它才有[[MK52][真值]]。
+若 $\mathcal{L}_0$ 满足对于任意 $L\in\mathcal{L}$ 均有 $\mathcal{L}_0\subset\mathcal{L}$ 则 $\mathcal{L}_0$ 是命题语言
 
-若定义命题公式为 $A$ 其[[MK67][命题变项]]为 $p_1,...,p_n$ 则可记作 $A(p_1,...,p_n)$
+即所有[[MK393][准语言]]的[[MK30][并]]，以符号 $\mathcal{L}=\bigcap\mathcal{L}_0$ 表示
 
-**** 解释<<MK69>>
+**** 定理<<MK395>>
 
-一组确定的 $p_1,...,p_n$ 使得 $A(p_1,...,p_n)$ 有确定的值，称为解释，通常记作 $I$ 表示
+$\mathcal{L}_0$ 是 $\Sigma$ 上最小的[[MK393][准语言]]，即 $\mathcal{L}_0=\bigcap_{L\in\mathcal{L}} L$
 
-*** 命题公式分类
+***** 证明
 
-**** 原子命题
+****** 是准语言
 
-仅包含[[MK67][命题变元]]的[[MK68][命题公式]]
+对于任意 $x\in\mathcal{L}$ 均有 $L\in\mathcal{L}_0\rightarrow x\in L$ ，又由于对于任意 $L\in\mathcal{L}_0$ 有 $L$ 是[[MK393][准语言]]，则：
+
+（1） $\forall a_i\in A$ 有 $a_i\in L$ 即有 $a_i\in\mathcal{L}$
+
+（2） $\forall s\in\mathcal{L}$ 有 $s\in L$ ，进一步有 $(\lnot s)\in L$ ，最终有 $(\lnot s)\in\mathcal{L}$
+
+（3） $\forall \{s_1,s_2\}\subset\mathcal{L}$ 有 $\{s_1,s_2\}\subset L$ ，则有 $(s_1\to s_2)\in L$ 即 $(s_1\to s_2)\in\mathcal{L{$   
+
+综上所述 $\mathcal{L}$ 是准语言
+
+****** 是最小准语言
+
+若存在 $L\subset\Sigma^*$ 比 $\mathcal{L}$ 小，即存在 $x\in L$ 满足 $x\not\in\mathcal{L}$ 显然与 $\mathcal{L}$ 定义矛盾
+
+*** 命题表达式<<MK51>>
+
+对于任意 $s\in\mathcal{L}_0$ 称 $s$ 是 $\Sigma$ 上的命题表达式
+
+根据[[MK392][基本符号集]]，对于任意 $s=<s_1,...,s_n>\in\Sigma^*$ 可简化表述为 $s=s_1...s_n$ ，且 $s[i]=s_i$ 为有序组 $s$ 上第 $i$ 个元素
+
+进一步定义 $|s|=|<s_1,...,s_n>|=n$ 为命题表达式的长度
+
+**** 相等<<MK399>>
+
+对于任意 $\{s_1,s_2\}\subset\mathcal{L}_0$ 若满足 $|s_1|=|s_2|\land\forall i<|s_1|\rightarrow s_1[i]=s_2[i]$
+
+则称表达式 $s_1,s_2$ 相等
+
+**** 定理1（可读性）<<MK397>>
+
+任意命题表达式 $s\in\mathcal{L}$ 以下三项中有且仅有一项成立：
+
+（1） 存在 $a_i\in A$ 满足 $s=a_i$ ，其中 $A$ 是[[MK55][命题符号]]
+
+（2） 存在 $\phi\in\mathcal{L}$ 满足 $s=(\lnot \phi)$
+
+（3） 存在 $\{\phi_1,\phi_2\}\subset\mathcal{L}_0$ 满足 $s=(\phi_1\to\phi_2)$
+
+***** 证明
+
+****** 必在三种情况中<<MK396>>
+
+假设存在 $s\in\mathcal{L}_0$ 满足不在三种情况中，则根据[[MK393][准语言定义]]可得 $\mathcal{L}_0-\{s\}$ 亦为准语言
+
+显然与[[MK395][定理]]矛盾，故假设不成立
+
+****** 三种情况互斥
+
+满足条件（1）时 $s[1]=a_i$ 对于任意 $s'$ 满足条件（2）或（3）根据定义必有 $s'[1]=($
+
+满足条件（2）时 $s[2]=\lnot$ 对于任意 $s'$ 满足条件（1）有 $|s'|=1$ 显然不满足，对于任意 $s'=(\phi_1\to\phi_2)$
+
+可得 $\phi_1\in\mathcal{L}_0$ 即 $s[2]=\phi_1[1]$ 根据[[MK396][之前证明]]可得 $\phi_1$ 必在三种情况中，故 $\phi_1[1]$ 仅可能为 $($ 或 $a_i$
+
+综上所述当 $s$ 满足（2）时与其他两种情况互斥
+
+满足条件（3）是由于上述证明可得 $s$ 不可能满足条件（1）（2）
+
+**** 定理2（前缀引理）<<MK399>>
+
+对于任意 $s\in\mathcal{L}_0$ 设 $s=<\sigma_1,...,\sigma_n>$ 其中 $\sigma_i\in\Sigma$ 定义 $s_k=<\sigma_1,...,\sigma_k>,k<n$
+
+则有 $s_k\not\in\mathcal{L}_0$
+
+***** 证明
+
+根据[[MK397][可读性]]有下列情况，分别证明后可得结论
+
+****** $s=a_i$
+
+显然后缀为 $\varnothing$ ，根据[[MK395][定理]]易证 $\varnothing\not\in\mathcal{L}_0$
+
+****** $s=(\lnot\phi)$ 或 $s=(\phi_1\to\phi_2)$
+
+由于是前缀且 $s[1]=($ 则显然 $s_k\ne a_i$ 。又根据[[MK426][定理5]]可得任意 $s_k$ 均有 $s_k[1],s_k[|s_k|]$ 之间 $(,)$ 个数不相等
+
+又根据[[MK426][定理5]]可得任意 $s'\in\mathcal{L}_0$ 不为 $a_i$ 形式的均有 $s'[0],s'[|s'|]$ 之间的 $(,)$ 个数一致
+
+故可得 $s_k\not\in\mathcal{L}_0$
+
+**** 定理3（后缀引理）<<MK430>>
+
+对于任意 $s\in\mathcal{L}_0$ 设 $s=<\sigma_1,...,\sigma_n>$ 其中 $\sigma_i\in\Sigma$ 定义 $s_k=<\sigma_{k},...,\sigma_n>,1<k\leq n$
+
+则有 $s_k\not\in\mathcal{L}_0$
+
+***** 证明
+
+根据[[MK397][可读性]]有下列情况，分别证明后可得结论
+
+****** $s=a_i$
+
+显然后缀为 $\varnothing$ ，根据[[MK395][定理]]易证 $\varnothing\not\in\mathcal{L}_0$
+
+****** $s=(\lnot\phi)$ 或 $s=(\phi_1\to\phi_2)$
+
+由于是后缀且 $s[|s|]=)$ 则显然 $s_k\ne a_i$ 。又根据[[MK426][定理5]]可得任意 $s_k$ 均有 $s_k[0],s_k[|s_k|]$ 之间 $(,)$ 个数不相等
+
+又根据[[MK426][定理5]]可得任意 $s'\in\mathcal{L}_0$ 不为 $a_i$ 形式的均有 $s'[0],s'[|s'|]$ 之间的 $(,)$ 个数一致
+
+故可得 $s_k\not\in\mathcal{L}_0$
+
+**** 定理4（唯一可读性）<<MK402>>
+
+任意命题表达式 $s\in\mathcal{L}_0$ 以下三项中有且仅有一项成立：
+
+（1） 存在唯一的 $a_i\in A$ 满足 $s=a_i$ ，其中 $A$ 是[[MK55][命题符号]]
+
+（2） 存在唯一的 $\phi\in\mathcal{L}$ 满足 $s=(\lnot \phi)$
+
+（3） 存在唯一一组 $\{\phi_1,\phi_2\}\subset\mathcal{L}_0$ 满足 $s=(\phi_1\to\phi_2)$
+
+***** 证明
+
+对于任意 $s\in\mathcal{L}_0$ 时，根据[[MK397][可读性]]定理可得：
+
+（1） 若 $s=a_i$ 显然成立
+
+（2） 若 $s=(\lnot\phi)$ 若存在 $\phi'\ne\phi$ 满足 $s=(\lnot\phi')$ 则根据[[MK399][相等]]定义必有 $\phi'[i]\ne\phi[i]$ 或 $|\phi|\ne|\phi'|$
+
+     若 $|\phi|\ne|\phi'|$ 则显然有 $|(\lnot\phi)|\ne|(\lnot\phi')|$ 显然 $s=(\lnot\phi')$ 不成立
+
+     若 $|\phi|=|\phi'|\land\phi'[i]\ne\phi[i]$ 则有 $s[i+2]=\phi'(i)=\phi[i]$ 显然矛盾，故不成立
+
+（3） 若 $s=(\phi_1\to\phi_2)$ 若存在 $\{\psi_1,\psi_2\}\subset\mathcal{L}_0$ 满足 $s=(\psi_1\to\psi_2)\land(\psi_1\ne\phi_1\lor\psi_2\ne\phi_2)$ 则
+
+     a. 若 $|\phi_1|+|\phi_2|\ne|\psi_1|+|\psi_2|$ 则有 $|(\psi_1\to\psi_2)|\ne|(\phi_1\to\phi_2)|$ 显然不成立
+
+     b. 若 $|\phi_1|=|\phi_2|\land|\psi_1|=|\psi_2|$ 则必有 $\phi_1[i]\ne\psi_1[i]\lor\phi_2[i]\ne\psi_2[i]$
+
+        即有 $s[1+i]\ne s[1+i]\lor s[2+|\phi_2|+i]\nes[2+|\phi_2|+i]$ 显然不可能
+
+     c. 若 $|\phi_1|+|\phi_2|=|\psi_1|+|\psi_2|$ 且 b 不成立，则必有 $\psi_1,\phi_1$ 其中一个是另一个的真前缀
+
+        根据[[MK399][前缀引理]]可得若成立，则必有 $\phi_1\not\in\mathcal{L}_0\lor\psi_1\not\in\mathcal{L}_0$ 显然与[[MK397][可读性]]矛盾
+
+综上所述，对于任意 $s\in\mathcal{L}_0$ 唯一可读性定理成立
+
+**** 定理5<<MK426>>
+
+任意命题表达式 $s\in\mathcal{L}_0$ 根据[[MK397][可读性]]若有形式 $(\lnot\phi)$ 或 $(\phi_1\to\phi_2)$ 则：
+
+（1） $s[1]=($ 和 $s[|s|]=)$ 之间的 $($ 和 $)$ 个数相等
+
+（2） 任意 $s[i],i\ne|s|$ 与 $s[1]$ 之间的 $($ 的个数大于 $)$ 的个数
+
+（3） 任意 $s[i],i\ne0$ 与 $s[|s|]$ 之间的 $($ 的个数小于 $)$ 的个数
+
+***** 证明
+
+根据以下证明，以及任意 $s\in\mathcal{L}_0$ 均有 $|s|<\infty$ 基于数学归纳法证得
+
+****** $|s|$ 最短形式<<MK429>>
+
+当 $\phi,\phi_1,\phi_2$ 是 $(\lnot a_i)$ 或 $(a_i\to a_j)$ 的形式时，则易证 $s=(\lnot\phi)$ 或 $s=(\phi_1\to\phi_2)$
+
+时显然结论（1）（2）（3）均成立
+
+****** 归纳假设
+
+假设对于任意 $s\in\mathcal{L}_0$ 若 $|s|<n$ 则命题成立，满足（1）（2）（3）
+
+****** 长度为 $n$ 时
+
+对于任意 $s\in\mathcal{L}_0$ 若 $|s|=n$ 且 $s$ 不为最短形式时，显然 $|\phi|<n$ 故根据归纳假设 $\phi$ 命题成立
+
+且 $\phi\ne a_i$ ，则有：
+
+由于满足（1）故 $\phi[1],\phi[|\phi|]$ 之间的 $(,)$ 个数相等，设均为 $n$ ，又由于 $\phi[1]=(,\phi[|\phi|]=)$
+
+故 $s[1]=($ 和 $s[|s|]=)$ 之间的 $($ 和 $)$ 个数均为 $n+1$ 即相等
+
+由于满足（2）且显然任意 $s[i]=)\land i\ne|s|$ 均在 $\phi$ 中
+
+若 $i=|s|-1$ 即 $s[i]\to\phi[|\phi|]$ ，则由于（1） $\phi[0],\phi[|\phi|]$ 之间的 $(,)$ 均为 $n$ 显然 $s[0],s[i]$ 之间 $($ 个数比 $)$ 多 $1$
+
+若上述不成立，则根据（2） $\phi[1]$ 之间 $($ 个数大于 $)$ 设为 $m>n$ 显然 $s[1],s[i]$ 之间 $($ 个数为 $m+1$ ， $)$ 仍为 $n$
+
+显然 $m+1>n$ 则命题成立。同理可证（3）
+ 
+*** 子表达式<<MK101>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\phi\in\mathcal{L}_0$ 若对于 $\psi\in\mathcal{L}_0$ 存在 $1\leq n\leq|\phi|$ 满足对于任意 $1\leq i\leq|\psi|$ 均有 $\psi[i]=\phi[n+i]$
+
+则称 $\psi$ 是 $\phi$ 的子表达式
+
+**** 定理1<<MK431>>
+
+任意命题表达式 $s\in\mathcal{L}_0$ 有 $|s|>1$
+
+（1） 任意 $s[i]=($ 有且仅有唯一 $s[j]=),j>i$ 满足 $s[i],s[j]$ 之前的 $(,)$ 个数相等
+
+（2） 任意 $s[i]=)$ 有且仅有唯一 $s[j]=(,j<i$ 满足 $s[i],s[j]$ 之前的 $(,)$ 个数相等
+
+（3） $s[i],s[j]$ 以及其间的子串 $s'$ 有 $s'\in\mathcal{L}_0$
+
+***** 证明
+
+根据以下证明，以及任意 $s\in\mathcal{L}_0$ 均有 $|s|<\infty$ 基于数学归纳法证得
+
+****** 最短形式
+
+由于 $|s|>1$ 故根据[[MK402][唯一可读]]可得 $s\ne a_i$ 则仅有 $s=(\lnot a_i)$ 或 $s=(a_i\to a_j)$ 两种形式
+
+显然此时（1）（2）（3）均满足
+
+****** 归纳假设
+
+对于任意 $s\in\mathcal{L}_0$ 且 $|s|<n$ 结论（1）（2）（3）均成立
+
+****** 任意长度
+
+对于任意 $s\in\mathcal{L}_0$ 且 $|s|=n>3$ 根据[[MK402][唯一可读]]有且仅有 $s=(\lnot\phi)$ 或 $s=(\phi_1\to \phi_2)$ 两种形式
+
+此时对于任意 $\phi,\phi_1,\phi_2$ 中的 $(,)$ 由于 $\max(\{|\phi|,|\phi_1|,|\phi_2|\})<n$ 则根据归纳假设（1）（2）（3）成立
+
+对于 $s[1]=($ 根据[[MK426][定理5]]可得有且仅有 $s[|s|]$ 满足 $s[0]=($ 和 $s[|s|]=)$ 之间的 $($ 和 $)$ 个数相等
+
+当 $s=(\lnot\phi)$ 时对于任意 $\phi[i]=($ 或 $\phi[i]=)$ 由于 $|\phi|<n$ 故根据归纳假设结论成立
+
+**** 定理2<<MK432>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\phi\in\mathcal{L}_0$ 以及 $\psi$ 是 $\phi$ 的子表达式，则
+
+（1） 若 $\psi\ne\phi$ 则 $\phi$ 必为 $\phi=(\lnot s_0)$ 或 $\phi=(s_1\to s_2)$ 的形式
+
+（2） 若 $\phi=(\lnot s_0)$ 且 $\psi\ne s_0$ 则 $\psi$ 是 $s_0$ 的子表达式；
+
+     若 $\phi=(s_1\to s_2)$ 且 $\psi\ne s_1\land\psi\ne s_2$ 则有 $\psi$ 是 $s_1$ 的子表达式或 $\psi$ 是 $s_2$ 的子表达式
+     
+***** 证明
+
+****** 证明（1）
+
+若 $\psi\ne\phi$ 根据[[MK402][唯一可读性]]三种必成立其一，若 $\phi=a_i$ 显然无法拆分，故必不成立
+
+****** 证明（2）
+
+******* $\phi=(\lnot s_0),s_0\in\mathcal{L}_0$ 形式
+
+根据[[MK399][前缀引理]]以及[[MK430][后缀引理]]可得 $\psi$ 不包含 $\phi[1]$ 以及 $\phi[|\phi|]$ ，故 $\psi$ 必为 $\lnot s_0$ 的子串
+
+根据[[MK402][唯一可读性]]以及 $s_0\in\mathcal{L}_0$ 可得对于任意 $\psi\in\mathcal{L}_0$ 均有 $\psi[1]\ne\lnot$ 故可得 $\psi$ 必为 $s_0$ 的子串
+
+******* $\phi=(s_1\to s_2),\{s_1,s_2\}\subset\mathcal{L}_0$ 形式
+
+根据[[MK399][前缀引理]]以及[[MK430][后缀引理]]可得 $\psi$ 不包含 $\phi[1]$ 以及 $\phi[|\phi|]$ ，故 $\psi$ 必为 $s_1\to s_2$ 的子串
+
+显然当且仅当 $\psi[1]$ 在 $s_1$ 中且 $\psi[|\psi|]$ 在 $s_2$ 中时 $\psi$ 不是 $s_1$ 或 $s_2$ 的子表达式，假设成立
+
+显然 $\psi\ne a_i$ 故根据[[MK402][唯一可读性]]可得 $\psi$ 有且仅有 $(\lnot\tau)$ 或 $(\tau_1\to\tau_2)$ 两种形式
+
+设 $\phi[0]=($ 位于 $\phi[i]$ ，则根据[[MK431][定理1]]可得 $\phi$ 中存在唯一 $\phi[j]=),j>i$ 满足 $<\phi[i],...,\phi[j]>\in\mathcal{L}_0$
+
+由于唯一且 $\psi$ 是[[MK101][子表达式]]，则有 $<\phi[i],...,\phi[j]>=\psi$ 根据假设 $\phi[j]$ 位于 $s_2$ 中
+
+由于假设 $\phi[i]$ 位于 $s_1$ 中，且 $s_1\in\mathcal{L}_0$ 同理根据[[MK431][定理1]] $s_1$ 中亦存在对应的 $)$
+
+综上所述，若 $\psi[|\psi|]$ 位于 $s_2$ 中，则存在两个 $)$ 与之对应满足[[MK431][定理1]]，显然与定理1描述的唯一性矛盾
+
+故假设不成立。不存在子表达式 $\psi$ 满足 $\psi[1]$ 在 $s_1$ 中且 $\psi[|\psi|]$ 在 $s_2$ 中
+
+即子表达式 $\psi$ 要么存在与 $s_1$ 中，要么存在于 $s_2$ 中
+
+** 真假赋值<<MK401>>
+
+一个关于[[MK394][命题语言]] $\mathcal{L}_0$ 的真假赋值，定义为[[MK194][函数]] $v:A\to\{T,F\}$ 其中 $A$ 是[[MK55][原子命题]]
+
+定义 $\mathcal{L}_0$ 的所有真假赋值集合为 $V(\mathcal{L}_0)$
+
+*** 扩展函数<<MK52>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 及其[[MK401][真假赋值]] $v$ ，则有 $\bar{v}$ 定义为
+
+（1） $v(a_i)=\bar{v}(a_i)$
+
+（2） $\bar{v}(<(,\lnot,\phi,)>)=H_{\lnot}(\bar{v}(\phi))$ 其中 $\phi\in\mathcal{L}_0$ 且 $H_{\lnot}$ 是[[MK402][逻辑函数]]
+
+（3） $\varphi(<(,\phi_1,\to,\phi_2,)>)=H_{\to}(\bar{v}(\phi_1),\bar{v}(\phi_2))$ 其中 $\{\phi_1,\phi_2\}\subset\mathcal{L}_0$ 且 $H_{\to}$ 是[[MK402][逻辑函数]]
+
+则 $\bar{v}$ 被定义为表达式真值
+
+**** 定理1（唯一扩张性）<<MK404>>
+
+$\bar{v}$ 是 $\mathcal{L}_0$ 到 $\{T,F\}$ 的[[MK194][函数]]，且定义域为 $\mathcal{L}_0$
+
+***** 证明<<MK403>>
+
+根据[[MK402][唯一可读性]]可得对于任意 $s\in\mathcal{L}_0$ 均有条件中的三种形式，故显然 $\bar{v}$ 定义域为 $\mathcal{L}_0$
+
+显然当 $|s|=1$ 时必有 $s=a_i$ 此时 $\bar{v}(s)=v(s)$ 且 $v$ 是[[MK194][函数]]，故 $\bar{v}(s)$ 真值唯一
+
+定义 *归纳假设* 当 $|s|=n$ 时对于任意 $|s'|<n\land s'\in\mathcal{L}_0$ 均有函数 $\bar{v}(s')$ 满足定理条件
+
+当 $s=(\lnot\phi)$ 时有 $|\phi|<n$ 故有 $\bar{v}(\phi)$ 唯一，又根据唯一可读性可得 $\phi$ 唯一，故有 $\bar{v}(s)$ 唯一
+
+同理可证当 $s=(\phi_1\to\phi_2)$ 时亦有 $\bar{v}(s)$ 唯一
+
+则根据任意 $s\in\mathcal{L}_0$ 均有 $|s|<\infty$ 以及数学归纳法可得对于任意 $s\in\mathcal{L}_0$ ：
+
+（1） 均存在 $\bar{v}(s)$
+
+（2） $\bar{v}(s)$ 唯一
+
+即 $\bar{v}$ 是 $\mathcal{L}_0$ 到 $\{T,F\}$ 的[[MK194][函数]]
+
+***** 推论1（排中律）<<MK53>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 的[[MK401][真假赋值]] $v$ 及其[[MK52][表达式真值]] $\bar{v}$ 对任意 $s\in\mathcal{L}_0$ 的值唯一
+
+即 $\bar{v}(s)$ 非真即假
+
+****** 证明
+
+根据[[MK404][定理1]]可得 $\bar{v}$ 是[[MK194][函数]]，则结果唯一
+
+***** 推论2
+
+素数有无限个
+
+****** 证明
+
+命题为素数有无限个，若命题正确，则素数有有限个。假设 $a_1,...,a_n$ 为所有素数，显然 $2$ 是质数，故 $n\geq 2$
+
+定义 $x=\prod_{i=1}^n a_i+1$ 则有 $x$ 被任意 $a_i$ 除均余 $1$ 。若 $x$ 是素数，则假设不成立。
+
+若 $x$ 不是素数，由于 $x>1$ ,则 $x$ 可分解成质数的乘积，由于 $a_1,..,a_n$ 均不是其质因子
+
+故存在其他质数可以整除 $x$ 假设亦不成立
+
+综上所述命题为素数有无限个命题为假，根据排中律素数有无限个证明命题为真。
+
+**** 定理2（局部确定性）
+
+设 $s\in\mathcal{L}_0$ 是[[MK394][命题语言]]，假设 $a_1,...,a_m$ 是 $s$ 中出现的所有[[MK55][原子命题]]
+
+则若[[MK401][真假赋值]] $u,v$ 满足 $u(a_i)=v(a_i),1\leq i\leq m$ 则有 $u(s)=v(s)$
+
+***** 证明
+
+当 $|s|=1$ 时显然成立，当 $|s|=n>1$ 时根据[[MK402][唯一可读性]]可用[[MK403][类似归纳法]]证明
+
+*** 可满足性<<MK406>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有[[MK401][真假赋值]] $v$ 及其[[MK52][扩展函数]] $\bar{v}$ 若：
+
+（1） 对于任意 $s\in\mathcal{L}_0$ 有 $\bar{v}(s)=T$ 则称 $v$ 满足 $s$ 或 $s$ 被 $v$ 满足
+
+（2） 对于任意 $S\subset\mathcal{L}_0$ 若有 $\forall s\in S\rightarrow \bar{v}(s)=T$ 则称则称 $v$ 满足 $S$ 或 $S$ 被 $v$ 满足
+
+则对于集合 $S\subset\mathcal{L}_0$ 若存在真假赋值 $v$ 满足 $S$ ，则称 $S$ 是可满足的
 
 **** 重言式（永真式）<<MK70>>
 
-若命题公式 $A$ 对所有[[MK67][命题变项]]赋值，[[MK52][真值]]都为 $1$ ，则称命题公式 $A$ 为重言式。
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $s\in\mathcal{L}_0$ 满足 $\forall v\in V(\mathcal{L}_0)\rightarrow \bar{v}=T$ 其中 $v\in V(\mathcal{L}_0)$ 是[[MK401][真假赋值]] $\bar{v}$ 是其[[MK52][表达式真值]]
+
+则称 $s$ 是重言式，例 $(\phi\to\phi)$
 
 **** 矛盾式（永假式）
 
-若命题公式 $A$ 对所有[[MK67][命题变项]]赋值，[[MK52][真值]]都为 $0$ ，则称命题公式 $A$ 为矛盾式。
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $s\in\mathcal{L}_0$ 满足 $\forall v\in V(\mathcal{L}_0)\rightarrow \bar{v}=F$ 其中 $v\in V(\mathcal{L}_0)$ 是[[MK401][真假赋值]] $\bar{v}$ 是其[[MK52][表达式真值]]
 
-**** 可满足式
+则称 $s$ 是矛盾式，例 $(\lnot(\phi\to\phi))$
 
-若命题公式 $A$ 至少对一个[[MK67][命题变项]]赋值，使得[[MK52][真值]]为 $1$ ，则称命题公式 $A$ 为可满足式。[[MK70][永真式]]是可满足时。
+*** 逻辑结论<<MK86>>
 
-*** 命题公式关系
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $s\in\mathcal{L}_0$ 以及 $S\subset\mathcal{L}_0$
 
-**** 逻辑等价<<MK71>>
+若满足对于任意[[MK401][真假赋值]] $v\in V(\mathcal{L}_0)$ 若有 $v$ [[MK406][满足]] $S$ 则有 $v$ 满足 $s$
 
-假设有命题公式 $A$ 和 $B$ ，其满足对于各自[[MK67][命题变项]]的[[MK52][真值]]计算结果均有 $A\leftrightarrow B=1$ 时便称两个命题公式逻辑等价，记作 $A{|\!\!\!=\!\!\!|}B$ 。
+则称 $s$ 是 $S$ 的逻辑结论，记作 $S\vDash s$ 。其中 $v\in V(\mathcal{L}_0)$ 是[[MK401][真假赋值]]
 
-注：逻辑等价符号 ${|\!\!\!=\!\!\!|}$ 仅表示两个公式之间的关系，无真值计算。
+**** 逻辑结论举例<<MK87>>
 
-***** 逻辑等价式举例<<MK72>>
+***** I1
 
-****** 双重否定<<MK73>>
+\begin{aligned}
+\{A\}\vDash A\lor B
+\end{aligned}
+
+***** 简化规则<<MK88>>
+
+\begin{aligned}
+\{(A\land B)\}\vDash A\\
+\{(A\land B)\}\vDash B\\
+\end{aligned}
+
+***** 添加规则
+
+\begin{aligned}
+\{A\}&\vDash A\lor B\\
+\{B\}&\vDash A\lor B\\
+\end{aligned}
+
+***** 二难推论
+
+\begin{aligned}
+\{(A\lor B)\land(A\rightarrow C)\land(B\rightarrow C)\}\vDash C\\
+\end{aligned}
+
+***** 假言推理
+
+\begin{aligned}
+\{(A\land (A\rightarrow B))\}\vDash B\\
+\end{aligned}
+
+****** 证明
+
+\begin{tabular}{|l|l|l|l|l|l|} 
+\hline
+A & B & A\rightarrow B & A\land (A\rightarrow B)\\
+\hline
+0&0&1&0\\
+1&0&0&0\\
+0&1&1&0\\
+1&1&1&1\\
+\hline
+\end{tabular}
+
+故当 $\bar{v}((A\land (A\rightarrow B)))=T$ 时必有 $\bar{v}(B)=T$
+
+***** 否定后件
+
+\begin{aligned}
+\{((A\rightarrow B)\land (\lnot B))\}\vDash(\lnot A)\\
+\end{aligned}
+
+****** 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & A\rightarrow B & \lnot B & (A\rightarrow B)\land \lnot B & \lnot A\\
+\hline
+0&0&1&1&1&1\\
+1&0&0&1&0&0\\
+0&1&1&0&0&1\\
+1&1&1&0&0&0\\
+\hline
+\end{tabular}
+
+故当 $\bar{v}(((A\rightarrow B)\land (0\lnot B)))=T$ 时必有 $\bar{v}((\lnot A))=T$
+
+***** 选言三段论
+
+\begin{aligned}
+\{((\lnot A)\land(A\lor B))\}&\vDash B\\
+\end{aligned}
+
+****** 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline
+A & B & \lnot A & A \lor B & \lnot A\land (A\lor B)\\
+\hline
+0&0&1&0&0\\
+1&0&0&1&0\\
+0&1&1&1&1\\
+1&1&0&1&0\\
+\hline
+\end{tabular}
+
+故当 $\bar{v}(((\lnot A)\land(A\lor B)))=T$ 时必有 $\bar{v}(B)=T$
+
+***** 假言三段论（蕴含的传递性）<<MK89>>
+
+\begin{aligned}
+\{((A\rightarrow B)\land(B\rightarrow C))\}&\vDash(A\rightarrow C)\\
+\end{aligned}
+
+****** 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & A\rightarrow B & B\rightarrow C & (A\rightarrow B)\land(B\rightarrow C) & A\rightarrow C\\
+\hline
+0&0&0&1&1&1&1\\
+1&0&0&0&1&0&0\\
+0&1&0&1&0&0&1\\
+0&0&1&1&1&1&1\\
+1&1&0&1&0&0&0\\
+1&0&1&0&1&0&1\\
+0&1&1&1&1&1&1\\
+1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+故当 $\bar{v}(((A\rightarrow B)\land(B\rightarrow C)))=T$ 时必有 $\bar{v}((A\rightarrow C))=T$
+
+***** I7
+
+\begin{aligned}
+\{((A\rightarrow B)\land(C\rightarrow D))\}\vDash((A\land C)\rightarrow (B\land D))\\
+\end{aligned}
+
+****** 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & D & A\rightarrow B & C\rightarrow D & (A\rightarrow B)\land(C\rightarrow D) & A\land C & B\land D & (A\land C)\rightarrow (B\land D)\\
+\hline
+0&0&0&0&1&1&1&0&0&1\\
+1&0&0&0&0&1&0&0&0&1\\
+0&1&0&0&1&1&1&0&0&1\\
+0&0&1&0&1&0&0&0&0&1\\
+0&0&0&1&1&1&1&0&0&1\\
+1&1&0&0&1&1&1&0&0&1\\
+1&0&1&0&0&0&0&1&0&0\\
+1&0&0&1&0&1&0&0&0&1\\
+0&1&1&0&1&0&0&0&0&1\\
+0&1&0&1&1&1&1&0&1&1\\
+0&0&1&1&1&1&1&0&0&1\\
+1&1&1&0&1&0&0&1&0&0\\
+1&1&0&1&1&1&1&0&1&1\\
+1&0&1&1&0&1&0&1&0&1\\
+0&1&1&1&1&1&1&0&1&1\\
+1&1&1&1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+故当 $\bar{v}(((A\rightarrow B)\land(C\rightarrow D)))=T$ 时必有 $\bar{v}(((A\land C)\rightarrow (B\land D)))=T$
+
+***** I8（双向蕴含传递）
+
+\begin{aligned}
+\{((A\leftrightarrow B)\land(B\leftrightarrow C))\}\vDash(A\leftrightarrow C)\\
+\end{aligned}
+
+****** 证明
+
+\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline
+A & B & C & A\leftrightarrow B & B\leftrightarrow C & (A\leftrightarrow B)\land(B\leftrightarrow C) & A\leftrightarrow C\\
+\hline
+0&0&0&1&1&1&1\\
+1&0&0&0&1&0&0\\
+0&1&0&0&0&0&1\\
+0&0&1&1&0&0&0\\
+1&1&0&1&0&0&0\\
+1&0&1&0&0&0&1\\
+0&1&1&0&1&0&0\\
+1&1&1&1&1&1&1\\
+\hline
+\end{tabular}
+
+故当 $\bar{v}(((A\leftrightarrow B)\land(B\leftrightarrow C)))=T$ 时必有 $\bar{v}((A\leftrightarrow C))=T$
+
+*** 逻辑等价<<MK71>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\phi\in\mathcal{L}_0,\psi\in\mathcal{L}_0$ 若对于任意[[MK52][扩展函数]]，若有 $\bar{v}(\phi),\bar{v}(\psi)$ 有意义，则 $\bar{v}(\phi)=\bar{v}(\psi)$
+
+则称[[MK51][命题表达式]] $\phi,\psi$ 逻辑等价，记作 $\phi\sim\psi$
+
+**** 定理
+
+***** 定理1<<MK90>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 的逻辑等价是[[MK176][等价关系]]
+
+****** 证明
+
+显然对于任意 $\varphi\in\mathcal{L}_0,\phi\in\mathcal{L}_0,\psi\in\mathcal{L}_0$ 以及任意 $\bar{v}(\varphi),\bar{v}(\phi),\bar{v}(\psi)$ 有意义的[[MK52][扩展函数]] $\bar{v}$ 有
+
+（1） $\bar{v}(\phi)=\bar{v}(\phi)$ 即 $\phi\sim\phi$ [[MK168][自反性]]
+
+（2） 若 $\bar{v}(\phi)=\bar{v}(\psi)$ 则 $\bar{v}(\psi)=\bar{v}(\phi)$ 即 $\phi\sim\psi\rightarrow\psi\sim\phi$ [[MK170][对称性]]
+
+（3） 若 $\bar{v}(\varphi)=\bar{v}(\phi),\bar{v}(\phi)=\bar{v}(\psi)$ 则 $\varphi\sim\phi\land\phi\sim\psi\rightarrow\varphi\sim\psi$ 即[[MK172][传递性]]
+
+***** 等价替换定理<<MK91>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\phi\in\mathcal{L}_0$ 存在 $\eta\in\mathcal{L}_0$ 是 $\phi$ 的[[MK101][子表达式]]，若存在 $\psi\sim\eta,\psi\in\mathcal{L}_0$
+
+则定义 $\phi'$ 是 $\phi$ 将 $\eta$ 替换为 $\psi$ 后的符号串，则有 $\phi'\in\mathcal{L}_0$ 以及 $\phi\sim\phi'$
+
+****** 证明
+
+对于任意 $\phi$ 满足 $\eta$ 是 $\phi$ 的子表达式且 $\eta\sim\psi$ ，根据[[MK402][唯一可读性]]以及[[MK432][定理2]]易证依次展开 $\phi$ 可寻找子表达式 $\eta$
+
+又由于 $|\phi|<\infty$ 故展开次数 $n<\infty$ 则根据以下证明以及数学归纳法可得结论
+
+******* 一次展开<<MK433>>
+
+对于任意 $\phi$ 满足 $\eta$ 是 $\phi$ 的子表达式，根据[[MK402][唯一可读性]]，若满足如下情况
+
+（1） $\phi=\eta$ 显然对于任意[[MK52][扩展函数]]均有 $\bar{v}(\phi)=\bar{v}(\eta)=\bar{v}(\psi)$ 
+
+（2） $\phi=(\lnot\eta)$ 则对于任意[[MK52][扩展函数]]均有 $\bar{v}(\phi)=H_\lnot(\bar{v}(eta))=H_\lnot(\bar{v}(\psi))$
+
+（3） $\phi=(\eta\to\tau)$ 则对于任意[[MK52][扩展函数]]均有 $\bar{v}(\phi)=H_\to(\bar{v}(eta),\bar{v}(\tau))=H_\lnot(\bar{v}(\psi),\bar{v}(\tau))$
+
+（4） $\phi=(\eta\to\phi),\phi=(\eta\to\eta)$ 与（3）同理 
+
+综上所述，上述命题表达式 $\phi$ 替换的 $\phi'$ 后对于任意扩展函数均有 $\bar{v}(\phi)=\bar{v}(\phi')$ ，即 $\phi\sim\phi'$
+
+******* 归纳假设
+
+对于任意 $\phi$ 满足 $\eta$ 是 $\phi$ 的子表达式，且到达 $\eta$ 需要的展开次数小于 $n$ ，则定理成立
+
+******* 任意情况
+
+对于任意 $\phi\in\mathcal{L}_0$ 满足 $\eta$ 是 $\phi$ 的子表达式，到达 $\eta$ 需要的展开次数为 $n>1$
+
+根据[[MK402][唯一可读性]]可得 $\phi=a_i$ 时显然成立，当 $\phi=(\lnot\tau)$ 或 $\phi=(\tau_1\to\tau_2)$ 时
+
+由于展开次数 $n>1$ 可得 $\eta\ne\tau\land\eta\ne\tau_1\land\eta\ne\tau_2$ ，则根据[[MK432][定理2]]可得 $\eta$ 必为 $\tau_1,\tau_2,\tau$ 的[[MK101][子表达式]]
+
+显然 $\tau_1,\tau_2,\tau$ 到 $\eta$ 的展开次数为 $n-1$ 定义替换 $\eta$ 后的表达式为 $\tau_1',\tau_2',\tau'$
+
+根据归纳假设对于任意扩展函数 $\bar{v}(\tau)=\bar{v}(\tau'),\bar{v}(\tau_1)=\bar{v}(\tau_1'),\bar{v}(\tau_2)=\bar{v}(\tau_2')$
+
+又[[MK433][同理可证]] $\phi'=(\lnot\tau')$ 或 $\phi'=(\tau'_1\to\tau'_2)$ 均有 $\bar{v}(\phi)=\bar{v}(\phi')$ ，即 $\phi\sim\phi'$
+
+**** 逻辑等价式举例<<MK72>>
+
+***** 双重否定<<MK73>>
 
 $\lnot\lnot A{|\!\!\!=\!\!\!|}A$
 
-****** 幂等律<<MK74>>
+***** 幂等律<<MK74>>
 
 $A\lor A{|\!\!\!=\!\!\!|}A,A\land A{|\!\!\!=\!\!\!|}A$
 
-****** 交换律<<MK75>>
+***** 交换律<<MK75>>
 
 \begin{aligned}
 A\lor B&{|\!\!\!=\!\!\!|}B\lor A\\
 A\land B&{|\!\!\!=\!\!\!|}B\land A
 \end{aligned}
 
-****** 结合律<<MK76>>
+***** 结合律<<MK76>>
 
 \begin{aligned}
 (A\lor B)\lor C&{|\!\!\!=\!\!\!|}A\lor (B\lor C)\\
 (A\land B)\land C&{|\!\!\!=\!\!\!|}A\land (B\land C)
 \end{aligned}
 
-******* 证明
+****** 证明
 
 或[[MK52][真值]]表
 
@@ -1580,14 +2151,14 @@ A & B & C & A\land B & (A\land B)\land C & B\land C & A\land (B\land C)\\
 \hline
 \end{tabular}
 
-****** 分配率<<MK77>>
+***** 分配率<<MK77>>
 
 \begin{aligned}
 A\lor (B\land C)&{|\!\!\!=\!\!\!|}(A\lor B)\land (A\lor C)\\
 A\land (B\lor C)&{|\!\!\!=\!\!\!|}(A\land B)\lor (A\land C)
 \end{aligned}
 
-******* 证明
+****** 证明
 
 \begin{tabular}{|l|l|l|l|l|l|l|l|} 
 \hline
@@ -1619,14 +2190,14 @@ A & B & C & A\land B & A\land C & B\lor C & A\land (B\lor C) & (A\land B)\lor (A
 \hline
 \end{tabular}
 
-****** 德摩根律<<MK78>>
+***** 德摩根律<<MK78>>
 
 \begin{aligned}
 \lnot (A\lor B)&{|\!\!\!=\!\!\!|}\lnot A\land\lnot B\\
 \lnot (A\land B)&{|\!\!\!=\!\!\!|}\lnot A\lor\lnot B\\
 \end{aligned}
 
-******* 证明
+****** 证明
 
 \begin{tabular}{|l|l|l|l|l|l|l|l|} 
 \hline
@@ -1650,14 +2221,14 @@ A & B & \lnot A & \lnot B & A\land B & \lnot (A\land B) & \lnot A\lor\lnot B\\
 \hline
 \end{tabular}
 
-****** 吸收律
+***** 吸收律
 
 \begin{aligned}
 A\land (A\lor B)&{|\!\!\!=\!\!\!|}A\\
 A\lor (A\land B)&{|\!\!\!=\!\!\!|}A\\
 \end{aligned} 
 
-******* 证明
+****** 证明
 
         \begin{tabular}{|l|l|l|l|l|} 
 \hline
@@ -1681,13 +2252,13 @@ A & B & A \lor B & A\land(A\lor B)\\
 \hline
 \end{tabular}
 
-****** 蕴含等式<<MK79>>
+***** 蕴含等式<<MK79>>
 
 \begin{aligned}
 A\rightarrow B&{|\!\!\!=\!\!\!|}\lnot A\lor B
 \end{aligned}
 
-******* 证明 
+****** 证明 
 
 \begin{tabular}{|l|l|l|l|l|l|} 
 \hline
@@ -1700,13 +2271,13 @@ A & B & \lnot A & \lnot A\lor B & A\rightarrow B\\
 \hline
 \end{tabular}
 
-****** 等价等值式<<MK80>>
+***** 等价等值式<<MK80>>
 
 \begin{aligned}
 A\leftrightarrow B&{|\!\!\!=\!\!\!|}(B\rightarrow A)\land (A\rightarrow B){|\!\!\!=\!\!\!|}(\lnot A\lor B)\land(\lnot B\lor A)
 \end{aligned}
 
-******* 证明
+****** 证明
 
 \begin{tabular}{|l|l|l|l|l|l|l|l|} 
 \hline
@@ -1719,39 +2290,39 @@ A & B & \lnot A & \lnot B & \lnot A \lor B & \lnot B\lor A & (\lnot A\lor B)\lan
 \hline
 \end{tabular}
 
-****** 零率<<MK81>>
+***** 零率<<MK81>>
 
 \begin{aligned}
 A\lor 1&{|\!\!\!=\!\!\!|}1\\
 A\land 0&{|\!\!\!=\!\!\!|}0
 \end{aligned}
 
-****** 同一律
+***** 同一律
 
 \begin{aligned}
 A\land 1&{|\!\!\!=\!\!\!|}A\\
 A\lor 0&{|\!\!\!=\!\!\!|}A
 \end{aligned}
 
-****** 排中律<<MK82>>
+***** 排中律<<MK82>>
 
 \begin{aligned}
 A\lor \lnot A&{|\!\!\!=\!\!\!|}1\\
 \end{aligned}
 
-****** 矛盾律<<MK83>>
+***** 矛盾律<<MK83>>
 
 \begin{aligned}
 A\land \lnot A&{|\!\!\!=\!\!\!|}0\\
 \end{aligned}
 
-****** 蕴含关系
+***** 蕴含关系
 
 \begin{aligned}
 (A\land B) \rightarrow C&{|\!\!\!=\!\!\!|}A\rightarrow (B \rightarrow C)\\
 \end{aligned}
 
-******* 证明
+****** 证明
 
 \begin{tabular}{|l|l|l|l|l|l|l|} 
 \hline
@@ -1768,13 +2339,13 @@ A & B & C & A\land B & B\rightarrow C & (A\land B) \rightarrow C & A\rightarrow 
 \hline
 \end{tabular}
 
-****** 假言易位（逆否命题）<<MK84>>
+***** 假言易位（逆否命题）<<MK84>>
 
 \begin{aligned}
 A\rightarrow B&{|\!\!\!=\!\!\!|}\lnot B\rightarrow \lnot A\\
 \end{aligned}
 
-******* 证明
+****** 证明
 
 \begin{tabular}{|l|l|l|l|l|l|l|} 
 \hline
@@ -1787,13 +2358,13 @@ A & B & \lnot A & \lnot B & A\rightarrow B & \lnot B\rightarrow \lnot A\\
 \hline
 \end{tabular}
 
-****** 归谬论
+***** 归谬论
 
 \begin{aligned}
 (A\rightarrow B)\land(A\rightarrow\lnot B)&{|\!\!\!=\!\!\!|}\lnot A\\
 \end{aligned}
 
-******* 证明
+****** 证明
 
 \begin{tabular}{|l|l|l|l|l|l|l|} 
 \hline
@@ -1806,13 +2377,13 @@ A & B & A\rightarrow B & \lnot B & A\rightarrow \lnot B & (A\rightarrow B)\land(
 \hline
 \end{tabular}
 
-****** 等价等值式2<<MK85>>
+***** 等价等值式2<<MK85>>
 
 \begin{aligned}
 A\leftrightarrow B&{|\!\!\!=\!\!\!|}(A\land B)\lor(\lnot A\land\lnot B)\
 \end{aligned}
 
-******* 证明
+****** 证明
 
 \begin{tabular}{|l|l|l|l|l|l|l|l|} 
 \hline
@@ -1825,249 +2396,628 @@ A & B & A\land B & \lnot A & \lnot B & \lnot A \land \lnot B & (A\land B)\lor(\l
 \hline
 \end{tabular}
 
-****** 等价否定式
+***** 等价否定式
 
 \begin{aligned}
 A\leftrightarrow B&{|\!\!\!=\!\!\!|}\lnot B\leftrightarrow \lnot A\\
 \end{aligned}
 
-**** 逻辑蕴含（逻辑结果）<<MK86>>
+** 布尔函数（真值函数）<<MK407>>
 
-假设有命题公式 $A$ 和 $B$ ，其满足对于各自[[MK67][命题变项]]的[[MK52][真值]]计算结果均有 $A\rightarrow B=1$ 时便称两个命题公式逻辑蕴含，记作 $A{|\!\!\!=}B$ 。
+所有[[MK194][函数]] $v:\{T,F\}^n\to\{T,F\}$ 均被成为真值函数（布尔函数），其中 $\{T,F\}$ 是[[MK153][笛卡尔幂]]
 
-注：逻辑蕴含符号 ${|\!\!\!=}$ 仅表示两个公式之间的关系，无真值计算。
+*** 定理1（诱导）<<MK357>>
 
-***** 逻辑蕴含举例<<MK87>>
+[[MK394][命题语言]] $\mathcal{L}_0$ 对于任意 $s\in\mathcal{L}_0$ 设其[[MK55][原子命题]]均在[[MK151][有序组]] $<a_1,...,a_{n}>$ 中，
 
-****** I1
+则 $s$ 可诱导[[MK407][布尔函数]] $f_s:\{T,F\}^n\to\{T,F\}$ 满足对于任意 $\sigma\in\{T,F\}^n$ 有 $f_s\left(v_\sigma(a_1),...,v_\sigma(a_{n-1})\right)=\bar{v}_\sigma(s)$
 
-\begin{aligned}
-A&{|\!\!\!=}A\lor B
-\end{aligned}
+其中 $\bar{v}_\sigma$ 是[[MK401][真假赋值]] $v_\sigma(a_i)=\begin{cases}\sigma[i]&i\leq n\\T&i> n\end{cases}$ 的[[MK52][扩展函数]]， $\sigma[i]$ 是[[MK151][有序组]]位选
+**** 证明
 
-****** 简化规则<<MK88>>
+对于任意 $\sigma\in\{T,F\}^n$ 定义[[MK401][真假赋值]] $v_\sigma(a_i)=\begin{cases}\sigma[i]&i\leq n\\T&i> n\end{cases}$ 及其[[MK52][扩展函数]] $\bar{v}_\sigma$
 
-\begin{aligned}
-A\land B&{|\!\!\!=}A\\
-A\land B&{|\!\!\!=}B\\
-\end{aligned}
+故可定义 $f_s\left(v_\sigma(a_1),...,v_\sigma(a_{n-1})\right)=\bar{v}_\sigma(s)$
 
-****** 添加规则
+*** 定理2（可表示性）
 
-\begin{aligned}
-A&{|\!\!\!=}A\lor B\\
-B&{|\!\!\!=}A\lor B\\
-\end{aligned}
+[[MK407][布尔函数]] $f:\{T,F\}^n\to\{T,F\}$ 若[[MK394][命题语言]] $\mathcal{L}_0$ 有[[MK55][原子命题]] $|A|\geq n$
 
-****** 二难推论
-
-\begin{aligned}
-(A\lor B)\land(A\rightarrow C)\land(B\rightarrow C)&{|\!\!\!=}C\\
-\end{aligned}
-
-****** 假言推理
-
-\begin{aligned}
-A\land (A\rightarrow B)&{|\!\!\!=}B\\
-\end{aligned}
-
-******* 证明
-
-\begin{tabular}{|l|l|l|l|l|l|} 
-\hline
-A & B & A\rightarrow B & A\land (A\rightarrow B) & \left(A\land (A\rightarrow B)\right)\rightarrow B\\
-\hline
-0&0&1&0&1\\
-1&0&0&0&1\\
-0&1&1&0&1\\
-1&1&1&1&1\\
-\hline
-\end{tabular}
-
-****** 否定后件
-
-\begin{aligned}
-(A\rightarrow B)\land \lnot B&{|\!\!\!=}\lnot A\\
-\end{aligned}
-
-******* 证明
-
-\begin{tabular}{|l|l|l|l|l|l|l|l|} 
-\hline
-A & B & A\rightarrow B & \lnot B & (A\rightarrow B)\land \lnot B & \lnot A & \left((A\rightarrow B)\land \lnot B\right)\rightarrow \lnot A\\
-\hline
-0&0&1&1&1&1&1\\
-1&0&0&1&0&0&1\\
-0&1&1&0&0&1&1\\
-1&1&1&0&0&0&1\\
-\hline
-\end{tabular}
-
-****** 选言三段论
-
-\begin{aligned}
-\lnot A\land(A\lor B)&{|\!\!\!=}B\\
-\end{aligned}
-
-******* 证明
-
-\begin{tabular}{|l|l|l|l|l|l|l|} 
-\hline
-A & B & \lnot A & A \lor B & \lnot A\land (A\lor B) & \left(\lnot A\land (A\lor B)\right)\rightarrow B\\
-\hline
-0&0&1&0&0&1\\
-1&0&0&1&0&1\\
-0&1&1&1&1&1\\
-1&1&0&1&0&1\\
-\hline
-\end{tabular}
-
-****** 假言三段论（蕴含的传递性）<<MK89>>
-
-\begin{aligned}
-(A\rightarrow B)\land(B\rightarrow C)&{|\!\!\!=}A\rightarrow C\\
-\end{aligned}
-
-******* 证明
-
-\begin{tabular}{|l|l|l|l|l|l|l|l|} 
-\hline
-A & B & C & A\rightarrow B & B\rightarrow C & (A\rightarrow B)\land(B\rightarrow C) & A\rightarrow C & \left((A\rightarrow B)\land(B\rightarrow C)\right)\rightarrow A\rightarrow C\\
-\hline
-0&0&0&1&1&1&1&1\\
-1&0&0&0&1&0&0&1\\
-0&1&0&1&0&0&1&1\\
-0&0&1&1&1&1&1&1\\
-1&1&0&1&0&0&0&1\\
-1&0&1&0&1&0&1&1\\
-0&1&1&1&1&1&1&1\\
-1&1&1&1&1&1&1&1\\
-\hline
-\end{tabular}
-
-****** I7
-
-\begin{aligned}
-(A\rightarrow B)\land(C\rightarrow D)&{|\!\!\!=}(A\land C)\rightarrow (B\land D)\\
-\end{aligned}
-
-******* 证明
-
-定义 $E=\left((A\rightarrow B)\land(C\rightarrow D)\right)\rightarrow\left((A\land C)\rightarrow (B\land D)\right)$
-
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|} 
-\hline
-A & B & C & D & A\rightarrow B & C\rightarrow D & (A\rightarrow B)\land(C\rightarrow D) & A\land C & B\land D & (A\land C)\rightarrow (B\land D) & E\\
-\hline
-0&0&0&0&1&1&1&0&0&1&1\\
-1&0&0&0&0&1&0&0&0&1&1\\
-0&1&0&0&1&1&1&0&0&1&1\\
-0&0&1&0&1&0&0&0&0&1&1\\
-0&0&0&1&1&1&1&0&0&1&1\\
-1&1&0&0&1&1&1&0&0&1&1\\
-1&0&1&0&0&0&0&1&0&0&1\\
-1&0&0&1&0&1&0&0&0&1&1\\
-0&1&1&0&1&0&0&0&0&1&1\\
-0&1&0&1&1&1&1&0&1&1&1\\
-0&0&1&1&1&1&1&0&0&1&1\\
-1&1&1&0&1&0&0&1&0&0&1\\
-1&1&0&1&1&1&1&0&1&1&1\\
-1&0&1&1&0&1&0&1&0&1&1\\
-0&1&1&1&1&1&1&0&1&1&1\\
-1&1&1&1&1&1&1&1&1&1&1\\
-\hline
-\end{tabular}
-
-****** I8（双向蕴含传递）
-
-\begin{aligned}
-(A\leftrightarrow B)\land(B\leftrightarrow C)&{|\!\!\!=}A\leftrightarrow C\\
-\end{aligned}
-
-******* 证明
-
-\begin{tabular}{|l|l|l|l|l|l|l|l|} 
-\hline
-A & B & C & A\leftrightarrow B & B\leftrightarrow C & (A\leftrightarrow B)\land(B\leftrightarrow C) & A\leftrightarrow C & \left((A\leftrightarrow B)\land(B\leftrightarrow C)\right)\rightarrow A\leftrightarrow C\\
-\hline
-0&0&0&1&1&1&1&1\\
-1&0&0&0&1&0&0&1\\
-0&1&0&0&0&0&1&1\\
-0&0&1&1&0&0&0&1\\
-1&1&0&1&0&0&0&1\\
-1&0&1&0&0&0&1&1\\
-0&1&1&0&1&0&0&1\\
-1&1&1&1&1&1&1&1\\
-\hline
-\end{tabular}
-
-**** 命题公式关系性质
-
-***** 等价传递<<MK90>>
-
-若 $A{|\!\!\!=\!\!\!|}B$ 且 $B{|\!\!\!=\!\!\!|}C$ 则有 $A{|\!\!\!=\!\!\!|}C$  
-
-***** 等价对称
-
-若 $A{|\!\!\!=\!\!\!|}B$ 则有 $B{|\!\!\!=\!\!\!|}A$  
-
-***** 假言易位
-
-若 $A{|\!\!\!=}B$ 则有 $\lnot A{|\!\!\!=}\lnot B$ ，可由[[MK84][假言易位]]证明
-
-***** 蕴含传递
-
-若 $A{|\!\!\!=}B$ 且 $B{|\!\!\!=}C$ 则有 $A{|\!\!\!=}C$  
-
-***** 蕴含可替
-
-若 $A{|\!\!\!=}B$ 且 $A{|\!\!\!=\!\!\!|}A',B{|\!\!\!=\!\!\!|}B'$ 则有 $A'{|\!\!\!=}B'$
-
-*** 重言式带入原理
-
-若命题公式 $A$ 为[[MK70][重言式]]，其中有一个[[MK67][命题变项]] $p$ ，当用命题公式 $B$ 代替 $p$ 时，记作 $A(B/p)$ 仍为重言式。
-
-注：必须全部替换
+则存在一个[[MK51][命题表达式]] $s\in\mathcal{L}_0$ 及其[[MK357][诱导]]的布尔函数 $f_s$ ，满足对于任意 $\sigma\in\{T,F\}^n$ 均有 $f(\sigma)=f_s(\sigma)$
 
 **** 证明
 
-由于 $A$ 为[[MK70][重言式]]，故 $p$ 无论取何值 $A$ 的[[MK52][真值]]均为 $1$ 故 $B$ 代替所有 $p$ 时，无论取何值 $A$ 真值均为真。
+由于 $\{T,F\}$ 有穷集，故可得 $\{T,F\}^n$ 亦为有穷集，故设 $\left\{\sigma\big|\sigma\in\{T,F\}^n\land f(\sigma)=T\right\}=\{\sigma_1,...,\sigma_m\}$
 
-当不全部替换时，可举反例 $A(p)=\lnot p\lor p$ 定义 $B=\lnot p$ 
+则对于 $\sigma_i$ 定义表达式 $\theta_{i,j}=\begin{cases}a_j&\sigma_i[j]=T\\(\lnot)a_j&\sigma_i[j]=F\end{cases}$ 进而定义[[MK59][连续合取]]表达式 $\phi_{\sigma_i}=(\theta_{i,1}\land...\land\theta_{i,n})$
 
-若仅替换第一个 $p$ 则有 $A'(B(p),p)=\lnot B\lor p=\lnot\lnot p\lor p$ 根据[[MK73][双重否定]]可得 $p{|\!\!\!=\!\!\!|}\lnot\lnot p$
+进一步定义[[MK59][连续析取]]表达式 $\psi=(\phi_{\sigma_1}\lor...\lor\phi_{\sigma_m})$ 进而定义改表达式[[MK357][诱导]]的函数 $f_\psi$
 
-定义 $B=p\lor p$ 根据[[MK91][替换原理]]得 $A'{|\!\!\!=\!\!\!|}B$ 。则当 $p=0$ 时 $B=0$ 根据[[MK71][等价定义]]此时当且仅当 $A'=0$ 时 $A'\leftrightarrow B$ 为 $1$
+则对于任意 $\sigma_i$ 满足 $f(\sigma_i)=T$ 定义[[MK401][真假赋值]] $v_{\sigma_i}(a_j)=\begin{cases}\sigma[j]&j\leq n\\T&j> n\end{cases}$ 及其[[MK52][扩展函数]] $\bar{v}_{\sigma_i}$ 
 
-故 $A'=0$ 根据[[MK70][重言式]]定义 $A'$ 不再是重言式。
+根据 $\theta_{i,j},\phi_{\sigma_i},\bar{v}_{\sigma_i}$ 定义易证 $\bar{v}_{\sigma_i}(\phi_i)=T$ 进一步根据[[MK59][析取定义]]可得 $f_{\psi}(\sigma_i)=\bar{v}_{\sigma_i}(\psi)=T$
 
-*** 命题公式替换原理<<MK91>>
+对于任意 $\sigma_i$ 满足 $f(\sigma_i)=F$ 根据 $\theta_{i,j},\phi_{\sigma_i},\bar{v}_{\sigma_i}$ 定义易证 $\bar{v}_{\sigma_i}(\phi_j)=F$
 
-若命题公式 $A$ 含有子公式 $C$ 。另外有命题公式 $D{|\!\!\!=\!\!\!|}C$ ，则将 $D$ 替换 $C$ 后得命题公式 $B$ ，则有 $A{|\!\!\!=\!\!\!|}B$
+又根据析取定义可得 $f_{\psi}(\sigma_i)=\bar{v}_{\sigma_i}(\psi)=F$
 
-注：部分替代亦可
+综上所述，对于任意 $\sigma\in\{T,F\}^n$ 有 $f(\sigma)=f_\psi(\sigma)$
+
+** 证明与定理<<MK104>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有子集 $\Gamma\subset\mathcal{L}_0$ 以及[[MK51][命题表达式]]的有限[[MK151][有序组]] $s=<\phi_1,...,\phi_n>$ 若对于任意 $\phi_i$ 必有以下之一成立：
+
+（1） $\phi_i\in\Gamma$ ；或者
+
+（2） $\phi_i$ 是[[MK398][逻辑公理]]；或者
+
+（3） 存在 $1\leq j_1\leq j_2\leq i$ 满足 $\phi_{j_2}=(\phi_{j_1}\to\phi_i)$
+
+则称序列 $s$ 是集合 $\Gamma$ 的 *证明*
+
+进一步对于 $\phi\in\mathcal{L}_0$ 存在 $s$ 满足 $s[|s|]=\phi$ 则称 $\phi$ 是 $\Gamma$ 的 *定理* ，记作 $\Gamma\vdash\phi$ 
+
+*** 逻辑公理<<MK398>>
+
+[[MK51][命题表达式]]集合 $\phi_1\in\mathcal{L}_0\land\phi_2\in\mathcal{L}_0\land\phi_3\in\mathcal{L}_0$ 其中 $\mathcal{L}_0$ 是[[MK394][命题语言]]
+
+定义以下[[MK70][重言式]]为逻辑公理，注： $\phi_1,\phi_2,\phi_3$ 可以相等
+
+（1） 蕴含分配 $((\phi_1\to(\phi_2\to\phi_3))\to((\phi_1\to\phi_2)\to(\phi_1\to\phi_3)))$
+
+（2） 自蕴含 $(\phi_1\to\phi_1)$
+
+（3） 第一宽容 $(\phi_1\to(\phi_2\to\phi_1))$
+
+（4） 第二宽容 $(\phi_1\to((\lnot\phi_1)\to\phi_2))$
+
+（5） 第一归谬 $(((\lnot\phi_1)\to\phi_1)\to\phi_1)$
+
+（6） 第三宽容 $((\lnot\phi_1)\to(\phi_1\to\phi_2))$
+
+（7） 合取 $(\phi_1\to((\lnot\phi_2)\to(\lnot(\phi_1\to\phi_2))))$
+
+**** 推论1<<MK408>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 对于任意 $\Gamma\subset\mathcal{L}_0$ 若 $\phi$ 是逻辑公理，则有 $\Gamma\vdash\phi$
+
+***** 证明
+
+根据[[MK104][证明]]定义可得 $<\phi>$ 是 $\Gamma$ 的证明，即 $\Gamma\vdash\phi$
+
+**** 推论2<<MK417>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 对于任意 $\Gamma\subset\mathcal{L}_0$ 以及任意 $\phi\in\mathcal{L}_0\land\phi_1\in\mathcal{L}_0\land\phi_2\in\mathcal{L}_0\land\phi_3\in\mathcal{L}_0$ 均有
+
+（1） $\Gamma\vdash((\phi_1\to\phi_2)\to((\phi_3\to\phi_1)\to(\phi_3\to\phi_2)))$
+
+（2） $\Gamma\vdash((\phi_1\to(\phi_2\to\phi_3))\to(\phi_2\to(\phi_1\to\phi_3)))$
+
+（3） $\Gamma\vdash((\phi_3\to\phi_1)\to((\phi_1\to\phi_2)\to(\phi_3\to\phi_2)))$
+
+（4） $\Gamma\vdash((\lnot(\lnot\phi))\to\phi)$
+
+（5） $\Gamma\vdash((\phi\to(\lnot\phi))\to(\lnot\phi))$ 
+
+（6） $\Gamma\vdash(\phi\to(\lnot(\lnot\phi)))$
+
+***** 证明
+
+根据[[MK408][推论1]]有以下证明步骤
+
+1. 根据[[MK398][第一宽容]] $\Gamma\vdash((\phi_1\to\phi_2)\to(\phi_3\to(\phi_1\to\phi_2)))$
+
+2. 根据第1步 $\Gamma\cup\{(\phi_1\to\phi_2)\}\vdash(\phi_3\to(\phi_1\to\phi_2)))$
+
+3. 根据蕴含分配 $\Gamma\vdash((\phi_3\to(\phi_1\to\phi_2))\to((\phi_3\to\phi_1)\to(\phi_3\to\phi_2)))$
+
+4. 根据第2步以及导出引理显然有 $\Gamma\cup\{(\phi_1\to\phi_2)\}\vdash((\phi_3\to\phi_1)\to(\phi_3\to\phi_2))$
+
+5. 根据[[MK409][演绎引理]] $\Gamma\vdash((\phi_1\to\phi_2)\to((\phi_3\to\phi_1)\to(\phi_3\to\phi_2)))$ 即（1）证得
+
+6. 根据蕴含分配 $\Gamma\vdash((\phi_1\to(\phi_2\to\phi_3))\to((\phi_1\to\phi_2)\to(\phi_1\to\phi_3)))$
+
+7. 根据上一步 $\Gamma\cup\{(\phi_1\to(\phi_2\to\phi_3))\}\vdash((\phi_1\to\phi_2)\to(\phi_1\to\phi_3))$
+
+8. 根据第一宽容 $\Gamma\vdash(((\phi_1\to\phi_2)\to(\phi_1\to\phi_3))\to(\phi_2\to((\phi_1\to\phi_2)\to(\phi_1\to\phi_3))))$
+
+9. 根据第7，8步以及导出引理 $\Gamma\cup\{(\phi_1\to(\phi_2\to\phi_3))\}\vdash(\phi_2\to((\phi_1\to\phi_2)\to(\phi_1\to\phi_3)))$
+
+10. 根据蕴含分配 $\Gamma\vdash((\phi_2\to((\phi_1\to\phi_2)\to(\phi_1\to\phi_3)))\to((\phi_2\to(\phi_1\to\phi_2))\to(\phi_2\to(\phi_1\to\phi_3))))$
+
+11. 根据第10，11步以及演绎引理 $\Gamma\cup\{(\phi_1\to(\phi_2\to\phi_3))\}\vdash((\phi_2\to(\phi_1\to\phi_2))\to(\phi_2\to(\phi_1\to\phi_3)))$
+
+12. 根据第一宽容 $\Gamma\vdash(\phi_2\to(\phi_1\to\phi_2))$
+
+13. 根据第11，12步以及演绎引理 $\Gamma\cup\{(\phi_1\to(\phi_2\to\phi_3))\}\vdash(\phi_2\to(\phi_1\to\phi_3))$
+
+14. 根据上一步以及导出引理 $\Gamma\vdash((\phi_1\to(\phi_2\to\phi_3))\to(\phi_2\to(\phi_1\to\phi_3)))$ 即（2）证得
+
+15. 根据（2）有 $\Gamma\vdash(((\phi_1\to\phi_2)\to((\phi_3\to\phi_1)\to(\phi_3\to\phi_2)))\to((\phi_3\to\phi_1)\to((\phi_1\to\phi_2)\to(\phi_3\to\phi_2))))$
+
+16. 根据（1），上一步以及导出引理 $\Gamma\vdash((\phi_3\to\phi_1)\to((\phi_1\to\phi_2)\to(\phi_3\to\phi_2)))$ 即（3）证得
+
+17. 根据[[MK398][第三宽容]] $\Gamma\vdash((\lnot(\lnot\phi))\to((\lnot\phi)\to\phi))$
+
+18. 根据第一归谬 $\Gamma\vdash(((\lnot\phi)\to\phi)\to\phi)$
+
+19. 根据第一宽容 $\Gamma\vdash((((\lnot\phi)\to\phi)\to\phi)\to((\lnot(\lnot\phi))\to(((\lnot\phi)\to\phi)\to\phi)))$
+
+20. 根据[[MK405][导出引理]] $\Gamma\vdash((\lnot(\lnot\phi))\to(((\lnot\phi)\to\phi)\to\phi))$
+
+21. 根据蕴含分批 $\Gamma\vdash(((\lnot(\lnot\phi))\to((\lnot\phi)\to\phi))\to((\lnot(\lnot\phi))\to\phi))$
+
+22. 根据第17，21步以及导出引理 $\Gamma\vdash((\lnot(\lnot\phi))\to\phi)$ 即（4）证得
+
+23. 根据（3）有 $\Gamma\vdash(((\lnot(\lnot\phi))\to\phi)\to((\phi\to(\lnot\phi))\to((\lnot(\lnot\phi))\to(\lnot\phi))))$
+
+24. 根据（4）以及导出引理 $\Gamma\vdash((\phi\to(\lnot\phi))\to((\lnot(\lnot\phi))\to(\lnot\phi)))$
+
+25. 根据（3） $\Gamma\vdash(((\phi\to(\lnot\phi))\to((\lnot(\lnot\phi))\to(\lnot\phi)))\to((((\lnot(\lnot\phi))\to(\lnot\phi))\to(\lnot\phi))\to((\phi\to(\lnot\phi))\to(\lnot\phi))))$
+
+26. 根据上一步以及导出引理 $\Gamma\vdash((((\lnot(\lnot\phi))\to(\lnot\phi))\to(\lnot\phi))\to((\phi\to(\lnot\phi))\to(\lnot\phi)))$
+
+27. 根据第一归谬 $\Gamma\vdash(((\lnot(\lnot\phi))\to(\lnot\phi))\to(\lnot\phi))$
+
+28. 根据第27，28步以及导出引理 $\Gamma\vdash((\phi\to(\lnot\phi))\to(\lnot\phi))$ 即（5）证得
+
+29. 根据第二宽容 $\Gamma\vdash(\phi\to((\lnot\phi)\to(\lnot(\lnot\phi))))$
+
+30. 根据（5） $\Gamma\vdash(((\lnot\phi)\to(\lnot(\lnot\phi)))\to(\lnot(\lnot\phi)))$
+
+31. 根据第一宽容 $\Gamma\vdash((((\lnot\phi)\to(\lnot(\lnot\phi)))\to(\lnot(\lnot\phi)))\to(\phi\to(((\lnot\phi)\to(\lnot(\lnot\phi)))\to(\lnot(\lnot\phi)))))$
+
+32. 根据第30，31步以及导出引理 $\Gamma\vdash(\phi\to(((\lnot\phi)\to(\lnot(\lnot\phi)))\to(\lnot(\lnot\phi))))$
+
+33. 根据蕴含分配 $\Gamma\vdash((\phi\to(((\lnot\phi)\to(\lnot(\lnot\phi)))\to(\lnot(\lnot\phi))))\to((\phi\to((\lnot\phi)\to(\lnot(\lnot\phi))))\to(\phi\to(\lnot(\lnot\phi)))))$
+
+34. 根据第32，33步以及导出引理 $\Gamma\vdash((\phi\to((\lnot\phi)\to(\lnot(\lnot\phi))))\to(\phi\to(\lnot(\lnot\phi))))$
+
+35. 根据第29，34步以及导出引理 $\Gamma\vdash(\phi\to(\lnot(\lnot\phi)))$
+
+*** 导出引理<<MK405>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0,\phi\in\mathcal{L}_0,\psi\in\mathcal{L}_0$ 若 $\psi,(\psi\to\phi)$ 均为 $\Gamma$ 的[[MK398][定理]]，即 $\Gamma\vdash\psi,\Gamma\vdash(\psi\to\phi)$
+
+则 $\phi$ 亦为 $\Gamma$ 的定理，即 $\Gamma\vdash\phi$
 
 **** 证明
 
-命题公式 $A$ 包含子公式 $C$ ，当 $C=0$ 时由于 $D{|\!\!\!=\!\!\!|}C$ 则 $D=0$ ，同理当 $C=1$ 时 $D=1$
+根据[[MK104][定理]]定义，存在 $s_1=<\theta_1,...,\theta_n,\psi>,s_2=<\eta_1,...,\eta_m,(\psi\to\phi)>$ 是 $\Gamma$ 的[[MK104][证明]]
 
-故无论是否替换 $C$ ，命题公式中 $C$ 所在的部分的真值均无变化。故根据[[MK53][排中律]] $A$ 的真值亦无变化。
+易证 $s=<\theta_1,...,\theta_n,\psi,\eta_1,...,\eta_m,(\psi\to\phi)>$ 亦为 $\Gamma$ 的证明
 
-*** 范式
+进一步有 $s=<\theta_1,...,\theta_n,\psi,\eta_1,...,\eta_m,(\psi\to\phi),\phi>$ 亦为 $\Gamma$ 的证明，故 $\Gamma\vdash\phi$ 
+
+*** 演绎引理<<MK409>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0,\phi\in\mathcal{L}_0,\psi\in\mathcal{L}_0$ 若有[[MK104][证明]] $\Gamma\cup\{\psi\}\vdash\phi$ 则有证明 $\Gamma\vdash(\psi\to\phi)$
+
+**** 证明
+
+根据定义有 $\Gamma\cup\{\psi\}$ 的证明 $s=<\psi_1,...,\psi_n>$ 其中 $\psi_n=\phi$
+
+对于 $\psi_1$ 若 $\psi_1\in\{\psi\}$ 则有 $\psi_1=\psi$ ，故 $(\psi\to\psi_1)=(\psi\to\psi)$ 是[[MK398][自蕴含公理]]
+
+即 $s=<(\psi\to\psi_1)>$ 是 $\Gamma$ 的证明。若 $\psi_1\in\Gamma$ 或 $\psi_1$ 是逻辑公理，
+
+则有 $\Gamma$ 的证明 $<\psi_1,(\psi_1\to(\psi\to\psi_1)),(\psi\to\psi_1)>$ 其中第二条是[[MK398][第一宽容公理]]。即有 $\Gamma\vdash(\psi\to\psi_1)$
+
+当 $1\leq i\leq n$ 时，假设对于任意 $1\leq j\leq i$ 均有 $\Gamma\vdash\phi_j$ 则
+
+若 $\psi_i\in\Gamma\cup\{\psi\}$ 或 $\psi_i$ 是逻辑公理时，与 $\psi_1$ 同理可证 $\Gamma\vdash(\psi\to\psi_i)$
+
+若存在 $1\leq j_1\leq j_2<i$ 满足 $\psi_{j_2}=(\psi_{j_1}\to\psi_i)$ 则根据假设有 $\Gamma\vdash(\psi\to\psi_{j_2})=(\psi\to(\psi_{j_1}\to\psi_i))$
+
+则根据[[MK398][蕴含分配公理]] $\Gamma\vdash((\psi\to(\psi_{j_1}\to\psi_i))\to((\psi\to\psi_{j_1})\to(\psi\to\psi_i)))$
+
+根据[[MK405][导出引理]]可得 $\Gamma\vdash((\psi\to\psi_{j_1})\to(\psi\to\psi_i))$ 又根据假设有 $\Gamma\vdash(\psi\to\psi_{j_1})$
+
+同理根据导出引理 $\Gamma\vdash(\psi\to\psi_i)$
+
+综上所述，根据数学归纳法，对于任意 $\psi_i$ 均有 $\Gamma\vdash(\psi\to\psi_i)$ 由于 $\psi_n=\phi$ 即有 $\Gamma\vdash(\psi\to\phi)$
+
+*** 引理<<MK422>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 若有 $\Gamma'\subset\Gamma$ 满足 $\Gamma'\vdash\phi$ 则有 $\Gamma\vdash\phi$ ，其中 $\phi\in\mathcal{L}_0$
+
+**** 证明
+
+若 $\Gamma'\vdash\phi$ 则有 $\Gamma'$ 的[[MK104][证明]] $<\phi_1,...,\phi_n>$ 满足 $\phi_n=\phi$
+
+根据数学归纳法易证 $<\phi_1,...,\phi_n>$ 亦为 $\Gamma$ 的证明，即有 $\Gamma\vdash\phi$ 
+
+** 命题逻辑性质
+
+*** 一致性<<MK107>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 则：
+
+（1） $\Gamma$ 是不一致的充要条件是，存在 $\phi\in\mathcal{L}_0$ 满足 $\Gamma\vdash\phi$ 以及 $\Gamma\vdash(\lnot\phi)$
+
+（2） $\Gamma$ 是一致的充要条件是，不存在 $\phi\in\mathcal{L}_0$ 满足 $\Gamma\vdash\phi$ 以及 $\Gamma\vdash(\lnot\phi)$
+
+**** 极大一致性<<MK413>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 是[[MK107][一致的]]，若对于任意 $\phi\in\mathcal{L}_0$ 均有若 $\Gamma\cup\{\phi\}$ 仍为一致则有 $\phi\in\Gamma$
+
+则称 $\Gamma$ 有极大一致性
+
+**** 定理1<<MK410>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 则 $\Gamma$ 不一致的充要条件是对于任意 $\phi\in\mathcal{L}_0$ 均有 $\Gamma\vdash\phi$
+
+即任意[[MK51][命题表达式]]均为 $\Gamma$ 的[[MK104][定理]]
+
+***** 证明
+
+****** 必要
+
+根据[[MK393][准语言]]以及[[MK394][命题语言]]定义易证若 $\phi\in\mathcal{L}_0$ 则 $(\lnot\phi)\in\mathcal{L}_0$
+
+又由于任意 $\phi\in\mathcal{L}_0$ 均有 $\Gamma\vdash\phi$ 故有 $\Gamma\vdash(\lnot\phi)$ 即 $\Gamma$ [[MK107][不一致]]
+
+****** 充分
+
+由于 $\Gamma\vdash\phi$ 以及 $\Gamma\vdash(\lnot\phi)$ 则对于任意 $\psi\in\mathcal{L}_0$ 根据[[MK398][第三宽容公理]] $\Gamma\vdash((\lnot\phi)\to(\phi\to\psi))$
+
+则根据[[MK405][导出引理]]有 $\Gamma\vdash(\phi\to\psi)$ 同理亦有 $\Gamma\vdash\psi$
+
+**** 定理2<<MK414>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 是[[MK107][一致的]]，则对于任意 $\phi\in\mathcal{L}_0$ 可得 $\Gamma\cup\{\phi\},\Gamma\cup\{(\lnot\phi)\}$ 至少有一个是一致的
+
+***** 证明
+
+假设 $\Gamma\cup\{(\lnot\phi)\},\Gamma\cup\{\phi\}$ 均为非一致，则根据[[MK410][定理1]]可得 $\Gamma\cup\{(\lnot\phi)\}\vdash\phi$ 又根据[[MK412][冗余假设]]可得 $\Gamma\vdash\phi$
+
+又由于 $\Gamma\cup\{\phi\}$ 非一致，同理可证 $\forall\psi\in\mathcal{L}_0\rightarrow\Gamma\cup\{\phi\}\vdash\psi$ 根据[[MK409][演绎引理]] $\Gamma\vdash(\phi\to\psi)$
+
+结合上述两个条件可得 $\forall\psi\in\mathcal{L}_0\rightarrow\Gamma\vdash\psi$ 根据[[MK410][定理1]]可得 $\Gamma$ 不一致
+
+与条件 $\Gamma$ 一致矛盾，故可得假设不成立，即 $\Gamma\cup\{(\lnot\phi)\},\Gamma\cup\{\phi\}$ 至少有一个是一致的
+
+则满足上述条件
+
+**** 定理3<<MK415>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 是[[MK413][极大一致]]的，则有以下命题成立：
+
+（1） 对于任意 $\phi\in\mathcal{L}_0$ 有 $\phi\in\Gamma$ 和 $(\lnot\phi)\in\Gamma$ 二者有且仅有一项成立
+
+（2） 对于任意 $\phi\in\mathcal{L}_0$ 以及 $\Gamma\vdash\phi$ 有 $\phi\in\Gamma$
+
+（3） 对于任意 $\phi_1\in\mathcal{L}_0\land\phi_2\in\mathcal{L}_0$ 则 $(\phi_1\to\phi_2)\in\Gamma$ 的充要条件是 $\phi_1\not\in\Gamma$ 或 $\phi_2\in\Gamma$
+
+***** 证明
+
+****** 证明（1）
+
+根据[[MK414][定理2]]可得 $\Gamma\cup\{\phi\},\Gamma\cup\{(\lnot\phi)\}$ 至少有一个是一致的，进一步根据[[MK413][定义]]可得（1）
+
+****** 证明（2）
+
+假设 $\phi\not\in\Gamma$ 则根据[[MK413][定义]]有 $\Gamma\cup\{\phi\}$ [[MK107][不一致]]，则根据结论（1）可得 $(\lnot\phi)\in\Gamma$
+
+则根据[[104][证明]]易得 $\Gamma\vdash(\lnot\phi)$ 又根据条件有 $\Gamma\vdash\phi$ 可得 $\Gamma$ 不一致，与条件矛盾
+
+****** 证明（3）
+
+******* 充分
+
+若 $(\phi_1\to\phi_2)\in\Gamma$ 则假设 $\phi_1\in\Gamma$ 且 $\phi_2\not\in\Gamma$ 则根据[[MK398][合取公理]] $\Gamma\vdash(\phi_1\to((\lnot\phi_2)\to(\lnot(\phi_1\to\phi_2))))$
+
+根据[[MK405][导出引理]] $\Gamma\vdash((\lnot\phi_2)\to(\lnot(\phi_1\to\phi_2)))$ 又根据（1）以及 $\phi_2\not\in\Gamma$ 有 $(\lnot\phi_2)\in\Gamma$
+
+同理 $\Gamma\vdash(\lnot(\phi_1\to\phi_2))$ 又由于 $(\phi_1\to\phi_2)\in\Gamma$ 根据[[MK104][定理定义]]有 $\Gamma\vdash(\phi_1\to\phi_2)$
+
+即 $\Gamma$ [[MK107][不一致]]，与条件矛盾，故假设不成立，则有 $\phi_1\not\in\Gamma$ 或 $\phi_2\in\Gamma$
+
+******* 必要
+
+若 $\phi_1\not\in\Gamma$ 成立，则根据（1）有 $(\lnot\phi_1)\in\Gamma$ 即根据[[104][证明]]易得 $\Gamma\vdash(\lnot\phi_1)$
+
+又根据[[MK398][第三宽容公理]]有 $\Gamma\vdash((\lnot\phi_1)\to(\phi_1\to\phi_2))$ 故根据[[MK405][导出引理]] $\Gamma\vdash(\phi_1\to\phi_2)$
+
+根据（2）有 $(\phi_1\to\phi_2)\in\Gamma$
+
+若 $\phi_2\in\Gamma$ 成立，则有 $\Gamma\vdash\phi_2$ ，根据[[MK398][第一宽容公理]]有 $\Gamma\vdash(\phi_2\to(\phi_1\to\phi_2))$
+
+即根据导出引理以及（2）同理可证 $(\phi_1\to\phi_2)\in\Gamma$
+
+若同时成立，则同理由 $\phi_2\in\Gamma$ 
+
+**** 定理4<<MK424>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 是[[MK413][极大一致]]的，则 $\Gamma$ 一定是[[MK406][可满足]]的
+
+***** 证明
+
+定义[[MK401][真假赋值]] $v_\Gamma(a)=\begin{cases}T&a\in A\cap\Gamma\\F&a\not\in A\cap\Gamma\end{cases}$ 其中 $A$ 是[[MK55][原子命题]]集合，对应的[[MK52][扩展函数]]定义为 $\bar{v}_\Gamma$
+
+定义 $\Gamma_n=\left\{\phi\big|\phi\in\Gamma\land|\phi|=n\right\}$ 则对于任意 $\phi\in\mathcal{L}_0\land|\phi|=n$ 时显然有 $\phi\in A$
+
+故显然对于任意 $\phi\in\Gamma_1$ 有 $\bar{v}_\Gamma(\phi)=T$ ，对于任意 $\phi\not\in\Gamma_1$ 有 $\bar{v}_\Gamma(\phi)=F$ 
+
+对于任意 $n\in\mathbb{N}\land n>1$ 假设有对于任意 $\phi\in\mathcal{L}_0,1\leq i<n$
+
+均有 $\forall\phi\in\Gamma_i\rightarrow\bar{v}_\Gamma=T$ 以及 $\forall\phi\not\in\Gamma_i\rightarrow\bar{v}_\Gamma=F$ 
+
+根据[[MK402][唯一可读性]]对于任意 $\phi\in\mathcal{L}_0\land|\phi|=n$ 有且仅有 $\phi=(\lnot\psi),\phi=(\psi_1\to\psi_2)$
+
+其中 $\psi\in\mathcal{L}_0\land\psi_1\in\mathcal{L}_0\land\psi_2\in\mathcal{L}_0$ 且显然 $\max(|\psi|,|\psi_1|,|\psi_2|)<|\phi|$
+
+假设 $\phi=(\lnot\psi)$ 则根据[[MK415][定理3]]（1）可知 $\psi\in\Gamma$ 和 $(\lnot\psi)\in\Gamma$ 有且仅有一项成立
+
+故当 $\phi=(\lnot\psi)\in\Gamma$ 时必有 $\psi\not\in\Gamma$ 根据前提假设有 $\bar{v}_\Gamma(\phi)=H_\lnot(\bar{v}(\psi))=T$
+
+故当 $\phi=(\lnot\psi)\not\in\Gamma$ 时必有 $\psi\in\Gamma$ 根据前提假设有 $\bar{v}_\Gamma(\phi)=H_\lnot(\bar{v}(\psi))=F$
+
+假设 $\phi=(\psi_1\to\psi_2)$ 则根据[[MK415][定理3]]可得 $\phi\in\Gamma$ 的充要条件为 $\psi_1\not\in\Gamma$ 或 $\psi_2\in\Gamma$
+
+故当 $\phi=(\psi_1\to\psi_2)\in\Gamma$ 时根据[[MK402][逻辑函数]]易证 $\bar{v}_\Gamma(\phi)=H_\to(\bar{v}(\psi_1),\bar{v}(\psi_2))=T$
+
+故当 $\phi=(\psi_1\to\psi_2)\not\in\Gamma$ 时有 $\psi_1\in\Gamma\land\psi_2\not\in\Gamma$ 根据前提假设 $\bar{v}_\Gamma(\psi_1)=T\land\bar{v}_\Gamma(\psi_2)=F$
+
+故根据[[MK402][逻辑函数]]易证 $\bar{v}_\Gamma(\phi)=H_\to(\bar{v}(\psi_1),\bar{v}(\psi_2))=F$
+
+根据[[MK392][基本符号集]]可得 $\forall\phi\in\mathcal{L}_0\rightarrow|\phi|<\infty$ 故根据数学归纳法可得对于任意 $\phi\in\mathcal{L}_0$
+
+均有 $\forall\phi\in\Gamma_i\rightarrow\bar{v}_\Gamma=T$ 以及 $\forall\phi\not\in\Gamma_i\rightarrow\bar{v}_\Gamma=F$ ，显然 $\bar{v}_\Gamma$ 满足 $\Gamma$
+
+**** 定理5<<MK425>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 是[[MK107][一致的]]，则存在 $\Gamma^*\subset\mathcal{L}_0$ 满足：
+
+（1） $\Gamma\subset\Gamma^*$
+
+（2） $\Gamma^*$ 是[[MK413][极大一致]]的
+
+***** 证明
+
+根据[[MK416][性质]]以及[[MK394][命题语言]]定义易证 $\mathcal{L}_0$ 是[[MK44][可数集]]，则定义 $\mathcal{L}_0=\left\{\phi_n\big|n\in\mathbb{N}\right\}$
+
+定义 $f:\mathcal{L}_0\to\mathbb{N}$ 是[[MK27][等势函数]]，即对于任意 $\psi\in\mathcal{L}_0$ 有 $\phi_{f(\psi)}=\psi$，定义 $\Gamma_0=\Gamma$ 给定 $\Gamma_n$ 定义 $\Gamma_{n+1}$ ：
+
+（1） 若 $\Gamma_n\cup\{\phi_n\}$ [[MK107][一致]]，则 $\Gamma_{n+1}=\Gamma_n\cup\{\phi_n\}$
+
+（2） 若 $\Gamma_n\cup\{(\lnot\phi_n)\}$ [[MK107][一致]]，则 $\Gamma_{n+1}=\Gamma_n\cup\{(\lnot\phi_n)\}$
+
+根据[[MK414][定理2]]可得上面两条至少成立一条，故进一步定义 $\Gamma^*=\bigcup_{n\in\mathbb{N}}\Gamma_n$
+
+****** 证明 $\Gamma_n$ 一致<<MK421>>
+
+对于任意 $\Gamma_{n+1}$ 已知 $\Gamma_n$ 一致，则对于 $\phi_n\in\mathcal{L}_0$ 根据[[MK414][定理2]]可得 $\Gamma\cup\{\phi_n\},\Gamma\cup\{(\lnot\phi_n)\}$ 至少有一个是一致的
+
+即根据定义 $\Gamma_{n+1}$ 是一致的。由于 $\Gamma_0$ 是一致的，故根据数学归纳法可得 $\Gamma_n$ 亦是一致的
+
+****** 证明 $\Gamma^*$ 一致
+
+******* $\Gamma^*$ 的[[MK104][证明]]均有 $\Gamma_n$ 包含<<MK420>>
+
+对于任意 $\Gamma^*$ 的[[MK104][证明]] $<\mu_1,...,\mu_u>$ 中的任意 $\mu_i$ 
+
+当 $i=1$ 时必有 $\mu_1$ 是公理或 $\mu_1\in\Gamma^*$
+
+若是公理，则有 $\Gamma_{f(\mu_1)}\cup\{\phi_{f(\mu_1)}\}$ 是一致的，若 $\mu_1\in\Gamma^*$ 则存在 $n\in\mathbb{N}$ 满足 $\mu_1\in\Gamma_n$
+
+当 $1<i\leq u$ 假设对于任意 $1\leq j< i$ 均满足存在 $\Gamma_{n_j}$ 使得 $\mu_j\in\Gamma_{n_j}$ 
+
+则定义 $n=\max(n_{j_1},...,n_{j_{i-1}})$ 显然有 $\mu_j\in\Gamma_n$ 则证明 $<\mu_1,...,\mu_{i-1},\mu_i>$ 有 $\Gamma_n\vdash\mu_i$
+
+此时若 $f(\mu_i)\leq n$ 则有 $\{\mu_1,...,\mu_i\}\subset\Gamma_n$ 反之根据定义有 $u\leq v\rightarrow\Gamma_u\subset\Gamma_v$ 易证 $\{\mu_1,...,\mu_{i-1}\}\subset\Gamma_{f(\mu_i)}$ 
+
+根据[[MK419][定理7]]有 $\Gamma_{f(\mu_i)}\cup\{\mu_i\}$ 是一致的，故有 $\Gamma_{f(\mu_i)+1}=\Gamma_{f(\mu_i)}\cup\{\mu_i\}$ 即 $\{\mu_1,...,\mu_i\}\subset\Gamma_{f(\mu_i)+1}$ 
+
+综上所述，故根据数学归纳法对于任意 $\mu_i$ 在 $<\mu_1,...,\mu_u>$ 中均存在 $\Gamma_n$ 满足 $\mu_i\in\Gamma_n$
+
+又由于所有证明均为有限有序组
+
+故对于任意 $\Gamma^*$ 的证明 $<\mu_1,...,\mu_u>$ 中的任意 $\mu_i,1\leq i\leq u$ 均存在 $\Gamma_n$ 满足 $\mu_i\in\Gamma_n$
+
+******* 证明结论
+
+假设 $\Gamma^*$ 不一致，则根据定义存在 $\phi\in\mathcal{L}_0$ 满足 $\Gamma^*\vdash\phi$ 以及 $\Gamma^*\vdash(\lnot\phi)$
+
+则有[[MK104][证明]] $<\mu_1,...,\mu_u>,<\eta_1,...,\eta_v>$ 满足 $\mu_u=\phi,\eta_v=(\lnot\phi)$
+
+根据[[MK420][之前证明]]对于任意 $\mu_i$ 均有 $\Gamma_{n_{j_i}}$ 满足 $\mu_i\in\Gamma_{n_{j_i}}$ ，对于任意 $\eta_i$ 均有 $\Gamma_{n_{j_{u+i}}}$ 满足 $\eta_i\in\Gamma_{n_{j_{u+1}}}$
+
+定义 $n=\max(n_{j_1},...,n_{j_{u+v}})$ 根据 $\Gamma_i$ 的构造易证 $\{\mu_1,...,\mu_u\}\cup\{\eta_1,...,\eta_v\}\subset\Gamma_n$  
+
+显然 $\Gamma_n\vdash\phi\land\Gamma_n\vdash(\lnot\phi)$ 不一致，与[[MK421][之前证明]]矛盾。故假设不成立， $\Gamma^*$ 一致
+
+****** 证明 $\Gamma^*$ 极大一致
+
+假设 $\Gamma^*$ 不是极大一致，则存在 $\phi\in\mathcal{L}_0$ 满足 $\phi\not\in\Gamma^*$ 以及 $\Gamma^*\cup\{\phi\}$ 一致
+
+显然 $\Gamma_{f(\phi)}\cup\{\phi\}\subset\Gamma^*\cup\{\phi\}$ 则根据[[MK423][定理6]] $\Gamma_{f(\phi)}\cup\{\phi\}$ 一致
+
+根据构造定义有 $\Gamma_{f(\phi)+1}=\Gamma_{f(\phi)}\cup\{\phi\}$ 又由于义 $\Gamma^*=\bigcup_{n\in\mathbb{N}}\Gamma_n$
+
+故有 $\phi\in\Gamma^*$ 矛盾，故假设不成立， $\Gamma^*$ 是[[MK413][极大一致]]的
+
+**** 定理6<<MK423>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 是[[MK107][一致的]]，则任意 $\Gamma'\subset\Gamma$ 必为一致
+
+***** 证明
+
+假设存在 $\Gamma'\subset\Gamma$ 不一致，即有 $\phi\in\mathcal{L}_0$ 满足 $\Gamma'\vdash\phi\land\Gamma'\vdash(\lnot\phi)$
+
+根据[[MK422][引理]]可得 $\Gamma\vdash\phi\land\Gamma\vdash(\lnot\phi)$ 不一致，故矛盾，假设不成立
+
+**** 定理7<<MK419>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 是[[MK107][一致的]]，对于任意 $\phi\in\mathcal{L}_0$ 若有 $\Gamma\vdash\phi$ 则 $\Gamma\cup\{\phi\}$ 是一致的
+
+***** 证明
+
+假设 $\Gamma\cup\{\phi\}$ 不一致，则根据[[MK410][定理1]]有 $\Gamma\cup\{\phi\}\vdash(\lnot\phi)$ 根据[[MK418][推论]]有 $\Gamma\vdash(\lnot\phi)$
+
+根据[[MK107][定义]]可得 $\Gamma$ 不一致，与条件故矛盾，即假设不成立
+
+*** 可靠性定理<<MK106>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 以及 $\phi\in\mathcal{L}_0$ ，若 $\Gamma\vdash\phi$ 则有 $\Gamma\vDash\phi$
+
+即若 $\phi$ 是 $\Gamma$ 的[[MK104][定理]]，则 $\phi$ 是 $\Gamma$ 的[[MK86][逻辑结论]]
+
+**** 证明
+
+根据定义有 $\Gamma$ 的[[MK104][证明]] $s_n=<\phi_1,...,\phi_n>$ 其中 $\phi_n=\phi$
+
+当 $i=1$ 时有且仅有 $\phi_1\in\Gamma$ 或 $\phi_1$ 是[[MK398][逻辑公理]]，由于逻辑公理均为[[MK70][重言式]]
+
+故对于任意[[MK406][满足]] $\Gamma$ 的[[MK401][真假赋值]] $v$ 其[[MK52][扩展函数]]均有 $\bar{v}(\phi_1)=T$ 即 $\Gamma\vDash\phi_1$ 
+
+对于任意 $1\leq i\leq n$ 假设对于任意 $1\leq k<i$ 均有 $\Gamma\vDash\phi_i$ 则对于 $\phi_i$
+
+若 $\phi_i\in\Gamma$ 或 $\phi_i$ 是逻辑公理，则同理可证 $\Gamma\vDash\phi$
+
+若存在 $1\leq j_1<j_2<i$ 有 $\phi_{j_2}=(\phi_{j_1}\to \phi_i)$ 则对于任意满足 $\Gamma$ 的真假赋值的扩展函数
+
+根据假设以及[[MK402][逻辑函数]]有 $\bar{v}(\phi_{j_1})=T,\bar{v}(\phi_{j_2})=H_{\to}(\bar{v}(\phi_{j_1}),\bar{v}(\phi_i))=T$
+
+显然根据逻辑函数当且仅当 $\bar{v}(\phi_i)=T$ 时有 $H_{\to}(\bar{v}(\phi_{j_1}),\bar{v}(\phi_i))=T$
+
+又由于 $|s|<\infty$ 有限，故综上所述，根据数学归纳法对于任意 $\phi_i$ 均有 $\Gamma\vDash\phi_i$
+
+又由于 $\phi_n=\phi$ 故有 $\Gamma\vDash\phi$
+
+**** 推论
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 若 $\Gamma$ 是[[MK406][可满足的]]，则 $\Gamma$ 是[[MK107][一致的]]
+
+***** 证明
+
+若 $\Gamma$ 可满足，即存在[[MK52][扩展函数]] $\bar{v}$ 。假设不是一致的，则存在 $\phi\in\mathcal{L}_0$ 满足 $\Gamma\vdash\phi$ 以及 $\Gamma\vdash(\lnot\phi)$
+
+根据[[MK106][可靠性定理]]可得 $\Gamma\vDash\phi,\Gamma\vDash(\lnot\phi)$ 则根据[[MK402][逻辑函数]] $\bar{v}(\phi)=T\land\bar{v}((\lnot\phi))=H_{\lnot}(\bar{v}(\phi))=T$
+
+显然矛盾，故假设不成立，即 = $\Gamma$ 是[[MK107][一致的]]
+
+*** 完备性<<MK108>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ ，若 $\Gamma$ 所有的[[MK86][逻辑结论]]都可以被[[MK104][证明]]，则称 $\Gamma$ 是完备的
+
+**** 第一完备性定理<<MK411>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ ，若 $\Gamma$ 是[[MK107][一致的]]的充要条件是 $\Gamma$ 是[[MK406][可满足的]]
+
+***** 证明
+
+根据[[MK425][定理5]]存在 $\Gamma^*$ 满足 $\Gamma\subset\Gamma^*$ 且 $\Gamma^*$ 是[[MK413][极大一致]]的
+
+又根据[[MK424][定理5]]可得 $\Gamma^*$ 是[[MK406][可满足]]的，即存在[[MK401][真假赋值]]的[[MK52][扩展函数]] $\bar{v}$ 满足 $\forall\phi\in\Gamma^*\rightarrow\bar{v}(\phi)=T$
+
+又由于 $\Gamma\subset\Gamma^*$ 故有 $\forall\phi\in\Gamma\rightarrow\bar{v}(\phi)=T$ 即 $\Gamma$ 是[[MK406][可满足的]]
+
+**** 第二完备性定理
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0,\phi\in\mathcal{L}_0$ 则 $\Gamma\vDash\phi$ 的充要条件是 $\Gamma\vdash\phi$
+
+即 $\phi$ 是 $\Gamma$ 的[[MK86][逻辑结论]]的充要条件是 $\phi$ 是 $\Gamma$ 的[[MK104][定理]]
+
+***** 证明
+
+必要条件有[[MK106][可靠性定理]]证得，以下证充分性
+
+若 $\Gamma\vDash\phi$ 则对于任意[[MK406][满足]] $\Gamma$ 的[[MK52][扩展函数]]均有 $\bar{v}(\phi)=T$ 。定义 $\Gamma_1=\Gamma\cup\{(\lnot\phi)\}$
+
+则对于任意[[MK406][满足]] $\Gamma$ 的[[MK52][扩展函数]]必有 $\bar{v}((\lnot\phi))=F$ 即 $\Gamma_1$ 不可满足
+
+根据[[MK411][第一完备性定理]]可得 $\Gamma_1$ 不是[[MK107][一致的]]，根据[[MK410][定理]]可得 $\Gamma_1\vdash \phi$
+
+则根据[[MK412][冗余假设]]引理可得 $\Gamma\vdash\phi$ 
+
+**** 冗余假设引理<<MK412>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0,\phi\in\mathcal{L}_0$ 若 $\Gamma\cup\{(\lnot\phi)\}\vdash\phi$ 则有 $\Gamma\vdash\phi$
+
+***** 证明
+
+根据[[MK408][推论]]以及[[MK398][第二宽容公理]]可得 $\Gamma\vdash(((\lnot\phi)\to\phi)\to\phi)$
+
+根据 $\Gamma\cup\{(\lnot\phi)\}\vdash\phi$ 以及[[MK409][演绎引理]]有 $\Gamma\vdash((\lnot\phi)\to\phi)$ 则根据[[MK405][导出引理]]有 $\Gamma\vdash\phi$
+
+***** 推论<<MK418>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0,\phi\in\mathcal{L}_0$ 若 $\Gamma\cup\{\phi\}\vdash(\lnot\phi)$ 则有 $\Gamma\vdash(\lnot\phi)$
+
+****** 证明
+
+根据 $\Gamma\cup\{\phi\}\vdash(\lnot\phi)$ 以及[[MK409][演绎引理]]有 $\Gamma\vdash(\phi\to(\lnot\phi))$ 
+
+根据[[MK417][推论]]（5）可得 $\Gamma\vdash((\phi\to(\lnot\phi))\to(\lnot\phi))$ 则根据[[MK405][导出引理]]有 $\Gamma\vdash(\lnot\phi)$
+
+*** 紧致性定理
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ ，则 $\Gamma$ 是[[MK107][一致的]]的充要条件是任意[[MK42][有限]]子集 $\Gamma'\subset\Gamma$ 是一致的
+
+**** 证明
+  
+***** 充分
+
+对于任意 $\Gamma'\subset\Gamma$ 假设不一致，有 $\Gamma'\vdash\phi,\Gamma'\vdash(\lnot\phi)$ 根据[[MK422][引理]]有 $\Gamma\vdash\phi,\Gamma\vdash(\lnot\phi)$ 与一致条件矛盾
+
+故假设不成立
+
+***** 必要
+
+假设 $\Gamma$ 不一致，故有 $\Gamma\vdash\phi,\Gamma\vdash(\lnot\phi)$ 则存在[[MK104][证明]] $<\phi_1,...,\phi_n>,<\psi_1,...,\psi_m>$ 满足 $\phi_n=\phi,\psi_m=(\lnot\phi)$
+
+则取 $\Gamma'=\{\phi_1,...,\phi_n,\psi_1,...,\psi_m\}\cap\Gamma$ 则显然 $<\phi_1,...,\phi_n>,<\psi_1,...,\psi_m>$ 亦为 $\Gamma'$ 的证明
+
+即 $\Gamma'\vdash\phi,\Gamma'\vdash(\lnot\phi)$ 不一致。由于证明是有限有序组，故 $\Gamma$ 是有限集，与有限子集一致条件矛盾
+
+故假设不成立， $\Gamma$ 一致
+
+**** 推论1
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ ，则 $\Gamma$ 是[[MK406][可满足]]的充要条件是任意[[MK42][有限]]子集 $\Gamma'\subset\Gamma$ 是可满足的
+
+***** 证明
+
+根据[[MK411][第一完备性定理]]可得可满足与一致为充要条件，则根据紧致性定理可得结论
+
+**** 推论2
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0$ 则 $\Gamma\vDash\phi\in\mathcal{L}_0$ 的充要条件为存在有限子集 $\Gamma'\subset\Gamma$ 满足 $\Gamma'\vDash\phi$
+
+***** 证明
+
+****** 充分
+
+由于 $\Gamma\vDash\phi$ 根据[[MK86][逻辑结论]]对于任意[[MK401][真假赋值]] $v$ 满足 $\Gamma$ 则有 $v$ 满足 $\phi$ ，即[[MK52][扩展函数]]有 $\bar{v}(\phi)=T$
+
+则显然有 $\bar{v}((\lnot\phi))=F$ 故有 $\Gamma\cup\{(\lnot\phi)\}$ 不可满足。根据[[MK411][第一完备性]]可得 $\Gamma\cup\{(\lnot\phi)\}$ [[MK107][不一致]]
+
+根据[[MK410][定理1]]可得 $\Gamma\cup\{(\lnot\phi)\}\vdash\phi$ 根据[[MK412][冗余假设]]可得 $\Gamma\vdash\phi$ 则存在[[MK104][证明]] $<\phi_1,...,\phi_n>$ 满足 $\phi_n=\phi$
+
+即定义 $\Gamma'=\{\phi_1,...,\phi_n\}\cap\Gamma$ 显然 $\Gamma'$ 有限集且 $<\phi_1,...,\phi_n>$ 亦为 $\Gamma'$ 的证明
+
+****** 必要
+
+若存在有限子集 $\Gamma'\subset\Gamma$ 满足 $\Gamma'\vDash\phi$ ，假设 $\Gamma\not\vDash\phi$ 则存在[[MK401][真假赋值]] $v$ 满足 $\Gamma$ 且[[MK52][扩展函数]]有 $\bar{v}(\phi)=F$
+
+由于满足 $\Gamma$ 则必满足 $\Gamma'$ 又根据 $\Gamma'\vDash\phi$ 可得 $\bar{v}(\phi)=T$ 矛盾，故假设不成立，即 $\Gamma\vDash\phi$
+
+** 范式
 
 **** 基本术语定义
 
 ***** 文字<<MK92>>
 
-[[MK67][命题变元]]以及他们的否定。此时命题常元、变元被称为正文字，他们的否命题称为负文字。
+[[MK55][原子命题]]被称为正文字，原子命题的否定称为负文字。
 
 ***** 析取子句<<MK93>>
 
-有限个[[MK92][文字]]或若干[[MK92][文字]]的[[MK59][析取]]。
+有限个[[MK92][文字]]的[[MK59][析取]]。
 
 ***** 合取子句<<MK94>>
 
-有限个[[MK92][文字]]或若干[[MK92][文字]]的[[MK58][合取]]。
+有限个[[MK92][文字]]的[[MK58][合取]]。
 
 **** 合取范式<<MK95>>
 
@@ -2087,7 +3037,7 @@ A & B & C & A\leftrightarrow B & B\leftrightarrow C & (A\leftrightarrow B)\land(
 
 **** 定理1（范式存在定理）<<MK97>>
 
-任何命题公式都可化为[[MK95][合取范式]]或[[MK96][析取范式]]
+任何命题公式都可化为[[MK71][逻辑等价]]的[[MK95][合取范式]]或[[MK96][析取范式]]
 
 ***** 证明
 
@@ -2107,11 +3057,13 @@ A & B & C & A\leftrightarrow B & B\leftrightarrow C & (A\leftrightarrow B)\land(
 
 （2） $A'$ 的每一个[[MK93][析取子句]]满足：
 
-      a）所有的[[MK67][命题变元]]及其[[MK57][否定]]不同时存在
+      a）所有的[[MK92][文字]]及其[[MK57][否定]]不同时存在
 
       b）但二者其一正好出现一次
 
-      c）[[MK93][析取子句]]中文[[MK67][命题变元]]的次序一致（ $p_1,...,p_n$ ）
+      c）[[MK93][析取子句]]中文[[MK55][原子命题]]的次序一致（ $p_1,...,p_n$ ）
+
+（3） $A'\sim A$ 即 $A$ 与 $A'$ [[MK71][等价]]
 
 **** 主析取范式<<MK99>>
 
@@ -2121,15 +3073,17 @@ A & B & C & A\leftrightarrow B & B\leftrightarrow C & (A\leftrightarrow B)\land(
 
 （2） $A'$ 的每一个[[MK94][合取子句]]满足：
 
-      a）所有的[[MK67][命题变元]]及其[[MK57][否定]]不同时存在
+      a）所有的[[MK92][文字]]及其[[MK57][否定]]不同时存在
 
       b）但二者其一正好出现一次
 
-      c）[[MK94][合取子句]]中文[[MK67][命题变元]]的次序一致（ $p_1,...,p_n$ ）
+      c）[[MK94][合取子句]]中文[[MK55][原子命题]]的次序一致（ $p_1,...,p_n$ ）
+
+（3） $A'\sim A$ 即 $A$ 与 $A'$ [[MK71][等价]]
 
 **** 定理2<<MK100>>
 
-任意命题公式 $A$ 的主合取（析取）范式存在且唯一
+任意命题公式 $A$ 其[[MK71][逻辑等价]]的主合取（析取）范式存在且唯一
 
 ***** 证明
 
@@ -2141,13 +3095,17 @@ A & B & C & A\leftrightarrow B & B\leftrightarrow C & (A\leftrightarrow B)\land(
 
 利用[[MK91][替换原理]]，可利用以下替换构造主合取范式：
 
-（1） 若 $A'_i$ 中却少某项 $p_j$ 则 $A'_i{|\!\!\!=\!\!\!|}A'_i\lor0$ 根据[[MK83][矛盾律]]及[[MK77][分配率]]可得 $A'_i\lor0{|\!\!\!=\!\!\!|}A'_i\lor(p_j\land \lnot p_j){|\!\!\!=\!\!\!|}(A'_i\lor p_j)\land(A'_i\lor\lnot p_j)$ ，故可补全合取子式中不包含的[[MK67][命题变元]]。
+（1） 若 $A'_i$ 中却少某项 $p_j$ 则 $A'_i{|\!\!\!=\!\!\!|}A'_i\lor0$
+
+     根据[[MK83][矛盾律]]及[[MK77][分配率]]可得 $A'_i\lor0{|\!\!\!=\!\!\!|}A'_i\lor(p_j\land \lnot p_j){|\!\!\!=\!\!\!|}(A'_i\lor p_j)\land(A'_i\lor\lnot p_j)$ ，故可补全合取子式中不包含的[[MK92][文字]]。
 
 （2） 根据[[MK74][幂等律]] $A_i\land A_i{|\!\!\!=\!\!\!|}A_i$ 结合[[MK75][交换律]]，[[MK76][结合律]]可去除重复的[[MK93][析取子句]] 
 
 （3） 根据[[MK74][幂等律]] $p_j\land p_j{|\!\!\!=\!\!\!|}p_j$ 结合[[MK75][交换律]]，[[MK76][结合律]]可去除 $A_i$ 中 $p_j$ 的重复项
 
-（4） 根据[[MK82][排中律]] $p_j\lor\lnot p_j{|\!\!\!=\!\!\!|}1$ 结合[[MK81][零律]]及[[MK75][交换律]]可得 $A_i{|\!\!\!=\!\!\!|}1$ 且 $A_1\land...\land A_{i-1}\land A_i\land A_{i+1} \land...A_s{|\!\!\!=\!\!\!|}A_1\land...\land A_{i-1}\land A_{i+1} \land...A_s$ 故去除 $p_j,\lnot p_j$ 同时存在的项。
+（4） 根据[[MK82][排中律]] $p_j\lor\lnot p_j{|\!\!\!=\!\!\!|}1$ 结合[[MK81][零律]]及[[MK75][交换律]]可得 $A_i{|\!\!\!=\!\!\!|}1$
+
+     且 $A_1\land...\land A_{i-1}\land A_i\land A_{i+1} \land...A_s{|\!\!\!=\!\!\!|}A_1\land...\land A_{i-1}\land A_{i+1} \land...A_s$ 故去除 $p_j,\lnot p_j$ 同时存在的项。
 
 又根据[[MK76][结合律]]，析取与合取可以无视计算顺序，最终可得满足[[MK98][主合取范式]]条件的命题公式。
 
@@ -2155,21 +3113,29 @@ A & B & C & A\leftrightarrow B & B\leftrightarrow C & (A\leftrightarrow B)\land(
 
 定义命题 $A(p_1,...,p_n)$ 存在两个不同的[[MK98][主合取范式]] $B,C$ 则必有 $A{|\!\!\!=\!\!\!|}B,A{|\!\!\!=\!\!\!|}C$ 根据[[MK90][等价传递]] $B{|\!\!\!=\!\!\!|}C$
 
-由于 $B,C$ 是两个不同的主合取范式，则必存在至少一个不同个[[MK93][析取子句]]。即存在[[MK93][析取子句]] $B^*_i$ 仅存在 $B$ 或 $C$ 中。不妨设 $B^*_i$ 仅存在 $B$ 中。
+由于 $B,C$ 是两个不同的主合取范式，则必存在至少一个不同个[[MK93][析取子句]]。
 
-由于命题 $A(p_1,...,p_n)$ 且 $B,C$ 为[[MK98][主合取范式]]，故其[[MK93][析取子句]]的形式为 $\textcircled{}p_1\lor\textcircled{ }p_2\lor...\lor\textcircled{ }p_n$ 排列。其中 $\textcircled{ }$ 可放 $\lnot$ 或不放。
+即存在[[MK93][析取子句]] $B^*_i$ 仅存在 $B$ 或 $C$ 中。不妨设 $B^*_i$ 仅存在 $B$ 中。
 
-对于中某一特定[[MK93][析取子句]] $P_j=q_1\lor...\lor q_n$ ，其中 $q_i=\textcircled{j}_ip_i$ 且 $\textcircled{j}_i$ 为该子句下特定的 $p_i$ 前缀，可为 $\lor$ 或无。
+由于命题 $A(p_1,...,p_n)$ 且 $B,C$ 为[[MK98][主合取范式]]，故其[[MK93][析取子句]]的形式为 $\textcircled{}p_1\lor\textcircled{ }p_2\lor...\lor\textcircled{ }p_n$ 排列。
+
+其中 $\textcircled{ }$ 可放 $\lnot$ 或不放。
+
+对于中某一特定[[MK93][析取子句]] $P_j=q_1\lor...\lor q_n$ ，其中 $q_i=\textcircled{j}_ip_i$ 且 $\textcircled{j}_i$ 为该子句下特定的 $p_i$ 前缀，可为 $\lnot$ 或无。
 
 根据[[MK59][析取]]定义，当且仅当 $\forall i\big(((1\leq i\leq n)\land i\in N)\rightarrow q_i=0\big)$ 时 $P_j=0$ 
 
-且此时对于任意 $P_l=1,l\ne j$ ， $P_{l}$ 必存在一个 $q_k$ 使得 $\textcircled{l}_k$ 不同与 $\textcircled{j}_k$ （否则两个子句相同）。由于[[MK98][主合取范式]]定义，必有 $\textcircled{j}_kp_k=\lnot\textcircled{l}_kp_k$
+且此时对于任意其他析取子句 $P_l,l\ne j$ ， $P_{l}$ 必存在一个 $q_k$ 使得 $\textcircled{l}_k$ 不同与 $\textcircled{j}_k$ （否则两个子句相同）。
+
+由于[[MK98][主合取范式]]定义，必有 $\textcircled{j}_kp_k=\lnot\textcircled{l}_kp_k$
 
 故当 $\textcircled{j}_kp_k=0$ 时 $\textcircled{l}_kp_k=1$ ,则当 $P_j=0$ 时对于任意 $l\ne j$ 均有 $P_l=1$ 。
 
 综上所述，当某一[[MK93][析取子句]]真值为 $0$ 时，其他所有析取子句真值为 $1$ 。
 
-由于 $B,C$ 均为析取子句的合取，故当给定一组[[MK69][解释]] $I$ 使得 $B^*_i=0$ 时， $B=0$ 此时除 $B^*_i$ 外任意[[MK98][主合取范式]]的析取子句真值为 $1$ ，故可得 $C=1$ 。
+由于 $B,C$ 均为析取子句的合取，故当给定一组[[MK401][真假赋值]]的[[MK52][扩展函数]]使得 $\bar{v}(B^*_i)=F$ 时，
+
+有 $\bar{v}(B)=F$ 此时除 $B^*_i$ 外任意[[MK98][主合取范式]]的析取子句真值为 $1$ ，故可得 $\bar{v}(C)=T$ 。
 
 上述结论与 $B{|\!\!\!=\!\!\!|}C$ 矛盾，故假设不成立，主合取范式唯一。
 
@@ -2181,11 +3147,70 @@ A & B & C & A\leftrightarrow B & B\leftrightarrow C & (A\leftrightarrow B)\land(
 
 若命题公式为 $A(p_1,...,p_n)$ ，则其[[MK99][主析取范式]] $A'$ 的[[MK94][合取子式]]形式为 $\textcircled{ }p_1\land\textcircled{ }p_2\land...\land\textcircled{ }p_n$ 其中 $\textcircled{ }$ 可放 $\lnot$ 或不放。
 
-故能表示的不同合取子式的数量为 $2^n$ 。每一个合取子式对于 $A'$ 来说仅有包含和被包含两种互斥可能。故 $A'$ 最多可表达 $2^{2^n}$ 中可能的等值类。
+故能表示的不同合取子式的数量为 $2^n$ 。
 
-** 命题形式系统
+每一个合取子式对于 $A'$ 来说仅有包含和被包含两种互斥可能。故 $A'$ 最多可表达 $2^{2^n}$ 中可能的等值类。
 
-*** 定义<<MK101>>
+** \\命题公式
+
+*** 基本定义<<MK65>>
+
+**** 命题常元<<MK66>>
+
+一个确定的具体的命题，称为命题常元。与[[MK67][命题变元]]对应。
+
+**** 命题变元<<MK67>>
+
+根据[[MK68][定义]]命题公式即为对不同命题的逻辑运算，命题变项为命题公式中可变的命题，即逻辑运算的输入项。
+
+**** 命题公式<<MK68>>
+
+命题公式（又称 *真值函数* 或 *合适公式* ）可按下列[[MK15][归纳定义]]生成:
+
+基础条款：[[MK67][命题变项]]本身是命题公式。
+
+归纳条款：如果 $A$ 是命题公式，则 $\lnot A$ 是命题公式。如果 $A$ 和 $B$ 是命题公式，那么 $A\land B, A\lor B,A\rightarrow B,A\leftrightarrow B$ 都是命题公式。
+
+终极条款：当且仅当有限次地应用以上条款所得到的包含[[MK67][命题变项]]，[[MK55][联结词]]和圆括号（用于判别优先级）的符号串是命题公式。
+
+命题公式的定义是一个递归定义形式。命题公式本身不是命题，没有[[MK52][真值]]，只有对其[[MK67][命题变项]]进行赋值后，它才有[[MK52][真值]]。
+
+若定义命题公式为 $A$ 其[[MK67][命题变项]]为 $p_1,...,p_n$ 则可记作 $A(p_1,...,p_n)$
+
+
+*** 命题公式分类
+
+**** 原子命题
+
+仅包含[[MK67][命题变元]]的[[MK68][命题公式]]
+
+**** 可满足式
+
+若命题公式 $A$ 至少对一个[[MK67][命题变项]]赋值，使得[[MK52][真值]]为 $1$ ，则称命题公式 $A$ 为可满足式。[[MK70][永真式]]是可满足时。
+
+*** 命题公式关系
+
+**** 命题公式关系性质
+
+***** 等价对称
+
+若 $A{|\!\!\!=\!\!\!|}B$ 则有 $B{|\!\!\!=\!\!\!|}A$  
+
+***** 假言易位
+
+若 $A{|\!\!\!=}B$ 则有 $\lnot A{|\!\!\!=}\lnot B$ ，可由[[MK84][假言易位]]证明
+
+***** 蕴含传递
+
+若 $A{|\!\!\!=}B$ 且 $B{|\!\!\!=}C$ 则有 $A{|\!\!\!=}C$  
+
+***** 蕴含可替
+
+若 $A{|\!\!\!=}B$ 且 $A{|\!\!\!=\!\!\!|}A',B{|\!\!\!=\!\!\!|}B'$ 则有 $A'{|\!\!\!=}B'$
+
+** \\命题形式系统
+
+*** 定义
 
 一个满足以下条件的符号体系：
 
@@ -2213,68 +3238,6 @@ A & B & C & A\leftrightarrow B & B\leftrightarrow C & (A\leftrightarrow B)\land(
 
 公理和推理规则能保证正确的前提可以推出正确的结论
 
-*** 证明<<MK104>>
-
-公式序列 $A_1,...,A_m$ 对于任意 $A_i,1\leq i\leq m$ 满足下列任一条件：
-
-（1） $A_i$ 是[[MK101][公理]]
-
-（2） $A_i$ 是由公式序列中 $A_{j_1},...,A_{j_k},j_s\leq i,i\leq s\leq k$ 的条件根据[[MK101][推理规则]]推理而得。
-
-则称公式序列 $A_1,...,A_m$ 是 $A_m$ 的证明，记作 ${|\!-}A_m$ ，且 $A_m$ 被称为 *定理* 。
-
-*** 演绎<<MK105>>
-
-已知 $\Gamma$ 为一个公式集合，有限公式序列 $A_1,...,A_m$ 对于任意 $A_i,1\leq i\leq m$ 满足下列任一条件：
-
-（1） $A_i$ 是[[MK101][公理]]
-
-（2） $A_i$ 是由公式序列中 $A_{j_1},...,A_{j_k},j_s\leq i,i\leq s\leq k$ 的条件根据[[MK102][推理规则]]推理而得。
-
-（3） $A_i\in\Gamma$
-
-则称公式序列 $A_1,...,A_m$ 是 $A_m$ 以 $\Gamma$ 为前提的演绎，记作 $\Gamma{|\!-}A_m$ ，且 $A_m$ 被称 $\Gamma$ 的 *演绎结果* 。
-
-当 $\Gamma=\varnothing$ 时，演绎结果即为[[MK104][定理]]。
-
-*** 推理规则保真性
-
-已知 $\Gamma$ 为一个公式集合，当 $\Gamma$ 中所有公式真值均为 $1$ 时，其[[MK105][演绎结果]]的真值亦为 $1$
-
-**** 证明
-
-根据[[MK105][演绎]]，对于满足条件的公式序列 $A_1,...,A_m$ 若 $A_i$ 是公理或 $A_i\in\Gamma$ 则根据条件 $A_i=1$
-
-若 $A_m$ 是推理结果，则存在前提条件 $A_{j_s},1\leq s\leq k,j_s<m$
-
-由于 $m\leq\infty$ 有限，故 $i$ 有限。且推理的前提条件 $A_{j_s}$ 需满足 $j_s<i$ 
-
-结合[[MK105][演绎]]定义，公式序列中推理过程必然由公理或者 $\Gamma$ 中的命题出发，则在条件下出发命题真值均为 $1$ 
-
-根据[[MK102][推理规则]]，则前提条件真值为 $1$ 时结论必为 $1$ 
-
-则根据条件，真值传递后 $A_m=1$
-
-*** 形式系统的性质
-
-**** 合理性<<MK106>>
-
-若 $A$ 是形式系统的[[MK104][定理]]，则 $A$ 为[[MK70][重言式]]，即 $A=1$
-
-若 $A$ 是形式系统的[[MK105][演绎结果]]，则 $A$ 为前提条件 $\Gamma$ 的[[MK86][逻辑结果]]，即 $\Gamma{|\!\!\!=}A$ 。
-
-即形式系统中的[[MK104][定理]]和[[MK105][演绎结果]]都是合乎逻辑的。
-
-**** 一致性<<MK107>>
-
-不会出现自相矛盾的[[MK104][定理]]，即 $({|\!-}A)\land({|\!-}\lnot A)=0$ 。
-
-**** 完备性<<MK108>>
-
-如果 $A$ 是重言式，则 $A$ 一定是形式系统中的定理，即 $\left\{A=1\right\}{|\!\!\!=}\left\{{|\!-}A\right\}$
-
-如果 $A$ 是 $\Gamma$ 中的[[MK86][逻辑结果]]，则 $A$ 为 $\Gamma$ 的[[MK105][演绎结果]]，即 $\left\{\Gamma{|\!\!\!=}A\right\}{|\!\!\!=}\left\{\Gamma{|\!-}A\right\}$
-
 *** 举例
 
 **** 命题演算系统（PC）
@@ -2293,27 +3256,27 @@ A3<<MK112>>: $(\lnot A\rightarrow\lnot B)\rightarrow(B\rightarrow A)$
 
 假设公式集合 $\Gamma$ ， 若满足：
 
-（1） $A\in\Gamma$ 或 $A$ 为 $\Gamma$ 的[[MK105][演绎结果]]
+（1） $A\in\Gamma$ 或 $A$ 为 $\Gamma$ 的[[MK104][演绎结果]]
 
 （2） 当 $\Gamma$ 中公式真值均为 $1$ 时有 $A\rightarrow B=1$
 
-则 $\Gamma{|\!-}B$ ，即 $B$ 亦为 $\Gamma$ 的[[MK105][演绎结果]]。特别的，当 $\Gamma=\varnothing$ 时 $B$ 为[[MK104][定理]]
+则 $\Gamma{|\!-}B$ ，即 $B$ 亦为 $\Gamma$ 的[[MK104][演绎结果]]。特别的，当 $\Gamma=\varnothing$ 时 $B$ 为[[MK104][定理]]
 
 ****** 推论：推理规则保真性<<MK114>>
 
-已知 $\Gamma$ 为一个公式集合，当 $\Gamma$ 中所有公式真值均为 $1$ 时，其[[MK105][演绎结果]]的真值亦为 $1$
+已知 $\Gamma$ 为一个公式集合，当 $\Gamma$ 中所有公式真值均为 $1$ 时，其[[MK104][演绎结果]]的真值亦为 $1$
 
 ******* 证明
 
 ******** 定义 $A_{s_k}$ 
 
-根据[[MK105][演绎结果]]定义假设公式序列 $A_1,...,A_m$ ，取其中任一公式 $A_{s_0}$
+根据[[MK104][演绎结果]]定义假设公式序列 $A_1,...,A_m$ ，取其中任一公式 $A_{s_0}$
 
 根据[[MK109][公理]]中定义，PC系统的公理为[[MK70][重言式]]，且根据条件 $\Gamma$ 中的命题公式真值亦为 $1$
 
 （1） 则若 $A_{s_0}\in\Gamma$ 或 $A_{s_0}$ 为[[MK109][公理]]时 $A_{s_0}=1$
 
-（2） 当 $A_{s_0}$ 为[[MK105][演绎结果]]时必存在 $A_{s_1}\rightarrow A_{s_0}=1,s_1<s_0$
+（2） 当 $A_{s_0}$ 为[[MK104][演绎结果]]时必存在 $A_{s_1}\rightarrow A_{s_0}=1,s_1<s_0$
 
 同理 $A_{s_1}$ 或者满足 $A_{s_1}=1$ 或者满足 $A_{s_2}\rightarrow A_{s_1}=1,s_2<s_1$
 
@@ -2341,7 +3304,7 @@ A3<<MK112>>: $(\lnot A\rightarrow\lnot B)\rightarrow(B\rightarrow A)$
 
 （1） 公理导出的结果均为[[MK70][重言式]]
 
-（2） [[MK105][演绎结果]]必为[[MK86][逻辑结果]]
+（2） [[MK104][演绎结果]]必为[[MK86][逻辑结果]]
 
 ****** 一致性
 
@@ -2417,45 +3380,205 @@ MU是否系统中的串？
 
 四个规则均无法从不能被3整除的数中演化出可以被3整除的数。故MU不是定理。
 
+* 一阶逻辑
+
+** 一阶语言
+
+*** 符号<<MK116>>
+
+一阶逻辑包含以下固定符号：
+
+（1） 逻辑符号：包含 $\{(,\lnot,\to,)\}$ 同[[MK56][命题逻辑符号]]，亦可有[[MK434][推导符号]] $\{\land,\lor,\leftrightarrow\}$
+
+（2） 量词符号<<MK124>>： $\forall$ ，亦可有推导符号 $\exists$
+
+（2） 等式符号： $\hat{=}$
+
+（3） 变元符号<<MK130>>： $X=\left\{x_i\big|i\in\mathbb{N}\right\}$ 
+
+除上述符号外，逗号亦被引入，作用于函数符号及谓词符号。同时一阶逻辑亦包含一下非固定符号：
+
+（1） 常元符号<<MK129>>： $C=\left\{c_i\big|i\in\mathbb{N}\right\}$
+
+（2） 函数符号<<MK131>>： $F=\left\{f_i\big|i\in\mathbb{N}\right\}$
+
+（3） 谓词（关系）符号<<MK132>>： $P=\left\{p_i\big|i\in\mathbb{N}\right\}$
+
+**** 符号假定1<<MK122>>
+
+所有符号均为不同元素
+
+**** 符号假定2
+
+存在函数 $\pi_P:P\to\mathbb{N}$ 以及函数 $\pi_F:F\to\mathbb{N}$ 满足：
+
+（1） $\forall p_i\in P\rightarrow\pi_P(p_i)\in\mathbb{N}$ 以及 $\forall f_i\in F\rightarrow\pi_F(f_i)\in\mathbb{N}$
+
+（2） 对于任意 $n\in\mathbb{N}$ 集合 $P_n=\left\{p_i\big|\pi_P(p_i)=n\right\}$ 和 $F_n=\left\{f_i\big|\pi_F(f_i)=n\right\}$ 均为[[MK44][可数集]]
+
+***** 可能性证明
+
+以 $F$ 为例，定义 $F_n=\left\{f_{ij}\big|i=n\land j\in\mathbb{N}\right\}$ 进一步定义 $F=\bigcup_{n\in\mathbb{N}}F_n$
+
+根据[[MK49][定理1]]可得 $F$ 仍为[[MK48][之多可数集]]，又有 $F_1$ 是可数集，且 $F_1\subset F$
+
+故根据[[MK355][定理7]]可得 $F$ 的[[MK3][基数]]大于等于 $F_1$ ，结合 $F$ 是至多可数集可得 $F$ 是可数集
+
+同理可证存在满足符号假定的 $P$ 
+
+*** 基本符号串
+
+定义 $\Sigma_0=\{(,\lnot,\to,),\forall,\hat{=}\}\cup X\cup\{,\}$ 为所有[[MK116][固定符号]]，最后一项为逗号。
+
+定义 $\Sigma_1=C\cup F\cup P$ 为所有[[MK116][非固定符号]]。定义 $\Sigma=\Sigma_0\cup\Sigma_1$ 以及 $\Sigma^n$ 为 $\Sigma$ 的 $n$ 次[[MK153][笛卡尔积]]
+
+最终定义基本符号串 $\Sigma^*=\bigcup_{n\in\mathbb{N}}\Sigma^n$
+
+**** 连接运算
+
+定义 $s_1=<a_1,...,a_n>\in\Sigma^*\land s_2=<b_1,...,b_m>\in\Sigma^*$ 则 $s_1*s_2=<a_1,...,a_n,b_1,...,b_m>$ 
+
+*** 合成封闭子集<<MK119>>
+
+若 $S\subset\Sigma^*$ 满足：
+
+（1） $X\cup C\subset S$ 即 $S$ 包含所有[[MK130][变元符号]]和[[MK129][常元符号]]
+
+（2） 对于任意 $f_i\in F$ 以及 $\tau_i\in S,1\leq i\leq\pi_F(f_i)}$ 有字符串 $f_i(\tau_1,...,\tau_{\pi_F(f_i)})\in S$
+
+则 $S$ 是 $\Sigma^*$ 的合成封闭子集，记 $\Sigma^*$ 的所有合成封闭子集为 $\mathcal{S}$
+
+*** 项<<MK133>>
+
+给定 $\Sigma^*$ ，定义 $T=\bigcap\mathcal{S}$ 是所有[[MK119][合成封闭子集]]的交，则 $T$ 中的元素为项
+
+**** 最小引理<<MK120>>
+
+$T$ 是最小的[[MK119][合成封闭子集]]
+
+***** 证明
+
+[[MK395][同理]]可证
+
+**** 可读性引理<<MK121>>
+
+若 $\tau\in T$ 是[[MK133][项]]，那么以下两种情况有且仅有一种成立：
+
+（1） $\tau=x_i\in X\lor\tau=c_i\in C$ 即是[[MK130][变元符号]]或[[MK129][常元符号]]
+
+（2） $\tau=f_i(\tau_1,...,\tau_n)$ 其中 $\tau_i\in T,1\leq i\leq n$
+
+***** 证明
+
+显然（1），（2）不能同时成立
+
+假设 $\tau$ 不是上述两种情况，根据[[MK120][最小引理]]可得 $T$ 是最小的[[MK119][合成封闭子集]]
+
+则 $T-\{\tau\}$ 亦为合成封闭子集，与 $T$ 的最小引理矛盾，故假设不成立。
+
+**** 前缀引理<<MK125>>
+
+若 $\tau=<t_1,...,t_n>\in T$ 是[[MK133][项]]，那么其任意真前缀 $\tau_k=<t_1,...,t_k>,k<n$ 均有 $t_k\not\in T$
+
+***** 证明
+
+根据以下证明， $\tau$ 为有限长度，以及数学归纳法可证
+
+****** 当 $|\tau|=1$ 时
+
+根据[[MK121][可读性引理]]当 $\tau=c_i$ 或 $\tau=x_i$ 时其真前缀有且仅有空字符串，根据[[MK120][最小引理]]可得空串不属于 $T$
+
+****** 归纳假设
+
+对于任意 $|\tau|<n$ 其任意真前缀 $\tau_k$ 均有 $\tau_k\not\in T$
+
+****** 当 $|\tau|=n$ 时
+
+根据[[MK121][可读性引理]]仅有可能 $\tau=f_i(\tau_1,...,\tau_n)$ 显然 $f_1\not\in T$
+
+若 $\tau_k=f_i(\tau'_1,...,\tau'_m)$ 则易证必有一对 $\tau'_i,\tau_i$ 满足一个为另一个的真前缀
+
+显然 $|\tau_i|<n,|\tau'_i|<n$ 其任意真前缀均不属于 $T$ 则根据[[MK121][可读性]] $\tau_k,\tau$ 有一个不属于 $T$
+
+又由于 $\tau\in T$ 为给定，故必有 $\tau_k\not\in T$
+
+**** 唯一可读性
+
+若 $\tau\in T$ 是[[MK133][项]]，那么以下两种情况有且仅有一种成立：
+
+（1） 存在唯一的[[MK129][常元符号]] $c_i\in C$ 使得 $\tau=c_i$
+
+（2） 存在唯一的[[MK129][常元符号]] $x_i\in X$ 使得 $\tau=x_i$
+
+（3） 存在唯一[[MK131][函数符号]] $f_i\in F$ 以及唯一的一组 $<\tau_1,...,\tau_n>\in T^n$ 满足 $\tau=f_i(\tau_1,...,\tau_n)$
+
+***** 证明
+
+根据以下证明， $\tau$ 为有限长度，以及数学归纳法可证
+
+****** 当 $|\tau|=1$ 时
+
+根据[[MK121][可读性引理]]仅有 $\tau=c_i$ 或 $\tau=x_i$ ，又根据[[MK122][符号假定]]可得所有 $X,C$ 中元素均不同
+
+故可得唯一
+
+****** 归纳假设
+
+对于任意 $|\tau|<n$ 唯一可读性成立
+
+****** 当 $|\tau|=n$ 时
+
+根据[[MK121][可读性引理]]仅有可能 $\tau=f_i(\tau_1,...,\tau_n)$ 假设存在 $\tau'=f'_i(\tau'_1,...,\tau'_m)$ 满足：
+
+（1） $\tau=\tau'$
+
+（2） $f_i\ne f'_i$ 或存在 $i$ 使得 $\tau_i\ne\tau'_i$
+
+则
+
+（1） 根据[[MK122][符号假定]]若 $f'_i\ne f_i$ 则 $\tau\ne\tau'$ 则有 $\tau'=f_i(\tau'_1,...,\tau'_m)$
+
+（2） 若有 $\sum_{i=1}^n|\tau_i|\ne\sum_{i=1}^m|\tau'_i|$ 则有 $|\tau|\ne|\tau'|$ 显然有 $\tau\ne\tau'$
+
+（3） 若 $m=n\land|\tau_i|=|\tau'_i|$ 则由于 $|\tau_i|<n$ 可得其形式唯一，可得 $\tau_i=\tau'_i$ 与 $\tau'$ 定义矛盾
+
+（4） 若 $\sum_{i=1}^n|\tau_i|=\sum_{i=1}^m|\tau'_i|$ 且不满足（3），易证必存在一对 $\tau_i,\tau'_i$ 一个是另一个的真前缀
+
+     根据[[MK125][前缀引理]]可得必有一个不属于 $T$ 进一步根据[[MK121][可读性]]易证 $\tau'\not\in T$
+
+综上所述，当 $|\tau|=n$ 根据归纳假设，不存在 $\tau'$ 打破唯一性
+
+*** 表达式<<MK135>>
+
+
+
 * 谓词逻辑
 
 ** 定义
 
-*** 个体词<<MK116>>
+*** 个体词
 
 在原子命题中可以独立存在的客体（主语、宾语等），称为个体词。
 
 同[[MK65][命题公式]]
 
-**** 个体常元<<MK117>>
-
-表示具体，或特定的个体词。一般用 $a,b,c,...\a$ 或 $a_i,b_j,c_k,...\a$ 表示
-
-**** 个体变元<<MK118>>
-
-表示抽象，或泛指的个体词。一般用 $x,y,z,...\a$ 或 $x_i,y_j,z_k,...\a$ 表示
-
-**** 个体域<<MK119>>
+**** 个体域
 
 个体词的取值范围。一般用 $D$ 表示
 
-**** 全总域（Universe）<<MK120>>
+**** 全总域（Universe）
 
 包含一切个体词的个体域，一般记作 $U$ 。若不标注[[MK119][个体域]]，一般表示全总域。
 
-*** 谓词<<MK121>>
+*** 谓词
 
 用以刻画[[MK116][个体词]]性质，或[[MK116][个体词]]间关系，即谓词。谓词表示通常以[[MK194][函数]]形式表示。
 
 举例某个谓词以符号 $P$ 表示，其刻画 $n$ 个体词 $x_1,...,x_n$ ，则表示为 $P(x_1,...,x_n)$ 即为 $P:D^n\rightarrow\{0,1\}$
 
-**** 元数<<MK122>>
+**** 元数
 
 谓词中可以放置[[MK118][个体变量]]的空位个数，称为谓词的元数。举例中为 $n$
-
-**** 谓词常量<<MK123>>
-
-谓词描述具体的性质或关系。例：小张和小明同岁，可表示为 $F(a,b)$ ，则谓词 $F$ 表同岁这一具体的关系。
 
 **** 谓词变量
 
@@ -2471,7 +3594,7 @@ MU是否系统中的串？
 
 故所有命题均可用零元谓词来表示。
 
-*** 量词<<MK124>>
+*** 量词
 
 描述[[MK116][个体词]]范围的词，例如：
 
@@ -2501,15 +3624,15 @@ $\exists xP(x),x\in\{a_1,...,a_n\}$ 定义为 $P(a_1)\lor...\lor P(a_n)$ ， $\l
 
 $\forall x\exists p\exists q\left(Even(x)\land(x>2)\rightarrow Prime(p)\land Prime(q)\right)$
 
-**** 约束变元<<MK125>>
+**** 约束变元
 
 被量词作用的[[MK118][个体变元]]
 
-**** 自由变元<<MK126>>
+**** 自由变元
 
 不被量词作用的[[MK118][个体变元]]
 
-**** 辖域<<MK127>>
+**** 辖域
 
 量词所作用的谓词或者复合谓词表达式。可用括号表示，亦可用冒号 $:$
 
@@ -2529,23 +3652,23 @@ $\forall x\exists p\exists q\left(Even(x)\land(x>2)\rightarrow Prime(p)\land Pri
 
 *** 包含符号
 
-**** 常量符号<<MK129>>
+**** 常量符号
 
 指[[MK117][个体常量]]，以 $a,b,c,...\a$ 或 $a_i,b_j,c_k,...\a$ 表示
 
-**** 变量符号<<MK130>>
+**** 变量符号
 
 指[[MK118][个体变量]]，以 $x,y,z,...\a$ 或 $x_i,y_j,z_k,...\a$ 表示
 
-**** 函数符号<<MK131>>
+**** 函数符号
 
 $n$ 元函数符号 $f(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\rightarrow D$ 的任一函数
 
-**** 谓词符号<<MK132>>
+**** 谓词符号
 
 $n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\rightarrow \{0,1\}$ 的任一谓词
 
-*** 项<<MK133>>
+*** 项
 
 根据[[MK15][归纳定义]]：
 
@@ -2555,19 +3678,19 @@ $n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\ri
 
 终极条款：只有有限次使用以上两条款产生的符号串是项
 
-*** 原子公式<<MK134>>
+*** 原子公式
 
 若 $P(x_1,...,x_n)$ 是 $n$ 元[[MK132][谓词公式]]，且 $t_1,...,t_n$ 是[[MK133][项]]，则 $P(t_1,...,t_n)$ 是原子公式
 
 根据[[MK132][谓词符号]]可得原子公式亦有[[MK52][真值]]且满足[[MK53][排中律]]。
  
-*** 合式公式(谓词公式)<<MK135>>
+*** 合式公式(谓词公式)
 
 根据[[MK15][归纳定义]]：
 
 基础条款：任意[[MK134][原子公式]]是合式公式
 
-归纳条款：[[MK54][逻辑连接词]]与[[MK124][量词]]作用于合式公式后仍为合式公式，即：
+归纳条款：[[MK55][逻辑连接词]]与[[MK124][量词]]作用于合式公式后仍为合式公式，即：
 
     若 $G,H$ 是合式公式，则 $(G\lor H),(G\land H),(G\rightarrow H),(G\leftrightarrow H)$ 也是合式公式
 
@@ -2577,7 +3700,7 @@ $n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\ri
 
 故合式公式为谓词逻辑下的[[MK52][真值]]计算公式，且满足[[MK53][排中律]]。
 
-*** 解释<<MK136>>
+*** 解释
 
 一组确定的[[MK130][变量符号]]，[[MK131][函数符号]]和[[MK132][谓词符号]]使得[[MK135][合式公式]]有确定的值，称为解释，通常记作 $I$ 表示
 
@@ -2589,7 +3712,7 @@ $n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\ri
 
 ** 合式公式分类
 
-*** 有效公式<<MK137>>
+*** 有效公式
 
 当[[MK135][合式公式]]对任意[[MK136][解释]]，使得[[MK135][合式公式]]的[[MK52][真值]]均为 $1$ 时，称为有效公式。
 
@@ -2605,13 +3728,13 @@ $n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\ri
 
 *** 谓词公式等价关系
 
-**** 定义<<MK138>>
+**** 定义
 
 若 $G\leftrightarrow H$ 是[[MK137][有效公式]]，则公式 $G,H$ 为等价，记作 $G{|\!\!\!=\!\!\!|}H$ 。
 
 同理，此处等价符号为两个[[MK135][合式公式]]的关系，不参与真值计算。
 
-**** 代入实例<<MK139>>
+**** 代入实例
 
 设 $G(P_1,...,P_n)$ 是[[MK68][命题公式]]，其中 $P_1,...,P_n$ 是[[MK67][命题变元]]。
 
@@ -2627,11 +3750,11 @@ $n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\ri
 
 由于 $H_i$ 是[[MK135][合式公式]]，故 $H_i\in\{0,1\}$ 故根据[[MK70][永真式]]定义，对于任意 $H_i$ 均有 $G(H_1,...,H_n)=1$ 
 
-***** 推论<<MK141>>
+***** 推论
 
 根据[[MK140][定理]]可知，[[MK72][命题等价举例]]中的公式，将[[MK67][命题变元]]替换为[[MK135][合式公式]]后，必为[[MK138][等价谓词公式]]
 
-**** 合式公式带入原理<<MK142>>
+**** 合式公式带入原理
 
 若[[MK135][合式公式]] $A$ 含有子公式 $C$ 。另外有合式公式 $D{|\!\!\!=\!\!\!|}C$ ，则将 $D$ 替换 $A$ 中的 $C$ 后得合式公式 $B$ ，则有 $A{|\!\!\!=\!\!\!|}B$
 
@@ -2696,7 +3819,7 @@ $n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\ri
 
 注：逻辑蕴含符号 ${|\!\!\!=}$ 仅表示两个公式之间的关系，无真值计算。
 
-**** 定理<<MK149>>
+**** 定理
 
 同理根据[[MK142][带入原理]]若[[MK65][命题公式]] $A{|\!\!\!=}B$ ，且 $G,H$ 为 $A,B$ 的[[MK139][带入实例]]，则有 $G{|\!\!\!=}H$
 
@@ -2731,7 +3854,7 @@ $n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\ri
 
 ** 前束范式
 
-*** 定义<<MK150>>
+*** 定义
 
 [[MK135][合式公式]] $G$ 称为前束范式，若满足：
 
@@ -2765,15 +3888,17 @@ $n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\ri
 
 ** 基本定义
 
-*** 有序组
-
-**** 定义<<MK151>>
+*** 有序组<<MK151>>
 
 $n$ 元有序组定义为：
 
 （1） 当 $n=2$ 时 $<a_1,a_2>=\left\{\{a_1\},\{a_1,a_2\}\right\}$
 
 （2） 当 $n>2$ 时 $<a_1,...a_n>=<<a_1,...,a_{n-1}>,a_n>$
+
+进一步简化表达可有 $a_1a_2...a_n=<a_1,a_2,...,a_n>$
+
+对于任意有序组 $s=<a_1,a_2,...,a_n>$ 定义 $s[i]=a_i$
 
 **** 定理<<MK152>>
 
@@ -2814,9 +3939,7 @@ $n$ 元有序组定义为：
 
 同理对集合求广义并由 $\{u,a_n\}=\{v,b_n\}$ 又由于 $u=v$ 故有 $a_n=b_n$
 
-*** 笛卡尔积/直积<<MK357>>
-
-**** 定义<<MK153>>
+*** 笛卡尔积/直积<<MK153>>
 
 当两个集合做笛卡尔积时定义为 $A_1\times A_2=\left\{<u,v>\big|u\in A_1\land v\in A_2\right\}$ 记作 $A_1\times A_2$
 

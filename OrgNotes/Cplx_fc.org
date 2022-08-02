@@ -2,7 +2,7 @@
 
 #+TITLE: 复变函数
 
-current mark: 92
+current mark: 93
 
 * 其他定理
 
@@ -66,7 +66,7 @@ current mark: 92
 
 两个复数 $a+ib,c+id$ 相等定义为 $a=c\land b=d$
 
-** 共轭复数
+** 共轭复数<<MK93>>
 
 若存在复数 $z=a+ib$ 则其共轭复数为 $\overline{z}=a-ib$
 

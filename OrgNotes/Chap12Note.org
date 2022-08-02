@@ -4,125 +4,6 @@
 
 current mark: MK28
 
-* 矩阵基本知识
-
-** 特征值与特征向量
-
-设 $A=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{n1}&a_{n2}&...&a_{nn}\end{matrix}\right]$ 为 $n$ 阶矩阵，存在常数 $\lambda$ 及非零 $n$ 维向量 $\vec{x}$ 使得 $A\vec{x}=\lambda\vec{x}$ 则称 $\lambda$ 为 $A$ 的特征值 $\vec{x}$ 为相应的特征向量
-
-** 求解特征值和特征向量
-
-根据定义有 $A\vec{x}=\lambda\vec{x}=\lambda E\vec{x}$ 故根据矩阵运算定义 $\left(E\lambda-A\right)\vec{x}=\vec{0}$ 其中 $E$ 为单位矩阵
-
-由于 $\vec{x}$ 为非零向量，故 $\left(E\lambda-A\right)$ 不存在逆阵使得 $\vec{x}=\vec{0}\left(E\lambda-A\right)=\vec{0}$ 故 $\left|E\lambda-A\right|=0$
-
-根据行列式计算方法 $D=\Pi_{i=1}^n (a_{ii}-\lambda)+C$ 其中 $C$ 为排除连乘的其他项，故根据代数基本定理 $\lambda$ 可有 $n$ 个复根
-
-** 矩阵对角化
-
-若 $n$ 阶矩阵 $A$ 存在 $n$ 个线性不相关特征向量 $\vec{x}=[\begin{matrix}\vec{x}_1&\vec{x}_2&..&\vec{x}_n\end{matrix}]$ 则存在正交矩阵 $P=\vec{x}$ 使得 $P^{-1}AP=\Lambda=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$ 其中 $\lambda_i$ 为特征向量 $\vec{x}$ 对应的特征值
-
-*** 证明
-
-根据矩阵乘法
-
-\begin{aligned}
-AP&=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{n1}&a_{n2}&...&a_{nn}\end{matrix}\right][\begin{matrix}\vec{x}_1&\vec{x}_2&..&\vec{x}_n\end{matrix}]\\
-&=[\begin{matrix}A\vec{x}_1&A\vec{x}_2&..&A\vec{x}_n\end{matrix}]\\
-&=[\begin{matrix}\lambda_1\vec{x}_1&\lambda_2\vec{x}_2&..&\lambda_n\vec{x}_n\end{matrix}]\\
-&=[\begin{matrix}\vec{x}_1&\vec{x}_2&..&\vec{x}_n\end{matrix}]\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]\\
-&=P\Lambda\\
-\end{aligned}
-
-若 $P$ 可逆，即 $\vec{x}_i$ 线性不相关，则有 $P^{-1}P=E$
-
-同时由于矩阵乘法满足结合律，故 $P^{-1}AP=P^{-1}(AP)=P^{-1}P\Lambda=E\Lambda=\Lambda$ 证毕
-
-** 实对称矩阵
-
-定义矩阵 $A$ 为 $n$ 阶实对称矩阵
-
-*** <<MK19>>实对称矩阵特征值为实数
-
-根据特征值定义 $A\vec{x}=\lambda\vec{x}\Rightarrow (A\vec{x})^T=(\lambda\vec{x})^T\Rightarrow\vec{x}^TA^T=\vec{x}^T\lambda$
-
-对以上等式两边取共轭 $\overline{\vec{x}^TA^T}=\overline{\vec{x}^T\lambda}\Rightarrow \overline{\vec{x}^T}\cdot\overline{A^T}=\overline{\lambda}\cdot\overline{\vec{x}^T}\Rightarrow\overline{\vec{x}^T}\cdot\overline{A^T}\cdot\vec{x}=\overline{\lambda}\cdot\overline{\vec{x}^T}\cdot\vec{x}$
-
-由于对称实矩阵 $A^T=A,\overline{A}=A\Rightarrow \overline{A^T}=A$ 故有 $\overline{\vec{x}^T}\cdot A\cdot\vec{x}=\overline{\vec{x}^T}\cdot \lambda\cdot\vec{x}=\overline{\lambda}\cdot\overline{\vec{x}^T}\cdot\vec{x}$
-
-故 $\overline{\lambda}=\lambda$ 得出特征值必为实数
-
-*** <<MK22>>实对称矩阵不同特征值的特征向量正交
-
-定义 $A\vec{x}_1=\lambda_1\vec{x}_1,A\vec{x}_2=\lambda_2\vec{x}_2$ 其中 $\lambda_1\ne\lambda_2$
-
-则有 $\vec{x}_2^TA\vec{x}_1=\vec{x}_2^T\lambda_1\vec{x}_1$ 由于实对称矩阵 $A^T=A$ 且由于根据矩阵乘法 $BA=(A^TB^T)^T$ 其中 $B$ 为列数为 $n$ 的任意矩阵，故有 $BA=(AB^T)^T$
-
-故 $\vec{x}_2^TA\vec{x}_1=(A\vec{x}_2)^T\vec{x}_1=(\lambda_2\vec{x}_2)^T\vec{x}_1=\vec{x}_2^T\lambda_1\vec{x}_1\Rightarrow (\lambda_1-\lambda_2)\vec{x}_2^T\vec{x}_1=0$ 因为 $\lambda_1\ne\lambda_2$ 故有 $\vec{x}_2^T\vec{x}_1=0$
-
-*** <<MK23>>实对称矩阵必有实数特征向量
-
-由于 $(E\lambda-A)\vec{x}=0$ 其中根据[[MK19][特征值为实数]]可得计算的 $\vec{x}$ 亦为实数
-
-*** <<MK24>>实对称矩阵必可对角化
-
-**** <<MK20>>证明存在正交矩阵转换为上三角矩阵
-
-假设对于 $n-1$ 阶矩阵 $B$ 存在正交矩阵 $S=[\begin{matrix}\vec{s}_2&\vec{s}_3&...&\vec{s}_n\end{matrix}]$ 其中 $|\vec{s}_i|=1,\vec{s}_i\cdot\vec{s}_j=0,i\ne j$ 使得 $S^{-1} B S=S^T A_{n-1} S=\left[\begin{matrix}\lambda_2&*&...&*\\0&\lambda_3&...&*\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$
-
-对于 $n$ 阶矩阵 $A$ 假设其中一个特征值为 $\lambda$ 对应特征向量 $\vec{q}_1$ 其长度为 $|\vec{q}_1|=1$ 以 $\vec{q}_1$ 为基准建议一组长度为1，相互正交的向量 $\vec{q}_1,\vec{q}_2,...,\vec{q}_n\Rightarrow |\vec{q}_i|=1,\vec{q}_i\cdot\vec{q}_j=0,i\ne j$
-
-则定义 $Q=[\begin{matrix}\vec{q}_1&\vec{q}_2&...&\vec{q}_n\end{matrix}]$ 故有 $AQ=[\begin{matrix}A\vec{q}_1&A\vec{q}_2&...&A\vec{q}_n\end{matrix}]$ 由于 $A\vec{q}_i\in R^n$ 且 $Q$ 为维度为 $n$ 的正交向量，故 $A\vec{q}_i$ 必可用 $\vec{q}_i$ 的线性组合表示，即 $A\vec{q}_i=\sum_{j=1}^n b_{ij}\vec{q}_j$
-
-且有根据特征值定义故 
-
-\begin{aligned}
-AQ&=\left[\begin{matrix}\lambda\vec{q}_1&\vec{q}_2\left[\begin{matrix}b_{21}\\b_{22}\\...\\b_{2n}\end{matrix}\right]&...&\vec{q}_n\left[\begin{matrix}b_{n1}\\b_{n2}\\...\\b_{nn}\end{matrix}\right]\end{matrix}\right]\\
-&=\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\right]\left[\begin{matrix}\lambda&b_{21}&...&b_{n1}\\0&b_{22}&...&b_{n2}\\...&...&...&...\\0&b_{2n}&...&b_{nn}\end{matrix}\right]
-\end{aligned}
-
-故有
-
-\begin{aligned}
-Q^{-1}AQ&=\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\right]^{-1}\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\right]\left[\begin{matrix}\lambda&b_{21}&...&b_{n1}\\0&b_{22}&...&b_{n2}\\...&...&...&...\\0&b_{2n}&...&b_{nn}\end{matrix}\right]\\
-&=\left[\begin{matrix}\lambda&b_{21}&...&b_{n1}\\0&b_{22}&...&b_{n2}\\...&...&...&...\\0&b_{2n}&...&b_{nn}\end{matrix}\right]\\
-&=\left[\begin{matrix}\lambda&\vec{b}\\\vec{0}&B\end{matrix}\right]
-\end{aligned}
-
-由于根据假设使任意 $n-1$ 阶矩阵 $B$ 存在正交阵 $S$ 使得 $S^{-1}BS$ 为上三角矩阵，则定义 $Q'=\left[\begin{matrix}1&0&...&0\\0& & & \\...& &S& \\0& & &\\\end{matrix}\right]$
-
-则有 $(QQ')^TQQ'=Q'^TQ^TQQ'=Q'^TEQ'=E$ 故 $QQ'$ 正交矩阵且有 
-
-\begin{aligned}
-(QQ')^{-1}AQQ'&=(QQ')^TAQQ'\\
-&=\left[\begin{matrix}1&\vec{0}\\\vec{0}&S\end{matrix}\right]^T \left[\begin{matrix}\lambda&\vec{b}\\\vec{0}&B\end{matrix}\right]\left[\begin{matrix}1&\vec{0}\\\vec{0}&S\end{matrix}\right]\\
-&=\left[\begin{matrix}\lambda&*&...&*\\0&\lambda_2&...&*\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]
-\end{aligned}
-
-由于对于 $1$ 阶矩阵，显然成立。故根据数学归纳法，证得。
-
-**** <<MK21>>证明对称矩阵必可对角化
-
-设 $A$ 为对称矩阵，根据[[MK20][上三角矩阵变换]]得，必可有正交矩阵 $P$ 使得 $H=P^{-1}AP=\left[\begin{matrix}\lambda_1&*&...&*\\0&\lambda_2&...&*\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$
-
-由于矩阵乘法满足结合律 $H^T=(P^{-1}AP)^T=(AP)^T(P^{-1})^T=P^TA^T(P^T)^T=P^TA^TP$ 由于 $A$ 为对称矩阵，故 $H^T=P^TA^TP=P^TAP=H$ 
-
-又因为 $H$ 是上三角矩阵，故必为对角阵，即 $H=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$
-
-**** 证明对角化后对角线为特征值，正交阵向量为特征向量
-
-根据[[MK21][可对角化]]有 $n$ 阶对称矩阵 $A$ 必然存在正交阵 $P$ 使得 $P^{-1}AP=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$
-
-故整理得
-
-\begin{aligned}
-P^{-1}AP&=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]\\
-AP&=P\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]\\
-A[\begin{matrix}\vec{p}_1&\vec{p}_1&...&\vec{p}_1\end{matrix}]&=[\begin{matrix}\vec{p}_1&\vec{p}_1&...&\vec{p}_1\end{matrix}]\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]
-\end{aligned}
-
-故推出 $A\vec{p}_i=\lambda_i\vec{p}_i$ 所以 $\lambda_i$ 为特征值 $\vec{p}_i$ 为对应的特征向量
-
 * 正定矩阵
 
 ** 定义
@@ -133,11 +14,13 @@ A[\begin{matrix}\vec{p}_1&\vec{p}_1&...&\vec{p}_1\end{matrix}]&=[\begin{matrix}\
 
 *** <<MK25>>实对称矩阵正定的充要条件是特征值都是正数
 
-定义 $n$ 阶实数对称矩阵 $A$ ，根据[[MK19][实对称矩阵特征值为实数]]，[[MK22][实对称矩阵特征向量正交]]，[[MK23][实对称矩阵特征向量为实数]]以及[[MK24][实对称矩阵必可对角化]]
+定义 $n$ 阶实数对称矩阵 $A$ ，根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK56][实对称矩阵特征值为实数]]，[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK62][实对称矩阵特征向量正交]]，[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK63][实对称矩阵特征向量为实数]]
 
-可得存在正交实数阵 $P$ 使得 $P^{-1}AP=\Lambda=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$ 其中 $P,\lambda_i$ 均为实数
+以及[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK61][实对称矩阵必可对角化]]可得存在正交实数阵 $P$ 使得 $P^{-1}AP=\Lambda=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$ 其中 $P,\lambda_i$ 均为实数
 
-故定义 $\vec{y}=P^{-1}\vec{x}\Rightarrow \vec{x}=P\vec{y}$ 由于 $\vec{x}$ 非零且 $P$ 正交（即非零），故 $\vec{y}=P^{-1}\vec{x}\ne 0$ 则 $f(\vec{x})=(P\vec{y})^TAP\vec{y}=\vec{y}^TP^TAP\vec{y}=\vec{y}^TP^{-1}AP\vec{y}^T=\sum_{i=1}^n \lambda_i y_i^2$
+故定义 $\vec{y}=P^{-1}\vec{x}\Rightarrow \vec{x}=P\vec{y}$ 由于 $\vec{x}$ 非零且 $P$ 正交（即非零）
+
+故 $\vec{y}=P^{-1}\vec{x}\ne 0$ 则 $f(\vec{x})=(P\vec{y})^TAP\vec{y}=\vec{y}^TP^TAP\vec{y}=\vec{y}^TP^{-1}AP\vec{y}^T=\sum_{i=1}^n \lambda_i y_i^2$
 
 **** 充分性
 
@@ -159,7 +42,7 @@ A[\begin{matrix}\vec{p}_1&\vec{p}_1&...&\vec{p}_1\end{matrix}]&=[\begin{matrix}\
 
 **** 充分性
 
-由于正定矩阵充分条件为 $\lambda_i>0$ 则有 $A=(PP^{-1})^TAPP^{-1}=(P^{-1})^TP^TAPP^{-1}$ 根据[[MK22][实对称矩阵特征向量正交]]可得 $P$ 为正交阵，故 $P^{-1}=P^T$
+由于正定矩阵充分条件为 $\lambda_i>0$ 则有 $A=(PP^{-1})^TAPP^{-1}=(P^{-1})^TP^TAPP^{-1}$ 根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK62][实对称矩阵特征向量正交]]可得 $P$ 为正交阵，故 $P^{-1}=P^T$
 
 则有 $A=(P^{-1})^TP^TAPP^{-1}=(P^{-1})^T\Lambda P^{-1}=P\sqrt{\Lambda}^T \sqrt{\Lambda}P^T=(\sqrt{\Lambda}P^T)^T\sqrt{\Lambda}P^T$ 故充分
 

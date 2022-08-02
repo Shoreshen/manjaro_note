@@ -2,13 +2,13 @@
 
 #+TITLE: 矩阵运算
 
-current mark: 52
+current mark: 64
 
 * 矩阵基础
 
 ** 矩阵的表述<<MK6>>
 
-定义 $M_{s\times n}(K)$ 为数域 $K$ 上的 $s$ 行 $n$ 列的 *所有* 矩阵的集合
+定义 $M_{s\times n}(K)$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的 $s$ 行 $n$ 列的 *所有* 矩阵的集合
 
 定义 $M=\left[m_{ij}\right]_{s\times n}$ 为第 $i$ 行 $j$ 列上的元素为 $m_{ij}$ 的 $s$ 行 $n$ 列的矩阵
 
@@ -268,9 +268,7 @@ I_nA_{n\times s}&= A_{s\times n}\\
 
 同理，任意两个下三角矩阵相乘仍然得下三角矩阵
 
-** 对称矩阵
-
-*** 定义<<MK17>>
+** 对称矩阵<<MK17>>
 
 若 $A_{s\times n}$ 为对称矩阵，则有 $A^T=A$ 即：
 
@@ -529,7 +527,7 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 故有 $\sum_{l=1}^w \left\{\left(\sum_{k=1}^v a_{ik}b_{kl}\right) c_{lj}\right\}=\sum_{l=1}^v\left\{a_{il}\left(\sum_{k=1}^w b_{lk}c_{kj}\right)\right\}$ 则 $(AB)C=A(BC)$
 
-**** 分配律
+**** 分配律<<MK54>>
 
 若可乘矩阵 $A,B,C$ 则有 $A(B+C)=AB+AC, (A+B)C=AC+BC$
 
@@ -561,7 +559,7 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 若矩阵 $A,B$ 可以相乘，则有 $rank(AB)\leq\min\left\{rank(A),rank(B)\right\}$ 
 
-其中 $rank(X)$ 表示 $X$ 的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-定义]]
+其中 $rank(X)$ 表示 $X$ 的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK87][定义]]
 
 ***** 证明
 
@@ -620,9 +618,7 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 &=\left[u_{ij}=\sum_{k=1}^n b'_{ik}a'_{kj}=\sum_{k=1}^n b_{ki}a_{jk}\right]_{m\times s}\\
 \end{aligned}
 
-* 矩阵的逆
-
-** 定义<<MK28>>
+* 矩阵的逆<<MK28>>
 
 矩阵 $A_n$ 行列数均为 $n$ ，若存在矩阵 $B$ 满足 $A_nB=BA_n=I$
 
@@ -672,7 +668,7 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 ***** 充分<<MK27>>
 
-构建矩阵 $B=[U_{ij}]^T_{n\times n}$ ，其中 $U_{ij}$ 定义为 $A_n$ 对于元素 $a_{ij}$ 的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-其他定义-代数余子式]]。
+构建矩阵 $B=[U_{ij}]^T_{n\times n}$ ，其中 $U_{ij}$ 定义为 $A_n$ 对于元素 $a_{ij}$ 的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK25][代数余子式]]。
 
 根据[[MK5][矩阵乘法]]可得 $A_nB=\left[t_{ij}=\sum_{k=1}^n a_{ik}U_{jk}\right]_{n\times n}$ 
 
@@ -688,7 +684,7 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 *** 定理1
 
-若 $A_n$ 可逆，则 $A^{-1}_n=\frac{1}{|A_n|}\left([U_{ij}]^T_{n\times n}\right)$ ，其中 $U_{ij}$ 定义为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-其他定义-代数余子式]]。
+若 $A_n=[a_{ij}]_{n\times n}$ 可逆，则 $A^{-1}_n=\frac{1}{|A_n|}\left([U_{ij}]^T_{n\times n}\right)$ ，其中 $U_{ij}$ 定义为 $a_{ij}$ 的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK25][代数余子式]]
 
 证明与[[MK27][之前]]同理。进一步定义 $A^*=[U_{ij}]^T_{n\times n}$ 成为矩阵 $A$ 的伴随矩阵
 
@@ -730,7 +726,9 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 *** 定理4<<MK35>>
 
-若矩阵 $S_i,i\in N\land 1\leq i\leq n$ 为 $n$ 个 $k$ 阶可逆矩阵，则有 $\prod_{i=1}^n S_i$ 可逆，且其逆矩阵位 $\prod_{i=n}^1 S^{-1}_i$ （注意：此处第一个位 $S^{-1}_n$ 依次递减）
+若矩阵 $S_i,i\in N\land 1\leq i\leq n$ 为 $n$ 个 $k$ 阶可逆矩阵，则有 $\prod_{i=1}^n S_i$ 可逆
+
+且其逆矩阵位 $\prod_{i=n}^1 S^{-1}_i$ （注意：此处第一个位 $S^{-1}_n$ 依次递减）
 
 即可逆矩阵乘法封闭
 
@@ -1026,7 +1024,7 @@ A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A
 
 （2） 当 $s=n$ 时 $|AB|=|A||B|$
 
-（3） 当 $s<n$ 时 $|AB|=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$ 其中 $A,B$ 分别代表子式
+（3） 当 $s<n$ 时 $|AB|=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$ 其中 $A,B$ 分别代表[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK21][子式]]
 
 ** 证明
 
@@ -1062,7 +1060,7 @@ A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A
 
 固有  $\left[\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right]\left[\begin{matrix}A&0_s\\I_n&B\end{matrix}\right]=\left[\begin{matrix}A-A&0_s-AB\\0_{n\times n}+I_{n\times n}&0_{n\times s}+B\end{matrix}\right]=\left[\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right]$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-上三角矩阵行列式]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|=1$ 根据[[MK29][可逆条件]]可得该矩阵可逆，根据[[MK37][定理7]]可得该矩阵可分解为[[MK13][初等矩阵]]相乘
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK18][上三角矩阵行列式]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|=1$ 根据[[MK29][可逆条件]]可得该矩阵可逆，根据[[MK37][定理7]]可得该矩阵可分解为[[MK13][初等矩阵]]相乘
 
 故根据[[MK48][初等矩阵与乘法]]以及[[MK21][乘法结合律]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|$
 
@@ -1070,14 +1068,16 @@ A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A
 
 ***** 等式左边矩阵行列式
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-拉普拉斯定理]]，对 $\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|$ 取前 $s$ 行即 $i_l=l,1\leq l\leq s$ ，对其列进行展开
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK26][拉普拉斯定理]]，对 $\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|$ 取前 $s$ 行即 $i_l=l,1\leq l\leq s$ ，对其列进行展开
 
 \begin{aligned}
 \left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\sum_{u=1}^s i_u+\sum_{u=1}^s j_u}M\left(\begin{matrix}i_1&i_2&...&i_s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}i_1&i_2&...&i_s\\j_1&j_2&...&j_s\end{matrix}\right)\\
 &=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)
 \end{aligned}
 
-由于对于任意 $j_l>s$ 其子式 $M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 均有一列元素全为 $0$ ，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-性质-性质3]]可得求子式的矩阵列向量现行相关，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-行列式与线性相关性]]可得其行列式为零，故子式为零，则得
+由于对于任意 $j_l>s$ 其子式 $M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 均有一列元素全为 $0$ ，
+
+则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK102][性质3]]可得求子式的矩阵列向量现行相关，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关性]]可得其行列式为零，故子式为零，则得
 
 
 \begin{aligned}
@@ -1154,4 +1154,197 @@ A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A
 |AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s(s-1)+n(n+1)-2ns}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
 |AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
 \end{aligned}
+
+* 特征值和特征向量<<MK55>>
+
+设 $A=[a_{ij}]_{n\times n}\in M_{n\times n}(K)$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上 $n$ 阶矩阵
+
+存在常数 $\lambda\in K$ 及不全为零 $n$ 维向量 $\vec{x}\in M_{n\times 1}(K)$ 使得 $A\vec{x}=\lambda\vec{x}$
+
+则称 $\lambda$ 为 $A$ 的 *特征值* $\vec{x}$ 为相应的 *特征向量*
+
+** 求解
+
+由于 $A\vec{x}=\lambda\vec{x}$ 则根据[[MK2][矩阵加法]]，[[MK54][乘法分配率]]、[[MK21][乘法结合律]]以及[[MK22][单位矩阵性质]]
+
+可得 $A\vec{x}=\lambda E\vec{x}\rightarrow \left(E\lambda-A\right)\vec{x}=\vec{0}\in M_{n\times 1}(K)$ 其中 $E$ 为[[MK4][单位矩阵]]
+
+显然 $\left(E\lambda-A\right)\vec{x}=\vec{0}$ 可对应[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK28][其次线性方程组]]，由于 $\vec{x}$ 为非零向量，即有非零解
+
+则根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK30][推论]]可得 $|E\lambda-A|=0$ 进而求解使行列式为零的 $\lambda$
+
+** 对角化<<MK57>>
+
+若 $n$ 阶矩阵 $A$ 存在 $n$ 个[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性不相关特]]征向量 $\{\vec{x}_1,\vec{x}_2,...,\vec{x}_n\}$ 其中 $\vec{x}_i=\left[\begin{matrix}x_{i1}\\x_{i2}\\...\\x_{in}\end{matrix}\right]$ 则存在正交矩阵 $P=[x_{ij}]_{n\times n}$
+
+使得 $P^{-1}AP=\Lambda=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$ 其中 $\lambda_i$ 为特征向量 $\vec{x}$ 对应的特征值
+
+*** 证明
+
+由于线性无关，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关]]可得 $|P|\ne0$ 进一步根据[[MK29][可逆充要条件]]可得存在逆矩阵 $P^{-1}$
+
+根据[[MK5][矩阵乘法]]，[[MK54][分配率]]，[[MK2][矩阵加法]]以及 $A\vec{x}=\lambda_i\vec{x}_i$ 有
+
+\begin{aligned}
+AP=&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{n1}&a_{n2}&...&a_{nn}\end{matrix}\right]\left[\begin{matrix}x_{11}&x_{12}&...&x_{1n}\\x_{21}&a_{22}&...&x_{2n}\\...&...&...&...\\x_{n1}&x_{n2}&...&x_{nn}\end{matrix}\right]\\
+=&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{n1}&a_{n2}&...&a_{nn}\end{matrix}\right]\left(\left[\begin{matrix}x_{11}&0&...&0\\x_{21}&0&...&0\\...&...&...&...\\x_{n1}&0&...&0\end{matrix}\right]+...+\left[\begin{matrix}0&0&...&x_{1n}\\0&0&...&x_{2n}\\...&...&...&...\\0&0&...&x_{nn}\end{matrix}\right]\right)\\
+=&\left[\begin{matrix}\lambda_1x_{11}&0&...&0\\\lambda_1x_{21}&0&...&0\\...&...&...&...\\\lambda_1x_{n1}&0&...&0\end{matrix}\right]+...+\left[\begin{matrix}0&0&...&\lambda_nx_{1n}\\0&0&...&\lambda_nx_{2n}\\...&...&...&...\\0&0&...&\lambda_nx_{nn}\end{matrix}\right]\\
+=&\left[\begin{matrix}\lambda_1x_{11}&\lambda_2x_{12}&...&\lambda_nx_{1n}\\\lambda_1x_{21}&\lambda_2a_{22}&...&\lambda_nx_{2n}\\...&...&...&...\\\lambda_1x_{n1}&\lambda_2x_{n2}&...&\lambda_nx_{nn}\end{matrix}\right]\\
+=&\left[\begin{matrix}x_{11}&x_{12}&...&x_{1n}\\x_{21}&a_{22}&...&x_{2n}\\...&...&...&...\\x_{n1}&x_{n2}&...&x_{nn}\end{matrix}\right]\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]\\
+=&P\Lambda
+\end{aligned}
+
+故根据[[MK21][结合律]]以及[[MK22][单位矩阵性质]]可得 $P^{-1}AP=P^{-1}(AP)=P^{-1}(P\Lambda)=P^{-1}P\Lambda=I\Lambda=\Lambda$
+
+** 性质
+
+*** 性质1<<MK62>>
+
+[[MK17][对称矩阵]] $A$ 有不同[[MK55][特征值]] $\lambda_1\ne\lambda_2$ 以及对应特征向量 $\vec{x}_1,\vec{x}_2$ 则 $\vec{x}_1^T\vec{x}_2=0$ 即正交
+
+**** 证明
+
+定义 $A\vec{x}_1=\lambda_1\vec{x}_1,A\vec{x}_2=\lambda_2\vec{x}_2$ 其中 $\lambda_1\ne\lambda_2$ 则有 $\vec{x}_2^TA\vec{x}_1=\lambda_1\vec{x}_2^T\vec{x}_1$
+
+由于实对称矩阵 $A^T=A$ 且由于[[MK5][矩阵乘法]]以及[[MK14][转置]]有 $\vec{x}_2^TA\vec{x}_1=(A\vec{x}_2)^T\vec{x}_1=(\lambda_2\vec{x}_2)^T\vec{x}_1=\lambda_2\vec{x}_2^T\vec{x}_1$
+
+即 $\lambda_1\vec{x}_2^T\vec{x}_1=\lambda_2\vec{x}_2^T\vec{x}_1\Rightarrow (\lambda_1-\lambda_2)\vec{x}_2^T\vec{x}_1=0$ 由于 $\lambda_1\ne\lambda_2$ 故有 $\vec{x}_2^T\vec{x}_1=0$
+
+** 实对称矩阵
+
+矩阵 $A$ 满足 $A\in M_{n\times n}(\mathbb{R})$ 且为[[MK17][对称矩阵]]
+
+*** 性质
+
+**** 性质1<<MK56>>
+
+实对称矩阵[[MK55][特征值]]为实数
+
+***** 证明
+
+根据特征值定义以及[[MK14][转置]] $A\vec{x}=\lambda\vec{x}\Rightarrow (A\vec{x})^T=(\lambda\vec{x})^T\Rightarrow\vec{x}^TA^T=\vec{x}^T\lambda$
+
+对以上等式两边取[[~/OneDrive/复变函数/Cplx_fc.org::MK93][共轭]] $\overline{\vec{x}^TA^T}=\overline{\vec{x}^T\lambda}\Rightarrow \overline{\vec{x}^T}\cdot\overline{A^T}=\overline{\lambda}\cdot\overline{\vec{x}^T}\Rightarrow\overline{\vec{x}^T}\cdot\overline{A^T}\cdot\vec{x}=\overline{\lambda}\cdot\overline{\vec{x}^T}\cdot\vec{x}$
+
+由于对称实矩阵 $A^T=A,\overline{A}=A\Rightarrow \overline{A^T}=A$ 故有 $\overline{\vec{x}^T}\cdot A\cdot\vec{x}=\overline{\vec{x}^T}\cdot \lambda\cdot\vec{x}=\overline{\lambda}\cdot\overline{\vec{x}^T}\cdot\vec{x}$
+
+故 $\overline{\lambda}=\lambda$ 得出特征值必为实数
+
+**** 性质2<<MK63>>
+
+实对称矩阵[[MK55][特征向量]]亦为实数
+
+***** 证明
+
+由于 $(E\lambda-A)\vec{x}=0$ 根据[[MK56][性质1]] $\lambda$ 为实数，故得 $E\lambda-A$ 亦为实数矩阵
+
+显然若存在 $\vec{x}$ 满足 $(E\lambda-A)\vec{x}=0$ 则 $\vec{x}$ 必为实数
+
+*** 定理<<MK61>>
+
+实对称矩阵 $A\in M_{n\times n}(\mathbb{R})$ 必存在 $n$ 个[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]的特征向量。即实对称矩阵可[[MK57][对角化]]
+
+**** 证明
+
+***** 实数[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK105][幂空间]]的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK51][维度]]<<MK58>>
+
+定义 $\mathcal{V}=<\mathbb{R},\mathbb{R},+,\times>$ 易证 $\dim(\mathcal{V})=1$ 则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK104][定理2]]可得 $\mathcal{V}^n=<\mathbb{R}^n,\mathbb{R},+,\times>$ 的维度为 $n$      
+
+***** 证明存在正交矩阵转换为上三角矩阵<<MK59>>
+
+假设对于 $n-1$ 阶实对称矩阵 $B$ 存在正交矩阵 $S=[\begin{matrix}\vec{s}_2&\vec{s}_3&...&\vec{s}_n\end{matrix}]$
+
+其中 $|\vec{s}_i|=1,\vec{s}_i\cdot\vec{s}_j=0,i\ne j$ 使得 $S^{-1} B S=S^T A_{n-1} S=\left[\begin{matrix}\lambda_2&*&...&*\\0&\lambda_3&...&*\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$
+
+对于 $n$ 阶矩阵 $A$ 假设其中一个特征值为 $\lambda$ 对应特征向量 $\vec{q}_1$ 其长度为 $|\vec{q}_1|=1$
+
+以 $\vec{q}_1$ 为基准建立一组长度为 $1$ ，易证存在 $\vec{q}_2,...,\vec{q}_n$ 满足正交，即 $\vec{q}_1,\vec{q}_2,...,\vec{q}_n\Rightarrow |\vec{q}_i|=1,\vec{q}_i\cdot\vec{q}_j=0,i\ne j$
+
+则定义 $Q=[\begin{matrix}\vec{q}_1&\vec{q}_2&...&\vec{q}_n\end{matrix}]$ 故有 $AQ=[\begin{matrix}A\vec{q}_1&A\vec{q}_2&...&A\vec{q}_n\end{matrix}]$
+
+由于 $A\vec{q}_i\in \mathbb{R}^n$ 故本质上是[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK105][幂空间]] $\mathcal{V}^n=<\mathbb{R}^n,\mathbb{R},+,\times>$ 的元素，同理 $\vec{q}_i\in\mathbb{R}^n$ 亦为幂空间元素
+
+由于正交，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK103][定理1]] $\{\vec{q}_1,...,\vec{q}_n\}$ [[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]，进一步根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK42][命题2]]可得 $\{\vec{q}_1,...,\vec{q}_n\}$ 是幂空间的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK36][基]]
+
+故 $A\vec{q}_i$ 必可用 $\vec{q}_i$ 的线性组合表示，即 $A\vec{q}_i=\sum_{j=1}^n b_{ij}\vec{q}_j$ ，进一步根据根据特征值定义有
+
+\begin{aligned}
+AQ&=\left[\begin{matrix}\lambda\vec{q}_1&\left[\begin{matrix}b_{21}\\b_{22}\\...\\b_{2n}\end{matrix}\right]^T\vec{q}_2&...&\left[\begin{matrix}b_{n1}\\b_{n2}\\...\\b_{nn}\end{matrix}\right]^T\vec{q}_n\end{matrix}\right]\\
+&=\left[\begin{matrix}\vec{q}_1&\vec{q}_2&...&\vec{q}_n\end{matrix}\right]\left[\begin{matrix}\lambda&b_{21}&...&b_{n1}\\0&b_{22}&...&b_{n2}\\...&...&...&...\\0&b_{2n}&...&b_{nn}\end{matrix}\right]
+\end{aligned}
+
+又由于 $\{\vec{q}_1,...,\vec{q}_n\}$ [[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关]]有 $|Q|\ne0$ 故根据[[MK29][可逆充要条件]]可得存在逆矩阵 $Q^{-1}$
+
+\begin{aligned}
+Q^{-1}AQ&=\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\right]^{-1}\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\right]\left[\begin{matrix}\lambda&b_{21}&...&b_{n1}\\0&b_{22}&...&b_{n2}\\...&...&...&...\\0&b_{2n}&...&b_{nn}\end{matrix}\right]\\
+&=\left[\begin{matrix}\lambda&b_{21}&...&b_{n1}\\0&b_{22}&...&b_{n2}\\...&...&...&...\\0&b_{2n}&...&b_{nn}\end{matrix}\right]\\
+&=\left[\begin{matrix}\lambda&\vec{b}\\\vec{0}&B\end{matrix}\right]
+\end{aligned}
+
+由于根据假设使任意 $n-1$ 阶矩阵 $B$ 存在正交阵 $S$ 使得 $S^{-1}BS$ 为上三角矩阵，则定义 $Q'=\left[\begin{matrix}1&0&...&0\\0& & & \\...& &S& \\0& & &\\\end{matrix}\right]$
+
+则有 $(QQ')^TQQ'=Q'^TQ^TQQ'=Q'^TEQ'=E$ 故 $QQ'$ 正交矩阵且有 
+
+\begin{aligned}
+(QQ')^{-1}AQQ'&=(QQ')^TAQQ'\\
+&=\left[\begin{matrix}1&\vec{0}\\\vec{0}&S\end{matrix}\right]^T \left[\begin{matrix}\lambda&\vec{b}\\\vec{0}&B\end{matrix}\right]\left[\begin{matrix}1&\vec{0}\\\vec{0}&S\end{matrix}\right]\\
+&=\left[\begin{matrix}\lambda&*&...&*\\0&\lambda_2&...&*\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]
+\end{aligned}
+
+由于对于 $1$ 阶矩阵，显然成立。故根据数学归纳法，证得。
+
+***** 证明对称矩阵必可对角化<<MK60>>
+
+设 $A$ 为对称矩阵，根据[[MK59][上三角矩阵变换]]得，必可有正交矩阵 $P$ 使得 $H=P^{-1}AP=\left[\begin{matrix}\lambda_1&*&...&*\\0&\lambda_2&...&*\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$
+
+由于矩阵乘法满足结合律 $H^T=(P^{-1}AP)^T=(AP)^T(P^{-1})^T=P^TA^T(P^T)^T=P^TA^TP$
+
+由于 $A$ 为对称矩阵，故 $H^T=P^TA^TP=P^TAP=H$ 
+
+又因为 $H$ 是上三角矩阵，故必为对角阵，即 $H=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$
+
+***** 证明对角化后对角线为特征值，正交阵向量为特征向量
+
+根据[[MK60][可对角化]]有 $n$ 阶对称矩阵 $A$ 必然存在正交阵 $P$ 使得 $P^{-1}AP=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$
+
+故根据[[MK5][矩阵乘法]]有
+
+\begin{aligned}
+&P^{-1}AP=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]\\
+\therefore&AP=P\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]\\
+\therefore&A[\begin{matrix}\vec{p}_1&\vec{p}_2&...&\vec{p}_n\end{matrix}]=[\begin{matrix}\vec{p}_1&\vec{p}_1&...&\vec{p}_1\end{matrix}]\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]
+\end{aligned}
+
+故推出 $A\vec{p}_i=\lambda_i\vec{p}_i$ 所以 $\lambda_i$ 为特征值 $\vec{p}_i$ 为对应的特征向量
+
+* 矩阵相似<<MK64>>
+
+定义 $\{A,B\}\subset M_{n\times n}(K)$ 为 $n$ 阶方阵，若存在[[MK28][可逆]]矩阵 $P\in M_{n\times n}(K)$ 满足 $P^{-1}AP=B$
+
+则称矩阵 $A$ 相似与矩阵 $B$ ，记作 $A\sim B$
+
+** 定理1
+
+矩阵相似是[[~/OneDrive/离散数学/Disc_Math.org::MK176][等价关系]]
+
+*** 证明
+
+**** 自反性
+
+根据[[MK28][可逆]]定义可得 $n$ 阶[[MK4][单位矩阵]]的逆矩阵为自身，进一步根据[[MK22][性质]]可得 $I^{-1}AI=IAI=AI=A$
+
+**** 对称性
+
+若 $A\sim B$ 则有可逆矩阵满足 $P^{-1}AP=B$ 进一步 $PP^{-1}APP^{-1}=PBP^{-1}$
+
+根据[[MK21][结合律]]可得 $PP^{-1}APP^{-1}=IAI=A=PBP^{-1}$ 即 $PBP^{-1}=A$ 即 $B\sim A$
+
+**** 传递性
+
+若 $A\sim B\land B\sim C$ 则有 $P_1^{-1}AP_1=B\land P_2^{-1}BP_2=C$ 即有 $P_2^{-1}P_1^{-1}AP_1P_2=C$
+
+定义 $P=P_1P_2$ 显然 $P^{-1}_2P^{-1}_1P_1P_2=P^{-1}_2IP_2=I$ 根据[[MK28][可逆]]定义有 $P^{-1}=P_2^{-1}P_1^{-1}$
+
+即根据[[MK21][结合律]]有 $P^{-1}AP=C$
+
 

@@ -2,9 +2,9 @@
 
 #+TITLE: 线性映射
 
-current video: P93
+current video: P94
 
-current mark: 35
+current mark: 36
 
 * 线性映射<<MK4>>
 
@@ -249,25 +249,27 @@ $\sigma$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK195][单射]]的充要条
 
 有 $\sigma(a)=&\sigma\left(\sum_{i=1}k_ia_i\right)=\sigma\left(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]X\right)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\right]MX$
 
-*** 定理<<MK34>>
+*** 定理
+
+**** 定理1<<MK34>>
 
 设 $\mathcal{V}=<V,K,+,\cdot>,\mathcal{V}'=<V',K,\bar{+},\bar{\cdot}>$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
 
 存在 $\{a_1,...,a_n\},\{b_1,...,b_m\}$ 分别为 $\mathcal{V},\mathcal{V}'$ 的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK36][基]]
 
-根据[[MK14][定理2]]可得 $\mathcal{V}_1=<\text{Hom}(\mathcal{V},\mathcal{V}'),+,\cdot>$ 是[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
+根据[[MK14][定理2]]可得 $\mathcal{V}_1=<\text{Hom}(\mathcal{V},\mathcal{V}'),K,+,\cdot>$ 是[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
 
 根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK10][矩阵组成线性空间]]可得 $\mathcal{V}_2=<M_{m\times n}(K),K,+,\cdot>$ 亦为线性空间
 
-则定义 $\sigma:\text{Hom}(\mathcal{V},\mathcal{V}')\to M_{m\times n}(K)$ 为对于任意 $f\in\text{Hom}(\mathcal{V},\mathcal{V}')$ 若有 $f(a_1,...,a_n)=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]M$
+则定义 $\sigma:\text{Hom}(\mathcal{V},\mathcal{V}')\to M_{m\times n}(K)$ 为对于任意 $f\in\text{Hom}(\mathcal{V},\mathcal{V}')$ 若有 $f(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right])=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]M$
 
 即有 $\sigma(f)=M$ 即对于任意线性映射 $f$ ， $\sigma(f)$ 的值为 $f$ 在基 $\{a_1,...,a_n\},\{b_1,...,b_m\}$ 下的映射矩阵
 
 则有 $\sigma$ 是 $\mathcal{V}_1$ 到 $\mathcal{V}_2$ 的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK75][同构映射]]，即 $\mathcal{V}_1\cong\mathcal{V}_2$ 两个空间[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK75][同构]]
 
-**** 证明
+***** 证明
 
-***** [[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]]
+****** [[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]]
 
 任取 $M\in M_{m\times n}(K)$ 则根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK5][矩阵乘法]]可得 $\left[\begin{matrix}c_1&c_2&...&c_n\end{matrix}\right]=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\right]M$
 
@@ -277,7 +279,7 @@ $\sigma$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK195][单射]]的充要条
 
 则显然 $\sigma(f)=g(h(f))$ 故根据以下证明以及[[~/OneDrive/离散数学/Disc_Math.org::MK201][传递性]]可得 $\sigma$ 亦为双射函数
 
-****** $g$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]]
+******* $g$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]]
 
 根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK80][定理3]]可得对于任意给定 $c_i$ 其由基 $\{b_1,...,b_m\}$ 的表述唯一
 
@@ -297,7 +299,7 @@ $\sigma$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK195][单射]]的充要条
 
 综上所述 $g$ 为双射函数
 
-****** $h$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]]
+******* $h$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]]
 
 根据[[MK32][推论]]可得对于任意 $\left[\begin{matrix}c_1&c_2&...&c_n\end{matrix}\right]$ 若 $f_1,f_2$ 满足 $f_1(a_i)=f_2(a_i)=c_i$ 则有 $f_1=f_2$ 即映射[[MK9][相等]]
 
@@ -311,29 +313,77 @@ $\sigma$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK195][单射]]的充要条
 
 综上所述 $h$ 是双射函数
 
-***** 保持加法
+****** 保持加法
 
 对于任意 $\{f_1,f_2\}\subset\text{Hom}(\mathcal{V},\mathcal{V}')$ 根据[[MK29][性质1]]可得若 $\sigma(f_1)=M_1\land\sigma(f_2)=M_2$
 
 则有 $\sigma(f_1+f_2)=M_1+M_2=\sigma(f_1)+\sigma(f_2)$
 
-***** 保持数乘
+****** 保持数乘
 
 对于任意 $k\in K$ 任意 $f\in\text{Hom}(\mathcal{V},\mathcal{V}')$ 根据[[MK30][性质2]]可得若 $\sigma(f)=M$
 
 则有 $\sigma(kf)=kM=k\sigma(f)$
 
-**** 推论1
+***** 推论1
 
 [[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\mathcal{V}_1=<\text{Hom}(\mathcal{V},\mathcal{V}'),+,\cdot>,\mathcal{V}_2=<M_{m\times n}(K),K,+,\cdot>$
 
 有 $\dim(\mathcal{V}_1)=\dim(\mathcal{V}_2)=nm=\dim(\mathcal{V})\dim(\mathcal{V}')$
 
-***** 证明
+****** 证明
 
 由于 $\mathcal{V}_1\cong\mathcal{V}_2$ 故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK97][定理1]]可得 $\dim(\mathcal{V}_1)=\dim(\mathcal{V}_2)$ ，又根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK52][推论2]]可得 $\dim(\mathcal{V}_2)=nm$
 
 根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK51][维数定义]]以及 $\{a_1,...,a_n\},\{b_1,...,b_m\}$ 分别为 $\mathcal{V},\mathcal{V}'$ 的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK36][基]]可得 $\dim(\mathcal{V})=n\land\dim(\mathcal{V}')=m$
+
+**** 定理2
+
+设 $\mathcal{V}=<V,K,+,\cdot>$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma:V\to V$ 是 $\mathcal{V}$ 上的线性变换
+
+定义 $\{a_1,...,a_n\},\{b_1,...,b_n\}$ 是 $\mathcal{V}$ 上的两组[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK36][基]]，且 $A,B$ 分别为 $\sigma$ 在两组基上的[[MK28][映射矩阵]]，则
+
+（1） 存在 $S=\left[\begin{matrix}s_{11}&s_{12}&...&s_{1n}\\s_{21}&s_{22}&...&s_{2n}\\...&...&...&...\\s_{n1}&s_{n2}&...&s_{nn}\\\end{matrix}\right]$ 满足 $\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]S$
+
+（2） $S$ 是[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK28][可逆]]矩阵
+
+（3） $B=S^{-1}AS$ 即 $A$ 与 $B$ [[~/OneDrive/高等代数/Algb-3-Matrix.org::MK64][相似]]
+ 
+***** 证明
+
+****** 存在 $S$
+
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK36][基]]的定义，对于任意 $v\in V$ 均可由基线性表述。故有 $a_j=\sum_{i=1}^ns_{ji}b_i$ ，故显然 $S$ 由此存在
+
+****** $S$ 可逆<<MK36>>
+
+由于基[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]，故对于任意 $x_1,...,x_n$ 当且仅当 $x_1=...=x_n=0$ 时有 $\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]\left[\begin{matrix}x_1\\x_2\\...\\x_n\end{matrix}\right]=0$
+
+即 $\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]S\left[\begin{matrix}x_1\\x_2\\...\\x_n\end{matrix}\right]=0$ 根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK21][结合律]]有 $\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\left(S\left[\begin{matrix}x_1\\x_2\\...\\x_n\end{matrix}\right]\right)=0$
+
+定义 $S\left[\begin{matrix}x_1\\x_2\\...\\x_n\end{matrix}\right]=\left[\begin{matrix}k_1\\k_2\\...\\k_n\end{matrix}\right]$ 则有 $\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\left[\begin{matrix}k_1\\k_2\\...\\k_n\end{matrix}\right]=0$ 由于 $\{b_1,...,b_n\}$ 亦为基
+
+故同理当且仅当 $k_1=...=k_n=0$ 时成立，即 $S\left[\begin{matrix}x_1\\x_2\\...\\x_n\end{matrix}\right]=\left[\begin{matrix}0\\0\\...\\0\end{matrix}\right]$ 由于 $S$ 为 $n$ 阶方阵
+
+故上式中 $x_i$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK28][齐次线性方程组]]的解，且根据上述证明 $x_i$ 只有唯一零解
+
+进一步根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK29][行列式与解的关系]]可得 $|S|\ne0$ ，又根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK29][可逆充要条件]]可得 $S$ 可逆
+
+****** 证明相似
+
+根据[[MK28][映射矩阵]]定义可的 $\sigma\left(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]\right)=\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]A$
+
+则有 $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]S\right)=\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]A$
+
+根据[[MK35][性质6]] $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)=\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]AS$
+
+根据 $S$ [[MK36][可逆]]以及[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK22][单位阵性质]] $\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]S^{-1}=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]$
+
+故有 $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]S^{-1}AS$
+
+故有  $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]B$ 且根据[[
+
+又根据[[MK34][定理1]]在同一组基上的线性映射与同构矩阵一一对应，故必有 $B=S^{-1}AS$
 
 ** 性质
 
