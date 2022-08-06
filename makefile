@@ -16,18 +16,21 @@ cporg: $(ORGNOTES)
 installall:
 	echo $(PW) | sudo -S pacman -S seahorse nerd-fonts-terminus rclone fcitx-qt5 fcitx-configtool fcitx-sogoupinyin emacs uget aria2-fast uget-integrator uget-integrator-chromium netease-cloud-music gnome-calculator
 
-connect: set_dns
-# "|" Pass results of "ls -l" to "awk"
-# "$$9" Will be interpreted as "$9", take the 9'th argument, which is "./OpenVPN/uk4107.nordvpn.com.udp.ovpn" like strings
-	ls -l ./OpenVPN/*.ovpn | awk '{print substr($$9, 11, 100)}' 
-# Take server from user input, if not input, connect “./OpenVPN/us7092.nordvpn.com.udp.ovpn”
-	@echo "Please pick a server(defualt: us5037.nordvpn.com.udp.ovpn): "; \
-	read server; \
-	if [ -z $$server ]; then \
-		echo $(PW) | sudo -S openvpn --config ./OpenVPN/us5037.nordvpn.com.udp.ovpn --auth-user-pass ~/文档/Auth.txt; \
-	else \
-		echo $(PW) | sudo -S openvpn --config ./OpenVPN/$$server --auth-user-pass ~/文档/Auth.txt; \
-	fi
+# connect: set_dns
+# # "|" Pass results of "ls -l" to "awk"
+# # "$$9" Will be interpreted as "$9", take the 9'th argument, which is "./OpenVPN/uk4107.nordvpn.com.udp.ovpn" like strings
+# 	ls -l ./OpenVPN/*.ovpn | awk '{print substr($$9, 11, 100)}' 
+# # Take server from user input, if not input, connect “./OpenVPN/us7092.nordvpn.com.udp.ovpn”
+# 	@echo "Please pick a server(defualt: us5037.nordvpn.com.udp.ovpn): "; \
+# 	read server; \
+# 	if [ -z $$server ]; then \
+# 		echo $(PW) | sudo -S openvpn --config ./OpenVPN/us5037.nordvpn.com.udp.ovpn --auth-user-pass ~/文档/Auth.txt; \
+# 	else \
+# 		echo $(PW) | sudo -S openvpn --config ./OpenVPN/$$server --auth-user-pass ~/文档/Auth.txt; \
+# 	fi
+
+connect:
+	echo $(PW) | sudo -S openvpn --config ~/文档/str-hnd102_a340373.ovpn --auth-user-pass ~/文档/auth.txt
 
 set_dns:  
 ifeq ($(DIF),)
