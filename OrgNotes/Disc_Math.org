@@ -2,9 +2,9 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 434
+currnet mark: 442
 
-free mark:MK138,MK139,MK140,MK141,MK142,MK149,MK150
+free mark:
  
 
 图论: P40
@@ -3474,6 +3474,12 @@ MU是否系统中的串？
 
 则定义 $T=\bigcap\mathcal{S}$ 是所有合成封闭子集的交，则 $T$ 中的元素为项
 
+**** 相等
+
+对于任意 $\tau_1\in T,\tau_2\in T$ 若满足 $|\tau_1|=|\tau_2|\land\forall i<|\tau_1|\rightarrow \tau_1[i]=\tau_2[i]$
+
+则称表达式 $\tau_1,\tau_2$ 相等
+
 **** 最小引理<<MK120>>
 
 $T$ 是最小的合成封闭子集
@@ -3510,7 +3516,7 @@ $T$ 是最小的合成封闭子集
 
 ***** 证明
 
-根据以下证明， $\tau$ 为有限长度，以及数学归纳法可证
+根据[[MK121][可读性]]易证左右括号成对出现。则根据以下证明， $\tau$ 为有限长度，以及数学归纳法可证
 
 ****** $2$ 对括号
 
@@ -3554,7 +3560,7 @@ $\tau_i[j]$ 与 $\tau[|\tau|]$ 间 $)$ 的对数为为 $\tau_i[j]$ 与 $\tau[|\t
 
 **** 前缀引理<<MK125>>
 
-若 $\tau=<t_1,...,t_n>\in T$ 是[[MK133][项]]，那么其任意真前缀 $\tau_k=<t_1,...,t_k>,k<n$ 均有 $t_k\not\in T$
+若 $\tau=<\tau_1,...,\tau_n>\in T$ 是[[MK133][项]]，那么其任意真前缀 $\tau_k=<\tau_1,...,\tau_k>,k<n$ 均有 $\tau_k\not\in T$
 
 ***** 证明
 
@@ -3578,7 +3584,65 @@ $\tau_i[j]$ 与 $\tau[|\tau|]$ 间 $)$ 的对数为为 $\tau_i[j]$ 与 $\tau[|\t
 
 又由于 $\tau\in T$ 为给定，故必有 $\tau_k\not\in T$
 
-**** 唯一可读性
+***** 推论<<MK435>>
+
+若 $\tau\in T$ 是[[MK133][项]]，则任意 $\tau[i]=($ 则存在唯一 $\tau[j]=)\land j>i$ 满足 $<\tau[i-1],\tau[i],...,\tau[j]>\in T$
+
+****** 证明
+
+******* 唯一性
+
+假设存在 $j'\ne j$ 满足 $<\tau[i-1],\tau[i],...,\tau[j']>\in T$
+
+则显然 $<\tau[i-1],\tau[i],...,\tau[j]>$ 和 $<\tau[i-1],\tau[i],...,\tau[j']>$ 必定一个为另一个的真前缀
+
+与[[MK125][前缀引理]]矛盾，故假设不成立
+
+******* 存在性
+
+根据[[MK121][可读性]]易证左右括号成对出现。根据以下证明， $|\tau|<\infty$ 以及数学归纳法可证存在性
+
+******** 一对括号
+
+显然有且仅有 $\tau=f_u(\tau_1,....,\tau_n)$ 其中 $\forall 1\leq i\leq n\rightarrow\tau_{i}\in X\cup C$ 情况
+
+则对于唯一的 $\tau[2]=($ 存在 $k=\tau[|\tau|]$ 使得 $<\tau[1],\tau[2],...,\tau[|\tau|]>=\tau\in T$
+
+******** 归纳假设
+
+对于括号对数小与 $n$ 的 $\tau\in T$ 任意 $\tau[i]=($ 存在对应 $\tau[j]=)\land j>i$ 满足命题
+
+******** $n$ 对括号时
+
+若 $\tau$ 有 $n$ 对括号，则根据[[MK138][唯一可读]]有 $\tau=f_u(\tau_1,....,\tau_n),\tau_i\in T$ 形式，且唯一
+
+显然 $\tau_i$ 中的括号对数小于等于 $n$ 即根据归纳假设 $\tau_i$ 中任意 $($ 均能在 $\tau_i$ 中找到唯一 $)$ 满足条件
+
+对于 $\tau[2]=($ 存在 $\tau[|\tau|]=)$ 满足条件。
+
+**** 后缀引理<<MK150>>
+
+若 $\tau=<t_1,...,t_n>\in T$ 是[[MK133][项]]，那么其任意真后缀 $\tau_k=<t_k,...,t_n>,k<n$ 均有 $\tau_k\not\in T$
+
+***** 证明
+
+根据[[MK121][可读性]]任意含有括号的[[MK133][项]]有且仅有 $\tau=f_u(\tau_1,....,\tau_n),\tau_i\in T$ 形式
+
+根据[[MK136][括号对应引理]]若 $k>2$ 则 $\tau_k$ 中不存在与 $\tau_k[|\tau_k|]=)$ 对应的 $($ 使其间 $($ 和 $)$ 相等
+
+继续根据[[MK136][括号对应引理]]可得 $\tau_k\not\in T$
+
+若 $k=1$ 则根据[[MK121][可读性]]不存在 $(\tau_1,...,\tau_n)$ 形式属于 $T$ ，即任意真后缀均不属于 $T$
+
+***** 推论
+
+若 $\tau\in T$ 是[[MK133][项]]，则任意 $\tau[j]=)$ 则存在唯一 $\tau[i]=(\land j>i$ 满足 $<\tau[i-1],\tau[i],...,\tau[j]>\in T$
+
+****** 证明
+
+根据[[MK150][后缀引理]]可用类似[[MK435][推论]]证明方法证明
+
+**** 唯一可读性<<MK138>>
 
 若 $\tau\in T$ 是[[MK133][项]]，那么以下两种情况有且仅有一种成立：
 
@@ -3602,7 +3666,7 @@ $\tau_i[j]$ 与 $\tau[|\tau|]$ 间 $)$ 的对数为为 $\tau_i[j]$ 与 $\tau[|\t
 
 对于任意 $|\tau|<n$ 唯一可读性成立
 
-****** 当 $|\tau|=n$ 时
+****** 当 $|\tau|=n$ 时<<MK139>>
 
 根据[[MK121][可读性引理]]仅有可能 $\tau=f_i(\tau_1,...,\tau_n)$ 假设存在 $\tau'=f'_i(\tau'_1,...,\tau'_m)$ 满足：
 
@@ -3612,7 +3676,7 @@ $\tau_i[j]$ 与 $\tau[|\tau|]$ 间 $)$ 的对数为为 $\tau_i[j]$ 与 $\tau[|\t
 
 则
 
-（1） 根据[[MK122][符号假定]]若 $f'_i\ne f_i$ 则 $\tau\ne\tau'$ 则有 $\tau'=f_i(\tau'_1,...,\tau'_m)$
+（1） 根据[[MK122][符号假定]]若 $f'_i\ne f_i$ 则 $\tau[1]\ne\tau'[1]$ 继而与（1）矛盾，则有 $\tau'=f_i(\tau'_1,...,\tau'_m)$
 
 （2） 若有 $\sum_{i=1}^n|\tau_i|\ne\sum_{i=1}^m|\tau'_i|$ 则有 $|\tau|\ne|\tau'|$ 显然有 $\tau\ne\tau'$
 
@@ -3628,7 +3692,7 @@ $\tau_i[j]$ 与 $\tau[|\tau|]$ 间 $)$ 的对数为为 $\tau_i[j]$ 与 $\tau[|\t
 
 给定 $\Sigma^*$ 期[[MK133][项]]集为 $T$ ，定义表达式封闭子集 $L\subset\Sigma^*$ 为满足以下五个条件的集合：
 
-（1） 若 $\tau_1\in T\land\tau_2\in T$ 则 $(\tau_1\hat{=}\tau_2)\in L$
+（1） 若 $\tau_1\in T\land\tau_2\in T$ 则 $(\tau_1\hat{=}\tau_2)$
 
 （2） 若 $\tau_i\in T,1\leq i\leq n$ 且 $p_i\in P,\pi_P(p_i)=n$ 则 $p_i(\tau_1,...,\tau_n)\in L$
 
@@ -3639,6 +3703,12 @@ $\tau_i[j]$ 与 $\tau[|\tau|]$ 间 $)$ 的对数为为 $\tau_i[j]$ 与 $\tau[|\t
 （5） 若 $\phi\in L$ 则 $(\forall x_i\phi)\in L$ ，其中 $x_i\in X$ 是[[MK130][变元]]
 
 进一步定义 $\mathcal{L}=\bigcap L$ 即所有表达式封闭子集的交，则 $\mathcal{L}$ 中的元素为表达式
+
+**** 相等<<MK141>>
+
+对于任意 $\phi_1\in\mathcal{L},\phi_2\in\mathcal{L}$ 若满足 $|\phi_1|=|\phi_2|\land\forall i<|\phi_1|\rightarrow \phi_1[i]=\phi_2[i]$
+
+则称表达式 $\phi_1,\phi_2$ 相等
 
 **** 最小引理<<MK119>>
 
@@ -3652,15 +3722,15 @@ $\mathcal{L}$ 是最小的表达式封闭集合
 
 若 $\phi\in\mathcal{L}$ 是[[MK135][表达式]]，那么以下五种情况有且仅有一种成立：
 
-（1） 若 $\tau_1\in T\land\tau_2\in T$ 则 $(\tau_1\hat{=}\tau_2)\in\mathcal{L}$
+（1） 存在 $\tau_1\in T\land\tau_2\in T$ 使得 $\phi=(\tau_1\hat{=}\tau_2)$
 
-（2） 若 $\tau_i\in T,1\leq i\leq n$ 且 $p_i\in P,\pi_P(p_i)=n$ 则 $p_i(\tau_1,...,\tau_n)\in\mathcal{L}$
+（2） 存在 $\tau_i\in T,1\leq i\leq n$ 以及 $p_i\in P,\pi_P(p_i)=n$ 使得 $\phi=p_i(\tau_1,...,\tau_n)$
 
-（3） 若 $\phi\in L$ 则 $(\lnot\phi)\in\mathcal{L}$
+（3） 存在 $\psi\in\mathcal{L}$ 使得 $\phi=(\lnot\psi)$
 
-（4） 若 $\phi_1\in L\land\phi_2\in L$ 则 $(\phi_1\to\phi_2)\in\mathcal{L}$
+（4） 存在 $\psi_1\in\mathcal{L}\land\psi_2\in\mathcal{L}$ 使得 $\phi=(\psi_1\to\psi_2)$
 
-（5） 若 $\phi\in L$ 则 $(\forall x_i\phi)\in\mathcal{L}$ ，其中 $x_i\in X$ 是[[MK130][变元]]
+（5） 存在 $\psi\in\mathcal{L}$ 使得 $\phi=(\forall x_i\psi)$ ，其中 $x_i\in X$ 是[[MK130][变元]]
 
 ***** 证明
 
@@ -3704,7 +3774,7 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 根据[[MK127][可读性]]可得任意 $\phi\in\mathcal{L}$ 均有 $\phi[|\phi|]=)$ ，且要么 $\phi[2]=($ 要么 $\phi[1]=($ 
 
-****** 证明其他
+****** 证明其他<<MK437>>
 
 对于任意 $\phi\in\mathcal{L}$ ，定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK133][项]]后 $($ 和 $)$ 的对数
 
@@ -3712,21 +3782,23 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 ******* $z(\phi)\leq 3$ 时
 
-根据[[MK127][可读性]]有且仅有 $(\lnot\psi),(\psi_1\to\psi_2),(\forall x_i\psi)$ 形式，其中 $\psi,\psi_1,\psi_2$ 均为 $(\tau_1\hat{=}\tau_2),p_i(\tau_1,...,\tau_n)$ 形式， $\tau_i\in T$ 是[[MK133][项]]
+根据[[MK127][可读性]]有且仅有 $(\lnot\psi),(\psi_1\to\psi_2),(\forall x_i\psi)$ 形式
+
+其中 $\psi,\psi_1,\psi_2$ 均为 $(\tau_1\hat{=}\tau_2),p_i(\tau_1,...,\tau_n)$ 形式， $\tau_i\in T$ 是[[MK133][项]]
 
 根据项的[[MK136][括号对应原理]]易证命题（2）（3）（4）成立
 
 ******* 归纳假设
 
-对于任意 $3<z(\phi)\leq n$ 均有命题（2）（3）（4）成立
+对于任意 $3<z(\phi)<n$ 均有命题（2）（3）（4）成立
 
 ******* $z(\phi)=n$ 时
 
 根据[[MK127][可读性]]结合之前[[MK126][证明方法]]易证命题（2）和命题（3），[[MK134][同理可证]]命题（4）
 
-**** 前缀引理
+**** 前缀引理<<MK140>>
 
-若 $\phi=<\phi_1,...,\phi_n>\in T$ 是[[MK133][项]]，那么其任意真前缀 $\phi_k=<\phi_1,...,\phi_k>,k<n$ 均有 $\phi_k\not\in T$
+若 $\phi=<\phi_1,...,\phi_n>\in\mathcal{L}$ 是[[MK135][表达式]]，那么其任意真前缀 $\phi_k=<\phi_1,...,\phi_k>,k<n$ 均有 $\phi_k\not\in\mathcal{L}$
 
 ***** 证明
 
@@ -3737,6 +3809,252 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 若 $\phi_k[|\phi_k|]=)$ 则根据[[MK137][括号对应引理]]（2） $\phi_k[z],\phi_k[|\phi_k|]$ 之间的 $($ 的个数大于 $)$ 的个数
 
 则又根据[[MK137][括号对应引理]]（4）可得 $\phi_k\not\in T$
+
+***** 推论<<MK436>>
+
+若 $\phi=<\phi_1,...,\phi_n>\in\mathcal{L}$ 是[[MK135][表达式]]，则对于任意不在[[MK133][项]]中的 $\phi[i]=($ 存在唯一 $j>i$ 使以下两项有且仅有一项成立
+
+（1） $<\phi[i],...,\phi[j]>\in\mathcal{L}$
+
+（2） $<\phi[i-1],\phi[i],...,\phi[j]>\in\mathcal{L}$
+
+****** 证明
+
+******* （1）（2）互斥
+
+假设对于 $\phi[i]=($ 存在 $\phi[k_1]=)$ 满足（1）， $\phi[k_2]=)$ 满足（2）
+
+根据[[MK127][可读性]]显然 $<\phi[i-1],\phi[i],...,\phi[k_2]>$ 有 $p_i(\tau_1,...,\tau_n)$ 形式，则 $<\phi[i],...,\phi[k_2]>$ 中不包含 $\hat{=},\forall,\to,\lnot$ 
+
+若 $k_1\leq k_2$ 根据[[MK127][可读性]] $<\phi[i],...,\phi[k_2]>$ 中必包含 $\hat{=},\forall,\to,\lnot$ 中至少一个，矛盾
+
+若 $k_1>k_2$ 则根据[[MK137][括号对应引理]]可得 $\phi[i],\phi[k_1]$ 之间 $($ 的个数大于 $)$ 的个数
+
+又根据[[MK137][括号对应引理]]可得任意 $\psi\in\mathcal{L}$ 均有最左最右括号对应，故 $<\phi[i],...,\phi[k_2]>\not\in\mathcal{L}$ 矛盾
+
+综上所述，假设不成立
+
+******* 唯一性
+
+假设存在 $k_1\ne k_2$ 满足 $<\phi[i],...,\phi[k_1]>\in\mathcal{L},<\phi[i],...,\phi[k_2]>\in\mathcal{L}$
+
+则一个必为另一个真前缀，故与[[MK140][前缀引理]]矛盾，故假设不成立
+
+同理可证不存在 $k_1\ne k_2$ 满足 $<\phi[i-1],\phi[i],...,\phi[k_1]>\in\mathcal{L},<\phi[i-1],\phi[i],...,\phi[k_2]>\in\mathcal{L}$
+
+******* 存在性
+
+对于任意 $\phi\in\mathcal{L}$ ，定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK133][项]]后 $($ 和 $)$ 的对数
+
+根据以下证明，$|\phi|<\infty$ 以及数学归纳法可证存在性
+
+******** $z(\phi)=1$ 时
+
+根据[[MK127][可读性]]有且仅有 $\phi=(\tau_1\hat{=}\tau_2)$ 和 $\phi=p_i(\tau_1,...,\tau_n)$ 形式
+
+则对于唯一不在[[MK133][项]]中的 $\phi[1]=($ 或 $\phi[2]=($ 存在 $\phi[|\phi|]=)$ 满足命题
+
+******** 归纳假设
+
+对于任意 $z(\phi)<n$ 均存在对应 $)$ 使得 $<\phi[i],...,\phi[j]>\in\mathcal{L}$ 或 $<\phi[i-1],\phi[i],...,\phi[j]>\in\mathcal{L}$
+
+******** $z(\phi)=n$ 时
+
+根据[[MK127][可读性]]有且仅有 $\phi=(\lnot\psi),\phi=(\psi_1\to\psi_2),\phi=(\forall x_i\psi)$ 三种情况
+
+显然 $z(\psi)<n,z(\psi_1)<n,z(\psi_2)<n$
+
+则根据归纳假设对于任意 $\psi,\psi_1,\psi_2$ 内且不在[[MK133][项]]中的 $($ 均存在 $\psi,\psi_1,\psi_2$ 中存在 $)$
+
+使得 $<\phi[i],...,\phi[j]>\in\mathcal{L}$ 或 $<\phi[i-1],\phi[i],...,\phi[j]>\in\mathcal{L}$
+
+又对于唯一不在 $\psi,\psi_1,\psi_2$ 的 $\phi[1]=($ 有 $\phi[|\phi|]=)$
+
+使得 $<\phi[i],...,\phi[j]>\in\mathcal{L}$ 或 $<\phi[i-1],\phi[i],...,\phi[j]>\in\mathcal{L}$
+
+**** 唯一可读性<<MK149>>
+
+若 $\phi\in\mathcal{L}$ 是[[MK135][表达式]]，那么以下五种情况有且仅有一种成立：
+
+（1） 存在唯一 $\tau_1\in T\land\tau_2\in T$ 使得 $\phi=(\tau_1\hat{=}\tau_2)$
+
+（2） 存在唯一 $\tau_i\in T,1\leq i\leq n$ 以及 $p_i\in P,\pi_P(p_i)=n$ 使得 $\phi=p_i(\tau_1,...,\tau_n)$
+
+（3） 存在唯一 $\psi\in\mathcal{L}$ 使得 $\phi=(\lnot\psi)$
+
+（4） 存在唯一 $\psi_1\in\mathcal{L}\land\psi_2\in\mathcal{L}$ 使得 $\phi=(\psi_1\to\psi_2)$
+
+（5） 存在唯一 $\psi\in\mathcal{L}$ 使得 $\phi=(\forall x_i\psi)$ ，其中 $x_i\in X$ 是[[MK130][变元]]
+
+***** 证明
+
+对于任意 $\phi\in\mathcal{L}$ ，定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK133][项]]后 $($ 和 $)$ 的对数
+
+根据以下证明， $\phi$ 为有限长度，以及数学归纳法可证
+
+******  $z(\phi)=1$ 时
+
+根据[[MK127][可读性]]原理有且仅有 $(\tau_1\hat{=}\tau_2),p_i(\tau_1,...,\tau_n)$ 两种形式，根据[[MK139][之前证明]]类似可证唯一性
+
+****** 归纳假设
+
+对于任意 $1<z(\phi)\leq n$ 唯一性均成立
+
+****** $z(\phi)=n$ 时
+
+根据[[MK127][可读性]]原理有且仅有以下情况
+
+******* $\phi=(\lnot\psi)$ 时<<MK142>>
+
+假设不唯一，即存在 $\psi'$ 满足 $\phi=(\lnot\psi')$ 以及以下任意一项：
+
+（1） $|\psi'|\ne|\psi|$
+
+（2） 存在 $i$ 使得 $\psi[i]\ne\psi'[i]$
+
+（3） $\psi',\psi$ 可解析为[[MK127][可读性]]中不同情况
+
+（4） $\psi',\psi$ 只能解析为[[MK127][可读性]]中同一情况，但组成该情况的子[[MK133][项]]和[[MK135][表达式]]不同
+
+根据[[MK140][前缀引理]]与[[MK141][相等]]易证（1）（2）不成立，故有 $\psi=\psi'$
+
+则（3）若成立，同一表达式可有不同情况表述，与[[MK127][可读性]]矛盾，故（3）不成立
+
+又由于 $z(\phi)=n$ 则必有 $z(\psi)=z(\psi')=n-1$
+
+则根据归纳假设，组成该形式的[[MK133][项]]和[[MK135][表达式]]唯一，故（4）不成立
+
+******* $\phi=(\forall x_i\psi)$ 时
+
+上一步同理可证
+
+******* $\phi=(\psi_1\to\psi_2)$ 时
+
+假设不唯一，则存在 $\psi'_1,\psi'_2$ 满足 $\phi=(\psi'_1\to\psi'_2)$ 以及以下任意一项（定义 $\psi=\psi_1\to\psi_2,\psi'=\psi'_1\to\psi'_2$ ）
+
+（1） $|\psi'|\ne|\psi|$
+
+（2） 存在 $i$ 使得 $\psi[i]\ne\psi'[i]$
+
+（3） $\psi'_1$ 与 $\psi_1$ 或 $\psi'_2$ 与 $\psi_2$ 可解析为[[MK127][可读性]]中不同情况
+
+（4） $\psi'_1$ 与 $\psi_1$ 或 $\psi'_2$ 与 $\psi_2$ 只能解析为[[MK127][可读性]]中同一情况，但组成该情况的子[[MK133][项]]和[[MK135][表达式]]不同
+
+[[MK142][同理]]根据[[MK140][前缀引理]]与[[MK141][相等]]易证（1）（2）不成立，即 $\psi=\psi'$
+
+再根据[[MK140][前缀引理]]可得若 $|\psi_1|\ne|\psi'_1|$ 则一个必为另一个真前缀，即必有一个不属于 $\mathcal{L}$ 故必有 $|\psi_1|=|\psi'_1|$
+
+又根据 $\psi=\psi'$ 可推出 $|\psi_2|=|\psi'_2|$ [[MK141][同理]]结合归纳假设易证（3）（4）不成立
+
+*** 自由变元与受限变元<<MK441>>
+
+[[MK130][变元符号]] $x_i$ 是[[MK135][表达式]] $\phi\in\mathcal{L}$ 的自由变元当且仅当 $x_i$ 在 $\phi$ 存在[[MK440][自由出现]]
+
+[[MK130][变元符号]] $x_i$ 是[[MK135][表达式]] $\phi\in\mathcal{L}$ 的受限变元 $x_i$ 在 $\phi$ 中的所有出现均为[[MK440][受限出现]] 
+
+**** 自由出现与受限出现<<MK440>>
+
+若[[MK130][变元符号]] $x_i$ 在[[MK135][表达式]] $\phi\in\mathcal{L}$ 中出现 $\phi[i]=x_i$ 则
+
+（1） 若存在[[MK439][量词辖域]] $\psi=<\phi[u],...,\phi[v]>$ 满足 $\phi[u-1]=x_i\land u\leq i\leq v$ 则称 $x_i$ 在 $\phi[i]$ 处受限出现
+
+（2） 若不存在[[MK439][量词辖域]]满足条件（1），则称 $x_i$ 在 $\phi[i]$ 处自由出现
+
+**** 量词辖域<<MK439>>
+
+任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 中若 $\psi=<\phi[i+2],...,\phi[k-1]>$ 是量词 $\phi[i]$ 的辖域，则
+
+（1） $\phi[i]=\forall\land\phi[i+1]=x_i$
+
+（2） $\phi[k]=)\land k> i+1$ 满足 $<\phi[i-1],\phi[i],...,\phi[k]>=(\forall x_i\psi)\in\mathcal{L}$
+
+根据[[MK438][量词引理]]可得任意 $\phi$ 中的量词 $\forall$ 均有其对应的[[MK130][变元符号]] $x_i$ 以及辖域
+
+**** 量词引理<<MK438>>
+
+任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 若 $<\phi[i],\phi[i+1]>=<\forall,x_i>$ 则：
+
+（1） $\phi[i-1]=($
+
+（2） 存在唯一 $\phi[k]=)\land k> i+1$ 满足 $<\phi[i-1],\phi[i],...,\phi[k]>=(\forall x_i\psi)\in\mathcal{L}$
+
+***** 证明
+
+根据[[MK127][可读性]]若包含 $\forall x_i$ 字符，则有且仅有 $\phi=(\lnot\psi),\phi=(\psi_1\to\psi_2),\phi=(\forall x_i\psi)$ 三种形式
+
+定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK133][项]]后 $($ 和 $)$ 的对数，利用数学归纳法[[MK437][类似]]可证（1）
+
+当（1）成立时，根据[[MK436][推论]]可证存在唯一 $\phi[k]$ 满足 $<\phi[i-1],\phi[i],...,\phi[k]>\in\mathcal{L}$
+
+又根据[[MK127][可读性]]以及 $<\phi[1],\phi[2],\phi[3]>=(\forall x_i$ 可得有且仅有 $(\forall x_i\psi),\psi\in\mathcal{L}$ 形式满足序列要求
+
+*** 语句
+
+任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 中的所有[[MK130][变元符号]]均为[[MK441][受限变元]]，则 $\phi$ 称为句子
+
+*** 替换
+
+定义 $\tau\in T$ 是[[MK133][项]]， $\tau_i\in T,1\leq i\leq n$ 亦为项， $\phi\in\mathcal{L}$ 是[[MK135][表达式]]，则
+
+（1） 定义 $\tau(<x_1,...,x_n>,<\tau_1,...,\tau_n>)$ 将项 $\tau$ 中每一个 $x_i,1\leq i\leq n$ 都有 $\tau_i$ 替换后所得的字符串
+
+（2） 定义 $\phi(<x_1,...,x_n>,<\tau_1,...,\tau_n>)$ 将项 $\phi$ 中每一个 $x_i,1\leq i\leq n$ 都有 $\tau_i$ 替换后所得的字符串
+
+根据[[MK442][替换引理]]可得 $\tau(<x_1,...,x_n>,<\tau_1,...,\tau_n>)\in T$ 以及 $\phi(<x_1,...,x_n>,<\tau_1,...,\tau_n>)\in\mathcal{L}$
+
+**** 替换引理<<MK442>>
+
+若 $\tau\in T$ 是[[MK133][项]]， $\phi\in\mathcal{L}$ 是[[MK135][表达式]]， $\tau_i\in T,1\leq i\leq n$ 亦为项
+
+则 $\tau(<x_1,...,x_n>,<\tau_1,...,\tau_n>)\in T$ 以及 $\phi(<x_1,...,x_n>,<\tau_1,...,\tau_n>)\in\mathcal{L}$
+
+***** 证明
+
+定义 $\tau'=\tau(<x_1,...,x_n>,<\tau_1,...,\tau_n>)$ 以及 $\phi' =\phi(<x_1,...,x_n>,<\tau_1,...,\tau_n>)$ 
+
+****** 项
+
+根据以下证明， $|\tau|<\infty$ ，以及数学归纳法可得
+
+******* 零对括号
+
+显然有且仅有 $\tau=x_i,\tau=c_i$ 形式，若为后者或 $i>n$ ，则 $\tau'=\tau\in T$
+
+若为前者且 $1\leq i\leq n$ 则根据 $\tau_i$ 定义 $\tau'=\tau_i\in T$
+
+******* 归纳假设
+
+任意 $\tau\in T$ 括号对数小于 $k>0$ 时均有 $\tau'\in T$ 即替换后仍为[[MK133][项]]
+
+******* $k$ 对括号
+
+根据[[MK138][唯一可读]]有 $\tau=f_i(\eta_1,...,\eta_n)$ 形式，显然 $\eta_i$ 的括号对数小于 $k$
+
+显然任意 $x_i$ 仅有可能存在与 $\eta_i$ ，则根据归纳假设可得 $\eta'_i=\eta_i(<x_1,...,x_n>,<\tau_1,...,\tau_n>)\in T$
+
+又根据[[MK133][项]]的定义可得 $f_i(\eta'_1,...,\ete'_n)\in T$
+
+****** 表达式
+
+对于任意 $\phi\in\mathcal{L}$ ，定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK133][项]]后 $($ 和 $)$ 的对数
+
+则根据以下证明， $\phi$ 为有限长度，以及数学归纳法可证
+
+******* $z(\phi)=1$ 时
+
+根据[[MK127][可读性]]有且仅有 $\phi=(\tau_1\hat{=}\tau_2),\phi=p_i(\tau_1,...,\tau_n)$ 形式
+
+根据上一步证明可得 $\tau'_i=\tau_i(<x_1,...,x_n>,<\tau_1,...,\tau_n>)\in T$
+
+则显然 $\phi'=(\tau'_i\hat{ =}\tau'_2)$ 或 $\phi'=p_i(\tau'_1,...,\tau'_n)$ 根据[[MK135][表达式]]定义可得 $\phi'\in\mathcal{L}$
+
+******* 归纳假设
+
+当 $1<z(\phi)<n$ 时有 $\phi' =\phi(<x_1,...,x_n>,<\tau_1,...,\tau_n>)\in\mathcal{L}$
+
+******* $z(\phi)=n$ 时
+
+
 
 * 谓词逻辑
 
