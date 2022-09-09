@@ -780,6 +780,14 @@ Select "X Server Display Configuration", pick the second screen and press "Save 
 
 # Softwares
 
+## Octave
+
+Install by:
+
+```shell
+sudo pacman -S octave
+```
+
 ## Wangyi yun music
 
 Install by:

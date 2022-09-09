@@ -2,7 +2,7 @@
 
 #+TITLE: 线性方程组解
 
-currnet mark: 31
+currnet mark: 33
 
 * 域<<MK24>>
 
@@ -515,6 +515,155 @@ $A=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\...&...&...&...\\a_{u1}&a_{u2}&
 **** 推论
 
 当矩阵中某一行为零时，取该行的行列式 $|A|=\sum_{i=1}^n 0A_{ki}=0$ ，且根据[[MK12][转置相等]]某一列为零时亦然
+
+*** 可逆矩阵行列式<<MK33>>
+
+若矩阵 $A$ [[~/OneDrive/高等代数/Algb-3-Matrix.org::MK28][可逆]]，则有 $|A^{-1}|=\frac{1}{|A|}$
+
+**** 证明
+
+根据[[MK18][上三角矩阵行列式]]可得[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK4][单位矩阵]]的行列式为 $|I|=1$
+
+根据[[MK32][矩阵乘法与行列式]]可得 $|A^{-1}||A|=|A^{-1}A|=|I|=1$ 故有 $|A^{-1}|=\frac{1}{|A|}$
+
+*** 乘法与行列式<<MK32>>
+
+定义矩阵 $A_{s\times n},B_{n\times s}$ 则有：
+
+（1） 当 $s>n$ 时 $|AB|=0$
+
+（2） 当 $s=n$ 时 $|AB|=|A||B|$
+
+（3） 当 $s<n$ 时 $|AB|=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$ 其中 $A,B$ 分别代表[[MK21][子式]]
+
+**** 证明
+
+***** 证明（1）
+
+由于 $n<s$ 则 $A$ 有 $\dim(A)\leq n$
+
+根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK24][乘法性质]]可得 $\dim(AB)\leq \dim(A)\leq n$
+
+由于根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK5][矩阵乘法]]可得 $AB$ 为 $s$ 阶方阵，则 $AB$ 不满秩，故 $|AB|=0$
+
+***** 证明（2）
+
+若 $|A|=0$ 则 $A$ 不满秩，同理根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK24][乘法性质]]可得 $\dim(AB)\leq \dim(A)< n$
+
+故得 $|AB|=0$
+
+若 $|A|\ne 0$ 则 $A$ 满秩，故根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK29][可逆条件]]可得 $A$ 可逆
+
+进一步根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK37][定理7]]可得 $A=\prod_{i=1}^vP_i$ 其中 $P_i$ 为[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK13][初等矩阵]]
+
+顾得 $|AB|=\left|\prod P_i B\right|$ 根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK48][初等矩阵性质]]以及[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK21][乘法结合律]]可得 $|AB|=\left|\prod P_i\right||B|=|A||B|$
+
+***** 证明（3）
+
+****** 利用分块矩阵
+
+构造[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK38][分块矩阵]] $\left[\begin{matrix}A&0_{s}\\I_n&B\end{matrix}\right]$ 其中分块 $I_n$ 为 $n$ 阶[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK4][单位矩阵]]，且 $0_s$ 为 $s$ 阶[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK9][零矩阵]]
+
+构造[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK45][分块初等矩阵]] $\left[\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right]$ 则有：
+
+（1） $I_sA=A$ ，（2） $-AI_n=-A$ ，（3） $0_{n\times s}A=0_{n\times n}$ ，（4） $I_nB=B$
+
+固有  $\left[\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right]\left[\begin{matrix}A&0_s\\I_n&B\end{matrix}\right]=\left[\begin{matrix}A-A&0_s-AB\\0_{n\times n}+I_{n\times n}&0_{n\times s}+B\end{matrix}\right]=\left[\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right]$
+
+根据[[MK18][上三角矩阵行列式]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|=1$ 根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK29][可逆条件]]可得该矩阵可逆，根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK37][定理7]]可得该矩阵可分解为[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK13][初等矩阵]]相乘
+
+故根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK48][初等矩阵与乘法]]以及[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK21][乘法结合律]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|$
+
+****** 利用拉普拉斯定理
+
+******* 等式左边矩阵行列式
+
+根据[[MK26][拉普拉斯定理]]，对 $\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|$ 取前 $s$ 行即 $i_l=l,1\leq l\leq s$ ，对其列进行展开
+
+\begin{aligned}
+\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\sum_{u=1}^s i_u+\sum_{u=1}^s j_u}M\left(\begin{matrix}i_1&i_2&...&i_s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}i_1&i_2&...&i_s\\j_1&j_2&...&j_s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)
+\end{aligned}
+
+由于对于任意 $j_l>s$ 其子式 $M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 均有一列元素全为 $0$ ，
+
+则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK102][性质3]]可得求子式的矩阵列向量现行相关，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关性]]可得其行列式为零，故子式为零，则得
+
+
+\begin{aligned}
+\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)
+\end{aligned}
+
+其中余子式 $\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 可表述为矩阵 $\left[\begin{matrix}I_n&B\end{matrix}\right]$ 去掉 $1\leq j_1\leq...\leq j_s\leq s$ 列后求行列式
+
+由于 $s<n$ 则去掉的列必在 $I_n$ 中，删除后 $I'_{n\times (n-s)}$ 为 $n$ 行 $(n-s)$ 列矩阵，对该 $n-s$ 列再用拉普拉斯定理的推论展开
+
+\begin{aligned}
+\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)=\sum_{\forall1\leq k_1\leq k_2\leq...\leq k_{n-s}\leq n}(-1)^{\sum_{u=1}^{n-s}u+\sum_{u=1}^{n-s}k_u}M'\left(\begin{matrix}k_1&k_2&...&k_{n-s}\\1&2&...&n-s\end{matrix}\right)\overline{M'}\left(\begin{matrix}k_1&k_2&...&k_s\\1&2&...&n-s\end{matrix}\right)
+\end{aligned}
+
+此时仅有未删除的列上有非零元素，他们位于 $K=\left\{k\big|k\not\in \{j_l|1\leq l\leq s\}\land k\leq n\right\}$ 行上
+
+由于单位矩阵仅对角线为 $1$ ，故当且仅当取所有 $k_v\in K$ 时子式 $M'\left(\begin{matrix}k_1&k_2&...&k_{n-s}\\1&2&...&n-s\end{matrix}\right)\ne0$
+
+由于 $I'_{n\times (n-s)}$ 仅有 $(n-s)$ 列且 $\dim(K)=n-s$ 故该情况只有一种。
+
+进一步由于单位矩阵，故取该种情况下行的子矩阵为 $I_{n-s}$ 为 $n-s$ 阶单位矩阵，即 $M'\left(\begin{matrix}k_1&k_2&...&k_{n-s}\\1&2&...&n-s\end{matrix}\right)=|I_{n-s}|=1$
+
+对应余子式为 $\left[\begin{matrix}I'_{n\times (n-s)}&B\end{matrix}\right]$ 矩阵去掉前 $n-s$ 列及 $1\leq k_1\leq...\leq k_{n-s}\leq s$ 行后的矩阵的行列式
+
+即矩阵 $B$ 去掉 $1\leq k_1\leq...\leq k_{n-s}\leq s$ 行后的矩阵的行列式，即矩阵 $B$ 保留 $1\leq j_1\leq...\leq j_s\leq s$ 行的行列式
+
+为更好区分，定义为 $B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$ 则有:
+
+\begin{aligned}
+\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)&=(-1)^{\sum_{u=1}^{n-s}u+\sum_{u=1}^{n-s}k_u}B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=(-1)^{\frac{(n-s)(n-s+1)}{2}+\sum_{u=1}^n u-\sum_{u=1}^s j_u}B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)
+\end{aligned}
+
+替换原式：
+
+\begin{aligned}
+\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)(-1)^{\frac{(n-s)(n-s+1)}{2}+\sum_{u=1}^n u-\sum_{u=1}^s j_u}B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\sum_{u=1}^su+\sum_{u=1}^s j_u+\sum_{u=1}^{n-s}u+\sum_{u=1}^n u-\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\sum_{u=1}^su+\sum_{u=1}^{n-s}u+\sum_{u=1}^n u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s^2+s+(n-s)^2+n-s+n^2+n}{2}}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{2s^2+2n^2-2ns+2n}{2}}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+\end{aligned}
+
+进一步定义子式 $M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)=A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 
+
+则有 $\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$
+
+******* 等式右边矩阵行列式
+
+以同样的方式，对 $\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|$ 取前 $s$ 行展开即 $i_l=l,1\leq l\leq s$ 则列的取值范围是 $\forall 1\leq j_1\leq...\leq j_s\leq n+s$
+
+同理若 $j_l\leq n$ 则其子式必为零，由于取值范围和 $j$ 的个数可得当且仅当 $j_l=n+l$ 时展开项不为零
+
+且根据[[MK14][行乘系数]] $|-AB|$ 每行有一个 $-1$ 则 $(-1)^s|AB|=|-AB|$ 故：
+
+\begin{aligned}
+\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|&=(-1)^{\sum_{u=1}^su+\sum_{u=1}^s n+u }M\left(\begin{matrix}1&2&...&s\\n+1&n+2&...&n+s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\n+1&n+2&...&n+s\end{matrix}\right)\\
+&=(-1)^{s(1+s)+sn}|-AB||I|\\
+&=(-1)^{sn}|-AB|\\
+&=(-1)^{s+sn}|AB|
+\end{aligned}
+
+******* 对其左右两边
+
+最终有： 
+
+\begin{aligned}
+(-1)^{s+sn}|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+|AB|&=(-1)^{-s-sn}\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n-s-sn}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s(s-1)+n(n+1)-2ns}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
+\end{aligned}
 
 ** 行列式与解的关系<<MK29>>
 

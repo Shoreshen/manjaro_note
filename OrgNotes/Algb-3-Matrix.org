@@ -2,7 +2,7 @@
 
 #+TITLE: 矩阵运算
 
-current mark: 64
+current mark: 66
 
 * 矩阵基础
 
@@ -418,25 +418,25 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 ***** 第一型
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-上三角矩阵行列式]]可得该型初等矩阵行列式 $|P|=1$
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK18][上三角矩阵行列式]]可得该型初等矩阵行列式 $|P|=1$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=|A|$
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK19][初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=|A|$
 
 此时 $|PA|=|AP|=|P||A|=1|A|=|A|$ 成立
 
 ***** 第二型
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-两行互换]]可得该型初等矩阵行列式 $|P|=-1$
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK13][两行互换]]可得该型初等矩阵行列式 $|P|=-1$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=-|A|$
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK19][初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=-|A|$
 
 此时 $|PA|=|AP|=|P||A|=-1|A|=-|A|$ 成立
 
 ***** 第三型
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-行乘系数]]可得该型初等矩阵行列式 $|P|=k$ 其中 $k$ 为对应的系数
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK14][行乘系数]]可得该型初等矩阵行列式 $|P|=k$ 其中 $k$ 为对应的系数
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=k|A|$
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK19][初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=k|A|$
 
 此时 $|PA|=|AP|=|P||A|=k|A|$ 成立
 
@@ -559,7 +559,7 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 若矩阵 $A,B$ 可以相乘，则有 $rank(AB)\leq\min\left\{rank(A),rank(B)\right\}$ 
 
-其中 $rank(X)$ 表示 $X$ 的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK87][定义]]
+其中 $rank(X)$ 表示 $X$ 的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK55][秩]]
 
 ***** 证明
 
@@ -652,17 +652,17 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 ***** 必要
 
-若 $A_n$ 可逆，则有 $A_nA^{-1}_n=I_n$ 根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-定义]] $I_n$ 列向量均线性不相关
+若 $A_n$ 可逆，则有 $A_nA^{-1}_n=I_n$ 根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性相关与线性无关]] $I_n$ 列向量均线性不相关
 
-故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论1]]可得 $rank(I_n)=n$
+故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK58][推论1]]可得 $rank(I_n)=n$
 
 根据[[MK24][乘法性质]]可得 $rank(I_n)=rank(A_nA^{-1}_n)\leq rank(A_n)$ 
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-矩阵的秩与行列式]]可得 $A_n$ 秩最大为 $n$ 即 $rank(A_n)\leq n$ 故得 $rank(A_n)=n$
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK55][秩的定义]]可得 $A_n$ 秩最大为 $n$ 即 $rank(A_n)\leq n$ 故得 $rank(A_n)=n$
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-行列式与线性相关性]]可得 $|A_n|\ne0$ 时行列向量线性无关
+根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关性]]可得 $|A_n|\ne0$ 时行列向量线性无关
 
-同理根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-列秩与行秩的定义]]以及[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩]]可得当且仅当行列向量线性无关时 $rank(A_n)=n$
+同理根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK55][列秩与行秩的定义]]以及[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK56][一般矩阵行秩与列秩]]可得当且仅当行列向量线性无关时 $rank(A_n)=n$
 
 综上所属若 $A_n$ 可逆，则 $rank(A_n)=n$ 则 $|A_n|\ne0$
 
@@ -670,9 +670,7 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 构建矩阵 $B=[U_{ij}]^T_{n\times n}$ ，其中 $U_{ij}$ 定义为 $A_n$ 对于元素 $a_{ij}$ 的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK25][代数余子式]]。
 
-根据[[MK5][矩阵乘法]]可得 $A_nB=\left[t_{ij}=\sum_{k=1}^n a_{ik}U_{jk}\right]_{n\times n}$ 
-
-则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-矩阵的秩与行列式-推论2]]可得 $t_{ij}=\begin{cases}|A_n|&i=j\\0&i\ne j\end{cases}$
+根据[[MK5][矩阵乘法]]可得 $A_nB=\left[t_{ij}=\sum_{k=1}^n a_{ik}U_{jk}\right]_{n\times n}$ ，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK107][推论2]]可得 $t_{ij}=\begin{cases}|A_n|&i=j\\0&i\ne j\end{cases}$
 
 则根据[[MK3][矩阵数乘]]可得 $\frac{1}{|A_n|}A_nB=I_n$ 根据[[MK25][数乘性质]]可得 $\frac{1}{|A_n|}A_nB=A_n\left(\frac{1}{|A_n|}B\right)=I_n$
 
@@ -1016,145 +1014,6 @@ A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A
 
 故，矩阵的分块初等变换亦不改变秩。
 
-* 矩阵乘法与行列式
-
-定义矩阵 $A_{s\times n},B_{n\times s}$ 则有：
-
-（1） 当 $s>n$ 时 $|AB|=0$
-
-（2） 当 $s=n$ 时 $|AB|=|A||B|$
-
-（3） 当 $s<n$ 时 $|AB|=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$ 其中 $A,B$ 分别代表[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK21][子式]]
-
-** 证明
-
-*** 证明（1）
-
-由于 $n<s$ 则 $A$ 有 $\dim(A)\leq n$
-
-根据[[MK24][乘法性质]]可得 $\dim(AB)\leq \dim(A)\leq n$
-
-由于根据[[MK5][矩阵乘法]]可得 $AB$ 为 $s$ 阶方阵，则 $AB$ 不满秩，故 $|AB|=0$
-
-*** 证明（2）
-
-若 $|A|=0$ 则 $A$ 不满秩，同理根据[[MK24][乘法性质]]可得 $\dim(AB)\leq \dim(A)< n$
-
-故得 $|AB|=0$
-
-若 $|A|\ne 0$ 则 $A$ 满秩，故根据[[MK29][可逆条件]]可得 $A$ 可逆
-
-进一步根据[[MK37][定理7]]可得 $A=\prod_{i=1}^vP_i$ 其中 $P_i$ 为[[MK13][初等矩阵]]
-
-顾得 $|AB|=\left|\prod P_i B\right|$ 根据[[MK48][初等矩阵性质]]以及[[MK21][乘法结合律]]可得 $|AB|=\left|\prod P_i\right||B|=|A||B|$
-
-*** 证明（3）
-
-**** 利用分块矩阵
-
-构造[[MK38][分块矩阵]] $\left[\begin{matrix}A&0_{s}\\I_n&B\end{matrix}\right]$ 其中分块 $I_n$ 为 $n$ 阶[[MK4][单位矩阵]]，且 $0_s$ 为 $s$ 阶[[MK9][零矩阵]]
-
-构造[[MK45][分块初等矩阵]] $\left[\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right]$ 则有：
-
-（1） $I_sA=A$ ，（2） $-AI_n=-A$ ，（3） $0_{n\times s}A=0_{n\times n}$ ，（4） $I_nB=B$
-
-固有  $\left[\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right]\left[\begin{matrix}A&0_s\\I_n&B\end{matrix}\right]=\left[\begin{matrix}A-A&0_s-AB\\0_{n\times n}+I_{n\times n}&0_{n\times s}+B\end{matrix}\right]=\left[\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right]$
-
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK18][上三角矩阵行列式]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|=1$ 根据[[MK29][可逆条件]]可得该矩阵可逆，根据[[MK37][定理7]]可得该矩阵可分解为[[MK13][初等矩阵]]相乘
-
-故根据[[MK48][初等矩阵与乘法]]以及[[MK21][乘法结合律]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|$
-
-**** 利用拉普拉斯定理
-
-***** 等式左边矩阵行列式
-
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK26][拉普拉斯定理]]，对 $\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|$ 取前 $s$ 行即 $i_l=l,1\leq l\leq s$ ，对其列进行展开
-
-\begin{aligned}
-\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\sum_{u=1}^s i_u+\sum_{u=1}^s j_u}M\left(\begin{matrix}i_1&i_2&...&i_s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}i_1&i_2&...&i_s\\j_1&j_2&...&j_s\end{matrix}\right)\\
-&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)
-\end{aligned}
-
-由于对于任意 $j_l>s$ 其子式 $M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 均有一列元素全为 $0$ ，
-
-则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK102][性质3]]可得求子式的矩阵列向量现行相关，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关性]]可得其行列式为零，故子式为零，则得
-
-
-\begin{aligned}
-\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq n+s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\\
-&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)
-\end{aligned}
-
-其中余子式 $\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 可表述为矩阵 $\left[\begin{matrix}I_n&B\end{matrix}\right]$ 去掉 $1\leq j_1\leq...\leq j_s\leq s$ 列后求行列式
-
-由于 $s<n$ 则去掉的列必在 $I_n$ 中，删除后 $I'_{n\times (n-s)}$ 为 $n$ 行 $(n-s)$ 列矩阵，对该 $n-s$ 列再用拉普拉斯定理的推论展开
-
-\begin{aligned}
-\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)=\sum_{\forall1\leq k_1\leq k_2\leq...\leq k_{n-s}\leq n}(-1)^{\sum_{u=1}^{n-s}u+\sum_{u=1}^{n-s}k_u}M'\left(\begin{matrix}k_1&k_2&...&k_{n-s}\\1&2&...&n-s\end{matrix}\right)\overline{M'}\left(\begin{matrix}k_1&k_2&...&k_s\\1&2&...&n-s\end{matrix}\right)
-\end{aligned}
-
-此时仅有未删除的列上有非零元素，他们位于 $K=\left\{k\big|k\not\in \{j_l|1\leq l\leq s\}\land k\leq n\right\}$ 行上
-
-由于单位矩阵仅对角线为 $1$ ，故当且仅当取所有 $k_v\in K$ 时子式 $M'\left(\begin{matrix}k_1&k_2&...&k_{n-s}\\1&2&...&n-s\end{matrix}\right)\ne0$
-
-由于 $I'_{n\times (n-s)}$ 仅有 $(n-s)$ 列且 $\dim(K)=n-s$ 故该情况只有一种。
-
-进一步由于单位矩阵，故取该种情况下行的子矩阵为 $I_{n-s}$ 为 $n-s$ 阶单位矩阵，即 $M'\left(\begin{matrix}k_1&k_2&...&k_{n-s}\\1&2&...&n-s\end{matrix}\right)=|I_{n-s}|=1$
-
-对应余子式为 $\left[\begin{matrix}I'_{n\times (n-s)}&B\end{matrix}\right]$ 矩阵去掉前 $n-s$ 列及 $1\leq k_1\leq...\leq k_{n-s}\leq s$ 行后的矩阵的行列式
-
-即矩阵 $B$ 去掉 $1\leq k_1\leq...\leq k_{n-s}\leq s$ 行后的矩阵的行列式，即矩阵 $B$ 保留 $1\leq j_1\leq...\leq j_s\leq s$ 行的行列式
-
-为更好区分，定义为 $B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$ 则有:
-
-\begin{aligned}
-\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)&=(-1)^{\sum_{u=1}^{n-s}u+\sum_{u=1}^{n-s}k_u}B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-&=(-1)^{\frac{(n-s)(n-s+1)}{2}+\sum_{u=1}^n u-\sum_{u=1}^s j_u}B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)
-\end{aligned}
-
-替换原式：
-
-\begin{aligned}
-\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)\\
-&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s(s+1)}{2}+\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)(-1)^{\frac{(n-s)(n-s+1)}{2}+\sum_{u=1}^n u-\sum_{u=1}^s j_u}B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\sum_{u=1}^su+\sum_{u=1}^s j_u+\sum_{u=1}^{n-s}u+\sum_{u=1}^n u-\sum_{u=1}^s j_u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\sum_{u=1}^su+\sum_{u=1}^{n-s}u+\sum_{u=1}^n u}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{s^2+s+(n-s)^2+n-s+n^2+n}{2}}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{\frac{2s^2+2n^2-2ns+2n}{2}}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-\end{aligned}
-
-进一步定义子式 $M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)=A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 
-
-则有 $\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)$
-
-***** 等式右边矩阵行列式
-
-以同样的方式，对 $\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|$ 取前 $s$ 行展开即 $i_l=l,1\leq l\leq s$ 则列的取值范围是 $\forall 1\leq j_1\leq...\leq j_s\leq n+s$
-
-同理若 $j_l\leq n$ 则其子式必为零，由于取值范围和 $j$ 的个数可得当且仅当 $j_l=n+l$ 时展开项不为零
-
-且根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-性质-行乘系数]] $|-AB|$ 每行有一个 $-1$ 则 $(-1)^s|AB|=|-AB|$ 故：
-
-\begin{aligned}
-\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|&=(-1)^{\sum_{u=1}^su+\sum_{u=1}^s n+u }M\left(\begin{matrix}1&2&...&s\\n+1&n+2&...&n+s\end{matrix}\right)\overline{M}\left(\begin{matrix}1&2&...&s\\n+1&n+2&...&n+s\end{matrix}\right)\\
-&=(-1)^{s(1+s)+sn}|-AB||I|\\
-&=(-1)^{sn}|-AB|\\
-&=(-1)^{s+sn}|AB|
-\end{aligned}
-
-***** 对其左右两边
-
-最终有： 
-
-\begin{aligned}
-(-1)^{s+sn}|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-|AB|&=(-1)^{-s-sn}\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s^2+n^2-ns+n-s-sn}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}(-1)^{s(s-1)+n(n+1)-2ns}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-|AB|&=\sum_{\forall 1\leq j_1\leq...\leq j_s\leq s}A\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)B\left(\begin{matrix}j_1&j_2&...&j_s\\1&2&...&s\end{matrix}\right)\\
-\end{aligned}
-
 * 特征值和特征向量<<MK55>>
 
 设 $A=[a_{ij}]_{n\times n}\in M_{n\times n}(K)$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上 $n$ 阶矩阵
@@ -1317,6 +1176,40 @@ Q^{-1}AQ&=\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\righ
 
 故推出 $A\vec{p}_i=\lambda_i\vec{p}_i$ 所以 $\lambda_i$ 为特征值 $\vec{p}_i$ 为对应的特征向量
 
+* 矩阵的迹<<MK65>>
+
+对于任意 $A=[a_{ij}]\in M_{n\times n}(K)$ 为 $n$ 阶方阵，则其迹定义为 $tr(A)=\sum_{i=1}^na_{ii}$
+
+** 性质1
+
+任意 $\{A,B\}\subset M_{n\times n}(K)$ 有 $tr(A+B)=tr(A)+tr(B)$
+
+*** 证明
+
+定义 $A=[a_{ij}],B=[b_{ij}]$ ，根据[[MK2][加法定义]]可得 $A+B=[a_{ij}+b_{ij}]$ 则 $tr(A+B)=\sum_{i=1}^n(a_{ii}+b_{ii})$
+
+显然 $tr(A)+tr(B)=\sum_{i=1}^na_{ii}+\sum_{i=1}^nb_{ii}=\sum_{i=1}^n(a_{ii}+b_{ii})$
+
+** 性质2
+
+任意 $A=[a_{ij}]\in M_{n\times n}(K)$ 有 $tr(kA)=ktr(A)$
+
+*** 证明
+
+根据[[MK3][数乘]]可得 $kA=[ka_{ij}]$ 则有 $tr(kA)=\sum_{i=1}^nka_{ii}=k\sum_{i=1}^na_{ii}=k\cdot tr(A)$
+
+** 性质3<<MK66>>
+
+任意 $\{A,B\}\subset M_{n\times n}(K)$ 有 $tr(AB)=tr(BA)$
+
+*** 证明
+
+定义 $A=[a_{ij}],B=[b_{ij}],AB=[c_{ij}]$ 则 $tr(AB)=\sum_{i=1}^nc_{ii}$
+
+根据[[MK5][乘法]]有 $c_{ii}=\sum_{k=1}^na_{ik}b_{ki}$ 则 $tr(AB)=\sum_{i=1}^n\left(\sum_{k=1}^na_{ik}b_{ki}\right)$
+
+易证 $tr(AB)=\sum_{k=1}^n\left(\sum_{i=1}^nb_{ki}a_{ik}\right)$ 又根据[[MK5][乘法]]易证 $tr(BA)=\sum_{k=1}^n\left(\sum_{i=1}^nb_{ki}a_{ik}\right)$ 
+
 * 矩阵相似<<MK64>>
 
 定义 $\{A,B\}\subset M_{n\times n}(K)$ 为 $n$ 阶方阵，若存在[[MK28][可逆]]矩阵 $P\in M_{n\times n}(K)$ 满足 $P^{-1}AP=B$
@@ -1346,5 +1239,41 @@ Q^{-1}AQ&=\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\righ
 定义 $P=P_1P_2$ 显然 $P^{-1}_2P^{-1}_1P_1P_2=P^{-1}_2IP_2=I$ 根据[[MK28][可逆]]定义有 $P^{-1}=P_2^{-1}P_1^{-1}$
 
 即根据[[MK21][结合律]]有 $P^{-1}AP=C$
+
+** 性质
+
+*** 性质1
+
+若矩阵 $A\sim B$ [[MK64][相似]]，则有 $|A|=|B|$ 即[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK11][行列式]]相等
+
+（2） $rank(A)=rank(B)$ 即[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK87][秩]]相等
+
+**** 证明
+
+根据[[MK64][相似]]可得存在[[MK28][可逆矩阵]] $P$ 满足 $A=PBP^{-1}$ 即有 $|A|=|PBP^{-1}|$
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK32][行列式与乘法]]可得 $|A|=|P||B||P^{-1}|=|P||P^{-1}||B|$
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK33][可逆矩阵行列式]]可得 $|A|=|P|\frac{1}{|P|}|B|=|B|$
+
+*** 性质2
+
+若矩阵 $A\sim B$ [[MK64][相似]]，则有 $rank(A)=rank(B)$ 即[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK87][秩]]相等
+
+**** 证明
+
+根据[[MK64][相似]]可得存在[[MK28][可逆矩阵]] $P$ 满足 $A=PBP^{-1}$ 则有 $rank(A)=rank(PBP^{-1})$
+
+根据[[MK46][定理8]]可得 $rank(PBP^{-1})=rank(B)$
+
+*** 性质3
+
+若矩阵 $A\sim B$ [[MK64][相似]]，则有 $tr(A)=tr(B)$ 即[[MK65][迹]]相等
+
+**** 证明
+
+根据[[MK64][相似]]可得存在[[MK28][可逆矩阵]] $P$ 满足 $A=PBP^{-1}$ 则有 $tr(A)=tr(PBP^{-1})$
+
+根据[[MK66][性质3]]可得 $tr(PBP^{-1})=tr(PP^{-1}B)=tr(B)$
 
 

@@ -2,11 +2,10 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 442
+currnet mark: 457
 
-free mark:
+free mark:148
  
-
 图论: P40
 
 * 集合论
@@ -375,9 +374,7 @@ free mark:
 
 根据[[MK5][外延公理]]，集合间存在相等关系，且等价条件为 $\forall x(x\in A\leftrightarrow x\in B)$
 
-*** 包含（子集）
-
-**** 定义<<MK20>>
+*** 包含（子集）<<MK20>>
 
 若集合 $A$ 的每一个[[MK2][元素]]都是集合 $B$ 的元素，则称 $A$ 为 $B$ 的子集，记作 $A\subset B$ 。
 
@@ -731,7 +728,7 @@ A\cap\left(\bigcup_{i=1}^\infty B_i\right)&=\bigcup_{i=1}^\infty\left(A\cap B_i\
 
 根据[[MK30][并]]以及[[MK31][交]]运算可得 $B\cap C=\left\{x\big|x\in B\land x\in C\right\}$ 以及 $A\cup (B\cap C)=\left\{x\big|x\in A\lor x\in B\cap C\right\}$
 
-根据[[MK148][谓词等价]]，[[MK77][分配率]]，[[MK14][描述法定义]]以及[[MK91][替换原理]]可得对于任意 $x$
+根据[[MK77][分配率]]，[[MK14][描述法定义]]以及[[MK91][替换原理]]可得对于任意 $x$
 
 \begin{aligned}
 &x\in A\cup (B\cap C)\\
@@ -791,7 +788,7 @@ A-(B\cup C)&=(A-B)\cap (A-C)\\
 
 仅证 $A-(B\cap C)&=(A- B)\cup (A-C)$ 根据[[MK30][并]]，[[MK31][交]]以及[[MK32][差]]运算定义 $B\cap C=\left\{x\big|x\in B\land x\in C\right\},A-(B\cap C)=\left\{x\big|x\in A\land x\not\in B\cap C\right\}$
 
-则根据[[MK148][谓词等价]]，[[MK2][成员定义]]，[[MK78][德摩根律]]，[[MK77][分配率]]，[[MK14][描述法定义]]以及[[MK91][替换原理]]可得对于任意 $x$
+则根据[[MK2][成员定义]]，[[MK78][德摩根律]]，[[MK77][分配率]]，[[MK14][描述法定义]]以及[[MK91][替换原理]]可得对于任意 $x$
 
 \begin{aligned}
 &x\in A-(B\cap C)\\
@@ -839,7 +836,7 @@ A\cap \overline{A}=\varnothing\\
 
 仅证 $\overline{A\cup B}=\overline{A}\cap\overline{B}$ 根据[[MK30][并]]与[[MK33][补]]运算定义 $\overline{A\cup B}=\left\{x\big|x\not\in A\cup B\right\}$ 以及 $\overline{A}\cap\overline{B}=\left\{x\big|x\not\in A\land x\not\in B\right\}$
 
-根据[[MK2][成员定义]]，[[MK14][描述法定义]]，[[MK148][谓词等价]]，[[MK78][德摩根律]]以及[[MK91][替换原理]]可得对于任意 $x$
+根据[[MK2][成员定义]]，[[MK14][描述法定义]]，[[MK78][德摩根律]]以及[[MK91][替换原理]]可得对于任意 $x$
 
 \begin{aligned}
 &x\in \overline{A\cup B}\\
@@ -1359,7 +1356,7 @@ p & p & p \land p\\
 
 ******* 推导过程
 
-对于[[MK51][表达式]] $\{s_1,s_2\}\subset\mathcal{L}_0$ 定义表达式 $z=(\lnot((\lnot s_1)\to(\lnot s_2)))$
+对于[[MK51][表达式]] $\{s_1,s_2\}\subset\mathcal{L}_0$ 定义表达式 $z=(\lnot(s_1\to(\lnot s_2)))$
 
 则根据[[MK52][表达式真值]]有 $\bar{v}(z)=H_{\lnot}(H_{\to}(H_{\lnot}(\bar{v}(s_1)),H_{\lnot}(\bar{v}(s_2))))$ 根据[[MK403][逻辑函数]]定义可得 $\bar{v}(z)$ 与合取真值相同
 
@@ -3203,7 +3200,6 @@ A\leftrightarrow B&{|\!\!\!=\!\!\!|}\lnot B\leftrightarrow \lnot A\\
 
 若定义命题公式为 $A$ 其[[MK67][命题变项]]为 $p_1,...,p_n$ 则可记作 $A(p_1,...,p_n)$
 
-
 *** 命题公式分类
 
 **** 原子命题
@@ -3434,7 +3430,7 @@ MU是否系统中的串？
 
 所有符号均为不同元素
 
-**** 符号假定2
+**** 符号假定2<<MK445>>
 
 存在函数 $\pi_P:P\to\mathbb{N}$ 以及函数 $\pi_F:F\to\mathbb{N}$ 满足：
 
@@ -3452,7 +3448,21 @@ MU是否系统中的串？
 
 同理可证存在满足符号假定的 $P$ 
 
-*** 基本符号串
+**** 推导符号<<MK456>>
+
+同理定义以下推导符号符号：
+
+（1） 逻辑符号：分别为逻辑与，逻辑或，逻辑双向蕴含。即 $\{\land,\lor,\leftrightarrow\}$
+
+（2） 量词符号：存在量词 $\exists$
+
+**** 量词的顺序<<MK128>>
+
+量词（不加括号）固定为从左至右叠加条件
+
+即当有多个量词排列时，其中某一个量词的条件为其左边量词均成立的情况下，该量词成立，以此类推。
+
+*** 基本符号串<<MK443>>
 
 定义 $\Sigma_0=\{(,\lnot,\to,),\forall,\hat{=}\}\cup X\cup\{,\}$ 为所有[[MK116][固定符号]]，最后一项为逗号。
 
@@ -3704,6 +3714,8 @@ $\tau_i[j]$ 与 $\tau[|\tau|]$ 间 $)$ 的对数为为 $\tau_i[j]$ 与 $\tau[|\t
 
 进一步定义 $\mathcal{L}=\bigcap L$ 即所有表达式封闭子集的交，则 $\mathcal{L}$ 中的元素为表达式
 
+进一步定义（1）（2）为原始表达式，（3）（4）（5）为递归表达式
+
 **** 相等<<MK141>>
 
 对于任意 $\phi_1\in\mathcal{L},\phi_2\in\mathcal{L}$ 若满足 $|\phi_1|=|\phi_2|\land\forall i<|\phi_1|\rightarrow \phi_1[i]=\phi_2[i]$
@@ -3892,7 +3904,7 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 根据以下证明， $\phi$ 为有限长度，以及数学归纳法可证
 
-******  $z(\phi)=1$ 时
+****** $z(\phi)=1$ 时
 
 根据[[MK127][可读性]]原理有且仅有 $(\tau_1\hat{=}\tau_2),p_i(\tau_1,...,\tau_n)$ 两种形式，根据[[MK139][之前证明]]类似可证唯一性
 
@@ -3956,13 +3968,15 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 若[[MK130][变元符号]] $x_i$ 在[[MK135][表达式]] $\phi\in\mathcal{L}$ 中出现 $\phi[i]=x_i$ 则
 
-（1） 若存在[[MK439][量词辖域]] $\psi=<\phi[u],...,\phi[v]>$ 满足 $\phi[u-1]=x_i\land u\leq i\leq v$ 则称 $x_i$ 在 $\phi[i]$ 处受限出现
+（1） 若存在[[MK439][量词辖域]] $\psi=<\phi[u],...,\phi[v]>$ 满足 $i\ne u-1\land\phi[u-1]=x_i\land u\leq i\leq v$
+
+     则称 $x_i$ 在 $\phi[i]$ 处受限出现
 
 （2） 若不存在[[MK439][量词辖域]]满足条件（1），则称 $x_i$ 在 $\phi[i]$ 处自由出现
 
 **** 量词辖域<<MK439>>
 
-任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 中若 $\psi=<\phi[i+2],...,\phi[k-1]>$ 是量词 $\phi[i]$ 的辖域，则
+任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 中若 $\psi=<\phi[i+2],...,\phi[k-1]>$ 是 $x_i$ 的量词辖域，则
 
 （1） $\phi[i]=\forall\land\phi[i+1]=x_i$
 
@@ -3988,7 +4002,7 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 又根据[[MK127][可读性]]以及 $<\phi[1],\phi[2],\phi[3]>=(\forall x_i$ 可得有且仅有 $(\forall x_i\psi),\psi\in\mathcal{L}$ 形式满足序列要求
 
-*** 语句
+*** 语句<<MK451>>
 
 任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 中的所有[[MK130][变元符号]]均为[[MK441][受限变元]]，则 $\phi$ 称为句子
 
@@ -3998,7 +4012,7 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 （1） 定义 $\tau(<x_1,...,x_n>,<\tau_1,...,\tau_n>)$ 将项 $\tau$ 中每一个 $x_i,1\leq i\leq n$ 都有 $\tau_i$ 替换后所得的字符串
 
-（2） 定义 $\phi(<x_1,...,x_n>,<\tau_1,...,\tau_n>)$ 将项 $\phi$ 中每一个 $x_i,1\leq i\leq n$ 都有 $\tau_i$ 替换后所得的字符串
+（2） 定义 $\phi(<x_1,...,x_n>,<\tau_1,...,\tau_n>)$ 将项 $\phi$ 中每一个[[MK440][自由出现]]的 $x_i,1\leq i\leq n$ 都有 $\tau_i$ 替换后所得的字符串
 
 根据[[MK442][替换引理]]可得 $\tau(<x_1,...,x_n>,<\tau_1,...,\tau_n>)\in T$ 以及 $\phi(<x_1,...,x_n>,<\tau_1,...,\tau_n>)\in\mathcal{L}$
 
@@ -4054,340 +4068,505 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 ******* $z(\phi)=n$ 时
 
+根据[[MK127][可读性]]有且仅有 $\phi=(\lnot\psi),\phi=(\psi_1\to\psi_2),\phi=(\forall x_i\psi)$ 形式
 
+显然根据[[MK440][定义]]当 $\phi=(\forall x_i\psi)$ 时 $\phi[3]=x_i$ 不是自由出现，故不能替换
 
-* 谓词逻辑
+其他任意 $\psi,\psi_1,\psi_2$ 显然均有 $z(\psi)<n\land z(\psi_1)\land z(\psi_2)<n$
 
-** 定义
+根据归纳假设 $\psi'\in\mathcal{L},\psi_1'\in\mathcal{L},\psi_2'\in\mathcal{L}$ 则根据[[MK135][表达式定义]]有 $(\lnot\psi')\in\mathcal{L},(\psi'_1\to\psi'_2)\in\mathcal{L},(\forall x_i\psi')\in\mathcal{L}$
 
-*** 个体词
+即有 $\phi'\in\mathcal{L}$
 
-在原子命题中可以独立存在的客体（主语、宾语等），称为个体词。
+**** 可替换性
 
-同[[MK65][命题公式]]
+任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 若包含[[MK440][自由出现]]的[[MK130][变元符号]] $x_i$ ，以及 $\tau_i\in T$ 且 $\tau$ 中包含的所有变元符号集合为 $\{x_{j_1},...,x_{j_k}\}$
 
-**** 个体域
+若 $\phi$ 中[[MK440][自由出现]]的 $x_i$ 可被 $\tau$ 替换，则 $\phi$ 中不存在 $x_{j_u},1\leq u\leq k$ 的[[MK439][量词辖域]] $\psi_u=<\phi[i_u],...,\phi[z_u]>$ 包含 $x_i$
 
-个体词的取值范围。一般用 $D$ 表示
+** 一阶结构
 
-**** 全总域（Universe）
+*** 语言<<MK444>>
 
-包含一切个体词的个体域，一般记作 $U$ 。若不标注[[MK119][个体域]]，一般表示全总域。
+对于任意 $\mathcal{A}\subset\Sigma_1=C\cup F\cup P$ 且 $\mathcal{A}\ne\varnothing$ ，即 $\mathcal{A}$ 是[[MK129][常元符号]]、[[MK131][函数符号]]和[[MK132][谓词符号]]的非空子集
 
-*** 谓词
+则定义 $\Sigma_{\mathcal{A}}=\Sigma_0\cup\mathcal{A}$ 以及[[MK443][基本符号串]] $\Sigma^*_{\mathcal{A}}=\bigcup_{n\in\mathbb{N}}\Sigma^n_\mathcal{A}$
 
-用以刻画[[MK116][个体词]]性质，或[[MK116][个体词]]间关系，即谓词。谓词表示通常以[[MK194][函数]]形式表示。
+同理根据 $\Sigma_\mathcal{A}$ 定义[[MK133][项]] $T_\mathcal{A}$ 以及[[MK135][表达式]] $\mathcal{L}_\mathcal{A}$ ，则称 $\mathcal{L}_\mathcal{A}$ 为 $\mathcal{A}$ 生成的语言
 
-举例某个谓词以符号 $P$ 表示，其刻画 $n$ 个体词 $x_1,...,x_n$ ，则表示为 $P(x_1,...,x_n)$ 即为 $P:D^n\rightarrow\{0,1\}$
+**** 引理
 
-**** 元数
-
-谓词中可以放置[[MK118][个体变量]]的空位个数，称为谓词的元数。举例中为 $n$
-
-**** 谓词变量
-
-谓词描抽象体的性质或关系。例：小张和小明有关系，可表示为 $F(a,b)$ ，则谓词 $F$ 表有关系这一抽象概念。
-
-**** 谓词与命题的转换
-
-当谓词 $P(x_1,...,x_n)$ 中， $P$ 被谓词常量定义， $x_1,...,x_n$ 被[[MK117][个体常元]]代替时，该谓词才会成为命题
-
-***** 零元谓词
-
-当谓词中的不含[[MK118][个体变量]]时，则根据[[MK122][定义]]为零元谓词。此时若谓词本身为[[MK123][谓词常量]]，则谓词是命题。
-
-故所有命题均可用零元谓词来表示。
-
-*** 量词
-
-描述[[MK116][个体词]]范围的词，例如：
-
-（1） 数量词“所有”（全称量词）记作 $\forall$ ，
-
-（2） 数量词“有”（存在量词）记作 $\exists$
-
-若 $x$ 的[[MK119][个体域]]为 $a_1,...,a_n$ 则
-
-$\forall xP(x),x\in\{a_1,...,a_n\}$ 定义为 $P(a_1)\land...\land P(a_n)$ ， $\lnot\forall xP(x),x\in\{a_1,...,a_n\}$
-
-定义为 $\lnot(P(a_1)\land...\land P(a_n))$ 
-
-$\exists xP(x),x\in\{a_1,...,a_n\}$ 定义为 $P(a_1)\lor...\lor P(a_n)$ ， $\lnot\exists xP(x),x\in\{a_1,...,a_n\}$
-
-定义为 $\lnot(P(a_1)\lor...\lor P(a_n))$ 
-
-**** 指导变元
-
-是一个[[MK118][个体变元]]，当量词作用于[[MK116][个体词]]时，同时放在量词后面和[[MK121][谓词]]中：$\forall xP(x),\exists xP(x)$
-
-表示量词作用的[[MK116][个体]]
-
-***** 举例
-
-定义 $x$ 的个体域是所有正整数。则“所有大于2的偶数，均可表示为两个素数之和”的表述为
-
-$\forall x\exists p\exists q\left(Even(x)\land(x>2)\rightarrow Prime(p)\land Prime(q)\right)$
-
-**** 约束变元
-
-被量词作用的[[MK118][个体变元]]
-
-**** 自由变元
-
-不被量词作用的[[MK118][个体变元]]
-
-**** 辖域
-
-量词所作用的谓词或者复合谓词表达式。可用括号表示，亦可用冒号 $:$
-
-**** 量词的顺序<<MK128>>
-
-量词（不加括号）固定为从左至右叠加条件
-
-即当有多个量词排列时，其中某一个量词的条件为其左边量词均成立的情况下，该量词成立，以此类推。
-
-**** 表达规则
-
-一般[[MK125][约束变元]]的[[MK119][个体域]]为[[MK120][全总域]]，采用一元谓词标注其特性。例：
-
-所有老虎都要吃人。： $\forall x\big(T(x)\rightarrow P(x)\big)$ 此时 $x\in U$ ，其中 $T(x)$ 表 $x$ 是老虎的一元谓词； $P(x)$ 表 $x$ 吃人一元谓词
-
-** 合式公式定义
-
-*** 包含符号
-
-**** 常量符号
-
-指[[MK117][个体常量]]，以 $a,b,c,...\a$ 或 $a_i,b_j,c_k,...\a$ 表示
-
-**** 变量符号
-
-指[[MK118][个体变量]]，以 $x,y,z,...\a$ 或 $x_i,y_j,z_k,...\a$ 表示
-
-**** 函数符号
-
-$n$ 元函数符号 $f(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\rightarrow D$ 的任一函数
-
-**** 谓词符号
-
-$n$ 元谓词符号 $P(x_1,...,x_n)$ 指所述[[MK119][个体域]]集合 $D^n\rightarrow \{0,1\}$ 的任一谓词
-
-*** 项
-
-根据[[MK15][归纳定义]]：
-
-基础条款：任意[[MK129][常量]]或[[MK130][变量]]符号是项
-
-归纳条款：若 $f(x_1,...,x_n)$ 是 $n$ 元[[MK131][函数符号]]，且 $t_1,...,t_n$ 是项，则 $f(t_1,...,t_n)$ 也是项
-
-终极条款：只有有限次使用以上两条款产生的符号串是项
-
-*** 原子公式
-
-若 $P(x_1,...,x_n)$ 是 $n$ 元[[MK132][谓词公式]]，且 $t_1,...,t_n$ 是[[MK133][项]]，则 $P(t_1,...,t_n)$ 是原子公式
-
-根据[[MK132][谓词符号]]可得原子公式亦有[[MK52][真值]]且满足[[MK53][排中律]]。
- 
-*** 合式公式(谓词公式)
-
-根据[[MK15][归纳定义]]：
-
-基础条款：任意[[MK134][原子公式]]是合式公式
-
-归纳条款：[[MK55][逻辑连接词]]与[[MK124][量词]]作用于合式公式后仍为合式公式，即：
-
-    若 $G,H$ 是合式公式，则 $(G\lor H),(G\land H),(G\rightarrow H),(G\leftrightarrow H)$ 也是合式公式
-
-    若 $G$ 是合式公式，则 $\lnot G,(\forall x)G,(\exists x)G$ 也是合适公式
-
-终极条款：只有有限次使用以上两条款产生的符号串是项
-
-故合式公式为谓词逻辑下的[[MK52][真值]]计算公式，且满足[[MK53][排中律]]。
-
-*** 解释
-
-一组确定的[[MK130][变量符号]]，[[MK131][函数符号]]和[[MK132][谓词符号]]使得[[MK135][合式公式]]有确定的值，称为解释，通常记作 $I$ 表示
-
-*** 闭式
-
-任意[[MK135][合式公式]]满足不存在[[MK126][自由变元]]，则称为闭式。
-
-当且仅当合式公式是闭式的时候，才有肯能称为[[MK51][命题]]。
-
-** 合式公式分类
-
-*** 有效公式
-
-当[[MK135][合式公式]]对任意[[MK136][解释]]，使得[[MK135][合式公式]]的[[MK52][真值]]均为 $1$ 时，称为有效公式。
-
-*** 矛盾公式
-
-当[[MK135][合式公式]]对任意[[MK136][解释]]，使得[[MK135][合式公式]]的[[MK52][真值]]均为 $0$ 时，称为矛盾公式。
-
-*** 可满足公式
-
-至少有一种[[MK136][解释]]，使得[[MK135][合式公式]]的[[MK52][真值]]为 $1$ ，称为可满足式。
-
-** 合式公式关系
-
-*** 谓词公式等价关系
-
-**** 定义
-
-若 $G\leftrightarrow H$ 是[[MK137][有效公式]]，则公式 $G,H$ 为等价，记作 $G{|\!\!\!=\!\!\!|}H$ 。
-
-同理，此处等价符号为两个[[MK135][合式公式]]的关系，不参与真值计算。
-
-**** 代入实例
-
-设 $G(P_1,...,P_n)$ 是[[MK68][命题公式]]，其中 $P_1,...,P_n$ 是[[MK67][命题变元]]。
-
-当使用[[MK135][合式公式]] $H_i$ 替换命题变元后，得到新的合式公式 $G(H_1,...,H_n)$ 称为带入实例
-
-***** 定理<<MK140>>
-
-[[MK70][永真式]]的带入实例必为[[MK137][有效公式]]
-
-****** 证明
-
-定义[[MK68][命题公式]] $G(P_1,...,P_n)$ 以及带入实例 $G(H_1,...,H_n)$ 
-
-由于 $H_i$ 是[[MK135][合式公式]]，故 $H_i\in\{0,1\}$ 故根据[[MK70][永真式]]定义，对于任意 $H_i$ 均有 $G(H_1,...,H_n)=1$ 
-
-***** 推论
-
-根据[[MK140][定理]]可知，[[MK72][命题等价举例]]中的公式，将[[MK67][命题变元]]替换为[[MK135][合式公式]]后，必为[[MK138][等价谓词公式]]
-
-**** 合式公式带入原理
-
-若[[MK135][合式公式]] $A$ 含有子公式 $C$ 。另外有合式公式 $D{|\!\!\!=\!\!\!|}C$ ，则将 $D$ 替换 $A$ 中的 $C$ 后得合式公式 $B$ ，则有 $A{|\!\!\!=\!\!\!|}B$
-
-注：部分替代亦可
+子语言是语言的子集 $\mathcal{L}_\mathcal{A}\subset\mathcal{L}$
 
 ***** 证明
 
-合适公式 $A$ 包含子公式 $C$ ，当 $C=0$ 时由于 $D{|\!\!\!=\!\!\!|}C$ 则 $D=0$ ，同理当 $C=1$ 时 $D=1$
+当 $\phi\in\mathcal{L}_\mathcal{A}$ 时说明 $\phi$ 可被 $\mathcal{A}$ 生成，显然由于 $\mathcal{A}\subset\Sigma_1$ 则 $\mathcal{L}$ 中可由同样过程生成 $\phi$
 
-故无论是否替换 $C$ ，公式中 $C$ 所在的部分的真值均无变化。故根据[[MK53][排中律]] $A$ 的真值亦无变化。
+即有 $\phi\in\mathcal{L}$
 
-**** 谓词公式等价举例
+*** 结构（基本语义解释）<<MK446>>
 
-假设 $G(x),H(x)$ 是只含[[MK126][自由变元]] $x$ 的[[MK135][合式公式]]， $S$ 是不含 $x$ 的[[MK135][合式公式]]，则在[[MK120][全总域]]上有：
+对于[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK151][有序组]] $<M,I>$ 满足：
+
+（1） $M$ 为集合且 $M\ne\varnothing$ 非空
+
+（2） $I$ 是[[MK194][映射]]，满足以下条件:
+
+     a） 若 $c_i\in\mathcal{A}\cup C$ 是[[MK129][常元符号]]，则 $I(c_i)\in M$
+
+     b） 若 $f_i\in A\cup F$ 是[[MK131][函数符号]]且根据[[MK445][符号假定]]有 $\pi_F(f_i)=n$ ，则 $I(f_i):M^n\to M$ 亦是[[MK194][映射]]
+
+     c） 若 $p_i\in A\cup P$ 是[[MK132][谓词符号]]且根据[[MK445][符号假定]]有 $\pi_P(p_i)=n$ ，则 $I(p_i)\subset M^n$
+
+则定义 $<M,I>$ 是语言 $\mathcal{L}_\mathcal{A}$ 的结构，其中 $M$ 称为 $\mathcal{L}_\mathcal{A}$ 的论域
+
+***  $\mathcal{M}=<M,I>$ 赋值<<MK447>>
+
+对于[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 的[[MK446][结构]] $\mathcal{M}=<M,I>$ 存在[[MK130][变元符号]]到 $M$ 的[[MK194][映射]] $v:X\to M$
+
+则称 $v$ 是语言 $\mathcal{L}_\mathcal{A}$ 在结构 $\mathcal{M}$ 上的赋值
+
+*** 项赋值<<MK448>>
+
+对于[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 的[[MK446][结构]] $\mathcal{M}=<M,I>$ 有 $\mathcal{M}$ [[MK447][赋值]] $v:X\to M$ 则由 $v$ 扩展的项赋值 $\bar{v}$ 满足：
+
+（1） $\bar{v}(x_i)=v(x_i)$ 其中 $x_i\in X$ 是[[MK130][变元符号]]
+
+（2） $\bar{v}(c_i)=I(c_i)$ 其中 $c_i\in C$ 是[[MK129][常元符号]]
+
+（3）  $\bar{v}(f_i(\tau_1,...,\tau_n))=I(f_i)(\bar{v}(\tau_1),...,\bar{v}(\tau_n))$ 其中 $\tau_i\in T$ 是[[MK133][项]] 
+
+**** 引理（局部确定性）<<MK450>>
+
+对于[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 的[[MK446][结构]] $\mathcal{M}=<M,I>$ 有[[MK448][项赋值]] $\bar{u},\bar{v}$ 以及 $\tau\in T_\mathcal{A}$ 是 $\mathcal{A}$ [[MK444][语言]]中的[[MK133][项]]
+
+若对于任意 $\tau$ 中出现的[[MK130][变元符号]] $x_i$ 均有 $u(x_i)=v(x_i)$ ，则有 $v(\tau)=u(\tau)$
+
+***** 证明
+
+****** $|\tau|=1$ 时
+
+根据[[MK138][唯一可读性]]有且仅有以下两种情况：
+
+当 $\tau=x_i$ 时根据[[MK448][项赋值]]有 $u(\tau)=u(x_i)=v(x_i)=v(\tau)$
+
+当 $\tau=c_i$ 时根据[[MK448][项赋值]]有 $u(\tau)=I(c_i)=v(\tau)$
+
+****** 归纳假设
+
+对于任意 $\tau\in T_\mathcal{A}$ 若 $1<|\tau|<n$ 则有 $v(\tau)=u(\tau)$
+
+****** $|\tau|=n$ 时
+
+根据[[MK138][唯一可读性]]有且仅有 $f_i(\tau_1,...,\tau_n)$ 形式，则根据[[MK448][项赋值]]
+
+有 $u(f_i(\tau_1,...,\tau_n))=I(f_i)(u(\tau_1),...,u(\tau_n))$ 以及 $v(f_i(\tau_1,...,\tau_n))=I(f_i)(v(\tau_1),...,v(\tau_n))$
+
+显然对于任意 $\tau_i$ 均有 $|\tau_i|<n$ 即 $v(\tau_i)=u(\tau_i)=m_i\in M$
+
+故有 $u(f_i(\tau_1,...,\tau_n))=I(f_i)(m_1,...,m_n)=v(f_i(\tau_1,...,\tau_n))$
+
+*** 满足<<MK449>>
+
+对于[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 的[[MK446][结构]] $\mathcal{M}=<M,I>$ 有 $\mathcal{M}$ [[MK447][赋值]] $v:X\to M$ 以及其扩展的[[MK448][项赋值]] $\bar{v}$
+
+则对于任意 $\phi\in\mathcal{L}_\mathcal{A}$ ：
+
+若为[[MK135][原始表达式]]，则若满足：
+
+（1） 若 $\phi=(\tau_1\hat{=}\tau_2)$ 则有 $\bar{v}(\tau_1) =\bar{v}(\tau_2)$
+
+（2） 若 $p_i(\tau_1,...,\tau_n)$ 则有 $<\bar{v}(\tau_1),...,\bar{v}(\tau_n)>\in I(p_i)$
+
+则称结构 $\mathcal{M}$ 与赋值 $v$ 满足 $\phi$ ，记作 $<\mathcal{M},v>\vDash\phi$
+
+若为[[MK135][递归表达式]]，则有
+
+（3） 若 $\phi=(\lnot\psi)$ 则 $<\mathcal{M},v>\vDash(\lnot\psi)$ 的充要条件是 $<\mathcal{M},v>\not\vDash\psi$
+
+（4） 若 $\phi=(\psi_1\to\psi_2)$ 则 $<\mathcal{M},v>\vDash(\psi_1\to\psi_2)$ 的充要条件是 $<\mathcal{M},v>\not\vDash\psi_1\lor<\mathcal{M},v>\vDash\psi_2$
+
+（5） 若 $\phi=(\forall x_i\psi)$ 则 $<\mathcal{M},v>\vDash(\forall x_i\psi)$ 的充要条件是对于任意[[MK447][赋值]] $\mu:X\to M$
+
+     若满足对于任意 $\phi$ 中除 $x_i$ 的[[MK441][自由变元]] $x_j$ 有 $\mu(x_j)=v(x_j)$ ，则有 $<\mathcal{M},\mu>\vDash(\forall x_i\psi)$ 
+
+**** 局部确定性定理<<MK452>>
+
+对于[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 的[[MK446][结构]] $\mathcal{M}=<M,I>$ 有 $\mathcal{M}$ [[MK447][赋值]] $u$ 和 $v$
+
+对于任意 $\phi\in\mathcal{L}_\mathcal{A}$ 若对于任意 $\phi$ 中[[MK441][自由出现]]的[[MK130][变元符号]] $x_i$ 均有 $u(x_i)=v(x_i)$
+
+则 $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},u>\vDash\phi$ ，其中 $\vDash$ 表[[MK449][满足]]
+
+***** 证明
+
+对于任意 $\phi\in\mathcal{L}$ ，定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK133][项]]后 $($ 和 $)$ 的对数。定义 $u,v$ 的[[MK448][项赋值]]分别为 $\bar{u},\bar{v}$
+
+根据以下证明， $\phi$ 为有限长度，以及数学归纳法可证
+
+****** $z(\phi)=1$ 时
+
+根据[[MK127][可读性]]原理有且仅有以下两种形式
+
+******* $(\tau_1\hat{=}\tau_2)$
+
+根据[[MK450][引理]]以及定理条件可得 $\bar{u}(\tau_1)=\bar{v}(\tau_1)\land \bar{u}(\tau_2)=\bar{v}(\tau_2)$
+
+根据[[MK449][满足定义]]显然有 $<\mathcal{M},v>\vDash\phi\Leftrightarrow<\mathcal{M},u>\vDash\phi$
+
+******* $\phi=p_i(\tau_1,...,\tau_n)$
+
+根据[[MK450][引理]]以及定理条件可得 $\bar{u}(\tau_i)=\bar{v}(\tau_i)$ 进而有 $<\bar{u}(\tau_1),...,\bar{u}(\tau_n)>=<\bar{v}(\tau_1),...,\bar{v}(\tau_n)>$
+
+根据[[MK449][满足定义]]显然有 $<\bar{u}(\tau_1),...,\bar{u}(\tau_n)>\in I(p_i)\Leftrightarrow<\bar{v}(\tau_1),...,\bar{v}(\tau_n)>\in I(p_i)$
+
+即 $<\mathcal{M},v>\vDash\phi\Leftrightarrow<\mathcal{M},u>\vDash\phi$
+
+****** 归纳假设
+
+对于任意 $1<z(\phi)<n$ 若满足定理条件，则有 $<\mathcal{M},v>\vDash\phi\Leftrightarrow<\mathcal{M},u>\vDash\phi$
+
+****** $z(\phi)=n$ 时
+
+根据[[MK127][可读性]]原理有且仅有以下情况
+
+******* $\phi=(\lnot\psi)$ 时
+
+根据[[MK449][满足定义]]当 $<\mathcal{M},v>\vDash\phi$ 时有 $<\mathcal{M},v>\not\vDash\psi$ 显然 $z(\psi)<n$ ，则根据归纳假设有 $<\mathcal{M},u>\not\vDash\psi$
+
+则又根据[[MK449][满足定义]]有 $<\mathcal{M},u>\vDash\phi$ 反之同理，故可得 $<\mathcal{M},v>\vDash\phi\Leftrightarrow<\mathcal{M},u>\vDash\phi$
+
+******* $\phi=(\psi_1\to\psi_2)$ 时
+
+根据[[MK449][满足定义]]当 $<\mathcal{M},v>\vDash\phi$ 时有 $<\mathcal{M},v>\not\vDash\psi_1\lor<\mathcal{M},v>\vDash\psi_2$ 显然 $z(\psi_1)<n\land z(\psi_2)<n$
+
+则根据归纳假设有 $<\mathcal{M},u>\not\vDash\psi_1\lor<\mathcal{M},u>\vDash\psi_2$ 则根据[[MK449][满足定义]]有 $<\mathcal{M},u>\vDash\phi$
+
+反之同理，故可得 $<\mathcal{M},v>\vDash\phi\Leftrightarrow<\mathcal{M},u>\vDash\phi$
+
+******* $\phi=(\forall x_i\psi)$ 时
+
+根据[[MK449][满足定义]]当 $<\mathcal{M},v>\vDash\phi$ 时有于任意[[MK447][赋值]] $\mu:X\to M$ 
+
+若满足对于任意 $\phi$ 中的[[MK441][自由变元]] $x_i$ 有 $\mu(x_i)=v(x_i)$ ，则 $<\mathcal{M},\mu>\vDash(\forall x_i\psi)$
+
+定义满足上述条件的函数集合为 $\Theta$
+
+则对于任意任意[[MK447][赋值]] $\mu':X\to M$ 若满足 $\phi$ 中的[[MK441][自由变元]] $x_i$ 有 $\mu'(x_i)=u(x_i)$
+
+根据定理条件均有 $\mu'(x_i)=u(x_i)=v(x_i)$ 故有 $\mu'\in\Theta$ 进而有 $<\mathcal{M},\mu'>\vDash(\forall x_i\psi)$
+
+故根据[[MK449][满足定义]]有 $<\mathcal{M},\mu>\vDash(\forall x_i\psi)$ 。反之同理，故可得 $<\mathcal{M},v>\vDash\phi\Leftrightarrow<\mathcal{M},u>\vDash\phi$
+
+***** 推论<<MK453>>
+
+[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{M}=<M,I>$ ，有[[MK451][语句]] $\phi\in\mathcal{L}_\mathcal{A}$ 则如下命题等价：
+
+（1） 存在[[MK447][赋值]] $v$ 能[[MK449][满足]] $\phi$ ，即 $<\mathcal{M},v>\vDash\phi$
+
+（2） 对于任意[[MK447][赋值]] $v$ 均能[[MK449][满足]] $\phi$ ，即 $<\mathcal{M},v>\vDash\phi$
+
+****** 证明
+
+******* （2）推（1）
+
+显然
+
+******* （1）推（2）
+
+显然 $\phi$ 中不含[[MK441][自由出现]]的[[MK130][变元符号]]，即若 $<\mathcal{M},v>\vDash\phi$ 则对于任意其他[[MK447][赋值]] $u$
+
+均满足[[MK452][局部性定理]]条件，故根可得 $<\mathcal{M},v>\vDash\phi\Leftrightarrow<\mathcal{M},u>\vDash\phi$
+
+**** [[MK456][推导符号]]
+
+***** 逻辑与<<MK457>>
+
+若 $\phi=(\psi_1\land\psi_2)\in\mathcal{L}_\mathcal{A}$ 则 $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash\psi_1$ 且 $<\mathcal{M},v>\vDash\psi_2$
+
+****** 等价表述
+
+$<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\psi_1\to(\lnot\psi_2)))$
+
+******* 证明
+
+根据[[MK449][满足]]可得 $<\mathcal{M},v>\vDash(\lnot(\psi_1\to(\lnot\psi_2)))\Leftrightarrow<\mathcal{M},v>\not\vDash(\psi_1\to(\lnot\psi_2))$
+
+进一步可等价于 $<\mathcal{M},v>\vDash\psi_1$ 且 $<\mathcal{M},v>\not\vDash(\lnot\psi_2)$ 即等价于 $<\mathcal{M},v>\vDash\psi_1$ 且 $<\mathcal{M},v>\not\vDash\psi_2$ 
+
+***** 逻辑或
+
+若 $\phi=(\psi_1\lor\psi_2)\in\mathcal{L}_\mathcal{A}$ 则 $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash\psi_1$ 或 $<\mathcal{M},v>\vDash\psi_2$
+
+****** 等价表述
+
+$<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash((\lnot\psi_1)\to\psi_2)$
+
+******* 证明
+
+根据[[MK449][满足]]可得 $<\mathcal{M},v>\vDash((\lnot\psi_1)\to\psi_2)$ 的充要条件是 $<\mathcal{M},v>\not\vDash(\lnot\psi_1)$ 或 $<\mathcal{M},v>\vDash\psi_2$ 
+
+进一步利用满足可得充要条件是 $<\mathcal{M},v>\not\vDash\psi_1$ 或 $<\mathcal{M},v>\vDash\psi_2$ 
+
+***** 逻辑双向蕴含
+
+若 $\phi=(\psi_1\leftrightarrow\psi_2)\in\mathcal{L}_\mathcal{A}$ 则 $<\mathcal{M},v>\vDash\phi$ 的充要条件是下列两个条件满足其一
+
+（1） $<\mathcal{M},v>\vDash\psi_1$ 且 $<\mathcal{M},v>\vDash\psi_2$
+
+（2） $<\mathcal{M},v>\not\vDash\psi_1$ 且 $<\mathcal{M},v>\not\vDash\psi_2$
+
+****** 等价表述
+
+$<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash((\psi_1\to\psi_2)\land(\psi_2\to\psi_1))$
+
+******* 证明
+
+根据[[MK457][逻辑与]]可得 $<\mathcal{M},v>\vDash((\psi_1\to\psi_2)\land(\psi_2\to\psi_1))$
+
+的充要条件为 $<\mathcal{M},v>\vDash(\psi_1\to\psi_2)$ 且 $<\mathcal{M},v>\vDash(\psi_2\to\psi_1)$
+
+根据[[MK449][满足]]可得等价于 $<\mathcal{M},v>\not\vDash\psi_1\lor<\mathcal{M},v>\vDash\psi_2$ 且 $<\mathcal{M},v>\not\vDash\psi_2\lor<\mathcal{M},v>\vDash\psi_1$
+
+此时若 $<\mathcal{M},v>\vDash\psi_2$ 则根据且条件必有 $<\mathcal{M},v>\vDash\psi_1$
+
+同理若 $<\mathcal{M},v>\not\vDash\psi_1$ 必有 $<\mathcal{M},v>\not\vDash\psi_2$
+
+易证反之依然，故等价
+
+***** 存在量词
+
+若 $\phi=(\exists x_i\psi)\in\mathcal{L}_\mathcal{A}$ 则 $<\mathcal{M},v>\vDash\phi$ 的充要条件是存在[[MK447][赋值]] $\mu:X\to M$
+
+若满足对于任意 $\phi$ 中除 $x_i$ 的[[MK441][自由变元]] $x_j$ 有 $\mu(x_j)=v(x_j)$ ，且 $<\mathcal{M},\mu>\vDash\psi$ 
+
+****** 等价表述
+
+$<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\forall x_i(\lnot\psi)))$
+
+******* 证明
+
+根据[[MK449][满足]] $<\mathcal{M},v>\vDash(\lnot(\forall x_i(\lnot\psi)))$ 的充要条件为 $<\mathcal{M},v>\not\vDash(\forall x_i(\lnot\psi))$
+
+同理根据[[MK449][满足]]可得存在[[MK447][赋值]] $\mu:X\to M$ 若满足对于任意 $\phi$ 中除 $x_i$ 的[[MK441][自由变元]] $x_j$ 有 $\mu(x_j)=v(x_j)$ 
+
+使得 $<\mathcal{M},\mu>\not\vDash(\lnot\psi)$ 同样根据[[MK449][满足]]可得其充要条件为 $<\mathcal{M},\mu>\vDash\psi$ 
+
+*** [[MK451][语句]]真假
+
+对于[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{M}=<M,I>$ ，对于任意[[MK451][语句]] $\phi\in\mathcal{L}_\mathcal{A}$ 若对于任意 $\mathcal{M}$ [[MK447][赋值]] $v$
+
+均有 $<\mathcal{M},v>\vDash\phi$ 则判断[[MK451][语句]] $\phi$ 为真，反之为假。
+
+根据[[MK453][推论]]可得任意上述条件等价与存在一个 $\mathcal{M}$ [[MK447][赋值]] $v$ 满足 $<\mathcal{M},v>\vDash\phi$ 记作 $\mathcal{M}\vDash\phi$
+
+**** 等价[[MK451][语句]]举例
+
+对于[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{M}=<M,I>$ ，对于任意[[MK451][语句]] $\phi\in\mathcal{L}_\mathcal{A}$ 定义 $\{x,y\}\in X\cap\mathcal{A}$ 是[[MK116][变元符号]]
+
+定义 $\phi(x)\in\mathcal{L}_\mathcal{A},\psi(x)\in\mathcal{L}_\mathcal{A}$ 是只含[[MK441][自由变元]] $x$ 的[[MK135][表达式]]， $\varphi\in\mathcal{L}_\mathcal{A}$ 是[[MK451][语句]]
+
+以及 $\eta(x,y)\in\mathcal{L}_\mathcal{A}$ 是含[[MK441][自由变元]] $x,y$ 的[[MK135][表达式]]，则有：
 
 ***** 改名规则<<MK143>>
 
 \begin{aligned}
-\exists xG(x){|\!\!\!=\!\!\!|}\exists yG(y)\\
-\forall xG(x){|\!\!\!=\!\!\!|}\forall yG(y)
+\mathcal{M}\vDash(\exists x \phi(x))\Leftrightarrow\mathcal{M}\vDash(\exists y \phi(y))\\
+\mathcal{M}\vDash(\forall x \phi(x))\Leftrightarrow\mathcal{M}\vDash(\forall y \phi(y))
 \end{aligned}
 
 ***** 量词转换<<MK144>>
 
 \begin{aligned}
-\lnot\exists xG(x){|\!\!\!=\!\!\!|}\forall x \lnot G(x)\\
-\lnot\forall xG(x){|\!\!\!=\!\!\!|}\exists x \lnot G(x)
+\mathcal{M}\vDash(\lnot(\exists x\phi(x)))\Leftrightarrow\mathcal{M}\vDash(\forall x(\lnot\phi(x)))\\
+\mathcal{M}\vDash(\lnot(\forall x\phi(x)))\Leftrightarrow\mathcal{M}\vDash(\exists x(\lnot \phi(x)))
 \end{aligned}
 
 ***** 辖域变化<<MK145>>
 
 \begin{aligned}
-\forall x\big(G(x)\lor S\big){|\!\!\!=\!\!\!|}(\forall xG(x))\lor S\\
-\forall x\big(G(x)\land S\big){|\!\!\!=\!\!\!|}(\forall xG(x))\land S\\
-\exists x\big(G(x)\lor S\big){|\!\!\!=\!\!\!|}(\exists xG(x))\lor S\\
-\exists x\big(G(x)\land S\big){|\!\!\!=\!\!\!|}(\exists xG(x))\land S\\
+\mathcal{M}\vDash(\forall x(\phi(x)\lor \varphi))\Leftrightarrow\mathcal{M}\vDash((\forall x\phi(x))\lor \varphi)\\
+\mathcal{M}\vDash(\forall x(\phi(x)\land \varphi))\Leftrightarrow\mathcal{M}\vDash((\forall x\phi(x))\land \varphi)\\
+\mathcal{M}\vDash(\exists x(\phi(x)\lor \varphi))\Leftrightarrow\mathcal{M}\vDash((\exists x\phi(x))\lor \varphi)\\
+\mathcal{M}\vDash(\exists x(\phi(x)\land \varphi))\Leftrightarrow\mathcal{M}\vDash((\exists x\phi(x))\land \varphi)\\
 \end{aligned}
 
 ***** 量词分配律<<MK146>>
 
 \begin{aligned}
-\forall x\big(G(x)\land H(x)\big){|\!\!\!=\!\!\!|}(\forall xG(x))\land(\forall xH(x))\\
-\forall x\big(G(x)\lor H(x)\big){|\!\!\!=\!\!\!|}(\forall xG(x))\lor(\forall xH(x))\\
-\exists x\big(G(x)\land H(x)\big){|\!\!\!=\!\!\!|}(\exists xG(x))\land(\exists xH(x))\\
-\exists x\big(G(x)\lor H(x)\big){|\!\!\!=\!\!\!|}(\exists xG(x))\lor(\exists xH(x))\\
+\mathcal{M}\vDash(\forall x(\phi(x)\land \psi(x)))\Leftrightarrow\mathcal{M}\vDash((\forall x\phi(x))\land(\forall x\psi(x)))\\
+\mathcal{M}\vDash((\forall x\phi(x))\lor(\forall x\psi(x)))\Rightarrow\mathcal{M}\vDash(\forall x(\phi(x)\lor \psi(x)))\\
+\mathcal{M}\vDash(\exists x(\phi(x)\land \psi(x)))\Rightarrow\mathcal{M}\vDash((\exists x\phi(x))\land(\exists x\psi(x)))\\
+\mathcal{M}\vDash(\exists x(\phi(x)\lor \psi(x)))\Leftrightarrow\mathcal{M}\vDash((\exists x\phi(x))\lor(\exists x\psi(x)))\\
 \end{aligned}
 
 ***** 量词交换<<MK147>>
 
-设 $G(x,y)$ 含[[MK126][自由变元]] $x,y$ ，则在[[MK120][全总域]]上有：
-
 \begin{aligned}
-\forall x\forall yG(x,y){|\!\!\!=\!\!\!|}\forall y\forall x \lnot G(x,y)\\
-\exists x\exists yG(x,y){|\!\!\!=\!\!\!|}\exists y\exists x \lnot G(x,y)\\
+\mathcal{M}\vDash(\forall x(\forall y\eta(x,y)))\Leftrightarrow\mathcal{M}\vDash(\forall y(\forall x \eta(x,y)))\\
+\mathcal{M}\vDash(\exists x(\exists y\eta(x,y)))\Leftrightarrow\mathcal{M}\vDash(\exists y(\exists x \eta(x,y)))\\
 \end{aligned}
 
-*** 谓词公式蕴含关系<<MK148>>
+*** 赋值等价
 
-**** 定义
+对于 $\mathcal{A}$ 的[[MK133][项]] $T_\mathcal{A}$ 和[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 的[[MK446][结构]] $\mathcal{M}=<M,I>$ 有 $\mathcal{M}$ [[MK447][赋值]] $u$ 和 $v$
 
-合式公式 $G\rightarrow H$ 为[[MK137][有效公式]]时，可得 $G$ 蕴含 $H$ ，记作 $G{|\!\!\!=}H$ 。
+对于任意 $\tau\in T_\mathcal{A}$ 若对于任意 $\tau$ 中出现的[[MK130][变元符号]] $x_i$ 均有 $u(x_i)=v(x_i)$ 则称 $u,v$ 关于 $\tau$ 等价，记作 $u\overset{\tau}{\equiv}v$
 
-注：逻辑蕴含符号 ${|\!\!\!=}$ 仅表示两个公式之间的关系，无真值计算。
+对于任意 $\phi\in\mathcal{L}_\mathcal{A}$ 若对于任意 $\phi$ 中[[MK441][自由出现]]的[[MK130][变元符号]] $x_i$ 均有 $u(x_i)=v(x_i)$ 则称 $u,v$ 关于 $\phi$ 等价，记作 $u\overset{\phi}{\equiv}v$
 
-**** 定理
+*** 替换定理
 
-同理根据[[MK142][带入原理]]若[[MK65][命题公式]] $A{|\!\!\!=}B$ ，且 $G,H$ 为 $A,B$ 的[[MK139][带入实例]]，则有 $G{|\!\!\!=}H$
+对于[[MK444][语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{M}=<M,I>$ 以及任意 $\mathcal{M}$ [[MK447][赋值]] $v$ 则
 
-***** 证明
+（1） 对于任意[[MK133][项]] $\tau\in T_\mathcal{A}$ 设其包含的[[MK130][变元符号]]为 $x_{i_1},...,x_{i_k}$ 若存在任意 $\tau_1,...,\tau_k$ 和 $\mathcal{M}$ [[MK447][赋值]] $u$
 
-根据[[MK86][定义]]有无论 $A,B$ 中的[[MK67][命题变元]]为何值，均有 $A\rightarrow B=1$
+     满足$\tau_i\in T_\mathcal{A}$ 以及 $v(x_{i_j})=\bar{u}(\tau_j)$ 则定义 $\tau'$ 为将 $\tau$ 中所有的[[MK130][变元符号]]做 $x_{i_j}$ 到 $\tau_{i_j}$ 的替换后的[[MK133][项]]
 
-由于带入实例仅替换命题变元，且值域亦为 $\{0,1\}$ 故无论带入实例如何改变命题变元的值，均有 $A\rightarrow B=1$
+     则两个赋值的[[MK448][扩展函数]]有 $\bar{v}(\tau)=\bar{u}(\tau')$
 
-故有 $G{|\!\!\!=}H$
+（2） 对于任意[[MK135][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 设其包含的[[MK441][自由变元]]为 $x_{i_1},...,x_{i_k}$ 若存在任意 $\tau_1,...,\tau_k$ 和 $\mathcal{M}$ [[MK447][赋值]] $u$
 
-**** 蕴含关系举例
+     满足$\tau_i\in T_\mathcal{A}$ 以及 $v(x_{i_j})=\bar{u}(\tau_j)$ 则定义 $\phi'$ 为将 $\phi$ 中所有的[[MK441][自由变元]]做 $x_{i_j}$ 到 $\tau_{i_j}$ 的替换后的[[MK135][表达式]]
 
-根据[[MK149][定理]]可知，故[[MK87][命题举例]]中的[[MK139][带入实例]]均有效。
+     且替换后 $\phi'$ 的 $\tau_i$ 中不含[[MK441][受限变元]]，则有 $<\mathcal{M},v>\vDash\phi$ 等价于 $<\mathcal{M},u>\vDash\phi'$
+ 
+**** 证明
 
-其他亦有
+***** 证明（1）<<MK454>>
 
-\begin{aligned}
-&\forall xG(x){|\!\!\!=}\exists xG(x)\\
-\\
-&\forall xG(x)\lor\forall xH(x){|\!\!\!=}\forall x\big(G(x)\lor H(x)\big)\\
-&\exists xG(x)\land\exists xH(x){|\!\!\!=}\exists x\big(G(x)\land H(x)\big)\\
-\\
-&\forall x\big(G(x)\rightarrow H(x)\big){|\!\!\!=}\forall xG(x)\rightarrow \forall xH(x)\\
-&\forall x\big(G(x)\rightarrow H(x)\big){|\!\!\!=}\exists xG(x)\rightarrow \exists xH(x)\\
-\\
-&\exists x\forall yG(x,y){|\!\!\!=}\forall y\exists xG(x,y)\\
-&\forall x\forall yG(x,y){|\!\!\!=}\exists y\exists xG(x,y)\\
-&\forall x\forall yG(x,y){|\!\!\!=}\exists y\forall xG(x,y)\\
-&\forall x\exists yG(x,y){|\!\!\!=}\exists y\exists xG(x,y)\\
-\end{aligned}
+根据以下证明， $\tau$ 为有限长度，以及数学归纳法可证
 
-** 前束范式
+****** 当 $|\tau|=1$ 时
 
-*** 定义
+根据[[MK138][唯一可读性]]有且仅有以下两种情况
 
-[[MK135][合式公式]] $G$ 称为前束范式，若满足：
+（1） $\tau=c_i$ ，则 $\tau'= c_i$ ，则根据[[MK448][项赋值]]有 $\bar{v}(c_i)=I(c_i)=\bar{u}(c_i)$
 
-（1） 所有[[MK124][量词]]均位于公式最前端
+（2） $\tau=x_{i_1}$ ，则 $\tau'=\tau_1$ 根据定理条件有 $\bar{v}(x_{i_1}) =\bar{u}(\tau_1)$
 
-（2） 量词的[[MK127][辖域]]延伸至公式末尾
+****** 归纳假设
 
-（3） 量词前不含[[MK57][否定连接词]]
+对于任意 $1<|\tau|<n$ 的 $\tau\in T_\mathcal{A}$ 定理结论（1）均成立
 
-*** 求解步骤
+****** 当 $|\tau|=n$ 时
 
-根据[[MK142][带入原理]]对于[[MK135][合式公式]]可根据以下步骤求解[[MK150][前束范式]]：
+根据[[MK138][唯一可读性]]有且仅有 $\tau=f_i(\mu_1,...,\mu_n)$ 根据[[MK448][项赋值]] $\bar{v}(\tau)=I(\bar{v}(\mu_1),...,\bar{v}(\mu_n))$
 
-（1） 根据[[MK141][推论]]，利用[[MK79][蕴含等值]]，[[MK80][等价等值]]以及[[MK85][等价等值2]]消去 $\rightarrow,\leftrightarrow$ 符号
+定义 $\mu_i'$ 为将 $\mu_i$ 中所有的[[MK130][变元符号]]根据定理条件（1）替换后的[[MK133][项]]
 
-（2） 使用[[MK144][量词转换]]将[[MK57][否定连接词]]放入公式内
+则根据归纳假设可得 $\bar{v}(\mu_i)=\bar{u}(\mu'_i)$ 则显然有 $\bar{v}(\tau)=I(\bar{v}(\mu_1),...,\bar{v}(\mu_n))=I(\bar{u}(\mu'_1),...,\bar{u}(\mu'_n))=\bar{u}(\tau')$
 
-（3） 使用[[MK143][改名规则]]、[[MK145][辖域变化]]以及[[MK146][量词分配律]]将[[MK124][量词]]移至公式最前，并将[[MK127][辖域]]延伸至公式末尾
+***** 证明（2）
 
-** 谓词逻辑推理规则
+对于任意 $\phi\in\mathcal{L}_\mathcal{A}$ ，定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK133][项]]后 $($ 和 $)$ 的对数
 
-除[[MK103][命题推理规则]]外，另有如下推理规则：
+****** $z(\phi)=1$ 时
 
-规则 $US$ ： $\forall xG(x){|\!\!\!=}G(y)$ 其中 $y$ 不为[[MK125][约束变量]]，或 $\forall xG(x)\rightarrow G(c)$ 其中 $c$ 为[[MK117][个体常元]]
+定义 $\mu_i'$ 为将 $\mu_i$ 中所有的[[MK130][变元符号]]根据定理条件（1）替换后的[[MK133][项]]
 
-规则 $ES$ ： $\exists xG(x){|\!\!\!=}G(c)$ 其中 $c$ 为特定的[[MK117][个体常元]]
+根据[[MK149][唯一可读性]]，有且仅有以下可能形式
 
-规则 $UG$ ： $G(y){|\!\!\!=}\forall xG(x)$ 其中 $y$ 为[[MK118][个体变元]]，若有[[MK136][解释]]使得 $G(y)=1$ 则公式的值与 $y$ 无关，即 $\forall xG(x)$
+******* $\phi=(\mu_1\hat{=}\mu_2)$
 
+若 $<\mathcal{M},v>\vDash\phi$ ，则根据[[MK449][满足]]等价于 $\bar{v}(\mu_1)=\bar{v}(\mu_2)$ 根据[[MK454][证明（1）]]可得 $\bar{v}(\mu_1)=\bar{u}(\mu'_1),\bar{v}(\mu_2)=\bar{u}(\mu'_2)$
+
+则显然等价于 $\bar{u}(\mu'_1)=\bar{u}(\mu'_2)$ ，进一步根据[[MK449][满足]]与定理条件（2）可得等价于 $<\mathcal{M},u>\vDash\phi'$
+
+******* $\phi=p_i(\mu_1,...,\mu_n)$
+
+若 $<\mathcal{M},v>\vDash\phi$ ，则根据[[MK449][满足]]等价于 $<\bar{v}(\mu_1),...,\bar{v}(\mu_n)>\in I(p_i)$
+
+根据[[MK454][证明（1）]]可得 $\bar{v}(\mu_i)=\bar{u}(\mu'_i)$ ，则显然上述条件等价于 $<\bar{u}(\mu'_1),...,\bar{u}(\mu'_n)>\in I(p_i)$
+
+进一步根据[[MK449][满足]]与定理条件（2）可得等价于 $<\mathcal{M},u>\vDash\phi'$
+
+****** 归纳假设
+
+对于任意 $1<z(\phi)<n$ 的 $\phi\in\mathcal{L}_\mathcal{A}$ 定理结论（2）均成立
+
+****** $z(\phi)=n$ 时
+
+定义 $\psi_i'$ 为将 $\psi_i$ 中所有的[[MK441][自由变元]]根据定理条件（2）替换后的[[MK135][表达式]]
+
+根据[[MK149][唯一可读性]]，有且仅有以下可能形式
+
+******* $\phi=(\lnot\psi_1)$
+
+显然 $\phi'=(\lnot\psi'_1)$ ，则若 $<\mathcal{M},v>\vDash\phi$ 则根据[[MK449][满足]]等价于 $<\mathcal{M},v>\not\vDash\psi_1$
+
+显然 $z(\psi_1)<n$ 故根据归纳假设等价于 $<\mathcal{M},u>\not\vDash\psi'_1$ 即等价于 $<\mathcal{M},u>\vDash\phi'$ 
+
+******* $\phi=(\psi_1\to\psi_2)$ <<MK455>>
+
+显然 $\phi'=(\psi'_1\to\psi'_2)$ ，则若 $<\mathcal{M},v>\vDash\phi$ 则根据[[MK449][满足]]等价于 $<\mathcal{M},v>\not\vDash\psi_1\lor<\mathcal{M},v>\vDash\psi_2$
+
+显然 $z(\psi_1)<n,z(\psi_2)<n$ 故根据归纳假设等价于 $<\mathcal{M},u>\not\vDash\psi'_1\lor<\mathcal{M},u>\vDash\psi'_2$
+
+即等价于 $<\mathcal{M},u>\vDash\phi'$ 
+
+******* $\phi=(\forall x_i\psi_1)$
+
+******** $x_i$ 不在 $\psi_1$ 中[[MK440][自由出现]]
+
+则有 $\phi'=(\forall x_i\psi'_1)$ 则[[MK455][类似可证]] $<\mathcal{M},v>\vDash\phi$ 等价于 $<\mathcal{M},u>\vDash\phi'$
+
+******** $x_i$ 在 $\psi_1$ 中[[MK440][自由出现]]
+
+定义 $\psi_1$ 中所有的自由变元为 $x_{i_1},...,x_{i_k},x_i$ ，其中 $x_{i_1},...,x_{i_k}$ 为 $\phi$ 中所有的[[MK441][自由变元]]
+
+定义 $\psi'$ 为 $\psi_1$ 中除 $x_i$ 的所有的[[MK441][自由变元]]根据定理条件（2）替换后的[[MK135][表达式]]
+
+********* 充分
+
+当 $<\mathcal{M},v>\vDash\phi$ 时，根据[[MK449][满足]]可得对于任意[[MK447][赋值]] $\alpha:X\to M$
+
+若满足对于任意 $\psi_1$ 中除 $x_i$ 的[[MK441][自由变元]] $x_{i_j}$ 有 $\alpha(x_{i_j})=v(x_{i_j})$ 则 $<\mathcal{M},\alpha>\vDash\psi_1$
+
+*假设* $<\mathcal{M},u>\not\vDash\phi'$ 则存在一个[[MK447][赋值]] $\beta:X\to M$
+
+对于任意 $\psi'$ 中除 $x_i$ 的[[MK441][自由变元]] $y_e$ 均有 $\beta(y_e)=u(y_e)$ 且 $<\mathcal{M},\beta>\not\vDash\psi'$
+
+此时 $x_i$ 不是 $\phi'$ 中的[[MK441][自由变元]]，且替换后的项 $\tau_i$ 中不含 $\phi'$ 的[[MK441][受限变元]]
+
+即 $\tau_i$ 中的[[MK130][变元符号]]均为 $\phi'$ 的[[MK441][自由变元]]，则根据[[MK450][局部确定引理]]可得 $\bar{\beta}(\tau_i)=\bar{u}(\tau_i)$
+
+定义一组 $\tau'_{i_1},...,\tau'_{i_k},\tau'_i$ 其中 $\tau'_{i_j}=\tau_{i_j}$ 且 $\tau_i=x_i$ 定义 $\mathcal{M}$ [[MK447][赋值]] $\rho$
+
+满足 $\rho(x_{i_j})=\bar{\beta}(\tau'_{i_j})$ 且 $\rho(x_i)=\bar{\beta}(\tau'_i)$
+
+由于 $z(\psi_1)<n$ 则根据归纳假设对于任意满足条件（2）的一组 $\tau'_{i_1},...,\tau'_{i_k},\tau'_i$ 以及[[MK447][赋值]] $\rho$
+
+均有 $<\mathcal{M},\rho>\vDash\psi_1\Leftrightarrow<\mathcal{M},\beta>\vDash\psi'$ 则 $<\mathcal{M},\rho>\not\vDash\psi_1$
+
+则根据定义，对于任意 $\phi$ 中的[[MK441][自由变元]]均有 $\rho(x_{i_j})=\bar{\beta}(\tau'_{i_j})=\bar{\beta}(\tau_{i_j})=\bar{u}(\tau_{i_j})=v(x_{i_j})$
+
+故可得存在 $\mathcal{M}$ [[MK447][赋值]] $\rho$ 满足足对于任意 $\psi_1$ 中除 $x_i$ 的[[MK441][自由变元]] $x_{i_j}$ 有 $\rho(x_{i_j})=v(x_{i_j})$ 则 $<\mathcal{M},\rho>\not\vDash\psi_1$
+
+即根据[[MK449][满足]]定义可得 $<\mathcal{M},v>\not\vDash\phi$ 与任意 $<\mathcal{M},\alpha>\vDash\psi_1$ 矛盾，故假设不成立，即 $<\mathcal{M},u>\vDash\phi'$ 
+
+********* 必要
+
+当 $<\mathcal{M},u>\vDash\phi'$ 时， *假设* $<\mathcal{M},v>\not\vDash\phi$ 则存在一个[[MK447][赋值]] $\beta:X\to M$
+
+对于任意 $\psi_1$ 中除 $x_i$ 的[[MK441][自由变元]] $x_{i_j}$ 均有 $\beta(x_{i_j})=v(x_{i_j})$ 且 $<\mathcal{M},\beta>\not\vDash\psi_1$
+
+定义一组 $\tau'_{i_1},...,\tau'_{i_k},\tau'_i$ 其中 $\tau'_{i_j}=\tau_{i_j}$ 且 $\tau_i=x_i$ 定义 $\mathcal{M}$ [[MK447][赋值]] $\alpha$
+
+满足对于任意 $\psi'$ 中除 $x_i$ 的[[MK441][自由变元]] $y_e$ 有 $\alpha(y_e)=v(y_e)$ 且 $\alpha(x_i)=\beta(x_i)$
+
+则根据[[MK449][满足]]定义有 $<\mathcal{M},\alpha>\vDash\psi'$
+
+此时 $x_i$ 不是 $\phi'$ 中的[[MK441][自由变元]]，且替换后的项 $\tau_i$ 中不含 $\phi'$ 的[[MK441][受限变元]]
+
+即 $\tau_i$ 中的[[MK130][变元符号]]均为 $\phi'$ 的[[MK441][自由变元]]，则根据[[MK450][局部确定引理]]可得 $\bar{\alpha}(\tau_i)=\bar{u}(\tau_i)=v(x_{i_j})=\beta(x_{i_j})$
+
+又由于 $z(\psi_1)<n$ 则根据归纳假设对于任意满足条件（2）的一组 $\tau'_{i_1},...,\tau'_{i_k},\tau'_i$ 以及[[MK447][赋值]] $\alpha$
+
+均有 $<\mathcal{M},\beta>\vDash\psi_1\Leftrightarrow<\mathcal{M},\alpha>\vDash\psi'$ 则 $<\mathcal{M},\alpha>\not\vDash\psi_1$ 显然矛盾
+
+故假设不成立，即 $<\mathcal{M},v>\vDash\phi$
+ 
 * 关系与函数
 
 ** 基本定义
@@ -4978,7 +5157,7 @@ R^n\cdot R^m=R^{n+m}
 
                     又根据[[MK128][量词顺序]] $\forall x\forall y\forall z(xRy\land yRz\rightarrow xRz){|\!\!\!=\!\!\!|}\forall x\forall z\forall y(xRy\land yRz\rightarrow xRz)$
 
-                    又根据[[MK148][蕴含关系]] $\forall x\forall z\forall y(xRy\land yRz\rightarrow xRz){|\!\!\!=\!\!\!|}\forall x\forall z(\exists y(xRy\land yRz)\rightarrow xRz)$
+                    进一步有 $\forall x\forall z\forall y(xRy\land yRz\rightarrow xRz)\Rightarrow\forall x\forall z(\exists y(xRy\land yRz)\rightarrow xRz)$
 
 **** 定理
 

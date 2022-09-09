@@ -2,7 +2,7 @@
 
 #+TITLE: 线性空间
 
-current mark: 105
+current mark: 107
 
 * 映射
 
@@ -160,9 +160,9 @@ $\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]，则定义 $V^n=V\times..
 
 $\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]，其有限次幂空间 $\mathcal{V}^n=<V^n,K,+,\times>$
 
-有向量组 $A=\{\vec{a}_1,...,\vec{a}_m\}$ 其中 $\vec{a}_i=<a_{i1},...,a_{in}>$ 不全为零，若满足对于任意 $\{\vec{a}_i,\vec{a}_j\}\in A$
+有向量组 $A=\{\vec{a}_1,...,\vec{a}_m\}$ 其中 $\vec{a}_i=<a_{i1},...,a_{in}>$ 不全为零，若对于任意满足 $i\ne j$ 的 $\{\vec{a}_i,\vec{a}_j\}\in A$
 
-均有 $\sum_{i=1}^na_ib_i=\left[\begin{matrix}a_{i1}&a_{i2}&...&a_{in}\end{matrix}\right]\left[\begin{matrix}a_{j1}\\a_{j2}\\...\\a_{jn}\end{matrix}\right]=0$ 则有 $A$ [[MK8][线性无关]]，其中第二式为[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK5][矩阵乘法]]
+均有 $\sum_{k=1}^na_{ik}a_{jk}=\left[\begin{matrix}a_{i1}&a_{i2}&...&a_{in}\end{matrix}\right]\left[\begin{matrix}a_{j1}\\a_{j2}\\...\\a_{jn}\end{matrix}\right]=0$ 则有 $A$ [[MK8][线性无关]]，其中第二式为[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK5][矩阵乘法]]
 
 ***** 证明
 
@@ -174,8 +174,10 @@ $\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]，其有限次幂空间 $\
 \vec{a}_z^T\cdot\vec{a}_m=&\left[\begin{matrix}a_{z1}&a_{z2}&...&a_{zn}\end{matrix}\right]\left[\begin{matrix}a_{m1}\\a_{m2}\\...\\a_{mn}\end{matrix}\right]\\
 =&\left[\begin{matrix}a_{z1}&a_{z2}&...&a_{zn}\end{matrix}\right]\left(k_1\left[\begin{matrix}a_{11}\\a_{12}\\...\\a_{1n}\end{matrix}\right]+...+k_{m-1}\left[\begin{matrix}a_{(m-1)1}\\a_{(m-1)2}\\...\\a_{(m-1)n}\end{matrix}\right]\right)\\
 =&\sum_{i\ne z\land 1\leq i\leq m-1}k_i\left[\begin{matrix}a_{z1}&a_{z2}&...&a_{zn}\end{matrix}\right]\left[\begin{matrix}a_{i1}\\a_{i2}\\...\\a_{in}\end{matrix}\right]+k_z\left[\begin{matrix}a_{z1}&a_{z2}&...&a_{zn}\end{matrix}\right]\left[\begin{matrix}a_{z1}\\a_{z2}\\...\\a_{zn}\end{matrix}\right]\\
-=&k_z\sum_{i=1}^na_{zi}^2
+=&\sum_{i\ne z\land 1\leq i\leq m-1}k_i\vec{a}_z^T\vvec{a}_i+k_z\sum_{i=1}^na_{zi}^2
 \end{aligned}
+
+根据条件当 $z\ne i$ 时 $\vec{a}_z^T\vvec{a}_i=0$ 则有 $\vec{a}_z^T\cdot\vec{a}_m=k_z\sum_{i=1}^na_{zi}^2$
 
 由于条件不全为零以及 $k_z\ne0$ ，故 $k_z\sum_{i=1}^na_{zi}^2\ne0$ 与正交条件矛盾，故假设不成立
 
@@ -1351,7 +1353,7 @@ $\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]且 $S\subset V$ 若满足�
 
 ** 坐标定义
 
-若 $V$ 中有一组基 $(\vec{a}_1,...,\vec{a}_n)$ 则根据[[MK36][基]]的定义，任意一个向量 $\vec{a}\in V$ 均可由基线性表述
+若 $\mathcal{V}=<V,K,+,\cdot>$ 中有一组基 $(\vec{a}_1,...,\vec{a}_n)$ 则根据[[MK36][基]]的定义，任意一个向量 $\vec{a}\in V$ 均可由基线性表述
 
 故有 $a_1=k_1\vec{a}_1+...+k_n\vec{a}_n$ 且根据[[MK38][性质5]]该表述中 $k_1,...,k_n$ 唯一
 
@@ -1899,7 +1901,7 @@ $[v]_W=[u]_W$ 的充要条件为 $v-u\in W$
 
 （1） $\mathcal{V}=\mathcal{V}'\textcircled{+}\mathcal{V}_1$ 即 $\mathcal{V}$ 为 $\mathcal{V}',\mathcal{V}_1$ 的[[MK83][直和]]
 
-（2） $\mathcal{V}_1$ 的[[MK36][基]]为 $\{\vec{u}_1,...,\vec{u}_n\}$
+（2） $\mathcal{V}_1$ 的[[MK36][基]]为 $\{\vec{u}_1,...,\vec{u}_t\}$
 
 **** 证明
 
@@ -1945,13 +1947,13 @@ $[v]_W=[u]_W$ 的充要条件为 $v-u\in W$
 
 若矩阵 $A=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{m1}&a_{m2}&...&a_{mn}\end{matrix}\right]$ 
 
-定义列元素 $\vec{a}_i=<a_{1i},...,a_{mi}>,1\leq i\leq n$ 则称 $\mathcal{V}_{col}<\text{span}(\{\vec{a}_1,...,\vec{a}_n\}),K,+,\cdot>$ 为矩阵的[[MK46][列空间]]
+定义列元素 $\vec{a}_i=\left[\begin{matrix}a_{1i}\\a_{2i}\\...\\a_{mi}\end{matrix}\right],1\leq i\leq n$ 则称 $\mathcal{V}_{col}<\text{span}(\{\vec{a}_1,...,\vec{a}_n\}),K,+,\cdot>$ 为矩阵的[[MK46][列空间]]
 
-且 $\dim_K(\mathcal{V}_{col})$ ，即列空间的[[MK51][维数]]为矩阵列[[MK19][秩]]
+其中 $+$ 是[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK2][矩阵加法]]， $\cdot$ 是[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK3][矩阵数乘]]，则 $\dim_K(\mathcal{V}_{col})$ ，即列空间的[[MK51][维数]]为矩阵列[[MK19][秩]]
 
-定义行元素 $\vec{a}_i=<a_{i1},...,a_{in}>,1\leq i\leq m$ 则称 $\mathcal{V}_{row}<\text{span}(\{\vec{a}_1,...,\vec{a}_m\}),K,+,\cdot>$ 为矩阵的[[MK46][行空间]]
+定义行元素 $\vec{a}_i=\left[\begin{matrix}a_{i1}&a_{i2}&...&a_{in}\end{matrix}\right],1\leq i\leq m$ 则称 $\mathcal{V}_{row}<\text{span}(\{\vec{a}_1,...,\vec{a}_m\}),K,+,\cdot>$ 为矩阵的[[MK46][行空间]]
 
-且 $\dim_K(\mathcal{V}_{row})$ ，及行空间的[[MK51][维数]]为矩阵行[[MK19][秩]]
+其中 $+$ 是[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK2][矩阵加法]]， $\cdot$ 是[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK3][矩阵数乘]]，则 $\dim_K(\mathcal{V}_{row})$ ，及行空间的[[MK51][维数]]为矩阵行[[MK19][秩]]
 
 为方便，以下定义 $\dim_K(A_{col})$ 为矩阵列秩 $\dim_K(A_{row})$ 为矩阵行秩
 
@@ -2117,7 +2119,7 @@ $[v]_W=[u]_W$ 的充要条件为 $v-u\in W$
 
 故初等行变换所得阶梯型矩阵非零行个数确定。
 
-*** 推论2
+*** 推论2<<MK106>>
 
 $rank(A)=rank(A')$
 
@@ -2231,13 +2233,13 @@ $E$ 的任意更高阶子矩阵亦可由 $A$ 对应位置的子矩阵变换所�
 
 综上所述，子式所在的 $r$ 行（列）为矩阵的极大线性无关行（列）向量
 
-*** 推论2
+*** 推论2<<MK107>>
 
 对于方阵 $A_n=[a_{ij}]_{n\times n}$ 取任意一行 $k$ 则有 $|A|=\sum_{i=1}^n a_{ki}A_{ki}$ 和 $0=\sum_{i=1}^n a_{ki}A_{li},l\ne k$
 
 同理取任意一列 $k$ 则有 $|A|=\sum_{i=1}^n a_{ik}A_{ik}$ 和 $0=\sum_{i=1}^n a_{ik}A_{il},l\ne k$
 
-其中 $A_{ij}$ 为 $A_n$ 对于元素 $a_{ij}$ 的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-其他定义-代数余子式]]
+其中 $A_{ij}$ 为 $A_n$ 对于元素 $a_{ij}$ 的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK17][代数余子式]]
 
 **** 证明
 
