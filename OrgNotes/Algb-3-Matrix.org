@@ -2,7 +2,7 @@
 
 #+TITLE: 矩阵运算
 
-current mark: 66
+current mark: 71
 
 * 矩阵基础
 
@@ -84,7 +84,7 @@ $\mathcal{V}=<M_{s\times n}(K),K,+,\cdot>$ 是[[~/OneDrive/高等代数/Algb-1-L
 
 对于矩阵线性空间 $\mathcal{V}=<M_{s\times n}(K),K,+,\cdot>$
 
-其有一组基为集合 $\left\{E_{ij}\big|1\leq i\leq s\land 1\leq j\leq n\right\}$ 中的所有元素
+其有一组基为集合 $\left\{E_{ij}\big|1\leq i\leq s\land 1\leq j\leq n\right\}$ 中的所有元素，其中 $E_{ij}$ 是[[MK8][基本矩阵]]
 
 *** 证明
 
@@ -198,7 +198,7 @@ I_nA_{n\times s}&= A_{s\times n}\\
 
 单位矩阵定义为 $E_{lk}=[D(i,j)]_{s\times n}$ 其中 $D(i,j)=\begin{cases}1&i=l\land j=k\\0&i\ne l\lor j\ne k\end{cases}$
 
-** 对角矩阵
+** 对角矩阵<<MK70>>
 
 定义对角矩阵为 $A_n=[D(i,j)]_{n\times n}$ 其中 $D(i,j)=\begin{cases}a_{ij}&i=j\\0&i\ne j\end{cases}$
 
@@ -583,7 +583,7 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 *** 数乘<<MK25>>
 
-若 $k\in K$ 其中 $K$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]， $A,B$ 为可相乘的矩阵，则有 $(kA)B=k(AB)=A(kB)$
+若 $k\in K$ 其中 $K$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]]， $A,B$ 为可相乘的矩阵，则有 $(kA)B=k(AB)=A(kB)$
 
 *** 幂
 
@@ -1026,34 +1026,170 @@ A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A
 
 由于 $A\vec{x}=\lambda\vec{x}$ 则根据[[MK2][矩阵加法]]，[[MK54][乘法分配率]]、[[MK21][乘法结合律]]以及[[MK22][单位矩阵性质]]
 
-可得 $A\vec{x}=\lambda E\vec{x}\rightarrow \left(E\lambda-A\right)\vec{x}=\vec{0}\in M_{n\times 1}(K)$ 其中 $E$ 为[[MK4][单位矩阵]]
+可得 $A\vec{x}=\lambda I\vec{x}\rightarrow \left(I\lambda-A\right)\vec{x}=\vec{0}\in M_{n\times 1}(K)$ 其中 $I$ 为[[MK4][单位矩阵]]
 
-显然 $\left(E\lambda-A\right)\vec{x}=\vec{0}$ 可对应[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK28][其次线性方程组]]，由于 $\vec{x}$ 为非零向量，即有非零解
+显然 $\left(I\lambda-A\right)\vec{x}=\vec{0}$ 可对应[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK28][其次线性方程组]]，由于 $\vec{x}$ 为非零向量，即有非零解
 
-则根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK30][推论]]可得 $|E\lambda-A|=0$ 进而求解使行列式为零的 $\lambda$
+则根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK30][推论]]可得 $|I\lambda-A|=0$ 进而求解使行列式为零的 $\lambda$
 
-** 对角化<<MK57>>
+** 特征多项式<<MK67>>
 
-若 $n$ 阶矩阵 $A$ 存在 $n$ 个[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性不相关特]]征向量 $\{\vec{x}_1,\vec{x}_2,...,\vec{x}_n\}$ 其中 $\vec{x}_i=\left[\begin{matrix}x_{i1}\\x_{i2}\\...\\x_{in}\end{matrix}\right]$ 则存在正交矩阵 $P=[x_{ij}]_{n\times n}$
+定义 $\lambda$ 为变量，根据 $|I\lambda-A|=0$ 又根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK11][行列式定义]]可得 $|I\lambda-A|$ 是关于 $\lambda$ 的[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK1][一元多项式]]
 
-使得 $P^{-1}AP=\Lambda=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$ 其中 $\lambda_i$ 为特征向量 $\vec{x}$ 对应的特征值
+故可得特征值为 $|I\lambda-A|$ 在[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][域]] $F$ 上的所有[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK52][根]]
 
-*** 证明
+*** 定理1<<MK68>>
 
-由于线性无关，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关]]可得 $|P|\ne0$ 进一步根据[[MK29][可逆充要条件]]可得存在逆矩阵 $P^{-1}$
+若有矩阵 $\{A,B\}\subset M_{n\times n}(K)$ 满足 $A\sim B$ [[MK64][相似]]，则有 $|I\lambda-A|=|I\lambda-B|$
 
-根据[[MK5][矩阵乘法]]，[[MK54][分配率]]，[[MK2][矩阵加法]]以及 $A\vec{x}=\lambda_i\vec{x}_i$ 有
+即[[MK67][特征多项式]]相等
+
+**** 证明
+
+根据[[MK64][相似]]存在[[MK28][可逆矩阵]] $P\in M_{n\times n}(K)$ 满足 $A=P^{-1}BP$
+
+则对于任意 $\lambda\in K$ 有 $|I\lambda-A|=|I\lambda-P^{-1}BP|$ 根据[[MK28][逆矩阵]]定义及[[MK4][单位矩阵]]可得 $I=P^{-1}P=P^{-1}IP$
+
+则根据[[MK25][数乘]]，[[MK54][分配率]]有 $|I\lambda-A|=|P^{-1}\lambda IP-P^{-1}BP|=|P^{-1}(\lambda I- B)P|$
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK32][行列式与乘法]]可得 $|I\lambda-A|=|P^{-1}||\lambda I- B||P|=|P^{-1}||P||\lambda I- B|$
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK33][可逆矩阵与行列式]]可得 $|I\lambda-A|=|\lambda I- B|$ 根据 $\lambda$ 的任意性可得[[MK67][特征多项式]]相等
+
+*** 定理2<<MK69>>
+
+行列式可化为 $\left|\lambda I- A\right|=\sum_{k=0}^n\left(\sum_{i=1}^{C_n^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\right)$
+
+其中 $C_n^k$ 为 $n$ 选 $k$ 组合， $\{j_{n,i,1},...,j_{n,i,k}\}\subset\{1,...,n\}$ 为一种在 $\{1,...,n\}$ 中选 $k$ 个元素的子集
+
+且满足 $i\ne l\rightarrow \{j_{n,i,1},...,j_{n,i,k}\}\ne\{j_{n,l,1},...,j_{n,l,k}\}$ 根据组合可得共可能有 $C_n^k$ 个 $\{j_{n,i,1},...,j_{n,i,k}\}$ 
+
+其中 $Z_n(\{j_{n,i,1},...,j_{n,i,k}\})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}-a_{ij}&i\not\in \{j_{n,i,1},...,j_{n,i,k}\}\\0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\end{cases}$
+
+**** 证明
+
+根据以下证明以及数学归纳法可证对于任意 $n<\infty$ 阶矩阵 $A$
+
+均有 $\left|\lambda I- A\right|=\sum_{k=0}^n\left(\sum_{i=1}^{C_n^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\right)$ 
+
+***** 二阶行列式
+
+对于二阶行列式
 
 \begin{aligned}
-AP=&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{n1}&a_{n2}&...&a_{nn}\end{matrix}\right]\left[\begin{matrix}x_{11}&x_{12}&...&x_{1n}\\x_{21}&a_{22}&...&x_{2n}\\...&...&...&...\\x_{n1}&x_{n2}&...&x_{nn}\end{matrix}\right]\\
-=&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{n1}&a_{n2}&...&a_{nn}\end{matrix}\right]\left(\left[\begin{matrix}x_{11}&0&...&0\\x_{21}&0&...&0\\...&...&...&...\\x_{n1}&0&...&0\end{matrix}\right]+...+\left[\begin{matrix}0&0&...&x_{1n}\\0&0&...&x_{2n}\\...&...&...&...\\0&0&...&x_{nn}\end{matrix}\right]\right)\\
-=&\left[\begin{matrix}\lambda_1x_{11}&0&...&0\\\lambda_1x_{21}&0&...&0\\...&...&...&...\\\lambda_1x_{n1}&0&...&0\end{matrix}\right]+...+\left[\begin{matrix}0&0&...&\lambda_nx_{1n}\\0&0&...&\lambda_nx_{2n}\\...&...&...&...\\0&0&...&\lambda_nx_{nn}\end{matrix}\right]\\
-=&\left[\begin{matrix}\lambda_1x_{11}&\lambda_2x_{12}&...&\lambda_nx_{1n}\\\lambda_1x_{21}&\lambda_2a_{22}&...&\lambda_nx_{2n}\\...&...&...&...\\\lambda_1x_{n1}&\lambda_2x_{n2}&...&\lambda_nx_{nn}\end{matrix}\right]\\
-=&\left[\begin{matrix}x_{11}&x_{12}&...&x_{1n}\\x_{21}&a_{22}&...&x_{2n}\\...&...&...&...\\x_{n1}&x_{n2}&...&x_{nn}\end{matrix}\right]\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]\\
-=&P\Lambda
+\left|\begin{matrix}\lambda-a_{11}&-a_{12}\\-a_{21}&\lambda-a_{22}\end{matrix}\right|=&\left|\begin{matrix}\lambda&0\\-a_{21}&\lambda-a_{22}\end{matrix}\right|+\left|\begin{matrix}-a_{11}&-a_{12}\\-a_{21}&\lambda-a_{22}\end{matrix}\right|\\
+=&\left|\begin{matrix}\lambda&0\\0&\lambda\end{matrix}\right|+\left|\begin{matrix}\lambda&0\\-a_{21}&-a_{22}\end{matrix}\right|+\left|\begin{matrix}-a_{11}&-a_{12}\\0&\lambda\end{matrix}\right|+\left|\begin{matrix}-a_{11}&-a_{12}\\-a_{21}&-a_{22}\end{matrix}\right|\\
+=&\sum_{k=0}^n\left(\sum_{i=1}^{C_n^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\right)
 \end{aligned}
 
-故根据[[MK21][结合律]]以及[[MK22][单位矩阵性质]]可得 $P^{-1}AP=P^{-1}(AP)=P^{-1}(P\Lambda)=P^{-1}P\Lambda=I\Lambda=\Lambda$
+其中 $C_n^k$ 为 $n$ 选 $k$ 组合， $\{j_{n,i,1},...,j_{n,i,k}\}\subset\{1,...,n\}$ 为一种在 $\{1,...,n\}$ 中选 $k$ 个元素的子集
+
+且满足 $i\ne l\rightarrow \{j_{n,i,1},...,j_{n,i,k}\}\ne\{j_{n,l,1},...,j_{n,l,k}\}$ 根据组合可得共可能有 $C_n^k$ 个 $\{j_{n,i,1},...,j_{n,i,k}\}$ 
+
+其中 $Z_n(J_{n,k,i})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}-a_{ij}&i\not\in \{j_{n,i,1},...,j_{n,i,k}\}\\0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\end{cases}$
+
+***** 归纳假设
+
+假设对于任意 $A\in M_{u\times u}(K),u<n$ 阶行列式有 $\left|\lambda I- A\right|=\sum_{k=0}^n\left(\sum_{i=1}^{C_n^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\right)$
+
+***** $n$ 阶行列式
+
+对于任意 $A\in M_{n\times n}(K)$ 由于是对行拆分，则可根据归纳假设，对前 $n-1$ 行均可进行同样拆分
+
+故可得 $\left|\lambda I- A\right|=\sum_{k=0}^{n-1}\left(\sum_{i=1}^{C_{n-1}^k}\left|Z_n(\{j_{n-1,i,1},...,j_{n-1,i,k}\})\right|\right)$
+
+其中 $\{j_{n,i,1},...,j_{n,i,k}\}\subset\{1,...,n\}$ 为一种在 $\{1,...,n\}$ 中选 $k$ 个元素的子集
+
+其中 $Z_n(J_{n-1,k,i})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}-a_{ij}&i\not\in \{j_{n,i,1},...,j_{n,i,k}\}\\0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\\-a_{ij}& i=n\land j\ne n\\\lambda-a_{nn}&i=n\land j=n\end{cases}$
+
+故对于每一个 $|Z_n(J_{n-1,k,i})|$ 均有
+
+\begin{aligned}
+|Z_n(\{j_{n-1,i,1},...,j_{n-1,i,k}\})|=&\left|\begin{matrix}z_{11}&z_{12}&...&z_{1n}\\z_{21}&z_{22}&...&z_{2n}\\...&...&...&...\\z_{(n-1)1}&z_{(n-1)2}&...&z_{(n-1)n}\\-a_{n1}&-a_{n2}&...&\lambda-a_{nn}\end{matrix}\right|\\
+=&\left|\begin{matrix}z_{11}&z_{12}&...&z_{1n}\\z_{21}&z_{22}&...&z_{2n}\\...&...&...&...\\z_{(n-1)1}&z_{(n-1)2}&...&z_{(n-1)n}\\0&0&...&\lambda\end{matrix}\right|+\left|\begin{matrix}z_{11}&z_{12}&...&z_{1n}\\z_{21}&z_{22}&...&z_{2n}\\...&...&...&...\\z_{(n-1)1}&z_{(n-1)2}&...&z_{(n-1)n}\\-a_{n1}&-a_{n2}&...&-a_{nn}\end{matrix}\right|\\
+=&|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})|+|Z_n(\{j_{n,i,1},...,j_{n,i,k},n\})|
+\end{aligned}
+
+故其行列式可化为
+
+\begin{aligned}
+\left|\lambda I- A\right|=&\sum_{k=0}^{n-1}\left(\sum_{i=1}^{C_{n-1}^k}\left(\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|+\left|Z_n(\{j_{n,i,1},...,j_{n,i,k},n\})\right|\right)\right)\\
+=&\sum_{k=0}^{n-1}\left(\sum_{i=1}^{C_{n-1}^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|+\sum_{i=1}^{C_{n-1}^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k},n\})\right|\right)\\
+\end{aligned}
+
+根据组合 $\sum_{i=1}^{C_{n}^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=\sum_{i=1}^{C_{n-1}^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|+\sum_{i=1}^{C_{n-1}^{k-1}}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k},n\})\right|$
+
+即 $n$ 选 $k$ 的情况，等价于当集合不包含 $n$ 时任取 $k$ 个数和当集合包含 $n$ 时任取 $k-1$ 个数两种情况，故
+
+\begin{aligned}
+\left|\lambda I- A\right|=&\sum_{k=0}^{n-1}\left(\sum_{i=1}^{C_{n-1}^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|+\sum_{i=1}^{C_{n-1}^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k},n\})\right|\right)\\
+=&\sum_{k=0}^{n-1}\left(\sum_{i=1}^{C_{n}^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\right)+\sum_{i=1}^{C_{n-1}^{n-1}}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k},n\})\right|\\
+=&\sum_{k=0}^{n-1}\left(\sum_{i=1}^{C_{n}^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\right)+\sum_{i=1}^{C_{n}^{n}}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\\
+=&\sum_{k=0}^n\left(\sum_{i=1}^{C_n^k}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\right)
+\end{aligned}
+
+证毕
+
+*** 定理3<<MK71>>
+
+$|I\lambda-A|=(-1)^n|A|+\sum_{k=1}^{n-1}\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\overline{M}^*\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)\right)+\lambda^n$
+
+其中 $C_n^k$ 为 $n$ 选 $k$ 组合， $\{j_{n,i,1},...,j_{n,i,k}\}\subset\{1,...,n\}$ 为一种在 $\{1,...,n\}$ 中选 $k$ 个元素的子集
+
+且满足 $i\ne l\rightarrow \{j_{n,i,1},...,j_{n,i,k}\}\ne\{j_{n,l,1},...,j_{n,l,k}\}$ 根据组合可得共可能有 $C_n^k$ 个 $\{j_{n,i,1},...,j_{n,i,k}\}$ 
+
+其中 $Z_n(\{j_{n,i,1},...,j_{n,i,k}\})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}-a_{ij}&i\not\in \{j_{n,i,1},...,j_{n,i,k}\}\\0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\end{cases}$
+
+其中 $\overline{M}^*\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)$ 是 $A$ 去除 $j_{n,i,1},...,j_{n,i,k}$ 行 $j_{n,i,1},...,j_{n,i,k}$ 列的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK22][余子式]]
+
+**** 证明
+
+显然当 $k=0$ 时 $C_n^0=1$ 则 $\sum_{i=1}^{C_n^0}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=\left|Z_n(\varnothing)\right|$ 即 $Z_n(\varnothing)=[-a_{ij}]$
+
+则根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK14][行乘系数]]可得 $\sum_{i=1}^{C_n^0}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=(-1)^n|A|$
+
+当 $k=n$ 时 $C_n^n=1$ 则 $\sum_{i=1}^{C_n^n}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=\left|Z_n(\{1,...,n\})\right|$
+
+即 $Z_n(\{1,...,n\})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\end{cases}$
+
+则根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK18][上三角矩阵行列式]]可得 $\sum_{i=1}^{C_n^n}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=\lambda^n$
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK26][拉普拉斯定理]]可得
+
+\begin{aligned}
+&\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\\
+=&\sum_{\forall 1\leq i_1\leq i_2\leq...\leq i_k\leq n}(-1)^{\sum_{u=1}^k i_u+\sum_{u=1}^k j_{n,i,u}}M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\i_1&i_2&...&i_k\end{matrix}\right)\overline{M}\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\i_1&i_2&...&i_k\end{matrix}\right)
+\end{aligned}
+
+其中 $M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\i_1&i_2&...&i_k\end{matrix}\right),\overline{M}\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\i_1&i_2&...&i_k\end{matrix}\right)$
+
+分别为 $Z_n(\{j_{n,i,1},...,j_{n,i,k}\})$ 对于 $j_{n,i,1},...,j_{n,i,k}$ 行 $i_1,...,i_k$ 列的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK21][子式]]和[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK22][余子式]]
+
+根据 $Z_n(\{j_{n,i,1},...,j_{n,i,k}\})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}-a_{ij}&i\not\in \{j_{n,i,1},...,j_{n,i,k}\}\\0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\end{cases}$
+
+可得对于任意 $M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\i_1&i_2&...&i_k\end{matrix}\right)=\left|[m_{ij}]\right|$ 当且仅当 $i_u=j_{n,i,u}$ 时 $m_{uu}=\lambda$ 其余均为 $0$
+
+故和中非零[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK21][子式]]有且仅有 $M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)$ 且为对角矩阵的行列式，对角线上的值均为 $\lambda$
+
+即 $M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)=\lambda^k$ 即进一步有
+
+\begin{aligned}
+&\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\\
+=&(-1)^{\sum_{u=1}^k j_{n,i,u}+\sum_{u=1}^k j_{n,i,u}}M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)\overline{M}\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)\\
+=&\lambda^k\overline{M}\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)
+\end{aligned}
+
+又根据 $Z_n(\{j_{n,i,1},...,j_{n,i,k}\})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}-a_{ij}&i\not\in \{j_{n,i,1},...,j_{n,i,k}\}\\0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\end{cases}$
+
+可得 $\overline{M}\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)=|[m_{ij}]|$ 有 $m_{ij}=-a_{ij}$ 故根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK14][行乘系数]]可得
+
+\begin{aligned}
+&\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\\
+=&\lambda^k\overline{M}\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)\\
+=&\lambda^k(-1)^k\overline{M}^*\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)
+\end{aligned}
+
+最终根据[[MK69][定理2]]可得$|I\lambda-A|=\sum_{k=0}^n\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\overline{M}^*\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)\right)$
 
 ** 性质
 
@@ -1176,6 +1312,56 @@ Q^{-1}AQ&=\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\righ
 
 故推出 $A\vec{p}_i=\lambda_i\vec{p}_i$ 所以 $\lambda_i$ 为特征值 $\vec{p}_i$ 为对应的特征向量
 
+* 矩阵对角化<<MK57>>
+
+对于任意 $n$ 阶矩阵 $A=[a_{ij}]_{n\times n}$ 若存在[[MK65][相似]]的[[MK70][对角矩阵]] $\Lambda=[l_{ij}],l_{ij}=\begin{cases}\lambda_{i}&i=j\\0&i\ne j\end{cases}$
+
+即存在[[MK28][可逆矩阵]] $P=[x_{ij}]_{n\times n}$ 满足 $P^{-1}AP=\Lambda=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$
+
+则称 $A$ 可对角化
+
+** 定理
+
+$n$ 阶矩阵 $A$ 存在[[MK28][可逆矩阵]] $P=[x_{ij}]_{n\times n}$ 满足 $P^{-1}AP=\Lambda=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$ ，即可[[MK57][对角化]]的充要条件是
+
+矩阵 $A$ 存在 $n$ 个[[MK8][线性不相关]]的[[MK55][特征向量]] $\{\vec{x}_1,\vec{x}_2,...,\vec{x}_n\}$ 其中 $\vec{x}_i=\left[\begin{matrix}x_{i1}\\x_{i2}\\...\\x_{in}\end{matrix}\right]$ 且 $\lambda_i$ 是矩阵 $A$ 的[[MK55][特征值]]
+
+*** 证明
+
+**** 充分
+
+若存在[[MK28][可逆矩阵]] $P=[x_{ij}]_{n\times n}$ 满足 $P^{-1}AP=\Lambda=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$ 则定义 $\vec{x}_i=\left[\begin{matrix}x_{i1}\\x_{i2}\\...\\x_{in}\end{matrix}\right]$
+
+根据[[MK21][结合律]]以及[[MK22][单位矩阵性质]]可得 $P(P^{-1}AP)=P\Lambda\rightarrow AP=P\Lambda$ 则根据[[MK5][矩阵乘法]]，[[MK54][分配率]]，[[MK2][矩阵加法]]
+
+\begin{aligned}
+&AP=P\Lambda\\
+\Rightarrow&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{n1}&a_{n2}&...&a_{nn}\end{matrix}\right]\left[\begin{matrix}x_{11}&x_{12}&...&x_{1n}\\x_{21}&x_{22}&...&x_{2n}\\...&...&...&...\\x_{n1}&x_{n2}&...&x_{nn}\end{matrix}\right]=\left[\begin{matrix}x_{11}&x_{12}&...&x_{1n}\\x_{21}&x_{22}&...&x_{2n}\\...&...&...&...\\x_{n1}&x_{n2}&...&x_{nn}\end{matrix}\right]\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]\\
+\end{aligned}
+
+即有 $\sum_{k=1}^na_{ik}x_{kj}=\lambda_jx_{ij}$ 故对于任意 $\vec{x}_j=\left[\begin{matrix}x_{j1}\\x_{j2}\\...\\x_{jn}\end{matrix}\right]$ 有 $A\vec{x}_j=[a'_{i}]_{n\times 1}$ 其中 $a'_{i}=\sum_{k=1}^na_{ik}x_{kj}=\lambda_jx_{ij}$
+
+即最终有 $A\vec{x}_j=[\lambda_jx_{ij}]_{n\times 1}=\lambda_j\vec{x}_j$ 故可得 $\vec{x}_j$ 为[[MK55][特征向量]] $\lambda_i$ 为[[MK55][特征值]]
+
+又由于 $P$ [[MK28][可逆]]，故根据[[MK29][可逆充要条件]]可得 $\{\vec{x}_1,\vec{x}_2,...,\vec{x}_n\}$ [[MK8][线性不相关]]
+
+**** 必要
+
+定义矩阵 $P=[x_{ij}]$ ，由于线性无关，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关]]可得 $|P|\ne0$ 进一步根据[[MK29][可逆充要条件]]可得存在逆矩阵 $P^{-1}$
+
+根据[[MK5][矩阵乘法]]，[[MK54][分配率]]，[[MK2][矩阵加法]]以及 $A\vec{x}=\lambda_i\vec{x}_i$ 有
+
+\begin{aligned}
+AP=&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{n1}&a_{n2}&...&a_{nn}\end{matrix}\right]\left[\begin{matrix}x_{11}&x_{12}&...&x_{1n}\\x_{21}&x_{22}&...&x_{2n}\\...&...&...&...\\x_{n1}&x_{n2}&...&x_{nn}\end{matrix}\right]\\
+=&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{n1}&a_{n2}&...&a_{nn}\end{matrix}\right]\left(\left[\begin{matrix}x_{11}&0&...&0\\x_{21}&0&...&0\\...&...&...&...\\x_{n1}&0&...&0\end{matrix}\right]+...+\left[\begin{matrix}0&0&...&x_{1n}\\0&0&...&x_{2n}\\...&...&...&...\\0&0&...&x_{nn}\end{matrix}\right]\right)\\
+=&\left[\begin{matrix}\lambda_1x_{11}&0&...&0\\\lambda_1x_{21}&0&...&0\\...&...&...&...\\\lambda_1x_{n1}&0&...&0\end{matrix}\right]+...+\left[\begin{matrix}0&0&...&\lambda_nx_{1n}\\0&0&...&\lambda_nx_{2n}\\...&...&...&...\\0&0&...&\lambda_nx_{nn}\end{matrix}\right]\\
+=&\left[\begin{matrix}\lambda_1x_{11}&\lambda_2x_{12}&...&\lambda_nx_{1n}\\\lambda_1x_{21}&\lambda_2a_{22}&...&\lambda_nx_{2n}\\...&...&...&...\\\lambda_1x_{n1}&\lambda_2x_{n2}&...&\lambda_nx_{nn}\end{matrix}\right]\\
+=&\left[\begin{matrix}x_{11}&x_{12}&...&x_{1n}\\x_{21}&a_{22}&...&x_{2n}\\...&...&...&...\\x_{n1}&x_{n2}&...&x_{nn}\end{matrix}\right]\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]\\
+=&P\Lambda
+\end{aligned}
+
+故根据[[MK21][结合律]]以及[[MK22][单位矩阵性质]]可得 $P^{-1}AP=P^{-1}(AP)=P^{-1}(P\Lambda)=P^{-1}P\Lambda=I\Lambda=\Lambda$
+
 * 矩阵的迹<<MK65>>
 
 对于任意 $A=[a_{ij}]\in M_{n\times n}(K)$ 为 $n$ 阶方阵，则其迹定义为 $tr(A)=\sum_{i=1}^na_{ii}$
@@ -1276,4 +1462,20 @@ Q^{-1}AQ&=\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\righ
 
 根据[[MK66][性质3]]可得 $tr(PBP^{-1})=tr(PP^{-1}B)=tr(B)$
 
+*** 性质4<<MK68>>
 
+若有矩阵 $\{A,B\}\subset M_{n\times n}(K)$ 满足 $A\sim B$ [[MK64][相似]]，则有 $|I\lambda-A|=|I\lambda-B|$
+
+即[[MK67][特征多项式]]相等，进而[[MK55][特征值]]相等
+
+**** 证明
+
+根据[[MK64][相似]]存在[[MK28][可逆矩阵]] $P\in M_{n\times n}(K)$ 满足 $A=P^{-1}BP$
+
+则对于任意 $\lambda\in K$ 有 $|I\lambda-A|=|I\lambda-P^{-1}BP|$ 根据[[MK28][逆矩阵]]定义及[[MK4][单位矩阵]]可得 $I=P^{-1}P=P^{-1}IP$
+
+则根据[[MK25][数乘]]，[[MK54][分配率]]有 $|I\lambda-A|=|P^{-1}\lambda IP-P^{-1}BP|=|P^{-1}(\lambda I- B)P|$
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK32][行列式与乘法]]可得 $|I\lambda-A|=|P^{-1}||\lambda I- B||P|=|P^{-1}||P||\lambda I- B|$
+
+根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK33][可逆矩阵与行列式]]可得 $|I\lambda-A|=|\lambda I- B|$ 根据 $\lambda$ 的任意性可得[[MK67][特征多项式]]相等

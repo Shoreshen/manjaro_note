@@ -98,11 +98,9 @@ current mark: 86
 
 由于乘法封闭，则 $V$ 的乘法可继承 $U$ 满足条件（5），（6）
 
-** 同构
+** 同构<<MK13>>
 
-*** 定义<<MK13>>
-
-有环 $U,V$ 若存在[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊函数-双射函数]] $\sigma:U\rightarrow V$ 满足对于任意 $\{a,b\}\subset U$ ：
+有环 $U,V$ 若存在[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]] $\sigma:U\rightarrow V$ 满足对于任意 $\{a,b\}\subset U$ ：
 
 （1） $\sigma(a+b)=\sigma(a)+\sigma(b)$
 
@@ -190,9 +188,7 @@ h(\tau)&=\sum_{i=1}^\infty\left(\sum_{j=0}^\infty\sigma(a_ib_j)x^{i+j}\right)
 
 故有 $f(\tau)g(\tau)=h(\tau)$
 
-* 一元多项式
-
-** 定义<<MK1>>
+* 一元多项式<<MK1>>
 
 定义[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $K$ ，若有表达式形式为 $f(x)=\sum_{i=0}^d a_ix^i$ ，其中 $a_i\in K$ ，其中 $x$ 是变元，可以有定义域
 
@@ -1296,13 +1292,11 @@ $0(x)$ 可约
 
 则称该式为 $f(x)$ 的标准分解式
 
-** 根
-
-*** 定义<<MK52>>
+** 根<<MK52>>
 
 若 $f(x)\in K[x]$ 存在 $c\in K$ 满足 $(x-c)\mid f(x)$ 即[[MK19][整除]]，则称 $c$ 是 $f(x)$ 的一个跟
 
-**** 推论<<MK71>>
+*** 推论<<MK71>>
 
 若 $c$ 是 $f(x)\in K[x]$ 的跟的充要条件是 $f(c)=0(x)$ 即：
 
@@ -1312,7 +1306,7 @@ $0(x)$ 可约
 
 （3） 经过运算后得结果为[[MK3][零元]]
 
-***** 证明
+**** 证明
 
 根据定义存在 $h(x)\in K[x]$ 满足 $f(x)=(x-c)h(x)$ 
 
