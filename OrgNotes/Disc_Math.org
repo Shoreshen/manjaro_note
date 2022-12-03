@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 507
+currnet mark: 521
 
 free mark:
  
@@ -7266,7 +7266,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 均有 $\alpha(x_j)=v(x_j)$ ，则有 $<\mathcal{M},\alpha>\vDash\psi_1$ 即根据[[MK449][满足]]有 $<\mathcal{M},v>\vDash\phi$
 
-***** 推论1
+***** 推论1<<MK512>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]，若 $\mathcal{M}\cong\mathcal{N}$ [[MK471][同构]]
 
@@ -7442,7 +7442,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的同质子结构， $\mathcal{M}$ 是 $\mathcal{N}$ 的同质放大， $\mathcal{N}$ 是 $\mathcal{M}$ 的同质缩小，记作 $\mathcal{M}\prec\mathcal{N}$
 
-***** 推论1
+***** 推论1<<MK513>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]
 
@@ -7454,11 +7454,11 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 又根据[[MK453][推论]]易证 $\mathcal{M}\vDash\phi$ 的充要条件是 $\mathcal{M}\vDash\phi$
 
-***** 推论2
+***** 推论2<<MK514>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]，若 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]且 $X\subset M$
 
-对于任意由 $\mathcal{L}_\mathcal{A}$ [[MK135][表达式]] $\phi(x_1,...,x_n,x_{n+1},...,x_{n+m})$ 且参数为 ${q_1,...,q_m}$
+对于任意由 $\mathcal{L}_\mathcal{A}$ [[MK135][表达式]] $\phi(x_1,...,x_n,x_{n+1},...,x_{n+m})$ 且参数为 ${q_1,...,q_m}$ 属于 $X$
 
 其在 $\mathcal{M}$ 定义的集合 $A\in\text{Def}_n(\mathcal{M},X)$ 与在 $\mathcal{N}$ 定义的集合 $A^*\in\text{Def}_n(\mathcal{N},X)$ 满足 $A=A^*\cap M$
 
@@ -7656,7 +7656,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 又根据[[MK449][满足]]可得 $<\mathcal{M},\beta>\not\vDash(\forall x_i\psi_1)$ 即 $<\mathcal{M},\beta>\not\vDash\phi$
 
-***** 定理3（存在性）
+***** 定理3（存在性）<<MK510>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{N}=<N,J>$ 满足 $N$ 是[[MK43][无限集]]，设 $X\subset N$ 是[[MK44][可数集]]
 
@@ -7676,11 +7676,13 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 又根据[[MK476][可定义]]定义可得 $\text{Def}_1(\mathcal{N},X)=\bigcup_{\phi\in\mathcal{L}_\mathcal{A}}\text{Def}(\phi)$ ，又根据[[MK500][引理]]可得 $\mathcal{L}_\mathcal{A}\subset\mathcal{L}\subset\Sigma^*$ 是[[MK44][可数集]]
 
+则又根据[[MK49][定理1]]可得 $\text{Def}_1(\mathcal{N},X)$ 是[[MK44][可数集]]
+
 ******* 定义 $M$
 
 定义 $M_0=X$ 若有 $M_n\subset N$ 是[[MK44][可数集]]，则根据上一步存在 $\text{Def}_1(\mathcal{N},M_n)$ 亦为[[MK44][可数集]]
 
-根据[[MK10][选择公理]]对于任意非空 $A\in\text{Def}_1(\mathcal{N},M_n)$ 存在选择函数 $f$ 满足 $f(A)\in A$ 且 $f(A)\ne\varnothing$ 
+根据[[MK10][选择公理]]对于任意非空 $A\in\text{Def}_1(\mathcal{N},M_n)$ 存在选择函数 $f$ 满足 $f(A)\in A$
 
 则定义 $M_{n+1}=M_n\cup\left(\bigcup_{A\ne\varnothing\land A\in\text{Def}_1(\mathcal{N},M_n)}\{f(A)\}\right)$ 显然根据[[MK49][定理1]]可得 $M_{n+1}$ 可数
 
@@ -7856,6 +7858,198 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 根据归纳假设有 $<\mathcal{M},\alpha>\vDash\psi_1$ 同理根据[[MK449][满足]]可得 $<\mathcal{M},v>\vDash\phi$ 
 
+*** 嵌入<<MK518>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]，存在[[MK194][函数]] $e:M\to N$ 满足：
+
+（1） $e$ 是[[MK195][单射]]
+
+（2） 若 $c\in\mathcal{L}_\mathcal{A}$ 是[[MK129][常元符号]]，则有 $e(I(c))=J(c)$
+
+（3） 若 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK131][函数符号]]且 $\pi_F(f)=n$ ，则对于任意 $<a_1,...,a_n>\subset M^n$ 使得 $I(f)(a_1,...,a_n)$ 有定义
+
+     有 $e(I(f)(a_1,...,a_n))=J(f)(e(a_1),...,e(a_n))$
+
+（4） 若 $p\in\mathcal{L}_\mathcal{A}$ 是[[MK132][谓词符号]]且 $\pi_P(p)=n$ ，则对于任意 $<a_1,...,a_n>\subset M^n$
+
+     $<a_1,...,a_n>\in I(p)$ 的充要条件是 $<e(a_1),...,e(a_n)>\in J(p)$
+
+则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的嵌入结构，并定义 $e$ 是 $\mathcal{M}$ 到 $\mathcal{N}$ 的嵌入映射
+
+**** 同质嵌入<<MK519>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]，存在[[MK194][函数]] $e:M\to N$ 使得
+
+对于任意 $\mathcal{M}$ [[MK447][赋值]] $v$ 以及[[MK135][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ ， $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},v\cdot e>\vDash\phi$
+
+则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的同质嵌入结构，并定义 $e$ 是 $\mathcal{M}$ 到 $\mathcal{N}$ 的同质嵌入映射
+
+***** 引理<<MK520>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]
+
+存在[[MK194][函数]] $e:M\to N$ 是 $\mathcal{M}$ 到 $\mathcal{N}$ 的[[MK519][同质嵌入映射]]，则 $e$ 必为[[MK518][嵌入映射]]
+
+****** 证明
+
+根据[[MK518][嵌入映射]]定义以及下列证明可证的 $e$ 为[[MK518][嵌入映射]]
+
+******* $e$ 是[[MK195][单射]]
+
+假设不为[[MK195][单射]]，则存在 $\{a_1,a_2\}\subset M$ 满足 $e(a_1)=e(a_2)$
+
+定义[[MK135][表达式]] $\phi=(\lnot(x_1\hat{=}x_2))$ 以及[[MK447][赋值]] $v$ 满足 $v(x_1)=a_1,v(x_2)=a_2$
+
+显然 $a_1\ne a_2$ 则根据[[MK449][满足]]易证有 $<\mathcal{M},v>\vDash\phi$ 又由于 $v\cdot e(x_1)=e(v(x_1))=e(a_1)=e(a_2)=v\cdot e(x_2)$
+
+即 $v\cdot e(x_1)=v\cdot e(x_2)$ 则根据[[MK449][满足]]易证有 $<\mathcal{N},v\cdot e>\not\vDash\phi$
+
+与 $\mathcal{M}$ 到 $\mathcal{N}$ 的[[MK519][同质嵌入映射]]矛盾，故假设不成立 $e$ 是[[MK195][单射]]
+
+******* [[MK129][常元符号]]
+
+对于任意 $c\in\mathcal{L}_\mathcal{A}$ 是[[MK129][常元符号]]，定义[[MK135][表达式]] $\phi=(x_1\hat{=}c)$ 定义[[MK447][赋值]] $v$ 满足 $v(x_1)=I(c)$
+
+则有 $<\mathcal{M},v>\vDash\phi$ 则根据[[MK519][同质嵌入映射]]定义有 $<\mathcal{N},v\cdot e>\vDash\phi$
+
+故根据[[MK449][满足]]定义可得 $v\cdot e(x_1)=J(c)$ 根据函数[[MK202][复合]]可得 $v\cdot e(x_1)=e(v(x_1))=e(I(c))=J(c)$ 
+
+******* [[MK131][函数符号]]
+
+若 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK131][函数符号]]且 $\pi_F(f)=n$ 定义[[MK135][表达式]] $\phi=(f(x_1,...,x_n)\hat{=}x_{n+1})$
+
+对于任意一组使得 $I(f)$ 有定义的 $<a_1,...,a_n>\in M^n$ 定义[[MK447][赋值]] $v$
+
+满足 $v(x_i)=a_i,1\leq i\leq n$ 以及 $v(x_{n+1})=I(f)(a_1,...,a_n)=a_{n+1}$
+
+则根据[[MK449][满足]]易证 $<\mathcal{M},v>\vDash\phi$ 即有 $I(f)(a_1,...,a_n)=a_{n+1}$ 
+
+则根据[[MK519][同质嵌入映射]]定义有 $<\mathcal{N},v\cdot e>\vDash\phi$ 根据[[MK449][满足]]有 $J(f)(v\cdot e(x_1),...,v\cdot e(x_n))=v\cdot e(x_{n+1})$
+
+根据函数[[MK202][复合]] $J(f)(e(a_1),...,e(a_n))=e(a_{n+1})$ 进而 $e(I(f)(a_1,...,a_n))=J(f)(e(a_1),...,e(a_n))$
+
+******* [[MK132][谓词符号]]
+
+若 $p\in\mathcal{L}_\mathcal{A}$ 是[[MK132][谓词符号]]且 $\pi_P(p)=n$ ，则对于任意 $<a_1,...,a_n>\subset M^n$ 且 $<a_1,...,a_n>\in I(p)$
+
+定义[[MK135][表达式]] $\phi=p(x_1,...,x_n)$ 以及[[MK447][赋值]] $v$ 满足 $v(x_i)=a_i$ 则根据[[MK449][满足]]易证 $<\mathcal{M},v>\vDash\phi$
+
+根据[[MK519][同质嵌入映射]]定义有 $<\mathcal{N},v\cdot e>\vDash\phi$ ，同理根据[[MK449][满足]]有 $<v\cdot e(x_1),...,v\cdot e(x_n)>\in J(p)$
+
+根据函数[[MK202][复合]] $<e(a_1),...,e(a_n)>\in J(p)$
+
+***** 定理
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$
+
+则 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK519][同质嵌入]]的充要条件是存在 $\mathcal{N}$ 的[[MK487][同质子结构]] $\mathcal{N}'$ 与 $\mathcal{M}$ [[MK471][同构]]
+
+****** 证明
+
+******* 充分
+
+根据[[MK520][引理]]可得 $e$ 是[[MK518][嵌入映射]]，根据[[MK521][定理]]可得存在 $\mathcal{N}$ 的[[MK483][子结构]] $\mathcal{N}'$ 与 $\mathcal{M}$ [[MK471][同构]]
+
+定义[[MK471][同构映射]]为 $e'$ 则根据[[MK481][引理]]可得逆映射 $(e')^{-1}$ 亦为[[MK471][同构映射]]
+
+则对于任意 $\mathcal{N}'$ [[MK447][赋值]] $v$ 以及[[MK135][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 根据[[MK475][定理]]可得 $<\mathcal{N}',v>\vDash\phi$ 的充要条件为 $<\mathcal{M},v\cdot (e')^{-1}>\vDash\phi$
+
+又根据[[MK518][同质嵌入]]定义可得 $<\mathcal{M},v\cdot (e')^{-1}>\vDash\phi$ 的充要条件为 $<\mathcal{N},v\cdot (e')^{-1}\cdot e>\vDash\phi$ 即 $<\mathcal{N},v>\vDash\phi$ 
+
+综上所述， $<\mathcal{N}',v>\vDash\phi$ 的充要条件为 $<\mathcal{N},v>\vDash\phi$ 结合 $\mathcal{N}'$ 是 $\mathcal{N}$ 的[[MK483][子结构]]
+
+可得 $\mathcal{N}'$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]
+
+******* 必要
+
+若存在 $\mathcal{N}$ 的[[MK487][同质子结构]] $\mathcal{N}'=<N',J'>$ 与 $\mathcal{M}$ [[MK471][同构]]，则定义[[MK471][同构映射]]为 $e':M\to N'$
+
+则对于任意 $\mathcal{M}$ [[MK447][赋值]] $v$ 以及[[MK135][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 根据[[MK475][定理]]可得 $<\mathcal{M},v>\vDash\phi$ 的充要条件为 $<\mathcal{N}',v\cdot e'>\vDash\phi$
+
+则定义 $e:M\to N$ 为 $e=e'$ 仅有值域不同，显然对于任意[[MK130][变元符号]] $x_i$ 均有 $v\cdot e'(x_i)=v\cdot e(x_i)$
+
+则根据[[MK452][局部确定性定理]]可得 $<\mathcal{N}',v\cdot e'>\vDash\phi$ 的充要条件是 $<\mathcal{N}',v\cdot e>\vDash\phi$
+
+有由于 $\mathcal{N}'$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]，故有 $<\mathcal{N}',v\cdot e>\vDash\phi$ 的充要条件是 $<\mathcal{N},v\cdot e>\vDash\phi$
+
+综上所述， $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},v\cdot e>\vDash\phi$ 即 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK519][同质嵌入]]
+
+**** 引理1
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]
+
+则 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK483][子结构]]的充要条件是恒等[[MK194][映射]] $e$ 是[[MK518][嵌入映射]]
+
+***** 证明
+
+由于 $e$ 是恒等映射，则对于任意 $a\in M$ 有 $e(a)=a$
+
+则根据[[MK471][子结构]]定义以及[[MK518][嵌入映射]]定义易证两者等价
+
+**** 定理<<MK521>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$
+
+则 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK518][嵌入]]的充要条件是存在 $\mathcal{N}$ 的[[MK483][子结构]] $\mathcal{N}'$ 与 $\mathcal{M}$ [[MK471][同构]]
+
+***** 证明
+
+****** 充分
+
+若 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK518][嵌入]]则存在[[MK518][嵌入映射]] $e:M\to N$ 则定义 $N'=\left\{b\big|((b\in N)\land(\exists a((a\in M)\land(e(a)=b))))\right\}$
+
+进而定义 $e':M\to N'$ 由于 $e$ 是[[MK195][单射]]，易证 $e'$ 亦是[[MK195][单射]]。又根据 $N'$ 定义可得 $e$ 是[[MK198][满射]]
+
+即 $e'$ 是[[MK200][双射]]。根据 $N'\subset N$ 定义 $J'$ 满足：
+
+（1） 对于任意 $c\in\mathcal{L}_\mathcal{A}$ 是[[MK129][常元符号]]有 $J(c)=J'(c)$
+
+（2） 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK131][函数符号]]且 $\pi_F(f)=n$ 对于任意 $<a_1,...,a_n>\subset (N')^n$ 使得 $J(f)(a_1,...,a_n)$ 有定义
+
+     有 $J'(f)(a_1,...,a_n)=J(f)(a_1,...,a_n)$
+
+（3） 对于任意$p\in\mathcal{L}_\mathcal{A}$ 是[[MK132][谓词符号]]且 $\pi_P(p)=n$ 定义 $J'(p)=J(p)\cap (N')^n$
+
+显然上述定义使得 $\mathcal{N}'=<N',J'>$ 是 $\mathcal{N}$ 的[[MK483][子结构]]，又根据[[MK518][嵌入映射]]定义
+
+（1） $e'$ 是[[MK200][双射]]
+
+（2） 对于任意 $c\in\mathcal{L}_\mathcal{A}$ 是[[MK129][常元符号]] $e'(I(c))=e(I(c))=J(c)=J'(c)$
+
+（3） 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK131][函数符号]]且 $\pi_F(f)=n$ 对于任意 $<a_1,...,a_n>\subset M^n$ 使得 $I(f)(a_1,...,a_n)$ 有定义
+
+     有 $e'(I(f)(a_1,...,a_n))=e(I(f)(a_1,...,a_n))=J(f)(e(a_1),...,e(a_n))=J'(f)(e(a_1),...,e(a_n))$
+
+（4） 对于任意$p\in\mathcal{L}_\mathcal{A}$ 是[[MK132][谓词符号]]且 $\pi_P(p)=n$ 则对于任意 $<a_1,...,a_n>\subset M^n$
+
+     使得 $<a_1,...,a_n>\in I(p)$ 有 $<e'(a_1),...,e'(a_n)>=<e(a_1),...,e(a_n)>\in J(p)$
+
+     又由于 $e'(a_i)\in N'$ 故可得 $<e'(a_1),...,e'(a_n)>\in J'(p)$
+
+综上所述，显然 $e'$ 是 $\mathcal{M}$ 到 $\mathcal{N}'$ 的[[MK471][同构映射]]，即 $\mathcal{N}'$ 与 $\mathcal{M}$ [[MK471][同构]]
+     
+****** 必要
+
+若有 $\mathcal{N}'=<N',J'>$ 是 $\mathcal{N}$ 的[[MK483][子结构]]且 $\mathcal{N}'$ 与 $\mathcal{M}$ [[MK471][同构]]，则存在[[MK471][同构映射]] $e':M\to N'$
+
+定义 $e:M\to N$ 为 $e=e'$ 仅有值域不同，由于 $e'$ 是[[MK200][双射]]，则易证 $e$ 是[[MK198][满射]]
+
+则根据[[MK471][同构]]以及[[MK483][子结构]]定义：
+
+（1） 对于任意 $c\in\mathcal{L}_\mathcal{A}$ 是[[MK129][常元符号]] $e(I(c))=e'(I(c))=J'(c)=J(c)$
+
+（2） 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK131][函数符号]]且 $\pi_F(f)=n$ 对于任意 $<a_1,...,a_n>\subset M^n$ 使得 $I(f)(a_1,...,a_n)$ 有定义
+
+     有 $e(I(f)(a_1,...,a_n))=e'(I(f)(a_1,...,a_n))=J'(f)(e(a_1),...,e(a_n))=J(f)(e(a_1),...,e(a_n))$
+
+（3） 对于任意$p\in\mathcal{L}_\mathcal{A}$ 是[[MK132][谓词符号]]且 $\pi_P(p)=n$ 则对于任意 $<a_1,...,a_n>\subset M^n$
+
+     使得 $<a_1,...,a_n>\in I(p)$ 有 $<e(a_1),...,e(a_n)>=<e'(a_1),...,e'(a_n)>\in J'(p)$
+
+     又由于 $e'(a_i)\in N'$ 故可得 $<e(a_1),...,e(a_n)>\in J(p)$
+
+综上所述， $e$ 是 $\mathcal{M}$ 到 $\mathcal{N}$ 的[[MK518][嵌入映射]]
+
 ** 可定义性<<MK476>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{M}=<M,I>$ ，对于 $Z\subset M$ 以及 $Y\in M^n$ 若有：
@@ -7966,7 +8160,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 即 $\mathcal{M}\vDash\phi[a_1,...,a_n,b_1,...,b_m]$ 又根据[[MK476][可定义]]可得 $<a_1,...,a_n>\in Y$ 
 
-** 无断点线性稠密序
+** 无端点线性稠密序
 
 *** 语言<<MK502>>
 
@@ -7990,7 +8184,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 （5） $(\forall x_1(\exists x_2 p_<(x_2,x_1)))$
 
-若满足以下公理，则为 *无断点线性稠密序*
+若满足以下公理，则为 *无端点线性稠密序*
 
 （6） $(\forall x_1(\forall x_2(p_<(x_1,x_2)\to(\exists x_3(p_<(x_1,x_3)\land p_<(x_3,x_2))))))$
 
@@ -7998,7 +8192,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 **** 引理1<<MK504>>
 
-[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,<p_<,\lessdot>>$ 是[[MK503][线性稠密序]]
+[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,\{<p_<,\lessdot>\}>$ 是[[MK503][无端点线性稠密序]]
 
 则对于任意 $F\subset A$ 为[[MK42][有限集]]，存在 $a\in F$ 满足对于任意 $x\in F$ 且 $x\ne a$ 均有 $x\lessdot a$
 
@@ -8034,7 +8228,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 ***** 推论<<MK505>>
 
-[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,<p_<,\lessdot>>$ 是[[MK503][线性稠密序]]
+[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,\{<p_<,\lessdot>\}>$ 是[[MK503][线性稠密序]]
 
 则对于任意 $F\subset A$ 为[[MK42][有限集]]，存在 $a\in F$ 满足对于任意 $x\in F$ 且 $x\ne a$  均有 $a\lessdot x$
 
@@ -8044,15 +8238,15 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 **** 引理2<<MK506>>
 
-[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,<p_<,\lessdot>>$ 是[[MK503][线性序]] $\mathcal{N}=<B,<p_<,\prec>>$ 是[[MK503][线性稠密序]]
+[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,\{<p_<,\lessdot>\}>$ 是[[MK503][线性序]] $\mathcal{N}=<B,\{<p_<,\prec>\}>$ 是[[MK503][线性稠密序]]
 
-若 $F\subset A,E\subset B$ 均为[[MK42][有限集]]，其定义[[MK471][子结构]]为 $\mathcal{F}=<F,<p_<,\lessdot\cap F^2>>,\mathcal{E}=<E,<p_<,\prec\cap E^2>>$
+若 $F\subset A,E\subset B$ 均为[[MK42][有限集]]，其定义[[MK471][子结构]]为 $\mathcal{F}=<F,\{<p_<,\lessdot\cap F^2>\}>,\mathcal{E}=<E,\{<p_<,\prec\cap E^2>\}>$
 
 且存在 $h:F\to E$ 是 $\mathcal{F}$ 到 $\mathcal{E}$ 的[[MK471][同构映射]]，则对于任意 $a\in A-F$ 存在 $b\in B-E$
 
-使得 $h'=h\cup<a,b>$ 是[[MK471][子结构]] $\mathcal{F}'=<F\cup\{a\},<p_<,\lessdot\cap(F\cup\{a\})^2>>$
+使得 $h'=h\cup<a,b>$ 是[[MK471][子结构]] $\mathcal{F}'=<F\cup\{a\},\{<p_<,\lessdot\cap(F\cup\{a\})^2>\}>$
 
-到 $\mathcal{E}'=<E\cup\{b\},<p_<,\prec\cap(E\cup\{b\})^2>>$ 的[[MK471][同构映射]]
+到 $\mathcal{E}'=<E\cup\{b\},\{<p_<,\prec\cap(E\cup\{b\})^2>\}>$ 的[[MK471][同构映射]]
 
 ***** 证明
 
@@ -8098,11 +8292,135 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 综上所述，根据[[MK502][语言]]定义可得 $h'$ 为 $\mathcal{F}'$ 到 $\mathcal{E}'$ 的[[MK471][同构映射]]
 
+**** 引理3<<MK508>>
+
+[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在[[MK446][结构]] $\mathcal{M}=<\mathbb{R},\{<p_<,<\ >\}>$ 即论域为 $\mathbb{R}$ 且 $p_<$ 对应为实数的小于
+
+若 $Y\subset\mathbb{R}$ 是一个[[MK42][有限集]]，对于任意两个 $\{a,b\}\subset\mathbb{R}$ 定义[[MK155][关系]] $\mathcal{R}$ 为若 $a\mathcal{R}b$ 则存在[[MK471][自同构映射]] $e$ 满足：
+
+（1） $e(a)=e(b)$
+
+（2） $\forall y\in Y\rightarrow e(y)=y$
+
+则有：
+
+（1） $\mathcal{R}$ 是[[MK176][等价关系]]
+
+（2） 若 $a\in Y$ 则其[[MK177][等价类]] $[a]_\mathcal{R}=\{a\}$
+
+     若 $a\not\in Y$ 则 $[a]_\mathcal{R}$ 为 $(-\infty,\min(Y)),(\max(Y),+\infty)$ 或者 $(b_1,b_2)$
+
+     满足 $b_1\in Y\land b_2\in Y\land (b_1,b_2)\cap Y=\varnothing$
+
+***** 证明
+
+由于 $Y\subset\mathbb{R}$ 是一个[[MK42][有限集]]，则有 $\min(Y)\in Y,\max(Y)\in Y$
+
+****** 是[[MK176][等价关系]]
+
+显然单位映射 $e(a)=a$ 是[[MK471][同构映射]]，故对于任意 $a\in\mathbb{R}$ 有 $a\mathcal{R}a$ 满足[[MK168][自反性]]
+
+由于[[MK471][同构映射]]是[[MK200][双射函数]]，故根据[[MK481][引理]]可得其[[MK203][逆映射]]亦为[[MK471][同构映射]]，即有 $a\mathcal{R}b\rightarrow b\mathcal{R}a$ 即[[MK170][对称性]]
+
+若有 $a\mathcal{R}b,b\mathcal{R}c$ 则存在满足条件的[[MK471][同构映射]] $e_1,e_2$ 则易证 $e_2\cdot e_1$ 亦为[[MK471][同构映射]]，故满足[[MK172][传递性]]
+
+综上所述，关系 $\mathcal{R}$ 是[[MK176][等价关系]]
+
+****** 证明[[MK177][等价类]]
+
+******* 若 $a\in Y$ 
+
+对于任意 $a\mathcal{R}b$ 则存在[[MK471][同构映射]] $e$ 使得 $e(a)=b$ 且 $\forall y\in Y\rightarrow e(y)=y$
+
+由于 $a\in Y$ 则根据第二条有且仅有 $e(a)=a$
+
+******* 若 $a\not\in Y$
+
+以下仅证 $a<\min(Y)$ 的情况，其他两种情况同理可证
+
+假设存在满足条件的[[MK471][同构映射]] $e$ 使得 $e(a)=b$ 不满足 $b<\min(Y)$
+
+由于 $a<\min(Y)$ 故根据[[MK471][同构]]定义可得 $e(a)<e(\min(Y))$ 即 $b<e(\min(Y))$ 由于 $\min(Y)\in Y$
+
+故有 $e(\min(Y))=\min(Y)$ 显然与 $b<\min(Y)$ 矛盾，故假设不成立。即 $x\in[a]_\mathcal{R}\rightarrow x<\min(Y)$
+
+对于任意 $b<\min(Y)$ 构建映射 $e(x)=\begin{cases}x&x\geq\min(Y)\\\frac{\min(Y)-b}{\min(Y)-a}(x-a)+b&x<\min(Y)\end{cases}$
+
+易证上述分段直线函数是[[MK200][双射函数]]，且由于 $a,b$ 均小于 $\min(Y)$ 故 $e$ 是递增函数
+
+则对于任意 $\{x,y\}\subset\mathbb{R}$ 满足 $x<y$ 均有 $e(x)<e(y)$ 即 $e$ 是[[MK471][同构映射]]，且对于任意 $y\in Y$ 必有 $y\geq\min(Y)$
+
+进而有 $e(y)=y$ 即 $e$ 是满足条件的同构映射
+
+综上所述，对于任意 $a<\min(Y)$ 可得不存在 $b\geq\min(Y)$ 满足 $b\in[a]_\mathcal{R}$ ，且对于任意 $b<\min(Y)$
+
+均有 $b\in[a]_\mathcal{R}$ 即 $[a]_\mathcal{R}=(-\infty,\min(Y))$
+
+**** 引理4<<MK517>>
+
+[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<M,\{<p_<,\prec>\}>,\mathcal{N}=<N,\{<p_<,\prec>\}>$ 两个[[MK446][结构]]是[[MK503][无端点线性稠密序]]
+
+且 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]，且 $A\in\text{Def}_1(\mathcal{N},M)$ 且 $A\cap M=\bigcup_{i=1}^n(a_i,b_i)_\mathcal{M}$
+
+其中 $(a_i,b_i)_\mathcal{M}$ 是基于 $\mathcal{M}$ 上的区间，则 $A=\bigcup_{i=1}^n(a_i,b_i)_\mathcal{N}$ 其中 $(a_i,b_i)_\mathcal{N}$ 是 $\mathcal{N}$ 上的区间
+
+***** 证明
+
+****** 定义 $\theta$ 以及 $A^*$
+
+若 $(a_i,b_i)_\mathcal{M}$ 是开区间，则定义 $\theta_i=(p_<(x_{i},x_{3n})\land p_<(x_{3n},x_{n+i}))$
+
+若为闭区间，则定义 $\theta_i=((p_<(x_{i},x_{3n})\land p_<(x_{3n},x_{n+i}))\lor(x_i\hat{=}x_{i})\lor(x_{3n}\hat{ =}x_{n+i}))$
+
+若为半开闭，则根据同理易证可写出 $\theta_i$ 表达式。
+
+定义 $\theta=(\theta_1\lor...\lor\theta_n)$ 进而定义 $A^*$ 是 $\mathcal{N}$ 基于 $\theta$ 参数为 $v(x_i)=a_i\in M,v(x_{n+1})=b_i\in M$
+
+变量为 $x_{3n}$ 所[[MK476][定义]]的集合，显然 $A^*=\bigcup_{i=1}^n(a_i,b_i)_\mathcal{N}$ 且 $A^*\in\text{Def}_1(\mathcal{N},M)$
+
+根据[[MK514][推论]]可得 $\mathcal{M}$ 同样可基于 $\theta$ 定义集合 $B\in\text{Def}_1(\mathcal{M},M)$
+
+显然满足 $B=\bigcup_{i=1}^n(a_i,b_i)_\mathcal{M}=A^*\cap M=A\cap M$
+
+****** 定义 $A'=(A^*-A)\cup(A-A^*)$ 证明 $A'\in\text{Def}_1(\mathcal{N},M)$ 
+
+若 $A^*\ne A$ 则 $A'=(A^*-A)\cup(A-A^*)$ 假设 $A$ 由[[MK135][表达式]] $\theta'(x_{3n},x_{4n+1},...,x_{4n+m})$ 定义
+
+其中 $v(x_{4n+i})=c_i$ 为参数 $x_{3n}$ 为变量，则定义表达式 $\theta^*=(((\lnot\theta)\land\theta')\lor(\theta\land(\lnot\theta')))$
+
+其中参数为 $v(x_i)=a_i\in M,v(x_{n+1})=b_i\in M,v(x_{4n+i})=c_i\in M$ 变量为 $x_{3n}$
+
+显然[[MK449][满足]] $\theta$ 等价于 $v(x_{3n})\in A^*$ 不满足等价于 $v(x_{3n})\not\in A^*$
+
+[[MK449][满足]] $\theta'$ 等价于 $v(x_{3n})\in A$ 不满足等价于 $v(x_{3n})\not\in A$
+
+总上所述，[[MK449][满足]] $\theta^*$ 等价与 $v(x_{3n})\in (A^*-A)$ 或 $v(x_{3n})\in (A-A^*)$ 即 $v(x_{3n})\in A'$
+
+即由 $\theta^*$ 可在 $\mathcal{N}$ 上[[MK476][定义]] $A'\in\text{Def}_1(\mathcal{N},M)$
+
+****** 假设 $A'\ne\varnothing$ 证明结论
+
+若 $A^*\ne A$ 则显然有 $A'\ne\varnothing$ 故对于任意 $x\in A'$ 假设 $x\in M$
+
+若 $x\in A-A^*$ 则 $x\in A$ 则有 $x\in A\cap M$ 同时 $x\not\in A^*$ 即有 $x\not\in M\cap A^*$
+
+又由于 $A\cap M=A^*\cap M$ 故矛盾，此种情况下假设 $x\in M$ 不成立
+
+若 $x\in A^*-A$ 同理可证此种情况下假设 $x\in M$ 亦不成立
+
+综上所述，对于任意 $x\in A'$ 假设 $x\in M$ 不成，故对于任意 $x\in A'$ 均有 $x\not\in M$ 即 $A'\cap M=\varnothing$
+
+又由于 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]， $A'\ne\varnothing$ 且 $A'\in\text{Def}_1(\mathcal{N},M)$
+
+故根据[[MK501][塔尔斯基定理]]可得 $A\cap M\ne\varnothing$ 故矛盾，则假设 $A'\ne\varnothing$ 不成立
+
+即有 $A=A^*=\bigcup_{i=1}^n(a_i,b_i)_\mathcal{N}$
+
 *** 定理
 
-**** 康托定理
+**** 康托定理<<MK511>>
 
-[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,<p_<,\lessdot>>,\mathcal{N}=<B,<p_<,\prec>>$ 两个[[MK446][结构]]是[[MK503][线性稠密序]]
+[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,\{<p_<,\lessdot>\}>,\mathcal{N}=<B,\{<p_<,\prec>\}>$ 两个[[MK446][结构]]是[[MK503][无端点线性稠密序]]
 
 若 $A,B$ 均为[[MK44][可数集]]，则 $\mathcal{M}$ 与 $\mathcal{N}$ [[MK471][同构]]
 
@@ -8112,7 +8430,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 则根据以下证明以及数学归纳法，可得对于任意 $n\in\mathbb{N}$ 均有：
 
-（1） $h_n$ 是 $<A_n,<p_<,\lessdot_n>>$ 到 $<B_n,<p_<,\prec_n>>$ 的[[MK471][同构函数]]
+（1） $h_n$ 是 $<A_n,\{<p_<,\lessdot_n>\}>$ 到 $<B_n,\{<p_<,\prec_n>\}>$ 的[[MK471][同构函数]]
 
 （2） $A_n\subset A,B_n\subset B$
 
@@ -8134,13 +8452,13 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 综上所述，结合和[[MK502][语言]]定义可得 $h$ 是 $\mathcal{M}$ 与 $\mathcal{N}$ 的[[MK471][同构函数]]
 
-****** 定义 $h_1,<A_1,<p_<,\lessdot_1>>,<B_1,<p_<,\prec_1>>$
+****** 定义 $h_1,<A_1,\{<p_<,\lessdot_1>\}>,<B_1,\{<p_<,\prec_1>\}>$
 
 任取 $\{f^{-1}(1),f^{-1}(2)\}\subset A,\{g^{-1}(1),g^{-1}(2)\}\subset B$ 构成 $A_1,B_1$
 
 根据[[MK503][公理（3）]]可得 $f^{-1}(1)\lessdot f^{-1}(2),f^{-1}(2)\lessdot f^{-1}(1)$ 必有一个成立，同理 $B_0$ 中元素亦有序关系
 
-则显然可以构造 $<A_1,<p_<,\lessdot_1>>$ 到 $<B_1,<p_<,\prec_1>>$ 的[[MK471][同构映射]] $h_1$
+则显然可以构造 $<A_1,\{<p_<,\lessdot_1>\}>$ 到 $<B_1,\{<p_<,\prec_1>\}>$ 的[[MK471][同构映射]] $h_1$
 
 ****** 归纳假设
 
@@ -8154,25 +8472,25 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 （4） $f^{-1}(i)\in A_i,g^{-1}(i)\in B_i$
 
-****** 定义 $h_n,<A_n,\lessdot_n>,<B_n,\prec_n>$
+****** 定义 $h_n,<A_n,\{<p_<,\lessdot_n>\}>,<B_n,\{<p_<,\prec_n>\}>$
 
 ******* 正向取
 
 取 $a_n=f^{-1}(n)$ 若 $a_n\in A_{n-1}$ 则由于 $h_{n-1}$ 是[[MK194][函数]]可得存在 $b$ 满足 $b=h_{n-1}(a_n)$
 
-则定义 $h'_n=h_{n-1}, A'_n=A_{n-1},B'_n=B_{n-1}$ 根据归纳假设显然 $h'_n$ 是 $<A'_n,<p_<,\lessdot'_n>>$
+则定义 $h'_n=h_{n-1}, A'_n=A_{n-1},B'_n=B_{n-1}$ 根据归纳假设显然 $h'_n$ 是 $<A'_n,\{<p_<,\lessdot'_n>\}>$
 
-到 $<B'_n,<p_<,\prec'_n>>$ 的[[MK471][同构函数]]且 $h_{n-1}\subset h'_n$ 以及 $a_n\in A'_n$ ，其中 $\lessdot'_n=\lessdot_{n-1},\prec'_n=\prec_{n-1}$
+到 $<B'_n,\{<p_<,\prec'_n>\}>$ 的[[MK471][同构函数]]且 $h_{n-1}\subset h'_n$ 以及 $a_n\in A'_n$ ，其中 $\lessdot'_n=\lessdot_{n-1},\prec'_n=\prec_{n-1}$
 
 若 $a_n\not\in A_{n-1}$ ，则有 $a_n\in A-A_n$ ，则根据[[MK506][引理2]]可得存在 $b\in B-B_{n-1}$
 
-定义 $A'_n=A_{n-1}\cup\{a_n\},B'_n=B_{n-1}\cup\{b\}$ ，则有 $h'_n=h_{n-1}\cup<a_n,b>$ 是 $<A'_n,<p_<,\lessdot'_n>>$
+定义 $A'_n=A_{n-1}\cup\{a_n\},B'_n=B_{n-1}\cup\{b\}$ ，则有 $h'_n=h_{n-1}\cup<a_n,b>$
 
-到 $<B'_n,<p_<\prec'_n>>$ 的[[MK471][同构函数]]且 $h_{n-1}\subset h'_n$ 以及 $a_n\in A'_n$
+是 $<A'_n,\{<p_<,\lessdot'_n>\}>$ 到 $<B'_n,\{<p_<\prec'_n>\}>$ 的[[MK471][同构函数]]且 $h_{n-1}\subset h'_n$ 以及 $a_n\in A'_n$
 
 其中 $\lessdot'_n=\lessdot_{n-1}\cap A'_n^2,\prec'_n=\prec_{n-1}\cap B'_n^2$
 
-综上所述，可得 $h_{n-1}\subset h'_n$ ， $h'$ 是 $<A'_n,<p_<,\lessdot'_n>>$ 到 $<B'_n,<p_<\prec'_n>>$ 的[[MK471][同构函数]]
+综上所述，可得 $h_{n-1}\subset h'_n$ ， $h'$ 是 $<A'_n,\{<p_<,\lessdot'_n>\}>$ 到 $<B'_n,\{<p_<\prec'_n>\}>$ 的[[MK471][同构函数]]
 
 以及 $a_n\in A'_n$
 
@@ -8180,19 +8498,193 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 取 $b_n=g^{-1}(n)$ 若 $b_n\in B_{n-1}$ 则由于 $h'_{n-1}$ 是[[MK471][同构函数]]故是[[MK200][双射函数]]，则可得存在 $a$ 满足 $a=h'_{n-1}(a)$
 
-则定义 $h_n=h'_n, A_n=A'_n,B_n=B'_n$ 显然根据上一步证明 $h_n$ 是 $<A_n,<p_<,\lessdot_n>>$
+则定义 $h_n=h'_n, A_n=A'_n,B_n=B'_n$ 显然根据上一步证明 $h_n$ 是 $<A_n,\{<p_<,\lessdot_n>\}>$
 
-到 $<B_n,<p_<,\prec_n>>$ 的[[MK471][同构函数]]， $h_{n-1}\subset h'_n\subset h_n$ 以及 $a_n\in A'_n\subset A_n,b_n\in B_n$
+到 $<B_n,\{<p_<,\prec_n>\}>$ 的[[MK471][同构函数]]， $h_{n-1}\subset h'_n\subset h_n$ 以及 $a_n\in A'_n\subset A_n,b_n\in B_n$
 
 若 $b_n\not\in B_{n-1}$ ，则有 $b_n\in B-B'_n$ ，根据[[MK506][引理2]]可得存在 $a\in A-A'_n$ 
 
-定义 $A_n=A'_n\cup\{a\},B_n=B'_n\cup\{b_n\}$ ，则有 $h_n=h'_n\cup<a_n,b>$ 是 $<A_n,<p_<,\lessdot_n>>$
+定义 $A_n=A'_n\cup\{a\},B_n=B'_n\cup\{b_n\}$ ，则有 $h_n=h'_n\cup<a_n,b>$ 是 $<A_n,\{<p_<,\lessdot_n>\}>$
 
 到 $<B_n,<p_<,\prec_n>>$ 的[[MK471][同构函数]]， $h_{n-1}\subset h'_n\subset h_n$ 以及 $a_n\in A'_n\subset A_n,b_n\in B_n$
 
-综上所述，结合上一步证明有 $h_{n-1}\subset h'_n\subset h_n$ ， $h_n$ 是 $<A_n,<p_<,\lessdot_n>>$
+综上所述，结合上一步证明有 $h_{n-1}\subset h'_n\subset h_n$ ， $h_n$ 是 $<A_n,\{<p_<,\lessdot_n>\}>$
 
-到 $<B_n,<p_<,\prec_n>>$ 的[[MK471][同构函数]]，以及 $a_n\in A_n,b_n\in B_n$
+到 $<B_n,\{<p_<,\prec_n>\}>$ 的[[MK471][同构函数]]，以及 $a_n\in A_n,b_n\in B_n$
+
+**** 实数轴区间定理<<MK509>>
+
+[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在[[MK446][结构]] $\mathcal{M}=<\mathbb{R},\{<p_<,<\ >\}>$ 即论域为 $\mathbb{R}$ 且 $p_<$ 对应为实数的小于
+
+则对于任意 $X\subset\mathbb{R},A\subset\mathbb{R}$ 且 $A\ne\varnothing$ 均有 $A\in\text{Def}_1(\mathcal{M},X)$ 的充要条件
+
+是 $A$ 为[[MK42][有限]]个端点在 $X$ 中的区间的并
+
+***** 证明
+
+****** 充分
+
+若 $A\in\text{Def}_1(\mathcal{M},X)$ 则存在 $\phi(x_1,...x_{n+1})\in\mathcal{L}_\mathcal{A}$ 使得 $a\in A$ 的充要条件是 $\mathcal{M}\vDash\phi[b_1,b_2,...,b_{n+1}]$
+
+定义 $Y=\{b_2,...,b_{n+1}\}$ 取任意[[MK471][同构映射]] $e$ 满足 $\forall b\in Y\rightarrow e(b)=b$ 则根据[[MK475][定理]]可得
+
+任意[[MK447][赋值]] $v$ 使得 $v(x_1)=a$ 能[[MK449][满足]] $<\mathcal{M},v>\vDash\phi[v(x_1),b_1,...,b_n]$
+
+的充要条件是 $<\mathcal{M},v\cdot e>\vDash\phi[v\cdot e(x_1),b_1,...,b_n]$ 由于 $v(x_1)=a$ 即有 $v\cdot e(x_1)=e(a)$ 
+
+则根据[[MK452][局部确定性定理]]可得若 $\mathcal{M}\vDash\phi[a,b_1,...,b_n]$ 则有 $\mathcal{M}\vDash\phi[e(a),b_1,...,b_n]$
+
+故对于任意 $a\in A$ 若存在[[MK471][同构映射]] $e$ 满足 $e(a)=b$ 以及 $\forall b\in Y\rightarrow e(b)=b$ 则 $b\in A$
+
+则根据[[MK508][引理3]]可得满足该条件的元素组成等价关系，即 $[a]_\mathcal{R}\subset A$ 其中 $\mathcal{R}$ 表示满足上述条件的关系
+
+故显然 $A=\bigcup_{a\in A}[a]_\mathcal{R}$ 。又根据[[MK508][引理3]]可得对于任意 $a\in A$ 其[[MK177][等价类]] $[a]_\mathcal{R}$ 仅有可能有 $Y$ 中的点
+
+以及他们与 $\pm\infty$ 组成的开区间，又由于 $Y$ 是[[MK42][有限集]]，则易证 $Y$ 中的点组成的区间亦为[[MK42][有限]]个
+
+则易证 $A$ 必为以 $Y\cup\{+\infty,-\infty\}$ 中的端点组成的有限个区间的并
+
+****** 必要
+
+若 $A$ 是有限个 $X$ 中的点组成区间的并，定义为 $(b_2,b_3),...,(b_n,b_{n+1})$
+
+则定义 $\phi=((p_<(x_2,x_1)\land p_<(x_1,x_3))\lor...\lor(p_<(x_n,x_1)\land p_<(x_1,x_{n+1})))$
+
+显然对于任意 $a\in\mathbb{R}$ 有[[MK449][满足关系]] $\mathcal{M}\vDash\phi[a,b_1,...,b_n]$ 均为 $(b_2,b_3),...,(b_n,b_{n+1})$ 的并中的元素
+
+故可得 $A$ 是以 $X$ 为参数在 $\mathcal{M}$ 中[[MK476][可定义]]的集合
+
+***** 推论<<MK516>>
+
+[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在[[MK446][结构]] $\mathcal{M}=<\mathbb{Q},\{<p_<,<\ >\}>$ 即论域为 $\mathbb{R}$ 且 $p_<$ 对应为有理数的小于
+
+则对于任意 $X\subset\mathbb{Q},A\subset\mathbb{Q}$ 且 $A\ne\varnothing$ 均有 $A\in\text{Def}_1(\mathcal{M},X)$ 的充要条件
+
+是 $A$ 为[[MK42][有限]]个端点在 $X$ 中的区间的并
+
+****** 证明
+
+显然 $\mathcal{M}=<\mathbb{Q},\{<p_<,<\ >\}>$ 是[[MK503][无端点线性稠密序]]，则根据[[MK515][同质子轴定理]]
+
+可得 $\mathcal{M}$ 是 $\mathcal{N}=<\mathbb{R},\{<p_<,<\ >\}>$ 的[[MK478][同质子结构]]
+
+则对于任意 $A\in\text{Def}_1(\mathcal{M},X)$ 存在[[MK135][表达式]] $\phi(x_1,...,x_{n+1})$ 满足 $a\in A$ 的充要条件是 $\mathcal{M}\vDash\phi[a,b_1,...,b_n]$
+
+则根据[[MK514][推论2]]可得表达式 $\phi$ 以同样参数 $b_1,...,b_n$ 在 $\mathcal{N}$ 上定义的集合 $A^*$ 满足 $A=A^*\cap \mathbb{Q}$
+
+根据[[MK509][区间定理]]可得 $A^*$ 是[[MK42][有限]]个端点在 $X$ 中的区间的并
+
+则显然 $A=A^*\cap\mathbb{Q}$ 亦为[[MK42][有限]]个端点在 $X$ 中定义在 $\mathbb{Q}$ 上的区间的并
+
+**** 实数[[MK487][同质]]子轴定理<<MK515>>
+
+[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在[[MK446][结构]] $\mathcal{M}=<\mathbb{R},\{<p_<,<\ >\}>$ 若 $X\subset\mathbb{R}$ 以及 $<_X=<\cap X^2$ 进而定义 $\mathcal{N}=<X,\{p_<,<_X\}>$
+
+故有 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK478][同质子结构]]的充要条件是 $\mathcal{N}$ 是[[MK503][无端点线性稠密序]]
+
+***** 证明
+
+****** 充分
+
+定义
+
+\begin{aligned}
+\theta=&((\forall x_1(\lnot p_<(x_1,x_1)))\land\\
+&((\forall x_1(\forall x_2(\forall x_3((p_<(x_1,x_2)\land p_<(x_2,x_3))\to p_<(x_1,x_3))))))\land\\
+&((\forall x_1(\forall x_2((\lnot(x_1\hat{=}x_2))\to(p_<(x_1,x_2)\lor p_<(x_2,x_1))))))\land\\
+&((\forall x_1(\exists x_2 p_<(x_1,x_2))))\land\\
+&((\forall x_1(\exists x_2 p_<(x_2,x_1))))\land\\
+&((\forall x_1(\forall x_2(p_<(x_1,x_2)\to(\exists x_3(p_<(x_1,x_3)\land p_<(x_3,x_2))))))))
+\end{aligned}
+
+即 $\theta\in\mathcal{L}_{\mathcal{A}_<}$ 是无端点线性稠密序的所有[[MK503][公理]]组成的[[MK451][语句]]，若[[MK449][满足]] $\theta$ 则[[MK446][结构]]是无端点线性稠密序
+
+若 $\mathcal{N}\prec\mathcal{M}$ ，显然有 $\mathcal{M}\vDash\theta$ 根据[[MK487][定义]]可得 $\mathcal{N}\vDash\theta$ 故可得 $\mathcal{N}$ 是[[MK503][无端点线性稠密序]]
+
+****** 必要
+
+若 $\mathcal{N}$ 是[[MK503][无端点线性稠密序]]，根据[[MK509][区间定理]]可得任意非空 $A\in\text{Def}_1(\mathcal{M},X)$ 均为 $X\cup\{-\infty,+\infty\}$
+
+中取有限个点组成的区间的并，故对于任意区间 $(a,b)$ 满足 $a\in X,b\in X$ 则根据[[MK503][公理（6）]]
+
+可得存在 $c\in X$ 满足 $c\in(a,b)$ 若 $a=-\infty$ 或 $b=+\infty$ 则根据[[MK503][公理（4）（5）]]可得存在 $c$
+
+满足 $c<b$ 或 $a<c$ 。综上所述，对于任意非空 $A\in\text{Def}_1(\mathcal{M},X)$ 均有 $A\cap X\ne\varnothing$
+
+显然 $X\subset\mathbb{R}$ 且 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK483][子结构]]，则根据[[MK501][塔尔斯基准则]]可得 $\mathcal{N}\prec\mathcal{M}$
+
+**** 区间定理
+
+[[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<M,\{<p_<,\lessdot>\}>$ 是[[MK503][无端点线性稠密序]]，则必有：
+
+（1） $\mathcal{M}$ 与 $<\mathbb{Q},\{<p_<,<\ >\}>$ [[MK148][同样]]，其中 $\mathbb{Q}$ 是有理数， $<$ 是有理数上的序
+
+（2） 对于任意 $X\subset M$ 以及 $A\in\text{Def}_1(\mathcal{M},X)$ 均有 $A$ 是有限个端点在 $X$ 中的区间的并
+
+***** 证明
+
+****** 证明（1）
+
+根据[[MK510][存在性定理]]可得 $\mathcal{M}$ 存在的[[MK487][同质子结构]] $\mathcal{N}=<N,\{<p_<,\lessdot_N>\}>$ 其中 $N\subset M,\lessdot_N=\lessdot\cap N^2$
+
+且 $N$ 是[[MK44][可数集]]，又由于 $\mathbb{Q}$ 是[[MK325][可数集]]，则根据[[MK511][康托定理]]可得 $\mathcal{N}$ 与 $<\mathbb{Q},\{<p_<,<\ >\}>$ [[MK471][同构]]
+
+根据[[MK512][推论]]可得 $\mathcal{N}$ 与 $<\mathbb{Q},\{<p_<,<\ >\}>$ [[MK148][同样]]，又根据[[MK513][推论1]]可得 $\mathcal{N}$ 与 $\mathcal{M}$ [[MK148][同样]]
+
+综上所述， $\mathcal{N}\vDash\theta$ 的充要条件是 $<\mathbb{Q},\{<p_<,<\ >\}>\vDash\theta$ 即 $\mathcal{M}$ 与 $<\mathbb{Q},\{<p_<,<\ >\}>$ [[MK148][同样]]
+
+****** 证明（2）
+
+对于任意 $A\in\text{Def}_1(\mathcal{M},X)$ 存在[[MK135][表达式]] $\phi(x_1,...,x_{n+1})$ 满足 $a\in A$ 的充要条件是 $\mathcal{M}\vDash\phi[a,b_1,...,b_n]$
+
+******* [[MK487][同质子结构]] $\mathcal{N}=<Y',\{<p_<,\lessdot_{Y'}>\}>$ 
+
+易证存在[[MK44][可数集]] $Y\subset M$ 满足 $b_i\in Y$ 则根据[[MK510][存在性定理]]可得存在 $Y'$
+
+满足 $\mathcal{N}=<Y',\{<p_<,\lessdot_{Y'}>\}>$ 是 $\mathcal{M}$ 的[[MK487][同质子结构]]，其中 $\lessdot_{Y'}=\lessdot\cap (Y')^2$
+
+******* $\mathcal{N}$ 是[[MK503][无端点线性稠密序]]
+
+定义
+
+\begin{aligned}
+\theta=&((\forall x_1(\lnot p_<(x_1,x_1)))\land\\
+&((\forall x_1(\forall x_2(\forall x_3((p_<(x_1,x_2)\land p_<(x_2,x_3))\to p_<(x_1,x_3))))))\land\\
+&((\forall x_1(\forall x_2((\lnot(x_1\hat{=}x_2))\to(p_<(x_1,x_2)\lor p_<(x_2,x_1))))))\land\\
+&((\forall x_1(\exists x_2 p_<(x_1,x_2))))\land\\
+&((\forall x_1(\exists x_2 p_<(x_2,x_1))))\land\\
+&((\forall x_1(\forall x_2(p_<(x_1,x_2)\to(\exists x_3(p_<(x_1,x_3)\land p_<(x_3,x_2))))))))
+\end{aligned}
+
+即 $\theta\in\mathcal{L}_{\mathcal{A}_<}$ 是无端点线性稠密序的所有[[MK503][公理]]组成的[[MK451][语句]]，若[[MK449][满足]] $\theta$ 则[[MK446][结构]]是无端点线性稠密序
+
+若 $\mathcal{N}\prec\mathcal{M}$ ，根据条件有 $\mathcal{M}\vDash\theta$ 根据[[MK487][定义]]可得 $\mathcal{N}\vDash\theta$ 故可得 $\mathcal{N}$ 是[[MK503][无端点线性稠密序]]
+
+******* $\mathcal{N}$ 与 $\mathcal{S}=<\mathbb{Q},\{<p_<,<\ >\}>$ [[MK471][同构]] 
+
+定义 $\mathcal{S}=<\mathbb{Q},\{<p_<,<\ >\}>$ 显然 $\mathbb{Q}$ 是[[MK44][可数集]]且 $\mathcal{S}$ 是[[MK503][无端点线性稠密序]]
+
+又由于 $Y'$ 是[[MK44][可数集]]，则根据[[MK511][康托定理]]可得 $\mathcal{N}$ 与 $\mathcal{S}$ [[MK471][同构]]，定义[[MK471][同构映射]]为 $e:Y'\to\mathbb{Q}$
+
+******* 结论
+
+定义 $\mathcal{N}$ 上由表达式 $\phi$ ，参数 $B=\{b_1,..,b_n\}$ 变量 $x_1$ 定义的集合为 $A'\in\text{Def}_1(\mathcal{N},B)$
+
+定义在 $\mathcal{S}$ 上由表达式 $\phi$ ，参数 $B'=\{e(b_1),..,e(b_n)\}$ 变量 $x_1$ 定义的集合为 $A''\in\text{Def}_1(\mathcal{S},B')$
+
+根据[[MK475][定理]]可得 $\mathcal{N}\vDash\phi[a,b_1,...,b_n]$ 的充要条件是 $\mathcal{S}\vDash\phi[e(a),e(b_1),...,e(b_n)]$
+
+根据[[MK476][可定义]]有 $e(a)\in A''$ 的充要条件为 $\mathcal{S}\vDash\phi[e(a),e(b_1),...,e(b_n)]$
+
+以及 $a\in A'$ 的充要条件为 $\mathcal{N}\vDash\phi[a,b_1,...,b_n]$ ，即 $a\in A'$ 的充要条件为 $e(a)\in A''$
+
+根据[[MK516][推论]] $A''$ 为 $\mathcal{S}$ 上[[MK42][有限]]个端点在 $B'$ 中的区间的并
+
+易证 $A'$ 亦为 $\mathcal{N}$ 上[[MK42][有限]]个端点在 $B$ 中的区间的并
+
+根据[[MK514][推论2]]可得 $A'=A\cap Y'$ ，则根据 $\mathcal{N}\prec\mathcal{M}$ ，均为[[MK503][无端点线性稠密序]]且 $A\in\text{Def}_1(\mathcal{M},X)$
+
+则根据[[MK517][引理4]]可得 $A$ 为 $\mathcal{M}$ 上[[MK42][有限]]个端点在 $B$ 中的区间的并
 
 * 图论
 
