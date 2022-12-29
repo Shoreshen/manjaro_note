@@ -30,7 +30,7 @@ installall:
 # 	fi
 
 connect:
-	echo $(PW) | sudo -S openvpn --config ~/文档/ffff.ovpn --auth-user-pass ~/文档/auth.txt
+	echo $(PW) | sudo -S openvpn --config ~/文档/str-sfo101_a340373.ovpn --auth-user-pass ~/文档/auth.txt
 
 set_dns:  
 ifeq ($(DIF),)

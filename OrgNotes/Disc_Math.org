@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 543
+currnet mark: 552
 
 free mark:
  
@@ -5819,6 +5819,8 @@ MU是否系统中的串？
 
 则定义 $T=\bigcap\mathcal{S}$ 是所有合成封闭子集的交，则 $T$ 中的元素为项
 
+定义 $\tau(x_1,...,x_n)$ 为项 $\tau$ 中的[[MK441][自由变元]]均在 $x_1,...,x_n$ 中
+
 **** 相等
 
 对于任意 $\tau_1\in T,\tau_2\in T$ 若满足 $|\tau_1|=|\tau_2|\land\forall i<|\tau_1|\rightarrow \tau_1[i]=\tau_2[i]$
@@ -6050,6 +6052,8 @@ $\tau_i[j]$ 与 $\tau[|\tau|]$ 间 $)$ 的对数为为 $\tau_i[j]$ 与 $\tau[|\t
 进一步定义 $\mathcal{L}=\bigcap L$ 即所有表达式封闭子集的交，则 $\mathcal{L}$ 中的元素为表达式
 
 进一步定义（1）（2）为原始表达式，（3）（4）（5）为递归表达式
+
+定义 $\phi(x_1,...,x_n)$ 为表达式 $\phi$ 中的[[MK441][自由变元]]均在 $x_1,...,x_n$ 中
 
 **** 相等<<MK141>>
 
@@ -6877,7 +6881,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash((\psi_1\to
 
 易证反之依然，故等价
 
-***** 存在量词
+***** 存在量词<<MK550>>
 
 若 $\phi=(\exists x_i\psi)\in\mathcal{L}_\mathcal{A}$ 则 $<\mathcal{M},v>\vDash\phi$ 的充要条件是存在[[MK447][赋值]] $\mu:X\to M$
 
@@ -7466,7 +7470,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 显然该[[MK528][证明]]亦可称为 $\Gamma\cup\{\phi_1\}$ 的[[MK528][证明]]，则 $\left<\theta_1,...,\theta_n,\phi_1,\phi_2\right>$ 是 $\Gamma\cup\{\phi_1\}$ 对 $\phi_2$ 的[[MK528][证明]]
 
-**** 归谬定理
+**** 归谬定理<<MK548>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ 以及[[MK135][表达式]] $\phi$ 则
 
@@ -7480,7 +7484,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 ****** 充分
 
-若 $\Gamma\cup\{(\lnot\phi)\}$ 不[[MK535][一致]]，则根据[[MK537][定理2]]可得 $\Gamma\vdash\phi$
+若 $\Gamma\cup\{(\lnot\phi)\}$ 不[[MK535][一致]]，则根据[[MK537][定理2]]可得 $\Gamma\cup\{(\lnot\phi)\}\vdash\phi$ 根据[[MK539][演绎定理]]可得 $\Gamma\vdash((\lnot\phi)\to\phi)$
+
+根据[[MK522][第一归谬]]可得 $\Gamma\vdash(((\lnot\phi)\to\phi)\to\phi)$ 则根据[[MK543][导出引理]]有 $\Gamma\vdash\phi$
 
 ****** 必要
 
@@ -7656,7 +7662,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 中出现的[[MK129][常元符号]]
  
-**** 等式定理
+**** 等式定理<<MK552>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 不带[[MK124][量词符号]]，有两组[[MK133][项]] $\langle \tau_1,...,\tau_n\rangle,\langle \sigma_1,...,\sigma_n\rangle$ 以及
 
@@ -7761,6 +7767,206 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 其中 $\alpha_x=\theta,\beta_y=(\lnot\theta)$ 根据[[MK522][第二宽容]]可得 $(\theta\to((\lnot\theta)\to\phi))$ 是公理
 
 则 $\left<\alpha_1,...,\alpha_x,\beta_1,...,\beta_y,(\theta\to((\lnot\theta)\to\phi)),((\lnot\theta)\to\phi),\phi\right>$ 是 $\Gamma$ 关于 $\phi$ 的[[MK528][证明]]
+
+*** 极大一致性<<MK547>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ ，若有：
+
+（1） $\Gamma$ 是[[MK535][一致的]]
+
+（2） 对于任意 $\phi\not\in\Gamma$ 有 $\Gamma\cup\{\phi\}$ 不[[MK535][一致]]
+
+则称 $\Gamma$ 在 $\mathcal{L}_\mathcal{A}$ 下极大一致
+
+**** 性质<<MK551>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ 是[[MK547][极大一致的]]，则有：
+
+（1） 若 $\Gamma\vdash\phi$ 则 $\phi\in\Gamma$
+
+（2） 任意表达式 $\phi$ ，或者 $\phi\in\Gamma$ 或者 $(\lnot\phi)\in\Gamma$
+
+（3） 若 $\phi\in\Gamma,(\phi\to\psi)\in\Gamma$ 则 $\psi\in\Gamma$
+
+***** 证明
+
+****** 证明（1）
+
+假设 $\phi\not\in\Gamma$ 则由于[[MK547][极大一致]]可得 $\Gamma\cup\{\phi\}$ [[MK535][不一致]]，则存在 $\theta$ 使得 $\Gamma\cup\{\phi\}\vdash\theta,\Gamma\cup\{\phi\}\vdash(\lnot\theta)$
+
+则根据[[MK539][演绎定理]]可得 $\Gamma\vdash(\phi\to\theta),\Gamma\vdash(\phi\to(\lnot\theta))$ 又由于 $\Gamma\vdash\phi$ 根据[[MK543][导出引理]]有 $\Gamma\vdash\theta,\Gamma\vdash(\lnot\theta)$
+
+与 $\Gamma$ 是[[MK535][一致的]]矛盾，故假设不成立，即有 $\phi\in\Gamma$
+
+****** 证明（2）
+
+若 $(\lnot\phi)\not\in\Gamma$ 则根据[[MK547][极大一致]]可得 $\Gamma\cup\{(\lnot\phi)\}$ [[MK535][不一致]]，则根据[[MK548][归谬定理]]可得 $\Gamma\vdash\phi$ 又根据证明（1）
+
+可得 $\phi\in\Gamma$ ，同理可证若 $\phi\not\in\Gamma$ 则有 $(\lnot\phi)\in\Gamma$
+
+****** 证明（3）
+
+若 $\phi\in\Gamma,(\phi\to\psi)\in\Gamma$ 则有 $\Gamma\vdash\psi$ 根据证明（1）可得 $\psi\in\Gamma$
+
+*** 自显存在性<<MK549>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ 若有 $(\exists x_i\phi)\in\Gamma$ 则存在[[MK129][常元符号]] $c_j$ 使得[[MK538][替换]]后的[[MK135][表达式]] $\phi(\left<x_i\right>,\left<c_j\right>)\in\Gamma$
+
+**** 定理
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{M}=<M,I>$ 定义[[MK447][赋值]] $v$ 满足 $v(x_i)\in\left\{I(c_i)\big|i\in\mathbb{N}\right\}$
+
+定义 $\Gamma=\left\{\phi\big|\left<\mathcal{M},v\right>\vDash\phi\right\}$ 则有
+
+（1） $\Gamma$ 是[[MK547][极大一致]]的
+
+（2） $\Gamma$ 是[[MK549][自显存在]]的充要条件是对于 $M_0=\left\{I(c_i)\big|i\in\mathbb{N}\right\}$ ，有 $I_0$ 满足
+
+     （a） 若 $c\in\mathcal{L}_{\mathcal{A}_1}$ 是[[MK129][常元符号]]，则有 $I(c)=I_0(c)$
+
+     （b） 若 $f\in\mathcal{L}_{\mathcal{A}_1}$ 是[[MK131][函数符号]]且 $\pi_F(f)=n$ ，对于任意 $<a_1,...,a_n>\subset M_0^n$
+
+          有 $I(f)(a_1,...,a_n)=I_0(f)(a_1,...,a_n)$
+
+     （c） 若 $p\in\mathcal{L}_{\mathcal{A}_1}$ 是[[MK132][谓词符号]]且 $\pi_P(p)=n$ 有 $I_0(p)=I(p)\cap M_0^n$
+
+     并使得 $\mathcal{M}_0=\left<M_0,I_0\right>$ 是 $\mathcal{M}$ 的[[MK487][同质子结构]]
+
+***** 证明
+
+****** 证明（1）
+
+假设不[[MK535][一致]]，则存在 $\phi$ 满足 $\Gamma\vdash\phi,\Gamma\vdash(\lnot\phi)$ 根据[[MK533][可靠性定理]]可得 $\Gamma\vDash\phi$ 根据 $\Gamma$ 定义可得 $\left<\mathcal{M},v\right>\vDash\Gamma$
+
+故根据[[MK531][逻辑结论]]有 $\left<\mathcal{M},v\right>\vDash\phi$ ，同理可证 $\left<\mathcal{M},v\right>\vDash(\lnot\phi)$ 根据[[MK449][满足]]显然矛盾。故假设不成立， $\Gamma$ [[MK535][一致]]
+
+对于任意 $\phi\not\in\Gamma$ 根据 $\Gamma$ 定义可得 $\left<\mathcal{M},v\right>\not\vDash\phi$ ，根据[[MK449][满足]]可得 $\left<\mathcal{M},v\right>\vDash(\lnot\phi)$ 即 $(\lnot\phi)\in\Gamma$
+
+则显然 $\Gamma\vdash(\lnot\phi)$ 故根据[[MK548][归谬定理]]可得 $\Gamma\cup\{\phi\}$ 不[[MK535][一致]]
+
+综上所述， $\Gamma$ [[MK547][极大一致]]
+
+****** 证明（2）
+
+******* 充分
+
+假设 $\Gamma$ [[MK549][自显存在]]，则对于任意非空[[MK476][可定义]]的 $A\in\text{Def}_1(\mathcal{N},M)$ 有[[MK135][表达式]] $\phi(x_1,...,x_{n+1})\in\mathcal{L}_\mathcal{A}$
+
+以及 $\left<b_1,...,b_n\right>\in M_0^n$ 满足 $a\in A$ 等价于 $\mathcal{M}\vDash\phi[a,b_1,...,b_n]$
+
+根据 $M_0$ 定义可得对于任意 $b_i\in M_0$ 均有[[MK129][常元符号]] $c_{k_i}$ 满足 $I(c_{k_i})=b_i$ ，显然 $c_{k_i}$ 是[[MK133][项]]
+
+故根据[[MK489][替换定理]]以及[[MK452][局部确定]]可得 $\mathcal{M}\vDash\phi[a,b_1,...,b_n]$ 等价于 $\mathcal{M}\vDash\phi(\left<x_1,...,x_{n+1}\right>,\left<c_{k_1},...,c_{k_n}\right>)[a]$
+
+即 $a\in A$ 等价于 $\mathcal{M}\vDash\phi(\left<x_1,...,x_{n+1}\right>,\left<c_{k_1},...,c_{k_n}\right>)[a]$ 由于 $A$ 非空，故有 $a\in A$
+
+则定义 $\mathcal{M}$ [[MK447][赋值]] $\mu$ 满足 $\mu(x_i)=\begin{cases}a&i=1\\v(x_i)&i\ne 1\end{cases}$
+
+则根据[[MK452][局部确定]]可得 $\left<\mathcal{M},\mu\right>\vDash\phi(\left<x_1,...,x_{n+1}\right>,\left<c_{k_1},...,c_{k_n}\right>)$
+
+则根据[[MK550][存在量词满足]]可得 $\left<\mathcal{M},v\right>\vDash(\exists x_1\phi(\left<x_1,...,x_{n+1}\right>,\left<c_{k_1},...,c_{k_n}\right>))$
+
+即 $(\exists x_1\phi(\left<x_1,...,x_{n+1}\right>,\left<c_{k_1},...,c_{k_n}\right>))\in\Gamma$ 根据[[MK549][自显存在]]
+
+有 $c_{k^*}$ 满足 $\phi(\left<x_1,...,x_{n+1}\right>,\left<c_{k_1},...,c_{k_n}\right>)(\left<x_1\right>,\left<c_{k^*}\right>)\in\Gamma$
+
+又根据 $\Gamma$ 定义有 $\left<\mathcal{M},v\right>\vDash\phi(\left<x_1,...,x_{n+1}\right>,\left<c_{k_1},...,c_{k_n}\right>)(\left<x_1\right>,\left<c_{k^*}\right>)$
+
+定义 $\mathcal{M}$ [[MK447][赋值]] $\eta$ 满足 $\eta(x_i)=\begin{cases}I(c_{k^*})&i=1\\v(x_i)&i\ne 1\end{cases}$ 
+
+则根据[[MK489][替换定理]]可得 $\left<\mathcal{M},\eta\right>\vDash\phi(\left<x_1,...,x_{n+1}\right>,\left<c_{k_1},...,c_{k_n}\right>)$
+
+又根据[[MK452][局部确定]]可得 $\mathcal{M}\vDash\phi(\left<x_1,...,x_{n+1}\right>,\left<c_{k_1},...,c_{k_n}\right>)[I(c_{k^*})]$
+
+同样根据[[MK489][替换定理]]以及[[MK452][局部确定]]可得等价于 $\mathcal{M}\vDash\phi[I(c_{k^*}),b_1,...,b_n]$
+
+故根据[[MK476][可定义]]有 $I(c_{k^*})\in A$ 又根据 $M_0$ 定义可得 $I(c_{k^*})\in M_0$
+
+综上所述，对于任意 $A\in\text{Def}_1(\mathcal{N},M)$ 均有 $M_0\cap A\ne\varnothing$
+
+根据[[MK545][定理2]]以及[[MK546][推论]]可得存在满足条件的 $I_0$ 使得 $\left<M_0,I_0\right>$ 是 $\mathcal{M}$ 的[[MK487][同质子结构]]
+
+******* 必要
+
+若存在满足条件的 $I_0$ 使得 $\mathcal{M}_0=\left<M_0,I_0\right>$ 是 $\mathcal{M}$ 的[[MK487][同质子结构]]，则对于任意 $(\exists x_i\phi)\in\Gamma$
+
+设 $\phi$ 中[[MK441][自由变元]]为 $x_1,...,x_n$ 由于 $\Gamma$ 定义有 $\left<\mathcal{M},v\right>\vDash(\exists x_i\phi)$
+
+又根据 $v$ 的定义可得对于任意 $x_i$ 均有 $v(x_i)\in\left\{I(c_i)\big|i\in\mathbb{N}\right\}=M_0$ 故 $v$ 亦为 $\mathcal{M}_0$ [[MK447][赋值]]
+
+故根据[[MK487][同质子结构]]有 $\left<\mathcal{M}_0,v\right>\vDash(\exists x_i\phi)$ 根据[[MK550][存在量词满足]]可得存在 $\mathcal{M}_0$ [[MK447][赋值]] $\mu$ 满足
+
+（1） 对于任意[[MK130][变元符号]] $x_k$ 若 $k\ne i$ 则有 $\mu(x_k)=v(x_k)$
+
+（2） $\left<\mathcal{M}_0,\mu\right>\vDash \phi$ 
+
+由于 $\mu(x_i)\in M_0$ 故存在[[MK129][常元符号]] $c_z$ 使得 $\mu(x_i)=I(c_z)$ 又根据[[MK447][赋值]] $\bar{v}(c_z)=I(c_z)$
+
+故根据[[MK489][替换定理]] $\left<\mathcal{M}_0,v\right>\vDash\phi(\left<x_i\right>,\left<c_z\right>)$ 又根据[[MK487][同质子结构]]有 $\left<\mathcal{M},v\right>\vDash\phi(\left<x_i\right>,\left<c_z\right>)$
+
+则根据 $\Gamma$ 定义可得 $\phi(\left<x_i\right>,\left<c_z\right>)\in\Gamma$ 。
+
+综上所述，对于任意 $(\exists x_i\phi)\in\Gamma$ 存在[[MK129][常元符号]] $c_z$ 使得 $\phi(\left<x_i\right>,\left<c_z\right>)\in\Gamma$ 即 $\Gamma$ 是[[MK549][自显存在]]的
+
+*** 可满足性定理
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ ，若 $\Gamma$ 是[[MK547][极大一致]]且[[MK549][自现存在]]的，则 $\Gamma$ 是[[MK530][可满足]]的
+
+**** 证明
+
+***** 构建[[MK129][常元符号]]的[[MK176][等价]]关系
+
+对于 $\mathcal{L}_\mathcal{A}$ 中的[[MK129][常元符号]]定义[[MK155][关系]] $\sim_\Gamma$ 为若 $(c_i\hat{=}c_j)\in\Gamma$ 则 $c_i\sim_\Gamma c_j$ 根据下列证明
+
+可得 $\sim_\Gamma$ 是[[MK176][等价关系]]
+
+****** [[MK168][自反性]]
+
+由于 $(x_i\hat{=}x_i)$ 是[[MK522][恒等律公理]]，又根据[[MK522][全域化]]有 $(\forall x_i(x_i\hat{ =}x_i))$ 亦为公理
+
+又根据[[MK522][特化公理]]有 $((\forall x_i(x_i\hat{ =}x_i))\to(c_i\hat{ =}c_i))$ 亦为公理，故根据[[MK543][导出引理]]有 $\Gamma\vdash(c_i\hat{ =}c_i)$
+
+由于 $\Gamma$ [[MK547][极大一致]]，则根据[[MK551][性质]]可得 $(c_i\hat{=}c_i)\in\Gamma$ 即 $c_i\sim_\Gamma c_i$
+
+****** [[MK170][对称性]]
+
+若 $c_i\sim_\Gamma c_j$ 则有 $(c_i\hat{=}c_j)\in\Gamma$ 定义 $\phi=(x_i\hat{ =}c_i)$ 则根据[[MK552][等式定理]]
+
+可得 $\{(c_i\hat{ =}c_j)\}\cup\{\phi(\left<x_i\right>,\left<c_i\right>)\}\vdash\phi(\left<x_i\right>,\left<c_j\right>)$
+
+即 $\{(c_i\hat{=}c_j),(c_i\hat{ =}c_i)\}\vdash(c_j\hat{ =}c_i)$ 由于上一步显然有 $\{(c_i\hat{ =}c_j),(c_i\hat{ =}c_i)\}\subset\Gamma$ ，即 $\Gamma\vdash(c_j\hat{ =}c_i)$
+
+根据[[MK551][性质]]可得 $c_j\sim_\Gamma c_i$
+
+****** [[MK172][传递性]]
+
+若有 $c_i\sim_\Gamma c_j$ 以及 $c_j\sim_\Gamma c_k$ 定义 $\phi=(x_i\hat{ =}c_k)$ 则根据[[MK552][等式定理]]
+
+可得 $\{(c_j\hat{ =}c_i)\}\cup\{\phi(\left<x_i\right>,\left<c_j\right>)\}\vdash\phi(\left<x_i\right>,\left<c_i\right>)$ 即 $\{(c_j\hat{ =}c_i),(c_j\hat{ =}c_k)\}\vdash(c_i\hat{ =}c_k)$
+
+由于 $c_i\sim_\Gamma c_j$ 以及上一步证明可得 $(c_j\hat{ =}c_i)\in\Gamma$ 又由于 $c_j\sim_\Gamma c_k$ 可得 $(c_j\hat{ =}c_k)\in\Gamma$
+
+故有 $\Gamma\vdash(c_i\hat{ =}c_k)$ 根据[[MK551][性质]]可得 $c_i\sim_\Gamma c_k$
+
+***** 构造[[MK446][结构]]
+
+定义 $M=\left\{c_i\big|i\in\mathbb{N}\right\}/\sim_\Gamma=\left\{[c]_{\sim_\Gamma}\big|i\in\mathbb{N}\right\}$ 是[[MK176][等价关系]] $\sim_\Gamma$ 的[[MK184][商集]]，并定义 $I$ 为
+
+（1） 若 $c_i\in\mathcal{L}_\mathcal{A}$ 是[[MK129][常元符号]]，则有 $I(c_i)=[c_i]_{\sim_\Gamma}$
+
+（2） 若 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK131][函数符号]]且 $\pi_F(f)=n$ ，
+
+     则 $I(f)([c_{i_1}]_{\sim_\Gamma},...,[c_{i_n}]_{\sim_\Gamma})=[c_{i_{n+1}}]_{\sim_\Gamma}$ 当且仅当 $(f(c_{i_1},...,c_{i_n})=c_{i_{n+1}})\in\Gamma$
+
+（3） 若 $p\in\mathcal{L}_\mathcal{A}$ 是[[MK132][谓词符号]]且 $\pi_P(p)=n$
+
+     则 $\left<[c_{i_1}]_{\sim_\Gamma},...,[c_{i_n}]_{\sim_\Gamma}\right>\in I(p)$ 当且仅当 $p(c_{i_1},...,c_{i_n})\in\Gamma$
+
+故最终得[[MK446][一阶结构]] $\mathcal{M}=\left<M,I\right>$
+ 
+***** 定义[[MK447][赋值]]
+
+***** 证明结论
 
 *** 可靠性定理<<MK533>>
 
@@ -8046,7 +8252,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的子结构，记作 $\mathcal{M}\subset\mathcal{N}$  
 
-**** 子结构特征定理
+**** 子结构特征定理<<MK544>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]且 $M\subset N$ ，则 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK483][子结构]]的充要条件是：
 
@@ -8276,7 +8482,59 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 则根据[[MK487][定义]]可得 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]
 
-***** 定理2（塔尔斯基）<<MK501>>
+***** 定理2<<MK545>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{N}=\langle N,J\rangle$ ，若有 $M\subset N$ 满足对于每一个非空[[MK476][可定义]]的 $A\in\text{Def}_1(\mathcal{N},M)$
+
+均有 $A\cap M\ne\varnothing$ ，则有
+
+（1） 对于任意 $c_i\in\mathcal{A}$ 有 $J(c_i)\in M$
+
+（2） 对于任意 $\pi_F(f)=n$ 若有 $<b_1,...,b_n>\in M^n$ 则 $J(f)(b_1,...,b_n)\in M$
+
+****** 证明
+
+******* 证明（1）
+
+对于任意 $c_i\in\mathcal{A}$ 可得 $J(c_i)\in N$ 则定义[[MK135][表达式]] $\phi(x_j)$ 为 $(x_j\hat{=}c_i)$
+
+则显然有且仅有 $J(c_i)$ 满足 $\mathcal{N}\vDash\phi[J(c_i)]$ ，则可得[[MK135][表达式]] $\phi$ [[MK476][定义]]了集合 $\{J(c_i)\}$
+
+即 $\{J(c_i)\}\in\text{Def}_1(\mathcal{N},M)$ 显然 $\{J(c_i)\}$ 非空，则根据 $M\cap\{J(c_i)\}\ne\varnothing$ 则仅有可能 $J(c_i)\in M$  
+
+******* 证明（2）
+
+定义[[MK135][表达式]] $\phi(x_1,...,x_{n+1})$ 为 $(x_1\hat{=}f(x_2,...,x_{n+1}))$ 则对于任意参数 $<b_1,...,b_n>\in M^n$
+
+有且仅有 $a=J(f)(b_1,...,b_n)$ 满足 $\mathcal{N}\vDash\phi[a,b_1,...,b_n]$ 即[[MK135][表达式]] $\phi$ 根据参数 $\left<b_1,...,b_n\right>$ [[MK476][定义]]了集合 $\{a\}$
+
+即 $\{a\}\in\text{Def}_1(\mathcal{N},M)$ 显然 $\{a\}$ 非空，则根据 $M\cap\{J(c_i)\}\ne\varnothing$
+
+则仅有可能 $a=J(f)(b_1,...,b_n)\in M$
+
+****** 推论<<MK546>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{N}=\langle N,J\rangle$ ，若有 $M\subset N$ 满足对于每一个非空[[MK476][可定义]]的 $A\in\text{Def}_1(\mathcal{N},M)$
+
+均有 $A\cap M\ne\varnothing$ ，则存在 $I$ 满足 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]
+
+******* 证明
+
+定义 $I$ 为：
+
+（1） 根据[[MK545][定理2]]，对于任意[[MK129][常元符号]] $c_i\in\mathcal{A}$ 有 $I(c_i)=J(c_i)\in M$
+
+（2） 根据[[MK545][定理2]]，对于任意[[MK131][函数符号]] $\pi_F(f)=n$
+
+     若 $\left<b_1,...,b_n\right>\in M^n$ 则定义 $I(f)(b_1,...,b_n)=J(f)(b_1,...,b_n)\in M$
+
+（3） 对于任意[[MK132][谓词符号]] $\pi_P(p)=n$ 定义 $I(p)=J(p)\cap M^n$
+
+显然根据[[MK446][一阶结构]]以及前述证明可得 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{L}_\mathcal{A}$ 的[[MK446][结构]]
+
+又根据[[MK483][子结构定义]]以及 $M\subset N$ 可得 $\mathcal{M}\subset\mathcal{N}$ ，则根据[[MK501][塔尔斯基]]定理有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]
+
+***** 定理3（塔尔斯基）<<MK501>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]，则以下两个命题等价：
 
@@ -8320,7 +8578,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 ******** $z(\phi)=1$ 时
 
-根据[[MK149][唯一可读性]]仅有可能为[[MK135][原始表达式]]，故对于任意 $\mathcal{M}$ [[MK447][赋值]] $v$ ， $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},v>\vDash\phi$
+根据[[MK149][唯一可读性]]仅有可能为[[MK135][原始表达式]]，故对于任意 $\mathcal{M}$ [[MK447][赋值]] $v$
+
+根据[[MK544][子结构特征定理]] $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},v>\vDash\phi$
 
 ******** 归纳假设
 
@@ -8382,9 +8642,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 又根据[[MK449][满足]]可得 $<\mathcal{M},\beta>\not\vDash(\forall x_i\psi_1)$ 即 $<\mathcal{M},\beta>\not\vDash\phi$
 
-***** 定理3（存在性）<<MK510>>
+***** 定理4（存在性）<<MK510>>
 
-[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{N}=<N,J>$ 满足 $N$ 是[[MK43][无限集]]，设 $X\subset N$ 是[[MK44][可数集]]
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{N}=\left<N,J\right>$ 满足 $N$ 是[[MK43][无限集]]，设 $X\subset N$ 是[[MK44][可数集]]
 
 则存在 $\mathcal{M}=<M,I>$ 满足 $X\subset M\subset N$ ， $M$ 是[[MK44][可数集]]且 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]
 
@@ -8404,7 +8664,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 则又根据[[MK49][定理1]]可得 $\text{Def}_1(\mathcal{N},X)$ 是[[MK44][可数集]]
 
-******* 定义 $M$
+******* 定义 $M\subset N$
 
 定义 $M_0=X$ 若有 $M_n\subset N$ 是[[MK44][可数集]]，则根据上一步存在 $\text{Def}_1(\mathcal{N},M_n)$ 亦为[[MK44][可数集]]
 
@@ -8426,37 +8686,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 即对于任意非空 $A\in\text{Def}_1(\mathcal{N},M)$ 可得 $A\cap M\ne\varnothing$
 
-******* 对于任意 $c_i\in\mathcal{A}$ 有 $J(c_i)\in M$
-
-对于任意 $c_i\in\mathcal{A}$ 可得 $J(c_1)\in N$ 则定义[[MK135][表达式]] $\phi(x_1)$ 为 $(x_1\hat{=}c_i)$
-
-则显然有且仅有 $J(c_i)$ 满足 $\mathcal{N}\vDash\phi[J(c_i)]$ ，则根据[[MK476][可定义性]]可得 $\{J(c_i)\}$ 是以 $M$ 为参数
-
-在 $\mathcal{N}$ 下由 $\phi$ 定义的集合，即 $\{J(c_i)\}\in\text{Def}_1(\mathcal{N},M)$ 显然 $\{J(c_i)\}$ 非空
-
-则根据上一步证明有 $M\cap\{J(c_i)\}\ne\varnothing$ 则仅有可能 $J(c_i)\in M$  
-
-******* 对于任意 $\pi_F(f)=n$ 若有 $<b_1,...,b_n>\in M^n$ 则 $J(f)(b_1,...,b_n)\in M$
-
-定义[[MK135][表达式]] $\phi(x_1,...,x_{n+1})$ 为 $(x_1\hat{=}f(x_2,...,x_{n+1}))$ 则对于任意 $<b_1,...,b_n>\in M^n$
-
-有且仅有 $a=J(f)(b_1,...,b_n)$ 满足 $\mathcal{N}\vDash\phi[a,b_1,...,b_n]$ 即 $\{J(f)(b_1,...,b_n)\}\in\text{Def}_1(\mathcal{N},M)$
-
-又根据之前证明有 $M\cap\{J(c_i)\}\ne\varnothing$ 则仅有可能 $J(f)(b_1,...,b_n)\in M$ 
-
 ******* 证明结论
 
-定义 $I$ 为：
-
-（1） 对于任意[[MK129][常元符号]] $c_i\in\mathcal{A}$ 有 $I(c_i)=J(c_i)$
-
-（2） 对于任意[[MK131][函数符号]] $\pi_F(f)=n$ 若有 $<b_1,...,b_n>\in M^n$ 则 $I(f)(b_1,...,b_n)=J(f)(b_1,...,b_n)$
-
-（3） 对于任意[[MK132][谓词符号]] $\pi_P(p)=n$ 定义 $I(p)=J(p)\cap M^n$
-
-显然根据[[MK446][一阶结构]]以及前述证明可得 $\mathcal{M}=<M,I>$ 是 $\mathcal{L}_\mathcal{A}$ 的[[MK446][结构]]
-
-又根据[[MK483][自结构定义]]以及 $M\subset N$ 可得 $\mathcal{M}\subset\mathcal{N}$ ，故根据[[MK501][塔尔斯基]]定理有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]
+根据[[MK546][推论]]可得存在 $I$ 使得 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]
 
 *** 扩充/裁剪结构<<MK490>>
 
