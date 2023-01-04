@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 552
+currnet mark: 566
 
 free mark:
  
@@ -4919,6 +4919,146 @@ A\leftrightarrow B&{|\!\!\!=\!\!\!|}\lnot B\leftrightarrow \lnot A\\
 
 35. 根据第29，34步以及导出引理 $\Gamma\vdash(\phi\to(\lnot(\lnot\phi)))$
 
+**** 推论3<<MK557>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 对于任意 $\Gamma\subset\mathcal{L}_0$ 以及任意 $\phi_1\in\mathcal{L}_0\land\phi_2\in\mathcal{L}_0$ 均有
+
+（1） $\Gamma\vdash(((\lnot\phi_2)\to(\lnot\phi_1))\to(\phi_1\to\phi_2))$
+
+（2） $\Gamma\vdash((\phi_1\to\phi_2)\to((\lnot\phi_2)\to(\lnot\phi_1)))$
+
+***** 证明
+
+****** 证明（1）
+
+1. 根据[[MK417][推论2（3）]] $\Gamma\vdash((\phi_2\to((\lnot\phi_2)\to\phi_1))\\\to((((\lnot\phi_2)\to\phi_1)\to((\lnot\phi_1)\to\phi_1))\to(\phi_2\to((\lnot\phi_1)\to\phi_1))))$
+
+2. 根据[[MK398][第二宽容]] $\Gamma\vdash(\phi_2\to((\lnot\phi_2)\to\phi_1))$
+
+3. 由步骤1，2得 $\Gamma\vdash((((\lnot\phi_2)\to\phi_1)\to((\lnot\phi_1)\to\phi_1))\to(\phi_2\to((\lnot\phi_1)\to\phi_1)))$
+
+4. 根据[[MK417][推论2（3）]] $\Gamma\vdash(((\lnot\phi_1)\to(\lnot\phi_2))\to(((\lnot\phi_2)\to\phi_1)\to((\lnot\phi_1)\to\phi_1)))$
+
+5. 根据[[MK417][推论2（3）]] $\Gamma\vdash((((\lnot\phi_1)\to(\lnot\phi_2))\to(((\lnot\phi_2)\to\phi_1)\to((\lnot\phi_1)\to\phi_1)))\\\to(((((\lnot\phi_2)\to\phi_1)\to((\lnot\phi_1)\to\phi_1))\to(\phi_2\to((\lnot\phi_1)\to\phi_1)))\\\to(((\lnot\phi_1)\to(\lnot\phi_2))\to(\phi_2\to((\lnot\phi_1)\to\phi_1)))))$
+
+6. 由步骤4，5可得 $\Gamma\vdash(((((\lnot\phi_2)\to\phi_1)\to((\lnot\phi_1)\to\phi_1))\to(\phi_2\to((\lnot\phi_1)\to\phi_1)))\\\to(((\lnot\phi_1)\to(\lnot\phi_2))\to(\phi_2\to((\lnot\phi_1)\to\phi_1))))$
+
+7. 由步骤3，6可得 $\Gamma\vdash(((\lnot\phi_1)\to(\lnot\phi_2))\to(\phi_2\to((\lnot\phi_1)\to\phi_1)))$
+
+8. 根据[[MK417][推论2（3）]] $\Gamma\vdash((((\lnot\phi_1)\to(\lnot\phi_2))\to(\phi_2\to((\lnot\phi_1)\to\phi_1)))\\\to(((\phi_2\to((\lnot\phi_1)\to\phi_1))\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1)))\\\to(((\lnot\phi_1)\to(\lnot\phi_2))\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1)))))$
+
+9. 有步骤7，8可得 $\Gamma\vdash(((\phi_2\to((\lnot\phi_1)\to\phi_1))\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1)))\\\to(((\lnot\phi_1)\to(\lnot\phi_2))\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1))))$
+
+10. 根据[[MK417][推论2（3）]] $\Gamma\vdash((\phi_2\to((\lnot\phi_1)\to\phi_1))\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1)))$
+
+11. 由步骤9，10可得 $\Gamma\vdash(((\lnot\phi_1)\to(\lnot\phi_2))\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1)))$
+
+12. 根据[[MK417][推论2（3）]] $\Gamma\vdash((\phi_1\to((\lnot\phi_1)\to(\lnot\phi_2)))\\\to((((\lnot\phi_1)\to(\lnot\phi_2))\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1)))\\\to(\phi_1\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1)))))$
+
+13. 根据[[MK398][第二宽容]]可得 $\Gamma\vdash(\phi_1\to((\lnot\phi_1)\to(\lnot\phi_2)))$
+
+14. 由步骤12，13可得 $\Gamma\vdash((((\lnot\phi_1)\to(\lnot\phi_2))\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1)))\\\to(\phi_1\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1))))$
+
+15. 由步骤11，14可得 $\Gamma\vdash(\phi_1\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1)))$
+
+16. 由步骤15可得 $\Gamma\vdash(\phi'_1\to((((\lnot\phi'_1)\to\phi'_1)\to\phi'_1)\to(\phi_2\to\phi'_1)))$ 其中 $\phi'_1=(((\lnot\phi_1)\to\phi_1)\to\phi_1)$
+
+17. 根据[[MK398][第一宽容]] $\Gamma\vdash(((\lnot\phi_1)\to\phi_1)\to\phi_1)$ 即 $\Gamma\vdash\phi'_1$
+
+18. 由步骤16，17可得 $\Gamma\vdash((((\lnot\phi'_1)\to\phi'_1)\to\phi'_1)\to(\phi_2\to\phi'_1))$
+
+19. 根据[[MK398][第一宽容]] $\Gamma\vdash(((\lnot\phi'_1)\to\phi'_1)\to\phi'_1)$
+
+20. 由步骤18，19可得 $\Gamma\vdash(\phi_2\to\phi'_1)$ 根据步骤16中 $\phi'_1$ 定义有 $\Gamma\vdash(\phi_2\to(((\lnot\phi_1)\to\phi_1)\to\phi_1))$
+
+21. 由步骤19可得 $\Gamma\vdash(\phi'_2\to(((\lnot\phi_1)\to\phi_1)\to\phi_1))$ 其中 $\phi'_2=(\lnot(\phi_2\to\phi_1))$
+
+22. 根据[[MK417][推论2（3）]] $\Gamma\vdash((\phi'_2\to(((\lnot\phi_1)\to\phi_1)\to\phi_1))\\\to(((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1))\to(\phi'_2\to(\phi_2\to\phi_1))))$
+
+23. 由步骤22，21可得 $\Gamma\vdash(((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1))\to(\phi'_2\to(\phi_2\to\phi_1)))$
+
+24. 根据[[MK417][推论2（3）]] $\Gamma\vdash((((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1))\to(\phi'_2\to(\phi_2\to\phi_1)))\\\to(((\phi'_2\to(\phi_2\to\phi_1))\to(\phi_2\to\phi_1))\\\to(((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1))\to(\phi_2\to\phi_1))))$
+
+25. 由步骤24，23可得 $\Gamma\vdash(((\phi'_2\to(\phi_2\to\phi_1))\to(\phi_2\to\phi_1))\\\to(((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1))\to(\phi_2\to\phi_1)))$
+
+26. 根据[[MK398][第一归谬]] $\Gamma\vdash(((\lnot(\phi_2\to\phi_1))\to(\phi_2\to\phi_1))\to(\phi_2\to\phi_1))$
+
+27. 根据步骤25，26以及21中 $\phi'_2=(\lnot(\phi_2\to\phi_1))$
+
+    可得 $\Gamma\vdash(((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1))\to(\phi_2\to\phi_1))$
+
+28. 根据[[MK417][推论2（3）]] $\Gamma\vdash((((\lnot\phi_1)\to(\lnot\phi_2))\to((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1)))\\\to((((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1))\to(\phi_2\to\phi_1))\\\to(((\lnot\phi_1)\to(\lnot\phi_2))\to(\phi_2\to\phi_1))))$
+
+29. 由步骤11，28可得 $\Gamma\vdash((((((\lnot\phi_1)\to\phi_1)\to\phi_1)\to(\phi_2\to\phi_1))\to(\phi_2\to\phi_1))\\\to(((\lnot\phi_1)\to(\lnot\phi_2))\to(\phi_2\to\phi_1)))$
+
+30. 由步骤29，27可得 $\Gamma\vdash(((\lnot\phi_1)\to(\lnot\phi_2))\to(\phi_2\to\phi_1))$
+
+****** 证明（2）
+
+1. 根据[[MK417][推论2（6）]] $\Gamma\vdash(\phi_2\to(\lnot(\lnot\phi_2)))$
+
+2. 根据[[MK398][第一宽容]] $\Gamma\vdash((\phi_2\to(\lnot(\lnot\phi_2)))\to((\lnot(\lnot\phi_1))\to(\phi_2\to(\lnot(\lnot\phi_2)))))$
+
+3. 根据步骤1，2有 $\Gamma\vdash((\lnot(\lnot\phi_1))\to(\phi_2\to(\lnot(\lnot\phi_2))))$
+
+4. 根据[[MK398][蕴含分配]] $\Gamma\vdash(((\lnot(\lnot\phi_1))\to(\phi_2\to(\lnot(\lnot\phi_2))))\to(((\lnot(\lnot\phi_1))\to\phi_2)\to((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2)))))$
+
+5. 根据步骤3，4有 $\Gamma\vdash(((\lnot(\lnot\phi_1))\to\phi_2)\to((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2))))$
+
+6. 根据[[MK417][推论2（4）]] $\Gamma\vdash((\lnot(\lnot\phi_1))\to\phi_1)$
+
+7. 根据[[MK417][推论2（3）]] $\Gamma\vdash(((\lnot(\lnot\phi_1))\to\phi_1)\to((\phi_1\to\phi_2)\to((\lnot(\lnot\phi_1))\to\phi_2)))$
+
+8. 根据步骤6，7有 $\Gamma\vdash((\phi_1\to\phi_2)\to((\lnot(\lnot\phi_1))\to\phi_2))$
+
+9. 根据[[MK398][第一宽容]] $\Gamma\vdash((((\lnot(\lnot\phi_1))\to\phi_2)\to((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2))))\\\to((\phi_1\to\phi_2)\to(((\lnot(\lnot\phi_1))\to\phi_2)\to((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2))))))$
+
+10. 由步骤5，9可得 $\Gamma\vdash((\phi_1\to\phi_2)\to(((\lnot(\lnot\phi_1))\to\phi_2)\to((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2)))))$
+
+11. 根据[[MK398][蕴含分配]]可得 $\Gamma\vdash(((\phi_1\to\phi_2)\to(((\lnot(\lnot\phi_1))\to\phi_2)\to((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2)))))\\\to(((\phi_1\to\phi_2)\to((\lnot(\lnot\phi_1))\to\phi_2))\to((\phi_1\to\phi_2)\to((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2))))))$
+
+12. 由步骤10，11可得 $\Gamma\vdash(((\phi_1\to\phi_2)\to((\lnot(\lnot\phi_1))\to\phi_2))\to((\phi_1\to\phi_2)\to((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2)))))$
+
+13. 由步骤8，12可得 $\Gamma\vdash((\phi_1\to\phi_2)\to((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2))))$
+
+14. 根据结论（1） $\Gamma\vdash(((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2)))\to((\lnot\phi_2)\to(\lnot\phi_1)))$
+
+15. 根据[[MK417][推论2（3）]] $\Gamma\vdash(((\phi_1\to\phi_2)\to((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2))))\\\to((((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2)))\to((\lnot\phi_2)\to(\lnot\phi_1)))\\\to((\phi_1\to\phi_2)\to((\lnot\phi_2)\to(\lnot\phi_1)))))$
+
+16. 由步骤15，13可得 $\Gamma\vdash((((\lnot(\lnot\phi_1))\to(\lnot(\lnot\phi_2)))\to((\lnot\phi_2)\to(\lnot\phi_1)))\\\to((\phi_1\to\phi_2)\to((\lnot\phi_2)\to(\lnot\phi_1))))$
+
+17. 由步骤16，14可得 $\Gamma\vdash((\phi_1\to\phi_2)\to((\lnot\phi_2)\to(\lnot\phi_1)))$
+
+**** 推论4<<MK558>>
+
+[[MK394][命题语言]] $\mathcal{L}_0$ 对于任意 $\Gamma\subset\mathcal{L}_0$ 以及任意 $\phi_1\in\mathcal{L}_0\land\phi_2\in\mathcal{L}_0$ 均有
+
+（1） $\Gamma\vdash((\lnot(\phi_1\to\phi_2))\to(\lnot\phi_2))$
+
+（2） $\Gamma\vdash((\lnot(\phi_1\to\phi_2))\to\phi_1)$
+
+***** 证明
+
+1. 根据[[MK398][第一宽容]]可得 $\Gamma\vdash(\phi_2\to(\phi_1\to\phi_2))$
+
+2. 根据[[MK557][推论3（2）]]可得 $\Gamma\vdash((\phi_2\to(\phi_1\to\phi_2))\to((\lnot(\phi_1\to\phi_2))\to(\lnot\phi_2)))$
+
+3. 由步骤1，2可得 $\Gamma\vdash((\lnot(\phi_1\to\phi_2))\to(\lnot\phi_2))$ 即结论（1）证得
+
+4. 根据[[MK398][第三宽容]]可得 $\Gamma\vdash((\lnot\phi_1)\to(\phi_1\to\phi_2))$
+
+5. 根据[[MK557][推论3（2）]]可得 $\Gamma\vdash(((\lnot\phi_1)\to(\phi_1\to\phi_2))\to((\lnot(\phi_1\to\phi_2))\to(\lnot(\lnot\phi_1))))$
+
+6. 由步骤4，5可得 $\Gamma\vdash((\lnot(\phi_1\to\phi_2))\to(\lnot(\lnot\phi_1)))$
+
+7. 根据[[MK417][推论2（3）]] $\Gamma\vdash(((\lnot(\phi_1\to\phi_2))\to(\lnot(\lnot\phi_1)))\to(((\lnot(\lnot\phi_1))\to\phi_1)\to((\lnot(\phi_1\to\phi_2))\to\phi_1)))$
+
+8. 由步骤6，7可得 $\Gamma\vdash(((\lnot(\lnot\phi_1))\to\phi_1)\to((\lnot(\phi_1\to\phi_2))\to\phi_1))$
+
+9. 根据[[MK417][推论2（4）]] $\Gamma\vdash((\lnot(\lnot\phi_1))\to\phi_1)$
+
+10. 由步骤9，8可得 $\Gamma\vdash((\lnot(\phi_1\to\phi_2))\to\phi_1)$ 即结论（2）证得
+
 *** 导出引理<<MK405>>
 
 [[MK394][命题语言]] $\mathcal{L}_0$ 有 $\Gamma\subset\mathcal{L}_0,\phi\in\mathcal{L}_0,\psi\in\mathcal{L}_0$ 若 $\psi,(\psi\to\phi)$ 均为 $\Gamma$ 的[[MK398][定理]]，即 $\Gamma\vdash\psi,\Gamma\vdash(\psi\to\phi)$
@@ -5253,7 +5393,7 @@ A\leftrightarrow B&{|\!\!\!=\!\!\!|}\lnot B\leftrightarrow \lnot A\\
 
 根据[[MK425][定理5]]存在 $\Gamma^*$ 满足 $\Gamma\subset\Gamma^*$ 且 $\Gamma^*$ 是[[MK413][极大一致]]的
 
-又根据[[MK424][定理5]]可得 $\Gamma^*$ 是[[MK406][可满足]]的，即存在[[MK401][真假赋值]]的[[MK52][扩展函数]] $\bar{v}$ 满足 $\forall\phi\in\Gamma^*\rightarrow\bar{v}(\phi)=T$
+又根据[[MK424][定理4]]可得 $\Gamma^*$ 是[[MK406][可满足]]的，即存在[[MK401][真假赋值]]的[[MK52][扩展函数]] $\bar{v}$ 满足 $\forall\phi\in\Gamma^*\rightarrow\bar{v}(\phi)=T$
 
 又由于 $\Gamma\subset\Gamma^*$ 故有 $\forall\phi\in\Gamma\rightarrow\bar{v}(\phi)=T$ 即 $\Gamma$ 是[[MK406][可满足的]]
 
@@ -6345,7 +6485,7 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 *** 语句<<MK451>>
 
-任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 中的所有[[MK130][变元符号]]均为[[MK441][受限变元]]，则 $\phi$ 称为句子
+任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 中的所有[[MK130][变元符号]]均为[[MK441][受限变元]]，则 $\phi$ 称为语句
 
 *** 替换<<MK538>>
 
@@ -7336,15 +7476,23 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 （6） $\Gamma\vdash(\phi\to(\lnot(\lnot\phi)))$
 
+（7） $\Gamma\vdash(((\lnot\phi_2)\to(\lnot\phi_1))\to(\phi_1\to\phi_2))$
+
+（8） $\Gamma\vdash((\phi_1\to\phi_2)\to((\lnot\phi_2)\to(\lnot\phi_1)))$
+
+（9） $\Gamma\vdash((\lnot(\phi_1\to\phi_2))\to(\lnot\phi_2))$
+
+（10） $\Gamma\vdash((\lnot(\phi_1\to\phi_2))\to\phi_1)$
+
 ****** 证明
 
-根据命题逻辑[[MK417][推论]]同理可证
+根据命题逻辑[[MK417][推论2]]、[[MK557][推论3]]和[[MK558][推论4]]同理可证
 
 **** 特化公理
 
-设任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 包含的[[MK441][自由变元]] $x_1$ ， $\tau_1\in T$ 是任意[[MK133][项]],若 $\tau_i$ [[MK523][可替换]] $\phi$ 中的[[MK441][自由变元]] $x_i$
+设任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 包含的[[MK441][自由变元]] $x_i$ ， $\tau_i\in T$ 是任意[[MK133][项]],若 $\tau_i$ [[MK523][可替换]] $\phi$ 中的[[MK441][自由变元]] $x_i$
 
-则定义[[MK538][替换]]后为 $\phi(\langle x_1\rangle,\langle\tau_1\rangle)$ ，则有 $((\forall x_1\phi)\to\phi(\langle x_1\rangle,\langle\tau_1\rangle))$ 是一条公理
+则定义[[MK538][替换]]后为 $\phi(\langle x_i\rangle,\langle\tau_i\rangle)$ ，则有 $((\forall x_i\phi)\to\phi(\langle x_i\rangle,\langle\tau_i\rangle))$ 是一条公理
 
 **** 全称量词分配
 
@@ -7390,6 +7538,92 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 则有 $\mu(x_i)\ne v(x_j)=\mu(x_j)$ 根据[[MK449][满足]]显然与 $<\mathcal{M},\mu>\vDash(x_i\hat{ =}x_j)$ 矛盾
 
+*** [[MK456][推导符号]]<<MK553>>
+
+**** 逻辑与<<MK559>>
+
+若 $\phi=(\psi_1\land\psi_2)\in\mathcal{L}_\mathcal{A}$ 则 $\left<\mathcal{M},v\right>\vdash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vdash\psi_1$ 且 $\left<\mathcal{M},v\right>\vdash\psi_2$ 
+
+***** 证明
+
+****** 充分
+
+若 $\left<\mathcal{M},v\right>\vdash(\psi_1\land\psi_2)$ 即 $\left<\mathcal{M},v\right>\vdash(\lnot(\psi_1\to(\lnot\psi_2)))$
+
+根据[[MK536][推论（9）]]可得 $\left<\mathcal{M},v\right>\vdash((\lnot(\psi_1\to(\lnot\psi_2)))\to(\lnot(\lnot\psi_2)))$ 根据[[MK543][导出引理]]有 $\left<\mathcal{M},v\right>\vdash(\lnot(\lnot\psi_2))$
+
+又根据[[MK536][推论（4）]]可得 $\left<\mathcal{M},v\right>\vdash((\lnot(\lnot\psi_2))\to\psi_2)$ 同理根据[[MK543][导出引理]]有 $\left<\mathcal{M},v\right>\vdash\psi_2$
+
+又根据[[MK536][推论（10）]] $\left<\mathcal{M},v\right>\vdash((\lnot(\psi_1\to(\lnot\psi_2)))\to\psi_1)$ 根据[[MK543][导出引理]]有 $\left<\mathcal{M},v\right>\vdash\psi_1$
+
+****** 必要
+
+若有 $\left<\mathcal{M},v\right>\vdash\psi_1,\left<\mathcal{M},v\right>\vdash\psi_2$ 则根据[[MK522][合取律]]可得 $(\psi_1\to((\lnot(\lnot\psi_2))\to(\lnot(\psi_1\to(\lnot\psi_2)))))$ 是公理
+
+故有 $\left<\mathcal{M},v\right>\vdash((\lnot(\lnot\psi_2))\to(\lnot(\psi_1\to(\lnot\psi_2))))$ 又根据[[MK536][推论（7）]]可得 $\left<\mathcal{M},v\right>\vdash(\psi_2\to(\lnot(\lnot\psi_2)))$
+
+故有 $\left<\mathcal{M},v\right>\vdash(\lnot(\lnot\psi_2))$ 故根据[[MK543][导出引理]] $\left<\mathcal{M},v\right>\vdash(\lnot(\psi_1\to(\lnot\psi_2)))$ 即 $\left<\mathcal{M},v\right>\vdash(\psi_1\land\psi_2)$ 
+
+**** 逻辑或
+
+若 $\phi=(\psi_1\lor\psi_2)\in\mathcal{L}_\mathcal{A}$ 则 $\left<\mathcal{M},v\right>\vdash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vdash((\lnot\psi_1)\to\psi_2)$
+
+**** 双向蕴含<<MK560>>
+
+若 $\phi=(\psi_1\leftrightarrow\psi_2)\in\mathcal{L}_\mathcal{A}$ 则 $\left<\mathcal{M},v\right>\vdash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vdash(\psi_1\to\psi_2)$ 且 $\left<\mathcal{M},v\right>\vdash(\psi_2\to\psi_1)$
+
+***** 证明
+
+根据定义可得 $\left<\mathcal{M},v\right>\vdash(\psi_1\to\psi_2)$ 等价与 $\left<\mathcal{M},v\right>\vdash((\psi_1\to\psi_2)\land(\psi_2\to\psi_1))$
+
+根据[[MK559][逻辑与]]可得其定价条件为 $\left<\mathcal{M},v\right>\vdash(\psi_1\to\psi_2)$ 且 $\left<\mathcal{M},v\right>\vdash(\psi_2\to\psi_1)$
+
+***** 等价条件<<MK564>>
+
+$\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
+
+（1） $\left<\mathcal{M},v\right>\vdash(\psi_1\to\psi_2)$ 且 $\left<\mathcal{M},v\right>\vdash((\lnot\psi_1)\to(\lnot\psi_2))$
+
+（2） $\left<\mathcal{M},v\right>\vdash((\lnot\psi_2)\to(\lnot\psi_1))$ 且 $\left<\mathcal{M},v\right>\vdash((\lnot\psi_1)\to(\lnot\psi_2))$
+
+****** 证明
+
+仅证（1），（2）类似可证
+
+******* 充分
+
+若 $\left<\mathcal{M},v\right>\vdash(\psi_1\to\psi_2)$ 则有 $\left<\mathcal{M},v\right>\vdash(\psi_1\to\psi_2)$ 且 $\left<\mathcal{M},v\right>\vdash(\psi_2\to\psi_1)$
+
+则有 $\left<\mathcal{M},v\right>\vdash(\psi_1\to\psi_2)$ ，又根据[[MK536][推论（8）]]可得 $\left<\mathcal{M},v\right>\vdash((\psi_2\to\psi_1)\to((\lnot\psi_1)\to(\lnot\psi_2)))$
+
+根据[[MK543][导出引理]]即有 $\left<\mathcal{M},v\right>\vdash((\lnot\psi_1)\to(\lnot\psi_2))$
+
+******* 必要
+
+若有 $\left<\mathcal{M},v\right>\vdash(\psi_1\to\psi_2)$ 且 $\left<\mathcal{M},v\right>\vdash((\lnot\psi_1)\to(\lnot\psi_2))$
+
+则根据[[MK536][推论（7）]]可得 $\left<\mathcal{M},v\right>\vdash(((\lnot\psi_1)\to(\lnot\psi_2))\to(\psi_2\to\psi_1))$ 根据[[MK543][导出引理]]即有 $\left<\mathcal{M},v\right>\vdash(\psi_2\to\psi_1)$
+
+则根据[[MK560][定义]]可得有 $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 
+
+***** 传递性<<MK565>>
+
+若有 $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 以及 $\left<\mathcal{M},v\right>\vdash(\psi_2\leftrightarrow\psi_3)$ 则有 $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_3)$ 
+
+****** 证明
+
+根据[[MK560][定义]] $\left<\mathcal{M},v\right>\vdash(\psi_1\to\psi_2)$ 且 $\left<\mathcal{M},v\right>\vdash(\psi_2\to\psi_1)$
+
+以及 $\left<\mathcal{M},v\right>\vdash(\psi_2\to\psi_3)$ 且 $\left<\mathcal{M},v\right>\vdash(\psi_3\to\psi_2)$
+
+根据[[MK561][传递引理]]可得 $\left<\mathcal{M},v\right>\vdash(\psi_1\to\psi_3)$ 且 $\left<\mathcal{M},v\right>\vdash(\psi_3\to\psi_1)$  
+
+又根据[[MK560][定义]]可得 $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_3)$ 
+
+**** 存在量词<<MK563>>
+
+若 $\phi=(\exists x_i\psi)\in\mathcal{L}_\mathcal{A}$ 则 $\left<\mathcal{M},v\right>\vdash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vdash(\lnot(\forall x_i(\lnot\psi)))$
+
 *** 一阶理论<<MK529>>
 
 一阶理论为包含以下四个要素的[[MK151][有续集]] $\mathcal{T}=<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*>$
@@ -7409,6 +7643,20 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 若有 $\mathcal{M}\vDash T$ 即 $T$ 可被 $\mathcal{M}$ [[MK530][满足]]，则称 $\mathcal{M}$ 是 $\mathcal{T}$ 的理论模型
 
 *** 定理
+
+**** 传递引理<<MK561>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ 以及[[MK135][表达式]] $\phi_1,\phi_2,\phi_3$ 满足 $\Gamma\vdash(\phi_1\to\phi_2)$ 以及 $\Gamma\vdash(\phi_2\to\phi_3)$
+
+则有 $\Gamma\vdash(\phi_1\to\phi_3)$
+
+***** 证明
+
+根据[[MK560][定义]]可得 $\Gamma\vdash(\phi_1\to\phi_2)$ 以及 $\Gamma\vdash(\phi_2\to\phi_3)$ 
+
+根据[[MK536][推论（3）]] $\Gamma\vdash((\phi_1\to\phi_2)\to((\phi_2\to\phi_3)\to(\phi_1\to\phi_3)))$
+
+根据[[MK543][导出定理]] $\Gamma\vdash((\phi_2\to\phi_3)\to(\phi_1\to\phi_3))$ 同理 $\Gamma\vdash(\phi_1\to\phi_3)$
 
 **** 导出引理<<MK543>>
 
@@ -7782,21 +8030,29 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ 是[[MK547][极大一致的]]，则有：
 
-（1） 若 $\Gamma\vdash\phi$ 则 $\phi\in\Gamma$
+（1） $\Gamma\vdash\phi$ 的充要条件为 $\phi\in\Gamma$
 
 （2） 任意表达式 $\phi$ ，或者 $\phi\in\Gamma$ 或者 $(\lnot\phi)\in\Gamma$
 
 （3） 若 $\phi\in\Gamma,(\phi\to\psi)\in\Gamma$ 则 $\psi\in\Gamma$
 
+（4） $\Gamma\vdash(\phi_1\to\phi_2)$ 的充要条件是 $\Gamma\vdash(\lnot\phi_1)$ 或 $\Gamma\vdash(\phi_2)$
+
 ***** 证明
 
 ****** 证明（1）
 
-假设 $\phi\not\in\Gamma$ 则由于[[MK547][极大一致]]可得 $\Gamma\cup\{\phi\}$ [[MK535][不一致]]，则存在 $\theta$ 使得 $\Gamma\cup\{\phi\}\vdash\theta,\Gamma\cup\{\phi\}\vdash(\lnot\theta)$
+******* 充分
+
+若 $\Gamma\vdash\phi$ ，则假设 $\phi\not\in\Gamma$ 则由于[[MK547][极大一致]]可得 $\Gamma\cup\{\phi\}$ [[MK535][不一致]]，则存在 $\theta$ 使得 $\Gamma\cup\{\phi\}\vdash\theta,\Gamma\cup\{\phi\}\vdash(\lnot\theta)$
 
 则根据[[MK539][演绎定理]]可得 $\Gamma\vdash(\phi\to\theta),\Gamma\vdash(\phi\to(\lnot\theta))$ 又由于 $\Gamma\vdash\phi$ 根据[[MK543][导出引理]]有 $\Gamma\vdash\theta,\Gamma\vdash(\lnot\theta)$
 
 与 $\Gamma$ 是[[MK535][一致的]]矛盾，故假设不成立，即有 $\phi\in\Gamma$
+
+******* 必要
+
+若 $\phi\in\Gamma$ 则显然 $\Gamma\vdash\phi$
 
 ****** 证明（2）
 
@@ -7807,6 +8063,26 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 ****** 证明（3）
 
 若 $\phi\in\Gamma,(\phi\to\psi)\in\Gamma$ 则有 $\Gamma\vdash\psi$ 根据证明（1）可得 $\psi\in\Gamma$
+
+****** 证明（4）
+
+******* 充分
+
+若 $\Gamma\vdash(\phi_1\to\phi_2)$ ，则假设 $\Gamma\vdash\phi_1$ 且 $\Gamma\vdash(\lnot\phi_2)$ 则根据[[MK543][导出引理]]可得 $\Gamma\vdash\phi_2$
+
+故可得 $\Gamma$ 不[[MK535][一致]]，与题意矛盾，故假设不成立，即有 $\Gamma\not\vdash\phi_1$ 或者 $\Gamma\not\vdash(\lnot\phi_2)$
+
+则根据结论（1） $\phi_1\not\in\Gamma$ 或者 $(\lnot\phi_2)\not\in\Gamma$ ，又根据结论（2）有 $(\lnot\phi_1)\in\Gamma$ 或者 $\phi_2\not\in\Gamma$
+
+又根据结论（1）可得 $\Gamma\vdash(\lnot\phi_1)$ 或者 $\Gamma\vdash\phi_2$
+
+******* 必要
+
+若 $\Gamma\vdash(\lnot\phi_1)$ 则 $\Gamma\cup\{\phi_1\}$ 不[[MK535][一致]]，根据[[MK537][定理2]]可得 $\Gamma\cup\{\phi_1\}\vdash\phi_2$
+
+则根据[[MK539][演绎定理]]可得 $\Gamma\vdash(\phi_1\to\phi_2)$
+
+若 $\Gamma\vdash\phi_2$ 则 $\Gamma\cup\{\phi_1\}\vdash\phi_2$ ，故根据[[MK539][演绎定理]]亦可得 $\Gamma\vdash(\phi_1\to\phi_2)$
 
 *** 自显存在性<<MK549>>
 
@@ -7914,7 +8190,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 **** 证明
 
-***** 构建[[MK129][常元符号]]的[[MK176][等价]]关系
+***** 构建[[MK129][常元符号]]的[[MK176][等价]]关系<<MK555>>
 
 对于 $\mathcal{L}_\mathcal{A}$ 中的[[MK129][常元符号]]定义[[MK155][关系]] $\sim_\Gamma$ 为若 $(c_i\hat{=}c_j)\in\Gamma$ 则 $c_i\sim_\Gamma c_j$ 根据下列证明
 
@@ -7950,6 +8226,8 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 ***** 构造[[MK446][结构]]
 
+****** 结构定义<<MK556>>
+
 定义 $M=\left\{c_i\big|i\in\mathbb{N}\right\}/\sim_\Gamma=\left\{[c]_{\sim_\Gamma}\big|i\in\mathbb{N}\right\}$ 是[[MK176][等价关系]] $\sim_\Gamma$ 的[[MK184][商集]]，并定义 $I$ 为
 
 （1） 若 $c_i\in\mathcal{L}_\mathcal{A}$ 是[[MK129][常元符号]]，则有 $I(c_i)=[c_i]_{\sim_\Gamma}$
@@ -7962,11 +8240,323 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
      则 $\left<[c_{i_1}]_{\sim_\Gamma},...,[c_{i_n}]_{\sim_\Gamma}\right>\in I(p)$ 当且仅当 $p(c_{i_1},...,c_{i_n})\in\Gamma$
 
-故最终得[[MK446][一阶结构]] $\mathcal{M}=\left<M,I\right>$
+****** 无歧义（合理性）
+
+若 $\{(c_{i_1}\hat{=}c_{j_1}),...,(c_{i_n}\hat{ =}c_{j_n})\}\subset\Gamma$ 且 $p(c_{i_1},...,c_{i_n})\in\Gamma$ 其中 $p$ 是[[MK132][谓词符号]]则定义 $\phi=p(x_1,...,x_n)$
+
+则根据[[MK552][等式定理]] $\{(c_{i_1}\hat{=}c_{j_1}),...,(c_{i_n}\hat{ =}c_{j_n})\}\cup\{\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>)\}\vdash\phi(\left<x_1,...,x_n\right>,\left<c_{j_1},...,c_{j_n}\right>)$
+
+即 $\{(c_{i_1}\hat{=}c_{j_n}),...,(c_{i_n}\hat{ =}c_{j_1})\}\cup\{p(c_{i_1},...,c_{i_n})\}\vdash p(c_{j_1},...,c_{j_n})$ 显然根据[[MK551][性质]]有 $p(c_{j_1},...,c_{j_n})\in\Gamma$
+
+同理可证若 $\{(c_{i_1}\hat{=}c_{j_1}),...,(c_{i_{n+1}}\hat{ =}c_{j_{n+1}})\}\subset\Gamma$ 且 $(f(c_{i_1},...,c_{i_n})=c_{i_{n+1}})\in\Gamma$ 则有 $(f(c_{j_1},...,c_{j_n})=c_{j_{n+1}})\in\Gamma$ 
+
+****** 结论
+
+根据之前两步证明，可得[[MK446][一阶结构]] $\mathcal{M}=\left<M,I\right>$ 
  
-***** 定义[[MK447][赋值]]
+***** 构造[[MK447][赋值]]
+
+****** 任意 $x_i$ 存在 $c_j$ 使得 $(x_i\hat{=}c_j)\in\Gamma$
+
+定义 $\phi=(\exists x_{i+1}(x_i\hat{=}x_{i+1}))$ 假设 $\phi\not\in\Gamma$ 则根据[[MK551][性质]]可得 $\Gamma\not\vdash(\exists x_{i+1}(x_i\hat{ =}x_{i+1}))$
+
+根据[[MK553][推导符号]]可得等价于 $\Gamma\not\vdash(\lnot(\forall x_{i+1}(\lnot(x_i\hat{ =}x_{i+1}))))$ 又根据[[MK551][性质]]可得 $\Gamma\vdash(\lnot(\lnot(\forall x_{i+1}(\lnot(x_i\hat{ =}x_{i+1})))))$
+
+定义 $\psi=(\forall x_{i+1}(\lnot(x_i\hat{ =}x_{i+1})))$ 根据[[MK536][推论（4）]]可得 $\Gamma\vdash((\lnot(\lnot\psi))\to\psi)$
+
+根据 $\Gamma\vdash (\lnot(\lnot\psi))$ 故根据[[MK543][导出引理]]有 $\Gamma\vdash\psi$ 即 $\Gamma\vdash(\forall x_{i+1}(\lnot(x_i\hat{ =}x_{i+1})))$ 定义 $\varphi=(\lnot(x_i\hat{ =}x_{i+1}))$
+
+根据[[MK522][特化公理]]定义 $\tau=x_i$ 则有 $((\forall x_{i+1}\varphi)\to\varphi(\left<x_{i+1}\right>,\left<x_i\right>))$ 是公理
+
+即 $((\forall x_{i+1}(\lnot(x_i\hat{ =}x_{i+1})))\to(\lnot(x_i\hat{ =}x_{i})))$ 是公理，根据 $\Gamma\vdash(\forall x_{i+1}(\lnot(x_i\hat{ =}x_{i+1})))$ 以及[[MK543][导出引理]]
+
+可得 $\Gamma\vdash(\lnot(x_i\hat{=}x_i))$ 又根据[[MK522][恒等律]]可得 $\Gamma\vdash(x_i\hat{ =}x_i)$ 可得 $\Gamma$ [[MK535][不一致]]，与 $\Gamma$ [[MK547][极大一致]]矛盾，故假设不成立。
+
+即有 $(\exists x_{i+1}(x_i\hat{=}x_{i+1}))\in\Gamma$ 根据[[MK549][自现存在性]]可得存在 $c_j$ 使得 $(x_i\hat{ =}c_j)\in\Gamma$
+
+综上所述，对于任意[[MK130][变元符号]] $x_i$ 均存在 $c_j$ 满足 $(x_i\hat{ =}c_j)\in\Gamma$
+
+****** 若 $\{(x_i\hat{ =}c_j),(x_i\hat{ =}c_k)\}\subset\Gamma$ 则 $(c_j\hat{ =}c_k)\in\Gamma$
+
+定义 $\phi=(x_{i+i}\hat{ =}c_k)$ 则根据[[MK552][等式定理]]有 $\{(x_i\hat{ =}c_i)\}\cup\{\phi(\left<x_{i+1}\right>,\left<x_i\right>)\}\vdash\phi(\left<x_{i+1}\right>,\left<c_j\right>)$
+
+即 $\{(x_i\hat{ =}c_i),(x_i\hat{ =}c_k)\}\vdash(c_j\hat{ =}c_k)$ 又根据条件 $\{(x_i\hat{ =}c_j),(x_i\hat{ =}c_k)\}\subset\Gamma$ ，故有 $\Gamma\vdash(c_j\hat{ =}c_k)$
+
+根据[[MK551][性质]]可得 $(c_j\hat{ =}c_k)\in\Gamma$
+
+****** 定义[[MK447][赋值]]<<MK554>>
+
+定义 $\mathcal{M}$ [[MK447][赋值]]为 $v(x_i)=[c_j]_{\sim_\Gamma}$ 当且仅当 $(x_i\hat{ =}c_j)\in\Gamma$
+
+****** [[MK133][项]]的[[MK448][赋值]]<<MK562>>
+
+对于任意[[MK133][项]] $\tau\in T$ 根据下列证明， $|\tau|<\infty$ 以及数学归纳法
+
+可证 $\bar{v}(\tau)=[c_i]_{\sim_\Gamma}$ 的充要条件是 $(\tau\hat{=}c_i)\in\Gamma$
+
+******* $|\tau|=1$
+
+根据[[MK138][唯一可读性]]可得有且仅有以下两种情况
+
+若 $\tau=x_k$ 则有 $\bar{v}(\tau)=v(x_k)$ 则根据[[MK554][定义]]可得 $v(x_k)=[c_i]_{\sim_\Gamma}$ 的充要条件是 $(x_k\hat{ =}c_i)\in\Gamma$
+
+若 $\tau=c_k$ 则有 $\bar{v}(\tau)=I(c_k)=[c_k]_{\sim_\Gamma}=[c_i]_{\sim_\Gamma}$ 显然 $[c_i]_{\sim_\Gamma}=[c_k]_{\sim_\Gamma}$ 的充要条件是 $c_k\sim_\Gamma c_i$ 
+
+根据[[MK555][定义]]可得即 $(c_k\hat{=}c_i)\in\Gamma$
+
+******* 归纳假设
+
+对于任意 $|\tau|<n$ 均有 $\bar{v}(\tau)=[c_i]_{\sim_\Gamma}$ 的充要条件是 $(\tau\hat{=}c_i)\in\Gamma$
+
+******* $|\tau|=n$
+
+根据[[MK138][唯一可读性]]可得有且仅有 $\tau=f(\tau_1,...,\tau_n)$ 一种情况则根据[[MK447][赋值]]有 $\bar{v}(\tau)=I(f)(\bar{v}(\tau_1),...,\bar{v}(\tau_n))$
+
+根据归纳假设有 $\bar{v}(\tau_k)=[c_{j_k}]_{\sim_\Gamma}$ 的充要条件为 $(\tau_i\hat{=}c_{j_i})\in\Gamma$ 即 $\bar{v}(\tau)=I(f)([c_{j_1}]_{\sim_\Gamma},...,[c_{j_n}]_{\sim_\Gamma})$
+
+又根据[[MK556][定义]]可得若 $I(f)([c_{j_1}]_{\sim_\Gamma},...,[c_{j_n}]_{\sim_\Gamma})=[c_i]_{\sim_\Gamma}$ 的充要条件是 $(f(c_{j_1},...,c_{j_n})\hat{=}c_i)\in\Gamma$
+
+******** 充分
+
+若 $\bar{v}(\tau)=I(f)([c_{j_1}]_{\sim_\Gamma},...,[c_{j_n}]_{\sim_\Gamma})=[c_i]_{\sim_\Gamma}$ ，则定义 $\phi=(f(x_1,...,x_n)\hat{=}x_{n+1})$ 则根据[[MK552][等式定理]]可得
+
+\begin{aligned}
+&\{(c_i\hat{= }c_i)\}\cup\left\{(\tau_k\hat{=}c_{j_k})\big|1\leq i\leq n\land i\in\mathbb{N}\right\}\cup\{\phi(\left<x_1,...,x_n,x_{n+1}\right>,\left<c_{j_1},...,c_{j_n},c_i\right>)\}\\
+\vdash&\phi(\left<x_1,...,x_n,x_{n+1}\right>,\left<\tau_1,...,\tau_n,c_i\right>)$
+\end{aligned}
+
+显然根据归纳假设以及[[MK555][自反性]]可得 $\{(c_i\hat{= }c_i)\}\cup\left\{(\tau_k\hat{=}c_{j_k})\big|1\leq i\leq n\land i\in\mathbb{N}\right\}\subset\Gamma$
+
+又由于 $\phi(\left<x_1,...,x_n,x_{n+1}\right>,\left<c_{j_1},...,c_{j_n},c_i\right>)=(f(c_{j_1},...,c_{j_n})\hat{=}c_i)\in\Gamma$
+
+故可得 $\Gamma\vdash\phi(\left<x_1,...,x_n,x_{n+1}\right>,\left<\tau_1,...,\tau_n,c_i\right>)=(f(\tau_1,...,\tau_n)\hat{=}c_i)$
+
+根据[[MK551][性质]]可得 $(f(\tau_1,...,\tau_n)\hat{=}c_i)\in\Gamma$
+
+******** 必要
+
+若 $(f(\tau_1,...,\tau_n)\hat{=}c_i)\in\Gamma$ 则定义 $\phi = (f(x_1,...,x_n)\hat{ =}x_{n+1})$ 则根据[[MK552][等式定理]]可得
+
+\begin{aligned}
+&\{(c_i\hat{= }c_i)\}\cup\left\{(\tau_k\hat{=}c_{j_k})\big|1\leq i\leq n\land i\in\mathbb{N}\right\}\cup\{\phi(\left<x_1,...,x_n,x_{n+1}\right>,\left<\tau_1,...,\tau_n,c_i\right>)\}\\
+\vdash&\phi(\left<x_1,...,x_n,x_{n+1}\right>,\left<c_{j_1},...,c_{j_n},c_i\right>)$
+\end{aligned}
+
+则与充分同理可证 $(f(c_{j_1},...,c_{j_n})\hat{=}c_i)\in\Gamma$ ，根据[[MK556][定义]]可得 $\bar{v}(\tau)=I(f)([c_{j_1}]_{\sim_\Gamma},...,[c_{j_n}]_{\sim_\Gamma}) =[c_i]_{\sim_\Gamma}$ 
 
 ***** 证明结论
+
+根据以下证明，对于任意[[MK135][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ ， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\phi\in\Gamma$ 即根据[[MK530][可满足]]有 $\left<\mathcal{M},v\right>\vDash\Gamma$  
+
+****** 任意[[MK451][语句]]满足结论<<MK566>>
+
+任意 $\theta\in\mathcal{L}_\mathcal{A}$ 是[[MK451][语句]]，定义 $z(\theta)$ 为 $\theta$ 中去除所有[[MK133][项]]后 $($ 和 $)$ 的对数
+
+显然 $z(\theta)<\infty$ 则根据以下证明以及数学归纳法可得 $\theta\in\Gamma$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\theta$
+
+其中 $\mathcal{M}$ 为[[MK556][之前定义的结构]]， $v$ 为[[MK554][之前定义赋值]]
+
+******* $z(\theta)=1$ 时
+
+根据[[MK149][唯一可读性]]有且仅有以下情况
+
+******** $\theta=(\tau_1\hat{=}\tau_2)$
+
+由于 $\theta$ 是[[MK451][语句]]且为[[MK135][原始表达式]]，故 $\tau_i$ 不含[[MK130][变元符号]]，则根据[[MK554][赋值定义]]可得
+
+存在唯一[[MK129][常元符号]] $c_{i_1},c_{i_2}$ 使得 $\bar{v}(\tau_1)=[c_{i_1}]_{\sim_\Gamma},\bar{v}(\tau_2)=[c_{i_2}]_{\sim_\Gamma}$
+
+则根据[[MK562][之前证明]]可得其充要条件为 $(\tau_1\hat{=}c_{i_1})\in\Gamma,(\tau_2\hat{ =}c_{i_2})\in\Gamma$
+
+根据[[MK449][满足]]可得 $\left<\mathcal{M},v\right>\vDash(\tau_1\hat{=}\tau_2)$ 的充要条件为 $[c_{i_1}]_{\sim_\Gamma}  =\bar{v}(\tau_1) =\bar{v}(\tau_2) =[c_{i_2}]_{\sim_\Gamma}$
+
+则根据[[MK555][等价关系定义]]可得其充要条件为 $(c_{i_1}\hat{=}c_{i_2})\in\Gamma$
+
+综上所述 $\left<\mathcal{M},v\right>\vDash(\tau_1\hat{=}\tau_2)$ 的等价条件为 $(c_{i_1}\hat{ =}c_{i_2})\in\Gamma$
+
+则定义 $\phi=(x_1\hat{ =}x_2)$ 根据以下证明可得当 $\theta=(\tau_1\hat{ =}\tau_2)$ 时 $\left<\mathcal{M},v\right>\vDash\theta$ 的充要条件为 $\theta\in\Gamma$ 
+
+********* 充分
+
+假设 $(\tau_1\hat{=}\tau_2)\in\Gamma$ 根据[[MK552][等式定理]]
+
+可得 $\{(\tau_1\hat{ =}c_{i_1}),(\tau_2\hat{ =}c_{2_1})\}\cup\{\phi(\left<x_1,x_2\right>,\left<\tau_1,\tau_2\right>)\}\vdash\phi(\left<x_1,x_2\right>,\left<c_{i_1},c_{i_2}\right>)$
+
+即 $\{(\tau_1\hat{ =}c_{i_1}),(\tau_2\hat{ =}c_{2_1}),(\tau_1\hat{ =}\tau_2)\}\vdash(c_{i_1}\hat{ =}c_{i_2})$ 显然根据假设 $\{(\tau_1\hat{ =}c_{i_1}),(\tau_2\hat{ =}c_{2_1}),(\tau_1\hat{ =}\tau_2)\}\subset\Gamma$
+
+即有 $\Gamma\vdash(c_{i_1}\hat{=}c_{i_2})$ 根据[[MK551][性质]]可得 $(c_{i_1}\hat{ =}c_{i_2})\in\Gamma$ 则根据等价条件可得 $\left<\mathcal{M},v\right>\vDash(\tau_1\hat{ =}\tau_2)$ 
+
+********* 必要
+
+假设 $\left<\mathcal{M},v\right>\vDash(\tau_1\hat{=}\tau_2)$ 则其等价条件为 $(c_{i_1}\hat{ =}c_{i_2})\in\Gamma$
+
+根据[[MK552][等式定理]] $\{(\tau_1\hat{ =}c_{i_1}),(\tau_2\hat{ =}c_{2_1})\}\cup\{\phi(\left<x_1,x_2\right>,\left<c_{i_1},c_{i_2}\right>)\}\vdash\phi(\left<x_1,x_2\right>,\left<\tau_1,\tau_2\right>)$
+
+即 $\{(\tau_1\hat{ =}c_{i_1}),(\tau_2\hat{ =}c_{2_1}),(c_{i_1}\hat{ =}c_{i_2})\}\vdash(\tau_1\hat{ =}\tau_2)$ 显然根据假设 $\{(\tau_1\hat{ =}c_{i_1}),(\tau_2\hat{ =}c_{2_1}),(c_{i_1}\hat{ =}c_{i_2})\}\subset\Gamma$
+
+故有 $\Gamma\vdash(\tau_1\hat{=}\tau_2)$ 根据[[MK551][性质]]可得 $(\tau_1\hat{ =}\tau_2)\in\Gamma$ 
+
+******** $\theta=p(\tau_1,...,\tau_n)$
+
+根据[[MK449][满足]]可得 $\left<\mathcal{M},v\right>\vDash\theta$ 的充要条件是 $\left<\bar{v}(\tau_1),...,\bar{v}(\tau_n)\right>\in I(p)$
+
+由于 $\theta$ 是[[MK451][语句]]且为[[MK135][原始表达式]]，故 $\tau_i$ 不含[[MK130][变元符号]]，则根据[[MK554][赋值定义]]可得对于任意 $\tau_i$
+
+存在唯一[[MK129][常元符号]] $c_{j_i}$ 使得 $\bar{v}(\tau_i)=[c_{j_i}]_{\sim_\Gamma}$ 根据[[MK562][之前证明]]可得充要条件 $(\tau_i\hat{=}c_{j_i})\in\Gamma$
+
+则可得  $\left<\bar{v}(\tau_1),...,\bar{v}(\tau_n)\right>\in I(p)$ 等价于 $\left<[c_{j_1}]_{\sim_\Gamma},...,\left<[c_{j_n}]_{\sim_\Gamma}\right>\in I(p)$
+
+又根据[[MK556][结构定义]] $\left<[c_{j_1}]_{\sim_\Gamma},...,\left<[c_{j_n}]_{\sim_\Gamma}\right>\in I(p)$ 等价于 $p(c_{j_1},...,c_{j_n})\in\Gamma$
+
+综上所述， $\left<\mathcal{M},v\right>\vDash p(\tau_1,...,\tau_n)$ 的充要条件是 $p(c_{j_1},...,c_{j_n})\in\Gamma$
+
+则定义 $\phi=p(x_1,...,x_n)$ 根据以下证明可得当 $\theta=p(\tau_1,...,\tau_n)$ 时 $\left<\mathcal{M},v\right>\vDash\theta$ 的充要条件为 $\theta\in\Gamma$ 
+
+********* 充分
+
+若 $p(\tau_1,...,\tau_n)\in\Gamma$
+
+根据[[MK552][等式定理]] $\left\{(\tau_i\hat{ =}c_{j_i})\big|1\leq i\leq n\land i\in\mathbb{N}\right\}\cup\{\phi(\left<x_1,...,x_n\right>,\left<\tau_1,...,\tau_n\right>)\}\vdash\phi(\left<x_1,...,x_n\right>,\left<c_{j_1},...,c_{j_2}\right>)$
+
+即 $\left\{(\tau_i\hat{ =}c_{j_i})\big|1\leq i\leq n\land i\in\mathbb{N}\right\}\cup\{p(\tau_1,...,\tau_n)\}\vdash p(c_{j_1},...,c_{j_2})$
+
+显然 $\left\{(\tau_i\hat{ =}c_{j_i})\big|1\leq i\leq n\land i\in\mathbb{N}\right\}\cup\{p(\tau_1,...,\tau_n)\}\subset\Gamma$ 故有 $\Gamma\vdash p(c_{j_1},...,c_{j_2})$
+
+根据[[MK551][性质]]可得 $p(c_{j_1},...,c_{j_n})\in\Gamma$ 根据等价条件有 $\left<\mathcal{M},v\right>\vDash p(\tau_1,...,\tau_n)$
+
+********* 必要
+
+若 $\left<\mathcal{M},v\right>\vDash p(\tau_1,...,\tau_n)$ 则其充要条件是 $p(c_{j_1},...,c_{j_n})\in\Gamma$ 
+
+根据[[MK552][等式定理]] $\left\{(\tau_i\hat{ =}c_{j_i})\big|1\leq i\leq n\land i\in\mathbb{N}\right\}\cup\{\phi(\left<x_1,...,x_n\right>,\left<c_{j_1},...,c_{j_2}\right>)\}\vdash\phi(\left<x_1,...,x_n\right>,\left<\tau_1,...,\tau_n\right>)$
+
+即 $\left\{(\tau_i\hat{ =}c_{j_i})\big|1\leq i\leq n\land i\in\mathbb{N}\right\}\cup\{p(c_{j_1},...,c_{j_2})\}\vdash p(\tau_1,...,\tau_n)$
+
+显然 $\left\{(\tau_i\hat{ =}c_{j_i})\big|1\leq i\leq n\land i\in\mathbb{N}\right\}\cup\{p(c_{j_1},...,c_{j_2})\}\subset\Gamma$ 故有 $\Gamma\vdash p(\tau_1,...,\tau_n)$
+
+根据[[MK551][性质]]可得 $p(\tau_1,...,\tau_n)\in\Gamma$
+
+******* 归纳假设
+
+对于任意[[MK451][语句]] $\theta$ 若 $z(\theta)<n$ 则 $\left<\mathcal{M},v\right>\vDash\theta$ 的充要条件为 $\theta\in\Gamma$ 
+
+******* $z(\theta)=n$
+
+根据[[MK149][唯一可读性]]有且仅有以下情况
+
+******** $\theta=(\lnot\phi)$
+
+根据[[MK449][满足]]可得 $\left<\mathcal{M},v\right>\vDash(\lnot\phi)$ 的充要条件是 $\left<\mathcal{M},v\right>\not\vDash\phi$ 根据归纳假设，其充要条件是 $\phi\not\in\Gamma$
+
+根据[[MK551][性质（2）]]可得 $\phi\not\in\Gamma$ 的充要条件是 $(\lnot\phi)\in\Gamma$
+
+******** $\theta=(\phi_1\to\phi_2)$
+
+根据[[MK449][满足]]可得 $\left<\mathcal{M},v\right>\vDash(\phi_1\to\phi_2)$ 的充要条件是 $\left<\mathcal{M},v\right>\not\vDash\phi_1$ 或者 $\left<\mathcal{M},v\right>\vDash\phi_2$
+
+根据归纳假设可得 $\left<\mathcal{M},v\right>\not\vDash\phi_1$ 或者 $\left<\mathcal{M},v\right>\vDash\phi_2$ 的充要条件为 $\phi_1\not\in\Gamma$ 或者 $\phi_2\in\Gamma$
+
+根据[[MK551][性质（4）]]可得 $\phi_1\not\in\Gamma$ 或者 $\phi_2\in\Gamma$ 的充要条件为 $\Gamma\vdash(\phi_1\to\phi_2)$
+
+又根据[[MK551][性质（1）]]可得 $\Gamma\vdash(\phi_1\to\phi_2)$ 的充要条件为 $(\phi_1\to\phi_2)\in\Gamma$
+
+******** $\theta=(\forall x_i\phi)$
+
+********* $\phi$ 是[[MK451][语句]]
+
+故 $\phi$ 中不含[[MK441][自由变元]]，根据[[MK453][推论]]易证 $\left<\mathcal{M},v\right>\vDash(\forall x_i\phi)$ 的充要条件为 $\left<\mathcal{M},v\right>\vDash\phi$
+
+根据归纳假设，即充要条件为 $\phi\in\Gamma$
+
+则根据[[MK522][特化原理]] $((\forall x_i\phi)\to\phi)$ 是个公理，又根据[[MK552][无关量词]]可得 $(\phi\to(\forall x_i\phi))$ 是公理
+
+故显然结合[[MK551][性质（1）]]可得 $\phi\in\Gamma$ 的充要条件是 $(\forall x_i\phi)\in\Gamma$
+
+********* $\phi$ 含有 $x_i$ 的[[MK441][自由变元]]
+
+根据[[MK449][满足]]可得 $\left<\mathcal{M},v\right>\vDash(\forall x_i\phi)$ 的充要条件为于任意[[MK447][赋值]] $\mu:X\to M$
+
+若满足对于任意 $\phi$ 中除 $x_i$ 的[[MK441][自由变元]] $x_j$ 有 $\mu(x_j)=v(x_j)$ ，则有 $<\mathcal{M},\mu>\vDash(\forall x_i\psi)$
+
+根据 $M$ 的[[MK556][定义]]可得等价于对于任意[[MK129][常元符号]] $c_j$ 满足 $\mu(x_i)=[c_j]_{\sim_\Gamma}$ 有 $<\mathcal{M},\mu>\vDash\phi$
+
+由于 $(\forall x_i\phi)$ 是[[MK451][语句]]，故 $x_i$ 是 $\phi$ 中唯一的[[MK441][自由变元]]，根据[[MK452][局部确定]]可得
+
+等价于对于任意[[MK129][常元符号]] $c_j$ 均有 $\mathcal{M}\vDash\phi[c_j]$ 显然 $c_j$ 是[[MK133][项]]，且根据[[MK556][定义]]有 $\mu(x_i)=I(c_j)=\bar{v}(c_j)$
+
+则根据[[MK489][替换定理]]有 $\mathcal{M}\vDash\phi[c_j]$ 的等价条件为 $\left<\mathcal{M},v\right>\vdash\phi(\left<x_i\right>,\left<c_j\right>)$ 根据归纳假设即 $\phi(\left<x_i\right>,\left<c_j\right>)\in\Gamma$  
+
+综上所述 $\left<\mathcal{M},v\right>\vDash(\forall x_i\phi)$ 的充要条件为对于任意[[MK129][常元符号]] $c_j$ 均有 $\phi(\left<x_i\right>,\left<c_j\right>)\in\Gamma$ 
+
+********** 充分
+
+若 $(\forall x_i\phi)\in\Gamma$ 则对于任意[[MK129][常元符号]] $c_j$ 显然 $c_j$ 是[[MK133][项]]，故根据[[MK522][特化公理]]可得 $((\forall x_i\phi)\to\phi(\left<x_i\right>,\left<c_j\right>))$
+
+是公理。则根据[[MK543][导出引理]]可得对于任意[[MK129][常元符号]] $c_j$ 有 $\Gamma\vdash\phi(\left<x_i\right>,\left<c_j\right>)$ 根据[[MK551][性质]] $\phi(\left<x_i\right>,\left<c_j\right>)\in\Gamma$
+
+故综上所述 $(\forall x_i\phi)\in\Gamma$ 可得任意[[MK129][常元符号]] $c_j$ 有 $\phi(\left<x_i\right>,\left<c_j\right>)\in\Gamma$
+
+则根据充要条件可得 $\left<\mathcal{M},v\right>\vDash(\forall x_i\phi)$  
+
+********** 必要
+
+若 $\left<\mathcal{M},v\right>\vDash(\forall x_i\phi)$ ，假设 $(\forall x_i\phi)\not\in\Gamma$ 则根据[[MK551][性质（2）]]可得 $(\lnot(\forall x_i\phi))\in\Gamma$ 则根据[[MK563][存在量词]]
+
+可得有 $(\exists x_i(\lnot\phi))\in\Gamma$ ，由于 $\Gamma$ [[MK549][自显存在]]，故存在 $c^*_j$ 满足 $(\lnot\phi)(\left<x_i\right>,\left<c^*_j\right>)\in\Gamma$
+
+即 $(\lnot\phi(\left<x_i\right>,\left<c^*_j\right>))\in\Gamma$ 又由于 $\left<\mathcal{M},v\right>\vDash(\forall x_i\phi)$  则根据充要条件可得任意[[MK129][常元符号]] $c_j$
+
+均有 $\phi(\left<x_i\right>,\left<c_j\right>)\in\Gamma$ 即对于 $c^*_j$ 亦有 $\phi(\left<x_i\right>,\left<c^*_j\right>)\in\Gamma$ 与[[MK551][性质（2）]]冲突
+
+故假设不成立 $(\forall x_i\phi)\in\Gamma$
+
+****** $((x_i\hat{=}c_j)\to(\phi\to\phi(\left<x_i\right>,\left<c_j\right>)))\in\Gamma$
+
+对于任意[[MK135][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 取[[MK130][变元符号]] $x_k$ 未再 $\phi$ 中出现，则用 $x_i$ [[MK538][替换]] $x_k$ 可得 $\phi(\left<x_k\right>,\left<x_i\right>)=\phi$
+
+同理两次[[MK538][替换]]可得 $\phi(\left<x_i\right>,\left<x_k\right>)(\left<x_k\right>,\left<x_i\right>)=\phi$ 即对 $\phi,\phi(\left<x_i\right>,\left<x_k\right>)$ 均用 $x_i$ [[MK538][替换]] $x_k$ 后表达式相等
+
+故根据[[MK522][等同律]]可得 $((x_i\hat{ = }x_k)\to(\phi\to\phi(\left<x_i\right>,\left<x_k\right>)))$ 是公理
+
+进一步根据[[MK522][全域化]]可得 $(\forall x_k((x_i\hat{ = }x_k)\to(\phi\to\phi(\left<x_i\right>,\left<x_k\right>))))$ 是公理
+
+又根据[[MK522][特化]]可得 $((\forall x_k((x_i\hat{ = }x_k)\to(\phi\to\phi(\left<x_i\right>,\left<x_k\right>))))\to((x_i\hat{ = }x_k)\to(\phi\to\phi(\left<x_i\right>,\left<x_k\right>)))(\left<x_k\right>,\left<c_j\right>))$
+
+根据[[MK543][导出引理]]即有 $\Gamma\vdash((x_i\hat{ = }x_k)\to(\phi\to\phi(\left<x_i\right>,\left<x_k\right>)))(\left<x_k\right>,\left<c_j\right>)$
+
+即 $\Gamma\vdash((x_i\hat{ = }c_j)\to(\phi\to\phi(\left<x_i\right>,\left<c_j\right>)))$ 根据[[MK551][性质]]可得 $((x_i\hat{=}c_j)\to(\phi\to\phi(\left<x_i\right>,\left<c_j\right>)))\in\Gamma$
+
+****** 若 $v(x_i)=[c_j]_{\sim_\Gamma}$ 则 $(\phi\leftrightarrow\phi(\left<x_i\right>,\left<c_j\right>))\in\Gamma$
+
+根据[[MK562][项赋值]]可得 $v(x_i)=[c_j]_{\sim_\Gamma}$ 则有 $(\tau\hat{=}c_i)\in\Gamma$ ，则根据上一步证明以及[[MK543][导出引理]] $\Gamma\vdash(\phi\rightarrow\phi(\left<x_i\right>,\left<c_j\right>))$
+
+同理亦有 $\Gamma\vdash((\lnot\phi)\rightarrow(\lnot\phi(\left<x_i\right>,\left<c_j\right>)))$ 则根据[[MK564][等价条件（2）]]可得 $\Gamma\vdash(\phi\leftrightarrow\phi(\left<x_i\right>,\left<c_j\right>))$
+
+****** $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\phi\in\Gamma$
+
+对于任意[[MK135][表达式]] $\phi(x_1,...,x_n)\in\mathcal{L}_\mathcal{A}$ 根据[[MK452][局部确定]]可得 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\mathcal{M}\vDash\phi[v(x_1),...,v(x_n)]$
+
+设 $v(x_i)=[c_{j_i}]_{\sim_\Gamma}$ 根据[[MK556][结构定义]]可得 $v(x_i)=I(c_{j_i})=\bar{v}(c_{j_i})$ 显然 $c_{j_i}$ 是[[MK133][项]]
+
+故根据[[MK489][替换定理]]可得 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\left<\mathcal{M},v\right>\vDash\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>))$ 
+
+由于 $v(x_i)=[c_{j_i}]_{\sim_\Gamma}$ 则根据上一步证明可得 $\Gamma\vdash(\phi\leftrightarrow\phi(\left<x_1\right>,\left<c_{i_1}\right>))$
+
+同理可得 $\Gamma\vdash(\phi\left<x_1\right>,\left<c_{i_1}\right>)\leftrightarrow\phi(\left<x_1,x_2\right>,\left<c_{i_1},c_{i_2}\right>))$ 则根据[[MK565][传递性]]可得 $\Gamma\vdash(\phi\leftrightarrow\phi(\left<x_1,x_2\right>,\left<c_{i_1},c_{i_2}\right>))$
+
+依次类推，由于 $n<\infty$ 故根据数学归纳法有 $\Gamma\vdash(\phi\leftrightarrow\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>))$
+
+由于 $x_1,...,x_n$ 是 $\phi$ 中所有的[[MK441][自由变元]]，故 $\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>)$ 是[[MK451][语句]]
+
+故根据[[MK566][之前证明]]可得 $\left<\mathcal{M},v\right>\vDash\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>))$ 的充要条件为 $\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>))\in\Gamma$
+
+根据[[MK551][性质]] $\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>))\in\Gamma$ 的充要条件为 $\Gamma\vdash\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>))$ 
+
+根据[[MK560][双向蕴含]]、[[MK543][导出引理]]以及 $\Gamma\vdash(\phi\leftrightarrow\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>))$
+
+易证 $\Gamma\vdash\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>))$ 的充要条件为 $\Gamma\vdash\phi$ 又根据[[MK551][性质]]可得充要条件为 $\phi\in\Gamma$
+
+综上所述，对于任意[[MK135][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ ， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\phi\in\Gamma$
 
 *** 可靠性定理<<MK533>>
 
