@@ -1,5 +1,6 @@
 DIF := $(shell cmp /etc/resolv.conf resolv.conf)
 PW = $(shell cat ~/文档/PW)
+SERVER = $(shell cat ~/文档/SERVER)
 
 cporg: ORGNOTES = $(shell find ~/OneDrive -path ~/OneDrive/manjaro_note -prune -o -name *.org -a -print)
 
@@ -30,7 +31,7 @@ installall:
 # 	fi
 
 connect:
-	echo $(PW) | sudo -S openvpn --config ~/文档/ffff.ovpn --auth-user-pass ~/文档/auth.txt
+	echo $(PW) | sudo -S openvpn --config ~/文档/ffff --auth-user-pass ~/文档/auth.txt
 
 set_dns:  
 ifeq ($(DIF),)
@@ -89,15 +90,15 @@ sync: commit
 ipsec_restart:
 	echo $(PW) | sudo -S ipsec restart
 
-conn: ipsec_restart # try 1.1.1.1 and 1.0.0.1 for dns
-	sleep 0.5
-	echo $(PW) | sudo -S ipsec up NordVPN
+conn: 
+	echo $(PW) | sudo -S wg-quick up $(SERVER)
 
 disip:
 	echo $(PW) | sudo -S ipsec down NordVPN
 
 # First disconnnect strongswan, then revert dns
-disconn:disip
+disconn:
+	echo $(PW) | sudo -S wg-quick down $(SERVER)
 
 nordconn:save_dns
 	echo $(PW) | sudo -S nordvpn c

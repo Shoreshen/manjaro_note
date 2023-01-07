@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 566
+currnet mark: 575
 
 free mark:
  
@@ -7262,7 +7262,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 *** 可满足<<MK530>>
 
-若 $\Gamma$ 是一个[[MK135][表达式]]集合，若存在[[MK446][结构]] $\mathcal{M}=<M,I>$ 以及[[MK447][赋值]] $v$
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有 $\Gamma$ 是一个[[MK135][表达式]]集合，若存在[[MK446][结构]] $\mathcal{M}=<M,I>$ 以及[[MK447][赋值]] $v$
 
 使得任意 $\gamma\in \Gamma$ 均有 $<\mathcal{M},v>\vDash\gamma$ 即[[MK449][满足]] $\gamma$ 则称 $\Gamma$ 是可满足的
 
@@ -7836,7 +7836,7 @@ $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件�
 
 则 $\langle\theta_1(\langle c_i\rangle,\langle x_j\rangle),...,\theta_l(\langle c_i\rangle,\langle x_j\rangle),\theta_m(\langle c_i\rangle,\langle x_j\rangle)\rangle$ 亦是一个 $\Gamma$ [[MK528][证明]]
 
-**** 常元省略定理
+**** 常元省略定理<<MK571>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ 以及[[MK135][表达式]] $\phi$ 若满足：
 
@@ -7846,9 +7846,9 @@ $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件�
 
 （3） [[MK130][变元符号]] $x_j$ 不是 $\phi$ 中的[[MK441][自由变元]]
 
-（4） [[MK130][变元符号]] $x_k$ 不在 $\phi$ 中出现，定义 $\phi(\langle c_i\rangle,\langle x_k\rangle)$ 是将 $\phi$ 中所有 $c_i$ 替换为 $x_j$ 后的[[MK135][表达式]]
+（4） [[MK130][变元符号]] $x_k$ 不在 $\phi$ 中出现，定义 $\phi(\langle c_i\rangle,\langle x_k\rangle)$ 是将 $\phi$ 中所有 $c_i$ 替换为 $x_k$ 后的[[MK135][表达式]]
 
-     则 $x_j$ [[MK523][可替换]] $\phi(\langle c_i\rangle,\langle x_k\rangle)$ 中的 $x_k$
+     且 $x_j$ [[MK523][可替换]] $\phi(\langle c_i\rangle,\langle x_k\rangle)$ 中的 $x_k$
 
 则有
 
@@ -7880,9 +7880,9 @@ $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件�
 
 又根据条件（4）可得 $x_j$ [[MK523][可替换]] $\phi(\langle c_i\rangle,\langle x_k\rangle)$ 中的 $x_k$ 根据条件（3）可得 $x_j$ 不是 $\phi$ 中的[[MK441][自由变元]]
 
-显然 $x_j$ 不在 $(\forall x_k\phi(\langle c_i\rangle,\langle x_k\rangle))$ 中[[MK440][自由出现]] 定义 $\psi=((\forall x_k\phi(\langle c_i\rangle,\langle x_k\rangle))\to(\forall x_j\phi(\langle c_i\rangle,\langle x_k\rangle)(\langle x_k\rangle,\langle x_j\rangle)))$
+显然 $x_j$ 不在 $(\forall x_k\phi(\langle c_i\rangle,\langle x_k\rangle))$ 中[[MK440][自由出现]]，定义 $\psi=((\forall x_k\phi(\langle c_i\rangle,\langle x_k\rangle))\to(\forall x_j\phi(\langle c_i\rangle,\langle x_k\rangle)(\langle x_k\rangle,\langle x_j\rangle)))$
 
-故根据[[MK542][量词变更引理]]可得 $\Gamma\vdash\psi$ 则有 $\Gamma$ [[MK528][证明]] $\langle\eta'_1,...,\eta'_v\rangle$ 满足 $\theta'_v=\psi$
+故根据[[MK542][量词变更引理]]可得 $\Gamma\vdash\psi$ 则有 $\Gamma$ [[MK528][证明]] $\langle\eta'_1,...,\eta'_v\rangle$ 满足 $\eta'_v=\psi$
 
 则 $\langle\eta_1,...,\eta_u,\eta'_1,...,\eta'_v,(\forall x_j\phi(\langle c_i\rangle,\langle x_k\rangle)(\langle x_k\rangle,\langle x_j\rangle))\rangle$ 是 $(\forall x_j\phi(\langle c_i\rangle,\langle x_k\rangle)(\langle x_k\rangle,\langle x_j\rangle))$
 
@@ -8557,6 +8557,224 @@ $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件�
 易证 $\Gamma\vdash\phi(\left<x_1,...,x_n\right>,\left<c_{i_1},...,c_{i_n}\right>))$ 的充要条件为 $\Gamma\vdash\phi$ 又根据[[MK551][性质]]可得充要条件为 $\phi\in\Gamma$
 
 综上所述，对于任意[[MK135][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ ， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\phi\in\Gamma$
+
+*** 扩展定理
+
+[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}$ 满足：
+
+（1） $\Gamma$ 是[[MK535][一致的]]
+
+（2） 不在 $\Gamma$ 中出现的[[MK129][常元符号]]有[[MK44][可数]]个
+
+则存在[[MK547][极大一致]]且[[MK549][自现存在]]的[[MK135][表达式]]集合 $\Gamma^*$ 满足 $\Gamma\subset\Gamma^*$
+
+**** 证明
+
+***** 构建[[MK129][常元符号]]排序<<MK568>>
+
+由于不在 $\Gamma$ 中出现的[[MK129][常元符号]]有[[MK44][可数]]个，记作 $D$ ，则根据[[MK27][等势]]可得存在[[MK200][双射函数]] $\sigma:D\to\mathbb{N}$
+
+定义 $c_{u_k}$ 满足 $c_{u_k}\in D$ 且 $\sigma(c_{u_k})=k$ ，由于 $\sigma$ [[MK200][双射]]，故 $c_{u_k}$ 唯一
+
+***** 构建 $\mathcal{L}$ 排序<<MK567>>
+
+根据[[MK500][引理]]可得[[MK433][基本符号串]] $\Sigma^*$ 是[[MK44][可数集]]，根据[[MK135][表达式]]定义易证 $\mathcal{L}\subset\Sigma^*$ 且显然 $\mathcal{L}$ 不是[[MK42][有限集]]
+
+根据[[MK46][定理2]]可得 $\mathcal{L}$ 亦为可数集，则同理有[[MK200][双射函数]] $\delta:\mathcal{L}\to\mathbb{N}$ 定义 $\phi_i$ 满足 $\phi_i\in\mathcal{L}$ 以及 $\delta(\phi_i)=i$ ，同理 $\phi_i$ 唯一
+
+对于任意 $i\in\mathbb{N}$ 设 $\phi_i$ 中包含[[MK129][常元符号]] $c_{i_{k_1}},...,c_{i_{k_n}}$ 其中 $k_i$ 为上一步[[MK568][常元排序]]。由于 $|\phi_i|<\infty$ 故 $n<\infty$
+
+则定义 $h(i)=\max(\{k_1,...,k_n\})+1$ 进一步递归定义 $g(i)=\max(\left\{g(j)+1\big|j<i\right\}\cup\{h(i)\})$
+
+显然对于任意 $i<j$ 有 $g(i)<g(j)$ 且对于任意 $i\in\mathbb{N}$ 有 $g(i)$ 存在
+
+定义 $\phi_{i_j}$ 满足若 $g(i)=j$ 则 $\phi_{i_j}=\phi_i$ 否则 $\phi_{i_j}=(x_j\hat{=}x_j)$
+
+若 $v\in\mathbb{N}$ 则易证对于任意 $v$ 存在 $j$ 满足 $v=2j$ 或 $v=2j+1$ 
+
+最后定义 $\phi_v$ 满足 $v\in\mathbb{N}$ 且有 $v=2j$ 或 $v=2j+1$ 时有 $\phi_v=\phi_{i_j}$
+
+****** 性质1<<MK570>>
+
+对于任意 $\phi_v,v\in\mathbb{N}$ 易证存在 $j$ 满足 $v=2j$ 或 $v=2j+1$ 故存在 $\phi_{i_j}$ 满足 $\phi_v=\phi_{i_j}$
+
+若 $\phi_{i_j}=(x_j\hat{=}x_j)$ 则不然任何[[MK129][常元符号]]，若 $\phi_{i_j} =\phi_i$ 则有 $j>h(i)$
+
+即对于任意 $\phi_v=\phi_{i_j}$ 包含的[[MK129][常元符号]] $c_{n_k}$ 有 $k<j$ 显然 $j\leq v$ 故有 $k<v$
+
+即对于任意 $k$ 满足 $k\geq v$ 的[[MK129][常元符号]] $c_{n_k}$ ，均有 $c_{n_k}$ 不在 $\phi_v$ 中出现
+
+****** 性质2
+
+任意[[MK135][表达式]] $\phi\in\mathcal{L}$ 根据[[MK567][之前证明]]可得存在 $i$ 满足 $\delta(\phi)=i$ 以及 $\phi_i=\phi$ ，存在 $j$ 满足 $g(i)=j$
+
+以及 $\phi_{i_j}=\phi_i$ ，存在 $v,v+1$ 满足 $v=2j$ 以及 $\phi_v=\phi_{v+1}=\phi_{i_j}$
+
+综上所述，对于任意 $\phi\in\mathcal{L}$ 均存在 $v,v+1$ 满足 $\phi_v=\phi_{v+1}=\phi$
+
+***** 递归构建 $\Sigma_i$ <<MK576>>
+
+定义[[MK135][表达式]] $\phi_i$ 中的 $i$ 为上步定义的[[MK567][表达式排序]]，[[MK129][常元符号]] $c_{k_i}$ 中 $i$ 为上一步[[MK568][常元排序]]
+
+递归定义 $\Sigma_i$ 如下：
+
+（1） $\Sigma_0=\Gamma$
+
+（2） 如果 $\phi_i\not\in\Sigma_i$ 且 $\Sigma_i\cup\{\phi_i\}$ [[MK535][一致]]，则 $\Sigma_{i+1}=\Sigma_i\cup\{\phi_i\}$
+
+（3） 如果 $\phi_i\in\Sigma_i$ 且 $\phi_i=(\exists x_j\psi)$ 形式，则 $\Sigma_{i+1}=\Sigma_i\cup\{\psi(\left<x_j\right>,\left<c_{k_i}\right>)\}$
+
+（4） 如果 $\phi_i$ 不满足（2）或者（3），则 $\Sigma_{i+1}=\Sigma_i$
+
+****** $\Sigma_i\subset\Sigma_{i+1}$ <<MK569>>
+
+根据构建步骤（2）（3）（4），均可得 $\Sigma_i\subset\Sigma_{i+1}$
+
+****** 对于任意 $i\in\mathbb{N}$ 有 $\Gamma\in\Sigma_i$
+
+由于构建步骤（1）有 $\Gamma\subset\Sigma_0$ 根据[[MK569][上步证明]]以及[[MK22][传递性]]可得 $\Gamma\subset\Sigma_i$
+
+****** 对于任意 $i\in\mathbb{N}$ 若 $c_{k_j}$ 满足 $j>i$ 则 $c_{k_j}$ 不在任意 $\phi\in\Sigma_i$ 中出现<<MK572>>
+
+根据下列证明以及数学归纳法可得对于任意 $i\in\mathbb{N}$ 均有对于任意 $c_{k_j}$ 满足 $j\geq i$ 均不在 $\Sigma_i$ 中出现
+
+******* $i=0$
+
+此时 $\Sigma_0=\Gamma$ ，由于 $c_{k_j}\in D$ 故根据[[MK568][定义]]不在任意 $\gamma\in\Gamma$ 中出现，即不在任意 $\phi\in\Sigma_i$ 中出现
+
+******* 归纳假设
+
+对于任意 $i<n$ 假设对于任意 $j\geq i$ 均有 $c_{k_j}$ 不在任意 $\phi\in\Sigma_i$ 中出现
+
+******* $i=n$
+
+******** $\phi_i$ 满足构建条件（4）
+
+则有 $\Sigma_n=\Sigma_{n-1}$ 显然 $j\geq n>n-1$ 故根据归纳假设任意 $c_{k_j}$ 满足 $j>n-1$
+
+均有 $c_{k_j}$ 不在任意 $\phi\in\Sigma_{n-1}$ 中出现，即不在 $\Sigma_n$ 中出现
+
+******** $\phi_i$ 满足构建条件（2）或（3）
+
+则有 $\Sigma_n=\Sigma_{n-1}\cup\{\phi_{n-1}\}$ 或有 $\Sigma_n=\Sigma_{n-1}\cup\{\psi(\left<x_z\right>,\left<c_{k_{n-1}}\right>)\}$ 且 $\phi_{n-1}=(\exists x_z\psi)$
+
+根据[[MK570][性质1]]可得对于任意 $c_{k_j}$ 满足 $j>n$ 均有 $c_{k_j}$ 不在 $\phi_i$ 中出现，则若 $\phi_{n-1}=(\exists x_z\psi)$
+
+显然亦不在 $\psi(\left<x_z\right>,\left<c_{k_{n-1}}\right>)$ 中出现
+
+又由于 $j\geq n>n-1$ 则根据归纳假 $c_{k_j}$ 满足 $j>n-1$ 则有 $c_{k_j}$ 亦不在任意 $\phi\in\Sigma_{n-1}$ 中出现
+
+综上所述，对于任意 $c_{k_j}$ 满足 $j\geq n$ 均不在 $\Sigma_n$ 中出现
+
+****** 任意 $i\in\mathbb{N}$ 有 $\Sigma_i$ 是[[MK353][一致]]的<<MK573>>
+
+根据以下证明以及数学归纳法可得对于任意 $i\in\mathbb{N}$ 有 $\Sigma_i$ 是[[MK353][一致]]的
+
+******* $i=0$
+
+此时 $\Sigma_0=\Gamma$ 根据定理条件 $\Gamma$ 是[[MK353][一致]]的
+
+******* 归纳假设
+
+对于任意 $i<n$ 均有 $\Sigma_i$ 是[[MK353][一致]]的
+
+******* $i=n$
+
+由于 $n-1<n$ 则根据归纳假设 $\Sigma_{n-1}$ 是[[MK353][一致]]的，显然若 $\phi_{n-1}$ 满足构造步骤（2）或（4）可得 $\Sigma_n$ [[MK353][一致]]
+
+则当 $\phi_{n-1}$ 满足构造步骤（3）时有 $\Sigma_n=\Sigma_{n-1}\cup\{\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)\}$ 且 $\phi_{n-1}=(\exists x_j\psi)$ 且 $\phi_{n-1}\in\Sigma_{n-1}$
+
+假设 $\Sigma_n$ 不[[MK353][一致]]，则根据[[MK548][归谬定理]]可得 $\Sigma_{n-1}\vdash(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>))$ 且：
+
+（1） 根据[[MK572][性质]]可得 $c_{k_{n-1}}$ 不在任意 $\phi\in\Sigma_{n-1}$ 中出现
+
+（2） 由于 $x_j$ 被[[MK538][替换]]，故 $x_j$ 不是 $(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>))$ 中的[[MK441][自由变元]]
+
+（3） 显然存在 $x_z$ 满足 $x_z$ 不在 $(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>))$ 中出现，则可[[MK538][替换]] $(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>))(\left<c_{k_{n-1}}\right>,\left<x_z\right>)$
+
+     又根据[[MK570][性质1]]可得 $c_{k_{n-1}}$ 不在 $\phi_{n-1}$ 中出现，则根据[[MK538][替换]]可得 $c_{k_{n-1}}$ 在 $(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>))$ 中
+
+     只在 $x_j$ [[MK441][自由出现]]的位置存在，故若用 $x_j$ [[MK538][替换]] $(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>))(\left<c_{k_{n-1}}\right>,\left<x_z\right>)$ 中的 $x_z$
+
+     可得 $(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>))(\left<c_{k_{n-1}}\right>,\left<x_z\right>)(\left<x_z\right>,\left<x_j\right>)$ 中的 $x_j$ 必为[[MK441][自由出现]]
+
+     最终可得 $x_j$ [[MK523][可替换]] $(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>))(\left<c_{k_{n-1}}\right>,\left<x_z\right>)$ 中的 $x_z$
+
+综上所述，根据[[MK571][常元省略定理]]可得 $\Sigma_{n-1}\vdash(\forall x_j(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>))(\left<c_{k_{n-1}}\right>,\left<x_z\right>)(\left<x_z\right>,\left<x_j\right>))$
+
+即有 $\Sigma_{n-1}\vdash(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)(\left<c_{k_{n-1}}\right>,\left<x_z\right>)(\left<x_z\right>,\left<x_j\right>))$ 同理根据[[MK570][性质1]]可得 $c_{k_{n-1}}$ 不在 $\psi$ 中出现
+
+故 $\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)$ 中 $c_{k_{n-1}}$ 仅存在于 $x_j$ 在 $\psi$ 中[[MK441][自由出现]]的位置
+
+又由于 $x_z$ 不存在于 $\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)$ 中，故 $\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)(\left<c_{k_{n-1}}\right>,\left<x_z\right>)$ 
+
+中 $x_z$ 仅存在于 $\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)$ 中所有 $c_{k_{n-1}}$ 的位置，且均为[[MK441][自由出现]]
+
+最终 $\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)(\left<c_{k_{n-1}}\right>,\left<x_z\right>)(\left<x_z\right>,\left<x_j\right>)$ 中 $x_j$ 替换了 $\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)(\left<c_{k_{n-1}}\right>,\left<x_z\right>)$
+
+中所有的 $x_z$
+
+总上所述， $\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)(\left<c_{k_{n-1}}\right>,\left<x_z\right>)(\left<x_z\right>,\left<x_j\right>)$ 用 $x_j$ 替换了 $\psi$ 中所有 $x_j$ 在 $\psi$ 中[[MK441][自由出现]]的位置
+
+故可得 $\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)(\left<c_{k_{n-1}}\right>,\left<x_z\right>)(\left<x_z\right>,\left<x_j\right>)=\psi$
+
+即根据 $\Sigma_{n-1}\vdash(\forall x_j(\lnot\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>))(\left<c_{k_{n-1}}\right>,\left<x_z\right>)(\left<x_z\right>,\left<x_j\right>))$ 有 $\Sigma_{n-1}\vdash(\forall x_j(\lnot\psi))$
+
+又根据 $\phi_{n-1}\in\Sigma_{n-1}$ 可得 $(\exists x_j\psi)\in\Sigma_{n-1}$ 即有 $\Sigma_{n-1}\vdash(\exists x_j\psi)$ 根据[[MK563][存在量词]]有 $\Sigma_{n-1}\vdash(\lnot(\forall x_j(\lnot\psi)))$
+
+综上所述有 $\Sigma_{n-1}\vdash(\forall x_j(\lnot\psi))$ 以及 $\Sigma_{n-1}\vdash(\lnot(\forall x_j(\lnot\psi)))$ 可得 $\Sigma_{n-1}$ [[MK535][不一致]]，矛盾
+
+故假设不成立， $\Sigma_n=\Sigma_{n-1}\cup\{\psi(\left<x_j\right>,\left<c_{k_{n-1}}\right>)\}$ 是[[MK353][一致]]的
+
+****** 任意 $i\in\mathbb{N}$ 或者 $\phi_i\in\Sigma_{i+1}$ 或者 $\Sigma_i\cup\{\phi_i\}$ 不[[MK353][一致]]<<MK574>>
+
+假设 $\phi_i\not\in\Sigma_{i+1}$ 且 $\Sigma_i\cup\{\phi_i\}$ [[MK353][一致]]，则根据[[MK569][性质]]可得 $\Sigma_i\subset\Sigma_{i+1}$ 故有 $\phi_i\not\in\Sigma_i$
+
+又由于 $\Sigma_i\cup\{\phi_i\}$ [[MK353][一致]]，则根据构造步骤（2）可得 $\Sigma_{i+1}=\Sigma_i\cup\{\phi_i\}$ 显然有 $\phi_i\in\Sigma_{i+1}$
+
+故矛盾，假设不成立，故有对于任意 $i\in\mathbb{N}$ 或者 $\phi_i\in\Sigma_{i+1}$ 或者 $\Sigma_i\cup\{\phi_i\}$ 不[[MK353][一致]]
+
+***** 构建 $\Gamma^*$
+
+定义 $\Gamma^*=\bigcup_{i\in\mathbb{N}}\Sigma_i$ 则根据以下证明可得 $\Gamma^*$ [[MK547][极大一致]]且[[MK549][自现存在]]
+
+****** [[MK353][一致]]性<<MK575>>
+
+假设 $\Gamma^*$ 不[[MK353][一致]]，则存在 $\phi$ 满足 $\Gamma^*\vdash\phi,\Gamma^*\vdash(\lnot\phi)$ 设[[MK528][证明]]分别为 $\left<\theta_1,...,\theta_n\right>,\left<\eta_1,...,\eta_m\right>$
+
+其中 $\theta_n=\phi,\eta_m=(\lnot\phi)$ 定义 $\Delta=\left\{\theta_i\big|\theta_i\in\Gamma^*\land 1\leq i\leq n\right\}\cup\left\{\eta_i\big|\eta_i\in\Gamma^*\land 1\leq i\leq m\right\}$
+
+显然 $\Delta$ 是[[MK42][有限集]]，对于任意 $\delta\in\Delta$ 均有 $\delta\in\Gamma^*$ 故可得存在 $g(\delta)\in\mathbb{N}$ 满足 $\delta\in\Sigma_{g(\delta)}$
+
+定义 $K=\max(\left\{g(\delta)\big|\delta\in\Delta\right\})$ 由于 $\Delta$ 是[[MK42][有限集]]故可得 $K$ 存在且 $K\in\mathbb{N}$
+
+则取 $\Sigma_K$ ，即对于任意 $\delta\in\Delta$ 存在 $\delta\in\Sigma_{g(\delta)}$ 且有 $g(\delta)\leq K$ 则根据[[MK569][性质]]以及[[MK22][传递性]]可得 $\delta\in\Sigma_K$
+
+最终可得 $\left<\theta_1,...,\theta_n\right>,\left<\eta_1,...,\eta_m\right>$ 亦为 $\Sigma_K$ 中的[[MK528][证明]]，则有 $\Sigma_K$ 不[[MK353][一致]]。与[[MK573][性质]]矛盾
+
+故假设不成立， $\Gamma^*$ [[MK353][一致]]
+
+****** [[MK547][极大一致]]
+
+对于任意 $\phi\not\in\Gamma^*$ 根据[[MK567][表达式排序]]可得存在 $\phi_i=\phi$ ，由于 $\Gamma^*=\bigcup_{i\in\mathbb{N}}\Sigma_i$ 故 $\phi_i\not\in\Sigma_{i+1}$
+
+根据[[MK574][性质]]可得 $\Sigma_i\cup\{\phi_i\}$ 不[[MK353][一致]]，由于 $\Sigma_i\subset\Gamma^*$ ，故有 $\Gamma^*\cup\{\phi_i\}=\Gamma^*\cup\{\phi\}$ 不[[MK353][一致]]
+
+结合上一步证明 $\Gamma^*$ [[MK353][一致]]可得 $\Gamma^*$ [[MK547][极大一致]]
+
+****** [[MK549][自显存在]]
+
+对于任意 $\phi\in\Gamma^*$ 满足 $\phi=(\exists x_j\psi)$ 根据[[MK567][表达式排序]]可得存在 $\phi_i=\phi_{i+1}=\phi$
+
+假设 $\phi_i\not\in\Sigma_{i+1}$ 则有 $\Sigma_i\cup\{\phi_i\}$ 不[[MK353][一致]]，由于 $\Sigma_i\subset\Gamma^*$ 又由于 $\phi\in\Gamma^*$ 则 $\Gamma^*$ 不[[MK353][一致]]
+
+与[[MK575][之前结论]]矛盾，故假设不成立，必有 $\phi_i\in\Sigma_{i+1}$ 又由于 $\phi_i=\phi_{i+1}=\phi$
+
+故 $\Sigma_{i+1}$ 与 $\phi_{i+1}$ 满足[[MK576][构建条件（3）]]，则可得 $\Sigma_{i+2}=\Sigma_{i+1}\cup\{\psi(\left<x_j\right>,\left<c_{k_{i+1}}\right>)\}$
+
+又由于 $\Sigma_{i+2}\subset\Gamma^*$ 故有 $\psi(\left<x_j\right>,\left<c_{k_{i+1}}\right>)\in\Gamma^*$
+
+综上所述，对于任意 $\phi\in\Gamma^*$ 满足 $\phi=(\exists x_j\psi)$ 均有 $\psi(\left<x_j\right>,\left<c_{k_{i+1}}\right>)\in\Gamma^*$
 
 *** 可靠性定理<<MK533>>
 
