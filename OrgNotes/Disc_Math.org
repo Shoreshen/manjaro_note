@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 575
+currnet mark: 587
 
 free mark:
  
@@ -7266,7 +7266,31 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{M},v>\vDash(\lnot(\for
 
 使得任意 $\gamma\in \Gamma$ 均有 $<\mathcal{M},v>\vDash\gamma$ 即[[MK449][满足]] $\gamma$ 则称 $\Gamma$ 是可满足的
 
-且对于 $<\mathcal{M},v>$ 满足所有 $\Gamma$ 中的表达式记作 $<\mathcal{M},v>\vDash\Gamma$ 
+且对于 $<\mathcal{M},v>$ 满足所有 $\Gamma$ 中的表达式记作 $<\mathcal{M},v>\vDash\Gamma$
+
+**** 定理<<MK579>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有 $\Gamma$ 是[[MK530][可满足]]的，定义 $\mathcal{A}^*$ 为 $\Gamma$ 中所含[[MK116][非固定符号]]集合
+
+则 $\Gamma$ 亦为 $\mathcal{L}_{\mathcal{A}^*}$ 的[[MK135][表达式]]集合，且在 $\mathcal{L}_{\mathcal{A}^*}$ 下亦[[MK530][可满足]]
+
+***** 证明
+
+若存在 $\mathcal{L}_\mathcal{A}$ 下的[[MK446][结构]] $\mathcal{M}=\left<M,I\right>$ 以及[[MK447][赋值]] $v$ 使得 $\left<\mathcal{M},v\right>\vDash\Gamma$ 则有对于任意 $\phi\in\Gamma$ 均有 $\left<\mathcal{M},v\right>\vDash\phi$
+
+定义 $I^*$ 满足：
+
+（1） 若 $c_i\in\mathcal{A}^*\cap C$ 是[[MK129][常元符号]]，则 $I^*(c_i)=I(c_i)$
+
+（2） 若 $f_i\in \mathcal{A}^*\cap F$ 是[[MK131][函数符号]]且根据[[MK445][符号假定]]有 $\pi_F(f_i)=n$ ，则 $I^*(f_i)=I(f_i)$
+
+（3） 若 $p_i\in\mathcal{A}^*\cap P$ 是[[MK132][谓词符号]]且根据[[MK445][符号假定]]有 $\pi_P(p_i)=n$ ，则 $I^*(p_i)=I(p_i)$
+
+进一步定义 $\mathcal{M}^*=\left<M,I^*\right>$ 则显然 $\mathcal{M}^*=\left<M,I^*\right>$ 是 $\mathcal{L}_{\mathcal{A}^*}$ 下的[[MK446][结构]]，显然 $v$ 亦为 $\mathcal{L}_{\mathcal{A}^*}$ 下的[[MK447][赋值]]
+
+根据 $\mathcal{A}^*$ 的定义可得 $\phi$ 是 $\mathcal{L}_{\mathcal{A}^*}$ 下的[[MK135][表达式]]，则类似[[MK450][项的局部确定性]]、[[MK452][表达式的局部确定性]]以及数学归纳法
+
+易证 $\left<\mathcal{M}^*,v\right>\vDash\phi$
 
 *** 真实<<MK524>>
 
@@ -7990,7 +8014,7 @@ $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件�
 
 即 $\Gamma$ [[MK528][证明]] $\phi$ ，则 $\Gamma\not\vdash(\lnot\phi)$ 则称 $\Gamma$ 在 $\mathcal{L}_\mathcal{A}$ 下是一致的
 
-**** 定理1
+**** 定理1<<MK581>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ [[MK530][可满足]]，则 $\Gamma$ 在 $\mathcal{L}_\mathcal{A}$ 下是[[MK535][一致的]]
 
@@ -8184,7 +8208,7 @@ $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件�
 
 综上所述，对于任意 $(\exists x_i\phi)\in\Gamma$ 存在[[MK129][常元符号]] $c_z$ 使得 $\phi(\left<x_i\right>,\left<c_z\right>)\in\Gamma$ 即 $\Gamma$ 是[[MK549][自显存在]]的
 
-*** 可满足性定理
+*** 可满足性定理<<MK584>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ ，若 $\Gamma$ 是[[MK547][极大一致]]且[[MK549][自现存在]]的，则 $\Gamma$ 是[[MK530][可满足]]的
 
@@ -8558,7 +8582,7 @@ $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件�
 
 综上所述，对于任意[[MK135][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ ， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\phi\in\Gamma$
 
-*** 扩展定理
+*** 扩展定理<<MK583>>
 
 [[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}$ 满足：
 
@@ -8775,6 +8799,368 @@ $\left<\mathcal{M},v\right>\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件�
 又由于 $\Sigma_{i+2}\subset\Gamma^*$ 故有 $\psi(\left<x_j\right>,\left<c_{k_{i+1}}\right>)\in\Gamma^*$
 
 综上所述，对于任意 $\phi\in\Gamma^*$ 满足 $\phi=(\exists x_j\psi)$ 均有 $\psi(\left<x_j\right>,\left<c_{k_{i+1}}\right>)\in\Gamma^*$
+
+*** 常元省略<<MK582>>
+
+[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}$ ，对于任意 $\phi\in\Gamma$ 定义[[MK194][函数]] $\rho(\phi)\in\mathcal{L}$ 满足 $\rho(\phi)[i]=\begin{cases}c_{2j}&\phi[i]\in C\\\phi[i]&\phi[i]\not\in C\end{cases}$
+
+其中 $C$ 是[[MK129][常元符号]]全体。定义 $\Gamma^*=\left\{\rho(\phi)\big|\phi\in\Gamma\right\}$ 以及 $\mathcal{L}^*$ 为只包含偶数下标[[MK129][常元符号]]的[[MK135][表达式]]则有
+
+（1） $\rho:\mathcal{L}\to\mathcal{L}^*$ [[MK200][双射]]
+
+（2） 若 $\Gamma$ [[MK535][一致]]，则 $\Gamma^*$ [[MK535][一致]]
+
+（3） 若 $\Gamma^*$ [[MK530][可满足]]，则 $\Gamma$ [[MK530][可满足]]
+
+**** 证明
+
+***** 证明（1）
+
+根据以下证明可得 $\rho:\mathcal{L}\to\mathcal{L}^*$ [[MK200][双射]]，且[[MK203][逆函数]]为 $\rho^{-1}:\mathcal{L}^*\to\mathcal{L}$ 满足 $\rho^{-1}(\phi_k)[j]=\begin{cases}c_{\frac{j}{2}}&\phi_k[i]\in C\\\phi[i]&\phi_k[i]\not\in C\end{cases}$
+
+****** $\rho$ 是[[MK195][单射]]
+
+对于任意 $\{\phi_1,\phi_2\}\subset\mathcal{L}$ 满足 $\phi_1\ne\phi_2$ 假设 $\rho(\phi_1)=\rho(\phi_2)$ 则必有 $i\in\mathbb{N}$ 使得 $\phi_1[i]\ne\phi_2[i]$
+
+根据 $\rho$ 定义可分成以下四种情况：
+
+（1） 若 $\phi_1[i]\in C,\phi_2[i]\not\in C$ 则 $\rho(\phi_1)[i]\in C,\rho(\phi_2)[i]=\phi_2[i]\not\in C$ 故必有 $\rho(\phi_1)\ne\rho(\phi_2)$
+
+（2） 若 $\phi_1[i]\not\in C,\phi_2[i]\in C$ 则与上一步同理可证 $\rho(\phi_1)\ne\rho(\phi_2)$
+
+（3） 若 $\phi_1[i]\not\in C,\phi_2[i]\not\in C$ 则 $\phi_1[i]=\rho(\phi_1)[i]\ne\rho(\phi_2)[i]=\phi_2[i]$ 亦有 $\rho(\phi_1)\ne\rho(\phi_2)$
+
+（4） 若 $\phi_1[i]\in C,\phi_2[i]\in C$ 则必有 $\phi_1[i]=c_u,\phi_2[i]=c_v$ 且 $c_u\ne c_v$ 其中 $\{u,v\}\subset\mathbb{N}$
+
+     故可得 $u\ne v$ ，显然亦有 $2u\ne 2v$ 即 $c_{2u}\ne c_{2v}$ 即 $c_{2u}=\rho(\phi_1)[i]\ne\rho(\phi_2)[i]=c_{2v}$
+
+     即有 $\rho(\phi_1)\ne\rho(\phi_2)$
+
+综上所述，假设情况下结果与 $\rho(\phi_1)=\rho(\phi_2)$ 矛盾，故假设不成立
+
+即有，对于任意 $\{\phi_1,\phi_2\}\subset\Gamma$ 满足 $\phi_1\ne\phi_2$ 有 $\rho(\phi_1)\ne\rho(\phi_2)$ 即 $\rho$ 是[[MK195][单射]]
+
+****** $\rho$ 是[[MK198][满射]]
+
+对于任意 $\phi\in\mathcal{L}^*$ 定义 $\phi'$ 满足 $\phi'[i]=\begin{cases}c_{\frac{j}{2}}&\phi[i]\in C\\\phi[i]&\phi[i]\not\in C\end{cases}$ 根据[[MK491][长远替换]]可得 $\phi\in\mathcal{L}$
+
+由于对于任意 $\phi$ 中出现的标[[MK129][常元符号]]下标均为偶数
+
+故可得 $\frac{i}{2}\in\mathbb{N}$ 则 $\phi'$ 存在，根据 $\rho$ 定义可得 $\rho(\phi')[i]=\begin{cases}c_{2i}&\phi'[i]\in C\\\phi'[i]&\phi'[i]\not\in C\end{cases}$
+
+根据定义有 $\phi'[i]=c_i\in C$ 时有 $\phi[i]=c_{2i}\in C$ ， $\phi'[i]\not\in C$ 时有 $\phi'[i]=\phi[i]$ 显然易证 $\rho(\phi')=\phi$
+
+综上所述，对于任意 $\phi\in\mathcal{L}^*$ 均存在 $\phi'\in\mathcal{L}$ 满足 $\rho(\phi')=\phi$ ，即 $\rho$ [[MK198][满射]]
+
+定义 $\rho^{-1}(\phi)=\phi'$ 故有 $\rho(\rho^{-1}(\phi))=\phi$ 即 $\rho^{-1}$ 是 $\rho$ 的[[MK203][逆函数]]
+
+***** [[MK528][证明]]可转换<<MK578>>
+
+对于任意 $\Gamma^*$ 的[[MK528][证明]] $\left<\phi_1,...,\phi_n\right>$ 满足 $\phi_i\in\mathcal{L}^*$ 则根据结论（1）可得 $\rho:\mathcal{L}\to\mathcal{L}^*$ [[MK200][双射]]
+
+根据[[MK203][求逆]]可得存在逆函数 $\rho^{-1}:\mathcal{L}^*\to\mathcal{L}$ ，定义 $\phi'_k=\rho(\phi_k)$ 根据 $\rho$ 定义有 $\phi'_k[j]=\begin{cases}c_{\frac{j}{2}}&\phi_k[i]\in C\\\phi[i]&\phi_k[i]\not\in C\end{cases}$
+
+则根据下列证明， $n<\infty$ 以及数学归纳法可证 $\left<\phi_1',...,\phi_n'\right>$ 是 $\Gamma$ 的[[MK528][证明]]
+
+****** $n=1$ <<MK577>>
+
+根据[[MK528][定义]]可得此时[[MK528][证明]]为 $\left<\phi_1\right>$ 且有且仅有以下两种情况
+
+******* $\phi_1\in\Gamma^*$
+
+根据 $\Gamma^*$ 定义可得必存在 $\phi_1'\in\Gamma$ 使得 $\rho(\phi'_1)=\phi_1$ 又根据结论（1）有 $\rho$ [[MK200][双射]]
+
+故 $\phi'_1$ 是唯一[[MK135][表达式]]满足 $\rho(\phi'_1)=\phi_1$ 故 $\left<\phi'_1\right>$ 是 $\Gamma$ 的[[MK528][证明]]
+
+******* $\phi_1$ 是[[MK522][公理]]
+
+若 $\phi_1$ 是[[MK522][公理]]，则易证 $\phi'_1$ 亦是[[MK522][公理]]，故 $\left<\phi'_1\right>$ 是 $\Gamma$ 的[[MK528][证明]]
+
+****** 归纳假设
+
+对于任意 $n<N$ 均有对于任意 $\Gamma^*$ 的[[MK528][证明]] $\left<\phi_1,...,\phi_n\right>$ 有 $\left<\phi_1',...,\phi_n'\right>$ 是 $\Gamma$ 的[[MK528][证明]]
+
+****** $n=N$
+
+若 $\left<\phi_1,...,\phi_n\right>$ 是 $\Gamma^*$ 的[[MK528][证明]]，则显然 $\left<\phi_1,...,\phi_{n-1}\right>$ 亦是 $\Gamma^*$ 的[[MK528][证明]]，则显然有 $n-1<N$
+
+故根据归纳假设有 $\left<\phi'_1,...,\phi'_{n-1}\right>$ 是 $\Gamma$ 的[[MK528][证明]]。
+
+根据[[MK528][定义]]可得有且仅有 $\phi_n\in\Gamma^*\cup\mathbb{L}$ 或者存在 $j<n,k<n$ 满足 $\phi_j=(\phi_k\to\phi_n)$
+
+若 $\phi_n\in\Gamma^*\cup\mathbb{L}$ ，则[[MK577][同理可证]] $\phi'_n\in\Gamma\cup\mathbb{L}$
+
+若存在 $j<n,k<n$ 满足 $\phi_j=(\phi_k\to\phi_n)$ ，易证 $\phi'_j=(\phi'_k\to\phi'_n)$
+
+故在 $\left<\phi'_1,...,\phi'_{n-1}\right>$ 亦存在 $\phi'_k$ 以及 $\phi'_j=(\phi'_k\to\phi'_n)$
+
+根据[[MK528][证明]]可得 $\left<\phi'_1,...,\phi'_{n-1},\phi'_n\right>$ 是 $\Gamma$ 的[[MK528][证明]]。
+
+***** 证明（2）
+
+假设 $\Gamma^*$ [[MK535][非一致]]，则根据[[MK537][定理2]]可得 $\Gamma^*\vdash(\lnot(x_1\hat{=}x_1))$ 设其[[MK528][证明]]为 $\left<\phi_1,...,\phi_n\right>$ 有 $\phi_n=(\lnot(x_1\hat{ =}x_1))$
+
+对于[[MK129][常元符号]] $c_1$ 有
+
+（1） $c_1$ 不在任意 $\gamma\in\Gamma^*$ 中出现
+
+（2） $x_2$ 不是 $\phi_n$ 中的[[MK441][自由变元]]
+
+（3） [[MK130][变元符号]] $x_3$ 不在 $\phi$ 中出现，定义 $\phi_n(\langle c_1\rangle,\langle x_3\rangle)$ 是将 $\phi_n$ 中所有 $c_1$ 替换为 $x_3$ 后的[[MK135][表达式]]
+
+     则显然 $\phi_n=\phi_n(\langle c_1\rangle,\langle x_3\rangle)=(\lnot(x_1\hat{ =}x_1))$ 故 $x_2$ [[MK523][可替换]] $\phi_n(\langle c_1\rangle,\langle x_3\rangle)$ 中的 $x_3$
+
+故根据[[MK571][常元省略定理]]可得存在 $\Gamma^*$ 的[[MK528][证明]] $\langle\theta_1,...,\theta_m\rangle$ 满足：
+
+（1） $\theta_m=(\forall x_2\phi_n(\langle c_1\rangle,\langle x_3\rangle)(\langle x_3\rangle,\langle x_2\rangle))=(\forall x_2(\lnot(x_1\hat{ =}x_1)))$
+
+（2） 对于任意 $1\leq i\leq m$ 若有[[MK129][常元符号]] $c_j$ 在 $\theta_m$ 中出现，则其必在 $\Gamma^*\cup\theta_m$ 中出现
+
+由于 $\theta_m=(\forall x_2(\lnot(x_1\hat{ =}x_1)))$ 不含[[MK129][常元符号]]，故 $c_j$ 必在 $\Gamma^*$ 中出现。根据 $\Gamma^*$ 定义可得 $c_j$ 满足 $j$ 是偶数
+
+根据[[MK578][之前证明]]可得 $\left<\rho^{-1}(\theta_1),...,\rho^{-1}(\theta_m)\right>$ 是 $\Gamma$ 的[[MK528][证明]]，根据 $\rho^{-1}$ 的[[MK578][定义]]
+
+可得 $\rho^{-1}(\theta_m)=\theta_m=(\forall x_2(\lnot(x_1\hat{ =}x_1)))$ 即 $\Gamma\vdash(\forall x_2(\lnot(x_1\hat{ =}x_1)))$ 定义 $\phi=(\lnot(x_1\hat{ =}x_1))$
+
+又根据[[MK522][特化公理]]可得 $\Gamma\vdash((\forall x_2\phi)\to\phi(\langle x_2\rangle,\langle c_1\rangle))$ 显然 $\phi(\langle x_2\rangle,\langle c_1\rangle))=\phi$ 即 $\Gamma\vdash((\forall x_2\phi)\to\phi)$
+
+故根据[[MK543][导出引理]]可得 $\Gamma\vdash\phi$ 即 $\Gamma\vdash(\lnot(x_1\hat{ =}x_1))$ 又根据[[MK522][恒等律]]可得 $\Gamma\vdash(x_1\hat{ =}x_1)$ 故 $\Gamma$ [[MK535][不一致]]，与条件矛盾 
+
+故假设不成立， $\Gamma^*$ [[MK535][一致]]
+
+***** 证明（3）
+
+定义 $\mathcal{A}^*$ 为 $\Gamma^*$ 中所含[[MK116][非固定符号]]集合，则根据[[MK579][定理]]可得存在 $\mathcal{L}_{\mathcal{A}^*}$ 下的[[MK446][结构]] $\mathcal{M}^*=\left<M,I^*\right>$ 以及[[MK447][赋值]] $v$
+
+使得 $\left<\mathcal{M}^*,v\right>\vDash\Gamma^*$ 且 $\Gamma^*\subset\mathcal{L}_{\mathcal{A}^*}$ 。同理定义 $\mathcal{A}$ 为 $\Gamma$ 中所含[[MK116][非固定符号]]集合，则有 $\Gamma\subset\mathcal{L}_{\mathcal{A}}$
+
+根据 $\Gamma^*$ 定义可得：
+
+（1） 若 $f_i\in\mathcal{A}$ 是[[MK131][函数符号]]，则有 $f_i\in\mathcal{A}^*$
+
+（2） 若 $p_i\in\mathcal{A}$ 是[[MK132][谓词符号]]，则有 $p_i\in\mathcal{A}^*$
+
+（3） 若 $c_i\in\mathcal{A}$ 则 $c_{2i}\in\mathcal{A}^*$
+
+故定义 $I$ 为：
+
+（1） 若 $c_i\in\mathcal{A}\cap C$ 是[[MK129][常元符号]]，则 $I(c_i)=I^*(c_{2i})$
+
+（2） 若 $f_i\in \mathcal{A}\cap F$ 是[[MK131][函数符号]]且根据[[MK445][符号假定]]有 $\pi_F(f_i)=n$ ，则 $I(f_i)=I^*(f_i)$
+
+（3） 若 $p_i\in\mathcal{A}\cap P$ 是[[MK132][谓词符号]]且根据[[MK445][符号假定]]有 $\pi_P(p_i)=n$ ，则 $I(p_i)=I^*(p_i)$
+
+根据 $\Gamma^*$ 定义可得对于任意 $\phi\in\Gamma$ 均有 $\phi'\in\Gamma^*$ 满足 $\rho(\phi)=\phi'$
+
+根据 $\left<\mathcal{M}^*,v\right>\vDash\Gamma^*$ 可得 $\left<\mathcal{M}^*,v\right>\vDash\rho(\phi)$ 又根据以下证明可得 $\left<\mathcal{M},v\right>\vDash\phi$
+
+即对于任意 $\phi\in\Gamma$ 均有 $\left<\mathcal{M},v\right>\vDash\phi$ ，根据[[MK530][可满足]]有 $\left<\mathcal{M},v\right>\vDash\Gamma$  
+
+****** $\left<\mathcal{M}^*,v\right>\vDash\rho(\phi)$ 的充要条件为 $\left<\mathcal{M},v\right>\vDash\phi$
+
+可得对于任意 $\phi\in\mathcal{L}$ 存在 $\phi'\in\mathcal{L}^*$ 满足 $\rho(\phi)=\phi'$
+
+进一步对于任意[[MK133][项]] $\tau$ 在 $\phi$ 中包含，显然存在 $\tau'\in\phi'$ 满足 $\rho(\tau)=\tau'$
+
+定义 $\mathcal{L}_{\mathcal{A}}$ 下[[MK448][扩展项赋值]]为 $\bar{v}$ ， $\mathcal{L}_{\mathcal{A}^*}$ 下[[MK448][扩展项赋值]]为 $\bar{v}^*$
+
+显然根据 $\mathcal{M}^*,\mathcal{M}$ 定义可得任意 $\mathcal{M}^*$ [[MK447][赋值]] $v$ 亦为 $\mathcal{M}$ [[MK447][赋值]]，反之依然
+
+则根据以下证明，数学归纳法以及 $|\phi|<\infty$ 可得对于任意 $\rho\in\mathcal{L}$
+
+任意 $\mathcal{M}^*$ [[MK447][赋值]] $v$ 均有 $\left<\mathcal{M}^*,v\right>\vDash\rho(\phi)$ 的充要条件为 $\left<\mathcal{M},v\right>\vDash\phi$
+
+******* [[MK133][项]]<<MK580>>
+
+根据下列证明， $|\tau|<n$ 以及数学归纳法可得 $\bar{v}(\tau_i)=\bar{v}^*(\rho(\tau_i))$
+
+******** $|\tau|=1$
+
+根据[[MK138][唯一可读性]]有且仅有以下两种情况：
+
+当 $\tau=x_i$ 时有 $\rho(\tau)=x_i$ 则由于[[MK447][赋值]]均为 $v$ ，则有 $\bar{v}(x_i)=v(x_i)=\bar{v}^*(\rho(x_i))$
+
+当 $\tau=c_i$ 时有 $\rho(\tau)=c_{2i}$ 则有 $\bar{v}(c_i)=I(c_i)=I^*(c_{2i})=\bar{v}^*(\rho(c_i))$
+
+******** 归纳假设
+
+对于任意[[MK133][项]]满足 $|\tau|<n$ 有 $\bar{v}(\tau)=\bar{v}^*(\rho(\tau))$
+
+******** $|\tau|=n$
+
+根据[[MK138][唯一可读性]]有且仅有 $f_i(\tau_1,...,\tau_n)$ 显然 $|\tau_i|<n$ 故根据归纳假设有 $\bar{v}(\tau_i)=\bar{v}^*(\rho(\tau_i))$
+
+根据[[MK448][项赋值]]可得 $\bar{v}(f_i(\tau_1,...,\tau_n))=I(f)(\bar{v}(\tau_1),...,\bar{v}(\tau_n))$
+
+同理 $\bar{v}^*(\rho(f_i(\tau_1,...,\tau_n)))=I^*(f)(\bar{v}^*(\rho(\tau_1)),...,\bar{v}^*(\rho(\tau_n)))$
+
+又根据 $I$ 定义有 $I(f_i)=I^*(f_i)$ 故有 $\bar{v}(f_i(\tau_1,...,\tau_n))=\bar{v}^*(\rho(f_i(\tau_1,...,\tau_n)))$
+
+******* [[MK135][表达式]]
+
+对于任意 $\phi\in\Gamma$ ，定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK133][项]]后 $($ 和 $)$ 的对数
+
+根据以下证明， $z(\phi)<n$ 以及数学归纳法可得对于任意 $\mathcal{M}^*$ 或 $\mathcal{M}$ [[MK447][赋值]] $v$
+
+均有 $\left<\mathcal{M}^*,v\right>\vDash\rho(\phi)$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi$
+
+******** $z(\phi)=1$
+
+根据[[MK127][可读性]]原理有且仅有以下两种形式
+
+********* $(\tau_1\hat{=}\tau_2)$
+
+根据[[MK449][满足]]可得若 $\left<\mathcal{M}^*,v\right>\vDash\rho(\phi)=(\rho(\tau_1)\hat{=}\rho(\tau_2))$ 则充要条件是 $\bar{v}^*(\rho(\tau_1)) =\bar{v}^*(\rho(\tau_2))$
+
+根据[[MK580][之前证明]]可得 $\bar{v}(\tau_1)=\bar{v}^*(\rho(\tau_1)),\bar{v}^*(\rho(\tau_2))=\bar{v}(\tau_2)$ 则 $\bar{v}^*(\rho(\tau_1)) =\bar{v}^*(\rho(\tau_2))$
+
+的充要条件是 $\bar{v}(\tau_1) =\bar{v}(\tau_2)$ 则根据[[MK449][满足]]可得充要条件是 $\left<\mathcal{M},v\right>\vDash\rho(\phi) =(\tau_1\hat{ =}\tau_2)$ 
+
+********* $\phi=p_i(\tau_1,...,\tau_n)$
+
+根据[[MK449][满足]]可得若 $\left<\mathcal{M}^*,v\right>\vDash\rho(\phi)=p_i(\rho(\tau_1),...,\rho(\tau_n))$ 则充要条件是 $\left<\bar{v}^*(\rho(\tau_1)),...,\bar{v}^*(\rho(\tau_n))\right>\in I^*(p_i)$
+
+根据[[MK580][之前证明]]可得 $\bar{v}(\tau_i)=\bar{v}^*(\rho(\tau_i))$ 根据 $I$ 定义可得 $I(p_i)=I^*(p_i)$
+
+故有 $\left<\bar{v}(\tau_1),...,\bar{v}(\tau_n)\right>=\left<\bar{v}^*(\rho(\tau_1)),...,\bar{v}^*(\rho(\tau_n))\right>, I^*(p_i)=I(p_i)$
+
+故可得 $\left<\bar{v}^*(\rho(\tau_1)),...,\bar{v}^*(\rho(\tau_n))\right>\in I^*(p_i)$ 的充要条件是 $\left<\bar{v}(\tau_1),...,\bar{v}(\tau_n)\right>\in I(p_i)$
+
+根据[[MK449][满足]]可得充要条件是 $\left<\mathcal{M},v\right>\vDash\rho(\phi)=p_i(\tau_1,...,\tau_n)$ 
+
+******** 归纳假设
+
+对于任意 $1<z(\phi)<n$ 若满足定理条件，有对于任意 $\mathcal{M}^*$ 或 $\mathcal{M}$ [[MK447][赋值]] $v$
+
+均有 $\left<\mathcal{M}^*,v\right>\vDash\rho(\phi)$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi$
+
+******** $z(\phi)=n$
+
+根据[[MK127][可读性]]原理有且仅有以下情况
+
+********* $\phi=(\lnot\psi)$
+
+根据[[MK449][满足]] $\left<\mathcal{M}^*,v\right>\vDash\rho(\phi)=(\lnot\rho(\psi))$ 的充要条件为 $\left<\mathcal{M}^*,v\right>\not\vDash\rho(\psi)$
+
+根据归纳假设可得充要条件为 $\left<\mathcal{M},v\right>\not\vDash\psi$ 进一步根据[[MK449][满足]]可得充要条件为 $\left<\mathcal{M},v\right>\vDash(\lnot\psi)$ 
+
+********* $\phi=(\psi_1\to\psi_2)$
+
+根据[[MK449][满足]] $\left<\mathcal{M}^*,v\right>\vDash\rho(\phi)=(\rho(\psi_1)\to\rho(\psi_2))$ 的充要条件为 $\left<\mathcal{M}^*,v\right>\not\vDash\rho(\psi_1)$ 或者 $\left<\mathcal{M}^*,v\right>\vDash\rho(\psi_2)$
+
+根据归纳假设有充要条件 $\left<\mathcal{M},v\right>\not\vDash\psi_1$ 或者 $\left<\mathcal{M},v\right>\vDash\psi_2$ 则根据[[MK449][满足]]可得充要条件为 $\left<\mathcal{M},v\right>\vDash(\psi_1\to\psi_2)$ 
+
+********* $\phi=(\forall x_i\psi)$
+
+仅证充分，必要同理可证
+
+根据[[MK449][满足]] $\left<\mathcal{M}^*,v\right>\vDash\rho(\phi)=(\forall x_i\rho(\psi))$ 可得充要条件为任意 $\mathcal{M}^*$ [[MK447][赋值]] $\mu:X\to M$
+
+若满足对于任意 $\rho(\psi)$ 中除 $x_i$ 的[[MK441][自由变元]] $x_j$ 有 $\mu(x_j)=v(x_j)$ ，则有 $\left<\mathcal{M}^*,\mu\right>\vDash \rho(\psi)$
+
+显然 $\rho(\psi)$ 中的[[MK441][自由变元]]亦为 $\psi$ 中的[[MK441][自由变元]]
+
+则对于任意 $\mathcal{M}$ [[MK447][赋值]] $\eta:X\to M$ 满足对于任意 $\psi$ 中除 $x_i$ 的[[MK441][自由变元]] $x_j$ 有 $\eta(x_j)=v(x_j)$
+
+亦有 $\eta$ 亦为 $\mathcal{M}^*$ [[MK447][赋值]]，故有 $\left<\mathcal{M}^*,\eta\right>\vDash\rho(\psi)$ 则根据归纳假设有 $\left<\mathcal{M},\eta\right>\vDash\psi$
+
+综上所述，对于任意 $\mathcal{M}$ [[MK447][赋值]] $\eta:X\to M$ 满足对于任意 $\psi$ 中除 $x_i$ 的[[MK441][自由变元]] $x_j$ 有 $\eta(x_j)=v(x_j)$
+
+均有 $\left<\mathcal{M},\eta\right>\vDash\psi$ 故可得 $\left<\mathcal{M},v\right>\vDash(\forall x_i\psi)$ 
+
+*** 哥德尔完备性
+
+**** 第一完备性定理<<MK585>>
+
+任意[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}$ 是[[MK535][一致]]的充要条件是 $\Gamma$ 是[[MK530][可满足]]的
+
+***** 证明
+
+****** 必要
+
+若 $\Gamma$ 是[[MK530][可满足]]的，则根据[[MK581][定理1]]可得 $\Gamma$ 是[[MK535][一致]]的
+
+****** 充分
+
+若 $\Gamma$ [[MK535][一致]]，则根据[[MK582][常元省略]]可得存在 $\Gamma^*$ 满足：
+
+（1） 仅包含包含偶数下标[[MK129][常元符号]]
+
+（2） 由于 $\Gamma$ [[MK535][一致]]，则 $\Gamma^*$ [[MK535][一致]]
+
+故可得不在 $\Gamma^*$ 中的[[MK129][常元符号]] $D$ 是[[MK43][无限集]]，由于[[MK129][常元符号]]集合是[[MK44][可数集]]，则根据[[MK46][定理2]]可得 $D$ 是[[MK44][可数集]]
+
+则根据[[MK583][扩展定理]]可得存在 $\Gamma'$ 满足：
+
+（1） $\Gamma^*\subset\Gamma'$
+
+（2） $\Gamma'$ 是[[MK547][极大一致]]且[[MK549][自现存在]]的
+
+则根据[[MK584][可满足性定理]]可得 $\Gamma'$ 是[[MK530][可满足]]的，即存在 $\mathcal{L}$ 的[[MK446][结构]] $\mathcal{M}=\left<M,I\right>$ 以及[[MK447][赋值]] $v$ 使得 $\left<\mathcal{M},v\right>\vDash\Gamma'$
+
+即对于任意 $\gamma\in\Gamma'$ 均有 $\left<\mathcal{M},v\right>\vDash\gamma$ 由于 $\Gamma^*\subset\Gamma'$ 故对于任意 $\gamma\in\Gamma^*$ 亦有 $\left<\mathcal{M},v\right>\vDash\gamma$
+
+故 $\left<\mathcal{M},v\right>\vDash\Gamma^*$ 即 $\Gamma^*$ 是[[MK530][可满足]]的。
+
+又根据[[MK582][常元省略]]可得 $\Gamma$ 亦[[MK530][可满足]]。综上所述，若 $\Gamma$ [[MK535][一致]]，则 $\Gamma$ [[MK530][可满足]]
+
+***** 推论<<MK586>>
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ ，则 $\Gamma$ 是[[MK535][一致]]的充要条件是 $\Gamma$ 是[[MK530][可满足]]的
+
+****** 证明
+
+******* 充分
+
+若 $\Gamma$ 是[[MK530][可满足]]的，则根据[[MK581][定理1]]可得 $\Gamma$ 是[[MK535][一致]]的
+
+******* 必要
+
+定义 $\mathcal{A^*}=\Sigma_1=C\cup F\cup P$ 则有 $\mathcal{L}_{\mathcal{A}^*}=\mathcal{L}$ 则根据[[MK585][第一完备性]]可得 $\Gamma$ 在 $\mathcal{L}$ 下[[MK530][可满足]]
+
+即存在 $\mathcal{L}$ 下的[[MK446][结构]] $\mathcal{M}=\left<M,I\right>$ 以及[[MK447][赋值]] $v$ 使得 $\left<\mathcal{M},v\right>\vDash\Gamma$
+
+定义 $\mathcal{L}_\mathcal{A}$ [[MK446][结构]] $\mathcal{N}=\left<N,J\right>$ 满足：
+
+（1） $M=N$
+
+（2） 若 $c\in\mathcal{L}_{\mathcal{A}}$ 是[[MK129][常元符号]]，则有 $I(c)=J(c)$
+
+（3） 若 $f\in\mathcal{L}_{\mathcal{A}}$ 是[[MK131][函数符号]]且 $\pi_F(f)=n$ ，对于任意 $<a_1,...,a_n>\subset M^n$
+
+     有 $I(f)(a_1,...,a_n)=J(f)(a_1,...,a_n)$
+
+（4） 若 $p\in\mathcal{L}_{\mathcal{A}}$ 是[[MK132][谓词符号]]且 $\pi_P(p)=n$ 有 $I(p)=J(p)\cap M^n$
+
+显然亦有 $\mathcal{A}\subset\mathcal{A}^*$ 故可得 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK490][扩充结构]]，故根据[[MK495][定理]]可得，对于任意 $\phi\in\mathcal{L}_\mathcal{A}$
+
+有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\left<\mathcal{N},v\right>\vDash\phi$ 。由于 $\left<\mathcal{M},v\right>\vDash\Gamma$ 故对于任意 $\gamma\in\Gamma$ 在 $\mathcal{L}_{\mathcal{A}^*}$ 下有 $\left<\mathcal{M},v\right>\vDash\gamma$
+
+又显然 $\gamma\in\mathcal{L}_\mathcal{A}$ 故有对于任意 $\gamma\in\Gamma$ 均有在 $\mathcal{L}_\mathcal{A}$ 下有 $\left<\mathcal{N},v\right>\vDash\gamma$ 即 $\left<\mathcal{N},v\right>\vDash\Gamma$
+
+故 $\Gamma$ 在 $\mathcal{L}_\mathcal{A}$ 下[[MK530][可满足]]
+
+**** 第二完备性定理<<MK587>>
+
+任意[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}$ 以及任意[[MK135][表达式]] $\phi$ ，则 $\Gamma\vdash\phi$ 的冲要条件是 $\Gamma\vDash\phi$
+
+***** 证明
+
+充分性由[[MK533][可靠性定理]]证得
+
+若 $\Gamma\vDash\phi$ 则根据[[MK531][逻辑结论定义]]对于任意 $\mathcal{L}$ 的[[MK446][结构]] $\mathcal{M}=\left<M,I\right>$ 以及[[MK447][赋值]] $v$ 若有 $\left<\mathcal{M},v\right>\vDash\Gamma$ 则有 $\left<\mathcal{M},v\right>\vDash\phi$
+
+则有 $\left<\mathcal{M},v\right>\not\vDash(\lnot\phi)$ 显然 $\Gamma\cup\{(\lnot\phi)\}$ 不[[MK530][可满足]]，则根据[[MK585][第一完备性定理]]可得 $\Gamma\cup\{(\lnot\phi)\}$ [[MK535][不一致]]
+
+则根据[[MK548][归谬定理]]可得 $\Gamma\vdash\phi$
+
+***** 推论
+
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK135][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ 以及任意[[MK135][表达式]] $\phi$ ，则 $\Gamma\vdash\phi$ 的冲要条件是 $\Gamma\vDash\phi$
+
+****** 证明
+
+根据[[MK586][推论]]，基于[[MK587][第二完备性定理]]的证明类似可证
 
 *** 可靠性定理<<MK533>>
 
@@ -9508,7 +9894,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 （3） 若 $c\in\mathcal{L}_{\mathcal{A}_1}$ 是[[MK129][常元符号]]，则有 $I(c)=J(c)$
 
-（4） 若 $f\in\mathcal{L}_{\mathcal{A}_1}$ 是[[MK131][函数符号]]且 $\pi_F(f)=n$ ，对于任意 $<a_1,...,a_n>\subset M^n$ 有 $I(f)(a_1,...,a_n)=J(f)(a_1,...,a_n)$
+（4） 若 $f\in\mathcal{L}_{\mathcal{A}_1}$ 是[[MK131][函数符号]]且 $\pi_F(f)=n$ ，对于任意 $<a_1,...,a_n>\subset M^n$
+
+     有 $I(f)(a_1,...,a_n)=J(f)(a_1,...,a_n)$
 
 （5） 若 $p\in\mathcal{L}_{\mathcal{A}_1}$ 是[[MK132][谓词符号]]且 $\pi_P(p)=n$ 有 $I(p)=J(p)\cap M^n$
 
