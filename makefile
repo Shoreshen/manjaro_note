@@ -13,6 +13,7 @@ test:
 cporg: $(ORGNOTES)
 	rm ./OrgNotes/*
 	cp $(ORGNOTES) ./OrgNotes
+	echo $(ORGNOTES) > ./OrgNotes/org_dirs
 
 installall:
 	echo $(PW) | sudo -S pacman -S seahorse nerd-fonts-terminus rclone fcitx-qt5 fcitx-configtool fcitx-sogoupinyin emacs uget aria2-fast uget-integrator uget-integrator-chromium netease-cloud-music gnome-calculator
