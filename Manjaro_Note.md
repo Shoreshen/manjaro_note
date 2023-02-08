@@ -899,6 +899,35 @@ Major steps are listed follow:
    ./analyze_new_cluster.sh
    su shore
    ```
+## pulse-secure
+
+Install from AUR package:
+
+```shell
+sudo pamac install pulse-secure
+```
+
+Enable/start service
+
+```shell
+sudo systemctl enable pulsesecure.service
+sudo systemctl start pulsesecure.service
+```
+
+Need reboot to take effect.
+
+## UniVPN
+
+Download the linux version from [leagsoft](https://www.leagsoft.com/) at this [link](https://www.leagsoft.com/new-detail/1087)
+
+Unzip it and find file `univpn-linux-64-XXXXX.X.X.XXXX.run` and replace the line ``ARCH="`arch`"`` with ``ARCH="`uname -m`"`` (use a hex editor, normal editor will disable the file)
+
+Change the atrribute and run the file
+
+```shell
+chmod 755 univpn-linux-64-10781.9.0.1229.run
+sudo ./univpn-linux-64-10781.9.0.1229.run
+```
 
 # Time
 
