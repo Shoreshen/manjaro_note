@@ -32,7 +32,7 @@ installall:
 # 	fi
 
 connect:
-	echo $(PW) | sudo -S openvpn --config ~/文档/ffff --auth-user-pass ~/文档/auth.txt
+	echo $(PW) | sudo -S openvpn --config ~/文档/vpn21_ovpn121_account.ovpn
 
 set_dns:  
 ifeq ($(DIF),)
@@ -64,9 +64,9 @@ split_scrn_left:
 	xrandr --output HDMI-0 --auto --left-of DP-2
 
 update:
-	echo $(PW) | sudo -S pacman -Syy
-	sudo pacman -Syu
-	sudo pamac update
+	- echo $(PW) | sudo -S pacman -Syy
+	- sudo pacman -Syu
+	- sudo pamac update
 
 version:
 	cat /etc/lsb-release 
