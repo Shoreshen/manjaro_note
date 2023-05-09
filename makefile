@@ -32,7 +32,7 @@ installall:
 # 	fi
 
 connect:
-	echo $(PW) | sudo -S openvpn --config ~/文档/vpn21_ovpn121_account.ovpn
+	echo $(PW) | sudo -S openvpn --config ~/文档/vpn-tk1_ovpn198_account.ovpn
 
 set_dns:  
 ifeq ($(DIF),)
@@ -66,7 +66,7 @@ split_scrn_left:
 update:
 	- echo $(PW) | sudo -S pacman -Syy
 	- sudo pacman -Syu
-	- sudo pamac update
+	- sudo pamac update --ignore openvpn-xor-git
 
 version:
 	cat /etc/lsb-release 
