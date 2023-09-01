@@ -11,7 +11,7 @@ test:
 	@echo $(PW)
 
 cporg: $(ORGNOTES)
-	rm ./OrgNotes/*
+	-rm ./OrgNotes/*
 	cp $(ORGNOTES) ./OrgNotes
 	echo $(ORGNOTES) > ./OrgNotes/org_dirs
 
