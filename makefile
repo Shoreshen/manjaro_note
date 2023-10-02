@@ -32,7 +32,7 @@ installall:
 # 	fi
 
 connect:
-	echo $(PW) | sudo -S openvpn --config ~/文档/vpn-tk1_ovpn198_account.ovpn
+	echo $(PW) | sudo -S openvpn --config ~/文档/vpn26_ovpn137_account.ovpn
 
 set_dns:  
 ifeq ($(DIF),)

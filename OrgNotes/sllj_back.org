@@ -7128,7 +7128,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]
 
-若 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]，则 $\mathcal{M}$ 与 $\mathcal{N}$ [[MK148][同样]] 
+若 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]，则 $\mathcal{M}$ 与 $\mathcal{N}$ [[MK148][同样]] 
 
 ****** 证明
 
@@ -7138,7 +7138,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 ***** 推论2<<MK514>>
 
-[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]，若 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]且 $X\subset M$
+[[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]，若 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]且 $X\subset M$
 
 对于任意由 $\mathcal{L}_\mathcal{A}$ [[MK135][表达式]] $\phi(x_1,...,x_n,x_{n+1},...,x_{n+m})$ 且参数为 ${q_1,...,q_m}$ 属于 $X$
 
@@ -7146,17 +7146,17 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 ****** 证明
 
-由于是[[MK486][同质子结构]]，则有 $M\subset N$ 进一步有 $M^n\subset N^n$
+由于是[[MK487][同质子结构]]，则有 $M\subset N$ 进一步有 $M^n\subset N^n$
 
 根据[[MK452][局部确定定理]]可得对于任意 $<a_1,...,a_n>\in A$ 其充要条件为 $\mathcal{M}\vDash\phi[a_1,...,a_n,q_1,...,q_m]$
 
-又结合[[MK486][同质子结构]]定义可得充要条件为 $\mathcal{N}\vDash\phi[a_1,...,a_n,q_1,...,q_m]$ 根据[[MK476][可定义]]即 $<a_1,...,a_n>\in A^*$
+又结合[[MK487][同质子结构]]定义可得充要条件为 $\mathcal{N}\vDash\phi[a_1,...,a_n,q_1,...,q_m]$ 根据[[MK476][可定义]]即 $<a_1,...,a_n>\in A^*$
 
 即 $A\subset A^*$ 又根据[[MK476][可定义]]显然 $A\subset M$ ，即有 $A\subset M\cap A^*$
 
 对于任意 $<a_1,...,a_n>\in A^*$ 且 $<a_1,...,a_n>\in M^n$ 同理可得 $\mathcal{N}\vDash\phi[a_1,...,a_n,q_1,...,q_m]$
 
-由于 $<a_1,...,a_n>\in M^n$ 则根据[[MK486][同质子结构]]易证有 $\mathcal{M}\vDash\phi[a_1,...,a_n,q_1,...,q_m]$
+由于 $<a_1,...,a_n>\in M^n$ 则根据[[MK487][同质子结构]]易证有 $\mathcal{M}\vDash\phi[a_1,...,a_n,q_1,...,q_m]$
 
 即 $<a_1,...,a_n>\in A$ 则有 $M\cap A^*\subset A$
 
@@ -7188,9 +7188,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 （1） $\mathcal{L}_{\mathcal{A}_M}$ 为 $\mathcal{L}_\mathcal{A}$ 的[[MK482][扩充语言]]
 
-（2） 定义 $\mathcal{M}^*=<M,I^*>,\mathcal{N}^*=<N,J^*>$ 分别为 $\mathcal{M},\mathcal{N}$ 的[[mk490][扩充结构]]
+（2） 定义 $\mathcal{M}^*=<M,I^*>,\mathcal{N}^*=<N,J^*>$ 分别为 $\mathcal{M},\mathcal{N}$ 的[[MK490][扩充结构]]
 
-（3） $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]的充要条件为 $\mathcal{M}^*$ 与 $\mathcal{N}^*$ [[MK148][同样]] 
+（3） $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]的充要条件为 $\mathcal{M}^*$ 与 $\mathcal{N}^*$ [[MK148][同样]] 
 
 ****** 证明
 
@@ -7198,7 +7198,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 ******* 充分
 
-若 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]，则有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK483][子结构]]，进一步有 $M\subset N$
+若 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]，则有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK483][子结构]]，进一步有 $M\subset N$
 
 对于任意[[MK451][语句]] $\phi\in\mathcal{L}_{\matthcal{A}_M}$ 定义 $\phi$ 中所有[[MK130][变元符号]]的最大下标 $n$ 所有满足 $c\in\left\{c_a\big|a\in M\right\}$ 的[[MK129][常元符号]]个数为 $m$
 
@@ -7244,7 +7244,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 同理可证若有 $<\mathcal{N},v>\vDash\phi$ 则有 $<\mathcal{M},v>\vDash\phi$ 又由于 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK483][子结构]]
 
-则根据[[MK487][定义]]可得 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]
+则根据[[MK487][定义]]可得 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]
 
 ***** 定理2<<MK545>>
 
@@ -7280,7 +7280,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK446][结构]] $\mathcal{N}=\langle N,J\rangle$ ，若有 $M\subset N$ 满足对于每一个非空[[MK476][可定义]]的 $A\in\text{Def}_1(\mathcal{N},M)$
 
-均有 $A\cap M\ne\varnothing$ ，则存在 $I$ 满足 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]
+均有 $A\cap M\ne\varnothing$ ，则存在 $I$ 满足 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]
 
 ******* 证明
 
@@ -7296,13 +7296,13 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 显然根据[[MK446][一阶结构]]以及前述证明可得 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{L}_\mathcal{A}$ 的[[MK446][结构]]
 
-又根据[[MK483][子结构定义]]以及 $M\subset N$ 可得 $\mathcal{M}\subset\mathcal{N}$ ，则根据[[MK501][塔尔斯基]]定理有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]
+又根据[[MK483][子结构定义]]以及 $M\subset N$ 可得 $\mathcal{M}\subset\mathcal{N}$ ，则根据[[MK501][塔尔斯基]]定理有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]
 
 ***** 定理3（塔尔斯基）<<MK501>>
 
 [[MK444][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$ 两个[[MK446][结构]]，则以下两个命题等价：
 
-（1） $\mathcal{M}\prec\mathcal{N}$ 即 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]
+（1） $\mathcal{M}\prec\mathcal{N}$ 即 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]
 
 （2） $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK483][子结构]]，且对于每一个非空[[MK476][可定义]]的 $A\in\text{Def}_1(\mathcal{N},M)$ 均有 $A\cap M\ne\varnothing$
 
@@ -7320,11 +7320,11 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 易证 $u$ 亦为 $\mathcal{N}$ [[MK447][赋值]]，则根据[[MK449][满足]]可得 $<\mathcal{N},u>\not\vDash(\forall x_1(\lnot\phi))$
 
-又由于 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]，则有 $<\mathcal{M},u>\not\vDash(\forall x_1(\lnot\phi))$
+又由于 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]，则有 $<\mathcal{M},u>\not\vDash(\forall x_1(\lnot\phi))$
 
 又根据[[MK449][满足]]可得存在 $\mathcal{M}$ [[MK447][赋值]] $\eta$ 满足 $\eta(x_1)\in M$ 以及 $\eta(x_i)=b_{i-1},i\geq 2$ 使得 $<\mathcal{M},\eta>\not\vDash(\lnot\phi)$
 
-即根据[[MK449][满足]] $<\mathcal{M},\eta>\vDash\phi$ ，易证 $\eta$ 亦为 $\mathcal{N}$ [[MK447][赋值]]，故根据 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]] $<\mathcal{N},\eta>\vDash\phi$
+即根据[[MK449][满足]] $<\mathcal{M},\eta>\vDash\phi$ ，易证 $\eta$ 亦为 $\mathcal{N}$ [[MK447][赋值]]，故根据 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]] $<\mathcal{N},\eta>\vDash\phi$
 
 根据 $\eta(x_1)\in M$ 、 $<\mathcal{N},\eta>\vDash\phi$ 以及[[MK452][局部确定定理]]可得 $\mathcal{N}\vDash\phi[\eta(x_1),b_1,...,b_{n-1}]$
 
@@ -7338,7 +7338,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 对于任意 $\mathcal{M}$ [[MK447][赋值]] $v$ ， $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},v>\vDash\phi$
 
-又结合（2）中 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK483][子结构]]根据[[MK486][同质子结构]]定义可得 $\mathcal{M}\prec\mathcal{N}$
+又结合（2）中 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK483][子结构]]根据[[MK487][同质子结构]]定义可得 $\mathcal{M}\prec\mathcal{N}$
 
 ******** $z(\phi)=1$ 时
 
@@ -7438,7 +7438,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 ******* 证明结论
 
-根据[[MK546][推论]]可得存在 $I$ 使得 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}$ 的[[MK486][同质子结构]]
+根据[[MK546][推论]]可得存在 $I$ 使得 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}$ 的[[MK487][同质子结构]]
 
 *** 扩充/裁剪结构<<MK490>>
 
@@ -9927,13 +9927,13 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 [[MK529][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 是[[MK590][完全的]]，若有 $\mathcal{L}_\mathcal{A}$ 的[[MK647][类型]] $\Gamma(x_1,...,x_n)\supset T$ 且不是[[MK654][根本型]]
 
-则 $\mathcal{T}$ 一定有两个不[[MK471][同构]]的[[610][模型]]
+则 $\mathcal{T}$ 一定有两个不[[MK471][同构]]的[[MK610][模型]]
 
 ****** 证明
 
 根据[[MK647][定义]]可得 $\Gamma$ [[MK535][一致]]，故根据[[MK585][完备性]]可得存在 $\mathcal{L}_\mathcal{A}$ 下的[[MK446][结构]] $\mathcal{M}'= \left<M',I'\right>$ 及其[[MK447][赋值]] $v'$ 满足 $\left<\mathcal{M}',v'\right>\vDash\Gamma$
 
-显然 $\mathcal{M}'\vDash T$ 即 $\mathcal{M}'$ 是 $\mathcal{T}$ 的[[610][模型]]。假设 $\mathcal{M}'$ 与 $\mathcal{M}$ [[MK471][同构]]，存在[[MK471][同构映射]] $e$ 
+显然 $\mathcal{M}'\vDash T$ 即 $\mathcal{M}'$ 是 $\mathcal{T}$ 的[[MK610][模型]]。假设 $\mathcal{M}'$ 与 $\mathcal{M}$ [[MK471][同构]]，存在[[MK471][同构映射]] $e$ 
 
 则根据[[MK475][定理]]可得 $\left<\mathcal{M}',v'\right>\vDash\Gamma$ 的充要条件为 $\left<\mathcal{M}',v'\cdot e\right>\vDash\Gamma$ 
 
@@ -10884,7 +10884,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 显然 $X\subset\mathbb{R}$ 且 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK483][子结构]]，则根据[[MK501][塔尔斯基准则]]可得 $\mathcal{N}\prec\mathcal{M}$
 
-**** 区间定理<<600>>
+**** 区间定理<<MK600>>
 
 [[MK502][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=\left<M,\{\left<p_<,\lessdot\right>\}\right>$ 是[[MK503][无端点线性稠密序]]，则必有：
 
