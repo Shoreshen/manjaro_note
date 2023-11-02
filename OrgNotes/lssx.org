@@ -3695,9 +3695,9 @@ $B$ 是反链<<MK154>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(
 
 ******* 反证假设<<MK163>>
 
-对于非空偏序集 $<P,\leq>$ 假设命题不成立，即全序子集有上界，但 $P$ 中不存在[[MK144][极大元]]，即满足
+对于非空偏序集 $\left<P,\leq\right>$ 假设命题不成立，即全序子集有上界，但 $P$ 中不存在[[MK144][极大元]]，即满足
 
-（1） 对于任意[[MK170][全序集]] $<S,\leq>$ 满足 $S\subset P$ 均有上界，即 $\exists b\in P,\forall a\in S\Rightarrow a\leq b$
+（1） 对于任意[[MK170][全序集]] $\left<S,\leq\right>$ 满足 $S\subset P$ 均有上界，即 $\exists b\in P,\forall a\in S\Rightarrow a\leq b$
 
 （2） $\forall x\in P,\exists b\in P\Rightarrow x\leq b$
 
@@ -3707,7 +3707,7 @@ $B$ 是反链<<MK154>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(
 
 定义 $S\subset P$ 是 $P$ 的[[MK170][全序集]]，则根[[MK163][据命题（1）]]必有 $p\in P$ 是 $S$ 的上界，即 $\forall a\in S\Rightarrow a\leq p$
 
-对于任意全序子集 $<S,\leq>$ 定义集合 $B(S)=\left\{p\bit|p\in P-S\land\forall a\in S\Rightarrow a\leq p\right\}$
+对于任意全序子集 $\left<S,\leq\right>$ 定义集合 $B(S)=\left\{p\bit|p\in P-S\land\forall a\in S\Rightarrow a\leq p\right\}$
 
 根据[[MK163][命题（2）]]必有 $p'\in P\Rightarrow p\leq p'$ 则根据[[MK128][传递性]] $\forall a\in S\Rightarrow a\leq p\leq p'$
 
@@ -3715,7 +3715,7 @@ $B$ 是反链<<MK154>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(
 
 ******* 定义函数 $\phi(S)$
 
-对于的[[MK170][全序子集]] $<S,\leq>$ 有对应的集合 $B(S)$ 必为非空集合
+对于的[[MK170][全序子集]] $\left<S,\leq\right>$ 有对应的集合 $B(S)$ 必为非空集合
 
 故由于[[MK14][选择公理]]可知存在选择函数 $\psi(B(S))\in B(S)$ 则定义 $\phi(S)=\psi(B(S))$ 显然满足 $\phi(S)\in B(S)$
 
@@ -3731,7 +3731,7 @@ $B$ 是反链<<MK154>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(
 
 （3） 若 $T\subset S$ 是[[MK170][全序子集]]的非空[[MK155][真前段]]，则 $S-T$ 的[[MK144][最小元]]为 $\phi(T)$
 
-首先推断 $C\ne\varnothing$ ，定义 $\{p_1\}=\phi(\{p_0\}),\phi(\{p_0,p_1\})=p_2$ 定义 $S_3=\{p_0,p_1,p_2\}$ 显然 $<S,\leq>$ 是[[MK171][良序集]]
+首先推断 $C\ne\varnothing$ ，定义 $\{p_1\}=\phi(\{p_0\}),\phi(\{p_0,p_1\})=p_2$ 定义 $S_3=\{p_0,p_1,p_2\}$ 显然 $\left<S,\leq\right>$ 是[[MK171][良序集]]
 
 且最小元为 $p$ ，$S$ 的真前段有且仅有 $\{p_0\},\{p_0,p_1\}$ 显然 $S-T$ 的最小元为 $\phi(T)$ ，故满足条件。
 
@@ -3755,7 +3755,7 @@ $B$ 是反链<<MK154>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(
 
 ******** 证明良序
 
-根据[[MK161][定理2]]可得 $<U,\leq>$ 亦是[[MK171][良序集]]
+根据[[MK161][定理2]]可得 $\left<U,\leq\right>$ 亦是[[MK171][良序集]]
 
 ******** 证明最小元是 $p_0$
 
@@ -3789,15 +3789,15 @@ $B$ 是反链<<MK154>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(
 
 由于 $U$ 是良序，故为全序。则根据条件 $U$ 有上界，且 $P$ 无[[MK144][极大元]]则 $\phi(U)$ 必不为空集，定义 $\{b\}=\phi(U)$
 
-由于 $<U,\leq>$ 是全续集，及选择函数定义有 $\forall u\in U,u\leq b$ 且 $b\not\in U$ 故：
+由于 $\left<U,\leq>$ 是全续集，及选择函数定义有 $\forall u\in U,u\leq b$ 且 $b\not\in U$ 故：
 
-（1） 根据[[MK160][定理1]]可得 $<U\cup\{b\},\leq>$ 亦为良序集
+（1） 根据[[MK160][定理1]]可得 $\left<U\cup\{b\},\leq\right>$ 亦为良序集
 
 （2） 亦有 $\forall u\in U\cup\{b\}\Rightarrow p_0\leq u$
 
 （3） 若 $T\subset U\cup \{b\}$ 为非空[[MK155][真前段]]，则 $U-T$ 的[[MK144][最小元]]为 $\phi(T)$
 
-故 $U\cup\phi(U)$ 亦为满足条件 $C$ 的元素，这与 $U$ 的定义矛盾，故[[MK163][假设]]不成立，即 $<P,\leq>$ 中有最大元
+故 $U\cup\phi(U)$ 亦为满足条件 $C$ 的元素，这与 $U$ 的定义矛盾，故[[MK163][假设]]不成立，即 $\left<P,\leq\right>$ 中有最大元
 
 *** 拟序关系<<MK165>>
 
@@ -3905,7 +3905,7 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$
 
 （2） 任意非空子集 $T\subset S$ 都有[[MK144][最小元]]
 
-满足此定义的集合与偏序关系称为良序集，记作 $<S,\leq>$
+满足此定义的集合与偏序关系称为良序集，记作 $\left<S,\leq\right>$
 
 **** 定理<<MK172>>
 
@@ -3921,61 +3921,89 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$
 
 **** 良序定理<<MK173>>
 
-任意非空集合 $X$ 均存在其上的[[MK143][偏序关系]] $\leq$ 使得 $<X,\leq>$ 是[[MK171][良序关系]]
+任意非空集合 $X$ 均存在其上的[[MK143][偏序关系]] $\leq$ 使得 $\left<X,\leq\right>$ 是[[MK171][良序关系]]
 
 ***** 证明
 
-****** 定义 $<P,\preceq>$ <<MK174>>
+****** 定义 $\left<P,\preceq\right>$ <<MK174>>
 
-定义 $\rho(X)$ 是 $X$ 的[[MK20][幂集]]，定义集合 $P$ 满足对于任意 $<Y,\leq_Y>\in P$ 有：
+定义 $\rho(X)$ 是 $X$ 的[[MK20][幂集]]，定义集合 $P$ 满足对于任意 $\left<Y,\leq_Y\right>\in P$ 有：
 
 （1） $Y\in\rho(X)$
 
-（2） $<Y,\leq_Y>$ 是[[MK171][良序关系]]
+（2） $\left<Y,\leq_Y\right>$ 是[[MK171][良序关系]]
 
-进一步在 $P$ 上定义关系 $\preceq$ 为 $<Y_1,\leq_{Y_1}>\preceq<Y_2,\leq_{Y_2}>$ 为：
+进一步在 $P$ 上定义关系 $\preceq$ 为 $\left<Y_1,\leq_{Y_1}\right>\preceq\left<Y_2,\leq_{Y_2}\right>$ 为：
 
 （1） $\leq_{Y_1}\subset\leq_{Y_2}$ 且 $Y_1\subset Y_2$
 
-（2） 在 $<Y_2,\leq_{Y_2}>$ 下 $Y_1$ 是 $Y_2$ 的[[MK155][前段]]
+（2） 在 $\left<Y_2,\leq_{Y_2}\right>$ 下 $Y_1$ 是 $Y_2$ 的[[MK155][前段]]
 
-****** 证明 $<P,\preceq>$ 是[[MK143][偏序关系]]
+****** 证明 $\left<P,\preceq\right>$ 是[[MK143][偏序关系]]
 
-则对于代数结构 $<P,\preceq>$ 有：
+则对于代数结构 $\left<P,\preceq\right>$ 有：
 
-（1） 对于任意 $<Y,\leq_Y>\in P$ 有 $Y\subset Y\land \leq_Y\subset\leq_Y$ 且 $Y$ 是 $Y$ 的[[MK155][前段]]，即 $<Y,\leq_{Y}>\preceq<Y,\leq_{Y}>$
+（1） 对于任意 $\left<Y,\leq_Y\right>\in P$ 有 $Y\subset Y\land \leq_Y\subset\leq_Y$ 且 $Y$ 是 $Y$ 的[[MK155][前段]]，即 $\left<Y,\leq_{Y}\right>\preceq\left<Y,\leq_{Y}\right>$
 
-（2） 若有 $<Y_1,\leq_{Y_1}>\preceq<Y_2,\leq_{Y_2}>\land<Y_2,\leq_{Y_2}>\preceq<Y_1,\leq_{Y_1}>$
+（2） 若有 $\left<Y_1,\leq_{Y_1}\right>\preceq\left<Y_2,\leq_{Y_2}\right>\land\left<Y_2,\leq_{Y_2}\right>\preceq\left<Y_1,\leq_{Y_1}\right>$
 
-     则根据[[MK16][自反性]]显然 $<Y_1,\leq_{Y_1}>=<Y_2,\leq_{Y_2}>$ 
+     则根据[[MK16][自反性]]显然 $\left<Y_1,\leq_{Y_1}\right>=\left<Y_2,\leq_{Y_2}\right>$ 
 
-（3） 若有 $<Y_1,\leq_{Y_1}>\preceq<Y_2,\leq_{Y_2}>\land<Y_2,\leq_{Y_2}>\preceq<Y_3,\leq_{Y_3}>$
+（3） 若有 $\left<Y_1,\leq_{Y_1}\right>\preceq\left<Y_2,\leq_{Y_2}\right>\land\left<Y_2,\leq_{Y_2}\right>\preceq\left<Y_3,\leq_{Y_3}\right>$
 
-     则有 $Y_1\subset Y_3$ 以及 $\leq_{Y_1}\subset\leq_{Y_3}$ 又根据[[MK159][传递性]]可得在 $<Y_3,\leq_{Y_3}>$ 下 $Y_1$ 是 $Y_3$ 的[[MK155][前段]]
+     则有 $Y_1\subset Y_3$ 以及 $\leq_{Y_1}\subset\leq_{Y_3}$ 又根据[[MK159][传递性]]可得在 $\left<Y_3,\leq_{Y_3}\right>$ 下 $Y_1$ 是 $Y_3$ 的[[MK155][前段]]
 
-综上所述 $<P,\preceq>$ 满足[[MK124][自反性]]，[[MK127][反对称性]]以及[[MK128][传递性]]，是[[MK143][偏序关系]]
+综上所述 $\left<P,\preceq\right>$ 满足[[MK124][自反性]]，[[MK127][反对称性]]以及[[MK128][传递性]]，是[[MK143][偏序关系]]
 
-****** 证明 $<P,\preceq>$ 有[[MK144][极大元]]
+****** 证明 $\left<P,\preceq\right>$ 有[[MK144][极大元]]
 
-对于任意 $<P,\preceq>$ [[MK153][链]] $C\subset P$ 定义 $Y^*=\bigcup_{<Y,\leq_Y>\in C}Y,\leq_{Y^*}=\bigcup_{<Y,\leq_Y>\in C}\leq_{Y}$
+对于任意 $\left<P,\preceq\right>$ [[MK153][链]] $C\subset P$ 定义 $Y^*=\bigcup_{\left<Y,\leq_Y\right>\in C}Y,\leq_{Y^*}=\bigcup_{\left<Y,\leq_Y\right>\in C}\leq_{Y}$
 
-易证 $<Y^*,\leq_{Y^*}>$ 亦为[[MK143][偏序关系]]且任意 $<Y,\leq_Y>\in C$ 有 $<Y,\leq_{Y}>\preceq<Y^*,\leq_{Y^*}>$
+易证 $\left<Y^*,\leq_{Y^*}\right>$ 亦为[[MK143][偏序关系]]且任意 $\left<Y,\leq_Y\right>\in C$ 有 $\left<Y,\leq_{Y}\right>\preceq\left<Y^*,\leq_{Y^*}\right>$
 
-则 $<Y^*,\leq_{Y^*}>$ 是 $C$ 在 $<P,\preceq>$ 中的[[MK145][上届]]，根据[[MK162][佐恩引理]]可得 $<P,\preceq>$ 存在[[MK144][极大元]]
+则 $\left<Y^*,\leq_{Y^*}\right>$ 是 $C$ 在 $\left<P,\preceq>$ 中的[[MK145][上届]]，根据[[MK162][佐恩引理]]可得 $\left<P,\preceq\right>$ 存在[[MK144][极大元]]
 
-定义为 $<M,\leq_M>$
+定义为 $\left<M,\leq_M\right>$
 
 ****** 证明 $M=X$
 
 假设 $M\ne X$ 根据[[MK174][定义]]可得 $M\subset X$ 则存在 $a\in X-M$
 
-定义 $M'=M\cup\{a\}$ 定义 $\leq_{M'} =\leq_M\cup\left\{<x,a>\big|x\in M\right\}$
+定义 $M'=M\cup\{a\}$ 定义 $\leq_{M'} =\leq_M\cup\left\{\left<x,a\right>\big|x\in M\right\}$
 
-易证 $<M',\leq_{M'}>$ 亦为[[MK171][良序关系]]且在 $<M',\leq_{M'}>$ 下 $M$ 是 $M'$ 的[[MK155][前段]]
+易证 $\left<M',\leq_{M'}\right>$ 亦为[[MK171][良序关系]]且在 $\left<M',\leq_{M'}\right>$ 下 $M$ 是 $M'$ 的[[MK155][前段]]
 
-进而有 $<M,\leq_M>\preceq<M',\leq_{M'}>$ 与 $<M,\leq_M>$ 是[[MK144][极大元]]矛盾
+进而有 $\left<M,\leq_M\right>\preceq\left<M',\leq_{M'}\right>$ 与 $\left<M,\leq_M\right>$ 是[[MK144][极大元]]矛盾
 
-故假设不成立 $X=M$ 进而有 $<X,\leq_M>$ 是[[MK171][良序关系]]
+故假设不成立 $X=M$ 进而有 $\left<X,\leq_M\right>$ 是[[MK171][良序关系]]
+
+**** 超限归纳
+
+任意[[MK171][良序关系]] $\left<X,\leq\right>$ 若对于命题 $P$ 满足：
+
+（1） $P(x_0)$ 为真，其中 $x_0$ 是 $X$ 的[[MK144][最小元]]
+
+（2） 对于任意 $a<b,a\ne b$ 均有命题 $P(a)$ 为真，则 $P(b)$ 为真
+
+则对于任意 $a\in X$ 均有命题 $P(a)$ 为真
+
+***** 证明
+
+对于任意[[MK171][良序关系]] $\left<X,\leq\right>$ 满足条件，假设存在 $a\in X$ 满足 $P(a)$ 为假
+
+则定义集合 $S=\left\{a\big|a\in X\land(\lnot P(a))\right\}$ 显然 $S$ 非空，则根据[[MK171][良序]]可得存在 $s\in S$
+
+满足对于任意 $s'\in S$ 均有 $s<s'$ 即 $S$ 上的[[MK144][最小元]]
+
+则若 $s=x_0$ 则根据条件（1）可得 $P(x_0)$ 为真，矛盾
+
+若 $s\ne x_2$ 则 $x_0\in Z=\left\{x\big|x\in X\land x<s\land x\ne s\right\}$ 即 $Z$ 非空
+
+显然根据 $s$ 定义可得任意 $x\in Z$ 满足 $x<s$ 均有 $x\not\in S$ 则有 $P(x)$ 为真
+
+则根据条件（2）可得 $P(s)$ 为真，矛盾
+
+综上所述，假设不成立，即不存在 $a\in X$ 满足 $P(a)$ 为假
 
 ** 函数（映射）
 
