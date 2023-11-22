@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 329
+currnet mark: 331
 
 free mark:
  
@@ -1940,6 +1940,30 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 可数集的子集，要么是[[MK89][可数集]]，要么是[[MK82][有限集]]
 
+***** 定理3<<MK330>>
+
+若 $A$ 是[[MK89][可数集]]，则 $B=\left\{b\big|b\in\rho(A)\land |b|=n\right\}$ 亦是[[MK89][可数集]]
+
+其中 $\rho(A)$ 是 $A$ 的[[MK20][幂集]]， $n\in\mathbb{N}$
+
+****** 证明
+
+根据[[MK88][定理5]]可得 $|A^n|=|A|$ 是[[MK89][可数集]]，其中 $A^n$ 是 $A$ 的 $n$ 次[[MK107][笛卡尔积]]
+
+对于任意 $b=\{a_1,...,a_n\}\in B$ 根据[[MK105][有序组定义]]可定义 $g(b)=\left\{a\big|a\in A^n\land b\in a\right\}$ 
+
+即 $A^n$ 中所有由 $\{a_1,...,a_n\}$ 组成的[[MK105][有序组]]，显然对于任意 $b\in B$ 有唯一 $c\subset A^n$ 满足 $g(b)=c$
+
+故 $g$ 是[[MK175][函数]]，根据[[MK14][选择公理]]可得存在选择[[MK175][函数]] $f'$ 满足 $f'(g(b))\in g(b)$
+
+最终定义 $f(b)=f'(g(b))$ 显然根据[[MK187][复合]]可得 $f$ 亦为[[MK175][函数]]
+
+对于任意 $b_1\ne b_2$ 不妨设 $a^*\in b_1,a^*\not\in b_2$ 则根据[[MK105][有序组定义]]可得存在 $k_1\in f(b_1)$ 满足 $a^*\in k_1$
+
+且不存在 $k_2\in f(b_2)$ 满足 $a^*\in k_2$ 则显然 $f(b_1)\ne f(b_2)$ 即 $f$ 是[[MK176][单射]]
+
+即有 $|B|<|A^n|=|A|$ 显然 $B$ 是[[MK83][无限集]]，则根据[[MK90][定理1]]易证 $B$ 是[[MK89][可数集]]
+
 *** 至多可数集<<MK93>>
 
 即[[MK82][有限集]]和[[MK89][可数集]]的并集，即与正整数集子集对等
@@ -3146,6 +3170,18 @@ $R$ [[MK128][传递]]则 $\forall x\forall y\forall z(xRy\land yRz\rightarrow xR
 即根据[[MK2][外延公理]]可得 $[a]_R=[b]_R$ 与条件矛盾，故不存在 $x\in[a]_R\land x\in[b]_R$ 
 
 即根据[[MK60][交运算]]定义 $[a]_R\cap[b]_R=\varnothing$
+
+**** 定理3<<MK331>>
+
+若 $R$ 是 $A$ 上的[[MK132][等价关系]] $B=\left\{[a]_R\big|a\in A\right\}$ 则有 $|B|\leq|A|$
+
+***** 证明
+
+对于任意 $[a]_R\in B$ 根据[[MK14][选择公理]]可得存在选择函数 $f$ 满足 $f([a]_R)\in[a]_R$ 显然有 $f([a]_R)\in A$
+
+显然对于任意 $[a]_R\ne[b]_R$ 不存在 $c\in[a]_R\land c\in[b]_R$ ，故可得 $f([a]_R)\ne f([b]_R)$
+
+即 $f$ 是[[MK176][单射]]，根据[[MK29][等势]]可得 $|B|\leq|A|$
 
 *** 划分
 
