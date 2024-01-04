@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 331
+currnet mark: 337
 
 free mark:
  
@@ -4200,6 +4200,22 @@ f(A)-f(B)&\subset f(A-B)\\
 
 故 $P$ 亦为满射函数
 
+***** 蕴含逆[[MK176][单射]]<<MK332>>
+
+若 $f:X\to Y$ 是[[MK179][满射]]，则存在 $g:Y\to X$ 是[[MK176][单射]]
+
+****** 证明
+
+定义 $f'(y)=\left\{x\big|x\in X\land f(x)=y\right\}$ 由于是[[MK179][满射]]，故对于任意 $y\in Y$ 均有 $f'(y)\ne\varnothing$
+
+则根据[[MK14][选择公理]]可得存在选择函数 $h$ 满足 $h(f'(y))\in f'(y)$ ，则定义 $g:Y\to X$ 为 $g(y)=h(f'(y))$
+
+对于任意 $y_1\ne y_2$ 假设 $g(y_1)=g(y_2)$ 则 $f(g(y_1))=y_1=y_2=f(g(y_2))$
+
+即对于 $g(y_1)\in X$ 有 $\left<g(y_1),y_1\right>\in f,\left<g(y_1),y_2\right>\in f$ ，与 $f$ 是[[MK175][函数]]矛盾
+
+故假设不成立，即对于任意 $y_1\ne y_2$ 均有 $g(y_1)\ne g(y_2)$ ，即 $g$ 是[[MK176][单射]]
+
 **** 双射<<MK181>>
 
 若 $f$ 是 $X$ 到 $Y$ 上的函数，且 $f$ 既是[[MK176][单射函数]]又是[[MK179][满射函数]]，则称为双射函数，即一一对应。
@@ -6434,6 +6450,132 @@ x&=y\\
 *** 同构定义
 
 两个[[MK298][代数结构]] $<S,*>,<\bar{S},\bar{*}>$ 若存[[MK306][同构映射]] $f$ ，则称两个[[MK298][代数结构]]同构。
+
+** 代数结构的类型
+
+*** 环
+
+**** 语言<<MK333>>
+
+除[[~/OneDrive/数理逻辑/sllj.org::MK105][固定符号]]外有：
+
+（1） [[~/OneDrive/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+$ 分别表示乘法，加法
+
+（3） [[~/OneDrive/数理逻辑/sllj.org::MK108][常元符号]] $c_0$
+
+则有 $\mathcal{A}_\mathcal{R}=\{f_\times,f_+,c_0\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 是环理论的[[~/OneDrive/数理逻辑/sllj.org::MK151][语言]]
+
+**** 公理<<MK334>>
+
+定义以下公理集合为 $T_\mathcal{R}$
+
+（1） $(\forall x_1(\forall x_2(f_+(x_1,x_2)\hat{=}f_+(x_2,x_1))))$ 加法交换律
+
+（2） $(\forall x_2(\forall x_2(\forall x_3(f_+(f_+(x_1,x_2),x_3)\hat{=}f_+(x_1,f_+(x_2,x_3))))))$ 加法结合律
+
+（3） $(\forall x_1(f_+(x_1,c_0)\hat{=}x_1))$ 加法幺元
+
+（4） $(\forall x_1(f_+(x_1,f_-(x_1))\hat{=}c_0))$ 加法逆元
+
+（5） $(\forall x_2(\forall x_2(\forall x_3(f_\times(f_\times(x_1,x_2),x_3)\hat{=}f_\times(x_1,f_\times(x_2,x_3))))))$ 乘法结合律
+
+（6） $(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$ 乘法分配律
+
+**** 性质
+
+***** 性质1<<MK337>>
+
+加法幺元唯一且为 $c_0$ ，即 $T_\mathcal{R}\vdash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
+
+****** 证明
+
+对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/OneDrive/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/OneDrive/数理逻辑/sllj.org::MK154][赋值]] $v$ 若满足 $\left<\mathcal{M},v\right>\vDash(\forall x_2(f_+(x_1,x_2)\hat{=}x_2))$
+
+则对于其[[~/OneDrive/数理逻辑/sllj.org::MK154][赋值]] $v^*$ 满足 $v^*(x_2)=I(c_0),v^*(x_1)=v(x_1)$ 根据[[~/OneDrive/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},v^*\right>\vDash(f_+(x_1,x_2)\hat{ =}x_2)$
+
+根据[[~/OneDrive/数理逻辑/sllj.org::MK158][满足]] $v^*(x_1)=I(f_+)(v^*(x_1),v^*(x_2))$
+
+根据[[MK334][公理（3）]]有 $\left<\mathcal{M},v^*\right>\vDash(f_+(x_1,x_2)\hat{=}x_1)$ 且 $\left<\mathcal{M},v^*\right>\vDash(x_1\hat{ =}f_+(x_1,x_2))$   
+
+根据[[~/OneDrive/数理逻辑/sllj.org::MK158][满足]] $I(f_+)(v^*(x_1),v^*(x_2))=v^*(x_2)=I(c_0)$
+
+即有 $v^*(x_1)\hat{=}I(c_0)$ 根据[[~/OneDrive/数理逻辑/sllj.org::MK158][满足]] $\left<\mathcal{M},v^*\right>\vDash(x_1\hat{ =}c_0)$ 又根据 $v^*(x_1)=v(x_1)$ 以及[[~/OneDrive/数理逻辑/sllj.org::MK168][局部确定]] $\left<\mathcal{M},v\right>\vDash(x_1\hat{ =}c_0)$
+
+综上所述，对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/OneDrive/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/OneDrive/数理逻辑/sllj.org::MK154][赋值]] $v$ 若 $\left<\mathcal{M},v\right>\vDash(\forall x_2(f_+(x_1,x_2)\hat{=}x_2))$
+
+则 $\left<\mathcal{M},v\right>\vDash(x_1\hat{ =}c_0)$ ，则显然 $\left<\mathcal{M},v\right>\vDash((\forall x_2(f_+(x_1,x_2)\hat{ =}x_2))\to(x_1\hat{ =}c_0))$
+
+又根据 $v$ 的任意性以及[[~/OneDrive/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},v\right>\vDash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{ =}x_2))\to(x_1\hat{ =}c_0)))$
+
+综上所述，对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/OneDrive/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/OneDrive/数理逻辑/sllj.org::MK154][赋值]] $v$
+
+均有 $\left<\mathcal{M},v\right>\vDash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{ =}x_2))\to(x_1\hat{ =}c_0)))$
+
+故根据[[~/OneDrive/数理逻辑/sllj.org::MK255][完备性]]有 $T_\mathcal{R}\vdash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
+
+*** 域
+
+**** 语言<<MK335>>
+
+除[[~/OneDrive/数理逻辑/sllj.org::MK105][固定符号]]外有：
+
+（1） [[~/OneDrive/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+,f_-$ 分别表示乘法，加法
+
+（3） [[~/OneDrive/数理逻辑/sllj.org::MK108][常元符号]] $c_0,c_1$
+
+则有 $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 是环理论的[[~/OneDrive/数理逻辑/sllj.org::MK151][语言]]
+
+**** 公理<<MK337>>
+
+显然[[MK335][域语言]]包含[[MK333][环语言]]，即 $\mathcal{A}_\mathcal{R}\subset\mathcal{A}_\mathbb{R}$ 故[[MK334][环公理]] $T_\mathcal{R}$ 显然满足 $T_\mathcal{R}\subset\mathcal{L}_{\mathcal{A}_\mathbb{F}}$
+
+定义域公理集合为 $T_\mathbb{F}$ ，除 $T_\mathcal{R}$ 外包含以下公理
+
+（1） $(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换律 
+
+（2） $(\forall x_1(f_\times(x_1,c_1)\hat{=}x_1))$ 乘法幺元
+
+（3） $(\forall x_1((\lnot(x_1\hat{=}c_0))\to(\exists x_2(f_\times(x_1,x_2)\hat{ =}c_1))))$ 乘法逆元
+
+（4） $(\forall x_1(f_\times(x_1,c_0)\hat{=}c_0))$ 乘法零元
+
+（5） $(\lnot(c_0\hat{=}c_1))$
+
+**** 性质
+
+***** 性质1
+
+加法幺元唯一且为 $c_0$ ，即 $T_\mathbb{F}\vdash(\forall x_1((\forall x_2(f_\times(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
+
+乘法幺元唯一且为 $c_1$ ，即 $T_\mathbb{F}\vdash(\forall x_1((\forall x_2(f_\times(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
+
+****** 证明
+
+[[MK337][类似可证]]
+
+*** 代数封闭域
+
+**** 语言
+
+同[[MK333][域语言]] $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 为区分记作 $\mathcal{A}_{\text{ACF}}$ 即有 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 是代数封闭域的[[~/OneDrive/数理逻辑/sllj.org::MK151][语言]
+
+**** 多项式<<MK336>>
+
+定义：
+
+（1） $\tau^n$ 为[[~/OneDrive/数理逻辑/sllj.org::MK117][项]] $f_\times(\tau,f_\times(\tau,f_\times(...f_\times(\tau,\tau)...)))$ 即 $n$ 个 $\tau$ 相乘，其中 $\tau$ 亦为[[~/OneDrive/数理逻辑/sllj.org::MK117][项]]
+
+（2） $\sum_{i=a}^{a+b}{\tau_i}$ 为[[~/OneDrive/数理逻辑/sllj.org::MK117][项]] $f_+(\tau_a,f_+(\tau_{a+1},f+(...f_+(\tau_{a+(b-1)},\tau_{a+b})...)))$
+
+     即为 $\tau_a$ 到 $\tau_{a+b}$ 的连加，其中 $\tau$ 亦为[[~/OneDrive/数理逻辑/sllj.org::MK117][项]]
+
+对于任意 $n\in\mathbb{N}$ 定义 $\phi_n=\sum_{i=1}^{n}f_\times(x_i,x_0^i)$ 为 $n$ 次多项式
+
+**** 公理
+
+定义代数封闭域公理集合为 $T_\text{ACF}$ ，则代数封闭域需要满足所有[[MK337][域公理]] $T_\mathbb{F}\subset T_\text{ACF}$ 外
+
+对于任意[[MK336][ $n$ 次多项式]] $\phi_n$ 均满足 $(\forall x_1(...(\forall x_n((\lnot(x_n\hat{=}c_0))\to(\exists x_0(\phi_n\hat{ =}c_0))))...))\in T_\text{ACF}$
 
 ** 代数结构的类型
 

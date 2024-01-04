@@ -2,11 +2,11 @@
 
 #+TITLE: 数理逻辑
 
-currnet mark: 430
+currnet mark: 480
 
-free mark:
+free mark: 
   
-数理逻辑: P26
+数理逻辑: P27
 
 * 命题逻辑
 
@@ -2236,9 +2236,9 @@ MU是否系统中的串？
 
 （2） 量词符号<<MK106>>： $\forall$ ，亦可有推导符号 $\exists$
 
-（2） 等式符号： $\hat{=}$
+（3） 等式符号： $\hat{=}$
 
-（3） 变元符号<<MK107>>： $X=\left\{x_i\big|i\in\mathbb{N}\right\}$ 
+（4） 变元符号<<MK107>>： $X=\left\{x_i\big|i\in\mathbb{N}\right\}$ 
 
 除上述符号外，逗号亦被引入，作用于函数符号及谓词符号。同时一阶逻辑亦包含一下非固定符号：
 
@@ -3086,7 +3086,7 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 定义 $\phi'$ 为将 $\phi[n:m]$ 替换为 $\tau'$ 的[[MK115][符号串]]，根据[[MK146][替换引理]]可得 $\phi'$ 仍是[[MK129][表达式]]
 
-若 $\phi'$ 满足 $\phi'[n]$ 到 $\phi'[n+|\tau'|-1]$ 间不含[[MK140][受限变元]]，则称 $\tau'$ 可替换 $\phi[n:m]$ 处[[MK141][自由出现]]的 $\tau$
+若 $\phi'$ 满足 $\phi'[n]$ 到 $\phi'[n+|\tau'|-1]$ 间不含[[MK140][受限变元]]，则称 $\tau'$ 可替换 $\phi[n:m]$ 处的 $\tau$
 
 若 $\tau'$ 对于 $\phi$ 中任意位置[[MK141][自由出现]]的 $\tau$ 均可替换，则称 $\phi$ 中 $\tau'$ 可替换 $\tau$
 
@@ -3908,7 +3908,7 @@ $\left<\mathcal{M},v\right>\vDash(\exists x_i \psi)$ 的充要条件是 $\left<\
 
 定义 $\psi_1$ 中所有的自由变元为 $x_{i_1},...,x_{i_k},x_i$ ，其中 $x_{i_1},...,x_{i_k}$ 为 $\phi$ 中所有的[[MK140][自由变元]]
 
-定义 $\psi'$ 为 $\psi_1$ 中除 $x_i$ 的所有的[[MK140][自由变元]]根据定理条件（2）替换后的[[MK129][表达式]]
+定义 $\psi'$ 为 $\psi_1$ 中除 $x_i$ 的所有的[[MK140][自由变元]]根据定理条件（2）替换后的[[MK129][表达式]]，则有 $\phi'=(\forall x_i\psi')$
 
 ********* 充分
 
@@ -3944,21 +3944,67 @@ $\left<\mathcal{M},v\right>\vDash(\exists x_i \psi)$ 的充要条件是 $\left<\
 
 对于任意 $\psi_1$ 中除 $x_i$ 的[[MK140][自由变元]] $x_{i_j}$ 均有 $\beta(x_{i_j})=v(x_{i_j})$ 且 $\left<\mathcal{M},\beta\right>\not\vDash\psi_1$
 
-定义一组 $\tau'_{i_1},...,\tau'_{i_k},\tau'_i$ 其中 $\tau'_{i_j}=\tau_{i_j}$ 且 $\tau_i=x_i$ 定义 $\mathcal{M}$ [[MK154][赋值]] $\alpha$
+定义一组[[MK117][项]] $\tau_{i_1},...,\tau_{i_k},x_i$ ， 定义 $\mathcal{M}$ [[MK154][赋值]] $\alpha$ 满足对于任意 $\psi'$ 中除 $x_i$ 的[[MK140][自由变元]] $y_e$
 
-满足对于任意 $\psi'$ 中除 $x_i$ 的[[MK140][自由变元]] $y_e$ 有 $\alpha(y_e)=v(y_e)$ 且 $\alpha(x_i)=\beta(x_i)$
+有 $\alpha(y_e)=u(y_e)$ 且 $\alpha(x_i)=\beta(x_i)$ ，则根据 $\left<\mathcal{M},u\right>\vDash(\forall x_i\psi')$ 以及[[MK158][满足]]定义有 $\left<\mathcal{M},\alpha\right>\vDash\psi'$
 
-则根据[[MK158][满足]]定义有 $\left<\mathcal{M},\alpha\right>\vDash\psi'$
+此时 $x_i$ 不是 $\phi'$ 中的[[MK140][自由变元]]，且替换后的项 $\tau_{i_j}$ 中不含 $\phi'$ 的[[MK140][受限变元]]
 
-此时 $x_i$ 不是 $\phi'$ 中的[[MK140][自由变元]]，且替换后的项 $\tau_i$ 中不含 $\phi'$ 的[[MK140][受限变元]]
+即 $\tau'_{i_j}$ 中不含 $x_i$ ，则根据[[MK156][局部确定引理]]可得 $\bar{\alpha}(\tau_{i_j})=\bar{u}(\tau_{i_j})=v(x_{i_j})=\beta(x_{i_j})$
 
-即 $\tau_i$ 中的[[MK107][变元符号]]均为 $\phi'$ 的[[MK140][自由变元]]，则根据[[MK156][局部确定引理]]可得 $\bar{\alpha}(\tau_i)=\bar{u}(\tau_i)=v(x_{i_j})=\beta(x_{i_j})$
+又由于替换后的项 $\tau_{i_j}$ 中不含 $\phi'$ 的[[MK140][受限变元]]，则显然 $\psi_1$ 替换 $\tau_{i_1},...,\tau_{i_k},x_i$ 后亦不含 $\psi'$ 的[[MK140][受限变元]]
 
-又由于 $z(\psi_1)<n$ 则根据归纳假设对于任意满足条件（2）的一组 $\tau'_{i_1},...,\tau'_{i_k},\tau'_i$ 以及[[MK154][赋值]] $\alpha$
+显然 $\tau_{i_1},...,\tau_{i_k},x_i$ 对于 $\psi_1,\psi'$ 满足条件（2），显然亦有 $z(\psi_1)<n$
 
-均有 $\left<\mathcal{M},\beta\right>\vDash\psi_1\Leftrightarrow\left<\mathcal{M},\alpha\right>\vDash\psi'$ 则 $\left<\mathcal{M},\alpha\right>\not\vDash\psi_1$ 显然矛盾
+根据归纳假设对于[[MK154][赋值]] $\alpha,\beta$ 有 $\left<\mathcal{M},\beta\right>\vDash\psi_1\Leftrightarrow\left<\mathcal{M},\alpha\right>\vDash\psi'$ 则 $\left<\mathcal{M},\alpha\right>\not\vDash\psi_1$ 显然矛盾
 
 故假设不成立，即 $\left<\mathcal{M},v\right>\vDash\phi$
+
+**** 推论<<MK467>>
+
+对于[[MK151][语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 以及任意 $\mathcal{M}$ [[MK154][赋值]] $v,u$ 则对于任意[[MK129][表达式]] $\phi(x_1,...,x_n)\in\mathcal{L}_\mathcal{A}$ 若满足
+
+（1） $\phi$ 中包含[[MK117][项]] $\tau_1,...,\tau_k$ ，
+
+（2） $\tau_i$ 在 $\phi$ 中的出现不含[[MK140][受限变元]]
+
+（3） 存在[[MK117][项]] $\tau'_1,...,\tau'_k$ 满足 $v(\tau_i)=u(\tau'_i)$
+
+（4） 对于任意 $1\leq i\leq n$ 有 $v(x_i)=u(x_i)$
+
+（5） $\phi$ 中 $\tau'_i$ [[MK150][可替换]] $\tau_i$
+
+则定义 $\phi'$ 为将 $\phi$ 中 $\tau_1,...,\tau_k$ 替换为 $\tau'_1,...,\tau'_k$ 后的[[MK115][符号串]]，则有
+
+（1） $\phi'$ 是 $\mathcal{L}_\mathcal{A}$ 的[[MK129][表达式]]
+
+（2） $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},u\right>\vDash\phi'$
+
+***** 证明
+
+根据[[MK146][项替换定理]]可证（1）
+
+定义 $\phi''$ 为将 $\phi$ 中 $\tau_1,...,\tau_k$ 替换为 $x_{n+1},...,x_{n+k}$ 后的表达式，定义 $\mathcal{M}$ [[MK154][赋值]] $\mu$ 满足
+
+（1） 对于任意 $1\leq i\leq n$ 有 $\mu(x_i)=u(x_i)$
+
+（2） 对于任意 $i>n$ 有 $\mu(x_i)=\bar{u}(x_i)$
+
+显然由于 $\phi$ 中不含 $x_{n+1},...,x_{n+k}$ ，则 $\phi''$ 中所有 $x_{n+1},...,x_{n+k}$ 的出现均为[[MK141][自由出现]]
+
+又由于任意 $\tau_i$ 在 $\phi$ 中的出现不含[[MK140][受限变元]]，故 $\phi''$ 中的 $x_1,...,x_n,x_{n+1},...,x_{n+k}$
+
+[[MK150][可替换]]为 $x_1,...,x_n,\tau_1,...\tau_k$ ，显然[[MK145][替换]]后为 $\phi$ ，则根据[[MK176][替换定理]]
+
+可得 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},\mu\right>\vDash\phi''$
+
+同理易证将 $\phi''$ 中的 $x_1,...,x_n,x_{n+1},...,x_{n+k}$ [[MK145][替换]]为 $x_1,...,x_n,\tau_1,...\tau_k$ 后为 $\phi'$
+
+又由于 $\phi$ 中 $\tau'_i$ [[MK150][可替换]] $\tau_i$ ，故显然 $x_1,...,x_n,x_{n+1},...,x_{n+k}$
+
+[[MK150][可替换]]为 $x_1,...,x_n,\tau'_1,...\tau'_k$ ，根据[[MK176][替换定理]] $\left<\mathcal{M},v\right>\vDash\phi'$ 的充要条件是 $\left<\mathcal{M},\mu\right>\vDash\phi''$
+
+综上所述， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},u\right>\vDash\phi'$
 
 *** [[MK139][子表达式]]替换定理<<MK179>>
 
@@ -3973,6 +4019,8 @@ $\left<\mathcal{M},v\right>\vDash(\exists x_i \psi)$ 的充要条件是 $\left<\
 （1） $\phi'$ 亦为 $\mathcal{L}_\mathcal{A}$ 的[[MK129][表达式]]
 
 （2） 对于任意 $\mathcal{L}_\mathcal{A}$ 的[[MK153][结构]] $\mathcal{M}$ 与其[[MK154][赋值]] $v$ ， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi'$
+
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
 
 **** 证明
 
@@ -4117,6 +4165,42 @@ $\left<\mathcal{M},v\right>\vDash(\exists x_i \psi)$ 的充要条件是 $\left<\
 若 $\left<\mathcal{M},v\right>\vDash(\lnot(\phi_1\lor\phi_2))$ 根据[[MK158][满足]]有 $\left<\mathcal{M},v\right>\not\vDash(\phi_1\lor\phi_2)$ 根据[[MK171][逻辑或]]可得 $\left<\mathcal{M},v\right>\not\vDash\phi_1$ 且 $\left<\mathcal{M},v\right>\not\vDash\phi_2$
 
 即有 $\left<\mathcal{M},v\right>\vDash(\lnot\phi_1)$ 且 $\left<\mathcal{M},v\right>\vDash(\lnot\phi_2)$ 根据[[MK170][逻辑与]]可得 $\left<\mathcal{M},v\right>\vDash((\lnot(\phi_1))\land(\lnot\phi_2))$
+
+***** 与/或交换<<MK451>>
+
+\begin{aligned}
+\left<\mathcal{M},v\right>\vDash(\phi_1\lor\phi_2)&\Leftrightarrow\left<\mathcal{M},v\right>\vDash(\phi_2\lor\phi_1)\\
+\left<\mathcal{M},v\right>\vDash(\phi_1\land\phi_2)&\Leftrightarrow\left<\mathcal{M},v\right>\vDash(\phi_2\land\phi_1)\\
+\end{aligned}
+
+***** 与/或分配<<MK452>>
+
+\begin{aligned}
+\left<\mathcal{M},v\right>\vDash(\phi_3\land(\phi_1\lor\phi_2))&\Leftrightarrow\left<\mathcal{M},v\right>\vDash((\phi_3\land\phi_1)\lor(\phi_3\land\phi_2))\\
+\left<\mathcal{M},v\right>\vDash(\phi_3\lor(\phi_1\land\phi_2))&\Leftrightarrow\left<\mathcal{M},v\right>\vDash((\phi_3\lor\phi_1)\land(\phi_3\lor\phi_2))\\
+\end{aligned}
+
+***** 与/或吸收<<MK454>>
+
+\begin{aligned}
+\left<\mathcal{M},v\right>\vDash(\phi_1\lor\phi_1)&\Leftrightarrow\left<\mathcal{M},v\right>\vDash\phi_1\\
+\left<\mathcal{M},v\right>\vDash(\phi_1\land\phi_1)&\Leftrightarrow\left<\mathcal{M},v\right>\vDash\phi_1\\
+\end{aligned}
+
+***** 无关存在量词引入<<MK455>>
+
+若 $x_i$ 不在 $\phi$ 中，则有
+
+\begin{aligned}
+\left<\mathcal{M},v\right>\vDash(\exists x_i\phi)&\Leftrightarrow\left<\mathcal{M},v\right>\vDash\phi\\
+\left<\mathcal{M},v\right>\vDash(\forall x_i\phi)&\Leftrightarrow\left<\mathcal{M},v\right>\vDash\phi\\
+\end{aligned}
+
+***** 双重否定<<MK462>>
+
+\begin{aligned}
+\left<\mathcal{M},v\right>\vDash(\lnot(\lnot\phi))&\Leftrightarrow\left<\mathcal{M},v\right>\vDash\phi\\
+\end{aligned}
 
 ** 逻辑结论<<MK187>>
 
@@ -4658,6 +4742,18 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 
 显然 $\left<\mathcal{M},v\right>\vDash\Gamma\cup\{(\exists x_1(...(\exists x_n\phi)...))\}$ 又根据[[MK255][完备性]]可得 $\Gamma\cup\{(\exists x_1(...(\exists x_n\phi)...))\}$ [[MK222][一致]]
 
+**** 引理4<<MK393>>
+
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK129][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ 若有 $\Gamma\vdash(\psi_1\to\psi_2),\Gamma\vdash(\psi_2\to\psi_3)$ 则有 $\Gamma\vdash(\psi_1\to\psi_3)$
+
+***** 证明
+
+根据[[MK198][推论1]]可得 $\Gamma\vdash((\psi_2\to\psi_3)\to((\psi_1\to\psi_2)\to(\psi_1\to\psi_3)))$
+
+则根据 $\Gamma\vdash(\psi_2\to\psi_3)$ 以及[[MK210][导出引理]]有 $\Gamma\vdash((\psi_1\to\psi_2)\to(\psi_1\to\psi_3))$
+
+又结合 $\Gamma\vdash(\psi_1\to\psi_2)$ 以及[[MK210][导出引理]]有 $\Gamma\vdash(\psi_1\to\psi_3)$
+
 *** 定理
 
 **** 传递引理<<MK209>>
@@ -4665,6 +4761,8 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 [[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK129][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ 以及[[MK129][表达式]] $\phi_1,\phi_2,\phi_3$ 满足 $\Gamma\vdash(\phi_1\to\phi_2)$ 以及 $\Gamma\vdash(\phi_2\to\phi_3)$
 
 则有 $\Gamma\vdash(\phi_1\to\phi_3)$
+
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
 
 ***** 证明
 
@@ -4766,6 +4864,8 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 
 若[[MK107][变元符号]] $x_i$ 不是任意 $\Gamma\cap\left\{\theta_i\big|1\leq i\leq n\right\}$ 中的[[MK140][自由变元]]，则有 $\Gamma\vdash(\forall x_i\phi)$
 
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
+
 ***** 证明
 
 若有 $\Gamma\vdash\phi$ 则有[[MK196][证明]] $\left<\theta_1,...,\theta_k\right>$ 满足 $\theta_k=\phi$ 根据下术证明以及数学归纳法
@@ -4806,6 +4906,8 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 
 则有 $\varnothing\vdash((\forall x_j\phi)\to(\forall x_i\phi(\langle x_j\rangle,\langle x_i\rangle)))$
 
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
+
 ***** 证明
 
 根据[[MK197][特化公理]]及条件（1）可得 $((\forall x_j\phi)\to\phi(\langle x_j\rangle,\langle x_i\rangle))$ 是公理，则有 $\varnothing\vdash((\forall x_j\phi)\to\phi(\langle x_j\rangle,\langle x_i\rangle))$ 
@@ -4824,11 +4926,13 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 
 则 $\langle\theta_1(\langle c_i\rangle\cong\langle x_j\rangle),...,\theta_n(\langle c_i\rangle\cong\langle x_j\rangle)\rangle$ 亦是一个 $\Gamma$ [[MK196][证明]]，其中 $\theta_m(\langle c_i\rangle\cong\langle x_j\rangle)$ 是[[MK411][全替换]]
 
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
+
 ***** 证明
 
 根据下列证明，数学归纳法以及 $n<\infty$ 可得结论
 
-****** $m=1$
+****** $m=1$ <<MK468>>
 
 显然 $\theta_m\in\Gamma\cup\mathbb{L}$
 
@@ -4836,11 +4940,11 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 
 故若 $\theta_m$ 为除[[MK197][全域化]]以外的[[MK197][公理]]，例如[[MK197][无关量词]] $\theta_m=(\phi\to(\forall x_i\phi))$ 
 
-则显然 $\theta_m(\left<c_i\right>\cong\left< x_j\right>)=(\phi(\left<c_i\right>\cong\left< x_j\right>)\to(\forall x_i\phi(\left<c_i\right>\cong\left< x_j\right>)))$ 同理 $\phi(\left<c_i\right>\cont\left< x_j\right>)$ 亦为[[MK129][表达式]]
+则显然 $\theta_m(\left<c_i\right>\cong\left< x_j\right>)=(\phi(\left<c_i\right>\cong\left< x_j\right>)\to(\forall x_i\phi(\left<c_i\right>\cong\left< x_j\right>)))$ 同理 $\phi(\left<c_i\right>\cong\left< x_j\right>)$ 亦为[[MK129][表达式]]
 
-由于条件（2）可得 $x_j$ 不在 $\phi$ 中出现，结合公理条件 $x_i$ 不是 $\phi$ 的[[MK140][自由变元]]
+若 $\theta_m=(\phi\to(\forall x_i\phi))$ 是[[MK197][无关量词公理]]，由于条件（2）可得 $x_j$ 不在 $\theta_m$ 中出现
 
-显然有 $x_i$ 亦不是 $\phi(\left<c_i\right>,\left< x_j\right>)$ 的[[MK140][自由变元]]，故可得 $\theta_m(\left<c_i\right>,\left< x_j\right>)$ 亦满足[[MK197][无关量词公理]]
+则显然 $x_i$ 亦不是 $\phi(\left<c_i\right>,\left< x_j\right>)$ 的[[MK140][自由变元]]，故 $\theta_m(\left<c_i\right>,\left< x_j\right>)$ 亦是[[MK197][无关量词公理]]
 
 其余除[[MK197][全域化]]以外的[[MK197][公理]]同理可证。
 
@@ -4893,6 +4997,8 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
      （c） 对于任意 $1\leq m\leq n$ 若有[[MK108][常元符号]] $c_k$ 在 $\theta_m$ 中出现，
 
           则 $c_k$ 在 $\Gamma\cup\{(\forall x_j\phi(\left<c_i\right>\cong\left<x_j\right>))\}$ 中的至少一个[[MK129][表达式]]中出现
+
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
 
 ***** 证明
 
@@ -5039,6 +5145,8 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 （1） $\phi'$ 亦为 $\mathcal{L}_\mathcal{A}$ 的[[MK129][表达式]]
 
 （2） $\Gamma\vdash\phi$ 的充要条件是 $\Gamma\vdash\phi'$
+
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
 
 ***** 证明
 
@@ -6988,7 +7096,7 @@ $\Gamma$ 亦为 $\mathcal{L}_{\mathcal{A}^*}$ 下[[MK322][关于 $x_1,...,x_n$ �
 
 即 $<e^{-1}(b_1),...,e^{-1}(b_n)>\in I(p)$ 的充要条件是 $<b_1,...,b_n>\in J(p)$
  [[则称 $\phi$ 是普遍真实的，记作 $\vDash\phi$]] 
-**** 定理<<MK276>>
+**** 定理1<<MK276>>
 
 [[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 两个[[MK153][结构]]且 $\mathcal{M}\cong\mathcal{N}$ [[MK274][同构]]且同构函数为 $e$
 
@@ -7094,33 +7202,33 @@ $\Gamma$ 亦为 $\mathcal{L}_{\mathcal{A}^*}$ 下[[MK322][关于 $x_1,...,x_n$ �
 
 ********* 充分
 
-若 $<\mathcal{M},v>\vDash\phi$ ，则对于任的 $\mathcal{N}$ [[MK154][赋值]] $\beta: X\to N$ 
+若 $\left<\mathcal{M},v\right>\vDash\phi$ ，则对于任的 $\mathcal{N}$ [[MK154][赋值]] $\beta: X\to N$ 
 
 若满足对于任意 $\psi_1$ 中除 $x_i$ 的[[MK140][自由变元]] $x_j$ 有 $\beta(x_j)=\overline{v\cdot e}(x_j)=e(v(x_j))$ 则由于 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK181][双射函数]]
 
 根据[[~/OneDrive/离散数学/lssx.org::MK188][函数求逆]]可得存在逆函数且满足任意 $\psi_1$ 中除 $x_i$ 的[[MK140][自由变元]] $x_j$ 有 $e^{-1}(\beta(x_j))=v(x_j)$
 
-[[MK277][同理易证]] $\beta\cdot e^{-1}: X\to M$ 亦为 $\mathcal{M}$ [[MK154][赋值]]，则根据 $<\mathcal{M},v>\vDash\phi$ 以及[[MK158][满足]]定义
+[[MK277][同理易证]] $\beta\cdot e^{-1}: X\to M$ 亦为 $\mathcal{M}$ [[MK154][赋值]]，则根据 $\left<\mathcal{M},v\right>\vDash\phi$ 以及[[MK158][满足]]定义
 
-可得 $<\mathcal{M},\beta\cdot e^{-1}>\vDash\psi_1$ ，显然 $z(\psi_1)<n$ 且有 $\beta\cdot e^{-1}\cdot e=\beta$ ，则根据归纳假设可得 $<\mathcal{N},\beta>\vDash\psi_1$
+可得 $\left<\mathcal{M},\beta\cdot e^{-1}\right>\vDash\psi_1$ ，显然 $z(\psi_1)<n$ 且有 $\beta\cdot e^{-1}\cdot e=\beta$ ，则根据归纳假设可得 $\left<\mathcal{N},\beta\right>\vDash\psi_1$
 
 综上所述，对于任意 $\mathcal{N}$ [[MK154][赋值]] $\beta: X\to M$ 若满足对于任意 $\psi_1$ 中除 $x_i$ 的[[MK140][自由变元]] $x_j$
 
-均有 $\beta(x_j)=e(v(x_j))$ 则有 $<\mathcal{N},\beta>\vDash\psi_1$ ，即根据[[MK158][满足]]有 $<\mathcal{N},v\cdot e>\vDash\phi$
+均有 $\beta(x_j)=e(v(x_j))$ 则有 $\left<\mathcal{N},\beta\right>\vDash\psi_1$ ，即根据[[MK158][满足]]有 $\left<\mathcal{N},v\cdot e\right>\vDash\phi$
 
 ********* 必要
 
-若 $<\mathcal{N},v\cdot e>\vDash\phi$ ，则对于任意 $\mathcal{M}$ [[MK154][赋值]] $\alpha: X\to M$ 若满足对于任意 $\psi_1$ 中除 $x_i$ 的[[MK140][自由变元]] $x_j$
+若 $\left<\mathcal{N},v\cdot e\right>\vDash\phi$ ，则对于任意 $\mathcal{M}$ [[MK154][赋值]] $\alpha: X\to M$ 若满足对于任意 $\psi_1$ 中除 $x_i$ 的[[MK140][自由变元]] $x_j$
 
 均有 $\alpha(x_j)=v(x_j)$ ，根据[[MK274][同构]]定义 $e(\alpha(x_j))=e(v(x_j))=\overline{v\cdot e}(x_j)$
 
-根据[[MK277][之前证明]]可得 $\alpha\cdot e:X\to N$ 是 $\mathcal{N}$ [[MK154][赋值]]，则根据 $<\mathcal{N},v\cdot e>\vDash\phi$ 以及[[MK158][满足]]有 $<\mathcal{N},\alpha\cdot e>\vDash\psi_1$
+根据[[MK277][之前证明]]可得 $\alpha\cdot e:X\to N$ 是 $\mathcal{N}$ [[MK154][赋值]]，则根据 $\left<\mathcal{N},v\cdot e\right>\vDash\phi$ 以及[[MK158][满足]]有 $\left<\mathcal{N},\alpha\cdot e\right>\vDash\psi_1$
 
-显然 $z(\psi_1)<n$ 则根据归纳假设有 $<\mathcal{M},\alpha>\vDash\psi_1$
+显然 $z(\psi_1)<n$ 则根据归纳假设有 $\left<\mathcal{M},\alpha\right>\vDash\psi_1$
 
 综上所述，对于任意 $\mathcal{M}$ [[MK154][赋值]] $\alpha: X\to M$ 若满足对于任意 $\psi_1$ 中除 $x_i$ 的[[MK140][自由变元]] $x_j$
 
-均有 $\alpha(x_j)=v(x_j)$ ，则有 $<\mathcal{M},\alpha>\vDash\psi_1$ 即根据[[MK158][满足]]有 $<\mathcal{M},v>\vDash\phi$
+均有 $\alpha(x_j)=v(x_j)$ ，则有 $\left<\mathcal{M},\alpha\right>\vDash\psi_1$ 即根据[[MK158][满足]]有 $\left<\mathcal{M},v\right>\vDash\phi$
 
 ***** 推论1<<MK279>>
 
@@ -7158,7 +7266,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 [[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 两个[[MK153][结构]]，若有[[~/OneDrive/离散数学/lssx.org::MK181][双射函数]] $e:M\to N$
 
-满足于任意[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 任意 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\left<\mathcal{N},v\cdot e\right>\vDash\phi$
+满足于任意[[MK129][原始表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 任意 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\left<\mathcal{N},v\cdot e\right>\vDash\phi$
 
 则 $e$ 是[[MK274][同构函数]]
 
@@ -7168,7 +7276,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 对于任意 $c\in\mathcal{L}_\mathcal{A}$ 显然存在 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 满足 $v(x_1)=I(c)$ 则根据[[MK158][满足]]可得 $\left<\mathcal{M},v\right>\vDash(x_1\hat{=}c)$
 
-根据条件可得 $\left<\mathcal{N},v\cdot e\right>\vDash(x_1\hat{=}c)$ 即有 $e(v(x_1))=e(I(c))=J(c)$
+显然 $(x_1\hat{= }c)$ 是[[MK129][原始表达式]]，故 $\left<\mathcal{N},v\cdot e\right>\vDash(x_1\hat{=}c)$ 即有 $e(v(x_1))=e(I(c))=J(c)$
 
 ****** [[MK109][函数符号]]
 
@@ -7176,7 +7284,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 显然存在 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 满足 $v(x_i)=a_i$ 以及 $v(x_{n+1})=I(f)(a_1,...,a_n)$
 
-根据[[MK158][满足]]可得 $\left<\mathcal{M},v\right>\vDash(x_{n+1}\hat{=}f(x_1,...,x_n))$ 根据条件可得 $\left<\mathcal{N},v\cdot e\right>\vDash(x_{n+1}\hat{ =}f(x_1,...,x_n))$ 
+根据[[MK158][满足]]可得 $\left<\mathcal{M},v\right>\vDash(x_{n+1}\hat{=}f(x_1,...,x_n))$ 显然 $(x_{n+1}\hat{ =}f(x_1,...,x_n)))$ 是[[MK129][原始表达式]]
+
+根据条件可得 $\left<\mathcal{N},v\cdot e\right>\vDash(x_{n+1}\hat{ =}f(x_1,...,x_n))$ 
 
 即有 $e(I(f)(a_1,...,a_n))=e(v(x_{n+1}))=J(f)(e(v(x_1)),...,e(v(x_n)))=J(f)(e(a_1),...,e(a_n))$
 
@@ -7188,7 +7298,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 若有 $\left<a_1,...,a_n\right>\in I(p)$ 显然存在 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 满足 $v(x_i)=a_i$ ，根据[[MK158][满足]] $\left<\mathcal{M},v\right>\vDash p(x_1,...,x_n)$
 
-根据条件可得 $\left<\mathcal{N},v\cdot e\right>\vDash p(x_1,...,x_n)$ 即 $\left<e(v(x_1)),...,e(v(x_2))\right>=\left<e(a_1),...,e(a_n)\right>\in J(p)$
+显然 $p(x_1,...,x_n)$ 是[[MK129][原始表达式]]，故可得 $\left<\mathcal{N},v\cdot e\right>\vDash p(x_1,...,x_n)$
+
+即 $\left<e(v(x_1)),...,e(v(x_2))\right>=\left<e(a_1),...,e(a_n)\right>\in J(p)$
 
 ******* 必要
 
@@ -7196,11 +7308,13 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 则根据[[MK158][满足]] $\left<\mathcal{N},\mu\right>\vDash p(x_1,...,x_n)$ 由于 $e$ [[~/OneDrive/离散数学/lssx.org::MK181][双射]]，故显然 $(\mu\cdot e^{-1})\cdot e=\mu$
 
-则有 $\left<\mathcal{N},(\mu\cdot e^{-1})\cdot e\right>\vDash p(x_1,...,x_n)$ 根据条件有 $\left<\mathcal{M},\mu\cdot e^{-1}\right>\vDash p(x_1,...,x_n)$
+则有 $\left<\mathcal{N},(\mu\cdot e^{-1})\cdot e\right>\vDash p(x_1,...,x_n)$ ，显然 $p(x_1,...,x_n)$ 是[[MK129][原始表达式]]
+
+根据条件有 $\left<\mathcal{M},\mu\cdot e^{-1}\right>\vDash p(x_1,...,x_n)$
 
 即 $\left<e^{-1}(\mu(x_1)),...,e^{-1}(\mu(x_n))\right>=\left<e^{-1}(e(a_1)),...,e^{-1}(e(a_n))\right>=\left<a_1,...,a_n\right>\in I(p)$
 
-**** 等势同构
+**** 等势同构<<MK437>>
 
 [[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 是[[MK222][一致]]的，则对于任意无穷[[~/OneDrive/离散数学/lssx.org::MK35][基数]] $\kappa$ ， $\mathcal{T}$ 是一个 $\kappa$ 等势同构理论
 
@@ -7411,6 +7525,42 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 同理可证对于任意 $\left<a_1,...,a_n\right>\in M^n$ 若 $\left<a_1,...,a_n\right>\in J(p)$ 则有 $\left<a_1,...,a_n\right>\in I(p)$
 
 即 $I(p)=J(p)\cap M^n$
+
+***** 推论<<MK461>>
+
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M},\mathcal{N}$ 两个[[MK153][结构]]且 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK282][子结构]]，则任意不带[[MK106][量词]]的[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$
+
+均有对于任意 $\mathcal{M}$ [[MK154][赋值]] $v$ ， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N},v\right>\vDash\phi$
+
+****** 证明
+
+定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK117][项]]后 $($ 和 $)$ 的对数
+
+******* $z(\phi)=1$
+
+根据[[MK137][可读性]]可得 $\phi$ 必为[[MK129][原始表达式]]，则根据[[MK284][特征定理]]
+
+有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N},v\right>\vDash\phi$
+
+******* 归纳假设
+
+任意不含[[MK106][量词]]的 $\phi\in\mathcal{L}_{\mathcal{A}}$ 满足 $1\leq z(\phi)<n$ 均有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N},v\right>\vDash\phi$
+
+******* $z(\phi)=n$
+
+根据[[MK137][可读性]]可得不含[[MK106][量词]]的 $\phi\in\mathcal{L}_{\mathcal{A}_<}$ 有且仅有以下两种形式
+
+******** $\phi=(\lnot\psi)$
+
+根据[[MK158][满足]] $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\not\vDash\psi$ ，显然 $z(\psi)<n$
+
+根据归纳假设充要条件为 $\left<\mathcal{N},v\right>\not\vDash\psi$ ，根据[[MK158][满足]]充要条件为 $\left<\mathcal{N},v\right>\vDash\phi$
+
+******** $\phi=(\psi_1\to\psi_2)$
+
+根据[[MK158][满足]] $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\not\vDash\psi_1$ 或 $\left<\mathcal{M},v\right>\not\vDash\psi_2$ ，显然 $z(\psi_1)<n,z(\psi_2)<n$
+
+根据归纳假设充要条件为 $\left<\mathcal{N},v\right>\not\vDash\psi_1$ 或 $\left<\mathcal{N},v\right>\not\vDash\psi_2$ 根据[[MK158][满足]]充要条件为 $\left<\mathcal{N},v\right>\vDash\phi$
 
 **** 同质子结构<<MK287>>
 
@@ -7756,7 +7906,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的裁剪结构， $\mathcal{N}$ 是 $\mathcal{M}$ 的扩充结构
 
-**** 引理1
+**** 引理
+
+***** 引理1
 
 [[MK151][一阶语言]] $\mathcal{L}_{\mathcal{A}}$ 是 $\mathcal{L}_{\mathcal{A}\cup C}$ 的[[MK152][裁剪语言]]，其中 $C=\{c_1,...,c_n\}$ 是[[MK108][常元符号]]集合且 $C\cap\mathcal{A}=\varnothing$
 
@@ -7766,9 +7918,11 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 （1） $\mathcal{M}'$ 是 $\mathcal{M}$ 的[[MK295][裁剪结构]]
 
-（2） 对于任意 $\mathcal{M}'$ 的[[MK154][赋值]] $v'$ 定义 $v$ 满足 $v(x_i)=\begin{cases}v(x_i)&i<p\\I'(c_{i-p})&i> p\end{cases}$ 则 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M}',v'\right>\vDash\phi'$ 
+（2） 对于任意 $\mathcal{M}'$ 的[[MK154][赋值]] $v'$ 定义 $v$ 满足 $v(x_i)=\begin{cases}v(x_i)&i<p\\I'(c_{i-p})&i> p\end{cases}$ 则 $\left<\mathcal{M},v\right>\vDash\phi$
 
-***** 证明
+     的充要条件是 $\left<\mathcal{M}',v'\right>\vDash\phi'$ 
+
+****** 证明
 
 根据[[MK395][定义]]显然可证（1）
 
@@ -7777,6 +7931,30 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 又根据[[MK296][定理1]]可得 $\left<\mathcal{M}',v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi$
 
 综上所述 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M}',v'\right>\vDash\phi'$ 即有（2）
+
+***** 引理2<<MK474>>
+
+[[MK151][一阶语言]] $\mathcal{L}_{\mathcal{A}_1}$ 是 $\mathcal{L}_{\mathcal{A}_2}$ 的[[MK152][裁剪语言]]，则对于任意 $\mathcal{L}_{\mathcal{A}_2}$ 的[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[MK282][子结构]] $\mathcal{N}=\left<N,J\right>$
+
+则根据[[MK299][定理2]]生成的 $\mathcal{L}_{\mathcal{A}_1}$ 上的[[MK295][裁剪结构]] $\mathcal{M}'=\left<M,I'\right>,\mathcal{N}'=\left<N,J'\right>$ 满足 $\mathcal{N}'$ 是 $\mathcal{M}'$ 的[[MK282][子结构]]   
+
+****** 证明
+
+由于 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK282][子结构]]，则有：
+
+（1） 对于任意[[MK108][常元符号]] $c\in\mathcal{A}_1$ 有 $I'(c)=I(c)=J(c)=J'(c)$
+
+（2） 对于任意[[MK109][函数符号]] $f\in\mathcal{A}_1$ 以及任意 $\left<a_1,...,a_n\right>\subset N^n$
+
+     均有 $J'(f)(a_1,...,a_n)=J(f)(a_1,...,a_n)=I(f)(a_1,...,a_n)=I'(f)(a_1,...,a_n)$
+
+（3） 对于任意[[MK110][谓词符号]] $p\in\mathcal{L}_{\mathcal{A}_1}$ 有 $J(p)=I(p)\cap N^n$
+
+     又由于 $\mathcal{M}'=\left<M,I'\right>,\mathcal{N}'=\left<N,J'\right>$ ，故有 $J'(p)=J(p),I'(p)=I(p)$
+
+     即有 $J'(p)=I'(p)\cap N^n$
+
+显然根据上述结论可得 $\mathcal{N}'$ 是 $\mathcal{M}'$ 的[[MK282][子结构]]
 
 **** 定理
 
@@ -7910,7 +8088,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 （2） 对于任意[[MK109][函数符号]] $f\in\mathcal{A}_1$ 亦有 $f\in\mathcal{A}_2$ ，故 $I(f):M^n\to M$ 是[[~/OneDrive/离散数学/lssx.org::MK175][映射]]
 
-     则对于任意 $<a_1,...,a_n>\subset M^n$ 均有 $I(f)(a_1,...,a_n)\in M$
+     则对于任意 $\left<a_1,...,a_n\right>\subset M^n$ 均有 $I(f)(a_1,...,a_n)\in M$
 
      故定义 $I'(f)(a_1,...,a_n)=I(f)(a_1,...,a_n)$
 
@@ -8765,7 +8943,7 @@ $\left<\mathcal{M}_i,v_i\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M}
 
 **** 定理<<MK312>>
 
-[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK153][结构]] $\mathcal{M}=<M,I>,\mathcal{N}=<N,J>$
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK153][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$
 
 则 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK300][嵌入]]的充要条件是存在 $\mathcal{N}$ 的[[MK282][子结构]] $\mathcal{N}'$ 与 $\mathcal{M}$ [[MK274][同构]]
 
@@ -8783,7 +8961,7 @@ $\left<\mathcal{M}_i,v_i\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M}
 
 （1） 对于任意 $c\in\mathcal{L}_\mathcal{A}$ 是[[MK108][常元符号]]有 $J(c)=J'(c)$
 
-（2） 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK109][函数符号]]且 $\pi_F(f)=n$ 对于任意 $<a_1,...,a_n>\subset (N')^n$ 使得 $J(f)(a_1,...,a_n)$ 有定义
+（2） 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK109][函数符号]]且 $\pi_F(f)=n$ 对于任意 $\left<a_1,...,a_n\right>\subset (N')^n$ 使得 $J(f)(a_1,...,a_n)$ 有定义
 
      有 $J'(f)(a_1,...,a_n)=J(f)(a_1,...,a_n)$ 。根据 $e'$ 定义可得存在 $b_i\in M$ 满足 $e(b_i)=a_i$
 
@@ -8799,21 +8977,21 @@ $\left<\mathcal{M}_i,v_i\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M}
 
 （2） 对于任意 $c\in\mathcal{L}_\mathcal{A}$ 是[[MK108][常元符号]] $e'(I(c))=e(I(c))=J(c)=J'(c)$
 
-（3） 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK109][函数符号]]且 $\pi_F(f)=n$ 对于任意 $<a_1,...,a_n>\subset M^n$ 使得 $I(f)(a_1,...,a_n)$ 有定义
+（3） 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK109][函数符号]]且 $\pi_F(f)=n$ 对于任意 $\left<a_1,...,a_n\right>\subset M^n$ 使得 $I(f)(a_1,...,a_n)$ 有定义
 
      有 $e'(I(f)(a_1,...,a_n))=e(I(f)(a_1,...,a_n))=J(f)(e(a_1),...,e(a_n))=J'(f)(e(a_1),...,e(a_n))$
 
 （4） 对于任意$p\in\mathcal{L}_\mathcal{A}$ 是[[MK110][谓词符号]]且 $\pi_P(p)=n$ 则对于任意 $<a_1,...,a_n>\subset M^n$
 
-     使得 $<a_1,...,a_n>\in I(p)$ 有 $<e'(a_1),...,e'(a_n)>=<e(a_1),...,e(a_n)>\in J(p)$
+     使得 $\left<a_1,...,a_n\right>\in I(p)$ 有 $\left<e'(a_1),...,e'(a_n)\right>=\left<e(a_1),...,e(a_n)\right>\in J(p)$
 
-     又由于 $e'(a_i)\in N'$ 故可得 $<e'(a_1),...,e'(a_n)>\in J'(p)$
+     又由于 $e'(a_i)\in N'$ 故可得 $\left<e'(a_1),...,e'(a_n)\right>\in J'(p)$
 
 综上所述，显然 $e'$ 是 $\mathcal{M}$ 到 $\mathcal{N}'$ 的[[MK274][同构映射]]，即 $\mathcal{N}'$ 与 $\mathcal{M}$ [[MK274][同构]]
      
 ****** 必要
 
-若有 $\mathcal{N}'=<N',J'>$ 是 $\mathcal{N}$ 的[[MK282][子结构]]且 $\mathcal{N}'$ 与 $\mathcal{M}$ [[MK274][同构]]，则存在[[MK274][同构映射]] $e':M\to N'$
+若有 $\mathcal{N}'=\left<N',J'\right>$ 是 $\mathcal{N}$ 的[[MK282][子结构]]且 $\mathcal{N}'$ 与 $\mathcal{M}$ [[MK274][同构]]，则存在[[MK274][同构映射]] $e':M\to N'$
 
 定义 $e:M\to N$ 为 $e=e'$ 仅有值域不同，由于 $e'$ 是[[~/OneDrive/离散数学/lssx.org::MK181][双射]]，则易证 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK179][满射]]
 
@@ -8821,15 +8999,15 @@ $\left<\mathcal{M}_i,v_i\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M}
 
 （1） 对于任意 $c\in\mathcal{L}_\mathcal{A}$ 是[[MK108][常元符号]] $e(I(c))=e'(I(c))=J'(c)=J(c)$
 
-（2） 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK109][函数符号]]且 $\pi_F(f)=n$ 对于任意 $<a_1,...,a_n>\subset M^n$ 使得 $I(f)(a_1,...,a_n)$ 有定义
+（2） 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK109][函数符号]]且 $\pi_F(f)=n$ 对于任意 $\left<a_1,...,a_n\right>\subset M^n$ 使得 $I(f)(a_1,...,a_n)$ 有定义
 
      有 $e(I(f)(a_1,...,a_n))=e'(I(f)(a_1,...,a_n))=J'(f)(e(a_1),...,e(a_n))=J(f)(e(a_1),...,e(a_n))$
 
-（3） 对于任意$p\in\mathcal{L}_\mathcal{A}$ 是[[MK110][谓词符号]]且 $\pi_P(p)=n$ 则对于任意 $<a_1,...,a_n>\subset M^n$
+（3） 对于任意$p\in\mathcal{L}_\mathcal{A}$ 是[[MK110][谓词符号]]且 $\pi_P(p)=n$ 则对于任意 $\left<a_1,...,a_n\right>\subset M^n$
 
-     使得 $<a_1,...,a_n>\in I(p)$ 有 $<e(a_1),...,e(a_n)>=<e'(a_1),...,e'(a_n)>\in J'(p)$
+     使得 $\left<a_1,...,a_n\right>\in I(p)$ 有 $\left<e(a_1),...,e(a_n)\right>=\left<e'(a_1),...,e'(a_n)\right>\in J'(p)$
 
-     又由于 $e'(a_i)\in N'$ 故可得 $<e(a_1),...,e(a_n)>\in J(p)$
+     又由于 $e'(a_i)\in N'$ 故可得 $\left<e(a_1),...,e(a_n)\right>\in J(p)$
 
 综上所述， $e$ 是 $\mathcal{M}$ 到 $\mathcal{N}$ 的[[MK300][嵌入映射]]
 
@@ -9605,13 +9783,19 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 （3） $\mathcal{T}_X$ 为扩展后 $(\mathcal{M},c_x)_{x\in X}$ 的[[MK220][理论]] 
 
-**** 饱和[[MK221][模型]]<<MK394>>
+**** 饱和[[MK153][结构]]/[[MK221][模型]]<<MK394>>
 
-若有[[~/OneDrive/离散数学/lssx.org::MK35][基数]] $\kappa$ 满足对于任意 $X\subset M$ 只要 $|X|<\kappa$ 则对于[[MK406][常元扩展]]后的[[MK220][理论]] $\mathcal{T}_X$ 的任意[[MK322][ $1$ 元类型]] $\Gamma(x_1)$
+对于 $\mathcal{L}_\mathcal{A}$ 的[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 若有[[~/OneDrive/离散数学/lssx.org::MK35][基数]] $\kappa$ 满足对于任意 $X\subset M$ 只要 $|X|<\kappa$
 
-只要 $\text{Th}((\mathcal{M},c_x)_{x\in X})\subset\Gamma$ 则 $\Gamma$ 被 $(\mathcal{M},c_x)_{x\in X}$ [[MK323][实现]]，则称 $\mathcal{M}$ 是 $\mathcal{L}_\mathcal{A}$ 的 $\kappa$ 饱和[[MK221][模型]]
+则对于[[MK406][常元扩展]]后的[[MK220][理论]] $\mathcal{T}_X$ 的任意[[MK322][ $1$ 元类型]] $\Gamma(x_1)$ 只要 $\text{Th}((\mathcal{M},c_x)_{x\in X})\subset\Gamma$ 则 $\Gamma$ 被 $(\mathcal{M},c_x)_{x\in X}$ [[MK323][实现]]
 
-特别的，若 $\kappa=|M|$ 则称 $\mathcal{M}$ 是饱和[[MK221][模型]]
+则称 $\mathcal{M}$ 是 $\mathcal{L}_\mathcal{A}$ 的 $\kappa$ 饱和[[MK153][结构]]/[[MK221][模型]]
+
+注：
+
+（1） 若 $\kappa=|M|$ 则称 $\mathcal{M}$ 是饱和[[MK153][结构]]/[[MK221][模型]]
+
+（2） 若 $\mathcal{M}$ 是[[MK153][可数结构]]且是 $|M|$ 饱和[[MK221][模型]]，则称 $\mahtcal{M}$ 为可数饱和[[MK153][结构]]/[[MK221][模型]]
 
 **** [[~/OneDrive/离散数学/lssx.org::MK82][有限]]实现<<MK402>>
 
@@ -10097,7 +10281,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 [[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK221][可数模型]] $\mathcal{M}=\left<M,I\right>$ 则对于任意 $n\in\mathbb{N}$ 定义 $Z$ 为所有 $\mathcal{M}$ 所[[MK323][实现]]的[[MK322][ $n$ 元类型]]集合
 
-则 $Z$ 是[[~/OneDrive/离散数学/lssx.org::MK89][可数]]集
+则 $Z$ 是[[~/OneDrive/离散数学/lssx.org::MK93][至多可数]]集
 
 *注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
 
@@ -10107,13 +10291,11 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 根据[[MK330][引理2]]对于任意 $\vec{a}\in M^n$ 有且仅有唯一 $\Gamma$ 满足 $\mathcal{M}\vDash\Gamma[\vec{a}]$ 即 $f$ 是[[~/OneDrive/离散数学/lssx.org::MK175][函数]]
 
-根据[[MK403][推论]]对于任意 $\Gamma\in Z$ 根据定义可得均有 $\vec{a}=\left<a_1,...,a_n\right>\in M^n$ 满足 $\mathcal{M}\vDash\Gamma[\vec{a}]$
+根据[[MK403][推论]]对于任意 $\Gamma\in Z$ 根据定义可得均有 $\vec{a}=\left<a_1,...,a_n\right>\in M^n$ 满足 $\mathcal{M}\vDash\Gamma[\vec{a}]$ ，即 $f$ 是[[~/OneDrive/离散数学/lssx.org::MK179][满射]]
 
-对于任意 $\Gamma_1\in Z,\Gamma_2\in Z$ 若存在 $\vec{a}\in M^n$ 满足 $\mathcal{M}\vDash\Gamma_1[\vec{a}],\mathcal{M}\vDash\Gamma_2[\vec{a}]$ 则显然有 $\Gamma_1=\Gamma_2$
+根据[[~/OneDrive/离散数学/lssx.org::MK332][蕴含逆单射]]可得存在[[~/OneDrive/离散数学/lssx.org::MK176][单射]] $g:Z\to M^n$ ，则有 $|M^n|\geq|Z|$ 又根据[[~/OneDrive/离散数学/lssx.org::MK98][定理2]]以及 $M$ [[~/OneDrive/离散数学/lssx.org::MK89][可数]]可得 $M^n$ 亦为[[~/OneDrive/离散数学/lssx.org::MK89][可数]]
 
-即 $f$ 是[[~/OneDrive/离散数学/lssx.org::MK181][函数]]双射，故可得 $|M^n|=|Z|$ 又根据[[~/OneDrive/离散数学/lssx.org::MK98][定理2]]以及 $M$ [[~/OneDrive/离散数学/lssx.org::MK89][可数]]可得 $M^n$ 亦为[[~/OneDrive/离散数学/lssx.org::MK89][可数]]
-
-即 $Z$ [[~/OneDrive/离散数学/lssx.org::MK89][可数]]
+则 $Z$ [[~/OneDrive/离散数学/lssx.org::MK93][至多可数]]
 
 **** 引理8<<MK400>>
 
@@ -10491,7 +10673,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 （b） 定义 $T_0\subset\left\{\theta\big|\theta\in\Theta\land\mathcal{M}\vDash\theta\right\}$ 其中 $\Theta$ 为 $\mathcal{L}_\mathcal{A}$ 中所有的[[MK144][语句]]，对于任意 $n\in\mathbb{N}\land n\geq1$
 
-     $\mathcal{L}_\mathcal{A}$ 中包含 $T_0$ 的[[MK322][ $n$ 元类型]]有[[~/OneDrive/离散数学/lssx.org::MK89][可数]]个，定义其集合为 $\mathcal{S}_{n}(T_0)$
+     $\mathcal{L}_\mathcal{A}$ 中包含 $T_0$ 的[[MK322][ $n$ 元类型]]有[[~/OneDrive/离散数学/lssx.org::MK93][至多可数]]个，定义其集合为 $\mathcal{S}_{n}(T_0)$
 
 则存在[[MK153][可数结构]] $\mathcal{N}=\left<N,J\right>$ 满足
 
@@ -10531,13 +10713,11 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 （2） 定义[[MK406][常元扩展]]后添加的常元为 $C_X=\left\{c_{a_i}\big|a_i\in X\right\}$
 
-（3） $\mathcal{S}_{n+1}(T_0)$ 为 $\mathcal{L}_\mathcal{A}$ 下包含 $T_0$ 的所有[[MK322][ $n+1$ 元类型]]，根据条件（b） $\mathcal{S}_{n+1}(T_0)$ [[~/OneDrive/离散数学/lssx.org::MK89][可数]]
+（3） $\mathcal{S}_{n+1}(T_0)$ 为 $\mathcal{L}_\mathcal{A}$ 下包含 $T_0$ 的所有[[MK322][ $n+1$ 元类型]]，根据条件（b） $\mathcal{S}_{n+1}(T_0)$ [[~/OneDrive/离散数学/lssx.org::MK93][至多可数]]
 
 则根据下列证明可得存在[[~/OneDrive/离散数学/lssx.org::MK176][单射]] $f:\mathbb{T}_X(\text{Th}((\mathcal{M},c_x)_{x\in X}))\to\mathcal{S}_{n+1}(T_0)$
 
-即根据[[~/OneDrive/离散数学/lssx.org::MK29][等势]]有 $\left|\mathbb{T}_X(\text{Th}((\mathcal{M},c_x)_{x\in X}))\right|\leq\left|\mathcal{S}_{n+1}(T_0)\right|$ 根据条件（b）有 $\mathcal{S}_{n+1}(T_0)$ 是[[~/OneDrive/离散数学/lssx.org::MK89][可数集]]
-
-即有 $\mathbb{T}_X(\text{Th}((\mathcal{M},c_x)_{x\in X}))$ [[~/OneDrive/离散数学/lssx.org::MK89][可数]]
+即根据[[~/OneDrive/离散数学/lssx.org::MK29][等势]]有 $\left|\mathbb{T}_X(\text{Th}((\mathcal{M},c_x)_{x\in X}))\right|\leq\left|\mathcal{S}_{n+1}(T_0)\right|$ 即有 $\mathbb{T}_X(\text{Th}((\mathcal{M},c_x)_{x\in X}))$ [[~/OneDrive/离散数学/lssx.org::MK93][至多可数]]
 
 由于 $M$ [[~/OneDrive/离散数学/lssx.org::MK89][可数]]，则根据[[~/OneDrive/离散数学/lssx.org::MK330][定理5]]可得对于任意 $n\in\mathbb{N}$ 有[[~/OneDrive/离散数学/lssx.org::MK89][可数]]个 $X\subset M$ 满足 $|X|=n$
 
@@ -10739,29 +10919,21 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
      若 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK295][裁剪结构]]，则对于任意 $\mathcal{N}$ 的[[MK154][赋值]] $u$ 若 $\mathcal{M}$ 的[[MK154][赋值]] $v$
 
-     满足 $v(x_i)=\begin{cases}u(x_i)&1\leq i\leq m\\J(c_i)&m+1\leq i\leq n+m\end{cases}$ 则有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N},u\right>\vDash\phi$
+     满足 $v(x_i)=\begin{cases}u(x_i)&1\leq i\leq m\\J(c_i)&m+1\leq i\leq n+m\end{cases}$ 则有 $\left<\mathcal{M},v\right>\vDash\mu(\phi)$ 的充要条件是 $\left<\mathcal{N},u\right>\vDash\phi$
 
 （2） 对于任意 $\phi(x_1,...,x_m)\in\mathcal{L}_\mathcal{A}$ 存在唯一 $\phi_1\in\mathcal{L}_\mathcal{A},\phi_3\in\mathcal{L}_{\mathcal{A}\cup C}$ 满足 $\mu(\phi_3)=\phi_1$
 
      以及对于任意 $\mathcal{L}_{\mathcal{A}}$ 的[[MK154][结构]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi_1$
 
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
+
 ***** 证明
 
 ****** 证明（1）
 
-显然 $\phi$ 中仅有[[MK140][自由变元]] $x_1,...,x_m$ ，则显然任意 $x_{n+m+i},1\leq i$ 不是 $\phi$ 中的[[MK140][自由变元]]
+由于 $C=\{c_1,...,c_n\}$ ，故对于任意 $\phi(x_1,...,x_m)\in\mathcal{L}_{\mathcal{A}\cup C}$ 其中出现的 $C$ 中的[[MK108][常元符号]]在 $\{c_1,...,c_n\}$
 
-故根据 $|\phi|<\infty$ 以及[[MK384][引理8]]可得 $\left<\mathcal{N},u\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N},u\right>\vDash\mu_1(\phi)$
-
-定义 $\mathcal{N}$ 的[[MK154][赋值]] $v$ 满足 $v(x_i)=\begin{cases}u(x_i)&1\leq i\leq m\\J(c_i)&m+1\leq i\leq n+m\end{cases}$
-
-显然 $\mu_1(\phi)$ 中不含任意 $x_i,i\leq m+n$ 的[[MK142][量词辖域]]，则 $\mu_2(\mu_1(\phi))$ 中的任意 $x_i,m+1\leq i\leq n+m$
-
-均为[[MK141][自由出现]]，则根据[[MK176][替换定理]]可得 $\left<\mathcal{N},u\right>\vDash\mu_1(\phi)$ 的充要条件是 $\left<\mathcal{N},v\right>\vDash\mu_1(\mu_1(\phi))=\mu(\phi)$
-
-显然 $\mu(\phi)$ 不含 $C$ 中符号，故 $\mu(\phi)\in\mathcal{L}_\mathcal{A}$ 则根据 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK295][裁剪结构]]
-
-以及[[MK296][定理1]]有 $\left<\mathcal{N},v\right>\vDash\mu(\phi)$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi$ 
+故显然有 $\mu_1=\mu^1_{n,m},\mu_2=\mu^2_{n,m},\mu=\mu_{n,m}$ ，则根据[[MK439][引理17]]可得 $\left<\mathcal{M},v\right>\vDash\mu(\phi)$ 的充要条件是 $\left<\mathcal{N},u\right>\vDash\phi$
 
 ****** 证明（2）
 
@@ -10795,6 +10967,114 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi_1$
 
+**** 引理15<<MK431>>
+
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A},\mathcal{L}_{\mathcal{A}\cup C}$ 满足：
+
+（1） $C$ 是[[MK108][常元符号]]且 $C\cap\mathcal{A}=\varnothing$
+
+（2） 有 $\mathcal{L}_\mathcal{A}$ 下的[[MK153][结构]] $\mathcal{M}=\left<M.I\right>$ 及 $\mathcal{L}_{\mathcal{A}\cup C}$ 的[[MK154][结构]] $\mathcal{M}_C=\left<M,I_C\right>$
+
+（3） $I_C=I\cup\left\{\left<c,a\right>\big| c\in C\land a\in M\right\}$
+
+则 $\mathcal{M}$ 是 $\mathcal{M}_C$ 的[[MK295][裁剪结构]]
+
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
+
+***** 证明
+
+显然有
+
+（1） $\mathcal{A}\subset\mathcal{A}\cup C$ 故 $\mathcal{L}_\mathcal{A}$ 是 $\mathcal{L}_{\mathcal{A}\cup C}$ 的[[MK152][裁剪语言]]
+
+（2） $\mathcal{M},\mathcal{M}_C$ 论域均为 $M$
+
+（3） 任意 $c\in\mathcal{A}$ 均有 $\left<c,I(c)\right>\in I\subset I_C$ ，即有 $I_C(c)=I(c)$
+
+（4） 若 $f\in\mathcal{A}$ 是[[MK109][函数符号]]有 $I(f)=I_C(f)$
+
+（5） 若 $p\in\mathcal{A}$ 是[[MK110][谓词符号]]且 $\pi_P(p)=n$ 有 $I(p)=I_C(p)$
+
+即 $\mathcal{M}$ 是 $\mathcal{M}_C$ 的[[MK295][裁剪结构]]
+
+**** 引理16<<MK443>>
+
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\kappa$ [[MK394][饱和结构]] $\mathcal{M}=\left<M,I\right>$ 以及[[MK153][结构]] $\mathcal{N}=\left<N,J\right>$ 满足 $\mathcal{M},\mathcal{N}$ [[MK274][同构]]
+
+则 $\mathcal{N}$ 亦为 $\kappa$ [[MK394][饱和结构]]
+
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
+
+***** 证明
+
+定义[[MK274][同构映射]]为 $e:M\to N$ ，则对于任意 $X\subset M$ 定义 $X'=\left\{e(x)\big|x\in X\right\}\subset N$
+
+定义 $\mathcal{N}_{X'}=\left<N,J_{X'}\right>$ 其中 $J_{X'}=\left\{\left<c_x,e(x)\right>\big|x\in X\right\}$ 显然是 $\mathcal{L}_{\mathcal{A}_{C_X}}$ 下的[[MK154][结构]]
+
+根据[[MK431][引理15]]可得 $\mathcal{M},\mathcal{N}$ 分别是 $(\mathcal{M},c_x)_{x\in X},\mathcal{N}$ 的[[MK295][裁剪结构]]，则对于任意 $\phi\in\mathcal{L}_{\mathcal{A}_{C_X}}$
+
+对于任意 $\phi\in\mathcal{L}_{\mathcal{A}_{C_X}}$ 由于 $|\phi|<\infty$ ，故 $\phi$ 中出现的 $X$ 中的[[MK108][常元符号]]必为[[~/OneDrive/离散数学/lssx.org::MK82][有限]]个，定义 $\phi$ 为 $\{c_1,...,c_n\}$
+
+设 $\phi$ 是[[MK322][关于 $x_1,...,x_m$ 的表达式]]，则根据[[MK439][引理17]]可得对于任意 $(\mathcal{M},c_x)_{x\in X}$ 的[[MK154][赋值]] $v$
+
+有 $\left<(\mathcal{M},c_x)_{x\in X},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},u\right>\vDash\mu(\phi)$ ，其中 $u(x_i)=\begin{cases}v(x_i)&1\leq i\leq m\\I_X(c_i)&m+1\leq i\leq n+m\end{cases}$
+
+根据[[MK274][同构]]可得 $\left<\mathcal{N},u\cdot e\right>\vDash\mu(\phi)$ 定义 $\mathcal{L}_{\mathcal{A}_{C_X}}$ 下 $\mathcal{N}$ 的[[MK154][赋值]] $\lambda$ 满足 $\lambda(x_i)=e(v(x_i))$
+
+对于任意 $m+1\leq i\leq n+m$ 显然 $J_X(c_i)=e(I_X(c_i))=u(x_i)$
+
+即有 $e(u(x_i))=\begin{cases}\lambda(x_i)&1\leq i\leq m\\J_X(c_i)&m+1\leq i\leq n+m\end{cases}$
+
+则根据[[MK439][引理17]]可得 $\left<\mathcal{N},u\cdot e\right>\vDash\mu(\phi)$ 的充要条件式 $\left<\mathcal{N}_{X'},\lambda\right>\vDash\phi$ 根据 $\lambda$ 定义可得 $\left<\mathcal{N}_{X'},v\cdot e\right>\vDash\phi$
+
+故对于任意 $\phi\in\mathcal{L}_{\mathcal{A}_{C_X}}$ 有 $\left<(\mathcal{M},c_x)_{x\in X},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N}_{X'},v\cdot e\right>\vDash\phi$
+
+又由于 $e$ 是[[MK274][同构映射]]，故 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK181][双射]]，则根据[[MK280][定理2]]可得 $e$ 是 $(\mathcal{M},c_x)_{x\in X}$ 到 $\mathcal{N}_{X'}$ 的[[MK274][同构映射]]
+
+根据 $\mathcal{M}$ 是 $\kappa$ [[MK394][饱和结构]]，则任意 $\mathcal{L}_{\mathcal{A}_{C_X}}$ 下的任意[[MK322][ $1$ 元类型]] $\Gamma(x_1)$ 均有 $(\mathcal{M},c_x)_{x\in X}\vDash\Gamma[a],a\in M$
+
+则根据 $(\mathcal{M},c_x)_{x\in X},\mathcal{N}_{X'}$ [[MK274][同构]]有 $\mathcal{N}_{X'}\vDash\Gamma[e(a)]$ ，即 $\mathcal{N}_{X'}$ 实现 $\Gamma$
+
+综上所述，对于任意 $X'\subset N\land |X'|<\kappa$ 均有对应的 $e^{-1}(X')=X\subset M$
+
+则易证 $\mathcal{L}_{\mathcal{A}_{C_{X'}}}$ 下的任意[[MK322][ $1$ 元类型]] $\Gamma(x_1)$ 均有 $\mathcal{N}_{X'}\vDash\Gamma$ ，即 $\mathcal{N}$ 是 $\kappa$ [[MK394][饱和结构]]
+
+**** 引理17<<MK439>>
+
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A},\mathcal{L}_{\mathcal{A}\cup C}$ 满足 $C$ 是[[MK108][常元符号]]，则对于任意 $\phi(x_1,...,x_m)\in\mathcal{L}_{\mathcal{A}\cup C}$ 定义
+
+（1） $\phi$ 中出现的 $C$ 中的[[MK108][常元符号]]在 $\{c_1,...,c_n\}$ 中 
+
+（2） $\mu^1_{n,m}(\phi)$ 为将 $\phi$ 中所有[[MK140][受限变元]]以及[[MK106][量词符号]]中的 $x_i$ 替换为 $x_{n+m+i}$ 显然是[[~/OneDrive/离散数学/lssx.org::MK176][单射]]
+
+（3） $\mu^2_{n,m}(\phi)[k]=\begin{cases}x_{i+m}&\phi[k]=c_i\in C\\\phi[k]&\phi[k]\not\in C\end{cases}$ 显然 $\mu_2$ 亦为[[~/OneDrive/离散数学/lssx.org::MK176][单射]]
+
+（4） $\mu_{n,m}(\phi)=\mu^2_{n,m}(\mu^1_{n,m}(\phi))$ 显然 $\mu_{n,m}$ 亦为[[~/OneDrive/离散数学/lssx.org::MK176][单射]]
+
+那么任意 $\mathcal{L}_{\mathcal{A}}$ 的[[MK154][结构]] $\mathcal{M}=\left<M,I\right>$ 以及 $\mathcal{L}_{\mathcal{A}\cup C}$ 的[[MK154][结构]] $\mathcal{N}=\left<N,J\right>$
+
+若 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK295][裁剪结构]]，则对于任意 $\mathcal{N}$ 的[[MK154][赋值]] $u$ 若 $\mathcal{M}$ 的[[MK154][赋值]] $v$
+
+满足 $v(x_i)=\begin{cases}u(x_i)&1\leq i\leq m\\J(c_i)&m+1\leq i\leq n+m\end{cases}$ 则有 $\left<\mathcal{M},v\right>\vDash\mu_{n,m}(\phi)$ 的充要条件是 $\left<\mathcal{N},u\right>\vDash\phi$
+
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
+
+***** 证明
+
+显然 $\phi$ 中仅有[[MK140][自由变元]] $x_1,...,x_m$ ，则显然任意 $x_{n+m+i},1\leq i$ 不是 $\phi$ 中的[[MK140][自由变元]]
+
+故根据 $|\phi|<\infty$ 以及[[MK384][引理8]]可得 $\left<\mathcal{N},u\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N},u\right>\vDash\mu^1_{n,m}(\phi)$
+
+定义 $\mathcal{N}$ 的[[MK154][赋值]] $v$ 满足 $v(x_i)=\begin{cases}u(x_i)&1\leq i\leq m\\J(c_i)&m+1\leq i\leq n+m\end{cases}$
+
+显然 $\mu^1_{n,m}(\phi)$ 中不含任意 $x_i,i\leq m+n$ 的[[MK142][量词辖域]]，则 $\mu^2_{n,m}(\mu^1_{n,m}(\phi))$ 中的任意 $x_i,m+1\leq i\leq n+m$
+
+均为[[MK141][自由出现]]，则根据[[MK176][替换定理]]可得 $\left<\mathcal{N},u\right>\vDash\mu^2_{n,m}(\mu^1_{n,m}(\phi))$ 的充要条件是 $\left<\mathcal{N},v\right>\vDash\mu^2_{n,m}(\mu^1_{n,m}(\phi))=\mu_{n,m}(\phi)$
+
+显然 $\mu_{n,m}(\phi)$ 不含 $C$ 中符号，故 $\mu_{n,m}(\phi)\in\mathcal{L}_\mathcal{A}$ 则根据 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK295][裁剪结构]]
+
+以及[[MK296][定理1]]有 $\left<\mathcal{N},v\right>\vDash\mu_{n,m}(\phi)$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\mu_{n,m}(\phi)$ 
+ 
 *** 定理
 
 **** 覆盖定理<<MK246>>
@@ -11591,7 +11871,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 根据[[MK350][上一步]]证明[[MK349][同理可证]] $\mathcal{A}$ 中的[[MK108][常元符号]]为[[~/OneDrive/离散数学/lssx.org::MK82][有限]]个时亦有 $\mathcal{T}$ 的[[MK221][可数模型]]来[[MK326][排斥]]所有 $\Gamma_k$
 
-**** 根本型定理
+**** 根本型定理<<MK440>>
 
 [[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 是[[MK264][完全的]]，对于任意 $n\in\mathbb{N}$ 有以下命题等价
 
@@ -11687,7 +11967,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 上述证明对于任意 $i$ 均成立，故 $\Gamma_1,...,\Gamma_m$ 均是 $\mathcal{T}$ 的[[MK329][根本型]]
 
-**** 有限类型空间定理
+**** 有限类型空间定理<<MK441>>
 
 [[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 是[[MK264][完全的]]且只有[[MK221][无限模型]]，则以下命题等价
 
@@ -12043,11 +12323,11 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 又根据 $M,N$ 均[[~/OneDrive/离散数学/lssx.org::MK89][可数]]以及[[MK388][引理5]]可得 $\mathcal{M},\mathcal{N}$ [[MK274][同构]]
 
-**** 可数[[MK394][饱和模型]]存在性定理
+**** [[MK394][可数饱和模型]]存在性定理
 
 [[MK220][一阶可数理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 是[[MK264][完全的]]且只有[[MK221][无限模型]]，则 $\mathcal{T}$ 存在一个[[MK221][可数]]且[[MK394][饱和]]模型
 
-的充要条件是对于任意 $n\in\mathbb{N}\land n\geq1$ ， $\mathcal{T}$ 有[[~/OneDrive/离散数学/lssx.org::MK89][可数]]个[[MK322][ $n$ 元类型]]包含 $T$
+的充要条件是对于任意 $n\in\mathbb{N}\land n\geq1$ ， $\mathcal{T}$ 有 [[~/OneDrive/离散数学/lssx.org::MK93][至多可数]]个[[MK322][ $n$ 元类型]]包含 $T$
 
 ***** 证明
 
@@ -12055,7 +12335,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 设 $\mathcal{T}$ 有 $|\mathbb{N}|$ [[MK394][饱和]]模型 $\mathcal{M}=\left<M,I\right>$ 则根据[[MK400][引理8]]可得任意 $\mathcal{T}$ 的个[[MK322][ $n$ 元类型]]均被 $\mathcal{M}$ [[MK323][实现]]
 
-又根据[[MK399][引理7]]可得对于任意 $n\in\mathbb{N}$ 均有 $\mathcal{M}$ 所[[MK323][实现]]的[[MK322][ $n$ 元类型]]集合是[[~/OneDrive/离散数学/lssx.org::MK89][可数]]集
+又根据[[MK399][引理7]]可得对于任意 $n\in\mathbb{N}$ 均有 $\mathcal{M}$ 所[[MK323][实现]]的[[MK322][ $n$ 元类型]]集合是[[~/OneDrive/离散数学/lssx.org::MK93][至多可数]]集
 
 ****** 必要
 
@@ -12121,7 +12401,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 显然 $(\mathcal{M} _\infty,c_{z_j})_{z_j\in X},\mathcal{M}'_k$ 均为 $\mathcal{L}_{\mathcal{A}_{C_X}}$ 下的[[MK154][结构]]
 
-******** 任意 $k\geq k^*$ 有 $(\mathcal{M}_\infty,c_x)_{x\in X}\vDash\theta$ 的充要条件是 $\mathcal{M}'_k\vDash\theta$
+******** 任意 $k\geq k^*$ 任意[[MK144][语句]] $(\mathcal{M}_\infty,c_x)_{x\in X}\vDash\theta$ 的充要条件是 $\mathcal{M}'_k\vDash\theta$
 
 对于任意[[MK144][语句]] $\theta\in\text{Th}((\mathcal{M}_\infty,c_{z_j})_{z_j\in X})$ 其充要条件为 $(\mathcal{M}_\infty,c_{z_j})_{z_j\in X}\vDash\theta$
 
@@ -12178,6 +12458,947 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 综上所述，对于任意 $\phi\in\Gamma$ 均有 $\left<(\mathcal{M}_\infty,c_{z_j})_{z_j\in X},\delta\right>\vDash\phi$ 即 $(\mathcal{M}_\infty,c_{z_j})_{z_j\in X}$ [[MK323][实现]] $\Gamma$
 
+**** [[MK394][可数饱和结构]]唯一性<<MK438>>
+
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 的任意两个的[[MK394][可数饱和结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 若[[MK281][同样]]，则 $\mathcal{M},\mathcal{N}$ [[MK274][同构]]
+
+*注：对于不可数 $\mathcal{L}_\mathcal{A}$ 亦成立*
+
+***** 证明
+
+****** 定义[[~/OneDrive/离散数学/lssx.org::MK175][映射]] $e$ <<MK436>>
+
+由于均为[[MK394][可数饱和结构]]，故可定义 $M=\left\{m_i\big|i\in\mathbb{N}\right\},N=\left\{n_i\big|i\in\mathbb{N}\right\}$
+
+定义 $D=\left\{d_i\big|i\in\mathbb{N}\right\}$ 为不在 $\mathcal{A}$ 中的[[MK108][常元符号]]，则根据以下证明以及数学归纳法
+
+可得对于任意 $k\in\mathbb{N}$ 定义 $D_k=\{d_1,...,d_{2k}\}$ ，[[MK151][一阶语言]] $\mathcal{L}_{\mathcal{A}\cup D_k}$ 及其[[MK153][结构]] $\mathcal{M}_k=\left<M,I_k\right>,\mathcal{N}_k=\left<N,J_k\right>$
+
+满足：
+
+（1） $I_k=I\cup\left\{\left<d_i,m^*_i\right>\big|1\leq i\leq 2k\right\},J_k=J\cup\left\{\left<d_i,n^*_i\right>\big|1\leq i\leq 2k\right\}$
+
+（2） $\{m_1,...,m_k\}\subset\{m^*_1,...,m^*_{2k}\},\{n_1,...,n_k\}\subset\{n^*_1,...,n^*_{2k}\}$
+
+（3） 对于任意 $1\leq i<j\leq 2k$ 均有 $m^*_i\ne m^*_j,n^*_i\ne n^*_j$
+
+（4） $\mathcal{L}_{\mathcal{A}\cup D_k}$ 下 $\text{Th}(\mathcal{N}_k)=\text{Th}(\mathcal{M}_k)$
+
+则定义 $e:M\to N$ 对于任意 $m_i\in M$ 若存在 $d_j\in D$ 满足对于任意 $k\geq 2i$ 均有 $I_k(d_j)=m^*_j=m_i$
+
+则定义 $e(m_i)=n^*_j$
+
+根据条件（2）有 $m_i\in\{m^*_1,...m^*_{2i}\}$ 设 $m_i=m^*_j,1\leq j\leq 2i$ 则根据（1）可得 $d_j$ 存在
+
+假设存在 $\{d_{j_1},d_{j_2}\}\subset D,j_1\ne j_2$ 满足 $I_k(d_{j_1})=m_i,I_k(d_{j_2})=m_i$ 则根据（1）有 $m^*_{j_1}=m_i=m^*_{j_2}$
+
+由于 $j_1\ne j_2$ 故与（3）冲突，故假设不成立
+
+综上所述，存在唯一 $d_j$ 满足对于任意 $k\geq 2i$ 均有 $I_k(d_j)=m^*_j=m_i$
+
+即对于任意 $m_i\in M$ 存在唯一 $n^*_j$ 满足 $e(m_i)=n^*_j$ ，即 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK175][映射]] 
+
+******* $k=1$
+
+******** 定义 $m^*_1,\Gamma'_1$ 证明存在 $n^*_1\in N$ 使得 $\mathcal{N}\vDash\Gamma'_1[n^*_1]$
+
+定义 $m^*_1=m_1$ 以及 $\Gamma=\left\{\phi(x_1)\big|\mathcal{M}\vDash\phi[m^*_1]\right\}$ 当 $X'_1=\varnothing\subset M$ 时易证：
+
+（1） $\mathcal{L}_{\mathcal{A}_{C_{X'_1}}}=\mathcal{L}_{\mathcal{A}}$
+
+（2） $(\mathcal{M},c_x)_{x\in X'_1}=\mathcal{M}$
+
+（3） 显然有 $\text{Th}((\mathcal{M},c_x)_{x\in X'_1})=\text{Th}(\mathcal{M})\subset\Gamma$
+
+由于 $\mathcal{M},\mathcal{N}$ [[MK281][同样]]，故有 $\text{Th}(\mathcal{M})=\text{Th}(\mathcal{N})$ ，即有 $\text{Th}(\mathcal{N})\subset\Gamma$ 则同理当 $Y'_1=\varnothing\subset N$ 时有：
+
+（1） $\mathcal{L}_{\mathcal{A}_{C_{Y'_1}}}=\mathcal{L}_{\mathcal{A}}$
+
+（2） $(\mathcal{N},c_y)_{y\in Y'_1}=\mathcal{N}$
+
+（3） 显然有 $\text{Th}((\mathcal{N},c_y)_{y\in Y'_1})=\text{Th}(\mathcal{N})\subset\Gamma$
+
+根据 $\mathcal{N}$ [[MK394][饱和]]可得 $(\mathcal{N},c_y)_{y\in Y'_1}$ [[MK323][实现]] $\Gamma'_1$ ，即存在 $n^*_1$ 满足 $(\mathcal{N},c_y)_{y\in Y'_1}\vDash\Gamma'[n^*_1]$ 即 $\mathcal{N}\vDash\Gamma[n^*_1]$
+
+******** 定义 $\mathcal{L}_{\mathcal{A}\cup D'_1},\mathcal{M}'_1,\mathcal{N}'_1$ 证明 $\text{Th}(\mathcal{N}'_1)=\text{Th}(\mathcal{M}'_1)$ <<MK432>>
+
+定义 $D'_1=\{d_1\}$ 定义[[MK151][一阶语言]] $\mathcal{L}_{\mathcal{A}\cup D'_1}$ 及其[[MK153][结构]] $\mathcal{M}'_1=\left<M,I'_1\right>,\mathcal{N}'_1=\left<N,J'_1\right>$
+
+其中 $I'_1=I\cup\{\left<d_1,m^*_1\right>\},J'_1=J\cup\{\left<d_1,n^*_1\right>\}$ 显然 $\mathcal{M},\mathcal{N}$ 分别是 $\mathcal{M}'_1,\mathcal{N}'_1$ 的[[MK295][裁剪结构]]
+
+对于任意[[MK144][语句]] $\theta\in\mathcal{L}_{\mathcal{A}\cup D'_1}$ 满足 $\mathcal{M}'_1\vDash\theta$ 根据[[MK429][引理14]]可得其充要条件是 $\left<\mathcal{M},v\right>\vDash\mu(\theta)$ 其中 $v(x_1)=m^*_1$
+
+即 $\mathcal{M}\vDash\mu(\theta)[m^*_1]$ 则有 $\mu(\theta)\in\Gamma$ 即有 $\mathcal{N}\vDash\mu(\theta)[n^*_1]$ 同理可证充要条件是 $\mathcal{N}'_1\vDash\theta$
+
+综上所述，对于任意[[MK144][语句]] $\theta\in\mathcal{L}_{\mathcal{A}\cup D'_1}$ ， $\mathcal{M}_1\vDash\theta$ 的充要条件是 $\mathcal{N}'_1\vDash\theta$ ，即 $\mathcal{M}'_1,\mathcal{N}'_1$ [[MK281][同样]]
+
+******** 定义 $n^*_2,\Gamma_1$ 证明存在 $m^*_2\in M$ 使得 $\mathcal{M}'_0\vDash\Gamma_1[m^*_2]$ <<MK433>>
+
+定义 $n^*_2$ 为 $N-\{n^*_1\}$ 中下标最小的元素，定义 $\Gamma_1=\left\{\phi(x_1)\big|\mathcal{N}'_1\vDash\phi[n^*_2]\right\}$
+
+根据[[MK330][引理2]]可得 $\Gamma_1$ 是 $\mathcal{L}_{\mathcal{A}\cup D'_1}$ 下的[[MK322][ $1$ 元类型]]且显然有 $\text{Th}(\mathcal{N}'_1)\subset\Gamma_1$
+
+根据上一步证明可得 $\text{Th}(\mathcal{M}'_1)\subset\Gamma_1$ ，又由于 $\mathcal{M}$ [[MK394][饱和]]，则易证 $\mathcal{M}'_1$ [[MK323][实现]] $\Gamma_1$
+
+即存在 $m^*_2\in M$ 使得 $\mathcal{M}'_1\vDash\Gamma_1[m^*_2]$
+
+******** 证明 $m^*_2\ne m^*_1$ <<MK434>>
+
+由于 $n^*_2\in N-\{n^*_1\}$ 故 $n^*_1\ne n^*_1$ 则根据[[MK158][满足]]可得 $\mathcal{N}'_1\vDash(\lnot(d_1\hat{=}x_1))[n^*_2]$ 则有 $(\lnot(d_1\hat{ =}x_1))\in\Gamma_1$
+
+又根据上一步证明有 $\mathcal{M}'_1\vDash(\lnot(d_1\hat{=}x_1))[m^*_2]$ 根据[[MK158][满足]]易证 $m^*_1=I'_1(d_1)\ne m^*_2$
+
+******** 定义 $\mathcal{L}_{\mathcal{A}\cup D_1},\mathcal{M}_1,\mathcal{N}_1$ 证明 $\text{Th}(\mathcal{N}_1)=\text{Th}(\mathcal{M}_1)$ <<MK435>>
+
+定义 $D_1=\{d_1,d_2\}$ 定义[[MK151][一阶语言]] $\mathcal{L}_{\mathcal{A}\cup D_1}$ 及其[[MK153][结构]] $\mathcal{M}_1=\left<M,I_1\right>,\mathcal{N}_1=\left<N,J_1\right>$
+
+其中 $I_1=I'_1\cup\{\left<d_2,m^*_2\right>\},J_1=J'_1\cup\{\left<d_2,n^*_2\right>\}$ 显然 $\mathcal{M}'_1,\mathcal{N}'_1$ 分别是 $\mathcal{M}_1,\mathcal{N}_1$ 的[[MK295][裁剪结构]]
+
+[[MK432][同理可证]] $\text{Th}(\mathcal{N}_1)=\text{Th}(\mathcal{M}_1)$
+
+******* 归纳假设
+
+对于任意 $k<K$ 定义 $D_k=\{d_1,...,d_{2k}\}$ ，[[MK151][一阶语言]] $\mathcal{L}_{\mathcal{A}\cup D_k}$ 及其[[MK153][结构]] $\mathcal{M}_k=\left<M,I_k\right>,\mathcal{N}_k=\left<N,J_k\right>$
+
+满足：
+
+（1） $I_k=I\cup\left\{\left<d_i,m^*_i\right>\big|1\leq i\leq 2k\right\},J_k=J\cup\left\{\left<d_i,n^*_i\right>\big|1\leq i\leq 2k\right\}$
+
+（2） $\{m_1,...,m_k\}\subset\{m^*_1,...,m^*_{2k}\},\{n_1,...,n_k\}\subset\{n^*_1,...,n^*_{2k}\}$
+
+（3） 对于任意 $1\leq i<j\leq 2k$ 均有 $m^*_i\ne m^*_j,n^*_i\ne n^*_j$
+
+（4） $\mathcal{L}_{\mathcal{A}\cup D_k}$ 下 $\text{Th}(\mathcal{N}_k)=\text{Th}(\mathcal{M}_k)$
+
+******* $k=K+1$
+
+******** 正向取
+
+定义 $m^*_{2K+1}$ 为 $M-\{m^*_1,...,m^*_{2K}\}$ 中下标最小的元素并定义 $\Gamma'_{K+1}=\left\{\phi(x_1)\big|\mathcal{M}_K\vDash\phi[m^*_{2K+1}]\right\}$
+
+[[MK433][同理]]可得存在 $n^*_{2K+1}\in N$ 满足 $\mathcal{N}_K\vDash\Gamma'_{K+1}[n^*_{2K+1}]$ 。定义 $D'_{K+1}=\{d_1,...,d_{2K},d_{2K+1}\}$
+
+定义[[MK151][一阶语言]] $\mathcal{L}_{\mathcal{A}\cup D'_{K+1}}$ 及其[[MK153][结构]] $\mathcal{M}'_{K+1}=\left<M,I'_{K+1}\right>,\mathcal{N}'_{K+1}=\left<N,J'_{K+1}\right>$
+
+其中 $I'_{K+1}=I_K\cup\{\left<d_{2K+1},m^*_{2K+1}\right>\},J'_{K+1}=J_K\cup\{\left<d_{2K+1},n^*_{2K+1}\right>\}$ 则：
+
+（1） 根据归纳假设（1）可得 $I'_{K+1}=I\cup\left\{\left<d_i,m^*_i\right>\big|1\leq i\leq 2K+1\right\}$
+
+     以及 $J'_{K+1}=J\cup\left\{\left<d_i,n^*_i\right>\big|1\leq i\leq 2K+1\right\}$
+
+（2） 根据归纳假设 $\{m_1,...,m_K\}\subset\{m^*_1,...,m^*_{2K}\}$ ，则若 $m_{K+1}\in M-\{m^*_1,...,m^*_{2k}\}$
+
+     则显然最小下标为 $K+1$ ，否则最小下标必大于 $K+1$
+
+     综上所述，即有 $\{m_1,...,m_{K+1}\}\subset\{m^*_1,...,m^*_{2K+1}\}$ 
+
+（3） 对于任意 $1\leq i\leq 2K$ 由于 $m^*_{2K+1}\in M-\{m^*_1,...,m^*_{2k}\}$ 则有 $m^*_i\ne m^*_{2K+1}$
+
+     [[MK434][同理]]可证 $n^*_i\ne n^*_{2K+1}$ ，则易证对于任意 $1\leq i<j\leq 2K+1$ 均有 $m^*_i\ne m^*_j,n^*_i\ne n^*_j$
+
+（4） [[MK435][同理]]可证 $\mathcal{L}_{\mathcal{A}\cup D'_{K+1}}$ 下 $\text{Th}(\mathcal{N}'_{K+1})=\text{Th}(\mathcal{M}'_{K+1})$
+
+******** 反向取
+
+定义 $n^*_{2K+1}$ 为 $N-\{n^*_1,...,n^*_{2K+1}\}$ 中下标最小的元素素并定义 $\Gamma_{K+1}=\left\{\phi(x_1)\big|\mathcal{N}_K\vDash\phi[n^*_{2K+2}]\right\}$
+
+则跟上一步同理可证存在 $m^*_{2K+2}\in M$ 且可定义 $D_{K+1}=\{d_1,...,d_{2K+2}\}$
+
+[[MK151][一阶语言]] $\mathcal{L}_{\mathcal{A}\cup D_{K+1}}$ 及其[[MK153][结构]] $\mathcal{M}_{K+1}=\left<M,I_{K+1}\right>,\mathcal{N}_{K+1}=\left<N,J_{K+1}\right>$ 满足：
+
+（1） $I_{K+1}=I\cup\left\{\left<d_i,m^*_i\right>\big|1\leq i\leq 2K+2\right\},J_{K+1}=J\cup\left\{\left<d_i,n^*_i\right>\big|1\leq i\leq 2K+2\right\}$
+
+（2） $\{m_1,...,m_{K+1}\}\subset\{m^*_1,...,m^*_{2K+2}\},\{n_1,...,n_{K+1}\}\subset\{n^*_1,...,n^*_{2K+2}\}$
+
+（3） 对于任意 $1\leq i<j\leq 2K+2$ 均有 $m^*_i\ne m^*_j,n^*_i\ne n^*_j$
+
+（4） $\mathcal{L}_{\mathcal{A}\cup D_{K+1}}$ 下 $\text{Th}(\mathcal{N}_{K+1})=\text{Th}(\mathcal{M}_{K+1})$
+
+****** $e$ 是[[~/OneDrive/离散数学/lssx.org::MK181][双射]]
+
+对于任意 $n_i\in N$ 根据上一步（2）有 $n_i\in\{n^*_1,...,n^*_{2i}\}$ 设 $n_i=n^*_j,1\leq j\leq 2i$
+
+则根据上一步（1）可得对于任意 $k\geq 2i$ 均有 $I_{k}(d_j)=m^*_j,J_k(d_j)=n^*_j=n_i$ 即 $e^{m^*_j}=n_i$
+
+故可得 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK179][满射]]
+
+对于任意 $\{m_i,m_j\}\subset M,i\ne j$ 取 $z=\max(i,j)$ 则根据上一步（2）有 $\{m_i,m_j\}\subset\{m^*_1,...,m^*_{2z}\}$
+
+由于上一步（3），故必有 $i'\ne j'$ 满足 $m_i=m^*_{i'},m_j=m^*_{j'}$ ，则有 $e(m_i)=n^*_{i'},e(m_j)=n^*_{j'}$
+
+由于 $i'\ne j'$ ，根据上一步（3）可得 $n^*_{i'}\ne n^*_{j'}$ ，即 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK176][单射]]
+
+综上所述 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK181][双射]]
+
+****** 证明结论
+
+对于任意 $\phi(x_1,...,x_p)\in\mathcal{L}_\mathcal{A}$ 任意 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 若有 $\left<\mathcal{M},v\right>\vDash\phi$ 定义 $v(x_i)=m_{j_i}$ 取 $k=\max(j_1,...,j_p)$
+
+根据[[MK436][之前证明]]取 $D_k=\{d_1,...,d_{2k}\}$ [[MK151][一阶语言]] $\mathcal{L}_{\mathcal{A}\cup D_k}$ 及其[[MK153][结构]] $\mathcal{M}_k=\left<M,I_k\right>,\mathcal{N}_k=\left<N,J_k\right>$
+
+其中 $I_k=I\cup\left\{\left<d_i,m^*_i\right>\big|1\leq i\leq 2k\right\},J_k=J\cup\left\{\left<d_i,n^*_i\right>\big|1\leq i\leq 2k\right\}$
+
+根据[[MK436][之前证明]]（2）可得存在 $j'_1,...j'_n$ 满足 $I_k(d_{j'_i})=m^*_{j'_i}=m_{j_i}, J_k(d_{j'_i})=n^*_{j'_i}$
+
+[[MK431][类似可证]] $\mathcal{M},\mathcal{N}$ 分别是 $\mathcal{M}_k,\mathcal{N}_k$ 的[[MK295][裁剪结构]]，则根据[[MK296][定理1]]可得 $\mathcal{L}_\mathcal{A}$ 下 $\left<\mathcal{M},v\right>\vDash\phi$
+
+的充要条件是 $\mathcal{L}_{\mathcal{A}\cup D_k}$ 下 $\left<\mathcal{M}_k,v\right>\vDash\phi$ 由于 $I_k(d_{j'_i})=v(x_i)$ 故根据[[MK176][替换定理]]
+
+可得 $\left<\mathcal{M}_k,v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M}_k,v\right>\vDash\phi\left(\left<x_1,...,x_p\right>,\left<d_{j'_1},...,d_{j'_p}\right>\right)$ 由于 $\phi$ 是[[MK322][关于 $x_1,...,x_p$ 的表达式]]
+
+故可得 $\phi\left(\left<x_1,...,x_p\right>,\left<d_{j'_1},...,d_{j'_p}\right>\right)$ 不含[[MK140][自由变元]]，即为[[MK144][语句]]。根据[[MK436][之前证明]]（4）
+
+可得充要条件是 $\mathcal{N}_k\vDash\phi\left(\left<x_1,...,x_p\right>,\left<d_{j'_1},...,d_{j'_p}\right>\right)$ 又根据 $e(v(x_i))=n^*_{j'_i}=J_k(d_{j'_i})$
+
+故根据[[MK176][替换定理]]可得充要条件是 $\left<\mathcal{N}_k,v\cdot e\right>\vDash\phi$ ，根据[[MK296][定理1]]， $\mathcal{N}$ 是 $\mathcal{N}_k$ 的[[MK295][裁剪结构]]以及 $\phi\in\mathcal{L}_\mathcal{A}$ 
+
+可得 $\mathcal{L}_{\mathcal{A}\cup D_k}$ 下 $\left<\mathcal{N}_k,v\cdot e\right>\vDash\phi$ 的充要条件是 $\mathcal{L}_\mathcal{A}$ 下 $\left<\mathcal{N},v\cdot e\right>\vDash\phi$
+
+综上所述，对于任意 $\phi\in\mathcal{L}_\mathcal{A}$ 以及 $\mathcal{M}$ 的[[MK154][赋值]] $v$ ， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N},v\cdot e\right>\vDash\phi$
+
+又根据上一步证明有 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK181][双射]]，则根据[[MK280][定理2]]可得 $e$ 是[[MK274][同构函数]]，即 $\mathcal{M},\mathcal{N}$ [[MK274][同构]]
+ 
+***** 推论
+
+[[MK220][一阶可数理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 是[[MK264][完全的]]，则 $\mathcal{T}$ 是 $|\mathbb{N}|$ [[MK437][等势同构理论]]的充要条件是
+
+$\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]的
+
+****** 证明
+
+******* 充分
+
+根据[[MK441][有限类型空间定理]]，[[MK440][根本型定理]]以及 $\mathcal{T}$ 是 $|\mathbb{N}|$ [[MK437][等势同构理论]]可得对于任意 $n\in\mathbb{N}$
+
+仅有[[~/OneDrive/离散数学/lssx.org::MK82][有限]]个包含 $T$ 的[[MK322][类型]] $\Gamma(x_1,...,x_n)\supset T$ ，结合 $\mathcal{T}$ 是[[MK264][完全]]的[[MK220][一阶可数理论]]
+
+可得 $\mathcal{T}$ 存在一个[[MK221][可数]]且[[MK394][饱和]]模型 $\mathcal{M}$ ，又由于任意 $\mathcal{T}$ 的[[MK221][可数模型]]均与 $\mathcal{M}$ [[MK274][同构]]
+
+则根据[[MK443][引理16]]可得任意 $\mathcal{T}$ 的[[MK221][可数模型]]均是[[MK394][可数饱和]]的
+
+******* 必要
+
+任取 $\mathcal{T}$ 的两个[[MK221][可数模型]] $\mathcal{M}_1,\mathcal{M}_2$ ，对于任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ 若有 $\mathcal{M}_1\vDash\theta$ 则显然 $\mathcal{M}_1\vDash T\cup\{\theta\}$
+
+由于 $\mathcal{T}$ 是[[MK264][完全的]]则根据[[MK270][引理6]]可得 $T\vdash\theta$ 则根据[[MK257][完备性]]以及 $\mathcal{M}_2\vDash T$ 可得有 $\mathcal{M}_2\vDash\theta$
+
+同理可证若 $\mathcal{M}_2\vDash\theta$ 则有 $\mathcal{M}_1\vDash\theta$ ，即任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ 有 $\mathcal{M}_2\vDash\theta$ 的充要条件是 $\mathcal{M}_1\vDash\theta$
+
+即 $\mathcal{M}_1,\mathcal{M}_2$ [[MK281][同样]]，又有 $\mathcal{M}_1,\mathcal{M}_2$ 均是[[MK394][可数饱和模型]]，故根据[[MK438][唯一性]]可得 $\mathcal{M}_1,\mathcal{M}_2$ [[MK274][同构]]
+
+** 量词消去
+
+*** 定义
+
+**** [[MK129][表达式]]在[[MK220][一阶理论]]下等价<<MK396>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，则对于任意 $\{\phi,\psi\}\subset\mathcal{L}_\mathcal{A}$ 若有 $T\vdash(\phi\leftrightarrow\psi)$
+
+则称 $\phi,\psi$ 在 $\mathcal{T}$ 下等价，其中 $(\phi\leftrightarrow\psi)$ 是 $((\phi\to\psi)\land(\psi\to\phi))$ 的简写
+
+**** 适合量词消去<<MK397>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，对于任意 $\phi\in\mathcal{L}_\mathcal{A}$ 存在不带[[MK106][量词符号]]的 $\psi\in\mathcal{L}_\mathcal{A}$
+
+满足 $\psi$ 与 $\phi$ 在 $\mathcal{T}$ 下[[MK396][等价]]，则称 $\mathcal{T}$ 适合量词消去
+
+**** 极小结构<<MK460>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，若存在 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 满足对于任意其他 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{N}$ 
+
+有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK300][嵌入]]，则称 $\mathcal{M}$ 是 $\mathcal{T}$ 的极小结构
+
+*** 引理
+
+**** 引理1<<MK449>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，对于任意 $\{\phi,\psi\}\subset\mathcal{L}_\mathcal{A}$ 若对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$
+
+均有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\psi$ 则有 $T\vdash(\phi\leftrightarrow\psi)$  
+
+***** 证明
+
+显然有 $\left<\mathcal{M},v\right>\vDash(\phi\to\psi),\left<\mathcal{M},v\right>\vDash(\psi\to\phi)$ ，根据[[MK170][逻辑与]]可得 $\left<\mathcal{M},v\right>\vDash((\phi\to\psi)\land(\psi\to\phi))$
+
+即 $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow\psi)$ 。综上所述，对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow\psi)$
+
+则根据[[MK257][完备性]]可得 $T\vdash(\phi\leftrightarrow\psi)$  
+
+*** 定理
+
+**** 定理1（等价替换）<<MK392>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，对于任意 $\phi\in\mathcal{L}_\mathcal{A}$ 满足：
+
+（1） 存在[[MK139][子表达式]] $\phi_1,...,\phi_n$
+
+（2） 存在 $\theta_1,...,\theta_n$ 为 $\mathcal{L}_\mathcal{A}$ 的[[MK129][表达式]]
+
+（3） 对于任意 $1\leq i \leq n$ 有 $T\vdash(\phi_i\leftrightarrow\theta_i)$
+
+（4） 定义 $\theta$ 为 $\phi$ 中任取 $1$ 个 $\phi_i$ 替换为 $\theta_i$ 后的表达式，替换不重叠
+
+则 $T\vdash(\phi\leftrightarrow\psi)$
+
+***** 证明 
+
+由于替换不重叠，故可定义 $\psi_1,...,\psi_n$ 为依次替换 $\phi_1,...,\phi_n$ 后的[[MK115][符号串]]，则有 $\psi_n=\theta$
+
+定义 $\psi_0=\phi$ ，则对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 根据[[MK257][完备性]]
+
+可得 $\left<\mathcal{M},v\right>\vDash\phi_i$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\theta_i$ 则根据[[MK179][替换定理]]
+
+可得 $\left<\mathcal{M},v\right>\vDash\psi_i$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\psi_{i+1}$
+
+则显然易证 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\theta$ 根据[[MK158][满足]]易证 $\left<\mathcal{M},v\right>\vDash(\phi\to\theta)$ 以及 $\left<\mathcal{M},v\right>\vDash(\theta\to\phi)$  
+
+根据[[MK170][逻辑与]]可得 $\left<\mathcal{M},v\right>\vDash((\phi\to\theta)\land(\theta\to\phi))$ 
+
+综上所述，对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 有 $\left<\mathcal{M},v\right>\vDash((\phi\to\theta)\land(\theta\to\phi))$
+
+根据足 $T$ [[MK222][一致]]以及[[MK257][完备性]]可得 $T\vdash(\phi\leftrightarrow\psi)$
+
+**** 定理2<<MK444>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，则以下命题等价：
+
+（1） $\mathcal{T}$ [[MK397][适合量词消去]]
+
+（2） 任意不含[[MK106][量词]]的[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 均存在不含[[MK106][量词]]的[[MK129][表达式]] $\psi$ 满足 $T\vdash((\forall x_i \phi)\leftrightarrow\psi)$
+
+***** 证明
+
+****** 充分<<MK445>>
+
+若 $\mathcal{T}$ [[MK397][适合量词消去]]，由于 $(\forall x_i \phi)\in\mathcal{L}_\mathcal{A}$ 则存在不带[[MK106][量词符号]]的 $\psi\in\mathcal{L}_\mathcal{A}$
+
+满足足 $\psi$ 与 $\phi$ 在 $\mathcal{T}$ 下[[MK396][等价]]，即 $T\vdash((\forall x_i \phi)\leftrightarrow\psi)$
+
+****** 必要<<MK446>>
+
+对于任意[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ ，定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK117][项]]后 $($ 和 $)$ 的对数。
+
+则根据以下证明以及数学归纳法可得 $\mathcal{T}$ [[MK397][适合量词消去]]
+
+******* $z(\phi)=1$ 时
+
+根据[[MK132][可读性]]可得必为[[MK129][原始表达式]]，故 $\phi$ 不含[[MK106][量词]]，则根据[[MK197][自蕴含]]显然 $T\vdash((\phi\to\phi)\land(\phi\to\phi))=(\phi\leftrightarrow\phi)$
+
+******* 归纳假设
+
+对于任意 $1<z(\phi)<n$ 均存在不含[[MK106][量词]]的 $\psi\in\mathcal{L}_\mathcal{A}$ 满足 $T\vdash(\phi\leftrightarrow\psi)$
+
+******* $z(\phi)=n$ 时
+
+根据[[MK132][可读性]]原理有且仅有以下情况
+
+******** $\phi=(\lnot\psi)$ 时
+
+显然 $z(\psi)<n$ ，则根据归纳假设存在不含[[MK106][量词]]的 $\psi'\in\mathcal{L}_\mathcal{A}$ 满足 $T\vdash(\psi\leftrightarrow\psi')$
+
+根据[[MK392][等价替换]]可得 $T\vdash((\lnot\psi)\leftrightarrow(\lnot\psi'))$ 显然 $(\lnot\psi')$ 亦不含[[MK106][量词]]
+
+******** $\phi=(\psi_1\to\psi_2)$ 时
+
+显然 $z(\psi_1)<n,z(\psi_2)<n$ ，根据归纳假设存在不含[[MK106][量词]]的 $\{\psi'_1,\psi'_2\}\subset\mathcal{L} _\mathcal{A}$
+
+满足 $T\vdash(\psi_1\leftrightarrow\psi'_1),T\vdash(\psi_2\leftrightarrow\psi'_2)$
+
+根据[[MK392][等价替换]]可得 $T\vdash((\psi_1\to\psi_2)\leftrightarrow(\psi'_1\to\psi'_2))$ 显然 $(\psi'_1\to\psi'_2)$ 亦不含[[MK106][量词]]
+
+******** $\phi=(\forall x_i\psi)$ 时
+
+显然 $z(\psi)<n$ ，则根据归纳假设存在不含[[MK106][量词]]的 $\psi'\in\mathcal{L}_\mathcal{A}$ 满足 $T\vdash(\psi\leftrightarrow\psi')$
+
+根据[[MK392][等价替换]]可得 $T\vdash((\forall x_i\psi)\leftrightarrow(\forall x_i\psi'))$ 又由于 $\psi'$ 不含[[MK106][量词]]，根据条件（2）
+
+可得存在 $\psi''\in\mathcal{L}_\mathcal{A}$ 满足 $T\vdash((\forall x_i\psi')\leftrightarrow\psi'')$ 则根据[[MK393][引理4]]易证 $T\vdash((\forall x_i\psi)\leftrightarrow\psi'')$
+
+***** 推论<<MK459>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，则以下命题等价：
+
+（1） $\mathcal{T}$ [[MK397][适合量词消去]]
+
+（2） 任意不含[[MK106][量词]]的[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 均存在不含[[MK106][量词]]的[[MK129][表达式]] $\psi$ 满足 $T\vdash((\exists x_i \phi)\leftrightarrow\psi)$
+
+****** 证明
+
+******* 充分
+
+[[MK445][同理可证]]
+
+******* 必要
+
+对于不含[[MK106][量词]]的[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 根据[[MK182][量词转换]]以及[[MK257][完备性]]易证 $T\vdash((\forall x_i\phi)\leftrightarrow(\lnot(\exists x_i(\lnot\phi))))$
+
+根据条件（2）可得均存在不含[[MK106][量词]]的[[MK129][表达式]] $\psi$ 满足 $T\vdash((\exists x_i(\lnot\phi))\leftrightarrow\psi)$
+
+根据[[MK392][等价替换]]可得 $T\vdash((\forall x_i\phi)\leftrightarrow(\lnot\psi))$ 显然 $(\lnot\psi)$ 不含[[MK106][量词]]
+
+综上所述，条件（2）可推出[[MK444][定理2]]中的条件（2），则根据[[MK444][定理2]]可证 $\mathcal{T}$ [[MK397][适合量词消去]]
+
+**** 定理3
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，若有：
+
+（1） $\mathcal{T}$ 存在[[MK460][极小结构]]
+
+（2） $\mathcal{T}$ [[MK397][适合量词消去]]
+
+则 $\mathcal{T}$ 是[[MK264][完全理论]]
+
+***** 证明
+
+任取[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ ，任取 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ ，
+
+根据条件（1）存在 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}_0=\left<M_0,I_0\right>$ 是[[MK460][极小结构]]
+
+根据条件（2）可得存在不带[[MK106][量词]]的 $\psi$ 满足 $T\vdash(\theta\leftrightarrow\psi)$ ，根据[[MK312][定理]]可得存在 $\mathcal{M}',\mathcal{N}'$ 分别是 $\mathcal{M},\mathcal{N}$ 的[[MK282][子结构]]
+
+且与 $\mathcal{M}_0$ [[MK274][同构]]，定义[[MK274][同构映射]]分别为 $e_1,e_2$ 。根据[[MK274][引理]]可得其[[~/OneDrive/离散数学/lssx.org::MK188][逆函数]] $e^{-1}_1,e^{-1}_2$ 亦为 $\mathcal{M}',\mathcal{N}'$ 到 $\mathcal{M}_0$ 的[[MK274][同构映射]]
+
+若有 $\mathcal{M}\vDash\theta$ ，则对于任意 $\mathcal{M}_0$ 的[[MK154][赋值]] $\mu$ 有 $\mu\cdot e^{-1}_1$ 是 $\mathcal{M}$ 的[[MK154][赋值]]，又由于 $e_1$ 是 $M'$ 到 $M_0$ 的映射
+
+故可得 $e^{-1}:M_0\to M'$ 故有 $\mu\cdot e^{-1}_1$ 亦为 $\mathcal{M}'$ 的[[MK154][赋值]]。
+
+又由于 $\mathcal{M}\vDash\theta$ 的充要条件是对于任意 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash\theta$ ，故有 $\left<\mathcal{M},\mu\cdot e^{-1}_1\right>\vDash\theta$
+
+根据 $T\vdash(\theta\leftrightarrow\psi)$ 以及[[MK257][完备性]]可得 $\left<\mathcal{M},\mu\cdot e^{-1}_1\right>\vDash\psi$ 由于 $\psi$ 不带[[MK106][量词]]，则根据[[MK461][推论]]可得 $\left<\mathcal{M}',\mu\cdot e^{-1}_1\right>\vDash\psi$
+
+根据[[MK276][定理1]]可得 $\left<\mathcal{M}_0,\mu\cdot e^{-1}_1\cdot e_1\right>\vDash\psi$ 即 $\left<\mathcal{M}_0,\mu\right>\vDash\psi$ 。
+
+综上所述，对于任意 $\mathcal{M}_0$ 的[[MK154][赋值]] $\mu$ 均有 $\left<\mathcal{M}_0,\mu\right>\vDash\psi$
+
+又根据[[MK276][定理1]]可得 $\left<\mathcal{N}',\mu\cdot e_2\right>\vDash\psi$ 根据[[MK461][推论]]可得 $\left<\mathcal{N},\mu\cdot e_2\right>\vDash\psi$
+
+根据 $T\vdash(\theta\leftrightarrow\psi)$ 以及[[MK257][完备性]]可得 $\left<\mathcal{N},\mu\cdot e_2\right>\vDash\theta$ ，根据 $\theta$ 是[[MK144][语句]]以及[[MK169][推论]]可得 $\mathcal{N}\vDash\theta$
+
+若有 $\mathcal{N}\vDash\theta$ 同理亦可证 $\mathcal{M}\vDash\theta$
+
+综上所述，对于任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ ，任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M},\mathcal{N}$ 有 $\mathcal{M}\vDash\theta$ 的充要条件是 $\mathcal{N}\vDash\theta$  
+
+即对于任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ 若 $T\vdash\theta$ 则根据[[MK257][完备性]]对于 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 有 $\mathcal{M}\vDash\theta$ 
+
+根据[[MK158][满足]]可得 $\mathcal{M}\not\vDash(\lnot\theta)$ ，则根据[[MK257][完备性]]以及 $\mathcal{M}$ 任意性可得 $T\not\vdash(\lnot\theta)$
+
+若 $T\vdash(\lnot\theta)$ 则同理可证 $T\not\vdash\theta$ 。
+
+综上所述， $T\vdash\theta$ 与 $T\vdash(\lnot\theta)$ 有且仅有一个成立，则根据[[MK266][引理1]]可得 $\mathcal{T}$ 是[[MK264][完全理论]]
+
+**** 定理4
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，对于任意 $\phi(x_1,...,x_n)\in\mathcal{L}_\mathcal{A}$ 则以下命题等价
+
+（1） 存在不含[[MK106][量词]]的 $\psi(x_1,...,x_n)\in\mathcal{L}_\mathcal{A}$ 与 $\phi$ [[MK396][等价]]
+
+（2） 对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 若有[[MK282][子结构]] $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ [[MK274][同构]]
+
+     设同构映射为 $e$ 则对于任意 $\left<a_1,...,a_n\right>\in (M')^n$ 有 $\mathcal{M}\vDash\phi[a_1,...,a_n]$
+
+     的充要条件是 $\mathcal{N}\vDash\phi[e(a_1),...,e(a_n)]$
+
+***** 证明
+
+****** 充分
+
+若存在不含[[MK106][量词]]的 $\psi\in\mathcal{L}_\mathcal{A}$ 与 $\phi$ [[MK396][等价]]则有 $T\vdash(\phi\leftrightarrow\psi)$ 则对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$
+
+若有 $\mathcal{M}\vDash\phi[a_1,...,a_n]$ 则根据[[MK257][完备性]]以及[[MK168][局部确定]]可得 $\mathcal{M}\vDash\psi[a_1,...,a_n]$
+
+由于不含[[MK106][量词]]且 $\mathcal{M}'$ 是 $\mathcal{M}$ 的[[MK282][子结构]]，结合 $\left<a_1,a_2,...,a_n\right>\in (M')^n$ 根据[[MK461][推论]]可得 $\mathcal{M}'\vDash\phi[a_1,...,a_n]$ 
+
+由于 $\mathcal{M}',\mathcal{N}'$ [[MK274][同构]]，根据[[MK276][定理1]]以及[[MK168][局部确定]]可得 $\mathcal{N}'\vDash\phi[a_1,...,a_n]$ 又根据[[MK461][推论]]可得 $\mathcal{N}\vDash\phi[a_1,...,a_n]$
+
+若有 $\mathcal{N}\vDash\phi[a_1,...,a_n]$ 则同理可证 $\mathcal{M}\vDash\phi[a_1,...,a_n]$ ，即条件（2）成立
+
+****** 必要
+
+对于任意 $\phi\in\mathcal{L}_\mathcal{A}$ 根据以下步骤均可找到不含[[MK106][量词]]的 $\psi\in\mathcal{L}_\mathcal{A}$ 满足 $T\vdash(\phi\leftrightarrow\psi)$
+
+******* $T\vdash\phi$
+
+根据[[MK197][恒等律]] $T\vdash(x_1\hat{=}x_1)$ 则易证 $T\vdash(\phi\leftrightarrow(x_1\hat{ =}x_1))$
+
+******* $T\vdash(\lnot\phi)$
+
+任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 根据[[MK257][完备性]]有 $\left<\mathcal{M},v\right>\vDash(\lnot\phi)$ 根据[[158][满足]]可得 $\left<\mathcal{M},v\right>\not\vDash\phi$
+
+显然亦有 $\left<\mathcal{M},v\right>\not\vDash(\lnot(x_1\hat{=}x_1))$ 即有 $\left<\mathcal{M},v\right>\vDash((\phi\to(\lnot(x_1\hat{ =}x_1)))\land((\lnot(x_1\hat{ =}x_1))\to\phi))=(\phi\leftrightarrow(\lnot(x_1\hat{ =}x_1)))$
+
+即对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow(\lnot(x_1\hat{ =}x_1)))$ 根据[[MK257][完备性]]有 $T\vdash(\phi\leftrightarrow(\lnot(x_1\hat{ =}x_1)))$ 
+
+******* 两者均不是
+
+******** 定义 $\Gamma$ 且 $T\cup\Gamma$ [[MK222][一致]]<<MK463>>
+
+对于任意 $\psi(x_1,...,x_n)\in\mathcal{L}_\mathcal{A}$ 若满足 $T\vdash(\phi\to\psi)$ 且 $\psi$ 不含[[MK106][量词]]，则 $\psi\in\Gamma$ 否则 $\psi\not\in\Gamma$
+
+由于 $T\not\vdash\phi$ 根据[[MK213][归谬定理]]可得 $T\cup\{\phi\}$ [[MK222][一致]]，根据[[MK211][演绎定理]]可得对于任意 $\psi\in\Gamma$ 有 $T\cup\{\phi\}\vdash\psi$
+
+由于 $T\cup\{\phi\}$ [[MK222][一致]]则根据[[MK255][完备性]]可得存在[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 使得 $\left<\mathcal{M},v\right>\vDash T\cup\{\phi\}$
+
+根据[[MK257][完备性]]可得亦有 $\left<\mathcal{M},v\right>\vDash \Gamma$ 即 $\left<\mathcal{M},v\right>\vDash T\cup\Gamma\cup\{\phi\}$ 根据[[MK255][完备性]]可得 $T\cup\Gamma\cup\{\phi\}$ [[MK222][一致]]
+
+即 $T\cup\Gamma$ [[MK222][一致]]
+
+******** 定义 $\mathcal{L}_{\mathcal{A}\cup D},\phi^*,\Gamma^*$ 且 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\cup\Gamma^*$ [[MK222][一致]]<<MK464>>
+
+定义 $D=\{d_1,...,d_n\}$ 是[[MK108][常元符号]]且 $D\cap\mathcal{A}=\varnothing$ ，则有[[MK151][一阶语言]] $\mathcal{L}_{\mathcal{A}\cup D}$ 是 $\mathcal{L}_{\mathcal{A}}$ 的[[MK152][扩展语言]]
+
+根据[[MK463][上一步]]可得 $T\cup\Gamma\cup\{\phi\}$ [[MK222][一致]]，则有 $\mathcal{L}_{\mathcal{A}}$ 下[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及[[MK154][赋值]] $v$ 使 $\left<\mathcal{M},v\right>\vDash T\cup\Gamma\cup\{\phi\}$
+
+定义 $I_D=I\cup\left\{\left<d_i,v(x_i)\right>\big|1\leq i\leq n\right\}$ 则显然 $\mathcal{M}_D=\left<M,I_D\right>$ 是 $\mathcal{L}_{\mathcal{A}\cup D}$ 下的[[MK153][结构]]
+
+且 $\mathcal{M}_D$ 是 $\mathcal{M}$ 的[[MK295][扩充结构]]，根据[[MK296][定理1]]可得 $v$ 亦为 $\mathcal{M}_D$ 的[[MK154][赋值]]且有 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $\left<\mathcal{M}_D,v\right>\vDash T\cup\Gamma\cup\{\phi\}$
+
+定义 $\Gamma^*=\left\{\psi\left(\left<x_1,...,x_n\right>,\left<d_1,...,d_n}\right>\right)\big|\psi\in\Gamma\right\},\phi^*=\phi\left(\left<x_1,...,x_n\right>,\left<d_1,...,d_n}\right>\right)$
+
+根据 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $\left<\mathcal{M}_D,v\right>\vDash T\cup\Gamma\cup\{\phi\}$ ， $I_D(d_i)=v(x_i)$ 以及[[MK176][替换定理]]可得 $\mathcal{M}_D\vDash T\cup\Gamma^*\cup\{\phi^*\}$
+
+根据[[MK255][完备性]]可得 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\cup\Gamma^*\cup\{\phi^*\}$ [[MK222][一致]]
+
+********* 性质1<<MK471>>
+
+若 $\mathcal{L}_{\mathcal{A}\cup D}$ 下有 $T\vdash\phi$ 且 $\phi$ 中 $x_1,...,x_n$ [[MK150][可替换]] $d_1,...,d_n$
+
+则有 $\mathcal{L}_\mathcal{A}$ 下 $T\vdash\phi(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)$
+
+********** 证明
+
+对于任意 $\mathcal{L}_\mathcal{A}$ 下 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 使得 $\left<\mathcal{M},v\right>\vDash T$
+
+则定义 $I_D=I\cup\left\{\left<d_i,v(x_i)\right>\big|1\leq i\leq n\right\}$ 以及 $\mathcal{M}_D=\left<M,I_D\right>$
+
+显然 $\mathcal{M}_D$ 是 $\mathcal{L}_{\mathcal{A}\cup D}$ 下的[[MK153][结构]]。显然 $\mathcal{L}_{\mathcal{A}\cup D}$ 是 $\mathcal{L}_{\mathcal{A}}$ 的[[MK152][扩展语言]]
+
+则可得 $\mathcal{M}_D$ 是 $\mathcal{M}$ 的[[MK295][扩充结构]]，根据[[MK296][定理1]]可得 $v$ 亦为 $\mathcal{M}_D$ 的[[MK154][赋值]]且有 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $\left<\mathcal{M}_D,v\right>\vDash T$
+
+根据 $\mathcal{L}_{\mathcal{A}\cup D}$ 下有 $T\vdash\phi$ 以及[[MK257][完备性]]可得 $\left<\mathcal{M}_D,v\right>\vDash\phi$
+
+由于 $I_D(d_i)=v(x_i)$ 且 $x_1,...,x_n$ [[MK150][可替换]] $d_1,...,d_n$ ，则根据[[MK176][替换定理]]
+
+可得 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $\left<\mathcal{M}_D,v\right>\vDash\phi(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)$ 显然 $\phi(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)\in\mathcal{L}_\mathcal{A}$
+
+又根据[[MK296][定理1]]可得 $\mathcal{L}_{\mathcal{A}}$ 下 $\left<\mathcal{M},v\right>\vDash\phi(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)$
+
+综上所述，对于任意 $\mathcal{L}_\mathcal{A}$ 下 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 若有 $\left<\mathcal{M},v\right>\vDash T$
+
+则有 $\left<\mathcal{M},v\right>\vDash\phi(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)$ ，则根据[[MK257][完备性]]
+
+可得 $T\vdash\phi(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)$
+
+********* 性质2<<MK479>>
+
+$\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\not\vdash\phi^*$
+
+********** 证明
+
+假设 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\vdash\phi^*$
+
+根据 $\phi^*=\phi\left(\left<x_1,...,x_n\right>,\left<d_1,...,d_n}\right>\right)$ 以及 $\phi\in\mathcal{L}_\mathcal{A}$ 可得 $d_i$ 不在 $\phi$ 中出现
+
+故可得 $\phi^*$ 中任意 $d_i$ 的位置均为 $\phi$ 中 $x_i$ 的[[MK141][自由出现]]，
+
+故 $\phi^*$ 中 $x_1,...,x_n$ [[MK150][可替换]] $d_1,...,d_n$ 且 $\phi=\phi^*\left(\left<d_1,...,d_n}\right>,\left<x_1,...,x_n\right>\right)$
+
+则根据[[MK471][性质1]]可得 $\mathcal{L}_\mathcal{A}$ 下 $T\vdash\phi$ ，显然与本标题两者均不是矛盾，故假设不成立
+
+即 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\not\vdash\phi^*$ 
+
+******** $T\cup\Gamma^*\vdash\phi^*$
+
+假设 $T\cup\Gamma^*\not\vdash\phi^*$ 则根据[[MK213][归谬定理]]可得 $T\cup\Gamma^*\cup\{(\lnot\phi^*)\}$ [[MK222][一致]]，根据[[MK255][完备性]]可得 $\mathcal{L}_{\mathcal{A}\cup D}$ 下
+
+存在[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[MK154][赋值]] $v$ 使得 $\left<\mathcal{M},v\right>\vDash T\cup\Gamma^*\cup\{(\lnot\phi^*)\}$
+
+由于均为[[MK144][语句]]，则根据[[MK169][推论]]得可 $\mathcal{M}\vDash T\cup\Gamma^*\cup\{(\lnot\phi^*)\}$ 则由以下证明：
+
+（1） 根据[[MK478][以下证明]]可得 $\mathcal{L}_{\mathcal{A}}$ 的[[MK153][结构]] $\mathcal{M}_\mathcal{A}=\left<M,I_\mathcal{A}\right>,\mathcal{N}_\mathcal{A}=\left<N,J_\mathcal{A}\right>,\mathcal{K}_\mathcal{A}=\left<K,L_\mathcal{A}\right>,\mathcal{K}'_\mathcal{A}=\left<K',L' _\mathcal{A}\right>$
+
+（2） $\mathcal{K}_\mathcal{A},\mathcal{K}'_ \mathcal{A}$ [[MK274][同构]]
+
+（3） 存在 $\left<a_1,...,a_n\right>\in K^n$ 满足 $\mathcal{M}_\mathcal{A}\vDash(\lnot\phi)[a_1,...,a_n],\mathcal{N}_\mathcal{A}\vDash\phi[e(a_1),...,e(a_n)]$
+
+显然与条件（2）矛盾，故假设不成立，即 $T\cup\Gamma^*\vdash\phi^*$
+
+********* 定义 $\mathcal{K}=\left<K,L\right>$
+
+定义 $F,C$ 分别为 $\mathcal{A}\cup D$ 中所有的[[MK109][函数符号]]和[[MK108][常元符号]]，根据[[MK112][符号假定]]定义 $\pi_F:F\to\mathbb{N}$
+
+********** 定义 $K$ <<MK465>>
+
+对于任意 $i\in\mathbb{N}$ 定义 $K_{i+1}=K_i\cup\left\{I(f)(a_1,...,a_{\pi_F(f)})\big|f\in F\land \{a_1,...,a_{\pi_F}\}\subset K_i\right\}$
+
+定义 $K_0=\left\{I(c)\big|c\in C\right\}$ ，定义 $K=\bigcup_{i\in\mathbb{N}}K_i$
+
+********** 定义 $L$
+
+（1） 对于任意 $c\in\mathcal{A}\cup D$ 是[[MK108][常元符号]]，定义 $L(c)=I(c)$ 显然 $I(c)\in K_0\subset K$
+
+（2） 对于任意 $f\in\mathcal{A}\cup D$ 是[[MK109][函数符号]]，对于任意 $\left<a_1,...,a_{\pi_F(f)}\right>\subset K^{{\pi_F(f)}}$
+
+     根据上一步定义对于任意 $a_i$ 存在 $K_{j_i}$ 满足 $a_i\in K_{j_i}$ ，定义 $i^*=\max(j_1,...,j_{\pi_F(f)})$
+
+     显然有 $\left\{a_1,...,a_{\pi_F(f)}\right\}\subset K_{i^*}$ 且 $I(f)(a_1,...,a_{\pi_F(f)})\in K_{i^*+1}\subset K$
+
+     则可定义 $L(f)(a_1,...,a_{\pi_F(f)})=I(f)(a_1,...,a_{\pi_F(f)})\in K$
+
+（3） 对于任意 $p\in\mathcal{A}\cup D$ 是[[MK110][谓词符号]]，定义 $L(p)=I(p)\cap K$
+
+********** $\mathcal{K}$ 是 $\mathcal{M}$ 的[[MK282][子结构]]<<MK472>>
+
+显然 $K_0=\left\{I(c)\big|c\in C\right\}\subset M$ ，若 $K_i\subset M$ 则任意[[MK109][函数符号]] $f$
+
+对于任意 $\left<a_1,...,a_{\pi_F(f)}\right>\subset K_i^{{\pi_F(f)}}$ 有 $\left<a_1,...,a_{\pi_F(f)}\right>\subset M^{{\pi_F(f)}}$
+
+则有 $I(f)(a_1,...,a_{\pi_F(f)})\in M$ ，即 $K_{i+1}\subset M$ 则易证 $K\subset M$
+
+又根据上一步 $L$ 的定义易证 $\mathcal{K}$ 是 $\mathcal{M}$ 的[[MK282][子结构]]
+
+********* [[MK406][常元扩展]]，定义 $\Theta$ <<MK473>>
+
+根据 $K$ 在 $\mathcal{L}_{\mathcal{A}\cup D}$ 下[[MK406][常元扩展]]，并定义 $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 下的[[MK129][表达式]]集合 $\Theta$ 满足：
+
+（1） 任意 $\theta\in\Theta$ 是[[MK144][语句]]
+
+（2） 任意 $\theta\in\Theta$ 或 $(\lnot\theta)\in\Theta$ 满足 $\theta$ 是[[MK129][原始表达式]]
+
+（3） 任意 $\theta\in\Theta$ 满足 $(\mathcal{K},c_a)_{a\in K}\vDash\theta$
+
+********** 性质1<<MK466>>
+
+任意[[MK108][常元符号]] $c\in\mathcal{A}\cup D\cup C_K$ 均有[[MK117][项]] $\tau$ 满足：
+
+（1） $(\mathcal{K},c_a)_{a\in K}\vDash(c\hat{=}\tau)$
+
+（2） $\tau$ 中的[[MK108][常元符号]]均在 $\mathcal{A}\cup D$ 中，不包含[[MK107][变元符号]]
+
+*********** 证明
+
+根据[[MK406][常元扩展]]易证 $(\mathcal{K},c_a)_{a\in K}=\left<K,L_K\right>$ 是 $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 的[[MK153][结构]]
+
+则任意 $c\in\mathcal{A}\cup D\cup C_K$ 均有 $L_K(c)\in K$ ，根据[[MK465][ $K$ 定义]]可得存在 $i\in\mathbb{N}$
+
+满足 $L_K(c)\in K_i$
+
+************ $i=0$
+
+即 $L_K(c)\in K_0$ ，则根据[[MK465][ $K_0$ 定义]]存在 $\mathcal{A}\cup D$ 中[[MK108][常元]] $c'$ 满足 $L_K(c')=L_K(c)$
+
+即有 $(\mathcal{K},c_a)_{a\in K}\vDash(c'\hat{=}c)$ ，显然 $\tau=c'$ 满足条件
+
+************ 归纳假设
+
+对于任意 $i<n$ 均有[[MK117][项]] $\tau$ 满足
+
+（1） $(\mathcal{K},c_a)_{a\in K}\vDash(c\hat{=}\tau)$
+
+（2） $\tau$ 中的[[MK108][常元符号]]均在 $\mathcal{A}\cup D$ 中，不包含[[MK107][变元符号]]
+
+************ $i=n$
+
+即 $L_K(c)\in K_n$ 则根据[[MK465][ $K_n$ 定义]]存在[[MK109][函数符号]] $f\in\mathcal{A}$ 以及 $\left<a_1,...,a_z\right>\in K^z_{n-1}$
+
+满足 $L_K(c)=L_K(f)(a_1,...,a_z)$ 根据归纳假设对于任意[[MK108][常元符号]] $c_{a_i}$ 满足 $L_K(c_{a_i})=a_i\in K_{n-1}$
+
+均存在 $\tau_i$ 满足条件，根据 $\mathcal{K}\vDash(c_{a_i}\hat{=}\tau_i)$ 以及[[MK158][满足]]有 $L_K(c_{a_i}) =\overline{L_K}(\tau_i)$ 
+
+则显然 $L_K(c)=L_K(f)(a_1,...,a_z)=L_K(f)(\overline{L_K}(\tau_1),...,\overline{L_K}(\tau_z))$
+
+根据[[MK158][满足]]可得 $(\mathcal{K},c_a)_{a\in K}\vDash(c\hat{=}f(\tau_1,...,\tau_z))$ ，由于 $\tau_i$ 中的[[MK108][常元符号]]均在 $\mathcal{A}\cup D$ 中，不包含[[MK107][变元符号]]
+
+显然 $f(\tau_1,...,\tau_z)$ 亦满足条件
+
+********** 性质2<<MK470>>
+
+对于任意 $T\cup\Theta$ 的[[MK196][证明]] $\langle\phi_1,...,\phi_n\rangle$ 定义 $\phi'_i$ 为将 $\phi_i$ 中所有不在 $\mathcal{A}\cup D$ 中的[[MK108][常元符号]] $c$
+
+替换为[[MK117][项]] $\tau$ 后的[[MK115][符号串]]，$c$ 与 $\tau$ 的关系满足：
+
+（1） $(\mathcal{K},c_a)_{a\in K}\vDash(c\hat{=}\tau)$
+
+（2） $\tau$ 中的[[MK108][常元符号]]均在 $\mathcal{A}\cup D$ 中，不包含[[MK107][变元符号]]
+
+则有
+
+（1） 若 $\phi_i\in\Theta$ 则有 $\phi'_i\in\Theta$
+
+（2） $\left<\phi'_1,...,\phi'_n\right>$ 亦是 $T\cup\Theta$ 的[[MK196][证明]]
+
+*********** 证明
+
+************ 证明（1）
+
+若 $\phi_1\in\Theta$ ，则根据[[MK466][性质1]]可得对于任意 $\phi_1$ 中的[[MK108][常元符号]] $c$ 均有[[MK117][项]] $\tau$
+
+（1） $(\mathcal{K},c_a)_{a\in K}\vDash(c\hat{=}\tau)$
+
+（2） $\tau$ 中的[[MK108][常元符号]]均在 $\mathcal{A}\cup D$ 中，不包含[[MK107][变元符号]]
+
+根据定义 $\phi'_1$ 为将 $\phi_1$ 中的[[MK108][常元符号]] $c_1,...,c_k$ 替换为满足上述条件的 $\tau_1,...,\tau_k$ 后的[[MK115][符号串]]
+
+由于 $\phi_1\in\Theta$ 故是[[MK129][原始表达式]]，故不含[[MK106][量词]]，则 $c_1,...,c_k$ 替换为 $\tau_1,...,\tau_k$ 后不会有[[MK141][受限出现]]
+
+即 $c_1,...,c_k$ [[MK150][可替换]]为 $\tau_1,...,\tau_k$ ，且 $c_i$ 为[[MK108][常元符号]]，不可能包含[[MK141][受限出现]]
+
+则根据[[MK467][推论]]可得 $(\mathcal{K},c_a)_{a\in K}\vDash\phi'_1$ ，又由于 $\phi_1$ 是[[MK129][原始表达式]]，显然 $\phi'_1$ 亦为[[MK129][原始表达式]]
+
+则根据 $\Theta$ 定义可得 $\phi'_1\in\Theta$
+
+************ 证明（2）
+
+由于 $n<\infty$ 则根据下列证明以及数学归纳法可证
+
+************* $n=1$ <<MK469>>
+
+即[[MK196][证明]]为 $\langle\phi_1\rangle$ ，则显然 $\phi_1\in T\cup\Theta$ 或 $\phi_1\in\mathbb{L}$ 是[[MK197][逻辑公理]]
+
+若 $\phi_1\in T$ ，由于 $T\subset\mathcal{L}_\mathcal{A}$ 显然 $\phi$ 中任意[[MK108][常元符号]]均在 $\mathcal{A}$ 中，故 $\phi'_1=\phi_1$
+
+若 $\phi_1\in\mathbb{L}$ ，根据[[MK146][项替换定理]]可得 $\phi'_i$ 亦为[[MK129][表达式]]，则[[MK468][类似可证]] $\phi'_1\in\mathbb{L}$
+
+若 $\phi_1\in\Theta$ ，则根据结论（1）可得 $\phi'_1\in\Theta$
+
+综上所述，若 $\left<\phi_1\right>$ 是 $T\cup\Theta$ 的[[MK196][证明]]，则 $\left<\phi'_1\right>$ 亦是 $T\cup\Theta$ 的[[MK196][证明]]
+
+************* 归纳假设
+
+对于任意 $n<N$ ，若 $\left<\phi_1,...,\phi_n\right>$ 是 $T\cup\Theta$ 的[[MK196][证明]]则 $\left<\phi'_1,...,\phi'_n\right>$ 亦是 $T\cup\Theta$ 的[[MK196][证明]]
+
+************* $n=N$
+
+若 $\left<\phi_1,...,\phi_n\right>$ 是 $T\cup\Theta$ 的[[MK196][证明]]，则显然 $n-1<n$ ，故 $\left<\phi'_1,...,\phi'_{n-1}\right>$ 亦是 $T\cup\Theta$ 的[[MK196][证明]]
+
+若 $\phi_n\in T\cup\mathbb{L}\cup\Theta$ 则[[MK469][同理可证]] $\phi'_n\in T\cup\mathbb{L}\cup\Theta$
+
+若存在 $i<n,j<n$ 满足 $\phi_j=(\phi_i\to\phi_n)$ 则显然 $\phi'_j=(\phi'_i\to\phi'_n)$ 
+
+综上所述，不论那种情况 $\left<\phi'_1,...,\phi'_{n}\right>$ 是 $T\cup\Theta$ 的[[MK196][证明]]
+
+********* $T\cup\Theta\cup\{\phi^*\}$ [[MK222][一致]]
+
+假设 $T\cup\Theta\cup\{\phi^*\}$ 不[[MK222][一致]]，则根据一下步骤可推出存在 $\theta_{i^*}$ 满足 $\mathcal{K}\vDash(\lnot\theta_{i^*}),\mathcal{K}\vDash\theta_{i^*}$ 矛盾
+
+故假设不成立，即 $T\cup\Theta\cup\{\phi^*\}$ [[MK222][一致]]
+
+********** 存在 $\mathcal{L}_{\mathcal{A}\cup D}$ 下的[[MK196][证明]] $\left<\phi'_1,...,\phi'_m\right>$ 满足 $\phi'_m=(\lnot\phi^*)$
+
+根据[[MK213][归谬定理]]可得 $T\cup\Theta\vdash(\lnot\phi^*)$ ，根据[[MK196][证明]]可得存在满足条件的序列 $\left<\phi_1,...,\phi_m\right>$
+
+其中 $\phi_m=(\lnot\phi^*)$ 。又根据[[MK470][性质2]]可得存在 $\left<\phi'_1,...,\phi'_m\right>$ 亦为 $T\cup\Theta$ 的[[MK196][证明]]且满足：
+
+（1） $\phi'_i$ 中所有不在 $\mathcal{A}\cup D$ 中的[[MK108][常元符号]] $c$ 均替换为[[MK117][项]] $\tau$ 
+
+（2） $\tau$ 中的[[MK108][常元符号]]均在 $\mathcal{A}\cup D$ 中，不包含[[MK107][变元符号]]
+
+显然 $\left<\phi'_1,...,\phi'_m\right>$ 不含 $\mathcal{A}\cup D$ 以外的[[MK108][常元符号]]且 $T\subset\mathcal{L}_{\mathcal{A}\cup D}$ ，故 $\left<\phi'_1,...,\phi'_m\right>$ 为 $\mathcal{L}_{\mathcal{A}\cup D}$ 下的[[MK196][证明]]
+
+由于 $\phi^*\in\mathcal{L}_{\mathcal{A}\cup D}$ 显然 $(\lnot\phi^*)$ 不含任意不在 $\mathcal{A}\cup D$ 中的[[MK108][常元符号]]，即 $\phi'_m=\phi_m=(\lnot\phi^*)$
+
+********** $\mathcal{L}_{\mathcal{A}\cup D}$ 下存在 $\{\theta_1,...,\theta_k\}\subset\Theta$ 满足 $T\vdash\left(\phi^*\to\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)\right)$ <<MK480>>
+
+根据[[MK464][之前证明]]可得 $T\cup\{\phi^*\}$ [[MK222][一致]]，则可得 $\Theta\cap\{\phi_1,...,\phi_m\}\ne\varnothing$
+
+则根据[[MK470][性质2]]可得 $\Theta\cap\{\phi'_1,...,\phi'_m\}\ne\varnothing$ 定义 $\{\theta_1,...,\theta_k\}=\Theta\cap\{\phi'_1,...,\phi'_m\}$
+
+易证 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\cup \{\theta_1,...,\theta_k\}\vdash(\lnot\phi^*)$ 根据[[MK201][逻辑与]]易证 $T\cup\left\{\left(\bigwedge_{i=1}^k \theta_i\right)\right\}\vdash(\lnot\phi^*)$
+
+根据[[MK211][演绎定理]] $T\vdash\left(\left(\bigwedge_{i=1}^k \theta_i\right)\to(\lnot\phi^*)\right)$ 根据[[MK198][推论（8）]] $T\vdash\left((\lnot(\lnot\phi^*))\to\left(\lnot\left(\bigwedge_{i=1}^k \theta_i\right)\right)\right)$
+
+根据[[MK219][替换定理]]，[[MK186][德摩根律]]以及[[MK462][双重否定]]易证 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\vdash\left(\phi^*\to\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)\right)$
+
+********** $\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)\in\Gamma^*$ 
+
+由于 $D\cap\mathcal{A}=\varnothing$ 且 $\phi^*=\phi\left(\left<x_1,...,x_n\right>,\left<d_1,...,d_n}\right>\right)$
+
+故 $\phi^*$ 中 $d_i$ 的出现必为 $x_i$ 的[[MK141][自由出现]]，故可得 $\phi^*$ 中 $x_1,...,x_n$ [[MK150][可替换]] $d_1,...,d_n$
+
+又由于 $\theta_i\in\Theta$ 是[[MK129][原始表达式]]，故不含[[MK106][量词]]，则替换后不会有[[MK141][受限出现]]
+
+故显然 $\theta_i$ 中 $x_1,...,x_n$ [[MK150][可替换]] $d_1,...,d_n$ 。
+
+综上所述 $\left(\phi^*\to\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)\right)$ 中 $x_1,...,x_n$ [[MK150][可替换]] $d_1,...,d_n$
+
+根据[[MK471][性质]]可得 $\mathcal{L}_\mathcal{A}$ 下 $T\vdash\left(\phi^*\to\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)\right)(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)$
+
+即 $\mathcal{L}_\mathcal{A}$ 下 $T\vdash\left(\phi\to\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)\right)$
+
+且 $\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)$ 不含[[MK106][量词]]
+
+则根据[[MK463][ $\Gamma$ 定义]]可得 $\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)\in\Gamma$
+
+又根据[[MK464][ $\Gamma^*$ 定义]]可得 $\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)(\left<x_1,...,x_n\right>,\left<d_1,...,d_n\right>)\in\Gamma^*$
+
+显然 $\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)(\left<x_1,...,x_n\right>,\left<d_1,...,d_n\right>)=\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)$
+
+故有 $\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)\in\Gamma^*$
+
+********** 推出矛盾
+
+由于 $\theta_i\in\Theta$ 是[[MK129][原始表达式]]，显然 $\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)$ 不含[[MK106][量词]]
+
+由于 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $\mathcal{M}\vDash\Gamma^*$ ，故有 $\mathcal{M}\vDash\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)$ 根据[[MK472][之前证明]]可得 $\mathcal{K}$ 是 $\mathcal{M}$ 的[[MK282][子结构]]
+
+结合[[MK461][推论]]可得 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $\mathcal{K}\vDash\left(\bigvee_{i=1}^k (\lnot\theta_i)\right)$ 根据[[MK171][逻辑或]]易证存在 $1\leq i^*\leq k$ 满足 $\mathcal{K}\vDash(\lnot\theta_{i^*})$ 
+
+又由于 $\theta_{i^*}\in\Theta$ ，则根据[[MK473][ $\Theta$ 定义]]可得 $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 下 $(\mathcal{K},c_a)_{a\in K}\vDash\theta_{i^*}$
+
+显然 $\mathcal{K}$ 是 $(\mathcal{K},c_a)_{a\in K}$ 的[[MK295][裁剪结构]]，且 $\theta_{i^*}\in\mathcal{L}_{\mathcal{A}\cup D}$ 故根据[[MK296][定理1]] $\mathcal{K}\vDash\theta_{i^*}$ 显然矛盾
+
+********* 定义 $\mathcal{N}$ 以及 $\mathcal{K}'$ <<MK476>>
+
+根据上一步可得 $T\cup\Theta\cup\{\phi^*\}$ [[MK222][一致]]，则根据[[MK255][完备性]]以及[[MK169][推论]]得可 $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 下存在
+
+[[MK153][结构]] $\mathcal{N}=\left<N,J\right>$ 满足 $\mathcal{N}\vDash T\cup\Theta\cup\{\phi^*\}$ ，则定义
+
+（1） $K'=\left\{J(c_a)\big|c_a\in C_K\right\}$
+
+（2） $L'$ 为：
+
+     （a） 对于任意 $c\in\mathcal{A}\cup D\cup C_K$ 是[[MK108][常元符号]]，有 $L'(c)=J(c)$
+
+     （b） 对于任意 $f\in\mathcal{A}\cup D\cup C_K$ 是[[MK109][函数符号]]且 $\pi_F(f)=z$ ，对于任意 $\left<a_1,...,a_z\right>\subset (K')^z$
+
+          有 $L'(f)(a_1,...,a_z)=J(a_1,...,a_z)$
+
+     （c） 对于任意 $p\in\mathcal{A}\cup D\cup C_K$ 是[[MK110][谓词符号]] $\pi_P(p)=z$ 有 $L'(p)=J(p)\cap (K')^n$
+
+根据以下证明可得 $\mathcal{K}'=\left<K',L'\right>$ 是[[MK153][结构]]，则显然 $\mathcal{K}'$ 是 $\mathcal{N}$ 的[[MK282][子结构]]
+
+********** $\mathcal{K}'=\left<K',L'\right>$ 是[[MK153][结构]]
+
+对于任意[[MK108][常元符号]]若 $c\in\mathcal{A}\cup D$ 根据[[MK465][定义]]有 $a\in K$ 满足 $L(c)=a$ ，则显然有 $L_D(c_a)=a=L_D(c)$
+
+即有 $(\mathcal{K},c_a)_{a\in K}=(c\hat{=}c_a)$ ，故根据[[MK476][ $\Theta$ 定义]]可得 $(c\hat{ =}c_a)\in\Theta$ 即 $\mathcal{N}\vDash(c\hat{ =}c_a)$
+
+根据[[MK158][满足]] $J(c)=J(c_a)\in K'$
+
+又由于 $L'(c)=J(c)$ 即 $L'(c)\in K$ 。若 $c\in C_K$ 则有 $L'(c)=J(c)\in K$
+
+综上所述，对于任意[[MK108][常元符号]] $c\in\mathcal{A}\cup D\cup C_K$ 均有 $L'(c)\in K$
+
+对于任意 $f\in\mathcal{A}\cup D\cup C_K$ 是[[MK109][函数符号]]且 $\pi_F(f)=z$ ，以及任意 $\left<b_1,...,b_z\right>\subset (K')^z$
+
+根据定义必有 $\{c_{a_1},...,c_{a_z}\}\subset C_K$ 满足 $J(c_{a_i})=a_i$ ，根据[[MK465][定义]]有 $L(c_{a_i})\in K$
+
+由于 $\mathcal{K}$ 是[[MK153][结构]]，故可得 $L(f)(L(c_{a_1}),...,L(c_{a_z}))=a\in K$
+
+则显然有 $L_D(c_a)=a=L(f)(L(c_{a_1}),...,L(c_{a_z}))$ 即 $(\mathcal{K},c_a)_{a\in K}=(f(c_{a_1},...,c_{a_z})\hat{=}c_a)$
+
+故根据[[MK476][ $\Theta$ 定义]]可得 $(f(c_{a_1},...,c_{a_z})\hat{=}c_a)\in\Theta$ 即 $\mathcal{N}\vDash(f(c_{a_1},...,c_{a_z})\hat{ =}c_a)$
+
+根据[[MK158][满足]] $J(f)(b_1,...,b_z)=J(c_a)\in K'$ 即 $L'(f)(b_1,...,b_z)\in K'$
+
+综上所述，对于任意 $f\in\mathcal{A}\cup D\cup C_K$ 以及 $\left<b_1,...,b_z\right>\subset (K')^z$ 均有 $L'(f)(b_1,...,b_z)\in K'$
+
+结合上述两条可得 $\mathcal{K}'=\left<K',L'\right>$ 是[[MK153][结构]]
+
+********** $\mathcal{K}'\vDash\Theta$ <<MK475>>
+
+根据[[MK473][ $\Theta$ 定义]]可得任意 $\theta\in\Theta$ 是[[MK129][原始表达式]]，根据上一步证明显然 $\mathcal{K}'$ 是 $\mathcal{N}$ 的[[MK282][子结构]]
+
+根据 $\mathcal{N}\vDash \Theta$ 以及[[MK284][特征定理]]可得 $\mathcal{K}'\vDash\Theta$
+
+********* 定义 $\mathcal{M},\mathcal{N},\mathcal{K},\mathcal{K}'$ 在 $\mathcal{L}_\mathcal{A}$ 上的[[MK295][裁剪结构]]<<MK478>>
+
+显然 $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 以及 $\mathcal{L}_{\mathcal{A}\cup D}$ 是 $\mathcal{L}_{\mathcal{A}}$ 的[[MK152][扩充语言]]，则根据[[MK299][定理2]]可得 $\mathcal{M},\mathcal{N},\mathcal{K},\mathcal{K}'$ 在 $\mathcal{L}_\mathcal{A}$
+
+上存在[[MK295][裁剪结构]] $\mathcal{M}_\mathcal{A}=\left<M,I_\mathcal{A}\right>,\mathcal{N}_\mathcal{A}=\left<N,J_\mathcal{A}\right>,\mathcal{K}_\mathcal{A}=\left<K,L_\mathcal{A}\right>,\mathcal{K}'_\mathcal{A}=\left<K',L' _\mathcal{A}\right>$
+
+根据[[MK474][引理2]]可得 $\mathcal{K}_\mathcal{A},\mathcal{K}'_ \mathcal{A}$ 分别是 $\mathcal{M}_\mathcal{A},\mathcal{N}_\mathcal{A}$ 的[[MK282][子结构]]，显然易证 $\mathcal{K}_\mathcal{A}$ 亦是 $(\mathcal{K},c_a)_{a\in K}$ 的[[MK295][裁剪结构]]
+
+********* $\mathcal{K}_\mathcal{A},\mathcal{K}'_ \mathcal{A}$ [[MK274][同构]]
+
+根据[[MK406][常元扩展]]以及 $(\mathcal{K},c_a)_{a\in K}$ 定义可得存在[[~/OneDrive/离散数学/lssx.org::MK181][双射函数]] $e_1:K\to C_K$ 
+
+********** 定义 $e$ 并证明是[[~/OneDrive/离散数学/lssx.org::MK181][双射]]<<MK477>>
+
+根据[[MK476][ $K'$ 定义]]可得对于任意 $c_a\in C_K$ 均有 $J(c_a)\in K'$ 则定义 $e:K\to K'$ 满足对于任意 $a\in K$
+
+有 $e(a)=J(e_1(a))$ 显然根据[[MK476][ $K'$ 定义]]易证 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK179][满射]]。
+
+对于任意 $a\ne b,\{a,b\}\subset K$ 根据[[MK158][满足]]可得 $(\mathcal{K},c_a)_{a\in K}\vDash(\lnot(e_1(a)\hat{=}e_1(b)))$
+
+根据[[MK473][ $\Theta$ 定义]]可得 $(\lnot(e_1(a)\hat{=}e_1(b)))\in\Theta$ ，又根据[[MK475][之前证明]]可得 $\mathcal{K}'\vDash(\lnot(e_1(a)\hat{ =}e_1(b)))$
+
+根据[[MK158][满足]] $L'(e_1(a))\ne L'(e_1(b))$ 根据[[MK476][ $K'$ 定义]]显然 $J(e_1(a))\ne J(e_1(b))$ 即 $e(a)\ne e(b)$
+
+综上所述，对于任意 $a\ne b,\{a,b\}\subset K$ 均有 $e(a)\ne e(b)$ ，故 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK176][单射]]
+
+故可得 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK181][双射]]
+
+********** 证明结论
+
+对于任意[[MK129][原始表达式]] $\phi(x_1,...,x_z)\in\mathcal{L}_\mathcal{A}$ 以及 $\mathcal{K}_\mathcal{A}$ 的[[MK154][赋值]] $v$ 满足 $\mathcal{L}_{\mathcal{A}}$ 下 $\left<\mathcal{K}_\mathcal{A},v\right>\vDash\phi$
+
+则根据[[MK296][定理1]]可得 $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 下有 $\left<(\mathcal{K},c_a)_{a\in K},v\right>\vDash\phi$ ，显然有 $L_K(e_1(v(x_i)))=v(x_i)$
+
+又由于 $\phi$ 是[[MK129][原始表达式]]，故不含[[MK106][量词]]，则任意[[MK107][变元符号]]在 $\phi$ 中均为[[MK140][自由出现]]
+
+则根据[[MK176][替换定理]]以及[[MK169][推论]]可得 $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 下 $(\mathcal{K},c_a)_{a\in K}\vDash\phi\left(\left<x_1,...,x_z\right>,\left<e_1(v(x_1)),...,e_1(v(x_z))\right>\right)$
+
+根据[[MK473][ $\Theta$ 定义]] $\phi\left(\left<x_1,...,x_z\right>,\left<e_1(v(x_1)),...,e_1(v(x_z))\right>\right)\in\Theta$
+
+根据[[MK475][之前证明]] $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 下 $\mathcal{K}'\vDash\phi\left(\left<x_1,...,x_z\right>,\left<e_1(v(x_1)),...,e_1(v(x_z))\right>\right)$
+
+根据上一步 $e$ 的定义显然有 $L'(e_1(v(x_1)))=J(e_1(v(x_1)))=e(v(x_1))$
+
+故同样根据[[MK176][替换定理]]以及[[MK169][推论]] $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 下 $\left<\mathcal{K}',e\cdot v\right>\vDash\phi$ ，即根据[[MK296][定理1]] $\mathcal{L}_{\mathcal{A}}$ 下 $\left<\mathcal{K}'_\mathcal{A},e\cdot v\right>\vDash\phi$
+
+综上所述，对于任意[[MK129][原始表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 以及 $\mathcal{K}_\mathcal{A}$ 的[[MK154][赋值]] $v$ 若有 $\left<\mathcal{K}_\mathcal{A},v\right>\vDash\phi$ 则有 $\left<\mathcal{K}'_\mathcal{A},e\cdot v\right>\vDash\phi$
+
+同理可证 若有 $\left<\mathcal{K}'_\mathcal{A},e\cdot v\right>\vDash\phi$ 则有 $\left<\mathcal{K} _\mathcal{A},v\right>\vDash\phi$ 
+
+即对于任意[[MK129][原始表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 以及 $\mathcal{K}_\mathcal{A}$ 的[[MK154][赋值]] $v$ ， $\left<\mathcal{K}_\mathcal{A},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{K}'_\mathcal{A},e\cdot v\right>\vDash\phi$
+
+结合上一步 $e$ 是[[~/OneDrive/离散数学/lssx.org::MK181][双射]]以及[[MK280][定理2]]可得 $\mathcal{K}_\mathcal{A},\mathcal{K}'_ \mathcal{A}$ [[MK274][同构]]
+
+********* 存在 $\left<a_1,...,a_n\right>\in K^n$ 满足 $\mathcal{M}_\mathcal{A}\vDash(\lnot\phi)[a_1,...,a_n],\mathcal{N}_\mathcal{A}\vDash\phi[e(a_1),...,e(a_n)]$
+
+显然 $\mathcal{L}_{\mathcal{A}\cup D}$ 下有 $\mathcal{M}\vDash(\lnot\phi^*)$ 以及根据[[MK476][ $\mathcal{N}$ 定义]] $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 下有 $\mathcal{N}\vDash\phi^*$
+
+根据[[MK464][ $\phi^*$ 定义]]以及[[MK176][替换定理]]易证 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $\mathcal{M}\vDash(\lnot\phi)[I(d_1),...,I(d_n)]$
+
+以及 $\mathcal{L}_{\mathcal{A}\cup D\cup C_K}$ 下 $\mathcal{N}\vDash\phi[J(d_1),...,J(d_n)]$
+
+又根据[[MK465][ $K$ 定义]]可得 $\mathcal{M}\vDash(\lnot\phi)[L(d_1),...,L(d_n)]$ ，定义 $a_i=L(d_i)$ 故有 $\mathcal{M}\vDash(\lnot\phi)[a_1,...,a_n]$
+
+显然根据上一步 $e_1$ 定义以及[[MK477][ $e$ 定义]]有 $e_1(a_i)=d_i$ ，则进一步易证 $J(d_i)=J(e_1(a_i))=e(a_i)$
+
+故可得 $\mathcal{N}\vDash\phi[e(a_1),...,e(a_n)]$
+
+又根据[[MK296][定理1]]以及[[MK169][推论]]可得 $\mathcal{L}_{\mathcal{A}}$ 下 $\mathcal{M}_\mathcal{A}\vDash(\lnot\phi)[a_1,...,a_n],\mathcal{N}_\mathcal{A}\vDash\phi[e(a_1),...,e(a_n)]$
+
+******** 证明结论
+
+由于 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\cup\Gamma^*\vdash\phi^*$ ，则根据[[MK196][证明]]可得存在满足条件的序列 $\left<\phi_1,...,\phi_m\right>$
+
+根据[[MK479][性质2]]可得 $T\not\vdash\phi^*$ 故易证 $\Gamma^*\cap\{\phi_1,...,\phi_m\}\ne\varnothing$ 则定义 $\{\theta^*_1,...,\theta^*_k\}=\Gamma^*\cap\{\phi_1,...,\phi_m\}$
+
+则[[MK480][同理可证]] $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\vdash\left(\left(\bigwedge_{i=1}^k \theta^*_i\right)\to\phi^*\right)$
+
+又根据[[MK471][性质1]] $\mathcal{L}_\mathcal{A}$ 下 $T\vdash\left(\left(\bigwedge_{i=1}^k \theta^*_i\right)\to\phi^*\right)(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)$ 显然有
+
+\begin{aligned}
+&\left(\left(\bigwedge_{i=1}^k \theta^*_i\right)\to\phi^*\right)(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)\\
+=&\left(\left(\bigwedge_{i=1}^k \theta^*_i(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)\right)\to\phi^*(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)\right)
+\end{aligned}
+
+根据[[MK479][性质2]]的证明易证 $\phi=\phi^*\left(\left<d_1,...,d_n}\right>,\left<x_1,...,x_n\right>\right)$
+
+以及 $\theta^*_i(\left<d_1,...,d_n\right>,\left<x_1,...,x_n\right>)=\theta_i\in\Gamma$ 故有 $T\vdash\left(\left(\bigwedge_{i=1}^k \theta_i\right)\to\phi\right)$
+
+由于 $\theta_i\in\Gamma$ 故根据[[MK463][ $\Gamma$ 定义]]可得 $T\vdash\left(\phi\to\theta_i\right)$ 根据[[MK211][演绎定理]] $T\cup\{\phi\}\vdash\theta_i$
+
+根据[[MK201][逻辑与]]易证 $T\cup\{\phi\}\vdash\left(\bigwedge_{i=1}^k \theta_i\right)$ 又根据[[MK211][演绎定理]] $T\vdash\left(\phi\to\left(\bigwedge_{i=1}^k \theta_i\right)\right)$
+
+即在 $\mathcal{L}_\mathcal{A}$ 下有 $T\vdash\left(\left(\bigwedge_{i=1}^k \theta_i\right)\to\phi\right)$ 以及 $T\vdash\left(\phi\to\left(\bigwedge_{i=1}^k \theta_i\right)\right)$
+
+则根据[[MK201][逻辑与]]以及[[MK396][定义]]可得 $T\vdash\left(\phi\leftrightarrow\left(\bigwedge_{i=1}^k \theta_i\right)\right)$
+
+又根据[[MK463][ $\Gamma$ 定义]]可得 $\theta_i$ 不含[[MK106][量词]]，则显然 $\left(\bigwedge_{i=1}^k \theta_i\right)$ 亦不含[[MK106][量词]]
+
 * 一阶逻辑例子
 
 ** 无端点线性稠密序
@@ -12192,7 +13413,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 若满足以下非逻辑公理，则为 *线性序*
 
-（1） $\forall x_1(\lnot p_<(x_1,x_1))$
+（1） $(\forall x_1(\lnot p_<(x_1,x_1)))$
 
 （2） $(\forall x_1(\forall x_2(\forall x_3((p_<(x_1,x_2)\land p_<(x_2,x_3))\to p_<(x_1,x_3)))))$
 
@@ -12210,13 +13431,13 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 *** [[MK220][一阶理论]]<<MK356>>
 
-定义[[MK355][公理]]集合为 $T_{\text{odl}}$ ，由于 $T_{\text{odl}}$ 均皆为[[MK144][语句]]，进一步定义[[MK220][一阶理论]] $\mathcal{T}_{\text{tol}}=\left<\mathcal{L}_{\mathcal{A}_<},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_<},T_{\text{odl}},T^*_{\text{odl}}\right>$ 
+定义[[MK355][公理]]集合为 $T_{\text{odl}}$ ，由于 $T_{\text{odl}}$ 均皆为[[MK144][语句]]，进一步定义[[MK220][一阶理论]] $\mathcal{T}_{\text{odl}}=\left<\mathcal{L}_{\mathcal{A}_<},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_<},T_{\text{odl}},T^*_{\text{odl}}\right>$ 
 
 *** 引理
 
 **** 引理1<<MK357>>
 
-[[MK354][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,\{<p_<,\lessdot>\}>$ 是[[MK355][无端点线性稠密序]]
+[[MK354][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=\left<A,\{\left<p_<,\lessdot\right>\}\right>$ 是[[MK355][无端点线性稠密序]]
 
 则对于任意 $F\subset A$ 为[[~/OneDrive/离散数学/lssx.org::MK82][有限集]]，存在 $a\in F$ 满足对于任意 $x\in F$ 且 $x\ne a$ 均有 $x\lessdot a$
 
@@ -12252,7 +13473,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 ***** 推论<<MK358>>
 
-[[MK354][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,\{<p_<,\lessdot>\}>$ 是[[MK355][线性稠密序]]
+[[MK354][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=\left<A,\{\left<p_<,\lessdot\right>\}\right>$ 是[[MK355][线性稠密序]]
 
 则对于任意 $F\subset A$ 为[[~/OneDrive/离散数学/lssx.org::MK82][有限集]]，存在 $a\in F$ 满足对于任意 $x\in F$ 且 $x\ne a$  均有 $a\lessdot x$
 
@@ -12262,15 +13483,15 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 **** 引理2<<MK359>>
 
-[[MK354][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<A,\{<p_<,\lessdot>\}>$ 是[[MK355][线性序]] $\mathcal{N}=<B,\{<p_<,\prec>\}>$ 是[[MK355][线性稠密序]]
+[[MK354][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=\left<A,\{\left<p_<,\lessdot\right>\}\right>$ 是[[MK355][线性序]] $\mathcal{N}=\left<B,\{\left<p_<,\prec\right>\}\right>$ 是[[MK355][线性稠密序]]
 
-若 $F\subset A,E\subset B$ 均为[[~/OneDrive/离散数学/lssx.org::MK82][有限集]]，其定义[[MK274][子结构]]为 $\mathcal{F}=<F,\{<p_<,\lessdot\cap F^2>\}>,\mathcal{E}=<E,\{<p_<,\prec\cap E^2>\}>$
+若 $F\subset A,E\subset B$ 均为[[~/OneDrive/离散数学/lssx.org::MK82][有限集]]，其定义[[MK274][子结构]]为 $\mathcal{F}=\left<F,\{\left<p_<,\lessdot\cap F^2\right>\}\right>,\mathcal{E}=\left<E,\{\left<p_<,\prec\cap E^2\right>\}\right>$
 
 且存在 $h:F\to E$ 是 $\mathcal{F}$ 到 $\mathcal{E}$ 的[[MK274][同构映射]]，则对于任意 $a\in A-F$ 存在 $b\in B-E$
 
-使得 $h'=h\cup<a,b>$ 是[[MK274][子结构]] $\mathcal{F}'=<F\cup\{a\},\{<p_<,\lessdot\cap(F\cup\{a\})^2>\}>$
+使得 $h'=h\cup\{\left<a,b\right>\}$ 是[[MK274][子结构]] $\mathcal{F}' =\left<F\cup\{a\},\{\left<p_<,\lessdot\cap(F\cup\{a\})^2\right>\}\right>$
 
-到 $\mathcal{E}'=<E\cup\{b\},\{<p_<,\prec\cap(E\cup\{b\})^2>\}>$ 的[[MK274][同构映射]]
+到 $\mathcal{E}'=\left<E\cup\{b\},\{\left<p_<,\prec\cap(E\cup\{b\})^2\right>\}\right>$ 的[[MK274][同构映射]]
 
 ***** 证明
 
@@ -12382,7 +13603,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 **** 引理4<<MK361>>
 
-[[MK354][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=<M,\{<p_<,\prec>\}>,\mathcal{N}=<N,\{<p_<,\prec>\}>$ 两个[[MK153][结构]]是[[MK355][无端点线性稠密序]]
+[[MK354][语言]] $\mathcal{L}_{\mathcal{A}_<}$ 存在 $\mathcal{M}=\left<M,\{\left<p_<,\prec\right>\}\right>,\mathcal{N}=\left<N,\{\left<p_<,\prec\right>\}\right>$ 两个[[MK153][结构]]是[[MK355][无端点线性稠密序]]
 
 且 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK287][同质子结构]]，且 $A\in\text{Def}_1(\mathcal{N},M)$ 且 $A\cap M=\bigcup_{i=1}^n(a_i,b_i)_\mathcal{M}$
 
@@ -12465,6 +13686,179 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 综上所述，对于任意 $X\subset\mathbb{Q}$ 满足 $|X|<|\mathbb{Q}|$ 则对于任意[[MK322][ $1$ 元类型]] $\Gamma(x_1)\supset T_X$ 均有 $\mathcal{M}_X\vDash\Gamma$
 
 即 $\mathcal{M}$ 是[[MK394][饱和模型]]
+
+**** 引理6
+
+[[MK354][无端点线性稠密序语言]] $\mathcal{L}_{\mathcal{A}_<}$ 上的[[MK153][结构]] $\mathcal{M}=\left<\mathbb{R},\{\left<p_<,<\right>\}\right>$ 即论域为 $\mathbb{R}$ 且 $p_<$ 对应为有理数的小于
+
+则 $\mathcal{M}$ 在 $\mathcal{L}_{\mathcal{A}_<}$ 上 *不是* [[MK394][饱和模型]]
+
+***** 证明
+
+定义 $X=\mathbb{N}$ 显然有 $|X|<|\mathbb{R}|$ 取 $C_X=\left\{c_n\big|n\in\mathbb{N}\right\}$ [[MK406][常元扩展]] 定义 $G=\left\{p_<(c_n,x_1)\big|c_n\in C_X\right\}$
+
+显然 $G\subset\mathcal{L}_{\mathcal{A}_{C_X}}$ 任取 $G\cup\text{Th}((\mathcal{M},c_x)_{x\in X})$ 的[[~/OneDrive/离散数学/lssx.org::MK82][有限]]子集 $K$ 定义 $K\cap G=\{p_<(c_{n_1},x_1),...,p_<(c_{n_m},x_1)\}$
+
+定义 $(\mathcal{M},c_x)_{x\in X}$ 的[[MK154][赋值]] $v$ 满足 $v(x_1)=\max(n_1,...,n_m)+1$ 则显然有 $\left<(\mathcal{M},c_x)_{x\in X},v\right>\vDash K\cap G$
+
+又对于任意 $\theta\in K-G$ 根据定义有 $(\mathcal{M},c_x)_{x\in X}\vDash\theta$ 根据[[MK169][推论]]有 $\left<(\mathcal{M},c_x)_{x\in X},v\right>\vDash\theta$
+
+则有 $\left<(\mathcal{M},c_x)_{x\in X},v\right>\vDash K$ ，根据[[MK255][完备性]]可得 $K$ [[MK222][一致]]
+
+又根据 $G'$ 任意性以及[[MK271][紧致性]]可得 $G\cup\text{Th}((\mathcal{M},c_x)_{x\in X})$ [[MK222][一致]]
+
+根据[[MK246][覆盖定理]]可得存在 $\mathcal{L}_{\mathcal{A}_{C_X}}$ 的[[MK322][ $1$ 元类型]] $\Gamma\supsetG\cup\text{Th}((\mathcal{M},c_x)_{x\in X})$
+
+对于任意 $(\mathcal{M},c_x)_{x\in X}$ 的[[MK154][赋值]] $v$ 根据[[~/OneDrive/实变函数/SBHS.org::MK19][阿基米德性质]]可得存在 $n^*\in\mathbb{N}$ 满足 $n^*>v(x_1)$
+
+即 $\left<(\mathcal{M},c_x)_{x\in X},v\right>\not\vDash p_<(c_{n^*},x_1)$ ，显然 $p_<(c_{n^*},x_1)\in G$
+
+故对于任意 $(\mathcal{M},c_x)_{x\in X}$ 的[[MK154][赋值]] $v$ 均有 $\left<(\mathcal{M},c_x)_{x\in X},v\right>\not\vDash G$ 即 $\left<(\mathcal{M},c_x)_{x\in X},v\right>\not\vDash\Gamma$
+
+即 $(\mathcal{M},c_x)_{x\in X}$ 不[[MK323][实现]] $\Gamma$
+
+**** 引理7（三歧性）<<MK447>>
+
+[[MK356][一阶理论]] $\mathcal{T}_{\text{odl}}=\left<\mathcal{L}_{\mathcal{A}_<},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_<},T_{\text{odl}},T^*_{\text{odl}}\right>$ 有
+
+\begin{aligned}
+T_\text{odl}&\vdash(\forall x_1(\forall x_2((x_1\hat{=}x_2)\lor p_<(x_1,x_2)\lor p_<(x_2,x_1))))\\
+T_\text{odl}&\vdash(\forall x_1(\forall x_2((x_1\hat{=}x_2)\leftrightarrow((\lnot p_<(x_1,x_2))\land (\lnot p_<(x_2,x_1))))))\\
+T_\text{odl}&\vdash(\forall x_1(\forall x_2(p_<(x_1,x_2)\leftrightarrow((\lnot (x_1\hat{=}x_2))\land (\lnot p_<(x_2,x_1))))))\\
+T_\text{odl}&\vdash(\forall x_1(\forall x_2(p_<(x_2,x_1)\leftrightarrow((\lnot p_<(x_1,x_2))\land (\lnot (x_1\hat{=}x_2))))))\\
+\end{aligned}
+
+***** 证明
+
+****** 证明第一个
+
+对于任意 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]] $\mathcal{M}$ 根据[[MK355][公理（3）]]以及[[MK169][推论]]
+
+可得 $\mathcal{M}\vDash(\forall x_1(\forall x_2((\lnot(x_1\hat{=}x_2))\to(p_<(x_1,x_2)\lor p_<(x_2,x_1)))))$
+
+则对于任意 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash((\lnot(x_1\hat{=}x_2))\to(p_<(x_1,x_2)\lor p_<(x_2,x_1)))$
+
+故根据[[MK158][满足]]若 $v(x_1)=v(x_2)$ 则 $\left<\mathcal{M},v\right>\vDash(x_1\hat{=}x_2)$ 否则 $\left<\mathcal{M},v\right>\vDash(p_<(x_1,x_2)\lor p_<(x_2,x_1))$
+
+即对于任意 $v$ 均有 $\left<\mathcal{M},v\right>\vDash((x_1\hat{=}x_2)\lor p_<(x_1,x_2)\lor p_<(x_2,x_1))$
+
+根据[[MK169][推论]] $\mathcal{M}\vDash(\forall x_1(\forall x_2((x_1\hat{=}x_2)\lor p_<(x_1,x_2)\lor p_<(x_2,x_1))))$
+
+综上所述，对于任意 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]] $\mathcal{M}$ 均有 $\mathcal{M}\vDash(\forall x_1(\forall x_2((x_1\hat{=}x_2)\lor p_<(x_1,x_2)\lor p_<(x_2,x_1))))$
+
+根据[[MK257][完备性]] $T_\text{odl}&\vdash(\forall x_1(\forall x_2((x_1\hat{=}x_2)\lor p_<(x_1,x_2)\lor p_<(x_2,x_1))))$
+
+****** 证明其他
+
+仅证 $T_\text{odl}&\vdash(\forall x_1(\forall x_2(p_<(x_1,x_2)\leftrightarrow((\lnot (x_1\hat{=}x_2))\land (\lnot p_<(x_2,x_1))))))$ 其余同理可证
+
+对于任意给定 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]] $\mathcal{M}$ ，根据[[MK169][推论]]可得 $\mathcal{M}\vdash T_\text{odl}$ 。任取 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 根据以下证明
+
+易证 $\left<\mathcal{M},v\right>\vDash(p_<(x_1,x_2)\leftrightarrow((\lnot (x_1\hat{=}x_2))\land (\lnot p_<(x_2,x_1))))$
+
+又根据 $v$ 的任意性可得 $\mathcal{M}\vDash(\forall x_1(\forall x_2(p_<(x_1,x_2)\leftrightarrow((\lnot (x_1\hat{=}x_2))\land (\lnot p_<(x_2,x_1))))))$
+
+根据[[MK257][完备性]] $T_\text{odl}&\vdash(\forall x_1(\forall x_2(p_<(x_1,x_2)\leftrightarrow((\lnot (x_1\hat{=}x_2))\land (\lnot p_<(x_2,x_1))))))$ 
+
+******* 充分
+
+若满足 $\left<\mathcal{M},v\right>\vDash p_<(x_1,x_2)$ ，则根据以下证明可得 $\left<\mathcal{M},v\right>\vDash(\lnot(x_1\hat{ =}x_2))$ 且 $\left<\mathcal{M},v\right>\vDash(\lnot p_<(x_2,x_1))$
+
+即 $\left<\mathcal{M},v\right>\vDash((\lnot(x_1\hat{ =}x_2))\land(\lnot p_<(x_2,x_1)))$
+
+******** 假设 $\left<\mathcal{M},v\right>\vDash(x_1\hat{=}x_2)$
+
+则有 $v(x_1)=v(x_2)$ 根据[[MK176][替换定理]]可得 $\left<\mathcal{M},v\right>\vDash p_<(x_1,x_1)$
+
+根据[[MK355][公理（1）]]、[[MK197][特化公理]]以及[[MK210][导出引理]]易证 $T\vdash(\lnot p_<(x_1,x_1))$
+
+由于 $\mathcal{M}$ 是 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]]，则根据[[MK257][完备性]]可得 $\left<\mathcal{M},v\right>\vDash(\lnot p_<(x_1,x_1))$ 矛盾，故假设不成立
+
+故有 $\left<\mathcal{M},v\right>\not\vDash(x_1\hat{=}x_2)$ 即 $\left<\mathcal{M},v\right>\vDash(\lnot(x_1\hat{ =}x_2))$
+
+******** 假设 $\left<\mathcal{M},v\right>\vDash p_<(x_2,x_1)$
+
+根据[[MK355][公理（2）]]、[[MK197][特化公理]]、[[MK210][导出引理]]以及[[MK257][完备性]]结合 $\left<\mathcal{M},v\right>\vDash p_<(x_1,x_2)$ 易证 $\left<\mathcal{M},v\right>\vDash p_<(x_1,x_1)$
+
+则与上一步同理可推出矛盾，故假设不成立，则易证 $\left<\mathcal{M},v\right>\vDash(\lnot p_<(x_2,x_1))$
+
+******* 必要
+
+若满足 $\left<\mathcal{M},v\right>\vDash((\lnot(x_1\hat{ =}x_2))\land(\lnot p_<(x_2,x_1)))$ 根据[[MK158][满足]]可得 $\left<\mathcal{M},v\right>\not\vDash(x_1\hat{ =}x_2)$ 以及 $\left<\mathcal{M},v\right>\not\vDash p_<(x_1,x_2)$
+
+则根据本引理第一个公式以及[[MK257][完备性]] $\left<\mathcal{M},v\right>\vDash((x_1\hat{=}x_2)\lor p_<(x_1,x_2)\lor p_<(x_2,x_1))$
+
+结合[[MK171][逻辑或]]可得 $\left<\mathcal{M},v\right>\vDash p_<(x_1,x_2)$
+
+**** 引理8<<MK456>>
+
+[[MK220][一阶理论]] $\mathcal{T}_{\text{odl}}=\left<\mathcal{L}_{\mathcal{A}_<},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_<},T_{\text{odl}},T^*_{\text{odl}}\right>$ 的于任意[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$
+
+对于任意一组[[~/OneDrive/离散数学/lssx.org::MK82][有限]]的[[MK107][变元符号]] $\{x_{a_1},...,x_{a_n}\}$ 均可排序 $\left<x_{a'_1},...,x_{a'_n}\right>$ 满足：
+
+（1） $\{a_1,...,a_n\}=\{a'_1,...,a'_n\}$
+
+（2） 任意 $1\leq i<j\leq n$ 均有 $\left<\mathcal{M},v\right>\vDash((x_{a'_i}\hat{=}x_{a'_j})\lor p_<(x_{a'_i},x_{a'_j}))$
+
+***** 证明
+
+根据以下证明以及数学归纳法可证
+
+****** $n=1$
+
+则显然 $\left<x_{a_1}\right>$ 是满足条件的排序
+
+****** 归纳假设
+
+假设任意 $1\leq n<N$ 均存在 $\left<x_{a'_1},...,x_{a'_n}\right>$ 满足条件
+
+****** $n=N$
+
+根据归纳假设 $\{x_{a_1},...,x_{a_{n-1}}\}$ 有满足条件的排序 $\left<x_{a'_1},...,x_{a'_{n-1}}\right>$
+
+根据[[MK447][三歧性]]以及[[MK197][特化公理]]易证对于任意 $x_{a'_i}$
+
+有 $\left<\mathcal{M},v\right>\vDash(x_{a'_i}\hat{=}x_{a_n}),\left<\mathcal{M},v\right>\vDash p_<(x_{a'_i},x_{a_n}),\left<\mathcal{M},v\right>\vDash p_<(x_{a_n},x_{a'_i})$
+
+有且仅有一个成立，则：
+
+若对于任意 $x_{a'_i}$ 均有 $\left<\mathcal{M},v\right>\vDash p_<(x_{a_n},x_{a'_i})$ 则定义排序为 $\left<x_{a_n},x_{a'_1},...,x_{a'_{n-1}}\right>$
+
+若对于任意 $x_{a'_i}$ 均有 $\left<\mathcal{M},v\right>\vDash p_<(x_{a'_i},x_{a_n})$ 则定义排序为 $\left<x_{a'_1},...,x_{a'_{n-1}},x_{a_n}\right>$
+
+否则，则取最大 $i$ 满足 $\left<\mathcal{M},v\right>\vDash p_<(x_{a'_i},x_{a_n})$ 成立并定义排序为 $\left<x_{a'_1},...,x_{a'_i},x_{a_n},x_{a'_{i+1}},...,x_{a'_{n-1}}\right>$
+
+显然对于任意 $x_{a'_j}$ 排在 $x_{a_n}$ 左边必有 $\left<\mathcal{M},v\right>\vDash p_<(x_{a'_i},x_{a_n})$
+
+根据归纳假设 $\left<\mathcal{M},v\right>\vDash((x_{a'_j}\hat{=}x_{a'_i})\lor p_<(x_{a'_j},x_{a'_i}))$ 根据[[MK457][引理9]]可得 $\left<\mathcal{M},v\right>\vDash p_<(x_{a'_j},x_{a_n})$
+
+对于任意 $x_{a'_j}$ 排在 $x_{a_n}$ 右边有 $\left<\mathcal{M},v\right>\not\vDash p_<(x_{a_n},x_{a'_{i+1}})$
+
+根据[[MK447][三歧性]]有 $\left<\mathcal{M},v\right>\vDash((x_{a_n}\hat{=}x_{a'_i})\lor p_<(x_{a_n},x_{a'_i}))$
+
+根据归纳假设亦有 $\left<\mathcal{M},v\right>\vDash((x_{a'_i}\hat{=}x_{a'_j})\lor p_<(x_{a'_i},x_{a'_j}))$ ，则根据[[MK457][引理9]]易证 $\left<\mathcal{M},v\right>\vDash p_<(x_{a_n},x_{a'_j})$
+
+即存在满足条件的排序
+
+**** 引理9<<MK457>>
+
+[[MK220][一阶理论]] $\mathcal{T}_{\text{odl}}=\left<\mathcal{L}_{\mathcal{A}_<},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_<},T_{\text{odl}},T^*_{\text{odl}}\right>$ 的于任意[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$
+
+（1） 若有 $\left<\mathcal{M},v\right>\vDash((x_i\hat{=}x_j)\lor p_<(x_i,x_j))$ 以及 $\left<\mathcal{M},v\right>\vDash p_<(x_j,x_k)$ 则有 $\left<\mathcal{M},v\right>\vDash p_<(x_i,x_k)$
+
+（2） 若有 $\left<\mathcal{M},v\right>\vDash((x_i\hat{=}x_j)\lor p_<(x_i,x_j))$ 以及 $\left<\mathcal{M},v\right>\vDash p_<(x_k,x_i)$ 则有 $\left<\mathcal{M},v\right>\vDash p_<(x_k,x_j)$
+
+***** 证明
+
+仅证（1），同理可证（2）
+
+根据[[MK171][逻辑或]]可得 $\left<\mathcal{M},v\right>\vDash(x_i\hat{=}x_j)$ 或者 $\left<\mathcal{M},v\right>\vDash p_<(x_i,x_j)$ 
+ 
+若 $\left<\mathcal{M},v\right>\vDash p_<(x_i,x_j)$ ，则根据[[MK355][公理（2）]]、[[MK197][特化公理]]以及[[MK257][完备性]]易证 $\left<\mathcal{M},v\right>\vDash p_<(x_i,x_k)$
+
+若 $\left<\mathcal{M},v\right>\vDash(x_i\hat{=}x_j)$ ，则根据[[MK158][满足]]有 $v(x_i)=v(x_j)$ 则根据[[MK176][替换定理]]
+
+可得 $\left<\mathcal{M},v\right>\vDash p_<(x_i,x_k)=p_<(x_j,x_k)(\left<x_j\right>,\left<x_i\right>)$
 
 *** 定理
 
@@ -12806,7 +14200,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 定义如下表达式：
 
-（1） $\phi_0=p_<(x_1,c_{a_1}),\phi_1=p_<(x_1,c_{a_1})$
+（1） $\phi_0=p_<(x_1,c_{a_1}),\phi_1=p_<(c_{a_m},x_1)$
 
 （2） $\phi_i=(p_<(a_{i-1},x_1)\land p_<(x_1,a_{i}))$ 其中 $2\leq i\leq m$
 
@@ -12948,6 +14342,299 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 又根据[[MK159][之前证明]]可得 $\mathcal{T}_X$ 有且仅有 $2m+1$ 个[[MK322][ $1$ 元类型]]
 
+**** [[MK397][适合量词消去]]
+
+[[MK220][一阶理论]] $\mathcal{T}_{\text{odl}}=\left<\mathcal{L}_{\mathcal{A}_<},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_<},T_{\text{odl}},T^*_{\text{odl}}\right>$ [[MK397][适合量词消去]]
+
+***** 证明
+
+****** 存在等价范式<<MK453>>
+
+对于任意不含[[MK106][量词]]的 $\phi\in\mathcal{L}_{\mathcal{A}_<}$ 根据下列证明可得存在 $\varphi$ 满足
+
+（1） $\varphi=\left(\bigvee_{i=1}^p\theta_i\right)$ 其中 $\theta_i=\left(\bigwedge_{j=2}^{u_i}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u_i+1}^{q_i} p_<(x_{k_j},x_{k_{j+1}})\right)$
+
+（2） $T_\text{odl}\vdash(\phi\leftrightarrow\varphi)$
+
+（3） 不存在 $x_\alpha,x_\beta$ 使得[[MK139][子表达式]] $(x_\alpha\hat{=}x_\beta),(x_\beta\hat{=}x_\alpha),p_<(x_\alpha,x_\beta),p_<(x_\beta,x_\alpha)$ 在任意 $\theta_i$ 中出现 $1$ 次以上
+
+******* $\phi$ [[MK189][不可满足]]<<MK448>>
+
+则对于任意 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\not\vDash\phi$ 根据[[MK355][公理（1）]]以及[[MK197][特化公理]]
+
+可得 $T\vdash((\forall x_1(\lnot p_<(x_1,x_1)))\to(\lnot p_<(x_0,x_0)))$ 根据[[MK210][导出引理]] $T\vdash(\lnot p_<(x_0,x_0))$
+
+根据[[MK257][完备性]]可得 $\left<\mathcal{M},v\right>\vDash(\lnot p_<(x_0,x_0))$ 根据[[MK158][满足]] $\left<\mathcal{M},v\right>\not\vDash p_<(x_0,x_0)$
+
+同理易证 $\left<\mathcal{M},v\right>\vDash((\phi\to p_<(x_0,x_0))\land(p_<(x_0,x_0)\to\phi))=(\phi\leftrightarrow p_<(x_0,x_0))$
+
+综上所述，对于任意 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow p_<(x_0,x_0))$
+
+根据[[MK257][完备性]]可得 $T_\text{odl}\vdash(\phi\leftrightarrow p_<(x_0,x_0))$
+
+******* $\phi$ [[MK193][普遍真实]]
+
+则对于任意 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash\phi$ 根据[[MK197][恒等律]]可得 $T\vdash(x_0\hat{=}x_0)$
+
+根据[[MK257][完备性]]可得 $\left<\mathcal{M},v\right>\vDash(x_0\hat{=}x_0)$ 根据[[MK158][满足]] $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow(x_0\hat{ =}x_0))$
+
+综上所述，对于任意则对于任意 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow(x_0\hat{ =}x_0))$
+
+综上所述 $T_\text{odl}\vdash(\phi\leftrightarrow(x_0\hat{ =}x_0))$
+
+******* $\phi$ [[MK189][可满足]]
+
+定义 $z(\phi)$ 为 $\phi$ 中去除所有[[MK117][项]]后 $($ 和 $)$ 的对数，根据以下证明， $|\phi|<\infty$ 以及数学归纳法可证
+
+任意不含[[MK106][量词]]的 $\phi\in\mathcal{L}_{\mathcal{A}_<}$ 即不是[[MK189][不可满足]]又不是[[MK193][普遍真实]]存在 $\varphi$ 满足：
+
+（1） $\varphi=\left(\bigvee_{i=1}^p\theta_i\right)$ 其中 $\theta_i=\left(\bigwedge_{j=2}^{u_i}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u_i+1}^{q_i} p_<(x_{k_j},x_{k_{j+1}})\right)$
+
+（2） $T_\text{odl}\vdash(\phi\leftrightarrow\varphi)$
+
+（3） 不存在 $x_\alpha,x_\beta$ 使得[[MK139][子表达式]] $(x_\alpha\hat{=}x_\beta),(x_\beta\hat{=}x_\alpha),p_<(x_\alpha,x_\beta),p_<(x_\beta,x_\alpha)$ 在任意 $\theta_i$ 中出现 $1$ 次以上
+
+******** $z(\phi)=1$
+
+根据[[MK119][项可读性]]可得任意[[MK117][项]] $\tau$ 有且仅有 $\tau=x_i,\tau=c_i,\tau=f(\tai_1,...,\tau_k)$ 三种形式
+
+由于 $\mathcal{A}_<$ 不含[[M108][常元符号]]和[[MK109][函数符号]]，故仅有可能 $\tau=x_i$ 且显然均为[[MK189][可满足]]
+
+又根据[[MK137][表达式可读性]]可得此时有且仅有以下情况
+
+********* $\phi=(x_i\hat{=}x_j)$
+
+若 $i=j$ 则根据[[MK197][恒等律]] $T\vdash\phi$ 根据[[MK257][完备性]] $\phi$ [[MK193][普遍真实]]，与假设不符。故必有 $i\ne j$
+
+此时根据[[MK197][自蕴含]]易证 $T\vdash(\phi\leftrightarrow (x_i\hat{=}x_j))$
+
+********* $\phi=p_<(x_i,x_j)$
+
+若 $i=j$ 则 $\phi=p_<(x_i,x_i)$ 根据[[MK355][公理（1）]]以及[[MK197][特化公理]] $T_\text{odl}\vdash(\lnot p_<(x_i,x_i))$
+
+根据[[MK257][完备性]] $\phi$ [[MK189][不可满足]]，故矛盾。故必有 $i\ne j$
+
+此时根据[[MK197][自蕴含]]易证 $T\vdash(\phi\leftrightarrow p_<(x_i,x_j))$
+
+******** 归纳假设
+
+任意不含[[MK106][量词]]的 $\phi\in\mathcal{L}_{\mathcal{A}_<}$ 即不是[[MK189][不可满足]]又不是[[MK193][普遍真实]]，且 $1\leq z(\phi)<n$ 均存在 $\varphi$ 满足：
+
+（1） $\varphi=\left(\bigvee_{i=1}^p\theta_i\right)$ 其中 $\theta_i=\left(\bigwedge_{j=2}^{u_i}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u_i+1}^{q_i} p_<(x_{k_j},x_{k_{j+1}})\right)$
+
+（2） $T_\text{odl}\vdash(\phi\leftrightarrow\varphi)$
+
+（3） 不存在 $x_\alpha,x_\beta$ 使得[[MK139][子表达式]] $(x_\alpha\hat{=}x_\beta),(x_\beta\hat{=}x_\alpha),p_<(x_\alpha,x_\beta),p_<(x_\beta,x_\alpha)$
+
+     在任意 $\theta_i$ 中出现 $1$ 次以上
+
+******** $z(\phi)=n$
+
+根据[[MK137][可读性]]可得不含[[MK106][量词]]的 $\phi\in\mathcal{L}_{\mathcal{A}_<}$ 有且仅有以下两种形式
+
+********* $\phi=(\lnot\psi)$
+
+显然 $z(\psi)<n$ 若 $\psi$ [[MK189][不可满足]]，则 $\varphi=p_<(x_0,x_0)$ ，若 $\psi$ [[MK193][普遍真实]]，则 $\varphi=(x_0\hat{=}x_0)$ 
+
+若均不是，根据归纳假设可得存在满足条件的 $\psi'=\left(\bigvee_{i=1}^{p'}\left(\bigwedge_{j=2}^{u'_i}(x_{k_{j-1}}\hat{ =}x_{k_{j}})\land\bigwedge_{j=u'_i+1}^{q'_i} p_<(x_{k_j},x_{k_{j+1}})\right)\right)$ 
+
+对于任意 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 根据[[MK186][德摩根律]]、[[MK447][三歧性]]、[[MK197][特化公理]]以及[[MK257][完备性]]有：
+
+\begin{aligned}
+&\left<\mathcal{M},v\right>\vDash\left(\lnot\left(\bigvee_{i=1}^{p'}\left(\bigwedge_{j=2}^{u'_i}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u'_i+1}^{q'_i} p_<(x_{k_j},x_{k_{j+1}})\right)\right)\right)\\
+\Leftrightarrow&\left<\mathcal{M},v\right>\vDash\left(\bigwedge_{i=1}^{p'}\left(\lnot\left(\bigwedge_{j=2}^{u'_i}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u'_i+1}^{q'_i} p_<(x_{k_j},x_{k_{j+1}})\right)\right)\right)\\
+\Leftrightarrow&\left<\mathcal{M},v\right>\vDash\left(\bigwedge_{i=1}^{p'}\left(\bigvee_{j=2}^{u'_i}(\lnot(x_{k_{j-1}}\hat{=}x_{k_{j}}))\lor\bigvee_{j=u'_i+1}^{q'_i} (\lnot p_<(x_{k_j},x_{k_{j+1}}))\right)\right)\\
+\Leftrightarrow&\left<\mathcal{M},v\right>\vDash\left(\bigwedge_{i=1}^{p'}\left(\bigvee_{j=2}^{u'_i}(p_<(x_{k_{j-1}},x_{k_{j}})\lor p_<(x_{k_{j-1}},x_{k_{j}}))\lor\bigvee_{j=u'_i+1}^{q'_i} ((x_{k_j}\hat{=}x_{k_{j+1}})\lor p_<(x_{k_{j+1}},x_{k_{j}}))\right)\right)\\
+
+\end{aligned}
+
+又根据[[MK451][与/或交换]]以及[[MK452][与/或分配]]可从上试中整理出 $\varphi'$
+
+满足 $\varphi'=\left(\bigvee_{i=1}^p\theta'_i\right)$ 其中 $\theta'_i=\left(\bigwedge_{j=2}^{u_i}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u_i+1}^{q_i} p_<(x_{k_j},x_{k_{j+1}})\right)$
+
+即有 $\left<\mathcal{M},v\right>\vDash(\lnot\psi')$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\varphi'$ 根据[[MK449][引理1]]可得 $T_\text{odl}\vdash((\lnot\psi')\leftrightarrow\varphi')$
+
+根据[[MK392][等价替换]]以及 $T_\text{odl}\vdash(\phi\leftrightarrow(\lnot\psi'))$ ，同理可得 $T_\text{odl}\vdash(\phi\leftrightarrow\varphi')$
+
+对于任意 $\theta'_i$ 存在任意 $(x _\alpha\hat{=}x _\beta),(x _\beta\hat{=}x _\alpha),p_<(x _\alpha,x _\beta),p_<(x _\beta,x _\alpha)$ 出现 $1$ 次以上
+
+根据[[MK451][与交换]]、[[MK454][与吸收]]以及[[MK449][引理1]]易证存在 $\theta_i$ 满足上述[[MK139][子表达式]]仅出现 $1$ 次且有 $T\vdash(\theta'_i\leftrightarrow\theta_i)$
+
+否则 $\theta_i=\theta'_i$ ，定义 $\varphi=\left(\bigvee_{i=1}^p\theta_i\right)$ ，根据[[MK392][等价替换]]易证 $T\vdash(\varphi'\leftrightarrow\varphi)$ 同理可证 $T _\text{odl}\vdash(\phi\leftrightarrow\varphi)$
+
+********* $\phi=(\psi_1\to\psi_2)$
+
+根据[[MK158][满足]]、[[MK171][逻辑或]]以及[[MK449][引理1]]易证 $T_\text{odl}\vdash((\psi_1\to\psi_2)\leftrightarrow((\lnot\psi_1)\lor\psi_2))$
+
+显然 $z(\psi_1)<n,z(\psi_2)<n$ 则根据上一步证明可得存在 $\varphi_1$ 满足：
+
+（1） $\varphi_1=\left(\bigvee_{i=1}^{p_1}\theta_{i,1}\right)$ 其中 $\theta_{i,1}=\left(\bigwedge_{j=2}^{u_{i,1}}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u_{i,1}+1}^{q_{i,1}} p_<(x_{k_j},x_{k_{j+1}})\right)$
+
+（2） $T_\text{odl}\vdash((\lnot\psi_1)\leftrightarrow\varphi_1)$
+
+（3） 不存在 $x_\alpha,x_\beta$ 使得[[MK139][子表达式]] $(x_\alpha\hat{=}x_\beta),(x_\beta\hat{=}x_\alpha),p_<(x_\alpha,x_\beta),p_<(x_\beta,x_\alpha)$
+
+     在任意 $\theta_{i,1}$ 中出现 $1$ 次以上
+
+
+若 $\psi_2$ [[MK189][不可满足]]，则 $\varphi_2=p_<(x_0,x_0)$ ，若 $\psi_2$ [[MK193][普遍真实]]，则 $\varphi_2=(x_0\hat{=}x_0)$ 
+
+若均不是，根据归纳假设可得存在 $\varphi_2$ 满足：
+
+（1） $\varphi_2=\left(\bigvee_{i=2}^{p_1}\theta_{i,2}\right)$ 其中 $\theta_{i,1}=\left(\bigwedge_{j=2}^{u_{i,2}}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u_{i,2}+1}^{q_{i,2}} p_<(x_{k_j},x_{k_{j+1}})\right)$
+
+（2） $T_\text{odl}\vdash(\psi_2\leftrightarrow\varphi_2)$
+
+（3） 不存在 $x_\alpha,x_\beta$ 使得[[MK139][子表达式]] $(x_\alpha\hat{=}x_\beta),(x_\beta\hat{=}x_\alpha),p_<(x_\alpha,x_\beta),p_<(x_\beta,x_\alpha)$
+
+     在任意 $\theta_{i,2}$ 中出现 $1$ 次以上
+
+根据[[MK392][等价替换]]可得 $T_\text{odl}\vdash((\psi_1\to\psi_2)\leftrightarrow(\varphi_1\lor\varphi_2))$
+
+显然根据[[MK451][与/或交换]]以及[[MK449][引理1]]易证有 $\varphi$ 满足：
+
+（1） $T_\text{odl}\vdash(\varphi\leftrightarrow(\varphi_1\lor\varphi_2))$
+
+（2） $\varphi=\left(\bigvee_{i=1}^p\theta_i\right)$ 其中 $\theta_i=\left(\bigwedge_{j=2}^{u_i}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u_i+1}^{q_i} p_<(x_{k_j},x_{k_{j+1}})\right)$
+
+（3） 不存在 $x_\alpha,x_\beta$ 使得[[MK139][子表达式]] $(x_\alpha\hat{=}x_\beta),(x_\beta\hat{=}x_\alpha),p_<(x_\alpha,x_\beta),p_<(x_\beta,x_\alpha)$
+
+     在任意 $\theta_i$ 中出现 $1$ 次以上
+
+根据[[MK392][等价替换]]可得 $T_\text{odl}\vdash(\phi\leftrightarrow\varphi)$
+
+****** 证明结论
+
+对于任意不含[[MK106][量词]]的 $\phi\in\mathcal{L}_{\mathcal{A}_<}$ ，根据[[MK453][之前证明]]可得存在 $\varphi$ 满足
+
+（1） $\varphi=\left(\bigvee_{i=1}^p\theta_i\right)$ 其中 $\theta_i=\left(\bigwedge_{j=2}^{u_i}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u_i+1}^{q_i} p_<(x_{k_j},x_{k_{j+1}})\right)$
+
+（2） $T_\text{odl}\vdash(\phi\leftrightarrow\varphi)$
+
+（3） 不存在 $x_\alpha,x_\beta$ 使得[[MK139][子表达式]] $(x_\alpha\hat{=}x_\beta),(x_\beta\hat{=}x_\alpha),p_<(x_\alpha,x_\beta),p_<(x_\beta,x_\alpha)$ 在任意 $\theta_i$ 中出现 $1$ 次以上
+
+则对于任意 $x_l$ 根据如下证明可得存在 $\theta'_i$ 满足 $T\vdash((\exists x_l\theta_i)\leftrightarrow\theta'_i)$
+
+根据[[MK184][量词分配]]以及[[MK449][引理1]]可得 $T_\text{odl}\vdash\left(\left(\exists x_l\left(\bigvee_{i=1}^p\theta_i\right)\right)\leftrightarrow\left(\bigvee_{i=1}^p(\exists x_l\theta_i)\right)\right)$
+
+根据[[MK392][等价替换]]可得 $T_\text{odl}\vdash\left(\left(\exists x_l\left(\bigvee_{i=1}^p\theta_i\right)\right)\leftrightarrow\left(\bigvee_{i=1}^p\theta'_i\right)\right)$ 显然有 $\left(\exists x_l\left(\bigvee_{i=1}^p\theta_i\right)\right)=(\exists x_l\varphi)$
+
+即 $T_\text{odl}\vdash\left((\exists x_l\varphi)\leftrightarrow\left(\bigvee_{i=1}^p\theta'_i\right)\right)$ 又根据[[MK392][等价替换]]可得 $T _\text{odl}\vdash\left((\exists x_l\phi)\leftrightarrow\left(\bigvee_{i=1}^p\theta'_i\right)\right)$
+
+综上所述，对于任意不含[[MK106][量词]]的 $\phi\in\mathcal{L}_{\mathcal{A}_<}$ 以及[[MK107][变元符号]] $x_l$ 均有 $T _\text{odl}\vdash\left((\exists x_l\phi)\leftrightarrow\left(\bigvee_{i=1}^p\theta'_i\right)\right)$
+
+其中 $\left(\bigvee_{i=1}^p\theta'_i\right)$ 不含[[MK106][量词]]，则根据[[MK459][推论]]可得 $\mathcal{T} _\text{odl}$ [[MK397][适合量词消去]]
+
+******* 定义 $\theta'_i$ 并证明 $T\vdash((\exists x_l\theta_i)\leftrightarrow\theta'_i)$
+
+******** $\theta_i$ 不含 $x_i$
+
+定义 $\theta'_i=\theta_i$ ，根据[[MK455][无关量词]]以及[[MK449][引理1]]易证 $T\vdash((\exists x_l\theta_i)\leftrightarrow\theta'_i)$
+
+******** $\theta_i$ 含[[MK139][子表达式]] $(x_l\hat{=}x_k)$
+
+定义 $\theta_i'=\theta_i(\left<x_l\right>,\left<x_k\right>)$ 由于不含[[MK106][量词]]，故显然任意 $x_l$ 在 $\theta_i$ 中均为[[MK141][自由出现]]，故替换为 $x_k$
+
+对于任意 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 根据以下证明可得 $\left<\mathcal{M},v\right>\vDash(\exists x_l\theta_i)$ 的充要条件
+
+是 $\left<\mathcal{M},v\right>\vDash\theta'_i$ ，根据[[MK449][引理1]]可得 $T\vdash((\exists x_l\theta_i)\leftrightarrow\theta'_i)$
+
+********* 充分
+
+若 $\left<\mathcal{M},v\right>\vDash(\exists x_l\theta_i)$ 则根据[[MK158][满足]]存在 $\mathcal{M}$ 的[[MK154][赋值]] $v'$ 满足：
+
+（1） 对于任意 $z\ne l$ 均有 $v'(x_z)=v(x_z)$
+
+（2） $\left<\mathcal{M},v'\right>\vDash\theta_i$
+
+则根据[[MK170][逻辑与]]可得 $\left<\mathcal{M},v'\right>\vDash(x_l\hat{=}x_k)$ ，则根据[[MK158][满足]]有 $v'(x_l)=v'(x_k)$
+
+根据[[MK176][替换定理]]有 $\left<\mathcal{M},v'\right>\vDash\theta_i(\left<x_l\right>,\left<x_k\right>)=\theta'_i$ 又由于 $\theta'_i$ 中不含 $x_l$ ，则根据[[MK168][局部确定]]可得 $\left<\mathcal{M},v\right>\vDash\theta'_i$ 
+
+********* 必要
+
+若 $\left<\mathcal{M},v\right>\vDash\theta'_i$ ，则有 $\left<\mathcal{M},v\right>\vDash(x_l\hat{=}x_k)$ ，则根据[[MK158][满足]]有 $v(x_l)=v(x_k)$ ，根据[[MK176][替换定理]]有 $\left<\mathcal{M},v\right>\vDash\theta_i$
+
+根据[[MK158][满足]]易证 $\left<\mathcal{M},v\right>\vDash(\exists x_l\theta_i)$ 
+
+******** 以上均不是
+
+若存[[MK107][变元符号]] $x_{u_1},...,x_{u_a},x_{v_1},...,x_{v_b}$ 使得对于任意 $1\leq y\leq a$ 均有 $p_<(x_{u_y},x_l)$ 在 $\theta_i$ 中，
+
+且对于任意 $1\leq z\leq b$ 均有 $p_<(x_l,x_{v_z})$ 是 $\theta_i$ 的[[MK139][子表达式]]则定义
+
+定义 $$\theta'_{i,1}=\left(\bigwedge_{j=2}^{u_i}(x_{k_{j-1}}\hat{=}x_{k_{j}})\land\bigwedge_{j=u_i+1,k_j\not\in\{u_1,...,u_a\},k_{j+1}\not\in\{v_1,...,v_b\}}^{q_i} p_<(x_{k_j},x_{k_{j+1}})\right)$$
+
+定义 $$\theta'_{i,2}=\left(\bigwedge_{1\leq y\leq a,1\leq z\leq b}p_<(x_{u_y},x_{v_z})\right)$$
+
+定义 $\theta'_i=\left(\theta_{i,1}\land\theta_{i,2}\right)$ 即将所有 $p_<(x_{u_y},x_l),p_<(x_l,x_{v_z})$ 删除
+
+且对于任意 $1\leq y\leq a,1\leq z\leq b$ 添加 $p_<(x_y,x_z)$ 。则对于任意 $\mathcal{T}_\text{odl}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$
+
+根据以下证明可得 $\left<\mathcal{M},v\right>\vDash(\exists x_l\theta_i)$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\theta'_i$
+
+则根据[[MK449][引理1]]可得 $T\vdash((\exists x_l\theta_i)\leftrightarrow\theta'_i)$
+
+********* 充分
+
+若 $\left<\mathcal{M},v\right>\vDash(\exists x_l\theta_i)$ 则根据[[MK158][满足]]存在 $\mathcal{M}$ 的[[MK154][赋值]] $v'$ 满足：
+
+（1） 对于任意 $z\ne l$ 均有 $v'(x_z)=v(x_z)$
+
+（2） $\left<\mathcal{M},v'\right>\vDash\theta_i$
+
+由于 $\theta'_{i,1}$ 中的所有[[MK139][子表达式]]均是 $\theta_i$ 的[[MK139][子表达式]]，则根据[[MK170][逻辑与]]易证 $\left<\mathcal{M},v'\right>\vDash\theta'_{i,1}$
+
+对于任意 $p_<(x_{u_y},x_{v_z})$ 是 $\theta'_{i,2}$ 中的[[MK139][子表达式]]，根据 $\theta'_i$ 定义可得存在 $p_<(x_{u_y},x_l),p_<(x_l,x_{v_z})$
+
+是 $\theta_i$ 的[[MK139][子表达式]]，则根据[[MK170][逻辑与]]易证 $\left<\mathcal{M},v'\right>\vDash p_<(x_{u_y},x_l),\left<\mathcal{M},v'\right>\vDash p_<(x_l,x_{v_z})$
+
+根据[[MK355][公理（2）]]、[[MK197][特化公理]]以及[[MK257][完备性]]易证 $\left<\mathcal{M},v'\right>\vDash((p_<(x_{u_y},x_l)\land p_<(x_l,x_{v_z}))\to p_<(x_{u_y},x_{v_z}))$
+
+根据[[MK158][满足]]易证 $\left<\mathcal{M},v'\right>\vDash p_<(x_{u_y},x_{v_z})$ ，又结合[[MK170][逻辑与]]可得 $\left<\mathcal{M},v'\right>\vDash\theta'_{i,2}$
+
+由于 $\left<\mathcal{M},v'\right>\vDash\theta'_{i,1}$ 以及 $\left<\mathcal{M},v'\right>\vDash\theta'_{i,2}$ ，故根据[[MK170][逻辑与]]可得 $\left<\mathcal{M},v'\right>\vDash\theta'_{i}$
+
+********* 必要
+
+若 $\left<\mathcal{M},v\right>\vDash\theta'_i$ 则根据[[MK170][逻辑与]]可得 $\left<\mathcal{M},v\right>\vDash\theta'_{i,1}$ 以及 $\left<\mathcal{M},v\right>\vDash\theta'_{i,2}$
+
+根据[[MK456][引理8]]可得满足引理条件的排序 $\left<x_{u'_1},...,x_{u'_a}\right>$ 以及 $\left<x_{v'_1},...,x_{v'_b}\right>$ 取 $x_{u'_a},x_{v'_1}$
+
+********** 若不存在 $x_{v'_1}$ <<MK458>>
+
+根据[[MK355][公理（4）]]、[[MK197][特化公理]]以及[[MK257][完备性]]易证 $\left<\mathcal{M},v\right>\vDash(\exists x_lp_<(x_{u'_a},x_l))$
+
+即存在 $\mathcal{M}$ 的[[MK154][赋值]] $v'$ 满足 $\left<\mathcal{M},v'\right>\vDash p_<(x_{u'_a},x_l)$ 以及 $v'(x_z)=v(x_z),z\ne l$
+
+根据[[MK456][引理8]]对于任意 $x_{u_y},1\leq y\leq a$ 若 $u_y\ne u'_a$ 均有 $\left<\mathcal{M},v\right>\vDash((x_{u_z}\hat{=}x_{u'_a})\lor p_<(x_{u_y},x_{u'_a}))$
+
+则根据 $\left<\mathcal{M},v'\right>\vDash p_<(x_{u'_a},x_l)$ 以及[[MK457][引理9]]可得 $\left<\mathcal{M},v'\right>\vDash p_<(x_{u_y},x_l)$ 
+
+综上所述 $\left<\mathcal{M},v'\right>\vDash \left(\bigwedge_{1\leq y\leq a}p_<(x_{u_y},x_l)\right)$
+
+由于 $\theta'_{i,1}$ 不含 $x_l$ ，则根据 $v'(x_z)=v(x_z),z\ne l, \left<\mathcal{M},v\right>\vDash\theta_{i,1}$ 以及[[MK168][局部确定]]
+
+可得 $\left<\mathcal{M},v'\right>\vDash\theta'_{i,1}$ 则根据 $\theta'_i$ 定义以及[[MK170][逻辑与]]可得 $\left<\mathcal{M},v'\right>\vDash\theta_i$ 
+
+********** 若不存在 $x_{u'_a}$
+
+根据[[MK355][公理（5）]]和上一步同样可证存在 $v'$ 满足 $v'(x_z)=v(x_z),z\ne l$ 以及 $\left<\mathcal{M},v'\right>\vDash\theta_i$ 
+
+********** 若均存在
+
+根据 $\theta'_{i,2}$ 定义易证 $p_<(x_{u'_a},x_{v'_1})$ 是 $\theta'_{i,2}$ 的[[MK139][子表达式]]，又由于 $\left<\mathcal{M},v\right>\vDash\theta'_{i,2}$
+
+则根据[[MK170][逻辑与]]可得 $\left<\mathcal{M},v\right>\vDashp_<(x_{u'_a},x_{v'_1})$ 结合[[MK355][公理（6）]]、[[MK197][特化公理]]以及[[MK257][完备性]]
+
+易证 $\left<\mathcal{M},v\right>\vDash(\exists x_l(p_<(x_{u'_a},x_l)\land p_<(x_l,x_{v'_1})))$
+
+即存在 $\mathcal{M}$ 的[[MK154][赋值]] $v'$ 满足 $\left<\mathcal{M},v'\right>\vDash(p_<(x_{u'_a},x_l)\land p_<(x_l,x_{v'_1}))$ 以及 $v'(x_z)=v(x_z),z\ne l$
+
+根据[[MK458][之前证明]]可得对于任意 $x_{u_y},1\leq y\leq a$ 均有 $\left<\mathcal{M},v'\right>\vDash p_<(x_{u_y},x_l)$
+
+根据上一步证明可得任意 $x_{u_z},1\leq z\leq b$ 均有 $\left<\mathcal{M},v'\right>\vDash p_<(x_l,x_{u_z})$
+
 *** 性质
 
 **** 一致性
@@ -13073,81 +14760,3 @@ $\mathcal{N}=\left<\mathbb{N},I\right>$ 其中 $I=\{\left<p_<,<\right>,\left<f_\
 即不存在 $n\in\mathbb{N}$ 满足 $e(n)=\mu(x_1)=\bar{\mu}(\tau_n)$ ，最终可得 $\mu(x_1)\in N^*-\left\{e(n)\big|n\in\mathbb{N}\right\}$
 
 对于任意 $b\in\mathbb{N}$ 有 $\left<\mathcal{N}^*,\mu\right>\vDash p_<(\tau_b,x_1)$ 根据[[MK158][满足]]定义可得 $e(b)=\mu(\tau_b)<^*\mu(x_1)$
-
-** 环
-
-*** 语言<<MK396>>
-
-除[[MK105][固定符号]]外有：
-
-（1） [[MK109][函数符号]] $f_\times,f_+$ 分别表示乘法，加法
-
-（3） [[MK108][常元符号]] $c_0$
-
-则有 $\mathcal{A}_\mathcal{R}=\{f_\times,f_+,c_0\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 是环理论的[[MK151][语言]]
-
-*** 公理<<MK397>>
-
-定义以下公理集合为 $T_\mathcal{R}$
-
-（1） $(\forall x_1(\forall x_2(f_+(x_1,x_2)\hat{=}f_+(x_2,x_1))))$ 加法交换律
-
-（2） $(\forall x_2(\forall x_2(\forall x_3(f_+(f_+(x_1,x_2),x_3)\hat{=}f_+(x_1,f_+(x_2,x_3))))))$ 加法结合律
-
-（3） $(\forall x_1(f_+(x_1,c_0)\hat{=}x_1))$ 加法幺元
-
-（4） $(\forall x_1(f_+(x_1,f_-(x_1))\hat{=}c_0))$ 加法逆元
-
-（5） $(\forall x_2(\forall x_2(\forall x_3(f_\times(f_\times(x_1,x_2),x_3)\hat{=}f_\times(x_1,f_\times(x_2,x_3))))))$ 乘法结合律
-
-（6） $(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$ 乘法分配律
-
-** 域
-
-*** 语言<<MK392>>
-
-除[[MK105][固定符号]]外有：
-
-（1） [[MK109][函数符号]] $f_\times,f_+, f_-$ 分别表示乘法，加法和取逆元运算符
-
-（3） [[MK108][常元符号]] $c_0,c_1$
-
-则有 $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathbb{F}}$ 是域理论的[[MK151][语言]]
-
-*** 公理<<MK393>>
-
-显然[[MK392][域语言]]包含[[MK396][环语言]]，即 $\mathcal{A}_\mathcal{R}\subset\mathcal{A}_\mathbb{R}$ 故[[MK397][环公理]] $T_\mathcal{R}$ 显然满足 $T_\mathcal{R}\subset\mathcal{L}_{\mathcal{A}_\mathbb{F}}$
-
-定义域公理集合为 $T_\mathbb{F}$ ，除 $T_\mathcal{R}$ 外包含以下公理
-
-（1） $(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换律 
-
-（2） $(\forall x_1(f_\times(x_1,c_1)\hat{=}x_1))$ 乘法幺元
-
-（3） $(\forall x_1((\lnot(x_1\hat{=}c_0))\to(\exists x_2(f_\times(x_1,x_2)\hat{ =}c_1))))$ 乘法逆元
-
-（4） $(\forall x_1(f_\times(x_1,c_0)\hat{=}c_0))$ 乘法零元
-
-（5） $(\lnot(c_0\hat{=}c_1))$
-
-** 代数封闭域
-
-*** 语言
-
-同[[MK392][代数语言]] $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 为区分记作 $\mathcal{A}_{\text{ACF}}$ 即有 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 是代数封闭域的[[MK151][语言]]
-
-*** 公理
-
-定义代数封闭域公理集合为 $T_\text{ACF}$ ，则对 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 中的表达式做如下定义
-
-（1） $\tau^n$ 为[[MK117][项]] $f_\times(\tau,f_\times(\tau,f_\times(...f_\times(\tau,\tau)...)))$ 即 $n$ 个 $\tau$ 相乘，其中 $\tau$ 亦为[[MK117][项]]
-
-（2） $\sum_{i=a}^{a+b}{\tau_i}$ 为[[MK117][项]] $f_+(\tau_a,f_+(\tau_{a+1},f+(...f_+(\tau_{a+(b-1)},\tau_{a+b})...)))$
-
-     即为 $\tau_a$ 到 $\tau_{a+b}$ 的连加，其中 $\tau$ 亦为[[MK117][项]]
-
-（3） 对于任意 $n\in\mathbb{N}$ 定义 $\phi_n=\sum_{i=1}^{n}f_\times(x_i,x_0^i)$ 即 $n$ 次多项式
-
-则代数封闭域需要满足所有[[MK393][代数公理]] $T_\mathbb{F}\subset T_\text{ACF}$ 外
-
-对于任意 $n\in\Phi$ 均满足 $(\forall x_1(...(\forall x_n((\lnot(x_n\hat{=}c_0))\to(\exists x_0(\phi_n\hat{ =}c_0))))...))\in T_\text{ACF}$

@@ -32,8 +32,7 @@ installall:
 # 	fi
 
 connect:
-	echo $(PW) | sudo -S openvpn --config ~/文档/str-hnd301_s194258_account.ovpn --auth-user-pass ~/文档/auth.txt
-
+	echo $(PW) | sudo -S openvpn --config ~/文档/str-lax306_s368038_account.ovpn --auth-user-pass ~/文档/auth.txt
 set_dns:  
 ifeq ($(DIF),)
 	cat /etc/resolv.conf

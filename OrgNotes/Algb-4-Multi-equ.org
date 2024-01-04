@@ -38,7 +38,7 @@ current mark: 86
 
 ** 零元定理<<MK9>>
 
-任意[[MK12][交换环]] $\mathcal{U}=<U,+,\cdot>$ 存在乘法[[~/OneDrive/离散数学/Disc_Math.org::MK313][零元]]，且等于[[MK10][环定义]]中加法幺元
+任意[[MK12][交换环]] $\mathcal{U}=\left<U,+,\cdot\right>$ 存在乘法[[~/OneDrive/离散数学/Disc_Math.org::MK313][零元]]，且等于[[MK10][环定义]]中加法幺元
 
 *** 证明
 
@@ -1774,15 +1774,15 @@ $0(x)$ 可约
 
 对于任意整数 $m$ 以及整数集合 $\mathbb{Z}$ 有 $m\in\mathbb{Z}$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-笛卡尔积]]以及[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系-基础定义]]定义关系 $R=\left\{<a,b>\in Z\times Z\big|a\mod m=b\mod m\right\}$
+根据[[~/OneDrive/离散数学/lssx.org::MK107][笛卡尔积]]以及[[~/OneDrive/离散数学/lssx.org::MK111][基础定义]]定义关系 $R=\left\{\left<a,b\right>\in Z\times Z\big|a\mod m=b\mod m\right\}$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-等价关系]]可知 $R$ 满足自反性，对称性以及传递性，故 $R$ 为等价关系
+根据[[~/OneDrive/离散数学/lssx.org::MK113][等价关系]]可知 $R$ 满足自反性，对称性以及传递性，故 $R$ 为等价关系
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-划分-定理-定理1]] $R$ 的[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-等价关系-等价类]]划分 $\mathbb{Z}$
+则根据[[~/OneDrive/离散数学/lssx.org::138][定理1]] $R$ 的[[~/OneDrive/离散数学/lssx.org::MK133][等价类]]划分 $\mathbb{Z}$
 
 对于任意 $x\in \mathbb{Z}$ 定义其等价类 $\overline{x}=\left\{y\big|y\in\mathbb{Z}\land xRy\right\}$ 显然 $\mathbb{Z}$ 被划分为 $\overline{0},\overline{1},...,\overline{m-1}$ 这 $m$ 个等价类
 
-故定义集合 $U=\left\{\overline{x}\big|x\in\mathbb{Z}\right\}$ 由于 $m$ 的余数是小于 $m$ 的整数，故 $U$ 的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数]]是 $|U|=m$
+故定义集合 $U=\left\{\overline{x}\big|x\in\mathbb{Z}\right\}$ 由于 $m$ 的余数是小于 $m$ 的整数，故 $U$ 的[[~/OneDrive/离散数学/lssx.org::MK35][基数]]是 $|U|=m$
 
 *** 定义加法
 

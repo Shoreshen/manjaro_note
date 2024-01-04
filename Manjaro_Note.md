@@ -1008,6 +1008,18 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
+## login quay.io
+
+```shell
+docker login quiy.io
+Username: shoreshen
+Password: Gx4HEW57hB3R/fG6bwZpw2AmJk5HqM4Upou2LEqjVtUqJN9I+o/Gh1qURBTqP+BL
+```
+
+To generate a new cli password, goto [this web](#https://quay.io/) and login
+
+<img src="2023-12-07_15-07.png">
+
 ## With VS-Code
 
 1. To enable specific function on remote, need to install AUR's official VS-Cdoe package <code>visual-studio-code-bin</code>
