@@ -14,7 +14,7 @@ freed mark:
 
 *** 字母表<<MK1>>
 
-由字符作为元素组成的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK42][有限集]]。
+由字符作为元素组成的[[~/文档/note/离散数学/Disc_Math.org::MK42][有限集]]。
 
 **** 运算
 
@@ -36,7 +36,7 @@ $V^n$ 定义为字符表 $V$ 的 $n$ 次幂，定义为 $V^0=\{\epsilon\},V^1=V,
 
 *** 字符串<<MK3>>
 
-由[[MK1][字母表]] $V$ 中的元素组成的有限[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]]定义为字符串。特别定义 $\epsilon$ 是长度为零的字符串（空串）
+由[[MK1][字母表]] $V$ 中的元素组成的有限[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]]定义为字符串。特别定义 $\epsilon$ 是长度为零的字符串（空串）
 
 通常的若字符串 $s=<a,b,c>$ 其中 $\{a,b,c\}\subset V$ ，则 $s$ 可简记做 $abc$
 
@@ -48,7 +48,7 @@ $V^n$ 定义为字符表 $V$ 的 $n$ 次幂，定义为 $V^0=\{\epsilon\},V^1=V,
 
 **** 相等<<MK4>>
 
-根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK152][定理]]可得字符串相等当且仅当每一个对应位置的字符相等。
+根据[[~/文档/note/离散数学/Disc_Math.org::MK152][定理]]可得字符串相等当且仅当每一个对应位置的字符相等。
 
 **** 运算
 
@@ -66,23 +66,23 @@ $V^n$ 定义为字符表 $V$ 的 $n$ 次幂，定义为 $V^0=\{\epsilon\},V^1=V,
 
 *** 定义<<MK7>>
 
-定义四元[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK310][代数结构]] $G=<V_N,V_T,P,s>$ 为语法，定义 $V=V_T\cup V_N$ 表示文法[[MK1][符号集]]
+定义四元[[~/文档/note/离散数学/Disc_Math.org::MK310][代数结构]] $G=<V_N,V_T,P,s>$ 为语法，定义 $V=V_T\cup V_N$ 表示文法[[MK1][符号集]]
 
 **** 终结符<<MK8>>
 
-定义为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $V_T$ ，是该文法所定义的语言的基本符号
+定义为[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]] $V_T$ ，是该文法所定义的语言的基本符号
 
 对于任意 $v\in V_T$ 无法单独存在与[[MK10][产生式]]左部
 
 **** 非终结符<<MK9>>
 
-定义为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $V_N$ ，满足 $V_N\cap V_T=\varnothing$ 特别的 $V_N$ 不包含[[MK3][空字符串]]，即 $\epsilon\not\in V_N$
+定义为[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]] $V_N$ ，满足 $V_N\cap V_T=\varnothing$ 特别的 $V_N$ 不包含[[MK3][空字符串]]，即 $\epsilon\not\in V_N$
 
 是用来表示语法成分的符号，亦称为语法符号
 
 **** 产生式<<MK10>>
 
-定义为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK155][二元关系]] $P\subset V^+\times V^*$ ， $<\alpha,\beta>\in P$ 通常记作 $\alpha\to\beta$ 其中 $\alpha$ 称为产生式的左部， $\beta$ 称为其右部  
+定义为[[~/文档/note/离散数学/Disc_Math.org::MK155][二元关系]] $P\subset V^+\times V^*$ ， $<\alpha,\beta>\in P$ 通常记作 $\alpha\to\beta$ 其中 $\alpha$ 称为产生式的左部， $\beta$ 称为其右部  
 
 该二元关系表示 $\alpha$ 可以替换成 $\beta$
 
@@ -222,23 +222,23 @@ $L^+=\bigcup_{i=1}^\infty L^i$
 
 定义[[MK14][2型文法]] $G=<V_N,V_T,P,s>$ 若有四元结构 $D=<M,E,\prec,f>$ 满足 
 
-（1） $<M,E>$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][有根树]]
+（1） $<M,E>$ 是[[~/文档/note/离散数学/Disc_Math.org::MK285][有根树]]
 
-（2） $f:M\to (V_N\cup V_T)$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]
+（2） $f:M\to (V_N\cup V_T)$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]
 
-（3） $\prec\subset V/\{r\}\times V/\{r\}$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK188][拟序关系]]，其中 $r$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]
+（3） $\prec\subset V/\{r\}\times V/\{r\}$ 是[[~/文档/note/离散数学/Disc_Math.org::MK188][拟序关系]]，其中 $r$ 是[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]
 
-（4） 每个[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][分支]] $v\in M$ 及其[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点]] $\mathcal{S}(v)$ 则存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec...\prec u_k$ 满足 $f(v)\to f(u_1)...f(u_k)\in P$
+（4） 每个[[~/文档/note/离散数学/Disc_Math.org::MK285][分支]] $v\in M$ 及其[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点]] $\mathcal{S}(v)$ 则存在[[~/文档/note/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec...\prec u_k$ 满足 $f(v)\to f(u_1)...f(u_k)\in P$
 
-（5） 若 $\delta_a\prec\delta_b\prec\delta_c$ 则对于任意 $\delta_b$ 到 $\delta_d$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]均有 $\delta_a\prec\delta_d\prec\delta_c$
+（5） 若 $\delta_a\prec\delta_b\prec\delta_c$ 则对于任意 $\delta_b$ 到 $\delta_d$ [[~/文档/note/离散数学/Disc_Math.org::MK245][有向可达]]均有 $\delta_a\prec\delta_d\prec\delta_c$
 
-则该代数结构定义为语法 $G$ 分析树，并定义自左向右的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树叶]]统称为该树的 *产出* 或 *边缘*
+则该代数结构定义为语法 $G$ 分析树，并定义自左向右的[[~/文档/note/离散数学/Disc_Math.org::MK285][树叶]]统称为该树的 *产出* 或 *边缘*
 
 *** 对应[[MK3][字串]]<<MK28>>
 
-任意分析树 $D=<M,E,\prec,f>$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK292][叶集]] $\mathcal{L}(M)$ 
+任意分析树 $D=<M,E,\prec,f>$ 的[[~/文档/note/离散数学/Disc_Math.org::MK292][叶集]] $\mathcal{L}(M)$ 
 
-存在基于 $\prec$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK191][排列]] $\delta_1\prec...\prec\delta_k$ 满足 $f(\delta_i)=X_i$
+存在基于 $\prec$ 的[[~/文档/note/离散数学/Disc_Math.org::MK191][排列]] $\delta_1\prec...\prec\delta_k$ 满足 $f(\delta_i)=X_i$
 
 则称分析树与[[MK3][字串]] $\alpha=X_1...X_k,X_i\in(V_N\cup V_T)$ 对应，记作 $D\simeq\alpha$
 
@@ -252,29 +252,29 @@ $L^+=\bigcup_{i=1}^\infty L^i$
 
 若分支节点为 $0$ 时易证 $|M|=1$ 
 
-显然仅有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]，则根据[[MK27][定义（2）]]可得有[[MK3][字串]] $f(r)=\alpha\in V_N$ 满足 $D\simeq\alpha$
+显然仅有[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]，则根据[[MK27][定义（2）]]可得有[[MK3][字串]] $f(r)=\alpha\in V_N$ 满足 $D\simeq\alpha$
 
 假设当分支节点为 $n$ 时条件成立
 
-则对于任意 $D=<M,E,\prec,f>$ 有 $n+1$ 个分支，取任意一个即[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]
+则对于任意 $D=<M,E,\prec,f>$ 有 $n+1$ 个分支，取任意一个即[[~/文档/note/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]
 
-则根据[[MK37][定理4]]可得存在 $D_{M/\mathcal{S}(v)}\stackrel{v}\Rightarrow D$ 其中 $v$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]] $\mathcal{S}(v)$ 为其[[~/OneDrive/离散数学/Disc_Math.org::MK297][子节点集]]
+则根据[[MK37][定理4]]可得存在 $D_{M/\mathcal{S}(v)}\stackrel{v}\Rightarrow D$ 其中 $v$ 是[[~/文档/note/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]] $\mathcal{S}(v)$ 为其[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点集]]
 
 由于 $D_{M/\mathcal{S}(v)}$ 分支节点比 $D$ 少 $v$ 故根据假设存在 $D_{M/\mathcal{S}(v)}\simeq\alpha'=X_1...X_n$
 
 定义 $D_{M/\mathcal{S}(v)}=<M',E',\prec',f'>$ 
 
-则根据[[MK28][定义]] $\mathcal{L}(M')$ 存在基于 $\prec$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec'...\prec' u_n$ 满足 $f'(u_i)=X_i$
+则根据[[MK28][定义]] $\mathcal{L}(M')$ 存在基于 $\prec$ 的[[~/文档/note/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec'...\prec' u_n$ 满足 $f'(u_i)=X_i$
 
-进一步根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK192][定理]]有存在 $u_k=v$  
+进一步根据[[~/文档/note/离散数学/Disc_Math.org::MK192][定理]]有存在 $u_k=v$  
 
 故根据[[MK33][分析树推导]] $\mathcal{L}(M)=(\mathcal{L}(M')-v)\cup\mathcal{S}(v)$ 
 
-且 $\mathcal{S}(v)$ 有基于 $\prec$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK191][排列]] $\delta_1\prec...\prec\delta_m$ 以及 $f(\delta_i)=Y_i\in(V_N\cup V_T)$
+且 $\mathcal{S}(v)$ 有基于 $\prec$ 的[[~/文档/note/离散数学/Disc_Math.org::MK191][排列]] $\delta_1\prec...\prec\delta_m$ 以及 $f(\delta_i)=Y_i\in(V_N\cup V_T)$
 
 进一步根据[[MK40][定理2]]可得 $u_1\prec...\prec u_n$ 以及 $f(u_i)=X_i$
 
-根据[[MK27][定义（4）]]可知 $\mathcal{L}(M)$ 有基于 $\prec$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec...\prec u_{k-1}\prec\delta_1\prec...\prec\delta_m\prec u_{k+1}...\prec u_n$ 
+根据[[MK27][定义（4）]]可知 $\mathcal{L}(M)$ 有基于 $\prec$ 的[[~/文档/note/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec...\prec u_{k-1}\prec\delta_1\prec...\prec\delta_m\prec u_{k+1}...\prec u_n$ 
 
 结合 $f(u_i)=X_i\land f(\delta_i)=Y_i$ 可得对于 $\alpha=X_1...X_{k-1}Y_1...Y_mX_{k+1}...X_n$ 有 $D\simeq\alpha$
 
@@ -284,13 +284,13 @@ $L^+=\bigcup_{i=1}^\infty L^i$
 
 ****** 唯一
 
-由于[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK192][排序唯一]]，且 $f$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，故 $f(\delta_i)$ 唯一，故对应的字串为 $f(\delta_1)...f(\delta_k)$
+由于[[~/文档/note/离散数学/Disc_Math.org::MK192][排序唯一]]，且 $f$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]，故 $f(\delta_i)$ 唯一，故对应的字串为 $f(\delta_1)...f(\delta_k)$
 
 由于 $D\simeq\alpha$ 则有 $\alpha=f(\delta_1)...\f(\delta_k)$ 唯一
 
 *** 分析树推导<<MK33>>
 
-[[MK27][分析树]] $D_a=<M,E,\prec,f>$ 对于 $D_a$ 的任一[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK292][叶]] $v\in\mathcal{L}(M)$ 若有：
+[[MK27][分析树]] $D_a=<M,E,\prec,f>$ 对于 $D_a$ 的任一[[~/文档/note/离散数学/Disc_Math.org::MK292][叶]] $v\in\mathcal{L}(M)$ 若有：
 
 （1） $f(v)=X_k=A\in V_N$
 
@@ -320,9 +320,9 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 ****** （1）
 
-由于 $D_a$ 满足（1）故 $<M,E>$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][有根树]]
+由于 $D_a$ 满足（1）故 $<M,E>$ 是[[~/文档/note/离散数学/Disc_Math.org::MK285][有根树]]
 
-故根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK286][等价条件]]可得 $r$ 到 $v$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][有向可达]]且 $<M,E>$ 没有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK238][弱圈]]
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK286][等价条件]]可得 $r$ 到 $v$ [[~/文档/note/离散数学/Disc_Math.org::MK244][有向可达]]且 $<M,E>$ 没有[[~/文档/note/离散数学/Disc_Math.org::MK238][弱圈]]
 
 由于 $v$ 到 $\delta_i$ 显然有向可达，故有 $r$ 到 $\delta_i$ 有向可达
 
@@ -334,7 +334,7 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 ****** （4）
 
-对于任意 $D_b$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]] $u\ne v$ 易证其亦为 $D_a$ 的分支，且 $D_a,D_b$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点]]相同，定义为 $\mathcal{S}(u)$
+对于任意 $D_b$ 的[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]] $u\ne v$ 易证其亦为 $D_a$ 的分支，且 $D_a,D_b$ 的[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点]]相同，定义为 $\mathcal{S}(u)$
 
 故 $\mathcal{S}(u)$ 则存在排列 $u_1\prec...\prec u_k,u_i\in\mathcal{S}(v)\land k=|\mathcal{S}(v)|$ 满足 $f(u)\to f(u_1)...f(u_k)\in P$
 
@@ -346,7 +346,7 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 ****** （5）
 
-若 $\delta_a\prec\delta_b\prec\delta_c,\{\delta_a,\delta_b,\delta_c\}\subset M$ 有 $u$ 是 $\delta_b$ 的有向可达[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]
+若 $\delta_a\prec\delta_b\prec\delta_c,\{\delta_a,\delta_b,\delta_c\}\subset M$ 有 $u$ 是 $\delta_b$ 的有向可达[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]
 
 若 $u\in M$ 则根据 $D_a$ 是分析树有 $\delta_a\prec u\prec\delta_c$ 则根据 $\prec'$ 构造有 $\delta_a\prec' u\prec'\delta_c$
 
@@ -382,7 +382,7 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 由于 $D_a\stackrel{v}\Rightarrow D_b$ 是[[MK33][分析树推导]]，且使用产生式为 $A\to Y_1...Y_n$ 故必有 $f(v)=X_k=A\in V_N$
 
-则根据 $M',E'$ 的构造 $v$ 从[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK292][叶]]转化为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]]，且新增叶[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]] $\delta_1,...,\delta_n$ 则 $|\mathcal{L}(M')|=|\mathcal{L}(M)|-1+n$
+则根据 $M',E'$ 的构造 $v$ 从[[~/文档/note/离散数学/Disc_Math.org::MK292][叶]]转化为[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]]，且新增叶[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]] $\delta_1,...,\delta_n$ 则 $|\mathcal{L}(M')|=|\mathcal{L}(M)|-1+n$
 
 根据 $\prec'$ 构造可知对于 $\mathcal{L}(M')$ 有排列 $u_1\prec'...\prec'u_{k-1}\prec'\delta_1\prec'...\prec'\delta_n\prec'u_{k+1}\prec'...\prec'u_m$
 
@@ -398,33 +398,33 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 ****** （4）
 
-根据[[MK33][推导]]定义可得不改变现有节点的[[~/OneDrive/离散数学/Disc_Math.org::MK218][入度]]，故若 $D_a$ 中 $d^-(r)=0$
+根据[[MK33][推导]]定义可得不改变现有节点的[[~/文档/note/离散数学/Disc_Math.org::MK218][入度]]，故若 $D_a$ 中 $d^-(r)=0$
 
-则 $D_b$ 中 $d^-(r)=0$ 又由于都是分析树，故均是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][有根树]]，故树根相同
+则 $D_b$ 中 $d^-(r)=0$ 又由于都是分析树，故均是[[~/文档/note/离散数学/Disc_Math.org::MK285][有根树]]，故树根相同
 
 ***** 推论<<MK32>>
 
-对于任意[[MK27][分析树]] $D=<M,E,\prec,f>$ 定义[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]为 $r\in M$ 
+对于任意[[MK27][分析树]] $D=<M,E,\prec,f>$ 定义[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]为 $r\in M$ 
 
 则存在[[MK14][2型文法]] $G$ 中的[[MK18][推导]] $f(r)\Rightarrow^n\alpha$ 
 
-其中 $n$ 为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]]节点个数， $\alpha\simeq D$ 是 $D$ [[MK28][对应]]的字串
+其中 $n$ 为[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]]节点个数， $\alpha\simeq D$ 是 $D$ [[MK28][对应]]的字串
 
 ****** 证明
 
-对于任意无[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]]节点的 $D$ ，易证 $f(r)=\alpha$ 显然成立
+对于任意无[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]]节点的 $D$ ，易证 $f(r)=\alpha$ 显然成立
 
-假设若 $M$ 中有 $n$ 个分支[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]时结论成立
+假设若 $M$ 中有 $n$ 个分支[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]时结论成立
 
-则若 $M$ 中有 $n+1$ 个分支节点时，任取一个[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的分支节点 $v$
+则若 $M$ 中有 $n+1$ 个分支节点时，任取一个[[~/文档/note/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的分支节点 $v$
 
-则定义 $\mathcal{A}(v)$ 是 $v$ 的所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][有向可达]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]的集合
+则定义 $\mathcal{A}(v)$ 是 $v$ 的所有[[~/文档/note/离散数学/Disc_Math.org::MK244][有向可达]]的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]的集合
 
 进一步定义 $X=M/\mathcal{A}(v)$ 则根据[[MK37][定理4]]有 $D_X\stackrel{v}\Rightarrow D$
 
 故根据[[MK29][定理1]]存在 $\alpha_X$ 满足 $D_X\simeq\alpha_X$ 则根据[[MK34][定理2]]存在 $\alpha$ 满足 $D\simeq\alpha$ 以及[[MK18][推导]] $\alpha_X\Rightarrow\alpha^*$ 
 
-由于 $\mathcal{H}(v)=1$ 故 $v$ 不含有向可达[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]]，则 $D_X$ 相比 $D$ 仅少分支 $v$ ，树根相同
+由于 $\mathcal{H}(v)=1$ 故 $v$ 不含有向可达[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]]，则 $D_X$ 相比 $D$ 仅少分支 $v$ ，树根相同
 
 则根据假设有[[MK18][推导]] $f(r)\Rightarrow^{n}\alpha_X\Rightarrow\alpha$ 即 $f(r)\Rightarrow^{n+1}\alpha$
 
@@ -444,7 +444,7 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 （2） 若 $D_b=<M',E',\prec',f'>$ 则 $f(v)=f'(v)=X_k$
 
-（3） 定义 $v$ 在 $D_b$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点集]] $\mathcal{S}(v)$ 则其有基于 $\prec'$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec...\prec u_n$
+（3） 定义 $v$ 在 $D_b$ 的[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点集]] $\mathcal{S}(v)$ 则其有基于 $\prec'$ 的[[~/文档/note/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec...\prec u_n$
 
      满足 $f'(u_i)=X_i$
 
@@ -462,9 +462,9 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 则存在分析树 $D$ 满足：
 
-（1） $f(r)=A\land D\simeq\alpha$ 其中 $r$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK285][树根]]
+（1） $f(r)=A\land D\simeq\alpha$ 其中 $r$ 是[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]
 
-（2） $D$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]]节点数是 $n$
+（2） $D$ 的[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]]节点数是 $n$
 
 ****** 证明
 
@@ -472,7 +472,7 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 则对于 $n+1$ 步推导必有 $A\Rightarrow^n\alpha'\Rightarrow\alpha$ 故有 $D'=<M',E',\prec',f'>$ 
 
-满足 $D'\simeq\alpha'\land f(r)=A$ 以及 $D'$ 有 $n$ 个分支节点。其中 $r$ 是 $D'$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK285][树根]]
+满足 $D'\simeq\alpha'\land f(r)=A$ 以及 $D'$ 有 $n$ 个分支节点。其中 $r$ 是 $D'$ 的[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]
 
 故根据[[MK36][定理3]]有 $v\in\mathcal(L)(M')$ 以及 $D$ 满足 $D'\stackrel{v}\Rightarrow D$ 且 $D\simeq\alpha$
 
@@ -492,23 +492,23 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 （1） $D\simeq\alpha$ [[MK28][对应]]
 
-（2） $f(r)=s$ 其中 $r$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]] $s$ 是[[MK11][开始符]]
+（2） $f(r)=s$ 其中 $r$ 是[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]] $s$ 是[[MK11][开始符]]
 
 **** 定理4<<MK37>>
 
-任意分析树 $D=<M,E,\prec,f>$ 定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]
+任意分析树 $D=<M,E,\prec,f>$ 定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即[[~/文档/note/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]
 
-取任一 $v\in K$ 定义 $\mathcal{A}(v)$ 为其所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]节点，定义 $N=M/(\mathcal{A}(v)/\{v\})$
+取任一 $v\in K$ 定义 $\mathcal{A}(v)$ 为其所有[[~/文档/note/离散数学/Disc_Math.org::MK245][有向可达]]节点，定义 $N=M/(\mathcal{A}(v)/\{v\})$
 
 则 $D_{N}$ 是 $D$ 的[[MK38][分析子树]]，且有 $D_N\stackrel{v}\Rightarrow D$ 
 
 ***** 证明
 
-由于 $\mathcal{H}(v)=1$ 故 $\mathcal{S}(v)$ 是 $v$ 所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][有向可达]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]的集合
+由于 $\mathcal{H}(v)=1$ 故 $\mathcal{S}(v)$ 是 $v$ 所有[[~/文档/note/离散数学/Disc_Math.org::MK244][有向可达]]的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]的集合
 
 则根据[[MK39][定理1]]可得 $D_N$ 是[[MK27][分析树]]
 
-由于 $v$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]]，故满足条件（4），故易证 $D_N$ 经过 $v$ 的推导可得 $D$
+由于 $v$ 是[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]]，故满足条件（4），故易证 $D_N$ 经过 $v$ 的推导可得 $D$
 
 即有 $D_N\stackrel{v}\Rightarrow D$ 
 
@@ -528,9 +528,9 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 **** 定理1<<MK39>>
 
-若分析树 $D=<M,E,\prec,f>$ 有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]] $v\in M/\{r\}$ 其中 $r$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]] 
+若分析树 $D=<M,E,\prec,f>$ 有[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]] $v\in M/\{r\}$ 其中 $r$ 是[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]] 
 
-定义 $Y=\mathcal{A}(v)\cup\{v\}$ 其中 $\mathcal{A}(v)$ 是 $v$ 的所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][有向可达]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]的集合
+定义 $Y=\mathcal{A}(v)\cup\{v\}$ 其中 $\mathcal{A}(v)$ 是 $v$ 的所有[[~/文档/note/离散数学/Disc_Math.org::MK244][有向可达]]的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]的集合
 
 定义 $X=M/Y\cup\{v\}$ 
 
@@ -544,19 +544,19 @@ f'=&f\cup\left\{<\delta_i,Y_i>\big|1\leq i\leq n\right\}\\
 
 ****** （1）
 
-根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK291][定理1]]可得 $<X,E_X>$ 是有根树
+根据[[~/文档/note/离散数学/Disc_Math.org::MK291][定理1]]可得 $<X,E_X>$ 是有根树
 
 ****** （2）
 
-由于 $f_X\subset f$ 故 $f_X$ 亦为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，故满足（2）
+由于 $f_X\subset f$ 故 $f_X$ 亦为[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]，故满足（2）
 
 ****** （3）
 
-由于 $\prec_X\subset\prec$ 故有 $\prec_X$ 亦是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK188][拟序关系]]故满足（3）
+由于 $\prec_X\subset\prec$ 故有 $\prec_X$ 亦是[[~/文档/note/离散数学/Disc_Math.org::MK188][拟序关系]]故满足（3）
 
 ****** （4）
 
-$D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]] $v\in X$ 以及[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点]] $\mathcal{S}(v)\subset X$ 在 $D$ 中仍是对应的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]]和[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点]]
+$D_X$ 中的任意[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]] $v\in X$ 以及[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点]] $\mathcal{S}(v)\subset X$ 在 $D$ 中仍是对应的[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]]和[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点]]
 
 故存在基于 $\prec$ 的排列 $u_1\prec...\prec u_k,u_i\in\mathcal{S}(v)\land k=|\mathcal{S}(v)|$ 以及 $f(v)\to f(u_1)...f(u_k)\in P$
 
@@ -596,7 +596,7 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 对于任意 $D_a=<M_a,E_a,\prec_a,f_a>,D_a=<M_b,E_b,\prec_b,f_b>$ 
 
-若存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]] $g:N_a\to N_b$ 其中 $N_a\subset M_a\land N_b\subset M_b$ 满足对于任意 $\{u,v\}\subset N_a$
+若存在[[~/文档/note/离散数学/Disc_Math.org::MK200][双射函数]] $g:N_a\to N_b$ 其中 $N_a\subset M_a\land N_b\subset M_b$ 满足对于任意 $\{u,v\}\subset N_a$
 
 （1） 若 $<u,v>\in E_a$ 则有 $<g(u),g(v)>\in E_b$
 
@@ -622,7 +622,7 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 （1） $D_a\simeq\alpha\land D_b\simeq\alpha$ 均[[MK28][对应]] $\alpha$
 
-（2） $f(r_a)=f(r_b)=s$ 即[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]均映射到[[MK11][开始符]]
+（2） $f(r_a)=f(r_b)=s$ 即[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]均映射到[[MK11][开始符]]
 
 （3） $D_a\not\bowtie D_b$ 不[[MK42][同构]]
 
@@ -640,7 +640,7 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 *** 种别<<MK45>>
 
-[[MK44][单词]]的一种有穷[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK179][划分]]，并定义每一类划分对应一个种别码。一般种别有：
+[[MK44][单词]]的一种有穷[[~/文档/note/离散数学/Disc_Math.org::MK179][划分]]，并定义每一类划分对应一个种别码。一般种别有：
 
 （1） 基本字：例如 if,while 等特殊含义的字符。有穷，基本字构成的表格为基本字表
 
@@ -656,7 +656,7 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 输入：源程序编码
 
-输出：[[MK44][单词]]的[[MK45][种别]] $t$ 以及单词自身值 $v$ 构成的二元组排列成的有穷[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]]
+输出：[[MK44][单词]]的[[MK45][种别]] $t$ 以及单词自身值 $v$ 构成的二元组排列成的有穷[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]]
 
      例如 $<<t_1,v_1>,<t_2,v_2>,...,<t_n,v_n>>$ 其中 $n<\infty\land n\in\mathbb{N}^$
 
@@ -690,13 +690,13 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 *** $\epsilon$ 闭包<<MK51>>
 
-定义 $S$ 为[[MK66][自动机]]的状态集 $\delta$ 是映射[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，定义 $I\subset S$ 则其 $\epsilon$ 闭包记作 $\epsilon\text{-closure}(I)$ 
+定义 $S$ 为[[MK66][自动机]]的状态集 $\delta$ 是映射[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]，定义 $I\subset S$ 则其 $\epsilon$ 闭包记作 $\epsilon\text{-closure}(I)$ 
 
 其构造定义为：
 
 （1） $\forall a\in I\rightarrow a\in\epsilon\text{-closure}$
 
-（2） 存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,\epsilon),...,\delta(s_{n},\epsilon)>,n<\infty$ 
+（2） 存在[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,\epsilon),...,\delta(s_{n},\epsilon)>,n<\infty$ 
 
      满足 $s_0\in\epsilon\text{-closure}(I)$ 以及 $\delta(s_{i-1},\epsilon)=s_i\lor s_i\in\delta(s_{i-1},\epsilon),1\leq i\leq n$
 
@@ -708,7 +708,7 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 对于[[MK67][DFA]] $M=<S,\Sigma,\delta,t,F>$ 存在 $\{u,v\}\subset S$ 
 
-对于任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,a_1),...,\delta(s_{n-1},a_n)>$ 满足：
+对于任意[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,a_1),...,\delta(s_{n-1},a_n)>$ 满足：
 
 （1） $\left(s_0=u\right)\land\left(\delta(s_{n-1},a_n)\in F\right)\land\left(s_i\in S,1\leq i\leq n\right)$ 
 
@@ -728,9 +728,9 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 状态转换图拥有结构 $M=<G,\Sigma,f,T,F>$ ：
 
-（1） 无[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK213][重边]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK221][有向图]] $G=<S,E>$
+（1） 无[[~/文档/note/离散数学/Disc_Math.org::MK213][重边]]的[[~/文档/note/离散数学/Disc_Math.org::MK221][有向图]] $G=<S,E>$
 
-（2） [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\rho(\mathcal{R}(\Sigma))$ 
+（2） [[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\rho(\mathcal{R}(\Sigma))$ 
 
      其中 $\mathcal{R}(\Sigma)$ 是 $\Sigma$ 产生的所有[[MK57][正规式]]集合，且满足 $\forall e\in E\rightarrow |f(e)|<\infty$
 
@@ -740,7 +740,7 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 *** 识别单词<<MK54>>
 
-一个[[MK44][单词]] $\alpha=a_1...a_n$ 可以被状态转换图接受，就表示存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK232][通道]] $t=<v_1,e_1,...,v_n,e_m,v_f>$ 满足：
+一个[[MK44][单词]] $\alpha=a_1...a_n$ 可以被状态转换图接受，就表示存在[[~/文档/note/离散数学/Disc_Math.org::MK232][通道]] $t=<v_1,e_1,...,v_n,e_m,v_f>$ 满足：
 
 （1） $t$ 是 $G$ 的有向通道
 
@@ -756,7 +756,7 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 若满足对于任意 $e\in E$ 若 $e$ 在映射 $f$ 中有定义则 $|f(e)|=1$
 
-定义[[~/OneDrive/高等代数/Algb-3-Matrix.org][矩阵基础-矩阵的表述]] $M_{|S|\times|\Sigma|}[a_{sa}]$ 其中 $s\in S\land a\in\Sigma$ 
+定义[[~/文档/note/高等代数/Algb-3-Matrix.org][矩阵基础-矩阵的表述]] $M_{|S|\times|\Sigma|}[a_{sa}]$ 其中 $s\in S\land a\in\Sigma$ 
 
 进一步定义 $a_{sa}=\begin{cases}s'&\exists s'\in S\rightarrow f(s,s')=\{a\}\\\varnothing&else\end{cases}$
 
@@ -766,7 +766,7 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 ** 正规集<<MK56>>
 
-一个由[[MK3][字符串]]为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK2][元素]]组成的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $L$ ，满足该集合可由[[MK57][正规式]]表达
+一个由[[MK3][字符串]]为[[~/文档/note/离散数学/Disc_Math.org::MK2][元素]]组成的[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]] $L$ ，满足该集合可由[[MK57][正规式]]表达
 
 ** 正规式<<MK57>>
 
@@ -810,11 +810,11 @@ $D_X$ 中的任意[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分�
 
 **** 交换律
 
-$r|s=s|r$ 根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK39][集合交换律]]
+$r|s=s|r$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK39][集合交换律]]
 
 **** 结合律
 
-$r|(s|t)=(r|s)|t$ 根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK40][集合结合律]]
+$r|(s|t)=(r|s)|t$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK40][集合结合律]]
 
 $r(st)=(rs)t$ 
 
@@ -846,7 +846,7 @@ $r^*=(r|\epsilon)^*$
 
 假设 $L(r|\epsilon)^n=\bigcup_{i=0}^nL(r)^i$ 根据[[MK63][分配率]]有 $(r|\epsilon)^{n+1}=(r|\epsilon)^n(r|\epsilon)=\left((r|\epsilon)^nr\right)|\left((r|\epsilon)^n\epsilon\right)$
 
-根据[[MK64][单位元]]可得 $r\epsilon=r\leftrightarrow L(r)\times\{\epsilon\}=L(r)$ 进一步根据[[MK63][分配率]]、[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK40][结合律]]、[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK38][等利律]]
+根据[[MK64][单位元]]可得 $r\epsilon=r\leftrightarrow L(r)\times\{\epsilon\}=L(r)$ 进一步根据[[MK63][分配率]]、[[~/文档/note/离散数学/Disc_Math.org::MK40][结合律]]、[[~/文档/note/离散数学/Disc_Math.org::MK38][等利律]]
 
 \begin{aligned}
 &\bigcup_{i=0}^{n+1}r^i\\
@@ -870,7 +870,7 @@ $r^*=(r|\epsilon)^*$
 
 则根据之前证明有 $x\in r^*\rightarrow x\in (r|\epsilon)^n\rightarrow x\in\bigcup_{i=0}^\infty (r|\epsilon)^i\rightarrow x\in(r|\epsilon)^*$
 
-同理可证 $x\in(r|\epsilon)^*\rightarrow x\in r^*$ 故根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $r^*=(r|\epsilon)^*$ 
+同理可证 $x\in(r|\epsilon)^*\rightarrow x\in r^*$ 故根据[[~/文档/note/离散数学/Disc_Math.org::MK5][外延公理]]可得 $r^*=(r|\epsilon)^*$ 
 
 **** 幂等律
 
@@ -880,13 +880,13 @@ $r^*=r^{**}$
 
 假设对于任意 $n\geq 1$ 若有 $(r^*)^n=r^*$ 则 $(r^*)^{n+1}=(r^*)^nr^*=r^*r^*=\left(\bigcup_{i=1}^\infty r^i\right)\left(\bigcup_{i=1}^\infty r^i\right)$ 
 
-则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK154][分配率]]有 $\left(\bigcup_{i=1}^\infty r^i\right)\left(\bigcup_{i=1}^\infty r^i\right)=\bigcup_{i=1}^\infty\left(r^i\left(\bigcup_{j=1}^\infty r^j\right)\right)=\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty \left(r^i r^j\right)\right)$
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK154][分配率]]有 $\left(\bigcup_{i=1}^\infty r^i\right)\left(\bigcup_{i=1}^\infty r^i\right)=\bigcup_{i=1}^\infty\left(r^i\left(\bigcup_{j=1}^\infty r^j\right)\right)=\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty \left(r^i r^j\right)\right)$
 
 根据[[MK65][幂相加]]亦有 $r^*r^*=\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty \left(r^{i+j}\right)\right)$ 则 $\forall x\in r^*r^*,\exists\{i,j\}\subset\mathbb{N}^+\rightarrow x\in r^{i+j}\subset r^*$
 
 故有 $r^*r^*\subset r^*$ 又根据[[MK62][闭包定义]]可得 $(r^ *)^n=\bigcup_{i=1}^n (r^ *)^i=(r^ *)^0\cup(r^ *)^1\cup\left(\bigcup_{i=2}^n (r^ *)^i\right)$
 
-根据[[MK61][幂]]定义可得 $(r^*)^1=r^*$ 则有 $r^*\subset r^*r^*$ 故根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $r^*=r^*r^*$
+根据[[MK61][幂]]定义可得 $(r^*)^1=r^*$ 则有 $r^*\subset r^*r^*$ 故根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $r^*=r^*r^*$
 
 则有当 $(r^*)^n=r^*$ 时有 $(r^*)^{n+1}=(r^*)^nr^*=r^*r^*=r^*$ 结合 $(r^*)^1=r^*$
 
@@ -896,7 +896,7 @@ $r^*=r^{**}$
 
 则有 $r^{**}\subset r^*$ 又由于 $r^{ * *}=(r^ *)^0\cup (r^ *)^1\cup...\a$ 故有 $r^ *\subset r^{ * *}$
 
-同理根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $r^*=r^{ * *}$
+同理根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $r^*=r^{ * *}$
 
 ** 自动机<<MK66>>
 
@@ -904,13 +904,13 @@ $r^*=r^{**}$
 
 定义为多元结构 $M=<S,\Sigma,\delta,t,F>$ 其中
 
-$S$ ：是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK42][有限]]的，元素为状态的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK1][集合]]
+$S$ ：是[[~/文档/note/离散数学/Disc_Math.org::MK42][有限]]的，元素为状态的[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]]
 
 $\Sigma$ ：[[MK48][输入带]]中[[MK3][字符串]]依据的[[MK1][字母表]]，满足 $\epsilon\not\in\Sigma$
 
-$\delta$ ：若为为 $\delta:S\times\Sigma\cup\{\epsilon\}\to S$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，则定义为包含空边的DFA
+$\delta$ ：若为为 $\delta:S\times\Sigma\cup\{\epsilon\}\to S$ 的[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]，则定义为包含空边的DFA
 
-    若为为 $\delta:S\times\Sigma\to S$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，则定义为 *不* 包含空边的DFA
+    若为为 $\delta:S\times\Sigma\to S$ 的[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]，则定义为 *不* 包含空边的DFA
 
 $t$ ：初始状态，满足 $t\in S$
 
@@ -920,7 +920,7 @@ $F$ ：最终状态，满足 $F\subset S$ 可作为结束的状态
 
 若一个[[MK44][单词]] $\alpha=a_1...a_n$ 可以被DFA识别
 
-则存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,a_1),\delta(s_1,a_2),...,\delta(s_{n-1},a_n)>$ 满足：
+则存在[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,a_1),\delta(s_1,a_2),...,\delta(s_{n-1},a_n)>$ 满足：
 
 （1） $\left(s_0=t\right)\land\left(\delta(s_{n-1},a_n)\in F\right)\land\left(s_i\in S,1\leq i\leq n\right)$ 
 
@@ -942,11 +942,11 @@ $F$ ：最终状态，满足 $F\subset S$ 可作为结束的状态
 
 定义为多元代数结构 $M=<S,\Sigma,\delta,T,F>$ 其中
 
-$S$ ：是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK42][有限]]的，元素为状态的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK1][集合]]
+$S$ ：是[[~/文档/note/离散数学/Disc_Math.org::MK42][有限]]的，元素为状态的[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]]
 
 $\Sigma$ ：[[MK48][输入带]]中[[MK3][字符串]]依据的[[MK1][字母表]]，满足 $\epsilon\in\Sigma$
 
-$\delta$ ：为 $\delta:S\times\mathcal{R}(\Sigma)\to\rho(S)$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，其中 $\rho(S)$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK25][幂集]] $\mathcal{R}(\Sigma)$ 是 $\Sigma$ 产生的所有[[MK57][正规式]]集合
+$\delta$ ：为 $\delta:S\times\mathcal{R}(\Sigma)\to\rho(S)$ 的[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]，其中 $\rho(S)$ 是[[~/文档/note/离散数学/Disc_Math.org::MK25][幂集]] $\mathcal{R}(\Sigma)$ 是 $\Sigma$ 产生的所有[[MK57][正规式]]集合
 
     且有 $\forall s\in S\rightarrow s\in\delta(s,\epsilon)$
 
@@ -958,7 +958,7 @@ $F$ ：最终状态，满足 $F\subset S$ 可作为结束的状态
 
 若一个[[MK44][单词]] $\alpha=a_1...a_n$ 可以被NFA识别
 
-则存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,\sigma_1),\delta(s_1,\sigma_2),...,\delta(s_{m-1},\sigma_m)>$ 满足：
+则存在[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,\sigma_1),\delta(s_1,\sigma_2),...,\delta(s_{m-1},\sigma_m)>$ 满足：
 
 （1） $\left(s_0\in T\right)\land\left(\delta(s_{m-1},\sigma_m)\cap F\ne\varnothing\right)\land\left(s_i\in S,1\leq i\leq m+1\right)$
 
@@ -972,7 +972,7 @@ $F$ ：最终状态，满足 $F\subset S$ 可作为结束的状态
 
 定义为多元代数结构 $M=<S,\Sigma,\Gamma,\delta,s_0,z_0,F>$ 其中
 
-$S$ ：是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK42][有限]]的，元素为状态的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK1][集合]]
+$S$ ：是[[~/文档/note/离散数学/Disc_Math.org::MK42][有限]]的，元素为状态的[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]]
 
 $\Sigma$ ：[[MK48][输入带]]中[[MK3][字符串]]依据的[[MK1][字母表]]，满足 $\epsilon\not\in\Sigma$
 
@@ -984,11 +984,11 @@ $z_0$ ：栈的底部，开始状态时栈中的唯一字符，满足 $z_0\in\Ga
 
 $F$ ：最终状态，满足 $F\subset S$ 可作为结束的状态
 
-$\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\Gamma^*$ 的动作[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]
+$\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\Gamma^*$ 的动作[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]
 
 **** 动作函数<<MK72>>
 
-动作[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $\delta$ 的自变量 $<<q,a>,z>\in S\times(\Sigma\cup\{\epsilon\})\times\Gamma$ 表示：
+动作[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $\delta$ 的自变量 $<<q,a>,z>\in S\times(\Sigma\cup\{\epsilon\})\times\Gamma$ 表示：
 
 （1） 当前状态为 $q\in S$
 
@@ -1026,7 +1026,7 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 
 定义 $r(s_a,s_b)=\left\{\sigma\big|<<s_a,\sigma>,S_b>\in\delta\land s_b\in S_b\right\}$ 则定义 $f=\left\{<<s_a,s_b>,r(a,b)>\big|<s_a,s_b>\in E\right\}$
 
-由于 $r(s_a,s_b)$ 的定义，故对于给定 $<s_a,s_b>$ 在 $f$ 中有唯一对应的 $r(s_a,s_b)$ 故 $f$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]
+由于 $r(s_a,s_b)$ 的定义，故对于给定 $<s_a,s_b>$ 在 $f$ 中有唯一对应的 $r(s_a,s_b)$ 故 $f$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]
 
 定意[[MK53][状态转换图]] $M’=<<S,E>,\Sigma,f,T,F>$
 
@@ -1046,7 +1046,7 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 
 则定义有序组 $t=<s_0,<s_0,s_1>,s_1,....,s_{m-1},<s_{m-1},s_m>,s_m>$ 则有：
 
-（1） 显然 $t$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK232][通道]]
+（1） 显然 $t$ 是[[~/文档/note/离散数学/Disc_Math.org::MK232][通道]]
 
 （2） $s_0\in T\land s_m\in F\land s_i\in S$
 
@@ -1058,13 +1058,13 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 
 对于任意 $\sigma\in f(<s_a,s_b>)$ 则有 $\sigma\in r(s_a,s_b)$ 即有 $s_b\in\delta(s_a,\sigma)$
 
-故类似可证 $L(M)\subset L(M')$ 故根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(M')$
+故类似可证 $L(M)\subset L(M')$ 故根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(M')$
 
 ***** （2）
 
 对于任意[[MK53][状态转换图]] $M’=<<S,E>,\Sigma,f,T,F>$ 
 
-由于 $<S,E>$ 是无[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK213][重边]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK221][有向图]]，故有 $|S|<\infty,|E|<\infty$
+由于 $<S,E>$ 是无[[~/文档/note/离散数学/Disc_Math.org::MK213][重边]]的[[~/文档/note/离散数学/Disc_Math.org::MK221][有向图]]，故有 $|S|<\infty,|E|<\infty$
 
 由于有 $\forall e\in E\rightarrow |f(e)|<\infty$ 故对于素有 $f(e_i)=\{\sigma_1,...,\sigma_n\}$ 定义 $f'(e_i)=\{\sigma_1|...|\sigma_n\}$
 
@@ -1074,11 +1074,11 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 
 则定义 $\delta=\left\{<<s,\sigma>,S(s,\sigma)>\big|s\in S\}$ 
 
-根据 $S(s,\sigma)$ 构造显然对于给定 $<s,\sigma>$ 在 $\delta$ 中有唯一 $S(s,\sigma)$ 与之对应，故 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]
+根据 $S(s,\sigma)$ 构造显然对于给定 $<s,\sigma>$ 在 $\delta$ 中有唯一 $S(s,\sigma)$ 与之对应，故 $\delta$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]
 
 则定义 $M=<S,\Sigma,\delta,T,F>$ 满足[[MK69][NFA]]定义，则对于任意 $\alpha\in M$ 
 
-根据[[MK70][定义]]存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,\sigma_1),...,\delta(s_{m-1},\sigma_m)>$ 满足：
+根据[[MK70][定义]]存在[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,\sigma_1),...,\delta(s_{m-1},\sigma_m)>$ 满足：
 
 （1） $\left(s_0\in T\right)\land\left(\delta(s_{m-1},\sigma_m)\cap F\ne\varnothing\right)\land\left(s_i\in S,1\leq i\leq n\right)$
 
@@ -1096,7 +1096,7 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 
 则构造有序组为 $<s_0,<s_0,s_1>,s_1,...,s_{m-1},<s_{m-1},s_m>,s_m>$ 满足：
 
-（1） 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK232][通道]]
+（1） 是[[~/文档/note/离散数学/Disc_Math.org::MK232][通道]]
 
 （2） $s_0\in T\land s_m\in F$
 
@@ -1106,7 +1106,7 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 
 同理根据 $S(s,\sigma)$ 定义，若有 $f(s_a,s_b)=\{\sigma\}$ 则有 $s_b\in S(s,\sigma)=\delta(s_a,\sigma)$
 
-则类似可证 $L(M)\subset L(M')$ 故根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(M')$
+则类似可证 $L(M)\subset L(M')$ 故根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(M')$
 
 *** 定理1<<MK75>>
 
@@ -1150,7 +1150,7 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 
 三组条件分别对应[[MK57][正规式]]的[[MK60][连接]]、[[MK59][并]]以及[[MK62][闭包]]运算对应。这里仅对第一组证明，其他证明类似。
 
-根据[[MK70][定义]]对于任意 $\alpha\in L(M_2)$ 有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $l=<\delta_2(s_0,\sigma_1),...,\delta_2(s_{m-1},\sigma_m)>$ 满足
+根据[[MK70][定义]]对于任意 $\alpha\in L(M_2)$ 有[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $l=<\delta_2(s_0,\sigma_1),...,\delta_2(s_{m-1},\sigma_m)>$ 满足
 
 （a） $\left(s_0\in T\right)\land\left(\delta_2(s_{m-1},\sigma_m)\cap F\ne\varnothing\right)\land\left(s_i\in S,1\leq i\leq n\right)$
 
@@ -1182,9 +1182,9 @@ $\delta$ ：为 $\delta:S\times(\Sigma\cup\{\epsilon\})\times\Gamma\to S\times\G
 
      若发生替换（一）则 $\omega_1...\omega_z=\sigma_1...\sigma...\sigma_m=\sigma_1...\sigma_a\simga_b...\sigma_m=\simga_1......\sigma_m$
 
-最终得 $\forall\alpha\in L(M_2)\rightarrow \alpha\in L(M_1)$ 根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK20][定义]]可得 $L(M_2)\subset L(M_1)$
+最终得 $\forall\alpha\in L(M_2)\rightarrow \alpha\in L(M_1)$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]可得 $L(M_2)\subset L(M_1)$
 
-同理可得 $L(M_1)\subset L(M_2)$ 故根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]有 $L(M_2)= L(M_1)$
+同理可得 $L(M_1)\subset L(M_2)$ 故根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]有 $L(M_2)= L(M_1)$
 
 **** 推论<<MK76>>
 
@@ -1243,9 +1243,9 @@ F&=\{f\}
 
 显然对于 $M=<S,\Sigma,\delta,T,F>$ 满足[[MK69][NFA]]定义，且对于任意 $\alpha\in L(r)$ 有 $<\delta(t,r)>$ 满足[[MK70][条件]]
 
-故有 $\forall\alpha\in L(R)\rightarrow\alpha\in L(M)$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $L(r)\subset L(M)$
+故有 $\forall\alpha\in L(R)\rightarrow\alpha\in L(M)$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]有 $L(r)\subset L(M)$
 
-类似易证 $L(M)\subset L(r)$ 根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(r)$ 即[[MK73][等价]]
+类似易证 $L(M)\subset L(r)$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(r)$ 即[[MK73][等价]]
 
 进一步根据[[MK75][定理1]]可按照[[MK58][运算]]的最低优先级拆分运算符，由于 $r$ 为经过有限步运算所得
 
@@ -1314,7 +1314,7 @@ F_2&=\{f\}
 
 ***** 子集法
 
-以下仅证明 $L(M_3)\subset L(M_2)$ 类似可证 $L(M_2)\subset L(M_3)$ 进而根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M_2)=L(M_3)$
+以下仅证明 $L(M_3)\subset L(M_2)$ 类似可证 $L(M_2)\subset L(M_3)$ 进而根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M_2)=L(M_3)$
 
 结合[[MK78][第一步]]的 $L(M_1)=L(M)$ 以及[[MK79][第二步]]的 $L(M_1)=L(M_2)$ 可得 $L(M_3)=L(M)$
 
@@ -1326,7 +1326,7 @@ F_2&=\{f\}
 
 （1） 求解 $\epsilon\text{-closure}(T_2)=\epsilon\text{-closure}(\{t\})$ 定义 $H=\{\epsilon\text{-closure}(T_2)\},\delta_3=\varnothing$
 
-（2） 对每一个 $I\in H$ 定义 $I'=\bigcup\left\{\epsilon\text{-closure}(I_0)\big|(<<s,a>,I_0>\in\delta_2)\land(s\in I)\right\}$ 为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK34][广义并]]
+（2） 对每一个 $I\in H$ 定义 $I'=\bigcup\left\{\epsilon\text{-closure}(I_0)\big|(<<s,a>,I_0>\in\delta_2)\land(s\in I)\right\}$ 为[[~/文档/note/离散数学/Disc_Math.org::MK34][广义并]]
 
      则重定义 $H=H\cup\{I'\},\delta_3=\delta_3\cup\{<<I,a>,I'>\}$
 
@@ -1338,13 +1338,13 @@ F_2&=\{f\}
 
 由于对于一个 $I\in H$ 所有 $\delta_2(s\in I,a)$ 的[[MK51][ $\epsilon$ 闭包]] 均为 $I^*$ 的子集
 
-故 $\delta_3(I,a)$ 有唯一映射 $I^*$ 故 $\delta_3:H\times\Sigma/\{\epsilon\}\to H$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]] 
+故 $\delta_3(I,a)$ 有唯一映射 $I^*$ 故 $\delta_3:H\times\Sigma/\{\epsilon\}\to H$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] 
 
 定义 $T_3=\epsilon\text{-closure}(T_2)\in H,F_3=\left\{I\big|I\in H\land F_2\cap I\ne\varnothing\right\}\subset H$
 
 最终组合成 $M_3=<H,\Sigma/\{\epsilon\},\delta_3,T_3,F_3>$ 满足[[MK67][DFA]]
 
-****** 存在对应[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]]<<MK81>>
+****** 存在对应[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]]<<MK81>>
 
 对于 $M_3=<H,\Sigma/\{\epsilon\},\delta_3,T_3,F_3>$ 
 
@@ -1402,7 +1402,7 @@ F_2&=\{f\}
 
 根据[[MK80][构造]] $M_3$ 是[[MK67][DFA]]，则对于任意 $\alpha=a_1...a_n\in L(M_3)$ 根据[[MK68][定义]]
 
-存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta_3(I_0,a_1),...,\delta_3(I_{n-1},a_n)>$ 满足：
+存在[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<\delta_3(I_0,a_1),...,\delta_3(I_{n-1},a_n)>$ 满足：
 
 （1） $\left(I_0=T_3\right)\land\left(\delta_3(I_{n-1},a_n)\in F_3\right)\land\left(I_i\in S_3,1\leq i\leq n\right)$ 
 
@@ -1422,7 +1422,7 @@ F_2&=\{f\}
 
 则根据[[MK70][定义]]以及 $M_2$ 的[[MK79][构造]]可得 $\alpha\in L(M_2)$ 即 $\forall\alpha\in L(M_3)\rightarrow\alpha\in L(M_2)$
 
-则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $L(M_3)\subset L(M_2)$
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]有 $L(M_3)\subset L(M_2)$
 
 *** 定理4
 
@@ -1445,13 +1445,13 @@ F'=&\begin{cases}F/U\cup I& U\cap F\ne\varnothing\\F&U\cap F =\varnothing\end{ca
 
 **** 证明
 
-对于任意 $\alpha=a_1...a_n\in L(M')$ 根据[[MK68][条件]]存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $r'=<\delta'(s_0,a_1),...,\delta'(s_{n-1},a_n)>$ 满足：
+对于任意 $\alpha=a_1...a_n\in L(M')$ 根据[[MK68][条件]]存在[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $r'=<\delta'(s_0,a_1),...,\delta'(s_{n-1},a_n)>$ 满足：
 
 （1） $\left(s_0=t'\right)\land\left(\delta'(s_{n-1},a_n)\in F'\right)\land\left(s_i\in S',1\leq i\leq n\right)$ 
 
 （2） $\delta'(s_{i-1},a_i)=s_i,1\leq i\leq n$
 
-以下仅证 $L(M')\subset L(M)$ ，类似可证 $L(M)\subset L(M')$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(M')$
+以下仅证 $L(M')\subset L(M)$ ，类似可证 $L(M)\subset L(M')$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(M')$
 
 ***** 不含 $I$
 
@@ -1515,7 +1515,7 @@ F'=&\begin{cases}F/U\cup I& U\cap F\ne\varnothing\\F&U\cap F =\varnothing\end{ca
 
 即根据[[MK68][识别单词]]可知 $\alpha=a_1...a_n\in L(M)$ 即 $\forall \alpha\in L(M')\rightarrow \alpha\in L(M)$
 
-则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $L(M’)\subset L(M)$
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]有 $L(M’)\subset L(M)$
 
 **** 推论
 
@@ -1531,11 +1531,11 @@ F'=&\begin{cases}F/U\cup I& U\cap F\ne\varnothing\\F&U\cap F =\varnothing\end{ca
 
      则划分 $I_i$ 至 $I_{ij}=\left\{I_i\cap I\big|I\in I_k\right\}$ 进一步定义 $I_{k+1}=(I_k/I_i)\cup I_{ij}$
 
-     反复运用改规则，直至 $|I_{k^*}|$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK3][基数]]不再增加
+     反复运用改规则，直至 $|I_{k^*}|$ [[~/文档/note/离散数学/Disc_Math.org::MK3][基数]]不再增加
 
 第二步进一步说明，若存在 $\{z_1,z_2\}\subset I_i$ 满足 $\delta(z_1,a)=z'_1\in I_u\in I_k,\delta(z_2,a)=z'_2\in I_v\in I_k$ 
 
-由于已知 $I_u,I_v$ 中元素非[[MK52][等价状态]]则存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,a_1),...,\delta(s_{n-1},a_n)>$ 满足：
+由于已知 $I_u,I_v$ 中元素非[[MK52][等价状态]]则存在[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,a_1),...,\delta(s_{n-1},a_n)>$ 满足：
 
 （1） $\left(s_0=z’_1\right)\land\left(\delta(s_{n-1},a_n)\in F\right)\land\left(s_i\in S,1\leq i\leq n\right)$ 
 
@@ -1571,13 +1571,13 @@ T=&\{s\}\\
 F=&\{f\}
 \end{aligned}
 
-显然根据 $\delta$ 构造规则对于任意 $A\in V_N\land \sigma\in V_T^*$ 映射 $\delta$ 有且仅有一个相，故 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]
+显然根据 $\delta$ 构造规则对于任意 $A\in V_N\land \sigma\in V_T^*$ 映射 $\delta$ 有且仅有一个相，故 $\delta$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]
 
 对于任意 $\sigma\in V_T^*=\Sigma^*$ 根据[[MK2][克林闭包]]与[[MK57][正规式]]定义易证 $\sigma$ 是[[MK1][字母表]]连接产生的正规式
 
 则有[[MK69][NFA]] $M=<S,\Sigma,\delta,T,F>$ 结合其构造规则以及[[MK70][识别单词]]
 
-对于任意 $\alpha=a_1...a_n\in L(M)$ 存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,\sigma_1),...,\delta(s_{m-1},\sigma_m)>$ 满足：
+对于任意 $\alpha=a_1...a_n\in L(M)$ 存在[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,\sigma_1),...,\delta(s_{m-1},\sigma_m)>$ 满足：
 
 （1） $s_0=s\right)\land\left(f\in\delta(s_{m-1},\sigma_m)\right)\land\left(s_i\in S,1\leq i\leq m+1\right)$
 
@@ -1597,9 +1597,9 @@ F=&\{f\}
 
 由于 $\alpha=a_1...a_n\in\sigma_1...\sigma_m$ 且 $\sigma_i$ 是[[MK1][字母表]]连接产生的正规式易证 $\alpha=\sigma_1...\sigma_m$
 
-故有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G)$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $L(M)\subset L(G)$
+故有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G)$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]有 $L(M)\subset L(G)$
 
-类似易证 $L(G)\subset L(M)$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(G)$
+类似易证 $L(G)\subset L(M)$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(G)$
 
 ****** 左线性
 
@@ -1616,7 +1616,7 @@ T=&\{t\}\\
 F=&\{s\}
 \end{aligned}
 
-对于任意 $\alpha=a_1...a_n\in L(M)$ 存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,\sigma_1),...,\delta(s_{m-1},\sigma_m)>$ 满足：
+对于任意 $\alpha=a_1...a_n\in L(M)$ 存在[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s_0,\sigma_1),...,\delta(s_{m-1},\sigma_m)>$ 满足：
 
 （1） $s_0=t\right)\land\left(s\in\delta(s_{m-1},\sigma_m)\right)\land\left(s_i\in S,1\leq i\leq m+1\right)$
 
@@ -1638,9 +1638,9 @@ F=&\{s\}
 
 由于 $\alpha=a_1...a_n\in\sigma_1...\sigma_m$ 且 $\sigma_i$ 是[[MK1][字母表]]连接产生的正规式易证 $\alpha=\sigma_1...\sigma_m$
 
-故有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G)$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $L(M)\subset L(G)$
+故有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G)$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]有 $L(M)\subset L(G)$
 
-类似易证 $L(G)\subset L(M)$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(G)$
+类似易证 $L(G)\subset L(M)$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(G)$
 
 ***** （2）
 
@@ -1668,9 +1668,9 @@ F=&\{s\}
 
 （2） $\delta(A_i,a_{i+1})=A_{i+1}$
 
-故根据[[MK68][定义]]有 $\alpha\in L(M)$ ，则有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G_R)$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $L(M)\subset L(G_R)$
+故根据[[MK68][定义]]有 $\alpha\in L(M)$ ，则有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G_R)$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]有 $L(M)\subset L(G_R)$
 
-类似易证 $L(G_R)\subset L(M)$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(G_R)$
+类似易证 $L(G_R)\subset L(M)$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(G_R)$
 
 当 $t\in F$ 时根据上述证明易见 $L(M)=L(G_R)\cup\{\epsilon\}$ 
 
@@ -1706,9 +1706,9 @@ F=&\{s\}
 
 根据[[MK5][连接]]有 $a_1...a_n\epsilon=a_1...a_n=\alpha$ 则根据[[MK22][定义]]有 $\alpha\in L(G_L)$
 
-则有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G_L)$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $L(M)\subset L(G_L)$
+则有 $\forall\alpha\in L(M)\rightarrow \alpha\in L(G_L)$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]有 $L(M)\subset L(G_L)$
 
-类似易证 $L(G_L)\subset L(M)$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(G_L)$
+类似易证 $L(G_L)\subset L(M)$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $L(M)=L(G_L)$
 
 当 $t\in F$ 时根据上述证明易见 $L(M)=L(G_L)\cup\{\epsilon\}$ 
 
@@ -1744,17 +1744,17 @@ F=&\{s\}
 
 ***** 证明
 
-根据定义，最左归约是最右推导的逆过程。由于是[[MK14][上下文无关]]，故[[MK10][产生式]]左部仅含有一个[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]
+根据定义，最左归约是最右推导的逆过程。由于是[[MK14][上下文无关]]，故[[MK10][产生式]]左部仅含有一个[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]
 
-故若有[[MK20][句型]]其最右[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]不存在与任意[[MK10][产生式]]的左部，则其无法产生[[MK21][句子]]
+故若有[[MK20][句型]]其最右[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]不存在与任意[[MK10][产生式]]的左部，则其无法产生[[MK21][句子]]
 
-故对于任意最右推导得的 $w\in L(G)$ 其被[[MK18][推导]]部分的必是当前[[MK20][句型]]中最右[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]
+故对于任意最右推导得的 $w\in L(G)$ 其被[[MK18][推导]]部分的必是当前[[MK20][句型]]中最右[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]
 
 ****** 充分
 
 假设若 $w\in L(G)$ 被最右归约时被[[MK19][归约]]的部分右边含有非终结符
 
-则其逆过程，即被[[MK18][推导]]部分不是最右[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]，与最左归约是最左推导的逆过程的逆过程矛盾。
+则其逆过程，即被[[MK18][推导]]部分不是最右[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]，与最左归约是最左推导的逆过程的逆过程矛盾。
 
 故假设不成立，则对于 $w\in L(G)$ 的最右归约被[[MK19][归约]]的部分的右边不含[[MK9][非终结符]]
 
@@ -1780,7 +1780,7 @@ F=&\{s\}
 
 若存在 $s\Rightarrow^* \alpha A\omega,A\in V_N$ 以及 $A\Rightarrow^+\beta$ 则称 $\beta$ 是句型 $\alpha\beta\omega$ 的短语
 
-是 $s\Rightarrow \alpha\beta\omega$ 对应的[[MK27][分析树]]上[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]大于 $2$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK298][子树]]的末端
+是 $s\Rightarrow \alpha\beta\omega$ 对应的[[MK27][分析树]]上[[~/文档/note/离散数学/Disc_Math.org::MK295][高]]大于 $2$ 的[[~/文档/note/离散数学/Disc_Math.org::MK298][子树]]的末端
 
 *** 直接短语<<MK90>>
 
@@ -1808,7 +1808,7 @@ F=&\{s\}
 
 若 $\beta$ 是 $\alpha$ 的直接短语，则有 $s\Rightarrow^*\delta A\omega\land A\to\beta\in P\land \alpha=\delta\beta\omega,\{\delta,\beta,\omega\}\subset V^*\land\{A,B\}\subset V_N$ 
 
-则根据[[MK32][定理3]]有 $D'=<M',E',\prec',f'>$ 满足 $D'\simeq\delta A\omega\land f(r')=s$ 其中 $r'$ 是 $D'$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]
+则根据[[MK32][定理3]]有 $D'=<M',E',\prec',f'>$ 满足 $D'\simeq\delta A\omega\land f(r')=s$ 其中 $r'$ 是 $D'$ 的[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]
 
 根据[[MK27][定义（4）]]存在 $v\in\mathcal{L}(M')$ 满足 $f(v)=A\in V_N$ 结合 $A\to\beta\in P$ 
 
@@ -1822,9 +1822,9 @@ F=&\{s\}
 
 ****** 必要
 
-若满足条件（1）（2），则定义 $D$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]是 $r$ ，若 $v\in K\land v=r$ 则显然直接短语是 $s$
+若满足条件（1）（2），则定义 $D$ 的[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]是 $r$ ，若 $v\in K\land v=r$ 则显然直接短语是 $s$
 
-若 $v\in K\land v\ne r$ 则显然 $v$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]]，定义 $X=M/(\mathcal{A}(v)/\{v\}),Y=\mathcal{A}(v)\cup\{v\}$
+若 $v\in K\land v\ne r$ 则显然 $v$ 是[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]]，定义 $X=M/(\mathcal{A}(v)/\{v\}),Y=\mathcal{A}(v)\cup\{v\}$
 
 故根据[[MK39][定理1]]有 $D_{X}=<X,E_1,f_1,\prec_1>,D_{Y}=<Y,E_1,f_1,\prec_1>$ 均为 $D$ 的[[MK38][分析子树]]
 
@@ -1848,9 +1848,9 @@ F=&\{s\}
 
 根据[[MK31][推论]]有[[MK27][分析树]] $D=<M,E,\prec,f>$ 满足 $D\simeq\alpha\land f(r)=s$
 
-定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]
+定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即[[~/文档/note/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]
 
-定义 $K$ 基于 $\prec$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK189][最小元]]为 $v$ ，定义 $v$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点]] $\mathcal{S}(v)$ 及其基于 $\prec$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec...\prec u_n$
+定义 $K$ 基于 $\prec$ 的[[~/文档/note/离散数学/Disc_Math.org::MK189][最小元]]为 $v$ ，定义 $v$ 的[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点]] $\mathcal{S}(v)$ 及其基于 $\prec$ 的[[~/文档/note/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec...\prec u_n$
 
 则 $\beta=f(u_1)...f(u_n)$ 是 $\alpha$ 的句柄， $v$ 是句柄分支
 
@@ -1866,23 +1866,23 @@ F=&\{s\}
 
 ****** （1）
 
-由于是句型，故根据[[MK31][推论]]可得存在[[MK27][语法树]] $D=<M,E,\prec,f>$ 满足 $D\simeq\alpha\land f(r)=s$ 其中 $r$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]
+由于是句型，故根据[[MK31][推论]]可得存在[[MK27][语法树]] $D=<M,E,\prec,f>$ 满足 $D\simeq\alpha\land f(r)=s$ 其中 $r$ 是[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]
 
 若 $K=\varnothing$ 则易证 $|M|=1$ 故 $M=\{r\}$ 由于 $f(r)=s$ 则 $D\simeq s$ 
 
 由于 $\alpha\ne s$ 则有 $s\Rightarrow^+\alpha$ 则易证 $K\ne\varnothing$ 且 $|K|<\infty$ 
 
-则根据[[MK39][定理1]]可依次去除 $K$ 中 $|K|$ 个节点的所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][有向可达]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]组成 $D$ 的[[MK38][分析子树]]
+则根据[[MK39][定理1]]可依次去除 $K$ 中 $|K|$ 个节点的所有[[~/文档/note/离散数学/Disc_Math.org::MK244][有向可达]]的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]组成 $D$ 的[[MK38][分析子树]]
 
 定义为 $D'=<M',E',\prec',f'>$ 易证 $K =\mathcal{L}(M')$ 
 
-故 $K$ 有基于 $\prec'$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec'...\prec'u_{|K|}$ 则根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK192][定理]]得 $\forall u_i\in K$ 必在排列上正好出现一次
+故 $K$ 有基于 $\prec'$ 的[[~/文档/note/离散数学/Disc_Math.org::MK191][排列]] $u_1\prec'...\prec'u_{|K|}$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK192][定理]]得 $\forall u_i\in K$ 必在排列上正好出现一次
 
-则 $u_1$ 必在排列最左，且 $\forall u_k\in K\land u_k\ne u_1$ 必有 $u_1\prec'...\prec'u_k$ 根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK172][传递性]] $u_1\prec'u_k$
+则 $u_1$ 必在排列最左，且 $\forall u_k\in K\land u_k\ne u_1$ 必有 $u_1\prec'...\prec'u_k$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK172][传递性]] $u_1\prec'u_k$
 
 由于 $D'$ 是 $D$ 分析子树，则根据[[MK40][定理1]]可得 $u_1\prec u_k$ 对于任意 $u_k\in K\land u_k\ne u_1$  
 
-故根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK189][定义]] $v$ 是 $K$ 基于 $\prec$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK189][最小元]]
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK189][定义]] $v$ 是 $K$ 基于 $\prec$ 的[[~/文档/note/离散数学/Disc_Math.org::MK189][最小元]]
 
 ****** （2）
 
@@ -1916,7 +1916,7 @@ F=&\{s\}
 
 定义 $\beta=X_1...X_n,\gamma=Y_1...Y_m$ 根据[[MK27][语法树定义]]存在 $x_i\in\mathcal{L}(M)$ 满足 $f(x_i)=X_i\land<v,x_i>\in E$
 
-同理有 $y_i\in\mathcal{L}(M)$ 满足 $f(y_i)=Y_i\land<v,y_i>\in E$ 由于 $v\prec v_\gamma$ 且 $v$ 到 $x_i$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][有向可达]]
+同理有 $y_i\in\mathcal{L}(M)$ 满足 $f(y_i)=Y_i\land<v,y_i>\in E$ 由于 $v\prec v_\gamma$ 且 $v$ 到 $x_i$ [[~/文档/note/离散数学/Disc_Math.org::MK244][有向可达]]
 
 则根据[[MK27][定义（5）]]有 $x_i\prec v_\gamma$ 同理可证 $x_i\prec y_i$ 故根据[[MK28][对应定义]]可得 $\gamma$ 在 $\beta$ 右边
 
@@ -1932,7 +1932,7 @@ F=&\{s\}
 
 由于是句型，故有 $s\Rightarrow^n\alpha$ 则根据[[MK31][推论]]可得有[[MK27][分析树]] $D$ 满足 $D\simeq\alpha\land f(r)=s$ 
 
-其中 $r$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]] $s$ 是[[MK11][开始符]]，定义其[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK293][分支]]节点数为 $n$ 
+其中 $r$ 是[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]] $s$ 是[[MK11][开始符]]，定义其[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]]节点数为 $n$ 
 
 根据[[MK93][定理1]]有句柄分支 $v\in K$ 故根据[[MK37][定理4]]存在 $D_1\stackrel{v}\Rightarrow D$
 
@@ -2083,7 +2083,7 @@ void $A$()
 
 由于是[[MK95][ $LL(1)$ 文法]]，故根据定义有当前[[MK9][非终结符]]和输入字符确定唯一[[MK10][产生式]]
 
-故可构建[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:V_N\times V_T\to P$
+故可构建[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:V_N\times V_T\to P$
 
 ****** 构建[[MK71][PDA]]
 
@@ -2251,35 +2251,35 @@ void $A$(){
 
 **** 算符文法<<MK100>>
 
-对于[[MK14][上下文无关文法]] $G=<V_N,V_T,P,s>$ 若其[[MK10][产生式]]的右部不含两个连续的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]
+对于[[MK14][上下文无关文法]] $G=<V_N,V_T,P,s>$ 若其[[MK10][产生式]]的右部不含两个连续的[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]
 
 则定义该文法为算符文法，此时称任意[[MK8][终结符]]为算符
 
 ***** 定理<<MK101>>
 
-算符文法的任意[[MK20][句型]]中不含两个连续的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]
+算符文法的任意[[MK20][句型]]中不含两个连续的[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]
 
 ****** 证明
 
 定义算符文法 $G=<V_N,V_T,P,s>$ 对于任意一步[[MK18][推导]]的句型 $\alpha_1$ 有 $s\Rightarrow\alpha_1$
 
-则有[[MK10][产生式]] $s\to\alpha_1\in P$ 根据定义有 $\alpha_1$ 不含两个连续的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]
+则有[[MK10][产生式]] $s\to\alpha_1\in P$ 根据定义有 $\alpha_1$ 不含两个连续的[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]
 
-假设对于任意 $n$ 步推导句型 $\alpha_n$ 满足不含两个连续的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]
+假设对于任意 $n$ 步推导句型 $\alpha_n$ 满足不含两个连续的[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]
 
 则对于任意 $n+1$ 步推导句型 $\alpha_{n+1}$ 有 $s\Rightarrow^*\alpha_n\Rightarrow\alpha_{n+1}$
 
-由于算符文法是上下文无关文法，故仅会替换 $\alpha_n$ 中的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]
+由于算符文法是上下文无关文法，故仅会替换 $\alpha_n$ 中的[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]
 
 故对于产生式替换的 $\alpha_n$ 非终结符 $A$ 可表述为 $\alpha_n=\omega_1z_1Az_2\omega_2$ 其中 $A\in V_N\land\omega_i\in V^*\land z_i\in V_T$
 
 产生式为 $A\to\beta\in P$ 推导过程 $\alpha_n\Rightarrow\alpha_{n+1}$ 表述为 $\omega_1z_1Az_2\omega_2\Rightarrow\omega_1z_1\beta z_2\omega_2$
 
-根据算符文法定义对于任意 $A\to\beta\in P$ 其中 $\beta$ 不含两个连续的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]
+根据算符文法定义对于任意 $A\to\beta\in P$ 其中 $\beta$ 不含两个连续的[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]
 
 结合假设可得 $\alpha_n$ 中的非终结符不连续出现可得 $\omega_i$ 中无连续非终结符
 
-故得 $\alpha_{n+1}=\omega_1z_1\beta z_2\omega_2$ 中不含两个连续的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK282][非终结符]]
+故得 $\alpha_{n+1}=\omega_1z_1\beta z_2\omega_2$ 中不含两个连续的[[~/文档/note/离散数学/Disc_Math.org::MK282][非终结符]]
 
 **** 算符优先级<<MK102>>
 
@@ -2313,7 +2313,7 @@ void $A$(){
 
 **** 算符优先表<<MK104>>
 
-对于[[MK103][算符优先文法]] $G=<V_N,V_T,P,s>$ 定义[[~/OneDrive/高等代数/Algb-3-Matrix.org][矩阵基础-矩阵的表述]] $M_{|V_T|\times|V_T|}[a_{ij}]$
+对于[[MK103][算符优先文法]] $G=<V_N,V_T,P,s>$ 定义[[~/文档/note/高等代数/Algb-3-Matrix.org][矩阵基础-矩阵的表述]] $M_{|V_T|\times|V_T|}[a_{ij}]$
 
 对于 $<v_i,v_j>,\{v_i,v_j\}\subset V_T$ 根据其[[MK102][算符优先级]]定义 $a_{ij}=\begin{cases}1&a\doteq b\\2&a\lessdot b\\3&a\gtrdot b\\0&else\end{cases}$ 
 
@@ -2521,13 +2521,13 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 ******* 是短语<<MK111>>
 
-易证存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK294][深度]]最大的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK279][分支]] $A$ ，满足 $A$ 到 $a_{j-1}$ ， $A$ 到 $a_{j}$ 均[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]
+易证存在[[~/文档/note/离散数学/Disc_Math.org::MK294][深度]]最大的[[~/文档/note/离散数学/Disc_Math.org::MK279][分支]] $A$ ，满足 $A$ 到 $a_{j-1}$ ， $A$ 到 $a_{j}$ 均[[~/文档/note/离散数学/Disc_Math.org::MK245][有向可达]]
 
-存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK294][深度]]最大的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK279][分支]] $Q$ ，满足 $Q$ 到 $a_{j+k}$ ， $A$ 到 $a_{j+k+1}$ 均[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]
+存在[[~/文档/note/离散数学/Disc_Math.org::MK294][深度]]最大的[[~/文档/note/离散数学/Disc_Math.org::MK279][分支]] $Q$ ，满足 $Q$ 到 $a_{j+k}$ ， $A$ 到 $a_{j+k+1}$ 均[[~/文档/note/离散数学/Disc_Math.org::MK245][有向可达]]
 
-******** $A$ 到 $a_{j-1}$ ， $Q$ 到 $a_{j+k+1}$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][长度]]为 $1$
+******** $A$ 到 $a_{j-1}$ ， $Q$ 到 $a_{j+k+1}$ [[~/文档/note/离散数学/Disc_Math.org::MK245][长度]]为 $1$
 
-假设 $A$ 到 $a_{j-1}$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK235][有向通路]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][长度]]大于 $1$ ，则有分支 $B$ 满足:
+假设 $A$ 到 $a_{j-1}$ 的[[~/文档/note/离散数学/Disc_Math.org::MK235][有向通路]]的[[~/文档/note/离散数学/Disc_Math.org::MK245][长度]]大于 $1$ ，则有分支 $B$ 满足:
 
 (1) $A$ 到 $B$ 有向路长度为 $1$ 
 
@@ -2545,17 +2545,17 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 此时有 $A$ 对应的产生式为 $A\to\omega BC\delta\lor A\to\omega BQC\delta$ 不满足[[MK100][算符文法]]定义
 
-故假设不成立 $A$ 到 $a_{j-1}$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK235][有向通路]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][长度]]不大于 $1$ ，则等于 $1$
+故假设不成立 $A$ 到 $a_{j-1}$ 的[[~/文档/note/离散数学/Disc_Math.org::MK235][有向通路]]的[[~/文档/note/离散数学/Disc_Math.org::MK245][长度]]不大于 $1$ ，则等于 $1$
 
-同理易证 $Q$ 到 $a_{j+k+1}$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][长度]]为 $1$
+同理易证 $Q$ 到 $a_{j+k+1}$ [[~/文档/note/离散数学/Disc_Math.org::MK245][长度]]为 $1$
 
 ******** 存在分支 $B,R$
 
-假设 $A$ 到 $a_j$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][长度]]是 $1$ ，则对应产生式有 $A\to\omega a_{j-1}a_{j}\delta$ 
+假设 $A$ 到 $a_j$ [[~/文档/note/离散数学/Disc_Math.org::MK245][长度]]是 $1$ ，则对应产生式有 $A\to\omega a_{j-1}a_{j}\delta$ 
 
 根据[[MK102][定义]]有 $a_{j=1}\doteq a_j$ 与条件不符，则假设不成立 $A$ 到 $a_j$ 距离不是 $1$
 
-故 $A$ 到 $a_j$ 距离大于 $1$ ，同理易证 $Q$ 到 $a_{j+k}$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][长度]]大于 $1$
+故 $A$ 到 $a_j$ 距离大于 $1$ ，同理易证 $Q$ 到 $a_{j+k}$ [[~/文档/note/离散数学/Disc_Math.org::MK245][长度]]大于 $1$
 
 则存在分支 $B$ 满足：
 
@@ -2575,11 +2575,11 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 ******** $B=R$
 
-假设 $B\ne R$ 由于 $\alpha$ 是[[MK20][句型]]，则有推导 $s\Rightarrow^*\alpha$ 根据[[MK30][定理1]]存在[[MK27][分析树]] $D$ 其树[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][根]]有 $f(r)=s$
+假设 $B\ne R$ 由于 $\alpha$ 是[[MK20][句型]]，则有推导 $s\Rightarrow^*\alpha$ 根据[[MK30][定理1]]存在[[MK27][分析树]] $D$ 其树[[~/文档/note/离散数学/Disc_Math.org::MK285][根]]有 $f(r)=s$
 
-根据[[MK39][定理3]]可得去除 $B,R$ 所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]节点后仍可构造分析树 $D'$
+根据[[MK39][定理3]]可得去除 $B,R$ 所有[[~/文档/note/离散数学/Disc_Math.org::MK245][有向可达]]节点后仍可构造分析树 $D'$
 
-根据[[MK32][定理4]]有对应 $f(r)\Rightarrow^*\alpha'$ ，由于 $B,R$ 对应节点是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK277][叶]]，故 $\alpha'$ 中包含 $B,R$
+根据[[MK32][定理4]]有对应 $f(r)\Rightarrow^*\alpha'$ ，由于 $B,R$ 对应节点是[[~/文档/note/离散数学/Disc_Math.org::MK277][叶]]，故 $\alpha'$ 中包含 $B,R$
 
 由于 $f(r)=s$ 故 $\alpha'$ 是[[MK20][句型]]，则若 $B,R$ 连续出现，则与[[MK101][定理]]矛盾
 
@@ -2589,7 +2589,7 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 ******** 证明结论
 
-根据[[MK39][定理3]]可基于 $B,R$ 及其所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]节点构造分析树 $D',D^*$
+根据[[MK39][定理3]]可基于 $B,R$ 及其所有[[~/文档/note/离散数学/Disc_Math.org::MK245][有向可达]]节点构造分析树 $D',D^*$
 
 根据[[MK32][定理4]]有 $D'$ 满足 $f(r)\Rightarrow^*N_1a_aN_2a_2...a_{j-1}Ba_{j+k+1}...N_na_nN_{n+1}$
 
@@ -2603,9 +2603,9 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 易证假设存在[[MK89][短语]] $C\Rightarrow N_na_n...N_ma_mN_{m+1}$ 包含与 $B$ 中
 
-则根据[[MK39][定理3]]可基于 $B$ 及其所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]节点构造分析树 $D^*$
+则根据[[MK39][定理3]]可基于 $B$ 及其所有[[~/文档/note/离散数学/Disc_Math.org::MK245][有向可达]]节点构造分析树 $D^*$
 
-易证存在[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK294][深度]]最大的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK279][分支]]对应 $A$ 满足 $A$ 到 $a_n,a_{n-1}$ 均[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]
+易证存在[[~/文档/note/离散数学/Disc_Math.org::MK294][深度]]最大的[[~/文档/note/离散数学/Disc_Math.org::MK279][分支]]对应 $A$ 满足 $A$ 到 $a_n,a_{n-1}$ 均[[~/文档/note/离散数学/Disc_Math.org::MK245][有向可达]]
 
 则[[MK111][同理易证]]：
 
@@ -2657,9 +2657,9 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 对于[[MK103][算符优先文法]] $G=<V_N,V_T,P,s>$ 定义：
 
-（1） [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:V_T\to\mathbb{N}$
+（1） [[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:V_T\to\mathbb{N}$
 
-（2） [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $g:V_T\to\mathbb{N}$
+（2） [[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $g:V_T\to\mathbb{N}$
 
 满足：
 
@@ -2673,15 +2673,15 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 ***** 建立优先函数算法
 
-定义 $X=\left\{f_a\big|a\in V_T\right\},Y=\left\{g_a\big|a\in V_T\right\}$ 则定义[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK259][有向二分图]]：
+定义 $X=\left\{f_a\big|a\in V_T\right\},Y=\left\{g_a\big|a\in V_T\right\}$ 则定义[[~/文档/note/离散数学/Disc_Math.org::MK259][有向二分图]]：
 
 （1） $V=X\cup Y$
 
 （2） $E=\left\{<f_a,g_b>\big|a\gtrdot b\lor a\doteq b\right\}\cup\left\{<g_b,f_a>\big|a\lessdot b\lor a\doteq b\right\}$
 
-若 $<V,E>$ 中不含[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK238][有向圈]]
+若 $<V,E>$ 中不含[[~/文档/note/离散数学/Disc_Math.org::MK238][有向圈]]
 
-则定义 $f(a),g(a)$ 的值分别为 $f_a,g_a$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]节点的个数（包含自身）
+则定义 $f(a),g(a)$ 的值分别为 $f_a,g_a$ [[~/文档/note/离散数学/Disc_Math.org::MK245][有向可达]]节点的个数（包含自身）
 
 故 $f(a),g(b)$ 是一对优先函数
 
@@ -2689,7 +2689,7 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 若有 $a\gtrdot b$ 根据[[MK103][算符优先文法]]定义 $<a,b>$ 不存在其他[[MK102][优先级]]关系
 
-则 $f_a,g_b$ 之间有且仅有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK211][边]] $<f_a,g_b>$ 且由于无圈，故 $g_b$ 不可达 $f_a$ 
+则 $f_a,g_b$ 之间有且仅有[[~/文档/note/离散数学/Disc_Math.org::MK211][边]] $<f_a,g_b>$ 且由于无圈，故 $g_b$ 不可达 $f_a$ 
 
 则 $g_b$ 所有可达节点均为 $f_a$ 的可达节点
 
@@ -2762,11 +2762,11 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
  
 且 $f(v)=f'(v)=A$ 假设 $v$ 不是[[MK92][句柄分支]]，定义 $K'=\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 
 
-则存在 $u\in K'$ 是[[MK92][句柄分支]]，则满足 $u\prec v$ 则根据[[MK27][定义]]可得 $<M',E'>$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][有根树]]
+则存在 $u\in K'$ 是[[MK92][句柄分支]]，则满足 $u\prec v$ 则根据[[MK27][定义]]可得 $<M',E'>$ 是[[~/文档/note/离散数学/Disc_Math.org::MK285][有根树]]
 
 又由于 $\{u,v\}\subset K'$ 故 $\mathcal{S}(u)\subset\mathcal{L}(M')\land\mathcal{S}(v)\subset\mathcal{L}(M')$ 
 
-则无[[~/OneDrive/离散数学/Disc_Math.org::MK238][弱圈]]，故 $\mathcal{S}(u)\cap\mathcal{S}(v)=\varnothing$ 又根据[[MK27][定义（5）]]由 $u\prec v$ 可得 $u'\prec v',\forall u'\in\mathcal{S}(u)\land \forall v'\in\mathcal{S}(u)$
+则无[[~/文档/note/离散数学/Disc_Math.org::MK238][弱圈]]，故 $\mathcal{S}(u)\cap\mathcal{S}(v)=\varnothing$ 又根据[[MK27][定义（5）]]由 $u\prec v$ 可得 $u'\prec v',\forall u'\in\mathcal{S}(u)\land \forall v'\in\mathcal{S}(u)$
 
 故 $\mathcal{S}(u)$ 在 $\mathcal{L}(M')$ 基于 $\prec$ 的排列在 $\mathcal{S}(v)$ 之前，则 $\alpha$ 中必有 $\mathcal{S}(u)$ 对应的字符串
 
@@ -2780,7 +2780,7 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 ****** 扩展项目<<MK141>>
 
-对于[[MK14][上下文无关文法]] $G=<V_N,V_T,P,s>$ 定义其扩展项目为二元[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<A\to\beta_{(i)},\rho>$
+对于[[MK14][上下文无关文法]] $G=<V_N,V_T,P,s>$ 定义其扩展项目为二元[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<A\to\beta_{(i)},\rho>$
 
 其中 $A\to\beta_{(i)}$ 是[[MK112][项目]]， $\rho\in V_T^*$ 是[[MK8][终结符]]组成的[[MK3][字串]]。为方便表述，记作 $A\to\beta_{(i),[\rho]}$
 
@@ -2870,7 +2870,7 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 由于 $s$ 是开始符，则有对应[[MK18][推导]] $s\Rightarrow\beta$ 则根据[[MK30][推论1]]有分析树 $D\simeq\beta\land f(r)=s$ 
 
-且仅有一个[[~/OneDrive/离散数学/Disc_Math.org::MK293][分支]]节点，则显然[[~/OneDrive/离散数学/Disc_Math.org::MK285][树根]]是唯一分支节点。故根据[[MK92][句柄]]定义可得 $\beta$ 是句柄
+且仅有一个[[~/文档/note/离散数学/Disc_Math.org::MK293][分支]]节点，则显然[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]是唯一分支节点。故根据[[MK92][句柄]]定义可得 $\beta$ 是句柄
 
 则根据[[MK114][活前缀]]定义可得 $\beta$ 的任意[[MK113][前缀]]是[[MK114][活前缀]]
 
@@ -2886,7 +2886,7 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 由于 $X_1...X_n$ 则定义 $X_1...X_q$ 是包含[[MK92][句柄]]的活前缀，根据[[MK114][定义]]有 $n\leq m$ 定义 $\alpha=X_1...X_q\beta$
 
-则存在有 $v'\in\mathcal{L}(M)$ 满足 $f(v)=X_k$ 定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即 $D$ 中[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]
+则存在有 $v'\in\mathcal{L}(M)$ 满足 $f(v)=X_k$ 定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即 $D$ 中[[~/文档/note/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]
 
 进一步定义 $X_p...X_q$ 是句柄，故有对应[[MK92][句柄分支]] $v\in K$
 
@@ -2894,15 +2894,15 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 则根据[[MK36][定理3]]有对应[[MK33][分析树推导]] $D\stackrel{v'}\Rightarrow D'=<M',E',\prec',f'>$ 满足 $D'\simeq\alpha'$
 
-且对于 $v'$ 有 $f(v')=X_k$ 定义 $K'=\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 则有 $v'\in K'$ 即在 $D'$ 中[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$
+且对于 $v'$ 有 $f(v')=X_k$ 定义 $K'=\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 则有 $v'\in K'$ 即在 $D'$ 中[[~/文档/note/离散数学/Disc_Math.org::MK295][高]]为 $1$
 
 若 $k<p$ 则有 $v'\prec v$ 根据[[MK40][定理2]]有 $v'\prec' v$ 又由于显然任意 $u\in K'\land u\ne v'\land u\ne v\Rightarrow u\in K$
 
-故有 $v\prec u$ 根据[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK172][传递性]]有 $\forall u\in K'\land u\ne v\Rightarrow v'\prec u$
+故有 $v\prec u$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK172][传递性]]有 $\forall u\in K'\land u\ne v\Rightarrow v'\prec u$
 
 若 $k\geq p$ 则 $v\not\in K'$ 类似易证亦有 $\forall u\in K'\land u\ne v\Rightarrow v'\prec u$
 
-故 $v'$ 是 $D'$ 的[[MK92][句柄分支]]，则定 $v'$ 为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]的[[MK38][分析子树]]所[[MK28][对应]]的[[MK3][字串]]是[[MK92][句柄]]
+故 $v'$ 是 $D'$ 的[[MK92][句柄分支]]，则定 $v'$ 为[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]的[[MK38][分析子树]]所[[MK28][对应]]的[[MK3][字串]]是[[MK92][句柄]]
 
 显然易证 $\alpha'$ 的句柄是[[MK18][推导]]出的 $X_{k-1}$ 与 $X_{k+1}$ 之间的 $Y_1...Y_m$ 
 
@@ -2926,29 +2926,29 @@ for 每一个 $\rho_i\to X_1X_2...X_m\in P$
 
 则根据[[MK92][定义]]存在[[MK27][分析树]] $D=<M,E,\prec,f>$ 满足 $D\simeq\alpha\beta\delta\land f(r)=s$
 
-定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]
+定义 $K=\left\{v\big|\mathcal{H}(v)=1\land v\in M\right\}$ 即[[~/文档/note/离散数学/Disc_Math.org::MK295][高]]为 $1$ 的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]
 
-则根据[[MK93][定理1]]有句柄分支 $v$ ，定义 $\mathcal{A}(v)$ 为其所有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK245][有向可达]]节点，定义 $N=M/(\mathcal{A}(v)/\{v\})$
+则根据[[MK93][定理1]]有句柄分支 $v$ ，定义 $\mathcal{A}(v)$ 为其所有[[~/文档/note/离散数学/Disc_Math.org::MK245][有向可达]]节点，定义 $N=M/(\mathcal{A}(v)/\{v\})$
 
 故根据[[MK37][定理4]]有 $D_N\stackrel{v}\Rightarrow D$ 且 $D_N=<M',E',\prec',f'>$ 是 $D$ 的[[MK38][分析子树]]
 
-进一步根据[[MK34][定理2]]有 $D_N\simeq\alpha A\delta\land f'(v)=f(v)=A$ 显然 $D_N,D$ 有相同的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][树根]]
+进一步根据[[MK34][定理2]]有 $D_N\simeq\alpha A\delta\land f'(v)=f(v)=A$ 显然 $D_N,D$ 有相同的[[~/文档/note/离散数学/Disc_Math.org::MK285][树根]]
 
 故根据[[MK32][推论]]以及[[MK34][定理2]]有 $s\Rightarrow^*\alpha A\delta\Rightarrow\alpha\beta\delta$ 
 
 ********* (2)
 
-定义 $D_N$ 及其句柄分支 $u$ ，假设 $\alpha$ 中包含句柄，则 $u$ 到 $v$ 不[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]
+定义 $D_N$ 及其句柄分支 $u$ ，假设 $\alpha$ 中包含句柄，则 $u$ 到 $v$ 不[[~/文档/note/离散数学/Disc_Math.org::MK244][可达]]
 
-由于 $D_N$ 是分析树，故根据[[MK27][定义]] $<M',E'>$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][有根树]]，故根据[[~/OneDrive/离散数学/Disc_Math.org::MK288][性质1]] $r$ 到 $v$ 可达
+由于 $D_N$ 是分析树，故根据[[MK27][定义]] $<M',E'>$ 是[[~/文档/note/离散数学/Disc_Math.org::MK285][有根树]]，故根据[[~/文档/note/离散数学/Disc_Math.org::MK288][性质1]] $r$ 到 $v$ 可达
 
-故存在 $u'\in\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 满足 $u'$ 到 $v$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]
+故存在 $u'\in\left\{v\big|\mathcal{H}(v)=1\land v\in M'\right\}$ 满足 $u'$ 到 $v$ [[~/文档/note/离散数学/Disc_Math.org::MK244][可达]]
 
 又根据[[MK92][定义]]有 $u\prec' u'$ 由于 $D_N$ 是 $D$ 的[[MK38][分析子树]]，则根据[[MK40][定理2]]有 $u\prec u'$
 
-根据[[MK27][定义（4）]]结合 $u'$ 到 $v$ [[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]有 $u\prec v$
+根据[[MK27][定义（4）]]结合 $u'$ 到 $v$ [[~/文档/note/离散数学/Disc_Math.org::MK244][可达]]有 $u\prec v$
 
-且由于 $u$ 到 $v$ 不[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK244][可达]]，故根据[[MK33][分析树推导]]可得 $u\in K$ 与句柄[[MK92][定义]]矛盾
+且由于 $u$ 到 $v$ 不[[~/文档/note/离散数学/Disc_Math.org::MK244][可达]]，故根据[[MK33][分析树推导]]可得 $u\in K$ 与句柄[[MK92][定义]]矛盾
 
 故假设不成立 $\alpha$ 中不包含句柄，则 $\alpha A$ 是[[MK114][活前缀]]
 
@@ -2988,7 +2988,7 @@ $F$ ：[[MK10][产生式]]的最终项目 $\left\{A\to\beta_{(|\beta|)}\big|A\to
 
 故得 $\delta(A\to\beta_{(i-1)},\epsilon)=\left\{\beta[i]\to\lambda_{(0)}\big|\beta[i]\to\lambda\in P\right\}\subset S$
 
-又根据构造易证 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]故得 $\delta:S\times\Sigma\to\rho(S)$ 满足[[MK69][定义]]，故成立
+又根据构造易证 $\delta$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]故得 $\delta:S\times\Sigma\to\rho(S)$ 满足[[MK69][定义]]，故成立
 
 ********* 一步[[MK18][推导]]<<MK132>>
 
@@ -3000,7 +3000,7 @@ $F$ ：[[MK10][产生式]]的最终项目 $\left\{A\to\beta_{(|\beta|)}\big|A\to
 
 故根据[[MK130][定义]]可得对于任意 $s\to\beta\in P\land1\leq i\leq |\beta|$ 可得 $s\to\beta_{(i)}$ 是[[MK130][有效项目]]，既有 $s\to\beta_{(i)}\in S$
 
-则有[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s\to\beta_{(0)},\beta[1]),...,\delta(s\to\beta_{(|\beta|-1)},\beta[|\beta|]})>$ 满足
+则有[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $<\delta(s\to\beta_{(0)},\beta[1]),...,\delta(s\to\beta_{(|\beta|-1)},\beta[|\beta|]})>$ 满足
 
 （1） $s\to\beta_{(0)}$
 
@@ -3082,7 +3082,7 @@ $F$ ：[[MK10][产生式]]的最终项目 $\left\{A\to\beta_{(|\beta|)}[a]\big|A
 
 故得 $\delta(A\to\beta_{(i-1)}[a],\epsilon)=\left\{\beta[i]\to\lambda_{(0)}[b]\bigg|\beta[i]\to\lambda\in P\land b\in FIRST(\beta[i]...\beta[|\beta|]a)\right\}\subset S$
 
-又根据构造易证 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]故得 $\delta:S\times\Sigma\to\rho(S)$ 满足[[MK69][定义]]，故成立
+又根据构造易证 $\delta$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]故得 $\delta:S\times\Sigma\to\rho(S)$ 满足[[MK69][定义]]，故成立
 
 ********* 一步[[MK18][推导]]
 
@@ -3142,7 +3142,7 @@ $F$ ：[[MK10][产生式]]的最终项目 $\left\{A\to\beta_{(|\beta|)}[a]\big|A
 
           求 $A\to\alpha X\beta_{(|\alpha|+1),[\rho]}$ 的[[MK166][闭包]]集合 $C'$ 若 $C'\not\in S\land C'\ne\varnothing$ 则定义 $S=S\cup C'$
 
-          进一步增加[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][映射]]关系 $\delta(C(I),X)=C'$ 到原有的 $\delta$ 中
+          进一步增加[[~/文档/note/离散数学/Disc_Math.org::MK194][映射]]关系 $\delta(C(I),X)=C'$ 到原有的 $\delta$ 中
 
      （b） 若 $C(I)$ 中含有 $A\to\alpha_{(|\alpha|),[\rho]}$ 形式的[[MK141][扩展项目]]，则添加 $C(I)$ 至 $F$ 中标记为[[MK67][终态]]
 
@@ -3190,13 +3190,13 @@ LR($k$)文法的任意[[MK20][句型]]包含唯一[[MK92][句柄]]
 
 假设 $\alpha$ 中存在多个句柄，则有多个包含[[MK92][句柄]]的[[MK114][活前缀]]
 
-根据[[MK120][定理]]可知任意包含[[MK92][句柄]]的[[MK114][活前缀]]可以被 $M$ 识别，故显然存在不同的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]]满足[[MK68][识别条件]]
+根据[[MK120][定理]]可知任意包含[[MK92][句柄]]的[[MK114][活前缀]]可以被 $M$ 识别，故显然存在不同的[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]]满足[[MK68][识别条件]]
 
 定义为 $r=<\delta(s_0,a_1),...,\delta(s_{n-1},\alpha[n])>,r_2=<\delta(s'_0,a_1),...,\delta(s'_{n-1},\alpha[m])>$ 
 
 根据[[MK68][识别条件]]开始状态均为 $s_0=t$ 故有 $s_0=s'_0$
 
-由于 $\delta$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]函数且第二个参数不为 $\epsilon$ ，故对于同意字符 $\alpha[1]$ 可得 $\delta(s_0,\alpha[1])$ 后继状态唯一
+由于 $\delta$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]函数且第二个参数不为 $\epsilon$ ，故对于同意字符 $\alpha[1]$ 可得 $\delta(s_0,\alpha[1])$ 后继状态唯一
 
 故有 $s_1=s'_1$ 依次类推可得 $s_i=s'_i,i\leq\min(m,n)$ 故若 $r_1,r_2$ 长度一致，则必有 $r_1=r_2$
 
@@ -3210,7 +3210,7 @@ LR($k$)文法的任意[[MK20][句型]]包含唯一[[MK92][句柄]]
 
 给定LR($k$)文法，其定义的定义[[MK128][活前缀DFA]]或[[MK161][扩展活前缀DFA]]为 $M=<S,\Sigma,\delta,t,F>$ 
 
-则可以确定唯一满足[[MK70][识别条件]]且识别包含[[MK92][句柄]]的[[MK114][活前缀]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]]
+则可以确定唯一满足[[MK70][识别条件]]且识别包含[[MK92][句柄]]的[[MK114][活前缀]]的[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]]
 
 ******* 证明
 
@@ -3218,13 +3218,13 @@ LR($k$)文法的任意[[MK20][句型]]包含唯一[[MK92][句柄]]
 
 由于[[MK92][句柄]]唯一，则包含[[MK92][句柄]]的[[MK114][活前缀]]唯一，定义为 $\lambda$
 
-根据[[MK120][定理]]以及[[MK77][等价性]]可知 $\lambda$ 可以被 $M$ 识别，即存在满足[[MK68][识别条件]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $r=<\delta(s_0,\lambda[1]),...,\delta(s_{n-1},\lambda[n])>$
+根据[[MK120][定理]]以及[[MK77][等价性]]可知 $\lambda$ 可以被 $M$ 识别，即存在满足[[MK68][识别条件]]的[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $r=<\delta(s_0,\lambda[1]),...,\delta(s_{n-1},\lambda[n])>$
 
 假设存在任意有序组 $<\delta(s'_0,\lambda[1]),...,\delta(s'_{n-1},\lambda[n])>$ 亦满足[[MK68][识别条件]]
 
 根据根据[[MK68][识别条件]]开始状态只能为 $s_0=t$ ，故有 $s'_0=s_0$
 
-且根据[[MK67][DFA定义]] $\delta:S\times\Sigma\cup\{\epsilon\}\to S$ 是[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK194][函数]]函数且第二个参数不为 $\epsilon$
+且根据[[MK67][DFA定义]] $\delta:S\times\Sigma\cup\{\epsilon\}\to S$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]函数且第二个参数不为 $\epsilon$
 
 故对于任意 $s_i=s'_i$ 可得 $\delta(s_i,\lambda[i])=\delta(s'_i,\lambda[i])$ 
 
@@ -3256,13 +3256,13 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 此时定义 $g_0:\mathcal{L}(M_1)\to\mathcal{L}(M_2)$ 为 $g(\delta_i)=\lambda_i$ 易证 $g_0$ 是[[MK41][分析函数]]
 
-根据[[MK93][定理1]]可得 $D_1,D_2$ 有[[MK92][句柄]] $\beta_1,\beta_2$ 及其[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK74][父节点]] $\delta,\lambda$
+根据[[MK93][定理1]]可得 $D_1,D_2$ 有[[MK92][句柄]] $\beta_1,\beta_2$ 及其[[~/文档/note/离散数学/Disc_Math.org::MK74][父节点]] $\delta,\lambda$
 
 根据LR($k$)文法定义可确定唯一句柄及其归约产生式，故得 $\beta_1=\beta_2\land f_1(\delta)=f_2(\lambda)$
 
 则继续定义 $g_1=g_0\cup\{<\delta,\lambda>\}$ 易证 $g_1$ 是分析函数
 
-根据[[MK39][定理1]]可得 $D_1,D_2$ 去除 $\delta,\lambda$ 对应的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点]]后是[[MK38][分析子树]] $D_{11},D_{21}$
+根据[[MK39][定理1]]可得 $D_1,D_2$ 去除 $\delta,\lambda$ 对应的[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点]]后是[[MK38][分析子树]] $D_{11},D_{21}$
 
 同理有对应字符串 $\omega_1,\omega_2$ 由于 $\beta_1=\beta_2\land f_1(\delta)=f_2(\lambda)$ 故易证 $\omega_1=\omega_2$
 
@@ -3308,13 +3308,13 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 ******* 证明
 
-由于是[[MK119][LR($k$)文法]]，则根据[[MK123][之前证明]]可得有唯一[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $r=<\delta(s_0,\alpha[1]),...,\delta(s_{n-1},\alpha[n])>$ 满足[[MK70][识别条件]]
+由于是[[MK119][LR($k$)文法]]，则根据[[MK123][之前证明]]可得有唯一[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $r=<\delta(s_0,\alpha[1]),...,\delta(s_{n-1},\alpha[n])>$ 满足[[MK70][识别条件]]
 
 则设 $\alpha[1]...\alpha[n]$ 是包含[[MK92][句柄]]的[[MK114][活前缀]]，又根[[MK119][定义]]可唯一确定以[[MK10][产生式]] $A\to\beta=\alpha[u]...\alpha[n]$ 进行[[MK19][归约]]
 
 得归约后的[[MK3][字串]]为 $\alpha_1=\alpha[1]...\alpha[u-1]A\alpha[n+1]...\alpha[|\alpha|]$
 
-同理可得对于句型 $\alpha_1$ 亦有有唯一[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK151][有序组]] $r_1=<\delta(s'_0,\alpha_1[1]),...,\delta(s'_{m-1},\alpha_1[m])>$ 满足[[MK70][识别条件]]
+同理可得对于句型 $\alpha_1$ 亦有有唯一[[~/文档/note/离散数学/Disc_Math.org::MK151][有序组]] $r_1=<\delta(s'_0,\alpha_1[1]),...,\delta(s'_{m-1},\alpha_1[m])>$ 满足[[MK70][识别条件]]
 
 则 $\alpha_1[1]...\alpha_1[m]$ 是包含[[MK92][句柄]]的[[MK114][活前缀]]。根据[[MK117][定理3]]可得 $\alpha[1]...\alpha[u-1]A$ 亦为活前缀
 
@@ -3438,21 +3438,21 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 **** 综合属性<<MK142>>
 
-一个[[MK145][字符]]的属性是由其在[[MK27][分析树]]中的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点]]的[[MK144][属性]]决定的，称为综合属性
+一个[[MK145][字符]]的属性是由其在[[MK27][分析树]]中的[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点]]的[[MK144][属性]]决定的，称为综合属性
 
 **** 继承属性<<MK143>>
 
-一个[[MK145][字符]]的属性是由其在[[MK27][分析树]]中的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][父节点]]或自身的其他[[MK144][属性]]决定的，称为综合属性
+一个[[MK145][字符]]的属性是由其在[[MK27][分析树]]中的[[~/文档/note/离散数学/Disc_Math.org::MK297][父节点]]或自身的其他[[MK144][属性]]决定的，称为综合属性
 
-推广定义中，亦可依赖于其[[~/OneDrive/离散数学/Disc_Math.org::MK299][兄弟节点]]的属性
+推广定义中，亦可依赖于其[[~/文档/note/离散数学/Disc_Math.org::MK299][兄弟节点]]的属性
 
 *** 推论
 
-（1） [[MK8][终结符]]无[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点]]，故仅有[[MK142][综合属性]]，由[[MK85][词法分析]]过程提供
+（1） [[MK8][终结符]]无[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点]]，故仅有[[MK142][综合属性]]，由[[MK85][词法分析]]过程提供
 
 （2） [[MK9][非终结符]]可有[[MK142][综合属性]]和[[MK143][继承属性]]
 
-（3） [[MK11][开始符]]无[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][父节点]]或[[~/OneDrive/离散数学/Disc_Math.org::MK299][兄弟节点]]，故其[[MK143][继承属性]]必须预先给定
+（3） [[MK11][开始符]]无[[~/文档/note/离散数学/Disc_Math.org::MK297][父节点]]或[[~/文档/note/离散数学/Disc_Math.org::MK299][兄弟节点]]，故其[[MK143][继承属性]]必须预先给定
 
 ** 语义规则<<MK146>>
 
@@ -3468,7 +3468,7 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 根据定义[[MK145][字符]]的[[MK144][属性]]仅能由[[MK10][产生式]]中包含的字符的其他属性计算而得
 
-根据[[MK27][分析树]]定义（4）可得产生式左部为[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][分支]]节点，右部为该分支的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点]]
+根据[[MK27][分析树]]定义（4）可得产生式左部为[[~/文档/note/离散数学/Disc_Math.org::MK285][分支]]节点，右部为该分支的[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点]]
 
 故语义规则仅能定义：
 
@@ -3486,7 +3486,7 @@ LR($k$)文法不是[[MK43][二义性]]文法
 
 对于任意[[MK10][产生式]] $A\to X_1...X_n$ 翻译模式以在对应[[MK145][字符]]后的位置加 $\{\mathcal{A}=\phi(...)\}$ 为表述
 
-代表语法分析器构建完该[[MK145][字符]]对应的[[MK27][分析树]]上的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]后运行 $\{\}$ 中的内容
+代表语法分析器构建完该[[MK145][字符]]对应的[[MK27][分析树]]上的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]后运行 $\{\}$ 中的内容
 
 其中 $\mathcal{A}$ 表示需要计算的[[MK144][属性]] $\phi$ 为[[MK146][规则函数]] 
 
@@ -3526,29 +3526,29 @@ A\{A.b=A.a+1\}\to B\{B.b=A.b+1\}C\{&C.b=B.b+1,\\
 
 *** 依赖图
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK222][有向无圈图]] $G=<V,E>$ 其中：
+定义[[~/文档/note/离散数学/Disc_Math.org::MK222][有向无圈图]] $G=<V,E>$ 其中：
 
 （1） $V$ 为所有[[MK144][属性]]的集合
 
 （2） $E$ 为依赖关系，其中 $<v_1,v_2>\in E,\{v_1,v_2\}\subset V$ 表示 $v_1$ 依赖于 $v_2$ 进行计算
 
-则可根据[[~/OneDrive/离散数学/Disc_Math.org::MK322][拓扑排序]]确定先后计算顺序，进行属性计算
+则可根据[[~/文档/note/离散数学/Disc_Math.org::MK322][拓扑排序]]确定先后计算顺序，进行属性计算
 
 *** 树遍历
 
-对于无循环依赖的[[MK146][语义规则]]，循环遍历[[MK27][分析树]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]，计算可以计算的[[MK144][属性]]
+对于无循环依赖的[[MK146][语义规则]]，循环遍历[[MK27][分析树]]的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]，计算可以计算的[[MK144][属性]]
 
 多遍扫描直至所有属性计算完毕。
 
 **** 实现
 
-构造函数visitNode([[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]])包含：
+构造函数visitNode([[~/文档/note/离散数学/Disc_Math.org::MK209][节点]])包含：
 
 （1） 计算当前可以计算的[[MK144][属性]]
 
 （2） 对于某节点的子节点自左向右扫描
 
-对于非[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK292][叶]]的[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]]递归调用visitNode([[/home/shore/OneDrive/离散数学/Disc_Math.org::MK209][节点]])
+对于非[[~/文档/note/离散数学/Disc_Math.org::MK292][叶]]的[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]]递归调用visitNode([[~/文档/note/离散数学/Disc_Math.org::MK209][节点]])
 
 ** S-属性文法<<MK154>>
 
@@ -3614,7 +3614,7 @@ A\{A.b=A.a+1\}\to B\{B.b=A.b+1\}C\{&C.b=B.b+1,\\
 
 定义文法 $G=<V_N,V_T,P,s>$ 其[[MK145][字符]]为 $V$ [[MK146][操作符]]集合为 $\mathcal{O}(V)$
 
-对于[[MK27][分析树]] $D=<M,E,\prec,f>$ 的每个[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK285][分支]]节点 $M(v)$ 以及其[[/home/shore/OneDrive/离散数学/Disc_Math.org::MK297][子节点]] $\mathcal{S}(v)$ 满足以下其中一条：
+对于[[MK27][分析树]] $D=<M,E,\prec,f>$ 的每个[[~/文档/note/离散数学/Disc_Math.org::MK285][分支]]节点 $M(v)$ 以及其[[~/文档/note/离散数学/Disc_Math.org::MK297][子节点]] $\mathcal{S}(v)$ 满足以下其中一条：
 
 （1） 存在 $u\in\mathcal{S}(v)\land f(u)\in\mathcal{O}(V)$ 
 
@@ -3801,7 +3801,7 @@ E\to E_1+E_2&\\
 
 *** DAG
 
-即[[~/OneDrive/离散数学/Disc_Math.org::MK222][有向图无圈图]]
+即[[~/文档/note/离散数学/Disc_Math.org::MK222][有向图无圈图]]
 
 ** 循环优化
 
@@ -3817,13 +3817,13 @@ E\to E_1+E_2&\\
 
 *** 流图
 
-定义[[MK155][基本块]]为[[~/OneDrive/离散数学/Disc_Math.org::MK209][节点]] $V=\{v_1,...,v_n\}$
+定义[[MK155][基本块]]为[[~/文档/note/离散数学/Disc_Math.org::MK209][节点]] $V=\{v_1,...,v_n\}$
 
-若基本块 $v_i$ 可能跳转到 $v_j$ ，则定义[[~/OneDrive/离散数学/Disc_Math.org::MK211][有向边]] $<v_i,v_j>$
+若基本块 $v_i$ 可能跳转到 $v_j$ ，则定义[[~/文档/note/离散数学/Disc_Math.org::MK211][有向边]] $<v_i,v_j>$
 
 所有有向边集合定义为 $E$
 
-最终定义 $G=<V,E>$ 为[[MK155][基本块]]形成的[[~/OneDrive/离散数学/Disc_Math.org::MK221][有向图]]
+最终定义 $G=<V,E>$ 为[[MK155][基本块]]形成的[[~/文档/note/离散数学/Disc_Math.org::MK221][有向图]]
 
 **** 首节点
 

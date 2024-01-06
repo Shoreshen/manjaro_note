@@ -22,7 +22,7 @@ $g(x)$ 在 $(a,b)$ 上不变号，且在 $[a,b]$ 上可导
 
 仅证明 $g(x)>0$ 情况
 
-根据[[e:/OneDrive/大学物理/Note/DiffEq.org][闭区间连续函数-有界性定理]]可得 $m\leq f(x)\leq M$
+根据[[~/文档/note/大学物理/Note/DiffEq.org][闭区间连续函数-有界性定理]]可得 $m\leq f(x)\leq M$
 
 若 $m=f(x)=M$ 则 $f(x)$ 为常函数 $f(x)=C\Rightarrow \int_a^b f(x)g(x)dx=C\int_a^b g(x)dx=f(\xi)\int_a^bg(x)dx,\xi\in[a,b]$
 
@@ -35,7 +35,7 @@ $g(x)$ 在 $(a,b)$ 上不变号，且在 $[a,b]$ 上可导
 
 由于 $&m< \frac{\int_a^b f(x)g(x) dx}{\int_a^b g(x) dx} < M$ 且 $m\leq f(x)\leq M$ 及 $f(x)$ 闭区间连续
 
-根据[[e:/OneDrive/大学物理/Note/DiffEq.org][闭区间连续函数-介值定理]]，必存在 $\eta\in(a,b)\Rightarrow f(\eta)=\frac{\int_a^b f(x)g(x) dx}{\int_a^b g(x) dx}\Rightarrow f(\eta)\int_a^b g(x) dx=\int_a^b f(x)g(x) dx$
+根据[[~/文档/note/大学物理/Note/DiffEq.org][闭区间连续函数-介值定理]]，必存在 $\eta\in(a,b)\Rightarrow f(\eta)=\frac{\int_a^b f(x)g(x) dx}{\int_a^b g(x) dx}\Rightarrow f(\eta)\int_a^b g(x) dx=\int_a^b f(x)g(x) dx$
 
 ** <<MK1>>第二积分中值定理：
 
@@ -167,7 +167,7 @@ $f(b)=\infty$ ，且 $A \in [a,b)$ ，$f(x)$ 对于 $\forall A$ 可积：
 
 $\int_a^\infty f(x) dx$ 收敛，则有 $\lim_{A\to\infty}\int_a^A f(x) dx=I$ 即 $\forall\epsilon>0,\exists \delta>a,\forall A>\delta\Rightarrow \left|\int_a^A f(x) dx-I\right|<\frac{\epsilon}{2}$
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]，取 $A',A''>\delta$
+则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]，取 $A',A''>\delta$
 
 \begin{aligned}
 \left|\int_{A'}^{A''}f(x)dx\right|&=\left|\int_a^{A'}f(x)dx-\int_a^{A''}f(x)dx\right|\\
@@ -182,7 +182,7 @@ $\int_a^\infty f(x) dx$ 收敛，则有 $\lim_{A\to\infty}\int_a^A f(x) dx=I$ �
 
 取 $\epsilon=1$ 则有 $\exists \delta,\forall A',A''>\delta\Rightarrow \left|\int_{A'}^{A''}f(x)dx\right|<1$ 
 
-取 $\delta+1<A$ 则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]有 $\int_a^A f(x) dx=\int_a^{\delta+1} f(x) dx+\int_{\delta+1}^A f(x) dx$
+取 $\delta+1<A$ 则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]有 $\int_a^A f(x) dx=\int_a^{\delta+1} f(x) dx+\int_{\delta+1}^A f(x) dx$
 
 因为 $\delta+1,A>\delta\Rightarrow \left|\int_{\delta+1}^A f(x) dx\right|<1$
 
@@ -192,7 +192,7 @@ $\int_a^\infty f(x) dx$ 收敛，则有 $\lim_{A\to\infty}\int_a^A f(x) dx=I$ �
 
 则对应有函数序列 $\left\{\int_a^{x_n} f(x) dx\big|n>N'\right\}$ 故映射数列 $\int_a^{x_n} f(x) dx$ 有界 
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][实数系基本定理-Bolzano-Weierstrass定理]]必有收敛子列 $\int_a^{x_i} f(x) dx,x_i\in\{x_n|n>N'\}$ 且因为 $x_i\in\{x_n|n>N'\}\Rightarrow \lim_{i\to\infty}x_i=\infty$
+根据[[~/文档/note/数学分析/Chap11Note.org][实数系基本定理-Bolzano-Weierstrass定理]]必有收敛子列 $\int_a^{x_i} f(x) dx,x_i\in\{x_n|n>N'\}$ 且因为 $x_i\in\{x_n|n>N'\}\Rightarrow \lim_{i\to\infty}x_i=\infty$
 
 ***** 证明反常积分收敛于 $K$
 
@@ -204,7 +204,7 @@ $\int_a^\infty f(x) dx$ 收敛，则有 $\lim_{A\to\infty}\int_a^A f(x) dx=I$ �
 
 取 $I=max(I_1+1,I_2+1)$ 则有 $x_I>\delta',\left|\int_a^{x_I}f(x)dx-K\right|<\frac{\epsilon}{2}$ 
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]] $\int_a^A f(x)dx+\int_A^{x_I} f(x)dx=\int_a^{x_I} f(x)dx\Rightarrow \int_a^A f(x)dx=\int_a^{x_I} f(x)dx-\int_A^{x_I} f(x)dx$ 有 
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]] $\int_a^A f(x)dx+\int_A^{x_I} f(x)dx=\int_a^{x_I} f(x)dx\Rightarrow \int_a^A f(x)dx=\int_a^{x_I} f(x)dx-\int_A^{x_I} f(x)dx$ 有 
 
 \begin{aligned}
 &\forall\epsilon>0,\exists \delta''=\max(\detla,\delta')>a,\forall A>\delta''\\
@@ -356,7 +356,7 @@ f(x) dx
 
 $\int_a^b f(x) dx$ 收敛，则有 $\lim_{A\to b^-}\int_a^A f(x) dx=I$ 即 $\forall\epsilon>0,\exists \delta>0,\forall A \in [b-\delta,b)\Rightarrow \left|\int_a^A f(x) dx-I\right|<\frac{\epsilon}{2}$
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]，取 $\eta_1,\eta2\in (0,\delta)$
+则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]，取 $\eta_1,\eta2\in (0,\delta)$
 
 \begin{aligned}
 \left|\int_{b-\eta_1}^{b-\eta_2}f(x)dx\right|&=\left|\int_a^{b-\eta_2}f(x)dx-\int_a^{b-\eta_1}f(x)dx\right|\\
@@ -371,7 +371,7 @@ $\int_a^b f(x) dx$ 收敛，则有 $\lim_{A\to b^-}\int_a^A f(x) dx=I$ 即 $\for
 
 取 $\epsilon=1$ 则有 $\exists \delta,\forall \eta_2,\eta_1\in(0,\delta)\Rightarrow \left|\int_{b-\eta_1}^{b-\eta_2}f(x)dx\right|<1$ 
 
-取 $b-\frac{\delta}{2}<A<b$ 则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]有 $\int_a^A f(x) dx=\int_a^{b-\frac{\delta}{2}} f(x) dx+\int_{b-\frac{\delta}{2}}^A f(x) dx$
+取 $b-\frac{\delta}{2}<A<b$ 则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]有 $\int_a^A f(x) dx=\int_a^{b-\frac{\delta}{2}} f(x) dx+\int_{b-\frac{\delta}{2}}^A f(x) dx$
 
 因为 $b-A,\frac{\delta}{2}\in(0,\delta)\Rightarrow \left|\int_{b-\frac{\delta}{2}}^A f(x) dx\right|<1$
 
@@ -381,7 +381,7 @@ $\int_a^b f(x) dx$ 收敛，则有 $\lim_{A\to b^-}\int_a^A f(x) dx=I$ 即 $\for
 
 则对应有函数序列 $\left\{\int_a^{x_n} f(x) dx\big|n>N'\right\}$ 故映射数列 $\int_a^{x_n} f(x) dx$ 有界 
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][实数系基本定理-Bolzano-Weierstrass定理]]必有收敛子列 $\int_a^{x_i} f(x) dx,x_i\in\{x_n|n>N'\}$ 且因为 $x_i\in\{x_n|n>N'\}\Rightarrow \lim_{i\to\infty}x_i=b^-$
+根据[[~/文档/note/数学分析/Chap11Note.org][实数系基本定理-Bolzano-Weierstrass定理]]必有收敛子列 $\int_a^{x_i} f(x) dx,x_i\in\{x_n|n>N'\}$ 且因为 $x_i\in\{x_n|n>N'\}\Rightarrow \lim_{i\to\infty}x_i=b^-$
 
 ***** 证明反常积分收敛于 $K$
 
@@ -393,7 +393,7 @@ $\int_a^b f(x) dx$ 收敛，则有 $\lim_{A\to b^-}\int_a^A f(x) dx=I$ 即 $\for
 
 取 $I=max(I_1+1,I_2+1)$ 则有 $x_I\in(b-\delta',b),\left|\int_a^{x_I}f(x)dx-K\right|<\frac{\epsilon}{2}$ 
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]] $\int_a^A f(x)dx+\int_A^{x_I} f(x)dx=\int_a^{x_I} f(x)dx\Rightarrow \int_a^A f(x)dx=\int_a^{x_I} f(x)dx-\int_A^{x_I} f(x)dx$ 有 
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]] $\int_a^A f(x)dx+\int_A^{x_I} f(x)dx=\int_a^{x_I} f(x)dx\Rightarrow \int_a^A f(x)dx=\int_a^{x_I} f(x)dx-\int_A^{x_I} f(x)dx$ 有 
 
 \begin{aligned}
 &\forall\epsilon>0,\exists \delta''=\max(\delta',\delta)>0,\forall A\in(b-\delta'',b)\\

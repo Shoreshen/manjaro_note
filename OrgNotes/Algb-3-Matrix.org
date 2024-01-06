@@ -8,7 +8,7 @@ current mark: 71
 
 ** 矩阵的表述<<MK6>>
 
-定义 $M_{s\times n}(K)$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的 $s$ 行 $n$ 列的 *所有* 矩阵的集合
+定义 $M_{s\times n}(K)$ 为[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的 $s$ 行 $n$ 列的 *所有* 矩阵的集合
 
 定义 $M=\left[m_{ij}\right]_{s\times n}$ 为第 $i$ 行 $j$ 列上的元素为 $m_{ij}$ 的 $s$ 行 $n$ 列的矩阵
 
@@ -24,13 +24,13 @@ current mark: 71
 
 ** 矩阵组成的线性空间<<MK10>>
 
-$\mathcal{V}=<M_{s\times n}(K),K,+,\cdot>$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间]]，记为 $M_{s\times n}(K)$
+$\mathcal{V}=<M_{s\times n}(K),K,+,\cdot>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间]]，记为 $M_{s\times n}(K)$
 
 其中 $+$ 是[[MK2][矩阵乘法]]， $\cdot$ 是[[MK3][矩阵数乘]]
 
 *** 证明
 
-由于 $K$ 亦是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]]，故为[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK12][交换环]]，即矩阵中的元素满足：
+由于 $K$ 亦是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]]，故为[[~/文档/note/高等代数/Algb-4-Multi-equ.org::MK12][交换环]]，即矩阵中的元素满足：
 
 （1） 加法结合律
 
@@ -46,7 +46,7 @@ $\mathcal{V}=<M_{s\times n}(K),K,+,\cdot>$ 是[[~/OneDrive/高等代数/Algb-1-L
 
 （7） 乘法分配率
 
-则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间]]定义以及以下证明可得 $\mathcal{V}$ 是线性空间
+则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间]]定义以及以下证明可得 $\mathcal{V}$ 是线性空间
 
 **** 交换律
 
@@ -88,7 +88,7 @@ $\mathcal{V}=<M_{s\times n}(K),K,+,\cdot>$ 是[[~/OneDrive/高等代数/Algb-1-L
 
 *** 证明
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK36][基的定义]]，做以下证明
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基的定义]]，做以下证明
 
 **** 任意元素可由基现行表述
 
@@ -102,7 +102,7 @@ $A=\sum_{l=1}^s\left\{\sum_{k=1}^n[D(i,j,l,k)]_{s\times n}\right\}$ 其中 $D(i,
 
 **** 基中的元素线性不相关
 
-根据[[MK9][零元定义]]以及[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][定义]]可得当且仅当 $\forall i\forall j(k_{ij}=0)$ 时有 $\sum_{l=1}^s\left\{\sum_{k=1}^nk_{lk}E_{lk}\right\}=[0]_{s\times n}$ 则线性不相关
+根据[[MK9][零元定义]]以及[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][定义]]可得当且仅当 $\forall i\forall j(k_{ij}=0)$ 时有 $\sum_{l=1}^s\left\{\sum_{k=1}^nk_{lk}E_{lk}\right\}=[0]_{s\times n}$ 则线性不相关
 
 其中 $k_{ij}\in K$
 
@@ -112,15 +112,15 @@ $A=\sum_{l=1}^s\left\{\sum_{k=1}^n[D(i,j,l,k)]_{s\times n}\right\}$ 其中 $D(i,
 
 *** 推论1
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK43][定理2]]可得 $M_{s\times n}(K)$ 任意基包含的向量个数为 $sn$
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK43][定理2]]可得 $M_{s\times n}(K)$ 任意基包含的向量个数为 $sn$
 
 *** 推论2<<MK52>>
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK51][线性空间的维数]]可得 $\dim\left(\mathcal{V}\right)=sn$
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK51][线性空间的维数]]可得 $\dim\left(\mathcal{V}\right)=sn$
 
 ** 定理1
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性子空间-子空间的运算-直和]]，线性空间 $M_{n\times n}(K)$ 是其[[MK15][对称子空间]]和[[MK16][斜对称子空间]]的直和
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性子空间-子空间的运算-直和]]，线性空间 $M_{n\times n}(K)$ 是其[[MK15][对称子空间]]和[[MK16][斜对称子空间]]的直和
 
 *** 证明
 
@@ -134,7 +134,7 @@ $A=\sum_{l=1}^s\left\{\sum_{k=1}^n[D(i,j,l,k)]_{s\times n}\right\}$ 其中 $D(i,
 
 综上所述 $a_{ij}=a_{ji}=-b_{ji}=b_{ij}=-a_{ij}$ 即 $a_{ij}=-a_{ji}$ 则 $a_{ij}=0$
 
-故 $A=B=[0]_{n\times n}$ 则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性子空间-子空间的运算-直和-两个子空间直和-性质]]可得 $S+S'$ 为直和，即  $S+S'=S\textcircled{+}S'$
+故 $A=B=[0]_{n\times n}$ 则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性子空间-子空间的运算-直和-两个子空间直和-性质]]可得 $S+S'$ 为直和，即  $S+S'=S\textcircled{+}S'$
 
 **** 求子空间得基
 
@@ -154,19 +154,19 @@ $A=\sum_{l=1}^s\left\{\sum_{k=1}^n[D(i,j,l,k)]_{s\times n}\right\}$ 其中 $D(i,
 
 **** 证明基可以互相表述
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性子空间-子空间的运算-直和-两个子空间直和-性质]]可得 $S+S'$ 的基为 $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性子空间-子空间的运算-直和-两个子空间直和-性质]]可得 $S+S'$ 的基为 $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$
 
 根据[[MK20][矩阵空间基]]可得 $M_{n\times n}(K)$ 的一组基为 $\left\{E_{ij}\big|1\leq i\leq n\land 1\leq j\leq n\right\}$ 
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的维数]]可知 $\dim(M_{n\times n}(K))=n^2=\dim(S+S')$
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的维数]]可知 $\dim(M_{n\times n}(K))=n^2=\dim(S+S')$
 
 由于 $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$ 是基，故线性不相关
 
-则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的维数-命题2]] $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$ 亦为 $M_{n\times n}(K)$ 的一组基
+则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的维数-命题2]] $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$ 亦为 $M_{n\times n}(K)$ 的一组基
 
-即任意 $A\in M_{n\times n}(K)$ 同样可由 $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$ 线性表述，且根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间定义]]线性表述运算封闭
+即任意 $A\in M_{n\times n}(K)$ 同样可由 $\left\{Z_{ij}\big|i>j\right\}\cup\left\{Z'_{ij}\big|i\leq j\right\}$ 线性表述，且根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间定义]]线性表述运算封闭
 
-故对于任意 $A\in M_{n\times n}(K)$ 可得 $A\in S+S'$ 由于线性空间本身为集合，则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $M_{n\times n}(K)=S+S'$
+故对于任意 $A\in M_{n\times n}(K)$ 可得 $A\in S+S'$ 由于线性空间本身为集合，则根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $M_{n\times n}(K)=S+S'$
 
 * 特殊矩阵
 
@@ -210,7 +210,7 @@ I_nA_{n\times s}&= A_{s\times n}\\
 
 ***** 证明<<MK11>>
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性子空间-线性子空间充要条件]]依次证明
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性子空间-线性子空间充要条件]]依次证明
 
 （1）显然对于 $M_{n\times n}(K)$ 对角矩阵不为空集
 
@@ -418,25 +418,25 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 ***** 第一型
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK18][上三角矩阵行列式]]可得该型初等矩阵行列式 $|P|=1$
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK18][上三角矩阵行列式]]可得该型初等矩阵行列式 $|P|=1$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK19][初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=|A|$
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK19][初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=|A|$
 
 此时 $|PA|=|AP|=|P||A|=1|A|=|A|$ 成立
 
 ***** 第二型
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK13][两行互换]]可得该型初等矩阵行列式 $|P|=-1$
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK13][两行互换]]可得该型初等矩阵行列式 $|P|=-1$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK19][初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=-|A|$
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK19][初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=-|A|$
 
 此时 $|PA|=|AP|=|P||A|=-1|A|=-|A|$ 成立
 
 ***** 第三型
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK14][行乘系数]]可得该型初等矩阵行列式 $|P|=k$ 其中 $k$ 为对应的系数
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK14][行乘系数]]可得该型初等矩阵行列式 $|P|=k$ 其中 $k$ 为对应的系数
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK19][初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=k|A|$
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK19][初等行变换]]以及[[MK32][初等变换]]可得 $|PA|=|AP|=k|A|$
 
 此时 $|PA|=|AP|=|P||A|=k|A|$ 成立
 
@@ -472,7 +472,7 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 *** 矩阵求逆
 
-若矩阵 $A=[a_{ij}]$ 且[[MK28][可逆]]，则 $A^{-1}_n=\frac{1}{|A_n|}\left([U_{ij}]^T_{n\times n}\right)$ 为其逆矩阵，其中 $U_{ij}$ 定义为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][行列式-其他定义-代数余子式]]。
+若矩阵 $A=[a_{ij}]$ 且[[MK28][可逆]]，则 $A^{-1}_n=\frac{1}{|A_n|}\left([U_{ij}]^T_{n\times n}\right)$ 为其逆矩阵，其中 $U_{ij}$ 定义为[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][行列式-其他定义-代数余子式]]。
 
 ** 基本运算性质
 
@@ -559,7 +559,7 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 若矩阵 $A,B$ 可以相乘，则有 $rank(AB)\leq\min\left\{rank(A),rank(B)\right\}$ 
 
-其中 $rank(X)$ 表示 $X$ 的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK55][秩]]
+其中 $rank(X)$ 表示 $X$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK55][秩]]
 
 ***** 证明
 
@@ -567,15 +567,15 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 定义 $B=\left[\begin{matrix}b_{11}&b_{12}&...&b_{1t}\\b_{21}&b_{22}&...&b_{2t}\\...&...&...&...\\b_{n1}&b_{n2}&...&b_{nt}\end{matrix}\right]$ 则根据[[MK5][乘法定义]]可得 $AB=\left[\begin{matrix}\sum_{i=1}^n\vec{a}_ib_{i1}&\sum_{i=1}^n\vec{a}_ib_{i2}&...&\sum_{i=1}^n\vec{a}_ib_{it}\end{matrix}\right]$
 
-则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][向量组关系-线性表述]]， $AB$ 的列向量可由 $A$ 的列向量线性表述
+则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][向量组关系-线性表述]]， $AB$ 的列向量可由 $A$ 的列向量线性表述
 
-故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][向量组关系-向量组秩的性质-性质2]]可得 $AB$ 的列秩小于等于 $A$ 的列秩
+故根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][向量组关系-向量组秩的性质-性质2]]可得 $AB$ 的列秩小于等于 $A$ 的列秩
 
-进一步由于[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-定义]]可的 $rank(AB)\leq rank(A)$
+进一步由于[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-定义]]可的 $rank(AB)\leq rank(A)$
 
 根据[[MK7][转置性质]]可的 $(AB)^T=B^TA^T$ 则根据本性质有 $rank\left((AB)^T\right)=rank\left(B^TA^T\right)\leq rank\left(B^T\right)$
 
-由于[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩]]可的同一矩阵行秩等于列秩，固有 $rank(AB)=rank\left((AB)^T\right),rank(B)=rank\left(B^T\right)$
+由于[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩]]可的同一矩阵行秩等于列秩，固有 $rank(AB)=rank\left((AB)^T\right),rank(B)=rank\left(B^T\right)$
 
 故亦有 $rank(AB)\leq rank(B)$
 
@@ -583,7 +583,7 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 *** 数乘<<MK25>>
 
-若 $k\in K$ 其中 $K$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]]， $A,B$ 为可相乘的矩阵，则有 $(kA)B=k(AB)=A(kB)$
+若 $k\in K$ 其中 $K$ 为[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]]， $A,B$ 为可相乘的矩阵，则有 $(kA)B=k(AB)=A(kB)$
 
 *** 幂
 
@@ -652,25 +652,25 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 ***** 必要
 
-若 $A_n$ 可逆，则有 $A_nA^{-1}_n=I_n$ 根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性相关与线性无关]] $I_n$ 列向量均线性不相关
+若 $A_n$ 可逆，则有 $A_nA^{-1}_n=I_n$ 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性相关与线性无关]] $I_n$ 列向量均线性不相关
 
-故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK58][推论1]]可得 $rank(I_n)=n$
+故根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK58][推论1]]可得 $rank(I_n)=n$
 
 根据[[MK24][乘法性质]]可得 $rank(I_n)=rank(A_nA^{-1}_n)\leq rank(A_n)$ 
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK55][秩的定义]]可得 $A_n$ 秩最大为 $n$ 即 $rank(A_n)\leq n$ 故得 $rank(A_n)=n$
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK55][秩的定义]]可得 $A_n$ 秩最大为 $n$ 即 $rank(A_n)\leq n$ 故得 $rank(A_n)=n$
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关性]]可得 $|A_n|\ne0$ 时行列向量线性无关
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关性]]可得 $|A_n|\ne0$ 时行列向量线性无关
 
-同理根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK55][列秩与行秩的定义]]以及[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK56][一般矩阵行秩与列秩]]可得当且仅当行列向量线性无关时 $rank(A_n)=n$
+同理根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK55][列秩与行秩的定义]]以及[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK56][一般矩阵行秩与列秩]]可得当且仅当行列向量线性无关时 $rank(A_n)=n$
 
 综上所属若 $A_n$ 可逆，则 $rank(A_n)=n$ 则 $|A_n|\ne0$
 
 ***** 充分<<MK27>>
 
-构建矩阵 $B=[U_{ij}]^T_{n\times n}$ ，其中 $U_{ij}$ 定义为 $A_n$ 对于元素 $a_{ij}$ 的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK25][代数余子式]]。
+构建矩阵 $B=[U_{ij}]^T_{n\times n}$ ，其中 $U_{ij}$ 定义为 $A_n$ 对于元素 $a_{ij}$ 的[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK25][代数余子式]]。
 
-根据[[MK5][矩阵乘法]]可得 $A_nB=\left[t_{ij}=\sum_{k=1}^n a_{ik}U_{jk}\right]_{n\times n}$ ，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK107][推论2]]可得 $t_{ij}=\begin{cases}|A_n|&i=j\\0&i\ne j\end{cases}$
+根据[[MK5][矩阵乘法]]可得 $A_nB=\left[t_{ij}=\sum_{k=1}^n a_{ik}U_{jk}\right]_{n\times n}$ ，则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK107][推论2]]可得 $t_{ij}=\begin{cases}|A_n|&i=j\\0&i\ne j\end{cases}$
 
 则根据[[MK3][矩阵数乘]]可得 $\frac{1}{|A_n|}A_nB=I_n$ 根据[[MK25][数乘性质]]可得 $\frac{1}{|A_n|}A_nB=A_n\left(\frac{1}{|A_n|}B\right)=I_n$
 
@@ -682,7 +682,7 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 *** 定理1
 
-若 $A_n=[a_{ij}]_{n\times n}$ 可逆，则 $A^{-1}_n=\frac{1}{|A_n|}\left([U_{ij}]^T_{n\times n}\right)$ ，其中 $U_{ij}$ 定义为 $a_{ij}$ 的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK25][代数余子式]]
+若 $A_n=[a_{ij}]_{n\times n}$ 可逆，则 $A^{-1}_n=\frac{1}{|A_n|}\left([U_{ij}]^T_{n\times n}\right)$ ，其中 $U_{ij}$ 定义为 $a_{ij}$ 的[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK25][代数余子式]]
 
 证明与[[MK27][之前]]同理。进一步定义 $A^*=[U_{ij}]^T_{n\times n}$ 成为矩阵 $A$ 的伴随矩阵
 
@@ -692,13 +692,13 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 **** 证明
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-定义]] $I_n$ 行、列向量均线性不相关，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论1]]可得 $rank(I_n)=n$
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性相关与线性无关-定义]] $I_n$ 行、列向量均线性不相关，故根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论1]]可得 $rank(I_n)=n$
 
 根据[[MK24][乘法性质]]可得 $rank(I_n)=rank(A_nB_n)\leq rank(A_n)$ 
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-矩阵的秩与行列式]]可得 $A_n$ 秩最大为 $n$ 即 $rank(A_n)\leq n$ 故得 $rank(A_n)=n$
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-矩阵的秩与行列式]]可得 $A_n$ 秩最大为 $n$ 即 $rank(A_n)\leq n$ 故得 $rank(A_n)=n$
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-行列式与线性相关性]]可得 $|A_n|\ne0$ 故根据[[MK29][充要条件]]可得 $A_n$ 可逆
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-行列式与线性相关性]]可得 $|A_n|\ne0$ 故根据[[MK29][充要条件]]可得 $A_n$ 可逆
 
 即存在 $A_n^{-1}$ 满足 $A_n^{-1}A_n=A_nA_n^{-1}=I_n$ 又根据[[MK26][唯一性]]可得 $B=A_n^{-1}$
 
@@ -752,9 +752,9 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 **** 证明
 
-由于任意行列式可经过[[MK32][初等变换]]化为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][线性方程组-其他定义-阶梯矩阵]]
+由于任意行列式可经过[[MK32][初等变换]]化为[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][线性方程组-其他定义-阶梯矩阵]]
 
-则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-阶梯矩阵的行秩与列秩]]可知 $\dim(A_n)=n$ 与主元个数相等
+则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-阶梯矩阵的行秩与列秩]]可知 $\dim(A_n)=n$ 与主元个数相等
 
 由于 $A_n$ 为 $n$ 行列的方阵，则化为阶梯矩阵后必为[[MK33][上三角矩阵]]
 
@@ -800,7 +800,7 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 根据[[MK32][初等变换]]可得上述乘法可定义为对矩阵 $A$ 做初等变换，
 
-故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论3]]可得初等变换不改变矩阵的秩。
+故根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论3]]可得初等变换不改变矩阵的秩。
 
 故有 $\dim(A)=\dim(AC_n)$ 同理可证 $\dim(A)=\dim(B_sA)$
 
@@ -998,7 +998,7 @@ A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A
 
 第三型由于 $P,I_{kk}$ 可逆，则根据[[MK35][定理4]]可得 $I_{kk}P=PI_{kk}=P$ 可逆。则 $\dim(P)=n$ 其中 $n=\dim(I_{kk})$ 
 
-故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论1]]可得调整后 $I'$ 矩阵中 $P$ 分块所在的列线性不相关
+故根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间与矩阵-一般矩阵行秩与列秩-推论1]]可得调整后 $I'$ 矩阵中 $P$ 分块所在的列线性不相关
 
 且显然除去 $P$ 分块的其他列也线性不相关，故 $I'$ 所有列线性不相关，即满秩，即可逆
 
@@ -1016,7 +1016,7 @@ A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A
 
 * 特征值和特征向量<<MK55>>
 
-设 $A=[a_{ij}]_{n\times n}\in M_{n\times n}(K)$ 为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上 $n$ 阶矩阵
+设 $A=[a_{ij}]_{n\times n}\in M_{n\times n}(K)$ 为[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上 $n$ 阶矩阵
 
 存在常数 $\lambda\in K$ 及不全为零 $n$ 维向量 $\vec{x}\in M_{n\times 1}(K)$ 使得 $A\vec{x}=\lambda\vec{x}$
 
@@ -1028,15 +1028,15 @@ A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A
 
 可得 $A\vec{x}=\lambda I\vec{x}\rightarrow \left(I\lambda-A\right)\vec{x}=\vec{0}\in M_{n\times 1}(K)$ 其中 $I$ 为[[MK4][单位矩阵]]
 
-显然 $\left(I\lambda-A\right)\vec{x}=\vec{0}$ 可对应[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK28][其次线性方程组]]，由于 $\vec{x}$ 为非零向量，即有非零解
+显然 $\left(I\lambda-A\right)\vec{x}=\vec{0}$ 可对应[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK28][其次线性方程组]]，由于 $\vec{x}$ 为非零向量，即有非零解
 
-则根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK30][推论]]可得 $|I\lambda-A|=0$ 进而求解使行列式为零的 $\lambda$
+则根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK30][推论]]可得 $|I\lambda-A|=0$ 进而求解使行列式为零的 $\lambda$
 
 ** 特征多项式<<MK67>>
 
-定义 $\lambda$ 为变量，根据 $|I\lambda-A|=0$ 又根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK11][行列式定义]]可得 $|I\lambda-A|$ 是关于 $\lambda$ 的[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK1][一元多项式]]
+定义 $\lambda$ 为变量，根据 $|I\lambda-A|=0$ 又根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK11][行列式定义]]可得 $|I\lambda-A|$ 是关于 $\lambda$ 的[[~/文档/note/高等代数/Algb-4-Multi-equ.org::MK1][一元多项式]]
 
-故可得特征值为 $|I\lambda-A|$ 在[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK24][域]] $F$ 上的所有[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK52][根]]
+故可得特征值为 $|I\lambda-A|$ 在[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][域]] $F$ 上的所有[[~/文档/note/高等代数/Algb-4-Multi-equ.org::MK52][根]]
 
 *** 定理1<<MK68>>
 
@@ -1052,9 +1052,9 @@ A 的第 $k$ 分块列右乘以可逆矩阵 $P$ ，即 $A'= [A'_{ij}]$ 其中 $A
 
 则根据[[MK25][数乘]]，[[MK54][分配率]]有 $|I\lambda-A|=|P^{-1}\lambda IP-P^{-1}BP|=|P^{-1}(\lambda I- B)P|$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK32][行列式与乘法]]可得 $|I\lambda-A|=|P^{-1}||\lambda I- B||P|=|P^{-1}||P||\lambda I- B|$
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK32][行列式与乘法]]可得 $|I\lambda-A|=|P^{-1}||\lambda I- B||P|=|P^{-1}||P||\lambda I- B|$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK33][可逆矩阵与行列式]]可得 $|I\lambda-A|=|\lambda I- B|$ 根据 $\lambda$ 的任意性可得[[MK67][特征多项式]]相等
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK33][可逆矩阵与行列式]]可得 $|I\lambda-A|=|\lambda I- B|$ 根据 $\lambda$ 的任意性可得[[MK67][特征多项式]]相等
 
 *** 定理2<<MK69>>
 
@@ -1140,21 +1140,21 @@ $|I\lambda-A|=(-1)^n|A|+\sum_{k=1}^{n-1}\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\
 
 其中 $Z_n(\{j_{n,i,1},...,j_{n,i,k}\})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}-a_{ij}&i\not\in \{j_{n,i,1},...,j_{n,i,k}\}\\0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\end{cases}$
 
-其中 $\overline{M}^*\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)$ 是 $A$ 去除 $j_{n,i,1},...,j_{n,i,k}$ 行 $j_{n,i,1},...,j_{n,i,k}$ 列的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK22][余子式]]
+其中 $\overline{M}^*\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)$ 是 $A$ 去除 $j_{n,i,1},...,j_{n,i,k}$ 行 $j_{n,i,1},...,j_{n,i,k}$ 列的[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK22][余子式]]
 
 **** 证明
 
 显然当 $k=0$ 时 $C_n^0=1$ 则 $\sum_{i=1}^{C_n^0}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=\left|Z_n(\varnothing)\right|$ 即 $Z_n(\varnothing)=[-a_{ij}]$
 
-则根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK14][行乘系数]]可得 $\sum_{i=1}^{C_n^0}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=(-1)^n|A|$
+则根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK14][行乘系数]]可得 $\sum_{i=1}^{C_n^0}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=(-1)^n|A|$
 
 当 $k=n$ 时 $C_n^n=1$ 则 $\sum_{i=1}^{C_n^n}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=\left|Z_n(\{1,...,n\})\right|$
 
 即 $Z_n(\{1,...,n\})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\end{cases}$
 
-则根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK18][上三角矩阵行列式]]可得 $\sum_{i=1}^{C_n^n}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=\lambda^n$
+则根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK18][上三角矩阵行列式]]可得 $\sum_{i=1}^{C_n^n}\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|=\lambda^n$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK26][拉普拉斯定理]]可得
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK26][拉普拉斯定理]]可得
 
 \begin{aligned}
 &\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\\
@@ -1163,13 +1163,13 @@ $|I\lambda-A|=(-1)^n|A|+\sum_{k=1}^{n-1}\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\
 
 其中 $M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\i_1&i_2&...&i_k\end{matrix}\right),\overline{M}\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\i_1&i_2&...&i_k\end{matrix}\right)$
 
-分别为 $Z_n(\{j_{n,i,1},...,j_{n,i,k}\})$ 对于 $j_{n,i,1},...,j_{n,i,k}$ 行 $i_1,...,i_k$ 列的[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK21][子式]]和[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK22][余子式]]
+分别为 $Z_n(\{j_{n,i,1},...,j_{n,i,k}\})$ 对于 $j_{n,i,1},...,j_{n,i,k}$ 行 $i_1,...,i_k$ 列的[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK21][子式]]和[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK22][余子式]]
 
 根据 $Z_n(\{j_{n,i,1},...,j_{n,i,k}\})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}-a_{ij}&i\not\in \{j_{n,i,1},...,j_{n,i,k}\}\\0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\end{cases}$
 
 可得对于任意 $M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\i_1&i_2&...&i_k\end{matrix}\right)=\left|[m_{ij}]\right|$ 当且仅当 $i_u=j_{n,i,u}$ 时 $m_{uu}=\lambda$ 其余均为 $0$
 
-故和中非零[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK21][子式]]有且仅有 $M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)$ 且为对角矩阵的行列式，对角线上的值均为 $\lambda$
+故和中非零[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK21][子式]]有且仅有 $M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)$ 且为对角矩阵的行列式，对角线上的值均为 $\lambda$
 
 即 $M\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)=\lambda^k$ 即进一步有
 
@@ -1181,7 +1181,7 @@ $|I\lambda-A|=(-1)^n|A|+\sum_{k=1}^{n-1}\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\
 
 又根据 $Z_n(\{j_{n,i,1},...,j_{n,i,k}\})=[z_{ij}]_{n\times n},z_{ij}=\begin{cases}-a_{ij}&i\not\in \{j_{n,i,1},...,j_{n,i,k}\}\\0&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i\ne j\\\lambda&i\in \{j_{n,i,1},...,j_{n,i,k}\}\land i=j\end{cases}$
 
-可得 $\overline{M}\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)=|[m_{ij}]|$ 有 $m_{ij}=-a_{ij}$ 故根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK14][行乘系数]]可得
+可得 $\overline{M}\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)=|[m_{ij}]|$ 有 $m_{ij}=-a_{ij}$ 故根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK14][行乘系数]]可得
 
 \begin{aligned}
 &\left|Z_n(\{j_{n,i,1},...,j_{n,i,k}\})\right|\\
@@ -1219,7 +1219,7 @@ $|I\lambda-A|=(-1)^n|A|+\sum_{k=1}^{n-1}\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\
 
 根据特征值定义以及[[MK14][转置]] $A\vec{x}=\lambda\vec{x}\Rightarrow (A\vec{x})^T=(\lambda\vec{x})^T\Rightarrow\vec{x}^TA^T=\vec{x}^T\lambda$
 
-对以上等式两边取[[~/OneDrive/复变函数/Cplx_fc.org::MK93][共轭]] $\overline{\vec{x}^TA^T}=\overline{\vec{x}^T\lambda}\Rightarrow \overline{\vec{x}^T}\cdot\overline{A^T}=\overline{\lambda}\cdot\overline{\vec{x}^T}\Rightarrow\overline{\vec{x}^T}\cdot\overline{A^T}\cdot\vec{x}=\overline{\lambda}\cdot\overline{\vec{x}^T}\cdot\vec{x}$
+对以上等式两边取[[~/文档/note/复变函数/Cplx_fc.org::MK93][共轭]] $\overline{\vec{x}^TA^T}=\overline{\vec{x}^T\lambda}\Rightarrow \overline{\vec{x}^T}\cdot\overline{A^T}=\overline{\lambda}\cdot\overline{\vec{x}^T}\Rightarrow\overline{\vec{x}^T}\cdot\overline{A^T}\cdot\vec{x}=\overline{\lambda}\cdot\overline{\vec{x}^T}\cdot\vec{x}$
 
 由于对称实矩阵 $A^T=A,\overline{A}=A\Rightarrow \overline{A^T}=A$ 故有 $\overline{\vec{x}^T}\cdot A\cdot\vec{x}=\overline{\vec{x}^T}\cdot \lambda\cdot\vec{x}=\overline{\lambda}\cdot\overline{\vec{x}^T}\cdot\vec{x}$
 
@@ -1237,13 +1237,13 @@ $|I\lambda-A|=(-1)^n|A|+\sum_{k=1}^{n-1}\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\
 
 *** 定理<<MK61>>
 
-实对称矩阵 $A\in M_{n\times n}(\mathbb{R})$ 必存在 $n$ 个[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]的特征向量。即实对称矩阵可[[MK57][对角化]]
+实对称矩阵 $A\in M_{n\times n}(\mathbb{R})$ 必存在 $n$ 个[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]的特征向量。即实对称矩阵可[[MK57][对角化]]
 
 **** 证明
 
-***** 实数[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK105][幂空间]]的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK51][维度]]<<MK58>>
+***** 实数[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK105][幂空间]]的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK51][维度]]<<MK58>>
 
-定义 $\mathcal{V}=<\mathbb{R},\mathbb{R},+,\times>$ 易证 $\dim(\mathcal{V})=1$ 则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK104][定理2]]可得 $\mathcal{V}^n=<\mathbb{R}^n,\mathbb{R},+,\times>$ 的维度为 $n$      
+定义 $\mathcal{V}=<\mathbb{R},\mathbb{R},+,\times>$ 易证 $\dim(\mathcal{V})=1$ 则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK104][定理2]]可得 $\mathcal{V}^n=<\mathbb{R}^n,\mathbb{R},+,\times>$ 的维度为 $n$      
 
 ***** 证明存在正交矩阵转换为上三角矩阵<<MK59>>
 
@@ -1257,9 +1257,9 @@ $|I\lambda-A|=(-1)^n|A|+\sum_{k=1}^{n-1}\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\
 
 则定义 $Q=[\begin{matrix}\vec{q}_1&\vec{q}_2&...&\vec{q}_n\end{matrix}]$ 故有 $AQ=[\begin{matrix}A\vec{q}_1&A\vec{q}_2&...&A\vec{q}_n\end{matrix}]$
 
-由于 $A\vec{q}_i\in \mathbb{R}^n$ 故本质上是[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK105][幂空间]] $\mathcal{V}^n=<\mathbb{R}^n,\mathbb{R},+,\times>$ 的元素，同理 $\vec{q}_i\in\mathbb{R}^n$ 亦为幂空间元素
+由于 $A\vec{q}_i\in \mathbb{R}^n$ 故本质上是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK105][幂空间]] $\mathcal{V}^n=<\mathbb{R}^n,\mathbb{R},+,\times>$ 的元素，同理 $\vec{q}_i\in\mathbb{R}^n$ 亦为幂空间元素
 
-由于正交，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK103][定理1]] $\{\vec{q}_1,...,\vec{q}_n\}$ [[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]，进一步根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK42][命题2]]可得 $\{\vec{q}_1,...,\vec{q}_n\}$ 是幂空间的[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK36][基]]
+由于正交，故根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK103][定理1]] $\{\vec{q}_1,...,\vec{q}_n\}$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]，进一步根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK42][命题2]]可得 $\{\vec{q}_1,...,\vec{q}_n\}$ 是幂空间的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]
 
 故 $A\vec{q}_i$ 必可用 $\vec{q}_i$ 的线性组合表示，即 $A\vec{q}_i=\sum_{j=1}^n b_{ij}\vec{q}_j$ ，进一步根据根据特征值定义有
 
@@ -1268,7 +1268,7 @@ AQ&=\left[\begin{matrix}\lambda\vec{q}_1&\left[\begin{matrix}b_{21}\\b_{22}\\...
 &=\left[\begin{matrix}\vec{q}_1&\vec{q}_2&...&\vec{q}_n\end{matrix}\right]\left[\begin{matrix}\lambda&b_{21}&...&b_{n1}\\0&b_{22}&...&b_{n2}\\...&...&...&...\\0&b_{2n}&...&b_{nn}\end{matrix}\right]
 \end{aligned}
 
-又由于 $\{\vec{q}_1,...,\vec{q}_n\}$ [[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关]]有 $|Q|\ne0$ 故根据[[MK29][可逆充要条件]]可得存在逆矩阵 $Q^{-1}$
+又由于 $\{\vec{q}_1,...,\vec{q}_n\}$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]，则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关]]有 $|Q|\ne0$ 故根据[[MK29][可逆充要条件]]可得存在逆矩阵 $Q^{-1}$
 
 \begin{aligned}
 Q^{-1}AQ&=\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\right]^{-1}\left[\begin{matrix}\vec{q}_1&\vec{q}_1&...&\vec{q}_1\end{matrix}\right]\left[\begin{matrix}\lambda&b_{21}&...&b_{n1}\\0&b_{22}&...&b_{n2}\\...&...&...&...\\0&b_{2n}&...&b_{nn}\end{matrix}\right]\\
@@ -1347,7 +1347,7 @@ $n$ 阶矩阵 $A$ 存在[[MK28][可逆矩阵]] $P=[x_{ij}]_{n\times n}$ 满足 $
 
 **** 必要
 
-定义矩阵 $P=[x_{ij}]$ ，由于线性无关，故根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关]]可得 $|P|\ne0$ 进一步根据[[MK29][可逆充要条件]]可得存在逆矩阵 $P^{-1}$
+定义矩阵 $P=[x_{ij}]$ ，由于线性无关，故根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关]]可得 $|P|\ne0$ 进一步根据[[MK29][可逆充要条件]]可得存在逆矩阵 $P^{-1}$
 
 根据[[MK5][矩阵乘法]]，[[MK54][分配率]]，[[MK2][矩阵加法]]以及 $A\vec{x}=\lambda_i\vec{x}_i$ 有
 
@@ -1404,7 +1404,7 @@ AP=&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&
 
 ** 定理1
 
-矩阵相似是[[~/OneDrive/离散数学/Disc_Math.org::MK176][等价关系]]
+矩阵相似是[[~/文档/note/离散数学/Disc_Math.org::MK176][等价关系]]
 
 *** 证明
 
@@ -1430,21 +1430,21 @@ AP=&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&
 
 *** 性质1
 
-若矩阵 $A\sim B$ [[MK64][相似]]，则有 $|A|=|B|$ 即[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK11][行列式]]相等
+若矩阵 $A\sim B$ [[MK64][相似]]，则有 $|A|=|B|$ 即[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK11][行列式]]相等
 
-（2） $rank(A)=rank(B)$ 即[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK87][秩]]相等
+（2） $rank(A)=rank(B)$ 即[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK87][秩]]相等
 
 **** 证明
 
 根据[[MK64][相似]]可得存在[[MK28][可逆矩阵]] $P$ 满足 $A=PBP^{-1}$ 即有 $|A|=|PBP^{-1}|$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK32][行列式与乘法]]可得 $|A|=|P||B||P^{-1}|=|P||P^{-1}||B|$
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK32][行列式与乘法]]可得 $|A|=|P||B||P^{-1}|=|P||P^{-1}||B|$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK33][可逆矩阵行列式]]可得 $|A|=|P|\frac{1}{|P|}|B|=|B|$
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK33][可逆矩阵行列式]]可得 $|A|=|P|\frac{1}{|P|}|B|=|B|$
 
 *** 性质2
 
-若矩阵 $A\sim B$ [[MK64][相似]]，则有 $rank(A)=rank(B)$ 即[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK87][秩]]相等
+若矩阵 $A\sim B$ [[MK64][相似]]，则有 $rank(A)=rank(B)$ 即[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK87][秩]]相等
 
 **** 证明
 
@@ -1476,6 +1476,6 @@ AP=&\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&
 
 则根据[[MK25][数乘]]，[[MK54][分配率]]有 $|I\lambda-A|=|P^{-1}\lambda IP-P^{-1}BP|=|P^{-1}(\lambda I- B)P|$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK32][行列式与乘法]]可得 $|I\lambda-A|=|P^{-1}||\lambda I- B||P|=|P^{-1}||P||\lambda I- B|$
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK32][行列式与乘法]]可得 $|I\lambda-A|=|P^{-1}||\lambda I- B||P|=|P^{-1}||P||\lambda I- B|$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org::MK33][可逆矩阵与行列式]]可得 $|I\lambda-A|=|\lambda I- B|$ 根据 $\lambda$ 的任意性可得[[MK67][特征多项式]]相等
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK33][可逆矩阵与行列式]]可得 $|I\lambda-A|=|\lambda I- B|$ 根据 $\lambda$ 的任意性可得[[MK67][特征多项式]]相等

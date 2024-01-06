@@ -29,9 +29,9 @@ $\left(\sum_{i=1}^n a_ib_i\right)^2\leq \sum_{i=1}^na_i^2\sum_{i=1}^nb_i^2$
 
 *** 证明
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-乘积可积]]可得 $f(x)^2,g(x)^2,f(x)g(x)$ 均在 $[a,b]$ 上可积
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-乘积可积]]可得 $f(x)^2,g(x)^2,f(x)g(x)$ 均在 $[a,b]$ 上可积
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分定义]]，对于任意可积函数在任意划分与取点下，只要满足 $\lambda\to0$ 黎曼和均收敛于定积分，故有：
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分定义]]，对于任意可积函数在任意划分与取点下，只要满足 $\lambda\to0$ 黎曼和均收敛于定积分，故有：
 
  $\int_a^bf(x)^2dx=\lim_{n\to\infty}\sum_{i=1}^nf(\xi_i)^2\frac{b-a}{n},\xi\in[x_i,x_{i+1}]$
 
@@ -71,7 +71,7 @@ $\lim_{B\to b}\int_a^Bf(x)^2dx\lim_{B\to b}\int_a^Bf(x)^2dx=\lim_{B\to b}\left(\
 
 假设 $f(x)$ 可以写为 $\frac{a_0}{2}+\sum_{i=1}^\infty\left(a_i\cos(ix)+b_i\sin(ix)\right)$ 的形式，且级数一致连续
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分几何应用-三角函数正交性]]及[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-一致收敛性质-可积性]]有
+则根据[[~/文档/note/数学分析/Chap7Note.org][定积分几何应用-三角函数正交性]]及[[~/文档/note/数学分析/Chap10Note.org][函数项级数-一致收敛性质-可积性]]有
 
 \begin{aligned}
 \int_{-\pi}^\pi f(x)\cos(nx)dx=&\int_{-\pi}^\pi\left\{\frac{a_0}{2}\cos(nx)+\cos(nx)\sum_{i=1}^\infty\left(a_i\cos(ix)+b_i\sin(ix)\right)\right\}dx\\
@@ -97,13 +97,13 @@ $\forall 0\leq a<b<\infty,\exists 0<K<\infty\Rightarrow\left|\int_a^b\frac{\sin(
 
 **** 证明反常积分在 $(0,\infty)$ 收敛
 
-根据积分[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]] $\int_0^\infty\frac{\sin(x)}{x}dx=\int_0^{\frac{\pi}{2}}\frac{\sin(x)}{x}dx+\int_{\frac{\pi}{2}}^\infty\frac{\sin(x)}{x}dx$
+根据积分[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]] $\int_0^\infty\frac{\sin(x)}{x}dx=\int_0^{\frac{\pi}{2}}\frac{\sin(x)}{x}dx+\int_{\frac{\pi}{2}}^\infty\frac{\sin(x)}{x}dx$
 
 分别为区间无限及无界反常积分由于 $\int_a^b\sin(x)dx$ 有界，对于任意 $0\leq a<b<\infty$ 且 $\lim_{x\to\infty}\frac{1}{x}=0$ 且 $\frac{1}{x}$ 单调
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][区间无限反常积分收敛判别-一般函数（不定号）反常积分判别法-Dirichlet]] $\int_{\frac{\pi}{2}}^\infty\frac{\sin(x)}{x}dx$ 收敛
+故根据[[~/文档/note/数学分析/Chap8Note.org][区间无限反常积分收敛判别-一般函数（不定号）反常积分判别法-Dirichlet]] $\int_{\frac{\pi}{2}}^\infty\frac{\sin(x)}{x}dx$ 收敛
 
-又因为 $\frac{\sin(x)}{x}<1$ 且有 $\lim_{a\to0}\int_a^\frac{\pi}{2}1dx=\frac{\pi}{2}$ 收敛，故根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-非负反常积分判别]] $\int_0^{\frac{\pi}{2}}\frac{\sin(x)}{x}dx$ 亦收敛
+又因为 $\frac{\sin(x)}{x}<1$ 且有 $\lim_{a\to0}\int_a^\frac{\pi}{2}1dx=\frac{\pi}{2}$ 收敛，故根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-非负反常积分判别]] $\int_0^{\frac{\pi}{2}}\frac{\sin(x)}{x}dx$ 亦收敛
 
 故 $\int_0^\infty\frac{\sin(x)}{x}dx$ 收敛
 
@@ -113,7 +113,7 @@ $\forall 0\leq a<b<\infty,\exists 0<K<\infty\Rightarrow\left|\int_a^b\frac{\sin(
 
 故定义 $u_i=\int_{2i\pi}^{(2i+2)\pi}\frac{\sin(x)}{x}dx$ 则有 $\sum_{i=0}^nu_i=\sum_{i=1}^n\left\{\int_{2i\pi}^{(2i+1)\pi}\frac{\sin(x)}{x}dx+\int_{(2i+1)\pi}^{(2i+2)\pi}\frac{\sin(x)}{x}dx\right\}=\sum_{i=1}^n\int_{2i\pi}^{(2i+1)\pi}\left(\frac{\sin(x)}{x}+\frac{\sin(x+\pi)}{x+\pi}\right)dx$ 其中 $\frac{\sin(x)}{x}\geq0,\frac{\sin(x+\pi)}{x+\pi}\leq0$
 
-且有 $\sin(x)=-\sin(x+\pi)$ 故 $\frac{\sin(x)}{x}+\frac{\sin(x+\pi)}{x+\pi}>0$ 根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-保序]]可得 $\int_{2i\pi}^{(2i+1)\pi}\left(\frac{\sin(x)}{x}+\frac{\sin(x+\pi)}{x+\pi}\right)dx\geq0$
+且有 $\sin(x)=-\sin(x+\pi)$ 故 $\frac{\sin(x)}{x}+\frac{\sin(x+\pi)}{x+\pi}>0$ 根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-保序]]可得 $\int_{2i\pi}^{(2i+1)\pi}\left(\frac{\sin(x)}{x}+\frac{\sin(x+\pi)}{x+\pi}\right)dx\geq0$
 
 同理有 $\int_0^\pi\frac{\sin(x)}{x}dx\geq\left|\int_{i\pi}^{(i+1)\pi}\frac{\sin(x)}{x}dx\right|$ 且根据之前证明 $\int_0^\pi\frac{\sin(x)}{x}dx$ 收敛，故定义 $L=\int_0^\pi\frac{\sin(x)}{x}dx$
 
@@ -146,15 +146,15 @@ $\forall 0\leq a<b<\infty,\exists 0<K<\infty\Rightarrow\left|\int_a^b\frac{\sin(
 
 **** <<MK1>>可积情况下
 
-由于可积，则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]有 $\forall\epsilon>0,\exists\delta,\forall\lambda<\delta,\forall P\Rightarrow\left|\sum_{i=1}^\infty\omega_i\Delta x_i\right|<\frac{\epsilon}{2}$
+由于可积，则根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]有 $\forall\epsilon>0,\exists\delta,\forall\lambda<\delta,\forall P\Rightarrow\left|\sum_{i=1}^\infty\omega_i\Delta x_i\right|<\frac{\epsilon}{2}$
 
-且根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-乘积可积]]得 $\phi(x)\sin(px)$ 亦可积
+且根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-乘积可积]]得 $\phi(x)\sin(px)$ 亦可积
 
 其中 $P:a=x_1<x_2<...<x_n=b$ 为黎曼和划分 $\Delta x_i=x_i-x_{i-1},\omega_i=sup(x)-inf(x),x\in[x_{i-1},x_i]$
 
 且定义 $m_i=inf(x),x\in[x_{i-1},x_i]$ ，并取一种满足上述条件的划分 $P$
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]]，[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-绝对可积]]，[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-乘积可积]]以及[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]可得
+则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]]，[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-绝对可积]]，[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-乘积可积]]以及[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]可得
 
 \begin{aligned}
 \left|\int_a^b\phi(x)\sin(px)dx\right|=&\left|\sum_{i=1}^n\int_{x_{i-1}}^{x_i}\phi(x)\sin(px)dx-\sum_{i=1}^n\int_{x_{i-1}}^{x_i}m_i\sin(px)dx+\sum_{i=1}^n\int_{x_{i-1}}^{x_i}m_i\sin(px)dx\right|\\
@@ -176,11 +176,11 @@ $\forall 0\leq a<b<\infty,\exists 0<K<\infty\Rightarrow\left|\int_a^b\frac{\sin(
 
 **** 反常积分绝对可积
 
-定义 $b$ 为奇点，则根据条件有 $\int_a^b|\phi(x)|dx$ 存在，根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-定义]] $\forall\epsilon>0,\exists\delta>0,\forall\eta<\delta\Rightarrow\int_{b-\eta}^b|\phi(x)|dx<\frac{\epsilon}{2}$
+定义 $b$ 为奇点，则根据条件有 $\int_a^b|\phi(x)|dx$ 存在，根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-定义]] $\forall\epsilon>0,\exists\delta>0,\forall\eta<\delta\Rightarrow\int_{b-\eta}^b|\phi(x)|dx<\frac{\epsilon}{2}$
 
 且根据[[MK1][可积条件下证明]]有 $\lim_{p\to\infty}\int_a^{b-\eta}\phi(x)\sin(px)dx=0$ 故 $\forall\epsilon>0,\eixsts P,\forall p>P\Rightarrow\left|\int_a^{b-\eta}\phi(x)\sin(px)dx\right|<\frac{\epsilon}{2}$
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-绝对可积]]以及根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-反常积分绝对收敛]]得
+故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-绝对可积]]以及根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-反常积分绝对收敛]]得
 
 \begin{aligned}
 \left|\int_a^b\phi(x)\sin(px)dx\right|=&\left|\int_a^{b-\eta}\phi(x)\sin(px)dx+\int_a^b\phi(x)\sin(px)dx\right|\\
@@ -200,9 +200,9 @@ $\lim_{m\to\infty}\int_{0}^{\delta}\left\{\frac{\phi(u)}{2\sin\left(\frac{u}{2}\
 
 定义 $g(u)=\begin{cases}\frac{1}{2\sin\left(\frac{u}{2}\right)}-\frac{1}{u}&u>0\\0&u=0\end{cases}$ 由于 $\lim_{u\to0}\frac{u}{2\sin\left(\frac{u}{2}\right)}=1\Rightarrow\lim_{u\to0}g(u)=0$ 故 $g(u)$ 连续
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2-推论1]]得出 $g(u)$ 在 $[0,\pi]$ 上可积
+故根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2-推论1]]得出 $g(u)$ 在 $[0,\pi]$ 上可积
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-乘积可积]]有 $g(u)\phi(u)$ 在 $u\in[0,\delta]$ 上亦可积或绝对可积 则有
+故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-乘积可积]]有 $g(u)\phi(u)$ 在 $u\in[0,\delta]$ 上亦可积或绝对可积 则有
 
 \begin{aligned}
 &\lim_{m\to\infty}\int_{0}^{\delta}\left\{\frac{\phi(u)}{2\sin\left(\frac{u}{2}\right)}\sin\left(\frac{2m+1}{2}u\right)\right\}du-\lim_{m\to\infty}\int_{0}^{\delta}\left\{\frac{\phi(u)}{u}\sin\left(\frac{2m+1}{2}u\right)\right\}du\\
@@ -231,9 +231,9 @@ $\lim_{m\to\infty}\int_{0}^{\delta}\left\{\frac{\phi(u)}{2\sin\left(\frac{u}{2}\
 
 **** 第二部分
 
-由于 $\phi(u)$ 单调，则 $\phi(u)-\phi(0^+)$ 亦单调，根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2-推论2]]得出可积
+由于 $\phi(u)$ 单调，则 $\phi(u)-\phi(0^+)$ 亦单调，根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2-推论2]]得出可积
 
-由于 $\frac{1}{u}$ 在 $[\eta,\delta]$ 上亦可积，则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-乘积可积]] $\frac{\phi(u)-\phi(0^+)}{u}$ 可积
+由于 $\frac{1}{u}$ 在 $[\eta,\delta]$ 上亦可积，则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-乘积可积]] $\frac{\phi(u)-\phi(0^+)}{u}$ 可积
 
 故根据[[MK2][黎曼引理]]得 $\lim_{p\to\infty}\int_\eta^\delta\frac{\phi(u)-\phi(0^+)}{u}\sin(pu)du=0$ 即 $\forall\epsilon>0\exists P,\forall p>P\Rightarrow\left|\int_\eta^\delta\frac{\phi(u)-\phi(0^+)}{u}\sin(pu)du\right|<\frac{\epsilon}{K+1}$
 
@@ -245,13 +245,13 @@ $\lim_{m\to\infty}\int_{0}^{\delta}\left\{\frac{\phi(u)}{2\sin\left(\frac{u}{2}\
 
 同理定义积分区间在 $(0,\eta]$ 的反常积分，可以理解为积分区域在 $[0,\eta]$ 但当 $u=0$ 时函数值为 $0$ 的积分
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性-推论]]有在 $(0,\eta]$ 上的反常积分等于在 $[0,\eta]$ 上的常义积分
+故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性-推论]]有在 $(0,\eta]$ 上的反常积分等于在 $[0,\eta]$ 上的常义积分
 
 故有 $\left|\int_0^\eta[\phi(u)-\phi(0^+)]\frac{\sin(pu)}{u}du\right|=\lim_{a\to0}\left|\int_a^\eta[\phi(u)-\phi(0^+)]\frac{\sin(pu)}{u}du\right|$ 左边为常义积分，右边为反常积分
 
-由于 $\phi(u)-\phi(0^+)$ 单调 $\frac{\sin(pu)}{u}$ 在 $[0,\eta]$ 上连续，则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2-推论1]]得必可积
+由于 $\phi(u)-\phi(0^+)$ 单调 $\frac{\sin(pu)}{u}$ 在 $[0,\eta]$ 上连续，则根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2-推论1]]得必可积
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][积分中值定理-第二积分中值定理]]得
+故根据[[~/文档/note/数学分析/Chap8Note.org][积分中值定理-第二积分中值定理]]得
 
 \begin{aligned}
 \left|\int_0^\eta[\phi(u)-\phi(0^+)]\frac{\sin(pu)}{u}du\right|=&\left|(\phi(0^+)-\phi(0^+))\int_a^{\xi}\frac{\sin(pu)}{u}du+(\phi(\eta^-)-\phi(0^+))\int_\xi^{\eta}\frac{\sin(pu)}{u}du\right|&\xi\in[0,\eta]\\
@@ -285,7 +285,7 @@ $\lim_{m\to\infty}\int_{0}^{\delta}\left\{\frac{\phi(u)}{2\sin\left(\frac{u}{2}\
 
 函数 $f(x)$ 的傅里叶级数为 $\frac{a_0}{2}+\sum_{i=1}^\infty\left(a_i\cos(ix)+b_i\sin(ix)\right)$ 故定义 $S_m(x)=\frac{a_0}{2}+\sum_{i=1}^m\left(a_i\cos(ix)+b_i\sin(ix)\right)$ 为级数的部分和
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]]，三角函数和差化积
+则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]]，三角函数和差化积
 
 \begin{aligned}
 S_m(x)=&\frac{a_0}{2}+\sum_{i=1}^m\left(a_i\cos(ix)+b_i\sin(ix)\right)\\
@@ -329,7 +329,7 @@ S_m(x)=&\frac{a_0}{2}+\sum_{i=1}^m\left(a_i\cos(ix)+b_i\sin(ix)\right)\\
 
 同理定义积分区间在 $(0,\pi]$ 的反常积分，可以理解为积分区域在 $[0,\pi]$ 但当 $u=0$ 时函数值为 $0$ 的积分
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性-推论]]有在 $(0,\pi]$ 上的反常积分等于在 $[0,\pi]$ 上的常义积分
+故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性-推论]]有在 $(0,\pi]$ 上的反常积分等于在 $[0,\pi]$ 上的常义积分
 
 故 $S_m(x)=\frac{1}{\pi}\int_{0}^{\pi}\left\{[f(x-u)+f(x+u)]\frac{\sin\left(\frac{2m+1}{2}u\right)}{2\sin\left(\frac{u}{2}\right)}\right\}du=\lim_{a\to0}\frac{1}{\pi}\int_{a}^{\pi}\left\{[f(x-u)+f(x+u)]\frac{\sin\left(\frac{2m+1}{2}u\right)}{2\sin\left(\frac{u}{2}\right)}\right\}du$
 
@@ -337,7 +337,7 @@ S_m(x)=&\frac{a_0}{2}+\sum_{i=1}^m\left(a_i\cos(ix)+b_i\sin(ix)\right)\\
 
 由于 $\int_0^{\pi}\frac{\sin\left(\frac{2m+1}{2}u\right)}{2\sin\left(\frac{u}{2}\right)}du=\int_0^{\pi}\left\{\frac{1}{2}+\sum_{i=1}^m\cos(iu)\right\}du=\int_0^{\pi}\frac{1}{2}du=\frac{\pi}{2}$
 
-定义 $\sigma(x)$ 为 $S_m(x)$ 的收敛值，则有 $\lim_{m\to\infty}\{S_m(x)-\sigma(x)\}=0$ 根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]]有
+定义 $\sigma(x)$ 为 $S_m(x)$ 的收敛值，则有 $\lim_{m\to\infty}\{S_m(x)-\sigma(x)\}=0$ 根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]]有
 
 \begin{aligned}
 &\lim_{m\to\infty}\left\{\frac{1}{\pi}\int_{0}^{\pi}\left\{[f(x-u)+f(x+u)]\frac{\sin\left(\frac{2m+1}{2}u\right)}{2\sin\left(\frac{u}{2}\right)}\right\}du-\sigma(x)\right\}\\
@@ -355,7 +355,7 @@ S_m(x)=&\frac{a_0}{2}+\sum_{i=1}^m\left(a_i\cos(ix)+b_i\sin(ix)\right)\\
 
 由于条件（1），则必存在领域当 $x\in[x-\delta,x+\delta]$ 时函数 $f(x)$ 单调，定义 $\phi(u)=f(x+u),\phi'(u)=f(x-u)$
 
-则有当 $u\in[0,\delta]$ 时 $\phi(u),\phi'(u)$ 单调，故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]和极限四则运算拆分积分
+则有当 $u\in[0,\delta]$ 时 $\phi(u),\phi'(u)$ 单调，故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]和极限四则运算拆分积分
 
 \begin{aligned}
 &\lim_{m\to\infty}\left\{\frac{1}{\pi}\int_{0}^{\pi}\left\{\phi(u,x)\frac{\sin\left(\frac{2m+1}{2}u\right)}{2\sin\left(\frac{u}{2}\right)}\right\}du\right\}\\
@@ -368,7 +368,7 @@ S_m(x)=&\frac{a_0}{2}+\sum_{i=1}^m\left(a_i\cos(ix)+b_i\sin(ix)\right)\\
 
 由于当 $u\in[a,\pi],0<a<\pi$ 时 $f(x+u)$ 为周期拓展可积或绝对可积，故 $\phi(u,x)$ 可积或绝对可积
 
-同理 $\frac{1}{\sin\left(\frac{u}{2}\right)}$ 可积，故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-乘积可积]] $\frac{\phi(u,x)}{\sin\left(\frac{u}{2}\right)}$ 在 $u\in[a,\pi],0<a<\pi$ 可积或绝对可积
+同理 $\frac{1}{\sin\left(\frac{u}{2}\right)}$ 可积，故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-乘积可积]] $\frac{\phi(u,x)}{\sin\left(\frac{u}{2}\right)}$ 在 $u\in[a,\pi],0<a<\pi$ 可积或绝对可积
 
 故满足[[MK2][黎曼引理]]条件，则有 $\lim_{m\to\infty}\int_{\delta}^{\pi}\left\{\frac{\phi(u,x)}{2\sin\left(\frac{u}{2}\right)}\sin\left(\frac{2m+1}{2}u\right)\right\}du=0$
 
@@ -403,7 +403,7 @@ Holden 条件的定义为对充分小的 $\delta>0$ 存在常数 $L>0,\alpha\in(
 
 根据条件有 $\left|\frac{f(x+u)-f(x^{+})}{u}\right|<\frac{L}{u^{1-\alpha}},u\in(0,\delta]$ 且有 $\int_0^\delta \frac{L}{u^{1-\alpha}}du=Lu^\alpha\big|_0^\delta=Lu^\delta$ 在上述条件下反常积分存在
 
-由于 $\left|\frac{f(x+u)-f(x^{+})}{u}\right|>0$ 故根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-非负反常积分判别]] $\left|\frac{f(x+u)-f(x^{ +})}{u}\right|$ 亦可积
+由于 $\left|\frac{f(x+u)-f(x^{+})}{u}\right|>0$ 故根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-非负反常积分判别]] $\left|\frac{f(x+u)-f(x^{ +})}{u}\right|$ 亦可积
 
 故有 $\frac{f(x+u)-f(x^{+})}{u}$ 在 $u\in(0,\delta]$ 上反常积分绝对可积，满足[[MK2][黎曼引理]]条件
 
@@ -447,7 +447,7 @@ F(x+2\pi)-F(x)=&\int_c^{x+2\pi}\left(f(t)-\frac{a_0}{2}\right)dt-\int_c^x\left(f
 =&0
 \end{aligned}
 
-故 $F(x)$ 为周期函数，周期为 $2\pi$ 。且则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][牛顿莱布尼茨公式-定理1]]可得 $F(x)$ 连续
+故 $F(x)$ 为周期函数，周期为 $2\pi$ 。且则根据[[~/文档/note/数学分析/Chap7Note.org][牛顿莱布尼茨公式-定理1]]可得 $F(x)$ 连续
 
 且根据证明有 $\lim_{\Delta x\to0^+}\frac{F(x+\Delta x)-F(x)}{\Delta x}=\lim_{\xi\to x^+}f(\xi)=f(x^+),\lim_{\Delta x\to0^-}\frac{F(x+\Delta x)-F(x)}{\Delta x}=\lim_{\xi\to x^-}f(\xi)=f(x^-)$ 
 
@@ -466,7 +466,7 @@ A_i=&\frac{1}{\pi}\int_{-\pi}^\pi F(x)\cos(ix)dx\\
 同理可证 $B_i=\frac{a_n}{i}$ 整理上式得 $F(x)=\frac{A_0}{2}+\sum_{i=1}^\infty\left(-\frac{b_i}{i}\cos(ix)+\frac{a_i}{i}\sin(ix)\right)$
 
 
-由于 $F(c)=0$ 故 $\frac{A_0}{2}=-\sum_{i=1}^\infty\left(-\frac{b_i}{i}\cos(ic)+\frac{a_i}{i}\sin(ic)\right)$ 故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]]有
+由于 $F(c)=0$ 故 $\frac{A_0}{2}=-\sum_{i=1}^\infty\left(-\frac{b_i}{i}\cos(ic)+\frac{a_i}{i}\sin(ic)\right)$ 故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]]有
 
 \begin{aligned}
 F(x)=&\sum_{i=1}^\infty\left(a_i\frac{\sin(ix)-\sin(ic)}{i}+b_i\frac{-\cos(ix)+\cos(ic)}{i}\right)\\

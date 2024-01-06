@@ -34,7 +34,7 @@ $$\forall \epsilon>0, \exists \delta>0, \forall |x_1-x_2|<\delta,x\in D\Rightarr
 
 因为一致连续，故 $\forall \epsilon>0, \exists \eta>0, \forall |x_1-x_2|<\eta,x\in [0,\infty)\Rightarrow |f(x_1)-f(x_2)|<\epsilon$ 故取 $\epsilon=\frac{\epsilon'}{2}\Rightarrow \exists \eta'>0, \forall |x_1-x_2|<\eta',x\in [0,\infty)\Rightarrow |f(x_1)-f(x_2)|<\frac{\epsilon'}{2}$
 
-因为 $\int_0^\infty e^{-st}f(t)dt=0,\forall s\in R$ 则根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界反常积分收敛判别-柯西收敛]]有 $\forall \epsilon>0,&\exist \delta\geq a,\forall A',A''>\delta,\Rightarrow \left|\int_{A'}^{A''} e^{-st}f(t)dt\right|<\epsilon$
+因为 $\int_0^\infty e^{-st}f(t)dt=0,\forall s\in R$ 则根据[[~/文档/note/Chap8Note.org][无界反常积分收敛判别-柯西收敛]]有 $\forall \epsilon>0,&\exist \delta\geq a,\forall A',A''>\delta,\Rightarrow \left|\int_{A'}^{A''} e^{-st}f(t)dt\right|<\epsilon$
 
 则取 $\epsilon=\frac{\epsilon'\eta'}{4}\Rightarrow &\exists \delta'\geq 0,\forall A',A''>\delta',\Rightarrow \left|\int_{A'}^{A''}f(x)dx\right|<\frac{\epsilon'\eta'}{4}$ 
 
@@ -68,9 +68,9 @@ $$\forall \epsilon>0, \exists \delta>0, \forall |x_1-x_2|<\delta,x\in D\Rightarr
 
 ...
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 11/Note11.org][实数系闭区间套定理]] $\exists \xi \in \cap_{n=1}^\infty [a_n,b_n]$ 则 $f(\xi)$ 无界
+根据[[~/文档/note/Chap11Note.org][实数系闭区间套定理]] $\exists \xi \in \cap_{n=1}^\infty [a_n,b_n]$ 则 $f(\xi)$ 无界
 
-又根据[[MK2][函数连续定义]]有 $\lim_{x\to\xi}f(x)=f(\xi)$ 根据[[e:/OneDrive/数学分析/Note/Chapter 11/Note11.org][多元函数性质-局部有界性]]可得则 $\exists \delta\Rightarrow-\infty<L<f(x)<U<+\infty, x \in O(\xi,\delta)$
+又根据[[MK2][函数连续定义]]有 $\lim_{x\to\xi}f(x)=f(\xi)$ 根据[[~/文档/note/Chap11Note.org][多元函数性质-局部有界性]]可得则 $\exists \delta\Rightarrow-\infty<L<f(x)<U<+\infty, x \in O(\xi,\delta)$
 
 故推出矛盾。
 
@@ -86,7 +86,7 @@ $$\forall \epsilon>0, \exists \delta>0, \forall |x_1-x_2|<\delta,x\in D\Rightarr
 
 根据下确界的定义 $\forall \epsilon>0,\exists f(x),x\in[a,b]\Rightarrow f(x)-\alpha < \epsilon\Rightarrow f(x)\in[\alpha,\alpha+\epsilon)$ 则定义数列 $x_n\in[a,b]\Rightarrow f(x_n)\in[\alpha,\alpha+\frac{1}{n})$
 
-因为 $x_n$ 有界故根据[[e:/OneDrive/数学分析/Note/Chapter 9/Series.org][Bolzano-Weiserstrass 定理]]，必存在收敛子列 $x_{n_k}\Rightarrow\lim_{k\to\infty} x_{n_k}=\xi,\xi\in\{x_{n_k}|k\in N^+\}\subset[a,b]$ 
+因为 $x_n$ 有界故根据[[~/文档/note/Series.org][Bolzano-Weiserstrass 定理]]，必存在收敛子列 $x_{n_k}\Rightarrow\lim_{k\to\infty} x_{n_k}=\xi,\xi\in\{x_{n_k}|k\in N^+\}\subset[a,b]$ 
 
 又因为 $\lim_{k\to\infty} \alpha+\frac{1}{n_k}=\alpha$ 根据夹逼定理 $\lim_{k\to\infty}f(x_{n_k})=\alpha$ 
 
@@ -185,7 +185,7 @@ $$\forall \epsilon>0, \exists \delta>0, \forall |x_1-x_2|<\delta,x\in D\Rightarr
 
 由于[[MK20][可导]]可得 $\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$ 存在且不为无穷，显然 $\lim_{x\to x_0}(x-x_0)=0$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK22][多元函数乘法]]可得
+根据[[~/文档/note/数学分析/Chap11Note.org::MK22][多元函数乘法]]可得
 
 \begin{aligned}
 &\lim_{x\to x_0}\left\{(x-x_0)\frac{f(x)-f(x_0)}{x-x_0}\right\}=\lim_{x\to x_0}\left\{(x-x_0)\right\}\lim_{x\to x_0}\left\{\frac{f(x)-f(x_0)}{x-x_0}\right\}\\
@@ -194,7 +194,7 @@ $$\forall \epsilon>0, \exists \delta>0, \forall |x_1-x_2|<\delta,x\in D\Rightarr
 \therefore &\lim_{x\to x_0}\left\{f(x)-f(x_0)\right\}=0\\
 \end{aligned}
 
-又根据[[~/OneDrive/数学分析/Chap11Note.org::MK22][多元函数加减法]]可得
+又根据[[~/文档/note/数学分析/Chap11Note.org::MK22][多元函数加减法]]可得
 
 \begin{aligned}
 &\lim_{x\to x_0}\left\{f(x)-f(x_0)\right\}=\lim_{x\to x_0}f(x)-\lim_{x\to x_0}f(x_0)=\lim_{x\to x_0}f(x)-f(x_0)=0\\
@@ -280,7 +280,7 @@ $$\forall \epsilon>0, \exists \delta>0, \forall |x_1-x_2|<\delta,x\in D\Rightarr
 
 （3） 由于 $\frac{\partial F(x,y)}{\partial x}=g'(x)\ne0$
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 12/Chap12Note.org][隐函数-一元隐函数存在定理]]存在 $x=g^{-1}(y)$ 且 $\frac{dx}{dy}=-\frac{\frac{\partial F(x,y)}{\partial y}}{\frac{\partial F(x,y)}{\partial y}}=-\frac{-1}{g'(x)}=\frac{1}{g'(x)}$
+故根据[[~/文档/note/Chap12Note.org][隐函数-一元隐函数存在定理]]存在 $x=g^{-1}(y)$ 且 $\frac{dx}{dy}=-\frac{\frac{\partial F(x,y)}{\partial y}}{\frac{\partial F(x,y)}{\partial y}}=-\frac{-1}{g'(x)}=\frac{1}{g'(x)}$
 
 由于连续性故有 $\lim_{y\to g(a)}g^{-1}(y)=a$ ，定义 $a=g^{-1}(g(a))$ 则 $g^{-1}(y)$ 在 $y=g(a)$ 点连续
 
@@ -384,17 +384,17 @@ $e^{ix}=\cos x+i\sin x$
 
 故若三个函数的泰勒展开成立，则有 $e^{ix}=\cos(x)+i\cos(x)$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][幂级数-幂级数展开-经典例题]]中步骤，需证明展开式收敛且余项趋于零
+根据[[~/文档/note/Chap10Note.org][幂级数-幂级数展开-经典例题]]中步骤，需证明展开式收敛且余项趋于零
 
 **** 证明展开式收敛
 
-利用[[E:\OneDrive\数学分析\Note\Chapter 9\Series.org][达朗贝尔]]判别法，对实部进行判别
+利用[[~/文档/note/Chap9Note.org][达朗贝尔]]判别法，对实部进行判别
 
 \begin{aligned}
 \lim_{n\to\infty}\left|\frac{\frac{x^{2n+2}}{(2n+2)!}}{\frac{x^{2n}}{(2n)!}}\right|=\lim_{n\to\infty}\left|\frac{x^2}{(2n+1)(2n+2)}\right|
 \end{aligned}
 
-虚部， $\sin(x),\cos(x)$ 同理。故判别，当 $x\in(-\infty,+\infty)$ 时，展开式绝对收敛。根据[[e:/OneDrive/数学分析/Note/Chapter 9/Series.org][级数敛散性-任意项级数-柯西收敛原理-推论1]]可得：绝对收敛 $\Rightarrow$ 级数收敛
+虚部， $\sin(x),\cos(x)$ 同理。故判别，当 $x\in(-\infty,+\infty)$ 时，展开式绝对收敛。根据[[~/文档/note/Series.org][级数敛散性-任意项级数-柯西收敛原理-推论1]]可得：绝对收敛 $\Rightarrow$ 级数收敛
 
 **** 证明余项收敛
 
@@ -484,7 +484,7 @@ $$\mathcal{L}\{f(x)\}=\int_0^\infty e^{-st}f(t)dt$$
 &\lim_{t\to t_0}\left\{e^{-st}f(t)\right\}=\lim_{t\to t_0}e^{-st}\lim_{t\to t_0}}f(t)=e^{-st_0}f(t_0)
 \end{aligned}
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][牛顿莱布尼茨公式]]及[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][反常积分定义-边界无穷积分]]，若 $e^{-st}f(t)$ 连续且 $F(x)=\int e^{-st}f(t) dx$ ，则有
+根据[[~/文档/note/Chap7Note.org][牛顿莱布尼茨公式]]及[[~/文档/note/Chap8Note.org][反常积分定义-边界无穷积分]]，若 $e^{-st}f(t)$ 连续且 $F(x)=\int e^{-st}f(t) dx$ ，则有
 t
 \begin{aligned}
 &\int_0^\infty e^{-st}f(t)dt=\lim_{A\to\infty}\int_0^A e^{-st}f(t)dt=\lim_{A\to\infty}\{F(A)-F(0)\}=\lim_{A\to\infty}F(A)-F(0)\\
@@ -564,7 +564,7 @@ t
 
 *** <<MK13>>线性
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]]
+根据[[~/文档/note/Chap7Note.org][定积分基本性质-线性]]
 
 \begin{aligned}
 \mathcal{L}\{Af(x)+Bg(x)\}&=\int_0^\infty e^{-st}\left[Af(t)+Bg(t)\right]dt\\
@@ -574,7 +574,7 @@ t
 
 *** <<MK11>>导数
 
-定义 $s<0$ 且 $\lim_{s\to\infty}\left\{e^{-st}f(t)\right\}=0$ 则根据根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][牛顿莱布尼茨公式]]，[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][反常积分定义-边界无穷积分]]以及分部积分法有
+定义 $s<0$ 且 $\lim_{s\to\infty}\left\{e^{-st}f(t)\right\}=0$ 则根据根据[[~/文档/note/Chap7Note.org][牛顿莱布尼茨公式]]，[[~/文档/note/Chap8Note.org][反常积分定义-边界无穷积分]]以及分部积分法有
 
 \begin{aligned}
 &\int e^{-st}f'(t)dt=\int e^{-st}df(t)=f(t)e^{-st}-\int f'(t)d\left(e^{-st}\right)=\int e^{-st}df(t)=f(t)e^{-st}+s\int e^{-st}f'(t)dt\\
@@ -602,15 +602,15 @@ t
 
 ***** 证明 $\int_0^1 |f(x)| dx = 0$ 
 
-因为连续，则根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][连续函数多项式逼近-Weierstrass第一逼近定理]]存在多项式 $P_n(x)$ ，使得 $\forall \epsilon>0,\ \exists N,\ \forall n>N,\forall x\in[0,1]\Rightarrow |f(x)-P_n(x)|<\epsilon$
+因为连续，则根据[[~/文档/note/Chap10Note.org][连续函数多项式逼近-Weierstrass第一逼近定理]]存在多项式 $P_n(x)$ ，使得 $\forall \epsilon>0,\ \exists N,\ \forall n>N,\forall x\in[0,1]\Rightarrow |f(x)-P_n(x)|<\epsilon$
 
-假设 $P_n(x)=p_0+p_1x^1+p_2x^2+...+p_nx^n$ 根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]] $\int_0^1 P_n(x)f(x) dx=p_0\int_0^1f(x) dx+p_1\int_0^1x^1f(x) dx+p_2\int_0^1x^2f(x) dx+...+p_n\int_0^1x^nf(x) dx=0$
+假设 $P_n(x)=p_0+p_1x^1+p_2x^2+...+p_nx^n$ 根据[[~/文档/note/Chap7Note.org][定积分基本性质-线性]] $\int_0^1 P_n(x)f(x) dx=p_0\int_0^1f(x) dx+p_1\int_0^1x^1f(x) dx+p_2\int_0^1x^2f(x) dx+...+p_n\int_0^1x^nf(x) dx=0$
 
 $\lim_{n\to\infty}P_n(x)f(x)=\sum_{i=0}^\infty p_ix^if(x)$ 是函数项级数。
 
-因为 $f(x)$ 闭区间连续根据[[MK3][有界性定理]]， $|f(x)|<K,x\in[0,1]$ ，且 $P_n(x)$ 一致收敛,则根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-一致收敛-判别-A-D判别-Abel]]定理，级数 $\sum_{i=0}^\infty p_ix^if(x)$ 一致收敛。
+因为 $f(x)$ 闭区间连续根据[[MK3][有界性定理]]， $|f(x)|<K,x\in[0,1]$ ，且 $P_n(x)$ 一致收敛,则根据[[~/文档/note/Chap10Note.org][函数项级数-一致收敛-判别-A-D判别-Abel]]定理，级数 $\sum_{i=0}^\infty p_ix^if(x)$ 一致收敛。
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-一致收敛性质-可积性-推论]] $\int_0^1\lim_{n\to\infty}\{P_n(x)\}f(x)dx=\lim_{n\to\infty}\int_0^1P_n(x)f(x)dx=0$
+则根据[[~/文档/note/Chap10Note.org][函数项级数-一致收敛性质-可积性-推论]] $\int_0^1\lim_{n\to\infty}\{P_n(x)\}f(x)dx=\lim_{n\to\infty}\int_0^1P_n(x)f(x)dx=0$
 
 又因为 $\lim_{n\to\infty}P_n(x)=g(x)$ 故 $\int_0^1 f(x)^2dx=0$ 又因为 $f(x)\in R$ 故有 $\int_0^1 f(x)dx=0$
 
@@ -622,9 +622,9 @@ $f(x)$ 连续，假定 $f(x')\ne 0\Rightarrow |f(x')|>0$ 由于绝对值定义�
 
 取 $\epsilon=|f(x')|>0$ 则有 $\exists \delta'>0,\forall x\in O(x',\delta')\Rightarrow ||f(x)|-|f(x')||<|f(x')|\Rightarrow |f(x)|>0$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]] $\int_0^1 |f(x)| dx=\int_0^{x'-\delta'}|f(x)|dx +\int_{x'-\delta'}^{x' +\delta'}|f(x)|dx +\int_{x' +\delta}^1 |f(x)|dx$
+根据[[~/文档/note/Chap7Note.org][定积分基本性质-区间可加]] $\int_0^1 |f(x)| dx=\int_0^{x'-\delta'}|f(x)|dx +\int_{x'-\delta'}^{x' +\delta'}|f(x)|dx +\int_{x' +\delta}^1 |f(x)|dx$
 
-由于 $|f(x)|>0,\forall x\in O(x',\delta')$ ，故连续，则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-可积充要条件3-推论]]得出 $\int_{x'-\delta'}^{x' +\delta'}|f(x)|dx$ 可积，并且 $\int_{x'-\delta'}^{x' +\delta'}|f(x)|dx>0$
+由于 $|f(x)|>0,\forall x\in O(x',\delta')$ ，故连续，则根据[[~/文档/note/Chap7Note.org][定积分可积定理-可积充要条件3-推论]]得出 $\int_{x'-\delta'}^{x' +\delta'}|f(x)|dx$ 可积，并且 $\int_{x'-\delta'}^{x' +\delta'}|f(x)|dx>0$
 
 因为 $\int_0^1 |f(x)| dx=0, \int_{x'-\delta'}^{x' +\delta'}|f(x)|dx>0$ 则必有 $\int_0^{x'-\delta'}|f(x)|dx +\int_{x' +\delta}^1 |f(x)|dx<0$ 。但是积分方向为正，被积函数为非负，则退出矛盾。
 

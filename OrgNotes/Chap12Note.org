@@ -14,9 +14,9 @@ current mark: MK28
 
 *** <<MK25>>实对称矩阵正定的充要条件是特征值都是正数
 
-定义 $n$ 阶实数对称矩阵 $A$ ，根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK56][实对称矩阵特征值为实数]]，[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK62][实对称矩阵特征向量正交]]，[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK63][实对称矩阵特征向量为实数]]
+定义 $n$ 阶实数对称矩阵 $A$ ，根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK56][实对称矩阵特征值为实数]]，[[~/文档/note/高等代数/Algb-3-Matrix.org::MK62][实对称矩阵特征向量正交]]，[[~/文档/note/高等代数/Algb-3-Matrix.org::MK63][实对称矩阵特征向量为实数]]
 
-以及[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK61][实对称矩阵必可对角化]]可得存在正交实数阵 $P$ 使得 $P^{-1}AP=\Lambda=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$ 其中 $P,\lambda_i$ 均为实数
+以及[[~/文档/note/高等代数/Algb-3-Matrix.org::MK61][实对称矩阵必可对角化]]可得存在正交实数阵 $P$ 使得 $P^{-1}AP=\Lambda=\left[\begin{matrix}\lambda_1&0&...&0\\0&\lambda_2&...&0\\...&...&...&...\\0&0&...&\lambda_n\end{matrix}\right]$ 其中 $P,\lambda_i$ 均为实数
 
 故定义 $\vec{y}=P^{-1}\vec{x}\Rightarrow \vec{x}=P\vec{y}$ 由于 $\vec{x}$ 非零且 $P$ 正交（即非零）
 
@@ -42,7 +42,7 @@ current mark: MK28
 
 **** 充分性
 
-由于正定矩阵充分条件为 $\lambda_i>0$ 则有 $A=(PP^{-1})^TAPP^{-1}=(P^{-1})^TP^TAPP^{-1}$ 根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK62][实对称矩阵特征向量正交]]可得 $P$ 为正交阵，故 $P^{-1}=P^T$
+由于正定矩阵充分条件为 $\lambda_i>0$ 则有 $A=(PP^{-1})^TAPP^{-1}=(P^{-1})^TP^TAPP^{-1}$ 根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK62][实对称矩阵特征向量正交]]可得 $P$ 为正交阵，故 $P^{-1}=P^T$
 
 则有 $A=(P^{-1})^TP^TAPP^{-1}=(P^{-1})^T\Lambda P^{-1}=P\sqrt{\Lambda}^T \sqrt{\Lambda}P^T=(\sqrt{\Lambda}P^T)^T\sqrt{\Lambda}P^T$ 故充分
 
@@ -454,9 +454,9 @@ a_{1n}&...&a_{n(j-1)}&b_n&a_{n(j+1)}&...&a_{nn}\\
 
 且由于偏导函数 $\frac{\partial f(\vec{x})}{\partial x_1}$ 存在，故对于给定的除 $u$ 以外的参数，存在一个闭区间 $[a,b]$ 使得所有 $u\in (a,b)$ 上导数均存在
 
-根据[[~/OneDrive/大学物理/Note/DiffEq.org][导数基本知识-可导必连续]]得出 $\Phi(u)$ 在某个闭区间 $u\in (a,b)$ 上连续，则存在区域 $[c,d]\subset [a,b]$ 使得函数在 $u\in(c,d)$ 上可导， $u\in [c,d]$ 上连续
+根据[[~/文档/note/大学物理/Note/DiffEq.org][导数基本知识-可导必连续]]得出 $\Phi(u)$ 在某个闭区间 $u\in (a,b)$ 上连续，则存在区域 $[c,d]\subset [a,b]$ 使得函数在 $u\in(c,d)$ 上可导， $u\in [c,d]$ 上连续
 
-综合上述条件根据[[~/OneDrive/大学物理/Note/DiffEq.org][导数基本知识-拉格朗日中值定理]]有 $\Phi(u)-\Phi(u_0)=\Phi(\xi)(u-u_0),\xi\in (u_0,u)$ 
+综合上述条件根据[[~/文档/note/大学物理/Note/DiffEq.org][导数基本知识-拉格朗日中值定理]]有 $\Phi(u)-\Phi(u_0)=\Phi(\xi)(u-u_0),\xi\in (u_0,u)$ 
 
 即 $f(x_{1_0} + \Delta x_1,x_{2_0} + \Delta x_2,...,x_{n_0} + \Delta x_n)-f(x_{1_0},x_{2_0} + \Delta x_2,...,x_{n_0} + \Delta x_n)=f_{x_1}(\xi_1,x_{2_0} + \Delta x_2,...,x_{n_0} + \Delta x_n)\Delta x_1$
 
@@ -593,7 +593,7 @@ a_{1n}&...&a_{n(j-1)}&b_n&a_{n(j+1)}&...&a_{nn}\\
 
 则有对于任意 $|y-y_0|<\delta$ ，若 $x\in O(x_0,\delta'),\delta'\leq \delta$ 则有函数 $f(x,k),f(x_0,k)$ 在 $[y_0,y]$ 上连续 $(y_0,y)$ 上可导
 
-根据[[~/OneDrive/大学物理/Note/DiffEq.org][导数基本知识-拉格朗日中值定理]]在 $\sqrt{(x-x_0)^2+(y-y_0)^2}<\delta$ 时有 $[f(x,y)-f(x_0,y)]-[f(x,y_0)-f(x_0,y_0)]=\frac{\partial [f(x,y)-f(x_0,y)]}{\partial y}\big|_{y=\xi},\xi\in (y,y_0)$
+根据[[~/文档/note/大学物理/Note/DiffEq.org][导数基本知识-拉格朗日中值定理]]在 $\sqrt{(x-x_0)^2+(y-y_0)^2}<\delta$ 时有 $[f(x,y)-f(x_0,y)]-[f(x,y_0)-f(x_0,y_0)]=\frac{\partial [f(x,y)-f(x_0,y)]}{\partial y}\big|_{y=\xi},\xi\in (y,y_0)$
 
 ***** 证明关于 $x$ 极限
 
@@ -890,7 +890,7 @@ dx_m
 
 *** 定义凸区域
 
-若区域 $D\subset R^n$ 为连通集（根据[[~/OneDrive/数学分析/Chap11Note.org][连续函数性质-补充连通定义]]）其中任意两点 $\vec{x},\vec{y}$ 相连的直线属于该区域 $\left\{\vec{x}+t(\vec{y}-\vec{x})\big|t\in [0,1]\right\}\in D$ 则 $D$ 为凸区域
+若区域 $D\subset R^n$ 为连通集（根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-补充连通定义]]）其中任意两点 $\vec{x},\vec{y}$ 相连的直线属于该区域 $\left\{\vec{x}+t(\vec{y}-\vec{x})\big|t\in [0,1]\right\}\in D$ 则 $D$ 为凸区域
 
 *** 中值定理描述
 
@@ -948,7 +948,7 @@ y_n-x_n\\
 
 因为 $|\vec{y}-\vec{x}|=\sqrt{\sum_{i=1}^n(y_i-x_i)^2}$ 不为无限大。
 
-故 $\frac{d(\Phi(t_0))}{dt}=\sum_{i=1}^n \left\{\frac{\partial f(\vec{x}+t_0(\vec{y}-\vec{x}))}{\partial x_i}(y_i-x_i)\right\},t_0\in[0,1]$ 故 $\Phi(t)$ 在 $(0,1)$ 上可导 $[0,1]$ 上连续，则应用一元函数[[~/OneDrive/大学物理/Note/DiffEq.org][导数基本知识-拉格朗日中值定理]]可得
+故 $\frac{d(\Phi(t_0))}{dt}=\sum_{i=1}^n \left\{\frac{\partial f(\vec{x}+t_0(\vec{y}-\vec{x}))}{\partial x_i}(y_i-x_i)\right\},t_0\in[0,1]$ 故 $\Phi(t)$ 在 $(0,1)$ 上可导 $[0,1]$ 上连续，则应用一元函数[[~/文档/note/大学物理/Note/DiffEq.org][导数基本知识-拉格朗日中值定理]]可得
 
 \begin{aligned}
 &\frac{d\Phi(\theta)}{dt}=\frac{\Phi(1)-\Phi(0)}{1}&\theta\in(0,1)\\
@@ -1036,7 +1036,7 @@ R_{k+1}=\frac{1}{(k+1)!}\left(\sum_{j=1}^n\Delta x_j\frac{\partial}{\partial x_j
 
 **** 对 $\Phi(1)$ 在 $t=0$ 处使用一元函数泰勒展开
 
-由于 $\Phi(t)$ 在 $t\in[0,1]$ 有定义，且在 $t\in[0,1]$ 连续 $t\in(0,1)$ 可导，故根据[[~/OneDrive/数学分析/Chap10Note.org][幂级数-幂级数展开-补充2：Taylor公式]]有
+由于 $\Phi(t)$ 在 $t\in[0,1]$ 有定义，且在 $t\in[0,1]$ 连续 $t\in(0,1)$ 可导，故根据[[~/文档/note/数学分析/Chap10Note.org][幂级数-幂级数展开-补充2：Taylor公式]]有
 
 \begin{aligned}
 \Phi(1)&=\sum_{i=0}^k \frac{1}{i!}\frac{d^i\Phi(0)}{dt^i}(1-0)^i+R_n(x)\\
@@ -1049,7 +1049,7 @@ R_{k+1}=\frac{1}{(k+1)!}\left(\sum_{j=1}^n\Delta x_j\frac{\partial}{\partial x_j
 f(\vec{x}_0+\Delta\vec{x})&=\sum_{i=0}^k \frac{1}{i!}\left(\sum_{j=1}^n \Delta x_j\frac{\partial}{\partial x_j}\right)^if(\vec{x}_0)+R_n(x)
 \end{aligned}
 
-同理根据[[~/OneDrive/数学分析/Chap10Note.org][幂级数-幂级数展开-补充2：Taylor公式]]的拉格朗日余项有
+同理根据[[~/文档/note/数学分析/Chap10Note.org][幂级数-幂级数展开-补充2：Taylor公式]]的拉格朗日余项有
 
 \begin{aligned}
 R_n(x)&=\frac{1}{(k+1)!}\frac{d^{k+1}\Phi(\theta)}{dt^{k+1}}(1-0)^{n+1} &\theta\in [0,1]\\
@@ -1846,7 +1846,7 @@ F_z=1
 
 *** 证明
 
-定义 $\Phi(x_i)=f(...,x_{(i-1)_0},x_i,x_{(i+1)_0}...)$ 则有 $x_{i_0}$ 为 $\Phi(x_i)$ 的极值点，则根据[[~/OneDrive/大学物理/Note/DiffEq.org][导数基本知识-费马引理]]可得 $\frac{d\Phi(x_i)}{dx_i}=0$
+定义 $\Phi(x_i)=f(...,x_{(i-1)_0},x_i,x_{(i+1)_0}...)$ 则有 $x_{i_0}$ 为 $\Phi(x_i)$ 的极值点，则根据[[~/文档/note/大学物理/Note/DiffEq.org][导数基本知识-费马引理]]可得 $\frac{d\Phi(x_i)}{dx_i}=0$
 
 即 $\frac{\partial f(\vec{x}_0)}{\partial x_i}=\frac{d\Phi(x_i)}{dx_i}=0$
 

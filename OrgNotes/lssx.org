@@ -14,7 +14,7 @@ free mark:
 
 *** 符号及表达式
 
-集合论语言为[[~/OneDrive/数理逻辑/sllj.org::MK104][一阶语言]]，除[[~/OneDrive/数理逻辑/sllj.org::MK105][固定符号]]外尤其仅有一个[[~/OneDrive/数理逻辑/sllj.org::MK110][谓词符号]] $\mathcal{A}_c=\{p_\in\}$ 其中根据[[~/OneDrive/数理逻辑/sllj.org::MK112][符号假定]]有 $\pi_P(p_\in)=2$
+集合论语言为[[~/文档/note/数理逻辑/sllj.org::MK104][一阶语言]]，除[[~/文档/note/数理逻辑/sllj.org::MK105][固定符号]]外尤其仅有一个[[~/文档/note/数理逻辑/sllj.org::MK110][谓词符号]] $\mathcal{A}_c=\{p_\in\}$ 其中根据[[~/文档/note/数理逻辑/sllj.org::MK112][符号假定]]有 $\pi_P(p_\in)=2$
 
 为方便书写：
 
@@ -24,11 +24,11 @@ free mark:
 
 （3） 定义 $\lnot(x\hat{=}y)$ 书写为 $(x\ne y)$
 
-集合论的[[~/OneDrive/数理逻辑/sllj.org::MK129][表达式]]均遵循以上简写
+集合论的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]均遵循以上简写
 
 *** 等式符号
 
-语言规定[[~/OneDrive/数理逻辑/sllj.org::MK105][等式符号]] $\hat{=}$ 必须满足[[MK132][等价关系]]，由[[MK2][外延公理]]定义
+语言规定[[~/文档/note/数理逻辑/sllj.org::MK105][等式符号]] $\hat{=}$ 必须满足[[MK132][等价关系]]，由[[MK2][外延公理]]定义
 
 ** 集合论非逻辑公理
 
@@ -58,7 +58,7 @@ $\exists x(x=x)$ 即存在一个集合
 
 形式语言： $\forall p_1(...(\forall p_n(\forall U(\exists S(\forall x((x\in S)\leftrightarrow((x\in U)\land \phi(p_1,...,p_n,x)))))))...)$
 
-其中 $n\in\mathbb{N}$ 是自然数， $\phi(p_1,...,p_n,x)$ 是[[~/OneDrive/数理逻辑/sllj.org::MK140][自由变元]]为 $p_1,...,p_n,x$ 且不包含 $U,S$ 的[[~/OneDrive/数理逻辑/sllj.org::MK129][表达式]]
+其中 $n\in\mathbb{N}$ 是自然数， $\phi(p_1,...,p_n,x)$ 是[[~/文档/note/数理逻辑/sllj.org::MK140][自由变元]]为 $p_1,...,p_n,x$ 且不包含 $U,S$ 的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]
 
 即对于任一集合 $U$ 存在 $S$ 使得 $x\in S$ 的充要条件是 $x\in U\land \phi(p_1,...,p_n,x)$ 
 
@@ -66,9 +66,9 @@ $\exists x(x=x)$ 即存在一个集合
 
 **** 唯一性
 
-设 $x$ 为一个集合 $\phi(a_1,...,a_n,z)$ 是[[~/OneDrive/数理逻辑/sllj.org::MK140][自由变元]]为 $a_1,...,a_n,z$ 且不包含 $x$ 的[[~/OneDrive/数理逻辑/sllj.org::MK129][表达式]]
+设 $x$ 为一个集合 $\phi(a_1,...,a_n,z)$ 是[[~/文档/note/数理逻辑/sllj.org::MK140][自由变元]]为 $a_1,...,a_n,z$ 且不包含 $x$ 的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]
 
-则当 $a_1,...,a_n$ [[~/OneDrive/数理逻辑/sllj.org::MK154][赋值]]确定时，存在唯一的 $y$ 满足 $\forall z((z\in y)\leftrightarrow((z\in x)\land(\phi(a_1,...,a_n,z))))$
+则当 $a_1,...,a_n$ [[~/文档/note/数理逻辑/sllj.org::MK154][赋值]]确定时，存在唯一的 $y$ 满足 $\forall z((z\in y)\leftrightarrow((z\in x)\land(\phi(a_1,...,a_n,z))))$
 
 ***** 证明
 
@@ -100,7 +100,7 @@ $\lnot(\exists x(\forall y(y\in x)))$ 即不存在包含一切集合的集合
 
 ***** 证明
 
-显然 $\lnot(z=z)$ 是[[MK1][集合论语言]]的合法[[~/OneDrive/数理逻辑/sllj.org::MK129][表达式]]，则根据[[MK3][第一存在]]可得有集合 $x$
+显然 $\lnot(z=z)$ 是[[MK1][集合论语言]]的合法[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]，则根据[[MK3][第一存在]]可得有集合 $x$
 
 故根据[[MK5][分离模式]]可得 $y=\left\{z\in x\big|\lnot(z=z)\right\}$ 亦为一个集合
 
@@ -116,7 +116,7 @@ $\lnot(\exists x(\forall y(y\in x)))$ 即不存在包含一切集合的集合
 
 根据定义可得 $\forall x(x\not\in\varnothing)$ ，若存在 $y$ 亦满足 $\forall x(x\not\in y)$
 
-则对于[[~/OneDrive/数理逻辑/sllj.org::MK129][表达式]] $\forall x((x\in\varnothing)\leftrightarrow (x\in y))$ 来说对于任意 $x$ 均有 $x\in\varnothing$ 与 $x\in y$ 均不成立
+则对于[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]] $\forall x((x\in\varnothing)\leftrightarrow (x\in y))$ 来说对于任意 $x$ 均有 $x\in\varnothing$ 与 $x\in y$ 均不成立
 
 则有 $\forall x((x\in\varnothing)\leftrightarrow (x\in y))$ 成立，则根据[[MK2][外延公理]]有 $y=\varnothing$ 
 
@@ -260,7 +260,7 @@ $\forall A(\lnot(\exists B(B\in A\land B=A)))$ 即集合不包含自身
 
 ***** 证明
 
-当 $A=B$ 时，根据[[~/OneDrive/数理逻辑/sllj.org::MK9][外延公理]]，[[~/OneDrive/数理逻辑/sllj.org::MK49][等价等值式]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]有：
+当 $A=B$ 时，根据[[~/文档/note/数理逻辑/sllj.org::MK9][外延公理]]，[[~/文档/note/数理逻辑/sllj.org::MK49][等价等值式]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]有：
 
 \begin{aligned}
 &\forall x(x\in A\leftrightarrow x\in B)\\
@@ -277,7 +277,7 @@ $\forall A(\lnot(\exists B(B\in A\land B=A)))$ 即集合不包含自身
 
 ***** 证明
 
-根据[[~/OneDrive/数理逻辑/sllj.org::MK37][蕴含传递]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]有：
+根据[[~/文档/note/数理逻辑/sllj.org::MK37][蕴含传递]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]有：
 
 \begin{aligned}
 &A\subset B\land B\subset A\\
@@ -288,7 +288,7 @@ $\forall A(\lnot(\exists B(B\in A\land B=A)))$ 即集合不包含自身
 
 **** 定理3
 
-对于任意集合 $A$ ，都存在 $A\in U$ 其中 $U$ 为[[~/OneDrive/数理逻辑/sllj.org::MK118][全总域]]
+对于任意集合 $A$ ，都存在 $A\in U$ 其中 $U$ 为[[~/文档/note/数理逻辑/sllj.org::MK118][全总域]]
 
 ***** 证明
 
@@ -722,7 +722,7 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
 
 （4） 对于任意 $A\in F\land A\subset B\subset X$ 则有 $B\in F$
 
-显然，在已知 $X$ 表达式的情况下 $X$ 的滤子可用[[~/OneDrive/数理逻辑/sllj.org::MK129][一阶表达式]]描述
+显然，在已知 $X$ 表达式的情况下 $X$ 的滤子可用[[~/文档/note/数理逻辑/sllj.org::MK129][一阶表达式]]描述
 
 **** 定理1
 
@@ -736,7 +736,7 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
 
 定义 $\phi_n(A)=(A\subset X)\land(\exists B_1(...\exists B_n((B_1\in E)\land...\land(B_n\in E)\land((B_1\cap...\cap B_n)\subset A))...))$
 
-由于 $n<\infty$ 故可得 $|\phi_n(A)|<\infty$ 故已知 $A$ 的情况下 $\phi(A)$ 是[[~/OneDrive/数理逻辑/sllj.org::MK129][表达式]]
+由于 $n<\infty$ 故可得 $|\phi_n(A)|<\infty$ 故已知 $A$ 的情况下 $\phi(A)$ 是[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]
 
 定义 $F_n=\left\{A\big|\phi_n(A)\right\}$ ，进一步定义 $F=\bigcup_{n\in\mathbb{N}}F_n$ 显然 $F\subset\rho(X)$
 
@@ -874,7 +874,7 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
 
 ***** 证明
 
-定义 $\phi(A)$ 为 $A$ 是 $X$ 的[[MK36][滤子]]的[[~/OneDrive/数理逻辑/sllj.org::MK129][表达式]]，则定义 $D=\left\{E\big|E\in\rho(X)\land F\subset E\land \phi(E)\right\}$
+定义 $\phi(A)$ 为 $A$ 是 $X$ 的[[MK36][滤子]]的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]，则定义 $D=\left\{E\big|E\in\rho(X)\land F\subset E\land \phi(E)\right\}$
 
 易证 $\left<D,\subset\right>$ 是[[MK143][偏序关系]]
 
@@ -994,11 +994,11 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
 
 *** 描述法<<MK49>>
 
-利用[[~/OneDrive/数理逻辑/sllj.org::MK129][谓词公式定义]]描述集合中的元素。
+利用[[~/文档/note/数理逻辑/sllj.org::MK129][谓词公式定义]]描述集合中的元素。
 
 例如 $A=\left\{x\big|P(x)\right\}$ 或 $A=\left\{x\big:P(x)\right\}$ 
 
-定义为当且仅当[[~/OneDrive/数理逻辑/sllj.org::MK129][谓词公式]] $P(x)=1$ 时，有 $x\in A$ 即 $\forall x(P(x)\leftrightarrow x\in A)=1$ 。
+定义为当且仅当[[~/文档/note/数理逻辑/sllj.org::MK129][谓词公式]] $P(x)=1$ 时，有 $x\in A$ 即 $\forall x(P(x)\leftrightarrow x\in A)=1$ 。
 
 **** 替换引理<<MK50>>
 
@@ -1036,7 +1036,7 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
 
 **** 归纳原理（数学归纳法）
 
-若集合 $A$ 以[[MK51][归纳定义]]，若 $P(x)$ 是[[~/OneDrive/数理逻辑/sllj.org::MK129][谓词公式]]其中 $x$ 是命题变元。要证明 $\forall x(x\in A\rightarrow P(x))$ 仅需证明：
+若集合 $A$ 以[[MK51][归纳定义]]，若 $P(x)$ 是[[~/文档/note/数理逻辑/sllj.org::MK129][谓词公式]]其中 $x$ 是命题变元。要证明 $\forall x(x\in A\rightarrow P(x))$ 仅需证明：
 
 （1） [[MK52][基础条款]]中定义的所有元素为真 $P(x^1_0)\land...\land P(x^u_0)=1$
 
@@ -1048,7 +1048,7 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
  
 ***** 证明
 
-假设集合 $A$ 有[[MK51][归纳定义]]，[[~/OneDrive/数理逻辑/sllj.org::MK129][谓词公式]] $P$ 且两个条件均成立，即：
+假设集合 $A$ 有[[MK51][归纳定义]]，[[~/文档/note/数理逻辑/sllj.org::MK129][谓词公式]] $P$ 且两个条件均成立，即：
 
 （1） $P(x^1_0)\land...\land P(x^u_0)=1$
 
@@ -1130,7 +1130,7 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
 
 ***** 存在性证明
 
-显然 $\forall c((c\in C)\rightarrow (x\in c))$ 是[[MK1][集合论语言]]的[[~/OneDrive/数理逻辑/sllj.org::MK129][表达式]]，又根据[[MK9][并集公理]]可得 $\bigcup C$ 存在
+显然 $\forall c((c\in C)\rightarrow (x\in c))$ 是[[MK1][集合论语言]]的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]，又根据[[MK9][并集公理]]可得 $\bigcup C$ 存在
 
 根据[[MK5][分离模式]]定理存在 $S=\left\{x\big|((x\in\bigcup C)\land(\forall c((c\in C)\rightarrow (x\in c)))\right\}$
 
@@ -1200,9 +1200,9 @@ A-\left(\bigcap_{\lambda\in\Lambda} C_\lambda\right)&=\bigcup_{\lambda\in\Lambda
 
 根据[[MK61][广义交]] $x\in A\land\forall\lambda\in\Lambda\rightarrow x\not\in C_\lambda$
 
-根据[[~/OneDrive/数理逻辑/sllj.org::MK45][交换率]] $(\forall\lambda\in\Lambda\rightarrow x\not\in C_\lambda)\land x\in A$
+根据[[~/文档/note/数理逻辑/sllj.org::MK45][交换率]] $(\forall\lambda\in\Lambda\rightarrow x\not\in C_\lambda)\land x\in A$
 
-根据[[~/OneDrive/数理逻辑/sllj.org::MK183][辖域变化]] $\forall\lambda\in\Lambda\rightarrow (x\not\in C_\lambda\land x\in A)$ 即有 $\forall\lambda\in\Lambda\rightarrow (x\in(A-C_\lambda))$  
+根据[[~/文档/note/数理逻辑/sllj.org::MK183][辖域变化]] $\forall\lambda\in\Lambda\rightarrow (x\not\in C_\lambda\land x\in A)$ 即有 $\forall\lambda\in\Lambda\rightarrow (x\in(A-C_\lambda))$  
 
 又根据[[MK59][广义并]] $x\in\bigcup_{\lambda\in\Lambda}(A-C_\lambda)$ 故有 $A-\bigcup_{\lambda\in\Lambda} C\subset\bigcap_{\lambda\in\Lambda}(A-C_\lambda)$
 
@@ -1287,7 +1287,7 @@ A\cap\left(\bigcup_{i=1}^\infty B_i\right)&=\bigcup_{i=1}^\infty\left(A\cap B_i\
 
 根据[[MK58][并]]以及[[MK60][交]]运算可得 $B\cap C=\left\{x\big|x\in B\land x\in C\right\}$ 以及 $A\cup (B\cap C)=\left\{x\big|x\in A\lor x\in B\cap C\right\}$
 
-根据[[~/OneDrive/数理逻辑/sllj.org::MK47][分配率]]，[[MK49][描述法定义]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $x$
+根据[[~/文档/note/数理逻辑/sllj.org::MK47][分配率]]，[[MK49][描述法定义]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $x$
 
 \begin{aligned}
 &x\in A\cup (B\cap C)\\
@@ -1304,7 +1304,7 @@ A\cap\left(\bigcup_{i=1}^\infty B_i\right)&=\bigcup_{i=1}^\infty\left(A\cap B_i\
 
 这里仅证 $A\cup\left(\bigcap_{i=1}^\infty B_i\right)&=\bigcap_{i=1}^\infty\left(A\cup B_i\right)$ 其余同理
 
-根据[[MK68][可数性质]]、[[~/OneDrive/数理逻辑/sllj.org::MK183][辖域变化]]、[[MK70][交换律]]以及[[MK57][运算定义]]
+根据[[MK68][可数性质]]、[[~/文档/note/数理逻辑/sllj.org::MK183][辖域变化]]、[[MK70][交换律]]以及[[MK57][运算定义]]
 
 \begin{aligned}
 &\forall x\in \left(\bigcap_{i=1}^\infty\left(A\cup B_i\right)\right)\\
@@ -1347,7 +1347,7 @@ A-(B\cup C)&=(A-B)\cap (A-C)\\
 
 仅证 $A-(B\cap C)&=(A- B)\cup (A-C)$ 根据[[MK58][并]]，[[MK60][交]]以及[[MK62][差]]运算定义 $B\cap C=\left\{x\big|x\in B\land x\in C\right\},A-(B\cap C)=\left\{x\big|x\in A\land x\not\in B\cap C\right\}$
 
-则根据[[MK45][成员定义]]，[[~/OneDrive/数理逻辑/sllj.org::MK186][德摩根律]]，[[~/OneDrive/数理逻辑/sllj.org::MK47][分配率]]，[[MK49][描述法定义]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $x$
+则根据[[MK45][成员定义]]，[[~/文档/note/数理逻辑/sllj.org::MK186][德摩根律]]，[[~/文档/note/数理逻辑/sllj.org::MK47][分配率]]，[[MK49][描述法定义]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $x$
 
 \begin{aligned}
 &x\in A-(B\cap C)\\
@@ -1395,7 +1395,7 @@ A\cap \overline{A}=\varnothing\\
 
 仅证 $\overline{A\cup B}=\overline{A}\cap\overline{B}$ 根据[[MK58][并]]与[[MK63][补]]运算定义 $\overline{A\cup B}=\left\{x\big|x\not\in A\cup B\right\}$ 以及 $\overline{A}\cap\overline{B}=\left\{x\big|x\not\in A\land x\not\in B\right\}$
 
-根据[[MK45][成员定义]]，[[MK49][描述法定义]]，[[~/OneDrive/数理逻辑/sllj.org::MK186][德摩根律]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $x$
+根据[[MK45][成员定义]]，[[MK49][描述法定义]]，[[~/文档/note/数理逻辑/sllj.org::MK186][德摩根律]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $x$
 
 \begin{aligned}
 &x\in \overline{A\cup B}\\
@@ -1413,7 +1413,7 @@ A\cap \overline{A}=\varnothing\\
 
 仅证 $\overline{\bigcap_{i=1}^\infty A_i}=\bigcup_{i=1}^\infty\overline{A_i}$ 其余同理
 
-根据[[MK68][可数性质]]、[[MK57][运算定义]]、[[~/OneDrive/数理逻辑/sllj.org::MK48][蕴含等式]]、[[~/OneDrive/数理逻辑/sllj.org::MK186][德摩根律]]、[[~/OneDrive/数理逻辑/sllj.org::MK182][量词转换]]可得
+根据[[MK68][可数性质]]、[[MK57][运算定义]]、[[~/文档/note/数理逻辑/sllj.org::MK48][蕴含等式]]、[[~/文档/note/数理逻辑/sllj.org::MK186][德摩根律]]、[[~/文档/note/数理逻辑/sllj.org::MK182][量词转换]]可得
 
 \begin{aligned}
 &x\in\bigcup_{i=1}^\infty\overline{A_i}\\
@@ -1463,7 +1463,7 @@ $A-B-C=A-B\cup C$
 &A\subset B\rightarrow B=A\cup(A-B)
 \end{aligned}
 
-**** [[~/OneDrive/数理逻辑/sllj.org::MK106][量词]]与运算<<MK80>>
+**** [[~/文档/note/数理逻辑/sllj.org::MK106][量词]]与运算<<MK80>>
 
 \begin{aligned}
 \left\{x\big|\forall y\in Y\rightarrow P(x,y)\right\}=\bigcap_{y\in Y}\left\{x\big|P(x,y)\right\}\\
@@ -1580,7 +1580,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 )
 \end{aligned}
 
-即 $f$ 是 $(B\times\mathbb{N})\to A$ 的[[MK176][单射函数]]的[[~/OneDrive/数理逻辑/sllj.org::MK129][表达式]]。定义 $F=\left\{f\big|(\text{IsFunc}(f,B)\land B\subset A)\right\}$
+即 $f$ 是 $(B\times\mathbb{N})\to A$ 的[[MK176][单射函数]]的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]。定义 $F=\left\{f\big|(\text{IsFunc}(f,B)\land B\subset A)\right\}$
 
 根据[[MK84][定理1]]可得存在 $B^*\subset A$ 满足 $|B^*|=|\mathbb{N}|$ 根据[[MK29][定义]]可得存在[[MK181][双射函数]] $\sigma:B^*\to\mathbb{N}$ 
 
@@ -1764,7 +1764,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 )
 \end{aligned}
 
-即 $f$ 是 $A$ 到 $A\times A$ 的[[MK181][双射函数]]的[[~/OneDrive/数理逻辑/sllj.org::MK129][表达式]]，定义 $Y=\left\{f\big|A\subset X\land\text{IsFunc}(f,A)\right\}$
+即 $f$ 是 $A$ 到 $A\times A$ 的[[MK181][双射函数]]的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]，定义 $Y=\left\{f\big|A\subset X\land\text{IsFunc}(f,A)\right\}$
 
 根据[[MK84][定理1]]可得存在 $C\in X$ 满足 $|C|=|\mathbb{N}|$ ，根据[[MK98][定理2]]易证 $|C\times C|=|C|$
 
@@ -2119,7 +2119,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 代数数的全体是可数集
 
-代数数为整系数多项式的[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][因式、可约与根-根]]，若不是，则定义为超越数（例如 $\pi$ ）
+代数数为整系数多项式的[[~/文档/note/高等代数/Algb-4-Multi-equ.org][因式、可约与根-根]]，若不是，则定义为超越数（例如 $\pi$ ）
 
 ****** 证明
 
@@ -2129,7 +2129,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 定义 $\sigma:A_n\to\mathbb{N}^n$ 规则为 $\sigma(f(x))=<a_1,...,a_n>$ 
 
-定义 $g(x)=\sum_{i=0}^nb_ix^i$ 根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][一元多项式-一元多项式运算-相等]]可得若 $f(x)\ne g(x)$ 则至少有一组 $b_k\ne a_k$
+定义 $g(x)=\sum_{i=0}^nb_ix^i$ 根据[[~/文档/note/高等代数/Algb-4-Multi-equ.org][一元多项式-一元多项式运算-相等]]可得若 $f(x)\ne g(x)$ 则至少有一组 $b_k\ne a_k$
 
 根据[[MK105][有序组]]定义可得 $<a_1,...,a_{k-1},a_k,a_{k+1},...,a_n>\ne<a_1,...,a_{k-1},b_k,a_{k+1},...,a_n>$ 故[[MK176][单射]]
 
@@ -2147,7 +2147,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 则有映射 $\sigma:A_n\times\{1,2,...,n\}\to B_n$ 显然根据定义 $B_n$ 中的元素必为某个 $f(x)\in A_n$ 的根
 
-进一步根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][因式、可约与根-根-根的个数]]可知 $f(x)$ 至多有 $n$ 个根，故 $\sigma$ 是[[MK179][满射]]
+进一步根据[[~/文档/note/高等代数/Algb-4-Multi-equ.org][因式、可约与根-根-根的个数]]可知 $f(x)$ 至多有 $n$ 个根，故 $\sigma$ 是[[MK179][满射]]
 
 定义[[MK47][集合族]] $K=\left\{K_b\big|b\in B_n\right\}$ 其中 $K_b=\left\{a\big|\sigma(a)=b\right\}$
 
@@ -2475,7 +2475,7 @@ A\times(B-C)&=(A\times B)-(A\times C)\\
 
 进一步等价于 $(x\in A_1\land y\in B_1)\land\lnot(x\in A_2\land y\in B_2)$
 
-根据[[~/OneDrive/数理逻辑/sllj.org::MK186][德摩根律]]、[[~/OneDrive/数理逻辑/sllj.org::MK47][分配率]]以及[[~/OneDrive/数理逻辑/sllj.org::MK45][交换律]]
+根据[[~/文档/note/数理逻辑/sllj.org::MK186][德摩根律]]、[[~/文档/note/数理逻辑/sllj.org::MK47][分配率]]以及[[~/文档/note/数理逻辑/sllj.org::MK45][交换律]]
 
 \begin{aligned}
 &(x\in A_1\land y\in B_1)\land\lnot(x\in A_2\land y\in B_2)\\
@@ -2662,7 +2662,7 @@ $R\cdot S=\left\{<x,y>\big|\exists y(xRy\land ySz)\right\}$
 
 同理可得 $ySz{|\!\!\!=}y\in B\land z\in C$ 故根据[[MK61][B不含x]] 
 
-此时当 $\exists y(xRy\land ySz)=1$ 根据[[~/OneDrive/数理逻辑/sllj.org::MK1][连词定义]]可得 $x\in A=1,z\in C=1$ 且 $\exists y(y\in B\land xRy\land ySz)=1$
+此时当 $\exists y(xRy\land ySz)=1$ 根据[[~/文档/note/数理逻辑/sllj.org::MK1][连词定义]]可得 $x\in A=1,z\in C=1$ 且 $\exists y(y\in B\land xRy\land ySz)=1$
 
 故得 $x\in A\land z\in C\land\exists y(y\in B\land xRy\land ySz)=1$
 
@@ -2670,7 +2670,7 @@ $R\cdot S=\left\{<x,y>\big|\exists y(xRy\land ySz)\right\}$
 
 故得 $x\in A\land z\in C\land\exists y(y\in B\land xRy\land ySz){|\!\!\!=\!\!\!|}\exists y(xRy\land ySz)$
 
-故根据[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]以及[[MK49][描述法]]定义 $R\cdot S=\left\{<x,y>\big|\exists y(xRy\land ySz)\right\}$
+故根据[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]以及[[MK49][描述法]]定义 $R\cdot S=\left\{<x,y>\big|\exists y(xRy\land ySz)\right\}$
 
 ***** 矩阵乘法
 
@@ -2711,7 +2711,7 @@ R\cdot(S\cup T)&=(R\cdot S)\cup(R\cdot T)\\
 
 定义 $R\in A\times B,S\in B\times C,T\in B\times C$ 
 
-根据[[MK118][定义]]，[[MK58][并运算]]，[[MK61][B不包含x]]，[[~/OneDrive/数理逻辑/sllj.org::MK45][交换律]]，[[~/OneDrive/数理逻辑/sllj.org::MK46][结合律]]，[[~/OneDrive/数理逻辑/sllj.org::MK47][分配率]]，[[~/OneDrive/数理逻辑/sllj.org::MK183][辖域变化]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]对于任意 $<x,y>$
+根据[[MK118][定义]]，[[MK58][并运算]]，[[MK61][B不包含x]]，[[~/文档/note/数理逻辑/sllj.org::MK45][交换律]]，[[~/文档/note/数理逻辑/sllj.org::MK46][结合律]]，[[~/文档/note/数理逻辑/sllj.org::MK47][分配率]]，[[~/文档/note/数理逻辑/sllj.org::MK183][辖域变化]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]对于任意 $<x,y>$
 
 \begin{aligned}
 &<x,y>\in R\cdot(S\cup T)\\
@@ -2738,7 +2738,7 @@ R\cdot(S\cap T)&\subset(R\cdot S)\cap(R\cdot T)\\
 
 定义 $R\in A\times B,S\in B\times C,T\in B\times C$ 
 
-根据[[MK118][定义]]，[[MK58][并运算]]，[[MK61][B不包含x]]，[[~/OneDrive/数理逻辑/sllj.org::MK45][交换律]]，[[~/OneDrive/数理逻辑/sllj.org::MK46][结合律]]，[[~/OneDrive/数理逻辑/sllj.org::MK47][分配率]]，[[~/OneDrive/数理逻辑/sllj.org::MK183][辖域变化]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]对于任意 $<x,y>$
+根据[[MK118][定义]]，[[MK58][并运算]]，[[MK61][B不包含x]]，[[~/文档/note/数理逻辑/sllj.org::MK45][交换律]]，[[~/文档/note/数理逻辑/sllj.org::MK46][结合律]]，[[~/文档/note/数理逻辑/sllj.org::MK47][分配率]]，[[~/文档/note/数理逻辑/sllj.org::MK183][辖域变化]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]对于任意 $<x,y>$
 
 \begin{aligned}
 &<x,y>\in R\cdot(S\cap T)\\
@@ -2762,7 +2762,7 @@ R\cdot(S\cap T)&\subset(R\cdot S)\cap(R\cdot T)\\
 
 定义 $R\in A\times B,S\in B\times C,T\in B\times C$ 
 
-根据[[MK118][定义]]以及[[MK117][逆]]运算，[[~/OneDrive/数理逻辑/sllj.org::MK3][交换律]]，[[~/OneDrive/数理逻辑/sllj.org::MK46][结合律]]对于任意 $<x,y>$
+根据[[MK118][定义]]以及[[MK117][逆]]运算，[[~/文档/note/数理逻辑/sllj.org::MK3][交换律]]，[[~/文档/note/数理逻辑/sllj.org::MK46][结合律]]对于任意 $<x,y>$
 
 \begin{aligned}
 &<x,y>\in(R\cdot S)^{-1}\\
@@ -2786,7 +2786,7 @@ R\cdot(S\cap T)&\subset(R\cdot S)\cap(R\cdot T)\\
 
 定义 $R\in A\times B,S\in B\times C,T\in C\times D$ 
 
-根据[[MK119][推论]]，[[MK118][关系定义]]，[[~/OneDrive/数理逻辑/sllj.org::MK185][量词交换]]，[[~/OneDrive/数理逻辑/sllj.org::MK183][辖域变化]]，[[~/OneDrive/数理逻辑/sllj.org::MK3][交换律]]，[[~/OneDrive/数理逻辑/sllj.org::MK46][结合律]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]对于任意 $<x,y>$
+根据[[MK119][推论]]，[[MK118][关系定义]]，[[~/文档/note/数理逻辑/sllj.org::MK185][量词交换]]，[[~/文档/note/数理逻辑/sllj.org::MK183][辖域变化]]，[[~/文档/note/数理逻辑/sllj.org::MK3][交换律]]，[[~/文档/note/数理逻辑/sllj.org::MK46][结合律]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]对于任意 $<x,y>$
 
 \begin{aligned}
 &<x,y>\in(R\cdot S)\cdot T\\
@@ -2892,7 +2892,7 @@ R^n\cdot R^m=R^{n+m}
 
                     [[MK119][同理可证]]条件等价于 $\forall x\forall y\forall z(xRy\land yRz\rightarrow xRz)$
 
-                    又根据[[~/OneDrive/数理逻辑/sllj.org::MK114][量词顺序]] $\forall x\forall y\forall z(xRy\land yRz\rightarrow xRz){|\!\!\!=\!\!\!|}\forall x\forall z\forall y(xRy\land yRz\rightarrow xRz)$
+                    又根据[[~/文档/note/数理逻辑/sllj.org::MK114][量词顺序]] $\forall x\forall y\forall z(xRy\land yRz\rightarrow xRz){|\!\!\!=\!\!\!|}\forall x\forall z\forall y(xRy\land yRz\rightarrow xRz)$
 
                     进一步有 $\forall x\forall z\forall y(xRy\land yRz\rightarrow xRz)\Rightarrow\forall x\forall z(\exists y(xRy\land yRz)\rightarrow xRz)$
 
@@ -2995,7 +2995,7 @@ $R$ [[MK127][反对称]]则有 $\forall x\forall y(xRy\land yRx\rightarrow x=y)$
 
 ******* 必要
 
-当 $R\cap R\sim\subset E_A$ 时，根据[[MK117][逆运算]]，[[MK60][交运算]]，[[MK15][子集定义]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]对于任意 $<x,y>$
+当 $R\cap R\sim\subset E_A$ 时，根据[[MK117][逆运算]]，[[MK60][交运算]]，[[MK15][子集定义]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]对于任意 $<x,y>$
 
 \begin{aligned}
 &xRy\land yRx\\
@@ -3147,7 +3147,7 @@ $R$ [[MK128][传递]]则 $\forall x\forall y\forall z(xRy\land yRz\rightarrow xR
 
 当 $aRb$ 时，若 $x\in[a]_R$ 则有 $xRa,aRb$ 根据[[MK128][传递性]]可得 $xRb$ 。又根据[[MK133][等价类定义]]可得 $x\in[b]_R$
 
-同理可证若 $x\in[b]_R\rightarrow x\in[a]_R$ 根据[[~/OneDrive/数理逻辑/sllj.org::MK49][等价等值式]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $x$ 有 $x\in[b]_R\leftrightarrow x\in[a]_R=1$
+同理可证若 $x\in[b]_R\rightarrow x\in[a]_R$ 根据[[~/文档/note/数理逻辑/sllj.org::MK49][等价等值式]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $x$ 有 $x\in[b]_R\leftrightarrow x\in[a]_R=1$
 
 又根据[[MK2][外延公理]]可得 $[a]_R=[b]_R$
 
@@ -3165,7 +3165,7 @@ $R$ [[MK128][传递]]则 $\forall x\forall y\forall z(xRy\land yRz\rightarrow xR
 
 当 $\{a,b\}\subset A$ 且 $[a]_R\ne[b]_R$ 若存在 $x\in[a]_R\land x\in[b]_R$ 则有 $\forall(y\in[a]_R\rightarrow yRx\rightarrow yRb\rightarrow y\in[b]_R)$
 
-同理可证 $\forall y(y\in[b]_R\rightarrow y\in[a]_R)$ 故根据[[~/OneDrive/数理逻辑/sllj.org::MK49][等价等值式]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $y$ 有 $y\in[b]_R\leftrightarrow y\in[a]_R=1$
+同理可证 $\forall y(y\in[b]_R\rightarrow y\in[a]_R)$ 故根据[[~/文档/note/数理逻辑/sllj.org::MK49][等价等值式]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $y$ 有 $y\in[b]_R\leftrightarrow y\in[a]_R=1$
 
 即根据[[MK2][外延公理]]可得 $[a]_R=[b]_R$ 与条件矛盾，故不存在 $x\in[a]_R\land x\in[b]_R$ 
 
@@ -3217,7 +3217,7 @@ $R$ [[MK128][传递]]则 $\forall x\forall y\forall z(xRy\land yRz\rightarrow xR
 
 故根据[[MK59][广义并]]定义 $\forall x(x\in A\leftrightarrow \exists[x]_R(x\in[x]_R\land[x]_R\in\pi)\leftrightarrow x\in\cup\pi)$ 
 
-进一步根据[[~/OneDrive/数理逻辑/sllj.org::MK39][等价传递]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]有 $\forall x(x\in A\leftrightarrow x\in\cup\pi)$
+进一步根据[[~/文档/note/数理逻辑/sllj.org::MK39][等价传递]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]有 $\forall x(x\in A\leftrightarrow x\in\cup\pi)$
 
 又根据[[MK2][外延公理]]可得 $A=\cup\pi$ 即不漏
 
@@ -3259,7 +3259,7 @@ $R$ [[MK128][传递]]则 $\forall x\forall y\forall z(xRy\land yRz\rightarrow xR
 
 同理对于任意 $b\in[a]_R\rightarrow aRb\rightarrow b\in B$
 
-根据[[~/OneDrive/数理逻辑/sllj.org::MK49][等价等值式]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $b$ 均有 $b\in B\leftrightarrow b\in[a]_R$
+根据[[~/文档/note/数理逻辑/sllj.org::MK49][等价等值式]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $b$ 均有 $b\in B\leftrightarrow b\in[a]_R$
 
 又根据[[MK2][外延公理]]可得 $B=[a]_R$
 
@@ -3271,7 +3271,7 @@ $R$ [[MK128][传递]]则 $\forall x\forall y\forall z(xRy\land yRz\rightarrow xR
 
 若 $xR'y\rightarrow \{x,y\}\subset S\in\pi\rightarrow xRy$
 
-根据[[~/OneDrive/数理逻辑/sllj.org::MK49][等价等值式]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $x$ 均有 $xRy\leftrightarrow xR'y$ 
+根据[[~/文档/note/数理逻辑/sllj.org::MK49][等价等值式]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $x$ 均有 $xRy\leftrightarrow xR'y$ 
 
 根据[[MK111][关系定义]]可得 $<x,y>\in R\leftrightarrow<x,y>\in R'$
 
@@ -3475,7 +3475,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 ****** 定理3<<MK148>>
 
-若 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，定义 $C=\left\{a+b\big|a\in A\land b\in B\right\}$
+若 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/文档/note/实变函数/SBHS.org::MK143][广义实数]]，定义 $C=\left\{a+b\big|a\in A\land b\in B\right\}$
 
 则有 $\sup\{C\}=\sup\{A\}+\sup\{B\}$
 
@@ -3497,7 +3497,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 ******** 否则
 
-由于 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 根据[[~/OneDrive/实变函数/SBHS.org::MK224][运算性质]]不能出现 $+\infty+(-\infty)$
+由于 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 根据[[~/文档/note/实变函数/SBHS.org::MK224][运算性质]]不能出现 $+\infty+(-\infty)$
 
 则当 $\pm\infty+r$ 或者 $\pm(\infty+\infty)$ 时，显然 $\sup\{A\}+\sup\{B\}=\pm\infty$
 
@@ -3505,7 +3505,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 ****** 定理4<<MK150>>
 
-若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，则定义 $B=\left\{c\cdot a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^+$
+若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/文档/note/实变函数/SBHS.org::MK143][广义实数]]，则定义 $B=\left\{c\cdot a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^+$
 
 则有 $\sup\{B\}=c\cdot\sup\{A\}$ 以及 $\inf\{B\}=c\cdot\inf\{A\}$ 
 
@@ -3537,7 +3537,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 ****** 定理6<<MK151>>
 
-若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，则定义 $-A=\left\{-a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^-$
+若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/文档/note/实变函数/SBHS.org::MK143][广义实数]]，则定义 $-A=\left\{-a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^-$
 
 则有 $\sup\{-A\}=-\inf\{A\}$
 
@@ -3545,7 +3545,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 定义 $\alpha=\sup\{-A\}$ 则有 $\forall a'\in-A\rightarrow a'\leq\alpha$ 且 $\forall\epsilon>0\rightarrow\left((\exists -a'\in-A)\rightarrow(\alpha-\epsilon<-a')\right)$
 
-则根据[[~/OneDrive/实变函数/SBHS.org::MK265][推论3]]可得 $-\alpha\leq-a'$ 根据 $-A$ 定~/OneDrive/离散数学/Disc_Math.org义可得 $\forall a\in A\rightarrow -\alpha\leq a$
+则根据[[~/文档/note/实变函数/SBHS.org::MK265][推论3]]可得 $-\alpha\leq-a'$ 根据 $-A$ 定义可得 $\forall a\in A\rightarrow -\alpha\leq a$
 
 类似可证 $\forall\epsilon>0\rightarrow\left((\exists a'\in A)\rightarrow(a<-\alpha+\epsilon)\right)$
 
@@ -3567,7 +3567,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 即对于任意 $\epsilon>0$ 均有 $\sup(A)+\sup(B)<c+\epsilon$ 假设 $\sup(A)+\sup(B)>c$
 
-则取 $\epsilon=\sup(A)+\sup(B)-c$ 则有 $0<0$ 显然与[[~/OneDrive/实变函数/SBHS.org::MK5][三岐性]]矛盾
+则取 $\epsilon=\sup(A)+\sup(B)-c$ 则有 $0<0$ 显然与[[~/文档/note/实变函数/SBHS.org::MK5][三岐性]]矛盾
 
 故假设不成立，即有 $\sup(A)+\sup(C)\leq c$
 
@@ -4121,7 +4121,7 @@ f(A)-f(B)&\subset f(A-B)\\
 
 仅证 $f'(A\cup B)=f'(A)\cup f'(B)$ 
 
-根据[[~/OneDrive/数理逻辑/sllj.org::MK46][结合律]]，[[MK58][并运算]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]，对于任意 $y$
+根据[[~/文档/note/数理逻辑/sllj.org::MK46][结合律]]，[[MK58][并运算]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]，对于任意 $y$
 
 \begin{aligned}
 &y\in f'(A\cup B)\\
@@ -4381,7 +4381,7 @@ f\cdot f^{-1}&=E_Y\\
 
 仅证 $(f\cdot g)^{-1}=g^{-1}\cdot f^{-1}$ 定义 $f:X\rightarrow Y,g:Y\rightarrow Z$ 是两个[[MK181][双射函数]]
 
-根据[[MK188][逆函数定义]]，[[~/OneDrive/数理逻辑/sllj.org::MK45][交换律]]以及[[~/OneDrive/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $<z,x>\in (f\cdot g)^{-1}$ 均有
+根据[[MK188][逆函数定义]]，[[~/文档/note/数理逻辑/sllj.org::MK45][交换律]]以及[[~/文档/note/数理逻辑/sllj.org::MK40][替换原理]]可得对于任意 $<z,x>\in (f\cdot g)^{-1}$ 均有
 
 \begin{aligned}
 &<z,x>\in(f\cdot g)^{-1}\\
@@ -5565,7 +5565,7 @@ $E$ 表示边的[[MK46][多重集合]]，且是[[MK82][有限集]]。附带重�
 
 综上所述，若 $G$ 不是哈密顿图，则存在 $v\in V$ 使得 $d(v)<\frac{p}{2}$ 
 
-即 $G\not\in\mathcal{H}\rightarrow \exists v\in V\left(d(v)<\frac{p}{2}\right)$ 则根据[[~/OneDrive/数理逻辑/sllj.org::MK182][量词转换]]以及[[~/OneDrive/数理逻辑/sllj.org::MK53][假言易位]]有：
+即 $G\not\in\mathcal{H}\rightarrow \exists v\in V\left(d(v)<\frac{p}{2}\right)$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK182][量词转换]]以及[[~/文档/note/数理逻辑/sllj.org::MK53][假言易位]]有：
 
 \begin{aligned}
 &G\not\in\mathcal{H}\rightarrow \exists v\in V\left(d(v)<\frac{p}{2}\right)\\
@@ -6457,13 +6457,13 @@ x&=y\\
 
 **** 语言<<MK333>>
 
-除[[~/OneDrive/数理逻辑/sllj.org::MK105][固定符号]]外有：
+除[[~/文档/note/数理逻辑/sllj.org::MK105][固定符号]]外有：
 
-（1） [[~/OneDrive/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+$ 分别表示乘法，加法
+（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+$ 分别表示乘法，加法
 
-（3） [[~/OneDrive/数理逻辑/sllj.org::MK108][常元符号]] $c_0$
+（3） [[~/文档/note/数理逻辑/sllj.org::MK108][常元符号]] $c_0$
 
-则有 $\mathcal{A}_\mathcal{R}=\{f_\times,f_+,c_0\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 是环理论的[[~/OneDrive/数理逻辑/sllj.org::MK151][语言]]
+则有 $\mathcal{A}_\mathcal{R}=\{f_\times,f_+,c_0\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 是环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
 
 **** 公理<<MK334>>
 
@@ -6489,41 +6489,41 @@ x&=y\\
 
 ****** 证明
 
-对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/OneDrive/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/OneDrive/数理逻辑/sllj.org::MK154][赋值]] $v$ 若满足 $\left<\mathcal{M},v\right>\vDash(\forall x_2(f_+(x_1,x_2)\hat{=}x_2))$
+对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 若满足 $\left<\mathcal{M},v\right>\vDash(\forall x_2(f_+(x_1,x_2)\hat{=}x_2))$
 
-则对于其[[~/OneDrive/数理逻辑/sllj.org::MK154][赋值]] $v^*$ 满足 $v^*(x_2)=I(c_0),v^*(x_1)=v(x_1)$ 根据[[~/OneDrive/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},v^*\right>\vDash(f_+(x_1,x_2)\hat{ =}x_2)$
+则对于其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v^*$ 满足 $v^*(x_2)=I(c_0),v^*(x_1)=v(x_1)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},v^*\right>\vDash(f_+(x_1,x_2)\hat{ =}x_2)$
 
-根据[[~/OneDrive/数理逻辑/sllj.org::MK158][满足]] $v^*(x_1)=I(f_+)(v^*(x_1),v^*(x_2))$
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $v^*(x_1)=I(f_+)(v^*(x_1),v^*(x_2))$
 
 根据[[MK334][公理（3）]]有 $\left<\mathcal{M},v^*\right>\vDash(f_+(x_1,x_2)\hat{=}x_1)$ 且 $\left<\mathcal{M},v^*\right>\vDash(x_1\hat{ =}f_+(x_1,x_2))$   
 
-根据[[~/OneDrive/数理逻辑/sllj.org::MK158][满足]] $I(f_+)(v^*(x_1),v^*(x_2))=v^*(x_2)=I(c_0)$
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $I(f_+)(v^*(x_1),v^*(x_2))=v^*(x_2)=I(c_0)$
 
-即有 $v^*(x_1)\hat{=}I(c_0)$ 根据[[~/OneDrive/数理逻辑/sllj.org::MK158][满足]] $\left<\mathcal{M},v^*\right>\vDash(x_1\hat{ =}c_0)$ 又根据 $v^*(x_1)=v(x_1)$ 以及[[~/OneDrive/数理逻辑/sllj.org::MK168][局部确定]] $\left<\mathcal{M},v\right>\vDash(x_1\hat{ =}c_0)$
+即有 $v^*(x_1)\hat{=}I(c_0)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\left<\mathcal{M},v^*\right>\vDash(x_1\hat{ =}c_0)$ 又根据 $v^*(x_1)=v(x_1)$ 以及[[~/文档/note/数理逻辑/sllj.org::MK168][局部确定]] $\left<\mathcal{M},v\right>\vDash(x_1\hat{ =}c_0)$
 
-综上所述，对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/OneDrive/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/OneDrive/数理逻辑/sllj.org::MK154][赋值]] $v$ 若 $\left<\mathcal{M},v\right>\vDash(\forall x_2(f_+(x_1,x_2)\hat{=}x_2))$
+综上所述，对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 若 $\left<\mathcal{M},v\right>\vDash(\forall x_2(f_+(x_1,x_2)\hat{=}x_2))$
 
 则 $\left<\mathcal{M},v\right>\vDash(x_1\hat{ =}c_0)$ ，则显然 $\left<\mathcal{M},v\right>\vDash((\forall x_2(f_+(x_1,x_2)\hat{ =}x_2))\to(x_1\hat{ =}c_0))$
 
-又根据 $v$ 的任意性以及[[~/OneDrive/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},v\right>\vDash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{ =}x_2))\to(x_1\hat{ =}c_0)))$
+又根据 $v$ 的任意性以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},v\right>\vDash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{ =}x_2))\to(x_1\hat{ =}c_0)))$
 
-综上所述，对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/OneDrive/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/OneDrive/数理逻辑/sllj.org::MK154][赋值]] $v$
+综上所述，对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$
 
 均有 $\left<\mathcal{M},v\right>\vDash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{ =}x_2))\to(x_1\hat{ =}c_0)))$
 
-故根据[[~/OneDrive/数理逻辑/sllj.org::MK255][完备性]]有 $T_\mathcal{R}\vdash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
+故根据[[~/文档/note/数理逻辑/sllj.org::MK255][完备性]]有 $T_\mathcal{R}\vdash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
 
 *** 域
 
 **** 语言<<MK335>>
 
-除[[~/OneDrive/数理逻辑/sllj.org::MK105][固定符号]]外有：
+除[[~/文档/note/数理逻辑/sllj.org::MK105][固定符号]]外有：
 
-（1） [[~/OneDrive/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+,f_-$ 分别表示乘法，加法
+（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+,f_-$ 分别表示乘法，加法
 
-（3） [[~/OneDrive/数理逻辑/sllj.org::MK108][常元符号]] $c_0,c_1$
+（3） [[~/文档/note/数理逻辑/sllj.org::MK108][常元符号]] $c_0,c_1$
 
-则有 $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 是环理论的[[~/OneDrive/数理逻辑/sllj.org::MK151][语言]]
+则有 $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 是环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
 
 **** 公理<<MK337>>
 
@@ -6557,17 +6557,17 @@ x&=y\\
 
 **** 语言
 
-同[[MK333][域语言]] $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 为区分记作 $\mathcal{A}_{\text{ACF}}$ 即有 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 是代数封闭域的[[~/OneDrive/数理逻辑/sllj.org::MK151][语言]
+同[[MK333][域语言]] $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 为区分记作 $\mathcal{A}_{\text{ACF}}$ 即有 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 是代数封闭域的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]
 
 **** 多项式<<MK336>>
 
 定义：
 
-（1） $\tau^n$ 为[[~/OneDrive/数理逻辑/sllj.org::MK117][项]] $f_\times(\tau,f_\times(\tau,f_\times(...f_\times(\tau,\tau)...)))$ 即 $n$ 个 $\tau$ 相乘，其中 $\tau$ 亦为[[~/OneDrive/数理逻辑/sllj.org::MK117][项]]
+（1） $\tau^n$ 为[[~/文档/note/数理逻辑/sllj.org::MK117][项]] $f_\times(\tau,f_\times(\tau,f_\times(...f_\times(\tau,\tau)...)))$ 即 $n$ 个 $\tau$ 相乘，其中 $\tau$ 亦为[[~/文档/note/数理逻辑/sllj.org::MK117][项]]
 
-（2） $\sum_{i=a}^{a+b}{\tau_i}$ 为[[~/OneDrive/数理逻辑/sllj.org::MK117][项]] $f_+(\tau_a,f_+(\tau_{a+1},f+(...f_+(\tau_{a+(b-1)},\tau_{a+b})...)))$
+（2） $\sum_{i=a}^{a+b}{\tau_i}$ 为[[~/文档/note/数理逻辑/sllj.org::MK117][项]] $f_+(\tau_a,f_+(\tau_{a+1},f+(...f_+(\tau_{a+(b-1)},\tau_{a+b})...)))$
 
-     即为 $\tau_a$ 到 $\tau_{a+b}$ 的连加，其中 $\tau$ 亦为[[~/OneDrive/数理逻辑/sllj.org::MK117][项]]
+     即为 $\tau_a$ 到 $\tau_{a+b}$ 的连加，其中 $\tau$ 亦为[[~/文档/note/数理逻辑/sllj.org::MK117][项]]
 
 对于任意 $n\in\mathbb{N}$ 定义 $\phi_n=\sum_{i=1}^{n}f_\times(x_i,x_0^i)$ 为 $n$ 次多项式
 
@@ -6843,7 +6843,7 @@ x&=y\\
 
 结合 $y=\frac{l^k_{ii}}{k}$ 以及 $\frac{l^m_{ii}}{m}>\frac{l^z_{ii}}{z}$ 可得 $y=\frac{l^k_{ii}}{k}>\frac{l^z_{ii}}{z}$ 
 
-总上所述，由于 $\forall j\leq k\rightarrow \frac{l^m_{ii}}{m}>\frac{l^j_{ii}}{j}$ 故有 $\frac{l^k_{ii}}{k}>\frac{l^z_{ii}}{z}\land \frac{l^z_{ii}}{z}>\frac{l^k_{ii}}{k}$ 与[[~/OneDrive/离散数学/Disc_Math.org::MK5][三岐性]]矛盾
+总上所述，由于 $\forall j\leq k\rightarrow \frac{l^m_{ii}}{m}>\frac{l^j_{ii}}{j}$ 故有 $\frac{l^k_{ii}}{k}>\frac{l^z_{ii}}{z}\land \frac{l^z_{ii}}{z}>\frac{l^k_{ii}}{k}$ 与[[~/文档/note/离散数学/Disc_Math.org::MK5][三岐性]]矛盾
 
 故假设不成立，则不存在 $m>k$ 满足 $\forall j\leq k\rightarrow \frac{l^m_{ii}}{m}>\frac{l^j_{ii}}{j}$ 
 

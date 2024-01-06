@@ -39,7 +39,7 @@ current mark: 5
 
 ** 极限点<<MK1>>
 
-对于数列 $\{x_n\}$ 若有极限点 $\xi$ 则存在[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]] $\{y_n\}$ 满足 $\lim_{n\to\infty}y_n=\xi$
+对于数列 $\{x_n\}$ 若有极限点 $\xi$ 则存在[[~/文档/note/数学分析/Chap11Note.org::MK16][子列]] $\{y_n\}$ 满足 $\lim_{n\to\infty}y_n=\xi$
 
 ** 上下极限<<MK2>>
 
@@ -262,7 +262,7 @@ $r=1$ 判别失效。
 
 由于 $S_{N+1}\in\mathbb{R}$ 即 $S_m\in(S_{N+1}-1,S_{N+1}+1)$ 则显然数列 $\{S_n\}$ 有界
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK29][Bolzano-Weiserstrass定理]]必有收敛子列，假设子列 $\{S_{k_1},S_{k_2},...\}$ 收敛与 $A$
+根据[[~/文档/note/数学分析/Chap11Note.org::MK29][Bolzano-Weiserstrass定理]]必有收敛子列，假设子列 $\{S_{k_1},S_{k_2},...\}$ 收敛与 $A$
 
 则有 $\forall\epsilon>0,\exists K,\forall n>K\rightarrow\left|S_{k_n}-A\right|<\epsilon$ 又存在 $N$ 满足 $\forall m>n>N\rightarrow|S_m-S_n|<\epsilon$
 

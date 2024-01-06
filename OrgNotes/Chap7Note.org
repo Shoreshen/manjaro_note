@@ -61,7 +61,7 @@ $\Rightarrow \bigg| \sum_{i=1}^n f(\xi_i)\Delta x_i - I \bigg| < \epsilon$
 
 函数: $f(x)$ 在 $\left[a,b\right]$ 上有界
 
-划分: $P=\left\{x_i\big|x_1=a\land x_n=b\land(\forall u>v\rightarrow x_u>x_v)\land0\leq i\leq n\land i\in\mathbb{N}\right\}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]
+划分: $P=\left\{x_i\big|x_1=a\land x_n=b\land(\forall u>v\rightarrow x_u>x_v)\land0\leq i\leq n\land i\in\mathbb{N}\right\}$ 是[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数集]]
 
 符号: $\Delta x_i=x_i-x_{i-1}$;
 
@@ -267,7 +267,7 @@ $l=I$
 
 且 $\sum_{i=1}^n\omega_i=\sum_{i=1}^n(f(x_i)-f(x_{i-1}))=f(x_n)-f(x_0)=f(b)-f(a)$
 
-由于有界，则可得 $\{f(b),f(a)\}\subset\mathbb{R}$ 则根据[[~/OneDrive/实变函数/SBHS.org::MK4][封闭性]]可得 $f(b)-f(a)\in\mathbb{R}$
+由于有界，则可得 $\{f(b),f(a)\}\subset\mathbb{R}$ 则根据[[~/文档/note/实变函数/SBHS.org::MK4][封闭性]]可得 $f(b)-f(a)\in\mathbb{R}$
 
 即 $f(b)-f(a)<\infty$ ，则 $\forall \epsilon>0$ 取 $\lambda=\frac{\epsilon}{2[f(b)-f(a)]}$ 
 
@@ -419,7 +419,7 @@ $\sum_{i=1}^n \omega_i \Delta x_i=\sum_{i=1}^k \omega^*_i \Delta x_i+\sum_{1\leq
 
 则对于任意 $n\in\mathbb{N}$ 取 $\epsilon=\frac{1}{n}$ 根据条件存在 $P_n$ 满足 $\sum_{i=1}^{|P_n|-1} \omega_{n,i} \Delta x_{n,i} < \frac{1}{n}$
 
-则定义 $P=\left\{P_n\big|n\in\mathbb{N}\right\}$ 则对于任意 $\delta>0$ 根据[[~/OneDrive/实变函数/SBHS.org::MK254][推论3]]可得存在 $z\in\mathbb{N}$ 使得 $\frac{1}{z}<\delta$
+则定义 $P=\left\{P_n\big|n\in\mathbb{N}\right\}$ 则对于任意 $\delta>0$ 根据[[~/文档/note/实变函数/SBHS.org::MK254][推论3]]可得存在 $z\in\mathbb{N}$ 使得 $\frac{1}{z}<\delta$
 
 则进而有 $\sum_{i=1}^{|P_z|-1} \omega_{z,i} \Delta x_{z,i} < \frac{1}{z}<\delta$ 故有 $\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\omega_{n,i}\Delta x_{n,i}=0$
 
@@ -645,7 +645,7 @@ $F(x)=\int_a^x f(t) dt$
 
 *** 连续:
 
-根据[[MK7][积分可加性]]及[[~/OneDrive/大学物理/Note/DiffEq.org::MK2][连续函数定义]]:
+根据[[MK7][积分可加性]]及[[~/文档/note/大学物理/Note/DiffEq.org::MK2][连续函数定义]]:
 
 \begin{aligned}
 &\lim_{\Delta x \to 0}F(x+\Delta x)-F(x)\\
@@ -655,7 +655,7 @@ $F(x)=\int_a^x f(t) dt$
 
 *** 导数:
 
-根据[[~/OneDrive/数学分析/Chap8Note.org::MK3][第一积分中值定理]]:
+根据[[~/文档/note/数学分析/Chap8Note.org::MK3][第一积分中值定理]]:
 
 \begin{aligned}
 &F(x+\Delta x)-F(x)\\
@@ -691,7 +691,7 @@ $\int_a^b f(x) dx=F(b)-F(a)$
 
 定义集合振幅 $\Omega(E)=\sup\left\{|f(s)-f(t)|\big|\{s,t\}\subset E\right\}$ 
 
-则[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f(x)$ 在 $x_0$ 点的振幅定义为 $\omega_f(x_0)=\lim_{\delta\to0^+}\Omega(O(x_0,\delta))$
+则[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f(x)$ 在 $x_0$ 点的振幅定义为 $\omega_f(x_0)=\lim_{\delta\to0^+}\Omega(O(x_0,\delta))$
 
 ** 引理1<<MK10>>
 
@@ -715,7 +715,7 @@ $\int_a^b f(x) dx=F(b)-F(a)$
 
 定义 $\alpha=\lim_{\delta\to0^+}\Omega(O(x_0,\delta)),\beta=\inf\left\{\Omega(O(x_0,\delta))\big|\delta>0\right\}$
 
-则根据以下证明以及[[~/OneDrive/实变函数/SBHS.org::MK5][三岐性]]可得 $\alpha=\beta$
+则根据以下证明以及[[~/文档/note/实变函数/SBHS.org::MK5][三岐性]]可得 $\alpha=\beta$
 
 **** 假设 $\alpha>\beta$
 
@@ -741,7 +741,7 @@ $\int_a^b f(x) dx=F(b)-F(a)$
 
 *** 证明
 
-由于 $(a,b)$ 是开区间，故根据[[~/OneDrive/实变函数/SBHS.org::MK277][引理]]可得是开集，则 $x_0$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，进一步存在 $\eta>0$ 满足 $O(x_0,\eta)\subset[a,b]$
+由于 $(a,b)$ 是开区间，故根据[[~/文档/note/实变函数/SBHS.org::MK277][引理]]可得是开集，则 $x_0$ 是[[~/文档/note/数学分析/Chap11Note.org::MK7][内点]]，进一步存在 $\eta>0$ 满足 $O(x_0,\eta)\subset[a,b]$
 
 又根据[[MK10][引理1]]可得 $\Omega(O(x_0,\eta))\leq\Omega([a,b])$ 同理由于 $\eta>0$ 则根据[[MK11][引理2]]可得 $\Omega([a,b])\geq\Omega(O(x_0,\eta))\geq\omega_f(x_0)$
 
@@ -787,11 +787,11 @@ $\int_a^b f(x) dx=F(b)-F(a)$
 
 则对于任意 $\{s,t\}\subset O(x_0,\delta')$ 均有 $|f(s)-f(x_0)|<\frac{\epsilon}{2}$ 以及 $|f(t)-f(x_0)|<\frac{\epsilon}{3}$
 
-则根据[[~/OneDrive/实变函数/SBHS.org::MK22][三角不等式]]有 $|f(s)-f(x_0)+f(x_0)-f(t)|\leq|f(s)-f(x_0)|+|f(x_0)-f(t)|<\frac{2\epsilon}{3}$
+则根据[[~/文档/note/实变函数/SBHS.org::MK22][三角不等式]]有 $|f(s)-f(x_0)+f(x_0)-f(t)|\leq|f(s)-f(x_0)|+|f(x_0)-f(t)|<\frac{2\epsilon}{3}$
 
 即可得 $\forall \{s,t\}\subset O(x_0,\delta')\rightarrow |f(s)-f(t)|<\frac{2\epsilon}{3}$
 
-由于 $\Omega(O(x_0,\delta'))=\sup\left\{|f(s)-f(t)|\big|\{s,t\}\subset O(x_0,\delta)\right\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK340][定理4]]可得 $\Omega(O(x_0,\delta'))\leq\frac{2\epsilon}{3}<\epsilon$ 
+由于 $\Omega(O(x_0,\delta'))=\sup\left\{|f(s)-f(t)|\big|\{s,t\}\subset O(x_0,\delta)\right\}$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK340][定理4]]可得 $\Omega(O(x_0,\delta'))\leq\frac{2\epsilon}{3}<\epsilon$ 
 
 结合非负性以及[[MK10][引理1]]可得对于任意 $\delta<\delta'$ 有 $\Omega(O(x_0,\delta))\leq\Omega(O(x_0,\delta'))<\epsilon$ 
 
@@ -811,7 +811,7 @@ $\int_a^b f(x) dx=F(b)-F(a)$
 
 *** 引理<<MK9>>
 
-假设[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to Y,E\cup Y\subset\mathbb{R}$
+假设[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:E\to Y,E\cup Y\subset\mathbb{R}$
 
 对于任意 $x_0\in E$ 若对于任意数列 $\{h_n\}\subset\mathbb{R}$ 满足 $\forall n(h_n\ne0\land x_0+h_n\in E)\land\lim_{n\to\infty}h_n=0$ 
 
@@ -887,7 +887,7 @@ f(x_0)=\lim_{x\to x_0}f(x)
 
 当 $\delta=\frac{1}{n},\ n\in N^+$ 时，存在点列 $x_n,y_n\in E:|x_n-y_n|<\frac{1}{n},\ |f(x_n)-f(y_n)|>\epsilon$
 
-由于有界，根据[[E:\OneDrive\数学分析\Note\Chapter 9\Series.org][Bolzano-Weierstrass定理]]，有界数列 $x_n$ 必有收敛子列
+由于有界，根据[[~/文档/note\Series.org][Bolzano-Weierstrass定理]]，有界数列 $x_n$ 必有收敛子列
 
 得出 $\lim_{n_k\to\infty}x_{n_k}=\xi,\ \xi\in E$ ，与之对应 $y_{n_k}$ 使得 $|f(x_{n_k})-f(y_{n_k})|>\epsilon$
 

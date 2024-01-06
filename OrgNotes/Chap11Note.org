@@ -37,7 +37,7 @@ $a_1=\max(a_{n1}),\forall x_n\in S_0$ ，则构建 $S_1=\{x_n|[x_n]=a_0,x_n\in S
 
 最终构建非空数集 $S\supset S_0 \supset S_1...\supset S_n \supset ...\\$
 
-且构建确界 $\beta=a_0.a_1a_2a_2...\\$ 根据[[~/OneDrive/实变函数/SBHS.org::MK33][定理2]]可得 $\beta\in\mathbb{R}$
+且构建确界 $\beta=a_0.a_1a_2a_2...\\$ 根据[[~/文档/note/实变函数/SBHS.org::MK33][定理2]]可得 $\beta\in\mathbb{R}$
 
 **** 确界满足 $\forall x\in S\Rightarrow \beta\geq x$
 
@@ -127,7 +127,7 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 
 *** 推论<<MK30>>
 
-任意数列 $\{s_n\}$ 均有[[MK29][子列]]满足 $\lim_{i\to\infty}s_{n_i}=A\in\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 为[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]
+任意数列 $\{s_n\}$ 均有[[MK29][子列]]满足 $\lim_{i\to\infty}s_{n_i}=A\in\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 为[[~/文档/note/实变函数/SBHS.org::MK143][广义实数]]
  
 **** 证明
 
@@ -139,7 +139,7 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 
 则定义 $\{s_{n_v}\}$ 为 $\{s_{n_i}\}$ 中所有小于零的元素， $\{s_{n_u}\}$ 为剩余所有大于零的元素 
 
-则由于 $\{s_{n_i}\}$ 是可数集，则 $\{s_{n_v}\},\{s_{n_u}\}$ 必有一个无限集[[~/OneDrive/离散数学/Disc_Math.org::MK43][无限集]]
+则由于 $\{s_{n_i}\}$ 是可数集，则 $\{s_{n_v}\},\{s_{n_u}\}$ 必有一个无限集[[~/文档/note/离散数学/Disc_Math.org::MK43][无限集]]
 
 以下仅对 $\{s_{n_u}\}$ 为无限集时证明， $\{s_{n_v}\}$ 为无限集时同理可证
 
@@ -167,9 +167,9 @@ $\forall \epsilon>0,\exists n_0\Rightarrow \epsilon>\frac{1}{10^{n_0}}$ 则存�
 
 **** 必要
 
-是实数系的[[~/OneDrive/实变函数/SBHS.org][实数公理-公理定义-完备性公理]]，故成立
+是实数系的[[~/文档/note/实变函数/SBHS.org][实数公理-公理定义-完备性公理]]，故成立
 
-亦可根据[[~/OneDrive/实变函数/SBHS.org][实数公理-等价定理]]从[[MK9][确界存在定理]]证得
+亦可根据[[~/文档/note/实变函数/SBHS.org][实数公理-等价定理]]从[[MK9][确界存在定理]]证得
 
 * 构造Euclid空间
 
@@ -215,7 +215,7 @@ $R$ 为实数全体，定义 $R^n=R\times R\times...\times R=\{(x_1,x_2,...,x_n)
 
 *** 拓扑定义
 
-若 $V$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $K$ 上的根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间]]，定义 $R$ 为实数，则根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数]]有函数 $\|\cdot\|:V\rightarrow R$ 满足：
+若 $V$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]] $K$ 上的根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间]]，定义 $R$ 为实数，则根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数]]有函数 $\|\cdot\|:V\rightarrow R$ 满足：
 
 （1） 正定型： $\forall x\in V\rightarrow \|x\|\geq 0$ 且 $\|x\|=0\Leftrightarrow x=0$
 
@@ -315,7 +315,7 @@ $\forall \vec{x}\in S\Rightarrow \vec{x}\in S_i$ 即所有 $S$ 包含的点均�
 
 **** 满足拓扑定义<<MK24>>
 
-根据[[~/OneDrive/实变函数/SBHS.org::MK39][拓扑定义]]有[[MK15][定理8]]可得（1）、[[P2][定理3]]可得（2）以及[[P3][定理4]]可得（3）
+根据[[~/文档/note/实变函数/SBHS.org::MK39][拓扑定义]]有[[MK15][定理8]]可得（1）、[[P2][定理3]]可得（2）以及[[P3][定理4]]可得（3）
 
 故该定义为有效拓扑定义
 
@@ -331,7 +331,7 @@ $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚�
 
 根据[[P1][定理1]]可得闭集 $S$ 的补集 $S^c$ 是[[MK10][开集]]，由于[[MK24][满足拓扑定义]]，故亦为拓扑开集
 
-则根据[[~/OneDrive/实变函数/SBHS.org::MK41][拓扑闭集定义]]可得 $(S^c)^c=S$ 亦为拓扑定义闭集
+则根据[[~/文档/note/实变函数/SBHS.org::MK41][拓扑闭集定义]]可得 $(S^c)^c=S$ 亦为拓扑定义闭集
 
 *** 紧集<<MK5>>
 
@@ -363,7 +363,7 @@ $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚�
 
 **** 证明
 
-根据[[~/OneDrive/实变函数/SBHS.org][拓扑-子集分类-完备集]]，进一步根据闭集定义以及[[MK8][聚点]]定义，
+根据[[~/文档/note/实变函数/SBHS.org][拓扑-子集分类-完备集]]，进一步根据闭集定义以及[[MK8][聚点]]定义，
 
 可得若闭集 $S$ 不存在孤立点，则对于任意 $x\in S$ 不是孤立点的定义为对于任意 $\delta\in\mathbb{R}\land\delta>0$
 
@@ -469,7 +469,7 @@ $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚�
 
 ***** 证明
 
-对于任意 $a\in A$ 定义 $\delta(a)=\frac{1}{2}d(\{a\},B)$ 其中 $d(a,B)$ 是[[~/OneDrive/实变函数/SBHS.org][测度-相关定义-子集距离]]
+对于任意 $a\in A$ 定义 $\delta(a)=\frac{1}{2}d(\{a\},B)$ 其中 $d(a,B)$ 是[[~/文档/note/实变函数/SBHS.org][测度-相关定义-子集距离]]
 
 同样对于任意 $b\in B$ 定义 $\delta(b)=\frac{1}{2}d(\{b\},A)$
 
@@ -483,7 +483,7 @@ $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚�
 
 若存在 $x\in\mathbb{R}^n$ 满足 $x\in A'\land x\in B'$ 则必定存在 $a'\in A\land b'\in B$ 满足 $x\in O(a',\delta(a'))\land x\in O(b',\delta(b'))$
 
-则根据[[~/OneDrive/实变函数/SBHS.org][测度-相关定义-度量空间]]三角性可得 $d(a',x)+d(x,b')\geq d(a',b')$
+则根据[[~/文档/note/实变函数/SBHS.org][测度-相关定义-度量空间]]三角性可得 $d(a',x)+d(x,b')\geq d(a',b')$
 
 又有 $d(a',x)<\frac{1}{2}d(\{a'\},B)\leq\frac{1}{2}d(a',b')$ 同理有 $d(x,b')<\frac{1}{2}d(a',b')$
 
@@ -501,7 +501,7 @@ $S'\subset S$ 或 $S'=\varnothing$ 即 $S$ 包含的点均为 $S$ 的[[MK8][聚�
 
 根据[[MK10][开集定义]]表达式 $\forall \vec{x}\in S\rightarrow \vec{x}\in S_i$ 为真是 $S$ 为开集的等价条件
 
-此处 $\rightarrow$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK60][蕴含]]，由于对于空集 $\vec{x}\in S'$ 永假，
+此处 $\rightarrow$ 为[[~/文档/note/离散数学/Disc_Math.org::MK60][蕴含]]，由于对于空集 $\vec{x}\in S'$ 永假，
 
 故根据真值表 $\forall \vec{x}\in S\rightarrow \vec{x}\in S_i$ 为真，则根据等价性空集是开集
 
@@ -1100,7 +1100,7 @@ $D\in R^n$ 映射 $\vec{f}:D\to R^m\Rightarrow \vec{x}=(x_1,...,x_n)\to\vec{z}=(
 
 若连续函数 $\vec{f}(\vec{x})=\vec{y}, \vec{x}\in K\subset R^n, S=\{\vec{y}\}\subset R^m$ 若 $K$ 是紧集，
 
-则 $\vec{f}(\vec{x})$ 一致连续，此处添加一元函数[[~/OneDrive/数学分析/Chap7Note.org::K3][康托定理]]的链接
+则 $\vec{f}(\vec{x})$ 一致连续，此处添加一元函数[[~/文档/note/数学分析/Chap7Note.org::K3][康托定理]]的链接
 
 *** 证明
 
@@ -1134,7 +1134,7 @@ $D\in R^n$ 映射 $\vec{f}:D\to R^m\Rightarrow \vec{x}=(x_1,...,x_n)\to\vec{z}=(
 
 对于任意点列 $\{\vec{h}_n\}\subset\mathbb{R}^n$ 满足 $\lim_{n\to\infty}|\vec{h}_n|=0$ 均有 $\lim_{n\to\infty}\vec{f}(\vec{x}+\vec{h}_n)=\vec{A}$
 
-其中 $\vec{A}\in\mathbb{R}_e^m$ 为[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]] ， $|\vec{h}_n|$ 是点 $\vec{h}_n$ 到原点的[[MK25][距离]]
+其中 $\vec{A}\in\mathbb{R}_e^m$ 为[[~/文档/note/实变函数/SBHS.org::MK143][广义实数]] ， $|\vec{h}_n|$ 是点 $\vec{h}_n$ 到原点的[[MK25][距离]]
 
 ** 证明
 

@@ -10,7 +10,7 @@ $\left(\int_a^bf(t)g(t)dt\right)^2\leq\int_a^b(f(t))^2dt\int_a^b(g(t))^2dt$
 
 ** 证明
 
-定义 $x\in R$ 则有 $0\leq \left(xf(t)+g(t)\right)^2$ 故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-保序]]有 $0=\int_a^b0dt\leq\int_a^b\left(xf(t)+g(t)\right)^2dt$ 
+定义 $x\in R$ 则有 $0\leq \left(xf(t)+g(t)\right)^2$ 故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-保序]]有 $0=\int_a^b0dt\leq\int_a^b\left(xf(t)+g(t)\right)^2dt$ 
 
 故根据
 
@@ -45,15 +45,15 @@ $\left(\int_a^bf(t)g(t)dt\right)^2\leq\int_a^b(f(t))^2dt\int_a^b(g(t))^2dt$
 
 由于[[MK1][含参变量常义积分定义]]，被积函数 $f(\vec{x},\vec{y})$ 在区域 $D$ 上连续，又由于 $D$ 为有界闭区域，
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理]]得 $D$ 为紧集
+故根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理]]得 $D$ 为紧集
 
-又根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][连续函数性质-康托定理]]得 $f(\vec{x},\vec{y})$ 在区域 $D$ 上一致连续，定义积分区域 $S$ 的面积为 $V$
+又根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-康托定理]]得 $f(\vec{x},\vec{y})$ 在区域 $D$ 上一致连续，定义积分区域 $S$ 的面积为 $V$
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][连续函数性质-补充多元函数一致连续定义]]
+则根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-补充多元函数一致连续定义]]
 
 $\forall \epsilon>0, \exists \delta, \forall (\vec{x},\vec{y}_0),(\vec{x},\vec{y})\in d, |(\vec{x},\vec{y}_0)-(\vec{x},\vec{y})|<\delta \Rightarrow \left|f(\vec{x},\vec{y}_0)-f(\vec{x},\vec{y})\right|<\frac{\epsilon}{V}$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][重积分性质与计算-性质]]中[线性]，[当 $f(\vec{x})=1$ 时]，[保序性]以及[绝对可积性]得
+根据[[~/文档/note/数学分析/Chap13Note.org][重积分性质与计算-性质]]中[线性]，[当 $f(\vec{x})=1$ 时]，[保序性]以及[绝对可积性]得
 
 \begin{aligned}
 &\left|\int_S f(\vec{x},\vec{y}_0)dv - \int_S f(\vec{x},\vec{y})dv\right|\\
@@ -80,9 +80,9 @@ $\forall \epsilon>0, \exists \delta, \forall (\vec{x},\vec{y}_0),(\vec{x},\vec{y
 
 *** 证明
 
-由于[[MK1][含参变量常义积分定义]]，被积函数 $f(\vec{x},\vec{y})$ 在区域 $D$ 上连续，故根据[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][有界闭集上的重积分-多重积分-推论]]任意维度下子重积分均可积
+由于[[MK1][含参变量常义积分定义]]，被积函数 $f(\vec{x},\vec{y})$ 在区域 $D$ 上连续，故根据[[~/文档/note/数学分析/Chap13Note.org][有界闭集上的重积分-多重积分-推论]]任意维度下子重积分均可积
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][重积分性质与计算-不规则区域上重积分]]重积分可化为累次积分。
+故根据[[~/文档/note/数学分析/Chap13Note.org][重积分性质与计算-不规则区域上重积分]]重积分可化为累次积分。
 
 又由于重积分 $\int_D f(\vec{x},\vec{y})dv$ 亦可积且能化为累次积分，且与 $\int_U\left\{\int_S f(\vec{x},\vec{y})dv\right\}dv,\int_S\left\{\int_U f(\vec{x},\vec{y})dv\right\}dv$ 所化累次积分相同
 
@@ -94,7 +94,7 @@ $\forall \epsilon>0, \exists \delta, \forall (\vec{x},\vec{y}_0),(\vec{x},\vec{y
 
 *** 证明
 
-定义 $\vec{y}=(\vec{y}',y_k)$ ，故根据导数定义，[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][重积分性质与计算-性质]]中[线性]，以及[[MK2][连续性定义推论]]
+定义 $\vec{y}=(\vec{y}',y_k)$ ，故根据导数定义，[[~/文档/note/数学分析/Chap13Note.org][重积分性质与计算-性质]]中[线性]，以及[[MK2][连续性定义推论]]
 
 \begin{aligned}
 \frac{\partial I(\vec{y})}{\partial y_k}=&\lim_{\Delta y_k\to0}\frac{I(\vec{x},\vec{y}',y_k+\Delta y)-I(\vec{x},\vec{y}',y_k)}{\Delta y_k}\\
@@ -121,11 +121,11 @@ $f(x,y),f_y(x,y)=\frac{\partial f(x,y)}{\partial y}$ 在区域 $D=[a,b]\times[c,
  
 定义 $\frac{\partial G(x,y)}{\partial x}=f(x,y)$ 即 $G(x,y)$ 是 $f(x,y)$ 关于 $x$ 的一个原函数，且根据条件 $f(x,y)$ 连续。
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][牛顿莱布尼茨公式]] $I(u,v,w)=\int_u^vf(x,w)dx=G(u,w)-G(v,w)$ 
+故根据[[~/文档/note/数学分析/Chap7Note.org][牛顿莱布尼茨公式]] $I(u,v,w)=\int_u^vf(x,w)dx=G(u,w)-G(v,w)$ 
 
 则有 $\frac{\partial I(u,v,w)}{\partial u}=\frac{\partial G(u,w)}{\partial u}=f(u,w),\frac{\partial I(u,v,w)}{\partial v}=\frac{\partial -G(v,w)}{\partial u}=-f(u,w)$ 又由于 $f(x,y)$ 连续，故两个偏导函数连续
 
-由于 $I(u,v,w)$ 的偏导数均连续，故根据[[e:/OneDrive/数学分析/Note/Chapter 12/Chap12Note.org][偏导数与全微分-可微条件]]函数在定义域上可微
+由于 $I(u,v,w)$ 的偏导数均连续，故根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-可微条件]]函数在定义域上可微
 
 综上所述，复合函数满足
 
@@ -133,7 +133,7 @@ $f(x,y),f_y(x,y)=\frac{\partial f(x,y)}{\partial y}$ 在区域 $D=[a,b]\times[c,
 
 （2） 复合函数 $I(u,v,w)$ 对于定义域上的 $(u,v,w)$ 点均可微
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 12/Chap12Note.org][多元复合函数求导-链式法则]] $\frac{\partial I(u,v,w)}{\partial y}=\frac{\partial I(u,v,w)}{\partial u}\frac{\partial u}{\partial y}+\frac{\partial I(u,v,w)}{\partial v}\frac{\partial v}{\partial y}+\frac{\partial I(u,v,w)}{\partial w}\frac{\partial w}{\partial y}$
+故根据[[~/文档/note/数学分析/Chap12Note.org][多元复合函数求导-链式法则]] $\frac{\partial I(u,v,w)}{\partial y}=\frac{\partial I(u,v,w)}{\partial u}\frac{\partial u}{\partial y}+\frac{\partial I(u,v,w)}{\partial v}\frac{\partial v}{\partial y}+\frac{\partial I(u,v,w)}{\partial w}\frac{\partial w}{\partial y}$
 
 则有 $\frac{dF(y)}{dy}=\frac{\partial I(u,v,w)}{\partial y}=\int_{a(y)}^{b(y)}f_y(x,y)dx+f(b(y),y)b'(y)-f(a(y),y)a'(y)$
 
@@ -181,9 +181,9 @@ $f(x,y),f_y(x,y)=\frac{\partial f(x,y)}{\partial y}$ 在区域 $D=[a,b]\times[c,
 
 已知 $\forall\epsilon>0,\exists A_0>a,\forall A''>A'>A_0,\forall y\in[c,d]\Rightarrow \left|\int_{A'}^{A''} f(x,y)dx\right|<\epsilon$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][区间无限反常积分收敛判别-柯西收敛原理-证明-必要]]可得在以上条件下 $\forall A>A_0,\forall y\in[c,d]\Rightarrow\left|\int_a^Af(x,y)dx-K(y)\right|<2\epsilon$
+根据[[~/文档/note/数学分析/Chap8Note.org][区间无限反常积分收敛判别-柯西收敛原理-证明-必要]]可得在以上条件下 $\forall A>A_0,\forall y\in[c,d]\Rightarrow\left|\int_a^Af(x,y)dx-K(y)\right|<2\epsilon$
 
-则有 $\forall\epsilon>0,\exists A_0>a,\forall A>A_0,\forall y\in[c,d]\Rightarrow \left|\int_a^Af(x,y)dx-K(y)\right|<\epsilon$ 根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][区间无限反常积分收敛判别-定义]]可得 $K(y)=\int_a^\infty f(x,y)dx=I(y)$
+则有 $\forall\epsilon>0,\exists A_0>a,\forall A>A_0,\forall y\in[c,d]\Rightarrow \left|\int_a^Af(x,y)dx-K(y)\right|<\epsilon$ 根据[[~/文档/note/数学分析/Chap8Note.org][区间无限反常积分收敛判别-定义]]可得 $K(y)=\int_a^\infty f(x,y)dx=I(y)$
 
 故 $\forall\epsilon>0,\exists A_0>a,\forall A>A_0,\forall y\in[c,d]\Rightarrow \left|\int_A^\infty f(x,y)dx\right|<\epsilon$
 
@@ -215,11 +215,11 @@ $f(x,y),f_y(x,y)=\frac{\partial f(x,y)}{\partial y}$ 在区域 $D=[a,b]\times[c,
 
 ***** 证明
 
-由于 $\int_a^\infty F(x)dx$ 收敛，根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][区间无限反常积分收敛判别-柯西收敛原理]]可得 $\forall\epsilon>0,\exists A_0,\forall A''>A'>A_0\Rightarrow\left|\int_{A'}^{A''}F(x)dx\right|<\epsilon$
+由于 $\int_a^\infty F(x)dx$ 收敛，根据[[~/文档/note/数学分析/Chap8Note.org][区间无限反常积分收敛判别-柯西收敛原理]]可得 $\forall\epsilon>0,\exists A_0,\forall A''>A'>A_0\Rightarrow\left|\int_{A'}^{A''}F(x)dx\right|<\epsilon$
 
 由于 $0\leq|f(x,y)|\leq F(x)$ 故有 $\forall\epsilon>0,\exists A_0,\forall A''>A'>A_0\Rightarrow\int_{A'}^{A''}F(x)dx<\epsilon$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-保序]]及[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-绝对可积]]可得 $\left|\int_{A'}^{A''}f(x,y)dx\right|\leq\int_{A'}^{A''}|f(x,y)|dx\leq\int_{A'}^{A''}F(x)dx$
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-保序]]及[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-绝对可积]]可得 $\left|\int_{A'}^{A''}f(x,y)dx\right|\leq\int_{A'}^{A''}|f(x,y)|dx\leq\int_{A'}^{A''}F(x)dx$
 
 **** Abel判别法
 
@@ -235,7 +235,7 @@ $f(x,y),f_y(x,y)=\frac{\partial f(x,y)}{\partial y}$ 在区域 $D=[a,b]\times[c,
 
 根据[[MK5][一致收敛定义]]，条件（1）： $\forall\epsilon>0,\exists A_0,\forall A''>A'_A_0,\forall y\in[c,d]\Rightarrow \left|\int_{A'}^{A''}f(x,y)dx\right|<\frac{\epsilon}{2L}$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][积分中值定理-第二积分中值定理]]及条件（2）可得 $\forall y\in[c,d]$ 均有：
+根据[[~/文档/note/数学分析/Chap8Note.org][积分中值定理-第二积分中值定理]]及条件（2）可得 $\forall y\in[c,d]$ 均有：
 
 \begin{aligned}
 \left|\int_{A'}^{A''}f(x,y)g(x,y)dx\right|=&\left|g(A',y)\int_{A'}^{\xi}f(x,y)dx+g(A'',y)\int_{\xi}^{A''}f(x,y)dx\right| &\xi\in[A',A'']\\
@@ -258,7 +258,7 @@ $f(x,y),f_y(x,y)=\frac{\partial f(x,y)}{\partial y}$ 在区域 $D=[a,b]\times[c,
 
 根据条件（2）： $\forall\epsilon>0,\exists A,\forall a>A,\forall y\in[c,d]\Rightarrow|g(a,y)|<\frac{\epsilon}{2L}$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][积分中值定理-第二积分中值定理]]及条件（1）可得 $\forall y\in[c,d]$ 均有：
+根据[[~/文档/note/数学分析/Chap8Note.org][积分中值定理-第二积分中值定理]]及条件（1）可得 $\forall y\in[c,d]$ 均有：
 
 \begin{aligned}
 \left|\int_{A'}^{A''}f(x,y)g(x,y)dx\right|=&\left|g(A',y)\int_{A'}^{\xi}f(x,y)dx+g(A'',y)\int_{\xi}^{A''}f(x,y)dx\right| &\xi\in[A',A'']\\
@@ -285,7 +285,7 @@ $f(x,y),f_y(x,y)=\frac{\partial f(x,y)}{\partial y}$ 在区域 $D=[a,b]\times[c,
 
 故取 $N$ 使得 $a_N>A_0$ 则有 $\forall n>N,\forall y\in[c,d]\Rightarrow\left|S_n(y)-S(y)\right|=\left|\sum_{i=a_n}^\infty u_n(y)\right|=\left|\int_{a_n}^\infty f(x,y)dx\right|<\epsilon$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-函数项级数一致收敛-定义]]，证毕。
+根据[[~/文档/note/数学分析/Chap10Note.org][函数项级数-函数项级数一致收敛-定义]]，证毕。
 
 **** <<MK17>>连续性
 
@@ -301,7 +301,7 @@ $f(x,y),f_y(x,y)=\frac{\partial f(x,y)}{\partial y}$ 在区域 $D=[a,b]\times[c,
 
 根据[[MK4][连续性定理]]可得 $u(y)=\int_{a_n}^{a_{n+1}}f(x,y)dx$ 连续，根据[[MK6][引理]]及条件（2）可得级数 $S(y)$ 一致连续
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-一致收敛性质-连续性]]可得 $S(y)$ 连续，即 $I(y)$ 连续
+根据[[~/文档/note/数学分析/Chap10Note.org][函数项级数-一致收敛性质-连续性]]可得 $S(y)$ 连续，即 $I(y)$ 连续
 
 即 $\lim_{y\to y_0}\int_a^\infty f(x,y)dx=\lim_{y\to y_0} I(y) = I(y_0)=\int_a^\infty f(x,y_0)dx$
 
@@ -321,7 +321,7 @@ $f(x,y),f_y(x,y)=\frac{\partial f(x,y)}{\partial y}$ 在区域 $D=[a,b]\times[c,
 
 根据[[MK4][连续性定理]]可得 $u(y)=\int_{a_n}^{a_{n+1}}f(x,y)dx$ 连续，根据[[MK6][引理]]及条件（2）可得级数 $S(y)$ 一致连续
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-一致收敛性质-连续性]]可得 $\int_c^d S(y)dy = \sum_{i=1}^\infty \int_c^d dy\int_{a_i}^{a_{i+1}}f(x,y)dx$
+根据[[~/文档/note/数学分析/Chap10Note.org][函数项级数-一致收敛性质-连续性]]可得 $\int_c^d S(y)dy = \sum_{i=1}^\infty \int_c^d dy\int_{a_i}^{a_{i+1}}f(x,y)dx$
 
 根据[[MK7][常义积分次序交换]]可得 $\int_c^d dy\int_{a_i}^{a_{i+1}}f(x,y)dx = \int_{a_i}^{a_{i+1}}\int_c^df(x,y)dydx$
 
@@ -343,7 +343,7 @@ $f(x,y),f_y(x,y)=\frac{\partial f(x,y)}{\partial y}$ 在区域 $D=[a,b]\times[c,
 
 ***** 证明
 
-定义 $I_y(y) = \int_a^\infty f_y(x,y)dx$ 根据条件（2），（3），[[MK8][可积性]]及[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][牛顿莱布尼茨公式]] 
+定义 $I_y(y) = \int_a^\infty f_y(x,y)dx$ 根据条件（2），（3），[[MK8][可积性]]及[[~/文档/note/数学分析/Chap7Note.org][牛顿莱布尼茨公式]] 
 
 $\int_c^u I_y(y)dy=\int_a^\infty \int_c^uf_y(x,y)dydx = \int_a^\infty f(x,u)-f(x,c)dydx=I(u)+C$
 
@@ -446,9 +446,9 @@ $I(y)=\int_a^b f(x,y)dx$ 收敛，则有 $\forall\epsilon>0,\exists \eta>0,\fora
 
 已知 $\forall\epsilon>0,\exists \eta_0>0,\forall \eta''<\eta'<\eta_0,\forall y\in[c,d]\Rightarrow \left|\int_{b-\eta'}^{b-\eta''} f(x,y)dx\right|<\epsilon$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-柯西收敛原理-证明-必要]]可得在以上条件下 $\forall \eta<\eta_0,\forall y\in[c,d]\Rightarrow\left|\int_a^{b-\eta} f(x,y)dx-K(y)\right|<2\epsilon$
+根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-柯西收敛原理-证明-必要]]可得在以上条件下 $\forall \eta<\eta_0,\forall y\in[c,d]\Rightarrow\left|\int_a^{b-\eta} f(x,y)dx-K(y)\right|<2\epsilon$
 
-则有 $\forall\epsilon>0,\exists \eta_0>0,\forall \eta<\eta_0,\forall y\in[c,d]\Rightarrow \left|\int_a^{b-\eta}f(x,y)dx-K(y)\right|<\epsilon$ 根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-定义]]可得 $K(y)=\int_a^b f(x,y)dx=I(y)$
+则有 $\forall\epsilon>0,\exists \eta_0>0,\forall \eta<\eta_0,\forall y\in[c,d]\Rightarrow \left|\int_a^{b-\eta}f(x,y)dx-K(y)\right|<\epsilon$ 根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-定义]]可得 $K(y)=\int_a^b f(x,y)dx=I(y)$
 
 故 $\forall\epsilon>0,\exists \eta_0>a,\forall \eta<\eta_0,\forall y\in[c,d]\Rightarrow \left|\int_{b-\eta}^b f(x,y)dx\right|<\epsilon$
 **** <<MK12>>Weierstrass判别
@@ -457,11 +457,11 @@ $I(y)=\int_a^b f(x,y)dx$ 收敛，则有 $\forall\epsilon>0,\exists \eta>0,\fora
 
 ***** 证明
 
-由于 $\int_a^b F(x)dx$ 收敛，根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-柯西收敛原理]]可得 $\forall\epsilon>0,\exists \eta_0,\forall \eta''<\eta'<\eta_0\Rightarrow\left|\int_{b-\eta'}^{b-\eta''}F(x)dx\right|<\epsilon$
+由于 $\int_a^b F(x)dx$ 收敛，根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-柯西收敛原理]]可得 $\forall\epsilon>0,\exists \eta_0,\forall \eta''<\eta'<\eta_0\Rightarrow\left|\int_{b-\eta'}^{b-\eta''}F(x)dx\right|<\epsilon$
 
 由于 $0\leq|f(x,y)|\leq F(x)$ 故有 $\forall\epsilon>0,\exists \eta_0,\forall\eta''<\eta'<\eta_0\Rightarrow\int_{b-\eta'}^{b-\eta''}F(x)dx<\epsilon$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-保序]]及[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-绝对可积]]可得 $\left|\int_{b-\eta'}^{b-\eta''}f(x,y)dx\right|\leq\int_{b-\eta'}^{b-\eta''}|f(x,y)|dx\leq\int_{b-\eta'}^{b-\eta''}F(x)dx$
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-保序]]及[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-绝对可积]]可得 $\left|\int_{b-\eta'}^{b-\eta''}f(x,y)dx\right|\leq\int_{b-\eta'}^{b-\eta''}|f(x,y)|dx\leq\int_{b-\eta'}^{b-\eta''}F(x)dx$
 
 * 欧拉积分
 
@@ -486,7 +486,7 @@ $\beta(p,q)$ 定义域为 $(p,q)\in(0,\infty)\times(0,\infty)$
 
 故有 $\int_a^{\frac{1}{2}}x^{p-1}dx=\begin{cases}\frac{2^p}{p}-\frac{a^p}{p}&p\ne0\\\ln(\frac{1}{2})-\ln(a)&p=0\end{cases}$ 故 $\lim_{a\to0}\int_a^{\frac{1}{2}}x^{p-1}dx$ 在 $p>0$ 时收敛 $p\leq0$ 时发散。
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-非负反常积分判别法-比较判别法]]当且仅当 $p>0$ 时 $\int_0^{\frac{1}{2}}x^{p-1}(1-x)^{q-1}dx$ 收敛
+则根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-非负反常积分判别法-比较判别法]]当且仅当 $p>0$ 时 $\int_0^{\frac{1}{2}}x^{p-1}(1-x)^{q-1}dx$ 收敛
 
 ***** 第二部分
 
@@ -579,7 +579,7 @@ $\Gamma(s)$ 定义域为 $s\in(0,\infty)$
 
 反常积分，当 $x\to\infty$ 时为区间无限反常积分，当 $x\to0$ 时可能为无界函数反常积分，
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]分割积分区域 $\Gamma(s)=\int_0^1 x^{s-1}e^{-x}dx+\int_1^\infty x^{s-1}e^{-x}dx$
+故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]分割积分区域 $\Gamma(s)=\int_0^1 x^{s-1}e^{-x}dx+\int_1^\infty x^{s-1}e^{-x}dx$
 
 ***** 第一部分
 
@@ -587,7 +587,7 @@ $\Gamma(s)$ 定义域为 $s\in(0,\infty)$
 
 根据[[MK11][之前证明]]可得积分 $\int_0^{1}x^{p-1}dx$ 当 $0<p<1$ 时为反常积分，积分收敛。当 $p\geq 1$ 时为常义积分，可积。
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-非负反常积分判别法-比较判别法]]当 $s>0$ 时 $\int_0^1 x^{s-1}e^{-x}dx$ 存在
+故根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-非负反常积分判别法-比较判别法]]当 $s>0$ 时 $\int_0^1 x^{s-1}e^{-x}dx$ 存在
 
 ***** <<MK13>>第二部分
 
@@ -595,7 +595,7 @@ $\int_1^\infty x^{s-1}e^{-x}dx=\int_1^\infty \frac{1}{x^2}\frac{x^{s+1}}{e^x}dx$
 
 则有 $g'(x)=\frac{(s+2)x^{s+1}e^x-x^{s+2}e^x}{e^{2x}}=\frac{x^{s+1}(s+2-x)}{e^x}$ 故当 $x>s+2$ 时 $g(x)$ 单调递减
 
-由于当 $x\in[1,s+2]$ 时 $x^{s-1}e^{-x}$ 连续，故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2-推论1]]若 $s>1$ 则 $\int_1^{s+2} x^{s-1}e^{-x}dx$ 必可积
+由于当 $x\in[1,s+2]$ 时 $x^{s-1}e^{-x}$ 连续，故根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2-推论1]]若 $s>1$ 则 $\int_1^{s+2} x^{s-1}e^{-x}dx$ 必可积
 
 对于 $\int_1^\infty \frac{1}{x^2}\frac{x^{s+1}}{e^x}dx$
 
@@ -603,9 +603,9 @@ $\int_1^\infty x^{s-1}e^{-x}dx=\int_1^\infty \frac{1}{x^2}\frac{x^{s+1}}{e^x}dx$
 
 （2） $\lim_{x\to\infty}\frac{x^{2s}}{e^x}=0$ （幂函数阶小于指数函数，可用洛必达法则证明）且单调
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][区间无限反常积分收敛判别-一般函数（不定号）反常积分判别法-Dirichlet]] $\int_s^\infty \frac{1}{x}\frac{x^s}{e^x}dx$ 对于任意 $s$ 收敛
+则根据[[~/文档/note/数学分析/Chap8Note.org][区间无限反常积分收敛判别-一般函数（不定号）反常积分判别法-Dirichlet]] $\int_s^\infty \frac{1}{x}\frac{x^s}{e^x}dx$ 对于任意 $s$ 收敛
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]] $\int_1^\infty \frac{1}{x}\frac{x^s}{e^x}dx$ 对于任意 $s$ 收敛
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]] $\int_1^\infty \frac{1}{x}\frac{x^s}{e^x}dx$ 对于任意 $s$ 收敛
 
 ***** 结论
 
@@ -625,7 +625,7 @@ $\int_1^\infty x^{s-1}e^{-x}dx=\int_1^\infty \frac{1}{x^2}\frac{x^{s+1}}{e^x}dx$
 
 ***** 函数（1）
 
-定义 $[a,b]$ 其中 $a>0,b<\infty$ 同样根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]分割积分区域
+定义 $[a,b]$ 其中 $a>0,b<\infty$ 同样根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]分割积分区域
 
 $\int_0^\infty x^{s-1}e^{-x}dx=\int_0^1 x^{s-1}e^{-x}dx+\int_1^\infty x^{s-1}e^{-x}dx$
 
@@ -643,7 +643,7 @@ $\int_0^\infty x^{s-1}e^{-x}dx=\int_0^1 x^{s-1}e^{-x}dx+\int_1^\infty x^{s-1}e^{
 
 ***** 函数（2）
 
-定义 $[a,b]$ 其中 $a>0,b<\infty$ 同样根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]分割积分区域
+定义 $[a,b]$ 其中 $a>0,b<\infty$ 同样根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]分割积分区域
 
 $\int_0^\infty x^{s-1}e^{-x}dx=\int_0^1 x^{s-1}e^{-x}(\ln(x))^ndx+\int_1^\infty x^{s-1}e^{-x}(\ln(x))^ndx$
 
@@ -663,7 +663,7 @@ $f'(x)=\frac{1}{x},g'(x)=-0.5ax^{-0.5a-1}$ 故有 $\frac{f'(x)}{g'(x)}=\frac{1}{
 
 （2） $\lim_{x\to0^+}\frac{f'(x)}{g'(x)}=0$
 
-故根据[[e:/OneDrive/大学物理/Note/DiffEq.org][洛必达法则]]有 $\lim_{x\to0^+}\frac{f(x)}{g(x)}=\lim_{x\to0^+}\frac{f'(x)}{g'(x)}$ 即 $\lim_{x\to0^+}\frac{(\ln(x))^n}{x^{-0.5a}}=\lim_{x\to0^+}\frac{x^{0.5a}}{-0.5a}=0$ 
+故根据[[~/文档/note/大学物理/Note/DiffEq.org][洛必达法则]]有 $\lim_{x\to0^+}\frac{f(x)}{g(x)}=\lim_{x\to0^+}\frac{f'(x)}{g'(x)}$ 即 $\lim_{x\to0^+}\frac{(\ln(x))^n}{x^{-0.5a}}=\lim_{x\to0^+}\frac{x^{0.5a}}{-0.5a}=0$ 
 
 ******** 当 $n>1$ 时
 
@@ -673,7 +673,7 @@ $f'(x)=n(\ln(x))^{n-1}\frac{1}{x},g'(x)=-0.5ax^{-0.5a-1}$ 故有 $\frac{f'(x)}{g
 
 同理 $\lim_{x\to0^+}g(x)=\lim_{x\to0^+}x^{-0.5a}=\infty$ 故若 $\lim_{x\to0}\frac{(\ln(x))^{n-1}}{x^{-0.5a}}=0$ 
 
-则根据[[e:/OneDrive/大学物理/Note/DiffEq.org][洛必达法则]]有 $\lim_{x\to0^+}\frac{f(x)}{g(x)}=\lim_{x\to0^+}\frac{f'(x)}{g'(x)}=0$
+则根据[[~/文档/note/大学物理/Note/DiffEq.org][洛必达法则]]有 $\lim_{x\to0^+}\frac{f(x)}{g(x)}=\lim_{x\to0^+}\frac{f'(x)}{g'(x)}=0$
 
 ******** 结论
 
@@ -693,10 +693,10 @@ $f'(x)=n(\ln(x))^{n-1}\frac{1}{x},g'(x)=-0.5ax^{-0.5a-1}$ 故有 $\frac{f'(x)}{g
 
 由于 $\ln(x)$ 当且仅当 $x<0$ 时为负，且 $\frac{n}{0.5a}>0$ 故必有 $0<\delta<1$ 
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]分割积分 $\int_0^1x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx=\int_0^\delta x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx+\int_\delta^1x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx$
+则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]分割积分 $\int_0^1x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx=\int_0^\delta x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx+\int_\delta^1x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx$
 由于 $x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx$ 在 $[\delta,1]$ 上连续，
 
-故根据根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2-推论1]] $\int_\delta^1x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx$ 可积
+故根据根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2-推论1]] $\int_\delta^1x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx$ 可积
 
 另一方面由于 $\int_0^\delta x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx$ 满足
 
@@ -704,7 +704,7 @@ $f'(x)=n(\ln(x))^{n-1}\frac{1}{x},g'(x)=-0.5ax^{-0.5a-1}$ 故有 $\frac{f'(x)}{g
 
 （2） $\lim_{x\to0}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|=0$ 且 $\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|$ 在 $x\in(0,\delta]$ 上单调
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-一般函数（不定号）反常积分判别法-Dirichlet]] $\int_0^\delta x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx$ 收敛
+则根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-一般函数（不定号）反常积分判别法-Dirichlet]] $\int_0^\delta x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx$ 收敛
 
 故 $\int_0^1x^{0.5a-1}\left|\frac{(\ln(x))^n}{x^{-0.5a}}\right|dx$ 收敛
 
@@ -726,7 +726,7 @@ $x^{b-1}e^{-x}|(\ln(x))^n|=\frac{1}{x^2}\frac{x^{b+1}(\ln(x))^n}{e^x}$ 定义 $f
 
 又有 $\forall A>s+2,\forall s>0\Rightarrow\int_{s+2}^A\frac{1}{x^2}dx=-\frac{1}{x}\big|_{s+2}^A=\frac{1}{s+2}-\frac{1}{A}$ 有界
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-一般函数（不定号）反常积分判别法-Dirichlet]]得 $\int_1^\infty x^{b-1}e^{-x}(\ln(x))^ndx$ 收敛
+故根据[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-一般函数（不定号）反常积分判别法-Dirichlet]]得 $\int_1^\infty x^{b-1}e^{-x}(\ln(x))^ndx$ 收敛
 
 故根据[[MK14][Weierstrass判别]]有 $\int_1^\infty x^{s-1}e^{-x}(\ln(x))^2dx$ 关于 $s\in[a,b]$ 一致收敛
 
@@ -826,7 +826,7 @@ $\beta(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$
 
 （2） $\int_0^\infty\int_0^\infty s^{2p-1}t^{2q-1}e^{-s^2-t^2}dsdt$ 以及 $\int_0^\infty\int_0^\infty\left|s^{2p-1}t^{2q-1}e^{-s^2-t^2}\right|dsdt$ 均收敛
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][反常重积分-区域无限反常重积分-区域无限反常重积分计算]]以及[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][反常重积分-无界函数反常重积分-无界反常重积分计算]]
+故根据[[~/文档/note/数学分析/Chap13Note.org][反常重积分-区域无限反常重积分-区域无限反常重积分计算]]以及[[~/文档/note/数学分析/Chap13Note.org][反常重积分-无界函数反常重积分-无界反常重积分计算]]
 
 定义 $D=(0,\infty)\times(0,\infty)$ 则有累次反常积分等于反常重积分 $\int_0^\infty\int_0^\infty s^{2p-1}t^{2q-1}e^{-s^2-t^2}dsdt=\int_D s^{2p-1}t^{2q-1}e^{-s^2-t^2}dv$
 
@@ -846,7 +846,7 @@ $\beta(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$
 
 （4） $D'$ 为有界闭集且连通
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][重积分变量代还]]有 $\int_{D'} s^{2p-1}t^{2q-1}e^{-s^2-t^2}dv=\int_{T(D')} r^{2(p+1)-1}e^{-r^2}(\cos\theta)^{2p-1}(\sin\theta)^{2q-1}dv$
+则根据[[~/文档/note/数学分析/Chap13Note.org][重积分变量代还]]有 $\int_{D'} s^{2p-1}t^{2q-1}e^{-s^2-t^2}dv=\int_{T(D')} r^{2(p+1)-1}e^{-r^2}(\cos\theta)^{2p-1}(\sin\theta)^{2q-1}dv$
 
 其中 $T(D')=\left\{(r,\theta)\big|r\in[a,b],\theat\in[c,d]\right\}$
 
@@ -858,7 +858,7 @@ $\beta(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$
 
 则有 $\lim_{k\to\infty}D_k=D$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][反常重积分-区域无限反常重积分-敛散性-引理1]]和[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][反常重积分-无界函数反常重积分-敛散性-引理1]]
+根据[[~/文档/note/数学分析/Chap13Note.org][反常重积分-区域无限反常重积分-敛散性-引理1]]和[[~/文档/note/数学分析/Chap13Note.org][反常重积分-无界函数反常重积分-敛散性-引理1]]
 
 则有 $\lim_{k\to\infty}\int_{D'_k}s^{2p-1}t^{2q-1}e^{-s^2-t^2}dv=\int_Ds^{2p-1}t^{2q-1}e^{-s^2-t^2}dv$
 
@@ -876,7 +876,7 @@ $\beta(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$
 
 （2） 反常累次积分 $\int_0^\infty\int_{2}^{\frac{\pi}{2}}r^{2(p+1)-1}e^{-r^2}(\cos\theta)^{2p-1}(\sin\theta)^{2q-1}d\theta dr=\int_0^\infty\int_{2}^{\frac{\pi}{2}}\left|r^{2(p+1)-1}e^{-r^2}(\cos\theta)^{2p-1}(\sin\theta)^{2q-1}\right|d\theta dr$ 存在可积
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][反常重积分-区域无限反常重积分-区域无限反常重积分计算]]以及[[e:/OneDrive/数学分析/Note/Chapter 13/Chap13Note.org][反常重积分-无界函数反常重积分-无界反常重积分计算]]
+故根据[[~/文档/note/数学分析/Chap13Note.org][反常重积分-区域无限反常重积分-区域无限反常重积分计算]]以及[[~/文档/note/数学分析/Chap13Note.org][反常重积分-无界函数反常重积分-无界反常重积分计算]]
 
 可得 $\int_{T(D)}r^{2(p+1)-1}e^{-r^2}(\cos\theta)^{2p-1}(\sin\theta)^{2q-1}dv=\int_0^\infty\int_{0}^{\frac{\pi}{2}}r^{2(p+1)-1}e^{-r^2}(\cos\theta)^{2p-1}(\sin\theta)^{2q-1}d\theta dr$
 
@@ -944,11 +944,11 @@ $\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin(\pi s)},0<s<1$
 
 根据条件（4）可得 $0\leq u(x)\leq\phi(x)$
 
-根据条件（3）及[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-非负反常积分判别]]得 $\int_a^b u(x)dx$ 也收敛
+根据条件（3）及[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-非负反常积分判别]]得 $\int_a^b u(x)dx$ 也收敛
 
 故 $\forall\epsilon>0$
 
-根据条件（3），（4）及[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][无界函数反常积分收敛判别-定义]]有 $\exists\delta,\forall 0<\eta<\delta\Rightarrow\int_{b-\eta}^b\phi(x)dx<\frac{\epsilon}{3}$
+根据条件（3），（4）及[[~/文档/note/数学分析/Chap8Note.org][无界函数反常积分收敛判别-定义]]有 $\exists\delta,\forall 0<\eta<\delta\Rightarrow\int_{b-\eta}^b\phi(x)dx<\frac{\epsilon}{3}$
 
 且根据条件（4）有 $\int_{b-\eta}^bu_n(x)dx\leq\int_{b-\eta}^b\phi(x)dx<\frac{\epsilon}{3},\int_{b-\eta}^b u(x)dx\leq\int_{b-\eta}^b\phi(x)dx<\frac{\epsilon}{3}$
 
@@ -974,7 +974,7 @@ $\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin(\pi s)},0<s<1$
 
 根据极限四则运算 $\lim_{n\to\infty}\int_a^c u_n(x)dx+\lim_{n\to\infty}\int_c^b u_n(x)dx=\lim_{n\to\infty}\left\{\int_a^c u_n(x)dx+\int_c^b u_n(x)dx\right\}$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]] $\int_a^c u(x)dx+\int_c^b u(x)dx=\int_a^b u(x)dx,\int_a^c u_n(x)dx+\int_c^b u_n(x)dx=\int_a^b u_n(x)dx$
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]] $\int_a^c u(x)dx+\int_c^b u(x)dx=\int_a^b u(x)dx,\int_a^c u_n(x)dx+\int_c^b u_n(x)dx=\int_a^b u_n(x)dx$
 
 故有 $\lim_{n\to\infty}\int_a^b u_n(x)dx=\lim_{n\to\infty}\left\{\int_a^c u_n(x)dx+\int_c^b u_n(x)dx\right\}=\int_a^c u(x)dx+\int_c^b u(x)dx=\int_a^b u(x)dx$
 
@@ -986,7 +986,7 @@ $\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin(\pi s)},0<s<1$
 
 ******* 对数转换
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 9/Chap9Note.org][部分公式证明-正弦函数无穷乘积展开]]得 $\sin(x)=x\prod_{i=1}^\infty\left(1-\frac{x^2}{i^2\pi^2}\right)$
+根据[[~/文档/note/数学分析/Chap9Note.org][部分公式证明-正弦函数无穷乘积展开]]得 $\sin(x)=x\prod_{i=1}^\infty\left(1-\frac{x^2}{i^2\pi^2}\right)$
 
 取绝对值和对数 $\ln|\sin(x)|=\ln|x|+\sum_{i=1}^\infty\ln\left|1-\frac{x^2}{i^2\pi^2}\right|$
 
@@ -1004,11 +1004,11 @@ $\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin(\pi s)},0<s<1$
 
 故 $-u_n'(x)$ 关于 $x$ 在 $x\in(0,\pi)$ 上单调递增，则定义 $b<\pi$ 则有 $\forall x\in(0,b]\Rightarrow|u_n'(x)|=\frac{2x}{i^2\pi^2-x^2}\leq\frac{2b}{i^2\pi^2-b^2}$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 9/Chap9Note.org][部分极限证明-P级数]]得 $\sum_{i=1}^\infty \frac{2b}{i^2\pi^2}$ 收敛，且 $l=\lim_{n\to\infty}\frac{\frac{2b}{i^2\pi^2-b^2}}{\frac{2b}{i^2\pi^2}}=\frac{1}{1-\frac{b^2}{i^2\pi^2}}=1$ 故 $0<l<\infty$ 
+根据[[~/文档/note/数学分析/Chap9Note.org][部分极限证明-P级数]]得 $\sum_{i=1}^\infty \frac{2b}{i^2\pi^2}$ 收敛，且 $l=\lim_{n\to\infty}\frac{\frac{2b}{i^2\pi^2-b^2}}{\frac{2b}{i^2\pi^2}}=\frac{1}{1-\frac{b^2}{i^2\pi^2}}=1$ 故 $0<l<\infty$ 
 
-又由于 $b<\pi\Rightarrow\frac{2b}{i^2\pi^2-b^2}>0$ 根据[[e:/OneDrive/数学分析/Note/Chapter 9/Chap9Note.org][级数敛散性-正项级数-比较判别法]]得 $\sum_{i=1}^\infty\frac{2b}{i^2\pi^2-b^2}$ 亦收敛
+又由于 $b<\pi\Rightarrow\frac{2b}{i^2\pi^2-b^2}>0$ 根据[[~/文档/note/数学分析/Chap9Note.org][级数敛散性-正项级数-比较判别法]]得 $\sum_{i=1}^\infty\frac{2b}{i^2\pi^2-b^2}$ 亦收敛
 
-又根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数一致收敛-判别-Weierstrass判别]]得 $u_n'(x)$ 在 $x\in(0,b]$ 上一致收敛
+又根据[[~/文档/note/数学分析/Chap10Note.org][函数项级数一致收敛-判别-Weierstrass判别]]得 $u_n'(x)$ 在 $x\in(0,b]$ 上一致收敛
 
 ******* 求导
 
@@ -1020,7 +1020,7 @@ $\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin(\pi s)},0<s<1$
  
 （3） $u_n'(x)$ 关于 $x\in(0,b]$ 一致收敛
 
-故当 $x\in(0,b]$ 时根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-一致收敛性质-可导性]]可得 $u_n'(x)=(\ln(\sin(x))-\ln(x))'$
+故当 $x\in(0,b]$ 时根据[[~/文档/note/数学分析/Chap10Note.org][函数项级数-一致收敛性质-可导性]]可得 $u_n'(x)=(\ln(\sin(x))-\ln(x))'$
 
 即有 $\sum_{i=1}^\infty\frac{2x}{x^2-i^2\pi^2}=\frac{\cos(x)}{\sin(x)}-\frac{1}{x}$
 
@@ -1059,7 +1059,7 @@ $\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin(\pi s)},0<s<1$
 
 根据[[MK22][Beta函数分式表述]]及[[MK23][对称性]]得 $\beta(s,1-s)=\beta(1-s,s)=\int_0^1\frac{t^{s-1}}{1+t}dt+\int_0^1\frac{t^{-s}}{1+t}dt$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][幂级数-幂级数展开-经典例题]]得 $(1+t)^{-1}=\sum_{i=0}^\infty\left(\binom {-1} n t^i\right)$
+根据[[~/文档/note/数学分析/Chap10Note.org][幂级数-幂级数展开-经典例题]]得 $(1+t)^{-1}=\sum_{i=0}^\infty\left(\binom {-1} n t^i\right)$
 
 根据定义 $\binom {-1} n = \frac{-1(-2)(-3)...(-n)}{n!}=(-1)^n$ 则有 $(1+t)^{-1}=\sum_{i=0}^\infty(-1)^it^i$
 
@@ -1081,11 +1081,11 @@ $\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin(\pi s)},0<s<1$
 
       a) $0<a_n(t)<(1-\eta)^{s+n-1}$ 且 $\lim_{n\to\infty}(1-\eta)^{s+n-1}=0$ ，
       
-         则根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数一致收敛-判别-Weierstrass判别]]及夹逼定理得 $a_n(t)$ 一致收敛到 $0$
+         则根据[[~/文档/note/数学分析/Chap10Note.org][函数项级数一致收敛-判别-Weierstrass判别]]及夹逼定理得 $a_n(t)$ 一致收敛到 $0$
 
       b) $\left|\sum_{i=0}^n b_i(t)\right|\leq 1<1.5$
 
-      故根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-函数项级数一致收敛-判别-A-D判别-Dirichlet]]得函数项级数 $\left\{\sum_{i=0}^n(-1)^it^{s+i-1}\right\}$ 在 $[\eta,1-\eta],1>\eta>0$ 上一致收敛 
+      故根据[[~/文档/note/数学分析/Chap10Note.org][函数项级数-函数项级数一致收敛-判别-A-D判别-Dirichlet]]得函数项级数 $\left\{\sum_{i=0}^n(-1)^it^{s+i-1}\right\}$ 在 $[\eta,1-\eta],1>\eta>0$ 上一致收敛 
 
 则根据[[MK25][推论]]有 $\lim_{n\to\infty}\int_0^1\left\{\sum_{i=0}^n(-1)^it^{s+i-1}\right\}dx=\int_0^1\frac{t^{s-1}}{1+t}dt$ 
 
@@ -1150,7 +1150,7 @@ $\lim_{s\to\infty}\frac{\Gamma(s)}{\sqrt{2\pi}s^ss^{-\frac{1}{2}}e^{-s}}=1$
 
 故有 $\frac{(n+y)^yn!}{\sqrt{2\pi}(n+y+1)^{n+y+1}(n+y+1)^{-\frac{1}{2}}e^{-(n+y+1)}}=\frac{(n+y)^y\Gamma(n+1)}{\sqrt{2\pi}s^ss^{-\frac{1}{2}}e^{-s}}\leq\frac{\Gamma(s)}{\sqrt{2\pi}s^ss^{-\frac{1}{2}}e^{-s}}\leq\frac{(n+1)^y\Gamma(n+1)}{\sqrt{2\pi}s^ss^{-\frac{1}{2}}e^{-s}}=\frac{(n+1)^yn!}{\sqrt{2\pi}(n+y+1)^{n+y+1}(n+y+1)^{-\frac{1}{2}}e^{-(n+y+1)}}$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 9/Chap9Note.org][部分公式证明-Stirling公式]]得 $\lim_{n\to\infty}\frac{n!}{\sqrt{2\pi}n^{n+\frac{1}{2}}e^{-n}}=1$ 故根据极限保序性及四则运算有：
+根据[[~/文档/note/数学分析/Chap9Note.org][部分公式证明-Stirling公式]]得 $\lim_{n\to\infty}\frac{n!}{\sqrt{2\pi}n^{n+\frac{1}{2}}e^{-n}}=1$ 故根据极限保序性及四则运算有：
 
 \begin{aligned}
 \lim_{s\to\infty}\frac{\Gamma(s)}{\sqrt{2\pi}s^ss^{-\frac{1}{2}}e^{-s}}\leq&\lim_{n\to\infty}\left\{\frac{(n+1)^yn!}{\sqrt{2\pi}(n+y+1)^{n+y+1}(n+y+1)^{-\frac{1}{2}}e^{-(n+y+1)}}\right\}\\
@@ -1176,7 +1176,7 @@ $\lim_{s\to\infty}\frac{\Gamma(s)}{\sqrt{2\pi}s^ss^{-\frac{1}{2}}e^{-s}}=1$
 
 ***** <<MK31>>证明泰勒展开
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][幂级数-幂级数展开]]在 $x_0=0$ 点有展开
+根据[[~/文档/note/数学分析/Chap10Note.org][幂级数-幂级数展开]]在 $x_0=0$ 点有展开
 
 （1） $\ln(1+x)=x-\frac{1}{2}x^2+\frac{1}{3}x^3-...,\ x\in(0,1)$ 
 
@@ -1188,7 +1188,7 @@ $\lim_{s\to\infty}\frac{\Gamma(s)}{\sqrt{2\pi}s^ss^{-\frac{1}{2}}e^{-s}}=1$
 
 对于式（1）通项为 $u_n(x)=(-1)^n\frac{1}{n}x^n$ 
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][幂级数-收敛半径-幂级数收敛半径判别-达朗贝尔]]以及[[e:/OneDrive/数学分析/Note/Chapter 9/Chap9Note.org][绝对收敛 & 条件收敛-收敛性质]]
+则根据[[~/文档/note/数学分析/Chap10Note.org][幂级数-收敛半径-幂级数收敛半径判别-达朗贝尔]]以及[[~/文档/note/数学分析/Chap9Note.org][绝对收敛 & 条件收敛-收敛性质]]
 
 $\lim_{n\to\infty}\left|\frac{\frac{1}{n+1}x^{n+1}}{\frac{1}{n}x^{n}}\right|=\lim_{n\to\infty}\left|\frac{n}{n+1}\right||x|$ 故当 $x\in(0,1)$ 时级数收敛
 

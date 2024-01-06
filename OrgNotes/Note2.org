@@ -148,11 +148,11 @@ $\vec{A}$ 与 $x$ 夹角为 $\omega t+\phi$ 于 $x$ 轴投影为 $x=A\cos(\omega
 
 ** <<MK4>>简谐运动动力学方程
 
-根据[[e:/OneDrive/大学物理/Note/Note1.org][质点运动-一般运动-牛顿三定律-动量定律]]以及[[MK1][线性恢复力]]可得 $F=ma\Rightarrow m\frac{d^2x}{dt^2}=-kx$
+根据[[~/文档/note/大学物理/Note/Note1.org][质点运动-一般运动-牛顿三定律-动量定律]]以及[[MK1][线性恢复力]]可得 $F=ma\Rightarrow m\frac{d^2x}{dt^2}=-kx$
 
 整理上式得 $\frac{d^2x}{dt^2}+\frac{k}{m}x=0$ 定义 $\omega^2=\frac{k}{m}$ 则有 $\frac{d^2x}{dt^2}+\omega^2x=0$ 此为 *简谐运动的动力学方程*
 
-上式为二阶常系数齐次微分方程，根据[[e:/OneDrive/大学物理/Note/DiffEq.org][二阶微分方程-二阶线性齐次方程-二阶常系数齐次微分方程]]
+上式为二阶常系数齐次微分方程，根据[[~/文档/note/大学物理/Note/DiffEq.org][二阶微分方程-二阶线性齐次方程-二阶常系数齐次微分方程]]
 
 可得该方程特征方程为 $r^2+\omega^2=0$ 拥有共轭复根，且 $p=0,\frac{\sqrt{-(p^2-4q)}}{2}=\frac{\sqrt{4\omega^2}}{2}=\omega$
 

@@ -15,13 +15,13 @@ free:
 
 ** 定义<<MK214>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 其中[[~/OneDrive/离散数学/Disc_Math.org::MK13][标志集]]是正整数
+定义[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 其中[[~/文档/note/离散数学/Disc_Math.org::MK13][标志集]]是正整数
 
 ** 集合列上下确界
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$
+定义[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][集合族运算]]
+根据[[~/文档/note/离散数学/Disc_Math.org::MK29][集合族运算]]
 
 其上确界定义为 $\cup_{i\in\mathbb{N}}A_i$
 
@@ -29,7 +29,7 @@ free:
 
 ** 集合列上下极限<<MK1>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ ，则根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][集合族运算]]
+定义[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ ，则根据[[~/文档/note/离散数学/Disc_Math.org::MK29][集合族运算]]
 
 其上极限定义为 $\overline{\lim_{n\to\infty}}A_n=\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)$ 即 $\overline{\lim_{n\to\infty}}A_n=\left\{a\big|\forall i\in\mathbb{N},\exists k\geq i\rightarrow a\in A_k\right\}$
 
@@ -51,7 +51,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 故 $\forall i'\in\mathbb{N}\rightarrow a\in\cup_{k\geq i'}A_k$ 进一步 $a\in\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)$ 根据定义 $a\in\overline{\lim_{n\to\infty}}A_n$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$ 
+根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$ 
 
 ** 集合列的极限
 
@@ -61,7 +61,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ** 单调集列<<MK69>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 定义
+定义[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ 定义
 
 递增集列满足 $\forall i\in\mathbb{N}\rightarrow A_i\subset A_{i+1}$
 
@@ -79,7 +79,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 且根据[[MK3][推论]]有 $\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)\subset\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)$ 故若能证明 $\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)\subset\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)$ 
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含-定理1]]可得 $\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)=\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)$ 
+则根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-包含-定理1]]可得 $\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)=\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)$ 
 
 ****** 递增集列
 
@@ -87,7 +87,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 特殊地取 $i=1$ 则有 $k_1\geq 1$ 使得 $a\in A_{k_1}$ 根据递增定义有 $\forall k\geq k_1\rightarrow A_{k_1}\subset A_k\rightarrow a\in A_k$ 即 $a\in \cap_{k\geq k_1}A_k$
 
-则有 $a\in\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)$ ，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)\subset\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)$ 
+则有 $a\in\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)$ ，根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)\subset\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)$ 
 
 ****** 递减集列
 
@@ -99,7 +99,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 故命题错误，则 $\exists z\in\mathbb{N}\rightarrow a\in\cap_{k\geq z}A_k$ 即 $a\in\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)$ 
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)\subset\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)$ 
+根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\cap_{i\geq 1}\left(\cup_{k\geq i}A_k\right)\subset\cup_{i\geq 1}\left(\cap_{k\geq i}A_k\right)$ 
 
 ***** 等式
 
@@ -117,7 +117,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ** 集合列极限<<MK2>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ ，若[[MK1][上下极限]]相等，即 $\overline{\lim_{n\to\infty}}A_n=\underline{\lim_{n\to\infty}}A_n$
+定义[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]] $\{A_i\}_{i\in\mathbb{N}}$ ，若[[MK1][上下极限]]相等，即 $\overline{\lim_{n\to\infty}}A_n=\underline{\lim_{n\to\infty}}A_n$
 
 则称集合列有极限，且极限等于上下极限，记作 $\lim_{n\to\infty}A_n$
 
@@ -125,7 +125,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ** 拓扑定义<<MK39>>
 
-设 $T$ 是 $X$ 的非空子集的[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]若满足：
+设 $T$ 是 $X$ 的非空子集的[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]]若满足：
 
 （1） $X,\varnothing$ 均属于 $T$
 
@@ -143,7 +143,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 *** 等价闭集定义<<MK129>>
 
-设 $T$ 是 $X$ 的非空子集的[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]
+设 $T$ 是 $X$ 的非空子集的[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]]
 
 定义闭集族 $T^c=\left\{t^c\big|t\in T\right\}$ 则 $<X,T>$ 是[[MK39][拓扑空间]]的充要条件是：
 
@@ -163,11 +163,11 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ***** （2）&（3）
 
-定义对于[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]] $A$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK35][广义并]]为 $\bigcup A$ 同理定义广义交为 $\bigcap A$
+定义对于[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]] $A$ 的[[~/文档/note/离散数学/Disc_Math.org::MK35][广义并]]为 $\bigcup A$ 同理定义广义交为 $\bigcap A$
 
 定义 $F\subset T$ 以及 $F^c=\left\{f^c\big|f\in F\right\}$ 根据 $T^c$ 定义显然有 $F^c\subset T^c$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org::MK331][集合族运算与补]]可得 $\left(\bigcup F\right)^c=\bigcap\left\{f^c\big|f\in F\right\}=\bigcap F^c$
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK331][集合族运算与补]]可得 $\left(\bigcup F\right)^c=\bigcap\left\{f^c\big|f\in F\right\}=\bigcap F^c$
 
 故对于任意 $F\subset T$ 若 $\bigcup F\in T$ 则有 $\left(\bigcup F\right)^c\in T^c$ 根据上式有 $\left(\bigcup F\right)^c=\bigcap F^c\in T^c$
 
@@ -195,7 +195,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 对于任意 $F\subset T$ 均有 $\bigcup F\in T$ 则有 $Y\cap\bigcup F\in T_y$ 故定义 $F_Y=\left\{f\cap Y\big|f\in F\right\}$ 
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK333][集合族运算与交并]]有 $Y\cap\bigcup F=\bigcup\left\{f\cap Y\big|f\in F\right\}=\bigcup F_Y$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK333][集合族运算与交并]]有 $Y\cap\bigcup F=\bigcup\left\{f\cap Y\big|f\in F\right\}=\bigcup F_Y$
 
 由于 $T_Y$ 中所有元素均有 $T$ 产生，故（2）成立。同理可证（3）
 
@@ -235,7 +235,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 则有 $<Y,T_Y>$ 上的闭集可定义为 $T_Y^c=\left\{Y-t\big|t\in T_Y\right\}$
 
-定义 $Z=\left\{x\cap Y\big|x\in T^c\right\}$ 则根据下列证明以及[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $T_Y^c=Z$
+定义 $Z=\left\{x\cap Y\big|x\in T^c\right\}$ 则根据下列证明以及[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $T_Y^c=Z$
 
 ***** $T_Y^c\subset Z$
 
@@ -245,9 +245,9 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 故有 $t\subset Y$ ，进一步由于 $Y-t=y$ 可得 $t\cup y=Y$ 以及 $t=Y-y$
 
-则有 $Y-y=x\cap Y$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK334][补与减]]以及[[~/OneDrive/离散数学/Disc_Math.org::MK39][交换律]]可得 $y^c\cap Y=x\cap Y$
+则有 $Y-y=x\cap Y$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK334][补与减]]以及[[~/文档/note/离散数学/Disc_Math.org::MK39][交换律]]可得 $y^c\cap Y=x\cap Y$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK335][补与并]]可得 $y\cap Y=x^c\cap Y$ 又由于 $t\subset Y\land y=Y-t$ 可得 $y\subset Y$
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK335][补与并]]可得 $y\cap Y=x^c\cap Y$ 又由于 $t\subset Y\land y=Y-t$ 可得 $y\subset Y$
 
 则有 $y\cap Y=t=x^c\cap Y$ 显然 $x^c\in T^c$
 
@@ -259,7 +259,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 进一步有 $x\in T$ 即 $x\cap Y\in T_Y$ 故根据 $T^c_Y$ 定义可得 $Y-(x\cap Y)\in T^c_Y$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org::MK334][补与减]]、[[~/OneDrive/离散数学/Disc_Math.org::MK328][德摩根律]]以及[[~/OneDrive/离散数学/Disc_Math.org::MK327][分配律]]
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK334][补与减]]、[[~/文档/note/离散数学/Disc_Math.org::MK328][德摩根律]]以及[[~/文档/note/离散数学/Disc_Math.org::MK327][分配律]]
 
 \begin{aligned}
 &Y-(x\cap Y)\\
@@ -325,15 +325,15 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 *** 原相<<MK151>>
 
-对于满足[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数定义]]的函数 $f:X\to Y$ 
+对于满足[[~/文档/note/离散数学/Disc_Math.org::MK194][函数定义]]的函数 $f:X\to Y$ 
 
 其 $G\subset Y$ 的原相定义为 $f^{-1}(G)=\left\{x\big|f(x)\in G\land x\in X\right\}$
 
-注：原相不同于[[~/OneDrive/离散数学/Disc_Math.org::MK203][逆函数]]，逆函数可能不存在。此处仅标识相同，实际问题需要区分。
+注：原相不同于[[~/文档/note/离散数学/Disc_Math.org::MK203][逆函数]]，逆函数可能不存在。此处仅标识相同，实际问题需要区分。
 
 **** 性质<<MK135>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK194][定义]] $f:X\to Y$ ，定义[[MK151][原相]]为 $f^{-1}(Y_\lambda)=\left\{x\big|f(x)\in Y_\lambda\land x\in X\right\}$
+定义[[~/文档/note/离散数学/Disc_Math.org::MK194][定义]] $f:X\to Y$ ，定义[[MK151][原相]]为 $f^{-1}(Y_\lambda)=\left\{x\big|f(x)\in Y_\lambda\land x\in X\right\}$
 
 （1） $f^{-1}\left(\bigcup_{\lambda\in\Lambda}Y_\lambda\right)=\bigcup_{\lambda\in\Lambda}f^{-1}\left(Y_\lambda\right)$ 
 
@@ -343,43 +343,43 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ***** 证明
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数定义]] $\forall x\in X\rightarrow\exists y\left(y\in Y\land f(x)=y\right)$ 故有以下证明
+根据[[~/文档/note/离散数学/Disc_Math.org::MK194][函数定义]] $\forall x\in X\rightarrow\exists y\left(y\in Y\land f(x)=y\right)$ 故有以下证明
 
 ****** （1）
 
-则对于任意 $x\in f^{-1}\left(\bigcup_{\lambda\in\Lambda} Y_\lambda\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]可得 $f(x)\in\bigcup_{\lambda\in\Lambda} Y_\lambda\rightarrow\exists \lambda^*\in\Lambda\rightarrow f(x)\in Y_{\lambda^*}$
+则对于任意 $x\in f^{-1}\left(\bigcup_{\lambda\in\Lambda} Y_\lambda\right)$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK29][运算]]可得 $f(x)\in\bigcup_{\lambda\in\Lambda} Y_\lambda\rightarrow\exists \lambda^*\in\Lambda\rightarrow f(x)\in Y_{\lambda^*}$
 
 进一步有 $x\in f^{-1}(Y_{\lambda^*})$ 由于 $\lambda^*\in\Lambda$ 故有 $f^{-1}(Y_{\lambda^*})\subset\bigcup_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$ 即 $x\in\bigcup_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$
 
-同理对于任意 $x\in\bigcup_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]可得 $\exists\lambda^*\rightarrow x\in f^{-1}(Y_{\lambda^*})$ 进一步有 $f(x)\in Y_{\lambda^*}$
+同理对于任意 $x\in\bigcup_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK29][运算]]可得 $\exists\lambda^*\rightarrow x\in f^{-1}(Y_{\lambda^*})$ 进一步有 $f(x)\in Y_{\lambda^*}$
 
 由于 $\lambda^*\in\Lambda$ 故有 $f(x)\in Y_{\lambda^*}\subset\bigcup_{\lambda\in\Lambda} Y_\lambda$ 即 $f(x)\in\bigcup_{\lambda\in\Lambda} Y_\lambda$ 即 $x\in f^{-1}\left(\bigcup_{\lambda\in\Lambda} Y_\lambda\right)$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $f^{-1}\left(\bigcup_{\lambda\in\Lambda}Y_\lambda\right)=\bigcup_{\lambda\in\Lambda}f^{-1}\left(Y_\lambda\right)$ 
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK5][外延公理]]可得 $f^{-1}\left(\bigcup_{\lambda\in\Lambda}Y_\lambda\right)=\bigcup_{\lambda\in\Lambda}f^{-1}\left(Y_\lambda\right)$ 
 
 ****** （2）
 
-则对于任意 $x\in f^{-1}\left(\bigcap_{\lambda\in\Lambda} Y_\lambda\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]可得 $f(x)\in\bigcap_{\lambda\in\Lambda} Y_\lambda\rightarrow\forall \lambda\in\Lambda\rightarrow f(x)\in Y_{\lambda}$
+则对于任意 $x\in f^{-1}\left(\bigcap_{\lambda\in\Lambda} Y_\lambda\right)$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK29][运算]]可得 $f(x)\in\bigcap_{\lambda\in\Lambda} Y_\lambda\rightarrow\forall \lambda\in\Lambda\rightarrow f(x)\in Y_{\lambda}$
 
 即 $\forall\lambda\in\Lambda\rightarrow x\in f^{-1}(Y_{\lambda})$ 故得 $x\in\bigcap_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$
 
-同理对于任意 $x\in\bigcap_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]可得 $\forall\lambda\in\Lambda\rightarrow x\in f^{-1}(Y_{\lambda})$ 即 $\forall\lambda\in\Lambda\rightarrow f(x)\in Y_{\lambda}$
+同理对于任意 $x\in\bigcap_{\lambda\in\Lambda} f^{-1}(Y_\lambda)$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK29][运算]]可得 $\forall\lambda\in\Lambda\rightarrow x\in f^{-1}(Y_{\lambda})$ 即 $\forall\lambda\in\Lambda\rightarrow f(x)\in Y_{\lambda}$
 
 故得 $f(x)\in\bigcap_{\lambda\in\Lambda} Y_\lambda$ 即 $x\in f^{-1}\left(\bigcap_{\lambda\in\Lambda} Y_\lambda\right)$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $f^{-1}\left(\bigcap_{\lambda\in\Lambda}Y_\lambda\right)=\bigcap_{\lambda\in\Lambda}f^{-1}\left(Y_\lambda\right)$
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK5][外延公理]]可得 $f^{-1}\left(\bigcap_{\lambda\in\Lambda}Y_\lambda\right)=\bigcap_{\lambda\in\Lambda}f^{-1}\left(Y_\lambda\right)$
 
 ****** （3）
 
-则对于任意 $x\in f^{-1}\left(Y^c\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]可得 $f(x)\in Y^c\leftrightarrow f(x)\not\in Y$
+则对于任意 $x\in f^{-1}\left(Y^c\right)$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK29][运算]]可得 $f(x)\in Y^c\leftrightarrow f(x)\not\in Y$
 
 故对于任意 $x\in f^{-1}(Y^c)\leftrightarrow f(x)\not\in Y\leftrightarrow x\not\in f^{-1}(Y)\leftrightarrow x\in(f^{-1}(Y))^c$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $f^{-1}(Y^c)=(f^{-1}(Y))^c$
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK5][外延公理]]可得 $f^{-1}(Y^c)=(f^{-1}(Y))^c$
 
 *** 连续函数<<MK115>>
 
-[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:X\to Y$ 其中 $X,Y$ [[MK39][拓扑空间]]
+[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:X\to Y$ 其中 $X,Y$ [[MK39][拓扑空间]]
 
 则连续的拓扑定义为若 $B\subset Y$ 是[[MK39][开集]]，则集合 $\left\{x\big|f(x)\in B\right\}$ 亦为开集
 
@@ -415,7 +415,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 （1） $f_i:X\to Y$ [[MK115][连续]]
 
-（2） $\{f_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+（2） $\{f_i(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
 则 $f(x)$ 亦[[MK115][连续]]
 
@@ -431,7 +431,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 根据[[MK115][连续定义]]可得[[MK151][原相]] $f_n^{-1}(z_0)$ 亦为开集，定义为 $u(x_0)\in\tau_X$
 
-根据[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]可得存在 $N_{x_0}$ 满足对于任意 $n>N_{x_0},x\in E$ 均有 $d(f_n(x),f(x))<\frac{\delta(x_0)}{3}$
+根据[[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]可得存在 $N_{x_0}$ 满足对于任意 $n>N_{x_0},x\in E$ 均有 $d(f_n(x),f(x))<\frac{\delta(x_0)}{3}$
 
 则对于任意 $v\in u(x_0)$ ，则根据[[MK38][三角性]]
 
@@ -443,7 +443,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 对于任意 $k\in K$ 存在 $x\in f^{-1}(S)$ 使得 $k\in u(x)\subset f^{-1}(S)$ 即 $K\subset f^{-1}(S)$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $K=f^{-1}(S)$ 又由于 $K=\bigcup_{x\in f^{-1}(S)}u(x)$ 且 $u(x)\in\tau_X$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $K=f^{-1}(S)$ 又由于 $K=\bigcup_{x\in f^{-1}(S)}u(x)$ 且 $u(x)\in\tau_X$
 
 则根据[[MK39][定义2]]可得 $K$ 是[[MK39][开集]]
 
@@ -451,7 +451,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ** 度量空间<<MK38>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK310][代数结构]] $<X,d>$ 运算 $d:X\times X\to\mathbb{R}$ 满足：
+定义[[~/文档/note/离散数学/Disc_Math.org::MK310][代数结构]] $<X,d>$ 运算 $d:X\times X\to\mathbb{R}$ 满足：
 
 （1） 非负性： $\forall\{x,y\}\subset X\rightarrow d(x,y)\geq0$
 
@@ -535,13 +535,13 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 根据定义若 $\forall x\in\varnothing\rightarrow\exists\delta(O(x,\delta)\subset\varnothing)$ 则空集是开集
 
-此处 $\rightarrow$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK60][蕴含]]，对于空集 $\vec{x}\in\varnothing$ 永假
+此处 $\rightarrow$ 为[[~/文档/note/离散数学/Disc_Math.org::MK60][蕴含]]，对于空集 $\vec{x}\in\varnothing$ 永假
 
 则根据真值表 $\forall x\in\varnothing\rightarrow\exists\delta(O(x,\delta)\subset\varnothing)$ 永真，故空集为开集
 
 ***** 全集
 
-对于任意 $x'\in O(x,\delta)$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK20][定义]]均有 $x'\in X$ 故根据定义必有 $O(x,\delta)\subset X$
+对于任意 $x'\in O(x,\delta)$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]均有 $x'\in X$ 故根据定义必有 $O(x,\delta)\subset X$
 
 即满足 $\forall x\in X\rightarrow\exists\delta(O(x,\delta)\subset X)$ 故 $X$ 是开集
 
@@ -581,7 +581,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 （2） 任元素合的补封闭 $\forall A\left(A\in\sigma(X)\rightarrow A^c\in\sigma(X)\right)$ 
 
-（3） [[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个元素的并封闭 $A_i\in\sigma(X)\rightarrow\bigcup_{i=1}^\infty A_i\in\sigma(X)$
+（3） [[~/文档/note/离散数学/Disc_Math.org::MK44][可数]]个元素的并封闭 $A_i\in\sigma(X)\rightarrow\bigcup_{i=1}^\infty A_i\in\sigma(X)$
 
 *** 性质
 
@@ -591,7 +591,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ***** 证明
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质]]中德摩根率可得 $\bigcap_{i=1}^\infty S_i=((\bigcap_{i=1}^\infty S_i)^c)^c=\left(\bigcup_{i=1}^\infty S_i^c\right)^c$
+根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的计算-性质]]中德摩根率可得 $\bigcap_{i=1}^\infty S_i=((\bigcap_{i=1}^\infty S_i)^c)^c=\left(\bigcup_{i=1}^\infty S_i^c\right)^c$
 
 由于 $S_i\in\sigma(X)$ 则有 $S^c_i\in\sigma(X)$ 则根据可数并封闭 $\bigcup_{i=1}^\infty S_i^c\subset\sigma(X)$
 
@@ -605,7 +605,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ***** 证明
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK334][补与减]]可得 $S_1-S_2=S_1\cap S^c_2$ 根据[[MK50][定义]]中（3）以及[[MK67][交封闭]]得 $S_1\cap S_2^c\in\sigma(X)$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK334][补与减]]可得 $S_1-S_2=S_1\cap S^c_2$ 根据[[MK50][定义]]中（3）以及[[MK67][交封闭]]得 $S_1\cap S_2^c\in\sigma(X)$
 
 根据[[MK65][Caratheodory定理]]可得若 $S_2$ 外测度可测，则满足 $\varphi(S_1)=\varphi(S_1\cap S_2)+\varphi(S_1-S_2)$
 
@@ -691,7 +691,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 ****** 包含本身
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]可得对于任意 $x\in E$ 均有 $y\in K$ 满足 $f(x)=y$
+根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]可得对于任意 $x\in E$ 均有 $y\in K$ 满足 $f(x)=y$
 
 根据 $g(K)=\left\{x\big|f(x)\in K\right\}$ 则结合上述条件可得 $g(K) = E$
 
@@ -701,11 +701,11 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 定义 $X_i\in A$ 则有 $g\left(\bigcup_{i=1}^\infty X_i\right)=\left\{x\big|f(x)\in\bigcup_{i=1}^\infty X_i\right\}$ 
 
-则对于任意 $x\in g\left(\bigcup_{i=1}^\infty X_i\right)$ 根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-运算]]可得 $f(x)\in\bigcup_{i=1}^\infty X_i\leftrightarrow\exists i\in\mathbb{N}\rightarrow f(x)\in X_i$
+则对于任意 $x\in g\left(\bigcup_{i=1}^\infty X_i\right)$ 根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的计算-运算]]可得 $f(x)\in\bigcup_{i=1}^\infty X_i\leftrightarrow\exists i\in\mathbb{N}\rightarrow f(x)\in X_i$
 
 故对于任意 $x\in g\left(\bigcup_{i=1}^\infty X_i\right)\leftrightarrow\left(\exist i\in\mathbb{N}^+\rightarrow x\in g(X_i))\leftrightarrow x\in\bigcup_{i=1}^\infty g(X_i)$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $g\left(\bigcup_{i=1}^\infty X_i\right)=\bigcup_{i=1}^\infty g(X_i)$
+故根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $g\left(\bigcup_{i=1}^\infty X_i\right)=\bigcup_{i=1}^\infty g(X_i)$
 
 则显然由于 $X_i\in A$ 故有 $g(X_i)\in\Sigma$ 且 $\Sigma$ 是[[MK50][ $\sigma$ 代数]]故 $g\left(\bigcup_{i=1}^\infty X_i\right)=\bigcup_{i=1}^\infty g(X_i)\in\Sigma$
 
@@ -719,7 +719,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 故有 $x\in \left(g(X)\right)^c\leftrightarrow f(x)\in X^c$ 
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $\left(g(X)\right)^c=g(X^c)$
+故根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $\left(g(X)\right)^c=g(X^c)$
 
 由于 $\Sigma$ 是[[MK50][ $\sigma$ 代数]]且 $g(X)\in\Sigma$ 故 $g(X^c)=(g(X))^c\in\Sigma$
 
@@ -727,7 +727,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 **** 性质6<<MK121>>
 
-对于集合 $X$ 的任意[[~/OneDrive/离散数学/Disc_Math.org::MK20][子集]] $F\subset X$ 定义 $G=\left\{F\cap g\big|g\in\sigma(X)\right\}$ 则 $G$ 是 $F$ 上的[[MK50][ $\sigma$ 代数]]
+对于集合 $X$ 的任意[[~/文档/note/离散数学/Disc_Math.org::MK20][子集]] $F\subset X$ 定义 $G=\left\{F\cap g\big|g\in\sigma(X)\right\}$ 则 $G$ 是 $F$ 上的[[MK50][ $\sigma$ 代数]]
 
 ***** 证明
 
@@ -745,7 +745,7 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 根据[[MK50][定义]]由于 $x_i\in\sigma(X)$ 故有 $\left(\bigcup_{i=1}^\infty x_i\right)\in\sigma(X)$ 故根据 $F$ 定义有 $F\cap\left(\bigcup_{i=1}^\infty x_i\right)\in G$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK327][分配律]]可得 $F\cap\left(\bigcup_{i=1}^\infty x_i\right)=\bigcup_{i=1}^\infty(x_i\cap F)=\bigcup_{i=1}^\infty f_i\in G$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK327][分配律]]可得 $F\cap\left(\bigcup_{i=1}^\infty x_i\right)=\bigcup_{i=1}^\infty(x_i\cap F)=\bigcup_{i=1}^\infty f_i\in G$
 
 则有对于任意 $f_i\in G$ 均有 $\bigcup_{i=1}^\infty f_i\in G$
 
@@ -763,11 +763,11 @@ $\underline{\lim_{n\to\infty}}A_n\subset\overline{\lim_{n\to\infty}}A_n$
 
 同理根据：
 
-（1）[[~/OneDrive/离散数学/Disc_Math.org::MK328][德摩根律]]
+（1）[[~/文档/note/离散数学/Disc_Math.org::MK328][德摩根律]]
 
-（2）[[~/OneDrive/离散数学/Disc_Math.org::MK78][德摩根律]]
+（2）[[~/文档/note/离散数学/Disc_Math.org::MK78][德摩根律]]
 
-（3）[[~/OneDrive/离散数学/Disc_Math.org::MK77][分配率]]
+（3）[[~/文档/note/离散数学/Disc_Math.org::MK77][分配率]]
 
 三条定律可有推导 
 
@@ -783,7 +783,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 根据传递性有 $e\in g^{c_F}\leftrightarrow\left(e\in\left(x^{c_X}\cap F\right)\right)$ 
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]] $g^{c_F}=x^{c_X}\cap F\in G$
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK5][外延公理]] $g^{c_F}=x^{c_X}\cap F\in G$
 
 故补集封闭
 
@@ -809,7 +809,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 ***** 证明
 
-定义 $L=\left\{Y\cap x\big|x\in\sigma_\Phi(X)\right\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]证明以下结论，故有 $L=\sigma_{\Psi}(Y)$
+定义 $L=\left\{Y\cap x\big|x\in\sigma_\Phi(X)\right\}$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]证明以下结论，故有 $L=\sigma_{\Psi}(Y)$
 
 ****** $\sigma_\Psi(Y)\subset L$
 
@@ -841,7 +841,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 由于均为[[MK50][ $\sigma$ 代数]]，故有 $\bigcup_{i=1}^\infty A_i\in\sigma_{\Phi}(X)$ 且 $\bigcup_{i=1}^\infty (A_i\cap Y)\in\sigma_{\Psi}(Y)$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][命题逻辑-命题公式-逻辑等价-逻辑等价式举例]]-分配率有 $Y\cap\left(\bigcup_{i=1}^\infty A_i\right)\in\sigma_{\Psi}(Y)$
+根据[[~/文档/note/离散数学/Disc_Math.org][命题逻辑-命题公式-逻辑等价-逻辑等价式举例]]-分配率有 $Y\cap\left(\bigcup_{i=1}^\infty A_i\right)\in\sigma_{\Psi}(Y)$
 
 故结合上述条件 $\bigcup_{i=1}^\infty A_i\in K$
 
@@ -885,7 +885,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 由于 $\mathcal{B}(X)$ 是 $T$ 生成的，故根据[[MK85][定义]]可得 $\mathcal{B}(X)\subset\sigma_{\mathcal{C}}(X)$ 
 
-同理可证 $\sigma_{\mathcal{C}}(X)\subset\mathcal{B}(X)$ 故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集-自反性]]可得 $\sigma_{\mathcal{C}}(X)=\mathcal{B}(X)$ 
+同理可证 $\sigma_{\mathcal{C}}(X)\subset\mathcal{B}(X)$ 故根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-子集-自反性]]可得 $\sigma_{\mathcal{C}}(X)=\mathcal{B}(X)$ 
 
 **** 连续映射原相一致<<MK117>>
 
@@ -919,13 +919,13 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 （2） 规范性： $\rho(\varnothing)=0$
 
-（3） 可数可加性： $\rho(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\rho(A_i),A_i\in\Gamma$ 注意此处 $i$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个，且当 $i\ne j$ 时 $A_i\cap A_j=\varnothing$
+（3） 可数可加性： $\rho(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\rho(A_i),A_i\in\Gamma$ 注意此处 $i$ 为[[~/文档/note/离散数学/Disc_Math.org::MK44][可数]]个，且当 $i\ne j$ 时 $A_i\cap A_j=\varnothing$
 
 则称 $\rho$ 是 $X$ 上的测度，其中 $\Gamma$ 是可测集。
 
 ** 外测度<<MK61>>
 
-定义集合 $X$ 则定义映射 $\varphi:\rho(X)\to\mathbb{R}^+\cup\{\infty\}$ 其中 $\rho(X)$ 是 $X$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK25][幂集]]
+定义集合 $X$ 则定义映射 $\varphi:\rho(X)\to\mathbb{R}^+\cup\{\infty\}$ 其中 $\rho(X)$ 是 $X$ 的[[~/文档/note/离散数学/Disc_Math.org::MK25][幂集]]
 
 若映射满足：
 
@@ -941,7 +941,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 ** 外侧度可测集<<MK174>>
 
-定义结构 $<X,\varphi>$ 其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
+定义结构 $<X,\varphi>$ 其中 $E$ 为[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
 
 对于任意 $S\subset X$ 若满足 $\forall A\subset X\rightarrow\varphi(A)=\varphi(A\cap S)+\varphi(A/S)$
 
@@ -949,7 +949,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 ** 外测度空间<<MK212>>
 
-若结构体 $<X,\varphi>$ 其中 $X$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是 $X$ 上的[[MK61][外测度]]，则定义该结构体为 $X$ 的测度空间
+若结构体 $<X,\varphi>$ 其中 $X$ 为[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是 $X$ 上的[[MK61][外测度]]，则定义该结构体为 $X$ 的测度空间
 
 *** 子空间<<MK208>>
 
@@ -985,7 +985,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 整理得 $\varphi(A/S)>\varphi((A/S)\cap Y)+\varphi(A/Y)$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK329][集合计算]]易证得 $((A/S)\cap Y)\cup(A/Y)=A/S$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK329][集合计算]]易证得 $((A/S)\cap Y)\cup(A/Y)=A/S$
 
 则根据[[MK61][次可数可加]]必有 $\varphi(A/S)\leq\varphi((A/S)\cap Y)+\varphi(A/Y)$ 与基于假设推出结论矛盾
 
@@ -1007,7 +1007,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 ** Caratheodory定理<<MK65>>
 
-定义[[MK212][外侧度空间]] $<X,\varphi>$ 其中 $X$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 其中 $X$ 为[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
 
 则 $<X,\varphi>$ 上所有[[MK174][外测度可测集]] $\mathcal{M}$ 有如下行至：
 
@@ -1051,7 +1051,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 假设 $S_1,S_2$ 均是外测度可测集，取任意 $A\subset X$ 根据[[MK61][次可加性]] $\varphi(A)\leq\varphi(A\cap(S_1\cup S_2))+\varphi(A/(S_1\cup S_2))$
 
-则根据可测集定义，[[MK61][次可加性]]以及[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质]]中分配率、结合律、补与减有：
+则根据可测集定义，[[MK61][次可加性]]以及[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的计算-性质]]中分配率、结合律、补与减有：
 
 \begin{aligned}
 \varphi(A)=&\varphi(A\cap S_1)+\varphi(A/S_1)\\
@@ -1110,7 +1110,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 根据[[MK63][补集可测]]以及[[MK62][有限可加]]可得由 $S^c_j,\ \bigcup_{i=1}^{j-1} S_i$ 均可测，则 $S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right),\ \left(S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right)\right)^c$ 可测 
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK328][德摩根律]] $\left(S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right)^c\right)^c=S_j\cap\left(\bigcup_{i=1}^{j-1} S_i\right)^c=S_j/\left(\bigcup_{i=1}^{j-1} S_i\right)=S'_j$ 
+根据[[~/文档/note/离散数学/Disc_Math.org::MK328][德摩根律]] $\left(S^c_j\cup\left(\bigcup_{i=1}^{j-1} S_i\right)^c\right)^c=S_j\cap\left(\bigcup_{i=1}^{j-1} S_i\right)^c=S_j/\left(\bigcup_{i=1}^{j-1} S_i\right)=S'_j$ 
 
 即 $S'_j$ 外而测度可测，另根据定义显然有 $\bigcup_{i=1}^nS'_i=\bigcup_{i=1}^nS_i$ （证明 $\forall x\big(x\in\bigcup_{i=1}^nS_i\leftrightarrow x\in\bigcup_{i=1}^nS'_i\big)$ ）
 
@@ -1118,7 +1118,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 同理 $\bigcup_{i=1}^nS_i=\bigcup_{i=1}^nS'_i\subset\bigcup_{i=1}^\infty S'_i$ 则有 $\bigcup_{i=1}^\infty S_i\subset\bigcup_{i=1}^\infty S'_i$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][定理1]]可得 $\bigcup_{i=1}^\infty S_i=\bigcup_{i=1}^\infty S'_i$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK21][定理1]]可得 $\bigcup_{i=1}^\infty S_i=\bigcup_{i=1}^\infty S'_i$
 
 故进一步根据[[MK64][不相交可数可加]]可得 $\bigcup_{i=1}^\infty S'_i$ 外测度可测，即 $\bigcup_{i=1}^\infty S_i$ 亦外测度可测
 
@@ -1132,7 +1132,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 *** 开集构造定理<<MK47>>
 
-直线（ $\mathbb{R}$ ）上的开集可表示为[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的[[MK42][构成区间]]的并
+直线（ $\mathbb{R}$ ）上的开集可表示为[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的[[MK42][构成区间]]的并
 
 **** 证明
 
@@ -1150,9 +1150,9 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 根据[[MK43][有理数稠密性]]可知，对于任意开区间 $(a,b)$ 均存在一个有理数 $q\in(a,b)$
 
-对每一个构成区间任取一个有理数，则构成[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-单射]]
+对每一个构成区间任取一个有理数，则构成[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-单射]]
 
-进一步根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数]]可得 $|T|\leq|\mathbb{Q}|$ 
+进一步根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-基数]]可得 $|T|\leq|\mathbb{Q}|$ 
 
 由于有理数是可数集，故得 $T$ 即是至多可数集
 
@@ -1164,7 +1164,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 对于任意 $x\in G$ 定义开区间集合 $A_{x}=\left\{(a,b)\big|x\in (a,b)\land(a,b)\subset G\right\}$
 
-由于是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]，故 $x$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]故有 $\exists\delta>0\land\delta\in\mathbb{R}\rightarrow(x-\delta,x+\delta)\subset G$ 故 $A\ne\varnothing$
+由于是[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]，故 $x$ 是[[~/文档/note/数学分析/Chap11Note.org::MK7][内点]]故有 $\exists\delta>0\land\delta\in\mathbb{R}\rightarrow(x-\delta,x+\delta)\subset G$ 故 $A\ne\varnothing$
 
 进一步定义 $\{a\}_{x}=\{a|(a,b)\in A_{x}\},\{b\}_{x}=\{b|(a,b)\in A_{x}\}$ 则定义 $\alpha=\inf\{a\}_{x},\beta=\sup\{b\}_{x}$
 
@@ -1172,23 +1172,23 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 则有 $y\in(a,b)\subset G$ ，故有 $(\alpha,\beta)\subset G$ 
 
-若 $\alpha\in G$ 由于 $G$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]，则存在 $O(\alpha,\delta)\subset G$
+若 $\alpha\in G$ 由于 $G$ 是[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]，则存在 $O(\alpha,\delta)\subset G$
 
 结合上述证明可得 $(\alpha-\delta,\beta)\subset G$ 与下确界定义矛盾，故 $\alpha\not\in G$ 同理可证 $\beta\not\in G$
 
 故 $(\alpha,\beta)$ 是 $x$ 在 $G$ 上的构成区间，即 $(\alpha,\beta)\in T$ 故 $x\in G'$
 
-综上所属 $\forall x\in G'\rightarrow x\in G\land \forall x\in G\rightarrow x\in G'$ 则根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $G'=G$
+综上所属 $\forall x\in G'\rightarrow x\in G\land \forall x\in G\rightarrow x\in G'$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK5][外延公理]]可得 $G'=G$
 
 **** 推论<<MK155>>
 
-对于[[MK143][广义实数]]定义上的直线，开集可有由[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并之后，与 $\pm\infty$ 的组合并组成
+对于[[MK143][广义实数]]定义上的直线，开集可有由[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并之后，与 $\pm\infty$ 的组合并组成
 
 ***** 证明
 
 根据[[MK152][定理3]]可得广义实数 $\mathbb{R}_e$ 上的开集由 $\mathbb{R}$ 上的开集与 $\pm\infty$ 的组合并组成
 
-由于 $\mathbb{R}$ 上的开集可有由[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并表示。
+由于 $\mathbb{R}$ 上的开集可有由[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并表示。
 
 故综上所述，命题成立
 
@@ -1198,7 +1198,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 **** 证明
 
-对于任意闭集 $K\in\mathbb{R}$ 根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]可得其补集 $K^c$ 是开集
+对于任意闭集 $K\in\mathbb{R}$ 根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]可得其补集 $K^c$ 是开集
 
 相反 $K$ 可以理解为 $\mathbb{R}$ 去除开集 $K^c$ 根据[[MK47][开集构造定理]]可得 $K^c$ 可由至多可数个不相交的开区间的并构成
 
@@ -1214,13 +1214,13 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 ***** 前提定义
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK34][完备集]]可得不含孤立点的闭集是完备集。
+根据[[~/文档/note/数学分析/Chap11Note.org::MK34][完备集]]可得不含孤立点的闭集是完备集。
 
-假设点 $x$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK14][孤立点]]，则根据定义存在 $\delta>0$ 使得去心领域 $O(x,\delta)/x$ 不属于 $S$
+假设点 $x$ 是[[~/文档/note/数学分析/Chap11Note.org::MK14][孤立点]]，则根据定义存在 $\delta>0$ 使得去心领域 $O(x,\delta)/x$ 不属于 $S$
 
 根据[[MK48][闭集构造]]可得任意闭集均可表示为为直线 $\mathbb{R}$ 去掉至多可数个开区间的并。
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]]得 $S$ 的补集 $S^c$ 是开集
+根据[[~/文档/note/数学分析/Chap11Note.org::P1][定理1]]得 $S$ 的补集 $S^c$ 是开集
 
 根据[[MK47][开集构造]]可得 $S^c=\bigcup_{i=1}^\infty(a_i,b_i)$ 其中 $(a_i,b_i)$ 是[[MK42][构成区间]]
 
@@ -1272,7 +1272,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 根据[[MK347][证明]] $E'_ n-E_ n=\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK40][结合律]]可得 $E'_ {n+1}=\bigcup_{\lambda\in\Lambda_{n+1}}[a_{\lambda},b_\lambda]$ 
+根据[[~/文档/note/离散数学/Disc_Math.org::MK40][结合律]]可得 $E'_ {n+1}=\bigcup_{\lambda\in\Lambda_{n+1}}[a_{\lambda},b_\lambda]$ 
 
 定义 $E'_0=[0,1]$ 则 $P=[0,1]-\bigcup_{i=1}^\infty E_n$ 即为康托三分集
 
@@ -1312,7 +1312,7 @@ e\in g^{c_F}&\leftrightarrow\left(e\not\in g\land e\in F\right)\\
 
 即 $x\in E_n-E'_ n$ 故有 $\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)\subset E_n-E'_ n$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $E_n-E'_ n=\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $E_n-E'_ n=\bigcup_{\lambda\in\Lambda_n}\left(\left[a_\lambda, a_\lambda+\frac{b_\lambda-a_\lambda}{3}\right] \cup\left[b_\lambda-\frac{b_\lambda-a_\lambda}{3},b_\lambda\right]\right)$
 
 ***** 有限相等<<MK348>>
 
@@ -1324,7 +1324,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 则根据数学归纳法可得 $E'_n=E'_0-E_1-...-E_{n-1}$
 
-又根据[[~/OneDrive/离散数学/Disc_Math.org::MK359][连续减]]可得 $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
+又根据[[~/文档/note/离散数学/Disc_Math.org::MK359][连续减]]可得 $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 ***** 包含端点<<MK349>>
 
@@ -1372,13 +1372,13 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 即 $a_\lambda\to\alpha_\lambda0,a_\lambda+\frac{b_\lambda-a_\lambda}{3}\to\alpha_\lambda1,b_\lambda-a_\lambda}{3}\to\beta_\lambda0,b_\lambda\to\beta_\lambda1$
 
-由于三分集是无限划分，故表达的二进制小数可延伸至[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]位
+由于三分集是无限划分，故表达的二进制小数可延伸至[[~/文档/note/离散数学/Disc_Math.org::MK44][可数]]位
 
 又根据[[MK349][包含端点]]可得所有 $E'_n$ 的端点均属于 $P$ ，故实数 $[0,1]$ 内的所有点均有对应的映射
 
-即 $\sigma:P\to[0,1]$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK198][满射]]，则根据[[~/OneDrive/离散数学/Disc_Math.org::MK3][基数]]可得 $|P|\geq|[0,1]|$ 又根据[[MK36][定理0]]以及传递性可得 $|P|\geq|\mathbb{R}|$
+即 $\sigma:P\to[0,1]$ 是[[~/文档/note/离散数学/Disc_Math.org::MK198][满射]]，则根据[[~/文档/note/离散数学/Disc_Math.org::MK3][基数]]可得 $|P|\geq|[0,1]|$ 又根据[[MK36][定理0]]以及传递性可得 $|P|\geq|\mathbb{R}|$
 
-由于 $P$ 是从 $\mathbb{R}$ 上取的，故显然有 $|P|\leq|\mathbb{R}|$ 根据基数定义中[[~/OneDrive/离散数学/Disc_Math.org::MK4][伯恩斯坦定理]] $|P|=|\mathbb{R}|$
+由于 $P$ 是从 $\mathbb{R}$ 上取的，故显然有 $|P|\leq|\mathbb{R}|$ 根据基数定义中[[~/文档/note/离散数学/Disc_Math.org::MK4][伯恩斯坦定理]] $|P|=|\mathbb{R}|$
 
 ***** 可测且[[MK51][外测度]]为零<<MK119>>
 
@@ -1400,7 +1400,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 ** 有限欧式空间开集构造定理<<MK83>>
 
-对于任意[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]] $G\subset\mathbb{R}^n\land n<\infty$ 其可表述为[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的半开闭[[MK13][区间]]的并
+对于任意[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]] $G\subset\mathbb{R}^n\land n<\infty$ 其可表述为[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的半开闭[[MK13][区间]]的并
 
 *** 证明
 
@@ -1414,7 +1414,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 由于有理数可数，且 $\mathbb{R}^n$ 中有理点是 $\mathbb{R}$ 中有理点的 $n$ 次直积
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理2]]可得 $H_0$ 是可数集
+则根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理2]]可得 $H_0$ 是可数集
 
 将 $H_0$ 中所有矩体二分，则矩体的长度为 $\frac{1}{2}$ ，定义此次划分的所有矩体集合为 $H_1$ 同理可证是可数集
 
@@ -1424,15 +1424,15 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 定义 $\Gamma_0=\left\{J\left|J\in H_0\land J\subset G\right\}$ 进一步定义 $\Gamma_k=\left\{J\left|J\in H_k\land\left(J\subset G/\bigcup_{i=0}^{k-1}\left(\bigcup_{J\in\Gamma_i}J\right)\right)\right\}$
 
-由于 $\Gamma_k\subset H_k$ 且 $H_k$ 可数，则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数-无限集]]可得 $\Gamma_k$ 至多可数
+由于 $\Gamma_k\subset H_k$ 且 $H_k$ 可数，则根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-基数-无限集]]可得 $\Gamma_k$ 至多可数
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理1]]可得 $\bigcup_{i=0}^\infty\Gamma_i$ 亦为至多可数
+则根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理1]]可得 $\bigcup_{i=0}^\infty\Gamma_i$ 亦为至多可数
 
 且根据构造，每个 $J\in\bigcup_{i=0}^\infty\Gamma_i$ 是区间，且两两互不相交 
 
 **** 证明结论
 
-根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]定义，对于任意 $x\in G$ 均存在 $\delta\in\mathbb{R}\land\delta>0$ 满足 $O(x,\delta)\subset G$ 
+根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]]定义，对于任意 $x\in G$ 均存在 $\delta\in\mathbb{R}\land\delta>0$ 满足 $O(x,\delta)\subset G$ 
 
 对于正闭矩体 $J$ 包含的点集，距离最远的点为矩体对角端点，距离为 $\sqrt{nl^2}$ 其中 $l$ 为矩体的边长
 
@@ -1454,7 +1454,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 故对于任意 $x\in\bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$ 均有 $x\in G$ 
 
-综上所述根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $G=\bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$
+综上所述根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $G=\bigcup_{i=0}^\infty\left(\bigcup_{J\in\Gamma_i}J\right)$
 
 证毕
 
@@ -1466,7 +1466,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 *** 域公理<<MK4>>
 
-对于任意 $\{a,b\}\subset\mathbb{R}$ 有二元[[~/OneDrive/离散数学/Disc_Math.org::MK304][运算]] $a+b$ 与 $a\cdot b$ 定义为加法，乘法，满足：
+对于任意 $\{a,b\}\subset\mathbb{R}$ 有二元[[~/文档/note/离散数学/Disc_Math.org::MK304][运算]] $a+b$ 与 $a\cdot b$ 定义为加法，乘法，满足：
 
 （0） 封闭性： $\forall a\in\mathbb{R}\forall b\in\mathbb{R}\left(a+b\in\mathbb{R}\land a\cdot b\in\mathbb{R}\right)$
 
@@ -1476,9 +1476,9 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 （3） 分配率： $\forall a\in\mathbb{R}\forall b\in\mathbb{R}\forall c\in\mathbb{R}\left((a+b)\cdot c=a\cdot c+b\cdot c\right)$
 
-（4） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]： $\exists 0\in\mathbb{R}\forall a\in\mathbb{R}\left(0+a=a\right)\land\exists1\in\mathbb{R}\forall a\in\mathbb{R}\left(1\cdot a=a\right)$
+（4） 存在加/乘法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]： $\exists 0\in\mathbb{R}\forall a\in\mathbb{R}\left(0+a=a\right)\land\exists1\in\mathbb{R}\forall a\in\mathbb{R}\left(1\cdot a=a\right)$
 
-（5） 存在加/乘法[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]： $\forall a\in\mathbb{R}\rightarrow\exists (-a)\in\mathbb{R}\left(-a+a=0\right)\land\forall (a\in\mathbb{R}\land a\ne0)\rightarrow\exists a^{-1}\in\mathbb{R}\left(a^{-1}\cdot a=1\right)$
+（5） 存在加/乘法[[~/文档/note/离散数学/Disc_Math.org::MK314][逆元]]： $\forall a\in\mathbb{R}\rightarrow\exists (-a)\in\mathbb{R}\left(-a+a=0\right)\land\forall (a\in\mathbb{R}\land a\ne0)\rightarrow\exists a^{-1}\in\mathbb{R}\left(a^{-1}\cdot a=1\right)$
 
 **** 不可数加法<<MK53>>
 
@@ -1508,7 +1508,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 **** 加法幺元的逆元是其本身<<MK211>>
 
-即 $-0=0$ 因为 $0+0=0$ 且根据[[~/OneDrive/离散数学/Disc_Math.org::MK316][性质2]]可得逆元唯一
+即 $-0=0$ 因为 $0+0=0$ 且根据[[~/文档/note/离散数学/Disc_Math.org::MK316][性质2]]可得逆元唯一
 
 **** 减法定义<<MK6>>
 
@@ -1520,7 +1520,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 **** 零元<<MK16>>
 
-加法幺元 $0$ 是乘法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-零元]]
+加法幺元 $0$ 是乘法[[~/文档/note/离散数学/Disc_Math.org][抽象代数-特殊元素-零元]]
 
 ***** 证明
 
@@ -1544,7 +1544,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 故有 $a+(-1)\cdot a=0$ 即 $(-1)\cdot a$ 是逆元
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元-性质2]]可得逆元唯一，故有 $(-1)\cdot a=a$
+根据[[~/文档/note/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元-性质2]]可得逆元唯一，故有 $(-1)\cdot a=a$
 
 **** 相等充要条件<<MK8>>
 
@@ -1560,15 +1560,15 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 若 $a-b=0$ 则根据[[MK6][减法]]可得 $a+(-b)=0$
 
-则 $(-b)$ 是 $a$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]，且有 $-b$ 亦定义为 $b$ 的逆元
+则 $(-b)$ 是 $a$ 的[[~/文档/note/离散数学/Disc_Math.org::MK314][逆元]]，且有 $-b$ 亦定义为 $b$ 的逆元
 
-由于加法满足结合律，故根据[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元-性质3]]可得 $a,b$ 逆元的逆元均为 $a,b$ 本身 
+由于加法满足结合律，故根据[[~/文档/note/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元-性质3]]可得 $a,b$ 逆元的逆元均为 $a,b$ 本身 
 
-由于 $a,b$ 的逆元均为 $-b$ 根据[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元-性质2]]可得 $-b$ 的逆元唯一，故有 $a=b$
+由于 $a,b$ 的逆元均为 $-b$ 根据[[~/文档/note/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元-性质2]]可得 $-b$ 的逆元唯一，故有 $a=b$
 
 **** 相等是等价关系<<MK11>>
 
-根据法[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-等价关系]]若 $\{a,b\}\subset\mathbb{R}$ 则 $a=b$ 满足自反性，对称性以及传递性
+根据法[[~/文档/note/离散数学/Disc_Math.org][关系与函数-特殊关系-等价关系]]若 $\{a,b\}\subset\mathbb{R}$ 则 $a=b$ 满足自反性，对称性以及传递性
 
 ***** 证明
 
@@ -1586,7 +1586,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 若 $a=b\land b=c$ 则有等价条件 $a-b=0\land b-c=0$
 
-由于加法是[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-代数的构建-运算]]故满足单值性，则有 $a-b+b-c=0+0$
+由于加法是[[~/文档/note/离散数学/Disc_Math.org][抽象代数-代数的构建-运算]]故满足单值性，则有 $a-b+b-c=0+0$
 
 根据域公理结合律，分配率可得 $a-b+b-c=a-c=0+0=0$ 即 $a-c=0$
 
@@ -1598,7 +1598,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 *** 序公理<<MK5>>
 
-对于任意 $\{a,b,c\}\subset\mathbb{R}$ 存在[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系]] $>$ 满足：
+对于任意 $\{a,b,c\}\subset\mathbb{R}$ 存在[[~/文档/note/离散数学/Disc_Math.org][关系与函数-二元关系]] $>$ 满足：
 
 1. 三歧性： $a>b, b>a, a=b$ 上述三个条件有且仅有一个成立
 
@@ -1608,7 +1608,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 **** 大于等于关系<<MK14>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系]] $\geq$ 为 $a\geq b{|\!\!\!=\!\!\!|}a>b\lor a=b$
+定义[[~/文档/note/离散数学/Disc_Math.org][关系与函数-二元关系]] $\geq$ 为 $a\geq b{|\!\!\!=\!\!\!|}a>b\lor a=b$
 
 则对于任意 $\{a,b,c\}\subset\mathbb{R}$ 满足：
 
@@ -1642,7 +1642,7 @@ $E'_n=E'_0-\bigcup_{i=1}^{n-1} E_i$
 
 仅证加法相容，乘法同理。若 $a\geq b$ 则等价于 $a>b\lor a=b$ 故：
 
-（1） $a=b$ 根据[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-代数的构建-运算]]单值性有 $a+c=b+c$
+（1） $a=b$ 根据[[~/文档/note/离散数学/Disc_Math.org][抽象代数-代数的构建-运算]]单值性有 $a+c=b+c$
 
 （2） $a>b$ 根据序公理计算相容可得 $a+c>b+c$
 
@@ -1689,7 +1689,7 @@ a\leq b\land c\leq d&\rightarrow a+c\leq b+d\\
 
 ***** 证明
 
-由于 $c<0$ 则根据[[MK4][域公理5]]可得存在[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]] $c'$ 且根据[[MK17][逆元等价]]可得 $(-1)c'=c$
+由于 $c<0$ 则根据[[MK4][域公理5]]可得存在[[~/文档/note/离散数学/Disc_Math.org::MK314][逆元]] $c'$ 且根据[[MK17][逆元等价]]可得 $(-1)c'=c$
 
 由于 $c=(-1)c'<0$ 则根据[[MK29][加法逆元]]可得 $(-1)\cdot 0<(-1)\cdot(-1)\cdot c'$
 
@@ -1729,9 +1729,9 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 进一步根据运算相容可得 $(-1)(-1)bc>(-1)(-1)ac$
 
-由于 $-1$ 是 $1$ 的加法[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]，进一步根据[[MK17][逆元等价]]可得 $(-1)(-1)=1$
+由于 $-1$ 是 $1$ 的加法[[~/文档/note/离散数学/Disc_Math.org::MK314][逆元]]，进一步根据[[MK17][逆元等价]]可得 $(-1)(-1)=1$
 
-且 $1$ 是乘法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]，故有 $bc>ac$
+且 $1$ 是乘法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]，故有 $bc>ac$
 
 **** 乘法逆元1<<MK139>>
 
@@ -1811,7 +1811,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 根据（2）有及[[MK14][大于等于]]定义有 $\frac{a+b}{2}<b\rightarrow \frac{a+b}{2}\leq b$
 
-根据[[MK14][大于等于]]传递性有 $a\leq x\leq b$ 故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\left[a,\frac{a+b}{2}\right]\subset[a,b]$
+根据[[MK14][大于等于]]传递性有 $a\leq x\leq b$ 故根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-包含]]可得 $\left[a,\frac{a+b}{2}\right]\subset[a,b]$
 
 同理可证 $\left[\frac{a+b}{2},b\right]\subset[a,b]$
 
@@ -1827,13 +1827,13 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 则定义 $I=\prod_{i=1}^n[a_i,b_i]$ 即 $n$ 个一维区间 $[a_i,b_i]$ 的笛卡尔积
 
-***** 开区间是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]<<MK277>>
+***** 开区间是[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]<<MK277>>
 
-对于任意 $(a,b)\land\{a,b\}\subset\mathbb{R}$ 若 $a\not<b$ 则有 $(a,b)=\varnothing$ 根据是[[~/OneDrive/数学分析/Chap11Note.org::MK15][定理8]]可得是开集
+对于任意 $(a,b)\land\{a,b\}\subset\mathbb{R}$ 若 $a\not<b$ 则有 $(a,b)=\varnothing$ 根据是[[~/文档/note/数学分析/Chap11Note.org::MK15][定理8]]可得是开集
 
 若 $a<b$ 则对于任意 $x\in(a,b)$ 可得 $a<x<b$ 定义 $\delta=\min\left(\frac{b-x}{2},\frac{x-a}{2}\right)$
 
-易证得 $(x-\delta,x+\delta)\subset(a,b)$ 故 $x$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，根据 $x$ 的任意性可得 $(a,b)$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
+易证得 $(x-\delta,x+\delta)\subset(a,b)$ 故 $x$ 是[[~/文档/note/数学分析/Chap11Note.org::MK7][内点]]，根据 $x$ 的任意性可得 $(a,b)$ 是[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]
 
 *** 连续性公理<<MK3>>
 
@@ -1953,7 +1953,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 定义 $I=\{i|i\in\mathbb{N}\land 0\leq i< n\}$ 定义 $\exists i\in I\rightarrow i\leq a< i+1$ 的逆否命题为 $\forall i\in I\rightarrow \lnot(i\leq a< i+1)$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][命题逻辑-命题公式-命题公式关系-逻辑等价-举例-德摩根律]]可得等价命题 $\forall i\in I\rightarrow (a<i\lor a\geq i+1)$
+根据[[~/文档/note/离散数学/Disc_Math.org][命题逻辑-命题公式-命题公式关系-逻辑等价-举例-德摩根律]]可得等价命题 $\forall i\in I\rightarrow (a<i\lor a\geq i+1)$
 
 假设成立，故：
 
@@ -2015,7 +2015,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 故对于任意 $n$ 均易证 $a^{S_n}\leq a^K$ 进一步易证 $\lim_{n\to\infty}a^{S_n}\leq a^K$
 
-综上所述，数列 $\{a^{S_n}\}$ 单调递增且有上界，根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 $\lim_{n\to\infty}a^{S_n}\in\mathbb{R}$
+综上所述，数列 $\{a^{S_n}\}$ 单调递增且有上界，根据[[~/文档/note/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 $\lim_{n\to\infty}a^{S_n}\in\mathbb{R}$
 
 同理易证当 $0<a<1$ 以及 $a=1$ 时同样有 $\lim_{n\to\infty}a^{S_n}\in\mathbb{R}$
 
@@ -2033,17 +2033,17 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 满足[[MK4][域公理]]以及[[MK5][序公理]]的前提下，以下六组定理等价：
 
-（1） [[~/OneDrive/数学分析/Chap11Note.org::MK9][确界存在定理]]（确界亦为实数）
+（1） [[~/文档/note/数学分析/Chap11Note.org::MK9][确界存在定理]]（确界亦为实数）
 
-（2） [[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]（收敛于实数）
+（2） [[~/文档/note/数学分析/Chap11Note.org::MK17][单调有界数列定理]]（收敛于实数）
 
-（3） [[~/OneDrive/数学分析/Chap11Note.org::MK20][闭区间套定理]]（收敛于实数） + [[MK19][阿基米德性质]]
+（3） [[~/文档/note/数学分析/Chap11Note.org::MK20][闭区间套定理]]（收敛于实数） + [[MK19][阿基米德性质]]
 
 （4） 有限覆盖定理：闭[[MK13][区间]] $[a,b]$ 上的开覆盖 $H$ 中存在有限个开区间，构成 $[a,b]$ 上的一个覆盖
 
-（5） 聚点定理：若 $S\in\mathbb{R}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK43][无限集]]且有界，则必有[[~/OneDrive/数学分析/Chap11Note.org::MK8][聚点]]
+（5） 聚点定理：若 $S\in\mathbb{R}$ 是[[~/文档/note/离散数学/Disc_Math.org::MK43][无限集]]且有界，则必有[[~/文档/note/数学分析/Chap11Note.org::MK8][聚点]]
 
-（6） [[~/OneDrive/数学分析/Chap11Note.org::MK21][柯西收敛原理]]（收敛于实数） + [[MK19][阿基米德性质]]
+（6） [[~/文档/note/数学分析/Chap11Note.org::MK21][柯西收敛原理]]（收敛于实数） + [[MK19][阿基米德性质]]
 
 **** 证明
 
@@ -2103,9 +2103,9 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 ****** 反正法假设
 
-根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理-前提定义-开覆盖]]的定义
+根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理-前提定义-开覆盖]]的定义
 
-故任意 $U\in H$ 是满足[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-开集定义]]的集合
+故任意 $U\in H$ 是满足[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-开集定义]]的集合
 
 假设不能被有限个开集覆盖
 
@@ -2151,9 +2151,9 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 由于 $\xi\in[a,b]$ 且 $H$ 是覆盖，故必然存在 $\xi\in C\in H$ 
 
-其中 $C$ 是一个满足[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-开集定义]]的开集
+其中 $C$ 是一个满足[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-开集定义]]的开集
 
-则根据开集定义可知 $\xi$ 是[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-点的定义-内点]]，故 $\exists\epsilon>0\rightarrow (\xi-\epsilon,\xi+\epsilon)\subset C$
+则根据开集定义可知 $\xi$ 是[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-点的定义-内点]]，故 $\exists\epsilon>0\rightarrow (\xi-\epsilon,\xi+\epsilon)\subset C$
 
 由于 $\lim_{n\to\infty}a_n=\lim_{n\to\infty}b_n=\xi$ 故必存在 $N$ 满足 $\forall n>N\rightarrow\xi-a_n<\epsilon\land b_n-\xi<\epsilon$
 
@@ -2165,7 +2165,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 因为有界，故有上下界，即 $\forall x\in S\left(\exists \{a,b\}\in R\rightarrow a<x<b\right)$ 故根据[[MK13][区间]]可得 $S\subset [a,b]$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-点的定义-聚点-充要条件1]]
+根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-点的定义-聚点-充要条件1]]
 
 定义存在聚点的条件 $\exists x\in S\left(\forall\epsilon>0\rightarrow\exists s\in S(s\ne x\land s\in(x-\epsilon,x+\epsilon))\right)$
 
@@ -2187,7 +2187,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 假设阿基米德性质不成立，故 $\forall n\in\mathbb{N}^+\rightarrow na<b$ 则数列 $\{na\}$ 有界
 
-显然 $\{na\}\sim\mathbb{N}$ 即为可数集，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-可数集]]可知 $\{na\}$ 是无限集
+显然 $\{na\}\sim\mathbb{N}$ 即为可数集，根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-可数集]]可知 $\{na\}$ 是无限集
 
 故根据（5）必存在聚点
 
@@ -2199,7 +2199,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 ****** 柯西收敛原理
 
-定义 $\{x_n\}$ 是满足 $\forall \epsilon>0,\exists N,\forall n,m>N\Rightarrow |x_n-x_m|<\epsilon$ 的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-可数集]]
+定义 $\{x_n\}$ 是满足 $\forall \epsilon>0,\exists N,\forall n,m>N\Rightarrow |x_n-x_m|<\epsilon$ 的[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-可数集]]
 
 根据可数集定义 $\{x_n\}$ 是无限集，则根据（5）存在 $\xi\in\mathbb{R}$ 满足 $\forall\epsilon>0,\exists x_M\in\{x_n\}\rightarrow x_M\in(\xi-\epsilon,\xi+\epsilon)$
 
@@ -2271,13 +2271,13 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 *** 定理0<<MK36>>
 
-实数上的任意[[MK13][区间]]均与实数[[~/OneDrive/离散数学/Disc_Math.org::MK26][对等]]
+实数上的任意[[MK13][区间]]均与实数[[~/文档/note/离散数学/Disc_Math.org::MK26][对等]]
 
 **** 证明
 
 ***** 单一开区间
 
-定义区间 $(a,b)\subset\mathbb{R}$ 显然函数 $\tan(x)$ 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-双射]]函数
+定义区间 $(a,b)\subset\mathbb{R}$ 显然函数 $\tan(x)$ 是[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-双射]]函数
 
 函数其值域是 $\mathbb{R}$ 定义域为弧度 $x\in\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ 则根据对等定义有 $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\sim\mathbb{R}$
 
@@ -2293,7 +2293,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 定义区间 $[a,b]\subset\mathbb{R}$ 根据开区间证明有 $(a,b)\sim\mathbb{R}$ 另有显然 $[a,b]\sim[a,b]\subset\mathbb{R}$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数-伯恩斯坦定理]]可得 $|[a,b]|=|\mathbb{R}|$
+则根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-基数-伯恩斯坦定理]]可得 $|[a,b]|=|\mathbb{R}|$
 
 由于两者均为无限集，故基数相等与对等等价。
 
@@ -2305,11 +2305,11 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 *** 定理1
 
-实数集合 $\mathbb{R}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK324][不可数集]]
+实数集合 $\mathbb{R}$ 是[[~/文档/note/离散数学/Disc_Math.org::MK324][不可数集]]
 
 **** 证明
 
-根据[[MK36][定理0]]可得 $\mathbb{R}\sim(0,1)$ 假设 $(0,1)$ 区间与 $\mathbb{N}^+$ [[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-对等]]，则存在双射函数 $\sigma$
+根据[[MK36][定理0]]可得 $\mathbb{R}\sim(0,1)$ 假设 $(0,1)$ 区间与 $\mathbb{N}^+$ [[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-对等]]，则存在双射函数 $\sigma$
 
 定义 $a^{(i)}$ 是 $a\in(0,1)$ 中 $\sigma(a)=i$ 的元素，由于其属于实数，故根据[[MK33][定理2]]存在小数表述
 
@@ -2317,21 +2317,21 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 根据[[MK35][推论]]可知 $\sum_{u=1}^\infty\frac{a_u}{10^u}\in\mathbb{R}$ 且对于任意 $a^{(i)}$ 均有 $a_i\ne a^{(i)}_i$ 故 $a\ne a^{(i)}$
 
-即 $a$ 不在数列中，则不存在 $\sigma(a)$ 故不满足[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]与 $\sigma$ 是双射函数矛盾
+即 $a$ 不在数列中，则不存在 $\sigma(a)$ 故不满足[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]与 $\sigma$ 是双射函数矛盾
 
-即假设不成立 $(0,1)$ 不可数，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-对等-定理]]其为等价关系。
+即假设不成立 $(0,1)$ 不可数，根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-对等-定理]]其为等价关系。
 
 根据等价关系传递性可得 $\mathbb{R}$ 不可数
 
 **** 推论1
 
-定义 $A_N$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]其中指标集 $N$ ，满足：
+定义 $A_N$ 是[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]]其中指标集 $N$ ，满足：
 
-（1） 任意 $A_n\land n\in N$ 均与 $\mathbb{R}$ [[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-对等]]
+（1） 任意 $A_n\land n\in N$ 均与 $\mathbb{R}$ [[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-对等]]
 
 （2） 任意 $\{n,m\}\subset N$ 均有 $A_n\cap A_m=\varnothing$
 
-（2） $N$ 是[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集]]
+（2） $N$ 是[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-至多可数集]]
 
 则有 $\bigcup_{n\in N}A_n$ 亦与 $\mathbb{R}$ 对等
 
@@ -2349,27 +2349,27 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 **** 推论2<<MK37>>
 
-定义 $A_N$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]其中指标集 $N$ ，满足：
+定义 $A_N$ 是[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]]其中指标集 $N$ ，满足：
 
-（1） 任意 $A_n\land n\in N$ 均与 $\mathbb{R}$ [[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-对等]]
+（1） 任意 $A_n\land n\in N$ 均与 $\mathbb{R}$ [[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-对等]]
 
-（2） $N$ 是[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集]]
+（2） $N$ 是[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-至多可数集]]
 
 则其笛卡尔积 $\prod_{n\in N}A_n$ 亦与 $\mathbb{R}$ 对等
 
 ***** 证明
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-直积-性质-基数]]可得 $\left|\prod_{n\in N}A_n\right|\geq |A_n|=|\mathbb{R}|$
+根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-基本定义-直积-性质-基数]]可得 $\left|\prod_{n\in N}A_n\right|\geq |A_n|=|\mathbb{R}|$
 
-对于任意 $a\in \prod_{n\in N}A_n$ 其元素均为[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-有序组]]，故有 $<a^{(1)},a^{(2)},....>$ 的表达式
+对于任意 $a\in \prod_{n\in N}A_n$ 其元素均为[[~/文档/note/离散数学/Disc_Math.org][关系与函数-基本定义-有序组]]，故有 $<a^{(1)},a^{(2)},....>$ 的表达式
 
 其中 $a^{(i)}\in A_i$ 由于与实数对等以及[[MK36][定理0]]，则有 $\sigma_i:A_i\to(0,1)$ 进一步根据[[MK33][定理2]]有 $\sigma_i(a^{(i)})=\sum_{j=1}^\infty\frac{a^{(i)}_j}{10}$
 
 定义函数 $\alpha(i,j)=\frac{i+j}{2}(i+j-1)-(j-1)$ 
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理1-证明]]可得对于 $i,j$ 均为整数时 $\alpha$ 是双射函数
+根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理1-证明]]可得对于 $i,j$ 均为整数时 $\alpha$ 是双射函数
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-函数的计算-函数求逆]]可得存在你函数 $\alpha^{-1}(k)=<i,j>$ 亦为双射函数
+根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-函数的计算-函数求逆]]可得存在你函数 $\alpha^{-1}(k)=<i,j>$ 亦为双射函数
 
 定义 $\alpha^{-1}(k)=<i,j>=<\phi(k),\psi(k)>$ 为 $\alpha^{-1}$ 对应的第一，第二个元素的映射
 
@@ -2383,17 +2383,17 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 故映射结果不想等。故  $f\left(<a^{(1)},a^{(2)},....>\right)$ 是单射。
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-单射-蕴含双射]]可得存在 $S\subset\mathbb{R}$ 使得 $f:\prod_{n\in N}A_n\to S$ 是双射函数
+则根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-单射-蕴含双射]]可得存在 $S\subset\mathbb{R}$ 使得 $f:\prod_{n\in N}A_n\to S$ 是双射函数
 
-故根据基数定义有 $\left|\prod_{n\in N}A_n\right|\leq|\mathbb{R}|$ 故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数-伯恩斯坦定理]]有 $\left|\prod_{n\in N}A_n\right|=|\mathbb{R}|$ 
+故根据基数定义有 $\left|\prod_{n\in N}A_n\right|\leq|\mathbb{R}|$ 故根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-基数-伯恩斯坦定理]]有 $\left|\prod_{n\in N}A_n\right|=|\mathbb{R}|$ 
 
 **** 推论3
 
-定义 $A_i=\{0,1,...,K\}$ 是[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-有限集]]，则有 $\left|\prod_{i=1}^\infty A_i\right|=|\mathbb{R}|$
+定义 $A_i=\{0,1,...,K\}$ 是[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-有限集]]，则有 $\left|\prod_{i=1}^\infty A_i\right|=|\mathbb{R}|$
 
 ***** 证明
 
-若 $|B_i|=|\mathbb{R}|$ 则显然 $|B_i|\geq|A_i|$ 根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-直积-性质-基数保序]]可得 $\left|\prod_{i\in I}A_i\right|\leq\left|\prod_{i\in I}B_i\right|$
+若 $|B_i|=|\mathbb{R}|$ 则显然 $|B_i|\geq|A_i|$ 根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-基本定义-直积-性质-基数保序]]可得 $\left|\prod_{i\in I}A_i\right|\leq\left|\prod_{i\in I}B_i\right|$
 
 根据[[MK37][推论2]]可得 $\left|\prod_{i\in I}A_i\right|\leq\left|\prod_{i\in I}B_i\right|=|\mathbb{R}|$ 根据等价关系性质有 $\left|\prod_{i\in I}A_i\right|\leq|\mathbb{R}|$
 
@@ -2401,13 +2401,13 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 则存在 $<a_1,a_2,...>\in\prod_{i=1}^\infty A_i$ 故有单射 $\sigma:\mathbb{R}\to\prod_{i=1}^\infty A_i$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-单射-蕴含双射]]可得 $\left|\prod_{i=1}^\infty A_i\right|\geq|\mathbb{R}|$
+则根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-单射-蕴含双射]]可得 $\left|\prod_{i=1}^\infty A_i\right|\geq|\mathbb{R}|$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-基数-伯恩斯坦定理]]有 $\left|\prod_{n\in N}A_n\right|=|\mathbb{R}|$ 
+故根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-基数-伯恩斯坦定理]]有 $\left|\prod_{n\in N}A_n\right|=|\mathbb{R}|$ 
 
 **** 推论4
 
-根据[[MK37][推论2]]， $n$ 维[[~/OneDrive/数学分析/Chap11Note.org][欧式空间]] $\mathbb{R}^n$ 亦与 $\mathbb{R}$ 对等
+根据[[MK37][推论2]]， $n$ 维[[~/文档/note/数学分析/Chap11Note.org][欧式空间]] $\mathbb{R}^n$ 亦与 $\mathbb{R}$ 对等
 
 *** 定理2<<MK33>>
 
@@ -2463,7 +2463,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 ***** 假设 $\alpha^m<t$ <<MK255>>
 
-由于 $n\in\mathbb{N}\rightarrow n\geq1$ ，故有 $\frac{1}{n}\leq 1$ ，且易证 $\alpha^{m-i}\tbinom{m}{i}>0$ ，故根据[[~/OneDrive/数学分析/Chap10Note.org::MK3][二项式展开]]可得
+由于 $n\in\mathbb{N}\rightarrow n\geq1$ ，故有 $\frac{1}{n}\leq 1$ ，且易证 $\alpha^{m-i}\tbinom{m}{i}>0$ ，故根据[[~/文档/note/数学分析/Chap10Note.org::MK3][二项式展开]]可得
 
 \begin{aligned}
 \left(a+\frac{1}{n}\right)^m=&\sum_{i=0}^m\alpha^{m-i}\left(\frac{1}{n}\right)^{i}\tbinom{m}{i}\\
@@ -2486,11 +2486,11 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 显然 $\left(a+\frac{1}{n^*}\right)^m\in\mathbb{R}$ 故定义 $c=\alpha+\frac{1}{n^*}$ 显然有 $c\in\mathbb{R}\land c>\alpha$ 且 $c^m\leq\alpha^m+\frac{A}{n^*}<t$
 
-显然与 $\alpha$ 是上[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]的定义不符，故假设不成立
+显然与 $\alpha$ 是上[[~/文档/note/离散数学/Disc_Math.org::MK326][确界]]的定义不符，故假设不成立
 
 ***** 假设 $\alpha^m>t$
 
-[[MK255][同理]]由于 $\frac{1}{n}\leq 1$ 以及 $\alpha^{m-i}\tbinom{m}{i}>0$ 且易证 $\left(-\frac{1}{n}\right)^{2i}>0\land\left(-\frac{1}{n}\right)^{2i+1}<0$ ，故根据[[~/OneDrive/数学分析/Chap10Note.org::MK3][二项式展开]]可得
+[[MK255][同理]]由于 $\frac{1}{n}\leq 1$ 以及 $\alpha^{m-i}\tbinom{m}{i}>0$ 且易证 $\left(-\frac{1}{n}\right)^{2i}>0\land\left(-\frac{1}{n}\right)^{2i+1}<0$ ，故根据[[~/文档/note/数学分析/Chap10Note.org::MK3][二项式展开]]可得
 
 \begin{aligned}
 \left(a-\frac{1}{n}\right)^m=&\sum_{i=0}^m\alpha^{m-i}\left(-\frac{1}{n}\right)^{i}\tbinom{m}{i}\\
@@ -2503,7 +2503,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 显然易证 $A\in\mathbb{R}$ 故根据 $\alpha^m>t$ 有 $\frac{\alpha^m-t}{A}>0$ 根据[[MK254][推论3]]存在 $n^*\in\mathbb{N}$ 满足 $\frac{1}{n^*}<\frac{\alpha^m-t}{A}$
 
-整理后可得 $\alpha^m-\frac{1}{n^*}A>t$ [[MK255][同理]]可得 $\left(\alpha-\frac{1}{n^*}\right)^m>t$ 与[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]定义矛盾，假设不成立
+整理后可得 $\alpha^m-\frac{1}{n^*}A>t$ [[MK255][同理]]可得 $\left(\alpha-\frac{1}{n^*}\right)^m>t$ 与[[~/文档/note/离散数学/Disc_Math.org::MK326][确界]]定义矛盾，假设不成立
 
 ***** 结论
 
@@ -2527,7 +2527,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 故根据[[MK5][运算相容]]可得 $e^\alpha<e^{\alpha+\frac{1}{n}}<A$ 显然 $\frac{1}{n}\in\mathbb{R}$ 故存在 $t=\alpha+\frac{1}{n}$
 
-满足 $t>\alpha$ 且 $e^t<A<a$ 显然与上[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]的定义不符，故假设不成立
+满足 $t>\alpha$ 且 $e^t<A<a$ 显然与上[[~/文档/note/离散数学/Disc_Math.org::MK326][确界]]的定义不符，故假设不成立
 
 ***** 假设 $e^\alpha>a$
 
@@ -2539,7 +2539,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 故根据[[MK5][运算相容]]可得 $e^\alpha>e^{\alpha-\frac{1}{n}}>A$ 显然 $\frac{1}{n}\in\mathbb{R}$ 故存在 $t=\alpha-\frac{1}{n}$
 
-满足 $t<\alpha$ 且 $e^t>A>a$ 显然与上[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]的定义不符，故假设不成立
+满足 $t<\alpha$ 且 $e^t>A>a$ 显然与上[[~/文档/note/离散数学/Disc_Math.org::MK326][确界]]的定义不符，故假设不成立
 
 ***** 结论
 
@@ -2615,23 +2615,23 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 *** 内点<<MK147>>
 
-定义为[[~/OneDrive/数学分析/Chap11Note.org::MK7][实数内点定义]]的扩展，即对于集合 $S\subset\mathbb{R}_e$ 其内点为 $\exists \delta>0\land\delta\in\mathbb{R}_e\rightarrow O(x,\delta)\subset S$ 
+定义为[[~/文档/note/数学分析/Chap11Note.org::MK7][实数内点定义]]的扩展，即对于集合 $S\subset\mathbb{R}_e$ 其内点为 $\exists \delta>0\land\delta\in\mathbb{R}_e\rightarrow O(x,\delta)\subset S$ 
 
 *** 开集<<MK148>>
 
-定义为在 $\mathbb{R}_e\cup \{-\infty,+\infty\}$ 满足[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]的集合，即 $S\subset\mathbb{R}_e$ 且有包含的点均为[[MK147][内点]]的集合
+定义为在 $\mathbb{R}_e\cup \{-\infty,+\infty\}$ 满足[[~/文档/note/数学分析/Chap11Note.org::MK10][开集定义]]的集合，即 $S\subset\mathbb{R}_e$ 且有包含的点均为[[MK147][内点]]的集合
 
 **** 定理1<<MK149>>
 
-对于任意 $S\subset\mathbb{R}$ 若 $+\infty\in S$ 则 $+\infty$ 为 $S$ 的[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]。 $-\infty$ 同理
+对于任意 $S\subset\mathbb{R}$ 若 $+\infty\in S$ 则 $+\infty$ 为 $S$ 的[[~/文档/note/数学分析/Chap11Note.org::MK7][内点]]。 $-\infty$ 同理
 
 ***** 证明
 
 则取 $\delta=1>0$ 根据[[MK144][运算]]有 $+\infty\pm\delta=+\infty$ 故有 $(b-\delta,b+\delta)=(+\infty, +\infty)$
 
-根据[[MK146][定义]]可得 $(+\infty, +\infty)=\varnothing$ 又根据[[~/OneDrive/离散数学/Disc_Math.org::MK23][定理4]]可得 $\varnothing\subset S$
+根据[[MK146][定义]]可得 $(+\infty, +\infty)=\varnothing$ 又根据[[~/文档/note/离散数学/Disc_Math.org::MK23][定理4]]可得 $\varnothing\subset S$
 
-即 $+\infty$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，同理可证 $-\infty$ 也是内点
+即 $+\infty$ 是[[~/文档/note/数学分析/Chap11Note.org::MK7][内点]]，同理可证 $-\infty$ 也是内点
 
 **** 定理2<<MK150>>
 
@@ -2645,7 +2645,7 @@ $a>b\land 0>c\rightarrow a\cdot c<b\cdot c$
 
 ****** （1）
 
-对于 $S\subset\mathbb{R}$ 中的任意一点 $x\in S$ ，若在 $\mathbb{R}$ 上是[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，则 $\exists \delta>0\land\delta\in\mathbb{R}\rightarrow O(x,\delta)\subset S$
+对于 $S\subset\mathbb{R}$ 中的任意一点 $x\in S$ ，若在 $\mathbb{R}$ 上是[[~/文档/note/数学分析/Chap11Note.org::MK7][内点]]，则 $\exists \delta>0\land\delta\in\mathbb{R}\rightarrow O(x,\delta)\subset S$
 
 由于 $\mathbb{R}\subset\mathbb{R}_e$ 故有 $\delta\in\mathbb{R}_e$ 则有 $\exists \delta>0\land\delta\in\mathbb{R}_e\rightarrow O(x,\delta)\subset S$ 根据[[MK147][定义]]可得是内点
 
@@ -2654,7 +2654,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 ****** （2）
 
-对于 $S\subset\mathbb{R}$ 中的存在非[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]] $x$ ，则有 $\forall\delta>0\land\delta\in\mathbb{R}\rightarrow O(x,\delta)\not\subset S$
+对于 $S\subset\mathbb{R}$ 中的存在非[[~/文档/note/数学分析/Chap11Note.org::MK7][内点]] $x$ ，则有 $\forall\delta>0\land\delta\in\mathbb{R}\rightarrow O(x,\delta)\not\subset S$
 
 当 $\delta'=\infty$ 时对于任意 $\delta\in\mathbb{R}$ 均有 $O(x,\delta)\subset O(x,\delta')$ 则有 $O(x,\delta')\not\in S$
 
@@ -2676,7 +2676,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 *** 数列上下极限<<MK171>>
 
-对于 $\mathbb{R}_e$ 上的数列 $\{x_n\}$ 其[[~/OneDrive/数学分析/Chap9Note.org::MK2][上下极限]]可表述为：
+对于 $\mathbb{R}_e$ 上的数列 $\{x_n\}$ 其[[~/文档/note/数学分析/Chap9Note.org::MK2][上下极限]]可表述为：
 
 （1） $\overline{\lim_{i\to\infty}}x_i=\inf\left\{\sup\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\}\bigg|i\in\mathbb{N}\right\}$
 
@@ -2686,7 +2686,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 仅证（1），同理可证（2）
 
-对于任意 $i\in\mathbb{N}$ 定义 $X_i=\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\},S_i=\sup(X_i)$ 根据[[~/OneDrive/数学分析/Chap11Note.org::MK9][确界存在定理]]可得 $S_i$ 存在
+对于任意 $i\in\mathbb{N}$ 定义 $X_i=\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\},S_i=\sup(X_i)$ 根据[[~/文档/note/数学分析/Chap11Note.org::MK9][确界存在定理]]可得 $S_i$ 存在
 
 同理可得 $I=\inf\left\{S_i\big|i\in\mathbb{N}\right\}$ 亦存在。
 
@@ -2694,11 +2694,11 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 则存在 $S_k=-\infty,k\in\mathbb{N}$ 由于是上确界，故 $\forall x_i\in X_k\rightarrow x_i\leq S_k$
 
-进一步由于 $X_k\subset\mathbb{R}_e$ 故可得 $x_i=-\infty,\forall i>k$ 故 $\{x_k,x_{k+1},...\}$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]]且 $-\infty$ 是[[~/OneDrive/数学分析/Chap9Note.org::MK1][极限点]]
+进一步由于 $X_k\subset\mathbb{R}_e$ 故可得 $x_i=-\infty,\forall i>k$ 故 $\{x_k,x_{k+1},...\}$ 是[[~/文档/note/数学分析/Chap11Note.org::MK16][子列]]且 $-\infty$ 是[[~/文档/note/数学分析/Chap9Note.org::MK1][极限点]]
 
-且 $\{x_1,...,x_{k-1}\}$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK42][有限集]]，且[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]]定义为取无限个。
+且 $\{x_1,...,x_{k-1}\}$ 为[[~/文档/note/离散数学/Disc_Math.org::MK42][有限集]]，且[[~/文档/note/数学分析/Chap11Note.org::MK16][子列]]定义为取无限个。
 
-故任意子列的极限点均为 $-\infty$ 根据[[~/OneDrive/数学分析/Chap9Note.org::MK2][定义]]可知是上极限
+故任意子列的极限点均为 $-\infty$ 根据[[~/文档/note/数学分析/Chap9Note.org::MK2][定义]]可知是上极限
 
 ***** 当 $I=+\infty$ 时
 
@@ -2706,11 +2706,11 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 则对于 $S_1$ 若 $X_1\cap\mathbb{R}=\varnothing$ 则有 $\forall x\in X_1\rightarrow x=+\infty$ 则 $X_1$ 是常数列，且极限为 $+\infty$
 
-若不为空，则任取 $x_{k_1}\in X_i\cap\mathbb{R}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界定义]]有 $x_{k_1}<+\infty$
+若不为空，则任取 $x_{k_1}\in X_i\cap\mathbb{R}$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK326][确界定义]]有 $x_{k_1}<+\infty$
 
 继续对 $S_{k_1+1}$ 重复上述步骤，以此类推可得数列 $x_{k_1},x_{k_2},...\a$ 其极限为 $+\infty$
 
-综上所述，存在 $\{x_n\}$ 的子列极限为 $+\infty$ 由于 $+\infty$ 是最大[[MK143][广义实数]]，故必为[[~/OneDrive/数学分析/Chap9Note.org::MK2][上极限]]
+综上所述，存在 $\{x_n\}$ 的子列极限为 $+\infty$ 由于 $+\infty$ 是最大[[MK143][广义实数]]，故必为[[~/文档/note/数学分析/Chap9Note.org::MK2][上极限]]
 
 ***** 当 $I\in\mathbb{R}$ 时
 
@@ -2718,25 +2718,25 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 由于当 $i>j$ 时有 $X_i\subset X_j$ 故有 $\sup(X_i)\leq\sup(X_j)$ 即 $S_i\leq S_j,j<i$ 单调递减
 
-由于 $I$ 为下确界，故根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界定理]]可知 $\lim_{i\to\infty}S_i=I$ 且由于 $S_n\geq I$ 
+由于 $I$ 为下确界，故根据[[~/文档/note/数学分析/Chap11Note.org::MK17][单调有界定理]]可知 $\lim_{i\to\infty}S_i=I$ 且由于 $S_n\geq I$ 
 
 故 $\forall\epsilon>0,\exists N,\forall n\geq N\rightarrow S_n-I<\epsilon$
 
 取 $\epsilon_1=\frac{1}{2}$ 则根据极限定义有 $\exists N_1$ 对于 $n_1>N\rightarrow S_{n_1}-I<\epsilon_1$
 
-进一步根据[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界定义]]可得存在 $x_{k_1}\rightarrow I\leq x_{k_1}\leq S_{n_1}\rightarrow x_{k_1}-I<\epsilon_1$
+进一步根据[[~/文档/note/离散数学/Disc_Math.org::MK326][确界定义]]可得存在 $x_{k_1}\rightarrow I\leq x_{k_1}\leq S_{n_1}\rightarrow x_{k_1}-I<\epsilon_1$
 
 取 $\epsilon_2=\left(\frac{1}{2}\right)^2$ 同理可得存在 $N_2$ 满足极限定义，则取 $n_2=\max(N_2,k_1)$
 
-即有 $S_{n_2}-I<\epsilon_2$ 则[[~/OneDrive/离散数学/Disc_Math.org::MK326][同理]]可得存在 $x_{k_1}\rightarrow x_{k_2}-I<\epsilon_2$
+即有 $S_{n_2}-I<\epsilon_2$ 则[[~/文档/note/离散数学/Disc_Math.org::MK326][同理]]可得存在 $x_{k_1}\rightarrow x_{k_2}-I<\epsilon_2$
 
-依次类推可得[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]] $\{x_{k_i}\}$ 满足 $\lim_{i\to\infty}x_{k_1}=I$ 即 $I$ 是数列的[[~/OneDrive/数学分析/Chap9Note.org::MK1][极限点]]
+依次类推可得[[~/文档/note/数学分析/Chap11Note.org::MK16][子列]] $\{x_{k_i}\}$ 满足 $\lim_{i\to\infty}x_{k_1}=I$ 即 $I$ 是数列的[[~/文档/note/数学分析/Chap9Note.org::MK1][极限点]]
 
 ****** 是最大极限点
 
-假设存在[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]] $\{x_{n_i}\}$ 满足 $\lim_{i\to\infty}x_{n_1}=I'>I$
+假设存在[[~/文档/note/数学分析/Chap11Note.org::MK16][子列]] $\{x_{n_i}\}$ 满足 $\lim_{i\to\infty}x_{n_1}=I'>I$
 
-由于 $n_i$ 有无限个且 $n_i\in\mathbb{N}$ 则 $\{n_i\}$ 存在[[~/OneDrive/离散数学/Disc_Math.org::MK185][序关系]]，不妨设 $i<j\rightarrow n_i<n_j$
+由于 $n_i$ 有无限个且 $n_i\in\mathbb{N}$ 则 $\{n_i\}$ 存在[[~/文档/note/离散数学/Disc_Math.org::MK185][序关系]]，不妨设 $i<j\rightarrow n_i<n_j$
 
 根据[[MK170][之前证明]]可得 $\lim_{i\to\infty} S_i=I$ 则取 $\epsilon=\frac{I'-I}{2}$ 则 $\exists N$ 任取 $n\geq N$ 满足 $S_n-I<\epsilon$ 即 $S_n<I+\epsilon$
 
@@ -2744,13 +2744,13 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 由于 $\epsilon=\frac{I'-I}{2}$ 故有 $I'-\epsilon=I+\epsilon$ 故有 $x_k>S_n$ 由于 $k\geq n$ 即有 $x_k\in X_n$
 
-故与 $S_n=\sup(X_n)$ 矛盾，假设不成立。即不存在[[~/OneDrive/数学分析/Chap11Note.org::MK16][子列]] $\{x_{n_i}\}$ 满足 $\lim_{i\to\infty}x_{n_1}=I'>I$
+故与 $S_n=\sup(X_n)$ 矛盾，假设不成立。即不存在[[~/文档/note/数学分析/Chap11Note.org::MK16][子列]] $\{x_{n_i}\}$ 满足 $\lim_{i\to\infty}x_{n_1}=I'>I$
 
-则 $I$ 是最大[[~/OneDrive/数学分析/Chap9Note.org::MK1][极限点]]，即为[[~/OneDrive/数学分析/Chap9Note.org::MK2][上极限]]
+则 $I$ 是最大[[~/文档/note/数学分析/Chap9Note.org::MK1][极限点]]，即为[[~/文档/note/数学分析/Chap9Note.org::MK2][上极限]]
 
 **** 引理1
 
-对于 $\mathbb{R}_e$ 上的数列 $\{x_n\}$ 其[[~/OneDrive/数学分析/Chap9Note.org::MK2][上下极限]]的等价表述为：
+对于 $\mathbb{R}_e$ 上的数列 $\{x_n\}$ 其[[~/文档/note/数学分析/Chap9Note.org::MK2][上下极限]]的等价表述为：
 
 （1） $\overline{\lim_{i\to\infty}}x_i=\lim_{n\to\infty}\sup\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\}$
 
@@ -2762,7 +2762,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 定义 $S_k=\left\{x_k\big|k\geq i\land k\in\mathbb{N}\right\},\alpha_k=\sup(S_k)$ 由于对于任意 $i>j$ 均有 $S_i\subset S_j$
 
-故显然有 $\alpha_i\leq\alpha_j$ 即 $A=\{\alpha_i\}$ 为单调递减数列，则根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]必收敛于数列的下确界
+故显然有 $\alpha_i\leq\alpha_j$ 即 $A=\{\alpha_i\}$ 为单调递减数列，则根据[[~/文档/note/数学分析/Chap11Note.org::MK17][单调有界数列定理]]必收敛于数列的下确界
 
 即 $\lim_{i\to\infty}=\inf(A)$ 证毕
 
@@ -2778,9 +2778,9 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 对于函数列 $\{f_i(x)\},i\in\mathbb{N}$ 定义：
 
-上极限： $\overline{\lim_{i\to\infty}}f_i(x)=\lim_{i\to\infty}\sup\left\{f_i(x)\big|i\geq n\right\}$ 其中 $\sup\{A\}$ 表示函数集合 $A$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK342][函数上确界]]
+上极限： $\overline{\lim_{i\to\infty}}f_i(x)=\lim_{i\to\infty}\sup\left\{f_i(x)\big|i\geq n\right\}$ 其中 $\sup\{A\}$ 表示函数集合 $A$ 的[[~/文档/note/离散数学/Disc_Math.org::MK342][函数上确界]]
 
-下极限： $\underline{\lim_{i\to\infty}}f_i(x)=\lim_{i\to\infty}\inf\left\{f_i(x)\big|i\geq n\right\}$ 其中 $\inf\{A\}$ 表示函数集合 $A$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK342][函数下确界]]
+下极限： $\underline{\lim_{i\to\infty}}f_i(x)=\lim_{i\to\infty}\inf\left\{f_i(x)\big|i\geq n\right\}$ 其中 $\inf\{A\}$ 表示函数集合 $A$ 的[[~/文档/note/离散数学/Disc_Math.org::MK342][函数下确界]]
 
 **** 引理<<MK271>>
 
@@ -2788,11 +2788,11 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 ***** 证明<<MK266>>
 
-定义 $g_n(x)=\inf\left\{-f_i(x)\big|i\geq n\right\}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK342][函数下确界]]则有 $\underline{\lim_{i\to\infty}}-f_i(x)=\lim_{n\to\infty}g_n(x)$
+定义 $g_n(x)=\inf\left\{-f_i(x)\big|i\geq n\right\}$ 是[[~/文档/note/离散数学/Disc_Math.org::MK342][函数下确界]]则有 $\underline{\lim_{i\to\infty}}-f_i(x)=\lim_{n\to\infty}g_n(x)$
 
 则根据定义对于任意 $x'$ 均有 $g_n(x')=\inf\left\{-f_i(x')\big|i\geq n\right\}$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK343][定理6]]可得 $-\inf\left\{-f_i(x')\big|i\geq n\right\}=\sup\left\{(-1)\cdot(-f_i(x'))\big|i\geq n\right\}$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK343][定理6]]可得 $-\inf\left\{-f_i(x')\big|i\geq n\right\}=\sup\left\{(-1)\cdot(-f_i(x'))\big|i\geq n\right\}$
 
 即 $\inf\left\{-f_i(x')\big|i\geq n\right\}=-\sup\left\{f_i(x')\big|i\geq n\right\}$ 又根据 $x'$ 的任意性可得 $g_n(x)=-\sup\left\{f_i(x)\big|i\geq n\right\}$ 
 
@@ -2860,7 +2860,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 对于 $\mathbb{R}^n$ 定义区间 $I=\prod_{i=1}^n\left[-\frac{\epsilon}{2},\frac{\epsilon}{2}\right]$ 根据[[MK52][勒贝格区间]]测度定义有 $|I|=\epsilon^n$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-包含-定理4]]可得对于任意 $\epsilon>0\land\epsilon\in\mathbb{R}$ 均有 $\varnothing\subset I$
+根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-包含-定理4]]可得对于任意 $\epsilon>0\land\epsilon\in\mathbb{R}$ 均有 $\varnothing\subset I$
 
 则 $I$ 是 $\varnothing$ 的开覆盖，由于外测度定义为下确界，故有 $m^*(\varnothing)\leq |I|=\epsilon^n$
 
@@ -2904,7 +2904,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 **** 正则性<<MK79>>
 
-在[[MK52][勒贝格测度]]定义下，任意有界[[MK13][区间]] $I=\prod_{i=1}^n[a_i,b_i]\subset\mathbb{R}^n$ 其中乘法为[[~/OneDrive/离散数学/Disc_Math.org::MK153][直积]]
+在[[MK52][勒贝格测度]]定义下，任意有界[[MK13][区间]] $I=\prod_{i=1}^n[a_i,b_i]\subset\mathbb{R}^n$ 其中乘法为[[~/文档/note/离散数学/Disc_Math.org::MK153][直积]]
 
 其外测度等于区间测度 $m^*(I)=|I|=\prod_{i=1}^n(b_i-a_i)$ 乘法为[[MK4][实数乘法]]
 
@@ -2942,13 +2942,13 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 ***** 证明
 
-对于任意 $i\in\mathbb{N}^+$ 定义 $K_i=\prod_{j=1}^n[-i,i]$ 其中 $n$ 为欧式空间的维数，乘法为[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-直积]]
+对于任意 $i\in\mathbb{N}^+$ 定义 $K_i=\prod_{j=1}^n[-i,i]$ 其中 $n$ 为欧式空间的维数，乘法为[[~/文档/note/离散数学/Disc_Math.org][关系与函数-基本定义-直积]]
 
 显然 $K_i$ 是[[MK13][区间]]，且 $\bigcup_{i=1}^\infty K_i=\mathbb{R}^n$ 由于 $E\subset\mathbb{R}^n$ 则有 $E\subset\bigcup_{i=1}^\infty K_i$
 
 则 $\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 不为空集，且显然 $\forall x\in \left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}\rightarrow x>0$
 
-故 $\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 有下界，根据[[~/OneDrive/数学分析/Chap11Note.org][实数系基本定理-确界存在定理]]必有下确界
+故 $\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 有下界，根据[[~/文档/note/数学分析/Chap11Note.org][实数系基本定理-确界存在定理]]必有下确界
 
 故 $\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 存在，即外测度对于任意集合均存在
 
@@ -2960,7 +2960,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据[[MK51][外测度]]定义可得 $m^*(E)=\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$ 
 
-定义 $I_i=\prod_{j=1}^n[a_{i,j},b_{i,j}]$ 此处乘法为[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-直积]]
+定义 $I_i=\prod_{j=1}^n[a_{i,j},b_{i,j}]$ 此处乘法为[[~/文档/note/离散数学/Disc_Math.org][关系与函数-基本定义-直积]]
 
 定义 $I'_i=\prod_{j=1}^n[a_{i,j}+x_j,b_{i,j}+x_j]$ 则根据[[MK52][勒贝格测度]]易证得得 $|I_i|=|I'_i|$
 
@@ -3004,7 +3004,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据[[MK52][区间测度]]定义可得 $|\alpha I_i|=\alpha^n|I_i|$ ，则 $m^*(\alpha E)=\inf\left\{\alpha^n\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK340][定理4]]可得 $m^*(\alpha E)=\alpha^n\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}=\alpha^n m^*(E)$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK340][定理4]]可得 $m^*(\alpha E)=\alpha^n\inf\left\{\sum_{i=1}^\infty |I_i|\big|E\subset\bigcup_{i=1}^\infty I_i\right\}=\alpha^n m^*(E)$
 
 **** 等测包<<MK297>>
 
@@ -3014,7 +3014,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 （2） $\varphi(E)=\varphi(G)$ 其中 $\varphi$ 是[[MK51][勒贝格外侧度]]
 
-（3） $G\in G_\delta$ 即 $G$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个开集的交（可测）
+（3） $G\in G_\delta$ 即 $G$ 是[[~/文档/note/离散数学/Disc_Math.org::MK44][可数]]个开集的交（可测）
 
 ***** 证明
 
@@ -3024,7 +3024,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 由于 $I$ 均为开集，则根据[[MK87][开集可测]]以及[[MK65][Caratheodory定理]]可得 $\varphi(\bigcup_{i=1}^\infty I_{n,i})=\sum_{i=1}^\infty |I_{n,i}|$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::P2][定理3]]可得 $E'_n=\bigcup_{i=1}^\infty I_{n,i}$ 亦为开集，进一步定义 $E_n=\bigcap_{i=1}^n E'_n$ 易证：
+根据[[~/文档/note/数学分析/Chap11Note.org::P2][定理3]]可得 $E'_n=\bigcup_{i=1}^\infty I_{n,i}$ 亦为开集，进一步定义 $E_n=\bigcap_{i=1}^n E'_n$ 易证：
 
 （1） $E\subset E_n$
 
@@ -3034,7 +3034,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 定义 $G=\lim_{n\to\infty}E_n=\bigcap_{i=1}^\infty E'_n$ 由于 $E'_n$ 是开集，故 $G\in G _\delta$ 是可数开集的交
 
-且由于 $\forall n\in\mathbb{N}\rightarrow E\subset E_n$ 则 $\forall x\in E,\forall n\in\mathbb{N}\rightarrow x\in E_n$ 即根据[[~/OneDrive/离散数学/Disc_Math.org::MK35][广义交]]定义有 $E\subset G$
+且由于 $\forall n\in\mathbb{N}\rightarrow E\subset E_n$ 则 $\forall x\in E,\forall n\in\mathbb{N}\rightarrow x\in E_n$ 即根据[[~/文档/note/离散数学/Disc_Math.org::MK35][广义交]]定义有 $E\subset G$
 
 此时若 $\varphi(E)=\infty$ 则根据[[MK60][单调性]]可得 $\varphi(E_n)\geq\varphi(E)$ 即 $\varphi(E_n)=\infty$ 则有 $\varphi(G)=\infty$ ，证毕
 
@@ -3046,7 +3046,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 ***** 推论<<MK301>>
 
-任意[[MK81][可测集]] $E\subset\mathbb{R}^n\land\varphi(E)<\infty$ 均有 $E=G-E_0$ 其中 $G\in G_\delta$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个开集的交, $E_0$ 是[[MK126][零测集]]
+任意[[MK81][可测集]] $E\subset\mathbb{R}^n\land\varphi(E)<\infty$ 均有 $E=G-E_0$ 其中 $G\in G_\delta$ 是[[~/文档/note/离散数学/Disc_Math.org::MK44][可数]]个开集的交, $E_0$ 是[[MK126][零测集]]
 
 ****** 证明
 
@@ -3072,9 +3072,9 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 （3） $\varphi\left(\bigcup_{i=1}^\infty I^p_i\right)\varphi\left(\bigcup_{i=1}^\infty I^q_i\right)<\varphi(X,Y)$
 
-显然 $X\times Y\subset \left(\bigcup_{i=1}^\infty I^p_i\right)\times\left(\bigcup_{i=1}^\infty I^q_i\right)$ 且根据[[~/OneDrive/离散数学/Disc_Math.org::MK154][分配律]]可得 $\left(\bigcup_{i=1}^\infty I^p_i\right)\times\left(\bigcup_{i=1}^\infty I^q_i\right)=\bigcup_{i=1}^\infty\bigcup_{j=1}^\infty(I^p_j\times I^q_j)$
+显然 $X\times Y\subset \left(\bigcup_{i=1}^\infty I^p_i\right)\times\left(\bigcup_{i=1}^\infty I^q_i\right)$ 且根据[[~/文档/note/离散数学/Disc_Math.org::MK154][分配律]]可得 $\left(\bigcup_{i=1}^\infty I^p_i\right)\times\left(\bigcup_{i=1}^\infty I^q_i\right)=\bigcup_{i=1}^\infty\bigcup_{j=1}^\infty(I^p_j\times I^q_j)$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK346][定理1]]可得 $\bigcup_{i=1}^\infty\bigcup_{j=1}^\infty(I^p_j\times I^q_j)$ 仍为据[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个区间的并，由于均为[[MK81][可测集]]，则根据[[MK56][可数可加性]]
+根据[[~/文档/note/离散数学/Disc_Math.org::MK346][定理1]]可得 $\bigcup_{i=1}^\infty\bigcup_{j=1}^\infty(I^p_j\times I^q_j)$ 仍为据[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个区间的并，由于均为[[MK81][可测集]]，则根据[[MK56][可数可加性]]
 
 有 $\varphi\left(\bigcup_{i=1}^\infty\bigcup_{j=1}^\infty(I^p_j\times I^q_j)\right)=\sum_{i=1}^\infty\sum_{j=1}^\infty\varphi(I^p_i\times I^q_j)$ 显然 $I^p_i\times I^q_j$ 根据[[MK13][定义]]亦为区间
 
@@ -3172,7 +3172,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 *** 计算<<MK84>>
 
-可测及对于[[~/OneDrive/离散数学/Disc_Math.org::MK29][运算]]中定义的计算有以下性质：
+可测及对于[[~/文档/note/离散数学/Disc_Math.org::MK29][运算]]中定义的计算有以下性质：
 
 （1） 若 $S$ 可测，则 $S^c$ 可测
 
@@ -3262,7 +3262,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 （2） $I^p\subset\mathbb{R}^p,I^q\subset\mathbb{R}^q$ 是各自空间上的半开闭区间
 
-其中乘法为[[~/OneDrive/离散数学/Disc_Math.org::MK153][直积]]，则 $\forall x\in\mathbb{R}^p$ 有 $f(x)=\begin{cases}\varphi(I^q)&x\in I^p\\0&x\not\in I^p\end{cases}$
+其中乘法为[[~/文档/note/离散数学/Disc_Math.org::MK153][直积]]，则 $\forall x\in\mathbb{R}^p$ 有 $f(x)=\begin{cases}\varphi(I^q)&x\in I^p\\0&x\not\in I^p\end{cases}$
 
 由于 $I^q$ 不随 $x$ 变化，则有 $f(x)$ 是[[MK178][简单函数]]，即[[MK134][可测函数]]。且根据[[MK82][区间可测]]可得 $I^q$ 是[[MK81][可测集]]
 
@@ -3272,7 +3272,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 ******* 开集<<MK299>>
 
-若 $E$ 是开集，则根据[[MK83][开集构造]]可得存[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的半开闭[[MK13][区间]]满足 $E=\bigcup_{i\in Z}I_i,Z\subset\mathbb{N}$
+若 $E$ 是开集，则根据[[MK83][开集构造]]可得存[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的半开闭[[MK13][区间]]满足 $E=\bigcup_{i\in Z}I_i,Z\subset\mathbb{N}$
 
 [[MK298][同理]]可得 $I_i=I^p_i\times I^q_i$ 则有 $E(x)=\bigcup_{i\in Z}I^q_i$ 
 
@@ -3384,19 +3384,19 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 若 $X\in\mathbb{R}^p,Y\in\mathbb{R}^q$ 分别为 $<\mathbb{R}^p,\varphi>,<\mathbb{R}^q,\varphi>$ 的[[MK81][可测集]]，其中 $\varphi$ 是[[MK51][勒贝格外侧度]]
 
-且 $p+q<\infty$ 则有 $X\times Y$ 是 $<\mathbb{R}^{p+q},\varphi>$ 上的[[MK81][可测集]]，其中乘法为[[~/OneDrive/离散数学/Disc_Math.org::MK153][直积]]
+且 $p+q<\infty$ 则有 $X\times Y$ 是 $<\mathbb{R}^{p+q},\varphi>$ 上的[[MK81][可测集]]，其中乘法为[[~/文档/note/离散数学/Disc_Math.org::MK153][直积]]
 
 ***** 证明
 
 ****** 开集的直积是开集<<MK291>>
 
-若 $X,Y$ 均为[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]则对于任意 $(\vec{x}_0,\vec{y}_0)\in X\times Y$ 其中 $\vec{x}_0\in X,\vec{y}_0\in Y$
+若 $X,Y$ 均为[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]则对于任意 $(\vec{x}_0,\vec{y}_0)\in X\times Y$ 其中 $\vec{x}_0\in X,\vec{y}_0\in Y$
 
 由于均为开集，则存在 $\delta_1,\delta_2$ 满足 $O_p(\vec{x}_0,\delta_1)\in X,O_q(\vec{y}_0,\delta_2)\in Y$ 其中 $O_n$ 表示 $\mathbb{R}^n$ 中的[[MK59][邻域]]
 
 则取 $\delta=\min\{\delta_1,\delta_2\}$ 对于任意 $(\vec{x},\vec{y})\in O_{p+q}((\vec{x}_0,\vec{y}_0),\delta)$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK25][距离定义]]有 $\sqrt{\sum_{i=1}^p(x_i-x_{0,i})^2+\sum_{i=1}^q(y_i-y_{0,i})^2}<\delta$
+根据[[~/文档/note/数学分析/Chap11Note.org::MK25][距离定义]]有 $\sqrt{\sum_{i=1}^p(x_i-x_{0,i})^2+\sum_{i=1}^q(y_i-y_{0,i})^2}<\delta$
 
 即 $\sum_{i=1}^p(x_i-x_{0,i})^2+\sum_{i=1}^q(y_i-y_{0,i})^2<\delta^2$ 
 
@@ -3404,15 +3404,15 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 即有 $\vec{x}\in X\land \vec{y}\in Y$ 即 $(\vec{x},\vec{y})\in X\times Y$ 由于任意性，故可得 $O_{p+q}((\vec{x}_0,\vec{y}_0),\delta)\subset X\times Y$
 
-即 $(\vec{x}_0,\vec{y}_0)$ 是 $X\times Y$ 的[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]，又由于 $(\vec{x}_0,\vec{y}_0)$ 任意性可得 $X\times Y$ 是 $\mathbb{R}^{p+q}$ 上的[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
+即 $(\vec{x}_0,\vec{y}_0)$ 是 $X\times Y$ 的[[~/文档/note/数学分析/Chap11Note.org::MK7][内点]]，又由于 $(\vec{x}_0,\vec{y}_0)$ 任意性可得 $X\times Y$ 是 $\mathbb{R}^{p+q}$ 上的[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]
 
 ****** 闭集的直积是闭集<<MK293>>
 
-若 $X,Y$ 均为[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]]，则根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]] $X^c,Y^c$ 均为开集，根据[[~/OneDrive/离散数学/Disc_Math.org::MK344][直积与补]]可得 $(X\times Y)^c=\mathbb{R}^p\times Y^c\cup X^c\times\mathbb{R}^q$
+若 $X,Y$ 均为[[~/文档/note/数学分析/Chap11Note.org::MK13][闭集]]，则根据[[~/文档/note/数学分析/Chap11Note.org::P1][定理1]] $X^c,Y^c$ 均为开集，根据[[~/文档/note/离散数学/Disc_Math.org::MK344][直积与补]]可得 $(X\times Y)^c=\mathbb{R}^p\times Y^c\cup X^c\times\mathbb{R}^q$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK26][全集是开集]]可得 $\mathbb{R}^p,\mathbb{R}^q$ 均为开集，根据[[MK291][之前证明]]可得 $(X\times Y)^c$ 是 $\mathbb{R}^{p+q}$ 上的[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
+根据[[~/文档/note/数学分析/Chap11Note.org::MK26][全集是开集]]可得 $\mathbb{R}^p,\mathbb{R}^q$ 均为开集，根据[[MK291][之前证明]]可得 $(X\times Y)^c$ 是 $\mathbb{R}^{p+q}$ 上的[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]]可得 $X\times Y$ 是闭集
+根据[[~/文档/note/数学分析/Chap11Note.org::P1][定理1]]可得 $X\times Y$ 是闭集
 
 ****** 构造开集与闭集<<MK294>>
 
@@ -3422,7 +3422,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 则有 $F\times F'\subset X\times Y\subset G\times G'$ 根据[[MK291][开集封闭]]以及[[MK293][闭集封闭]] $F\times F'$ 是闭集 $G\times G'$ 是开集
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK345][直积与差]]可得 $(G\times G')-(F\times F')=G\times(G'-F')\cup(G-F)\times G'$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK345][直积与差]]可得 $(G\times G')-(F\times F')=G\times(G'-F')\cup(G-F)\times G'$
 
 则根据[[MK61][次可加性]]有 $\varphi((G\times G')-(F\times F'))\leq\varphi(G\times(G'-F'))+\varphi((G-F)\times G')$
 
@@ -3438,7 +3438,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据[[MK61][单调性]] $\varphi\left(G\times(G'-F')\right)\leq\varphi\left(\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)\right)$ 
 
-进一步根据[[~/OneDrive/离散数学/Disc_Math.org::MK154][分配律]]易证 $\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)=\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty I_i\times I'_j\right)$
+进一步根据[[~/文档/note/离散数学/Disc_Math.org::MK154][分配律]]易证 $\left(\bigcup_{n=1}^\infty I_n\right)\times\left(\bigcup_{n=1}^\infty I'_n\right)=\bigcup_{i=1}^\infty\left(\bigcup_{j=1}^\infty I_i\times I'_j\right)$
 
 又根据[[MK79][正则性]]易证 $\varphi(I_i\times I'_j)=\varphi(I_i)\varphi(I'_j)$
 
@@ -3514,7 +3514,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 即有 $<\vec{x},\vec{y}>\in X\times Y$ 即 $X\times Y\supset \bigcup_{i=1}^\infty(X_i\times Y_i)$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $X\times Y=\bigcup_{i=1}^\infty(X_i\times Y_i)$ 结合 $\bigcup_{i=1}^\infty(X_i\times Y_i)$ 可测
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $X\times Y=\bigcup_{i=1}^\infty(X_i\times Y_i)$ 结合 $\bigcup_{i=1}^\infty(X_i\times Y_i)$ 可测
 
 故有 $X\times Y$ 亦可测
 
@@ -3616,7 +3616,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据确界定义，对于任意 $\forall\epsilon>0\land\epsilon\in\mathbb{R}$ 存在一组开区间 $\{I_i\}$ 满足 $E\subset\bigcup_{i=1}^\infty I_i\land \sum_{i=1}^\infty|I_i|< m^*(E)+\epsilon$
 
-则定义 $G=\bigcup_{i=1}^\infty I_i$ 根据[[~/OneDrive/数学分析/Chap11Note.org::P2][定理3]]可得 $G$ 仍为开集
+则定义 $G=\bigcup_{i=1}^\infty I_i$ 根据[[~/文档/note/数学分析/Chap11Note.org::P2][定理3]]可得 $G$ 仍为开集
 
 根据[[MK57][次可加性]]可得 $m^*(G)\leq \sum_{i=1}^\infty m^*(I_i)<m^*(E)+\epsilon$ 故有 $m^*(G)-m^*(E)<\epsilon$
 
@@ -3624,7 +3624,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 ****** 当 $m^*(E)=\infty$ 时
 
-对于任意 $i\in\mathbb{N}^+$ 定义 $K_i=\prod_{j=1}^n[-i,i]$ 其中 $n$ 为欧式空间的维数，乘法为[[~/OneDrive/离散数学/Disc_Math.org::MK153][直积]]
+对于任意 $i\in\mathbb{N}^+$ 定义 $K_i=\prod_{j=1}^n[-i,i]$ 其中 $n$ 为欧式空间的维数，乘法为[[~/文档/note/离散数学/Disc_Math.org::MK153][直积]]
 
 显然 $K_i$ 是[[MK13][区间]]，根据外测度[[MK79][正则性]]可得 $m^*(K_i)=(2i)^n<\infty$
 
@@ -3642,15 +3642,15 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 由于 $E_{i^*}=E\cap K_{i^*}$ 故有 $x\not\in E_{i^*}$ 即 $x\in G_{i^*}-E_{i^*}$ 显然 $x\in\bigcup_{i=1}^\infty(G-E)$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $G-E\subset\bigcup_{i=1}^\infty(G-E)$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]有 $G-E\subset\bigcup_{i=1}^\infty(G-E)$
 
 同理对于任意 $x\in\bigcup_{i=1}^\infty(G-E)$ 存在 $i^*$ 满足 $x\in G_{i^*}\land x\not\in E_{i^*}$ ，则有 $x\in G$
 
 由于 $G_{i^*}\subset K_{i^*}$ 则有 $x\in K_{i^*}$ ，又由于 $x\not\in E_{i^*}=E\cap K_{i^*}$ 故必有 $x\not\in E$
 
-即 $x\in G-E$ 同理根据[[~/OneDrive/离散数学/Disc_Math.org::MK20][定义]]有 $\bigcup_{i=1}^\infty(G-E)\subset G-E$
+即 $x\in G-E$ 同理根据[[~/文档/note/离散数学/Disc_Math.org::MK20][定义]]有 $\bigcup_{i=1}^\infty(G-E)\subset G-E$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $G-E=\bigcup_{i=1}^\infty(G-E)$
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $G-E=\bigcup_{i=1}^\infty(G-E)$
 
 则有 $m^*(G-E)=m^*\left(\bigcup_{i=1}^\infty(G_i-E_i)\right)\leq\sum_{i=1}^\infty m^*(G_i-E_i)<\sum_{i=1}^\infty\frac{\epsilon}{2^i}=\epsilon$
 
@@ -3660,7 +3660,7 @@ $S$ 其任意点显然在 $\mathbb{R}_e$ 上仍为[[MK147][内点]]，故满足[
 
 根据条件（1）可得对于 $E^c$ 有 $\forall\epsilon$ 存在开集 $G$ 满足 $m^*(G/E^c)<\epsilon$ 
 
-由于 $G/E^c=E/G^c$ 且由于 $G$ 是开集，则根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]]可得 $G^c$ 是闭集
+由于 $G/E^c=E/G^c$ 且由于 $G$ 是开集，则根据[[~/文档/note/数学分析/Chap11Note.org::P1][定理1]]可得 $G^c$ 是闭集
 
 定义 $G^c=F$ 则有 $m^*(G/E^c)=m^*(E/F)<\epsilon$
 
@@ -3740,7 +3740,7 @@ $E$ [[MK81][可测]]的充要条件是 $\forall\epsilon>0\land\epsilon\in\mathbb
  
 *** 正规性定理<<MK97>>
 
-定义 $\Gamma$ 表示 $\mathbb{R}^n$ 所有开集的[[~/OneDrive/离散数学/Disc_Math.org::MK12][集合族]]，定义 $\Theta$ 为所有闭集的集合族，若 $E\subset\mathbb{R}^n$ 则：
+定义 $\Gamma$ 表示 $\mathbb{R}^n$ 所有开集的[[~/文档/note/离散数学/Disc_Math.org::MK12][集合族]]，定义 $\Theta$ 为所有闭集的集合族，若 $E\subset\mathbb{R}^n$ 则：
 
 （1） $E$ 是[[MK81][可测集]]，则有 $m^*(E)=\inf\left\{m^*(G)\big|E\subset G\land G\in\Gamma\right\}=\sup\left\{m^*(F)\big|F\subset E\land F\in\Theta\right\}$
 
@@ -3790,7 +3790,7 @@ $E$ [[MK81][可测]]的充要条件是 $\forall\epsilon>0\land\epsilon\in\mathbb
 
 ******* 当 $m^*(E)=\infty$ 时
 
-对于任意 $i\in\mathbb{N}^+$ 定义 $K_i=\prod_{j=1}^n[-i,i]$ 其中 $n$ 为欧式空间的维数，乘法为[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-直积]]
+对于任意 $i\in\mathbb{N}^+$ 定义 $K_i=\prod_{j=1}^n[-i,i]$ 其中 $n$ 为欧式空间的维数，乘法为[[~/文档/note/离散数学/Disc_Math.org][关系与函数-基本定义-直积]]
 
 显然 $K_i$ 是[[MK13][区间]]，根据外测度[[MK79][正则性]]可得 $m^*(K_i)=(2i)^n<\infty$
 
@@ -3836,7 +3836,7 @@ $E$ [[MK81][可测]]的充要条件是 $\forall\epsilon>0\land\epsilon\in\mathbb
 
 由于 $G_i$ 为开集，故根据[[MK87][开集可测]]可得可测
 
-同理 $F_i$ 为闭集，结合[[MK84][计算]]中（1）以及[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]]可得亦可测
+同理 $F_i$ 为闭集，结合[[MK84][计算]]中（1）以及[[~/文档/note/数学分析/Chap11Note.org::P1][定理1]]可得亦可测
 
 根据[[MK84][计算]]中（2）和（4）可得 $A,B$ 亦可测，结合 $m^*(B)<\infty$ 有 $m^*(A)-m^*(B)=m^*(A-B)=0$
 
@@ -3996,7 +3996,7 @@ Borel集中元素均为可测集
 
 *** 引理<<MK98>>
 
-若 $E\subset\mathbb{R}^n$ 是有界的[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]]且 $0<m^*(E)<\infty$ 定义 $D=\left\{\vec{x}-\vec{y}\big|\vec{x}\in E\land \vec{y}\in E\right\}$
+若 $E\subset\mathbb{R}^n$ 是有界的[[~/文档/note/数学分析/Chap11Note.org::MK13][闭集]]且 $0<m^*(E)<\infty$ 定义 $D=\left\{\vec{x}-\vec{y}\big|\vec{x}\in E\land \vec{y}\in E\right\}$
 
 则必有 $\delta>0\land\delta\in\mathbb{R}$ 使得 $O(\vec{0},\delta)\subset D$ 
 
@@ -4006,15 +4006,15 @@ Borel集中元素均为可测集
 
 由于 $E$ [[MK81][可测]]故根据[[MK97][正规性]]定理可得 $m^*(E)=\inf\left\{m^*(G)\big|E\subset G\land G\in\Gamma\right\}$
 
-故根据下确界定义，存在[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]] $G$ 使得 $K\subset G\land m^*(G)<2m^*(K)$
+故根据下确界定义，存在[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-集合定义-开集]] $G$ 使得 $K\subset G\land m^*(G)<2m^*(K)$
 
-取 $G$ 的补集 $G^c$ 根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]可得 $G^c$ 为闭集且 $G^c\cap K=\varnothing$
+取 $G$ 的补集 $G^c$ 根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-集合定义-部分定理-定理1]]可得 $G^c$ 为闭集且 $G^c\cap K=\varnothing$
 
 ***** 证明距离大于零
 
 定义 $d(G^c,K)$ 为集合间的[[MK89][度量]]，此时若 $d(G^c,K)=0$ 则必然存在 $\vec{x}$ 满足 $\forall\delta>0,\exists\vec{y}\in G^c\rightarrow y\in O(\vec{x},\delta)$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-点的定义-聚点-充要条件1]]可得 $\vec{x}$ 是 $G^c$ 的聚点，结合闭集定义可得 $\vec{x}\in G^c$
+根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-点的定义-聚点-充要条件1]]可得 $\vec{x}$ 是 $G^c$ 的聚点，结合闭集定义可得 $\vec{x}\in G^c$
 
 同理可证 $\vec{x}\in K$ 与 $G^c\cap K=\varnothing$ 矛盾，故必有 $d(G^c,K)>0$ 定义 $\delta=d(G^c,K)$
 
@@ -4068,7 +4068,7 @@ Borel集中元素均为可测集
 
 ***** 建立划分<<MK100>>
 
-定义[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系]] $R=\left\{<x,y>\big|x\in\mathbb{R}\land y\in\mathbb{R}\land x-y\in\mathbb{Q}\right\}$ 即两个相差有理数的实数，显然有：
+定义[[~/文档/note/离散数学/Disc_Math.org][关系与函数-二元关系]] $R=\left\{<x,y>\big|x\in\mathbb{R}\land y\in\mathbb{R}\land x-y\in\mathbb{Q}\right\}$ 即两个相差有理数的实数，显然有：
 
 （1） 自反性 $x-x=0\in\mathbb{Q}$
 
@@ -4076,13 +4076,13 @@ Borel集中元素均为可测集
 
 （3） 传递性 $x-y\in\mathbb{Q}\land y-z\in\mathbb{Q}$ 则有 $x-y+y-z=x-z\in\mathbb{Q}$
 
-故可得 $R$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK176][等价关系]]，根据[[~/OneDrive/离散数学/Disc_Math.org::MK180][定理1]]可得 $R$ 划分 $\mathbb{R}$
+故可得 $R$ 是[[~/文档/note/离散数学/Disc_Math.org::MK176][等价关系]]，根据[[~/文档/note/离散数学/Disc_Math.org::MK180][定理1]]可得 $R$ 划分 $\mathbb{R}$
 
 ***** 定义集合<<MK96>>
 
-定义集合 $V$ 为从每个上述划分中选取一个代表元素，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-选择公理]]可得 $V$ 存在
+定义集合 $V$ 为从每个上述划分中选取一个代表元素，根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-选择公理]]可得 $V$ 存在
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理-定理1-推论]]可得有理数是可数集
+根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理-定理1-推论]]可得有理数是可数集
 
 故定义数列 $\{q_i\},i\in\mathbb{N}$ 为有理数列排成的列，进一步定义 $V_i=\left\{v+q_i\big|v\in V\right\}$
 
@@ -4096,15 +4096,15 @@ Borel集中元素均为可测集
 
 ***** 证明结论<<MK102>>
 
-由于 $R$ 可形成 $\mathbb{R}$ 上的[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-划分]]，故对于任意 $x\in\mathbb{R}$ 均有一个划分与其对应
+由于 $R$ 可形成 $\mathbb{R}$ 上的[[~/文档/note/离散数学/Disc_Math.org][关系与函数-特殊关系-划分]]，故对于任意 $x\in\mathbb{R}$ 均有一个划分与其对应
 
 根据 $V$ 的定义存在 $y\in V\rightarrow y\in[x]_R$ 且必然 $x-y\in\mathbb{Q}$ 根据有利数可列性有 $x-y=q_k$ 继而有 $x\in V_k$
 
-故有 $\mathbb{R}\subset\bigcup_{i=1}^\infty V_i$ 又由于显然 $\mathbb{R}\supset\bigcup_{i=1}^\infty V_i$ 则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集-定理1]]可得 $\mathbb{R}=\bigcup_{i=1}^\infty V_i$
+故有 $\mathbb{R}\subset\bigcup_{i=1}^\infty V_i$ 又由于显然 $\mathbb{R}\supset\bigcup_{i=1}^\infty V_i$ 则根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-子集-定理1]]可得 $\mathbb{R}=\bigcup_{i=1}^\infty V_i$
 
 由于 $E\subset\mathbb{R}$ 故有 $E\cap \bigcup_{i=1}^\infty V_i=E$ 
 
-根据的[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的计算-性质-集合族运算与交并]]可得 $\bigcup_{i=1}^\infty(E\cap V_i)=E\cap\bigcup_{i=1}^\infty V_i$
+根据的[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的计算-性质-集合族运算与交并]]可得 $\bigcup_{i=1}^\infty(E\cap V_i)=E\cap\bigcup_{i=1}^\infty V_i$
 
 继而有 $E=\bigcup_{i=1}^\infty(E\cap V_i)$ 故根据[[MK57][次可加性]]有 $m^*(E)\leq\sum_{i=1}^\infty m^*(E\cap V_i)$ 
 
@@ -4140,7 +4140,7 @@ Borel集中元素均为可测集
 
 ***** 建立划分
 
-定义[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系]] $R=\left\{<x,y>\big|x\in\mathbb{R}\land y\in\mathbb{R}\land x-y\in\mathbb{Q}\right\}$ 即两个相差有理数的实数，显然有：
+定义[[~/文档/note/离散数学/Disc_Math.org][关系与函数-二元关系]] $R=\left\{<x,y>\big|x\in\mathbb{R}\land y\in\mathbb{R}\land x-y\in\mathbb{Q}\right\}$ 即两个相差有理数的实数，显然有：
 
 （1） 自反性 $x-x=0\in\mathbb{Q}$
 
@@ -4148,7 +4148,7 @@ Borel集中元素均为可测集
 
 （3） 传递性 $x-y\in\mathbb{Q}\land y-z\in\mathbb{Q}$ 则有 $x-y+y-z=x-z\in\mathbb{Q}$
 
-故可得 $R$ 是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-等价关系]]，根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-划分-定理-定理1]]可得 $R$ 划分 $\mathbb{R}$
+故可得 $R$ 是[[~/文档/note/离散数学/Disc_Math.org][关系与函数-特殊关系-等价关系]]，根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-特殊关系-划分-定理-定理1]]可得 $R$ 划分 $\mathbb{R}$
 
 ***** 定义集合<<MK96>>
 
@@ -4158,11 +4158,11 @@ Borel集中元素均为可测集
 
 故对于任意 $x\in\mathbb{R}$ 的等价类 $[x]_R$ 存在 $y\in[0,1]\land y\in[x]_R$
 
-故定义集合 $V$ 为从每个上述划分中选取一个 $[0,1]$ 中的代表元素，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-选择公理]]可得 $V$ 存在
+故定义集合 $V$ 为从每个上述划分中选取一个 $[0,1]$ 中的代表元素，根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-选择公理]]可得 $V$ 存在
 
-取 $[-1,1]$ 中所有的有理数，根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理-定理1-推论]]可得有理数是可数集
+取 $[-1,1]$ 中所有的有理数，根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-至多可数集-定理-定理1-推论]]可得有理数是可数集
 
-进一步根据[[MK43][稠密性]]可得 $[-1,1]$ 中所有有理数的集合为[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合分类-无限集]]
+进一步根据[[MK43][稠密性]]可得 $[-1,1]$ 中所有有理数的集合为[[~/文档/note/离散数学/Disc_Math.org][集合论-集合分类-无限集]]
 
 故定义数列 $\{q_i\},i\in\mathbb{N}$ 为上述有理数列排成的列，进一步定义 $V_k=\left\{v+q_k\big|v\in V\right\}$
 
@@ -4180,7 +4180,7 @@ Borel集中元素均为可测集
 
 即 $-1\leq x-y\leq 1$ 即 $x-y\in[-1,1]$ 则必有 $q_{u}\in\{q_i\}$ 满足 $x-y=q_u$
 
-故有 $\forall x\in[0,1]\rightarrow x\in V_u\subset\bigcup_{i=1}^\infty V_k$ 则根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集]]可得 $[0,1]\subset\bigcup_{k=1}^\infty V_k$
+故有 $\forall x\in[0,1]\rightarrow x\in V_u\subset\bigcup_{i=1}^\infty V_k$ 则根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-子集]]可得 $[0,1]\subset\bigcup_{k=1}^\infty V_k$
 
 故有 $[0,1]\subset\bigcup_{i=1}^\infty V_k\subset [-1,2]$ 根据[[MK60][单调性]]可得 $m^*([0,1])\leq m^*\left(\bigcup_{i=1}^\infty V_k\right)\leq m^*([-1,2])$
 
@@ -4210,11 +4210,11 @@ Borel集中元素均为可测集
 
 *** 引理1<<MK352>>
 
-非空[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]]上的有限函数必有界
+非空[[~/文档/note/数学分析/Chap11Note.org::MK13][闭集]]上的有限函数必有界
 
 **** 证明
 
-对于任意 $E\subset\mathbb{R}^n$ 是非空闭集，任意 $f:E\to\mathbb{R}$ 为 $E$ 到 $\mathbb{R}$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]
+对于任意 $E\subset\mathbb{R}^n$ 是非空闭集，任意 $f:E\to\mathbb{R}$ 为 $E$ 到 $\mathbb{R}$ 的[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]
 
 假设无界，则满足 $\forall a\in\mathbb{R},\exists x\in E\rightarrow f(x)>a$
 
@@ -4224,7 +4224,7 @@ Borel集中元素均为可测集
 
 对于 $a_1=1$ 任取一个划分满足存在 $x$ 属于该划分且 $f(x)>a_1$ 定义该划分为 $E_1$
 
-以此类推，可以有 $E_1,E_2,...\a$ 显然满足[[~/OneDrive/数学分析/Chap11Note.org::KTDL][闭区间套]]条件
+以此类推，可以有 $E_1,E_2,...\a$ 显然满足[[~/文档/note/数学分析/Chap11Note.org::KTDL][闭区间套]]条件
 
 故存在唯一一点 $x\in\bigcup_{i=1}^\infty E_i$ 根据条件必有 $f(x)=\infty$
 
@@ -4232,7 +4232,7 @@ Borel集中元素均为可测集
 
 ** 连续函数<<MK106>>
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK18][向量值函数连续]]，在不考虑边界点的情况下（只考虑 $B$ 的[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]）
+根据[[~/文档/note/数学分析/Chap11Note.org::MK18][向量值函数连续]]，在不考虑边界点的情况下（只考虑 $B$ 的[[~/文档/note/数学分析/Chap11Note.org::MK7][内点]]）
 
 若 $f:A\to B,A\subset\mathbb{R}^n\land B\subset\mathbb{R}^m$ 连续，则 $\forall\vec{x}_0\in B\rightarrow\lim_{\vec{x}\to\vec{x}_0}f(\vec{x})=f(\vec{x}_0)$
 
@@ -4242,7 +4242,7 @@ Borel集中元素均为可测集
 
 （1） $\forall\vec{x}_0\in B\rightarrow\forall\epsilon>0\left(\exists\delta>0\rightarrow O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}\right)$
 
-（2） 对于任意 $C\subset B$ 且 $C$ 为[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]，则 $f^{-1}(C)=\left\{\vec{x}\big|f(\vec{x})\in C\right\}$ 仍为开集 
+（2） 对于任意 $C\subset B$ 且 $C$ 为[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]，则 $f^{-1}(C)=\left\{\vec{x}\big|f(\vec{x})\in C\right\}$ 仍为开集 
 
 **** 证明
 
@@ -4260,7 +4260,7 @@ Borel集中元素均为可测集
 
 故 $\forall\vec{x}\in O(\vec{x}_0,\delta)\rightarrow\forall|\vec{x}-\vec{x}_0|<\delta\rightarrow\vec{x}\in\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org][集合论-集合的关系-子集]]定义可得 $O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
+故根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合的关系-子集]]定义可得 $O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
 ****** 必要
 
@@ -4280,7 +4280,7 @@ Borel集中元素均为可测集
 
 ****** 充分
 
-若 $f^{-1}(C)=\varnothing$ 则根据[[~/OneDrive/数学分析/Chap11Note.org::MK15][定理8]]可得空集是开集，即开集 $C$ 的原相是开集
+若 $f^{-1}(C)=\varnothing$ 则根据[[~/文档/note/数学分析/Chap11Note.org::MK15][定理8]]可得空集是开集，即开集 $C$ 的原相是开集
 
 若 $f^{-1}(C)\ne\varnothing$ 则对于任意 $\vec{x}_0\in f^{-1}(C)$ 均有 $f(\vec{x}_0)\in C$ 由于 $C$ 是开集，故有 $\exists\epsilon>0\rightarrow O(f(\vec{x}_0),\epsilon)\subset C$
 
@@ -4292,29 +4292,29 @@ Borel集中元素均为可测集
 
 即有 $\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}\subset\left\{\vec{x}\big|f(\vec{x})\in C\right\}$ 故 $O(\vec{x}_0,\delta)\subset\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}\subset\left\{\vec{x}\big|f(\vec{x})\in C\right\}$
 
-综上所述，对于任意 $\vec{x}_0\in C$ 均存在 $\delta>0\rightarrow O(\vec{x}_0,\delta)\subset C$ 即 $C$ 的所有点均为[[~/OneDrive/数学分析/Chap11Note.org::MK7][内点]]
+综上所述，对于任意 $\vec{x}_0\in C$ 均存在 $\delta>0\rightarrow O(\vec{x}_0,\delta)\subset C$ 即 $C$ 的所有点均为[[~/文档/note/数学分析/Chap11Note.org::MK7][内点]]
 
-故根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]定义 $C$ 是开集。即（1）推出（2）
+故根据[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]定义 $C$ 是开集。即（1）推出（2）
 
 ****** 必要
 
 对于任意 $\vec{x}_0\in A$ 以及 $\epsilon>0$ 定义集合 $Y=\left\{f(\vec{x})\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$ 根据领域定义 $Y=O(f(\vec{x}_0),\epsilon)$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK19][定理2]]可得领域为开集，即 $O(f(\vec{x}_0),\epsilon)$ 是开集
+根据[[~/文档/note/数学分析/Chap11Note.org::MK19][定理2]]可得领域为开集，即 $O(f(\vec{x}_0),\epsilon)$ 是开集
 
 若满足（2）则 $\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}=\left\{\vec{x}\big|f(\vec{x})\in O(f(\vec{x}_0),\epsilon)\right\}$ 亦为开集
 
 显然 $\left|f(\vec{x}_0)-f(\vec{x}_0)\right|=0<\epsilon$ 故有 $f(\vec{x}_0)\in O(f(\vec{x}_0),\epsilon)\rightarrow\vec{x}\in\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
-故根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]定义有 $\eixsts\delta>0\rightarrow O(\vec{x},\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
+故根据[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]定义有 $\eixsts\delta>0\rightarrow O(\vec{x},\delta)\subset\left\{\vec{x}\big|\left|f(\vec{x})-f(\vec{x}_0)\right|<\epsilon\right\}$
 
 定义原相 $g(K)=\left\{k\big|f(k)\in K\right\}$ 故推出（1）
 
 *** 引理1
 
-若存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个[[MK106][连续函数]] $f_i(x), i\in I$ 定义 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\},\psi(x)=\sup\left\{f_i(x)\big|i\in I\right\}$
+若存在[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个[[MK106][连续函数]] $f_i(x), i\in I$ 定义 $\phi(x)=\inf\left\{f_i(x)\big|i\in I\right\},\psi(x)=\sup\left\{f_i(x)\big|i\in I\right\}$
 
-即为 $f_i(x)$ 的上下[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]，则 $\phi(x),\psi(x)$ 不一定为[[MK106][连续函数]]
+即为 $f_i(x)$ 的上下[[~/文档/note/离散数学/Disc_Math.org::MK326][确界]]，则 $\phi(x),\psi(x)$ 不一定为[[MK106][连续函数]]
 
 **** 证明
 
@@ -4362,7 +4362,7 @@ Borel集中元素均为可测集
 
 由于递增 $\forall x<x_0\rightarrow f(x)\leq f(x_0)$ 由于定义域属于 $\mathbb{R}$ 故 $f(x)<\infty$
 
-故集合 $L=\left\{f(x)\big|a<x<x_0\right\}$ 有上界，根据[[~/OneDrive/数学分析/Chap11Note.org::MK9][确界存在定理]]存在上确界 $A=\sup(L)$
+故集合 $L=\left\{f(x)\big|a<x<x_0\right\}$ 有上界，根据[[~/文档/note/数学分析/Chap11Note.org::MK9][确界存在定理]]存在上确界 $A=\sup(L)$
 
 则对于任意 $\epsilon>0$ 存在 $x_0-\delta\in L$ 使得 $A-f(x_0-\delta)<\epsilon$
 
@@ -4384,13 +4384,13 @@ Borel集中元素均为可测集
 
 由于递增可得 $\forall f(x)\in L\rightarrow f(x)\leq f(x_0)$ 以及 $\forall f(x)\in U\rightarrow f(x)\geq f(x_0)$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理1]]可得 $A\leq f(x_0)\leq B$ 当 $A=f(x_0)=B$ 时显然有 $\lim_{x\to x_0}f(x)=f(x_0)$
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK339][定理1]]可得 $A\leq f(x_0)\leq B$ 当 $A=f(x_0)=B$ 时显然有 $\lim_{x\to x_0}f(x)=f(x_0)$
 
 即点 $x_0$ [[MK106][连续]]，与条件不符，故根据[[MK5][三岐性]]必有 $B>A$
 
 *** 定理2<<MK335>>
 
-[[MK13][区间]] $(a,b)$ 上的单调函数 $f(x)$ 定义域 $Y\subset\mathbb{R}$ 的不连续点集是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]
+[[MK13][区间]] $(a,b)$ 上的单调函数 $f(x)$ 定义域 $Y\subset\mathbb{R}$ 的不连续点集是[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数集]]
 
 **** 证明
 
@@ -4404,25 +4404,25 @@ Borel集中元素均为可测集
 
 由于 $B_{x_0}=\inf\left(\left\{f(x)\big|x_0<x<b\right\}\right),A_{x_1}=\sup\left(\left\{f(x)\big|a<x<x_1\right\}\right)$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界定义]]有 $B_{x_0}\leq f(x')\leq A_{x_1}$ 于是乎同样取 $r(x_1)$ 可得 $r(x_1)>A_{x_1}>B_{x_0}>r(x_0)$
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK326][确界定义]]有 $B_{x_0}\leq f(x')\leq A_{x_1}$ 于是乎同样取 $r(x_1)$ 可得 $r(x_1)>A_{x_1}>B_{x_0}>r(x_0)$
 
 同理可证若 $x_1<x_0$ 则有 $r(x_1)<r(x_0)$
 
 综上所述，对于任意一个 $x_0\in E$ 均有唯一对应的有理数 $r(x_0)\in\mathbb{Q}$
 
-即存在 $K\subset\mathbb{Q}$ 使得 $|E|=|K|$ [[~/OneDrive/离散数学/Disc_Math.org::MK26][对等]]，根据[[~/OneDrive/离散数学/Disc_Math.org::MK355][定理8]]可得 $|K|\leq|\mathbb{Q}|$
+即存在 $K\subset\mathbb{Q}$ 使得 $|E|=|K|$ [[~/文档/note/离散数学/Disc_Math.org::MK26][对等]]，根据[[~/文档/note/离散数学/Disc_Math.org::MK355][定理8]]可得 $|K|\leq|\mathbb{Q}|$
 
-又根据[[~/OneDrive/离散数学/Disc_Math.org::MK325][推论]]可得 $\mathbb{Q}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK48][可数集]]，则易证 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]] 
+又根据[[~/文档/note/离散数学/Disc_Math.org::MK325][推论]]可得 $\mathbb{Q}$ 是[[~/文档/note/离散数学/Disc_Math.org::MK48][可数集]]，则易证 $E$ 为[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数集]] 
 
 ** 康托函数<<MK109>>
 
-若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $F$ 满足： 
+若[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $F$ 满足： 
 
 （1） 将[[MK107][康托三分集]] $P$ 映射成[[MK51][外测度]]为正的[[MK81][可测集]]
 
-（2） 是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射]]函数
+（2） 是[[~/文档/note/离散数学/Disc_Math.org::MK200][双射]]函数
 
-（3） 其[[~/OneDrive/离散数学/Disc_Math.org::MK203][逆]]函数 $F^{-1}$ [[MK106][连续]]
+（3） 其[[~/文档/note/离散数学/Disc_Math.org::MK203][逆]]函数 $F^{-1}$ [[MK106][连续]]
 
 则称 $F$ 为康托函数
 
@@ -4486,13 +4486,13 @@ Borel集中元素均为可测集
 
 由于[[MK113][严格单调递增]]，故有 $F(x_1)>F(x_2)\lor F(x_1)<F(x_2)$ 进一步根据[[MK5][三歧性]]有 $F(x_1)\ne F(x_2)$
 
-即为单射函数，故满足[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射]]定义
+即为单射函数，故满足[[~/文档/note/离散数学/Disc_Math.org::MK200][双射]]定义
 
 ***** 逆函数连续
 
 ****** $f(x)$ 连续
 
-******* 递增且[[~/OneDrive/离散数学/Disc_Math.org::MK198][满射]]<<MK112>>
+******* 递增且[[~/文档/note/离散数学/Disc_Math.org::MK198][满射]]<<MK112>>
 
 显然根据映射 $g(x)$ 的定义可得 $g(x)$ 递增，则若 $x_1<x_2$ 有 $g(x_1)\leq g(x_2)$
 
@@ -4520,7 +4520,7 @@ Borel集中元素均为可测集
 
 进一步取任意 $a\in\left(f(x_0),K-\frac{1}{2}(K-f(x_0))\right)$ 显然 $a\in[0,1]$
 
-由于 $f(x)$ 值域为 $[0,1]$ 且[[~/OneDrive/离散数学/Disc_Math.org::MK198][满射]]，故存在 $x'$ 满足 $f(x')=a$ 
+由于 $f(x)$ 值域为 $[0,1]$ 且[[~/文档/note/离散数学/Disc_Math.org::MK198][满射]]，故存在 $x'$ 满足 $f(x')=a$ 
 
 又根据递增有 $x>x'>x_0$ 故显然有 $x'-x_0<\delta'$ 则根据极限定义有 $|f(x')-K|<\epsilon$
 
@@ -4540,7 +4540,7 @@ Borel集中元素均为可测集
 
 ****** $F^{-1}(y)$ 连续<<MK118>>
 
-根据[[MK111][之前证明]]可得 $F(x)$ 是双射函数，故根据[[~/OneDrive/离散数学/Disc_Math.org::MK203][定义]]可得逆函数 $F^{-1}(y)$ 存在
+根据[[MK111][之前证明]]可得 $F(x)$ 是双射函数，故根据[[~/文档/note/离散数学/Disc_Math.org::MK203][定义]]可得逆函数 $F^{-1}(y)$ 存在
 
 根据之前证明有 $F(x)$ [[MK113][严格递增]]且[[MK114][连续]]，
 
@@ -4564,15 +4564,15 @@ Borel集中元素均为可测集
 
 **** 广义实值函数
 
-定义为 $f:E\to\mathbb{R}\cup\{-\infty,+\infty\}$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，其中 $\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
+定义为 $f:E\to\mathbb{R}\cup\{-\infty,+\infty\}$ 的[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]，其中 $\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
 
 **** 有限函数<<MK383>>
 
-若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]满足 $f:E\to\mathbb{R}$ 则定义为有限函数
+若[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]满足 $f:E\to\mathbb{R}$ 则定义为有限函数
 
 **** 有界函数<<MK386>>
 
-若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to X\subset\mathbb{R}$ 满足：
+若[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:E\to X\subset\mathbb{R}$ 满足：
 
 （1） 存在 $a\in\mathbb{R}$ 使得 $\forall x\in X\rightarrow x<a$ 则为有上界函数
 
@@ -4593,7 +4593,7 @@ Borel集中元素均为可测集
 
 仅证第一等式，其余类似可证
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK37][可数性质]]可得 $\forall z\in\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]\leftrightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(a-\frac{1}{i},+\infty\right]\right)$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK37][可数性质]]可得 $\forall z\in\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]\leftrightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(a-\frac{1}{i},+\infty\right]\right)$
 
 由于 $\forall i\in\mathbb{N}\rightarrow a-\frac{1}{i}<a$ 则有 $\forall z\in[a,\infty]\rightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(a-\frac{1}{i},\infty\right]\right)$
 
@@ -4611,7 +4611,7 @@ Borel集中元素均为可测集
 
 则假设 $z<a$ 不成立，故显然 $z\geq a$ 即 $z\in[a,\infty]$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]=[a,\infty]$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $\bigcap_{i=1}^\infty \left(a-\frac{1}{i},+\infty\right]=[a,\infty]$
 
 **** 定理2<<MK142>>
 
@@ -4626,7 +4626,7 @@ Borel集中元素均为可测集
 
 仅证（1），显然 $\infty\in\bigcap_{i=1}^\infty \left(i,+\infty\right]$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK37][可数性质]]可得 $\forall z\in\bigcap_{i=1}^\infty \left(i,\infty\right]\leftrightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(i,+\infty\right]\right)$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK37][可数性质]]可得 $\forall z\in\bigcap_{i=1}^\infty \left(i,\infty\right]\leftrightarrow\left(\forall i\in\mathbb{N}\rightarrow z\in\left(i,+\infty\right]\right)$
 
 假设 $z\in\mathbb{R}$ 满足上述性质
 
@@ -4638,13 +4638,13 @@ Borel集中元素均为可测集
 
 （2） $\forall i\in\mathbb{N}\rightarrow \infty\in(i,\infty]$
 
-故 $z=\infty\rightarrow z\in\{\infty\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $\bigcap_{i=1}^\infty \left(i,+\infty\right]&=\{\infty\}$
+故 $z=\infty\rightarrow z\in\{\infty\}$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $\bigcap_{i=1}^\infty \left(i,+\infty\right]&=\{\infty\}$
 
 ** 绝对连续函数<<MK384>>
 
 设 $f(x)$ 是 $[a,b]$ 上的[[MK383][有限函数]]，若对于任意 $\epsilon>0$ 均存在 $\delta>0$ 满足
 
-任取[[~/OneDrive/离散数学/Disc_Math.org:MK48][至多可数]]个 $[a,b]$ 上互不相交的开区间 $\{(a_i,b_i)\}$ 若满足 $\sum_{i=1}^n(b_i-a_i)<\delta$
+任取[[~/文档/note/离散数学/Disc_Math.org:MK48][至多可数]]个 $[a,b]$ 上互不相交的开区间 $\{(a_i,b_i)\}$ 若满足 $\sum_{i=1}^n(b_i-a_i)<\delta$
 
 则均有 $\sum_{i=1}^n|f(a_i)-f(b_i)|<\epsilon$ 。则称 $f(x)$ 是 $[a,b]$ 上的绝对连续函数
 
@@ -4682,7 +4682,7 @@ Borel集中元素均为可测集
 
 **** 证明
 
-由于是绝对连续函数，故对于 $\epsilon=1$ 存在 $\delta>0$ 对于任意[[~/OneDrive/离散数学/Disc_Math.org:MK48][至多可数]]个互不相交的开区间 $\{(a_i,b_i)\}$
+由于是绝对连续函数，故对于 $\epsilon=1$ 存在 $\delta>0$ 对于任意[[~/文档/note/离散数学/Disc_Math.org:MK48][至多可数]]个互不相交的开区间 $\{(a_i,b_i)\}$
 
 若满足 $\sum_{i=1}^n(b_i-a_i)<\delta$ 则均有 $\sum_{i=1}^n|f(a_i)-f(b_i)|<\epsilon$
 
@@ -4690,9 +4690,9 @@ Borel集中元素均为可测集
 
 定义为 $[a_i,b_i]$ ，其中 $a_1=a,b_{N}=b,a_{i+1}=b_i$ ，且每个区间长度 $b_i-a_i=\frac{b-a}{N}$
 
-则对于 $[a_i,b_i]$ 上的任意[[~/OneDrive/离散数学/Disc_Math.org::MK360][有理划分]] $T=\{[a_{ij},b_{ij}]\}$ 根据条件均满足 $Z_{T,[a_i,b_i]}(f)<1$
+则对于 $[a_i,b_i]$ 上的任意[[~/文档/note/离散数学/Disc_Math.org::MK360][有理划分]] $T=\{[a_{ij},b_{ij}]\}$ 根据条件均满足 $Z_{T,[a_i,b_i]}(f)<1$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $\sup(Z_{[a_i,b_i]}(f))\leq1$ 其中 $Z_{[a_i,b_i]}(f)=\left\{Z_{T,[a_i,b_i]}(f)\big|T\in\mathcal{T}_i\right\}$ 即 $\overunderset{b_i}{a_i}{V}(f)\leq1$
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK339][定理2]]可得 $\sup(Z_{[a_i,b_i]}(f))\leq1$ 其中 $Z_{[a_i,b_i]}(f)=\left\{Z_{T,[a_i,b_i]}(f)\big|T\in\mathcal{T}_i\right\}$ 即 $\overunderset{b_i}{a_i}{V}(f)\leq1$
 
 根据[[MK356][性质4]]可得 $\overunderset{b}{a}{V}(f)=\overunderset{b_1}{a_1}{V}(f)+\overunderset{b}{a_2}{V}(f)$ 同理又有 $\overunderset{b}{a}{V}(f)=\overunderset{b_1}{a_1}{V}(f)+\overunderset{b_2}{a_2}{V}(f)+\overunderset{b}{a_3}{V}(f)$
 
@@ -4722,7 +4722,7 @@ Borel集中元素均为可测集
 
 ***** 前置证明<<MK391>>
 
-故对于任意 $\epsilon>0$ 存在 $\delta$ 任取[[~/OneDrive/离散数学/Disc_Math.org:MK48][至多可数]]个 $[a,x_0]$ 上互不相交的开区间 $\{(a_i,b_i)\}$
+故对于任意 $\epsilon>0$ 存在 $\delta$ 任取[[~/文档/note/离散数学/Disc_Math.org:MK48][至多可数]]个 $[a,x_0]$ 上互不相交的开区间 $\{(a_i,b_i)\}$
 
 若满足 $\sum_{i=1}^n(b_i-a_i)<\delta$ 则有 $\sum_{i=1}^n|f(a_i)-f(b_i)|<\epsilon$
 
@@ -4793,7 +4793,7 @@ Borel集中元素均为可测集
 
 函数 $f(x)$ 是 $[a,b]$ 上的[[MK384][绝对连续函数]]的充要条件为在 $[a,b]$ 上：
 
-（1） [[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]] $f'(x)$ [[MK190][几乎处处]]存在，且
+（1） [[~/文档/note/大学物理/Note/DiffEq.org::MK20][导数]] $f'(x)$ [[MK190][几乎处处]]存在，且
 
 （2） $f'(x)$ [[MK237][勒贝格可积]]
 
@@ -4855,7 +4855,7 @@ Borel集中元素均为可测集
 
 *** 定义<<MK350>>
 
-对于任意一个 $[a,b]$ 上的[[~/OneDrive/离散数学/Disc_Math.org::MK360][有理划分]] $T=\{[a_0,a_1],[a_1,a_2],...\}$
+对于任意一个 $[a,b]$ 上的[[~/文档/note/离散数学/Disc_Math.org::MK360][有理划分]] $T=\{[a_0,a_1],[a_1,a_2],...\}$
 
 定义 $Z_{T,[a,b]}(f)=\sum_{i=1}^n\left|f(a_i)-f(a_{i-1})\right|$ 为划分 $T$ 下的变差
 
@@ -4987,7 +4987,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 \leq&\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)
 \end{aligned}
 
-即由 $T$ 的任意性以及[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $\overunderset{b}{a}{V}(f)\leq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+即由 $T$ 的任意性以及[[~/文档/note/离散数学/Disc_Math.org::MK339][定理2]]可得 $\overunderset{b}{a}{V}(f)\leq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
 
 ****** 证明 $\overunderset{b}{a}{V}(f)\geq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
 
@@ -4997,7 +4997,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 显然由于 $Z_{T,[a,b]}(f)\in Z_{[a,b]}(f)$ 故可得 $Z_{T_\alpha,[a,c]}(f)+Z_{T_\beta,[c,b]}(f)\leq\overunderset{b}{a}{V}(f)$
 
-即由 $T$ 的任意性以及[[~/OneDrive/离散数学/Disc_Math.org::MK361][定理7]]可得 $\overunderset{b}{a}{V}(f)\geq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
+即由 $T$ 的任意性以及[[~/文档/note/离散数学/Disc_Math.org::MK361][定理7]]可得 $\overunderset{b}{a}{V}(f)\geq\overunderset{c}{a}{V}(f)+\overunderset{b}{c}{V}(f)$
 
 *** Jordan分解（定义1）<<MK354>>
 
@@ -5083,7 +5083,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 ****** 构造函数
 
-对于任意增函数 $f(x)$ 根据[[MK335][定理2]]可得其不连续点是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]
+对于任意增函数 $f(x)$ 根据[[MK335][定理2]]可得其不连续点是[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数集]]
 
 则定义不连续点集 $Z=\{z_1,z_2...\}$
 
@@ -5147,7 +5147,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 显然 $g(x),h(x)$ 是闭区间 $[a,b]$ 上的单调函数，故根据[[MK382][勒贝格定理]]有：
 
-（1） $g(x),h(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]存在[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]
+（1） $g(x),h(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]存在[[~/文档/note/大学物理/Note/DiffEq.org::MK20][导数]]
 
 （2） 导函数 $g'(x),h'(x)$ 在 $[a,b]$ 上均[[MK237][勒贝格可积]]
 
@@ -5161,7 +5161,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 ** 可测函数<<MK134>>
 
-定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e,E\subset X$ 其中 $\mathbb{R}_e=\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e,E\subset X$ 其中 $\mathbb{R}_e=\mathbb{R}\cup\{-\infty,+\infty\}$ 为[[MK143][广义实数]]
 
 进一步定义 $\mathcal{M}\subset\rho(X)$ 是 $X$ 上所有的[[MK65][外测度可测集]]族
 
@@ -5259,7 +5259,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 ***** 证明
 
-由于是[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]，则对于任意 $x\in E$ 可得存在唯一 $f(x)\in\mathbb{R}_e$ 满足 $<x,f(x)>\in f$ 
+由于是[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]，则对于任意 $x\in E$ 可得存在唯一 $f(x)\in\mathbb{R}_e$ 满足 $<x,f(x)>\in f$ 
 
 根据[[MK5][三岐性]]可知 $f(x),0$ 仅有一种序关系，故：
 
@@ -5317,13 +5317,13 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 ****** 开集可测
 
-根据[[MK155][推论]]可得任意 $\mathbb{R}_e$ 上的开集可有由[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并之后，与 $\pm\infty$ 的组合并组成
+根据[[MK155][推论]]可得任意 $\mathbb{R}_e$ 上的开集可有由[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并之后，与 $\pm\infty$ 的组合并组成
 
 根据定义构成区间为开区间，且则根据[[MK158][之前证明]]可得开区间的原相可测
 
-结合[[MK135][性质]]可得[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并的原相，等价于原相的并
+结合[[MK135][性质]]可得[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并的原相，等价于原相的并
 
-故根据[[MK65][Caratheodory定理]]可得由[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并的原相可测
+故根据[[MK65][Caratheodory定理]]可得由[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个不相交的实数[[MK42][构成区间]]的并的原相可测
 
 又根据[[MK159][之前证明]]亦可得 $\{+\infty\},\{-\infty\},\{-\infty, +\infty\}$ 的原相可测
 
@@ -5371,7 +5371,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 对于任意 $x\in S'$ 均有 $\forall r\in\mathbb{Q}\rightarrow g(x)<r<f(x)$ 即 $g(x)<f(x)$ 即 $x\in S$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $S=S'$ 由于 $f(x),g(x)$ 均为[[MK134][可测函数]]，进一步根据[[MK154][等价定义]]
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK5][外延公理]]可得 $S=S'$ 由于 $f(x),g(x)$ 均为[[MK134][可测函数]]，进一步根据[[MK154][等价定义]]
 
 可得对于任意 $r$ 有 $f^{-1}((r,+\infty]), g^{-1}([-\infty,r))$ 均可测
 
@@ -5379,17 +5379,17 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 根据[[MK50][定义（3）]]可得 $f^{-1}((r,+\infty])\cup g^{-1}([-\infty,r))$ 可测
 
-同样根据[[MK50][定义（3）]]以及[[~/OneDrive/离散数学/Disc_Math.org::MK325][有理数可数]]可得 $S'$ 可测，即 $S$ 可测
+同样根据[[MK50][定义（3）]]以及[[~/文档/note/离散数学/Disc_Math.org::MK325][有理数可数]]可得 $S'$ 可测，即 $S$ 可测
 
 **** 定理4<<MK177>>
 
-定义结构 $<E,\varphi>$ 其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
+定义结构 $<E,\varphi>$ 其中 $E$ 为[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]集 $K=\{E_i\}\subset\rho(E)$ 对于任意 $E_i\in K$ 均满足：
+定义[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]集 $K=\{E_i\}\subset\rho(E)$ 对于任意 $E_i\in K$ 均满足：
 
 （1） $E_i$ 是 $<X,\varphi>$ 上的[[MK174][外测度可测集]]
 
-（2） $\{E_i\}$ 是对 $E$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]
+（2） $\{E_i\}$ 是对 $E$ 的[[~/文档/note/离散数学/Disc_Math.org::MK179][划分]]
 
 进一步定义分段函数 $f(x)=f_i(x),\ x\in E_i$
 
@@ -5413,11 +5413,11 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 **** 定理5<<MK230>>
 
-定义结构 $<E,\varphi>$ ，其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]，定义 $f:E\to\mathbb{R}_e$ 为非负[[MK133][广义实值函数]]。则有：
+定义结构 $<E,\varphi>$ ，其中 $E$ 为[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]，定义 $f:E\to\mathbb{R}_e$ 为非负[[MK133][广义实值函数]]。则有：
 
-（1） 若 $f(x)$ 为[[MK134][可测函数]]，则存在递增的非负[[MK178][简单函数]]列 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$ 即 $\lim_{i\to\infty}\phi_i(x)=f(x)$
+（1） 若 $f(x)$ 为[[MK134][可测函数]]，则存在递增的非负[[MK178][简单函数]]列 $\{\phi_i(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$ 即 $\lim_{i\to\infty}\phi_i(x)=f(x)$
 
-（2） 若满足（1）且 $f(x)$ [[MK202][有界]]，则 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+（2） 若满足（1）且 $f(x)$ [[MK202][有界]]，则 $\{\phi_i(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
 ***** 证明
 
@@ -5477,11 +5477,11 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 综上所述，对于任意给定 $x\in E$ ，对于任意 $\epsilon>0$ 存在 $K=\max(k_1,k_2)$
 
-对于任意 $k>K$ 均有 $f(x)-\phi_k(x)<\epsilon$ 即当 $f(x)\in\mathbb{R}$ 时函数项级数 $\{\phi_i\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][收敛]]于 $f(x)$
+对于任意 $k>K$ 均有 $f(x)-\phi_k(x)<\epsilon$ 即当 $f(x)\in\mathbb{R}$ 时函数项级数 $\{\phi_i\}$ [[~/文档/note/数学分析/Chap10Note.org::MK2][收敛]]于 $f(x)$
 
 若 $f(x)=+\infty$ 则有 $\lim_{k\to\infty}\phi_k(x)=+\infty$
 
-综上所述函数项级数 $\{\phi_i\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][收敛]]于 $f(x)$
+综上所述函数项级数 $\{\phi_i\}$ [[~/文档/note/数学分析/Chap10Note.org::MK2][收敛]]于 $f(x)$
 
 ****** 证明（2）
 
@@ -5497,7 +5497,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 则 $\forall\epsilon>0$ 定义 $K=\max(k_1,k_2)$ 则 $\forall x\in E,\forall k>K\rightarrow f(x)-\phi_k(x)<\epsilon$ 
 
-即函数项级数 $\{\phi_i\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+即函数项级数 $\{\phi_i\}$ [[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
 ***** 推论<<MK200>>
 
@@ -5517,7 +5517,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 **** 定理6<<MK236>>
 
-定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e,E\subset X$
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e,E\subset X$
 
 若 $\varphi(E)=0$ 则 $f(x)$ 为[[MK134][可测函数]]
 
@@ -5541,7 +5541,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 即 $x\in f^{-1}((a,\infty])\cap A$ 故有 $g^{-1}((a,+\infty])\subset\left(f^{-1}((a,\infty])\cap A\right)$
 
-类似易证 $\left(f^{-1}((a,\infty])\cap A\right)\subset g^{-1}((a,+\infty])$ 故根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $g^{-1}((a,+\infty])=\left(f^{-1}((a,\infty])\cap A\right)$
+类似易证 $\left(f^{-1}((a,\infty])\cap A\right)\subset g^{-1}((a,+\infty])$ 故根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $g^{-1}((a,+\infty])=\left(f^{-1}((a,\infty])\cap A\right)$
 
 由于 $f(x)$ 可测，则有 $A,f^{-1}((a,\infty])$ 均是[[MK174][可测集]]
 
@@ -5577,7 +5577,7 @@ Z_T(f)=&\sum_{i=1}^{k-1}\left|f(a_i)-f(a_{i-1})\right|+|f(a_k)-f(a_{k-1})|+\sum_
 
 **** 定理9（对数可测）
 
-定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}^+,E\subset X$
+定义[[MK212][外侧度空间]] $<X,\varphi>$ 及[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}^+,E\subset X$
 
 则 $\ln f(x)$ 为[[MK143][可测函数]]是 $f(x)$ 为[[MK143][可测函数]]的充要条件
 
@@ -5806,11 +5806,11 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 **** 确界运算<<MK172>>
 
-若存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]个[[MK134][可测函数]] $f_i(x), i\in\mathbb{N}\land x\in E$
+若存在[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]个[[MK134][可测函数]] $f_i(x), i\in\mathbb{N}\land x\in E$
 
 定义 $\phi(x)=\inf\left\{f_i(x)\big|i\in\mathbb{N}\right\},\psi(x)=\sup\left\{f_i(x)\big|i\in\mathbb{N}\right\}$
 
-即为 $f_i(x)$ 的上下[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]，则 $\phi(x),\psi(x)$ 仍为[[MK134][可测函数]]
+即为 $f_i(x)$ 的上下[[~/文档/note/离散数学/Disc_Math.org::MK326][确界]]，则 $\phi(x),\psi(x)$ 仍为[[MK134][可测函数]]
 
 ***** 证明
 
@@ -5820,17 +5820,17 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 即 $\forall x\in \phi^{-1}((a,+\infty])\rightarrow\inf\left\{f_i(x)\big|i\in I\right\}\in(a,+\infty]$ 根据[[MK168][引理]]有 $\phi(x)=\inf\left\{f_i(x)\big|i\in\mathbb{N}\right\}>a$
 
-则根据下[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界]]定义有 $\forall i\in\mathbb{N}\rightarrow f_i(x)>a$ 即 $\forall i\in\mathbb{N}\rightarrow f_i(x)\in(a,+\infty]\rightarrow\forall i\in \mathbb{N}(x\in f_i^{-1}((a,+\infty])$
+则根据下[[~/文档/note/离散数学/Disc_Math.org::MK326][确界]]定义有 $\forall i\in\mathbb{N}\rightarrow f_i(x)>a$ 即 $\forall i\in\mathbb{N}\rightarrow f_i(x)\in(a,+\infty]\rightarrow\forall i\in \mathbb{N}(x\in f_i^{-1}((a,+\infty])$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK35][广义交]]可得 $x\in\bigcap_{i\in I}f_i^{-1}((a,+\infty])$ 综上所述 $\forall x\in \phi^{-1}((a,+\infty])\rightarrow x\in\bigcap_{i\in I}f_i^{-1}((a,+\infty])$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK35][广义交]]可得 $x\in\bigcap_{i\in I}f_i^{-1}((a,+\infty])$ 综上所述 $\forall x\in \phi^{-1}((a,+\infty])\rightarrow x\in\bigcap_{i\in I}f_i^{-1}((a,+\infty])$
 
 类似易证 $\forall x\in\bigcap_{i\in I}f_i^{-1}((a,+\infty])\rightarrow \phi^{-1}((a,+\infty])$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]] $\phi^{-1}((a,+\infty])=\bigcap_{i\in I}f_i^{-1}((a,+\infty])$
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK5][外延公理]] $\phi^{-1}((a,+\infty])=\bigcap_{i\in I}f_i^{-1}((a,+\infty])$
 
 由于 $f_i(x)$ 是可测函数，故根据[[MK134][定义]]可得 $f_i^{-1}((a,+\infty])$ 是[[MK65][外测度可测集]]
 
-根据[[MK65][Caratheodory定理]]可知[[MK65][外测度可测集]]构成[[MK50][ $\sigma$ 代数]]，由于 $I$ 是在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]
+根据[[MK65][Caratheodory定理]]可知[[MK65][外测度可测集]]构成[[MK50][ $\sigma$ 代数]]，由于 $I$ 是在[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数集]]
 
 故根据[[MK67][可数交封闭]]可得 $\bigcap_{i\in I}f_i^{-1}((a,+\infty])$ 亦可测。
 
@@ -5844,13 +5844,13 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 **** 极限运算<<MK268>>
 
-对于[[~/OneDrive/离散数学/Disc_Math.org::MK44][可数]]个[[MK134][可测函数]] $f_i(x), i\in\mathbb{N}$ 其上定义其[[MK267][下极限函数]] $\phi(x)=\overline{\lim_{i\to\infty}}f_i(x),\psi(x)=\underline{\lim_{i\to\infty}}f_i(x)$
+对于[[~/文档/note/离散数学/Disc_Math.org::MK44][可数]]个[[MK134][可测函数]] $f_i(x), i\in\mathbb{N}$ 其上定义其[[MK267][下极限函数]] $\phi(x)=\overline{\lim_{i\to\infty}}f_i(x),\psi(x)=\underline{\lim_{i\to\infty}}f_i(x)$
 
 则 $\phi(x),\psi(x)$ 仍为[[MK134][可测函数]]
 
 ***** 证明
 
-则对于给定 $x\in\mathbb{R}_e$ 有[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\{f_i(x)\}$ 其中 $i\in\mathbb{N}$ 
+则对于给定 $x\in\mathbb{R}_e$ 有[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]] $\{f_i(x)\}$ 其中 $i\in\mathbb{N}$ 
 
 根据[[MK171][数列极限]]可知 $\overline{\lim_{i\to\infty}}f_i(x)=\inf\left\{\sup\left\{f_k(x)\big|k\geq i\land k\in\mathbb{N}\right\}\bigg|i\in\mathbb{N}\right\}$
 
@@ -5874,11 +5874,11 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 则对于任意 $a\in\mathbb{R}$ [[MK151][原相]] $f^{-1}((a,+\infty])=f^{-1}((a,+\infty))\cup f^{-1}(\{\infty\}})$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集定义]]可得 $\{+\infty\}$ 是闭集，故根据[[MK197][等价条件]]可得对于连续函数 $f^{-1}(\{\infty\}})$ 是闭集
+根据[[~/文档/note/数学分析/Chap11Note.org::MK13][闭集定义]]可得 $\{+\infty\}$ 是闭集，故根据[[MK197][等价条件]]可得对于连续函数 $f^{-1}(\{\infty\}})$ 是闭集
 
 根据[[MK207][闭集可测]]可得 $f^{-1}(\{\infty\}})$ 是[[MK174][可测集]]
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]易证得 $(a,+\infty)$ 为 $\mathbb{R}$ 上的开集，根据[[MK105][等价定义]]可得原相 $f^{-1}((a,+\infty))$ 必为 $\mathbb{R}^n$ 上的开集
+根据[[~/文档/note/数学分析/Chap11Note.org::MK10][开集定义]]易证得 $(a,+\infty)$ 为 $\mathbb{R}$ 上的开集，根据[[MK105][等价定义]]可得原相 $f^{-1}((a,+\infty))$ 必为 $\mathbb{R}^n$ 上的开集
 
 根据[[MK87][开集可测]]可得 $f^{-1}((a,+\infty))$ 亦是[[MK174][可测集]]
 
@@ -5924,7 +5924,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 对于任意 $a\in\mathbb{R}_e$ 若[[MK151][原相]] $f^{-1}((a,+\infty])=\varnothing$ 则根据 $\mathbb{R}$ 上的[[MK103][borel集定义]]以及[[MK122][定理1]]可得空集是[[MK81][可测集]]
 
-若不为空集，则取 $x_0$ 为$f^{-1}((a,+\infty])=\varnothing$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK326][下确界]]
+若不为空集，则取 $x_0$ 为$f^{-1}((a,+\infty])=\varnothing$ 的[[~/文档/note/离散数学/Disc_Math.org::MK326][下确界]]
 
 故对于任意 $x>x_0$ 假设 $f(x)\leq a$ 则对于任意 $z\in f^{-1}((a,+\infty])$ 则有 $f(z)>a\geq f(x)$
 
@@ -5946,13 +5946,13 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 **** 简单函数<<MK178>>
 
-定义结构 $<E,\varphi>$ 其中 $E$ 为[[~/OneDrive/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
+定义结构 $<E,\varphi>$ 其中 $E$ 为[[~/文档/note/离散数学/Disc_Math.org::MK1][集合]] $\varphi$ 是[[MK61][外侧度]]
 
-定义[[~/OneDrive/离散数学/Disc_Math.org::MK42][有限]]集 $K=\{E_i\}\subset\rho(E)$ 对于任意 $E_i\in K$ 均满足：
+定义[[~/文档/note/离散数学/Disc_Math.org::MK42][有限]]集 $K=\{E_i\}\subset\rho(E)$ 对于任意 $E_i\in K$ 均满足：
 
 （1） $E_i$ 是 $<X,\varphi>$ 上的[[MK174][外测度可测集]]
 
-（2） $\{E_i\}$ 是对 $E$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]
+（2） $\{E_i\}$ 是对 $E$ 的[[~/文档/note/离散数学/Disc_Math.org::MK179][划分]]
 
 定义分段函数 $f(x)$ 满足对于任意 $x\in E_i$ 均有 $f(x)=c_i$ 其中 $c_i\in\mathbb{R}_e$
 
@@ -5982,7 +5982,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 可得 $A_i$ 是 $<X,\varphi>$ 上的[[MK174][外测度可测集]]，根据[[MK209][性质2]]可得 $A_i$ 亦为[[MK208][子空间]] $<A,\varphi>$ 上的外侧度可测集 
 
-由于 $E_i$ 是 $E$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]，易证 $A_i$ 是 $A$ 的划分
+由于 $E_i$ 是 $E$ 的[[~/文档/note/离散数学/Disc_Math.org::MK179][划分]]，易证 $A_i$ 是 $A$ 的划分
 
 进一步对于任意 $x\in A_i$ 有 $x\in E_i$ 故有 $g(x)=f(x)=c_i$ 故 $g(x)$ 亦为简单函数
 
@@ -5994,7 +5994,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 由于是简单函数，则有 $f(x)=\sum_{i=1}^ua_i\cdot\chi_{E_i}(x)$ 以及 $g(x)=\sum_{j=1}^vb_j\cdot\chi_{E_j}(x)$
 
-则对于任意 $x\in E$ 由于是[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]则必然存在 $i$ 满足 $x\in E_i$ ，同理存在 $j$ 满足 $x\in E_j$
+则对于任意 $x\in E$ 由于是[[~/文档/note/离散数学/Disc_Math.org::MK179][划分]]则必然存在 $i$ 满足 $x\in E_i$ ，同理存在 $j$ 满足 $x\in E_j$
 
 故 $x\in E_i\cap E_j$ 此时 $h(x)=\alpha a_i+\beta b_j$
 
@@ -6006,7 +6006,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 对于任意 $x\in E$ 上的[[MK133][广义实值]]函数列 $\{f_k(x)\}$ 以及函数 $f(x)$ 若满足：
 
-（1） 存在 $E^*$ 满足 $\varphi(E^*)=0$ 且当 $x\in E-E^*$ 时有 $\{f_k(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+（1） 存在 $E^*$ 满足 $\varphi(E^*)=0$ 且当 $x\in E-E^*$ 时有 $\{f_k(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
 
      即[[MK190][几乎处处]]逐点收敛
 
@@ -6024,7 +6024,7 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 （2） $\varphi(E_\delta)<\delta$
 
-（2） 在 $E-E_\delta$ 上有 $\{f_k(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+（2） 在 $E-E_\delta$ 上有 $\{f_k(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
 其中 $\varphi(E)$ 定义为 $E$ 的[[MK61][外侧度]]
 
@@ -6050,11 +6050,11 @@ h^{-1}((a,+\infty])&=\left\{x\big|f(x)+g(x)\in(a,+\infty]\right\}\\
 
 且有 $\varphi(E_\delta)=\sum_{i=1}^\infty\varphi\left(S_{N_{\delta,i}}\left(\frac{\delta}{i}\right)\right)$ 进一步有 $\varphi(E_\delta)<\sum_{i=1}^\infty\frac{\delta}{2^i}=\delta$
 
-***** 余集[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]
+***** 余集[[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]
 
 集合 $E-E_\delta$ 当 $E$ 为全集时等于 $E_\delta^c$ 即自身的补集
 
-即 $\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{x\in E\big||f_k(x)-f(x)|>\frac{1}{i}\right\}\right)^c$ ，则根据[[~/OneDrive/离散数学/Disc_Math.org::MK331][广义并与补]]可得
+即 $\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{x\in E\big||f_k(x)-f(x)|>\frac{1}{i}\right\}\right)^c$ ，则根据[[~/文档/note/离散数学/Disc_Math.org::MK331][广义并与补]]可得
 
 \begin{aligned}
 E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{x\in E\big||f_k(x)-f(x)|\geq\frac{1}{i}\right\}\right)^c\\
@@ -6063,7 +6063,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 =&\bigcap_{i=1}^\infty\bigcap_{k\geq N_{\delta,i}}^\infty\left\{x\in E\big||f_k(x)-f(x)|<\frac{1}{i}\right\}\\
 \end{aligned}
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK331][量词与计算]]可得 $E-E_\delta=\left\{x\in E\big|\forall i\in\mathbb{N},\exists N_{\delta,i},\forall k>N_{\delta,i}\rightarrow|f_k(x)-f(x)|<\frac{1}{i}\right\}$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK331][量词与计算]]可得 $E-E_\delta=\left\{x\in E\big|\forall i\in\mathbb{N},\exists N_{\delta,i},\forall k>N_{\delta,i}\rightarrow|f_k(x)-f(x)|<\frac{1}{i}\right\}$
 
 即对于任意 $x\in E-E_\delta$ 均满足 $\forall i\in\mathbb{N},\exists N_{\delta,i},\forall k>N_{\delta,i}\rightarrow|f_k(x)-f(x)|<\frac{1}{i}$
 
@@ -6071,7 +6071,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 即有对于任意 $x\in E-E_\delta$ 均满足 $\exists N_{\delta,i},\forall k>N_{\delta,i}\rightarrow|f_k(x)-f(x)|<\frac{1}{i}<\epsilon$
 
-即[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]定义，证毕
+即[[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]定义，证毕
 
 **** 函数非[[MK202][有限]]
 
@@ -6079,7 +6079,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 （1） $\varphi(\bar{E}_\delta)<\delta$
 
-（2） 在 $\bar{E}-\bar{E}_\delta$ 上 $\{f_k(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+（2） 在 $\bar{E}-\bar{E}_\delta$ 上 $\{f_k(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
 （3） $\bar{E}_\delta\subset\bar{E}$
 
@@ -6105,9 +6105,9 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于对于任意 $x\in E$ 均有限，故 $|f_k(x)-f(x)|$ 对于任意 $x\in E$ 有定义
 
-则根据[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]定义，其不收敛的点集为 $E^*=\left\{x\big|\exists\epsilon,\forall N,\exists k>N\rightarrow |f_k(x)-f(x)|\geq\epsilon\right\}$
+则根据[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]定义，其不收敛的点集为 $E^*=\left\{x\big|\exists\epsilon,\forall N,\exists k>N\rightarrow |f_k(x)-f(x)|\geq\epsilon\right\}$
 
-即根据[[~/OneDrive/离散数学/Disc_Math.org::MK331][量词与计算]]可得 $E^*=\bigcup_{\epsilon>0}\bigcap_{N\in\mathbb{N}}\bigcup_{k\geq N}^\infty\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}$
+即根据[[~/文档/note/离散数学/Disc_Math.org::MK331][量词与计算]]可得 $E^*=\bigcup_{\epsilon>0}\bigcap_{N\in\mathbb{N}}\bigcup_{k\geq N}^\infty\left\{x\big||f_k(x)-f(x)|\geq\epsilon\right\}$
 
 ***** 测度为零
 
@@ -6153,7 +6153,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 *** 引理1
 
-[[MK189][依测度收敛]]无法导出[[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]或[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]
+[[MK189][依测度收敛]]无法导出[[MK190][几乎处处]]有[[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]或[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]
 
 **** 证明
 
@@ -6173,9 +6173,9 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 当 $k=a+1$ 时有对应 $n',m'$ 易证 $x\not\in\left(\frac{m'}{n'},\frac{m'+1}{n'}\right]$ 显然 $x$ 不收敛
 
-由于 $x$ 的任意性，可得不存在 $x\in E$ 使得 $\{f_k(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]
+由于 $x$ 的任意性，可得不存在 $x\in E$ 使得 $\{f_k(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]
 
-故 $\{f_k(x)\}$ 处处不收敛，即不是[[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]或[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]
+故 $\{f_k(x)\}$ 处处不收敛，即不是[[MK190][几乎处处]]有[[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]或[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]
  
 *** 引理2
 
@@ -6193,11 +6193,11 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 即对于任意 $x\in\left\{x\in E\big||f(x)-f_k(x)|<\frac{1}{n}\right\}\cap\left\{x\in E\big||f_k(x)-g(x)|<\frac{1}{n}\right\}$
 
-均有 $x\in\left\{x\in E\big||f(x)-g(x)|<\frac{1}{n}\right\}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK20][子集定义]]
+均有 $x\in\left\{x\in E\big||f(x)-g(x)|<\frac{1}{n}\right\}$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK20][子集定义]]
 
 有 $\left\{x\in E\big||f(x)-f_k(x)|<\frac{1}{n}\right\}\cap\left\{x\in E\big||f_k(x)-g(x)|<\frac{1}{n}\right\}\subset\left\{x\in E\big||f(x)-g(x)|<\frac{1}{n}\right\}$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org::MK332][子集与运算]]、[[~/OneDrive/离散数学/Disc_Math.org::MK331][补与交]]、[[MK61][单调性]]以及[[MK61][次可数可加性]]可得
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK332][子集与运算]]、[[~/文档/note/离散数学/Disc_Math.org::MK331][补与交]]、[[MK61][单调性]]以及[[MK61][次可数可加性]]可得
 
 \begin{aligned}
 &\left\{x\in E\bigg||f(x)-f_k(x)|<\frac{1}{n}\right\}\cap\left\{x\in E\bigg||f_k(x)-g(x)|<\frac{1}{n}\right\}\subset\left\{x\in E\bigg||f(x)-g(x)|<\frac{1}{n}\right\}\\
@@ -6218,13 +6218,13 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 根据 $n$ 的任意性，通过反证法易证 $\left\{x\in E\big||f(x)-g(x)|>\frac{1}{n}\right\}\supset\left\{x\in E\big|f(x)\ne g(x)\right\}$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $\left\{x\in E\big||f(x)-g(x)|>\frac{1}{n}\right\}=\left\{x\in E\big|f(x)\ne g(x)\right\}$
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $\left\{x\in E\big||f(x)-g(x)|>\frac{1}{n}\right\}=\left\{x\in E\big|f(x)\ne g(x)\right\}$
 
 即有 $\varphi\left(\left\{x\in E\big|f(x)\ne g(x)\right\}\right)=0$ 
 
 *** 引理3
 
-[[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]无法导出[[MK189][依测度收敛]]
+[[MK190][几乎处处]]有[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]无法导出[[MK189][依测度收敛]]
 
 **** 证明
 
@@ -6232,9 +6232,9 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 假设 $\{f_k(x)\}$ [[MK189][依测度收敛]]到 $f(x)$ ，则根据[[MK191][里斯定理]]可得存在子列 $\{f_{k_s}(x)\}$
 
-该子列[[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+该子列[[MK190][几乎处处]]有[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
 
-由于[[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]与 $f(x)=1$ 故子列 $\{f_{k_s}(x)\}$ 亦收敛于 $f(x)=1$
+由于[[MK190][几乎处处]]有[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]与 $f(x)=1$ 故子列 $\{f_{k_s}(x)\}$ 亦收敛于 $f(x)=1$
 
 故若依测度收敛，则只能收敛于 $f(x)=1$
 
@@ -6246,7 +6246,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 则对于任意 $x\in E$ 存在 $n$ 对于任意 $k>n$ 有 $f_k(x)=1$
 
-即 $x\in E$ 上[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]与 $f(x)=1$
+即 $x\in E$ 上[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]与 $f(x)=1$
 
 另一方面，对于任意 $k$ 均有 $\varphi\left(\left\{x\in E\big||f_k(x)-f(x)|>0.5\right\}\right)=(k,+\infty]$
 
@@ -6280,7 +6280,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 对于任意 $x\in E$ 上的[[MK133][广义实值]]函数列 $\{f_k(x)\}$ 以及函数 $f(x)$ 若满足
 
-（1） 存在 $E^*$ 满足 $\varphi(E^*)=0$ 且当 $x\in E-E^*$ 时有 $\{f_k(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+（1） 存在 $E^*$ 满足 $\varphi(E^*)=0$ 且当 $x\in E-E^*$ 时有 $\{f_k(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
 
      即[[MK190][几乎处处]]逐点收敛
 
@@ -6316,7 +6316,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 对于任意 $x\in E$ 上的[[MK133][广义实值]]函数列 $\{f_k(x)\}$ 以及函数 $f(x)$
 
-若 $\{f_k(x)\}$ [[MK189][依测度收敛]] $f(x)$ 则存在子列 $\{f_{k(s)}(x)\}$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+若 $\{f_k(x)\}$ [[MK189][依测度收敛]] $f(x)$ 则存在子列 $\{f_{k(s)}(x)\}$ [[MK190][几乎处处]]有[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
 
 *** 证明
 
@@ -6348,15 +6348,15 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 则对于任意 $\epsilon>0$ 存在 $u\in\mathbb{N}$ 满足 $\epsilon>\frac{1}{u}$ 则取 $\hat{N}=\max(N,u)$
 
-则对于任意 $s>\hat{N}$ 均有 $|f_{k(s)}(x)-f(x)|<\frac{1}{u}<\epsilon$ 即当 $x\in Z$ 时 $\{f_{k(s)}(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]与 $f(x)$
+则对于任意 $s>\hat{N}$ 均有 $|f_{k(s)}(x)-f(x)|<\frac{1}{u}<\epsilon$ 即当 $x\in Z$ 时 $\{f_{k(s)}(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]与 $f(x)$
 
 **** 不收敛点集是零测集
 
 根据[[MK193][之前证明]]可知收敛点集为 $Z$ ，则不收敛点集为其补集 $Z^c$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org::MK331][补与交并]]可得 $$Z^c=\bigcap_{N\in\mathbb{N}}\bigcup_{s\geq N}\left\{x\in E\bigg||f_{k(s)}(x)-f(x)|>\frac{1}{s}\right\}$$
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK331][补与交并]]可得 $$Z^c=\bigcap_{N\in\mathbb{N}}\bigcup_{s\geq N}\left\{x\in E\bigg||f_{k(s)}(x)-f(x)|>\frac{1}{s}\right\}$$
 
-对于任意 $n\in\mathbb{N}$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK31][交定义]]可得 $$Z^c\subset\bigcup_{s\geq n}\left\{x\in E\bigg||f_{k(s)}(x)-f(x)|>\frac{1}{s}\right\}$$
+对于任意 $n\in\mathbb{N}$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK31][交定义]]可得 $$Z^c\subset\bigcup_{s\geq n}\left\{x\in E\bigg||f_{k(s)}(x)-f(x)|>\frac{1}{s}\right\}$$
 
 则根据[[MK61][定义]]中次可数可加性、单调性以及[[MK194][之前证明]]可得
 
@@ -6377,7 +6377,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 **** 结论
 
-综上所述，不一致收敛的点是零测集，即 $\{f_{k(s)}(x)\}$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+综上所述，不一致收敛的点是零测集，即 $\{f_{k(s)}(x)\}$ [[MK190][几乎处处]]有[[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
 ** 鲁津定理<<MK361>>
 
@@ -6399,7 +6399,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 *** 证明
 
-由于 $E\subset\mathbb{R}^n$ 则定义 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 为其[[MK39][拓扑]]，其中 $\tau(\mathbb{R}^n)$ 是 $\mathbb{R}^n$ 上所有[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]的集合
+由于 $E\subset\mathbb{R}^n$ 则定义 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 为其[[MK39][拓扑]]，其中 $\tau(\mathbb{R}^n)$ 是 $\mathbb{R}^n$ 上所有[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]的集合
 
 则根据[[MK130][定义]]可得 $<E,\tau(E)=\left\{E\cap t\big|t\in\tau(\mathbb{R}^n)\right\}>$ 亦为拓扑空间
 
@@ -6407,7 +6407,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 对于任意简单函数 $f(x)=f_i(x)=c_i,x\in E_i$ 满足：
 
-（1） [[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]] $\{E_1,...,E_s\}$ 满足 $E=\bigcup_{i=1}^s E_i$
+（1） [[~/文档/note/离散数学/Disc_Math.org::MK179][划分]] $\{E_1,...,E_s\}$ 满足 $E=\bigcup_{i=1}^s E_i$
 
 （2） $E_i$ 是 $<E,\tau(E)>$ 上的[[MK174][外测度可测集]]
 
@@ -6478,7 +6478,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于有限，故对于任意 $x\in E$ 有定义且 $|g(x)|<1$ 
 
-则根据[[MK200][推论]]可得存在简单函数列 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $g(x)$ 则
+则根据[[MK200][推论]]可得存在简单函数列 $\{\phi_i(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]于 $g(x)$ 则
 
 ***** 构造满足条件 $F$ <<MK204>>
 
@@ -6492,7 +6492,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 则定义 $F=\bigcap_{i=1}^\infty F_{i,\delta}$ ，显然有 $F\subset E$ 且根据[[MK129][闭集定义]]可得 $F$ 是 $<\mathbb{R}^n, \tau(\mathbb{R}^n)>$ 上的[[MK129][闭集]] 
 
-则[[MK203][类似可证]] $F$ 是 $<E, \tau(E)>$ 上的[[MK129][闭集]]，且进一步根据[[~/OneDrive/离散数学/Disc_Math.org::MK328][德摩根律]]以及[[MK61][次可数可加性]]可得
+则[[MK203][类似可证]] $F$ 是 $<E, \tau(E)>$ 上的[[MK129][闭集]]，且进一步根据[[~/文档/note/离散数学/Disc_Math.org::MK328][德摩根律]]以及[[MK61][次可数可加性]]可得
 
 \begin{aligned}
 \varphi(E-F)=&\varphi\left(E-\bigcap_{i=1}^\infty F_{i,\delta}\right)\\
@@ -6510,7 +6510,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 则有函数列 $\{\phi'_i(x)\}$ 由于对于任意 $x\in F$ 均有 $\phi'_i(x)=\phi_i(x)\land g'(x)=g(x)$
 
-故根据 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $g(x)$ 可得在 $F$ 上 $\{\phi'_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $g'(x)$
+故根据 $\{\phi_i(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]于 $g(x)$ 可得在 $F$ 上 $\{\phi'_i(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]于 $g'(x)$
 
 且根据[[MK2014][之前证明]]可得 $\phi_i(x)$ 在 $<F,\tau(F)>$ 上[[MK106][连续]]，同理有 $\phi'_i(x)$ 在 $<F,\tau(F)>$ 上[[MK106][连续]]
 
@@ -6590,7 +6590,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于是[[MK174][外测度可测集]]则根据[[MK65][Caratheodory定理]]可得[[MK61][外测度]]是[[MK56][测度]]
 
-则根据[[MK213][定义]]、[[~/OneDrive/离散数学/Disc_Math.org::MK327][分配率]]以及[[MK56][可数可加性]]有
+则根据[[MK213][定义]]、[[~/文档/note/离散数学/Disc_Math.org::MK327][分配率]]以及[[MK56][可数可加性]]有
 
 \begin{aligned}
 \int_{A\cup B} f(x)dx=&\sum_{i=1}^sc_i\varphi\big(E_i\cap (A\cup B)\big)\\
@@ -6618,7 +6618,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于是[[MK174][外测度可测集]]则根据[[MK65][Caratheodory定理]]外侧度可测集是[[MK50][ $\sigma$ 代数]]，且[[MK61][外测度]]是[[MK56][测度]]
 
-则根据[[MK73][定理]]、[[~/OneDrive/离散数学/Disc_Math.org:MK333][集合族并]]以及极限的四则运算有
+则根据[[MK73][定理]]、[[~/文档/note/离散数学/Disc_Math.org:MK333][集合族并]]以及极限的四则运算有
 
 \begin{aligned}
 \int_{E} f(x)dx=&\int_{\cup_{n=1}^\infty A_n} f(x)dx\\
@@ -6638,7 +6638,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 ***** 证明
 
-由于是非负[[MK178][简单函数]]，则定义 $f(x)$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]集合为 $\{E_i\}$ ， $g(x)$ 则为 $\{E_j\}$
+由于是非负[[MK178][简单函数]]，则定义 $f(x)$ 的[[~/文档/note/离散数学/Disc_Math.org::MK179][划分]]集合为 $\{E_i\}$ ， $g(x)$ 则为 $\{E_j\}$
 
 定义 $h(x)=\alpha f(x)+\beta g(x)$ 根据[[MK216][引理2]]以及 ${\alpha,\beta}\not\subset\mathbb{R}^-$ ，可得 $h(x)$ 亦为非负[[MK178][简单函数]]
 
@@ -6658,7 +6658,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于是[[MK174][外测度可测集]]则根据[[MK65][Caratheodory定理]]外侧度可测集是[[MK50][ $\sigma$ 代数]]，且[[MK61][外测度]]是[[MK56][测度]]
 
-由于是[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]故有对于任意 $i,j$ 均有 $E_i\subset E\land E_j\subset E$ 则根据[[MK213][定义]]、[[~/OneDrive/离散数学/Disc_Math.org::MK327][分配律]]、[[~/OneDrive/离散数学/Disc_Math.org::MK336][同一律]]
+由于是[[~/文档/note/离散数学/Disc_Math.org::MK179][划分]]故有对于任意 $i,j$ 均有 $E_i\subset E\land E_j\subset E$ 则根据[[MK213][定义]]、[[~/文档/note/离散数学/Disc_Math.org::MK327][分配律]]、[[~/文档/note/离散数学/Disc_Math.org::MK336][同一律]]
 
 以及[[MK56][可数可加性]]有
 
@@ -6802,7 +6802,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 均有 $\int_E\phi(x)dx=\int_A\phi(x)dx\leq\int_Ag(x)dx$
 
-又根据[[~/OneDrive/离散数学/Disc_Math.org::326][确界定义]]易证 $$\int_E f(x)\chi_{A}(x)dx=\sup\left\{\int_E\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_E(f(x)\chi_{A}(x))\right\}\leq\int_A g(x)dx$$
+又根据[[~/文档/note/离散数学/Disc_Math.org::326][确界定义]]易证 $$\int_E f(x)\chi_{A}(x)dx=\sup\left\{\int_E\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_E(f(x)\chi_{A}(x))\right\}\leq\int_A g(x)dx$$
 
 类似易证 $$\int_A g(x)dx=\sup\left\{\int_E\phi(x)dx\bigg|\phi(x)\in\mathcal{Z}_A(g(x))\right\}\leq\int_E f(x)\chi_{A}(x)dx$$
 
@@ -6830,7 +6830,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 若 $S$ 在 $\mathbb{R}$ 上无界，由于递增，故有 $\lim_{i\to\infty}f_i(x')=\infty$
 
-若有界，则根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 存在 $a\in\mathbb{R}$ 满足 $\lim_{i\to\infty}f_i(x')=a$
+若有界，则根据[[~/文档/note/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 存在 $a\in\mathbb{R}$ 满足 $\lim_{i\to\infty}f_i(x')=a$
 
 综上所述，对于任意 $x'\in E$ 均存在极限，故函数极限存在
 
@@ -6894,17 +6894,17 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于 $\phi(x),f_i(x)$ 均为[[MK134][可测函数]]，则根据[[MK164][定理3]]易证 $E_i$ 亦为 $<E,\varphi>$ 上的[[MK65][外测度可测集]]
 
-对于任意 $x\in E_i$ 均有 $f_{i+1}(x)\geq f_i(x)\geq c\phi(x)$ 故有 $x\in E_{i+1}$ ，根据[[~/OneDrive/离散数学/Disc_Math.org::MK20][子集定义]]可得 $E_i\subset E_i$
+对于任意 $x\in E_i$ 均有 $f_{i+1}(x)\geq f_i(x)\geq c\phi(x)$ 故有 $x\in E_{i+1}$ ，根据[[~/文档/note/离散数学/Disc_Math.org::MK20][子集定义]]可得 $E_i\subset E_i$
 
 定义 $E^*=\bigcup_{i=1}^\infty E_i$ 对于任意 $x\in E'$ 由于 $\lim_{i\to\infty}f_i(x)=f(x)>c\phi(x)$
 
 故存在 $N$ 对于任意 $i^*>N$ 均有 $f_{i^*}(x)>c\phi(x)$ 则有 $x\in E_{i^*}$ 故有 $E'\subset E^*$
 
-又由于对于任意 $x\in E^*$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK34][定义]]存在 $i\in\mathbb{N}^+$ 满足 $x\subset E_i$
+又由于对于任意 $x\in E^*$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK34][定义]]存在 $i\in\mathbb{N}^+$ 满足 $x\subset E_i$
 
 进一步根据 $E_i$ 定义可得 $E_i\subset E'$ 故有 $E^*\subset E'$
 
-综上所述，根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $E^*=E'$ 即 $E'=\bigcup_{i=1}^\infty E_i$
+综上所述，根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $E^*=E'$ 即 $E'=\bigcup_{i=1}^\infty E_i$
 
 ********* 推出不等式<<MK229>>
 
@@ -6964,7 +6964,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 ***** 证明
 
-定义 $I_i=\left\{f_k(x)\big|k\geq n\land k\in\mathbb{N}^+\right\}$ 以及 $D_i(x)=\inf\left\{I_i\}$ 即函数集合 $I_i$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK342][函数下确界]]
+定义 $I_i=\left\{f_k(x)\big|k\geq n\land k\in\mathbb{N}^+\right\}$ 以及 $D_i(x)=\inf\left\{I_i\}$ 即函数集合 $I_i$ 的[[~/文档/note/离散数学/Disc_Math.org::MK342][函数下确界]]
 
 则有 $\forall x\in E\land i\in\mathbb{N}^+$ 满足 $f_k(x)\in I_i\rightarrow f_k(x)\geq D_i(x)$
 
@@ -7044,7 +7044,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 综上所述，对于任意 $\phi(x)\in\mathcal{Z}(f(x))$ 均有 $\int_{A\cup B}\phi(x)dx\leq \int_Af(x)dx+\int_Bf(x)dx$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::326][确界定义]]易证 $$\int_{A\cup B}f(x)dx=\sup\left\{\int_E\phi(x)\bigg|\phi(x)\in\mathcal{Z}_{A\cup B}(f(x))\right\}\leq\int_Af(x)dx+\int_Bf(x)dx$$
+故根据[[~/文档/note/离散数学/Disc_Math.org::326][确界定义]]易证 $$\int_{A\cup B}f(x)dx=\sup\left\{\int_E\phi(x)\bigg|\phi(x)\in\mathcal{Z}_{A\cup B}(f(x))\right\}\leq\int_Af(x)dx+\int_Bf(x)dx$$
 
 ****** 证明右边小于等于左边
 
@@ -7064,9 +7064,9 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于勒贝格积分值为实数，故 $M_A\subset\mathbb{R}_e\land M_B\subset\mathbb{R}_e$ ，则定义 $$M=\left\{a+b\big|a\in M_A\land b\in M_B\right\}$$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $\sup\{M\}\leq\int_{A\cup B}f(x)dx$
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK339][定理2]]可得 $\sup\{M\}\leq\int_{A\cup B}f(x)dx$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK338][定理3]]有 $\sup\{M\}=\sup\{M_A\}+\sup\{M_B\}=\int_Af(x)dx+\int_Bf(x)dx$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK338][定理3]]有 $\sup\{M\}=\sup\{M_A\}+\sup\{M_B\}=\int_Af(x)dx+\int_Bf(x)dx$
 
 综上所述，有 $$\int_Af(x)dx+\int_Bf(x)dx\leq\int_{A\cup B}f(x)dx$$
 
@@ -7126,7 +7126,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 类似亦可证对于任意 $$\int_E\alpha\psi(x)dx\in B$$ 均有 $$\int_E\alpha\psi(x)dx\in A$$
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org::MK5][外延公理]]可得 $B=A$
+则根据[[~/文档/note/离散数学/Disc_Math.org::MK5][外延公理]]可得 $B=A$
 
 故有 $$\int_E\alpha f(x)dx=\sup\left\{\int_E\alpha\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}$$
 
@@ -7136,7 +7136,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 即 $$\int_E\alpha f(x)dx=\sup\left\{\alpha\int_E\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}$$ 由于 $$\int_E\psi(x)dx\in\mathbb{R}_e$$
 
-故根据[[~/OneDrive/离散数学/Disc_Math.org::MK340][定理4]]可得 $$\sup\left\{\alpha\int_E\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}=\alpha\sup\left\{\int_E\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}$$
+故根据[[~/文档/note/离散数学/Disc_Math.org::MK340][定理4]]可得 $$\sup\left\{\alpha\int_E\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}=\alpha\sup\left\{\int_E\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}$$
 
 又由于 $$\int_Ef(x)dx=\sup\left\{\int_E\psi(x)dx\bigg|\psi(x)\in\mathcal{Z}_E(f(x))\right\}$$
 
@@ -7320,7 +7320,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 定义[[MK212][外侧度空间]] $<X,\varphi>$ 其中 $X$ 是定义域 $\varphi$ 是[[MK61][外侧度]]
 
-[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e,E\subset X$ 是 $<X,\varphi>$ 上的[[MK134][可测函数]]，且 $E$ 为[[MK174][可测集]]
+[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e,E\subset X$ 是 $<X,\varphi>$ 上的[[MK134][可测函数]]，且 $E$ 为[[MK174][可测集]]
 
 则根据[[MK198][引理]]可得 $f(x)=f^+(x)-f^-(x)$
 
@@ -7340,7 +7340,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 **** 性质1<<MK242>>
 
-若 $\varphi(E)=0\land E\ne\varnothing$ 则对于任意[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e$ 均有 $f(x)\in\mathcal{L}(E)$
+若 $\varphi(E)=0\land E\ne\varnothing$ 则对于任意[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e$ 均有 $f(x)\in\mathcal{L}(E)$
 
 且 $$\int_Ef(x)dx=0$$
 
@@ -7354,7 +7354,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 **** 性质2<<MK251>>
 
-若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e$ 满足 $f(x)\in\mathcal{L}(E)$ 则 $f(x)$ 在 $E$ 上[[MK190][几乎处处]]有限
+若[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f:E\to\mathbb{R}_e$ 满足 $f(x)\in\mathcal{L}(E)$ 则 $f(x)$ 在 $E$ 上[[MK190][几乎处处]]有限
 
 ***** 证明
 
@@ -7541,7 +7541,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 由于 $|f(x)|$ 是非负[[MK134][可测函数]]，则 $$\int_{E'}|f(x)|dx$$ 根据[[MK219][定义]]是[[MK223][目标函数集]] $\mathcal{Z}_{E'}(f(x))$ 的上确界
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界定义]]可得对于任意 $s>0$ 均有 $\phi(x)\in\mathcal{Z}_{E'}(f(x))$ 满足 $$\int_{E'}\phi(x)dx\leq\int_{E'}f(x)dx<\int_{E'}\phi(x)dx+s$$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK326][确界定义]]可得对于任意 $s>0$ 均有 $\phi(x)\in\mathcal{Z}_{E'}(f(x))$ 满足 $$\int_{E'}\phi(x)dx\leq\int_{E'}f(x)dx<\int_{E'}\phi(x)dx+s$$
 
 取 $s=\frac{\epsilon}{2}$ 即 $$0\leq\int_{E'}f(x)dx-\int_{E'}\phi(x)dx<\frac{\epsilon}{2}$$ 进一步结合[[MK220][性质1]]有
 
@@ -7661,7 +7661,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 （1） 是一列[[MK134][可测函数]]
 
-（2） [[MK190][几乎处处]]满足 $\lim_{n\to\infty}f_n(x)=f(x)$ 即[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+（2） [[MK190][几乎处处]]满足 $\lim_{n\to\infty}f_n(x)=f(x)$ 即[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
 
 （3） 存在非负函数 $F(x)\in\mathcal{L}(E)$ （[[MK237][勒贝格可积]]）且 $\forall n\in\mathbb{N}\rightarrow\left(\forall x\in E\rightarrow|f_n(x)|\leq F(x)\right)$
 
@@ -7804,13 +7804,13 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 显然当 $$\sum_{i=1}^\infty\int_E|f_i(x)|dx<\infty$$ 时 $F(x)=\sum_{i=1}^\infty|f_i(x)|$ 有[[MK247][勒贝格可积]]
 
-******* [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]
+******* [[MK190][几乎处处]]有[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]
 
 根据[[MK251][性质2]]可得若 $F(x)$ [[MK247][勒贝格可积]]，则 $F(x)$ 在 $E$ 上[[MK190][几乎处处]]有限
 
 则定义 $x\in E'$ 时 $F(x)$ 有限，根据几乎处处性质有 $\varphi(E-E')=0$
 
-进一步有 $S_n(x)$ 在 $E'$ 上[[~/OneDrive/数学分析/Chap10Note.org::MK5][绝对收敛]]，则根据[[~/OneDrive/数学分析/Chap10Note.org::MK4][引理]]可得 $S_n(x)$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]
+进一步有 $S_n(x)$ 在 $E'$ 上[[~/文档/note/数学分析/Chap10Note.org::MK5][绝对收敛]]，则根据[[~/文档/note/数学分析/Chap10Note.org::MK4][引理]]可得 $S_n(x)$ [[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]
 
 定义 $\lim_{n\to\infty}S_n(x)=S(x)$ 当 $x\in E'$ 时
 
@@ -7820,13 +7820,13 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 ***** 引理3
 
-若[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]] $f(x,t)$ 满足：
+若[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]] $f(x,t)$ 满足：
 
 （1） $f:E\times[a,b]\to\mathbb{R}$ 为实值函数
 
 （2） 对于任意 $t'\in(a,b)$ 均有 $f(x,t')\in\mathcal{L}(E)$ [[MK237][勒贝格可积]]
 
-（3） 对于任意 $x'\in E$ 均有 $f(x',t)$ 在 $t\in(a,b)$ 上[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][可导]]
+（3） 对于任意 $x'\in E$ 均有 $f(x',t)$ 在 $t\in(a,b)$ 上[[~/文档/note/大学物理/Note/DiffEq.org::MK20][可导]]
 
 （4） 存在 $F(x)\in\mathcal{L}(E)$ 满足对于任意 $x'\in E$ 均有 $\forall t\in(a,b)\rightarrow \left|\frac{\partial f(x',t)}{\partial{t}}\right|\leq F(x')$
 
@@ -7846,11 +7846,11 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 ******* 证明（3）
 
-对于任意 $x'\in E$ ，由于条件（3），根据根据[[~/OneDrive/大学物理/Note/DiffEq.org::MK1][可导必连续]]可得 $f(x',t)$ 在 $t\in(a,b)$ 上[[MK106][连续]]
+对于任意 $x'\in E$ ，由于条件（3），根据根据[[~/文档/note/大学物理/Note/DiffEq.org::MK1][可导必连续]]可得 $f(x',t)$ 在 $t\in(a,b)$ 上[[MK106][连续]]
 
 由于 $t'\in(a,b)\land\forall n(t'+h_n\in(a,b))$ 故可得 $f(x',t)$ 在 $t\in[t',t'+h_n]$ 上连续 $t\in(t',t'+h_n)$ 上可导
 
-则根据[[~/OneDrive/大学物理/Note/DiffEq.org::MK5][中值定理]]可得存在 $\theta\in[0,1]$ 满足 $g(x')=\frac{f(x',t'+h_n)-f(x,t')}{h_n}=\frac{\partial f(x',t' +\theta h_n)}{\partial t}$
+则根据[[~/文档/note/大学物理/Note/DiffEq.org::MK5][中值定理]]可得存在 $\theta\in[0,1]$ 满足 $g(x')=\frac{f(x',t'+h_n)-f(x,t')}{h_n}=\frac{\partial f(x',t' +\theta h_n)}{\partial t}$
 
 由于条件（4）可得 $\forall n\rightarrow |g_n(x')|\leq F(x')$
 
@@ -7872,9 +7872,9 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 进一步根据[[MK262][线性]]可得 $$\lim_{n\to\infty}\int_E\frac{f(x,t'+h_n)-f(x,t')}{h_n}dx=\lim_{n\to\infty}\left\{\frac{\int_Ef(x,t'+h_n)dx-\int_Ef(x,t')dx}{h_n}\right\}$$
 
-进一步根据 $\{h_n\}$ 的任意性以及[[~/OneDrive/数学分析/Chap7Note.org::MK9][引理]]可得 $$\lim_{h\to0}\left\{\frac{\int_Ef(x,t'+h)dx-\int_Ef(x,t')dx}{h}\right\}=\int_E\frac{\partial f(x,t')}{\partial t}dx$$
+进一步根据 $\{h_n\}$ 的任意性以及[[~/文档/note/数学分析/Chap7Note.org::MK9][引理]]可得 $$\lim_{h\to0}\left\{\frac{\int_Ef(x,t'+h)dx-\int_Ef(x,t')dx}{h}\right\}=\int_E\frac{\partial f(x,t')}{\partial t}dx$$
 
-根据[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数定义]]可得 $$\frac{d}{d t}\left(\int_Ef(x,t')dx\right)=\int_E\frac{\partial f(x,t')}{\partial t}dx$$
+根据[[~/文档/note/大学物理/Note/DiffEq.org::MK20][导数定义]]可得 $$\frac{d}{d t}\left(\int_Ef(x,t')dx\right)=\int_E\frac{\partial f(x,t')}{\partial t}dx$$
 
 最终结合 $t'$ 的任意性可得 $$\frac{d}{d t}\left(\int_Ef(x,t)dx\right)=\int_E\frac{\partial f(x,t)}{\partial t}dx$$
 
@@ -7886,9 +7886,9 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 均有 $$\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\Omega([x_{n,i-1},x_{n,i}])(x_{n,i}-x_{n,i-1})=(\mathcal{L})\int_{[a,b]}\omega_f(x)dx$$ 其中
 
-（1） $\Omega(E)=\sup\left\{|f(s)-f(t)|\big|\{s,t\}\subset E\right\}$ 是集合的[[~/OneDrive/数学分析/Chap7Note.org::MK16][振幅]]
+（1） $\Omega(E)=\sup\left\{|f(s)-f(t)|\big|\{s,t\}\subset E\right\}$ 是集合的[[~/文档/note/数学分析/Chap7Note.org::MK16][振幅]]
 
-（2） $\omega_f(x)$ 是点的[[~/OneDrive/数学分析/Chap7Note.org::MK16][振幅]]
+（2） $\omega_f(x)$ 是点的[[~/文档/note/数学分析/Chap7Note.org::MK16][振幅]]
 
 （3） $(\mathcal{L})$ 代表[[MK237][勒贝格积分]]
 
@@ -7910,9 +7910,9 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 ******* 逐点收敛于 $\omega_f(x)$ <<MK279>>
 
-则固定任意 $\epsilon>0$ ，对于任意 $x_0\not\in\bigcup_{n=1}^\infty P_n$ 定义 $\omega_f(x_0)$ 是 $x_0$ 点的[[~/OneDrive/数学分析/Chap7Note.org::MK16][振幅]]
+则固定任意 $\epsilon>0$ ，对于任意 $x_0\not\in\bigcup_{n=1}^\infty P_n$ 定义 $\omega_f(x_0)$ 是 $x_0$ 点的[[~/文档/note/数学分析/Chap7Note.org::MK16][振幅]]
 
-根据[[~/OneDrive/数学分析/Chap7Note.org::MK15][引理4]]可得存在 $\Delta>0$ 对于任意 $|b-a|<\Delta\land x_0\in(a,b)$ 均有 $\Omega([a,b])-\omega_f(x_0)<\epsilon$
+根据[[~/文档/note/数学分析/Chap7Note.org::MK15][引理4]]可得存在 $\Delta>0$ 对于任意 $|b-a|<\Delta\land x_0\in(a,b)$ 均有 $\Omega([a,b])-\omega_f(x_0)<\epsilon$
 
 又由于 $\lim_{n\to\infty}\lambda_n=0$ 则存在 $N$ 对于任意 $n'>N$ 满足 $\lambda_{n'}<\Delta$
 
@@ -7920,17 +7920,17 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 又由于 $x_{n',i}-x_{n',i}\leq\lambda_{n'}<\Delta$ 故有 $\Omega([x_{n',i-1},x_{n',i}])-\omega_f(x_0)<\epsilon$
 
-又根据[[~/OneDrive/数学分析/Chap7Note.org::MK17][引理3]]以及 $x_0\in(x_{n',i-1},x_{n',i})$ 可得 $\Omega([x_{n',i-1},x_{n',i}])\geq\omega_f(x_0)$
+又根据[[~/文档/note/数学分析/Chap7Note.org::MK17][引理3]]以及 $x_0\in(x_{n',i-1},x_{n',i})$ 可得 $\Omega([x_{n',i-1},x_{n',i}])\geq\omega_f(x_0)$
 
 故有 $|\Omega([x_{n',i-1},x_{n',i}])-\omega_f(x_0)|<\epsilon$ 又根据 $\phi_n(x)$ 定义可得 $\phi_{n'}(x_0)=\Omega([x_{n',i-1},x_{n',i}])$
 
 故最终，综上所述 $\forall\epsilon>0,\exists N,\forall n>N\land x\not\in\bigcup_{n=1}^\infty P_n\rightarrow |\phi_{n'}(x_0)-\omega_f(x_0)|<\epsilon$
 
-即对于任意 $x_0\not\in\bigcup_{n=1}^\infty P_n$ 有 $\phi_n(x)$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $\omega_f(x)$
+即对于任意 $x_0\not\in\bigcup_{n=1}^\infty P_n$ 有 $\phi_n(x)$ [[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $\omega_f(x)$
 
-又根据[[~/OneDrive/数学分析/Chap7Note.org::MK14][定义]]可得 $P_n=\{x_i\}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]，则易证 $\forall n\in\mathbb{N}\rightarrow\varphi(P_n)=0$
+又根据[[~/文档/note/数学分析/Chap7Note.org::MK14][定义]]可得 $P_n=\{x_i\}$ 是[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数集]]，则易证 $\forall n\in\mathbb{N}\rightarrow\varphi(P_n)=0$
 
-则根据[[MK278][可数零测]]可得 $\varphi\left(\bigcup_{n=1}^\infty P_n\right)=0$ 。故可得 $\phi_n(x)$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $\omega_f(x)$
+则根据[[MK278][可数零测]]可得 $\varphi\left(\bigcup_{n=1}^\infty P_n\right)=0$ 。故可得 $\phi_n(x)$ [[MK190][几乎处处]]有[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $\omega_f(x)$
 
 ******* 控制函数<<MK286>>
 
@@ -7940,7 +7940,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 根据[[MK22][三角不等式]]可得对于任意 $\{s,t\}\subset[u,v]$ 有 $|f(s)-f(t)|\leq|f(s)|+|-f(t)|\leq 2M<2M+1$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $\Omega([u,v])\leq 2M+1$ 由 $u,v$ 的任意性可得 $\forall n\in\mathbb{N},\forall x\in[a,b]\rightarrow|\phi_n(x)|\leq 2M+1$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK339][定理2]]可得 $\Omega([u,v])\leq 2M+1$ 由 $u,v$ 的任意性可得 $\forall n\in\mathbb{N},\forall x\in[a,b]\rightarrow|\phi_n(x)|\leq 2M+1$
 
 故定义 $F(x)=2M+1$ 显然是非负[[MK178][简单函数]]，即为[[MK134][可测函数]]
 
@@ -7986,7 +7986,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 ******* 逐点收敛于 $f(x)$
 
-根据[[~/OneDrive/数学分析/Chap7Note.org::MK14][定义]]可得 $P_n=\{x_i\}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]，则易证 $\forall n\in\mathbb{N}\rightarrow\varphi(P_n)=0$
+根据[[~/文档/note/数学分析/Chap7Note.org::MK14][定义]]可得 $P_n=\{x_i\}$ 是[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数集]]，则易证 $\forall n\in\mathbb{N}\rightarrow\varphi(P_n)=0$
 
 则根据[[MK278][可数零测]]可得 $\varphi\left(\bigcup_{n=1}^\infty P_n\right)=0$ ，去除不连续点，定义 $E^*=E'\cup\left(\bigcup_{n=1}^\infty P_n\right)$
 
@@ -8004,7 +8004,7 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 综上所述，对于任意 $x_0\in E^*$ 均有 $\forall\epsilon>0,\exists N,\forall n>N\rightarrow|\phi_n(x_0)-f(x_0)|<\epsilon$
 
-结合 $\varphi(E^*)=0$ 可得 $\phi_n(x)$ [[MK190][几乎处处]]有[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $\omega_f(x)$
+结合 $\varphi(E^*)=0$ 可得 $\phi_n(x)$ [[MK190][几乎处处]]有[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $\omega_f(x)$
 
 ******* 控制函数
 
@@ -8018,25 +8018,25 @@ E-E_\delta=&\left(\bigcup_{i=1}^\infty\bigcup_{k\geq N_{\delta,i}}^\infty\left\{
 
 **** 定理2：黎曼可积充要条件<<MK282>>
 
-闭区间 $[a,b]\subset\mathbb{R}$ 上的[[MK202][有界]]函数 $f(x)$ [[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]的充要条件是
+闭区间 $[a,b]\subset\mathbb{R}$ 上的[[MK202][有界]]函数 $f(x)$ [[~/文档/note/数学分析/Chap7Note.org::MK6][黎曼可积]]的充要条件是
 
 $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ***** 证明
 
-根据[[~/OneDrive/数学分析/Chap7Note.org::MK18][推论3]]可得若黎曼可积，其充要条件是
+根据[[~/文档/note/数学分析/Chap7Note.org::MK18][推论3]]可得若黎曼可积，其充要条件是
 
 对于任意一列满足 $\lim_{n\to\infty}\lambda_n=0$ 的划分 $\{P_n\}$ 使得 $\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\Omega([x_{n,i-1},x_{n,i}])(x_{n,i}-x_{n,i-1})=0$
 
 又根据[[MK280][引理4]]有对于任意满足条件划分列，均有 $$\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}\Omega([x_{n,i-1},x_{n,i}])(x_{n,i}-x_{n,i-1})=(\mathcal{L})\int_{[a,b]}\omega_f(x)dx$$
 
-即 $$(\mathcal{L})\int_{[a,b]}\omega_f(x)dx=0$$ 由于 $\omega_f(x)$ 是[[~/OneDrive/数学分析/Chap7Note.org::MK16][振幅]]，故根据其定义非负
+即 $$(\mathcal{L})\int_{[a,b]}\omega_f(x)dx=0$$ 由于 $\omega_f(x)$ 是[[~/文档/note/数学分析/Chap7Note.org::MK16][振幅]]，故根据其定义非负
 
 则根据[[MK281][性质8]]可得 $\omega_f(x)$ 不为零的点是[[MK126][零测集]]是 $$(\mathcal{L})\int_{[a,b]}\omega_f(x)dx=0$$ 的充要条件
 
-又根据[[~/OneDrive/数学分析/Chap7Note.org::MK19][引理5]]可得 $\omega_f(x)\ne0$ 充要条件是函数 $f(x)$ 在 $x$ 点不连续
+又根据[[~/文档/note/数学分析/Chap7Note.org::MK19][引理5]]可得 $\omega_f(x)\ne0$ 充要条件是函数 $f(x)$ 在 $x$ 点不连续
 
-综上所述，易证 $f(x)$ 在 $[a,b]$ 上几乎处处连续是[[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]的充要条件
+综上所述，易证 $f(x)$ 在 $[a,b]$ 上几乎处处连续是[[~/文档/note/数学分析/Chap7Note.org::MK6][黎曼可积]]的充要条件
 
 ***** 推论<<MK330>>
 
@@ -8044,15 +8044,15 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ****** 证明
 
-根据[[~/OneDrive/数学分析/Chap7Note.org::MK21][推论2]]可得单调有界函数黎曼可积，则根据定理可得几乎处处连续
+根据[[~/文档/note/数学分析/Chap7Note.org::MK21][推论2]]可得单调有界函数黎曼可积，则根据定理可得几乎处处连续
 
 **** 定理3：黎曼可积与勒贝格可积<<MK288>>
 
-闭区间 $[a,b]\subset\mathbb{R}$ 上的[[MK202][有界]]函数 $f(x)$ [[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]的，则有：
+闭区间 $[a,b]\subset\mathbb{R}$ 上的[[MK202][有界]]函数 $f(x)$ [[~/文档/note/数学分析/Chap7Note.org::MK6][黎曼可积]]的，则有：
 
 （1） $f(x)$ 在 $E=[a,b]$ 上[[MK237][勒贝格可积]]
 
-（2） $$(\mathcal{L})\int_{[a,b]}f(x)dx=(\mathcal{R})\int_a^bf(x)dx$$ 即[[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼积分]]等于[[MK237][勒贝格积分]]
+（2） $$(\mathcal{L})\int_{[a,b]}f(x)dx=(\mathcal{R})\int_a^bf(x)dx$$ 即[[~/文档/note/数学分析/Chap7Note.org::MK6][黎曼积分]]等于[[MK237][勒贝格积分]]
 
 ***** 证明
 
@@ -8086,7 +8086,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 （3） 取点点集 $S_n=\{\xi_{n,i}\}$ 满足 $\xi_{n,i}\in(x_{n,i-1},x_{n,i})$
 
-若满足 $\lim_{n\to\infty}\lambda_n=0$ 则根据[[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]定义 $$(\mathcal{R})\int_a^bf(x)dx=\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}f(\xi_{n,i})(x_{n,i}-x_{n,i-1})$$
+若满足 $\lim_{n\to\infty}\lambda_n=0$ 则根据[[~/文档/note/数学分析/Chap7Note.org::MK6][黎曼可积]]定义 $$(\mathcal{R})\int_a^bf(x)dx=\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}f(\xi_{n,i})(x_{n,i}-x_{n,i-1})$$
 
 则根据[[MK287][引理5]]可得 $$\lim_{n\to\infty}\sum_{i=1}^{|P_n|-1}f(\xi_{n,i})(x_{n,i}-x_{n,i-1})=(\mathcal{L})\int_{[a,b]}f(x)dx$$
 
@@ -8096,7 +8096,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 设 $f(x)$ 是在区间 $[a,+\infty)$ 上的非负实值函数，若满足：
 
-（1） $\forall A>a$ 均有 $f(x)$ 在 $[a,A]$ 上[[MK202][有界]]且[[~/OneDrive/数学分析/Chap7Note.org::MK6][黎曼可积]]
+（1） $\forall A>a$ 均有 $f(x)$ 在 $[a,A]$ 上[[MK202][有界]]且[[~/文档/note/数学分析/Chap7Note.org::MK6][黎曼可积]]
 
 （2） $$(\mathcal{R})\int_a^\infty f(x)dx=\lim_{A\to\infty}(\mathcal{R})\int_a^A f(x)dx$$ 收敛
 
@@ -8122,11 +8122,11 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 又根据[[MK288][定理3]]和条件（1）可得 $$(\mathcal{L})\int_{[a,A_n]}f(x)dx=(\mathcal{R})\int_a^{A_n}f(x)dx$$
 
-最终根据[[~/OneDrive/数学分析/Chap8Note.org::MK2][反常积分定义]]可得 $$\lim_{n\to\infty}(\mathcal{R})\int_a^{A_n}f(x)dx=(\mathcal{R})\int_a^\infty f(x)dx$$
+最终根据[[~/文档/note/数学分析/Chap8Note.org::MK2][反常积分定义]]可得 $$\lim_{n\to\infty}(\mathcal{R})\int_a^{A_n}f(x)dx=(\mathcal{R})\int_a^\infty f(x)dx$$
 
 **** 定理4：几何意义<<MK312>>
 
-若 $f(x)$ 为[[MK174][外侧度可测集]] $E\subset\mathbb{R}^n$ 上的非负[[~/OneDrive/离散数学/Disc_Math.org::MK194][函数]]
+若 $f(x)$ 为[[MK174][外侧度可测集]] $E\subset\mathbb{R}^n$ 上的非负[[~/文档/note/离散数学/Disc_Math.org::MK194][函数]]
 
 定义 $G(E,f)=\left\{<x,y>\big|x\in E\land y\in[0,f(x))\right\}$ 则有：
 
@@ -8146,7 +8146,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ******* [[MK178][简单函数]]<<MK309>>
 
-根据定义有 $f(x)=\sum_{i=1}^s c_i\chi_{E_i}(x)$ ，其中 $\{E_i\}$ 是对 $E$ 的[[~/OneDrive/离散数学/Disc_Math.org::MK179][划分]]且 $E_i$ 是 $\mathbb{R}^n$ 上的[[MK81][可测集]]
+根据定义有 $f(x)=\sum_{i=1}^s c_i\chi_{E_i}(x)$ ，其中 $\{E_i\}$ 是对 $E$ 的[[~/文档/note/离散数学/Disc_Math.org::MK179][划分]]且 $E_i$ 是 $\mathbb{R}^n$ 上的[[MK81][可测集]]
 
 则定义 $G(E_i,f)=\left\{<x,y>\big|x\in E\land y\in[0,f(x))\right\}$ 则易证 $G(E,f)=\bigcup_{i=1}^sG(E_i,f)$
 
@@ -8158,17 +8158,17 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ******* 可测函数
 
-若 $f(x)$ 是[[MK134][可测函数]]，则根据[[MK230][定理5]]可得存在递增[[MK178][简单函数]]列 $\{\phi_i(x)\}$ [[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
+若 $f(x)$ 是[[MK134][可测函数]]，则根据[[MK230][定理5]]可得存在递增[[MK178][简单函数]]列 $\{\phi_i(x)\}$ [[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]于 $f(x)$
 
-对于任意 $<x,y>\in G(E,f)$ 有 $y<f(x)$ ，则由于[[~/OneDrive/数学分析/Chap10Note.org::MK2][逐点收敛]]存在 $i'$ 满足 $y<\phi_{i'}(x)$
+对于任意 $<x,y>\in G(E,f)$ 有 $y<f(x)$ ，则由于[[~/文档/note/数学分析/Chap10Note.org::MK2][逐点收敛]]存在 $i'$ 满足 $y<\phi_{i'}(x)$
 
 即 $<x,y>\in G(E,\phi_i)$ 故有 $G(E,f)\subset\bigcup_{i=1}^\infty G(E,\phi_i)$
 
-由于递增函数，且逐点收敛，故根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]易证 $\forall x\rightarrow f(x)=\sup\{\phi_i(x)\}$
+由于递增函数，且逐点收敛，故根据[[~/文档/note/数学分析/Chap11Note.org::MK17][单调有界数列定理]]易证 $\forall x\rightarrow f(x)=\sup\{\phi_i(x)\}$
 
 即 $\forall i\rightarrow f(x)\geq\phi_i(x)$ 则对于任意 $<x,y>\in\bigcup_{i=1}^\infty G(E,\phi_i)$ 均有 $x\in E\land y<f(x)$
 
-即 $<x,y>\in G(E,f)$ 则有 $\bigcup_{i=1}^\infty G(E,\phi_i)\subset G(E,f)$ 最终根据[[~/OneDrive/离散数学/Disc_Math.org::MK21][自反性]]可得 $G(E,f)=\bigcup_{i=1}^\infty G(E,\phi_i)$
+即 $<x,y>\in G(E,f)$ 则有 $\bigcup_{i=1}^\infty G(E,\phi_i)\subset G(E,f)$ 最终根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $G(E,f)=\bigcup_{i=1}^\infty G(E,\phi_i)$
 
 则根据[[MK309][之前证明]]可得 $G(E,\phi_i)$ 是[[MK81][可测集]]，则根据[[MK84][计算（2）]]可得 $G(E,f)$ 亦为可测集
 
@@ -8190,7 +8190,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 由于 $f(x)$ 定义与为 $E$ 故 $f^{-1}((a,+\infty])=\left(f^{-1}((a,+\infty])\cap(E\cap R)\right)\cup\left(f^{-1}((a,+\infty])\cap(E-E\cap R)\right)$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK347][差分配]] $E-E\cap R=(E-E)\cup(E-R)=E-R$ 由于 $E\subset\mathbb{R}^n$ 即有 $E-R\subset\mathbb{R}^n-R$ 
+根据[[~/文档/note/离散数学/Disc_Math.org::MK347][差分配]] $E-E\cap R=(E-E)\cup(E-R)=E-R$ 由于 $E\subset\mathbb{R}^n$ 即有 $E-R\subset\mathbb{R}^n-R$ 
 
 由于 $\varphi(\mathbb{R}^n-R)=0$ 故根据[[MK128][子集零测]]可得 $\varphi(E-E\cap R)=0$
 
@@ -8419,7 +8419,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 **** 证明
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]可得存在 $\delta>0$ 满足 $(x-\delta,x+\delta)\subset U$
+根据[[~/文档/note/数学分析/Chap11Note.org::MK10][开集定义]]可得存在 $\delta>0$ 满足 $(x-\delta,x+\delta)\subset U$
 
 则取 $\epsilon^*=\min\left(\frac{\delta}{2},\epsilon\right)$ 故有 $I^*=[a,b]$ 满足 $x\in I^*\land \varphi(I^*)=b-a<\epsilon^*$
 
@@ -8439,7 +8439,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 （2） 存在 $V$ 是 $E$ 的[[MK317][维塔利覆盖]]
 
-则存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]集 $\{I_n\}\subset V$ 满足:
+则存在[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]集 $\{I_n\}\subset V$ 满足:
 
 （1） $\forall\{i,j\}\subset\mathbb{N}\rightarrow I_i\cap I_j=\varnothing$
 
@@ -8467,9 +8467,9 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 根据[[MK278][可数零测]]可得 $\varphi(\{a_i,b_i\})=0$ 以及 $\varphi\left(\bigcup_{i=1}^\infty\{a_i,b_i\}\right)=0$ 根据[[MK128][子集零测]]可得 $\varphi\left(\bigcup_{i=1}^\infty\overline{I}_i-\bigcup_{i=1}^\infty I_i\right)=0$
 
-显然根据区间定义有 $I_i\subset\overline{I}_i$ 故易证 $\bigcup_{i=1}^\infty I_i\subset\bigcup_{i=1}^\infty\overline{I}_i$ 则根据[[~/OneDrive/离散数学/Disc_Math.org::MK332][子集性质]]有 $\bigcup_{i=1}^\infty \overline{I}_i=\bigcup_{i=1}^\infty I_i\cup\left(\bigcup_{i=1}^\infty\overline{I}_i-\bigcup_{i=1}^\infty I_i\right)$
+显然根据区间定义有 $I_i\subset\overline{I}_i$ 故易证 $\bigcup_{i=1}^\infty I_i\subset\bigcup_{i=1}^\infty\overline{I}_i$ 则根据[[~/文档/note/离散数学/Disc_Math.org::MK332][子集性质]]有 $\bigcup_{i=1}^\infty \overline{I}_i=\bigcup_{i=1}^\infty I_i\cup\left(\bigcup_{i=1}^\infty\overline{I}_i-\bigcup_{i=1}^\infty I_i\right)$
 
-进一步根据[[~/OneDrive/离散数学/Disc_Math.org::MK347][差分配]]以及[[~/OneDrive/离散数学/Disc_Math.org::MK327][分配率]]易证 $\left(E-\bigcup_{i}^\infty \overline{I}_i\right)\cup\left(\bigcup_{i=1}^\infty\overline{I}_i-\bigcup_{i=1}^\infty I_i\right)=E-\bigcup_{i}^\infty I_i$
+进一步根据[[~/文档/note/离散数学/Disc_Math.org::MK347][差分配]]以及[[~/文档/note/离散数学/Disc_Math.org::MK327][分配率]]易证 $\left(E-\bigcup_{i}^\infty \overline{I}_i\right)\cup\left(\bigcup_{i=1}^\infty\overline{I}_i-\bigcup_{i=1}^\infty I_i\right)=E-\bigcup_{i}^\infty I_i$
 
 同理根据[[MK278][可数零测]]可得 $\varphi\left(E-\bigcup_{i}^\infty I_i\right)=0$ 。综上所述，若能证明 $\overline{V}$ 满足条件，则 $V$ 满足条件
 
@@ -8499,19 +8499,19 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 对于任意 $I_n$ 定义 $K_n=\left\{I\big|I\in W\land I\subset\left(\bigcup_{i=1}^n I_n\right)^c\right\}$ 定义 $r_n =\sup\left\{\varphi(I)\big|I\in K_n\right\}$
 
-由于 $\forall I\in W$ 均有 $I\subset U$ 故根据[[MK60][单调性]] $\varphi(I)\leq\varphi(U)<\infty$ 根据[[~/OneDrive/离散数学/Disc_Math.org::MK339][定理2]]可得 $r_n\leq\varphi(U)<\infty$
+由于 $\forall I\in W$ 均有 $I\subset U$ 故根据[[MK60][单调性]] $\varphi(I)\leq\varphi(U)<\infty$ 根据[[~/文档/note/离散数学/Disc_Math.org::MK339][定理2]]可得 $r_n\leq\varphi(U)<\infty$
 
 若 $E-\bigcup_{i=1}^nI_i=\varnothing$ 则 $\{I_1,...,I_n\}$ 满足条件
 
 若 $E-\bigcup_{i=1}^nI_i\ne\varnothing$ 则存在 $x\in E-\bigcup_{i=1}^nI_1$
 
-根据[[MK319][之前定义]]可得 $I_i\in W$ 均是[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]]，则根据[[~/OneDrive/数学分析/Chap11Note.org::MK28][定理6]]可得 $\bigcup_{i=1}^n I_i$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]]，即根据[[~/OneDrive/数学分析/Chap11Note.org::P1][定理1]] $\left(\bigcup_{i=1}^n I_i\right)^c$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]
+根据[[MK319][之前定义]]可得 $I_i\in W$ 均是[[~/文档/note/数学分析/Chap11Note.org::MK13][闭集]]，则根据[[~/文档/note/数学分析/Chap11Note.org::MK28][定理6]]可得 $\bigcup_{i=1}^n I_i$ 是[[~/文档/note/数学分析/Chap11Note.org::MK13][闭集]]，即根据[[~/文档/note/数学分析/Chap11Note.org::P1][定理1]] $\left(\bigcup_{i=1}^n I_i\right)^c$ 是[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK334][补与减]]可得 $E-\bigcup_{i=1}^nI_i=E\cap\left(\bigcup_{i=1}^nI_i\right)^c$ 即 $x\in\left(\bigcup_{i=1}^n I_i\right)^c$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK334][补与减]]可得 $E-\bigcup_{i=1}^nI_i=E\cap\left(\bigcup_{i=1}^nI_i\right)^c$ 即 $x\in\left(\bigcup_{i=1}^n I_i\right)^c$
 
 则根据[[MK320][引理]]可得存在 $I^*\in W\land I^*\in\left(\bigcup_{i=1}^n I_i\right)^c$ 即 $K_n$ 非空，则 $r_n$ 有定义
 
-根据[[~/OneDrive/离散数学/Disc_Math.org::MK326][确界定义]]存在 $I_{n+1}$ 满足 $\varphi(I_{n+1})>\frac{r_n}{2}\land I_{n+1}\in K_n$
+根据[[~/文档/note/离散数学/Disc_Math.org::MK326][确界定义]]存在 $I_{n+1}$ 满足 $\varphi(I_{n+1})>\frac{r_n}{2}\land I_{n+1}\in K_n$
 
 进一步根据 $K_n$ 定义可得 $(I_{n+1}\in W)\land\left(\forall 1\leq i\leq n\rightarrow I_i\cap I_{n+1}=\varnothing\right)$
 
@@ -8527,7 +8527,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 对于任意 $y\in E-\bigcup_{i=1}^\infty I_i$ 均满足对于任意 $k>1$ 有 $y\not\in\bigcup_{i=1}^k I_i$ 即 $y\in\left(\bigcup_{i=1}^k I_i\right)^c$
 
-根据上一步证明类似可证 $\left(\bigcup_{i=1}^k I_n\right)^c$ 是[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集]]，则根据[[MK320][引理]]可得存在 $I^*\in W\land y\in I^*$
+根据上一步证明类似可证 $\left(\bigcup_{i=1}^k I_n\right)^c$ 是[[~/文档/note/数学分析/Chap11Note.org::MK10][开集]]，则根据[[MK320][引理]]可得存在 $I^*\in W\land y\in I^*$
 
 ***** 存在 $I_{n_y}$ 满足 $I_{n_y}\cap I^*\ne\varnothing$ <<MK324>>
 
@@ -8535,9 +8535,9 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 则根据[[MK322][之前定义]]对于任意 $n\in\mathbb{N}$ 有 $I^*\in K_n$ 则 $\varphi(I^*)\leq r_n$ 进一步根据[[MK322][之前证明]]可得 $\sum_{i=1}^\infty \varphi(I_i)<\infty$
 
-根据[[MK54][非负性]]易证 $S_z=\sum_{i=1}^z \varphi(I_i)$ 单调递增，故根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 $S_z$ 收敛
+根据[[MK54][非负性]]易证 $S_z=\sum_{i=1}^z \varphi(I_i)$ 单调递增，故根据[[~/文档/note/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 $S_z$ 收敛
 
-最终根据[[~/OneDrive/数学分析/Chap9Note.org::MK5][推论4]]可得 $\lim_{z\to\infty}\varphi(I_z)=0$ 由于 $I_z>\frac{r_{z-1}}{2}$ 即可得 $\lim_{z\to\infty}r_z=0$
+最终根据[[~/文档/note/数学分析/Chap9Note.org::MK5][推论4]]可得 $\lim_{z\to\infty}\varphi(I_z)=0$ 由于 $I_z>\frac{r_{z-1}}{2}$ 即可得 $\lim_{z\to\infty}r_z=0$
 
 则由 $n$ 的任意性易证 $\varphi(I^*)=0$ 显然与 $I^*\in W$ 矛盾，故假设不成立
 
@@ -8565,7 +8565,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 根据[[MK82][区间可测]]、[[MK656][Caratheodory定理]]以及[[MK322][之前证明]]可得 $\varphi\left(\bigcup_{i=k}^\infty J_i\right)=\sum_{i=k}^\infty\varphi(J_i)=5\sum_{i=k}^\infty\varphi(I_i)$
 
-根据[[MK324][之前证明]] $S_z=\sum_{i=1}^z \varphi(I_i)$ 为收敛级数，则根据[[~/OneDrive/数学分析/Chap9Note.org::MK5][推论3]]可得 $\lim_{k\to\infty}\sum_{i=k}^\infty\varphi(I_i)=0$
+根据[[MK324][之前证明]] $S_z=\sum_{i=1}^z \varphi(I_i)$ 为收敛级数，则根据[[~/文档/note/数学分析/Chap9Note.org::MK5][推论3]]可得 $\lim_{k\to\infty}\sum_{i=k}^\infty\varphi(I_i)=0$
 
 则根据 $k$ 的任意性以及 $\varphi\left(E-\bigcup_{i}^\infty I_n\right)\leq5\sum_{i=k}^\infty\varphi(I_i)$ 易证 $\varphi\left(E-\bigcup_{i}^\infty I_n\right)=0$
 
@@ -8585,7 +8585,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 （2） 存在 $V$ 是 $E$ 的[[MK317][维塔利覆盖]]
 
-则对于任意 $\epsilon>0$ 存在[[~/OneDrive/离散数学/Disc_Math.org::MK42][有限]]个区间 $I_1,I_2,...,I_n}$ 使得
+则对于任意 $\epsilon>0$ 存在[[~/文档/note/离散数学/Disc_Math.org::MK42][有限]]个区间 $I_1,I_2,...,I_n}$ 使得
 
 （1） $\forall\{i,j\}\subset\mathbb{N}\rightarrow I_i\cap I_j=\varnothing$
 
@@ -8595,7 +8595,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 根据[[MK327][覆盖定理]]可得存在 $\{I_i\}$ 满足 $\varphi(E-\bigcup_{i=1}^\infty I_i)=0$ 以及 $\varphi\left(\bigcup_{i=1}^\infty I_i\right)=\sum_{i=1}^\infty \varphi(I_i)<\infty$
 
-根据[[MK54][非负性]]易证 $S_z=\sum_{i=1}^z \varphi(I_i)$ 单调递增，故根据[[~/OneDrive/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 $S_z$ 收敛
+根据[[MK54][非负性]]易证 $S_z=\sum_{i=1}^z \varphi(I_i)$ 单调递增，故根据[[~/文档/note/数学分析/Chap11Note.org::MK17][单调有界数列定理]]可得 $S_z$ 收敛
 
 故有 $\lim_{z\to\infty}S_z=\sum_{i=1}^\infty \varphi(I_i)=\varphi(E)$ 故根据极限定义 $\forall\epsilon>0,\exists N,\forall n>N\rightarrow \varphi(E)-S_n<\epsilon$
 
@@ -8629,7 +8629,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 则易证 $\lim_{n\to\infty}h_n=0\land h_n\ne0$ 且 $x_0+h_n\in[a,b]$ 故定义 $d_n=\frac{f(x_0+h_n)-f(x_0)}{h_n}$
 
-则根据[[~/OneDrive/数学分析/Chap11Note.org::MK30][推论]]可得必有收敛子列 $\lim_{i\to\infty}d_{n_i}=A$
+则根据[[~/文档/note/数学分析/Chap11Note.org::MK30][推论]]可得必有收敛子列 $\lim_{i\to\infty}d_{n_i}=A$
 
 易证 $h_{n_i}\ne0\land \lim_{i\to\infty}h_{n_i}=0$ 故满足列导数定义
 
@@ -8637,13 +8637,13 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 对于任意 $[a,b]$ 上的函数 $f(x)$ 中的任意 $x_0\in[a,b]$
 
-若不存在[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]，则必有两个[[MK326][列导数]]不相等
+若不存在[[~/文档/note/大学物理/Note/DiffEq.org::MK20][导数]]，则必有两个[[MK326][列导数]]不相等
 
 **** 证明
 
 假设所有列导数的极限都相等，定义函数 $g(h)=\frac{f(x+h)-f(x)}{h}$
 
-则根据[[~/OneDrive/数学分析/Chap11Note.org::MK31][海涅定理]]可得若 $\lim_{h\to0}g(h)=A$ 故存在[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]
+则根据[[~/文档/note/数学分析/Chap11Note.org::MK31][海涅定理]]可得若 $\lim_{h\to0}g(h)=A$ 故存在[[~/文档/note/大学物理/Note/DiffEq.org::MK20][导数]]
 
 与条件矛盾，假设不成立
 
@@ -8679,7 +8679,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 又由于 $x_0\in E\subset G$ 则存在 $\delta_{x_0}$ 使得 $(x_0-\delta_{x_0},x_0+\delta_{x_0})\subset G$
 
-由于 $\{h_n\}$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK43][无限集]]且 $\forall n\in\mathbb{N}\rightarrow h_n\ne0$ ，则至少存在一个同号子列 $\{h'_n\}$ ，易证同样[[MK326][满足条件]]
+由于 $\{h_n\}$ 是[[~/文档/note/离散数学/Disc_Math.org::MK43][无限集]]且 $\forall n\in\mathbb{N}\rightarrow h_n\ne0$ ，则至少存在一个同号子列 $\{h'_n\}$ ，易证同样[[MK326][满足条件]]
 
 则当 $\{h'_n\}\subset\mathbb{R}^+$ 时有：
 
@@ -8713,7 +8713,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ****** 证明结论
 
-根据[[MK327][维塔利覆盖定理]]可得存在[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数]]集 $\{\Delta_i(x_i)\}\subset V$ 满足 $\varphi\left(f(E)-\bigcup_{i}^\infty \Delta_i(x_i)\right)=0$
+根据[[MK327][维塔利覆盖定理]]可得存在[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数]]集 $\{\Delta_i(x_i)\}\subset V$ 满足 $\varphi\left(f(E)-\bigcup_{i}^\infty \Delta_i(x_i)\right)=0$
 
 且 $\forall\{i,j\}\subset\mathbb{N}\rightarrow \Delta_i(x_i)\cap \Delta_j(x_j)=\varnothing$
 
@@ -8751,9 +8751,9 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 由于严格递增，则无论那种均有 $f(x_1)\ne f(x_2)$ 与假设矛盾
 
-故假设不成立，即不存在 $x_1\ne x_2$ 使得 $f(x_1)=f(x_2)$ ，故 $f(x)$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK195][单射函数]]
+故假设不成立，即不存在 $x_1\ne x_2$ 使得 $f(x_1)=f(x_2)$ ，故 $f(x)$ 是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射函数]]
 
-显然 $f(x)$ 亦是[[~/OneDrive/离散数学/Disc_Math.org::MK198][满射函数]]，则 $f(x)$ 亦是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]]，故存在[[~/OneDrive/离散数学/Disc_Math.org::MK203][逆函数]] $f^{-1}(y)$ 且亦为严格递增函数
+显然 $f(x)$ 亦是[[~/文档/note/离散数学/Disc_Math.org::MK198][满射函数]]，则 $f(x)$ 亦是[[~/文档/note/离散数学/Disc_Math.org::MK200][双射函数]]，故存在[[~/文档/note/离散数学/Disc_Math.org::MK203][逆函数]] $f^{-1}(y)$ 且亦为严格递增函数
 
 当 $q=0$ 时根据[[MK54][非负性]]有 $\varphi(f(E))\geq 0$ 则当 $q>0$ 时作以下证明
 
@@ -8769,9 +8769,9 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 ****** 不连续点的相零测
 
-由于 $f(x)$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]] $E=E^*\cap Z'$ 故根据[[~/OneDrive/离散数学/Disc_Math.org::MK356][相分离]]可得 $f(E)=f(E^*)\cup f(Z')$
+由于 $f(x)$ 是[[~/文档/note/离散数学/Disc_Math.org::MK200][双射函数]] $E=E^*\cap Z'$ 故根据[[~/文档/note/离散数学/Disc_Math.org::MK356][相分离]]可得 $f(E)=f(E^*)\cup f(Z')$
 
-由于 $f(x)$ 双射，故 $f(Z')\sim Z'$ 根据[[MK335][定理2]]可得 $Z'$ 是[[~/OneDrive/离散数学/Disc_Math.org::MK48][至多可数集]]，则 $f(Z')$ 以为至多可数集
+由于 $f(x)$ 双射，故 $f(Z')\sim Z'$ 根据[[MK335][定理2]]可得 $Z'$ 是[[~/文档/note/离散数学/Disc_Math.org::MK48][至多可数集]]，则 $f(Z')$ 以为至多可数集
 
 根据[[MK318][单点零测]]以及[[MK278][可数并零测]]可得 $f(Z')$ 亦为零测集，根据[[MK331][零测不变]]可得 $\varphi(f(E)-f(Z))=\varphi(f(E))$
 
@@ -8809,7 +8809,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 若 $f(x)$ 是闭[[MK13][区间]] $[a,b]$ 上的单调实值函数，则有
 
-（1） $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]存在[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]（可以是无穷）
+（1） $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]存在[[~/文档/note/大学物理/Note/DiffEq.org::MK20][导数]]（可以是无穷）
 
 （2） 导函数 $f'(x)$ 在 $[a,b]$ 上[[MK237][勒贝格可积]]
 
@@ -8853,7 +8853,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 即有 $p\varphi(E_{p,q})\leq\varphi(f(E_{p,q}))\leq q\varphi(E_{p,q})$ 又由于 $q<p$ 故必有 $\varphi(E_{p,q})=0$ 
 
-又根据[[~/OneDrive/离散数学/Disc_Math.org::MK358][推论2]]可得 $\mathbb{Q}^+\times\mathbb{Q}^+$ 亦为可数集，故根据[[MK278][可数并零测]]可得 $\varphi\left(\bigcup_{<p,q>\in\mathbb{Q}\times\mathbb{Q}}E_{p,q}\right)=0$
+又根据[[~/文档/note/离散数学/Disc_Math.org::MK358][推论2]]可得 $\mathbb{Q}^+\times\mathbb{Q}^+$ 亦为可数集，故根据[[MK278][可数并零测]]可得 $\varphi\left(\bigcup_{<p,q>\in\mathbb{Q}\times\mathbb{Q}}E_{p,q}\right)=0$
 
 又根据[[MK54][非负性]]和[[MK60][单调性]]有 $0\leq\varphi(E)\leq\varphi\left(\bigcup_{<p,q>\in\mathbb{Q}\times\mathbb{Q}}E_{p,q}\right)$ 即得 $\varphi(E)=0$
 
@@ -8887,7 +8887,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 由于当 $x\not\in E\land x\in[a,+\infty)$ 时 $f_z(x)$ 导数存在且 $\lim_{n\to\infty}\frac{1}{n}=0$
 
-故当 $x\not\in E\land x\in[a,+\infty)$ 根据[[~/OneDrive/数学分析/Chap11Note.org::MK31][海涅定理]]可得 $\lim_{n\to\infty}\frac{f_z(x+\frac{1}{n})-f_z(x)}{\frac{1}{n}}=f'_z(x)$
+故当 $x\not\in E\land x\in[a,+\infty)$ 根据[[~/文档/note/数学分析/Chap11Note.org::MK31][海涅定理]]可得 $\lim_{n\to\infty}\frac{f_z(x+\frac{1}{n})-f_z(x)}{\frac{1}{n}}=f'_z(x)$
 
 即有 $\lim_{n\to\infty}g_n(x)=g(x)$ 故根据[[MK268][极限运算]]可得 $g(x)$ 亦为可测函数
 
@@ -8939,7 +8939,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 存在 $[a,b]$ 上的增函数 $f(x)$ 满足对于任意 $x_0\in E$ 均有 $f'(x)=\infty$
 
-即 $f(x)$ 在 $E$ 上的[[~/OneDrive/大学物理/Note/DiffEq.org::MK20][导数]]为无穷
+即 $f(x)$ 在 $E$ 上的[[~/文档/note/大学物理/Note/DiffEq.org::MK20][导数]]为无穷
 
 **** 证明
 
@@ -8975,7 +8975,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 即 $\lim_{x\to x_0}f(x)=f(x_0)$ 故[[MK106][连续]]，定义 $f(x)=\sum_{i=1}^\infty f_i(x)$
 
-显然 $|f_i(x)|\leq\frac{1}{2^n}$ 且 $\sum_{i=1}^\infty\frac{1}{2^i}<\infty$ 故根据[[~/OneDrive/数学分析/Chap10Note.org::MK6][判别法]]可得 $\sum_{i=1}^\infty f_i(x)$ [[~/OneDrive/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
+显然 $|f_i(x)|\leq\frac{1}{2^n}$ 且 $\sum_{i=1}^\infty\frac{1}{2^i}<\infty$ 故根据[[~/文档/note/数学分析/Chap10Note.org::MK6][判别法]]可得 $\sum_{i=1}^\infty f_i(x)$ [[~/文档/note/数学分析/Chap10Note.org::MK1][一致收敛]]于 $f(x)$
 
 则根据[[MK205][引理1]]可得 $f(x)$ 连续，且由于 $f_n(x)$ 单调递增，故 $f(x)$ 亦为单调递增函数
 
@@ -8983,7 +8983,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 对于任意 $x_0\in[a,b)\cap E$ 有 $x\in G_n,n\in\mathbb{N}$ ，则给定任意 $k\in\mathbb{N}$ 
 
-由于 $x_0\in G_k$ 则根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]存在 $\delta_k$ 对于任意 $0<h<\delta_k$ 均有 $[x,x_0+h]\subset G_k$
+由于 $x_0\in G_k$ 则根据[[~/文档/note/数学分析/Chap11Note.org::MK10][开集定义]]存在 $\delta_k$ 对于任意 $0<h<\delta_k$ 均有 $[x,x_0+h]\subset G_k$
 
 又根据[[MK345][定义]]可得 $[x,x_0+h]\subset G_i,\forall i\leq k$ 即 $[x_0,x_0+h]\cap G_i=[x_0,x_0+h],\forall i\leq k$
 
@@ -9019,7 +9019,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 即存在 $\lambda\in\Lambda_n$ 满足 $x\in Z=\left(a_\lambda+\frac{b_\lambda-a_\lambda}{3},b_\lambda-\frac{b_\lambda-a_\lambda}{3}\right)$
 
-根据[[~/OneDrive/数学分析/Chap11Note.org::MK10][开集定义]]可得存在 $\delta>0$ 满足 $(x-\delta,x+\delta)\subset Z$
+根据[[~/文档/note/数学分析/Chap11Note.org::MK10][开集定义]]可得存在 $\delta>0$ 满足 $(x-\delta,x+\delta)\subset Z$
 
 即 $O(x,\delta)=(x-\delta,x+\delta)\cap P=\varnothing$
 
@@ -9080,7 +9080,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 故定义 $Z_1=\left\{x\big|\phi_1(x+t)=\infty\right\},Z_2=\left\{x\big|\phi_2(x)=\infty\right\}$
 
-易证 $\varphi(Z_1)=\varphi(Z_2)=0$ 且根据[[MK178][定义]] $\phi_1(x),\phi_2(x)$ 将集合划分为[[~/OneDrive/离散数学/Disc_Math.org::MK42][有限]]集
+易证 $\varphi(Z_1)=\varphi(Z_2)=0$ 且根据[[MK178][定义]] $\phi_1(x),\phi_2(x)$ 将集合划分为[[~/文档/note/离散数学/Disc_Math.org::MK42][有限]]集
 
 故易证 $\phi_1(x)$ 在 $[a-t,a]-Z_1$ 上有界 $M_1$ ，同理 $\phi_2(x)$ 在 $[b-t,a]-Z_2$ 上有界 $M_2$
 
@@ -9197,7 +9197,7 @@ $f(x)$ 在 $[a,b]$ 上[[MK190][几乎处处]]连续
 
 （2） $\varphi([a,b]-F)<\frac{\epsilon}{M_3}$
 
-又根据[[~/OneDrive/数学分析/Chap7Note.org::K3][康拓定理]]可得 $f(x)$ 在 $F$ 上一致连续
+又根据[[~/文档/note/数学分析/Chap7Note.org::K3][康拓定理]]可得 $f(x)$ 在 $F$ 上一致连续
 
 即 $\forall\epsilon>0,\exists t_2,\forall |x-y|<t_2\Rightarrow |f(x)-f(y)|<\frac{\epsilon}{b-a}$
 
@@ -9352,7 +9352,7 @@ F(x_2)-F(x_1)=&\int_{[a,x_2]}f(t)dx-\int_{[a,x_1]}f(t)dx\\
 
 由于 $f(x)$ 勒贝格可积，则根据[[MK369][性质9]]可得 $f(x)$ 几乎处处有限
 
-又根据定义 $E$ 可测， $f(x)$ 可测，故根据[[MK361][鲁津定理]]可得存在[[~/OneDrive/数学分析/Chap11Note.org::MK13][闭集]] $F$ 满足：
+又根据定义 $E$ 可测， $f(x)$ 可测，故根据[[MK361][鲁津定理]]可得存在[[~/文档/note/数学分析/Chap11Note.org::MK13][闭集]] $F$ 满足：
 
 （1） $f(x)$ 在 $F$ 上连续
 
@@ -9364,9 +9364,9 @@ F(x_2)-F(x_1)=&\int_{[a,x_2]}f(t)dx-\int_{[a,x_1]}f(t)dx\\
 
 定义 $S(x)=\sup\left(F\cap [-\infty,x]\right),I(x)=\inf\left(F\cap [x,+\infty]\right)$
 
-由于 $F$ 是闭集，根据[[~/OneDrive/数学分析/Chap11Note.org::P4][定理5]]可得 $F\cap[-\infty,x],F\cap[x,+\infty]$ 均为闭集
+由于 $F$ 是闭集，根据[[~/文档/note/数学分析/Chap11Note.org::P4][定理5]]可得 $F\cap[-\infty,x],F\cap[x,+\infty]$ 均为闭集
 
-进一步由于[[~/OneDrive/数学分析/Chap11Note.org::MK35][定理9]]可得 $S(x)\in F\cap[-\infty,x]\land I(x)\in F\cap[x,+\infty]$ 继而 $S(x)\in F\land I(x)\in F$
+进一步由于[[~/文档/note/数学分析/Chap11Note.org::MK35][定理9]]可得 $S(x)\in F\cap[-\infty,x]\land I(x)\in F\cap[x,+\infty]$ 继而 $S(x)\in F\land I(x)\in F$
 
 则 $f'(S(x)),f'(I(x))$ 有定义，
 

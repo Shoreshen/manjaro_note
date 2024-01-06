@@ -169,13 +169,13 @@ I_1&=\int\frac{1}{(x^2+a^2)^n}dx\\
 
 因为 $\vec{f}(\vec{t})$ 在 $D_{n-1}$ 上存在偏导且连续，故偏导数 $\frac{\partial f_i(\vec{t})}{\partial t_j},1\leq i\leq n, 1\leq j\leq n-1$ 亦为 $\vec{t}$ 的连续映射
 
-由于 $D_{n-1}$ 有界闭集，故根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理]] $D_{n-1}$ 为紧集
+由于 $D_{n-1}$ 有界闭集，故根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理]] $D_{n-1}$ 为紧集
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][连续函数性质-紧集的连续映射（连续函数）也是紧集]]得出 $\frac{\partial f_i(\vec{t})}{\partial t_j}$ 亦为紧集，同理为有界闭集，则存在 $m_{ij}\leq\frac{\partial f_i(\vec{t})}{\partial t_j}\leq M_{ij}$ 
+根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-紧集的连续映射（连续函数）也是紧集]]得出 $\frac{\partial f_i(\vec{t})}{\partial t_j}$ 亦为紧集，同理为有界闭集，则存在 $m_{ij}\leq\frac{\partial f_i(\vec{t})}{\partial t_j}\leq M_{ij}$ 
 
 定义 $M=\max\left\{|M_{ij}|,|m_{ij}|\big|1\leq i\leq n, 1\leq j\leq n-1\right\}$ ，定义 $\vec{t}_1,\vec{t}_2\in D_{n-1}$ 为区域内任意两点
 
-若 $\vec{t}_1,\vec{t}_2$ 之间的连线 $l_{12}\in D_{n-1}$ 则根据[[e:/OneDrive/数学分析/Note/Chapter 12/Chap12Note.org][多元函数中值定理与Taylor公式-中值定理]]有
+若 $\vec{t}_1,\vec{t}_2$ 之间的连线 $l_{12}\in D_{n-1}$ 则根据[[~/文档/note/数学分析/Chap12Note.org][多元函数中值定理与Taylor公式-中值定理]]有
 
 \begin{aligned}
 \left|f_i(\vec{t}_2)-f_i(\vec{t}_1)\right|&=\left|\sum_{j=1}^{n-1} \frac{\partial f_i(\vec{t}_1+\theta(\vec{t}_2-\vec{t}_1))}{\partial t_j}(t_{2j}-t_{1j})\right|\\
@@ -188,7 +188,7 @@ I_1&=\int\frac{1}{(x^2+a^2)^n}dx\\
 
 若 $l_{12}\not\in D_{n-1}$ 但存在分段连线 $l_{13},l_{34},...,l_{(n-1)n},l_{n2}$ ，同理可证以上结论。
 
-由于 $D_{n-1}$ 为连通集，根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][连续函数性质-补充连通定义-连通集定义]]不存在 $\vec{t}_1,\vec{t}_2$ 没有通路的情况，所以
+由于 $D_{n-1}$ 为连通集，根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-补充连通定义-连通集定义]]不存在 $\vec{t}_1,\vec{t}_2$ 没有通路的情况，所以
 
 \begin{aligned}
 \left|\vec{f}(\vec{t}_2)-\vec{f}(\vec{t}_1)\right|&=\sqrt{\sum_{i=1}^n \left(f_i(\vec{t}_2)-f_i(\vec{t}_1)\right)^2}\\
@@ -265,13 +265,13 @@ I_1&=\int\frac{1}{(x^2+a^2)^n}dx\\
 
 **** <<MK1>>证明
 
-由于有界闭集，则根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][Euclid空间基本定理-Heine-Borel定理]]得 $D$ 是紧集，又由于 $f(x,y)$ 连续，根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][连续函数性质-康托定理]]得函数一直连续，
+由于有界闭集，则根据[[~/文档/note/数学分析/Chap11Note.org][Euclid空间基本定理-Heine-Borel定理]]得 $D$ 是紧集，又由于 $f(x,y)$ 连续，根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-康托定理]]得函数一直连续，
 
 定义 $S=\sum_{i=1}^n \sigma_i$ 为 $D$ 的面积，故有 $\forall \epsilon>0, \exists \delta, \forall \vec{x}',\vec{x}''\in K, |\vec{x}'-\vec{x}''|<\delta \Rightarrow \left|\vec{f}(\vec{x}')-\vec{f}(\vec{x}'')\right|<\frac{\epsilon}{S}$
 
 定义 $\omega_i=sup\{f(\xi_i,\eta_i)\}-inf\{f(\xi_i,\eta_i)\},\ \ \xi_i,\eta_i\in D_i$ 为振幅，则当 $\lambda<\delta$ 时 $\omega_i<\epsilon$ ，则和式 $\sum_{i=1}^n \omega_i\sigma_i<\sum_{i=1}^n \frac{\epsilon}{S}\sigma_i=\epsilon$ 
 
-故的 $\forall \epsilon>0,\exists \delta,\forall \lambda<\delta\Rightarrow \sum_{i=1}^n\omega_i\sigma_i<\epsilon$ 即 $\lim_{\lambda\to0}\sum_{i=1}^n\omega_i\sigma_i=0$ 故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]得黎曼积分可积
+故的 $\forall \epsilon>0,\exists \delta,\forall \lambda<\delta\Rightarrow \sum_{i=1}^n\omega_i\sigma_i<\epsilon$ 即 $\lim_{\lambda\to0}\sum_{i=1}^n\omega_i\sigma_i=0$ 故根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]得黎曼积分可积
 
 ** 多重积分
 
@@ -315,17 +315,17 @@ I_1&=\int\frac{1}{(x^2+a^2)^n}dx\\
 
 综上所述 $\forall \epsilon>0,\exists N=\frac{\ln\frac{1}{2\epsilon}}{\ln 2},\forall n>N\Rightarrow \left|\vec{f}_n(t)-\vec{f}_m(t)\right|\leq\frac{1}{2^{n+1}}<\epsilon$
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-柯西收敛原理]] $\lim_{n\to\infty}\vec{f}_n(t)$ 收敛，定义 $\vec{f}(t)=\lim_{n\to\infty}\vec{f}_n(t)$
+根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-柯西收敛原理]] $\lim_{n\to\infty}\vec{f}_n(t)$ 收敛，定义 $\vec{f}(t)=\lim_{n\to\infty}\vec{f}_n(t)$
 
 故对于任意给定 $t\in[0,1]$ 存在映射 $\vec{f}(t)$
 
 *** 证明面积
 
-定义 $S=\left\{\vec{f}(t)\big|t\in[0,1]\right\}$ 由于 $[0,1]$ 有界闭集，根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][Euclid空间基本定理-Heine-Borel定理]]得出是紧集。
+定义 $S=\left\{\vec{f}(t)\big|t\in[0,1]\right\}$ 由于 $[0,1]$ 有界闭集，根据[[~/文档/note/数学分析/Chap11Note.org][Euclid空间基本定理-Heine-Borel定理]]得出是紧集。
 
-又根据据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][连续函数性质-紧集的连续映射（连续函数）也是紧集]]得出 $S$ 也为紧集，同理 $S$ 有界闭集。 
+又根据据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-紧集的连续映射（连续函数）也是紧集]]得出 $S$ 也为紧集，同理 $S$ 有界闭集。 
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-开集与闭集-闭集定义]]故有 $S$ 包含聚点。
+则根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-闭集定义]]故有 $S$ 包含聚点。
 
 由于 $\vec{f}(t)=\lim_{n\to\infty}\vec{f}_n(t)$ 故有 $\forall \delta>0,\exists N_1,\forall n>N_1\Rightarrow \left|\vec{f}_n(t)-\vec{f}(t)\right|<\frac{\delta}{2}$
 
@@ -333,7 +333,7 @@ I_1&=\int\frac{1}{(x^2+a^2)^n}dx\\
 
 故 $\forall \delta>0, \exists N=\max(N_1,N_2),\forall n>N,\exists t_0\in\left[\frac{i-1}{4^n},\frac{i}{4^n}\right]\Rightarrow \left|f(t_0)-\vec{a}\right|\leq\left|f(t_0)-f_n(t_0)\right|+\left|f_n(t_0)-\vec{a}\right|<\delta$ 即 $\vec{f}(t_0)\in O(\vec{a},\delta)$
 
-故对于 $\vec{a}$ 的任意领域均包含 $S$ 的点，故根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-开集与闭集-点的定义]] $\vec{a}$ 为 $S$ 的聚点。又由于 $S$ 闭集，故 $\vec{a}\in S$
+故对于 $\vec{a}$ 的任意领域均包含 $S$ 的点，故根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-点的定义]] $\vec{a}$ 为 $S$ 的聚点。又由于 $S$ 闭集，故 $\vec{a}\in S$
 
 由此三角形内所有点都为曲线聚点，曲线 $S$ 面积为三角形的面积。
 
@@ -343,7 +343,7 @@ I_1&=\int\frac{1}{(x^2+a^2)^n}dx\\
 
 $L=l\Leftrightarrow \lim_{\lambda \to 0}{\sum_{i=1}^n f(\vec{\xi}_i)v_i} = L$
 
-其中 $L$ 为达布大和， $l$ 为达布小和，证明同[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件1]]
+其中 $L$ 为达布大和， $l$ 为达布小和，证明同[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件1]]
 
 ** <<MK31>>可积充要条件2：
 
@@ -354,7 +354,7 @@ $L=l\Leftrightarrow \lim_{\lambda \to 0}{\sum_{i=1}^n f(\vec{\xi}_i)v_i} = L$
 
 其中 $M_i$ 为区域 $\sigma_i$ 中最大值， $m_i$ 为区域 $\sigma_i$ 中的最小值，则 $\omega_i$ 为该区域的振幅
 
-证明同[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]
+证明同[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]
 
 ** <<MK2>>重积分可积充要条件3
 
@@ -429,7 +429,7 @@ $L=l\Leftrightarrow \lim_{\lambda \to 0}{\sum_{i=1}^n f(\vec{\xi}_i)v_i} = L$
 
 **** 必要性
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]得 $\forall P:\lim_{\lambda \to 0} \sum_{i=1}^n \omega_i v_i = 0$ 即 $\forall\epsilon>0,\exists \delta, \forall \lambda<\delta\Rightarrow \forall P: \sum_{i=1}^n \omega_iv_i<\epsilon$
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]得 $\forall P:\lim_{\lambda \to 0} \sum_{i=1}^n \omega_i v_i = 0$ 即 $\forall\epsilon>0,\exists \delta, \forall \lambda<\delta\Rightarrow \forall P: \sum_{i=1}^n \omega_iv_i<\epsilon$
 
 故 $&\forall \epsilon > 0, \exists P:\ \sum_{i=1}^n \omega_i v_i < \epsilon$
 
@@ -463,7 +463,7 @@ $L=l\Leftrightarrow \lim_{\lambda \to 0}{\sum_{i=1}^n f(\vec{\xi}_i)v_i} = L$
 
 ***** 证明（1）
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]得 $\lim_{\lambda\to0}\sum_{i=1}^n v_i \sigma_i=0$ 对于任意划分，其中 $\omega_i$ 为区域 $D_i$ 上函数的振幅
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]得 $\lim_{\lambda\to0}\sum_{i=1}^n v_i \sigma_i=0$ 对于任意划分，其中 $\omega_i$ 为区域 $D_i$ 上函数的振幅
 
 则存在一种划分（划分曲面面积为零），将 $D$ 分割成 $D_1,D_2$ 即 $\lim_{\lambda\to0}\sum_{i=1}^n \omega_i v_i=\lim_{\lambda\to0}\sum_{i=1}^n \omega_i v^1_i+\lim_{\lambda\to0}\sum_{i=1}^n \omega_i v^2_i=0$ 其中 $v^1_i$ 为 $D_{1i}$ 的体积
 
@@ -471,13 +471,13 @@ $L=l\Leftrightarrow \lim_{\lambda \to 0}{\sum_{i=1}^n f(\vec{\xi}_i)v_i} = L$
 
 即有 $\forall \epsilon >0,\exists P\Rightarrow \sum_{i=1}^n \omega_i v^1_i<\epsilon$ 则根据[[MK2][重积分可积充要条件3]]得 $\forall P:\lim_{\lambda\to0} \sum_{i=1}^n \omega_iv^1_i=0$ 同理可得 $\forall P:\lim_{\lambda\to0} \sum_{i=1}^n \omega_iv^2_i=0$ 
 
-又根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]得 $f(\vec{x})$ 在 $D_1,D_2$ 上分别可积
+又根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]得 $f(\vec{x})$ 在 $D_1,D_2$ 上分别可积
 
 ***** 证明（2）
 
 由 $f(\vec{x})$ 在 $D_1,D_2$ 上可积得 $\int_{D_2} f(\vec{x})dv=\lim_{\lambda\to0}\sum_{i=1}^n f(\vec{\xi}_i) v^1_i,\int_{D_1} f(\vec{x})dv=\lim_{\lambda\to0}\sum_{i=1}^n f(\vec{\xi}_i) v^2_i$
 
-且根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]得 $\lim_{\lambda\to0}\sum_{i=1}^n \omega_i v^1_i=0,\lim_{\lambda\to0}\sum_{i=1}^n \omega_i v^2_i=0$
+且根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件2]]得 $\lim_{\lambda\to0}\sum_{i=1}^n \omega_i v^1_i=0,\lim_{\lambda\to0}\sum_{i=1}^n \omega_i v^2_i=0$
 
 由于存在一种划分将 $D$ 切分为 $D_1,D_2$ （划分曲面面积为零）则这种划分下有 $\lim_{\lambda\to0}\sum_{i=1}^n \omega_i v_i=\lim_{\lambda\to0}\sum_{i=1}^n \omega_i v^1_i+\lim_{\lambda\to0}\sum_{i=1}^n \omega_i v^2_i=0$
 
@@ -602,7 +602,7 @@ $\int_D f(\vec{x})dv=\int_D dv$ 为被积区域的体积（被积区域为平面
 
 故形成闭区间套 $D\supset D^1_i\supset D^2_i\supset...\supset D^n_i\supset...\\$ ，由于分割方法，故有 $\lim_{n\to\infty}diam D^n_i=0$
 
-故根[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][据构造Euclid空间-Euclid空间基本定理-康托闭区域套定理]]，必有唯一一点 $\vec{\xi}\in \cap_{n=1}^\infty D^n_i$ ，且有 $\eta\in[m^k_i,m^k_j],\forall k\in N^+$
+故根[[~/文档/note/数学分析/Chap11Note.org][据构造Euclid空间-Euclid空间基本定理-康托闭区域套定理]]，必有唯一一点 $\vec{\xi}\in \cap_{n=1}^\infty D^n_i$ ，且有 $\eta\in[m^k_i,m^k_j],\forall k\in N^+$
 
 由于函数连续 $\lim_{\vec{x}\to\vec{\xi}}f(\vec{x})=f(\vec{\xi})$ 故有 $\forall \epsilon>0,\exists \delta>0,\forall \vec{x}\in O(\vec{\xi},\delta)\Rightarrow |f(\vec{x})-f(\vec{\xi})|<\epsilon\Rightarrow f(\vec{\xi})-\epsilon<f(\vec{x})<f(\vec{\xi})+\epsilon$
 
@@ -701,7 +701,7 @@ $\int_D f(\vec{x})dv=\int_D dv$ 为被积区域的体积（被积区域为平面
 
 其中 $\sum_{j=1}^{K}M_{\vec{v}_j}Vol_{\vec{v}_j},\sum_{j=1}^{K}m_{\vec{v}_j}Vol_{\vec{v}_j}$ 分别为 $P^n$ 划分下 $\int_D f(\vec{x})dv$ 对应的达布大和与达布小和
 
-又因为 $\int_D f(\vec{x})dv$ 可积，则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件1]]得 
+又因为 $\int_D f(\vec{x})dv$ 可积，则根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件1]]得 
 
 \begin{aligned}
 &\forall P:\lim_{\lambda\to0}\overline{S}(P)=\lim_{\lambda\to0}\underline{S}(P)=\lim_{\lambda\to0}\sum_{j=1}^{K}f(\vec{\xi}_j)Vol_{\vec{v}_j}=\int_D f(\vec{x})dv,&\vec{\xi}_j\in D_{\vec{v}_j}
@@ -949,13 +949,13 @@ T_{kx_1}&T_{kx_2}&...&T_{kx_n}\\
 
 （1） 函数 $1$ 不变号
 
-（2） 由于 $T_k(\vec{x})$ 有连续偏导，故根据[[e:/OneDrive/数学分析/Note/Chapter 12/Chap12Note.org][偏导数与全微分-可微条件]]得出可微，根据[[e:/OneDrive/数学分析/Note/Chapter 12/Chap12Note.org][偏导数与全微分-欧几里得空间连续，可导，可微及方向导数关系-可微与连续]]推出<<MK12>> $T_k(\vec{x})$ 连续
+（2） 由于 $T_k(\vec{x})$ 有连续偏导，故根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-可微条件]]得出可微，根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-欧几里得空间连续，可导，可微及方向导数关系-可微与连续]]推出<<MK12>> $T_k(\vec{x})$ 连续
 
 （3） $[T_k(b_k,\vec{x}_k)-T_k(a_k,\vec{x}_k)]$ 根据结论（2）也连续 
 
 （4） 由于连续映射，且 $A^k$ 为有界集闭集，
 
-      根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理]]及[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][连续函数性质-紧集的连续映射（连续函数）也是紧集]]得出 $[T_k(\vec{x}_u)-T_k(\vec{x}_l)]$ 有界
+      根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理]]及[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-紧集的连续映射（连续函数）也是紧集]]得出 $[T_k(\vec{x}_u)-T_k(\vec{x}_l)]$ 有界
 
 定义  则根据[[MK9][积分中值定理]]有
 
@@ -967,7 +967,7 @@ T_{kx_1}&T_{kx_2}&...&T_{kx_n}\\
 &=\frac{[T_k(b_k,\vec{\xi}_k)-T_k(a_k,\vec{\xi}_k)]}{b_k-a_k}\Pi_{i=1}^n(b_i-a_i) &\vec{\xi}_k\in A^k\\
 \end{aligned}
 
-又因为结论（2）可得 $T_k(u,\vec{\xi})$ 对于 $u$ 在 $[a,b]$ 连续，根据条件（1）得出 $u$ 在 $(a,b)$ 可导，故根据[[e:/OneDrive/大学物理/Note/DiffEq.org][导数基本知识-拉格朗日中值定理]]可得
+又因为结论（2）可得 $T_k(u,\vec{\xi})$ 对于 $u$ 在 $[a,b]$ 连续，根据条件（1）得出 $u$ 在 $(a,b)$ 可导，故根据[[~/文档/note/大学物理/Note/DiffEq.org][导数基本知识-拉格朗日中值定理]]可得
 
 \begin{aligned}
 \int_B dv&=\int_{a_1}^{b_1}dt_1...\int_{a_{k-1}}^{b_{k-1}}dt_{k-1}\int_{a_{k+1}}^{b_{k+1}}dt_{k+1}...\int_{a_n}^{b_n}dt_n\int_{T_k(b_k,\vec{x}_k)}^{T_k(a_k,\vec{x}_k)}dt_k\\
@@ -1013,7 +1013,7 @@ T_{kx_1}&T_{kx_2}&...&T_{kx_n}\\
 
 ***** $D$ 与 $T(D)$ 边界点的对应关系
 
-若 $D_i$ 中包含 $D$ 的边界点，则根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-开集与闭集-点的定义-边界点]]的定义 $D_i$ 中包含不属于 $D$ 的点
+若 $D_i$ 中包含 $D$ 的边界点，则根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-开集与闭集-点的定义-边界点]]的定义 $D_i$ 中包含不属于 $D$ 的点
 
 由于当 $D_i$ 包含不属于 $D$ 的点时，映射未定义。故根据条件（1）补全映射，使得 $\vec{x}\in D_i\Rightarrow \vec{t}=\vec{T}(\vec{x})\in T(D_i)$ 
 
@@ -1046,11 +1046,11 @@ T_{kx_1}&T_{kx_2}&...&T_{kx_n}\\
 **** 证明结论
 
 
-根据条件（4）有 $D$ 为有界闭集，根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理]] $D$ 紧集
+根据条件（4）有 $D$ 为有界闭集，根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理]] $D$ 紧集
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][连续函数性质-紧集的连续映射（连续函数）也是紧集]]得 $T(D)$ 紧集，同理 $T(D)$ 有界闭集 
+根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-紧集的连续映射（连续函数）也是紧集]]得 $T(D)$ 紧集，同理 $T(D)$ 有界闭集 
 
-故 $f(\vec{t})$ 为有界闭集上的连续函数，根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][连续函数性质-最大值定理]]存在 $m'\leq f(\vec{t})\leq M',\vec{t}\in T(D)$ 同理存在 $m''\leq f\left(\vec{T}(\vec{x})\right)\left|\det\left(\frac{\partial \vec{T}(\vec{x})}{\partial\vec{x}}\right)\right|\leq M''$
+故 $f(\vec{t})$ 为有界闭集上的连续函数，根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-最大值定理]]存在 $m'\leq f(\vec{t})\leq M',\vec{t}\in T(D)$ 同理存在 $m''\leq f\left(\vec{T}(\vec{x})\right)\left|\det\left(\frac{\partial \vec{T}(\vec{x})}{\partial\vec{x}}\right)\right|\leq M''$
 
 定义 $M=\max(M',M''),m=\min(m',m'')$ ，定义包含边界点的区域为 $D'_{i'}$ 不包含边界点的矩形为 $D''_{i''}$ 
 
@@ -1116,7 +1116,7 @@ T_{kx_1}&T_{kx_2}&...&T_{kx_n}\\
 
 *** <<MK17>>引理3：复合映射的雅克比行列式等于两个映射雅克比行列式乘积
 
-定义 $\vec{F}(\vec{x}_0)=\vec{T}\left(\vec{G}(\vec{x}_0)\right)\in R^n, \vec{x}_0\in R^n$ 满足[[e:/OneDrive/数学分析/Note/Chapter 12/Chap12Note.org][多元复合函数求导-链式法则]]的两个条件，即
+定义 $\vec{F}(\vec{x}_0)=\vec{T}\left(\vec{G}(\vec{x}_0)\right)\in R^n, \vec{x}_0\in R^n$ 满足[[~/文档/note/数学分析/Chap12Note.org][多元复合函数求导-链式法则]]的两个条件，即
 
 （1） 所有分量导数对两个函数均存在
 
@@ -1160,7 +1160,7 @@ T_{kx_1}&T_{kx_2}&...&T_{kx_n}\\
 
 ***** 逆映射定理结论
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 12/Chap12Note.org][隐函数-逆映射定理]]在 $O(\vec{t}^1_0,\rho_1)$ 内有
+故根据[[~/文档/note/数学分析/Chap12Note.org][隐函数-逆映射定理]]在 $O(\vec{t}^1_0,\rho_1)$ 内有
 
 （1） 逆函数 $\vec{x}=\vec{F}^1(\vec{t}^1)=\begin{cases}x_1=F_{1_1}(t^1_1,t^1_2,...,t^1_n)\\x_2=t^1_2\\...\\x_n=t^1_n\end{cases}$
 
@@ -1202,7 +1202,7 @@ T_{kx_1}&T_{kx_2}&...&T_{kx_n}\\
 
 ***** 逆映射定理结论
 
-同理根据[[e:/OneDrive/数学分析/Note/Chapter 12/Chap12Note.org][隐函数-逆映射定理]]在 $O(\vec{t}^2_0,\rho_2)$ 内
+同理根据[[~/文档/note/数学分析/Chap12Note.org][隐函数-逆映射定理]]在 $O(\vec{t}^2_0,\rho_2)$ 内
 
 （1） 逆函数 $\vec{t}^1=\vec{F}^2(\vec{t}^2)=\begin{cases}t^1_1=t^2_1\\t^1_2=F_2(t^2_1,t^2_2,...,t^2_n)\\...\\t^2_n=t^1_n\end{cases}$
 
@@ -1248,7 +1248,7 @@ T_{kx_1}&T_{kx_2}&...&T_{kx_n}\\
 
 ***** 逆映射定义结论
 
-同理根据[[e:/OneDrive/数学分析/Note/Chapter 12/Chap12Note.org][隐函数-逆映射定理]]在 $O(\vec{t}^3_0,\rho_3)$ 内
+同理根据[[~/文档/note/数学分析/Chap12Note.org][隐函数-逆映射定理]]在 $O(\vec{t}^3_0,\rho_3)$ 内
 
 （1） 逆函数 $\vec{t}^2=\vec{F}^3(\vec{t}^3)=\begin{cases}t^2_1=t^3_1\\t^2_2=t^3_2\\t^2_3=F_3(t^3_1,t^3_2,...,t^3_n)\\...\\t^2_n=t^3_n\end{cases}$
 
@@ -1304,9 +1304,9 @@ T_n\left(F_{1_{n-1}}(\vec{t}^{n-1}),F_{2_{n-1}}(\vec{t}^{n-1}),...,F_{(n-1)_{n-1
 
 定义 $D$ 的无限开覆盖 $\left\{U\big|O\left(\vec{x},\frac{\delta}{2}\right),\vec{x}\in D\right\}$ 其中 $\delta$ 是根据[[MK18][引理4]]导出的在 $\vec{x}$ 点周围可将映射分解为 $n$ 个本源映射的领域半径
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理]] $D$ 为紧集，
+根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理]] $D$ 为紧集，
 
-根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理-前提定义-紧集]]给出的定义，任意无限开覆盖必有有限子覆盖。
+根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Heine-Borel定理-前提定义-紧集]]给出的定义，任意无限开覆盖必有有限子覆盖。
 
 故定义有限子覆盖 $\cup_{i=1}^s O\left(\vec{x}_i,\frac{\delta_i}{2}\right)$ ，进一步定义 $\delta^*=\min(\delta_i)$
 
@@ -1600,7 +1600,7 @@ F&=G\rho\int_0^{2\pi}d\theta\int_0^a r^2 \frac{1}{2rs^2} dr\int_{|r-s|}^{r+s} \f
 
 则根据极限定义有 $\forall\epsilon>0,\exists\delta,\forall\lambda<\delta,\forall P\Rightarrow \left|\sum_{i=1}^n f(m_i)\Delta x_i-\underline{\int_a^b}f(x)dx\right|<\frac{\epsilon}{4}$ 其中 $P$ 表划分
 
-由于 $f(x)>0,x\in[a,b]$ 且根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定理1]]得 $\sum_{i=1}^n f(m_i)\Delta x_i\leq\underline{\int_a^b}f(x)dx\right$
+由于 $f(x)>0,x\in[a,b]$ 且根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定理1]]得 $\sum_{i=1}^n f(m_i)\Delta x_i\leq\underline{\int_a^b}f(x)dx\right$
 
 故极限定义可写成 $\forall\epsilon>0,\exists\delta,\forall\lambda<\delta,\forall P\Rightarrow \underline{\int_a^b}f(x)dx-\sum_{i=1}^n f(m_i)\Delta x_i<\frac{\epsilon}{4}$
 
@@ -1612,7 +1612,7 @@ F&=G\rho\int_0^{2\pi}d\theta\int_0^a r^2 \frac{1}{2rs^2} dr\int_{|r-s|}^{r+s} \f
 
 由于 $0\leq s(x) \leq f(m_i)\leq f(x),x\in[x_{i-1},x_i]$ 故有 $f(x)\geq s(x)$
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]，在某一给定划分满足条件的划分 $P: a=x_0<x_1<x_2<...<x_{n-1}<x_n=b,\lambda<\delta$ 成立 
+则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]，在某一给定划分满足条件的划分 $P: a=x_0<x_1<x_2<...<x_{n-1}<x_n=b,\lambda<\delta$ 成立 
 
 \begin{aligned}
 \int_a^b s(x)dx&=\sum_{i=1}^n \int_{x_{i-1}}^{x_i}s(x)dx\\
@@ -1652,7 +1652,7 @@ F&=G\rho\int_0^{2\pi}d\theta\int_0^a r^2 \frac{1}{2rs^2} dr\int_{|r-s|}^{r+s} \f
 
 （2） $\underline{\int_a^b}f(x)dx<\int_a^b s(x)dx+\frac{\epsilon}{2}<\int_a^b g(x)dx+\epsilon$
 
-又因为 $f(x)$ 在 $[a,b]$ 上可积，根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分可积定理-定积分可积充要条件1]] $\underline{\int_a^b}f(x)dx=\int_a^bf(x)dx$
+又因为 $f(x)$ 在 $[a,b]$ 上可积，根据[[~/文档/note/数学分析/Chap7Note.org][定积分可积定理-定积分可积充要条件1]] $\underline{\int_a^b}f(x)dx=\int_a^bf(x)dx$
 
 故证毕。
 
@@ -1680,7 +1680,7 @@ F&=G\rho\int_0^{2\pi}d\theta\int_0^a r^2 \frac{1}{2rs^2} dr\int_{|r-s|}^{r+s} \f
 
 则根据[[MK25][引理1]]有 $\forall\epsilon>0,\forall n\in N^+,\exists g_n(x)>0\Rightarrow g_n(x)\leq f_n(x),\int_a^b f_n(x)<g_n(x)+\frac{\epsilon}{2^n}$ 其中 $g_n(x)$ 为连续梯形函数
 
-****** 使用[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-一致收敛性质-Dini定理]]
+****** 使用[[~/文档/note/数学分析/Chap10Note.org][函数项级数-一致收敛性质-Dini定理]]
 
 定义 $h_n(x)=\min(g_1(x),g_2(x),...,g_n(x))$ 由于 $h_n(x)$ 满足：
 
@@ -1690,9 +1690,9 @@ F&=G\rho\int_0^{2\pi}d\theta\int_0^a r^2 \frac{1}{2rs^2} dr\int_{|r-s|}^{r+s} \f
 
 （3） 对于固定 $x\in[a,b]$ ，有 $h_n(x)$ 单调递减
 
-故根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-一致收敛性质-Dini定理]]函数 $h_n(x)$ 在定义域 $x\in[a,b]$ 上一致收敛
+故根据[[~/文档/note/数学分析/Chap10Note.org][函数项级数-一致收敛性质-Dini定理]]函数 $h_n(x)$ 在定义域 $x\in[a,b]$ 上一致收敛
 
-又根据[[e:/OneDrive/数学分析/Note/Chapter 10/Chap10Note.org][函数项级数-一致收敛性质-可积性]] $\lim_{n\to\infty}\left\{\int_a^b h_n(x)dx\right\}=\int_a^b \left\{\lim_{n\to\infty}h_n(x)\right\}dx=0$
+又根据[[~/文档/note/数学分析/Chap10Note.org][函数项级数-一致收敛性质-可积性]] $\lim_{n\to\infty}\left\{\int_a^b h_n(x)dx\right\}=\int_a^b \left\{\lim_{n\to\infty}h_n(x)\right\}dx=0$
 
 ****** 推导不等式
 
@@ -1707,7 +1707,7 @@ F&=G\rho\int_0^{2\pi}d\theta\int_0^a r^2 \frac{1}{2rs^2} dr\int_{|r-s|}^{r+s} \f
 
 由于 $f_i(x)\geq f_j(x),i>j$ 且 $g_i(x)\leq f_i(x)$ 故有 $\max(g_i(x),g_{i+1}(x),...,g_n(x))\leq\max(f_i(x),f_{i+1}(x),...,f_n(x))\leq f_i(x)$
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-保序性]]及[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]]有：
+则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-保序性]]及[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]]有：
 
 \begin{aligned}
 \int_a^b f_i(x)&\geq \int_a^b \max(g_i(x),g_{i+1}(x),...,g_n(x))dx\\
@@ -1716,7 +1716,7 @@ F&=G\rho\int_0^{2\pi}d\theta\int_0^a r^2 \frac{1}{2rs^2} dr\int_{|r-s|}^{r+s} \f
 \therefore & \int_a^b \max(g_i(x),g_{i+1}(x),...,g_n(x))-g_i(x)dx\leq \int_a^b f_i(x)-\int_a^bg_i(x)dx\leq \frac{\epsilon}{2^i}\\
 \end{aligned}
 
-故根据之前推导和[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-保序性]]及[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]]有：
+故根据之前推导和[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-保序性]]及[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]]有：
 
 \begin{aligned}
 0&\leq \int_a^b g_n(x)dx\leq \int_a^b \left\{h_n(x)+\sum_{i=1}^{n-1} \left\{\max(g_i(x),g_{i+1}(x),...,g_n(x))-g_i(x)\right\}\right\}dx\\
@@ -1749,9 +1749,9 @@ F&=G\rho\int_0^{2\pi}d\theta\int_0^a r^2 \frac{1}{2rs^2} dr\int_{|r-s|}^{r+s} \f
 
 （2） $\lim_{n\to\infty}\phi_n(x)=0,\forall x\in[a,b]$ 
 
-（3） $f_n(x),f(x)$ 在 $[a,b]$ 上均可积，故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]] $\int_a^bf_n(x)-f(x)dx$ 也可积，
+（3） $f_n(x),f(x)$ 在 $[a,b]$ 上均可积，故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]] $\int_a^bf_n(x)-f(x)dx$ 也可积，
   
-     又根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-绝对可积]] $\int_a^b|f_n(x)-f(x)|dx$ 也可积 
+     又根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-绝对可积]] $\int_a^b|f_n(x)-f(x)|dx$ 也可积 
 
 定义函数 $\psi_n(x)=sup_{k\geq0}\{\phi_{n+k}(x)\}$ 同理函数有：
 
@@ -1777,13 +1777,13 @@ $\lim_{n\to\infty}\int_a^b f_n(x)dx=\int_a^b f(x)dx=\int_a^b \lim_{n\to\infty}f_
 
 由于 $-|f_n(x)-f(x)|\leq f_n(x)-f(x)\leq|f_n(x)-f(x)|$ 
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-保序]]可得 $\int_a^b-|f_n(x)-f(x)|dx\leq \int_a^b f_n(x)-f(x)dx\leq\int_a^b|f_n(x)-f(x)|dx$
+则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-保序]]可得 $\int_a^b-|f_n(x)-f(x)|dx\leq \int_a^b f_n(x)-f(x)dx\leq\int_a^b|f_n(x)-f(x)|dx$
 
 则根据极限四则运算 $\lim_{n\to\infty}\int_a^b-|f_n(x)-f(x)|dx=-\lim_{n\to\infty}\int_a^b|f_n(x)-f(x)|dx=\lim_{n\to\infty}\int_a^b|f_n(x)-f(x)|dx=0$
 
 则根据极限夹逼定理 $\lim_{n\to\infty}\int_a^b f_n(x)-f(x)dx=0$ 
 
-再根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]]和极限四则运算有 $\lim_{n\to\infty}\int_a^b f_n(x)-f(x)dx=0=\lim_{n\to\infty}\int_a^b f_n(x)dx-\lim_{n\to\infty}\int_a^b f(x)dx$ 
+再根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]]和极限四则运算有 $\lim_{n\to\infty}\int_a^b f_n(x)-f(x)dx=0=\lim_{n\to\infty}\int_a^b f_n(x)dx-\lim_{n\to\infty}\int_a^b f(x)dx$ 
 
 证毕。
 
@@ -1797,7 +1797,7 @@ $\lim_{n\to\infty}\int_a^b f_n(x)dx=\int_a^b f(x)dx=\int_a^b \lim_{n\to\infty}f_
 
 （2） 零边界曲面 $\Gamma$ 将无界区域 $D$ 切割，形成零边界有界区域 $D_\Gamma$
 
-（3） 定义 $d(\Gamma)=inf\left\{|\vec{x}|\big|\vec{x}\in\Gamma\right\}$ 其中 $|\vec{x}|$ 为向量 $\vec{x}$ 到原点的距离，根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][构造Euclid空间-定义距离]]计算
+（3） 定义 $d(\Gamma)=inf\left\{|\vec{x}|\big|\vec{x}\in\Gamma\right\}$ 其中 $|\vec{x}|$ 为向量 $\vec{x}$ 到原点的距离，根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-定义距离]]计算
 
 （4） 定义 $f(\vec{x})$ 为 $D_\Gamma$ 上的可积函数
 
@@ -1903,7 +1903,7 @@ $D$ 为 $R^n$ 上的零边界无界区域，若 $0\leq f(\vec{x})\leq g(\vec{x})
 
 根据[[MK28][引理1]]，由于 $\int_D f(\vec{x})d\vec{x}$ 发散，则有 $\lim_{n\to\infty}\left\{\int_{D_n}f(\vec{x})d\vec{x}\right\}$ 发散
 
-又由于 $0\leq\int_{D_n} f(\vec{x})d\vec{x}\leq M$ 故数列 $\left\{\int_{D_n}f(\vec{x})d\vec{x}\right\}$ 有界，根据[[e:/OneDrive/数学分析/Note/Chapter 11/Chap11Note.org][实数系基本定理-Bolzano-Weierstrass定理]]，有界数列必有收敛子列
+又由于 $0\leq\int_{D_n} f(\vec{x})d\vec{x}\leq M$ 故数列 $\left\{\int_{D_n}f(\vec{x})d\vec{x}\right\}$ 有界，根据[[~/文档/note/数学分析/Chap11Note.org][实数系基本定理-Bolzano-Weierstrass定理]]，有界数列必有收敛子列
 
 故得一列 $\left\{\int_{D_k}f(\vec{x})d\vec{x}\right\}$ 当 $k\to\infty$ 时，数列收敛。同样根据[[MK28][引理1]]得反常积分收敛，故推出矛盾
 
@@ -2087,7 +2087,7 @@ $D$ 为 $R^n$ 上的零边界无界区域，若 $0\leq f(\vec{x})\leq g(\vec{x})
 
 （2） $\forall\epsilon>0,\exists\delta_2,\forall K>\delta_2\Rightarrow \left|\int_a^Kg(\vec{x})d\vec{x}-I_2\right|<\frac{\epsilon}{2B}$
 
-则根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]]
+则根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]]
 
 \begin{aligned}
 &\forall\epsilon>0,\exists\delta>\max(\delta_1,\delta_2),\forall K>\delta\\
@@ -2110,7 +2110,7 @@ $D$ 为 $R^n$ 上的零边界无界区域，若 $0\leq f(\vec{x})\leq g(\vec{x})
 
 ****** 证明
 
-定义 $K>a_i,F(x_i)=\int_{a_{i+1}}^\infty...\int_{a_n}^\infty f(\vec{x})dx_n...dx_{i+1},G(x_i)=\int_{a_{i+1}}^\infty...\int_{a_n}^\infty g(\vec{x})dx_n...dx_{i+1}$ ，根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-线性]]及给定条件
+定义 $K>a_i,F(x_i)=\int_{a_{i+1}}^\infty...\int_{a_n}^\infty f(\vec{x})dx_n...dx_{i+1},G(x_i)=\int_{a_{i+1}}^\infty...\int_{a_n}^\infty g(\vec{x})dx_n...dx_{i+1}$ ，根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]]及给定条件
 
 \begin{aligned} 
 &\int_{a_i}^K\int_{a_{i+1}}^\infty...\int_{a_n}^\infty \left\{Af(\vec{x})+Bg(\vec{x})\right\}dx_n...dx_{i+1}dx_i\\
@@ -2165,7 +2165,7 @@ $D$ 为 $R^n$ 上的零边界无界区域，若 $0\leq f(\vec{x})\leq g(\vec{x})
 
 定义 $\psi_u(x_i)=\int_{a_{i+1}}^{A^u_{i+1}}...\int_{a_n}^{A^u_n} f(\vec{x})dx_n...dx_{i+1},\psi(x_i)=\int_{a_{i+1}}^{\infty}...\int_{a_n}^{\infty} f(\vec{x})dx_n...dx_{i+1}$ 则函数满足
 
-（1） $\forall u\in N^+$ 定积分 $\int_{a_i}^{A_i^u} \psi_n(x_i)dx_i$ 可积（根据[[e:/OneDrive/数学分析/Note/Chapter 8/Chap8Note.org][反常积分定义-边界无穷积分]]及反常累次积分可积条件）
+（1） $\forall u\in N^+$ 定积分 $\int_{a_i}^{A_i^u} \psi_n(x_i)dx_i$ 可积（根据[[~/文档/note/数学分析/Chap8Note.org][反常积分定义-边界无穷积分]]及反常累次积分可积条件）
 
 （2） $\forall x_i\in[a_i,A^u_i]$ 有 $\lim_{u\to\infty}\psi_n(x_i)=\psi(x)$ 
 
@@ -2282,11 +2282,11 @@ $D$ 为 $R^n$ 上的零边界无界区域，若 $0\leq f(\vec{x})\leq g(\vec{x})
 
 （2） 累次积分 $\int_0^\infty\int_0^\infty e^{-(x^2+y^2)}dydx=\int_0^\infty e^{-x^2}dx\int_0^\infty e^{-y^2}dy=\left(\int_0^\infty e^{-x^2}dx\right)^2$
 
-      由于 $0<e^{-x^2}<e^{-x},x\in[1,\infty]$ 且根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][牛顿莱布尼茨公式]] $\int_1^\infty e^{-x} dx=-\frac{1}{e^\infty}-\left(-\frac{1}{e}\right)<\infty$
+      由于 $0<e^{-x^2}<e^{-x},x\in[1,\infty]$ 且根据[[~/文档/note/数学分析/Chap7Note.org][牛顿莱布尼茨公式]] $\int_1^\infty e^{-x} dx=-\frac{1}{e^\infty}-\left(-\frac{1}{e}\right)<\infty$
 
       故根据保序性 $\int_1^\infty e^{-x^2}dx<\int_1^\infty e^{-x}dx<\frac{1}{e}$ 有界，且函数 $f(A)=\int_0^A e^{-x^2}dx,A>0$ 为单调递增函数
 
-      故 $\int_1^\infty e^{-x^2}dx$ 收敛，又由于 $\int_0^1 e^{-x^2}dx$ 收敛，故根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][定积分基本性质-区间可加]]  $\int_0^\infty e^{-x^2}dx$ 收敛
+      故 $\int_1^\infty e^{-x^2}dx$ 收敛，又由于 $\int_0^1 e^{-x^2}dx$ 收敛，故根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-区间可加]]  $\int_0^\infty e^{-x^2}dx$ 收敛
 
 则根据[[MK43][重积分计算]]得 $\int_D e^{-(x^2+y^2)}d\sigma=\int_0^\infty\int_0^\infty e^{-(x^2+y^2)}dydx=\int_0^\infty e^{-x^2}dx\int_0^\infty e^{-y^2}dy=\left(\int_0^\infty e^{-x^2}dx\right)^2$
 
@@ -2324,7 +2324,7 @@ $D$ 为 $R^n$ 上的零边界无界区域，若 $0\leq f(\vec{x})\leq g(\vec{x})
 &=\int_a^R\frac{1}{r^{p-n+1}}dr\int_0^{2\pi}d\phi_{n-1}\prod_{i=1}^{n-2}\int_0^\pi \sin^{n-i-1}(\phi_i)d\phi_i
 \end{aligned} 
 
-显然其敛散性取决于 $\int_a^R\frac{1}{r^{p-n+1}}dr$ 根据[[e:/OneDrive/数学分析/Note/Chapter 7/Chap7Note.org][牛顿莱布尼茨公式]]
+显然其敛散性取决于 $\int_a^R\frac{1}{r^{p-n+1}}dr$ 根据[[~/文档/note/数学分析/Chap7Note.org][牛顿莱布尼茨公式]]
 
 \begin{aligned}
 \int_a^R\frac{1}{r^{p-n+1}}dr&=

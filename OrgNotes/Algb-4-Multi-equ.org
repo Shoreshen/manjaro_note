@@ -12,9 +12,9 @@ current mark: 86
 
 （2） 加法交换律： $\forall\{a,b\}\subset U\rightarrow a+b=b+a$ 
 
-（3） 存在加法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]： $\exists 0\in U\rightarrow\left((\forall a\in U)\rightarrow(a+0=0+a=a)\right)$ 记作零元
+（3） 存在加法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]： $\exists 0\in U\rightarrow\left((\forall a\in U)\rightarrow(a+0=0+a=a)\right)$ 记作零元
 
-（4） 存在加法[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]： $\forall a\in U(\exists b\in U\rightarrow a+b=b+a=0)$ 其中 $0$ 是加法幺元 
+（4） 存在加法[[~/文档/note/离散数学/Disc_Math.org::MK314][逆元]]： $\forall a\in U(\exists b\in U\rightarrow a+b=b+a=0)$ 其中 $0$ 是加法幺元 
 
 （5） 乘法结合律： $\forall \{a,b,c\}\subset U\rightarrow (ab)c=a(bc)$ 
 
@@ -32,13 +32,13 @@ current mark: 86
 
 *** 单位元<<MK11>>
 
-若 $U$ 是环，存在元素 $e\in U$ 与环中的乘法满足[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]定义，则称 $e$ 为单位元
+若 $U$ 是环，存在元素 $e\in U$ 与环中的乘法满足[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]定义，则称 $e$ 为单位元
 
-且根据[[~/OneDrive/离散数学/Disc_Math.org::MK312][性质]]可得 $e$ 唯一
+且根据[[~/文档/note/离散数学/Disc_Math.org::MK312][性质]]可得 $e$ 唯一
 
 ** 零元定理<<MK9>>
 
-任意[[MK12][交换环]] $\mathcal{U}=\left<U,+,\cdot\right>$ 存在乘法[[~/OneDrive/离散数学/Disc_Math.org::MK313][零元]]，且等于[[MK10][环定义]]中加法幺元
+任意[[MK12][交换环]] $\mathcal{U}=\left<U,+,\cdot\right>$ 存在乘法[[~/文档/note/离散数学/Disc_Math.org::MK313][零元]]，且等于[[MK10][环定义]]中加法幺元
 
 *** 证明
 
@@ -100,7 +100,7 @@ current mark: 86
 
 ** 同构<<MK13>>
 
-有环 $U,V$ 若存在[[~/OneDrive/离散数学/Disc_Math.org::MK200][双射函数]] $\sigma:U\rightarrow V$ 满足对于任意 $\{a,b\}\subset U$ ：
+有环 $U,V$ 若存在[[~/文档/note/离散数学/Disc_Math.org::MK200][双射函数]] $\sigma:U\rightarrow V$ 满足对于任意 $\{a,b\}\subset U$ ：
 
 （1） $\sigma(a+b)=\sigma(a)+\sigma(b)$
 
@@ -138,7 +138,7 @@ current mark: 86
 
 则满足：
 
-（1） 根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]， $f(x)$ 到 $f(\tau)$ 的关系形成函数
+（1） 根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]， $f(x)$ 到 $f(\tau)$ 的关系形成函数
 
 （2） 若有 $\{f(x),g(x),h(x)\}\in K[x]$ 且满足 $f(x)+g(x)=h(x)$ ，则有 $f(\tau)+g(\tau)=h(\tau)$
 
@@ -156,7 +156,7 @@ current mark: 86
 
 由于 $K[x],I[\tau]$ 均为一元多项式，则根据[[MK5][一元多项式相等]]可知元素相同的充要条件为系相同
 
-由于 $\sigma$ 为[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊函数-双射函数]]，故必为单射 $\forall a\forall a'(\{a,a'\}\subset K\land a\ne a'\rightarrow \sigma(a)\ne\sigma(a'))$
+由于 $\sigma$ 为[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-特殊函数-双射函数]]，故必为单射 $\forall a\forall a'(\{a,a'\}\subset K\land a\ne a'\rightarrow \sigma(a)\ne\sigma(a'))$
 
 故有 $\forall f(x)\forall f'(x)\big(\{f(x),f'(x)\}\subset K[x]\land f(x)\ne f'(x)\rightarrow \f(\tau)\ne f'(\tau)\big)$
 
@@ -190,7 +190,7 @@ h(\tau)&=\sum_{i=1}^\infty\left(\sum_{j=0}^\infty\sigma(a_ib_j)x^{i+j}\right)
 
 * 一元多项式<<MK1>>
 
-定义[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $K$ ，若有表达式形式为 $f(x)=\sum_{i=0}^d a_ix^i$ ，其中 $a_i\in K$ ，其中 $x$ 是变元，可以有定义域
+定义[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]] $K$ ，若有表达式形式为 $f(x)=\sum_{i=0}^d a_ix^i$ ，其中 $a_i\in K$ ，其中 $x$ 是变元，可以有定义域
 
 则称表达式为数域 $K$ 上的一元多项式，满足该条件的所有表达式的集合记作 $K[x]$
 
@@ -210,7 +210,7 @@ h(\tau)&=\sum_{i=1}^\infty\left(\sum_{j=0}^\infty\sigma(a_ib_j)x^{i+j}\right)
 
 若一元多项式 $f(x)=\sum_{i=1}^\infty a_ix^i$ 定义集合 $I=\left\{i\big|a_i\ne0\land i\in N\right\}$ 
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-特殊关系-序关系-元]]集合 $I$ 的最大元为多项式 $f(x)$ 的次数，记作 $\deg(f(x))$
+则根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-特殊关系-序关系-元]]集合 $I$ 的最大元为多项式 $f(x)$ 的次数，记作 $\deg(f(x))$
 
 特殊的，当 $I$ 的最大元为零时，定义 $\deg(f(x))=-\infty$
 
@@ -262,7 +262,7 @@ h(\tau)&=\sum_{i=1}^\infty\left(\sum_{j=0}^\infty\sigma(a_ib_j)x^{i+j}\right)
 
 *** 一元多项式线性空间
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间定义]]，定义集合 $V$ 为所有[[MK1][一元多项式]]组成的集合，则 $V$ 是线性空间
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间定义]]，定义集合 $V$ 为所有[[MK1][一元多项式]]组成的集合，则 $V$ 是线性空间
 
 其中一组基为 $\{x^0,...,x^n,...\}$ 该空间为无限维线性空间，即 $\dim(V)=\infty$
 
@@ -330,7 +330,7 @@ h(\tau)&=\sum_{i=1}^\infty\left(\sum_{j=0}^\infty\sigma(a_ib_j)x^{i+j}\right)
 
 再证明 $\{x^0,...,x^n,...\}$ 线性不相关
 
-根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间中向量组的定义-子集线性无关]]，取任意 $\{x^{i_1},...,x^{i_n}\}\subset\{x^0,...,x^n,...\}$ 其中 $n\leq\infty$
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间中向量组的定义-子集线性无关]]，取任意 $\{x^{i_1},...,x^{i_n}\}\subset\{x^0,...,x^n,...\}$ 其中 $n\leq\infty$
 
 根据集合定义 $a\ne b\rightarrow i_a\ne i_b$ 构造等式 $0(x)=\sum_{j=1}^nk_jx^{i_j}$ 其中 $k_j\in K$ 且 $0(x)$ 为[[MK3][零元]]
 
@@ -350,7 +350,7 @@ h(\tau)&=\sum_{i=1}^\infty\left(\sum_{j=0}^\infty\sigma(a_ib_j)x^{i+j}\right)
 
 ***** 证明维数
 
-由于之前证明得 $V$ 的一组基为 $\{x^0,...,x^n,...\}$ ，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的维数]]可得 $\dim(V)=\infty$
+由于之前证明得 $V$ 的一组基为 $\{x^0,...,x^n,...\}$ ，则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org][线性空间的基和维数-线性空间的维数]]可得 $\dim(V)=\infty$
 
 *** 一元多项式环<<MK15>>
 
@@ -366,7 +366,7 @@ h(\tau)&=\sum_{i=1}^\infty\left(\sum_{j=0}^\infty\sigma(a_ib_j)x^{i+j}\right)
 
 （3） 根据[[MK3][零元]]可得 $\forall f(x)\bigg(f(x)\in K[x]\rightarrow\exists 0(x)\big(f(x)+0(x)=0(x)+f(x)=f(x)\big)\bigg)$
 
-（4） 根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]可得 $-1\in K$ 则结合乘法 $\forall \sum_{i=0}^\infty a_ix^i\in K[x]$ 均有 $(-1)\sum_{i=0}^\infty a_ix^i=\sum_{i=0}^\infty -a_ix^i\in K[x]$
+（4） 根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]]可得 $-1\in K$ 则结合乘法 $\forall \sum_{i=0}^\infty a_ix^i\in K[x]$ 均有 $(-1)\sum_{i=0}^\infty a_ix^i=\sum_{i=0}^\infty -a_ix^i\in K[x]$
 
      结合加法可得 $\sum_{i=0}^\infty a_ix^i+(-1)\sum_{i=0}^\infty a_ix^i=\sum_{i=0}^\infty 0x^i=0(x)$
 
@@ -498,7 +498,7 @@ $f(x)-g(x)=0(x)\rightarrow f(x)=g(x)$
 
 ****** 证明
 
-零次多项式定义为 $b=a_0x^0\land b\ne 0$ 根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $1\in K$ 则有 $\frac{1}{b}\in K$ 同理 $\frac{1}{b}$ 亦为零次一元多项式
+零次多项式定义为 $b=a_0x^0\land b\ne 0$ 根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]] $1\in K$ 则有 $\frac{1}{b}\in K$ 同理 $\frac{1}{b}$ 亦为零次一元多项式
 
 根据[[MK6][乘法]]可得 $f(x)=\left(\frac{1}{b}f(x)\right)b=f(x)$
 
@@ -563,7 +563,7 @@ $f(x)-g(x)=0(x)\rightarrow f(x)=g(x)$
 
 根据[[MK1][定义]]及条件 $\{p(x),f(x)\}\subset K'[x]$ ，则 $\forall i\in\mathbb{N}\forall s\in\mathbb{N}(b_i\in K'[x]\land \sum_{i+j=s}a_ib_j\in K'[x])$
 
-故根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]可得 $a_i\in K'[x]$ 则 $h(x)\in K'[x]$
+故根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]]可得 $a_i\in K'[x]$ 则 $h(x)\in K'[x]$
 
 则根据[[MK5][相等]]定义可得在数域 $K'[x]$ 上有 $h(x)p(x)=f(x)$ 即满足整除定义
 
@@ -571,17 +571,17 @@ $f(x)-g(x)=0(x)\rightarrow f(x)=g(x)$
 
 ***** 定义
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系-基础定义]]，对于任意 $\{f(x),g(x)\}\subset K[x]$ 要么 $g(x)\mid f(x)$ 要么 $g(x)\nmid f(x)$
+根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-二元关系-基础定义]]，对于任意 $\{f(x),g(x)\}\subset K[x]$ 要么 $g(x)\mid f(x)$ 要么 $g(x)\nmid f(x)$
 
-则把满足 $g(x)\mid f(x)$ 的元素对组成[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-基本定义-有序组]]
+则把满足 $g(x)\mid f(x)$ 的元素对组成[[~/文档/note/离散数学/Disc_Math.org][关系与函数-基本定义-有序组]]
 
 进一步把所有满足条件元素对组成的有序组的集合定义为 $R\subset K[x]\times K[x]$
 
-则此时根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系-基础定义]] $R$ 是集合 $K[x],K[x]$ 上的二元关系
+则此时根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-二元关系-基础定义]] $R$ 是集合 $K[x],K[x]$ 上的二元关系
 
 ***** 性质
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-二元关系-关系性质-定义]]
+根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-二元关系-关系性质-定义]]
 
 ****** 自反性
 
@@ -627,7 +627,7 @@ $f(x),g(x)$ 相伴且的充要条件是 $f(x)=cg(x)$ 其中 $c\in K$
 
 ******* 必要
 
-$f(x)=cg(x)$ 则根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $1\in K\rightarrow \frac{1}{c}\in K$ 则有 $g(x)=\frac{1}{c}f(x)$
+$f(x)=cg(x)$ 则根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]] $1\in K\rightarrow \frac{1}{c}\in K$ 则有 $g(x)=\frac{1}{c}f(x)$
 
 则根据[[MK19][定义]]可得 $f(x)\mid g(x)\land g(x)\mid f(x)$ 
 
@@ -655,7 +655,7 @@ $h(x)$ 为商式， $f(x)$ 为被试， $g(x)$ 为除式 $r(x)$ 称为余式
 
 ******* 证明 $m=n$
 
-假设 $n=m$ 且由于 $K$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]且 $\{a_n,b_m\}\subset K$ 故有 $\frac{a_n}{b_m}\in K$
+假设 $n=m$ 且由于 $K$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]]且 $\{a_n,b_m\}\subset K$ 故有 $\frac{a_n}{b_m}\in K$
 
 则有 $f(x)-\frac{a_n}{b_m}g(x)=\sum_{i=0}^{n-1}\left(a_i-\frac{a_n}{b_m}b_i\right)x^i$
 
@@ -752,7 +752,7 @@ r(x)-r'(x)&=(h(x)-h'(x))g(x)\\
 
 ***** 定理
 
-若 $\{g(x),f(x)\}\subset K[x]$ 存在 $K\subset E$ 同为[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]，则有 $\{g(x),f(x)\}\subset E[x]$
+若 $\{g(x),f(x)\}\subset K[x]$ 存在 $K\subset E$ 同为[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]]，则有 $\{g(x),f(x)\}\subset E[x]$
 
 则在 $E[x]$ 上 $g(x)\mid f(x)$ 的充要条件是在 $K[x]$ 上 $g(x)\mid f(x)$
 
@@ -970,7 +970,7 @@ $0(x)$ 与 $0(x)$ 的公因式为 $0(x)$
 
 **** 首一最大公因式不随数域扩大改变<<MK37>>
 
-若有[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $E,K$ 满足 $K\subset E$ 有 $\{f(x),g(x)\}\subset K[x]$
+若有[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]] $E,K$ 满足 $K\subset E$ 有 $\{f(x),g(x)\}\subset K[x]$
 
 则 $f(x),g(x)$ 在 $K[x]$ 上的首一最大公因式等于 $f(x),g(x)$ 在 $E[x]$ 上的[[MK38][首一最大公因式]] 
 
@@ -1010,7 +1010,7 @@ $0(x)$ 与 $0(x)$ 的公因式为 $0(x)$
 
 **** 互素性不随数域扩大改变
 
-若有[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]] $E,K$ 满足 $K\subset E$ 有 $\{f(x),g(x)\}\subset K[x]$
+若有[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]] $E,K$ 满足 $K\subset E$ 有 $\{f(x),g(x)\}\subset K[x]$
 
 若 $f(x),g(x)$ 在 $K[x]$ 中互素，则其在 $E[x]$ 中也互素
 
@@ -1412,7 +1412,7 @@ $0(x)$ 可约
 
 假设 $f(x)=\sum_{i=0}^da_ix^i\in K[x]$ 为[[MK1][多项式表达式]]，若定义 $\tau\in K$ 是定义域为数域 $K$ 的自变量
 
-将 $\tau$ 替换 $x$ 引入数域 $K$ 上的乘法，则显然根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]] $f(\tau)=\sum_{i=0}^da_i\tau^i$ 为函数
+将 $\tau$ 替换 $x$ 引入数域 $K$ 上的乘法，则显然根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]] $f(\tau)=\sum_{i=0}^da_i\tau^i$ 为函数
 
 此时称 $f(\tau)$ 为 $f(x)$ 诱导的函数。定义集合 $K_{pol}$ 为所有 $f(x)\in K[x]$ 诱导的函数的集合
 
@@ -1446,7 +1446,7 @@ $0(x)$ 可约
 
 则有 $f(\tau)-g(\tau)=0$ 故对于任意 $\tau\in K$ 均有 $f(\tau)=g(\tau)$
 
-即根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数]]可得 $\sigma:f(x)\to f(\tau)$ 是函数映射
+即根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数]]可得 $\sigma:f(x)\to f(\tau)$ 是函数映射
 
 ****** 证明是同构映射
 
@@ -1454,7 +1454,7 @@ $0(x)$ 可约
 
 根据 $K_{pol}$ 的[[MK68][定义]]可得对于任意 $f(\tau)\in K_{pol}$ 均由 $f(x)\in K$ 诱导，即满足 $\sigma(f(x))=f(\tau)$ 
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-满射]]可得 $\sigma$ 为满射
+则根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-满射]]可得 $\sigma$ 为满射
 
 若 $f(x)\ne g(x)$ 则定义 $f(x)=\sum_{i=0}^{d_1}a_ix^i,g(x)=\sum_{i=0}^{d_2}b_ix^i$
 
@@ -1466,7 +1466,7 @@ $0(x)$ 可约
 
 则不满足 $\forall\tau\rightarrow f(\tau)-g(\tau)=0$ 根据[[MK65][相等定义]]可得 $f(\tau)\ne g(\tau)$ 
 
-则根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-单射]]可得 $\sigma$ 为单射
+则根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-特殊的函数类型-单射]]可得 $\sigma$ 为单射
 
 故 $\sigma$ 是双摄函数
 
@@ -1494,21 +1494,21 @@ $0(x)$ 可约
 
 若 $K=\mathbb{C}$ 是复数域，若 $f(x)$ 无根，则根据[[MK72][结论]] $f(\tau)$ 在 $\tau\in\mathbb{C}$ 上恒不等于零
 
-则定义函数 $\Phi(\tau)=\frac{1}{f(\tau)}$ 则根据[[~/OneDrive/复变函数/Cplx_fc.org][导数、微分与解析-导数-基本公式]]可得 $$\Phi'(\tau)=-\frac{f'(\tau)}{(f(\tau))^2}$$
+则定义函数 $\Phi(\tau)=\frac{1}{f(\tau)}$ 则根据[[~/文档/note/复变函数/Cplx_fc.org][导数、微分与解析-导数-基本公式]]可得 $$\Phi'(\tau)=-\frac{f'(\tau)}{(f(\tau))^2}$$
 
 且根据导数公式在复数域上多项式函数 $f'(\tau)$ 导数存，结合 $f(\tau)\ne0$ 可得在复数域上 $\Phi'(\tau)$ 存在
 
-则根据[[~/OneDrive/复变函数/Cplx_fc.org][导数、微分与解析-解析]]可得函数 $\Phi(\tau)$ 解析。
+则根据[[~/文档/note/复变函数/Cplx_fc.org][导数、微分与解析-解析]]可得函数 $\Phi(\tau)$ 解析。
 
-根据[[~/OneDrive/复变函数/Cplx_fc.org][构建复数-模-性质]]以及[[~/OneDrive/复变函数/Cplx_fc.org::MK57][函数极限]]可得 $\lim_{|\tau|\to\infty}\frac{1}{\tau^i}=0,i\in\mathbb{N}$
+根据[[~/文档/note/复变函数/Cplx_fc.org][构建复数-模-性质]]以及[[~/文档/note/复变函数/Cplx_fc.org::MK57][函数极限]]可得 $\lim_{|\tau|\to\infty}\frac{1}{\tau^i}=0,i\in\mathbb{N}$
 
 则有 $$\lim_{|\tau|\to\infty}\Phi(\tau)=\lim_{|\tau|\to\infty}\frac{\frac{1}{\tau^n}}{a_n+\sum_{i=0}^{n-1}a_i\frac{1}{\tau^{n-i}}}=0$$ 则根据定义，存在 $M$ 对于任意 $|\tau|>M$ 均有 $\left|\Phi(\tau)\right|<1$
 
-当 $|\tau|\leq M$ 时，根据[[~/OneDrive/复变函数/Cplx_fc.org][导数、微分与解析-导数-可导必连续]]定义可得多项式函数连续
+当 $|\tau|\leq M$ 时，根据[[~/文档/note/复变函数/Cplx_fc.org][导数、微分与解析-导数-可导必连续]]定义可得多项式函数连续
 
-又由于 $|\tau|\leq M$ 有界闭区间，故根据[[~/OneDrive/数学分析/Chap11Note.org][连续函数性质-有界性定理]]可得有界，最终得 $\Phi(\tau)$ 有界且解析。
+又由于 $|\tau|\leq M$ 有界闭区间，故根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-有界性定理]]可得有界，最终得 $\Phi(\tau)$ 有界且解析。
 
-故根据[[~/OneDrive/复变函数/Cplx_fc.org][积分-定理-刘维尔定理]]可得 $\Phi(\tau)$ 必为常值函数。即 $\Phi(\tau)=A$
+故根据[[~/文档/note/复变函数/Cplx_fc.org][积分-定理-刘维尔定理]]可得 $\Phi(\tau)$ 必为常值函数。即 $\Phi(\tau)=A$
 
 则有 $f(\tau)=\frac{1}{A}$ 为零[[MK17][次]]多项式函数。根据[[MK68][定义]]为零次多项式诱导的函数。
 
@@ -1538,13 +1538,13 @@ $0(x)$ 可约
 
 若 $f(x)=\sum_{i=0}^na_ix^i\in\mathbb{R}[x]$ 此时根据[[MK72][多项式函数同构]]可得若 $c$ 是 $f(x)$ 的根，则 $f(c)=0$
 
-根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域-推论2]]可得最大数域为 $\mathbb{C}$ 则 $c\in\mathbb{C}$ ，故 $c$ 存在[[~/OneDrive/复变函数/Cplx_fc.org][构建复数-共轭复数]]
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域-推论2]]可得最大数域为 $\mathbb{C}$ 则 $c\in\mathbb{C}$ ，故 $c$ 存在[[~/文档/note/复变函数/Cplx_fc.org][构建复数-共轭复数]]
 
 取 $c$ 的共轭复数 $\overline{c}$ 带入亦有 $f(\overline{c})=0$ 即等价于 $\overline{c}$ 亦是多项式的根
 
 **** 证明
 
-对于函数 $\sum_{i=0}^na_ic^i=0$ 两边取共轭复数，则根据[[~/OneDrive/复变函数/Cplx_fc.org][构建复数-共轭复数-性质]]中加法乘法保持可得
+对于函数 $\sum_{i=0}^na_ic^i=0$ 两边取共轭复数，则根据[[~/文档/note/复变函数/Cplx_fc.org][构建复数-共轭复数-性质]]中加法乘法保持可得
 
 \begin{aligned}
 \overline{\sum_{i=0}^na_ic^i}&=\sum_{i=1}^n\overline{a_ic^i}\\
@@ -1572,7 +1572,7 @@ $0(x)$ 可约
 
 则根据[[MK19][整除定义]]可得 $p(x)=(x-c)(x-\overline{c})\prod_{i=1}^nf_i(x)=(x-c)(x-\overline{c})h'(x)$ 
 
-则有 $(x-c)(x-\overline{c})=x^2-(c+\overline{c})x+c\overline{c}$ 根据[[~/OneDrive/复变函数/Cplx_fc.org][构建复数-共轭复数]]定义，若 $c=a+ib$ 则有 $\overline{c}=c-ib$
+则有 $(x-c)(x-\overline{c})=x^2-(c+\overline{c})x+c\overline{c}$ 根据[[~/文档/note/复变函数/Cplx_fc.org][构建复数-共轭复数]]定义，若 $c=a+ib$ 则有 $\overline{c}=c-ib$
 
 则 $c+\overline{c}=2a\in\mathbb{R}$ 及 $c\overline{c}=a^2-b^2\in\mathbb{R}$ 故 $x^2-(c+\overline{c})x+c\overline{c}\in\mathbb{R}[x]$
 
@@ -1600,7 +1600,7 @@ $0(x)$ 可约
 
 **** 推论1<<MK80>>
 
-若 $f(x)\in\mathbb{Q}$ 即有理数义[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]多项式，则必有本源多项式与之相伴。
+若 $f(x)\in\mathbb{Q}$ 即有理数义[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]]多项式，则必有本源多项式与之相伴。
 
 ***** 证明
 
@@ -1736,7 +1736,7 @@ $0(x)$ 可约
 
 **** 推论1
 
-有理[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][数域]]上存在任意次不可约多项式
+有理[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][数域]]上存在任意次不可约多项式
 
 ***** 证明
 
@@ -1774,15 +1774,15 @@ $0(x)$ 可约
 
 对于任意整数 $m$ 以及整数集合 $\mathbb{Z}$ 有 $m\in\mathbb{Z}$
 
-根据[[~/OneDrive/离散数学/lssx.org::MK107][笛卡尔积]]以及[[~/OneDrive/离散数学/lssx.org::MK111][基础定义]]定义关系 $R=\left\{\left<a,b\right>\in Z\times Z\big|a\mod m=b\mod m\right\}$
+根据[[~/文档/note/离散数学/lssx.org::MK107][笛卡尔积]]以及[[~/文档/note/离散数学/lssx.org::MK111][基础定义]]定义关系 $R=\left\{\left<a,b\right>\in Z\times Z\big|a\mod m=b\mod m\right\}$
 
-根据[[~/OneDrive/离散数学/lssx.org::MK113][等价关系]]可知 $R$ 满足自反性，对称性以及传递性，故 $R$ 为等价关系
+根据[[~/文档/note/离散数学/lssx.org::MK113][等价关系]]可知 $R$ 满足自反性，对称性以及传递性，故 $R$ 为等价关系
 
-则根据[[~/OneDrive/离散数学/lssx.org::138][定理1]] $R$ 的[[~/OneDrive/离散数学/lssx.org::MK133][等价类]]划分 $\mathbb{Z}$
+则根据[[~/文档/note/离散数学/lssx.org::138][定理1]] $R$ 的[[~/文档/note/离散数学/lssx.org::MK133][等价类]]划分 $\mathbb{Z}$
 
 对于任意 $x\in \mathbb{Z}$ 定义其等价类 $\overline{x}=\left\{y\big|y\in\mathbb{Z}\land xRy\right\}$ 显然 $\mathbb{Z}$ 被划分为 $\overline{0},\overline{1},...,\overline{m-1}$ 这 $m$ 个等价类
 
-故定义集合 $U=\left\{\overline{x}\big|x\in\mathbb{Z}\right\}$ 由于 $m$ 的余数是小于 $m$ 的整数，故 $U$ 的[[~/OneDrive/离散数学/lssx.org::MK35][基数]]是 $|U|=m$
+故定义集合 $U=\left\{\overline{x}\big|x\in\mathbb{Z}\right\}$ 由于 $m$ 的余数是小于 $m$ 的整数，故 $U$ 的[[~/文档/note/离散数学/lssx.org::MK35][基数]]是 $|U|=m$
 
 *** 定义加法
 
@@ -1792,7 +1792,7 @@ $0(x)$ 可约
 
 由于 $\overline{x},\overline{y}$ 亦可表述为 $\overline{a},\overline{b}$ ，对于任意 $a\in[x]_R\land b\in[y]_R$ ，同样有 $\overline{a}+\overline{b}=\overline{a+b}$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-代数的构建-运算]]可知运算是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数]]，必须满足唯一性。
+根据[[~/文档/note/离散数学/Disc_Math.org][抽象代数-代数的构建-运算]]可知运算是[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数]]，必须满足唯一性。
 
 对于任意 $a\in[x]_R\land b\in[y]_R$ 均可表示为 $a=a'm+x'\land b=b'm+y'$ 其中 $\{a',b'\}\subset\mathbb{Z}$ 且 $\{x',y'\}\subset\left\{z\big|z\in\mathbb{Z}\land z<m\right\}$
 
@@ -1808,7 +1808,7 @@ $0(x)$ 可约
 
 由于 $\overline{x},\overline{y}$ 亦可表述为 $\overline{a},\overline{b}$ ，对于任意 $a\in[x]_R\land b\in[y]_R$ ，同样有 $\overline{a}\times\overline{b}=\overline{ab}$
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-代数的构建-运算]]可知运算是[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数]]，必须满足唯一性。
+根据[[~/文档/note/离散数学/Disc_Math.org][抽象代数-代数的构建-运算]]可知运算是[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数]]，必须满足唯一性。
 
 对于任意 $a\in[x]_R\land b\in[y]_R$ 均可表示为 $a=a'm+x'\land b=b'm+y'$ 其中 $\{a',b'\}\subset\mathbb{Z}$ 且 $\{x',y'\}\subset\left\{z\big|z\in\mathbb{Z}\land z<m\right\}$
 
@@ -1870,7 +1870,7 @@ $0(x)$ 可约
 
 ** 定理1
 
-若 $\mathbb{Z}_m=<U,+,\cdot>$ 是一个 $m$ 的[[MK85][剩余类环]]，若 $m$ 是素数，则 $Z_m$ 是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][域]]
+若 $\mathbb{Z}_m=<U,+,\cdot>$ 是一个 $m$ 的[[MK85][剩余类环]]，若 $m$ 是素数，则 $Z_m$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][域]]
 
 *** 证明
 
@@ -1891,11 +1891,11 @@ $0(x)$ 可约
 
 即 $\overline{v}\times\overline{x}=\overline{1}$ 由于 $v\in\mathbb{Z}$ 可得 $\overline{v}\in\mathbb{Z}_m$ 即对于任意 $\overline{x}\in\mathbb{Z}\land\overline{x}\ne\overline{0}$ 存在 $\overline{v}\in\mathbb{Z}$ 使得 $\overline{v}\times\overline{x}=\overline{1}$
 
-又根据[[MK85][定义]]可得剩余类环 $\mathbb{Z}_m$ 是交换环，故根据[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][域]]定义可得 $\mathbb{Z}_m$ 是域
+又根据[[MK85][定义]]可得剩余类环 $\mathbb{Z}_m$ 是交换环，故根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][域]]定义可得 $\mathbb{Z}_m$ 是域
 
 ** 定理2
 
-若 $\mathbb{Z}_m=<U,+,\cdot>$ 是一个 $m$ 的[[MK85][剩余类环]]，若 $m$ 是合数，则 $Z_m$ 不是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][域]]
+若 $\mathbb{Z}_m=<U,+,\cdot>$ 是一个 $m$ 的[[MK85][剩余类环]]，若 $m$ 是合数，则 $Z_m$ 不是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][域]]
 
 *** 证明
 
@@ -1907,4 +1907,4 @@ $0(x)$ 可约
 
 由于 $a>1$ 故有 $\frac{1}{a}\not\in\mathbb{Z}$ 故 $x=pb+\frac{1}{a}\not\in\mathbb{Z}$ 即 $\overline{x}\not\in\mathbb{Z}_m$ ，即矛盾。
 
-故对于 $\overline{a}\in\mathbb{Z}_m\land\overline{a}\ne\overline{0}$ 不存在乘法[[~/OneDrive/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元]]，故不是[[~/OneDrive/高等代数/Algb-1-Liner_sys_func.org][域]]
+故对于 $\overline{a}\in\mathbb{Z}_m\land\overline{a}\ne\overline{0}$ 不存在乘法[[~/文档/note/离散数学/Disc_Math.org][抽象代数-特殊元素-逆元]]，故不是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][域]]

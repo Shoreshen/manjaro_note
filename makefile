@@ -1,14 +1,15 @@
 DIF := $(shell cmp /etc/resolv.conf resolv.conf)
 PW = $(shell cat ~/文档/PW)
 SERVER = $(shell cat ~/文档/SERVER)
+BRANCH = $(shell git symbolic-ref --short HEAD)
 
-cporg: ORGNOTES = $(shell find ~/OneDrive -path ~/OneDrive/manjaro_note -prune -o -name *.org -a -print)
+cporg: ORGNOTES = $(shell find ~/文档/note/ -path -prune -o -name *.org -a -print)
 
 upload:
 	rclone sync ~/OneDrive/Book onedrive:Book
 
 test:
-	@echo $(PW)
+	@echo $(ORGNOTES)
 
 cporg: $(ORGNOTES)
 	-rm ./OrgNotes/*
@@ -32,7 +33,7 @@ installall:
 # 	fi
 
 connect:
-	echo $(PW) | sudo -S openvpn --config ~/文档/str-lax306_s368038_account.ovpn --auth-user-pass ~/文档/auth.txt
+	echo $(PW) | sudo -S openvpn --config ~/文档/conf/str-lax306_s368038_account.ovpn --auth-user-pass ~/文档/conf/auth.txt
 set_dns:  
 ifeq ($(DIF),)
 	cat /etc/resolv.conf
@@ -117,3 +118,5 @@ brightness:
 	read displayer; \
 	read bright; \
 	xrandr --output $$displayer --brightness $$bright
+reset_hard:
+	git fetch && git reset --hard origin/$(BRANCH)

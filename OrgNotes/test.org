@@ -1474,7 +1474,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 代数数的全体是可数集
 
-代数数为整系数多项式的[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][因式、可约与根-根]]，若不是，则定义为超越数（例如 $\pi$ ）
+代数数为整系数多项式的[[~/文档/note/高等代数/Algb-4-Multi-equ.org][因式、可约与根-根]]，若不是，则定义为超越数（例如 $\pi$ ）
 
 ****** 证明
 
@@ -1484,7 +1484,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 定义 $\sigma:A_n\to\mathbb{N}^n$ 规则为 $\sigma(f(x))=<a_1,...,a_n>$ 
 
-定义 $g(x)=\sum_{i=0}^nb_ix^i$ 根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][一元多项式-一元多项式运算-相等]]可得若 $f(x)\ne g(x)$ 则至少有一组 $b_k\ne a_k$
+定义 $g(x)=\sum_{i=0}^nb_ix^i$ 根据[[~/文档/note/高等代数/Algb-4-Multi-equ.org][一元多项式-一元多项式运算-相等]]可得若 $f(x)\ne g(x)$ 则至少有一组 $b_k\ne a_k$
 
 根据[[MK151][有序组]]定义可得 $<a_1,...,a_{k-1},a_k,a_{k+1},...,a_n>\ne<a_1,...,a_{k-1},b_k,a_{k+1},...,a_n>$ 故[[MK195][单射]]
 
@@ -1502,7 +1502,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 则有映射 $\sigma:A_n\times\{1,2,...,n\}\to B_n$ 显然根据定义 $B_n$ 中的元素必为某个 $f(x)\in A_n$ 的根
 
-进一步根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org][因式、可约与根-根-根的个数]]可知 $f(x)$ 至多有 $n$ 个根，故 $\sigma$ 是[[MK198][满射]]
+进一步根据[[~/文档/note/高等代数/Algb-4-Multi-equ.org][因式、可约与根-根-根的个数]]可知 $f(x)$ 至多有 $n$ 个根，故 $\sigma$ 是[[MK198][满射]]
 
 定义[[MK12][集合族]] $K=\left\{K_b\big|b\in B_n\right\}$ 其中 $K_b=\left\{a\big|\sigma(a)=b\right\}$
 
@@ -2804,7 +2804,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 ****** 定理3<<MK338>>
 
-若 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，定义 $C=\left\{a+b\big|a\in A\land b\in B\right\}$
+若 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/文档/note/实变函数/SBHS.org::MK143][广义实数]]，定义 $C=\left\{a+b\big|a\in A\land b\in B\right\}$
 
 则有 $\sup\{C\}=\sup\{A\}+\sup\{B\}$
 
@@ -2826,7 +2826,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 ******** 否则
 
-由于 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 根据[[~/OneDrive/实变函数/SBHS.org::MK224][运算性质]]不能出现 $+\infty+(-\infty)$
+由于 $A\subset\mathbb{R}_e\land B\subset\mathbb{R}_e$ 根据[[~/文档/note/实变函数/SBHS.org::MK224][运算性质]]不能出现 $+\infty+(-\infty)$
 
 则当 $\pm\infty+r$ 或者 $\pm(\infty+\infty)$ 时，显然 $\sup\{A\}+\sup\{B\}=\pm\infty$
 
@@ -2834,7 +2834,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 ****** 定理4<<MK340>>
 
-若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，则定义 $B=\left\{c\cdot a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^+$
+若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/文档/note/实变函数/SBHS.org::MK143][广义实数]]，则定义 $B=\left\{c\cdot a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^+$
 
 则有 $\sup\{B\}=c\cdot\sup\{A\}$ 以及 $\inf\{B\}=c\cdot\inf\{A\}$ 
 
@@ -2866,7 +2866,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 ****** 定理6<<MK343>>
 
-若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/OneDrive/实变函数/SBHS.org::MK143][广义实数]]，则定义 $-A=\left\{-a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^-$
+若 $A\subset\mathbb{R}_e$ 其中 $\mathbb{R}_e$ 是[[~/文档/note/实变函数/SBHS.org::MK143][广义实数]]，则定义 $-A=\left\{-a\big|a\in A\right\}$ 其中 $c\in\mathbb{R}^-$
 
 则有 $\sup\{-A\}=-\inf\{A\}$
 
@@ -2874,7 +2874,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 定义 $\alpha=\sup\{-A\}$ 则有 $\forall a'\in-A\rightarrow a'\leq\alpha$ 且 $\forall\epsilon>0\rightarrow\left((\exists -a'\in-A)\rightarrow(\alpha-\epsilon<-a')\right)$
 
-则根据[[~/OneDrive/实变函数/SBHS.org::MK265][推论3]]可得 $-\alpha\leq-a'$ 根据 $-A$ 定~/OneDrive/离散数学/Disc_Math.org义可得 $\forall a\in A\rightarrow -\alpha\leq a$
+则根据[[~/文档/note/实变函数/SBHS.org::MK265][推论3]]可得 $-\alpha\leq-a'$ 根据 $-A$ 定义可得 $\forall a\in A\rightarrow -\alpha\leq a$
 
 类似可证 $\forall\epsilon>0\rightarrow\left((\exists a'\in A)\rightarrow(a<-\alpha+\epsilon)\right)$
 
@@ -2896,7 +2896,7 @@ $B$ 的下确界： $b$ 下界的最大元
 
 即对于任意 $\epsilon>0$ 均有 $\sup(A)+\sup(B)<c+\epsilon$ 假设 $\sup(A)+\sup(B)>c$
 
-则取 $\epsilon=\sup(A)+\sup(B)-c$ 则有 $0<0$ 显然与[[~/OneDrive/实变函数/SBHS.org::MK5][三岐性]]矛盾
+则取 $\epsilon=\sup(A)+\sup(B)-c$ 则有 $0<0$ 显然与[[~/文档/note/实变函数/SBHS.org::MK5][三岐性]]矛盾
 
 故假设不成立，即有 $\sup(A)+\sup(C)\leq c$
 
@@ -13884,7 +13884,7 @@ x&=y\\
 
 结合 $y=\frac{l^k_{ii}}{k}$ 以及 $\frac{l^m_{ii}}{m}>\frac{l^z_{ii}}{z}$ 可得 $y=\frac{l^k_{ii}}{k}>\frac{l^z_{ii}}{z}$ 
 
-总上所述，由于 $\forall j\leq k\rightarrow \frac{l^m_{ii}}{m}>\frac{l^j_{ii}}{j}$ 故有 $\frac{l^k_{ii}}{k}>\frac{l^z_{ii}}{z}\land \frac{l^z_{ii}}{z}>\frac{l^k_{ii}}{k}$ 与[[~/OneDrive/离散数学/Disc_Math.org::MK5][三岐性]]矛盾
+总上所述，由于 $\forall j\leq k\rightarrow \frac{l^m_{ii}}{m}>\frac{l^j_{ii}}{j}$ 故有 $\frac{l^k_{ii}}{k}>\frac{l^z_{ii}}{z}\land \frac{l^z_{ii}}{z}>\frac{l^k_{ii}}{k}$ 与[[~/文档/note/离散数学/Disc_Math.org::MK5][三岐性]]矛盾
 
 故假设不成立，则不存在 $m>k$ 满足 $\forall j\leq k\rightarrow \frac{l^m_{ii}}{m}>\frac{l^j_{ii}}{j}$ 
 

@@ -10,7 +10,7 @@ current mark: 93
 
 满足：
 
-（1） [[~/OneDrive/数学分析/Chap14Note.org][可求长线段]]
+（1） [[~/文档/note/数学分析/Chap14Note.org][可求长线段]]
 
 （2） 没有交点（若闭合，则除首尾外无交点）
 
@@ -231,7 +231,7 @@ $$\left|\frac{1}{z}\right|=\frac{1}{|z|}$$
 
 根据[[MK59][定义]]可得 $S_k=a_k+ib_k$ 且由于 $\exists M,\forall i\in\mathbb{N}^+\Rightarrow |S_i|<M$ 根据[[MK56][模]]定义可得 $a_k,b_k$ 均需有界
 
-构造 $\vec{x}_k=(a_k,b_k)$ 由于 $a_k\in\mathbb{R}\land b_k\in\mathbb{R}$ 故根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Bolzano-Weierstrass定理]]
+构造 $\vec{x}_k=(a_k,b_k)$ 由于 $a_k\in\mathbb{R}\land b_k\in\mathbb{R}$ 故根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-Bolzano-Weierstrass定理]]
 
 可得 $\vec{x}_k$ 必有收敛子列，即有 $\vec{x}_{i_1},...,\vec{x}_{i_n}$ 满足 $\lim_{n\to\infty}\vec{x}_{in}=(A,B)\in\mathbb{R}^2$
 
@@ -243,7 +243,7 @@ $$\left|\frac{1}{z}\right|=\frac{1}{|z|}$$
 
 **** 证明
 
-根据[[~/OneDrive/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]，由于 $f(z)$ 为函数，故对于 $z=x+iy$ 必有一个 $f(z)=a+ib$ 形成映射
+根据[[~/文档/note/离散数学/Disc_Math.org][关系与函数-函数-相关定义-函数定义]]，由于 $f(z)$ 为函数，故对于 $z=x+iy$ 必有一个 $f(z)=a+ib$ 形成映射
 
 故对于 $u(x,y),v(x,y)$ 若 $x+iy=z$ 则必有 $u(x,y)=a,v(x,y)=b$
 
@@ -281,7 +281,7 @@ $$\lim_{z\to z_0}\left(f(z)-f(z_0)\right)=\lim_{z\to z_0}\left((z-z_0)\frac{f(z)
 
 函数 $f(z)=u(x,y)+iv(x,y)$ 在点 $z_0=x_0+iy_0$ 可导的充要条件是：
 
-（1） $u(x,y),v(x,y)$ 在点 $(x_0,y_0)$ 根据[[~/OneDrive/数学分析/Chap12Note.org][偏导数与全微分-偏导数，方向导数及全微分-全微分]]定义，可微
+（1） $u(x,y),v(x,y)$ 在点 $(x_0,y_0)$ 根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-偏导数，方向导数及全微分-全微分]]定义，可微
 
 （2） 满足 $\frac{\partial u(x_0,y_0)}{\partial x}=\frac{\partial v(x_0,y_0)}{\partial y}\land \frac{\partial u(x_0,y_0)}{\partial y}=-\frac{\partial v(x_0,y_0)}{\partial x}$ 即柯西-黎曼方程
 
@@ -305,9 +305,9 @@ f'(z_0)\Delta z+o(\Delta z)=&(a+ib)(\Delta x+i\Delta y)+o_1(\Delta z)+io_2(\Delt
 
 由于 $\Delta z\to 0$ 等价于 $\Delta x\to0\land \Delta y\to0$ 则有 $\lim_{\Delta x\to0\land \Delta y\to0}o_1(\Delta z)=0$
 
-即根据[[~/OneDrive/数学分析/Chap12Note.org][偏导数与全微分-偏导数，方向导数及全微分-全微分]]定义， $u(x,y)$ 在点 $x_0,y_0$ 可微
+即根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-偏导数，方向导数及全微分-全微分]]定义， $u(x,y)$ 在点 $x_0,y_0$ 可微
 
-且根据[[~/OneDrive/数学分析/Chap12Note.org][偏导数与全微分-欧几里得空间连续，可导，可微及方向导数关系-可微与偏导]]
+且根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-欧几里得空间连续，可导，可微及方向导数关系-可微与偏导]]
 
 可得 $\frac{\partial u(x,y)}{\partial x}=a,\frac{\partial u(x,y)}{\partial y}=-b$
 
@@ -317,7 +317,7 @@ f'(z_0)\Delta z+o(\Delta z)=&(a+ib)(\Delta x+i\Delta y)+o_1(\Delta z)+io_2(\Delt
 
 ***** 必要
 
-定义 $z_0=x_0+iy_0$ 由于可微，则根据[[~/OneDrive/数学分析/Chap12Note.org][偏导数与全微分-欧几里得空间连续，可导，可微及方向导数关系-可微与偏导]]可得
+定义 $z_0=x_0+iy_0$ 由于可微，则根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-欧几里得空间连续，可导，可微及方向导数关系-可微与偏导]]可得
 
 \begin{aligned}
 \Delta u=\Delta x\frac{\partial u(x_0,y_0)}{\partial x}+\Delta y\frac{\partial u(x_0,y_0)}{\partial y}+o_1\left(\sqrt{\Delta x^2+\Delta y^2}\right)\\
@@ -404,13 +404,13 @@ $\left(g(f(z))\right)'=g'(f(z))f'(z)$
 
 ** 积分定义<<MK67>>
 
-设 $D\subset\mathbb{C}$ 为复平面上的区域，若存在复平面上[[~/OneDrive/数学分析/Chap14Note.org][可求长线段]] $L\subset D$
+设 $D\subset\mathbb{C}$ 为复平面上的区域，若存在复平面上[[~/文档/note/数学分析/Chap14Note.org][可求长线段]] $L\subset D$
 
 定义 $x_0,...,x_n$ 为线段上的点，将线段划分成 $n-1$ 份，其中 $x_0,x_n$ 分别为线段的起始和终止点
 
 规定 $x_0\to x_n$ 为线段的正方向。若[[MK58][复函数]] $f(x)$ 在 $L$ 上有定义且有界（ $\forall z\in L\rightarrow|f(z)|<\infty$ ）
 
-取 $\zeta_i$ 为线段 $x_i,x_{i+1}$ 上的一点，则有[[~/OneDrive/数学分析/Chap7Note.org][定积分定义-黎曼和]] $$\sum_{i=1}^{n-1}f(\zeta_i)(x_{i+1}-x_i)$$
+取 $\zeta_i$ 为线段 $x_i,x_{i+1}$ 上的一点，则有[[~/文档/note/数学分析/Chap7Note.org][定积分定义-黎曼和]] $$\sum_{i=1}^{n-1}f(\zeta_i)(x_{i+1}-x_i)$$
 
 定义 $s_i$ 为 $x_i,x_{i+1}$ 间的弧长， $\lambda=\max(\Delta s_i)$ 
 
@@ -432,7 +432,7 @@ $\left(g(f(z))\right)'=g'(f(z))f'(z)$
 
 或微分形式 $$\int_Lf(z)dz=\int_L u\big(x,y\big)dx-v\big(x,y\big)dy+i\int_L v\big(x,y\big)dx+u\big(x,y\big)dy$$
 
-即转化为两个[[~/OneDrive/数学分析/Chap14Note.org][第二类曲线积分]]，其中 $u(x,y)+iv(x,y)=f(x+iy)$ 根据[[MK61][定理]]所得
+即转化为两个[[~/文档/note/数学分析/Chap14Note.org][第二类曲线积分]]，其中 $u(x,y)+iv(x,y)=f(x+iy)$ 根据[[MK61][定理]]所得
 
 **** 证明
 
@@ -462,7 +462,7 @@ $\left(g(f(z))\right)'=g'(f(z))f'(z)$
 
 ***** 引入第二类曲线积分<<MK75>>
 
-根据[[~/OneDrive/数学分析/Chap14Note.org][第二类曲线积分-计算-推论]] $\lim_{\lambda\to0}\left\{\sum_{i=1}^{n-1}(u(\alpha_i,\beta_i),-v(\alpha_i,\beta_i))\cdot(\Delta a_i,\Delta b_i)\right\}$ 为微分形式的黎曼和
+根据[[~/文档/note/数学分析/Chap14Note.org][第二类曲线积分-计算-推论]] $\lim_{\lambda\to0}\left\{\sum_{i=1}^{n-1}(u(\alpha_i,\beta_i),-v(\alpha_i,\beta_i))\cdot(\Delta a_i,\Delta b_i)\right\}$ 为微分形式的黎曼和
 
 由于满足
 
@@ -492,7 +492,7 @@ $\left(g(f(z))\right)'=g'(f(z))f'(z)$
 
 由于 $$\int_Lf(z)dz=\int_a^b\bigg\{u\big(x(t),y(t)\big)x'(t)-v\big(x(t),y(t)\big)y'(t)\bigg\}dt+i\int_a^b\bigg\{v\big(x(t),y(t)\big)x'(t)+u\big(x(t),y(t)\big)y'(t)\bigg\}dt$$
 
-根据[[~/OneDrive/数学分析/Chap7Note.org][定积分基本性质-线性]]可得：
+根据[[~/文档/note/数学分析/Chap7Note.org][定积分基本性质-线性]]可得：
 
 \begin{aligned}
 &\int_a^b\bigg\{u\big(x(t),y(t)\big)x'(t)-v\big(x(t),y(t)\big)y'(t)\bigg\}dt+i\int_a^b\bigg\{v\big(x(t),y(t)\big)x'(t)+u\big(x(t),y(t)\big)y'(t)\bigg\}dt\\
@@ -518,7 +518,7 @@ $\left(g(f(z))\right)'=g'(f(z))f'(z)$
 
 由于连续，故实部虚部均连续，故 $\vec{F}(x,y)=\left(u(x,y),-v(x,y)\right)$ 亦连续
 
-根据[[~/OneDrive/数学分析/Chap14Note.org][第二类曲线积分-性质-连续函数可积]]可得 $\vec{F}(x,y)$ 可积
+根据[[~/文档/note/数学分析/Chap14Note.org][第二类曲线积分-性质-连续函数可积]]可得 $\vec{F}(x,y)$ 可积
 
 同理可证虚部可积，则函数可积。
 
@@ -564,7 +564,7 @@ $\left(g(f(z))\right)'=g'(f(z))f'(z)$
 
 即积分和式可转换为实部虚部两个第二类曲线积分的和式。
 
-由于[[MK67][可积]]故实部虚部均可积。根据[[~/OneDrive/数学分析/Chap14Note.org][第二类曲线积分-性质-区间可加]]可得实部虚部均满足区间可加
+由于[[MK67][可积]]故实部虚部均可积。根据[[~/文档/note/数学分析/Chap14Note.org][第二类曲线积分-性质-区间可加]]可得实部虚部均满足区间可加
 
 故有复函数积分的区间可加性。
 
@@ -582,7 +582,7 @@ $\left(g(f(z))\right)'=g'(f(z))f'(z)$
 
 根据[[MK68][三角不等式]]，[[MK69][相乘等价]]可得 $\left|\sum_{i=1}^nf(\xi_i)\Delta z_i\right|\leq\sum_{i=1}^n\left|f(\xi_i)\right||\Delta z_i|\leq M\sum_{i=1}^n|\Delta z_i|$
 
-根据[[~/OneDrive/数学分析/Chap14Note.org][可求长线段]]定义 $\lim_{\lambda\to0}\sum_{i=1}^n|\Delta z_i|=l$ 又由于弧长大于等于弦长，故有 $\sum_{i=1}^n|\Delta z_i|\leq l$
+根据[[~/文档/note/数学分析/Chap14Note.org][可求长线段]]定义 $\lim_{\lambda\to0}\sum_{i=1}^n|\Delta z_i|=l$ 又由于弧长大于等于弦长，故有 $\sum_{i=1}^n|\Delta z_i|\leq l$
 
 故有 $\left|\int_Lf(z)dz\right|\leq Ml$
 
@@ -632,7 +632,7 @@ $$\int_Ldz=\lim_{\lambda\to0}\sum_{i=1}^n\Delta z_i=\lim_{\lambda\to0}\sum_{i=1}
 
 根据[[MK61][定理]]函数可有等价映射 $u(x,y)+iv(x,y)$ 根据[[MK62][连续]]定义可得 $u(x,y),v(x,y)$ 亦连续
 
-定义 $L$ 长度为 $l$ ，由于 $L$ 为有界闭集，故根据[[~/OneDrive/数学分析/Chap11Note.org][连续函数性质-康托定理]]可得 $u(x,y),v(x,y)$ 一致连续。
+定义 $L$ 长度为 $l$ ，由于 $L$ 为有界闭集，故根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-康托定理]]可得 $u(x,y),v(x,y)$ 一致连续。
 
 则可证 $f(z)$ [[MK66][一致连续]]，即 $\forall\epsilon>0,\exists\delta'>0,\forall|z'-z''|<\delta\Rightarrow|f(z')-f(z'')|<\frac{\epsilon}{2l}$
 
@@ -672,7 +672,7 @@ $$\int_Ldz=\lim_{\lambda\to0}\sum_{i=1}^n\Delta z_i=\lim_{\lambda\to0}\sum_{i=1}
 
 **** 证明
 
-定义 $L$ 的参数方程为 $z(t)=\alpha+r\left(\cos(t)+i\sin(t)\right)$ 根据[[~/OneDrive/大学物理/Note/DiffEq.org][欧拉公式]]可得 $z(t)=\alpha+re^{it}$ 其中 $t\in[0,2\pi]$
+定义 $L$ 的参数方程为 $z(t)=\alpha+r\left(\cos(t)+i\sin(t)\right)$ 根据[[~/文档/note/大学物理/Note/DiffEq.org][欧拉公式]]可得 $z(t)=\alpha+re^{it}$ 其中 $t\in[0,2\pi]$
 
 则根据[[MK82][推论]]可得 
 
@@ -701,7 +701,7 @@ $$\int_Ldz=\lim_{\lambda\to0}\sum_{i=1}^n\Delta z_i=\lim_{\lambda\to0}\sum_{i=1}
 
 *** 柯西积分定理<<MK84>>
 
-若 $D\subset\mathbb{C}$ 是[[~/OneDrive/数学分析/Chap14Note.org][Green公式，Gauss公式，Stokes公式-前提定义-平面单连通区域]]，函数 $f(z)$ 在 $z\in D$ 上[[MK65][解析]]
+若 $D\subset\mathbb{C}$ 是[[~/文档/note/数学分析/Chap14Note.org][Green公式，Gauss公式，Stokes公式-前提定义-平面单连通区域]]，函数 $f(z)$ 在 $z\in D$ 上[[MK65][解析]]
 
 若有[[MK81][简单]]闭合曲线 $L\subset D$ ，其包含的区域亦为单连通，则有 $$\int_Lf(z)dz=0$$
 
@@ -733,7 +733,7 @@ $$\int_Ldz=\lim_{\lambda\to0}\sum_{i=1}^n\Delta z_i=\lim_{\lambda\to0}\sum_{i=1}
 
 （4） $$\left|\int_{L^{(n)}}f(z)dz\right|\geq\frac{M}{4^n}$$
 
-利用以上（1）（2）条件，根据[[~/OneDrive/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-康托闭区域套定理]]可得
+利用以上（1）（2）条件，根据[[~/文档/note/数学分析/Chap11Note.org][构造Euclid空间-Euclid空间基本定理-康托闭区域套定理]]可得
 
 复平面上必存在一个点 $z_0\in D$ 满足 $z_0\in\cap_{i=1}^\infty\Delta_i$
 
@@ -777,7 +777,7 @@ $$\int_Ldz=\lim_{\lambda\to0}\sum_{i=1}^n\Delta z_i=\lim_{\lambda\to0}\sum_{i=1}
 
 *** 柯西积分公式<<MK88>>
 
-若 $D\subset\mathbb{C}$ 是有界的[[~/OneDrive/数学分析/Chap14Note.org][Green公式，Gauss公式，Stokes公式-前提定义-平面单连通区域]]，函数 $f(z)$ 在 $D$ 上[[MK65][解析]]
+若 $D\subset\mathbb{C}$ 是有界的[[~/文档/note/数学分析/Chap14Note.org][Green公式，Gauss公式，Stokes公式-前提定义-平面单连通区域]]，函数 $f(z)$ 在 $D$ 上[[MK65][解析]]
 
 若有[[MK81][简单]]闭合曲线 $L\subset D$ 且点 $z_0\not\in L$ 在 $L$ 包含的区域内，则有 $$f(z_0)=\frac{1}{2\pi i}\int_L\frac{f(z)}{z-z_0}dz$$
 
@@ -846,7 +846,7 @@ $$\int_Ldz=\lim_{\lambda\to0}\sum_{i=1}^n\Delta z_i=\lim_{\lambda\to0}\sum_{i=1}
 
 *** 柯西积分公式推广<<MK92>>
 
-若 $D\subset\mathbb{C}$ 是有界的[[~/OneDrive/数学分析/Chap14Note.org][Green公式，Gauss公式，Stokes公式-前提定义-平面单连通区域]]，函数 $f(z)$ 在 $D$ 上[[MK65][解析]]
+若 $D\subset\mathbb{C}$ 是有界的[[~/文档/note/数学分析/Chap14Note.org][Green公式，Gauss公式，Stokes公式-前提定义-平面单连通区域]]，函数 $f(z)$ 在 $D$ 上[[MK65][解析]]
 
 若有[[MK81][简单]]闭合曲线 $L\subset D$ 且点 $z_0\not\in L$ 在 $L$ 包含的区域内，则有 $$f^{(n)}(z_0)=\frac{n!}{2\pi i}\int_L\frac{f(z)}{(z-z_0)^{n+1}}dz$$
 
@@ -885,7 +885,7 @@ f(\xi)-f(z_0)=&\frac{\xi-z_0}{2\pi i}\int_L\frac{f(z)}{(z-z_0)^2}+\frac{1}{2\pi 
 \frac{f(\xi)-f(z_0)}{\xi-z_0}=&\frac{1}{2\pi i}\int_L\frac{f(z)}{(z-z_0)^2}+\frac{1}{2\pi i(\xi-z_0)}\int_L\frac{f(z)\sum_{i=2}^\infty\left(\frac{\xi-z_0}{z-z_0}\right)^i}{z-z_0}dz\\
 \end{aligned}
 
-由于 $L$ 为有界闭集且 $f(z)$ 解析，故 $f(z)$ 连续，根据[[~/OneDrive/数学分析/Chap11Note.org][连续函数性质-有界性定理]]可得有界
+由于 $L$ 为有界闭集且 $f(z)$ 解析，故 $f(z)$ 连续，根据[[~/文档/note/数学分析/Chap11Note.org][连续函数性质-有界性定理]]可得有界
 
 定义 $M\geq\left|f(z)\right|,z\in L$ 则根据[[MK87][分式]]、[[MK69][相乘]]、[[MK68][三角不等式]]以及[[MK89][之前证明]]有：
 

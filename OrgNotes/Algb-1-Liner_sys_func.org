@@ -6,13 +6,13 @@ currnet mark: 33
 
 * 域<<MK24>>
 
-设[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK12][交换环]] $<U,+,\cdot>$ 满足：
+设[[~/文档/note/高等代数/Algb-4-Multi-equ.org::MK12][交换环]] $<U,+,\cdot>$ 满足：
 
-（1） 存在乘法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]，定义为 $1$ （根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK9][定理]]存在乘法零元，等于加法幺元，记作 $0$ ）
+（1） 存在乘法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]，定义为 $1$ （根据[[~/文档/note/高等代数/Algb-4-Multi-equ.org::MK9][定理]]存在乘法零元，等于加法幺元，记作 $0$ ）
 
-（2） $1$ 不等于加法[[~/OneDrive/离散数学/Disc_Math.org::MK311][幺元]]（定义为 $0$ ）
+（2） $1$ 不等于加法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]（定义为 $0$ ）
 
-（3） $\forall a\left(a\in U\land a\ne0\rightarrow\exists y(y\in U\land a\cdot y=1)\right)$ 即任意不等于加法幺元的元素存在乘乘法[[~/OneDrive/离散数学/Disc_Math.org::MK314][逆元]]
+（3） $\forall a\left(a\in U\land a\ne0\rightarrow\exists y(y\in U\land a\cdot y=1)\right)$ 即任意不等于加法幺元的元素存在乘乘法[[~/文档/note/离散数学/Disc_Math.org::MK314][逆元]]
 
 则该代数结构定义为域
 
@@ -36,7 +36,7 @@ currnet mark: 33
 
 其中 $1<a<m,1<b<m$ 且均为正整数，由于 $m$ 为最小正整数，故 $ae\ne0\land be\ne0$
 
-根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK12][交换环]]中加乘法分配率，对于任意 $\{z_1,z_2\}\subset U$ 有：
+根据[[~/文档/note/高等代数/Algb-4-Multi-equ.org::MK12][交换环]]中加乘法分配率，对于任意 $\{z_1,z_2\}\subset U$ 有：
 
 \begin{aligned}
 (az_1)(bz_2)=&\left(\sum_{i=1}^az_1\right)\left(\sum_{i=1}^bz_2\right)\\
@@ -52,7 +52,7 @@ currnet mark: 33
 
 根据环中乘法结合律可得 $(ae)^{-1}\left((ae)(be)\right)=\left((ae)^{-1}(ae)\right)be=ebe=be$ 
 
-根据[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK16][定理]]可得 $(ae)^{-1}0=0$
+根据[[~/文档/note/高等代数/Algb-4-Multi-equ.org::MK16][定理]]可得 $(ae)^{-1}0=0$
 
 故有 $be=0$ 与条件矛盾，故 $m$ 不能为合数 
 
@@ -72,7 +72,7 @@ currnet mark: 33
 
 *** 证明是交换环
 
-根据复数上的加法/乘法，以及[[~/OneDrive/高等代数/Algb-4-Multi-equ.org::MK12][交换环]]可知
+根据复数上的加法/乘法，以及[[~/文档/note/高等代数/Algb-4-Multi-equ.org::MK12][交换环]]可知
 
 （1） 加法满足结合律
 
@@ -524,11 +524,11 @@ $A=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\...&...&...&...\\a_{u1}&a_{u2}&
 
 *** 可逆矩阵行列式<<MK33>>
 
-若矩阵 $A$ [[~/OneDrive/高等代数/Algb-3-Matrix.org::MK28][可逆]]，则有 $|A^{-1}|=\frac{1}{|A|}$
+若矩阵 $A$ [[~/文档/note/高等代数/Algb-3-Matrix.org::MK28][可逆]]，则有 $|A^{-1}|=\frac{1}{|A|}$
 
 **** 证明
 
-根据[[MK18][上三角矩阵行列式]]可得[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK4][单位矩阵]]的行列式为 $|I|=1$
+根据[[MK18][上三角矩阵行列式]]可得[[~/文档/note/高等代数/Algb-3-Matrix.org::MK4][单位矩阵]]的行列式为 $|I|=1$
 
 根据[[MK32][矩阵乘法与行列式]]可得 $|A^{-1}||A|=|A^{-1}A|=|I|=1$ 故有 $|A^{-1}|=\frac{1}{|A|}$
 
@@ -548,37 +548,37 @@ $A=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\...&...&...&...\\a_{u1}&a_{u2}&
 
 由于 $n<s$ 则 $A$ 有 $\dim(A)\leq n$
 
-根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK24][乘法性质]]可得 $\dim(AB)\leq \dim(A)\leq n$
+根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK24][乘法性质]]可得 $\dim(AB)\leq \dim(A)\leq n$
 
-由于根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK5][矩阵乘法]]可得 $AB$ 为 $s$ 阶方阵，则 $AB$ 不满秩，故 $|AB|=0$
+由于根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK5][矩阵乘法]]可得 $AB$ 为 $s$ 阶方阵，则 $AB$ 不满秩，故 $|AB|=0$
 
 ***** 证明（2）
 
-若 $|A|=0$ 则 $A$ 不满秩，同理根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK24][乘法性质]]可得 $\dim(AB)\leq \dim(A)< n$
+若 $|A|=0$ 则 $A$ 不满秩，同理根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK24][乘法性质]]可得 $\dim(AB)\leq \dim(A)< n$
 
 故得 $|AB|=0$
 
-若 $|A|\ne 0$ 则 $A$ 满秩，故根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK29][可逆条件]]可得 $A$ 可逆
+若 $|A|\ne 0$ 则 $A$ 满秩，故根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK29][可逆条件]]可得 $A$ 可逆
 
-进一步根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK37][定理7]]可得 $A=\prod_{i=1}^vP_i$ 其中 $P_i$ 为[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK13][初等矩阵]]
+进一步根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK37][定理7]]可得 $A=\prod_{i=1}^vP_i$ 其中 $P_i$ 为[[~/文档/note/高等代数/Algb-3-Matrix.org::MK13][初等矩阵]]
 
-顾得 $|AB|=\left|\prod P_i B\right|$ 根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK48][初等矩阵性质]]以及[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK21][乘法结合律]]可得 $|AB|=\left|\prod P_i\right||B|=|A||B|$
+顾得 $|AB|=\left|\prod P_i B\right|$ 根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK48][初等矩阵性质]]以及[[~/文档/note/高等代数/Algb-3-Matrix.org::MK21][乘法结合律]]可得 $|AB|=\left|\prod P_i\right||B|=|A||B|$
 
 ***** 证明（3）
 
 ****** 利用分块矩阵
 
-构造[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK38][分块矩阵]] $\left[\begin{matrix}A&0_{s}\\I_n&B\end{matrix}\right]$ 其中分块 $I_n$ 为 $n$ 阶[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK4][单位矩阵]]，且 $0_s$ 为 $s$ 阶[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK9][零矩阵]]
+构造[[~/文档/note/高等代数/Algb-3-Matrix.org::MK38][分块矩阵]] $\left[\begin{matrix}A&0_{s}\\I_n&B\end{matrix}\right]$ 其中分块 $I_n$ 为 $n$ 阶[[~/文档/note/高等代数/Algb-3-Matrix.org::MK4][单位矩阵]]，且 $0_s$ 为 $s$ 阶[[~/文档/note/高等代数/Algb-3-Matrix.org::MK9][零矩阵]]
 
-构造[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK45][分块初等矩阵]] $\left[\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right]$ 则有：
+构造[[~/文档/note/高等代数/Algb-3-Matrix.org::MK45][分块初等矩阵]] $\left[\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right]$ 则有：
 
 （1） $I_sA=A$ ，（2） $-AI_n=-A$ ，（3） $0_{n\times s}A=0_{n\times n}$ ，（4） $I_nB=B$
 
 固有  $\left[\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right]\left[\begin{matrix}A&0_s\\I_n&B\end{matrix}\right]=\left[\begin{matrix}A-A&0_s-AB\\0_{n\times n}+I_{n\times n}&0_{n\times s}+B\end{matrix}\right]=\left[\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right]$
 
-根据[[MK18][上三角矩阵行列式]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|=1$ 根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK29][可逆条件]]可得该矩阵可逆，根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK37][定理7]]可得该矩阵可分解为[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK13][初等矩阵]]相乘
+根据[[MK18][上三角矩阵行列式]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|=1$ 根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK29][可逆条件]]可得该矩阵可逆，根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK37][定理7]]可得该矩阵可分解为[[~/文档/note/高等代数/Algb-3-Matrix.org::MK13][初等矩阵]]相乘
 
-故根据[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK48][初等矩阵与乘法]]以及[[~/OneDrive/高等代数/Algb-3-Matrix.org::MK21][乘法结合律]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|$
+故根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK48][初等矩阵与乘法]]以及[[~/文档/note/高等代数/Algb-3-Matrix.org::MK21][乘法结合律]]可得 $\left|\begin{matrix}I_s&-A\\0_{n\times s}&I_n\end{matrix}\right|\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}A&0_s\\I_n&B\end{matrix}\right|=\left|\begin{matrix}0_{s\times n}&-AB\\I_{n\times n}&B\end{matrix}\right|$
 
 ****** 利用拉普拉斯定理
 
@@ -593,7 +593,7 @@ $A=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\...&...&...&...\\a_{u1}&a_{u2}&
 
 由于对于任意 $j_l>s$ 其子式 $M\left(\begin{matrix}1&2&...&s\\j_1&j_2&...&j_s\end{matrix}\right)$ 均有一列元素全为 $0$ ，
 
-则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK102][性质3]]可得求子式的矩阵列向量现行相关，则根据[[~/OneDrive/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关性]]可得其行列式为零，故子式为零，则得
+则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK102][性质3]]可得求子式的矩阵列向量现行相关，则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK57][行列式与线性相关性]]可得其行列式为零，故子式为零，则得
 
 
 \begin{aligned}

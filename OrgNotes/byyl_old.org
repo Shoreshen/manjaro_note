@@ -708,7 +708,7 @@ $D_X$ 中的任意[[MK454][分支]] $v\in X$ 以及[[MK342][子节点]] $\mathca
 
 若满足对于任意 $e\in E$ 若 $e$ 在映射 $f$ 中有定义则 $|f(e)|=1$
 
-定义[[~/OneDrive/高等代数/Algb-3-Matrix.org][矩阵基础-矩阵的表述]] $M_{|S|\times|\Sigma|}[a_{sa}]$ 其中 $s\in S\land a\in\Sigma$ 
+定义[[~/文档/note/高等代数/Algb-3-Matrix.org][矩阵基础-矩阵的表述]] $M_{|S|\times|\Sigma|}[a_{sa}]$ 其中 $s\in S\land a\in\Sigma$ 
 
 进一步定义 $a_{sa}=\begin{cases}s'&\exists s'\in S\rightarrow f(s,s')=\{a\}\\\varnothing&else\end{cases}$
 
@@ -2227,7 +2227,7 @@ void $A$(){
 
 **** 算符优先表<<MK436>>
 
-对于[[MK431][算符优先文法]] $G=<V_N,V_T,P,s>$ 定义[[~/OneDrive/高等代数/Algb-3-Matrix.org][矩阵基础-矩阵的表述]] $M_{|V_T|\times|V_T|}[a_{ij}]$
+对于[[MK431][算符优先文法]] $G=<V_N,V_T,P,s>$ 定义[[~/文档/note/高等代数/Algb-3-Matrix.org][矩阵基础-矩阵的表述]] $M_{|V_T|\times|V_T|}[a_{ij}]$
 
 对于 $<v_i,v_j>,\{v_i,v_j\}\subset V_T$ 根据其[[MK418][算符优先级]]定义 $a_{ij}=\begin{cases}1&a\doteq b\\2&a\lessdot b\\3&a\gtrdot b\\0&else\end{cases}$ 
 
