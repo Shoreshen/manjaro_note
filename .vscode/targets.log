@@ -1,0 +1,494 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.4.1
+ 
+# Built for x86_64-pc-linux-gnu
+ 
+# Copyright (C) 1988-2023 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Fri Dec 15 07:48:34 2023
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# environment
+LC_NAME = zh_CN.UTF-8
+# environment
+LC_NUMERIC = zh_CN.UTF-8
+# environment
+VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
+# environment
+VSCODE_CWD = /home/shore/桌面
+# environment
+LC_ADDRESS = zh_CN.UTF-8
+# environment
+GDM_LANG = zh_CN.utf8
+# default
+MAKE_COMMAND := make
+# environment
+GTK3_MODULES = xapp-gtk3-module:xapp-gtk3-module
+# makefile (from 'makefile', line 2)
+PW = $(shell cat ~/文档/PW)
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/shore/OneDrive/manjaro_note
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+MAIL = /var/spool/mail/shore
+# environment
+XDG_DATA_DIRS = /usr/local/share:/usr/share
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/shore/.config/Code/CachedData/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+# environment
+LANG = C
+# environment
+XAUTHORITY = /home/shore/.Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS := /usr/local/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/shore/OneDrive/manjaro_note
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXYAQbgU/agent.1074
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_CONFIG_DIRS = /etc/xdg
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = xfce
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST := makefile
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_PID = 2053
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+SESSION_MANAGER = local/shore-82b6:@/tmp/.ICE-unix/1018,unix/shore-82b6:/tmp/.ICE-unix/1018
+# automatic
+*F = $(notdir $*)
+# environment
+QT_QPA_PLATFORMTHEME = qt5ct
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","osLocale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b9fb41d736504d04093918c78fef1da1.zh-cn","_translationsConfigFile":"/home/shore/.config/Code/clp/b9fb41d736504d04093918c78fef1da1.zh-cn/tcf.json","_cacheRoot":"/home/shore/.config/Code/clp/b9fb41d736504d04093918c78fef1da1.zh-cn","_resolvedLanguagePackCoreLocation":"/home/shore/.config/Code/clp/b9fb41d736504d04093918c78fef1da1.zh-cn/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2","_corruptedFile":"/home/shore/.config/Code/clp/b9fb41d736504d04093918c78fef1da1.zh-cn/corrupted.info","_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=fcitx
+# environment
+SHLVL = 1
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /home/shore/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+# default
+MAKEFILES := 
+# environment
+LC_MONETARY = zh_CN.UTF-8
+# environment
+MOTD_SHOWN = pam
+# automatic
+^F = $(notdir $^)
+# environment
+LC_TIME = zh_CN.UTF-8
+# makefile (from 'makefile', line 3)
+SERVER = $(shell cat ~/文档/SERVER)
+# makefile (from 'makefile', line 1)
+DIF := /etc/resolv.conf resolv.conf differ: char 1, line 1
+# environment
+LC_TELEPHONE = zh_CN.UTF-8
+# automatic
+?F = $(notdir $?)
+# environment
+XDG_SEAT = seat0
+# environment
+GTK_IM_MODULE = fcitx
+# environment
+XDG_CURRENT_DESKTOP = XFCE
+# automatic
++F = $(notdir $+)
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+DESKTOP_SESSION = xfce
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = XFCE
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = shore
+# environment
+XDG_VTNR = 7
+# makefile
+.DEFAULT_GOAL := upload
+# environment
+EDITOR = /usr/bin/nano
+# environment
+DISPLAY = :0.0
+# environment
+GTK_MODULES = canberra-gtk-module:canberra-gtk-module
+# environment
+USER = shore
+# default
+MAKE_VERSION := 4.4.1
+# 'override' directive
+.SHELLSTATUS := 1
+# environment
+LC_MEASUREMENT = zh_CN.UTF-8
+# environment
+DEBUGINFOD_URLS = https://debuginfod.archlinux.org 
+# environment
+SSH_AGENT_PID = 1075
+# environment
+_ = /usr/bin/make
+# environment
+LC_PAPER = zh_CN.UTF-8
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+LC_CTYPE = zh_CN.UTF-8
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+GTK2_RC_FILES = /home/shore/.gtkrc-2.0
+# environment
+HOME = /home/shore
+# environment
+QT_IM_MODULE = fcitx
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-81cb0a90-1.85-main.sock
+# environment
+XDG_SESSION_ID = 1
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+QT_AUTO_SCREEN_SCALE_FACTOR = 0
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/shore
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs notintermediate shell-export archives jobserver jobserver-fifo output-sync check-symlink guile load
+# environment
+XDG_MENU_PREFIX = xfce-
+# environment
+GDMSESSION = xfce
+# environment
+LC_IDENTIFICATION = zh_CN.UTF-8
+# variable set hash-table stats:
+# Load=109/1024=11%, Rehash=0, Collisions=6/144=4%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 66306, inode 89263717): 38 files, no impossibilities.
+
+# 38 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+update:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 67):
+	- echo $(PW) | sudo -S pacman -Syy
+	- sudo pacman -Syu
+	- sudo pamac update
+
+commit: cporg
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 83):
+	git add -A
+	@echo "Please type in commit comment: "; \
+	read comment; \
+	git commit -m"$$comment"
+
+st_docker:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 80):
+	echo $(PW) | sudo -S systemctl start docker	
+
+set_dns:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 41):
+	rm ./OpenVPN/resolv.conf
+	cp /etc/resolv.conf ./OpenVPN
+	echo $(PW) | sudo -S rm /etc/resolv.conf
+	sudo cp resolv.conf /etc/
+	sudo chattr +i /etc/resolv.conf
+ 
+	cat /etc/resolv.conf
+ 
+
+ 
+brightness:
+ 
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+ 
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 116):
+	xrandr -q | grep connected
+	@echo "Please select displayer and brightness (1.1 means 1.1 times of current brightness): "; \
+	read displayer; \
+	read bright; \
+	xrandr --output $$displayer --brightness $$bright
+
+serv_sun:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 75):
+	xhost + 
+	echo $(PW) | sudo -S systemctl start runsunloginclient
+	xhost -
+
+split_scrn:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 61):
+	xrandr --output HDMI-0 --auto --right-of DP-2
+
+split_scrn_left:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 64):
+	xrandr --output HDMI-0 --auto --left-of DP-2
+
+nordconn: save_dns
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 105):
+	echo $(PW) | sudo -S nordvpn c
+
+save_dns:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 50):
+	rm ./OpenVPN/resolv.conf
+	cp /etc/resolv.conf ./OpenVPN
+
+version:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 72):
+	cat /etc/lsb-release 
+
+# makefile (from 'makefile', line 5)
+cporg: ORGNOTES = $(shell find ~/OneDrive -path ~/OneDrive/manjaro_note -prune -o -name *.org -a -print)
+cporg:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=1/32=3%, Rehash=0, Collisions=0/2=0%
+#  recipe to execute (from 'makefile', line 14):
+	-rm ./OrgNotes/*
+	cp $(ORGNOTES) ./OrgNotes
+	echo $(ORGNOTES) > ./OrgNotes/org_dirs
+
+upload:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 8):
+	rclone sync ~/OneDrive/Book onedrive:Book
+
+disconn:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 102):
+	echo $(PW) | sudo -S wg-quick down $(SERVER)
+
+installall:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 19):
+	echo $(PW) | sudo -S pacman -S seahorse nerd-fonts-terminus rclone fcitx-qt5 fcitx-configtool fcitx-sogoupinyin emacs uget aria2-fast uget-integrator uget-integrator-chromium netease-cloud-music gnome-calculator
+
+norddisconn:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 108):
+	echo $(PW) | sudo -S nordvpn d
+	sudo rm /etc/resolv.conf
+	sudo cp ./OpenVPN/resolv.conf /etc/	
+
+rec_dns:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 54):
+	cat /etc/resolv.conf
+	echo $(PW) | sudo -S chattr -i /etc/resolv.conf
+	sudo rm /etc/resolv.conf
+	sudo cp ./OpenVPN/resolv.conf /etc/
+	cat /etc/resolv.conf
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+connect:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 35):
+	echo $(PW) | sudo -S openvpn --config ~/文档/vpn21_ovpn089_account.ovpn
+
+disip:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 98):
+	echo $(PW) | sudo -S ipsec down NordVPN
+
+test:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 11):
+	@echo $(PW)
+
+sync: commit
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 89):
+	git push -u origin master
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  File is secondary (prerequisite of .SECONDARY).
+#  Last modified 2023-11-22 08:16:26.011874703
+#  File has been updated.
+#  Successfully updated.
+
+restart_net:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 113):
+	echo $(PW) | sudo -S systemctl restart NetworkManager
+
+conn:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 95):
+	echo $(PW) | sudo -S wg-quick up $(SERVER)
+
+ipsec_restart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 92):
+	echo $(PW) | sudo -S ipsec restart
+
+# files hash-table stats:
+# Load=28/1024=3%, Rehash=0, Collisions=0/44=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 68 / storage = 1024 B / avg = 15 B
+# current buf: size = 8162 B / used = 1024 B / count = 68 / avg = 15 B
+
+# strcache performance: lookups = 100 / hit rate = 32%
+# hash-table stats:
+# Load=68/8192=1%, Rehash=0, Collisions=0/100=0%
+# Finished Make data base on Fri Dec 15 07:48:34 2023
+
+ 
