@@ -44,7 +44,7 @@ Manjaro mirror list can be obtained from [web](https://repo.manjaro.org/)
 4. At the end, type in:
    ```shell
    [archlinuxcn]
-   SigLevel = Optional TrustedOnly
+   SigLevel = TrustAll //remove after install archlinuxcn-keyring
    Server = http://repo.archlinuxcn.org/$arch
    ```
 
@@ -158,11 +158,34 @@ The following are steps to disable this:
 3. Type in old pass word, and input nothing in the new password setting.
 4. Press OK for non password setting, and reboot.
 
-# VS-Code font
+# VS-Code 
 
-1. Install <code>ttf-droid-min</code> fonts package from AUR
+## font
+
+1. Install <code>ttf-droid</code> fonts package from AUR
 2. Reboot
 
+## Remote development
+
+1. To enable specific function on remote, need to install AUR's official VS-Cdoe package <code>visual-studio-code-bin</code>
+2. Install <code>Docker</code> extension.
+3. Install <code>Remote Development</code> vscode extension package
+
+## Mouse Cursor size
+
+VS-Code mouse cursor size will be different with the system one shows as follow:
+<img src="2024-01-13_13-56_1.png">
+<img src="2024-01-13_13-56.png">
+
+To fix this, do as follow:
+1. Open <code>~/.profile</code>:
+   ```shell
+   code ~/.profile
+   ```
+2. At the end of the file, type in:
+   ```shell
+   export XCURSOR_SIZE=16
+   ```
 
 # Snip tool
 
@@ -1017,12 +1040,6 @@ docker login -u="shoreshen" -p="password generated on web" quay.io
 To generate a new cli password, goto [this web](#https://quay.io/) and login
 
 <img src="2023-12-07_15-07.png">
-
-## With VS-Code
-
-1. To enable specific function on remote, need to install AUR's official VS-Cdoe package <code>visual-studio-code-bin</code>
-2. Install <code>Docker</code> extension.
-3. Install <code>Remote Development</code> vscode extension package
 
 ## Command
 

@@ -6,7 +6,7 @@ currnet mark: 480
 
 free mark: 
   
-数理逻辑: P27
+数理逻辑: P28
 
 * 命题逻辑
 
@@ -12930,7 +12930,7 @@ $\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]�
 
 ******* 两者均不是
 
-******** 定义 $\Gamma$ 且 $T\cup\Gamma$ [[MK222][一致]]<<MK463>>
+******** 定义 $\Gamma$ 证明 $T\cup\Gamma$ [[MK222][一致]]且非空<<MK463>>
 
 对于任意 $\psi(x_1,...,x_n)\in\mathcal{L}_\mathcal{A}$ 若满足 $T\vdash(\phi\to\psi)$ 且 $\psi$ 不含[[MK106][量词]]，则 $\psi\in\Gamma$ 否则 $\psi\not\in\Gamma$
 
@@ -12940,7 +12940,11 @@ $\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]�
 
 根据[[MK257][完备性]]可得亦有 $\left<\mathcal{M},v\right>\vDash \Gamma$ 即 $\left<\mathcal{M},v\right>\vDash T\cup\Gamma\cup\{\phi\}$ 根据[[MK255][完备性]]可得 $T\cup\Gamma\cup\{\phi\}$ [[MK222][一致]]
 
-即 $T\cup\Gamma$ [[MK222][一致]]
+即 $T\cup\Gamma$ [[MK222][一致]]。
+
+由于 $T\cup\{\phi\}$ [[MK222][一致]]且根据[[MK197][恒等律]] $T\cup\{\phi\}\vdash(x_1\hat{=}x_1)$ ，故根据[[MK211][演绎定理]] $T\vdash(\phi\to(x_1\hat{ =}x_1))$
+
+则显然 $(x_1\hat{=}x_1)\in\Gamma$ ，故 $\Gamma$ 非空
 
 ******** 定义 $\mathcal{L}_{\mathcal{A}\cup D},\phi^*,\Gamma^*$ 且 $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\cup\Gamma^*$ [[MK222][一致]]<<MK464>>
 

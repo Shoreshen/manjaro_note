@@ -40,7 +40,7 @@ $\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 
 
 （1） $V$ 上定义了加法运算即 $V\times V\mapsto V$ ，记作 $\forall(\vec{a},\vec{b})\subset V,\exists \vec{c}\in V\Rightarrow \vec{a}+\vec{b}=\vec{c}$
 
-（2） $V$ 上定义了[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 与 $V$ 中元素的数乘运算即 $K\times V\mapsto V$ ，记作 $\forall k\in K,\forall \vec{a}\in V,\exists \vec{b}\in V\Rightarrow k\vec{a}=\vec{b}$
+（2） $V$ 上定义[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][域]] $K$ 与 $V$ 中元素的数乘运算即 $K\times V\mapsto V$ ，记作 $\forall k\in K,\forall \vec{a}\in V,\exists \vec{b}\in V\Rightarrow k\vec{a}=\vec{b}$
 
 且满足
 
@@ -52,7 +52,7 @@ $\left\{f(a)\big| \forall a\in A\right\}$ 即所有 $A$ 中元素通过 $f$ 在 
 
 （4） 有负元（加法逆元），即 $\forall \vec{a}\in V,\exists \vec{b}\in V\Rightarrow \vec{a}+\vec{b}=\vec{0}$ 且 $\vec{a}$ 的负元记作 $-\vec{a}$
 
-（5） $\forall\vec{a}\in V\Rightarrow 1 \vec{a}=\vec{a}$ 其中 $1$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 的乘法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]
+（5） $\forall\vec{a}\in V\Rightarrow 1 \vec{a}=\vec{a}$ 其中 $1$ 为[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org][域]] $K$ 的乘法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]
 
 （6） $\forall\{l,k\}\subset K, \forall\vec{a}\in V\Rightarrow (lk)\vec{a}=l(k\vec{a})$
 
