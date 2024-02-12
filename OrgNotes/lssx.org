@@ -2,9 +2,9 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 340
+currnet mark: 396
 
-free mark:
+free mark: 
  
 数理逻辑: P26
 
@@ -6344,7 +6344,7 @@ $G$ 或者 $G$ 的[[MK214][子图]]作任何同胚操作后得到的图均不能
 
 若仅满足 $o*x=o$ 则为右零元
 
-**** 性质
+**** 性质<<MK379>>
 
 若存在左右零元，则左零元等于右零元，且零元唯一
 
@@ -6519,11 +6519,71 @@ x&=y\\
 
 （3） $(\forall x_1(f_+(x_1,c_0)\hat{=}x_1))$ 加法幺元
 
-（4） $(\forall x_1(f_+(x_1,f_-(x_1))\hat{=}c_0))$ 加法逆元
+（4） $(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{=}c_0)))$ 加法逆元
 
 （5） $(\forall x_2(\forall x_2(\forall x_3(f_\times(f_\times(x_1,x_2),x_3)\hat{=}f_\times(x_1,f_\times(x_2,x_3))))))$ 乘法结合律
 
-（6） $(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$ 乘法分配律
+（6） $(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$
+
+     $(\forall x_1(\forall x_2(\forall x_3((f_\times(f_+(x_2,x_3),x_1)\hat{=}f_+(f_\times(x_2,x_1),f_\times(x_3,x_1)))))))$ 乘法分配律
+
+**** 相关定义
+
+***** 同态[[MK175][映射]]<<MK344>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK309][环]]，即 $\mathcal{M}\vDash T_\mathcal{R},\mathcal{N}\vDash T_\mathcal{R}$ ，若存在[[MK175][映射]] $\eta:M\to N$ 满足：
+
+（1） 对于任意 $\{a,b\}\subset M$ 均有 $\eta(I(f_+)(a,b))=J(f_+)(\eta(a),\eta(b))$
+
+（2） 对于任意 $\{a,b\}\subset M$ 均有 $\eta(I(f_\times)(a,b))=J(f_\times)(\eta(a),\eta(b))$
+
+则称 $\eta$ 是 $\mathcal{M}$ 到 $\mathcal{N}$ 的同态[[MK175][映射]]
+
+***** 核<<MK346>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK309][环]]且有[[MK344][同态映射]] $\eta:M\to N$ ，则定义 $ker(\eta)=\left\{a\in M\big|\eta(a)=J(c_0)\right\}$
+
+是[[MK344][同态映射]] $\eta$ 的核
+
+***** 理想<<MK348>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK309][环]]且有非空 $N\subset M$ 满足 $\left<N,I_N\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，且若：
+
+（1） 若对于任意 $a\in N,b\in M$ 均有 $J(f_\times)(a,b)\in N$ 则称 $N$ 是 $\mathcal{M}$ 的左理想
+
+（2） 若对于任意 $a\in N,b\in M$ 均有 $J(f_\times)(b,a)\in N$ 则称 $N$ 是 $\mathcal{M}$ 的右理想
+
+（3） 若 $N$ 即是 $\mathcal{M}$ 的左理想又是 $\mathcal{M}$ 的右理想，则称 $N$ 是 $\mathcal{M}$ 的理想
+
+其中 $I_N$ 是 $I$ 在 $N$ 上的[[~/文档/note/数理逻辑/sllj.org::MK481][限制解释]]
+
+***** 极大理想<<MK360>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 有[[MK348][理想]] $N\subset M,N\ne M$ ，且对于任意 $N'\subset M$ 亦为[[MK348][理想]]，若有 $N\subset N'$
+
+则必有 $N'=N$ 或者 $N'=M$ ，则称 $N$ 是 $\mathcal{M}$ 的极大理想
+
+***** 同余关系<<MK352>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK309][环]]且 $N\subset M$ 是 $\mathcal{M}$ 的[[MK348][理想]]，则定义[[MK111][关系]] $\sim$ 满足对于任意 $\{a,b\}\subset M$ 若存在 $c\in N$ 满足 $a=I(f_+)(b,c)$ 则 $\left<a,b\right>\in\sim$
+
+称 $\sim$ 是[[MK309][环]] $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的同余关系
+
+***** 商环<<MK354>>
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK309][环]]且 $N\subset M$ 是 $\mathcal{M}$ 的[[MK348][理想]]，[[MK111][关系]] $\sim$ 是[[MK309][环]] $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的[[MK352][同余关系]]，则定义：
+
+（1） $M/N=\left\{[a]_\sim\big|a\in M\right\}$ 为 $\sim$ 的[[MK133][等价类]]（根据[[MK355][定理1]]可得[[MK352][同余关系]]是[[MK132][等价关系]]）
+
+（2） $J(f_+):M/N\to M/N$ 满足对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_+)([a]_\sim,[b]_\sim)=[I(f_+)(a,b)]_\sim$
+
+（3） $J(f_\times):M/N\to M/N$ 满足对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_\times)([a]_\sim,[b]_\sim)=[I(f_\times)(a,b)]_\sim$
+
+（4） $J(c_0)=[I(c_0)]_\sim$
+
+则 $\mathcal{N}=\left<M/N,J\right>$ 称为 $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的商环 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]且 $\mathcal{N}\vDash T_\mathcal{R}$ ，称为商环。
+
+根据[[MK366][定理3]]可得商环是[[MK309][环]]
 
 **** 性质
 
@@ -6533,17 +6593,17 @@ x&=y\\
 
 ****** 证明
 
-对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 若满足 $\left<\mathcal{M},v\right>\vDash(\forall x_2(f_+(x_1,x_2)\hat{=}x_2))$
+对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 若满足 $\left<\mathcal{M},v\right>\vDash(\forall x_2(f_+(x_1,x_2)\hat{=}x_2))$ 以及 $\mathcal{M}\vDash T_\mathcal{R}$
 
 则对于其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v^*$ 满足 $v^*(x_2)=I(c_0),v^*(x_1)=v(x_1)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},v^*\right>\vDash(f_+(x_1,x_2)\hat{ =}x_2)$
 
-根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $v^*(x_1)=I(f_+)(v^*(x_1),v^*(x_2))$
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $v^*(x_2)=I(f_+)(v^*(x_1),v^*(x_2))$
 
 根据[[MK334][公理（3）]]有 $\left<\mathcal{M},v^*\right>\vDash(f_+(x_1,x_2)\hat{=}x_1)$ 且 $\left<\mathcal{M},v^*\right>\vDash(x_1\hat{ =}f_+(x_1,x_2))$   
 
 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $I(f_+)(v^*(x_1),v^*(x_2))=v^*(x_2)=I(c_0)$
 
-即有 $v^*(x_1)\hat{=}I(c_0)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\left<\mathcal{M},v^*\right>\vDash(x_1\hat{ =}c_0)$ 又根据 $v^*(x_1)=v(x_1)$ 以及[[~/文档/note/数理逻辑/sllj.org::MK168][局部确定]] $\left<\mathcal{M},v\right>\vDash(x_1\hat{ =}c_0)$
+即有 $v^*(x_1)=I(c_0)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\left<\mathcal{M},v^*\right>\vDash(x_1\hat{ =}c_0)$ 又根据 $v^*(x_1)=v(x_1)$ 以及[[~/文档/note/数理逻辑/sllj.org::MK168][局部确定]] $\left<\mathcal{M},v\right>\vDash(x_1\hat{ =}c_0)$
 
 综上所述，对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 若 $\left<\mathcal{M},v\right>\vDash(\forall x_2(f_+(x_1,x_2)\hat{=}x_2))$
 
@@ -6557,57 +6617,654 @@ x&=y\\
 
 故根据[[~/文档/note/数理逻辑/sllj.org::MK255][完备性]]有 $T_\mathcal{R}\vdash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
 
-*** 域
+***** 性质2<<MK345>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK309][环]]，若有[[MK344][同态映射]] $\eta:M\to N$ 则 $\eta(I(c_0))=J(c_0)$
+
+****** 证明
+
+根据[[MK334][加法幺元]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $a\in M$ 均有 $I(f_+)(a,I(c_0))=a$ 则有 $I(f_+)(I(c_0),I(c_0))=I(c_0)$
+
+根据[[MK344][同态映射]] $J(f_+)(\eta(I(c_0)),\eta(I(c_0)))=\eta(I(c_0))$ ，根据[[MK334][加法逆元]]可得存在 $b\in N$ 满足 $J(f_+)(\eta(I(c_0)),b)=J(c_0)$
+
+由于是[[MK175][函数]]故有 $J(c_0)=J(f_+)(\eta(I(c_0)),b)=J(f_+)(J(f_+)(\eta(I(c_0)),\eta(I(c_0))),b)$
+
+根据[[MK334][加法结合]]、[[MK334][加法幺元]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $J(f_+)(J(f_+)(\eta(I(c_0)),\eta(I(c_0))),b)=J(f_+)(\eta(I(c_0)),J(f_+)(\eta(I(c_0)),b))=J(f_+)(\eta(I(c_0)),J(c_0))=\eta(I(c_0))$
+ 
+故可得 $\eta(I(c_0))=J(c_0)$
+
+***** 性质3
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK309][环]]，若有[[MK344][同态映射]] $\eta:M\to N$ 是[[MK181][双射]]，则 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+****** 证明
+
+根据[[MK345][性质2]]以及[[MK344][同态映射]]有
+
+（1） $\eta(I(c_0))=J(c_0)$ 
+
+（2） 对于任意 $\{a,b\}\subset M$ 均有 $\eta(I(f_+)(a,b))=J(f_+)(\eta(a),\eta(b))$
+
+（3） 对于任意 $\{a,b\}\subset M$ 均有 $\eta(I(f_\times)(a,b))=J(f_\times)(\eta(a),\eta(b))$
+
+又由于 $\eta$ 是[[MK181][双射]]，故满足[[~/文档/note/数理逻辑/sllj.org::MK274][同构定义]]
+
+***** 性质4<<MK347>>
+
+$T_\mathcal{R}\vdash(\forall x_1(f_\times(x_1,c_0)\hat{=}c_0))$ 以及 $T_\mathcal{R}\vdash(\forall x_1(f_\times(c_0,x_1)\hat{ =}c_0))$
+
+****** 证明
+
+对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[MK338][结构]] $\mathcal{M}$ 满足 $\mathcal{M}\vDash T_\mathcal{R}$ ，则根据[[MK334][乘法分配]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $a\in M$
+
+满足 $I(f_\times)(a,I(f_+)(I(c_0),I(c_0)))=I(f_+)(I(f_\times)(a,I(c_0)),I(f_\times)(a,I(c_0)))$
+
+根据[[MK334][加法幺元]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $I(f_\times)(a,I(f_+)(I(c_0),I(c_0)))=I(f_\times)(a,I(c_0))$
+
+根据[[MK334][加法逆元]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证存在 $b\in M$ 满足 $I(f_+)(b,I(f_\times)(a,I(c_0)))=I(c_0)$
+
+则有 $I(f_+)(b,I(f_\times)(a,I(c_0)))=I(f_+)(b,I(f_+)(I(f_\times)(a,I(c_0)),I(f_\times)(a,I(c_0))))$
+
+根据[[MK334][加法结合]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $I(f_+)(b,I(f_+)(I(f_\times)(a,I(c_0)),I(f_\times)(a,I(c_0))))=I(f_+)(I(f_+)(b,I(f_\times)(a,I(c_0))),I(f_\times)(a,I(c_0)))$
+
+即有 $I(f_+)(I(f_+)(b,I(f_\times)(a,I(c_0))),I(f_\times)(a,I(c_0)))=I(f_+)(I(c_0),I(f_\times)(a,I(c_0)))=I(f_\times)(a,I(c_0))$
+
+最终可得 $I(f_\times)(a,I(c_0))=I(c_0)$ ，根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得 $\mathcal{M}\vDash(f_\times(x_1,c_0)\hat{=}c_0)[a]$ 又根据 $a$ 的任意型可得 $\mathcal{M}\vDash(\forall x_1(f_\times(x_1,c_0)\hat{ =}c_0))$
+
+同理根据[[MK334][乘法分配]]可证 $\mathcal{M}\vDash(\forall x_1(f_\times(c_0,x_1)\hat{ =}c_0))$
+
+综上所述，对于任意 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[MK338][结构]] $\mathcal{M}$ 满足 $\mathcal{M}\vDash T_\mathcal{R}$ 可得 $\mathcal{M}\vDash(\forall x_1(f_\times(x_1,c_0)\hat{ =}c_0))$ 以及 $\mathcal{M}\vDash(\forall x_1(f_\times(c_0,x_1)\hat{ =}c_0))$
+
+故根据[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]可得 $T_\mathcal{R}\vdash(\forall x_1(f_\times(x_1,c_0)\hat{=}c_0))$ 以及 $T_\mathcal{R}\vdash(\forall x_1(f_\times(c_0,x_1)\hat{ =}c_0))$
+
+***** 性质5<<MK353>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK309][环]]，若有[[MK344][同态映射]] $\eta:M\to N$
+
+（1） 定义 $\eta$ 的相 $\eta(M)=\left\{\eta(a)\big|a\in M\right\}$ 则 $\left<\eta(M), J'\right>$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，且 $\left<\eta(M), J'\right>\vDash T_\mathcal{R}$ ，其中 $J'$ 满足：
+
+     a） $J'(c_0)=J(c_0)$
+
+     b） 对于任意 $f\in\{f_+,f_\times\}$ 任意 $\{a,b\}\subset\eta(M)$ 有 $J'(f)(a,b)=J(f)(a,b)$
+
+（2） $\eta$ 的[[MK346][核]] $ker(\eta)$ ，则 $\left<ker(\eta),I'\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，且 $\left<ker(\eta),I'\right>\vDash T_\mathcal{R}$ ，其中 $I'$ 满足：
+
+     a） $I'(c_0)=I(c_0)$
+
+     b） 对于任意 $f\in\{f_+,f_\times\}$ 任意 $\{a,b\}\subset\eta(M)$ 有 $I'(f)(a,b)=I(f)(a,b)$
+
+****** 证明
+
+******* 证明（1）
+
+对于任意 $\{a,b\}\subset\eta(M)$ 根据定义有 $\{a',b'\}\subset M$ 满足 $\eta(a')=a,\eta(b')=b$
+
+根据[[MK344][同态映射]]对于任意 $f\in\{f_+,f_\times\}$ 有 $J'(f)(a,b)=J(f)(a,b)=J(f)(\eta(a'),\eta(b'))=\eta(I(f)(a',b'))$
+
+则显然 $J'(f)(a,b)=\eta(I(f)(a',b'))\in\eta(M)$ ，则易证 $\left<\eta(M), J'\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[MK338][结构]]
+
+故根据 $\mathcal{M}\vDash T_\mathcal{R}$ 可得 $\mathcal{M}$ [[~/文档/note/数理逻辑/sllj.org::MK158][满足]]公理中的[[MK334][加法交换]]
+
+可得 $J(f_+)(a,b)=J(f_+)(\eta(a'),\eta(b'))=\eta(I(f)(a',b'))=\eta(I(f)(b',a'))=J(f_+)(\eta(b'),\eta(a'))=J(f_+)(b,a)$
+
+同理可证 $\left<\eta(M), J'\right>\vDash T_\mathcal{R}$ 
+
+******* 证明（2）
+
+对于任意 $\{a,b\}\subset ker(\eta)$ 有 $\eta(a)=\eta(b)=J(c_0)$ 则根据[[MK344][同态映射]]以及[[MK334][加法幺元]] $\eta(I(f_+)(a,b))=J(f_+)(J(c_0),J(c_0))=J(c_0)$
+
+根据[[MK347][性质4]]以及[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]可得 $\eta(I(f_\times)(a,b))=J(f_\times)(J(c_0),J(c_0))=J(c_0)$ ，则则易证 $\left<ker(\eta),I'\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[MK338][结构]]
+
+则同（1）类似可证 $\left<ker(\eta),I'\right>\vDash T_\mathcal{R}$
+
+***** 性质6<<MK351>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK309][环]]，则对于任意 $a\in M$ 存在唯一 $b\in M$ 满足 $I(f_+)(a,b)=I(c_0)$
+
+****** 证明
+
+根据[[MK334][加法交换]]、[[MK334][加法结合]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得对于任意 $\{a,b,c\}\subset M$ 均有 $I(f_+)(a,b)=I(f_+)(b,a)$ 和 $I(f_+)(I(f_+)(a,b),c)=I(f_+)(a,I(f_+)(b,c))$
+
+故若 $I(f_+)(a,b)=I(c_0)$ 则有 $I(f_+)(b,a)=I(c_0)$ ，故根据[[MK304][性质2]]可得 存在唯一 $b\in M$ 满足 $I(f_+)(a,b)=I(c_0)$
+
+***** 性质7<<MK349>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，则
+
+（1） $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_+(x_1,x_2)\hat{=}f_+(x_2,x_1))))$ 的充要条件是对于任意 $\{a,b\}\subset M$ 均有 $I(f_+)(a,b)=I(f_+)(b,a)$ 
+
+（2） $\mathcal{M}\vDash(\forall x_2(\forall x_2(\forall x_3(f_+(f_+(x_1,x_2),x_3)\hat{=}f_+(x_1,f_+(x_2,x_3))))))$ 的充要条件是对于任意 $\{a,b\}\subset M$
+
+     均有 $I(f_+)(a,I(f_+)(b,c))=I(f_+)(I(f_+)(a,b),c)$ 
+
+（3） $\mathcal{M}\vDash(\forall x_1(f_+(x_1,c_0)\hat{=}x_1))$ 的充要条件是对于任意 $\{a,b\}\subset M$ 均有 $I(f_+)(a,I(c_0))=a$ 
+
+（4） $\mathcal{M}\vDash(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{=}c_0)))$ 的充要条件是对于任意 $a\in M$ 均存在 $-a\in M$ 满足 $I(f_+)(a,-a)=I(c_0)$
+
+（5） $\mathcal{M}\vDash(\forall x_2(\forall x_2(\forall x_3(f_\times(f_\times(x_1,x_2),x_3)\hat{=}f_\times(x_1,f_\times(x_2,x_3))))))$ 的充要条件是对于任意 $\{a,b,c\}\subset M$
+
+     均有 $I(f_\times)(a,I(f_\times)(b,c))=I(f_\times)(I(f_\times)(a,b),c)$ 
+
+（6） $\mathcal{M}\vDash(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$ 的充要条件是对于任意 $\{a,b,c\}\subset M$
+
+     均有 $I(f_\times)(a,I(f_+)(b,c))=I(f_+)(I(f_\times)(a,b),I(f_\times)(a,c))$
+
+（7） $\mathcal{M}\vDash(\forall x_1(\forall x_2(\forall x_3((f_\times(f_+(x_2,x_3),x_1)\hat{=}f_+(f_\times(x_2,x_1),f_\times(x_3,x_1)))))))$ 的充要条件是对于任意 $\{a,b,c\}\subset M$
+
+     均有 $I(f_\times)(I(f_+)(b,c),a)=I(f_+)(I(f_\times)(b,a),I(f_\times)(c,a))$
+
+****** 证明
+
+充分：根据[[MK334][加法交换]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(f_+(x_1,x_2)\hat{=}f_+(x_2,x_1))[a,b]$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $I(f_+)(a,b)=I(f_+)(b,a)$
+
+必要：若对于任意 $\{a,b\}\subset M$ 有 $I(f_+)(a,b)=I(f_+)(b,a)$ ，则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\mathcal{M}\vDash(f_+(x_1,x_2)\hat{=}f_+(x_2,x_1))[a,b]$
+
+     又由 $a,b$ 任意性以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_+(x_1,x_2)\hat{=}f_+(x_2,x_1))))$ 
+
+其余同理可证
+
+***** 性质8<<MK350>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK309][环]]，则若有 $a\in M$ 满足 $I(f_+)(a,I(c_1))=I(c_0)$ 则对于任意 $b\in M$ 有 $I(f_\times)(a,b)=-b$ 是 $b$ 的逆元
+
+即 $I(f_+)(I(f_\times)(a,b),b)=I(c_0)$ 。又根据[[MK351][性质6]]可得 $I(c_1)$ 的逆元唯一，为方便记为 $-I(c_1)$
+
+****** 证明
+
+根据[[MK349][性质7]]有 $I(f_\times)(b,I(f_+)(a,I(c_1)))=I(f_\times)(b,I(c_0))$ 根据[[MK347][性质4]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $I(f_\times)(b,I(c_0))=I(c_0)$
+
+根据[[MK349][性质7]] $I(f_\times)(b,I(f_+)(a,I(c_1)))=I(f_+)(I(f_\times)(b,a),I(f_\times)(b,I(c_1)))=I(f_+)(I(f_\times)(b,a),b)$
+
+即有 $I(f_+)(I(f_\times)(a,b),b)=I(c_0)$
+
+***** 性质9<<MK357>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 为[[MK309][环]]，则 $\{I(c_0)\}$ 是 $\mathcal{M}$ 的[[MK348][理想]]
+
+****** 证明
+
+根据[[MK349][性质7]]有 $I(f_+)(I(c_0),I(c_0))=I(c_0)\in\{I(c_0)\}$ 根据[[MK347][性质4]]有 $I(f_\times)(I(c_0),I(c_0))=I(c_0)\in\{I(c_0)\}$
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK482][引理1]]可得 $\left<\{I(c_0)\},I_0\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，其中 $I_0$ 是 $I$ 在 $\{I(c_0)\}$ 上的[[~/文档/note/数理逻辑/sllj.org::MK481][限制解释]]。且根据[[MK349][性质7]]易证 $\left<\{I(c_0)\},I_0\right>\vDash T_\mathcal{R}$ 是[[MK309][环]]
+
+又根据[[MK347][性质4]]可得对于任意 $a\in M$ 均有 $I(f_\times)(a,I(c_0))=I(f_\times)(I(c_0),a)=I(c_0)\in\{I(c_0)\}$
+
+故 $\left<\{I(c_0)\},I_0\right>$ 是 $\mathcal{M}$ 的[[MK348][理想]]
+
+***** 性质10<<MK364>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 为[[MK309][环]]，则对于任意 $a\in M$ 有
+
+（1） $N_1=\left\{I(f_\times)(r,a)\big|r\in M\right\}$ 是 $\mathcal{M}$ 中包含 $A$ 的最小[[MK348][右理想]]
+
+（2） $N_2=\left\{I(f_\times)(a,r)\big|r\in M\right\}$ 是 $\mathcal{M}$ 中包含 $A$ 的最小[[MK348][左理想]]
+
+****** 证明
+
+仅证（1），（2）同理可证
+
+******* 是[[MK348][右理想]]
+
+对于任意 $\{b_1,b_2\}\subset N\subset M$ 根据定义存在 $\{r_1,r_2\}\subset M$ 满足 $b_1=I(f_\times)(r_1,a),b_2=I(f_\times)(r_2,a)$
+
+根据[[MK363][性质1]]有 $I(f_+)(b_1,b_2)=I(f_+)(I(f_\times)(r_1,a),I(f_\times)(r_1,a))=I(f_\times)(I(f_+)(r_1,r_2),a)$
+
+根据[[MK348][理想]]定义可得 $I(f_+)(b_1,b_2)\in N$
+
+同理 $I(f_\times)(b_1,b_2)=I(f_\times)(I(f_\times)(r_1,a),I(f_\times)(r_1,a))=I(f_\times)(I(f_\times)(I(f_\times)(r_1,a),r_2),a)$
+
+同样根据[[MK348][理想]]定义可得 $I(f_\times)(b_1,b_2)\in N$
+
+定义 $I_N$ 是 $I$ 在 $N$ 上的[[~/文档/note/数理逻辑/sllj.org::MK481][限制解释]]，显然对于任意 $\{b_1,b_2\}\subset N$ 亦有 $I_N(f_+)(b_1,b_2)\in N,I_N(f_\times)(b_1,b_2)\in N$
+
+故可得 $\left<N,I_N\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]。进一步根据[[MK349][性质7]]易证 $\left<N,I_N\right>$ 是[[MK309][环]]
+
+******* 最小
+
+显然根据[[MK348][右理想]]可得
+
+***** 性质11<<MK367>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 为[[MK309][环]]，则对于任意 $a\in M$ 有
+
+（1） 若 $N$ 是 $\mathcal{M}$ 的[[MK348][右理想]]，则包含 $\{a\}\cup N$ 的最小[[MK348][右理想]]是 $N'=\left\{I(f_+)(I(f_\times)(m,a),n)\big|m\in M\land n\in N\right\}$
+
+（2） 若 $N$ 是 $\mathcal{M}$ 的[[MK348][左理想]]，则包含 $\{a\}\cup N$ 的最小[[MK348][左理想]]是 $N'=\left\{I(f_+)(I(f_\times)(a,m),n)\big|m\in M\land n\in N\right\}$
+
+****** 证明
+
+仅证（1），（2）同理可证
+
+******* 是[[MK348][右理想]]
+
+对于任意 $\{b_1,b_2\}\subset N'$ 根据定义存在 $\{m_1,m_2\}\subset M,\{n_1,n_2\}\subset N$ 满足 $b_1=I(f_+)(I(f_\times)(m_1,a),n_1),b_2=I(f_+)(I(f_\times)(m_2,a),n_2)$
+
+则根据[[MK363][性质1]]可得（以下证明过程简写）
+
+\begin{aligned}
+&I(f_\times)(b_1,b_2)\\
+=&(m_1a+n_1)(m_2a+n_2)\\
+=&m_1m_2a^2+m_2n_1a+m_1n_2a+n_1n_2\\
+=&(m_1m_2a+m_2n_1+n_2m_1)a+n_1n_2\\
+=&I(f_+)(I(f_\times)(I(f_+)(I(f_+)(I(f_\times)(I(f_\times)(m_1,m_2),a),I(f_\times)(m_2,n_1)) ,I(f_\times)(m_1,n_2)),a),I(f_\times)(n_1,n_2))
+\end{aligned}
+
+显然 $m^*=m_1m_2a+m_2n_1+n_2m_1=I(f_+)(I(f_+)(I(f_\times)(I(f_\times)(m_1,m_2),a),I(f_\times)(m_2,n_1)) ,I(f_\times)(m_1,n_2))\in M$
+
+又由于 $N$ 是[[MK348][理想]]，故亦为[[MK309][环]]，结合 $\{n_1,n_2\}\subset N$ 以及[[MK363][性质1]]可得 $n^*=I(f_\times)(n_1,n_2)\in N$
+
+即存在 $m^*\in M,n^*\in N$ 满足 $I(f_+)(I(f_\times)(m^*,a),n^*)=I(f_\times)(b_1,b_2)$
+
+同样根据[[MK363][性质1]]可得（以下证明过程简写）
+
+\begin{aligned}
+&I(f_+)(b_1,b_2)\\
+=&m_1a+n_1+m_2a+n_2\\
+=&(m_1+m_2)a+(b_1+b_2)\\
+=&I(f_+)(I(f_\times)(I(f_+)(m_1,m_2),a),I(f_+)(n_1,n_2))
+\end{aligned}
+
+同上可证 $m^*=I(f_+)(m_1,m_2)\in M,n^*=I(f_+)(n_1,n_2)\in N$ 即存在 $m^*\in M,n^*\in N$ 满足 $I(f_+)(I(f_\times)(m^*,a),n^*)=I(f_+)(b_1,b_2)$
+
+定义 $I_{N'}$ 是 $I$ 在 $N'$ 上的[[~/文档/note/数理逻辑/sllj.org::MK481][限制解释]]，显然对于任意 $\{b_1,b_2\}\subset N'$ 亦有 $I_{N'}(f_+)(b_1,b_2)\in N',I_{N'}(f_\times)(b_1,b_2)\in N'$
+
+故可得 $\left<N',I_{N'}\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]。进一步根据[[MK349][性质7]]易证 $\left<N',I_{N'}\right>$ 是[[MK309][环]]
+
+******* 最小
+
+任意[[MK348][右理想]] $N^*$ 包含 $\{a\}\cup N$ ，则对于任意 $m\in M$ 必有 $I(f_\times)(m,a)\in N^*$
+
+又由于 $N^*$ 亦为[[MK309][环]]，故可得对于任意 $\{n_1,n_2\}\subset N^*$ 有 $I(f_+)(n_1,n_2)\in N^*$
+
+则显然 $I(f_+)(I(f_\times)(m,a),n_2)\in N^*$ 即对于任意 $m\in M, n\in N$ 有 $I(f_+)(I(f_\times)(m,a),n)\in N^*$
+
+故可得 $N'\subset N^*$ ，根据 $N^*$ 任意性可得 $N'$ 最小
+
+***** 性质12<<MK368>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 为[[MK309][环]]且 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ ，则任意 $N\subset M$ 以下三个条件等价：
+
+（1） $N$ 是 $\mathcal{M}$ 的[[MK348][右理想]]
+
+（2） $N$ 是 $\mathcal{M}$ 的[[MK348][左理想]]
+
+（3） $N$ 是 $\mathcal{M}$ 的[[MK348][理想]]
+
+****** 证明
+
+显然
+
+***** 性质13<<MK371>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 为[[MK309][环]]且 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+$N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M/N,J\right>$ 满足 $\mathcal{N}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+****** 证明
+
+对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 均有 $J(f_\times)([a]_\sim,[b]_\sim)=[I(f_\times)(a,b)]_\sim=[I(f_\times)(b,a)]_\sim=J(f_\times)([b]_\sim,[a]_\sim)$
+
+**** 定理
+
+***** 定理1<<MK355>>
+
+[[MK352][同余关系]]是[[MK132][等价关系]]
+
+****** 证明
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK309][环]]且 $N\subset M$ 是 $\mathcal{M}$ 的[[MK348][理想]]，[[MK111][关系]] $\sim$ 是[[MK309][环]] $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的[[MK352][同余关系]]，则：
+
+（1） 对于任意 $a\in M$ 根据[[MK348][理想定义]]可得 $I(c_0)\in N$ ，根据[[MK349][性质7]]可得 $a=I(f_+)(a,I(c_0))$ 故可得 $\left<a,a\right>\in\sim$ 即[[MK124][自反性]]
+
+（2） 对于任意 $a\sim b$ 有 $c\in N$ 则根据[[MK350][性质8]]以及[[MK348][理想定义]]可得 $I(f_\times)(-I(c_1),c)=-c\in N$
+
+     根据[[MK349][性质7]] $I(f_+)(a,-c)=I(f_+)(I(f_+)(b,c),-c)=I(f_+)(b,I(f_+)(c,-c))=I(f_+)(b,I(c_0))=b$
+
+     即若 $\left<a,b\right>\in r$ 则 $\left<b,a\right>\in\sim$ 即[[MK126][对称性]]
+
+（3） 对于任意 $\{a,b,c\}\subset M$ 若有 $a\sim b,b\sim c$ 根据定义有 $\{z_1,z_2\}\subset N$ 满足 $a=I(f_+)(b,z_1),b=I(f_+)(c,z_2)$
+
+     则根据[[MK349][性质7]]可得 $a=I(f_+)(I(f_+)(c,z_2),z_1)=I(f_+)(c,I(f_+)(z_1,z_2))$ ，根据[[MK348][理想定义]]以及[[MK347][性质7]] $I(f_+)(z_1,z_2)\in N$
+
+     故可得 $a\sim c$ 即[[MK128][传递性]]
+
+综上所属 $\sim$ 是[[MK132][等价关系]]
+
+***** 定理2<<MK366>>
+
+[[MK354][商环]] $\mathcal{N}$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]且 $\mathcal{N}\vDash T_\mathcal{R}$
+
+****** 证明
+
+显然对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_+)([a]_\sim,[b]_\sim)\in M/N,J(f_\times)([a]_\sim,[b]_\sim)\in M/N$ ，故易证 $\mathcal{N}$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK309][环]]且 $N\subset M$ 是 $\mathcal{M}$ 的[[MK348][理想]]， $\mathcal{N}=\left<M/N,J\right>$ 是 $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的[[MK354][商环]]，则根据[[MK349][性质7]]对于任意 $\{[a]_\sim,[b]_\sim,[c]_\sim\}\subset M/N$ ：
+
+（1） $J(f_+)([a]_\sim,[b]_\sim)=[I(f_+)(a,b)]_\sim=[I(f_+)(b,a)]_\sim=J(f_+)([b]_\sim,[a]_\sim)$
+
+（2） 类似可证 $J(f_+)(J(f_+)([a]_\sim,[b]_\sim),[c]_\sim)=J(f_+)([a]_\sim,J(f_+)([b]_\sim,[c]_\sim))$
+
+（3） 类似可证 $J([a]_\sim,[I(c_0)]_\sim)=[a]_\sim$
+
+（4） 存在 $-a\in M$ 满足 $J(f_+)([a]_\sim,[-a]_\sim)=[I(f_+)(a,-a)]_\sim=[I(c_0)]_\sim=J(c_0)$
+
+（5） 类似可证 $J(f_\times)(J(f_\times)([a]_\sim,[b]_\sim),[c]_\sim)=J(f_\times)([a]_\sim,J(f_\times)([b]_\sim,[c]_\sim))$
+
+（6） 类似可证 $J(f_\times)(J(f_+)([a]_\sim,[b]_\sim),[c]_\sim)=J(f_+)(J(f_\times)([a]_\sim,[c]_\sim),J(f_\times)([b]_\sim,[c]_\sim))$
+
+根据[[MK349][性质7]]可得 $\mathcal{N}\vDash T_\mathcal{R}$
+
+***** 定理3<<MK358>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK309][环]]，若有[[MK344][同态映射]] $\eta:M\to N$ ，则 $\eta$ 的[[MK346][核]]是 $\mathcal{M}$ 的[[MK348][理想]]
+
+****** 证明
+
+根据[[MK353][性质5]]可得 $\left<ker(\eta),I'\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，其中 $I'$ 是 $I$ 在 $ker(\eta)$ 上的[[~/文档/note/数理逻辑/sllj.org::MK481][限制解释]]
+
+对于任意 $a\in M,b\in ker(\eta)$ ，根据[[MK347][性质4]]有 $\eta(I(f_\times)(a,b))=J(f_\times)(\eta(a),\eta(b))=J(f_\times)(\eta(a),J(c_0))=J(c_0)$
+
+同理可证亦有 $\eta(I(f_\times)(b,a))=J(c_0)$ ，即 $I(f_\times)(a,b)\in ker(\eta),I(f_\times)(b,a)\in ker(\eta)$
+
+故 $ker(\eta)$ 是 $\mathcal{M}$ 的[[MK348][理想]]
+
+*** 非零幺环<<MK362>>
+
+**** 语言<<MK361>>
+
+除[[~/文档/note/数理逻辑/sllj.org::MK105][固定符号]]外有：
+
+（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+$ 分别表示乘法，加法
+
+（3） [[~/文档/note/数理逻辑/sllj.org::MK108][常元符号]] $c_0,c_1$
+
+则有 $\mathcal{A}_{\mathcal{R}_e}=\{f_\times,f_+,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_{\mathcal{R}_e}}$ 是幺环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
+
+**** 公理<<MK373>>
+
+显然[[MK361][非零幺环语言]]包含[[MK333][环语言]]，即 $\mathcal{A}_\mathcal{R}\subset\mathcal{A}_{\mathbb{R}_e}$ 故[[MK334][环公理]] $T_\mathcal{R}$ 显然满足 $T_\mathcal{R}\subset\mathcal{L}_{\mathcal{A}_{\mathcal{R}_e}}$
+
+定义幺环理集合为 $T_{\mathcal{R}_e}$ ，除 $T_\mathcal{R}$ 外包含以下公理：
+
+（1） $(\lnot(c_1\hat{=}c_0))$
+
+（2） $(\forall x_1((\lnot(x_1\hat{=}c_0))\to(f_\times(x_1,c_1)\hat{=}x_1)))$ 乘法幺元
+
+（3） $(\forall x_1((\lnot(x_1\hat{=}c_0))\to(f_\times(c_1,x_1)\hat{=}x_1)))$ 乘法幺元
+
+即存在不等于 $c_0$ 的乘法幺元
+
+**** 相关定义
+
+***** 幺环商环<<MK369>>
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]且 $N\subset M$ 是 $\mathcal{M}$ 的[[MK348][理想]]，[[MK111][关系]] $\sim$ 是[[MK309][环]] $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的[[MK352][同余关系]]，则定义：
+
+（1） $M/N=\left\{[a]_\sim\big|a\in M\right\}$ 为 $\sim$ 的[[MK133][等价类]]（根据[[MK355][定理1]]可得[[MK352][同余关系]]是[[MK132][等价关系]]）
+
+（2） $J(f_+):M/N\to M/N$ 满足对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_+)([a]_\sim,[b]_\sim)=[I(f_+)(a,b)]_\sim$
+
+（3） $J(f_\times):M/N\to M/N$ 满足对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_\times)([a]_\sim,[b]_\sim)=[I(f_\times)(a,b)]_\sim$
+
+（4） $J(c_0)=[I(c_0)]_\sim$
+
+（5） $J(c_1)=[I(c_1)]_\sim$
+
+则 $\mathcal{N}=\left<M/N,J\right>$ 称为 $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的商环 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]且 $\mathcal{N}\vDash T_\mathcal{R}$ ，称为商环。
+
+**** 性质
+
+***** 性质1<<MK363>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{L}_{\mathcal{A}_{\mathcal{R}_e}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，则其满足[[MK349][性质7]]以及：
+
+（1） $\mathcal{M}\vDash(\forall x_1(f_\times(x_1,c_1)\hat{=}x_1))$ 的充要条件是对于任意 $a\in M,a\ne I(c_0)$ 有 $I(f_\times)(a,I(c_1))=a$
+
+（2） $\mathcal{M}\vDash(\forall x_1(f_\times(c_1,x_1)\hat{=}x_1))$ 的充要条件是对于任意 $a\in M,a\ne I(c_0)$ 有 $I(f_\times)(a,I(c_1))=a$
+
+（3） $\mathcal{M}\vDash(\lnot(c_0\hat{=}c_1))$ 的充要条件是 $I(c_0)\ne I(c_1)$
+
+****** 证明
+
+[[MK349][同理可证]]
+
+***** 性质2<<MK365>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]（显然有 $\mathcal{M}\vDash T_\mathcal{R}$ 亦为[[MK309][环]]）且 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+则对于任意 $a\in M$ 有 $N=\left\{I(f_\times)(r,a)\big|r\in M\right\}$ 是 $\mathcal{M}$ 中包含 $a$ 的最小[[MK348][理想]]
+
+****** 证明
+
+根据[[MK364][性质10]]以及[[MK368][性质12]]易证
+
+***** 性质3<<MK372>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]（显然有 $\mathcal{M}\vDash T_\mathcal{R}$ 亦为[[MK309][环]]），若 $N$ 是 $\mathcal{M}$ 的[[MK348][理想]]且 $a\in M-N$
+
+则包含 $\{a\}\cup N$ 的最小[[MK348][理想]]是 $N'=\left\{I(f_+)(I(f_\times)(m,a),n)\big|m\in M\land n\in N\right\}$
+
+****** 证明
+
+根据[[MK367][性质11]]以及[[MK368][性质12]]易证
+
+**** 定理
+
+***** 定理1<<MK359>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]（显然有 $\mathcal{M}\vDash T_\mathcal{R}$ 亦为[[MK309][环]]）， $N$ 是 $\mathcal{M}$ 的[[MK348][理想]]，则：
+
+（1） $N=M$ 的充要条件是 $I(c_1)\in N$
+
+（2） 若 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ ，则 $\mathcal{M}$ 的[[MK348][理想]]有且仅有 $\{I(c_0)\},M$ 的充要条件是 $\mathcal{M}$ 是[[MK338][域]]
+
+****** 证明
+
+******* 证明（1）
+
+显然 $I(c_1)\in M$ 如若 $N=M$ 必有 $I(c_1)\in N$
+
+若 $I(c_1)\in N$ 则根据[[MK363][性质1]]可得对于任意 $a\in M$ 有 $I(f_\times)(a,I(c_1))=I(f_\times)(I(c_1),a)=a$
+
+即根据[[MK348][理想定义]] $a\in N$ 。故根据[[MK15][定义]]可得 $M\subset N$ ，又由于 $N\subset M$ 故根据[[MK16][自反性]]有 $N=M$ 
+
+******* 证明（2）
+
+******** 充分
+
+显然由于 $\mathcal{M}$ 是[[MK362][非零幺环]]，则根据[[MK363][性质1]]以及条件有：
+
+（1） $\mathcal{M}\vDash(\forall x_1(f_\times(x_1,c_1)\hat{=}x_1))$
+
+（2） $\mathcal{M}\vDash(\lnot(c_0\hat{=}c_1))$ 
+
+（3） $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+假设存在 $a\in M,a\ne I(c_0)$ ，根据[[MK365][性质2]]可得 $N=\left\{I(f_\times)(r,a)\big|r\in M\right\}$ 是 $\mathcal{M}$ 的[[MK348][理想]]
+
+又由于 $a\ne I(c_0)$ 可得 $N=M$ ，故 $I(c_1)\in N$ 则存在 $b\in M$ 满足 $I(f_\times)(a,b)=I(c_1)$
+
+综上所术，对于任意 $a\in M$ 存在 $b\in M$ 使得 $I(f_\times)(a,b)=I(c_1)$ 即根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]
+
+有 $\mathcal{M}\vDash(\forall x_1((\lnot(x_1\hat{=}c_0))\to(\exists x_2(f_\times(x_1,x_2)\hat{ =}c_1))))$ 故显然 $\mathcal{M}$ 是[[MK338][域]]
+
+******** 必要
+
+显然有 $\mathcal{M}\vDash T_\mathcal{R}$ 亦为[[MK309][环]]，则根据[[MK357][性质9]]可得 $\{I(c_0)\}$ 是 $\mathcal{M}$ 的[[MK348][理想]]
+
+对于任意 $\mathcal{M}$ 的[[MK348][理想]] $N\subset M$ 存在 $a\in N,a\ne I(c_0)$ 则根据[[MK356][性质4]]可得存在 $b\in M$ 满足 $I(f_\times)(b,a)=I(c_1)$
+
+则根据[[MK348][理想定义]] $I(c_1)\in N$ ，又根据[[MK356][性质4]]可得对于任意 $a\in M$ 有 $I(f_\times)(a,I(c_1))=a$ 即有 $a\in M$
+
+故可得 $N\subset M$ ，则根据[[MK16][自反性]]可得 $N=M$
+
+****** 推论
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]（显然有 $\mathcal{M}\vDash T_\mathcal{R}$ 亦为[[MK309][环]]）且满足 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+则对于任意 $\mathcal{N}=\left<N,J\right>$ 是[[MK309][环]]，若有[[MK344][同态映射]] $\eta:M\to N$ 满足 $\eta$ 不是对于任意 $a\in M$ 均有 $\eta(a)=J(c_0)$ 有 $\eta$ 必为[[MK176][单射]]
+
+******* 证明
+
+由于 $\mathcal{M}$ 亦为[[MK309][环]]，故根据[[MK358][定理3]]可得 $ker(\eta)$ 是[[MK309][环]] $\mathcal{M}$ 的[[MK348][理想]]，又根据[[MK359][定理1]]以及 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+可得 $\mathcal{M}$ 的[[MK348][理想]]有且仅有 $\{I(c_0)\},M$ 。根据 $\eta$ 不是全零映射，故可得 $ker(\eta)=\{I(c_0)\}$
+
+对于任意 $\{a,b\}\subset M,a\ne b$ 假设 $\eta(a)=\eta(b)$ ，则根据[[MK356][性质4]]可得存在 $c\in M$ 满足 $I(f_+)(a,c)=I(c_0)$
+
+显然 $a$ 亦为 $c$ 的[[MK334][加法逆元]]，由于 $a\ne b$ 根据[[MK304][逆元唯一]]可得 $b$ 不是 $c$ 的[[MK334][加法逆元]]，即 $I(f_+)(b,c)\ne I(c_0)$
+
+则根据[[MK345][性质2]]有 $J(c_0)=\eta(I(c_0))=\eta(I(f_+)(a,c))=J(f_+)(\eta(a),\eta(c))$ 即 $\eta(c)$ 亦为 $\eta(a)$ 的[[MK334][加法逆元]]
+
+由于 $\eta(a)=\eta(b)$ ，故有 $J(c_0)=\eta(I(c_0))=J(f_+)(\eta(b),\eta(c))$ ，则 $\eta(I(f_+)(b,c))=J(f_+)(\eta(b),\eta(c))=J(c_0)$
+
+故有 $I(f_+)(b,c)\in ker(\eta)=\{I(c_0)\}$ 由于 $I(f_+)(b,c)\ne I(c_0)$ 故显然矛盾
+
+故假设不成立，即对于任意 $\{a,b\}\subset M,a\ne b$ 有 $\eta(a)\ne\eta(b)$ ，即 $\eta$ 是[[MK176][单射]]
+
+***** 定理2<<MK370>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]（显然有 $\mathcal{M}\vDash T_\mathcal{R}$ 亦为[[MK309][环]]）， $N$ 是 $\mathcal{M}$ 的[[MK348][理想]]，且 $N\ne M$
+
+则[[MK369][商环]] $\mathcal{N}=\left<M/N,J\right>$ 亦为[[MK362][非零幺环]]
+
+****** 证明
+
+[[MK366][同理可证]] $\mathcal{N}\vDash T_\mathcal{R}$ 是[[MK309][环]]
+
+******* $\mathcal{N}\vDash(\forall x_1((\lnot(x_1\hat{=}c_0))\to(f_\times(x_1,c_1)\hat{=}x_1)))$
+
+对于任意 $[a]_\sim\in M/N$ 满足 $[a]_\sim\ne J(c_0)=[I(c_0)]_\sim$ ，即有 $a\not\sim I(c_0)$ 即不存在 $c\in N$ 满足 $a=I(f_+)(I(c_0),c)$
+
+又由于 $N$ 是[[MK348][理想]]，故 $I(c_0)\in N$ ，假设 $a=I(c_0)$ 则根据[[MK363][性质1]]可得 $a=I(f_+)(I(c_0),I(c_0))$ 与即 $a\not\sim I(c_0)$ 矛盾
+
+故假设不成立，则有 $a\ne I(c_0)$ 故根据[[MK363][性质1]] $J(f_\times)([a]_\sim,[I(c_1)]_\sim)=[I(f_\times)(a,I(c_1))]_\sim=[a]_\sim$
+
+******* $\mathcal{N}\vDash(\forall x_1((\lnot(x_1\hat{=}c_0))\to(f_\times(c_1,x_1)\hat{=}x_1)))$
+
+同上一步可证
+
+******* $\mathcal{N}\vDash(\lnot(c_1\hat{=}c_0))$
+
+假设 $\mathcal{N}\not\vDash(\lnot(c_1\hat{=}c_0))$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $[I(c_1)]_\sim=J(c_1)=J(c_0) =[I(c_0)]_\sim$
+
+即有 $I(c_1)\sim I(c_0)$ 故存在 $c\in N$ 满足 $I(c_1)=I(f_+)(I(c_0),c)=c$
+
+即有 $I(c_1)=c\in N$ 根据[[MK359][定理1]]可得若 $I(c_1)\in N$ 则有 $N=M$ 与条件矛盾
+
+故假设不成立，即 $\mathcal{N}\vDash(\lnot(c_1\hat{=}c_0))$
+
+***** 定理3<<MK385>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]（显然有 $\mathcal{M}\vDash T_\mathcal{R}$ 亦为[[MK309][环]]）且满足 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+则对于任意 $N\subset M$ ， $N$ 是 $\mathcal{M}$ 的[[MK360][极大理想]]的充要条件是[[MK354][商环]] $\mathcal{N}=\left<M/N,J\right>$ 是[[MK338][域]]
+
+****** 证明
+
+******* 充分
+
+由于 $N$ 是 $\mathcal{M}$ 的[[MK360][极大理想]]，故 $N\ne M$ ，则根据[[MK371][性质13]]以及[[MK370][定理2]]可得：
+
+（1） $\mathcal{N}\vDash(\lnot(c_1\hat{=}c_0))$
+
+（2） $\mathcal{N}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+（3） $\mathcal{N}\vDash(\forall x_1((\lnot(x_1\hat{=}c_0))\to(f_\times(c_1,x_1)\hat{=}x_1)))$
+
+任取 $[a]_\sim\in M/N,[a]_\sim\ne J(c_0)=[I(c_0)]_\sim$ ，即有有 $a\not\sim I(c_0)$ 即不存在 $c\in N$ 满足 $a=I(f_+)(I(c_0),c)=c$
+
+即 $a\not\in N$ ，则根据[[MK372][性质3]] $\{a\}\cup N$ 的最小[[MK348][理想]]为 $N'=\left\{I(f_+)(I(f_\times)(m,a),n)\big|m\in M\land n\in N\right\}$
+
+又由于 $N$ 是 $\mathcal{M}$ 的[[MK360][极大理想]]，故可得 $N'=M$ 即存在 $m\in M,n\in N$ 满足 $I(c_1)=I(f_+)(I(f_\times)(m,a),n)$
+
+进而有 $I(c_1)\sim I(f_\times)(m,a)$ 故 $J(f_\times)([m]_\sim,[a]_\sim)=[I(f_\times)(m,a)]_\sim=[I(c_1)]_\sim=J(c_1)$
+
+综上所述，对于任意 $[a]_\sim\in M/N,[a]_\sim\ne J(c_0)=[I(c_0)]_\sim$ 均存在 $[m]_\sim\in M/N$ 使得故 $J(f_\times)([m]_\sim,[a]_\sim)=J(c_1)$
+
+根据[[MK356][性质4]]可得 $\mathcal{N}\vDash(\forall x_1((\lnot(x_1\hat{=}c_0))\to(\exists x_2(f_\times(x_1,x_2)\hat{ =}c_1))))$
+
+******* 必要
+
+若 $\mathcal{N}=\left<M/N,J\right>$ 是[[MK338][域]]，则根据[[MK356][性质4]] $[I(c_1)]_\sim=J(c_1)\ne J(c_0)=[I(c_0)]_\sim$ 即 $I(c_1)\not\sim I(c_0)$
+
+故不存在 $c\in N$ 满足 $I(c_1)=I(f_+)(I(c_0),c)=c$ ，即 $I(c_1)\not\in N$ ，根据[[MK359][定理1]]可得 $N\ne M$
+
+假设 $N$ 不是 $\mathcal{M}$ 的[[MK360][极大理想]]，则存在[[MK348][理想]] $N^*$ 满足 $N\subset N^*$ 且 $N^*\ne N,N^*\ne M$
+
+任取 $a\in N^*-N$ 显然有 $a\not\in N$ ，根据[[MK363][性质1]]不存在 $b\in N$ 满足 $a=I(f_+)(I(c_0),b)=b$
+
+即 $a\not\sim I(c_0)$ 故 $[a]_\sim\ne[I(c_0)]_\sim$ ，取包含 $[a]_\sim$ 的最小的 $\mathcal{N}$ 的[[MK348][理想]]
+
+根据[[MK359][定理1]]可得 $\mathcal{N}$ 的[[MK348][理想]]有且仅有 $\{J(c_0)\},M/N$ ，即包含 $[a]_\sim$ 的最小的 $\mathcal{N}$ 的[[MK348][理想]]为 $M/N$
+
+又根据[[MK365][性质2]]可得 $M/N=\left\{J(f_\times)([r]_\sim,[a]_\sim)\big|[r]_\sim\in M/N\right\}$ ，显然 $J(c_1)=[I(c_1)]_\sim\in M/N$
+
+又根据[[MK356][性质4]]以及 $[a]_\sim\ne[I(c_0)]_\sim$ 可得存在 $[r]_\sim\in M/N$ 满足 $J(f_\times)([r]_\sim,[a]_\sim)=[I(c_1)]_\sim$
+
+进而有 $[I(f_\times)(r,a)]_\sim=[I(c_1)]_\sim$ 故存在 $c\in N$ 满足 $I(c_1)=I(f_+)(I(f_\times)(r,a),c)$
+
+又由于 $\{a\}\cup N\subset N^*$ 则根据[[MK372][性质3]]可得 $N'=\left\{I(f_+)(I(f_\times)(m,a),n)\big|m\in M\land n\in N\right\}\subset N^*$
+
+则显然有 $I(c_1)\in N'\subset N^*$ ，又根据[[MK359][定理1]]可得 $N^*=M$ 矛盾
+
+故假设不成立，即不存在[[MK348][理想]] $N^*$ 满足 $N\subset N^*$ 且 $N^*\ne N,N^*\ne M$ ，即 $N$ 是 $\mathcal{M}$ 的[[MK360][极大理想]]
+
+*** 域<<MK338>>
 
 **** 语言<<MK335>>
 
 除[[~/文档/note/数理逻辑/sllj.org::MK105][固定符号]]外有：
 
-（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+,f_-$ 分别表示乘法，加法
+（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+$ 分别表示乘法，加法
 
 （3） [[~/文档/note/数理逻辑/sllj.org::MK108][常元符号]] $c_0,c_1$
 
-则有 $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 是环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
+则有 $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 是环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
 
 **** 公理<<MK337>>
 
-显然[[MK335][域语言]]包含[[MK333][环语言]]，即 $\mathcal{A}_\mathcal{R}\subset\mathcal{A}_\mathbb{R}$ 故[[MK334][环公理]] $T_\mathcal{R}$ 显然满足 $T_\mathcal{R}\subset\mathcal{L}_{\mathcal{A}_\mathbb{F}}$
+显然[[MK335][域语言]]包含[[MK361][非零幺环语言]]，即 $\mathcal{A}_{\mathcal{R}_e}\subset\mathcal{A}_\mathbb{F}$ 故[[MK373][非零幺环公理]] $T_\mathcal{R}$ 显然满足 $T_\mathcal{R}\subset\mathcal{L}_{\mathcal{A}_\mathbb{F}}$
 
 定义域公理集合为 $T_\mathbb{F}$ ，除 $T_\mathcal{R}$ 外包含以下公理
 
 （1） $(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换律 
 
-（2） $(\forall x_1(f_\times(x_1,c_1)\hat{=}x_1))$ 乘法幺元
+（2） $(\forall x_1((\lnot(x_1\hat{=}c_0))\to(\exists x_2(f_\times(x_1,x_2)\hat{ =}c_1))))$ 乘法逆元
 
-（3） $(\forall x_1((\lnot(x_1\hat{=}c_0))\to(\exists x_2(f_\times(x_1,x_2)\hat{ =}c_1))))$ 乘法逆元
+**** 相关定义
 
-（4） $(\forall x_1(f_\times(x_1,c_0)\hat{=}c_0))$ 乘法零元
+***** 特征<<MK339>>
 
-（5） $(\lnot(c_0\hat{=}c_1))$
+定义[[~/文档/note/数理逻辑/sllj.org::MK117][项]] $\tau_n=f_+(...f_+(c_1,c_1),c_1)$ 即 $n$ 个 $c_1$ 相加，则[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 的特征定义为最小的正整数 $p$ 使得 $\mathcal{M}\vDash(\tau_p\hat{=}c_0)$
 
-**** 性质
+***** 域的扩张<<MK341>>
 
-***** 性质1
+[[MK338][结构]] $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且 $\mathcal{M}\vDash T_\mathbb{F},\mathcal{N}\vDash T_\mathbb{F}$ ，则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的子域， $\mathcal{N}$ 是 $\mathcal{M}$ 的扩张域
 
-加法幺元唯一且为 $c_0$ ，即 $T_\mathbb{F}\vdash(\forall x_1((\forall x_2(f_\times(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
+****** 生成[[MK341][扩张域]]<<MK393>>
 
-乘法幺元唯一且为 $c_1$ ，即 $T_\mathbb{F}\vdash(\forall x_1((\forall x_2(f_\times(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，若有 $A\subset N-M$
 
-****** 证明
+定义 $\Delta=\left\{N'\big|N'\subset N\land M\cup A\subset N'\land\left<N',J_{N'}\right>\vDash T_\mathbb{F}\right\}$ 即所有满足：
 
-[[MK337][类似可证]]
+（1） 是 $N$ 的子集
 
-**** 子域
+（2） 包含 $M\cup A$
 
-**** 域的扩张
+（3） $J$ 在 $N'$ 上的[[~/文档/note/数理逻辑/sllj.org::MK481][限制解释]]是[[MK338][域]]
 
-*** 代数封闭域
+的集合，进一步定义 $M_{(A)}=\bigcup_{N'\in\Delta} N'$ ，并定义 $\mathcal{M}_{(A)}=\left<M_{(A)},I_{(A)}\right>$ 是由 $A$ 生成的 $\mathcal{M}$ 的[[MK341][扩张域]]
 
-**** 语言
+即 $\mathcal{N}$ 下包含 $M\cup A$ 的最小[[MK341][扩张域]]
 
-同[[MK333][域语言]] $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 为区分记作 $\mathcal{A}_{\text{ACF}}$ 即有 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 是代数封闭域的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
+***** [[MK341][扩张域]]的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK51][维数]]
 
-**** 多项式<<MK336>>
+若 $\mathcal{N}=\left<N,J\right>$ 是 $\mathcal{M}=\left<M,I\right>$ 的[[MK341][扩张域]]，则根据[[MK343][定理1]]可得 $\left<N,M,J(f_+),J(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK40][定理1]]可得存在[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]
+
+故定义符号 $[\mathcal{N}:\mathcal{M}]$ 是 $\left<N,M,J(f_+),J(f_\times)\right>$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK51][维数]]
+
+***** 多项式<<MK336>>
 
 定义：
 
@@ -6617,13 +7274,1247 @@ x&=y\\
 
      即为 $\tau_a$ 到 $\tau_{a+b}$ 的连加，其中 $\tau$ 亦为[[~/文档/note/数理逻辑/sllj.org::MK117][项]]
 
-对于任意 $n\in\mathbb{N}$ 定义 $\phi_n=\sum_{i=1}^{n}f_\times(x_i,x_0^i)$ 为 $n$ 次多项式
+对于任意 $n\in\mathbb{N}$ 定义 $\phi_n=\sum_{i=1}^{n}f_\times(x_i,x_{n+1}^i)$ 为 $n$ 次多项式
+
+***** 多项式环<<MK374>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]，定义 $M[x]=\left\{\sum_{i=0}^na_ix^i\big|\{a_0,...,a_n\}\subset M\land n\in\mathbb{N}\right\}$
+
+定义 $I[x]$ 满足如下：
+
+（1） 对于任意 $\left\{\sum_{i=0}^{n}a_ix^i,\sum_{i=0}^{m}b_ix^i\right\}\subset M[x]$ 有 $I[x](f_+)(\sum_{i=0}^na_ix^i,\sum_{i=0}^mb_ix^i)=\sum_{i=0}^{\max(n,m)}I(f_+)(a'_i,b'_i)x^i$
+
+     其中 $a'_i=\begin{cases}a_i&i\leq n_1\\I(c_0)&i>n_1\end{cases},b'_i=\begin{cases}b_i&i\leq n_2\\I(c_0)&i>n_2\end{cases}$
+
+（2） 对于任意 $\left\{\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right\}\subset M[x]$ 有 $I[x](f_\times)(\sum_{i=0}^na_ix^i,\sum_{i=0}^mb_ix^i)=\sum_{k=0}^{m+n}\left(\overline{\sum_{i=0}^ka'_ib'_{k-i}}\right)x^k$
+
+     其中 $\overline{\sum_{i=0}^ka_ib_{k-i}}=I(f_+)(I(f_+)(...I(f_+)(I(f_\times)(a_0,b_k),I(f_\times)(a_1,b_{k-1}))...),I(f_\times)(a_k,b_{0}))$
+
+     其中 $a'_i=\begin{cases}a_i&i\leq n\\I(c_0)&i>n\end{cases},b'_i=\begin{cases}b_i&i\leq m\\I(c_0)&i>m\end{cases}$
+
+（3） 对于任意 $a_0\in M$ 均有 $a_0x^0=a_0$
+
+（4） $I[x](c_0)=I(c_0)x^0$
+
+（5） $I[x](c_1)=I(c_1)x^0$
+
+（6） 对于任意 $\sum_{i=0}^{n}a_ix^i\in M[x]$ 若有 $a_{n+1}=...=a_{n+m}=I(c_0)$ 则有 $\sum_{i=0}^{n}a_ix^i=\sum_{i=0}^{n+m}a_ix^i$
+
+（7） 对于任意 $\left\{\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right\}\subset M[x]$ 有 $\sum_{i=0}^{n_1}a_ix^i=\sum_{i=0}^{n_2}b_ix^i$ 的充要条件
+
+     对于任意 $0\leq i\leq\max(n_1,n_2)$ 均有 $a'_i=b'_i$ 其中 $a'_i=\begin{cases}a_i&i\leq n_1\\I(c_0)&i>n_1\end{cases},b'_i=\begin{cases}b_i&i\leq n_2\\I(c_0)&i>n_2\end{cases}$
+
+进而定义结构 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 为[[MK338][域]] $\mathcal{M}$ 的多项式环
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是[[MK362][非零幺环]]，且 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+****** 次<<MK378>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，则对于任意 $\sum_{i=0}^{n}a_ix^i\in M[x]$
+
+定义最大的 $i$ 使得 $a_i\ne I(c_0)$ 的为该多项式的次数
+
+若任意 $1\leq i\leq n$ 均有 $a_i=I(c_0)$ 则定义次数为 $-1$
+
+
+******* 性质1<<MK387>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，对于任意 $\left\{p(x),q(x)\right\}\subset M[x]$
+
+若其[[MK378][次数]]为 $n_1,n_2$ ，则 $I[x](f_\times)(p(x),q(x))$ 的[[MK378][次数]] $n$ 满足
+
+（1） 若 $p(x)\ne I[x](c_0)$ 且 $q(x)\ne I[x](c_0)$ 则 $n=n_1+n_2$
+
+（2） 否则 $n=-1$
+
+******** 证明
+
+********* 证明（1）
+
+设 $p(x)=\sum_{i=0}^{n_1}a_ix^i,q(x)=\sum_{i=0}^{n_2}b_ix^i$ 则有 $I[x](f_\times)(p(x),q(x))=\sum_{k=0}^{m+n}\left(\overline{\sum_{i=0}^ka'_ib'_{k-i}}\right)x^k$
+
+则 $x^{n_1+n_2}$ 的系数为 $\overline{\sum_{i=0}^{n_1+n_2}a'_ib'_{n_1+n_2-i}}$ 其中 $a'_i=\begin{cases}a_i&i\leq n_1\\I(c_0)&i>n_1\end{cases},b'_i=\begin{cases}b_i&i\leq n_2\\I(c_0)&i>n_2\end{cases}$
+
+故根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]可得（以下横线下的为 $I(f_+),I(f_\times)$ 的简写）
+
+\begin{aligned}
+&\overline{\sum_{i=0}^{n_1+n_2}a'_ib'_{n-i}}\\
+=&\overline{a'_0b'_{n_1+n_2}+...+a'_{n_1-1}b'_{n_2+1}+a'_{n_1}b'_{n_2}+a'_{n_1+1}b'_{n_2-1}+...+a'_{n_1+n_2}b'_0}\\
+=&\overline{a_0I(c_0)+...+a_{n_1-1}I(c_0)+a_{n_1}b_{n_2}+I(c_0)b_{n_2-1}+...+I(c_0)b_0}\\
+=&\overline{a_{n_1}b_{n_2}}\\
+\end{aligned}
+
+根据 $p(x)\ne I[x](c_0)$ 且 $q(x)\ne I[x](c_0)$ 有 $n_1\geq 0,n_2\geq 0$ ，则有 $a_{n_1}\ne I(c_0),b_{n_2}\ne I(c_0)$
+
+则根据[[MK340][性质2]]可得 $I(f_\times)(a_{n_1},b_{n_2})\ne I(c_0)$ 故 $x^{n_1+n_2}$ 的系数不为 $I(c_0)$
+
+即 $I[x](f_\times)(p(x),q(x))$ 的[[MK378][次数]] $n=n_1+n_2$
+
+********* 证明（2）
+
+若是 $p(x)=I[x](c_0)$ 或 $q(x)=I[x](c_0)$ 则根据[[MK376][定理2]]可得 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是[[MK362][非零幺环]]
+
+根据[[MK347][性质4]]可得 $I[x](f_\times)(p(x),q(x))=I[x](c_0)$ 故[[MK378][次数]]为 $n=-1$
+
+********* 推论<<MK388>>
+
+对于任意 $\left\{p(x),q(x)\right\}\subset M[x]$ 若[[MK378][次数]]不同，则 $p(x)\ne q(x)$
+
+********** 证明
+
+根据[[MK374][定义（7）]]显然易证
+
+******* 性质2<<MK396>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，对于任意 $\left\{p(x),q(x)\right\}\subset M[x]$
+
+若其[[MK378][次数]]为 $n_1,n_2$ ，则 $I[x](f_+)(p(x),q(x))$ 的[[MK378][次数]]为 $\max(n_1,n_2)$
+
+******** 证明
+
+设 $p(x)=\sum_{i=0}^{n}a_ix^i,q(x)=\sum_{i=0}^{m}b_ix^i$ 则有 $\sum_{i=0}^{\max(n,m)}I(f_+)(a'_i,b'_i)x^i$
+
+其中 $a'_i=\begin{cases}a_i&i\leq n\\I(c_0)&i>n\end{cases},b'_i=\begin{cases}b_i&i\leq m\\I(c_0)&i>m\end{cases}$
+
+显然 $x^{\max(n_1,n_2)}$ 的系数不为 $I(c_0)$ 
+
+****** 首一不可约<<MK377>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，则对于任意 $\sum_{i=0}^{n}a_ix^i\in M[x]$ 若满足
+
+（1） $a_n=I(c_1)$
+
+（2） 其[[MK378][次数]] $n>0$
+
+（3） 不存在 $\left\{\sum_{i=0}^{n_1}b_ix^i,\sum_{i=0}^{n_2}c_ix^i\right\}\subset M[x]$ 其[[MK378][次数]]为 $n_1,n_2$ 满足 $n_1>0,n_2>0$
+
+     且 $\sum_{i=0}^{n}a_ix^i=I[x](f_\times)\left(\sum_{i=0}^{n_1}b_ix^i,\sum_{i=0}^{n_2}c_ix^i\right)$
+
+则称 $\sum_{i=0}^{n}a_ix^i\in M[x]$ 为 $\mathcal{M}[x]$ 的首一不可约多项式 
+
+****** 带入求值<<MK394>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，则对于任意 $f(x)=\sum_{i=0}^{n}a_ix^i\in M[x]$ 将任意 $b\in M$
+
+替换 $\sum_{i=0}^{n}a_ix^i$ 中的 $x$ 形成 $\sum_{i=0}^{n}a_ib^i$ 满足：
+
+（1） $b^i=I(f_\times)(...I(f_\times)(b,b)...)$ 即连续 $i$ 个 $b$ 在 $\mathcal{M}$ 下相乘
+
+（2） $a_ib^i=I(f_\times)(a_i,b^i)$ 即为 $\mathcal{M}$ 下的乘法
+
+（3） $\sum_{i=0}^{n}a_ib^i=I(f_+)(a_0b^0,I(f_+)(...,I(f_+)(a_{n-1}b^{n-1},a_nb^n)...))$ 即 $\mathcal{M}$ 下的连续加法
+
+由于 $\mathcal{M}$ 是[[MK338][域]]，故显然 $\sum_{i=0}^{n}a_ib^i\in M$ ，则称上述行为为多项式 $f(x)$ 对于 $b$ 的带入值为 $\sum_{i=0}^{n}a_ib^i$
+
+记作 $f(b)=\sum_{i=0}^{n}a_ib^i$ 
+
+******* 性质<<MK395>>
+
+对于任意 $\{f(x),g(x)\}\subset M[x]$ 设 $h_1(x)=I[x](f_+)(f(x),g(x)),h_2(x)=I[x](f_\times)(f(x),g(x))$
+
+则对于任意 $b\in M$ 有：
+
+（1） $I(f_+)(f(a),g(a))=h_1(a)$
+
+（2） $I(f_\times)(f(a),g(a))=h_2(a)$
+
+******** 证明
+
+设 $f(x)=\sum_{i=0}^na_ix^i,g(x)=\sum_{i=0}^mb_ix^i$ 则 $I[x](f_+)(\sum_{i=0}^na_ix^i,\sum_{i=0}^mb_ix^i)=\sum_{i=0}^{\max(n,m)}I(f_+)(a'_i,b'_i)x^i$
+
+即对于任意 $r\in M$ 有（以下对于 $I(f_+),I(f_\times)$ 简写）
+
+\begin{aligned}
+h_1(r)=&\sum_{i=0}^{\max(n,m)}(a'_i+b'_i)\cdot b^i\\
+=&\sum_{i=1}^na_i\cdot r^i+\sum_{i=1}^mb_i\cdot r^i\\
+=&f(r)+g(r)
+\end{aligned}
+
+即有 $I(f_+)(f(a),g(a))=h_1(a)$
+
+同理对于任意 $r\in M$ 亦有（以下对于 $I(f_+),I(f_\times)$ 简写）
+
+\begin{aligned}
+h_2(r)=&\sum_{k=0}^{m+n}\left(\sum_{i=0}^ka'_ib'_{k-i}\right)\cdot x^k\\
+=&\sum_{i=1}^na_i\cdot r^i\cdot\sum_{i=1}^mb_i\cdot r^i\\
+=&f(r)\cdot g(r)
+\end{aligned}
+
+即有 $I(f_\times)(f(a),g(a))=h_2(a)$
+
+****** 根<<MK389>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，则对于任意 $f(x)=\sum_{i=0}^{n}a_ix^i\in M[x]$ 若存在 $b\in M$
+
+满足 $f(b)=I(c_0)$ 其中 $f(b)$ 是多项式 $f(x)$ 对于 $b$ 的[[MK394][带入值]]，则称 $b$ 是 $\sum_{i=0}^{n}a_ix^i$ 的根 
+
+**** 性质
+
+***** 性质1<<MK342>>
+
+加法幺元唯一且为 $c_0$ ，即 $T_\mathbb{F}\vdash(\forall x_1((\forall x_2(f_\times(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
+
+乘法幺元唯一且为 $c_1$ ，即 $T_\mathbb{F}\vdash(\forall x_1((\forall x_2(f_\times(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
+
+****** 证明
+
+[[MK337][类似可证]]
+
+***** 性质2<<MK340>>
+
+$T_\mathbb{F}\vdash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$ 即任意两个元素乘积为 $0$ ，则两个元素至少有一个为 $0$
+
+****** 证明
+
+对于任意[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 满足 $\mathcal{M}\vDash T_\mathbb{F}$ 假设 $\mathcal{M}\not\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]以及[[~/文档/note/数理逻辑/sllj.org::MK169][推论]]易证存在 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $\left<\mathcal{M},v\right>\not\vDash((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))$
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\left<\mathcal{M},v\right>\vDash(f_\times(x_1,x_2)\hat{=}c_0)$ 以及 $\left<\mathcal{M},v\right>\not\vDash((x_1\hat{ =}c_0)\lor(x_2\hat{ =}c_0))$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]以及[[~/文档/note/数理逻辑/sllj.org::MK186][德摩根律]]可得 $\left<\mathcal{M},v\right>\vDash((\lnot(x_1\hat{ =}c_0))\land(\lnot(x_2\hat{ =}c_0)))$ 根据[[~/文档/note/数理逻辑/sllj.org::MK170][逻辑与]] $\left<\mathcal{M},v\right>\vDash(\lnot(x_1\hat{ =}c_0))$ 且 $\left<\mathcal{M},v\right>\vDash(\lnot(x_2\hat{ =}c_0))$
+
+即对于意任 $\mathcal{M}\vDash T_\mathbb{F}$ 均有 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $\left<\mathcal{M},v\right>\vDash(f_\times(x_1,x_2)\hat{=}c_0),\left<\mathcal{M},v\right>\vDash(\lnot(x_1\hat{ =}c_0)),\left<\mathcal{M},v\right>\vDash(\lnot(x_2\hat{ =}c_0))$
+
+设 $v(x_1)=a,v(x_2)=b,I(c_0)=0,I(c_1)=1$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]以及[[~/文档/note/数理逻辑/sllj.org::MK153][结构定义]]可得 $I(f_\times)(a,b)=0,a\ne 0,b\ne 0$
+
+根据[[MK337][公理（3）]]、 $\left<\mathcal{M},v\right>\vDash(\lnot(x_1\hat{ =}c_0)),\left<\mathcal{M},v\right>\vDash(\lnot(x_2\hat{ =}c_0))$ 、[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]以及[[~/文档/note/数理逻辑/sllj.org::MK384][引理8]]易证 $\left<\mathcal{M},v\right>\vDash(\exists x_3(f_\times(x_1,x_3)\hat{ =}c_1)),\left<\mathcal{M},v\right>\vDash(\exists x_4(f_\times(x_2,x_4)\hat{ =}c_1))$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证存在 $\left\{\frac{1}{a},\frac{1}{b}\right\}\subset M$ 满足 $I(f_\times)(a,\frac{1}{a})=1,I(f_\times)(b,\frac{1}{b})=1$
+
+根据[[MK337][乘法交换律]]、[[MK334][乘法结合律]]易证 $I(f_\times)(I(f_\times)(\frac{1}{a},I(f_\times)(a,b)),\frac{1}{b})=I(f_\times)(I(f_\times)(\frac{1}{a},a),I(f_\times)(b,\frac{1}{b}))$
+
+根据 $1,0$ 分别为[[MK337][乘法幺元、零元]]易证 $I(f_\times)(I(f_\times)(\frac{1}{a},I(f_\times)(a,b)),\frac{1}{b})=I(f_\times)(I(f_\times)(\frac{1}{a},0),\frac{1}{b})=I(f_\times)(0,\frac{1}{b})=0$
+
+同理 $I(f_\times)(I(f_\times)(\frac{1}{a},a),I(f_\times)(b,\frac{1}{b}))=I(f_\times)(1,1)=1$ 又根据[[MK337][公理（5）]]易证 $1\ne 0$
+
+故矛盾，则假设不成立，即任意[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 满足 $\mathcal{M}\vDash T_\mathbb{F}$ 均有 $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]可得 $T_\mathbb{F}\vdash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+***** 性质3
+
+任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 的[[MK399][特征]]均为素数
+
+****** 证明
+
+假设 $\mathcal{M}=\left<M,I\right>$ 的[[MK399][特征]] $p=ab$ 则 $\mathcal{M}\vDash(\tau_n\hat{= }c_0)$ 根据[[MK334][加法结合律]]、[[MK334][加法结合律]]易证 $\mathcal{M}\vDash(\tau_n\hat{=}f_+(\tau_a,f_+(...f_+(\tau_a,\tau_a)...)))$
+
+即 $b$ 个 $a$ 相加，根据[[MK334][乘法分配]]易证 $\mathcal{M}\vDash(\tau_n\hat{=}f_\times(f_+(c_1,f_+(...f_+(c_1,c_1)...)),\tau_a))$ 根据定义 $f_+(c_1,f_+(...f_+(c_1,c_1)...))$ 即为 $\tau_b$
+
+故可得 $\mathcal{M}\vDash(\tau_n\hat{=}f_\times(\tau_b,\tau_a))$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(c_0\hat{ =}f_\times(\tau_b,\tau_a))$ 则根据[[MK340][性质2]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(c_0\hat{ =}\tau_a)$ 或者 $\mathcal{M}\vDash(c_0\hat{ =}\tau_b)$
+
+由于均为正整数，故 $a<p$ 且 $b<p$ ，则任意一个成立均使得 $p$ 不是最小的正整数使得 $\mathcal{M}\vDash(\tau_p\hat{=}c_0)$ ，故矛盾
+
+则假设不成立，即 $p$ 不可分解
+
+***** 性质4<<MK356>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathbb{F}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，则其满足[[MK363][性质1]]以及：
+
+（1） $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 的充要条件是对于任意 $\{a,b\}\subset M$ 有 $I(f_\times)(a,b)=I(f_\times)(b,a)$
+
+（2） $\mathcal{M}\vDash(\forall x_1((\lnot(x_1\hat{=}c_0))\to(\exists x_2(f_\times(x_1,x_2)\hat{ =}c_1))))$ 的充要条件是对于任意 $a\in M$ 且 $a\ne I(c_0)$ 存在 $b\in M$ 满足 $I(f_\times)(a,b)=I(c_1)$ 
+
+****** 证明
+
+[[MK349][同理可证]]
+
+***** 性质5<<MK375>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]，则其[[MK374][多项式环]]为 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 则对于任意 $\sum_{i=0}^{n}a_ix^i\in M[x]$
+
+定义 $a'_i=\begin{cases}a_i&i\leq n\\I(c_0)&i>n\end{cases}$ 则对于任意 $m\geq n$ 均有 $\sum_{i=0}^{m}a'_ix^i=\sum_{i=0}^{n_1}a_ix^i$
+
+****** 证明
+
+根据[[MK374][定义（6）]]易证
+
+***** 性质6<<MK381>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，任意 $\sum_{i=0}^{n}a_ix^i\in M[x]$
+
+其加法逆元唯一且为 $\sum_{i=0}^{n}(-a_i)x^i$ 其中 $I(f_+)(a_i,-a_i)=I(c_0)$
+
+****** 证明
+
+根据[[MK374][定义]]可得有 $I[x](f_+)(\sum_{i=0}^na_ix^i,\sum_{i=0}^n(-a_i)x^i)=\sum_{i=0}^{n}I(f_+)(a_i,-a_i)x^i=\sum_{i=0}^{n}I(c_0)x^i=I[x](c_0)$
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]，故[[MK304][类似可证]]该逆元唯一
+
+****** 推论<<MK382>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，任意 $\sum_{i=0}^{n}a_ix^i\in M[x]$
+
+若有 $\sum_{i=0}^{m}b_ix^i\in M[x]$ 满足其加法逆元亦为 $\sum_{i=0}^{n}a_ix^i$ 的加法逆元，则 $\sum_{i=0}^{n}a_ix^i=\sum_{i=0}^{m}b_ix^i$
+
+******* 证明
+
+根据[[MK381][性质6]]设 $\sum_{i=0}^{m}(-b_i)x^i$ 是 $\sum_{i=0}^{m}b_ix^i$ 的加法逆元，同时其亦为 $\sum_{i=0}^{n}a_ix^i$ 的加法逆元，
+
+又根据[[MK376][定理2]] $\mathcal{M}[x]$ 是[[MK362][非零幺环]]则根据[[MK363][性质1]]有
+
+\begin{aligned}
+&I[x](f_+)\left(\sum_{i=0}^{n}a_ix^i,\sum_{i=0}^{m}(-b_i)x^i\right)=I[x](c_0)=I[x](f_+)\left(\sum_{i=0}^{m}b_ix^i,\sum_{i=0}^{m}(-b_i)x^i\right)\\
+\therefore&I[x](f_+)\left(I[x](f_+)\left(\sum_{i=0}^{n}a_ix^i,\sum_{i=0}^{m}(-b_i)x^i\right),\sum_{i=0}^{m}b_ix^i\right)=I[x](f_+)\left(I[x](f_+)\left(\sum_{i=0}^{m}b_ix^i,\sum_{i=0}^{m}(-b_i)x^i\right),\sum_{i=0}^{m}b_ix^i\right)\\
+\therefore&I[x](f_+)\left(\sum_{i=0}^{n}a_ix^i,I[x](f_+)\left(\sum_{i=0}^{m}(-b_i)x^i,\sum_{i=0}^{m}b_ix^i\right)\right)=I[x](f_+)\left(\sum_{i=0}^{m}b_ix^i,I[x](f_+)\left(\sum_{i=0}^{m}(-b_i)x^i,\sum_{i=0}^{m}b_ix^i\right)\right)\\
+\therefore&I[x](f_+)\left(\sum_{i=0}^{n}a_ix^i,I[x](c_0)\right)=I[x](f_+)\left(\sum_{i=0}^{m}b_ix^i,I[x](c_0)\right)\\
+\therefore&\sum_{i=0}^{n}a_ix^i=\sum_{i=0}^{m}b_ix^i\\
+\end{aligned}
+
+***** 性质7<<MK383>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，对于任意 $\left\{p(x),q(x)\right\}\subset M[x]$
+
+存在唯一 $\left\{h(x),r(x)\right\}\subset M[x]$ 满足：
+
+（1） $p(x)=I[x](f_+)(I[x](f_\times)(h(x),q(x)),r(x))$
+
+（2） $r(x)$ 的[[MK378][次数]]小于 $q(x)$ 的[[MK378][次数]]
+
+****** 证明
+
+设 $p(x)=\sum_{i=0}^{n}a_ix^i,q(x)=\sum_{i=0}^{m}b_ix^i$ 其[[MK378][次数]]分别为 $n,m$ 即 $a_n\ne I[x](c_0), b_m\ne I[x](c_0)$
+
+******* 存在
+
+定义 $h(x)=I(c_0),r(x)=p(x)$ 根据 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是[[MK362][非零幺环]]以及[[MK363][性质1]]
+
+易证 $p(x)=I[x](f_+)(I[x](f_\times)(h(x),q(x)),r(x))$
+
+若 $n\geq m$ 根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]可得存在 $b^{-1}_n$ 满足 $I(f_\times)(b_n,b^{-1}_n)=I(c_1)$
+
+同理可证存在 $-a_n\in M$ 满足 $I(f_+)(a_n,-a_n)=I(c_0)$
+
+则取 $h_1(x)=I(f_\times)\left(-a_n,b_n^{-1}\right)x^{n-m}$ 则根据[[MK374][定义]]易证 $I[x](f_\times)(h_1(x),q(x))=\sum_{i=0}^{m-1}(\overline{b_ia_nb^{-1}_n})x^{n-m+i}+(-a_n)x^n$
+
+由于对于任意 $0\leq i\leq m-1$ 均有 $n-m+i\leq n-1<n$ 故可得 $I[x](f_\times)(h_1(x),q(x))$ 中 $x^n$ 的系数为 $-a_n$
+
+则定义 $p_1(x)=I[x](f_+)(p_0(x),I[x](f_\times)(h_1(x),q(x)))$ 其中 $p_0(x)=p(x)$
+
+显然 $p(x)$ 中 $x^n$ 的系数为 $I(f_+)(a_n,-a_n)=I(c_0)$
+
+又由于 $p_0(x),I[x](f_\times)(h_1(x),q(x))$ 中对于任意 $x^i,i>n$ 的系数均为 $I[x](c_0)$ 故 $p_1(x)$ 的[[MK378][次数]]小于等于 $n-1$ 
+
+定义 $p_1(x)=\sum_{i=0}^{n_1}a_{i,1}x^i$ 其[[MK378][次数]]为 $n_1<n$ 
+
+依此类推可定义 $h_i(x),p_i(x)$ 满足 $p_i(x)=I[x](f_+)(p_{i-1}(x),I[x](f_\times)(h_i(x),q(x)))$ 直至 $p_k$ 的[[MK378][次数]]小于 $m$
+
+满足 $p_i(x)$ 的[[MK378][次数]]等于 $n-i$ ，则有（以 $I[x](f_+),I[x](f_\times)$ 下简写）：
+
+\begin{aligned}
+p_k=&p_{k-1}(x)+q(x)h_{k}(x)\\
+=&p_{k-2}(x)+q(x)h_{k-1}(x)+q(x)h_{k}(x)\\
+&...\\
+=&p_0(x)+\left(\sum_{i=1}^kh_i(x)\right)q(x)
+\end{aligned}
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]，故根据[[MK363][性质1]]可得存在 $h(x)\in M[x]$ 是 $\sum_{i=1}^kh_i(x)$ 的加法逆元
+
+故可得（以 $I[x](f_+),I[x](f_\times)$ 下简写）：
+
+\begin{aligned}
+p_k&=p(x)+\left(\sum_{i=1}^kh_i(x)\right)q(x)\\
+p_k+h(x)q(x)&=p(x)+\left(\sum_{i=1}^kh_i(x)\right)q(x)+h(x)q(x)\\
+p_k+h(x)q(x)&=p(x)+\left(\left(\sum_{i=1}^kh_i(x)\right)+h(x)\right)q(x)\\
+p_k+h(x)q(x)&=p(x)+I[x](c_0)q(x)\\
+p_k+h(x)q(x)&=p(x)\\
+\end{aligned}
+
+即有 $r(x)=p_k(x)$ 。故对于任意 $\left\{p(x),q(x)\right\}\subset M[x]$ 存在 $\left\{h(x),r(x)\right\}\subset M[x]$ 满足：
+
+（1） $p(x)=I[x](f_+)(I[x](f_\times)(h(x),q(x)),r(x))$
+
+（2） $r(x)$ 的[[MK378][次数]]均小于 $q(x)$ 的[[MK378][次数]]
+
+******* 唯一
+
+对于任意 $h'(x),r'(x)$ 满足 $p(x)=I[x](f_+)(I[x](f_\times)(h'(x),q(x)),r'(x))$ 且 $r'(x)$ 的[[MK378][次数]]小于 $q(x)$ 的[[MK378][次数]]
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]，故根据[[MK363][性质1]]可得（以 $I[x](f_+),I[x](f_\times)$ 下简写）：
+
+\begin{aligned}
+h(x)q(x)+r(x)=&h'(x)q(x)+r'(x)\\
+h(x)q(x)+r(x)+(-r(x))+(-h'(x))q(x)=&h'(x)q(x)+r'(x)+(-r(x))+(-h'(x))q(x)\\
+h(x)q(x)+(-h'(x))q(x)=&r'(x)+(-r(x))+(h'(x)+(-h'(x)))q(x)\\
+(h(x)+(-h'(x)))q(x)=&r'(x)+(-r(x))+I(c_0)q(x)\\
+(h(x)+(-h'(x)))q(x)=&r'(x)+(-r(x))\\
+\end{aligned}
+
+假设 $h(x)+(-h'(x))$ 的[[MK378][次数]]为 $z\geq 0$ 则可写成 $h(x)+(-h'(x))=\sum_{i=1}^z c_ix^i$ 其中 $c_z\ne I[x](c_0)$
+
+则有 $(h(x)+(-h'(x)))q(x)=\sum_{k=0}^{z+m}\left(\overline{\sum_{i=0}^kc'_ib'_{k-i}}\right)x^k$ 其中 $c'_i=\begin{cases}c_i&i\leq z\\I(c_0)&i>z\end{cases},b'_i=\begin{cases}b_i&i\leq m\\I(c_0)&i>m\end{cases}$
+
+故根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]可得 $x^{z+m}$ 的系数为（以下横线下的为 $I(f_+),I(f _\times)$ 的简写）：
+
+\begin{aligned}
+&\overline{\sum_{i=0}^{z+m}c'_ib'_{n-i}}\\
+=&\overline{c'_0b'_{z+m}+...+c'_{n-1}b'_{m+1}+c'_nb'_m+c'_{n+1}b'_{m-1}+...+c'_{z+m}b'_0}\\
+=&\overline{c_0I(c_0)+...+c_{n-1}I(c_0)+c_zb_m+I(c_0)b_{m-1}+...+I(c_0)b_0}\\
+=&\overline{c_zb_m}\\
+\end{aligned}
+
+根据[[MK340][性质2]]可得 $I(f_\times)(c_z,b_m)\ne I[x](c_0)$ 即 $(h(x)+(-h'(x)))q(x)$ 的[[MK378][次数]]为 $s=z+m$ 由于 $z\geq 0$ 即 $s\geq m$
+
+由于 $r'(x),r(x)$ 的[[MK378][次数]]均小于 $m$ ，则根据[[MK381][性质6]]可得 $(-r(x))$ 的[[MK378][次数]]与 $r(x)$ 的[[MK378][次数]]相等，即 $-r(x)$ 的[[MK378][次数]]亦小于 $m$
+
+则 $r'(x),r(x)$ 在 $x^m$ 上的系数均为 $I(c_0)$ ，根据[[MK374][定义（1）]]易证 $r'(x)+(-r(x))$ 在 $x^m$ 上的系数亦为 $I(c_0)$
+
+显然根据[[MK374][定义（7）（6）]]可得这与 $(h(x)+(-h'(x)))q(x)=&r'(x)+(-r(x))$ 矛盾
+
+故假设不成立，即 $h(x)+(-h'(x))$ 的[[MK378][次数]]为 $z\not\geq 0$ 则仅有可能 $h(x)+(-h'(x))=I[x](c_0)$
+
+同时根据[[MK347][性质4]]亦有 $I[x](f_+)(r'(x),-r(x))=I[x](f_\times)(I[x](f_+)(h(x),-h'(x)),q(x))=I[x](f_\times)(I[x](c_0),q(x))=I[x](c_0)$
+
+根据[[MK382][推论]]可得 $h(x)=h'(x),r(x)=r'(x)$ ，又根据 $h'(x),r'(x)$ 的任意性可得唯一性
+
+***** 性质8<<MK384>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，对于任意 $\left\{p(x),q(x)\right\}\subset M[x]$
+
+若不存在 $\left\{f(x),f_1(x),f_2(x)\right\}\subset M[x],f(x)\ne I[x](c_1)$ 满足 $p(x)=I[x](f_\times)(f(x),f_1(x)),q(x)=I[x](f_\times)(f(x),f_2(x))$
+
+则存在 $\left\{h(x),s(x)\right\}\subset M[x]$ 满足 $I[x](f_+)(I[x](f_\times)(p(x),h(x)),I[x](f_\times)(q(x),s(x)))=I[x](c_1)$
+
+****** 证明
+
+根据[[MK383][性质7]]可得存在（以 $I[x](f_+),I[x](f_\times)$ 下简写）：
+
+\begin{aligned}
+p(x)=&h_1(x)q(x)+r_1(x)\\
+q(x)=&h_2(x)r_1(x)+r_2(x)\\
+r_1(x)=&h_3(x)r_2(x)+r_3(x)\\
+...\\
+r_{n-1}(x)=&h_{n+1}(x)r_n(x)+r_{n+1}(x)\\
+r_n(x)=&h_{n+2}(x)r_{n+1}(x)+r_{n+2}(x)\\
+r_{n+1}(x)=&h_{n+3}(x)r_{n+2}(x)\\
+\end{aligned}
+
+由于[[MK383][性质7]]可得 $r_i$ 的[[MK378][次数]]大于 $r_{i+1}$ 故可得存在 $n<\infty$ 满足 $r_{n+3}=I[x](c_0)$ 即[[MK378][次数]]为 $-1$
+
+假设 $r_{n+2}(x)\ne I[x](c_1)$ 则有（以 $I[x](f_+),I[x](f_\times)$ 下简写）
+
+\begin{aligned}
+r_{n+1}(x)=&h_{n+3}(x)r_{n+2}(x)\\
+r_n(x)=&h_{n+2}(x)r_{n+1}(x)+r_{n+2}(x)\\
+=&h_{n+2}(x)h_{n+3}(x)r_{n+2}(x)+r_{n+2}(x)\\
+=&\left(h_{n+2}(x)h_{n+3}(x)+I[x](c_1)\right)r_{n+2}(x)\\
+=&h'_{n+2}(x)r_{n+2}\\
+r_{n-1}(x)=&h_{n+1}(x)r_n(x)+r_{n+1}(x)\\
+=&h_{n+1}(x)h'_{n+2}(x)r_{n+2}+h_{n+3}(x)r_{n+2}(x)\\
+=&(h_{n+1}(x)h'_{n+2}+h_{n+3}(x))r_{n+2}(x)\\
+=&h'_{n+1}(x)r_{n+2}(x)\\
+...\\
+r_1(x)=&h_3(x)r_2(x)+r_3(x)\\
+=&h_3(x)h'_4(s)r_{n+2}(x)+h'_5(x)r_{n+2}(x)\\
+=&(h_3(x)h'_4(s)+h'_5(x))r_{n+2}(x)\\
+=&h'_3(x)r_{n+2}(x)\\
+q(x)=&h_2(x)r_1(x)+r_2(x)\\
+=&h_2(x)h'_3r_{n+2}(x)+h'_4(s)r_{n+2}(x)\\
+=&(h_2(x)h'_3+h'_4(s))r_{n+2}(x)\\
+=&h'_2(x)r_{n+2}(x)\\
+p(x)=&h_1(x)h'_2(x)r_{n+2}(x)+h'_3(x)r_{n+2}(x)\\
+=&(h_1(x)h'_2(x)+h'_3(x))r_{n+2}(x)\\
+=&h'_1(x)r_{n+2}(x)
+\end{aligned}
+
+即存在 $f(x)=r_{n+2}(x)\ne I[x](c_1)$ 满足 $q(x)=I[x](f_\times)(f(x),h'_2(x)),p(x)=I[x](f _\times)(f(x),h'_1(x))$
+
+与假设不符，故必有 $r_{n+2}(x)=I[x](c_1)$
+
+则有（以 $I[x](f_+),I[x](f_\times)$ 下简写，对于任意 $f(x)\in M[x]$ 的加法逆元用 $(-f(x))$ 表示）：
+
+\begin{aligned}
+r_1(x)=&p(x)+(-h_1(x))q(x)\\
+=&I[x](c_1)p(x)+(-h_1(x))q(x)\\
+=&u_1(x)p(x)+v_1(x)q(x)\\
+r_2(x)=&q(x)+(-h_2(x))r_1(x)\\
+=&q(x)+(-h_2(x))(u_1(x)p(x)+v_1(x)q(x))\\
+=&u_2(x)p(x)+v_2(x)q(x)\\
+r_3(x)=&r_1(x)+(-h_3(x))r_2(x)\\
+=&u_1(x)p(x)+v_1(x)q(x)+(-h_3(x))(u_2(x)p(x)+v_2(x)q(x))\\
+=&u_3(x)p(x)+v_3(x)q(x)\\
+...\\
+r_{n+2}(x)=&r_n(x)+(-h_{n+2}(x))r_{n+1}(x)\\
+=&u_n(x)p(x)+v_n(x)q(x)+(-h_{n+2}(x))(u_{n+1}(x)p(x)+v_{n+1}(x)q(x))\\
+=&u_{n+2}(x)p(x)+v_{n+2}(x)q(x)
+\end{aligned}
+
+最终有 $I[x](f_+)(I[x](f_\times)(p(x),u_{n+2}(x)),I[x](f_\times)(q(x),v_{n+2}(x)))=r_{n+2}(x)=I[x](c_1)$
+
+又根据[[MK376][定理2]]可得 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+则根据[[MK356][性质4]]易证 $I[x](f_+)(I[x](f_\times)(p(x),u_{n+2}(x)),I[x](f_\times)(q(x),v_{n+2}(x)))=I[x](c_1)$
+
+***** 性质9<<MK386>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]] $p(x)=\sum_{i=0}^{n}a_ix^i\in M[x]$ 是 $\mathcal{M}[x]$ 的[[MK377][首一不可约多项式]]
+
+则包含 $p(x)$ 的 $\mathcal{M}[x]$ 的最小[[MK348][理想]]一定是 $\mathcal{M}[x]$ 的[[MK360][极大理想]]
+
+****** 证明
+
+根据[[MK365][性质2]]可得包含 $p(x)$ 的 $\mathcal{M}[x]$ 的最小[[MK348][理想]] $N[x]=\left\{I[x](f_\times)\left(q(x),p(x)\right)\big|q(x)\in M[x]\right\}$
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]且满足 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+******* $N[x]\ne M[x]$ 是真[[MK348][理想]]
+
+由于 $a_n=I(c_1)$ 且 $n>1$ ，则根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]可得对于任意 $b\in M\land b\ne I(c_0)$ 有 $I(f_\times)(I(c_1),b)=b$
+
+则对于任意 $q(x)=\sum_{i=0}^{m'}b_ix^i\in M[x],q(x)\ne I[x](c_0)$ 若存在 $m>1$ 满足 $b_i\ne I(c_0)$ 则根据[[MK374][定义]]有 $q(x)=\sum_{i=0}^{m}b_ix^i$
+
+若不存在，则有 $m=0,q(x)=\sum_{i=0}^{m}b_ix^i=b_0x^0=b_0\ne I[x](c_0)=I(c_0)$ 故有 $q(x)=\sum^m_{i=0}b_ix^i$ 且 $b_m\ne I(c_0)$
+
+则有 $I[x](f_\times)(p(x),q(x))=\sum_{k=0}^{m+n}\left(\overline{\sum_{i=0}^ka'_ib'_{k-i}}\right)x^k$
+
+则 $x^{n+m}$ 的系数为 $\overline{\sum_{i=0}^{n+m}a'_ib'_{n-i}}$ 其中 $a'_i=\begin{cases}a_i&i\leq n\\I(c_0)&i>n\end{cases},b'_i=\begin{cases}b_i&i\leq m\\I(c_0)&i>m\end{cases}$
+
+故根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]可得（以下横线下的为 $I(f_+),I(f_\times)$ 的简写）
+
+\begin{aligned}
+&\overline{\sum_{i=0}^{n+m}a'_ib'_{n-i}}\\
+=&\overline{a'_0b'_{n+m}+...+a'_{n-1}b'_{m+1}+a'_nb'_m+a'_{n+1}b'_{m-1}+...+a'_{m+n}b'_0}\\
+=&\overline{a_0I(c_0)+...+a_{n-1}I(c_0)+a_nb_m+I(c_0)b_{m-1}+...+I(c_0)b_0}\\
+=&\overline{a_nb_m}\\
+=&b_m
+\end{aligned}
+
+即对于任意 $q(x)\in M[x],q(x)\ne I[x](c_0)$ 均有 $I[x](f_\times)(p(x),q(x))$ 中 $x^{n+m}$ 的系数为 $b_m\ne I(c_0)$
+
+且由于 $n>1$ 故 $n+m>1$ 即根据[[MK374][定义（7）]]可得 $I[x](f_\times)(p(x),q(x))\ne I[x](c_1)$
+
+即有 $I[x](c_1)\not\in N[x]$ 即 $N[x]\ne M[x]$
+
+******* 是[[MK360][极大理想]]
+
+任取 $q(x)\in M[x]-N[x]$ 则根据[[MK372][性质3]]可得包含 $\{q(x)\}\cup N[x]$ 的最小[[MK348][理想]]
+
+为 $N'[x]=\left\{I[x](f_+)(I[x](f_\times)(g(x),q(x)),f(x))\big|g(x)\in M[x]\land f(x)\in N[x]\right\}$
+
+由于 $q(x)\not\in N[x]$ 则不存在 $h(x)\in M[x]$ 使得 $q(x)=I[x](f_\times)(p(x),h(x))$
+
+则显然不存在 $\left\{f(x),f_1(x),f_2(x)\right\}\subset M[x],f(x)\ne I[x](c_1)$ 满足 $p(x)=I[x](f_\times)(f(x),f_1(x)),q(x)=I[x](f_\times)(f(x),f_2(x))$
+
+故根据[[MK384][性质8]]可得存在 $\left\{h(x),s(x)\right\}\subset M[x]$ 满足 $I[x](f_+)(I[x](f_\times)(p(x),h(x)),I[x](f_\times)(q(x),s(x)))=I[x](c_1)$
+
+又由于 $I[x](f_\times)(q(x),s(x))\in N[x]$ 故可得 $I[x](c_1)\in N'[x]$ ，即根据[[MK359][定理1]]可得 $N'[x]=M[x]$
+
+即任意 $N'[x]$ 满足 $N[x]\subset N'[x]$ 以及 $N'[x]\ne N[x]$ 均有 $N'[x]=M[x]$
+
+**** 定理
+
+***** 定理1<<MK343>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，则 $\left<N,M,J(f_+),J(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
+
+****** 证明
+
+（1） 对于任意 $\{a,b\}\subset N$ 根据[[MK334][加法交换]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{N}\vDash(f_+(a,b)\hat{=}f_+(b,a))$ ，根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]即 $J(f_+)(a,b)=J(f_+)(b,a)$
+
+（2） 同上根据[[MK334][加法结合]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $J(f_+)(a,J(f_+)(b,c))=J(f_+)(J(f_+)(a,b),c)$
+
+（3） 同上根据[[MK334][加法幺元]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有对于任意 $a\in N$ 有 $J(f_+)(a,J(c_0))=J(f_+)(J(c_0),a)=a$
+
+（4） 同上根据[[MK334][加法逆元]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]对于任意 $a\in N$ 有 $J(f_-)(a)\in N$ 满足 $J(f_+)(a,J(f_-)(a))=J(c_0)$
+
+（5） 对于任意 $a\in N$ 根据[[MK33][乘法幺元]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $J(f_\times)(J(c_1),a)=a$ 。由于是[[MK341][子域]]，故是[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，则有 $J(c_1)=I(c_1)$
+
+     故可得 $J(c_1)=I(c_1)\in M$ 是 $\mathcal{M}$ 中的[[MK33][乘法幺元]]
+
+（6） 同上根据[[MK33][乘法结合]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\{k,l\}\subset M\subset N, a\in N$ 均有 $J(f_\times)(J(f_\times)(k,l),a)=J(f_\times)(k,J(f_\times)(l,a))$
+
+（7） 同上根据[[MK334][乘法分配]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\{k,l\}\subset M\subset N, a\in N$ 均有 $J(f_\times)(J(f_+)(k,l),a)=J(f_+)(J(f_\times)(k,a),J(f_\times)(l,a))$
+
+（8） 同上根据[[MK334][乘法分配]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\{a,b\}\subset N, k\in M\subset N$ 均有 $J(f_\times)(k,J(f_+)(a,b))=J(f_+)(J(f_\times)(k,a),J(f_\times)(k,b))$
+
+综上所述 $\left<N,M,J(f_+),J(f_\times)\right>$ 组成[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
+
+***** 定理2<<MK376>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]，则其[[MK374][多项式环]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是[[MK362][非零幺环]]，且 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+****** 证明
+
+对于任意 $\left\{\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i,\sum_{i=0}^{n_3}c_ix^i\right\}\subset M[x]$ 根据[[MK356][性质4]]：
+
+******* 是 $\mathcal{L}_{\mathcal{A}_{\mathcal{R}_e}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
+对于任意 $\left\{\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right\}\subset M[x]$ 显然有 $I[x](f_+)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right)\in M[x],I[x](f_\times)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right)\in M[x]$
+
+故显然 $\mathcal{M}[x]$ 是 $\mathcal{L}_{\mathcal{A}_{\mathcal{R}_e}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
+******* 证明结论
+
+根据以下证明结合 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 易证 $\mathcal{M}[x] =\left<M[x],I[x]\right>$ 是[[MK362][非零幺环]]
+
+******** $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_+(x_1,x_2)\hat{=}f_+(x_2,x_1))))$
+
+对于任意 $\left\{\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right\}\subset M[x]$ 显然[[MK374][定义（1）]]中 $a'_i\in M,b'_i\in M$
+
+则根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]对于任意 $0\leq i\leq\max(n_1,n_2)$ 均有 $I(f_+)(a'_i,b'_i)=I(f_+)(b'_i,a'_i)$ 故
+
+\begin{aligned}
+&I[x](f_+)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right)\\
+=&\sum_{i=0}^{\max(n_1,n_2)}I(f_+)(a'_i,b'_i)x\\
+=&\sum_{i=0}^{\max(n_1,n_2)}I(f_+)(b'_i,a'_i)x\\
+=&I[x](f_+)\left(\sum_{i=0}^{n_1}b_ix^i,\sum_{i=0}^{n_2}a_ix^i\right)
+\end{aligned}
+
+根据[[MK356][性质4]]可得 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_+(x_1,x_2)\hat{=}f_+(x_2,x_1))))$
+
+******** $\mathcal{M}[x]\vDash(\forall x_2(\forall x_2(\forall x_3(f_+(f_+(x_1,x_2),x_3)\hat{=}f_+(x_1,f_+(x_2,x_3))))))$
+
+对于任意 $\left\{\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i,\sum_{i=0}^{n_3}c_ix^i\right\}\subset M[x]$ 根据上一步同理可得 $a'_i\in M,b'_i\in M,c'_i\in M$
+
+则根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]对于任意 $0\leq i\leq\max(n_1,n_2,n_3)$ 均有 $I(f_+)(I(f_+)(a'_i,b'_i),c'_i)=I(f_+)(a'_i,I(f_+)(b'_i,c'_i))$ 故
+
+\begin{aligned}
+&I[x](f_+)\left(I[x](f_+)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right),\sum_{i=0}^{n_3}c_ix^i\right)\\
+=&I[x](f_+)\left(\sum_{i=0}^{\max(n_1,n_2)}I(f_+)(a'_i,b'_i)x,\sum_{i=0}^{n_3}c_ix^i\right)\\
+=&\sum_{i=0}^{\max(\max(n_1,n_2),n_3)}I(f_+)(I(f_+)(a'_i,b'_i),c'_i)x^i\\
+=&\sum_{i=0}^{\max(n_1,\max(n_2,n_3))}I(f_+)(a'_i,I(f_+)(b'_i,c'_i))x^i\\
+=&I[x](f_+)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{\max(n_2,n_3)}I(f_+)(b'_i,c'_i)x\right)\\
+=&I[x](f_+)\left(\sum_{i=0}^{n_1}a_ix^i,I[x](f_+)\left(\sum_{i=0}^{n_2}b_ix^i,\sum_{i=0}^{n_3}c_ix^i\right)\right)
+\end{aligned}
+
+根据[[MK356][性质4]]可得 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_+(x_1,x_2)\hat{=}f_+(x_2,x_1))))$
+
+******** $\mathcal{M}[x]\vDash(\forall x_1(f_+(x_1,c_0)\hat{=}x_1))$
+
+对于任意 $\sum_{i=0}^{n_1}a_ix^i\in M[x]$ 由于 $a_i\in M$ 则根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]对于任意 $0\leq i\leq n_1$ 均有 $I(f_+)(a_i,I(c_0))=a_i$
+
+则根据[[MK374][定义]]有：
+
+\begin{aligned}
+&I[x](f_+)\left(\sum_{i=0}^{n_1}a_ix^i,I(c_0)\right)\\
+=&I[x](f_+)\left(\sum_{i=0}^{n_1}a_ix^i,I(c_0)x^0\right)\\
+=&\sum_{i=0}^{n_1}I(f_+)(a_i,I(c_0))x^i\\
+=&\sum_{i=0}^{n_1}a_ix^i\\
+\end{aligned}
+
+根据[[MK356][性质4]]可得 $\mathcal{M}[x]\vDash(\forall x_1(f_+(x_1,c_0)\hat{=}x_1))$
+
+******** $\mathcal{M}[x]\vDash(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{=}c_0)))$
+
+对于任意 $\sum_{i=0}^{n_1}a_ix^i\in M[x]$ 由于 $a_i\in M$ 则根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]对于任意 $0\leq i\leq n_1$ 均存在 $b_i\in M$ 满足 $I(f_+)(a_i,b_i)=I(c_0)$
+
+则根据[[MK374][定义]]有：
+
+\begin{aligned}
+&I[x](f_+)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_1}b_ix^i\right)\\
+=&\sum_{i=0}^{n_1}I(f_+)(a_i,b_i)x^i\\
+=&\sum_{i=0}^{n_1}I(c_0)x^i\\
+=&I(c_0)x^0=I(c_0)=I[x](c_0)\\
+\end{aligned}
+
+根据[[MK356][性质4]]可得 $\mathcal{M}[x]\vDash(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{=}c_0)))$
+
+******** $\mathcal{M}[x]\vDash(\forall x_2(\forall x_2(\forall x_3(f_\times(f_\times(x_1,x_2),x_3)\hat{=}f_\times(x_1,f_\times(x_2,x_3))))))$
+
+对于任意 $\left\{\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i,\sum_{i=0}^{n_3}c_ix^i\right\}\subset M[x]$ 根据之前证明同理可得 $a'_i\in M,b'_i\in M,c'_i\in M$
+
+根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]可得（以下横线下的为 $I(f_+),I(f_\times)$ 的简写）
+
+\begin{aligned}
+&I[x](f_\times)\left(I[x](f_\times)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right),\sum_{i=0}^{n_3}c_ix^i\right)\\
+=&I[x](f_\times)\left(\sum_{k=0}^{n_1+n_2}\left(\overline{\sum_{i=0}^ka'_ib'_{k-i}}\right)x^k,\sum_{i=0}^{n_3}c_ix^i\right)\\
+=&\sum_{j=0}^{n_1+n_2+n_3}\left(\overline{\sum_{k=0}^j\left(\left(\sum_{i=0}^ka'_ib'_{k-i}}\right)c'_{j-k}\right)\right)x^j\\
+=&\sum_{j=0}^{n_1+n_2+n_3}\left(\overline{(a'_0b'_0c'_j)+(a'_0b'_1c'_{j-1}+a'_1b'_0c'_{j-1})+(a'_0b'_2c'_{j-2}+a'_1b'_1c'_{j-2}+a'_2b'_0c'_{j-2})+...+(a'_0b'_jc'_0+...+a'_jb'_0c'_0)}\right)\right)x^j\\
+=&\sum_{j=0}^{n_1+n_2+n_3}\left(\overline{a'_0\sum_{i=0}^j(b'_ic'_{j-i})+a'_1\sum_{k=0}^{j-1}(b'_ic'_{(j-1)-i})+...+a'_j\sum_{i=0}^0b'_ic'_{0-i}}\right)\right)x^j\\
+=&\sum_{j=0}^{n_1+n_2+n_3}\left(\overline{\sum_{k=0}^j\left(a'_{j-k}\left(\sum_{i=0}^kb'_ic'_{k-i}\right)\right)}\right)\right)x^j\\
+=&\sum_{j=0}^{n_1+n_2+n_3}\left(\overline{\sum_{k=0}^j\left(a'_k\left(\sum_{i=0}^{j-k}b'_ic'_{(j-k)-i}\right)\right)}\right)\right)x^j\\
+=&I[x](f _\times)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{k=0}^{n_2+n_3}\left(\overline{\sum_{i=0}^kb'_ic'_{k-i}}\right)x^k\right)\\
+=&I[x](f _\times)\left(\sum_{i=0}^{n_1}a_ix^i,I[x](f _\times)\left(\sum_{i=0}^{n_1}b_ix^i,\sum_{i=0}^{n_2}c_ix^i\right)\right)\\
+\end{aligned}
+
+根据[[MK356][性质4]]可得 $\mathcal{M}[x]\vDash(\forall x_2(\forall x_2(\forall x_3(f_\times(f_\times(x_1,x_2),x_3)\hat{=}f_\times(x_1,f_\times(x_2,x_3))))))$
+
+******** $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$
+
+对于任意 $\left\{\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i,\sum_{i=0}^{n_3}c_ix^i\right\}\subset M[x]$ 根据之前证明同理可得 $a'_i\in M,b'_i\in M,c'_i\in M$
+
+根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]可得（以下横线下的为 $I(f_+),I(f_\times)$ 的简写）
+
+\begin{aligned}
+&I[x](f_\times)\left(I[x](f_+)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right),\sum_{i=0}^{n_3}c_ix^i\right)\\
+=&I[x](f_\times)\left(\sum_{k=0}^{\max(n_1,n_2)}\left(\overline{a'_i+b'_i}\right)x^i,\sum_{i=0}^{n_3}c_ix^i\right)\\
+=&\sum_{k=0}^{\max(n_1,n_2)+n_3}\left(\overline{\sum_{i=0}^k\left((a'_i+b'_i)c'_{k-i}\right)}\right)x^i\\
+=&\sum_{k=0}^{\max(n_1,n_2)+n_3}\left(\overline{\sum_{i=0}^k\left(a'_ic'_{k-i}+b'_ic'_{k-i}\right)}\right)x^i\\
+=&\sum_{k=0}^{\max(n_1,n_2)+n_3}\left(\overline{\sum_{i=0}^k(a'_ic'_{k-i})+\sum_{i=0}^k(b'_ic'_{k-i})}\right)x^i\\
+=&I[x](f_+)\left(\sum_{k=0}^{\max(n_1,n_2)+n_3}\left(\overline{\sum_{i=0}^k(a'_ic'_{k-i})}\right)x^i,\sum_{k=0}^{\max(n_1,n_2)+n_3}\left(\overline{\sum_{i=0}^k(b'_ic'_{k-i})}\right)x^i\right)\\
+=&I[x](f_+)\left(I[x](f _\times)\left(\sum_{i=0}^{\max(n_1,n_2)}a'_ix^i,\sum_{i=0}^{n_3}c_ix^i\right),I[x](f _\times)\left(\sum_{i=0}^{\max(n_1,n_2)}b'_ix^i,\sum_{i=0}^{n_3}c_ix^i\right)\right)\\
+\end{aligned}
+
+根据[[MK375][性质5]] $\sum_{i=0}^{\max(n_1,n_2)}a'_ix^i=\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{\max(n_1,n_2)}b'_ix^i=\sum_{i=0}^{n_2}b_ix^i$
+
+故根据[[MK356][性质4]]可得 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$
+
+******** $\mathcal{M}[x]\vDash(\lnot(c_0\hat{=}c_1))$
+
+根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]] $I[x](c_0)=I(c_0)x^0=I(c_0)\ne I(c_1)=I(c_1)x^0=I[x](c_1)$
+
+故根据[[MK356][性质4]]可得 $\mathcal{M}[x]\vDash(\lnot(c_0\hat{=}c_1))$
+
+******** $\mathcal{M}[x]\vDash(\forall x_1(f_\times(x_1,c_1)\hat{=}x_1))$
+
+对于任意 $\sum_{i=0}^{n_1}a_ix^i\in M[x]$ 由于 $a_i\in M$ 故根据之前证明同理可得 $a'_i\in M$
+
+则根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]对于任意 $0\leq i\leq n_1$ 均有 $I(f_\times)(a_i,I(c_1))=a_i$ ，故可得（以下横线下的为 $I(f_+),I(f_\times)$ 的简写）
+
+\begin{aligned}
+&I[x](f_\times)\left(\sum_{i=0}^{n_1}a_ix^i,I(c_1)\right)\\
+=&I[x](f_\times)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^0I(c_1)x^0\right)\\
+=&\sum_{k=0}^{n_1+0}\left(\overline{\sum_{i=0}^k\left(a'_ib'_{k-i}\right)}\right)x^i
+\end{aligned}
+
+其中 $b'_i=\begin{cases}I(c_1)&i\leq 1\\I(c_0)&i>1\end{cases}$ 故根据[[MK356][性质4]]以及[[MK375][性质5]]可得
+
+\begin{aligned}
+&I[x](f_\times)\left(\sum_{i=0}^{n_1}a_ix^i,I(c_1)\right)\\
+=&\sum_{k=0}^{n_1+0}\left(\overline{\sum_{i=0}^k\left(a'_ib'_i\right)}\right)x^i\\
+=&\sum_{k=0}^{n_1+0}a'_kx^i\\
+=&\sum_{i=0}^{n_1}a_ix^i
+\end{aligned}
+
+故根据[[MK356][性质4]]可得 $\mathcal{M}[x]\vDash(\forall x_1(f_\times(x_1,c_1)\hat{=}x_1))$
+
+******** $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+对于任意 $\left\{\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right\}\subset M[x]$ 根据之前证明同理可得 $a'_i\in M,b'_i\in M$
+
+根据 $\mathcal{M}$ 是[[MK338][域]]以及[[MK356][性质4]]可得（以下横线下的为 $I(f_+),I(f_\times)$ 的简写）
+
+\begin{aligned}
+&I[x](f_\times)\left(\sum_{i=0}^{n_1}a_ix^i,\sum_{i=0}^{n_2}b_ix^i\right)\\
+=&\sum_{k=0}^{n_1+n_2}\left(\overline{\sum_{i=0}^ka'_ib'_{k-i}}\right)x^k\\
+=&\sum_{k=0}^{n_1+n_2}\left(\overline{\sum_{i=0}^kb'_{k-i}a'_i}\right)x^k\\
+=&\sum_{k=0}^{n_1+n_2}\left(\overline{\sum_{i=0}^kb'_ia'_{k-i}\right)x^k\\
+=&I[x](f_\times)\left(\sum_{i=0}^{n_1}b_ix^i,\sum_{i=0}^{n_2}a_ix^i\right)\\
+\end{aligned}
+
+根据[[MK356][性质4]]可得 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+***** 定理3
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]其[[MK374][多项式环]]为 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ ，则对于任意[[MK377][首一不可约]]多项式 $f(x)\in M[x]$ 存在 $\mathcal{N}=\left<N,J\right>$ 满足：
+
+（1） $\mathcal{N}\vDash T_\mathbb{F}$ 是[[MK338][域]]
+
+（2） $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]
+
+（3） 存在 $a\in N$ 是 $f(x)$ 在 $\mathcal{N}$ 下的[[MK389][根]]
+
+****** 证明
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]，则取 $\mathcal{M}[x]$ 中包含 $f(x)$ 的最小[[MK348][理想]] $(f(x))\subset M[x]$ 
+
+进一步取 $\mathcal{M}[x]$ 在[[MK348][理想]] $(f(x))$ 上的[[MK369][幺环商环]] $\mathcal{N}=\left<M[x]/(f(x)),J\right>$
+
+******* $\mathcal{N}$ 是[[MK338][域]]
+
+根据[[MK386][性质9]]可得 $(f(x))$ 是 $\mathcal{M}[x]$ 的[[MK360][极大理想]]，又根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]
+
+且 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 。
+
+则根据[[MK385][定理3]]可得 $\mathcal{N}$ 是[[MK338][域]]，即 $\mathcal{N}\vDash T_\mathbb{F}$ 
+
+******* 构造[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]] $e$
+
+定义对于任意 $a\in M$ 有 $e(a)=[ax^0]_\sim$ ，即 $ax^0$ 为[[MK309][环]] $\mathcal{M}[x]$ 在其[[MK348][理想]] $(f(x))$ 上的[[MK352][同余关系]]的[[MK133][等价类]]
+
+******** 是[[MK176][单射]]
+
+则对于任意 $\{a,b\}\subset M,a\ne b$ 有 $e(a)=[ax^0]_\sim,e(b)=[bx^0]_\sim$ 根据[[MK374][定义]]有 $ax^0=a,bx^0=b$
+
+假设 $a\sim b$ 则根据[[MK352][同余关系]]存在 $q(x)\in (f(x))$ 满足 $a=I[x](f_+)(q(x),b)$
+
+根据[[MK365][性质2]]可得 $(f(x))=\left\{I[x](f_\times)(p(x),f(x))\big|p(x)\in M[x]\right\}$ 则对于任意 $p(x)\ne I[x](c_0)$
+
+显然其[[MK378][次数]]大于 $0$ ，又由于 $f(x)$ [[MK377][首一不可约]]，故其[[MK378][次数]]大于 $1$ ，则根据[[MK387][性质10]]可得 $I[x](f_\times)(p(x),f(x))$ 的[[MK378][次数]]大于 $1$
+
+即对于任意 $q(x)\in(f(x))$ 其[[MK378][次数]]大于 $1$ ，又由于 $b$ 的[[MK378][次数]]为 $0$ ，则又根据[[MK387][性质10]]可得 $I[x](f_\times)(q(x),b)$ 的[[MK378][次数]]亦大于 $1$
+
+同理 $a$ 的[[MK378][次数]]为 $0$ 则根据[[MK388][推论]]可得对于任意 $q(x)\in(f(x))$ 均有 $a\ne I[x](f_+)(q(x),b)$
+
+故假设不成立，即 $a\not\sim b$ ，故有 $e(a)=[a]_\sim\ne[b]_\sim=e(b)$ 故 是[[MK176][单射]]
+
+******** 是[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]
+
+根据[[MK369][幺环商环]]定义，对于任意 $\{a,b\}\subset M$ 均有
+
+（1） $J(c_0)=[I(c_0)]_\sim=e(I(c_0))$
+
+（2） $J(c_1)=[I(c_1)]_\sim=e(I(c_1))$
+
+（3） $e(I(f_+)(a,b))=[I(f_+)(a,b)]=J(f_+)([a]_\sim,[b]_\sim)=J(f_+)(e(a),e(b))$
+
+（4） $e(I(f_\times)(a,b))=[I(f_\times)(a,b)]=J(f_\times)([a]_\sim,[b]_\sim)=J(f_\times)(e(a),e(b))$
+
+******* 存在 $a\in M[x]/(f(x))$ 使得 $f(a)=J(c_0)$
+
+设 $f(x)=\sum_{i=1}^na_ix^i$ 则经过 $e$ 映射后可得 $f(x)$ 在[[MK338][域]] $\mathcal{N}$ 中可表述为 $f(x)=\sum_{i=1}^n[a_i]_\sim x^i$ 
+
+显然 $I(c_0)x=x\in M[x]$ 则带入 $[x]_\sim\in M[x]/(f(x))$ 到 $f(x)$ 中可得（以 $I[x](f_+),I[x](f_\times)$ 下简写）
+
+\begin{aligned}
+\sum_{i=1}^n[a_i]_\sim [x]_\sim^i=&\sum_{i=1}^n[a_ix^i]_\sim\\
+=&\left[\sum_{i=1}^na_ix^i\right]_\sim\\
+=&[f(x)]_\sim
+\end{aligned}
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]，则根据[[MK363][性质1]]有 $f(x)=I[x](f_+)(I[x](c_0),f(x))$
+
+显然 $f(x)\in(f(x))$ 故可得 $f(x)\sim I[x](c_0)$ 即 $[f(x)]_\sim=[I[x](c_0)]_\sim$
+
+根据[[MK369][幺环商环]]定义显然有 $J(c_0)=[I[x](c_0)]_\sim$
+
+综上所述 $[x]_\sim\in M[x]/(f(x))$ 是 $f(x)$ 在 $\mathcal{N}$ 下的[[MK389][根]]
+
+***** 定理4
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]其[[MK374][多项式环]]为 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 对于任意[[MK377][首一不可约]]多项式 $f(x)\in M[x]$
+
+取 $\mathcal{M}[x]$ 中包含 $f(x)$ 的最小[[MK348][理想]] $(f(x))\subset M[x]$ 取 $\mathcal{M}[x]$ 在[[MK348][理想]] $(f(x))$ 上的[[MK369][幺环商环]] $\mathcal{N}=\left<M[x]/(f(x)),J\right>$
+
+定义 $M^*=\left\{[a]_\sim\big|a\in M\right\}$ 即 $M$ 中元素 $a$ 在 $M[x]/(f(x))$ 中的[[MK133][等价类]]则：
+
+（1） $\left<M[x]/(f(x)),M^*,J(f_+),J(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
+
+（2） $[I(c_1)]_\sim,[x]_\sim,...,[x^{n-1}]_\sim$ 为（1）中[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]的一组[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]
+
+****** 证明
+
+******* 证明（1）
+
+根据[[MK371][性质13]]以及[[MK370][定理2]]可得 $\mathcal{N}$ 是[[MK362][非零幺环]]且 $\mathcal{N}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是[[MK362][非零幺环]]，则根据[[MK356][性质4]]有（以下 $J(f_+),J(f_\times)$ 简写）：
+
+（1） 对于任意 $\{[f(x)]_\sim,[g(x)]_\sim\}\subset M[x]/(f(x))$ 有 $[f(x)]_\sim+[g(x)]_\sim=[g(x)]_\sim+[f(x)]_\sim$
+
+（2） 对于任意 $\{[f(x)]_\sim,[g(x)]_\sim,[h(x)]_\sim\}\subset M[x]/(f(x))$
+
+     有 $\left([f(x)]_\sim+[g(x)]_\sim\right)+[h(x)]_\sim=[f(x)]_\sim+\left([g(x)]_\sim+[h(x)]_\sim\right)$
+
+（3） 对于任意 $[f(x)]_\sim\in M[x]/(f(x))$ 有 $[f(x)]_\sim+J(c_0)=[f(x)]_\sim$
+
+（4） 对于任意 $[f(x)]_\sim\in M[x]/(f(x))$ 有 $-[f(x)]_\sim$ 使得 $[f(x)]_\sim+(-[f(x)]_\sim)=J(c_0)$
+
+（5） 对于任意 $[f(x)]_\sim\in M[x]/(f(x))$ 有 $J(c_1)=[I[x](c_1)]_\sim$ 根据[[MK374][多项式环]]有 $I[x](c_1)=I(c_1)$ 即 $[I[x](c_1)]_\sim\in M^*$
+
+     又有 $[f(x)]_\sim\cdot J(c_1)=[f(x)]_\sim\cdot[I[x](c_1)]_\sim=[I[x](f_\times)(f(x),I[x](c_1))]_\sim=[f(x)]_\sim$
+
+（6） 对于任意 $\{[a]_\sim,[b]_\sim\}\subset M^*,[f(x)]_\sim\in M[x]/(f(x))$ 有 $([a]_\sim\cdot [b]_\sim)\cdot [f(x)]_\sim=\left[I[x](f_\times)(I[x](f\times)(a,b),f(x))\right]_\sim$
+
+     进一步有 $([a]_\sim\cdot [b]_\sim)\cdot [f(x)]_\sim=\left[I[x](f_\times)(a,I[x](f\times)(b,f(x)))\right]_\sim=[a]_\sim\cdot([b]_\sim\cdot [f(x)]_\sim)$
+
+（7） 对于任意 $\{[a]_\sim,[b]_\sim\}\subset M^*,[f(x)]_\sim\in M[x]/(f(x))$ 有 $([a]_\sim+[b]_\sim)\cdot [f(x)]_\sim=[a]_\sim\cdot[f(x)]_\sim+[b]_\sim\cdot[f(x)]_\sim$
+
+（8） 对于任意 $[a]_\sim\in M^*,\{[f(x)]_\sim,[g(x)]_\sim\}\subset M[x]/(f(x))$ 有 $[a]_\sim\cdot([f(x)]_\sim+[g(x)]_\sim)=[a]_\sim\cdot[f(x)]_\sim+[a]_\sim\cdot[g(x)]_\sim$
+
+综上所述 $\left<M[x]/(f(x)),M^*,J(f_+),J(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
+
+******* 证明（2）
+
+根据上一步可得 $J(c_0)$ 是 $\left<M[x]/(f(x)),M^*,J(f_+),J(f_\times)\right>$ 的零点，且有 $J(c_0)=[I[x](c_0)]_\sim=[I(c_0)]_\sim$
+
+以下对 $J(f_+),J(f_\times)$ 简写为 $+,\cdot$ ，对 $I[x](f_+),I[x](f_\times)$ 简写为 $\oplus,\odot$
+
+同样 $J(f_+)$ 的连加简写为 $\sum$ ，$I[x](f_+)$ 的连加简写为 $\overline{\sum}$
+
+******** [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]
+
+假设[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性相关]]，则存在 $\{[b_0]_\sim,...,[b_{n-1}]_\sim\}\subset M^*$ 满足不全为 $[I(c_0)]_\sim$ 使得 $\sum_{i=0}^{n-1}[b_i]_\sim\cdot[x^i]_\sim=[I(c_0)]_\sim$
+
+根据[[MK369][幺环商环定义]]可得 $\sum_{i=0}^{n-1}[b_i]_\sim\cdot[x^i]_\sim=\left[\overline{\sum}_{i=1}^{n-1}b_i\odot x^i\right]_\sim=[h(x)]_\sim$ 
+
+根据[[MK374][多项式环]]易证由于不全为零有 $h(x)\ne I(c_0)$ 则仅有可能 $h(x)\sim I(c_0)$ 即为[[MK352][同余关系]]
+
+即存在 $g(x)\in M[x]$ 满足 $h(x)=(g(x)\odot f(x))\oplus I(c_0)=g(x)\odot f(x)$ 又根据[[MK387][性质10]]有
+
+（1） 若 $g(x)=I(c_0)$ 则有 $g(x)\odot f(x)=I(c_0)\ne h(x)$ 矛盾
+
+（2） 若 $g(x)\ne I(c_0)$ 则有 $g(x)$ [[MK378][次数]] $u\geq 0$ 则有 $g(x)\odot f(x)$ 的[[MK378][次数]]为 $u+n\geq n$
+
+     显然 $h(x)$ 的[[MK378][次数]]为 $n-1$ 根据[[MK388][推论]]可得 $g(x)\odot f(x)\ne h(x)$ 矛盾
+
+综上所述假设不成立，故 $[I(c_1)]_\sim,[x]_\sim,...,[x^{n-1}]_\sim$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]
+
+******** [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK12][线性表述]]所有元素
+
+对于任意 $g(x)=\overline{\sum}_{i=0}^ka_i\odot x^i\in M[x]$ 其[[MK378][次数]]为 $k$
+
+若 $k<n$ 根据[[MK369][幺环商环定义]]可得 $[g(x)]_\sim=\sum_{i=0}^k[a_i]\sim\cdot[x^i]_\sim$ 即被 $[I(c_1)]_\sim,[x]_\sim,...,[x^{n-1}]_\sim$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK12][线性表述]]
+
+若 $k\geq n$ 则根据[[MK383][性质7]]可得存在 $\left\{h(x),r(x)\right\}\subset M[x]$ 满足
+
+（1） $g(x)=(h(x)\odot f(x))\oplus r(x)$
+
+（2） $r(x)$ 的[[MK378][次数]]小于 $f(x)$ 的[[MK378][次数]]
+
+又根据[[MK365][性质2]]可得 $h(x)\odot f(x)\in(f(x))$ 故 $g(x)\sim r(x)$ 即为[[MK352][同余关系]]，则有 $[g(x)]_\sim=[r(x)]_\sim$
+
+由于 $r(x)$ 的[[MK378][次数]]小于 $n$ ，故同上易证 $r(x)$ 被 $[I(c_1)]_\sim,[x]_\sim,...,[x^{n-1}]_\sim$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK12][线性表述]]
+
+综上所述，对于任意 $g(x)\in M[x]$ 均有 $[g(x)]_\sim$ 被 $[I(c_1)]_\sim,[x]_\sim,...,[x^{n-1}]_\sim$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK12][线性表述]]
+
+又由于 $M[x]/(f(x))=\left\{[g(x)]_\sim\big|g(x)\in M[x]\right\}$ 故可得任意 $M[x]/(f(x))$ 中的元素均被 $[I(c_1)]_\sim,[x]_\sim,...,[x^{n-1}]_\sim$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK12][线性表述]]
+
+***** 定理5
+
+若 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{K}=\left<K,L\right>$ 的[[MK341][子域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是 $\mathcal{M}$ 的[[MK374][多项式环]]
+
+若有 $\alpha\in N-M$ 是某一[[MK377][首一不可约]]多项式 $p(x)\in M[x]$ 的[[MK389][根]]，定义：
+
+（1） 由 $\alpha$ [[MK393][生成]]的 $\mathcal{M}$ 的[[MK393][扩张域]]为 $\mathcal{M}_{(\alpha)}=\left<M_{(\alpha)},I_{(\alpha)}\right>$
+
+（2） $\mathcal{M}[x]$ 中包含 $p(x)$ 的最小[[MK348][理想]] $(p(x))\subset M[x]$
+
+（3） $\mathcal{M}[x]$ 在[[MK348][理想]] $(p(x))$ 上的[[MK369][幺环商环]] $\mathcal{N}=\left<M[x]/(p(x)),J\right>$
+
+则 $\mathcal{M}_{(\alpha)}$ 与 $\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+****** 证明
+
+以下对 $L(f_+),L(f_\times)$ 简写为 $+,\cdot$ ，其连加简写为 $\sum$ ，由于 $\mathcal{M}$ 是 $\mathcal{K}$ 的[[MK341][子域]]故 $I$ 是 $L$ 在 $M$ 上的[[~/文档/note/数理逻辑/sllj.org::MK481][限制解释]]
+
+故 $I(f_+),I(f_\times)$ 可同样简写为 $+,\cdot$ 
+
+定义 $e:M[x]/(p(x))\to K$ 满足对于任意 $[\sum_{i=1}^na_ix^i]_\sim\in M[x]/(p(x))$ 有 $e([\sum_{i=1}^na_ix^i]_\sim)=\sum_{i=1}^na_i\cdot \alpha^i$ 
+
+******* [[MK344][同态]]
+
+******** [[~/文档/note/数理逻辑/sllj.org::MK108][常元符号]]
+
+显然根据[[MK374][多项式环]]以及[[MK369][幺环商环]]定义有：
+
+（1） $e(J(c_0))=e([I[x](c_0)]_\sim)=e(L(c_0))=L(c_0)$
+
+（2） $e(J(c_1))=e([I[x](c_1)]_\sim)=e(L(c_1))=L(c_1)$
+
+******** [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]]
+
+对于任意 $\{\left[\sum_{i=1}^na_ix^i\right]_\sim,\left[\sum_{i=1}^mb_ix^i\right]_\sim\}\subset M[x]/(p(x))$
+
+\begin{aligned}
+&e\left(J(f_+)\left(\left[\sum_{i=1}^na_ix^i\right]_\sim,\left[\sum_{i=1}^mb_ix^i\right]_\sim\right)\right)\\
+=&e\left(\left[I[x](f_+)\left(\sum_{i=1}^na_ix^i,\sum_{i=1}^mb_ix^i\right)\right]_\sim\right)\\
+=&e\left(\left[\sum_{i=0}^{\max(n,m)}(a'_i+b'_i)x^i\right]_\sim\right)\\
+=&\sum_{i=0}^{\max(n,m)}(a'_i+b'_i)\cdot\alpha^i\\
+=&\sum_{i=0}^{n}a_i\cdot\alpha^i+\sum_{i=0}^{m}b_i\cdot\alpha^i\\
+=&e\left(\left[\sum_{i=0}^{n}a_ix^i\right]_\sim\right)+e\left(\left[\sum_{i=0}^{m}b_ix^i\right]_\sim\right)\\
+\end{aligned}
+
+即有 $e\left(J(f_+)\left(\left[\sum_{i=1}^na_ix^i\right]_\sim,\left[\sum_{i=1}^nb_ix^i\right]_\sim\right)\right)=L(f_+)\left(e\left(\left[\sum_{i=0}^{n}a_ix^i\right]_\sim\right),e\left(\left[\sum_{i=0}^{m}b_ix^i\right]_\sim\right)\right)$
+
+同理：
+
+\begin{aligned}
+&e\left(J(f_\times)\left(\left[\sum_{i=1}^na_ix^i\right]_\sim,\left[\sum_{i=1}^mb_ix^i\right]_\sim\right)\right)\\
+=&e\left(\left[I[x](f_\times)\left(\sum_{i=1}^na_ix^i,\sum_{i=1}^mb_ix^i\right)\right]_\sim\right)\\
+=&e\left(\left[\sum_{k=0}^{m+n}\left(\sum_{i=0}^ka'_i\cdot b'_{k-i}\right)x^k\right]_\sim\right)\\
+=&\sum_{k=0}^{m+n}\left(\sum_{i=0}^ka'_i\cdot b'_{k-i}\right)\alpha^k\\
+=&\left(\sum_{i=1}^na_i\alpha^i\right)\cdot\left(\sum_{i=1}^mb_i\alpha^i\right)\\
+=&e\left(\left[\sum_{i=1}^na_i\alpha^i\right]_\sim\right)\cdot e\left(\left[\sum_{i=1}^mb_i\alpha^i\right]_\sim\right)\\
+\end{aligned}
+
+即有 $e\left(J(f_\times)\left(\left[\sum_{i=1}^na_ix^i\right]_\sim,\left[\sum_{i=1}^nb_ix^i\right]_\sim\right)\right)=L(f_\times)\left(e\left(\left[\sum_{i=1}^na_i\alpha^i\right]_\sim\right),e\left(\left[\sum_{i=1}^mb_i\alpha^i\right]_\sim\right)\right)$
+
+******* 是[[MK175][函数]]
+
+对于任意 $\{[f(x)]_\sim,[g(x)]_\sim\}\subset M[x]/(p(x))$ 若有 $[f(x)]_\sim=[g(x)]_\sim$ 则有 $f(x)\sim g(x)$
+
+根据[[MK352][同于关系]]可得存在 $h(x)\in(p(x))$ 满足 $f(x)=I[x](f_+)(h(x),g(x))$
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]，且 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+根据[[MK365][性质2]]可得 $(p(x))=\left\{I[x](f_\times)(q(x),p(x))\big|q(x)\in M[x]\right\}$ 即最终有 $f(x)=I[x](f_+)(I[x](f_\times)(q(x),p(x)),g(x))$
+
+则根据上一步同态证明以及 $\alpha$ 是 $p(x)$ 的[[MK389][根]]有：
+
+\begin{aligned}
+e([f(x)]_\sim)=&e(\left[I[x](f_+)(I[x](f_\times)(q(x),p(x)),g(x))\right]_\sim)\\
+=&e(J(f_+)\left(J(f_\times)([q(x)]_\sim,[p(x)]_\sim),[g(x)]_\sim\right))\\
+=&e(J(f_\times)([q(x)]_\sim,[p(x)]_\sim))+e([g(x)]_\sim)\\
+=&e([q(x)]_\sim)\cdot e([p(x)]_\sim)+e([g(x)]_\sim)\\
+=&q(\alpha)\cdot p(\alpha)+g(\alpha)\\
+=&q(\alpha)\cdot L(c_0)+g(\alpha)\\
+=&L(c_0)+g(\alpha)\\
+=&g(\alpha)\\
+=&e([g(x)]_\sim)
+\end{aligned}
+
+即对于任意 $[f(x)]_\sim=[g(x)]_\sim$ 有 $e([f(x)]_\sim)=e([g(x)]_\sim)$ 故 $e$ 是[[MK175][函数]]
+
+******* 是[[MK176][单射]]
+
+对于任意 $\{[f(x)]_\sim,[g(x)]_\sim\}\subset M[x]/(p(x))$ 满足 $[f(x)]_\sim\ne[g(x)]_\sim$ 假设有 $e([f(x)]_\sim)=e([g(x)]_\sim)$
+
+即有 $f(\alpha)=g(\alpha)$ 根据上一步证明易证可以取到 $f(x),g(x)$ 满足[[MK378][次数]]均小于 $n$
+
+则可推出以下矛盾，故假设不成立，即若有 $[f(x)]_\sim\ne[g(x)]_\sim$ 则有 $e([f(x)]_\sim)\ne e([g(x)]_\sim)$ 即 $e$ 是[[MK176][单射]]
+
+******** 存在 $r_0(x)$ 满足[[MK378][次数]]大于 $0$ 小于 $n$ 且 $r_0(\alpha)=J(c_0)$  
+
+根据[[MK381][性质6]]可得存在 $-g(x)$ 满足 $h(x)=I[x](f_+)(g(x),-g(x))=I[x](c_0)$ 且[[MK378][次数]]与 $g(x)$ 想同
+
+根据[[MK395][性质]]可得 $h(\alpha)=J(c_0)=J(f_+)(g(\alpha),-g(\alpha))=J(f_+)(J(c_0),-g(\alpha))=-g(\alpha)$ 即有 $-g(\alpha)=J(c_0)$
+
+则定义 $r_0(x)=I[x](f_+)(f(x),(-g(x)))$ 同样根据[[MK395][性质]] $r_0(\alpha)=f(\alpha)+(-g(\alpha))=J(c_0)+J(c_0)=J(c_0)$
+
+若 $r_0(x)=J(c_0)$ 则根据[[MK382][推论]]可得 $f(x)=g(x)$ 根据[[MK355][定理1]]可得[[MK352][同余关系]]是[[MK132][等价关系]]，
+
+根据[[MK124][自反性]]有 $[f(x)]_\sim=[g(x)]_\sim$ 故矛盾，假设不成立。即有 $r_0(x)\ne J_0(c_0)$ ，即[[MK378][次数]]不为 $-1$
+
+假设 $r_0(x)$ [[MK378][次数]]为 $1$ ，则有 $r_0(x)=b\in M,b\ne J(c_0)$ 则[[MK394][带入]]有 $r_0(\alpha)=b\ne J(c_0)$ 矛盾
+
+故假设不成立，即 $r_0(x)$ [[MK378][次数]]不为 $0$ 。
+
+综上所述 $r_0(x)$ [[MK378][次数]]大于 $0$ ，又根据 $f(x),g(x)$ [[MK378][次数]]小于 $n$ 以及[[MK396][性质2]]可得 $r_0(x)$ 的[[MK378][次数]]小于 $p(x)$ 
+
+******** 存在 $r_0(x),...,r_{k+1}(x)$
+
+则根据[[MK383][性质7]]可的存在 $\{h_1(x),r_1(x)\}\subset M[x]$ 满足：
+
+（1） $p(x)=I[x](f_+)(I[x](f_\times)(h_1(x),r_0(x)),r_1(x))$
+
+（2） $r_1(x)$ 的[[MK378][次数]]小于 $r_0(x)$ 的[[MK378][次数]]
+
+根据[[MK395][性质]]以及[[MK347][性质4]]有 $J(c_0)=p(\alpha)=h_1(\alpha)\cdot h_0(\alpha)+r_1(\alpha)=h_1(\alpha)\cdot J(c_0)+r_1(a)=r_1(a)$ 即 $r_1(\alpha)=J(c_0)$
+
+依次类推有：
+
+\begin{aligned}
+p(x)&=I[x](f_+)(I[x](f_\times)(h_1(x),r_0(x)),r_1(x))\\
+r_0(x)&=I[x](f_+)(I[x](f_\times)(h_2(x),r_1(x)),r_2(x))\\
+r_1(x)&=I[x](f_+)(I[x](f_\times)(h_3(x),r_2(x)),r_3(x))\\
+&...\\
+r_{k-1}(x)&=I[x](f_+)(I[x](f_\times)(h_{k+1}(x),r_{k}(x)),r_{k+1}(x))\\
+r_k(x)&=I[x](f_+)(I[x](f_\times)(h_{k+2}(x),r_{k+1}(x)),J(c_0))=I[x](f_\times)(h_{k+2}(x),r_{k+1}(x))
+\end{aligned}
+
+由于 $r_i(x)$ 的[[MK378][次数]]大于 $r_{i+1}(x)$ 的次数，故必然会降到最低[[MK378][次数]]，假设经过 $k$ 轮后达到 $r_{k+2}(x)=J(c_0)$ 即[[MK378][次数]]为 $-1$
+
+同理亦可证 $r_i(\alpha)=J(c_0)$ 由于 $\alpha\not\in M$ 且 $r_i(x)\in M[x]$
+
+假设 $r_i(x)$ 的[[MK378][次数]]小于等于 $0$ 则 $r_i(x)=b\in M$ 。根据 $r_i(\alpha)=J(c_0)$ 可得 $b=J(c_0)$ 即 $r_i(x)=J(c_0)$
+
+即得 $r_i(x)$ [[MK378][次数]]为 $-1$ ，与上述推理步骤中遇到 $r_{k+2}(x)=J(c_0)$ 才停止矛盾，故假设不成立
+
+即可得 $r_i(x)$ 满足：
+
+（1） $r_i(x)$ 的[[MK378][次数]]大于 $r_{i+1}(x)$
+
+（2） $r_i(\alpha)=J(c_0)$
+
+（3） $r_i(x)$ 的[[MK378][次数]]大于 $0$
+
+******** 推出矛盾
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]，则根据[[MK363][性质1]]
+
+\begin{aligned}
+r_k(x)&=I[x](f_\times)(h_{k+2}(x),r_{k+1}(x))\\
+r_{k-1}(x)&=I[x](f_+)(I[x](f_\times)(h_{k+1}(x),r_{k}(x)),r_{k+1}(x))\\
+&=I[x](f_+)(I[x](f_\times)(h_{k+1}(x),I[x](f_\times)(h_{k+2}(x),r_{k+1}(x))),r_{k+1}(x))\\
+&=I[x](f_+)(I[x](f_\times)(I[x](f_\times)(h_{k+1}(x),h_{k+2}(x)),r_{k+1}(x)),r_{k+1}(x))\\
+&=I[x](f_+)(I[x](f_\times)(I[x](f_\times)(h_{k+1}(x),h_{k+2}(x)),r_{k+1}(x)),I[x](f_\times)(I[x](c_1),r_{k+1}(x)))\\
+&=I[x](f_\times)(I[x](f_+)(I[x](f_\times)(h_{k+1}(x),h_{k+2}(x)),I[x](c_1)),r_{k+1}(x))\\
+&=I[x](f_\times)(h'_{k-1}(x),r_{k+1}(x))\\
+&...\\
+r_1(x)&=I[x](f_+)(I[x](f_\times)(h_3(x),I[x](f_\times)(h'_2(x),r_{k+1}(x))),I[x](f_\times)(h'_3(x),r_{k+1}(x)))\\
+&=I[x](f_\times)(I[x](f_+)(I[x](f_\times)(h_3(x),h'_2(x)),h'_3(x)),r_{k+1}(x))\\
+&=I[x](f_\times)(h'_1(x),r_{k+1}(x))\\
+r_0(x)&=I[x](f_+)(I[x](f_\times)(h_2(x),r_1(x)),r_2(x))\\
+&=I[x](f_+)(I[x](f_\times)(h_2(x),I[x](f_\times)(h'_1(x),r_{k+1}(x))),I[x](f_\times)(h'_2(x),r_{k+1}(x)))\\
+&=I[x](f_\times)(I[x](f_+)(I[x](f_\times)(h_2(x),h'_1(x)),h'_2(x)),r_{k+1}(x))\\
+&=I[x](f_\times)(h'_0(x),r_{k+1}(x))\\
+p(x)&=I[x](f_+)(I[x](f_\times)(h_1(x),r_0(x)),r_1(x))\\
+&=I[x](f_+)(I[x](f_\times)(h_1(x),I[x](f_\times)(h'_0(x),r_{k+1}(x))),I[x](f_\times)(h'_1(x),r_{k+1}(x)))\\
+&=I[x](f_\times)(I[x](f_+)(I[x](f_\times)(h_1(x),h'_0(x)),h'_1(x)),r_{k+1}(x))\\
+&=I[x](f_\times)(q(x),r_{k+1}(x))\\
+\end{aligned}
+
+即有 $p(x)=I[x](f_\times)(q(x),r_{k+1}(x))$ 根据上一步有 $r_k(x)$ 的[[MK378][次数]]（设为 $u$ ）大于 $0$ 小于 $n$
+
+则根据[[MK387][性质1]]可得 $q(x)$ 的[[MK378][次数]]（设为 $v$ ）满足 $n=u+v$ 即 $v>0$
+
+故与 $p(x)$ [[MK377][首一不可约]]矛盾
+
+******* 值域
+
+对于任意 $\left[\sum_{i=0}^nb_ix^i\right]_\sim\in M[x]/(p(x))$ 有 $e\left(\left[\sum_{i=0}^nb_ix^i\right]_\sim\right)=\sum_{i=0}^nb_i\cdot \alpha^i$ 其中 $b_i\in M$
+
+故任意 $e\left(\left[\sum_{i=0}^nb_ix^i\right]_\sim\right)$ 均为 $M$ 中的元素与 $\alpha$ 经过有限次 $L(f_+),L(f_\times)$ 后的值，显然属于包含 $M\cup\{\alpha\}$ 的域中的元素
+
+即 $e(M[x]/(p(x)))=\left\{e([f(x)]_\sim)\big|[f(x)]_\sim\in M[x]/(p(x))\right\}\subset M_{(\alpha)}$
+
+故可得 $e:M[x]/(p(x))\to M_{(\alpha)}$
+
+******* [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+根据前几步证明可得 $e$ 是[[MK344][同态]]且是[[MK176][单射]]可得 $e:M[x]/(p(x))\to M_{(\alpha)}$ 是 $\mathcal{N}$ 到 $\mathcal{M}_{(\alpha)}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M}_{(\alpha)}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]] $\mathcal{M}'_{(\alpha)}=\left<M'_{(\alpha)},I_{(\alpha)}\right>$ 与 $\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，显然有：
+
+（1） $M'_{(\alpha)}=\left\{e([f(x)]_\sim)\big|[f(x)]_\sim\in M[x]/(p(x))\right\}\subset M_{(\alpha)}$ 是 $e$ 的相
+
+（2） $I'_{(\alpha)}$ 是 $I_{(\alpha)}$ 在 $M'_{(\alpha)}$ 上的[[~/文档/note/数理逻辑/sllj.org::MK481][限制解释]]
+
+又根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]，且 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+根据[[MK386][性质9]]可得 $(f(x))$ 是 $\mathcal{M}[x]$ 的[[MK360][极大理想]]，则根据[[MK385][定理3]]可得 $\mathcal{N}$ 是[[MK338][域]]，则有 $\mathcal{M}'_{(\alpha)}$ 亦为[[MK338][域]]
+
+根据 $e$ 的定义有 $e([x]_\sim)=\alpha$ 且对于任意 $b\in M$ 均有 $e([b]_\sim)=b$ 即有 $M\cup\{\alpha\}\subset M'_{(\alpha)}$
+
+故 $\mathcal{M}'_{(\alpha)}$ 是包含 $M\cup\{\alpha\}$ 的[[MK338][域]]且是 $\mathcal{M}_{(\alpha)}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，根据[[MK393][生成扩张域]]的定义可得 $\mathcal{M}_{(\alpha)}$ 是包含 $M\cup\{\alpha\}$ 的最小 $\mathcal{K}$ 的[[MK341][子域]]
+
+故可得必有 $\mathcal{M}_{(\alpha)}=\mathcal{M}'_{(\alpha)}$ ，即有 $e:M[x]/(p(x))\to M_{(\alpha)}$ 是[[MK181][双射]]，即 $\mathcal{M}_{(\alpha)}$ 与 $\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+***** 定理6
+
+若 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK338][域]]且[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，设同构映射为 $e$ 。则定义
+
+（1） 对于任意 $f(x)=\sum_{i=0}^na_ix^i$ 定义 $e(f(x))=\sum_{i=1}^ne(a_i)x^i$
+
+（2） $\mathcal{M}[x]=\left<M[x],I[x]\right>,\mathcal{N}[x]=\left<N[x],J[x]\right>$ 分别为 $\mathcal{M},\mathcal{N}$ 的[[MK374][多项式环]]
+
+（3） $(f(x)),(e(f(x)))$ 分别为 $\mathcal{M}[x],\mathcal{N}[x]$ 中包含 $f(x),e(f(x))$ 的最小[[MK348][理想]]
+
+（4） $\mathcal{M}[x],\mathcal{N}[x]$ 分别在[[MK348][理想]] $(f(x)),(e(f(x)))$ 上的[[MK369][幺环商环]]分别是 $\mathcal{M}'=\left<M[x]/(f(x)),I'\right>,\mathcal{N}'=\left<N[x]/(f(x)),J'\right>$
+
+则有 $\mathcal{M}',\mathcal{N}'$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+****** 证明
+
+定义映射 $e^*:M[x]/f(x)\to N[x]/e(f(x))$ 满足对于任意 $[f(x)]_\sim=\left[\sum_{i=0}^na_ix^i\right]_\sim\in M[x]/f(x)$ 有 $e^*([f(x)])=\left[\sum_{i=1}^ne(a_i)x^i\right]_\sim\in N[x]/(e(f(x)))$ 
+
+*** 代数封闭域<<MK390>>
+
+**** 语言
+
+同[[MK333][域语言]] $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 为区分记作 $\mathcal{A}_{\text{ACF}}$ 即有 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 是代数封闭域的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
 
 **** 公理
 
 定义代数封闭域公理集合为 $T_\text{ACF}$ ，则代数封闭域需要满足所有[[MK337][域公理]] $T_\mathbb{F}\subset T_\text{ACF}$ 外
 
-对于任意[[MK336][ $n$ 次多项式]] $\phi_n$ 均满足 $(\forall x_1(...(\forall x_n((\lnot(x_n\hat{=}c_0))\to(\exists x_0(\phi_n\hat{ =}c_0))))...))\in T_\text{ACF}$
+对于任意[[MK336][ $n$ 次多项式]] $\phi_n$ 均满足 $(\forall x_1(...(\forall x_n((\lnot(x_n\hat{=}c_0))\to(\exists x_{n+1}(\phi_n\hat{ =}c_0))))...))\in T_\text{ACF}$
+
+**** 性质
+
+***** 性质1<<MK391>>
+
+[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{L}_{\mathcal{A}_\text{ACF}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，则其满足[[MK356][性质4]]且对于任意[[MK336][ $n$ 次多项式]] $\phi_n$ 以下命题等价：
+
+（1） $\mathcal{M}\vDash(\forall x_1(...(\forall x_n((\lnot(x_n\hat{=}c_0))\to(\exists x_{n+1}(\phi_n\hat{ =}c_0))))...))$
+
+（2） 对于任意 $\{a_1,...,a_n\}\subset M$ 满足 $a_n\ne I(c_0)$ 存在 $b\in M$ 是[[MK374][多项式]] $\sum_{i=1}^na_ix^i$ 的[[MK389][根]]
+
+****** 证明
+
+******* 充分
+
+若 $\mathcal{M}\vDash(\forall x_1(...(\forall x_n((\lnot(x_n\hat{=}c_0))\to(\exists x_0(\phi_n\hat{ =}c_0))))...))$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\{a_1,...,a_n\}\subset M,a_n\ne I(c_0)$
+
+均有 $\mathcal{M}\vDash\exists x_{n+1}(\phi_n\hat{ =}c_0)[a_1,...,a_n]$ 又根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得存在 $b\in M$ 满足 $\mathcal{M}\vDash(\phi_n\hat{ =}c_0)[a_1,...,a_n,b]$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]即有 $\sum_{i=1}^n a_ib^i=I(c_0)$ 其中：
+
+（1） $b^i=I(f_\times)(...I(f_\times)(b,b)...)$ 即连续 $i$ 个 $b$ 在 $\mathcal{M}$ 下相乘
+
+（2） $a_ib^i=I(f_\times)(a_i,b^i)$ 即为 $\mathcal{M}$ 下的乘法
+
+（3） $\sum_{i=0}^{n}a_ib^i=I(f_+)(a_0b^0,I(f_+)(...,I(f_+)(a_{n-1}b^{n-1},a_nb^n)...))$ 即 $\mathcal{M}$ 下的连续加法
+
+即根据[[MK389][定义]]可得 $b$ 是[[MK374][多项式]] $\sum_{i=1}^na_ix^i$ 的[[MK389][根]]
+
+******* 必要
+
+若对于任意 $\{a_1,...,a_n\}\subset M$ 满足 $a_n\ne I(c_0)$ 存在 $b\in M$ 是[[MK374][多项式]] $\sum_{i=1}^na_ix^i$ 的[[MK389][根]]
+
+即 $\sum_{i=1}^n a_ib^i=I(c_0)$ ，即上一步类似可得 $\mathcal{M}\vDash(\phi_n\hat{ =}c_0)[a_1,...,a_n,b]$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\mathcal{M}\vDash(\exists x_{n+1}(\phi_n\hat{ =}c_0))[a_1,...,a_n]$ 由 $a_n\ne I(c_0)$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\mathcal{M}\vDash((\lnot(x_n\hat{=}c_0))\to(\exists x_{n+1}(\phi_n\hat{ =}c_0)))[a_1,...,a_n]$
+
+又由 $a_1,...,a_n$ 的任意性有 $\mathcal{M}\vDash(\forall x_1(...(\forall x_n((\lnot(x_n\hat{=}c_0))\to(\exists x_{n+1}(\phi_n\hat{ =}c_0))))...))$
+
+***** 性质2<<MK392>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]（显然亦为[[MK338][域]]）其[[MK374][多项式环]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 则对于任意 $f(x)\in M[x]$
+
+[[MK378][次数]]为 $n>0$ 存在唯一的 $c,h_1(x),...,h_n(x)$ 满足：
+
+（1） $c\in M$
+
+（2） $h_i(x)=x+(-a_i)$ 其中 $a_i\in M$ 是 $f(x)$ 的[[MK389][根]] $-a_i$ 是 $a_i$ 的加法逆元
+
+（3） $f(x)=I[x](f_\times)\left(c,\prod_{i=1}^nh_i(x)\right)$
+
+     其中 $\prod_{i=1}^nh_i(x)$ 为 $I[x](f_\times)(I[x](f_\times)(...I[x](f_\times)(h_1(x),h_2(x))...),h_n(x))$ 即 $\mathcal{M}[x]$ 下的连乘
+
+****** 证明
+
+根由 $\mathcal{M}$ 是[[MK390][代数封闭域]]以及[[MK391][性质1]]可得存在 $a_1\in M$ 是 $f(x)$ 的[[MK389][根]]，且存在 $-a_1$ 是 $a_1$ 的加法逆元
+
+则定义 $h_1(x)=x+(-a_1)$ ，根据[[MK383][性质7]]可得存在唯一 $p_1(x),r_1(x)$ 满足
+
+（1） $f(x)=I[x](f_+)(I[x](f_\times)(p_1(x),h_1(x)),r_1(x))$
+
+（2） $r_1(x)$ 的[[MK378][次数]]小于 $h_1(x)$ 的[[MK378][次数]]
+
+根据[[MK391][性质1]]及[[MK389][根定义]]有（以下 $I(f_+),I(f_\times)$ 均简写）：
+
+\begin{aligned}
+f(a_1)=I(c_0)=&p_1(a_1)h_1(a_1)+r_1(a_1)\\
+=&p_1(a_1)(a_1+(-a_1))+r_1(a_1)\\
+=&p_1(a_1)I(c_0)+r_1(a_1)\\
+=&r_1(a_1)\\
+\end{aligned}
+
+即有 $r_1(a_1)=I(c_0)$ 又由于 $r_1(x)$ 的[[MK378][次数]]小于 $h_1(x)$ 的[[MK378][次数]]，故 $r_1(x)=ax^0=a$ 即有 $r_1(x)=I(c_0)=I[x](c_0)$
+
+故可得 $f(x)=I[x](f_\times)(p_1(x),h_1(x))$ ，显然 $h_1(x)$ 的[[MK378][次数]]为 $1$ 且 $f(x)$ 的[[MK378][次数]] $n>0$
+
+故根据[[MK387][性质10]]可得 $p_1(x)$ 的[[MK378][次数]]为 $n-1$
+
+依次类推可得 $f(x)=p_n(x)\prod_{i=1}^{n-1}h_i(x)$ （其中 $I[x](f_+),I[x](f_\times)$ 简写），且 $h_i(x)=x+(-a_i)$ 以及 $p_n(x)$ 的[[MK378][次数]]为 $1$
+
+即可得 $p_n(x)=b_1x+b_2$ ，又由 $\mathcal{M}$ 是[[MK390][代数封闭域]]以及[[MK391][性质1]]可得存在乘法逆元 $b_1^{-1}$ 满足 $I(f_\times)(b_1,b_1^{-1})=I(c_1)$
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]，则根据[[MK363][性质1]]有（以下 $I[x](f_+),I[x](f_\times)$ 简写）：
+
+\begin{aligned}
+f(x)=&p_n(x)\prod_{i=1}^{n-1}h_i(x)\\
+=&(b_1x+b_1)\prod_{i=1}^{n-1}h_i(x)\\
+=&b_1b_1^{-1}(b_1x+b_2)\prod_{i=1}^{n-1}h_i(x)\\
+=&b_1(b_1b_1^{-1}x+b_2b_1^{-1})\prod_{i=1}^{n-1}h_i(x)\\
+=&b_1(x+b_2b_1^{-1})\prod_{i=1}^{n-1}h_i(x)\\
+=&b_1\prod_{i=1}^{n}h_i(x)&\text{where }h_n(x)=(x+b_2b_1^{-1})\\
+\end{aligned}
+
+即有 $f(x)=I[x](f_\times)\left(b_1,\prod_{i=1}^nh_i(x)\right)$ ，又根据[[MK383][性质7]]的唯一性可证 $b_1,h_1(x),...,h_n(x)$ 唯一 
+
+****** 推论
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]（显然亦为[[MK338][域]]）其[[MK374][多项式环]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 则对于任意 $f(x)\in M[x]$
+
+其[[MK389][根]]的数量为有限个
+
+******* 证明
+
+设 $f(x)$ [[MK378][次数]]为 $n>0$ ，则根据[[MK392][性质2]]可得 $f(x)=I[x](f_\times)\left(c,\prod_{i=1}^n(x+(-a_i))\right)$ 且分解唯一
+
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]$ 是[[MK362][非零幺环]]，则根据[[MK363][性质1]]以及[[MK304][性质2]]可得 $a_i$ 的加法逆元唯一，设为 $-a_i$
+
+则对于任意 $b\in M,b\not\in\{a_1,...,a_n\}$ 则有 $b+a_i\ne I(c_0)$
+
+则根据[[MK340][性质2]]易证 $\mathcal{M}$ 下的 $I(f_\times)\left(c,\prod_{i=1}^nI(f_+)(b,-a_i))\ne I(c_0)$ ，即 $b$ 不是 $f(x)$ 的[[MK389][根]]
+
+故可得 $f(x)$ 的[[MK389][根]]有且仅有 $\{a_1,...,a_n\}$ ，即有限 
 
 * 电路设计
 

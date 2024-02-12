@@ -2,7 +2,7 @@
 
 #+TITLE: 数理逻辑
 
-currnet mark: 480
+currnet mark: 482
 
 free mark: 
   
@@ -3234,7 +3234,7 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 （1） $M$ 为集合且 $M\ne\varnothing$ 非空
 
-（2） $I$ 是[[~/文档/note/离散数学/lssx.org::MK175][映射]]，满足以下条件:
+（2） $I$ 是[[~/文档/note/离散数学/lssx.org::MK175][映射]]，称为 $M$ 的解释，满足以下条件:
 
      a） 若 $c_i\in\mathcal{A}\cap C$ 是[[MK108][常元符号]]，则 $I(c_i)\in M$
 
@@ -7385,6 +7385,40 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 （4） 若 $p\in\mathcal{L}_\mathcal{A}$ 是[[MK110][谓词符号]]且 $\pi_P(p)=n$ 有 $I(p)=J(p)\cap M^n$
 
 则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的子结构，记作 $\mathcal{M}\subset\mathcal{N}$ 
+
+**** 限制[[MK153][解释]]<<MK481>>
+
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ ，若有 $N\subset M$ ，则 $I$ 对于 $N$ 的限制解释定义为 $I_N$ 满足：
+
+（1） 若 $c\in\mathcal{L}_\mathcal{A}$ 是[[MK108][常元符号]]，则有 $I_N(c)=I(c)$
+
+（2） 若 $f\in\mathcal{L}_\mathcal{A}$ 是[[MK109][函数符号]]且 $\pi_F(f)=n$ ，对于任意 $\left<a_1,...,a_n\right>\in N^n$ 有 $I_N(f)(a_1,...,a_n)=I(f)(a_1,...,a_n)$
+
+（3） 若 $p\in\mathcal{L}_\mathcal{A}$ 是[[MK110][谓词符号]]且 $\pi_P(p)=n$ 有 $I(p)=J(p)\cap N^n$
+
+***** 引理<<MK482>>
+
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 以及 $N\subset M$ ，定义 $I$ 在 $N$ 上的[[MK481][限制解释]]为 $I_N$
+
+则 $\left<N,I_N\right>$ 是 $\mathcal{M}$ 的[[MK282][子结构]]的充要条件是对于任意[[MK109][函数符号]] $f\in\mathcal{L}_\mathcal{A},\pi_F(f)=n$ ，对于任意 $\left<a_1,...,a_n\right>\in N^n$ 有 $I_N(f)(a_1,...,a_n)\in N$
+
+****** 证明
+
+******* 充分
+
+显然有:
+
+（1） 对于任意 $c\in\mathcal{L}_\mathcal{A}$ 是[[MK108][常元符号]]，则有 $I_N(c)=I(c)$
+
+（2） 根据条件对于任意 $f\in\mathcal{L}_\mathcal{A},\pi_F(f)=n$ 以及任意 $\left<a_1,...,a_n\right>\in N^n$ 有 $I_N(f)(a_1,...,a_n)\in N$
+
+（3） 对于任意 $p\in\mathcal{L}_\mathcal{A}$ 是[[MK110][谓词符号]]且 $\pi_P(p)=n$ 有 $I(p)\subset N^n$
+
+即 $\left<N,I_N\right>$ 符合 $\mathcal{L}_\mathcal{A}$ 的[[MK153][结构定义]]，则显然 $\left<N,I_N\right>$ 是 $\mathcal{M}$ 的[[MK282][子结构]]
+
+******* 必要
+
+若 $\left<N,I_N\right>$ 是 $\mathcal{M}$ 的[[MK282][子结构]]，则根据定义显然对于任意 $\left<a_1,...,a_n\right>\in N^n$ 有 $I_N(f)(a_1,...,a_n)\in N$
 
 **** 传递性<<MK283>>
 
