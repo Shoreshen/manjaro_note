@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 396
+currnet mark: 397
 
 free mark: 
  
@@ -6435,21 +6435,19 @@ x&=y\\
 
 两个[[MK298][代数结构]] $<S,*>,<\bar{S},\bar{*}>$ 若满足 $|S|=|\bar{S}|$ 即集合[[MK35][基数]]相等
 
-*** 同态映射<<MK306>>
+*** 同态映射<<MK344>>
 
-两个[[MK298][代数结构]] $<S,\Delta,*>,<\bar{S},\bar{\Delta},\bar{*}>$ 若存在[[MK175][函数]] $f:S\rightarrow\bar{S}$ ，对于任意 $\{a,b\}\subset S$ 满足 $h(\Delta a)=\bar{\Delta}h(a)\land h(a*b)=h(a)\bar{ *}h(b)$
+[[~/文档/note/数理逻辑/sllj.org::MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 下有[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 存在[[MK175][函数]] $e:M\to N$ 满足：
 
-则称 $f$ 是 $S$ 到 $S'$ 的同态映射，特别的：
+（1） 对于任意 $c\in\mathcal{L}_\mathcal{A}$ 是[[~/文档/note/数理逻辑/sllj.org::MK108][常元符号]]有 $e(I(c))=J(c)$
 
-（1） 当 $f$ [[MK176][单射]]时称为单一同态
+（2） 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 是[[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]]以及任意 $\left<a_1,...,a_n\right>\in M$ 有 $e(I(f)(a_1,...,a_n))=J(f)(e(a_1),...,e(a_n))$
 
-（2） 当 $f$ [[MK179][满射]]时称为满同态
-
-（3） 当 $f$ [[MK181][双射]]时称为同构映射
+（3） 对于任意 $p\in\mathcal{L}_\mathcal{A}$ 是[[~/文档/note/数理逻辑/sllj.org::MK110][谓词符号]]以及任意 $\left<a_1,...,a_n\right>\in M$ 有 $\left<a_1,...,a_n\right>\in I(p)$ 的充要条件是 $\left<e(a_1),...,e(a_n)\right>\in I(p)$ 
 
 *** 同构定义
 
-两个[[MK298][代数结构]] $<S,*>,<\bar{S},\bar{*}>$ 若存[[MK306][同构映射]] $f$ ，则称两个[[MK298][代数结构]]同构。
+两个[[MK298][代数结构]] $<S,*>,<\bar{S},\bar{*}>$ 若存[[MK344][同构映射]] $f$ ，则称两个[[MK298][代数结构]]同构。
 
 ** 代数结构的类型
 
@@ -6528,16 +6526,6 @@ x&=y\\
      $(\forall x_1(\forall x_2(\forall x_3((f_\times(f_+(x_2,x_3),x_1)\hat{=}f_+(f_\times(x_2,x_1),f_\times(x_3,x_1)))))))$ 乘法分配律
 
 **** 相关定义
-
-***** 同态[[MK175][映射]]<<MK344>>
-
-[[MK338][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK309][环]]，即 $\mathcal{M}\vDash T_\mathcal{R},\mathcal{N}\vDash T_\mathcal{R}$ ，若存在[[MK175][映射]] $\eta:M\to N$ 满足：
-
-（1） 对于任意 $\{a,b\}\subset M$ 均有 $\eta(I(f_+)(a,b))=J(f_+)(\eta(a),\eta(b))$
-
-（2） 对于任意 $\{a,b\}\subset M$ 均有 $\eta(I(f_\times)(a,b))=J(f_\times)(\eta(a),\eta(b))$
-
-则称 $\eta$ 是 $\mathcal{M}$ 到 $\mathcal{N}$ 的同态[[MK175][映射]]
 
 ***** 核<<MK346>>
 
@@ -8374,21 +8362,172 @@ p(x)&=I[x](f_+)(I[x](f_\times)(h_1(x),r_0(x)),r_1(x))\\
 
 ***** 定理6
 
-若 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK338][域]]且[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，设同构映射为 $e$ 。则定义
+若 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK338][域]]且[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，设同构映射为 $e$ 则定义
 
-（1） 对于任意 $f(x)=\sum_{i=0}^na_ix^i$ 定义 $e(f(x))=\sum_{i=1}^ne(a_i)x^i$
+（1） 对于任意 $f(x)=\sum_{i=0}^na_ix^i$ 定义 $e'(f(x))=\sum_{i=1}^ne(a_i)x^i$
 
 （2） $\mathcal{M}[x]=\left<M[x],I[x]\right>,\mathcal{N}[x]=\left<N[x],J[x]\right>$ 分别为 $\mathcal{M},\mathcal{N}$ 的[[MK374][多项式环]]
 
-（3） $(f(x)),(e(f(x)))$ 分别为 $\mathcal{M}[x],\mathcal{N}[x]$ 中包含 $f(x),e(f(x))$ 的最小[[MK348][理想]]
+（3） $(f(x)),(e(f(x)))$ 分别为 $\mathcal{M}[x],\mathcal{N}[x]$ 中包含 $f(x),e'(f(x))$ 的最小[[MK348][理想]]
 
-（4） $\mathcal{M}[x],\mathcal{N}[x]$ 分别在[[MK348][理想]] $(f(x)),(e(f(x)))$ 上的[[MK369][幺环商环]]分别是 $\mathcal{M}'=\left<M[x]/(f(x)),I'\right>,\mathcal{N}'=\left<N[x]/(f(x)),J'\right>$
+（4） $\mathcal{M}[x],\mathcal{N}[x]$ 分别在[[MK348][理想]] $(f(x)),(e'(f(x)))$ 上的[[MK369][幺环商环]]分别是 $\mathcal{M}'=\left<M[x]/(f(x)),I'\right>,\mathcal{N}'=\left<N[x]/(e'(f(x))),J'\right>$
 
-则有 $\mathcal{M}',\mathcal{N}'$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+则有：
+
+（1） $\mathcal{M}[x],\mathcal{N}[x]$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+（2） 对于任意 $\{f(x),g(x),h(x),r(x)\}\subset M[x]$ 有 $g(x)=I[x](f_+)(I[x](f_\times)(h(x),f(x)),r(x))$
+
+     的充要条件是 $e'(g(x))=J[x](f_+)(J[x](f_\times)(e'(h(x)),e'(f(x))),e'(r(x)))$
+
+（3） $\mathcal{M}',\mathcal{N}'$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
 ****** 证明
 
-定义映射 $e^*:M[x]/f(x)\to N[x]/e(f(x))$ 满足对于任意 $[f(x)]_\sim=\left[\sum_{i=0}^na_ix^i\right]_\sim\in M[x]/f(x)$ 有 $e^*([f(x)])=\left[\sum_{i=1}^ne(a_i)x^i\right]_\sim\in N[x]/(e(f(x)))$ 
+******* 证（1）
+
+定义映射 $e':M[x]\to N[x]$ 满足对于任意 $f(x)=\sum_{i=1}^n a_ix^i\in M[x]$
+
+有 $e'(f(x))=\sum_{i=0}^ne(a_i)x^i\in N[x]$ 根据以下证明可得 $e'$ 是 $\mathcal{M}[x]$ 到 $\mathcal{N}[x]$ 的[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]
+
+******** 是[[MK176][单射]]
+
+若有 $\sum_{i=0}^na_ix^i\ne\sum_{i=0}^m b_ix^i$ 则根据[[MK374][定义（7）]]可得有：
+
+（1） $n\ne m$ 或
+
+（2） 存在 $a_i\ne b_i$
+
+若 $n\ne m$ 则显然有 $\sum_{i=0}^ne(a_i)x^i\ne\sum_{i=0}^me(b_i)x^i$
+
+若 $a_i\ne b_i$ 由于 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]，故亦为[[MK181][双射]]，故可得 $e(a_i)\ne e(b_i)$ 则有 $\sum_{i=0}^ne(a_i)x^i\ne\sum_{i=0}^me(b_i)x^i$
+
+综上所述 $e'$ 是[[MK176][单射]]
+
+******** 是[[MK179][满射]]<<MK397>>
+
+由于 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]，故亦为[[MK181][双射]]，则根据[[MK188][逆运算]]可得存在逆函数 $e^{-1}:N\to M$
+
+对于任意 $\sum_{i=0}^n a_ix^i\in N[x]$ 有 $a_i\in N$ 则有 $e^{-1}(a_i)\in M$ 进一步有 $e'\left(\sum_{i=0}^ne^{-1}(a_i)x^i\right)=\sum_{i=0}^ne(e^{-1}(a_i))x^i=\sum_{i=0}^na_ix_i$
+
+即对于任意 $\sum_{i=0}^n a_ix^i\in N[x]$ 均存在 $\sum_{i=0}^ne^{-1}(a_i)x^i\in M[x]$ 满足 $e'\left(\sum_{i=0}^ne^{-1}(a_i)x^i\right)=\sum_{i=0}^ne(e^{-1}(a_i))x^i=\sum_{i=0}^na_ix_i$
+
+******** [[MK344][同态]]
+
+由于 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]，则易证：
+
+（1） $e(I(c_0))=J(c_0),e(I(c_1))=J(c_1)$
+
+（2） $e(I(f_+)(a,b))=J(f_+)(e(a),e(b))$
+
+（3） $e(I(f_\times)(a,b))=J(f_\times)(e(a),e(b))$
+
+则根据[[MK374][定义]]有 $I[x](c_0)=I(c_0)x^0$ 则根据 $e'$ 定义有 $e'(I[x](c_0))=e'(I(c_0)x^0)=e(I(c_0))x^0=J(c_0)x^0=J[x](c_0)$
+
+同理易证 $e'(I[x](c_1))=J[x](c_1)$
+
+对于任意 $\left\{\sum_{i=0}^{n}a_ix^i,\sum_{i=0}^{m}b_ix^i\right\}\subset M[x]$ 有
+
+\begin{aligned}
+&e'\left(I[x](f_+)\left(\sum_{i=0}^na_ix^i,\sum_{i=0}^mb_ix^i\right)\right)\\
+=&e'\left(\sum_{i=0}^{\max(n,m)}I(f_+)(a'_i,b'_i)x^i\right)\\
+=&\sum_{i=1}^{\max(n,m)}e(I(f_+)(a'_i,b'_i))x^i\\
+=&\sum_{i=1}^{\max(n,m)}J(f_+)(e(a'_i),e(b'_i))x^i\\
+\end{aligned}
+
+其中 $a'_i=\begin{cases}a_i&i\leq n\\I(c_0)&i>n\end{cases},b'_i=\begin{cases}b_i&i\leq m\\I(c_0)&i>m\end{cases}$
+
+另有
+
+\begin{aligned}
+&J[x](f_+)\left(e'\left(\sum_{i=0}^na_ix^i\right),e'\left(\sum_{i=0}^mb_ix^i\right)\right)\\
+=&J[x](f_+)\left(\sum_{i=0}^ne(a_i)x^i,\sum_{i=0}^me(b_i)x^i\right)\\
+=&\sum_{i=1}^{\max(n,m)}J(f_+)(e(a_i)',e(b_i)')x^i\\
+\end{aligned}
+
+其中 $e(a)'_i=\begin{cases}e(a_i)&i\leq n\\J(c_0)&i>n\end{cases},e(b_i)'=\begin{cases}e(b_i)&i\leq m\\J(c_0)&i>m\end{cases}$
+
+由于 $e(I(c_0))=J(c_0)$ 即有 $e(a'_i)=e(a_i)',e(b'_i)=e(b_i)'$
+
+即可得 $e'\left(I[x](f_+)\left(\sum_{i=0}^na_ix^i,\sum_{i=0}^mb_ix^i\right)\right)=J[x](f_+)\left(e'\left(\sum_{i=0}^na_ix^i\right),e'\left(\sum_{i=0}^mb_ix^i\right)\right)$
+
+同理易证 $e'\left(I[x](f_\times)\left(\sum_{i=0}^na_ix^i,\sum_{i=0}^mb_ix^i\right)\right)=J[x](f_\times)\left(e'\left(\sum_{i=0}^na_ix^i\right),e'\left(\sum_{i=0}^mb_ix^i\right)\right)$
+
+******* 证（2）
+
+根据（1）可得 $\mathcal{M}[x],\mathcal{N}[x]$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]且同构映射为 $e'$
+
+******** 充分
+
+若有 $\{f(x),g(x),h(x),r(x)\}\subset M[x]$ 满足 $g(x)=I[x](f_+)(I[x](f_\times)(h(x),f(x)),r(x))$
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于 $\mathcal{M}[x]$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_1)=f(x),v(x_2)=g(x),v(x_3)=h(x),v(x_4)=r(x)$
+
+有 $\left<\mathcal{M}[x],v\right>\vDash(x_2\hat{=}f_+(f_\times(x_3,x_1),x_4))$ ，根据[[~/文档/note/数理逻辑/sllj.org::MK276][定理1]]可得 $\left<\mathcal{N}[x],v\cdot e\right>\vDash(x_2\hat{ =}f_+(f_\times(x_3,x_1),x_4))$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $e'(g(x))=J[x](f_+)(J[x](f_\times)(e'(h(x)),e'(f(x))),e'(r(x)))$
+
+******** 必要
+
+根据[[MK188][求逆]]可得存在逆函数 $e'^{-1}$ 根据[[~/文档/note/数理逻辑/sllj.org::MK275][引理1]]可得 $e'^{-1}$ 亦为[[~/文档/note/数理逻辑/sllj.org::MK274][同构函数]]
+
+则根据上一步证明同理可证若有 $e'(g(x))=J[x](f_+)(J[x](f_\times)(e'(h(x)),e'(f(x))),e'(r(x)))$
+
+则有 $g(x)=I[x](f_+)(I[x](f_\times)(h(x),f(x)),r(x))$
+
+******* 证（3）
+
+定义映射 $e^*:M[x]/f(x)\to N[x]/(e'(f(x)))$ 满足对于任意 $[p(x)]_\sim=\left[\sum_{i=0}^na_ix^i\right]_\sim\in M[x]/(f(x))$
+
+有 $e^*([p(x)]_\sim)=[e'(p(x))]_\sim\in N[x]/(e'(f(x)))$ 根据以下证明可得 $e^*$ 是 $\mathcal{M}'$ 到 $\mathcal{N}'$ 的[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]
+
+******** 是[[MK175][函数]]
+
+对于任意 $\{p(x),q(x)\}\subset M[x]$ 满足 $[p(x)]_\sim=[q(x)]_\sim$ 有 $p(x)\sim q(x)$
+
+即存在 $h'(x)\in(f(x))$ 满足 $p(x)=I[x](f_+)(h'(x),q(x))$
+
+又根据[[MK370][定理2]]可得 $\mathcal{M}[x],\mathcal{N}[x]$ 是[[MK362][非零幺环]]，则根据[[MK365][性质2]]可得 $(f(x))=\left\{I[x](f_\times)(u(x),f(x))\big|u(x)\in M[x]\right\}$
+
+即存在 $h(x)\in M[x]$ 满足 $h'(x)=I[x](f_\times)(h(x),f(x))$ 即有 $p(x)=I[x](f_+)(I[x](f_\times)(h(x),f(x)),q(x))$ 
+
+根据（2）可得 $e'(p(x))=J[x](f_+)(J[x](f_\times)(e'(h(x)),e'(f(x))),e'(q(x)))$
+
+即 $e'(p(x))\sim e'(p(x))$ 即有 $[e'(p(x))]_\sim=[e'(q(x))]_\sim$
+
+故可得对于任意 $[p(x)]_\sim\in M[x]/(f(x))$ 可得存在唯一 $[e'(p(x))]\in N[x]/(e'(f(x)))$ 满足 $e^*([p(x)]_\sim)=[e'(p(x))]_\sim$
+
+******** 是[[MK176][单射]]
+
+假设存在 $\{[p(x)]_\sim,[q(x)]_\sim\}\subset M[x]/(f(x))$ 满足 $[p(x)]_\sim\ne[q(x)]_\sim$ 且 $e^*([p(x)]_\sim)=e^*([q(x)]_\sim)$
+
+则有 $[e'(p(x))]_\sim=[e'(q(x))]_\sim$ 即有 $e'(p(x))\sim e'(q(x))$ ，根据上一步类似可证存在 $h(x)\in N[x]$
+
+满足 $e'(p(x))=J[x](f_+)(J[x](f_\times)(h(x),e'(f(x))),e'(q(x)))$
+
+[[MK397][同理可证]]存在 $h'(x)\in M[x]$ 满足 $e(h'(x))=h(x)$ ，根据（2）可得有 $p(x)=I[x](f_+)(I[x](f_\times)(h'(x),f(x)),q(x))$
+
+即易证 $p(x)\sim q(x)$ 与 $[p(x)]_\sim\ne[q(x)]_\sim$ 矛盾，假设不成立
+
+故对于任意 $\{[p(x)]_\sim,[q(x)]_\sim\}\subset M[x]/(f(x))$ 满足 $[p(x)]_\sim\ne[q(x)]_\sim$ 均有 $e^*([p(x)]_\sim)\ne e^*([q(x)]_\sim)$
+
+******** 是[[MK179][满射]]
+
+[[MK397][同理可证]]对于任意 $h(x)\in N[x]$ 存在 $h'(x)\in M[x]$ 满足 $e(h'(x))=h(x)$
+
+则根据 $e^*$ 定义对于任意 $[h(x)]_\sim\in N[x]/(e'(f(x)))$ 存在 $[h'(x)]_\sim$ 满足 $e^*([h'(x)]_\sim)=[e'(h'(s))]_\sim=[h(x)]_\sim$
+
+******** [[MK344][同态]]
+
+根据[[MK369][定义]]以及（1）的证明可得：
+
+（1） $e^*(I'(c_0))=e^*([I[x](c_0)]_\sim)=[e'(I[x](c_0))]_\sim=[J[x](c_0)]_\sim=J'(c_0)$
+
+（2） $e^*(I'(c_1))=e^*([I[x](c_1)]_\sim)=[e'(I[x](c_1))]_\sim=[J[x](c_1)]_\sim=J'(c_1)$
+
+（3） $e^*(I'(f_\times)([p(x)]_\sim,[q(x)]_\sim))=e^*([I[x](f_\times)(p(x),q(x))]_\sim)=&[e'(I[x](f_\times)(p(x),q(x)))]_\sim\\=[J[x](f_\times)(e'(p(x))),e'(q(x))]_\sim=J'(f_\times)([e'(p(x))]_\sim,[e'(q(x))]_\sim)=J'(f_\times)(e^*([p(x)]_\sim),e^*([q(x)]_\sim))$
+
+（4） $e^*(I'(f_+)([p(x)]_\sim,[q(x)]_\sim))=e^*([I[x](f_+)(p(x),q(x))]_\sim)=&[e'(I[x](f_\times)(p(x),q(x)))]_\sim\\=[J[x](f_+)(e'(p(x))),e'(q(x))]_\sim=J'(f_+)([e'(p(x))]_\sim,[e'(q(x))]_\sim)=J'(f_+)(e^*([p(x)]_\sim),e^*([q(x)]_\sim))$
 
 *** 代数封闭域<<MK390>>
 
@@ -8515,6 +8654,16 @@ f(x)=&p_n(x)\prod_{i=1}^{n-1}h_i(x)\\
 则根据[[MK340][性质2]]易证 $\mathcal{M}$ 下的 $I(f_\times)\left(c,\prod_{i=1}^nI(f_+)(b,-a_i))\ne I(c_0)$ ，即 $b$ 不是 $f(x)$ 的[[MK389][根]]
 
 故可得 $f(x)$ 的[[MK389][根]]有且仅有 $\{a_1,...,a_n\}$ ，即有限 
+
+**** 定理
+
+***** 定理1
+
+[[MK390][代数封闭域]]适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
+
+****** 证明
+
+对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 若有[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]] $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
 * 电路设计
 
