@@ -2,7 +2,7 @@
 
 #+TITLE: 数理逻辑
 
-currnet mark: 482
+currnet mark: 483
 
 free mark: 
   
@@ -12920,7 +12920,7 @@ $\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]�
 
 综上所述， $T\vdash\theta$ 与 $T\vdash(\lnot\theta)$ 有且仅有一个成立，则根据[[MK266][引理1]]可得 $\mathcal{T}$ 是[[MK264][完全理论]]
 
-**** 定理4
+**** 定理4<<MK483>>
 
 [[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，对于任意 $\phi(x_1,...,x_n)\in\mathcal{L}_\mathcal{A}$ 则以下命题等价
 
@@ -13054,7 +13054,7 @@ $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\not\vdash\phi^*$
 
 （1） 根据[[MK478][以下证明]]可得 $\mathcal{L}_{\mathcal{A}}$ 的[[MK153][结构]] $\mathcal{M}_\mathcal{A}=\left<M,I_\mathcal{A}\right>,\mathcal{N}_\mathcal{A}=\left<N,J_\mathcal{A}\right>,\mathcal{K}_\mathcal{A}=\left<K,L_\mathcal{A}\right>,\mathcal{K}'_\mathcal{A}=\left<K',L' _\mathcal{A}\right>$
 
-（2） $\mathcal{K}_\mathcal{A},\mathcal{K}'_ \mathcal{A}$ [[MK274][同构]]
+（2） $\mathcal{K}_\mathcal{A},\mathcal{K}'_ \mathcal{A}$ [[MK274][同构]]，同构映射为 $e$
 
 （3） 存在 $\left<a_1,...,a_n\right>\in K^n$ 满足 $\mathcal{M}_\mathcal{A}\vDash(\lnot\phi)[a_1,...,a_n],\mathcal{N}_\mathcal{A}\vDash\phi[e(a_1),...,e(a_n)]$
 

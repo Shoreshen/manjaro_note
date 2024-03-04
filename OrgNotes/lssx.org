@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 397
+currnet mark: 412
 
 free mark: 
  
@@ -6501,11 +6501,11 @@ x&=y\\
 
 除[[~/文档/note/数理逻辑/sllj.org::MK105][固定符号]]外有：
 
-（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+$ 分别表示乘法，加法
+（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+,f_-$ 分别表示乘法，加法，加法逆元
 
 （3） [[~/文档/note/数理逻辑/sllj.org::MK108][常元符号]] $c_0$
 
-则有 $\mathcal{A}_\mathcal{R}=\{f_\times,f_+,c_0\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 是环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
+则有 $\mathcal{A}_\mathcal{R}=\{f_\times,f_+,f_-,c_0\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 是环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
 
 **** 公理<<MK334>>
 
@@ -6517,7 +6517,7 @@ x&=y\\
 
 （3） $(\forall x_1(f_+(x_1,c_0)\hat{=}x_1))$ 加法幺元
 
-（4） $(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{=}c_0)))$ 加法逆元
+（4） $(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)))$ 加法逆元
 
 （5） $(\forall x_2(\forall x_2(\forall x_3(f_\times(f_\times(x_1,x_2),x_3)\hat{=}f_\times(x_1,f_\times(x_2,x_3))))))$ 乘法结合律
 
@@ -6575,7 +6575,7 @@ x&=y\\
 
 **** 性质
 
-***** 性质1<<MK337>>
+***** 性质1<<MK398>>
 
 加法幺元唯一且为 $c_0$ ，即 $T_\mathcal{R}\vdash(\forall x_1((\forall x_2(f_+(x_1,x_2)\hat{=}x_2))\to(x_1\hat{ =}c_0)))$
 
@@ -6962,11 +6962,11 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 除[[~/文档/note/数理逻辑/sllj.org::MK105][固定符号]]外有：
 
-（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+$ 分别表示乘法，加法
+（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+,f_-$ 分别表示乘法，加法，加法逆元
 
 （3） [[~/文档/note/数理逻辑/sllj.org::MK108][常元符号]] $c_0,c_1$
 
-则有 $\mathcal{A}_{\mathcal{R}_e}=\{f_\times,f_+,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_{\mathcal{R}_e}}$ 是幺环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
+则有 $\mathcal{A}_{\mathcal{R}_e}=\{f_\times,f_+,f_-,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_{\mathcal{R}_e}}$ 是幺环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
 
 **** 公理<<MK373>>
 
@@ -6998,7 +6998,323 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 （5） $J(c_1)=[I(c_1)]_\sim$
 
+（6） $J(f_-)([a]_\sim)=[I(f_-)(a)]_\sim$
+
 则 $\mathcal{N}=\left<M/N,J\right>$ 称为 $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的商环 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]且 $\mathcal{N}\vDash T_\mathcal{R}$ ，称为商环。
+
+***** 分式关系<<MK399>>
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]定义 $M_\div=\left\{\frac{a}{b}\big|\{a,b\}\subset M\land b\ne I(c_0)\right\}$
+
+定义关系 $\sim=\left\{\left<\frac{a}{b},\frac{c}{d}\right>\big|\{a,b,c,d\}\subset M\land I(f_\times)(a,d)=I(f_\times)(c,b)\right\}$ 为分式关系
+
+****** 性质1<<MK401>>
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]且满足：
+
+（1） $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换
+
+（2） $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$ 
+
+则其[[MK399][分式关系]]是[[MK132][等价关系]]
+
+******* 证明
+
+定义 $\mathcal{M}$ 的[[MK399][分式关系]]为 $\sim$ 则有
+
+******** [[MK124][自反性]]
+
+对于任意 $\frac{a}{b}\in M_\div$ 根据 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 易证 $I(f_\times)(a,b)=I(f_\times)(b,a)=I(f_\times)(a,b)$
+
+即有 $\frac{a}{b}\sim\frac{a}{b}$ 即满足[[MK124][自反性]]
+
+******** [[MK126][对称性]]
+
+对于任意 $\left\{\frac{a}{b},\frac{c}{d}\right\}\subset M_\div$ 若有 $\frac{a}{b}\sim\frac{c}{d}$ 即可得 $I(f_\times)(a,d)=I(f_\times)(c,b)$ 显然 $I(f_\times)(c,b)=I(f_\times)(a,d)$
+
+故可得 $\frac{c}{d}\sim\frac{a}{b}$ 即满足[[MK126][对称性]]
+
+******** [[MK128][传递性]]
+
+对于任意 $\left\{\frac{a}{b},\frac{c}{d},\frac{x}{y}\right\}\subset M_\div$ 若有 $\frac{a}{b}\sim\frac{c}{d},\frac{c}{d}\sim\frac{x}{y}$ 则有 $I(f_\times)(a,d)=I(f_\times)(c,b),I(f_\times)(c,y)=I(f_\times)(x,d)$
+
+根据 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]、[[MK363][性质1]]以及 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 易证
+
+（1） $I(f_\times)(I(f_\times)(a,d),I(f_\times)(c,y))=I(f_\times)(I(f_\times)(a,y),I(f_\times)(d,c))$
+
+（2） $I(f_\times)(I(f_\times)(c,b),I(f_\times)(x,d))=I(f_\times)(I(f_\times)(d,c),I(f_\times)(x,b))$
+
+即有 $I(f_\times)(I(f_\times)(d,y),I(f_\times)(a,c))=I(f_\times)(I(f_\times)(d,y),I(f_\times)(x,b))$
+
+又根据[[MK400][性质4]]可得 $I(f_\times)(a,y)=I(f_\times)(x,b)$ 即有 $\frac{a}{b}\sim\frac{x}{y}$ 即满足[[MK128][传递性]]
+
+****** 性质2<<MK403>>
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]满足：
+
+（1） $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换
+
+（2） $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+且 $\sim$ 是 $\mathcal{M}$ 的[[MK399][分式关系]]，则对于任意 $\{a,b\}\subset M$ 均有 $\frac{I(c_0)}{a}\sim\frac{I(c_0)}{b}$
+
+进一步 $\left[\frac{I(c_0)}{a}\right]_\sim=\left[\frac{I(c_0)}{b}\right]_\sim$
+
+******* 证明
+
+根据 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]、[[MK347][性质4]]易证 $I(f_\times)(I(c_0),b)=I(c_0)=I(f_\times)(I(c_0),a)$
+
+即有 $\frac{I(c_0)}{a}\sim\frac{I(c_0)}{b}$ 根据[[MK134][定理1]]可得 $\left[\frac{I(c_0)}{a}\right]_\sim=\left[\frac{I(c_0)}{b}\right]_\sim$
+
+****** 性质3<<MK404>>
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]满足：
+
+（1） $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换
+
+（2） $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+且 $\sim$ 是 $\mathcal{M}$ 的[[MK399][分式关系]]，则对于任意 $\{a,b,c\}\subset M$ 均有 $\frac{a}{b}\sim\frac{I(f_\times)(a,c)}{I(f_\times)(b,c)}$
+
+进一步 $\left[\frac{a}{b}\right]_\sim=\left[\frac{I(f_\times)(a,c)}{I(f_\times)(b,c)}\right]_\sim$
+
+******* 证明
+
+根据 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]以及[[MK363][性质1]]易证 $I(f_\times)(a,I(f_\times)(b,c))=I(f_\times)(I(f_\times)(a,c),b)$
+
+即有 $\frac{a}{b}\sim\frac{I(f_\times)(a,c)}{I(f_\times)(b,c)}$ 根据[[MK134][定理1]]可得 $\left[\frac{a}{b}\right]_\sim=\left[\frac{I(f_\times)(a,c)}{I(f_\times)(b,c)}\right]_\sim$
+
+***** 分式幺环<<MK402>>
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]满足：
+
+（1） $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换
+
+（2） $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$ 
+
+则定义 $M_\div=\left\{\frac{a}{b}\big|\{a,b\}\subset M\land b\ne I(c_0)\right\}$ 以及 $\sim=\left\{\left<\frac{a}{b},\frac{c}{d}\right>\big|\{a,b,c,d\}\subset M\land I(f_\times)(a,d)=I(f_\times)(c,b)\right\}$
+
+根据[[MK401][性质]]可得 $\sim$ 是 $M_\div$ 上的[[MK132][等价关系]]，则进一步定义 $M_{[\div]}=\left\{[a]_\sim\big|a\in M_\div\right\}$ 是 $M_\div$ 关于 $\sim$ 的[[MK133][等价类]]
+
+定义 $I_{[\div]}$ 满足
+
+（1） $I_{[\div]}(c_0)=\left[\frac{I(c_0)}{I(c_1)}\right]_\sim$
+
+（2） $I_{[\div]}(c_1)=\left[\frac{I(c_1)}{I(c_1)}\right]_\sim$
+
+（3） $I_{[\div]}(f_\times)\left(\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right)=\left[\frac{I(f_\times)(a,c)}{I(f_\times)(b,d)}\right]_\sim$
+
+（4） $I_{[\div]}(f_+)\left(\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right)=\left[\frac{I(f_+)(I(f_\times)(a,d),I(f_\times)(c,b))}{I(f_\times)(b,d)}\right]_\sim$
+
+（5） $I_{[\div]}(f_-)(\left[\frac{a}{b}\right]_\sim)=\left[\frac{I(f_-)(a)}{b}\right]_\sim$
+
+定义 $\mathcal{M}_{[\div]}=\left<M_{[\div]},I_{[\div]}\right>$ 是 $\mathcal{M}$ 的分式幺环
+
+****** 定理1<<MK406>>
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]满足：
+
+（1） $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换
+
+（2） $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+则其[[MK402][分式幺环]] $\mathcal{M}_{[\div]}=\left<M_{[\div]},I_{[\div]}\right>$ 是[[MK338][域]]
+
+******* 证明
+
+根据[[MK337][域公理]]，[[MK356][性质4]]以及下列证明可证
+
+******** 加法交换律
+
+\begin{aligned}
+&I_{[\div]}(f_+)\left(\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right)\\
+=&\left[\frac{I(f_+)(I(f_\times)(a,d),I(f_\times)(c,b))}{I(f_\times)(b,d)}\right]_\sim\\
+=&\left[\frac{I(f_+)(I(f_\times)(c,b),I(f_\times)(a,d))}{I(f_\times)(d,b)}\right]_\sim\\
+=&I_{[\div]}(f_+)\left(\left[\frac{c}{d}\right]_\sim,\left[\frac{a}{b}\right]_\sim\right)
+\end{aligned}
+
+******** 加法结合律
+
+以下对 $I(f_+),I(f_\times)$ 简写
+
+\begin{aligned}
+&I_{[\div]}(f_+)\left(I_{[\div]}(f_+)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{a_2}{b_2}\right]_\sim\right),\left[\frac{a_3}{b_3}\right]_\sim\right)\\
+=&I_{[\div]}(f_+)\left(\left[\frac{a_1b_2+a_2b_1}{b_1b_2}\right]_\sim,\left[\frac{a_3}{b_3}\right]_\sim\right)\\
+=&\left[\frac{(a_1b_2+a_2b_1)b_3+(b_1b_2)a_3}{(b_1b_2)b_3}\right]_\sim\\
+=&\left[\frac{a_1(b_2b_3)+b_1(a_2b_3+b_2a_3)}{b_1(b_2b_3)}\right]_\sim\\
+=&I_{[\div]}(f_+)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{a_2b_3+b_2a_3}{b_2b_3}\right]_\sim\right)\\
+=&I_{[\div]}(f_+)\left(\left[\frac{a_1}{b_1}\right]_\sim,I_{[\div]}(f_+)\left(\left[\frac{a_2}{b_2}\right]_\sim,\left[\frac{a_3}{b_3}\right]_\sim\right)\right)\\
+\end{aligned}
+
+******** 加法幺元
+
+根据[[MK403][性质2]]可得 $\left[\frac{I(c_0)}{b_1}\right]_\sim=\left[\frac{I(c_0)}{I(c_1)}\right]_\sim=I_{[\div]}(c_0)$ 则（以下对 $I(f_+),I(f_\times)$ 简写）：
+
+\begin{aligned}
+&I_{[\div]}(f_+)\left(\left[\frac{a_1}{b_1}\right]_\sim,I_{[\div]}(c_0)\right)\\
+=&I_{[\div]}(f_+)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{I(c_0)}{b_1}\right]_\sim\right)\\
+=&\left[\frac{a_1b_1+I(c_0)b_1}{b_1b_1}\right]_\sim\\
+=&\left[\frac{(a_1+I(c_0))b_1}{b_1b_1}\right]_\sim\\
+=&\left[\frac{a_1b_1}{b_1b_1}\right]_\sim\\
+\end{aligned}
+
+根据[[MK404][性质3]]可得 $\left[\frac{a_1}{b_1}\right]_\sim=\left[\frac{a_1b_1}{b_1b_1}\right]_\sim$ 即有 $I_{[\div]}(f_+)\left(\left[\frac{a_1}{b_1}\right]_\sim,I_{[\div]}(c_0)\right)=\left[\frac{a_1}{b_1}\right]_\sim$
+
+******** 加法逆元
+
+以下对 $I(f_+),I(f_\times),I(f_-)$ 简写
+
+\begin{aligned}
+&I_{[\div]}(f_+)\left(\left[\frac{a_1}{b_1}\right]_\sim,I_{[\div]}(f_-)\left(\left[\frac{a_1}{b_1}\right]_\sim\right)\right)\\
+=&I_{[\div]}(f_+)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{(-a_1)}{b_1}\right]_\sim\right)\\
+=&\left[\frac{a_1b_1+(-a_1)b_1}{b_1b_1}\right]_\sim\\
+=&\left[\frac{(a_1+(-a_1))b_1}{b_1b_1}\right]_\sim\\
+=&\left[\frac{I(c_0)b_1)}{b_1b_1}\right]_\sim\\
+=&\left[\frac{I(c_0)}{b_1,b_1}\right]_\sim\\
+\end{aligned}
+
+根据[[MK403][性质2]]可得 $\left[\frac{I(c_0)}{b_1,b_1}\right]_\sim=\left[\frac{I(c_0)}{I(c_1)}\right]_\sim=I_{[\div]}(c_0)$
+
+******** 乘法结合律
+
+以下对 $I(f_+),I(f_\times)$ 简写
+
+\begin{aligned}
+&I_{[\div]}(f_\times)\left(I_{[\div]}(f_\times)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{a_2}{b_2}\right]_\sim\right),\left[\frac{a_3}{b_3}\right]_\sim\right)\\
+=&I_{[\div]}(f_\times)\left(\left[\frac{a_1a_2}{b_1b_2}\right]_\sim,\left[\frac{a_3}{b_3}\right]_\sim\right)\\
+=&\left[\frac{(a_1b_2)a_3}{(b_1b_2)b_3}\right]_\sim\\
+=&\left[\frac{a_1(b_2a_3)}{b_1(b_2b_3)}\right]_\sim\\
+=&I_{[\div]}(f_\times)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{a_2a_3}{b_2b_3}\right]_\sim\right)\\
+&I_{[\div]}(f_\times)\left(\left[\frac{a_1}{b_1}\right]_\sim,I_{[\div]}(f_\times)\left(\left[\frac{a_2}{b_2}\right]_\sim,\left[\frac{a_3}{b_3}\right]_\sim\right)\right)\\
+\end{aligned}
+
+******** 乘法分配律
+
+根据[[MK404][性质3]]可得 $\left[\frac{(a_1b_2+a_2b_1)a_3}{(b_1b_2)b_3}\right]_\sim=\left[\frac{((a_1b_2+a_2b_1)a_3)b_3}{((b_1b_2)b_3)b_3}\right]_\sim$ 则（以下对 $I(f_+),I(f_\times)$ 简写）：
+
+\begin{aligned}
+&I_{[\div]}(f_\times)\left(I_{[\div]}(f_+)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{a_2}{b_2}\right]_\sim\right),\left[\frac{a_3}{b_3}\right]_\sim\right)\\
+=&I_{[\div]}(f_\times)\left(\left[\frac{a_1b_2+a_2b_1}{b_1b_2}\right]_\sim,\left[\frac{a_3}{b_3}\right]_\sim\right)\\
+=&\left[\frac{(a_1b_2+a_2b_1)a_3}{(b_1b_2)b_3}\right]_\sim\\
+=&\left[\frac{((a_1b_2+a_2b_1)a_3)b_3}{((b_1b_2)b_3)b_3}\right]_\sim\\
+=&\left[\frac{(a_1a_3)(b_2b_3)+(a_2a_3)(b_1b_3)}{(b_1b_3)(b_2b_3)}\right]_\sim\\
+=&I_{[\div]}(f_+)\left(\left[\frac{a_1a_3}{b_1b_3}\right]_\sim,\left[\frac{a_2a_3}{b_2b_3}\right]_\sim\right)\\
+=&I_{[\div]}(f_+)\left(I_{[\div]}(f_\times)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{a_3}{b_3}\right]_\sim\right),I_{[\div]}(f_\times)\left(\left[\frac{a_2}{b_2}\right]_\sim,\left[\frac{a_3}{b_3}\right]_\sim\right)\right)
+\end{aligned}
+
+******** 乘法幺元
+
+以下对 $I(f_+),I(f_\times)$ 简写
+
+\begin{aligned}
+&I_{[\div]}(f_\times)\left(\left[\frac{a_1}{b_1}\right]_\sim,I_{[\div]}(c_1)\right)\\
+=&I_{[\div]}(f_\times)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{I(c_1)}{I(c_1)}\right]_\sim\right)\\
+=&\left[\frac{a_1I(c_1)}{b_1I(c_1)}\right]_\sim\\
+=&\left[\frac{a_1}{b_1}\right]_\sim
+\end{aligned}
+
+******** $0,1$ 不等
+
+根据 $I_{[\div]}(c_0)=\left[\frac{I(c_0)}{I(c_1)}\right]_\sim,I_{[\div]}(c_0)=\left[\frac{I(c_1)}{I(c_1)}\right]_\sim$ 显然 $I(f_\times)(I(c_0),I(c_1))=I(c_0),I(f_\times)(I(c_1),I(c_1))=I(c_1)$
+
+根据 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]、[[MK347][性质4]]显然 $I(c_0)\ne I(c_1)$ 即有 $\frac{I(c_0)}{I(c_1)}\not\sim\frac{I(c_1)}{I(c_1)}$
+
+根据[[MK134][定理1]]可得 $I_{[\div]}(c_0)=\left[\frac{I(c_0)}{I(c_1)}\right]_\sim\ne\left[\frac{I(c_1)}{I(c_1)}\right]_\sim=I_{[\div]}(c_1)$ 
+
+******** 乘法交换律
+
+以下对 $I(f_+),I(f_\times)$ 简写
+
+\begin{aligned}
+&I_{[\div]}(f_\times)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{a_2}{b_2}\right]_\sim\right)\\
+=&\left[\frac{a_1a_2}{b_1b_2}\right]_\sim\\
+=&\left[\frac{a_2a_1}{b_2b_1}\right]_\sim\\
+=&I_{[\div]}(f_\times)\left(\left[\frac{a_2}{b_2}\right]_\sim,\left[\frac{a_1}{b_1}\right]_\sim\right)\\
+\end{aligned}
+
+******** 乘法逆元
+
+根据[[MK404][性质3]]可得 $\left[\frac{a_1b_1}{a_1b_1}\right]_\sim=\left[\frac{I(c_1)(a_1b_1)}{I(c_1)(a_1b_1)}\right]_\sim=\left[\frac{I(c_1)}{I(c_1)}\right]_\sim=I_{[\div]}(c_1)$ 则（以下对 $I(f_+),I(f_\times)$ 简写）：
+
+\begin{aligned}
+&I_{[\div]}(f_\times)\left(\left[\frac{a_1}{b_1}\right]_\sim,\left[\frac{b_1}{a_1}\right]_\sim\right)\\
+=&\left[\frac{a_1b_1}{b_1a_1}\right]_\sim\\
+=&\left[\frac{a_1b_1}{a_1b_1}\right]_\sim\\
+=&I_{[\div]}(c_1)\\
+\end{aligned}
+
+****** 定理2<<MK405>>
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]满足：
+
+（1） $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换
+
+（2） $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+[[MK338][结构]] $\mathcal{N}=\left<N,J\right>$ 是[[MK338][域]]且有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]，则 $\mathcal{M}$ 的[[MK402][分式幺环]] $\mathcal{M}_{[\div]}=\left<M_{[\div]},I_{[\div]}\right>$ 亦是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]
+
+******* 证明
+
+设 $\mathcal{M}$ 到 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]为 $e$ 则定义 $e^*=\left\{\left<\left[\frac{a}{b}\right]_\sim,J(f_\times)(e(a),e(b)^{-1})\right>\big|\left[\frac{a}{b}\right]_\sim\in M_{[\div]}\land J(f_\times)(e(b),e(b)^-1)=J(c_1)\right\}$
+
+******** 是[[MK175][函数]]
+
+对于任意 $\left\{\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right\}\subset M_{[\div]}$ 满足 $\left[\frac{a}{b}\right]_\sim=\left[\frac{c}{d}\right]_\sim$ 则有 $I(f_\times)(a,d)=I(f_\times)(c,b)$ 根据[[MK356][性质4]]可得
+
+\begin{aligned}
+&e(I(f_\times)(a,d))=e(I(f_\times)(c,b))\\
+\Leftrightarrow&J(f_\times)(e(a),e(d))=J(f_\times)(e(c),e(b))\\
+\Leftrightarrow&J(f_\times)(J(f_\times)(e(a),e(d)),J(f_\times)(e(d)^{-1},e(b)^{-1}))=J(f_\times)(J(f_\times)(e(c),e(b)),J(f_\times)(e(d)^{-1},e(b)^{-1}))\\
+\Leftrightarrow&J(f_\times)(e(a),J(f_\times)(J(f_\times)(e(d),e(d)^{-1}),e(b)^{-1}))=J(f_\times)(e(c),J(f_\times)(J(f_\times)(e(b),e(b)^{-1}),e(d)^{-1}))\\
+\Leftrightarrow&J(f_\times)(e(a),J(f_\times)(J(c_1),e(b)^{-1}))=J(f_\times)(e(c),J(f_\times)(J(c_1),e(d)^{-1}))\\
+\Leftrightarrow&J(f_\times)(e(a),e(b)^{-1})=J(f_\times)(e(c),e(d)^{-1})\\
+\end{aligned}
+
+又根据定义 $e^*\left(\left[\frac{a}{b}\right]_\sim\right)=J(f_\times)(e(a),e(b)^{-1}),e^*\left(\left[\frac{c}{d}\right]_\sim\right)=J(f_\times)(e(c),e(d)^{-1})$ 故可得 $e^*\left(\left[\frac{a}{b}\right]_\sim\right)=e^*\left(\left[\frac{c}{d}\right]_\sim\right)$
+
+即是[[MK175][函数]]
+
+******** 是[[MK176][单射]]
+
+对于任意 $\left\{\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right\}\subset M_{[\div]}$ 满足 $\left[\frac{a}{b}\right]_\sim\ne\left[\frac{c}{d}\right]_\sim$ 假设 $e^*\left(\left[\frac{a}{b}\right]_\sim\right)=e^*\left(\left[\frac{c}{d}\right]_\sim\right)$
+
+即有 $J(f_\times)(e(a),e(b)^{-1})=J(f_\times)(e(c),e(d)^{-1})$ 根据上一步同理可证 $e(I(f_\times)(a,d))=e(I(f_\times)(c,b))$
+
+由于 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]，则为[[MK176][单射]]，故有 $I(f_\times)(a,d)=I(f_\times)(c,b)$ 根据[[MK399][分式关系]]以及[[MK134][定理1]]可得 $\left[\frac{a}{b}\right]_\sim=\left[\frac{c}{d}\right]_\sim$ 矛盾
+
+故假设不成立，即任意 $\left\{\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right\}\subset M_{[\div]}$ 满足 $\left[\frac{a}{b}\right]_\sim\ne\left[\frac{c}{d}\right]_\sim$ 均有 $e^*\left(\left[\frac{a}{b}\right]_\sim\right)\ne e^*\left(\left[\frac{c}{d}\right]_\sim\right)$
+
+******** [[MK344][同态]]
+
+（1） $e^*(I_{[\div]}(c_0))=e^*\left(\left[\frac{I(c_0)}{I(c_1)}\right]_\sim\right)=J(f_\times)(e(I(c_0)),e(I(c_1)))=J(f_\times)(J(c_0),J(c_1))=J(c_0)$
+
+（2） 同上易证 $e^*(I_{[\div]}(c_0))=J(c_1)$
+
+（3） 对于任意 $\left\{\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right\}\subset M_{[\div]}$ 有：
+
+\begin{aligned}
+&e^*\left(I_{[\div]}(f_\times)\left(\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right)\right)\\
+=&e^*\left(\left[\frac{I(f_\times)(a,c)}{I(f_\times)(b,d)}\right]_\sim\right)\\
+=&J(f_\times)(e(I(f_\times)(a,c)),e(I(f_\times)(b,d))^{-1})\\
+=&J(f_\times)(J(f_\times)(e(a),e(c)),(J(f_\times)(e(b),e(d)))^{-1})\\
+=&J(f_\times)(J(f_\times)(e(a),e(b)^{-1}),J(f_\times)(e(c),e(d)^{-1}))\\
+=&J(f_\times)\left(e^*\left(\left[\frac{a}{b}\right]_\sim\right),e^*\left(\left[\frac{c}{d}\right]_\sim\right)\right)
+\end{aligned}
+
+（4） 对于任意 $\left\{\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right\}\subset M_{[\div]}$ 有（以下对 $I(f_+),I(f_\times)$ 简写）：
+
+\begin{aligned}
+&e^*\left(I_{[\div]}(f_+)\left(\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right)\right)\\
+=&e^*\left(\left[\frac{ad+cb}{bd}\right]_\sim\right)\\
+=&J(f_\times)(e(ad+cb),e(I(f_\times)(bd))^{-1})\\
+=&J(f_\times)(J(f_+)(J(f_\times)(e(a),e(d)),J(f_\times)(e(c),e(b))),(J(f_\times)(e(b),e(d)))^{-1})\\
+=&J(f_\times)(J(f_+)(J(f_\times)(e(a),e(d)),J(f_\times)(e(c),e(b))),J(f_\times)(e(b)^{-1},e(d)^{-1}))\\
+=&J(f_+)(J(f_\times)(J(f_\times)(e(a),e(d)),J(f_\times)(e(b)^{-1},e(d)^{-1})),J(f_\times)(J(f_\times)(e(c),e(b)),J(f_\times)(e(b)^{-1},e(d)^{-1})))\\
+=&J(f_+)(J(f_\times)(e(a),J(f_\times)(J(f_\times)(e(d),e(d)^{-1}),e(b)^{-1})),J(f_\times)(e(c),J(f_\times)(J(f_\times)(e(b),e(b)^{-1}),e(d)^{-1})))\\
+=&J(f_+)(J(f_\times)(e(a),J(f_\times)(J(c_1),e(b)^{-1})),J(f_\times)(e(c),J(f_\times)(J(c_1),e(d)^{-1})))\\
+=&J(f_+)(J(f_\times)(e(a),e(b)^{-1}),J(f_\times)(e(c),e(d)^{-1}))\\
+=&J(f_+)(J(f_\times)\left(e\left(\left[\frac{a}{b}\right]_\sim),e\left(\left[\frac{c}{d}\right]_\sim)\right)\\
+\end{aligned}
 
 **** 性质
 
@@ -7035,6 +7351,38 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 ****** 证明
 
 根据[[MK367][性质11]]以及[[MK368][性质12]]易证
+
+***** 性质4<<MK400>>
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]且满足 $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+则 $\mathcal{M}\vDash(\forall x_1(\forall x_2(\forall x_3(((\lnot(x_2\hat{=}c_0))\land(f_\times(x_2,x_1)\hat{=}f_\times(x_2,x_3)))\to(x_1\hat{=}x_3)))))$
+
+****** 证明
+
+任取 $\{a,b,c\}\subset M$ 若有 $I(f_\times)(a,b)=I(f_\times)(a,c)$ 以及 $a\ne I(c_0)$
+
+根据 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]以及[[MK363][性质1]]易证
+
+\begin{aligned}
+&I(f_+)(I(f_\times)(a,c),I(f_\times)(a,f_-(c)))\\
+=&I(f_\times)(a,I(f_+)(c,I(f_-)(c)))\\
+=&I(f_\times)(a,I(c_0))\\
+=&I(c_0)
+\end{aligned}
+
+同理亦有
+
+\begin{aligned}
+&I(f_+)(I(f_\times)(a,b),I(f_\times)(a,f_-(c)))\\
+=&I(f_\times)(a,I(f_+)(b,I(f_-)(c)))\\
+\end{aligned}
+
+即 $I(f_\times)(a,I(f_+)(b,I(f_-)(c)))=I(c_0)$
+
+则根据 $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$ 结合 $a\ne I(c_0)$ 可得 $I(f_+)(b,I(f_-)(c))=I(c_0)$
+
+两边同加 $c$ 即有 $b=I(f_+)(b,I(c_0))=I(f_+)(b,I(f_+)(I(f_-)(c),c))=I(f_+)(I(f_+)(b,I(f_-)(c)),c)=I(f_+)(I(c_0),c)=c$
 
 **** 定理
 
@@ -7204,15 +7552,15 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 除[[~/文档/note/数理逻辑/sllj.org::MK105][固定符号]]外有：
 
-（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+$ 分别表示乘法，加法
+（1） [[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_\times,f_+,f_-$ 分别表示乘法，加法，取加法逆元
 
 （3） [[~/文档/note/数理逻辑/sllj.org::MK108][常元符号]] $c_0,c_1$
 
-则有 $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 是环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
+则有 $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 是环理论的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
 
 **** 公理<<MK337>>
 
-显然[[MK335][域语言]]包含[[MK361][非零幺环语言]]，即 $\mathcal{A}_{\mathcal{R}_e}\subset\mathcal{A}_\mathbb{F}$ 故[[MK373][非零幺环公理]] $T_\mathcal{R}$ 显然满足 $T_\mathcal{R}\subset\mathcal{L}_{\mathcal{A}_\mathbb{F}}$
+显然[[MK335][域语言]]同[[MK361][非零幺环语言]]，故[[MK373][非零幺环公理]] $T_\mathcal{R}$ 显然满足 $T_\mathcal{R}\subset\mathcal{L}_{\mathcal{A}_\mathbb{F}}$
 
 定义域公理集合为 $T_\mathbb{F}$ ，除 $T_\mathcal{R}$ 外包含以下公理
 
@@ -7228,11 +7576,11 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 ***** 域的扩张<<MK341>>
 
-[[MK338][结构]] $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且 $\mathcal{M}\vDash T_\mathbb{F},\mathcal{N}\vDash T_\mathbb{F}$ ，则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的子域， $\mathcal{N}$ 是 $\mathcal{M}$ 的扩张域
+[[MK338][域结构]] $\mathcal{M},\mathcal{N}$ 满足 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且 $\mathcal{M}\vDash T_\mathbb{F},\mathcal{N}\vDash T_\mathbb{F}$ ，则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的子域， $\mathcal{N}$ 是 $\mathcal{M}$ 的扩张域
 
 ****** 生成[[MK341][扩张域]]<<MK393>>
 
-[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，若有 $A\subset N-M$
+[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，若有 $A\subset N-M$
 
 定义 $\Delta=\left\{N'\big|N'\subset N\land M\cup A\subset N'\land\left<N',J_{N'}\right>\vDash T_\mathbb{F}\right\}$ 即所有满足：
 
@@ -7262,7 +7610,9 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
      即为 $\tau_a$ 到 $\tau_{a+b}$ 的连加，其中 $\tau$ 亦为[[~/文档/note/数理逻辑/sllj.org::MK117][项]]
 
-对于任意 $n\in\mathbb{N}$ 定义 $\phi_n=\sum_{i=1}^{n}f_\times(x_i,x_{n+1}^i)$ 为 $n$ 次多项式
+对于任意 $n\in\mathbb{N}$ 定义 $\phi_n=\sum_{i=1}^{n}f_\times(\tau_i,x_{n+1}^i)$ 为关于 $x_{n+1}$ 的 $n$ 次多项式
+
+其中 $\tau_i$ 为 $x^i_{n+1}$ 的系数，不含 $x_{n+1}$
 
 ***** 多项式环<<MK374>>
 
@@ -7446,7 +7796,7 @@ h_2(r)=&\sum_{k=0}^{m+n}\left(\sum_{i=0}^ka'_ib'_{k-i}\right)\cdot x^k\\
 
 ****** 证明
 
-[[MK337][类似可证]]
+[[MK398][类似可证]]
 
 ***** 性质2<<MK340>>
 
@@ -7482,11 +7832,11 @@ $T_\mathbb{F}\vdash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_
 
 ***** 性质3
 
-任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 的[[MK399][特征]]均为素数
+任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 的[[MK339][特征]]均为素数
 
 ****** 证明
 
-假设 $\mathcal{M}=\left<M,I\right>$ 的[[MK399][特征]] $p=ab$ 则 $\mathcal{M}\vDash(\tau_n\hat{= }c_0)$ 根据[[MK334][加法结合律]]、[[MK334][加法结合律]]易证 $\mathcal{M}\vDash(\tau_n\hat{=}f_+(\tau_a,f_+(...f_+(\tau_a,\tau_a)...)))$
+假设 $\mathcal{M}=\left<M,I\right>$ 的[[MK339][特征]] $p=ab$ 则 $\mathcal{M}\vDash(\tau_n\hat{= }c_0)$ 根据[[MK334][加法结合律]]、[[MK334][加法结合律]]易证 $\mathcal{M}\vDash(\tau_n\hat{=}f_+(\tau_a,f_+(...f_+(\tau_a,\tau_a)...)))$
 
 即 $b$ 个 $a$ 相加，根据[[MK334][乘法分配]]易证 $\mathcal{M}\vDash(\tau_n\hat{=}f_\times(f_+(c_1,f_+(...f_+(c_1,c_1)...)),\tau_a))$ 根据定义 $f_+(c_1,f_+(...f_+(c_1,c_1)...))$ 即为 $\tau_b$
 
@@ -7789,6 +8139,20 @@ r_{n+2}(x)=&r_n(x)+(-h_{n+2}(x))r_{n+1}(x)\\
 又由于 $I[x](f_\times)(q(x),s(x))\in N[x]$ 故可得 $I[x](c_1)\in N'[x]$ ，即根据[[MK359][定理1]]可得 $N'[x]=M[x]$
 
 即任意 $N'[x]$ 满足 $N[x]\subset N'[x]$ 以及 $N'[x]\ne N[x]$ 均有 $N'[x]=M[x]$
+
+***** 性质10
+
+任意 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 满足[[MK337][公里（4）]]均有 $\mathcal{M}\vDash(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{=}c_0)))$
+
+进一步有 $\left\{(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)))\right\}\vdash(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{ =}c_0)))$
+
+****** 证明
+
+对于任意[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 任取 $a\in M$ 根据[[MK337][公里（4）]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $I(f_+)(a,I(f_-)(a))=I(c_0)$
+
+显然有 $I(f_-)(a)\in M$ 故可得 $\mathcal{M}\vDash(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{=}c_0)))$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK255][完备性]]有 $\left\{(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)))\right\}\vdash(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{ =}c_0)))$
 
 **** 定理
 
@@ -8149,7 +8513,7 @@ r_{n+2}(x)=&r_n(x)+(-h_{n+2}(x))r_{n+1}(x)\\
 
 又由于 $M[x]/(f(x))=\left\{[g(x)]_\sim\big|g(x)\in M[x]\right\}$ 故可得任意 $M[x]/(f(x))$ 中的元素均被 $[I(c_1)]_\sim,[x]_\sim,...,[x^{n-1}]_\sim$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK12][线性表述]]
 
-***** 定理5
+***** 定理5<<MK408>>
 
 若 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{K}=\left<K,L\right>$ 的[[MK341][子域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是 $\mathcal{M}$ 的[[MK374][多项式环]]
 
@@ -8360,7 +8724,7 @@ p(x)&=I[x](f_+)(I[x](f_\times)(h_1(x),r_0(x)),r_1(x))\\
 
 故可得必有 $\mathcal{M}_{(\alpha)}=\mathcal{M}'_{(\alpha)}$ ，即有 $e:M[x]/(p(x))\to M_{(\alpha)}$ 是[[MK181][双射]]，即 $\mathcal{M}_{(\alpha)}$ 与 $\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
-***** 定理6
+***** 定理6<<MK409>>
 
 若 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK338][域]]且[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，设同构映射为 $e$ 则定义
 
@@ -8533,13 +8897,15 @@ p(x)&=I[x](f_+)(I[x](f_\times)(h_1(x),r_0(x)),r_1(x))\\
 
 **** 语言
 
-同[[MK333][域语言]] $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,f_-,c_0,c_1\}$ 为区分记作 $\mathcal{A}_{\text{ACF}}$ 即有 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 是代数封闭域的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
+同[[MK333][域语言]] $\mathcal{A}_\mathbb{F}=\{f_\times,f_+,c_0,c_1\}$ 为区分记作 $\mathcal{A}_{\text{ACF}}$ 即有 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 是代数封闭域的[[~/文档/note/数理逻辑/sllj.org::MK151][语言]]
 
-**** 公理
+**** 公理<<MK411>>
 
 定义代数封闭域公理集合为 $T_\text{ACF}$ ，则代数封闭域需要满足所有[[MK337][域公理]] $T_\mathbb{F}\subset T_\text{ACF}$ 外
 
-对于任意[[MK336][ $n$ 次多项式]] $\phi_n$ 均满足 $(\forall x_1(...(\forall x_n((\lnot(x_n\hat{=}c_0))\to(\exists x_{n+1}(\phi_n\hat{ =}c_0))))...))\in T_\text{ACF}$
+对于任意[[MK336][ $n$ 次多项式]] $\phi_n(x_0,x_1,...,x_m)$ 均满足 $(\forall x_1(...(\forall x_m((\lnot(\tau_n\hat{=}c_0))\to(\exists x_0(\phi_n\hat{ =}c_0))))...))\in T_\text{ACF}$
+
+其中 $\tau_n$ 为[[MK336][定义]]中 $x_0^n$ 的系数
 
 **** 性质
 
@@ -8637,7 +9003,7 @@ f(x)=&p_n(x)\prod_{i=1}^{n-1}h_i(x)\\
 
 即有 $f(x)=I[x](f_\times)\left(b_1,\prod_{i=1}^nh_i(x)\right)$ ，又根据[[MK383][性质7]]的唯一性可证 $b_1,h_1(x),...,h_n(x)$ 唯一 
 
-****** 推论
+****** 推论<<MK410>>
 
 若 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]（显然亦为[[MK338][域]]）其[[MK374][多项式环]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 则对于任意 $f(x)\in M[x]$
 
@@ -8653,17 +9019,185 @@ f(x)=&p_n(x)\prod_{i=1}^{n-1}h_i(x)\\
 
 则根据[[MK340][性质2]]易证 $\mathcal{M}$ 下的 $I(f_\times)\left(c,\prod_{i=1}^nI(f_+)(b,-a_i))\ne I(c_0)$ ，即 $b$ 不是 $f(x)$ 的[[MK389][根]]
 
-故可得 $f(x)$ 的[[MK389][根]]有且仅有 $\{a_1,...,a_n\}$ ，即有限 
+故可得 $f(x)$ 的[[MK389][根]]有且仅有 $\{a_1,...,a_n\}$ ，即有限
 
-**** 定理
+***** 性质4<<MK412>>
 
-***** 定理1
-
-[[MK390][代数封闭域]]适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]则 $M$ 是[[MK83][无限集]]
 
 ****** 证明
 
+假设 $M=\{a_1,...,a_n\}$ 是[[MK82][有限集]]，则定义[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]] $\phi=(f_+(\prod_{i=1}^{n}f_+(x_i,f_-(x_0)),c_1)\hat{=}c_0)$
+
+易证 $\phi$ 存在[[~/文档/note/数理逻辑/sllj.org::MK396][等价]]的[[MK336][多项式]] $\psi$ ，则任取 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]]满足 $v(x_i)=a_i$ 设 $v(x_0)=a_j$
+
+则易证有 $\left<\mathcal{M},v\right>\vDash((f_+(x_j),x_0)\hat{=}c_0)$ ，进一步易证 $\left<\mathcal{M},v\right>\vDash(f_+(\prod_{i=1}^{n}f_+(x_i,f_-(x_0)),c_1)\hat{ =}c_1)$
+
+根据[[MK411][公理]]可得 $\mathcal{M}\vDash(\lnot(c_1\hat{ =}c_0))$ 即显然 $\mathcal{M}\vDash(\forall x_0(\lnot(\psi\hat{ =}c_0)))[a_1,...,a_n]$ 与[[MK411][公理]]矛盾
+
+故假设不成立，即 $M$ 是[[MK83][无限集]]
+
+$a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
+
+**** 定理
+
+***** 定理1<<MK407>>
+
+对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 若有[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]] $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]（同构映射 $e:M\to N$ ）
+
+则存在 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]] $\mathcal{M}^*=\left<M^*,I^*\right>,\mathcal{N}^* =\left<N^*,J^*\right>$ 满足：
+
+（1） [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+（2） [[MK338][域]]
+
+（3） $\mathcal{M}',\mathcal{N}'$ 分别为 $\mathcal{M}^*,\mathcal{N}^*$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+****** 证明
+
+易证 $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ [[~/文档/note/数理逻辑/sllj.org::MK158][满足]]：
+
+（1） $(\forall x_1(\forall x_2(f_+(x_1,x_2)\hat{=}f_+(x_2,x_1))))$ 加法交换律
+
+（2） $(\forall x_2(\forall x_2(\forall x_3(f_+(f_+(x_1,x_2),x_3)\hat{=}f_+(x_1,f_+(x_2,x_3))))))$ 加法结合律
+
+（3） $(\forall x_1(f_+(x_1,c_0)\hat{=}x_1))$ 加法幺元
+
+（4） $(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)))$ 加法逆元
+
+（5） $(\forall x_2(\forall x_2(\forall x_3(f_\times(f_\times(x_1,x_2),x_3)\hat{=}f_\times(x_1,f_\times(x_2,x_3))))))$ 乘法结合律
+
+（6） $(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$
+
+（7） $(\lnot(c_1\hat{=}c_0))$
+
+（8） $(\forall x_1((\lnot(x_1\hat{=}c_0))\to(f_\times(x_1,c_1)\hat{=}x_1)))$ 乘法幺元
+
+（9） $(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换律
+
+又由于 $\mathcal{M},\mathcal{N}$ 均为[[MK338][域]]，故根据[[MK340][性质2]]可得均满足 $(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+同理易证 $\mathcal{M}',\mathcal{N}'$ 亦满足 $(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+综上所述 $\mathcal{M}',\mathcal{N}'$ 是[[MK362][非零幺环]]且[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]
+
+（1） $(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换
+
+（2） $(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
+
+由于 $\mathcal{M}',\mathcal{N}'$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]则根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得 $\mathcal{M}'$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]。显然 $\mathcal{M}'$ 与自身[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，故可得 $\mathcal{M}'$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]
+
+又根据[[MK405][定理2]]可得 $\mathcal{M}$ 的[[MK402][分式幺环]] $\mathcal{M}_{[\div]}=\left<M_{[\div]},I_{[\div]}\right>$ 亦是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]
+
+又根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]] $\mathcal{M}^*=\left<M^*,I^*\right>,\mathcal{N}^* =\left<N^*,J^*\right>$ 均与 $\mathcal{M}_{[\div]}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+故显然 $\mathcal{M}^*,\mathcal{N}^*$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，又根据[[MK406][定理1]]可得 $\mathcal{M}_{[\div]}$ 是[[MK338][域]]，则根据[[~/文档/note/数理逻辑/sllj.org::MK276][定理1]]以及[[~/文档/note/数理逻辑/sllj.org::MK168][局部确定]]易证 $\mathcal{M}^*,\mathcal{N}^*$ 是[[MK338][域]]
+
+又根据[[MK405][定理2]]中证明易证 $\mathcal{M}',\mathcal{N}'$ 分别为 $\mathcal{M}^*,\mathcal{N}^*$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+***** 定理2
+
+[[MK411][代数封闭域理论]] $\mathcal{T}_\test{ACF}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}_{\mathcal{A}_{\text{ACF}}},T_\test{ACF},T^*_\test{ACF}\right>$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
+
+****** 证明
+
+******* 任意不带[[~/文档/note/数理逻辑/sllj.org::MK106][量词]] $\phi\in\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 其 $(\exists x_i\phi)$ 存在[[~/文档/note/数理逻辑/sllj.org::MK396][等价]]不带[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]的 $\psi$
+
 对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 若有[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]] $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+对于任意不带[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]] $\phi(x_0,...,x_n)\in\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 根据[[~/文档/note/数理逻辑/sllj.org::MK186][德摩根律]]、[[~/文档/note/数理逻辑/sllj.org::MK451][与或分配]]、[[~/文档/note/数理逻辑/sllj.org::MK452][与或交换]]以及[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]易证
+
+其表达式[[~/文档/note/数理逻辑/sllj.org::MK396][等价]]与形式 $\psi=\left(\bigvee_{i=1}^k\left(\left(\bigwedge_{j=1}^l(\tau_{f_{ij}}(x_0)\hat{=}c_0})\right)\land\left(\bigwedge_{j=1}^m(\lnot(\tau_{g_{ij}}(x_0)\hat{=}c_0}))\right)\right)\right)$
+
+其中 $\tau_{f_{ij}}(x_0),\tau_{g_{ij}}(x_0)$ 均为关于 $x_0$ 的一[[MK377][首一不可约]]的[[MK336][多项式]]
+
+******** $\mathcal{M}\vDash(\exists x_0\psi)[a_1,...,a_n]$ 可得 $\mathcal{N}\vDash(\exists x_0\psi)[e(a_1),...,e(a_n)]$
+
+根据[[MK407][定理1]]可得存在 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]] $\mathcal{M}^*=\left<M^*,I^*\right>,\mathcal{N}^* =\left<N^*,J^*\right>$ 满足：
+
+（1） [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]（设同构映射为 $e$ ）
+
+（2） [[MK338][域]]
+
+（3） $\mathcal{M}',\mathcal{N}'$ 分别为 $\mathcal{M}^*,\mathcal{N}^*$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+若有 $\mathcal{M}\vDash(\exists x_0\psi)[a_1,...,a_n]$ 其中 $\{a_1,...,a_n\}\subset M'\subset M^*$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]存在 $b\in M$
+
+使得 $\mathcal{M}\vDash\psi[b,a_1,...,a_n]$ 进而存在 $\left(\left(\bigwedge_{j=1}^l(\tau_{f_{ij}}(x_0)\hat{=}c_0})\right)\land\left(\bigwedge_{j=1}^m(\lnot(\tau_{g_{ij}}(x_0)\hat{=}c_0}))\right)\right)$
+
+使得 $\mathcal{M}\vDash\left(\left(\bigwedge_{j=1}^l(\tau_{f_{ij}}(x_0)\hat{=}c_0})\right)\land\left(\bigwedge_{j=1}^m(\lnot(\tau_{g_{ij}}(x_0)\hat{=}c_0}))\right)\right)[b,a_1,...,a_n]$
+
+********* 若存在 $\tau_{f_{ij}}(x_0)$ 满足 $\mathcal{M}\vDash(\lnot(\forall x_0(\tau_{f_{ij}}\hat{=}c_0)))[a_1,...,a_n]$
+
+定义 $\mathcal{M}^*$ 由 $b$ [[MK393][生成]]的[[MK393][扩张域]]为 $\mathcal{M}^*_{(b)}=\left<M^*_{(b)},I^*_{(b)}\right>$ 显然 $\mathcal{M}^*_{(b)}$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK461][推论]]以及 $\psi$ 不带[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]可得 $\mathcal{M}^*_{(b)}\vDash\left(\left(\bigwedge_{j=1}^l(\tau_{f_{ij}}(x_0)\hat{=}c_0})\right)\land\left(\bigwedge_{j=1}^m(\lnot(\tau_{g_{ij}}(x_0)\hat{=}c_0}))\right)\right)[b,a_1,...,a_n]$
+
+则设 $f_{ij} =\sum_{i=1}^{z}f_\times(\tau_i,x_0^i)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK168][局部确定]]易证存在 $b_i\in M^*_{b}$ 满足对于任意 $\mathcal{M}^*_{(b)}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_i)=a_i$ 均有 $\bar{v}(\tau_i)=b_i$
+
+易证 $b$ 是对应[[MK374][多项式环]] $\mathcal{M}^*_{(b)}[x] =\left<M^*_{(b)}[x],I^*_{(b)}[x]\right>$ 中 $\sum_{i=1}^zb_ix$ 的[[MK389][根]]
+
+则根据[[MK408][定理5]]可得 $\mathcal{M}^*_{(b)}$ 与 $\mathcal{M}_s=\left<M^*_{(b)}[x]/\left(\sum_{i=1}^zb_ix\right),I_s\right>$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+由于 $\tau_i$ 不含 $x_0$ 故易证 $\bar{v}(\tau_i)=b_i\in M^*$ 即有 $e(b_i)\in N^*$ 且根据 $\mathcal{M}^*,\mathcal{N}^*$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]易证
+
+对于任意 $\mathcal{N}^*$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_i)=e(a_i)$ 均有 $\bar{v}(\tau_i)=e(b_i)$ 由于 $\mathcal{N}$ 是[[MK390][代数封闭域]]
+
+故存在 $\beta\in N$ 满足 $\mathcal{N}\vDash(\tau_{f_{ij}}(x_0)\hat{=}c_0})[\beta,e(a_1),...,e(a_n)]$ 定义 $\mathcal{N}^*$ 由 $\beta$ [[MK393][生成]]的[[MK393][扩张域]]为 $\mathcal{N}^*_{(\beta)} =\left<N^*_{(\beta)},J^*_{(\beta)}\right>$ 
+
+同理易证 $\beta$ 是对应[[MK374][多项式环]] $\mathcal{N}^*_{(\beta)}[x] =\left<N^*_{(\beta)}[x],J^*_{(\beta)}[x]\right>$ 中 $\sum_{i=1}^ze(b_i)x$ 的[[MK389][根]]
+
+同样根据[[MK408][定理5]]可得 $\mathcal{N}^*_{(\beta)}$ 与 $\mathcal{N}_s=\left<N^*_{(\beta)}[x]/\left(\sum_{i=1}^ze(b_i)x\right),J_s\right>$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+又根据[[MK409][定理6]]以及 $\mathcal{M}^*,\mathcal{N}^*$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]可得 $\mathcal{M}_s,\mathcal{N}_s$ 亦[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，故可得 $\mathcal{M}^*_{(b)}$ 与 $\mathcal{N}^*_{(\beta)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK276][定理1]]以及[[~/文档/note/数理逻辑/sllj.org::MK168][局部确定]]易证 $\mathcal{N}^*_{(\beta)}\vDash\left(\left(\bigwedge_{j=1}^l(\tau_{f_{ij}}(x_0)\hat{=}c_0})\right)\land\left(\bigwedge_{j=1}^m(\lnot(\tau_{g_{ij}}(x_0)\hat{=}c_0}))\right)\right)[\beta,e(a_1),...,e(a_n)]$
+
+显然 $\mathcal{N}^*_{(\beta)}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，又根据[[~/文档/note/数理逻辑/sllj.org::MK461][推论]]可得 $\mathcal{N}\vDash\left(\left(\bigwedge_{j=1}^l(\tau_{f_{ij}}(x_0)\hat{=}c_0})\right)\land\left(\bigwedge_{j=1}^m(\lnot(\tau_{g_{ij}}(x_0)\hat{=}c_0}))\right)\right)[\beta,e(a_1),...,e(a_n)]$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\mathcal{N}\vDash(\exists x_0\psi)[e(a_1),...,e(a_n)]$
+
+********* 若不存在 $\tau_{f_{ij}}(x_0)$ 满足 $\mathcal{M}\vDash(\lnot(\forall x_0(\tau_{f_{ij}}\hat{=}c_0)))[a_1,...,a_n]$
+
+则显然对于任意 $x_0$ 的赋值 $b\in M$ 均有 $\mathcal{M}\vDash\left(\bigwedge_{j=1}^l(\tau_{f_{ij}}(x_0)\hat{=}c_0})\right)[b,a_1,...,a_n]$
+
+又根据[[MK410][定理]]易证对于任意 $\tau_{g_{ij}}(x_0)$ 在 $N$ 中[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\mathcal{N}\vDash(\lnot(\tau_{g_{ij}}(x_0)\hat{=}c_0})[b,e(a_1),...e(a_n)]$ 的 $b$ 为[[MK82][有限]]个
+
+[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\mathcal{N}\vDash(\lnot(\tau_{g_{ij}}(x_0)\hat{=}c_0})[b,e(a_1),...e(a_n)]$ 的元素为 $B_j =\{b_{j,1},...,b_{j,n_j}\}$ 则显然 $B =\bigcup_{j=1}^m B_j$ 亦为[[MK82][有限集]]
+
+根据[[MK412][性质4]]可得 $N$ 为[[MK83][无限集]]，故可得 $N-B\ne\varnothing$ 即存在 $\beta\in N$ 满足 $\beta\not\in B$
+
+即可得 $\mathcal{N}\vDash\left(\bigwedge_{j=1}^m(\lnot(\tau_{g_{ij}}(x_0)\hat{=}c_0}))\right)[\beta,e(a_1),...,e(a_n)]$ 假设存在 $\tau_{f_{ij}}(x_0)$ 满足 $\mathcal{N}\vDash(\lnot(\tau_{f_{ij}}(x_0)\hat{ =}c_0))[\beta,e(a_1),...,e(a_n)]$
+
+则根据对称性，同上一步易证存在 $b\in M$ 满足 $\mathcal{M}^*_{(b)}$ 与 $\mathcal{N}^*_{(\beta)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，则同理有 $\mathcal{M}\vDash(\lnot(\tau_{f_{ij}}(x_0)\hat{ =}c_0))[b,a_1,...,a_n]$
+
+则有 $\mathcal{M}\vDash(\lnot(\forall x_0(\tau_{f_{ij}}\hat{=}c_0)))[a_1,...,a_n]$ 与条件冲突。故假设不成立，即有 $\mathcal{N}\vDash\left(\bigwedge_{j=1}^m(\tau_{f_{ij}}(x_0)\hat{ =}c_0})\right)[\beta,e(a_1),...,e(a_n)]$
+
+综上所述 $\mathcal{N}\vDash\left(\left(\bigwedge_{j=1}^l(\tau_{f_{ij}}(x_0)\hat{=}c_0})\right)\land\left(\bigwedge_{j=1}^m(\lnot(\tau_{g_{ij}}(x_0)\hat{=}c_0}))\right)\right)[\beta,e(a_1),...,e(a_n)]$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\mathcal{N}\vDash(\exists x_0\psi)[e(a_1),...,e(a_n)]$
+
+********* 结论
+
+综上所述，对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 若有[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]] $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+任意不带[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]] $\phi(x_0,...,x_n)\in\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 以及 $\{a_1,...,a_n\}\subset M'$ 均有 $\mathcal{M}\vDash(\exists x_0\psi)[a_1,...,a_n]$ 可得 $\mathcal{N}\vDash(\exists x_0\psi)[e(a_1),...,e(a_n)]$
+
+******** 证明充要
+
+根据对称性易对于任意不带[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]] $\phi(x_0,...,x_n)\in\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 以及 $\{a_1,...,a_n\}\subset M'$ 若有 $\mathcal{N}\vDash(\exists x_0\psi)[e(a_1),...,e(a_n)]$
+
+则有 $\mathcal{M}\vDash(\exists x_0\psi)[a_1,...,a_n]$
+
+即 $\mathcal{M}\vDash(\exists x_0\psi)[a_1,...,a_n]$ 的充要条件是 $\mathcal{N}\vDash(\exists x_0\psi)[e(a_1),...,e(a_n)]$
+
+******** 等价
+
+根据之前证明以及[[~/文档/note/数理逻辑/sllj.org::MK483][定理4]]可得对于任意不带[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]] $\phi(x_0,...,x_n)\in\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ ，其 $(\exists x_i\phi)$ 存在[[~/文档/note/数理逻辑/sllj.org::MK396][等价]]不带[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]的 $\psi$
+
+******* 证明结论
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK459][推论]]可得 $\mathcal{T}_\test{ACF}$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
 
 * 电路设计
 
