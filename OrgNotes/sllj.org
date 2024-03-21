@@ -2,7 +2,7 @@
 
 #+TITLE: 数理逻辑
 
-currnet mark: 483
+currnet mark: 484
 
 free mark: 
   
@@ -6518,7 +6518,7 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 
 *** 完全性<<MK264>>
 
-[[MK220][一阶理论]] $\mathcal{T}=<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*>$ 若对于任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ 有 $T\vdash\theta$ 的充要条件是 $T\not\vdash(\lnot\theta)$
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 若对于任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ 有 $T\vdash\theta$ 的充要条件是 $T\not\vdash(\lnot\theta)$
 
 则称 $\mathcal{T}$ 是完全理论
 
@@ -12738,7 +12738,7 @@ $\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]�
 
 **** 极小结构<<MK460>>
 
-[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，若存在 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 满足对于任意其他 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{N}$ 
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，若存在 $\mathcal{L}_\mathcal{A}$ 的[[MK153][结构]] $\mathcal{M}$ 满足对于任意其他 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{N}$ 
 
 有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK300][嵌入]]，则称 $\mathcal{M}$ 是 $\mathcal{T}$ 的极小结构
 
@@ -12872,7 +12872,7 @@ $\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]�
 
 综上所述，条件（2）可推出[[MK444][定理2]]中的条件（2），则根据[[MK444][定理2]]可证 $\mathcal{T}$ [[MK397][适合量词消去]]
 
-**** 定理3
+**** 定理3<<MK484>>
 
 [[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，若有：
 
@@ -12892,9 +12892,9 @@ $\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]�
 
 且与 $\mathcal{M}_0$ [[MK274][同构]]，定义[[MK274][同构映射]]分别为 $e_1,e_2$ 。根据[[MK274][引理]]可得其[[~/文档/note/离散数学/lssx.org::MK188][逆函数]] $e^{-1}_1,e^{-1}_2$ 亦为 $\mathcal{M}',\mathcal{N}'$ 到 $\mathcal{M}_0$ 的[[MK274][同构映射]]
 
-若有 $\mathcal{M}\vDash\theta$ ，则对于任意 $\mathcal{M}_0$ 的[[MK154][赋值]] $\mu$ 有 $\mu\cdot e^{-1}_1$ 是 $\mathcal{M}$ 的[[MK154][赋值]]，又由于 $e_1$ 是 $M'$ 到 $M_0$ 的映射
+对于任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ 若有 $\mathcal{M}\vDash\theta$ ，则对于任意 $\mathcal{M}_0$ 的[[MK154][赋值]] $\mu$ 有 $\mu\cdot e^{-1}_1$ 是 $\mathcal{M}$ 的[[MK154][赋值]]，又由于 $e_1$ 是 $M'$ 到 $M_0$ 的映射
 
-故可得 $e^{-1}:M_0\to M'$ 故有 $\mu\cdot e^{-1}_1$ 亦为 $\mathcal{M}'$ 的[[MK154][赋值]]。
+故可得 $e_1^{-1}:M_0\to M'$ 故有 $\mu\cdot e^{-1}_1$ 亦为 $\mathcal{M}'$ 的[[MK154][赋值]]。
 
 又由于 $\mathcal{M}\vDash\theta$ 的充要条件是对于任意 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash\theta$ ，故有 $\left<\mathcal{M},\mu\cdot e^{-1}_1\right>\vDash\theta$
 
@@ -12912,7 +12912,7 @@ $\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]�
 
 综上所述，对于任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ ，任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M},\mathcal{N}$ 有 $\mathcal{M}\vDash\theta$ 的充要条件是 $\mathcal{N}\vDash\theta$  
 
-即对于任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ 若 $T\vdash\theta$ 则根据[[MK257][完备性]]对于 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 有 $\mathcal{M}\vDash\theta$ 
+即对于任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ 若 $T\vdash\theta$ 则根据[[MK257][完备性]]对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 有 $\mathcal{M}\vDash\theta$ 
 
 根据[[MK158][满足]]可得 $\mathcal{M}\not\vDash(\lnot\theta)$ ，则根据[[MK257][完备性]]以及 $\mathcal{M}$ 任意性可得 $T\not\vdash(\lnot\theta)$
 

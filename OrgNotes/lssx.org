@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 412
+currnet mark: 418
 
 free mark: 
  
@@ -7251,13 +7251,19 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 （2） $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
 
-[[MK338][结构]] $\mathcal{N}=\left<N,J\right>$ 是[[MK338][域]]且有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]，则 $\mathcal{M}$ 的[[MK402][分式幺环]] $\mathcal{M}_{[\div]}=\left<M_{[\div]},I_{[\div]}\right>$ 亦是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]
+[[MK338][结构]] $\mathcal{N}=\left<N,J\right>$ 是[[MK338][域]]且有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]（设[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]为 $e$ ），则：
+
+（1） $\mathcal{M}$ 的[[MK402][分式幺环]] $\mathcal{M}_{[\div]}=\left<M_{[\div]},I_{[\div]}\right>$ 亦是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]（设[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]为 $e^*$ ）
+
+（2） 对于任意 $a\in M$ 存在 $b\in M_{[\div]}$ 满足 $e(a)=e^*(b)$
 
 ******* 证明
 
+******** 证（1）
+
 设 $\mathcal{M}$ 到 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]为 $e$ 则定义 $e^*=\left\{\left<\left[\frac{a}{b}\right]_\sim,J(f_\times)(e(a),e(b)^{-1})\right>\big|\left[\frac{a}{b}\right]_\sim\in M_{[\div]}\land J(f_\times)(e(b),e(b)^-1)=J(c_1)\right\}$
 
-******** 是[[MK175][函数]]
+********* 是[[MK175][函数]]
 
 对于任意 $\left\{\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right\}\subset M_{[\div]}$ 满足 $\left[\frac{a}{b}\right]_\sim=\left[\frac{c}{d}\right]_\sim$ 则有 $I(f_\times)(a,d)=I(f_\times)(c,b)$ 根据[[MK356][性质4]]可得
 
@@ -7274,7 +7280,7 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 即是[[MK175][函数]]
 
-******** 是[[MK176][单射]]
+********* 是[[MK176][单射]]
 
 对于任意 $\left\{\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right\}\subset M_{[\div]}$ 满足 $\left[\frac{a}{b}\right]_\sim\ne\left[\frac{c}{d}\right]_\sim$ 假设 $e^*\left(\left[\frac{a}{b}\right]_\sim\right)=e^*\left(\left[\frac{c}{d}\right]_\sim\right)$
 
@@ -7284,7 +7290,7 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 故假设不成立，即任意 $\left\{\left[\frac{a}{b}\right]_\sim,\left[\frac{c}{d}\right]_\sim\right\}\subset M_{[\div]}$ 满足 $\left[\frac{a}{b}\right]_\sim\ne\left[\frac{c}{d}\right]_\sim$ 均有 $e^*\left(\left[\frac{a}{b}\right]_\sim\right)\ne e^*\left(\left[\frac{c}{d}\right]_\sim\right)$
 
-******** [[MK344][同态]]
+********* [[MK344][同态]]
 
 （1） $e^*(I_{[\div]}(c_0))=e^*\left(\left[\frac{I(c_0)}{I(c_1)}\right]_\sim\right)=J(f_\times)(e(I(c_0)),e(I(c_1)))=J(f_\times)(J(c_0),J(c_1))=J(c_0)$
 
@@ -7315,6 +7321,14 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 =&J(f_+)(J(f_\times)(e(a),e(b)^{-1}),J(f_\times)(e(c),e(d)^{-1}))\\
 =&J(f_+)(J(f_\times)\left(e\left(\left[\frac{a}{b}\right]_\sim),e\left(\left[\frac{c}{d}\right]_\sim)\right)\\
 \end{aligned}
+
+******** 证（2）
+
+显然对于任意 $a\in M$ 取 $\left[\frac{a}{I(c_1)}\right]\in M_{[\div]}$ 由于 $\mathcal{N}$ 是[[MK338][域]]，故满足[[MK337][乘法交换律]]
+
+则根据[[MK304][性质2]]可得乘法逆元唯一，显然亦有 $J(f_\times)(J(c_1),J(c_1))=J(c_1)$ 即可得 $J(c_1)^{-1}=J(c_1)$
+
+由于是[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]，故可得 $e(I(c_1))=J(c_1)$ 即有 $e^*\left(\left[\frac{a}{I(c_1)}\right]\right)=J(f_\times)(e(a),e(I(c_1))^{-1})=e(a)$
 
 **** 性质
 
@@ -7574,6 +7588,96 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 定义[[~/文档/note/数理逻辑/sllj.org::MK117][项]] $\tau_n=f_+(...f_+(c_1,c_1),c_1)$ 即 $n$ 个 $c_1$ 相加，则[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 的特征定义为最小的正整数 $p$ 使得 $\mathcal{M}\vDash(\tau_p\hat{=}c_0)$
 
+若对于任意 $n\in\mathbb{N}^+$ 均有 $\mathcal{M}\vDash(\lnot(\tau_n\hat{=}c_0))$ 则称特征为 $0$
+
+****** 性质1
+
+任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 的[[MK339][特征]]均为素数
+
+******* 证明
+
+定义 $\tau_n=f_+(c_1,f_+(...f_+(c_1,c_1)...)$ 为 $n$ 个 $c_1$ 相加
+
+假设 $\mathcal{M}=\left<M,I\right>$ 的[[MK339][特征]] $p=ab$ 则 $\mathcal{M}\vDash(\tau_n\hat{= }c_0)$ 根据[[MK334][加法结合律]]、[[MK334][加法结合律]]易证 $\mathcal{M}\vDash(\tau_n\hat{=}f_+(\tau_a,f_+(...f_+(\tau_a,\tau_a)...)))$
+
+即 $b$ 个 $a$ 相加，根据[[MK334][乘法分配]]易证 $\mathcal{M}\vDash(\tau_n\hat{=}f_\times(f_+(c_1,f_+(...f_+(c_1,c_1)...)),\tau_a))$ 根据定义 $f_+(c_1,f_+(...f_+(c_1,c_1)...))$ 即为 $\tau_b$
+
+故可得 $\mathcal{M}\vDash(\tau_n\hat{=}f_\times(\tau_b,\tau_a))$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(c_0\hat{ =}f_\times(\tau_b,\tau_a))$ 则根据[[MK340][性质2]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(c_0\hat{ =}\tau_a)$ 或者 $\mathcal{M}\vDash(c_0\hat{ =}\tau_b)$
+
+由于均为正整数，故 $a<p$ 且 $b<p$ ，则任意一个成立均使得 $p$ 不是最小的正整数使得 $\mathcal{M}\vDash(\tau_p\hat{=}c_0)$ ，故矛盾
+
+则假设不成立，即 $p$ 不可分解
+
+****** 性质2<<MK413>>
+
+任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 若[[MK339][特征]] $p=0$ 则对于任意 $i\ne j,\{i,j\}\subset\mathbb{N}^+$ 均有 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} \tau_j))$
+
+其中 $\tau_i=f_+(c_1,f_+(...f_+(c_1,c_1)...))$ 即 $i$ 个 $c_1$ 相加
+
+******* 证明
+
+假设存在 $i\ne j$ 使得 $\mathcal{M}\not\vDash(\lnot(\tau_i\hat{=} \tau_j))$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\mathcal{M}\vDash(\tau_i\hat{ =} \tau_j)$ 即有 $a_i=a_j$
+
+其中 $a_i=I(f_+)(I(c_1),I(f_+)(...f_+(I(c_1),I(c_1))...))$ 即 $i$ 个 $I(c_1)$ 在 $\mathcal{M}$ 下相加
+
+不妨设 $i>j$ 则显然有 $I(f_+)(a_i,I(f_-)(a_j))=a_{i-j}$ 以及 $I(f_+)(a_j,I(f_-)(a_j))=I(c_0)$
+
+故可得 $a_{i-j}=I(c_0)$ 即有 $\mathcal{M}\vDash(\tau_{i-j}\hat{ =} c_0)$ 由于 $i>j$ 且均为正整数，故可得 $i-j$ 亦为正整数
+
+又由于[[MK339][特征]] $p=0$ ，则有对于任意 $n\in\mathbb{N}^+$ 均有 $\mathcal{M}\vDash(\lnot(\tau_n\hat{=}c_0))$ ，矛盾
+
+故假设不成立，即有对于任意 $i\ne j,\{i,j\}\subset\mathbb{N}^+$ 均有 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} \tau_j))$
+
+****** 性质3<<MK414>>
+
+任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 若[[MK339][特征]] $p=0$ 则对于任意 $\{i,j\}\subset\mathbb{N}^+$ 均有 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} I(f_-)(\tau_j)))$
+
+其中 $\tau_i=f_+(c_1,f_+(...f_+(c_1,c_1)...))$ 即 $i$ 个 $c_1$ 相加
+
+******* 证明
+
+假设存在 $\{i,j\}\subset\mathbb{N}^+$ 使得 $\mathcal{M}\not\vDash(\lnot(\tau_i\hat{=} I(f_-)(\tau_j)))$ 则[[MK413][同理]]易证 $a_i=I(f_-)(a_j)$
+
+其中 $a_i=I(f_+)(I(c_1),I(f_+)(...f_+(I(c_1),I(c_1))...))$ 即 $i$ 个 $I(c_1)$ 在 $\mathcal{M}$ 下相加
+
+进一步有 $a_{i+j}=I(f_+)(a_i,a_j)=I(f_+)(I(f_-)(a_j),a_j)=I(c_0)$ 进而 $\mathcal{M}\vDash(\tau_{i+j}\hat{ =} c_0)$ 
+
+又由于[[MK339][特征]] $p=0$ ，则有对于任意 $n\in\mathbb{N}^+$ 均有 $\mathcal{M}\vDash(\lnot(\tau_n\hat{=}c_0))$ ，矛盾
+
+故假设不成立，即对于任意 $\{i,j\}\subset\mathbb{N}^+$ 均有 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} I(f_-)(\tau_j)))$
+
+****** 性质4<<MK418>>
+
+任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 若[[MK339][特征]]为 $p$ 则对于任意 $0\leq i< j\leq p-1$ 均有 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} \tau_j))$
+
+******* 证明
+
+假设存在 $0\leq i\leq j\leq p-1$ 使得 $\mathcal{M}\not\vDash(\lnot(\tau_i\hat{=} I(f_-)(\tau_j)))$ 则[[MK413][同理]]易证 $\mathcal{M}\vDash(\tau_{j-i}\hat{ =} c_0)$
+
+由于 $0\leq i\leq j\leq p-1$ 故可得 $j-i<p$ 则[[MK339][特征]]亦小于 $p$ 矛盾。
+
+故假设不成立，即对于任意 $0\leq i\leq j\leq p-1$ 均有 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} I(f_-)(\tau_j)))$
+
+***** $\mathbb{Z}_p$ <<MK417>>
+
+对于任意素数 $p$ 定义 $Z_p=\{0,1,2,...,p-1\}$ 定义 $I_p$ 满足：
+
+（1） $I_p(c_0)=0,I_p(c_1)=1$
+
+（2） 对于任意 $\{a,b\}\subset Z_p$ 有 $I_p(f_+)(a,b)=(a+b)\mod p,I_p(f_\times)(a,b)=(a\cdot b)\mod p$
+
+（3） 对于任意 $a\in Z_p$ 有 $I_p(f_-)(a)=(p-a)\mod p$
+
+定义 $\mathbb{Z}_p=\left<Z_p,I_p\right>$
+
+****** 性质
+
+$\mathbb{Z}_p$ 是 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
+******* 证明
+
+显然 $\mathbb{Z}_p$ 对于 $I_p(f_+),I_p(f_-),I_p(f_\times)$ 封闭，故是 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
 ***** 域的扩张<<MK341>>
 
 [[MK338][域结构]] $\mathcal{M},\mathcal{N}$ 满足 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且 $\mathcal{M}\vDash T_\mathbb{F},\mathcal{N}\vDash T_\mathbb{F}$ ，则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的子域， $\mathcal{N}$ 是 $\mathcal{M}$ 的扩张域
@@ -7829,22 +7933,6 @@ $T_\mathbb{F}\vdash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_
 故矛盾，则假设不成立，即任意[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 满足 $\mathcal{M}\vDash T_\mathbb{F}$ 均有 $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
 
 根据[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]可得 $T_\mathbb{F}\vdash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$
-
-***** 性质3
-
-任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 的[[MK339][特征]]均为素数
-
-****** 证明
-
-假设 $\mathcal{M}=\left<M,I\right>$ 的[[MK339][特征]] $p=ab$ 则 $\mathcal{M}\vDash(\tau_n\hat{= }c_0)$ 根据[[MK334][加法结合律]]、[[MK334][加法结合律]]易证 $\mathcal{M}\vDash(\tau_n\hat{=}f_+(\tau_a,f_+(...f_+(\tau_a,\tau_a)...)))$
-
-即 $b$ 个 $a$ 相加，根据[[MK334][乘法分配]]易证 $\mathcal{M}\vDash(\tau_n\hat{=}f_\times(f_+(c_1,f_+(...f_+(c_1,c_1)...)),\tau_a))$ 根据定义 $f_+(c_1,f_+(...f_+(c_1,c_1)...))$ 即为 $\tau_b$
-
-故可得 $\mathcal{M}\vDash(\tau_n\hat{=}f_\times(\tau_b,\tau_a))$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(c_0\hat{ =}f_\times(\tau_b,\tau_a))$ 则根据[[MK340][性质2]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(c_0\hat{ =}\tau_a)$ 或者 $\mathcal{M}\vDash(c_0\hat{ =}\tau_b)$
-
-由于均为正整数，故 $a<p$ 且 $b<p$ ，则任意一个成立均使得 $p$ 不是最小的正整数使得 $\mathcal{M}\vDash(\tau_p\hat{=}c_0)$ ，故矛盾
-
-则假设不成立，即 $p$ 不可分解
 
 ***** 性质4<<MK356>>
 
@@ -9093,11 +9181,11 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 故显然 $\mathcal{M}^*,\mathcal{N}^*$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，又根据[[MK406][定理1]]可得 $\mathcal{M}_{[\div]}$ 是[[MK338][域]]，则根据[[~/文档/note/数理逻辑/sllj.org::MK276][定理1]]以及[[~/文档/note/数理逻辑/sllj.org::MK168][局部确定]]易证 $\mathcal{M}^*,\mathcal{N}^*$ 是[[MK338][域]]
 
-又根据[[MK405][定理2]]中证明易证 $\mathcal{M}',\mathcal{N}'$ 分别为 $\mathcal{M}^*,\mathcal{N}^*$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+又根据[[MK405][定理2]]中结论（2）易证 $\mathcal{M}',\mathcal{N}'$ 分别为 $\mathcal{M}^*,\mathcal{N}^*$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
 
-***** 定理2
+***** 定理2<<MK415>>
 
-[[MK411][代数封闭域理论]] $\mathcal{T}_\test{ACF}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}_{\mathcal{A}_{\text{ACF}}},T_\test{ACF},T^*_\test{ACF}\right>$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
+[[MK411][代数封闭域理论]] $\mathcal{T}_\test{ACF}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}},T_\test{ACF},T^*_\test{ACF}\right>$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
 
 ****** 证明
 
@@ -9198,6 +9286,158 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 ******* 证明结论
 
 根据[[~/文档/note/数理逻辑/sllj.org::MK459][推论]]可得 $\mathcal{T}_\test{ACF}$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
+
+****** 推论<<MK416>>
+
+[[MK339][特征]]确定（设为 $p$ ）的[[MK411][代数封闭域理论]] $\mathcal{T}_{\test{ACF}_p}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}},T_{\test{ACF}_p},T^*_{\test{ACF}_p}\right>$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
+
+******* 证明
+
+与[[MK415][定理2]]同理可证
+
+***** 定理3
+
+[[MK339][特征]]确定（设为 $p$ ）的[[MK411][代数封闭域理论]] $\mathcal{T}_{\test{ACF}_p}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}},T_{\test{ACF}_p},T^*_{\test{ACF}_p}\right>$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]
+
+****** 证明
+
+******* $p=0$
+
+******** 定义[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathbb{Z}_0=\left<\mathbb{Z},J\right>$ 
+
+定义 $\mathbb{Z}_0=\left<\mathbb{Z},J\right>$ 其中 $\mathbb{Z}$ 是整数 $J$ 满足：
+
+（1） $J(c_0)=0,J(c_1)=1$
+
+（2） 对于任意 $\left\{a,b\right\}\subset\mathbb{Z}$ 有 $J(f_+)(a,b)=a+b,J(f_\times)(a,b)=a\cdot b$ 即为整数加法乘法
+
+（3） 对于任意 $a\in\mathbb{Z}$ 有 $J(f_-)(a)=-a$ 即为整数取负
+
+易证 $\mathbb{Z}_0$ 是 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
+******** 证明是[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
+
+对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>$ 定义映射 $e:\mathbb{Z}\to M$ 满足对于任意 $a\in\mathbb{Z}$ 有：
+
+（1） 若 $a=0$ 则 $e(a)=I(c_0)$
+
+（2） 若 $a>0$ 则 $e(a)=t_a$
+
+（3） 若 $a<0$ 则 $e(a)=I(f_-)(t_{-a})$
+
+其中 $t_a=I(f_+)(I(c_1),I(f_+)(...f_+(I(c_1),I(c_1))...))$ 即 $a$ 个 $c_1$ 相加
+
+根据以下证明可得 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK300][定义]]可得 $e$ 是 $\mathbb{Z}$ 到 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]
+
+********* 是[[MK176][单射]]
+
+根据 $p=0$ 、[[MK413][性质2]]以及[[MK414][性质3]]可得对于任意 $\{i,j\}\subset\mathbb{Z},i\ne j$ 必有 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} \tau_j))$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $t_i\ne t_j$
+
+故可得 $e(i)=t_i\ne t_j=e(j)$ 即是[[MK176][单射]]
+
+********* [[MK344][同态]]
+
+（1） 对于任意 $\{i,j\}\subset\mathbb{Z}$ 根据[[MK411][公理]]满足加法交换律、结合律，则易证
+
+     $e(i+j)=t_{i+j}=I(f_+)(t_i,t_j)=I(f_+)(e(i),e(j))$
+
+（2） 对于任意 $\{i,j\}\subset\mathbb{Z}$ 根据[[MK411][公理]]满足加法交换律、结合律，
+
+     则易证 $e(i\cdot j)=t_{i\cdot j}=I(f_+)(t_i,I(f_+)(...I(f_+)(t_i,t_i)...))$ 即 $j$ 个 $t_i$ 相加
+
+     同样根据[[MK411][公理]]满足乘法分配率，则易证 $I(f_+)(t_i,I(f_+)(...I(f_+)(t_i,t_i)...))=I(f_\times)(t_i,t_j)$
+
+     最终有 $e(i\cdot j)=I(f_\times)(t_i,t_j)=I(f_\times)(e(i),e(j))$
+
+（3） 对于任意 $i\in\mathbb{Z}$ 若 $i=0$ 则易证 $e(J(f_-)(0))=e(0)=I(c_0)=I(f_-)(c_0)$
+
+     若 $i>0$ 则易证有 $e(J(f_-)(i))=e(-i)=I(f_-)(t_i)=I(f_-)(e(i))$
+
+     若 $i<0$ 则有 $e(J(f_-)(i))=e(-i)=t_{-i}=I(f_-)(I(f_-)(t_{-i}))=I(f_-)(e(i))$
+
+（4） 显然易证 $e(J(c_0))=e(0)=I(c_0),e(J(c_1))=e(1)=I(c_1)$
+
+******** 证明结论
+
+根据[[MK416][推论]]可得 $\mathcal{T}_{\test{ACF}_0}$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]，根据上一步证明可得亦存在[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK484][定理3]]可得 $\mathcal{T}_{\test{ACF}_0}$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]
+     
+******* $p\ne 0$
+
+******** [[MK417][ $\mathbb{Z}_p$ ]]是[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
+
+对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>$ 定义映射 $e:Z_p\to M$ 满足对于任意 $a\in\mathbb{Z}$ 有：
+
+（1） 若 $a=0$ 则 $e(a)=I(c_0)$
+
+（2） 若 $a>0$ 则 $e(a)=t_a$
+
+其中 $t_a=I(f_+)(I(c_1),I(f_+)(...f_+(I(c_1),I(c_1))...))$ 即 $a$ 个 $c_1$ 相加
+
+根据以下证明可得 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK300][定义]]可得 $e$ 是 $\mathbb{Z}$ 到 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]
+
+********* 是[[MK176][单射]]
+
+任取 $\{i,j\}\subset Z_p,i\ne j$ 易证有 $0\leq i\leq p-1,0\leq j \leq p-1$ 不放设 $i<j$
+
+则根据[[MK418][性质4]]可得 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} \tau_j))$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $e(i)=t_i\ne t_j=e(j)$
+
+********* [[MK344][同态]]
+
+显然满足 $e(I_p(c_0))=e(0)=I(c_0),e(I_p(c_1))=e(1)=I(c_1)$
+
+********** $f_+$
+
+任取 $\{i,j\}\subset Z_p$ 有 $e(I_p(f_+)(i,j))=e((i+j)\mod p)=t_{(i+j)\mod p}$ 另有：
+
+\begin{aligned}
+&I(f_+)(e(i),e(j))\\
+=&I(f_+)(t_i,t_j)\\
+=&I(f_+)(I(c_1),I(f_+)(...f_+(I(c_1),I(c_1))...))\\
+=&I(f_+)(t_p,I(f_+)(...f_+(t_p,t_{{i+j}\mod p})...))\\
+\end{aligned}
+
+即根据[[MK441][公理]]中的加法交换律，结合律可得 $I(f_+)(e(i),e(j))$ 可化为若干个 $t_p$ 与一个 $t_{{i+j}\mod p}$ 相加
+
+由于[[MK339][特征]]为 $p$ 故可得 $t_p=I(c_0)$ 故易证 $I(f_+)(e(i),e(j))=t_{{i+j}\mod p}$
+
+综上所述，对于任意 $\{i,j\}\subset Z_p$ 均有 $e(I_p(f_+)(i,j))=I(f_+)(e(i),e(j))$
+
+********** $f_\times$
+
+任取 $\{i,j\}\subset Z_p$ 有 $e(I_p(f_\times)(i,j))=e((i\cdot j)\mod p)=t_{(i\cdot j)\mod p}$ 另有：
+
+\begin{aligned}
+&I(f_\times)(e(i),e(j))\\
+=&I(f_+)(t_i,t_j)\\
+=&I(f_+)(I(f_\times)(t_i,I(c_1)),I(f_+)(...f_+(I(f_\times)(t_i,I(c_1)),I(f_\times)(t_i,I(c_1)))...))\\
+=&I(f_+)(I(c_1),I(f_+)(...f_+(I(c_1),I(c_1))...))\\
+\end{aligned}
+
+即根据[[MK441][公理]]中的乘法分配律，交换律，结合律可得 $I(f_\times)(e(i),e(j))$ 可化为 $i\cdot j$ 个 $I(c_1)$ 相加
+
+进一步可化为若干个 $t_p$ 与一个 $t_{{i\cdot j}\mod p}$ 相加
+
+由于[[MK339][特征]]为 $p$ 故可得 $t_p=I(c_0)$ 故易证 $I(f_\times)(e(i),e(j))=t_{{i+j}\mod p}$
+
+综上所述，对于任意 $\{i,j\}\subset Z_p$ 均有 $e(I_p(f_\times)(i,j))=I(f_\times)(e(i),e(j))$
+
+********** $f_-$
+
+任取 $i\in Z_p$ 有 $e(I(f_-)(i))=e(p-i)=t_{p-i}$ 由于[[MK339][特征]]为 $p$ 可得 $t_p=I(c_0)$
+
+显然亦有 $I(f_+)(t_i,t_{p-i})=t_p=I(c_0)$ 故 $t_{p-i}$ 是 $t_i$ 的加法逆元
+
+根据[[MK411][公理]]可得满足加法交换律，故根据[[MK304][性质2]]可得加法逆元唯一，即有 $I(f_-)(t_i)=t_{p-i}$
+
+故可得 $e(I_p(f_-)(i))=J(f_-)(t_i)$
+
+******** 证明结论
+
+根据[[MK416][推论]]可得 $\mathcal{T}_{\test{ACF}_p}$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]，根据上一步证明可得亦存在[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK484][定理3]]可得 $\mathcal{T}_{\test{ACF}_p}$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]
 
 * 电路设计
 
