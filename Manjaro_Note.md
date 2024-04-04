@@ -397,15 +397,7 @@ git diff --output=<Path/to/log> <CommitID> <CommitID> <Path/to/File>
 
 ## Terminal font
 
-Install <code>nerd-fonts-terminus</code> package:
-
-```shell
-pacman -S nerd-fonts-terminus
-```
-
-In terminal, select "Edit->Preference->Appearance", select "TerminessTTF Nerd Font Mono Medium" font:
-
-<img src="截图_2020-02-08_16-35-01.png">
+In terminal, select "Edit->Preference->Appearance", select "Source Code Pro Light" font.
 
 ## find instruction
 
@@ -612,6 +604,22 @@ pacman -S emacs
    export QT_IM_MODULE=fcitx
    export XMODIFIERS=@im=fcitx
    export LC_CTYPE=zh_CN.UTF-8
+   ```
+
+## Cursor size
+
+1. Open <code>~/.profile</code>:
+   ```shell
+   code ~/.profile
+   ```
+2. At the end of the file, type in:
+   ```shell
+   export XCURSOR_SIZE=16
+   ```
+3. open `~/.bash_profile`
+4. At the end of the file, type in:
+   ```shell
+   [[ -f ~/.bashrc ]] && . ~/.profile
    ```
 
 ## Latex
@@ -1153,5 +1161,6 @@ auditwheel repair dist/pandas-0.24.2-cp27-cp27m-linux_x86_64.whl --plat manylinu
 # Stop system beep
 
 ```shell
-xset -b
+su
+echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 ```
