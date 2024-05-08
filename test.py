@@ -119,7 +119,52 @@
 # f_1.write(sllj_text_rep_link)
 # f_2.write(lssx_text_rep_link)
 
-k = 32
+# k = 32
  
-for i in range(1, k):
-    print(str(i) +":" ,(i+2)/(k/2) - (2*i-1)/((int)(k/i)*i))
+# for i in range(1, k):
+#     print(str(i) +":" ,(i+2)/(k/2) - (2*i-1)/((int)(k/i)*i))
+
+
+def load_map(file_path):
+    """
+    加载文件内容到字典，假设文件中每行的格式为 "<<KEY>>|VALUE".
+    """
+    result_map = {}
+    with open(file_path, 'r', encoding='utf-8') as file:
+        for line in file:
+            if '|' in line:
+                key, value = line.strip().split('|', 1)
+                clean_key = key.replace('<<', '').replace('>>', '').replace(' ','')  # 移除 << 和 >>
+                clean_value = value.replace(' ', '')  # 移除空格
+                result_map[clean_key] = clean_value
+    return result_map
+
+def replace_content_in_file(file_path, lssx_map, sllj_map):
+    """
+    替换文件中特定格式的字段。
+    """
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+    
+    # 处理 lssx_map 替换
+    for key, value in lssx_map.items():
+        search_pattern = f"[[~/文档/note/离散数学/Disc_Math.org::{key}]"
+        replace_pattern = f"[[~/文档/note/离散数学/lssx.org::{value}]"
+        content = content.replace(search_pattern, replace_pattern)
+    
+    # 处理 sllj_map 替换
+    for key, value in sllj_map.items():
+        search_pattern = f"[[~/文档/note/离散数学/Disc_Math.org::{key}]"
+        replace_pattern = f"[[~/文档/note/数理逻辑/sllj.org::{value}]"
+        content = content.replace(search_pattern, replace_pattern)
+    
+    # 保存更改后的内容
+    with open(file_path + ".new", 'w', encoding='utf-8') as file:
+        file.write(content)
+
+# 加载字典
+lssx_map = load_map('mark_map_lssx.txt')
+sllj_map = load_map('mark_map_sllj.txt')
+
+# 替换文件中的内容
+replace_content_in_file('/home/shore/文档/note/高等代数/Algb-2-Liner_Space.org', lssx_map, sllj_map)  # 替换 'your_target_file.txt' 中的内容

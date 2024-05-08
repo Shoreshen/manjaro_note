@@ -2,7 +2,7 @@
 
 #+TITLE: 数理逻辑
 
-currnet mark: 484
+currnet mark: 487
 
 free mark: 
   
@@ -7034,7 +7034,13 @@ $\Gamma$ 亦为 $\mathcal{L}_{\mathcal{A}^*}$ 下[[MK322][关于 $x_1,...,x_n$ �
 
 满足 $\left<\mathcal{M}',v'\right>\vDash\Gamma$ 且 $|M|=\kappa$ 。则根据[[MK251][之前证明]]可得存在 $\mathcal{L}_\mathcal{A}$ 下的[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 满足 $v'$ 亦是其[[MK154][赋值]]
 
-且 $\left<\mathcal{M},v'\right>\vDash\Gamma$ ，显然亦有 $|M|=\kappa$ 
+且 $\left<\mathcal{M},v'\right>\vDash\Gamma$ ，显然亦有 $|M|=\kappa$
+
+*** [[MK221][模型]]完全<<MK485>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，若对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$
+
+满足 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK282][子结构]]，则 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK287][同质子结构]]，则称 $\mathcal{T}$ 是[[MK221][模型]]完全的
 
 ** 一阶结构关系
 
@@ -9057,7 +9063,7 @@ $\left<\mathcal{M}_i,v_i\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M}
 
 则称 $Y_\phi$ 以 $Z$ 中的元素为参数，在 $\mathcal{M}$ 中可定义，记作 $Y_\phi=\left\{\left<a_1,...,a_n\right>\big|\mathcal{M}\vDash\phi[a_1,...,a_n,b_1,...,b_m]\right\}$
 
-记所有可定义的 $Y_\phi\subset M^n$ 的集合为 $\text{Def}_n(\mathcal{M}, Z)$ ，则 $Y_\phi$ 可定义可表示为 $Y_\phi\in\text{Def}_n(\mathcal{M}, Z)$
+对所有 $\phi\in\mathcal{L}_\mathcal{A}$ 其可定义集 $Y_\phi\subset M^n$ 的集合为 $\text{Def}_n(\mathcal{M}, Z)=\left\{Y_\phi\big|\phi\in\mathcal{L}_\mathcal{A}\right\}$ ，则 $Y_\phi$ 可定义可表示为 $Y_\phi\in\text{Def}_n(\mathcal{M}, Z)$
 
 当 $Z=\varnothing$ 时若 $Y_\phi\in\text{Def}_n(\mathcal{M},\varnothing)$ 则 $Y_\phi$ 是 $\mathcal{M}$ 免参数可定义集合
 
@@ -12756,7 +12762,29 @@ $\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]�
 
 即 $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow\psi)$ 。综上所述，对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow\psi)$
 
-则根据[[MK257][完备性]]可得 $T\vdash(\phi\leftrightarrow\psi)$  
+则根据[[MK257][完备性]]可得 $T\vdash(\phi\leftrightarrow\psi)$
+
+**** 引理2
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，对于任意 $\{\phi(x_1,...,x_n),\psi(x_1,...,x_m)\}\subset\mathcal{L}_\mathcal{A}$ 以下命题等价：
+
+（1） $T\vdash(\forall x_1(...(\forall x_{\max(m,n)}(\phi\leftrightarrow\psi))...))$
+
+（2） $T\vdash(\phi\leftrightarrow\psi)$
+
+***** 证明
+
+****** （1）证（2）
+
+若有 $T\vdash(\forall x_1(...(\forall x_{\max(m,n)}(\phi\leftrightarrow\psi))...))$ 根据[[MK199][推论]]有限次使用[[MK197][特化公理]]可得 $T\vdash(\phi\leftrightarrow\psi)$
+
+****** （2）证（1）
+
+若有 $T\vdash(\phi\leftrightarrow\psi)$ 则根据[[MK257][完备性]]可得对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow\psi)$
+
+由于 $v$ 的任意性以及[[MK158][满足]]易证 $\mathcal{M}\vDash(\forall x_1(...(\forall x_{\max(m,n)}(\phi\leftrightarrow\psi))...))$
+
+又根据 $\mathcal{M}$ 的任意性以及[[MK257][完备性]]可得 $T\vdash(\forall x_1(...(\forall x_{\max(m,n)}(\phi\leftrightarrow\psi))...))$ 
 
 *** 定理
 
@@ -12898,9 +12926,9 @@ $\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]�
 
 又由于 $\mathcal{M}\vDash\theta$ 的充要条件是对于任意 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash\theta$ ，故有 $\left<\mathcal{M},\mu\cdot e^{-1}_1\right>\vDash\theta$
 
-根据 $T\vdash(\theta\leftrightarrow\psi)$ 以及[[MK257][完备性]]可得 $\left<\mathcal{M},\mu\cdot e^{-1}_1\right>\vDash\psi$ 由于 $\psi$ 不带[[MK106][量词]]，则根据[[MK461][推论]]可得 $\left<\mathcal{M}',\mu\cdot e^{-1}_1\right>\vDash\psi$
+根据 $T\vdash(\theta\leftrightarrow\psi)$ 以及[[MK257][完备性]]可得 $\left<\mathcal{M},\mu\cdot e^{-1}_1\right>\vDash(\theta\leftrightarrow\psi)$ 根据[[MK158][满足]]有 $\left<\mathcal{M},\mu\cdot e^{-1}_1\right>\vDash\psi$ 
 
-根据[[MK276][定理1]]可得 $\left<\mathcal{M}_0,\mu\cdot e^{-1}_1\cdot e_1\right>\vDash\psi$ 即 $\left<\mathcal{M}_0,\mu\right>\vDash\psi$ 。
+由于 $\psi$ 不带[[MK106][量词]]，则根据[[MK461][推论]]可得 $\left<\mathcal{M}',\mu\cdot e^{-1}_1\right>\vDash\psi$ ，又根据[[MK276][定理1]]可得 $\left<\mathcal{M}_0,\mu\cdot e^{-1}_1\cdot e_1\right>\vDash\psi$ 即 $\left<\mathcal{M}_0,\mu\right>\vDash\psi$ 。
 
 综上所述，对于任意 $\mathcal{M}_0$ 的[[MK154][赋值]] $\mu$ 均有 $\left<\mathcal{M}_0,\mu\right>\vDash\psi$
 
@@ -13437,7 +13465,47 @@ $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\not\vdash\phi^*$
 
 又根据[[MK463][ $\Gamma$ 定义]]可得 $\theta_i$ 不含[[MK106][量词]]，则显然 $\left(\bigwedge_{i=1}^k \theta_i\right)$ 亦不含[[MK106][量词]]
 
+**** 定理5<<MK487>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]且 $\mathcal{T}$ [[MK397][适合量词消去]]，则对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$
+
+满足 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK282][子结构]]，则 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK287][同质子结构]]
+
+***** 证明
+
+对于任意 $\mathcal{N}$ [[MK154][赋值]] $v:X\to N$ 以及[[MK129][表达式]] $\phi(x_1,...,x_n)\in\mathcal{L}_\mathcal{A}$ 若有 $\left<\mathcal{M},v\right>\vDash\phi$ 根据 $\mathcal{T}$ [[MK397][适合量词消去]]可得存在 $\psi\in\mathcal{L}_\mathcal{A}$
+
+满足 $T\vdash(\phi\leftrightarrow\psi)$ 且 $\psi$ 不带[[MK106][量词]]。根据[[MK257][完备性]]可得 $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow\psi)$ 根据[[MK158][满足]]可得 $\left<\mathcal{M},v\right>\vDash\psi$ 又根据[[MK461][推论]]可得 $\left<\mathcal{N},v\right>\vDash\psi$
+
+同理根据 $T\vdash(\phi\leftrightarrow\psi)$ 以及[[MK257][完备性]]可得 $\left<\mathcal{N},v\right>\vDash(\phi\leftrightarrow\psi)$ ，则根据[[MK158][满足]]可得 $\left<\mathcal{N},v\right>\vDash\phi$ 
+
+同理可证若 $\left<\mathcal{N},v\right>\vDash\phi$ 则有 $\left<\mathcal{M},v\right>\vDash\phi$
+
+综上所述可得 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK287][同质子结构]]
+
 * 一阶逻辑例子
+
+** 自然数序理论
+
+*** 语言
+
+除[[MK105][固定符号]]外仅有一个[[MK110][谓词符号]] $p_<$ 用于表示小于关系，则定义 $\mathcal{A}_<=\{p_<\}$
+
+进一步有 $\mathcal{L}_{\mathcal{A}_<}$ 是自然数序理论的[[MK151][语言]]
+
+*** 公理
+
+（1） 反自反 $(\forall x_1(\lnot(p_<(x_1,x_1))))$
+
+（2） 传递性 $(\forall x_1(\forall x_2(\forall x_3((p_<(x_1,x_2)\land p_<(x_2,x_3))\to p_<(x_1,x_3)))))$
+
+（3） 三歧性 $(\forall x_1(\forall x_2(p_<(x_1,x_2)\lor p_<(x_2,x_1)\lor (x_1\hat{=}x_2))))$
+
+（4） 最小元 $(\exists x_1(\forall x_2p_<(x_1,x_2)))$
+
+（5） 存在最大小于 $x_1$ 的元素 $(\forall x_1((\exists x_2 p_<(x_2,x_1))\to(\exists x_2(\forall x_3(p_<(x_3,x_1)\to(p_<(x_3,x_2)\lor(x_2\hat{=}x_3)))))))$
+
+（6） 存在最小大于 $x_1$ 的元素 $(\forall x_1((\exists x_2 p_<(x_1,x_2))\to(\exists x_2(\forall x_3(p_<(x_1,x_3)\to(p_<(x_2,x_3)\lor(x_2\hat{=}x_3)))))))$
 
 ** 无端点线性稠密序
 
@@ -14380,7 +14448,7 @@ T_\text{odl}&\vdash(\forall x_1(\forall x_2(p_<(x_2,x_1)\leftrightarrow((\lnot p
 
 又根据[[MK159][之前证明]]可得 $\mathcal{T}_X$ 有且仅有 $2m+1$ 个[[MK322][ $1$ 元类型]]
 
-**** [[MK397][适合量词消去]]
+**** [[MK397][适合量词消去]]<<MK486>>
 
 [[MK220][一阶理论]] $\mathcal{T}_{\text{odl}}=\left<\mathcal{L}_{\mathcal{A}_<},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_<},T_{\text{odl}},T^*_{\text{odl}}\right>$ [[MK397][适合量词消去]]
 
@@ -14687,13 +14755,23 @@ T_\text{odl}&\vdash(\forall x_1(\forall x_2(p_<(x_2,x_1)\leftrightarrow((\lnot p
 
 **** 完全性
 
-无断点线性稠密序的[[MK356][理论]] $\mathcal{T}_{\text{odl}}$ 是[[MK264][完全]]的
+无端点线性稠密序的[[MK356][理论]] $\mathcal{T}_{\text{odl}}$ 是[[MK264][完全]]的
 
 ***** 证明
 
 根据[[MK366][区间定理]]可得对于两个任意 $\mathcal{T}_{\text{odl}}$ 的[[MK195][模型]] $\mathcal{M}_1,\mathcal{M}_2$ 均与 $\left<\mathbb{Q},\{\left<p_<,<\right>\}\right>$ [[MK281][同样]]
 
 又根据[[MK281][同样]]定义易证 $\mathcal{M}_1,\mathcal{M}_2$ [[MK281][同样]]，则根据[[MK267][引理3（2）]]可得 $\mathcal{T}_{\text{odl}}$ 是[[MK264][完全理论]]
+
+**** 模型完全性
+
+无端点线性稠密序的[[MK356][理论]] $\mathcal{T}_{\text{odl}}$ 是[[MK485][模型完全]]的
+
+***** 证明
+
+根据[[MK486][之前证明]]可得 $\mathcal{T}_{\text{odl}}$ [[MK397][适合量词消去]]，又根据[[MK487][定理5]]可得对于任意 $\mathcal{T}_{\text{old}}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$
+
+满足 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK282][子结构]]，则 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK287][同质子结构]]，即可得 $\mathcal{T}_{\text{odl}}$ 是[[MK485][模型完全]]的
 
 ** 自然数算数理论模型
 

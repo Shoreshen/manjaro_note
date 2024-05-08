@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 418
+currnet mark: 419
 
 free mark: 
  
@@ -7668,7 +7668,15 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 （3） 对于任意 $a\in Z_p$ 有 $I_p(f_-)(a)=(p-a)\mod p$
 
-定义 $\mathbb{Z}_p=\left<Z_p,I_p\right>$
+定义 $\mathbb{Z}_p=\left<Z_p,I_p\right>$ 。特别的当 $p=0$ 时定义 $\mathbb{Z}_0=\left<\mathbb{Z}, I_0\right>$ 满足：
+
+（1） $I_0(c_0)=0,I_0(c_1)=1$
+
+（2） 对于任意 $\left\{a,b\right\}\subset\mathbb{Z}$ 有 $J(f_+)(a,b)=a+b,J(f_\times)(a,b)=a\cdot b$ 即为整数加法乘法
+
+（3） 对于任意 $a\in\mathbb{Z}$ 有 $J(f_-)(a)=-a$ 即为整数取负
+
+易证 $\mathbb{Z}_p=\left<Z_p,I_p\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
 
 ****** 性质
 
@@ -9295,29 +9303,17 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 与[[MK415][定理2]]同理可证
 
-***** 定理3
+***** 定理3<<MK419>>
 
-[[MK339][特征]]确定（设为 $p$ ）的[[MK411][代数封闭域理论]] $\mathcal{T}_{\test{ACF}_p}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}},T_{\test{ACF}_p},T^*_{\test{ACF}_p}\right>$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]
+[[MK339][特征]]确定（设为 $p$ ）的[[MK411][代数封闭域理论]] $\mathcal{T}_{\test{ACF}_p}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}},T_{\test{ACF}_p},T^*_{\test{ACF}_p}\right>$
+
+则 [[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{T}_{\test{ACF}_p}$ 的[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
 
 ****** 证明
 
 ******* $p=0$
 
-******** 定义[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathbb{Z}_0=\left<\mathbb{Z},J\right>$ 
-
-定义 $\mathbb{Z}_0=\left<\mathbb{Z},J\right>$ 其中 $\mathbb{Z}$ 是整数 $J$ 满足：
-
-（1） $J(c_0)=0,J(c_1)=1$
-
-（2） 对于任意 $\left\{a,b\right\}\subset\mathbb{Z}$ 有 $J(f_+)(a,b)=a+b,J(f_\times)(a,b)=a\cdot b$ 即为整数加法乘法
-
-（3） 对于任意 $a\in\mathbb{Z}$ 有 $J(f_-)(a)=-a$ 即为整数取负
-
-易证 $\mathbb{Z}_0$ 是 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
-
-******** 证明是[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
-
-对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>$ 定义映射 $e:\mathbb{Z}\to M$ 满足对于任意 $a\in\mathbb{Z}$ 有：
+根据[[MK417][定义]]显然 $\mathbb{Z}_0$ 是 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，则对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>$ 定义映射 $e:\mathbb{Z}\to M$ 满足对于任意 $a\in\mathbb{Z}$ 有：
 
 （1） 若 $a=0$ 则 $e(a)=I(c_0)$
 
@@ -9329,13 +9325,13 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 根据以下证明可得 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK300][定义]]可得 $e$ 是 $\mathbb{Z}$ 到 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]
 
-********* 是[[MK176][单射]]
+******** 是[[MK176][单射]]
 
 根据 $p=0$ 、[[MK413][性质2]]以及[[MK414][性质3]]可得对于任意 $\{i,j\}\subset\mathbb{Z},i\ne j$ 必有 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} \tau_j))$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $t_i\ne t_j$
 
 故可得 $e(i)=t_i\ne t_j=e(j)$ 即是[[MK176][单射]]
 
-********* [[MK344][同态]]
+******** [[MK344][同态]]
 
 （1） 对于任意 $\{i,j\}\subset\mathbb{Z}$ 根据[[MK411][公理]]满足加法交换律、结合律，则易证
 
@@ -9357,17 +9353,9 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 （4） 显然易证 $e(J(c_0))=e(0)=I(c_0),e(J(c_1))=e(1)=I(c_1)$
 
-******** 证明结论
-
-根据[[MK416][推论]]可得 $\mathcal{T}_{\test{ACF}_0}$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]，根据上一步证明可得亦存在[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
-
-则根据[[~/文档/note/数理逻辑/sllj.org::MK484][定理3]]可得 $\mathcal{T}_{\test{ACF}_0}$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]
-     
 ******* $p\ne 0$
 
-******** [[MK417][ $\mathbb{Z}_p$ ]]是[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
-
-对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>$ 定义映射 $e:Z_p\to M$ 满足对于任意 $a\in\mathbb{Z}$ 有：
+根据[[MK417][定义]]显然 $\mathbb{Z}_p$ 是 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，则对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>$ 定义映射 $e:Z_p\to M$ 满足对于任意 $a\in\mathbb{Z}$ 有：
 
 （1） 若 $a=0$ 则 $e(a)=I(c_0)$
 
@@ -9377,17 +9365,17 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 根据以下证明可得 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK300][定义]]可得 $e$ 是 $\mathbb{Z}$ 到 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]
 
-********* 是[[MK176][单射]]
+******** 是[[MK176][单射]]
 
 任取 $\{i,j\}\subset Z_p,i\ne j$ 易证有 $0\leq i\leq p-1,0\leq j \leq p-1$ 不放设 $i<j$
 
 则根据[[MK418][性质4]]可得 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} \tau_j))$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $e(i)=t_i\ne t_j=e(j)$
 
-********* [[MK344][同态]]
+******** [[MK344][同态]]
 
 显然满足 $e(I_p(c_0))=e(0)=I(c_0),e(I_p(c_1))=e(1)=I(c_1)$
 
-********** $f_+$
+********* $f_+$
 
 任取 $\{i,j\}\subset Z_p$ 有 $e(I_p(f_+)(i,j))=e((i+j)\mod p)=t_{(i+j)\mod p}$ 另有：
 
@@ -9404,7 +9392,7 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 综上所述，对于任意 $\{i,j\}\subset Z_p$ 均有 $e(I_p(f_+)(i,j))=I(f_+)(e(i),e(j))$
 
-********** $f_\times$
+********* $f_\times$
 
 任取 $\{i,j\}\subset Z_p$ 有 $e(I_p(f_\times)(i,j))=e((i\cdot j)\mod p)=t_{(i\cdot j)\mod p}$ 另有：
 
@@ -9423,7 +9411,7 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 综上所述，对于任意 $\{i,j\}\subset Z_p$ 均有 $e(I_p(f_\times)(i,j))=I(f_\times)(e(i),e(j))$
 
-********** $f_-$
+********* $f_-$
 
 任取 $i\in Z_p$ 有 $e(I(f_-)(i))=e(p-i)=t_{p-i}$ 由于[[MK339][特征]]为 $p$ 可得 $t_p=I(c_0)$
 
@@ -9433,11 +9421,13 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 故可得 $e(I_p(f_-)(i))=J(f_-)(t_i)$
 
-******** 证明结论
+***** 定理4
 
-根据[[MK416][推论]]可得 $\mathcal{T}_{\test{ACF}_p}$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]，根据上一步证明可得亦存在[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
+[[MK339][特征]]确定（设为 $p$ ）的[[MK411][代数封闭域理论]] $\mathcal{T}_{\test{ACF}_p}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}},T_{\test{ACF}_p},T^*_{\test{ACF}_p}\right>$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]
 
-则根据[[~/文档/note/数理逻辑/sllj.org::MK484][定理3]]可得 $\mathcal{T}_{\test{ACF}_p}$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]
+****** 证明
+
+根据[[MK416][推论]]可得 $\mathcal{T}_{\test{ACF}_p}$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]，根据[[MK419][定理3]]可得 $\mathcal{T}_{\test{ACF}_p}$ 存在[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]。则根据[[~/文档/note/数理逻辑/sllj.org::MK484][定理3]]可得 $\mathcal{T}_{\test{ACF}_p}$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]
 
 * 电路设计
 
