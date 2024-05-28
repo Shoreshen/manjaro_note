@@ -56,6 +56,8 @@ rec_dns:
 	sudo rm /etc/resolv.conf
 	sudo cp ./OpenVPN/resolv.conf /etc/
 	cat /etc/resolv.conf
+ban_ipv6:
+	echo $(PW) | sudo -S sysctl -w net.ipv6.conf.all.disable_ipv6=1
 
 split_scrn:
 	xrandr --output HDMI-0 --auto --right-of DP-2

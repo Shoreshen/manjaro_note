@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 419
+currnet mark: 433
 
 free mark: 
  
@@ -436,7 +436,7 @@ $X$ 是[[MK21][传递集]]的等价条件是 $\forall x(\forall y((x\in y\land y
 
 **** 极限序数
 
-如果[[MK24][序数]] $X$ 不是[[MK25][后继序数]]，则 $X$ 是极限序数
+如果[[MK24][序数]] $X$ 不存在 $Y$ 使得 $X$ 是 $Y$ 的[[MK25][后继序数]]，则 $X$ 是极限序数
 
 **** 引理1<<MK26>>
 
@@ -581,7 +581,7 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
 根据[[MK29][定义]]可得有[[MK181][双射]] $\phi_i:A_i\to B_i$ 则定义[[MK175][映射]] $\phi=\bigcup_{i=1}^\infty\phi_i$
 
 根据[[MK183][并双射]]可得 $\phi$ 亦是[[MK181][双射]]，即 $\left|\bigcup_{i=1}^\infty A_i\right|=\left|\bigcup_{i=1}^\infty B_i\right|$
-
+ [[则[[MK432][域基]]与 $M$ [[MK29][等势]]]] 
 **** 定理3<<MK32>>
 
 若 $|A|=|B|$ 即存在 $\phi:A\to B$ 是[[MK181][双射函数]]，则对于 $C\subset A$
@@ -651,6 +651,16 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
 根据[[MK29][定义]]有[[MK181][双射函数]] $\sigma:C\to A$ 以及[[MK176][单射函数]] $\eta:A\to B$
 
 则显然 $g(c)=\eta(\sigma(c)),c\in C$ 是 $C\to B$ 的[[MK176][单射函数]]，故有 $|C|\leq|B|$
+
+***** 推论<<MK420>>
+
+若有 $|A|\leq|B|$ 以及 $|B|\leq|C|$ 则有 $|A|\leq|C|$ 
+
+****** 证明
+
+根据定义存在[[MK176][单射]] $f_{A,B}:A\to B, f_{B,C}:B\to C$ 对于任意 $\{a_1,a_2\}\subset A\land a_1\ne a_2$ 可得 $f_{A,B}(a_2)\ne f_{A,B}(a_2)$
+
+同理可得 $f_{B,C}(f_{A,B}(a_2))\ne f_{B,C}(f_{A,B}(a_2))$ 又根据[[MK187][复合]]可得 $f_{B,C}\cdot f_{A,B}$ 以为[[MK175][函数]]，故可得 $f_{B,C}\cdot f_{A,B}$ 是 $A$ 到 $C$ 的[[MK176][单射]]
 
 **** 伯恩斯坦定理<<MK34>>
 
@@ -1668,7 +1678,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 **** 定理3<<MK86>>
 
-若 $A_i,i\in\mathbb{N}$ 满足：
+若 $A=\left\{A_i\big|i\in\mathbb{N}\right\}$ 满足：
 
 （1） 均为无限集
 
@@ -1680,9 +1690,9 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 ****** 定义 $\sigma:\bigcup_{i\in\mathbb{N}}A_i\to B_k\times\mathbb{N}$ 
 
-对于任意 $a\in\bigcup_{i\in\mathbb{N}}A_i$ 必有 $A_{i_1},...,A_{i_n}$ 满足 $a\in A_{i_j}$ 且 $n\geq 1$ 则定义 $\sigma_{z}:\bigcup_{i\in\mathbb{N}}A_i\to \bigcup_{i\in\mathbb{N}}A_i\times\mathbb{N}$
+对于任意 $a\in\bigcup_{i\in\mathbb{N}}A_i$ 必有 $A'\subset A$ 满足对于任意 $A_j\in A'$ 有 $a\in A_j$ 且 $|A'|\geq 1$ 则定义 $\sigma_{z}:\bigcup_{i\in\mathbb{N}}A_i\to \bigcup_{i\in\mathbb{N}}A_i\times\mathbb{N}$
 
-满足 $\sigma_{z}(a)=\left<a,\min(i_1,...,i_n)\right>$ 进一步定义 $\sigma_z(a)=\left<\sigma_{z_1}(a),\sigma_{z_2}(a)\right>$ 其中 $\sigma_{z_1}(a)\in A_i,\sigma_{z_2}(a)\in\mathbb{N}$
+满足 $\sigma_{z}(a)=\left<a,\min\left(\left\{j\big|A_j\in A'\right\}\right)\right>$ 进一步定义 $\sigma_z(a)=\left<\sigma_{z_1}(a),\sigma_{z_2}(a)\right>$ 其中 $\sigma_{z_1}(a)\in A_i,\sigma_{z_2}(a)\in\mathbb{N}$
 
 若 $a\ne b$ 可得 $a=\sigma_{z_1}(a)\ne\sigma_{z_1}(b)=b$ 故 $\sigma_z$ 是[[MK176][单射]]
 
@@ -1710,7 +1720,7 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 
 故有 $\sigma(a)\ne\sigma(b)$
 
-若 $\sigma_{z_2}(a)=\sigma_{z_2}(b)$ ，根据 $\sigma_{\sigma_{z_2}(a),k}$ 是[[MK181][双射]]可得 $\sigma_{\sigma_{z_2}(a),k}(a)\ne\sigma_{\sigma_{z_2}(b),k}(b)$ 
+若 $\sigma_{z_2}(a)=\sigma_{z_2}(b)$ ，根据 $\sigma_{\sigma_{z_2}(a),k}$ 是[[MK176][单射]]可得 $\sigma_{\sigma_{z_2}(a),k}(a)\ne\sigma_{\sigma_{z_2}(b),k}(b)$ 
 
 根据 $\sigma_k$ 是[[MK181][双射]]可得 $\sigma_{k_1}\left(\sigma_{\sigma_{z_2}(a),k}\left(\sigma_{z_1}(a)\right)\right)\ne\sigma_{k_1}\left(\sigma_{\sigma_{z_2}(b),k}\left(\sigma_{z_1}(b)\right)\right)$
 
@@ -1859,6 +1869,96 @@ $A\cap B=C\cap B\rightarrow\overline{A}\cap B=\overline{C}\cap B$
 根据[[MK29][等势]]可得存在[[MK181][双射]] $f_2:\bar{A}\cup C\to(\bar{A}\cup C)\times(\bar{A}\cup C)$ 显然 $\bar{f}\subset f_2$ 且 $f_2\in Y$
 
 与 $\bar{f}$ 是[[MK166][极大元]]矛盾，故假设不成立，即 $|\bar{A}|=|X|$ ，又根据 $|\bar{A}|=|\bar{A}\times\bar{A}|$ 可得 $|X\times X|=|X|$
+
+***** 推论<<MK422>>
+
+$|A\times B|=\max(|A|,|B|)$
+
+****** 证明
+
+不妨设 $|A|\leq |B|$ 则易证存在[[MK176][单射]] $f:A\to B$ 进一步易证存在[[MK176][单射]] $g:A\times B\to B\times B$
+
+即 $|A\times B|\leq |B\times B|$ 根据[[MK88][定理5]]可得 $|B\times B|=|B|$ 根据[[MK327][定理6]]可得 $|A\times B|\leq |B|$ 
+
+**** 定理6
+
+设 $\left\{a_\lambda\big|\lambda\in\Lambda\right\}$ 满足：
+
+（1） $\left<\Lambda, <\right>$ 是[[MK170][全序关系]]
+
+（2） $\Lambda$ 是[[MK83][无限集]]
+
+（3） 对于任意 $\{\lambda_1,\lambda_2\}\subset\Lambda$ 满足若 $\lambda_1\ne\lambda_2\land\lambda_1<\lambda_2$ 则有 $a_{\lambda_1}\subset a_{\lambda_2}$ 且 $a_{\lambda_1}\ne a_{\lambda_2}$
+
+则 $\left|\bigcup_{\labmda\in\Lambda}a_\lambda\right|\leq\max(|\Lambda|,|A_{\lambda^*}|)$ 其中 $\lambda^*$ 满足对于任意 $\lambda\in\Lambda$ 均有 $|a_\lambda|\leq|a_{\lambda^*}|$ （结论1）
+
+特别地，当满足对于任意 $\lambda\in\Lambda$ 均存在 $\lambda+1\in\Lambda$ 使得：
+
+（1） $\lambda\ne\lambda+1$
+
+（2） $\lambda<\lambda+1$
+
+（3） 对于任意 $\lambda'\in\Lambda,\lambda'\ne\lambda,\lambda<\lambda'$ 均有 $\lambda+1<\lambda'$
+
+则有 $\left|\bigcup_{\labmda\in\Lambda}a_\lambda\right|=\max(|\Lambda|,|A_{\lambda^*}|)$ （结论2）
+
+***** 证明
+
+****** 结论1
+
+由于对于任意 $\lambda\in\Lambda$ 均有 $|a_\lambda|\leq|a_{\lambda^*}|$ 则根据[[MK29][等势]]定义可得存在[[MK176][单射]] $f_\lambda:a_\lambda\to a_{\lambda^*}$ 同样定义 $g(a_\lambda)=\lambda$ 
+
+最终定义 $\phi:\bigcup_{\labmda\in\Lambda}a_\lambda\to \Lambda\times a_{\lambda^*}$ 满足 $\phi(b)=\left<g(b),f_{g(b)}(b)\right>$
+
+对于任意 $\{b_1,b_2\}\subset\bigcup_{\labmda\in\Lambda}a_\lambda$ 满足 $b_1\ne b_2$ 若存在 $\lambda$ 使得 $g(b_1)=g(b_2)=\lambda$ 则由于 $f_{\lambda}$ 是[[MK176][单射]]，故有 $f_\lambda(b_1)\ne f_\lambda(b_2)$ ，即 $\phi(b_1)\ne\phi(b_2)$
+
+若 $g(b_1)\ne g(b_2)$ 则直接有 $\phi(b_1)\ne\phi(b_2)$
+
+综上所述 $\phi$ 是[[MK176][单射]]，根据[[MK29][等势]]可得 $\left|\bigcup_{\labmda\in\Lambda}a_\lambda\right|\leq|\Lambda\times a_{\lambda^*}|$ ，又根据[[MK422][推论]]可得 $\left|\bigcup_{\labmda\in\Lambda}a_\lambda\right|\leq\max(|\Lambda|,|A_{\lambda^*}|)$ 
+
+****** $|a_{\lambda^*}|\leq\left|\bigcup_{\labmda\in\Lambda}a_\lambda\right|$ 
+
+显然 $a_{\lambda^*}\subset\bigcup_{\labmda\in\Lambda}a_\lambda$ 根据[[MK33][定理5]]可得 $|a_{\lambda^*}|\leq\left|\bigcup_{\labmda\in\Lambda}a_\lambda\right|$
+
+****** $|\Lambda|\leq\left|\bigcup_{\labmda\in\Lambda}a_\lambda\right|$
+
+对于任意 $\lambda\in\Lambda$ 根据 $\lambda<\lambda+1,\lambda+1\ne\lambda$ 可得 $a_{\lambda+1}-a_\lambda$ 非空，根据[[MK14][选择公理]]可得选择函数 $\eta(a_\lambda)\in a_\lambda-a_{\lambda+1}$  
+
+对于任意 $\{\lambda_1,\lambda_2\}\subset\Lambda$ 满足 $\lambda_1\ne\lambda_2$ 由于是[[MK170][全序关系]]必有 $\lambda_1<\lambda_2$ 或 $\lambda_2<\lambda_1$ ，不妨设 $\lambda_1<\lambda_2$
+
+故可得 $\eta(a_{\lambda_1})\in a_{\lambda_1+1}$ 以及 $\eta(a_{\lambda_2})\in a_{\lambda_2}-a_{\lambda_2+1}$ 根据条件易证 $a_{\lambda_1+1}\subset a_{\lambda_2}$ 则有 $\eta(a_{\lambda_1})\in a_{\lambda_2}$
+
+即 $\eta(a_{\lambda_1})\not\in a_{\lambda_2}-a_{\lambda_2+1}$ 结合 $\eta(a_{\lambda_2})\in a_{\lambda_2}-a_{\lambda_2+1}$ 可得 $\eta(a_{\lambda_1})\ne\eta(a_{\lambda_2})$  即是[[MK176][单射]]
+
+****** 结论2
+
+根据[[MK34][伯恩斯坦定理]]可得 $\left|\bigcup_{\labmda\in\Lambda}a_\lambda\right|=\max(|\Lambda|,|A_{\lambda^*}|)$
+
+**** 定理7
+
+对于任意[[MK83][无限集]] $A$ 且定义 $B=\left\{a\big|a\subset A\land |a|<|\mathbb{N}|\right\}$ 则有 $|B|=|A|$ 
+
+***** 证明
+
+对于任意 $a\in A$ 显然有 $\{a\}\in B$ 则定义 $\phi(a)=\{a\}$ ，易证是[[MK175][函数]]。若有 $\{a_1,a_2\}\subset A$ 满足 $a_1\ne a_2$ 则显然 $\phi(a_1)=\{a_1\}\ne\{a_2\}=\phi(a_2)$
+
+即为[[MK176][单射]]，故可得 $|A|\leq|B|$
+
+对于任意 $b\in B$ 显然有 $|b|<|\mathbb{N}|$ 则可表示为 $b=\{a_1,...,a_n\}$ 其中 $a_i\in A$ ，定义 $A_b=\left\{\left<a^*_1,...,a^*_n\right>\big|a^*_i\in B\land\left<a^*_1,...,a^*_n\right>\in A^{|b|}\right\}$
+
+即有 $A^*=\left\{A_b\big|b\in B\right\}$ 则根据[[MK14][选择公理]]存在选择函数 $f:A^*\to\bigcup_{b\in B}A_b$ 满足 $f(A_b)\in A_b$
+
+则定义 $\psi(b)=f(A_b)$ 则显然 $\psi$ 为 $B$ 到 $\bigcup_{n\in\mathbb{N}}A^n$ 的[[MK175][函数]]，对于任意 $b_1\ne b_2$ 必存在 $a^*\in b_1,a^*\not\in b_2$ 则对于任意 $\vec{b}_1\in A_{b_1}$ 均含有 $a^*$
+
+同理对于任意 $\vec{b}_2\in A_{b_2}$ 不含 $a^*$ ，即有对于任意 $\vec{b}_1\in A_{b_1},\vec{b}_2\in A_{b_2}$ 均有 $\vec{b}_1\ne\vec{b}_2$
+
+根据定义 $\psi(b_1)=f(A_{b_1})\in A_{b_1},\psi(b_2)=f(A_{b_2})\in A_{b_2}$ 则有 $\psi(b_1)\ne\psi(b_2)$ 故 $\psi$ 是[[MK176][单射]]，即有 $|B|\leq\left|\bigcup_{n\in\mathbb{N}}A^n\right|$
+
+根据[[MK88][定理5]]以及 $A$ 是[[MK83][无限集]]可得 $\left|A^2\right|=|A|$ 根据数学归纳法可得 $\left|A^n\right|=|A|$ ，又根据[[MK86][定理3]]可得 $\left|\bigcup_{n\in\mathbb{N}}A^n\right|=|A|$
+
+又根据[[MK327][定理6]]可得 $|B|\leq|A|$
+
+根据[[MK34][伯恩斯坦定理]]可得 $|B|=|A|$
 
 *** 可数集<<MK89>>
 
@@ -3843,7 +3943,7 @@ $B$ 是反链<<MK154>>： $\forall x\forall y(\{x,y\}\subset B\rightarrow \lnot(
 
 （2） $R$ 具有[[MK125][反自反性]]、[[MK127][反对称性]]以及[[MK128][传递性]]，即 $\lnot xRx,xRy\land yRx\rightarrow x=y, xRy\land xRz\rightarrow xRz$
 
-则称 $R$ 为 $A$ 上的拟序关系，且 $A$ 称为有拟序集，记作 $<A,R>$
+则称 $R$ 为 $A$ 上的拟序关系，且 $A$ 称为有拟序集，记作 $\left<A,R\right>$
 
 **** 推论
 
@@ -3931,7 +4031,7 @@ $B$ 的极大元： $b\in B\land\lnot\exists x(x\in B\land b<x)$
 
 若[[MK143][偏序集]] $(P,\leq)$ 中任意两个元素 $(a,b)\subset P$ 至少成立 $a\leq b,b\leq a$ 中的一个
 
-则称 $<P,\leq>$ 为全序集
+则称 $\left<P,\leq\right>$ 为全序集
 
 *** 良序关系<<MK171>>
 
@@ -4341,6 +4441,16 @@ f(A)-f(B)&\subset f(A-B)\\
 根据[[MK175][函数定义]]有 $y_1=y_2$ 同理亦有 $z_1=z_2$ 即 $\forall z_1\forall z_2(<x,z_1>\in f\cdot g\land <x,z_2>\in f\cdot g\rightarrow z_1=z_2)$
 
 故 $f\cdot z$ 亦为函数
+
+***** 引理1<<MK423>>
+
+若 $f_{A,B}:A\to B, f_{B,C}:B\to C$ 是两个[[MK176][单射]]，则 $f_{B,C}\cdot f_{A,B}$ 亦为[[MK176][单射]]
+
+****** 证明
+
+对于任意 $\{a_1,a_2\}\subset A\land a_1\ne a_2$ 可得 $f_{A,B}(a_2)\ne f_{A,B}(a_2)$ 同理可得 $f_{B,C}(f_{A,B}(a_2))\ne f_{B,C}(f_{A,B}(a_2))$
+
+又根据[[MK187][复合]]可得 $f_{B,C}\cdot f_{A,B}$ 亦为[[MK175][函数]]，故可得 $f_{B,C}\cdot f_{A,B}$ 是 $A$ 到 $C$ 的[[MK176][单射]]
 
 **** 函数求逆<<MK188>>
 
@@ -6517,7 +6627,7 @@ x&=y\\
 
 （3） $(\forall x_1(f_+(x_1,c_0)\hat{=}x_1))$ 加法幺元
 
-（4） $(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)))$ 加法逆元
+（4） $(\forall x_1((f_+(x_1,f_-(x_1))\hat{=}c_0)))$ 加法逆元
 
 （5） $(\forall x_2(\forall x_2(\forall x_3(f_\times(f_\times(x_1,x_2),x_3)\hat{=}f_\times(x_1,f_\times(x_2,x_3))))))$ 乘法结合律
 
@@ -6563,15 +6673,39 @@ x&=y\\
 
 （1） $M/N=\left\{[a]_\sim\big|a\in M\right\}$ 为 $\sim$ 的[[MK133][等价类]]（根据[[MK355][定理1]]可得[[MK352][同余关系]]是[[MK132][等价关系]]）
 
-（2） $J(f_+):M/N\to M/N$ 满足对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_+)([a]_\sim,[b]_\sim)=[I(f_+)(a,b)]_\sim$
+（2） $J(f_+):\left(M/N\times M/N\right)\to M/N$ 满足对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_+)([a]_\sim,[b]_\sim)=[I(f_+)(a,b)]_\sim$
 
-（3） $J(f_\times):M/N\to M/N$ 满足对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_\times)([a]_\sim,[b]_\sim)=[I(f_\times)(a,b)]_\sim$
+（3） $J(f_\times):\left(M/N\times M/N\right)\to M/N$ 满足对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_\times)([a]_\sim,[b]_\sim)=[I(f_\times)(a,b)]_\sim$
 
-（4） $J(c_0)=[I(c_0)]_\sim$
+（4） $J(f_-):M/N\to M/N$ 满足对于任意 $[a]_\sim\in M/N$ 有 $J(f_-)([a]_\sim)=[I(f_-)(a)]_\sim$
 
-则 $\mathcal{N}=\left<M/N,J\right>$ 称为 $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的商环 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]且 $\mathcal{N}\vDash T_\mathcal{R}$ ，称为商环。
+（5） $J(c_0)=[I(c_0)]_\sim$
 
-根据[[MK366][定理3]]可得商环是[[MK309][环]]
+则 $\mathcal{N}=\left<M/N,J\right>$ 称为 $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的商环，根据[[MK366][定理]]可得商环是[[MK309][环]]
+
+****** 定理2<<MK366>>
+
+[[MK354][商环]] $\mathcal{N}$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]且 $\mathcal{N}\vDash T_\mathcal{R}$
+
+******* 证明
+
+显然对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_+)([a]_\sim,[b]_\sim)\in M/N,J(f_\times)([a]_\sim,[b]_\sim)\in M/N$ ，故易证 $\mathcal{N}$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
+若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK309][环]]且 $N\subset M$ 是 $\mathcal{M}$ 的[[MK348][理想]]， $\mathcal{N}=\left<M/N,J\right>$ 是 $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的[[MK354][商环]]，则根据[[MK349][性质7]]对于任意 $\{[a]_\sim,[b]_\sim,[c]_\sim\}\subset M/N$ ：
+
+（1） $J(f_+)([a]_\sim,[b]_\sim)=[I(f_+)(a,b)]_\sim=[I(f_+)(b,a)]_\sim=J(f_+)([b]_\sim,[a]_\sim)$
+
+（2） 类似可证 $J(f_+)(J(f_+)([a]_\sim,[b]_\sim),[c]_\sim)=J(f_+)([a]_\sim,J(f_+)([b]_\sim,[c]_\sim))$
+
+（3） 类似可证 $J([a]_\sim,[I(c_0)]_\sim)=[a]_\sim$
+
+（4） 类似可证 $J(f_+)([a]_\sim,J(f_-)([a]_\sim))=J(f_+)([a]_\sim,[I(f_-)(a)]_\sim)=[I(f_+)(a,I(f_-)(a))]_\sim=[I(c_0)]_\sim=J(c_0)$
+
+（5） 类似可证 $J(f_\times)(J(f_\times)([a]_\sim,[b]_\sim),[c]_\sim)=J(f_\times)([a]_\sim,J(f_\times)([b]_\sim,[c]_\sim))$
+
+（6） 类似可证 $J(f_\times)(J(f_+)([a]_\sim,[b]_\sim),[c]_\sim)=J(f_+)(J(f_\times)([a]_\sim,[c]_\sim),J(f_\times)([b]_\sim,[c]_\sim))$
+
+根据[[MK349][性质7]]可得 $\mathcal{N}\vDash T_\mathcal{R}$
 
 **** 性质
 
@@ -6783,9 +6917,9 @@ $T_\mathcal{R}\vdash(\forall x_1(f_\times(x_1,c_0)\hat{=}c_0))$ 以及 $T_\mathc
 
 若 $\mathcal{M}=\left<M,I\right>$ 为[[MK309][环]]，则对于任意 $a\in M$ 有
 
-（1） $N_1=\left\{I(f_\times)(r,a)\big|r\in M\right\}$ 是 $\mathcal{M}$ 中包含 $A$ 的最小[[MK348][右理想]]
+（1） $N_1=\left\{I(f_\times)(r,a)\big|r\in M\right\}$ 是 $\mathcal{M}$ 中包含 $a$ 的最小[[MK348][右理想]]
 
-（2） $N_2=\left\{I(f_\times)(a,r)\big|r\in M\right\}$ 是 $\mathcal{M}$ 中包含 $A$ 的最小[[MK348][左理想]]
+（2） $N_2=\left\{I(f_\times)(a,r)\big|r\in M\right\}$ 是 $\mathcal{M}$ 中包含 $a$ 的最小[[MK348][左理想]]
 
 ****** 证明
 
@@ -6918,31 +7052,7 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 综上所属 $\sim$ 是[[MK132][等价关系]]
 
-***** 定理2<<MK366>>
-
-[[MK354][商环]] $\mathcal{N}$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]且 $\mathcal{N}\vDash T_\mathcal{R}$
-
-****** 证明
-
-显然对于任意 $\{[a]_\sim,[b]_\sim\}\subset M/N$ 有 $J(f_+)([a]_\sim,[b]_\sim)\in M/N,J(f_\times)([a]_\sim,[b]_\sim)\in M/N$ ，故易证 $\mathcal{N}$ 是 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
-
-若[[MK338][结构]] $\mathcal{M}=\left<M,I\right>$ 是[[MK309][环]]且 $N\subset M$ 是 $\mathcal{M}$ 的[[MK348][理想]]， $\mathcal{N}=\left<M/N,J\right>$ 是 $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的[[MK354][商环]]，则根据[[MK349][性质7]]对于任意 $\{[a]_\sim,[b]_\sim,[c]_\sim\}\subset M/N$ ：
-
-（1） $J(f_+)([a]_\sim,[b]_\sim)=[I(f_+)(a,b)]_\sim=[I(f_+)(b,a)]_\sim=J(f_+)([b]_\sim,[a]_\sim)$
-
-（2） 类似可证 $J(f_+)(J(f_+)([a]_\sim,[b]_\sim),[c]_\sim)=J(f_+)([a]_\sim,J(f_+)([b]_\sim,[c]_\sim))$
-
-（3） 类似可证 $J([a]_\sim,[I(c_0)]_\sim)=[a]_\sim$
-
-（4） 存在 $-a\in M$ 满足 $J(f_+)([a]_\sim,[-a]_\sim)=[I(f_+)(a,-a)]_\sim=[I(c_0)]_\sim=J(c_0)$
-
-（5） 类似可证 $J(f_\times)(J(f_\times)([a]_\sim,[b]_\sim),[c]_\sim)=J(f_\times)([a]_\sim,J(f_\times)([b]_\sim,[c]_\sim))$
-
-（6） 类似可证 $J(f_\times)(J(f_+)([a]_\sim,[b]_\sim),[c]_\sim)=J(f_+)(J(f_\times)([a]_\sim,[c]_\sim),J(f_\times)([b]_\sim,[c]_\sim))$
-
-根据[[MK349][性质7]]可得 $\mathcal{N}\vDash T_\mathcal{R}$
-
-***** 定理3<<MK358>>
+***** 定理2<<MK358>>
 
 [[MK338][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK309][环]]，若有[[MK344][同态映射]] $\eta:M\to N$ ，则 $\eta$ 的[[MK346][核]]是 $\mathcal{M}$ 的[[MK348][理想]]
 
@@ -6976,9 +7086,7 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 （1） $(\lnot(c_1\hat{=}c_0))$
 
-（2） $(\forall x_1((\lnot(x_1\hat{=}c_0))\to(f_\times(x_1,c_1)\hat{=}x_1)))$ 乘法幺元
-
-（3） $(\forall x_1((\lnot(x_1\hat{=}c_0))\to(f_\times(c_1,x_1)\hat{=}x_1)))$ 乘法幺元
+（2） $(\forall x_1((\lnot(x_1\hat{=}c_0))\to((f_\times(x_1,c_1)\hat{=}x_1)\land(f_\times(c_1,x_1)\hat{=}x_1))))$ 乘法幺元
 
 即存在不等于 $c_0$ 的乘法幺元
 
@@ -7000,7 +7108,7 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 （6） $J(f_-)([a]_\sim)=[I(f_-)(a)]_\sim$
 
-则 $\mathcal{N}=\left<M/N,J\right>$ 称为 $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的商环 $\mathcal{L}_{\mathcal{A}_\mathcal{R}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]且 $\mathcal{N}\vDash T_\mathcal{R}$ ，称为商环。
+则 $\mathcal{N}=\left<M/N,J\right>$ 称为 $\mathcal{M}$ 在其[[MK348][理想]] $N$ 上的幺环商环
 
 ***** 分式关系<<MK399>>
 
@@ -7330,6 +7438,163 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 由于是[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]，故可得 $e(I(c_1))=J(c_1)$ 即有 $e^*\left(\left[\frac{a}{I(c_1)}\right]\right)=J(f_\times)(e(a),e(I(c_1))^{-1})=e(a)$
 
+***** $\mathbb{Z}_p$ <<MK417>>
+
+对于任意素数 $p$ 定义 $Z_p=\{0,1,2,...,p-1\}$ 定义 $I_p$ 满足：
+
+（1） $I_p(c_0)=0,I_p(c_1)=1$
+
+（2） 对于任意 $\{a,b\}\subset Z_p$ 有 $I_p(f_+)(a,b)=(a+b)\mod p,I_p(f_\times)(a,b)=(a\cdot b)\mod p$
+
+（3） 对于任意 $a\in Z_p$ 有 $I_p(f_-)(a)=(p-a)\mod p$
+
+定义 $\mathbb{Z}_p=\left<Z_p,I_p\right>$ 。特别的当 $p=0$ 时定义 $\mathbb{Z}_0=\left<\mathbb{Z}, I_0\right>$ 满足：
+
+（1） $I_0(c_0)=0,I_0(c_1)=1$
+
+（2） 对于任意 $\left\{a,b\right\}\subset\mathbb{Z}$ 有 $J(f_+)(a,b)=a+b,J(f_\times)(a,b)=a\cdot b$ 即为整数加法乘法
+
+（3） 对于任意 $a\in\mathbb{Z}$ 有 $J(f_-)(a)=-a$ 即为整数取负
+
+易证 $\mathbb{Z}_p=\left<Z_p,I_p\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
+****** 性质1
+
+$\mathbb{Z}_p$ 是 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
+******* 证明
+
+显然 $\mathbb{Z}_p$ 对于 $I_p(f_+),I_p(f_-),I_p(f_\times)$ 封闭，故是 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
+****** 性质2<<MK428>>
+
+$\mathbb{Z}_p$ 是[[MK362][非零妖环]]
+
+******* 证明
+
+对 $0$ 取余定义为本身，即对于任意 $a\in\mathbb{N}$ 均有 $a\mod0=a$
+
+******** 是[[MK309][环]]
+
+根据以下证明以及[[MK349][性质7]]可得 $\mathbb{Z}_p$ 是[[MK309][环]]
+
+********* 加法交换
+
+对于任意 $\{a,b\}\subset Z_p$ 显然满足 $I_p(f_+)(a,b)=(a+b)\mod p=(b+a)\mod p=I_p(f_+)(b,a)$
+
+********* 加法结合
+
+对于任意 $\{a,b,c\}\subset Z_p$ 有
+
+\begin{aligned}
+&I_p(f_+)(I_p(f_+)(a,b),c)=I_p((a+b)\mod p,c)=(((a+b)\mod p)+c)\mod p\\
+=&((a+b)+c)\mod p=(a+(b+c))\mod p\\
+=&(a+(b+c)\mod p)\mod p\\
+=&I_p(f_+)(a,I_p(f_+)(b,c))
+\end{aligned}
+
+********* 加法幺元
+
+对于任意 $a\in Z_p$ 有 $I_p(f_+)(I_p(c_0),a)=0+a\mod p=a\mod p$ 由于 $a\in Z_p$ 故 $a<p$ 即 $a\mod p=a$
+
+即有$I_p(f_+)(I_p(c_0),a)=a$
+
+********* 加法逆元
+
+对于任意 $a\in Z_p$ 显然 $p-a\in Z_p$ 进一步有 $I_p(f_+)(a,p-a)=(a+p-a)\mod p=0=I_p(c_0)$
+
+********* 乘法结合
+
+对于任意 $\{a,b,c\}\subset Z_p$ 有
+
+\begin{aligned}
+&I_p(f_\times)(I_p(f_\times)(a,b),c)=I_p(f_\times)((a\cdot b)\mod p,c)=(((a\cdot b)\mod p)\cdot c)\mod p\\
+=&((a\cdot b-n_1\cdot p)\cdot c)\mod p=((a\cdot b)\cdot c -n_1\cdot p\cdot c)\mod p\\
+=&((a\cdot b)\cdot c)\mod p = (a\cdot (b\cdot c))\mod p\\
+=&(a\cdot (b\cdot c)-n_2\cdot p\cdot a)\mod p=(a\cdot(b\cdot a-n_2\cdot p))\mod p\\
+=&(a\cdot((b\cdot a)\mod p))\mod p=I_p(f_\times)(a,I_p(f_\times)(b,c))
+\end{aligned}
+
+其中 $n_1$ 为 $\mathbb{N}$ 中最大的满足 $p\cdot n_1<a\cdot b$ 的元素， $n_2$ 为 $\mathbb{N}$ 中最大的满足 $p\cdot n_1<b\cdot c$ 的元素
+
+********* 乘法分配
+
+对于任意 $\{a,b,c\}\subset Z_p$ 有
+
+\begin{aligned}
+&I_p(f_\times)(I_p(f_+)(a,b),c)=I_p(f_\times)((a+b)\mod p,c)=(((a\cdot b)\mod p)\cdot c)\mod p\\
+=&((a+b-n_1\cdot p)\cdot c)\mod p=((a+b)\cdot c -n_1\cdot p\cdot c)\mod p\\
+=&(a\cdot c+b\cdot c -n_1\cdot p\cdot c)\mod p=(a\cdot c+b\cdot c)\mod p\\
+=&(((a\cdot c)\mod p)+((b\cdot c)\mod p))\mod p\\
+=&I_p(f_+)(I_p(f_\times)(a,c),I_p(f_\times)(b,c))
+\end{aligned}
+
+******** 是[[MK362][非零妖环]]
+
+显然 $I_p(c_1)=1\ne0=I_p(c_0)$
+
+对于任意 $a\in Z_p$ 且 $a\ne 0$ 显然有 $I_p(f_\times)(a,I_p(c_1))=a\cdot 1=a$
+
+故根据[[MK363][性质1]]可得 $\mathbb{Z}_p$ 是[[MK362][非零妖环]]
+
+****** 性质3<<MK431>>
+
+若 $p\ne0$ 且 $p$ 是素数，则 $\mathbb{Z}_p$ 是[[MK338][域]]
+
+******* 证明
+
+根据[[MK428][性质2]]可得 $\mathbb{Z}_p$ 是[[MK362][非零妖环]]，显然对于任意 $\{a,b\}\subset Z_p$ 满足乘法交换律
+
+对于任意 $a\in Z_p$ 定义 $a_0=a$ 运用辗转相除可得存在
+
+\begin{aligned}
+p&=n_0a_0+a_1\\
+a_0&=n_1a_1+a_2\\
+...\\
+a_k&=n_{k+1}a_{k+1}+a_{k+2}\\
+...
+\end{aligned}
+
+由于 $a_{i-1}=n_ia_i+a_{i+1}$ 若 $a_{i+1}\geq a_i$ 则有 $a_{i-1}=(n_i+1)a_i+(a_{i+1}-a_i)$ 矛盾，故必有 $a_{i+1}<a_i$ 
+
+由于 $a\in\mathbb{N}$ 则必定在有限次内达到 $a_{i^*}$ 满足 $a_{i^*}=0$ 即 $a_{i^*-2}=n_{i^*-1}a_{i^*-1}=a_{i^*-1}k_{i^*-2}$ 进一步可得
+
+\begin{aligned}
+a_{i^*-3}&=n_{i^*-2}a_{i^*-2}+a_{i^*-1}=n_{i^*-2}a_{i^*-1}k_{i^*-2}+a_{i^*-1}\\
+&=a_{i^*-1}(n_{i^*-2}n_{i^*-1}+1)\\
+&=a_{i^*-1}k_{i^*-3}\\
+a_{i^*-4}&=n_{i^*-3}a_{i^*-3}+a_{i^*-2}=n_{i^*-2}a_{i^*-1}k_{i^*-3}+a_{i^*-1}k_{i^*-2}\\
+&=a_{i^*-1}(n_{i^*-2}n_{i^*-1}+k_{i^*-2})\\
+&=a_{i^*-1}k_{i^*-4}\\
+...\\
+a_0&=n_1a_1+a_2=n_1a_{i^*-1}k_1+a_{i^*-1}k_2\\
+p&=n_0a_0+a_1=n_0a_{i^*-1}k_0+a_{i^*-1}k_1\\
+&=a_{i^*-1}(n_0k_0+k_1)
+\end{aligned}
+
+由于 $n_0k_0+k_1,a_{i^*-1}$ 显然均为正整数且 $p$ 是素数，故可得 $a_{i^*-1}=1$ 或 $a_{i^*-1}=p$ 由于 $p>a_0>a_{i^*-1}$ 故可得 $a_{i^*-1}=1$ 
+
+\begin{aligned}
+a_1&=p-n_0a_0=u_1p+v_1a_0\\
+a_2&=a_0-n_1(u_1p+v_1a_0)=a_0(1-u_1v_1)-n_1u_1p=v_2a_0+u_2p\\
+...\\
+a_{i^*-1}&=a_{i^*-3}-n_{i^*-2}a_{i^*-2}=(v_{i^*-3}a_0+u_{i^*-3}p)-n_{i^*-2}(v_{i^*-2}a_0+u_{i^*-2}p)\\
+&=(v_{i^*-3}-n_{i^*-2}v_{i^*-2})a_0+(u_{i^*-3}-n_{i^*-2}u_{i^*-2})p\\
+&=v_{i^*-1}a_0+u_{i^*-1}p
+\end{aligned}
+
+即有 $v_{i^*-1}a_0+u_{i^*-1}p=a_{i^*-1}=1$ 进而有 $(v_{i^*-1}a_0+u_{i^*-1}p)\mod p=(v_{i^*-1}a_0)\mod p=1$
+
+取 $v_{i^*-1}'=v_{i^*-1}+kp$ 其中 $k$ 是使得 $v'_{i^*-1}$ 为正的最小正整数
+
+取 $v''_{i^*-1}=v'_{i^*-1}\mod p$ 由于 $v'_{i^*-1}>0$ 故可得 $0<v''_{i^*-1}<p$ 即有 $v''_{i^*-1}\in Z_p$
+
+易证另有 $v''_{i^*-1}=v'_{i^*-1}+\alpha p$ 以及 $v'_{i^*-1}=v+\beta p$ 其中 $\{\alpha,\beta\}\subset\mathbb{N}$ ，即有 $v''_{i^*-1}=v_{i^*-1}+(\alpha+\beta)p=v_{i^*-1}+\gamma p$
+
+则 $(v''_{i^*-1}\cdot a)\mod p=((v_{i^*-1}+\gamma p)a)\mod p=(v_{i^*-1}a+a\gamma p)\mod p=(v_{i^*-1}a_0)\mod p=1$
+
+综上所述，对于任意 $a\in Z_p$ 存在 $v''_{i^*-1}\in Z_p$ 满足 $I_p(f _\times)(a,v''_{i^*-1})=(v''_{i^*-1}\cdot a)\mod p=1$ ，即是 $a$ 的乘法逆元
+
 **** 性质
 
 ***** 性质1<<MK363>>
@@ -7476,7 +7741,7 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 若 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]（显然有 $\mathcal{M}\vDash T_\mathcal{R}$ 亦为[[MK309][环]]）， $N$ 是 $\mathcal{M}$ 的[[MK348][理想]]，且 $N\ne M$
 
-则[[MK369][商环]] $\mathcal{N}=\left<M/N,J\right>$ 亦为[[MK362][非零幺环]]
+则[[MK369][幺环商环]] $\mathcal{N}=\left<M/N,J\right>$ 亦为[[MK362][非零幺环]]
 
 ****** 证明
 
@@ -7508,7 +7773,7 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 若 $\mathcal{M}=\left<M,I\right>$ 是[[MK362][非零幺环]]（显然有 $\mathcal{M}\vDash T_\mathcal{R}$ 亦为[[MK309][环]]）且满足 $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
 
-则对于任意 $N\subset M$ ， $N$ 是 $\mathcal{M}$ 的[[MK360][极大理想]]的充要条件是[[MK354][商环]] $\mathcal{N}=\left<M/N,J\right>$ 是[[MK338][域]]
+则对于任意 $N\subset M$ ， $N$ 是 $\mathcal{M}$ 的[[MK360][极大理想]]的充要条件是[[MK369][幺环商环]] $\mathcal{N}=\left<M/N,J\right>$ 是[[MK338][域]]
 
 ****** 证明
 
@@ -7590,7 +7855,7 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 
 若对于任意 $n\in\mathbb{N}^+$ 均有 $\mathcal{M}\vDash(\lnot(\tau_n\hat{=}c_0))$ 则称特征为 $0$
 
-****** 性质1
+****** 性质1<<MK430>>
 
 任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 的[[MK339][特征]]均为素数
 
@@ -7657,34 +7922,6 @@ $N\subset M$ 是其[[MK348][理想]]，则[[MK354][商环]] $\mathcal{N}=\left<M
 由于 $0\leq i\leq j\leq p-1$ 故可得 $j-i<p$ 则[[MK339][特征]]亦小于 $p$ 矛盾。
 
 故假设不成立，即对于任意 $0\leq i\leq j\leq p-1$ 均有 $\mathcal{M}\vDash(\lnot(\tau_i\hat{=} I(f_-)(\tau_j)))$
-
-***** $\mathbb{Z}_p$ <<MK417>>
-
-对于任意素数 $p$ 定义 $Z_p=\{0,1,2,...,p-1\}$ 定义 $I_p$ 满足：
-
-（1） $I_p(c_0)=0,I_p(c_1)=1$
-
-（2） 对于任意 $\{a,b\}\subset Z_p$ 有 $I_p(f_+)(a,b)=(a+b)\mod p,I_p(f_\times)(a,b)=(a\cdot b)\mod p$
-
-（3） 对于任意 $a\in Z_p$ 有 $I_p(f_-)(a)=(p-a)\mod p$
-
-定义 $\mathbb{Z}_p=\left<Z_p,I_p\right>$ 。特别的当 $p=0$ 时定义 $\mathbb{Z}_0=\left<\mathbb{Z}, I_0\right>$ 满足：
-
-（1） $I_0(c_0)=0,I_0(c_1)=1$
-
-（2） 对于任意 $\left\{a,b\right\}\subset\mathbb{Z}$ 有 $J(f_+)(a,b)=a+b,J(f_\times)(a,b)=a\cdot b$ 即为整数加法乘法
-
-（3） 对于任意 $a\in\mathbb{Z}$ 有 $J(f_-)(a)=-a$ 即为整数取负
-
-易证 $\mathbb{Z}_p=\left<Z_p,I_p\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
-
-****** 性质
-
-$\mathbb{Z}_p$ 是 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
-
-******* 证明
-
-显然 $\mathbb{Z}_p$ 对于 $I_p(f_+),I_p(f_-),I_p(f_\times)$ 封闭，故是 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
 
 ***** 域的扩张<<MK341>>
 
@@ -7897,6 +8134,38 @@ h_2(r)=&\sum_{k=0}^{m+n}\left(\sum_{i=0}^ka'_ib'_{k-i}\right)\cdot x^k\\
 若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，则对于任意 $f(x)=\sum_{i=0}^{n}a_ix^i\in M[x]$ 若存在 $b\in M$
 
 满足 $f(b)=I(c_0)$ 其中 $f(b)$ 是多项式 $f(x)$ 对于 $b$ 的[[MK394][带入值]]，则称 $b$ 是 $\sum_{i=0}^{n}a_ix^i$ 的根 
+
+***** 有理数[[MK338][域]]<<MK424>>
+
+若 $\mathcal{Q}=\left<\mathbb{Q},I_\mathbb{Q}\right>$ 满足：
+
+（1） $\mathbb{Q}$ 是有理数集合
+
+（2） $I_\mathbb{Q}(c_1)=1,I_\mathbb{Q}(c_0)=0$
+
+（3） $I_\mathbb{Q}(f_+)$ 为有理数加法， $I_\mathbb{Q}(f_\times)$ 为有理数乘法， $I_\mathbb{Q}(f_-)$ 为有理数取负
+
+则 $\mathcal{Q}$ 是[[MK335][域语言]] $\mathcal{L}_{\mathcal{A}_\mathbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+
+****** 性质
+
+$\mathcal{Q}\vDash T_\mathbb{F}$ 即 $\mathcal{Q}$ 是[[MK338][域]]
+
+******* 证明
+
+显然有理数加法，乘法满足：加法交换律、加法结合律、乘法结合律、乘法分配律、乘法交换律且：
+
+（1） 任意 $a\in\mathbb{Q}$ 有 $I_\mathbb{Q}(f_+)(a,I_\mathbb{Q}(c_0))=a+0=a$ 为加法幺元
+
+（2） 对于任意 $a\in\mathbb{Q}$ 有 $-a+a=0$ 为加法逆元
+
+（3） $I_\mathbb{Q}(c_0)\ne I_\mathbb{Q}(c_1)$
+
+（4） 任意 $a\in\mathbb{Q},a\ne 0=I_\mathbb{Q}(c_0)$ 有 $I_\mathbb{Q}(f_+)(a,I_\mathbb{Q}(c_1))=a$ 为乘法幺元
+
+（5） 任意 $\frac{p}{q}\in\mathbb{Q},q\ne 0=I_\mathbb{Q}(c_0)$ 均有 $I_\mathbb{Q}(f_+)\left(\frac{p}{q},\frac{q}{p}\right)=\frac{p}{q}\times \frac{q}{p}=1=I_\mathbb{Q}(c_1)$ 即为乘法逆元
+
+则根据[[MK356][性质4]]可得 $\mathcal{Q}\vDash T_\mathbb{F}$ 是[[MK338][域]]
 
 **** 性质
 
@@ -8250,6 +8519,48 @@ r_{n+2}(x)=&r_n(x)+(-h_{n+2}(x))r_{n+1}(x)\\
 
 根据[[~/文档/note/数理逻辑/sllj.org::MK255][完备性]]有 $\left\{(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)))\right\}\vdash(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{ =}c_0)))$
 
+***** 性质11
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]则 $\mathcal{M}\vDash(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)\to(x_1\hat{=}x_2)))$
+
+****** 证明
+
+对于任意 $a\in M$ 若有 $I(f_+)(a,I(f_-)(b))=I(c_0)$ 则根据[[MK356][性质4]]易证 $I(f_+)(I(f_+)(a,I(f_-)(b)),b)=I(f_+)(I(c_0),b)$
+
+等式右侧： $I(f_+)(I(c_0),b)=b$
+
+等式左侧： $I(f_+)(I(f_+)(a,I(f_-)(b)),b)=I(f_+)(a,I(f_+)(I(f_-)(b),b))=I(f_+)(a,I(c_0))=a$
+
+即有 $a=b$ ，又根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)\to(x_1\hat{=}x_2)))$
+
+***** 性质12<<MK425>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]则 $I(c_1)$ 的乘法逆元唯一且为 $I(c_1)$
+
+****** 证明
+
+根据[[MK356][性质4]]可得 $I(f_\times)(I(c_1),I(c_1))=I(c_1)$ 。又由于是[[MK338][域]]，故满足乘法结合律，根据[[MK304][性质2]]可得唯一
+
+***** 性质13<<MK427>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]则对于任意 $\{a,b\}\subset M$ 且 $a\ne I(c_0),b\ne I(c_0)$ 有 $I(f_\times)(a^{-1},b^{-1})=\left(I(f_\times)(a,b)\right)^{-1}$
+
+其中 $x^{-1}$ 是 $x$ 的乘法逆元
+
+****** 证明
+
+根据[[MK356][性质4]]可得 $I(f_\times)\left(I(f_\times)(a,b),\left(I(f_\times)(a,b)\right)^{-1}\right)=I(c_1)$ 以及：
+
+\begin{aligned}
+&I(f_\times)\left(I(f_\times)(a,b),I(f_\times)(a^{-1},b^{-1})\right)\\
+=&I(f_\times)\left(I(f_\times)(a,a^{-1}),I(f_\times)(b,b^{-1})\right)\\
+=&I(f_\times)\left(I(c_1),I(c_1)\right)=I(c_1)
+\end{aligned}
+
+即 $I(f_\times)(a^{-1},b^{-1}),\left(I(f_\times)(a,b)\right)^{-1}$ 均是 $I(f_\times)(a,b)$ 的乘法逆元。又由于是[[MK338][域]]，故满足乘法结合律
+
+则根据[[MK304][性质4]]可得逆元唯一，即 $I(f_\times)(a^{-1},b^{-1})=\left(I(f_\times)(a,b)\right)^{-1}$
+
 **** 定理
 
 ***** 定理1<<MK343>>
@@ -8266,13 +8577,13 @@ r_{n+2}(x)=&r_n(x)+(-h_{n+2}(x))r_{n+1}(x)\\
 
 （4） 同上根据[[MK334][加法逆元]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]对于任意 $a\in N$ 有 $J(f_-)(a)\in N$ 满足 $J(f_+)(a,J(f_-)(a))=J(c_0)$
 
-（5） 对于任意 $a\in N$ 根据[[MK33][乘法幺元]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $J(f_\times)(J(c_1),a)=a$ 。由于是[[MK341][子域]]，故是[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，则有 $J(c_1)=I(c_1)$
+（5） 对于任意 $a\in N$ 根据[[MK33][乘法幺元]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $J(f_\times)(J(c_1),a)=a$ 。由于是[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，则有 $J(c_1)=I(c_1)$
 
      故可得 $J(c_1)=I(c_1)\in M$ 是 $\mathcal{M}$ 中的[[MK33][乘法幺元]]
 
-（6） 同上根据[[MK33][乘法结合]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\{k,l\}\subset M\subset N, a\in N$ 均有 $J(f_\times)(J(f_\times)(k,l),a)=J(f_\times)(k,J(f_\times)(l,a))$
+（6） 同上根据[[MK33][乘法结合]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\{k,l\}\subset M, a\in N$ 均有 $J(f_\times)(J(f_\times)(k,l),a)=J(f_\times)(k,J(f_\times)(l,a))$
 
-（7） 同上根据[[MK334][乘法分配]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\{k,l\}\subset M\subset N, a\in N$ 均有 $J(f_\times)(J(f_+)(k,l),a)=J(f_+)(J(f_\times)(k,a),J(f_\times)(l,a))$
+（7） 同上根据[[MK334][乘法分配]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\{k,l\}\subset M, a\in N$ 均有 $J(f_\times)(J(f_+)(k,l),a)=J(f_+)(J(f_\times)(k,a),J(f_\times)(l,a))$
 
 （8） 同上根据[[MK334][乘法分配]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\{a,b\}\subset N, k\in M\subset N$ 均有 $J(f_\times)(k,J(f_+)(a,b))=J(f_+)(J(f_\times)(k,a),J(f_\times)(k,b))$
 
@@ -8495,15 +8806,17 @@ r_{n+2}(x)=&r_n(x)+(-h_{n+2}(x))r_{n+1}(x)\\
 
 （2） $J(c_1)=[I(c_1)]_\sim=e(I(c_1))$
 
-（3） $e(I(f_+)(a,b))=[I(f_+)(a,b)]=J(f_+)([a]_\sim,[b]_\sim)=J(f_+)(e(a),e(b))$
+（3） $e(I(f_+)(a,b))=[I(f_+)(a,b)]_\sim=J(f_+)([a]_\sim,[b]_\sim)=J(f_+)(e(a),e(b))$
 
-（4） $e(I(f_\times)(a,b))=[I(f_\times)(a,b)]=J(f_\times)([a]_\sim,[b]_\sim)=J(f_\times)(e(a),e(b))$
+（4） $e(I(f_\times)(a,b))=[I(f_\times)(a,b)]_\sim=J(f_\times)([a]_\sim,[b]_\sim)=J(f_\times)(e(a),e(b))$
+
+（5） $e(I(f_-)(a))=[I(f_-)(a)]_\sim=J(f_-)([a]_\sim)=J(f_-)(e(a))$
 
 ******* 存在 $a\in M[x]/(f(x))$ 使得 $f(a)=J(c_0)$
 
 设 $f(x)=\sum_{i=1}^na_ix^i$ 则经过 $e$ 映射后可得 $f(x)$ 在[[MK338][域]] $\mathcal{N}$ 中可表述为 $f(x)=\sum_{i=1}^n[a_i]_\sim x^i$ 
 
-显然 $I(c_0)x=x\in M[x]$ 则带入 $[x]_\sim\in M[x]/(f(x))$ 到 $f(x)$ 中可得（以 $I[x](f_+),I[x](f_\times)$ 下简写）
+显然 $I(c_1)x=x\in M[x]$ 则带入 $[x]_\sim\in M[x]/(f(x))$ 到 $f(x)$ 中可得（以 $I[x](f_+),I[x](f_\times)$ 下简写）
 
 \begin{aligned}
 \sum_{i=1}^n[a_i]_\sim [x]_\sim^i=&\sum_{i=1}^n[a_ix^i]_\sim\\
@@ -8989,6 +9302,90 @@ p(x)&=I[x](f_+)(I[x](f_\times)(h_1(x),r_0(x)),r_1(x))\\
 
 （4） $e^*(I'(f_+)([p(x)]_\sim,[q(x)]_\sim))=e^*([I[x](f_+)(p(x),q(x))]_\sim)=&[e'(I[x](f_\times)(p(x),q(x)))]_\sim\\=[J[x](f_+)(e'(p(x))),e'(q(x))]_\sim=J'(f_+)([e'(p(x))]_\sim,[e'(q(x))]_\sim)=J'(f_+)(e^*([p(x)]_\sim),e^*([q(x)]_\sim))$
 
+***** 定理7<<MK429>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]且[[MK339][特征]]为 $0$ 则[[MK424][有理数域]] $\mathcal{Q}=\left<\mathbb{Q},I_\mathbb{Q}\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+
+****** 证明
+
+定义[[MK175][函数]] $e:\mathbb{Q}\to M$ 满足对于任意 $p\geq0,q>0$ 均有 $e\left(\frac{p}{q}\right)=I(f_\times)\left(\sum_{i=1}^p I(c_1),\left(\sum_{i=1}^q I(c_1)\right)^{-1}\right)$
+
+以及 $e\left(-\frac{p}{q}\right)=I(f_-)\left(I(f_\times)\left(\sum_{i=1}^p I(c_1),\left(\sum_{i=1}^q I(c_1)\right)^{-1}\right)\right)$
+
+其中 $\sum_{i=1}^n I(c_1)$ 是 $n$ 个 $I(c_1)$ 相加（加法为 $I(f_+)$ ）且当 $n=0$ 时 $\sum_{i=1}^n I(c_0)$ ， $a^{-1}$ 表示 $a$ 的乘法逆元，即 $I(f_\times)(a,a^{-1})=I(c_1)$
+
+根据以下证明可得 $e$ 是 $\mathcal{Q}$ 到 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]
+
+******* $e(0)=I(c_0),e(1)=I(c_1)$
+
+显然 $e(0)=e\left(\frac{0}{q}\right)$ 其中 $q\ne 0$ 则有 $e\left(\frac{0}{q}\right)=I(f_\times)\left(\sum_{i=1}^0 I(c_1),\left(\sum_{i=1}^q I(c_1)\right)^{-1}\right)=I(f_\times)\left(I(c_0),\left(\sum_{i=1}^q I(c_1)\right)^{-1}\right)$
+
+由于 $\mathcal{M}$ 是[[MK338][域]]，显然亦为[[MK309][环]]，故根据[[MK347][性质4]]可得 $I(f_\times)\left(I(c_0),\left(\sum_{i=1}^q I(c_1)\right)^{-1}\right)=I(c_0)$ 。即有 $e(0)=e\left(\frac{0}{q}\right)=I(c_0)$
+
+显然 $e(0)=e\left(\frac{1}{1}\right)$ 则 $e\left(\frac{1}{1}\right)=I(f_\times)\left(I(c_1),\left(I(c_1)\right)^{-1}\right)$ 根据[[MK425][性质12]]可得 $e(0)=e\left(\frac{1}{1}\right)=I(c_1)$
+
+******* $\frac{p_1}{q_1}=\frac{p_2}{q_2},q_1\ne0\land q_2\ne0$ 的充要条件是 $p_1q_2=p_2q_1$ <<MK426>>
+
+若 $\frac{p_1}{q_1}=\frac{p_2}{q_2}$ 根据有理数乘法可得 $p_1q_2=p_2q_1$ 。根据有理数除法反之同理。
+
+******* 是[[MK175][函数]]
+
+对于任意 $\frac{p_1}{q_1}=\frac{p_2}{q_2},q_1\ne0\land q_2\ne0$ 根据[[MK426][之前证明]]可得有 $p_1q_2=p_2q_1$ 易证 $\sum_{i=1}^{p_1q_2}I(c_1)=\sum_{i=1}^{p_2q_1}I(c_1)$ 根据[[MK356][性质4]]可得满足乘法分配律
+
+则易证 $I(f_\times)\left(\sum_{i=1}^{p_1}I(c_1),\sum_{i=1}^{q_2}I(c_1)\right)=\sum_{i=1}^{p_1q_2}I(c_1)=\sum_{i=1}^{p_2q_1}I(c_1)=I(f_\times)\left(\sum_{i=1}^{p_2}I(c_1),\sum_{i=1}^{q_1}I(c_1)\right)$
+
+等式两边均乘 $I(f_\times)\left(\left(\sum_{i=1}^{q_1}I(c_1)\right)^{-1},\left(\sum_{i=1}^{q_2}I(c_1)\right)^{-1}\right)$ 后根据[[MK356][性质4]]整理
+
+易证 $I(f_\times)\left(\sum_{i=1}^{p_1}I(c_1),\left(\sum_{i=1}^{q_1}I(c_1)\right)^{-1}\right)=I(f_\times)\left(\sum_{i=1}^{p_2}I(c_1),\left(\sum_{i=1}^{q_2}I(c_1)\right)^{-1}\right)$ 即为 $e\left(\frac{p_1}{q_1}\right)=e\left(\frac{p_2}{q_2}\right)$
+
+综上所述，对于任意 $q_1\ne0,q_2\ne0,\{p_1,p_2,q_1,q_2\}\subset\mathbb{N}$ 若有 $\frac{p_1}{q_1}=\frac{p_2}{q_2}$ 则 $e\left(\frac{p_1}{q_1}\right)=e\left(\frac{p_2}{q_2}\right)$ 即是[[MK175][函数]]
+
+******* [[MK176][单射]]
+
+对于任意 $\frac{p_1}{q_1}\ne\frac{p_2}{q_2}$ 根据[[MK426][之前证明]]可得 $p_1q_2\ne p_2q_1$ 显然 $\{p_1q_2,p_2q_1\}\subset\mathbb{N}$ 不妨设 $p_1q_2>p_2q_1$
+
+假设 $\sum_{i=1}^{p_1q_2}I(c_1)=\sum_{i=1}^{p_2q_1}I(c_1)$ 则两边同加 $I(f_-)\left(\sum_{i=1}^{p_2q_1}I(c_1)\right)$ 根据[[MK356][性质4]]整理可得 $\sum_{i=1}^{p_1q_2-p_2q_1}I(c_1)=I(c_0)$  
+
+显然 $p_1q_2-p_2q_1>0$ 这与[[MK339][特征]]为 $0$ 矛盾，故假设不成立，即 $\sum_{i=1}^{p_1q_2}I(c_1)\ne\sum_{i=1}^{p_2q_1}I(c_1)$
+
+则与上一步同理易证 $e\left(\frac{p_1}{q_1}\right)\ne e\left(\frac{p_2}{q_2}\right)$ 即为[[MK176][单射]]
+
+******* $f_+$
+
+对于任意 $\left\{\frac{p_1}{q_1},\frac{p_2}{q_2}\right\}\subset\mathbb{Q}$ 有 $e\left(\frac{p_1}{q_1}+\frac{p_2}{q_2}\right)=e\left(\frac{p_1q_2+p_2q_1}{q_1q_2}\right)=I(f_\times)\left(\sum_{i=1}^{p_1q_2+p_2q_1} I(c_1),\left(\sum_{i=1}^{q_1q_2} I(c_1)\right)^{-1}\right)$
+
+又根据[[MK356][性质4]]以及[[MK427][性质13]]易证
+
+\begin{aligned}
+&I(f_+)\left(e\left(\frac{p_1}{q_1}\right),e\left(\frac{p_2}{q_2}\right)\right)\\
+=&I(f_+)\left(I(f_\times)\left(\sum_{i=1}^{p_1} I(c_1),\left(\sum_{i=1}^{q_1} I(c_1)\right)^{-1}\right),I(f_\times)\left(\sum_{i=1}^{p_2} I(c_1),\left(\sum_{i=1}^{q_2} I(c_1)\right)^{-1}\right)\right)\\
+=&I(f_+)\left(I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_1} I(c_1),\left(\sum_{i=1}^{q_1} I(c_1)\right)^{-1}\right),I(c_1)\right),I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_2} I(c_1),\left(\sum_{i=1}^{q_2} I(c_1)\right)^{-1}\right),I(c_1)\right)\right)\\
+=&I(f_+)\left(I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_1} I(c_1),\left(\sum_{i=1}^{q_1} I(c_1)\right)^{-1}\right),I(f_\times)\left(\sum_{i=1}^{q_2} I(c_1),\left(\sum_{i=1}^{q_2} I(c_1)\right)^{-1}\right)\right),\\&\ \ \ \ \ \ \ \ \ \ I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_2} I(c_1),\left(\sum_{i=1}^{q_2} I(c_1)\right)^{-1}\right),I(f_\times)\left(\sum_{i=1}^{q_1} I(c_1),\left(\sum_{i=1}^{q_1} I(c_1)\right)^{-1}\right)\right)\right)\\
+=&I(f_+)\left(I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_1} I(c_1),\sum_{i=1}^{q_2} I(c_1)\right),I(f_\times)\left(\left(\sum_{i=1}^{q_1} I(c_1)\right)^{-1},\left(\sum_{i=1}^{q_2} I(c_1)\right)^{-1}\right)\right),\\&\ \ \ \ \ \ \ \ \ \ I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_2} I(c_1),\sum_{i=1}^{q_1} I(c_1)\right),I(f_\times)\left(\left(\sum_{i=1}^{q_2} I(c_1)\right)^{-1},\left(\sum_{i=1}^{q_1} I(c_1)\right)^{-1}\right)\right)\right)\\
+=&I(f_+)\left(I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_1} I(c_1),\sum_{i=1}^{q_2} I(c_1)\right),\left(I(f_\times)\left(\sum_{i=1}^{q_1} I(c_1),\sum_{i=1}^{q_2} I(c_1)\right)\right)^{-1}\right),\\&\ \ \ \ \ \ \ \ \ \ I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_2} I(c_1),\sum_{i=1}^{q_1} I(c_1)\right),\left(I(f_\times)\left(\sum_{i=1}^{q_2} I(c_1),\sum_{i=1}^{q_1} I(c_1)\right)\right)^{-1}\right)\right)\\
+=&I(f_\times)\left(I(f+)\left(I(f_\times)\left(\sum_{i=1}^{p_1} I(c_1),\sum_{i=1}^{q_2} I(c_1)\right),I(f_\times)\left(\sum_{i=1}^{p_2} I(c_1),\sum_{i=1}^{q_1} I(c_1)\right)\right),\left(I(f_\times)\left(\sum_{i=1}^{q_2} I(c_1),\sum_{i=1}^{q_1} I(c_1)\right)\right)^{-1}\right)\\
+=&I(f_\times)\left(\sum_{i=1}^{p_1q_2+p_2q_1} I(c_1),\left(\sum_{i=1}^{q_1q_2} I(c_1)\right)^{-1}\right)
+\end{aligned}
+
+即有 $e\left(\frac{p_1}{q_1}+\frac{p_2}{q_2}\right)=I(f_+)\left(e\left(\frac{p_1}{q_1}\right),e\left(\frac{p_2}{q_2}\right)\right)$
+
+******* $f_\times$
+
+对于任意 $\left\{\frac{p_1}{q_1},\frac{p_2}{q_2}\right\}\subset\mathbb{Q}$ 根据[[MK356][性质4]]以及[[MK427][性质13]]易证
+
+\begin{aligned}
+e\left(\frac{p_1}{q_1}\times\frac{p_2}{q_2}\right)=&e\left(\frac{p_1p_2}{q_1q_2}\right)\\
+=&I(f_\times)\left(\sum_{i=1}^{p_1p_2} I(c_1),\left(\sum_{i=1}^{q_1q_2} I(c_1)\right)^{-1}\right)\\
+=&I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_1} I(c_1),\sum_{i=1}^{p_2} I(c_1)\right),\left(I(f_\times)\left(\sum_{i=1}^{q_1} I(c_1),\sum_{i=1}^{q_2} I(c_1)\right)\right)^{-1}\right)\\
+=&I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_1} I(c_1),\sum_{i=1}^{p_2} I(c_1)\right),I(f_\times)\left(\left(\sum_{i=1}^{q_1} I(c_1)\right)^{-1},\left(\sum_{i=1}^{q_2} I(c_1)\right)^{-1}\right)\right)\\
+=&I(f_\times)\left(I(f_\times)\left(\sum_{i=1}^{p_1} I(c_1),\left(\sum_{i=1}^{q_1} I(c_1)\right)^{-1}\right),I(f_\times)\left(\sum_{i=1}^{p_1} I(c_1),\left(\sum_{i=1}^{q_1} I(c_1)\right)^{-1}\right)\right)\\
+=&I(f_\times)\left(e\left(\frac{p_1}{q_1}\right),e\left(\frac{p_2}{q_2}\right)\right)
+\end{aligned}
+
+******* $f_-$
+
+对于任意 $\frac{p_1}{q_1}\in\mathbb{Q}$ 显然有 $e\left(-\frac{p}{q}\right)=I(f_-)\left(I(f_\times)\left(\sum_{i=1}^p I(c_1),\left(\sum_{i=1}^q I(c_1)\right)^{-1}\right)\right)=I(f_-)\left(e\left(\frac{p}{q}\right)\right)$
+
 *** 代数封闭域<<MK390>>
 
 **** 语言
@@ -9117,7 +9514,7 @@ f(x)=&p_n(x)\prod_{i=1}^{n-1}h_i(x)\\
 
 故可得 $f(x)$ 的[[MK389][根]]有且仅有 $\{a_1,...,a_n\}$ ，即有限
 
-***** 性质4<<MK412>>
+***** 性质3<<MK412>>
 
 若 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]则 $M$ 是[[MK83][无限集]]
 
@@ -9134,6 +9531,76 @@ f(x)=&p_n(x)\prod_{i=1}^{n-1}h_i(x)\\
 故假设不成立，即 $M$ 是[[MK83][无限集]]
 
 $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
+
+**** 相关定义
+
+***** [[MK390][代数封闭域]]的基<<MK432>>
+
+对于任意给定[[MK339][特征]] $p$ 的[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>$ ：
+
+（1） 若 $p=0$ 则根据[[MK429][定理7]]可得[[MK338][域]] $\mathcal{Q}=\left<\mathbb{Q},I_\mathbb{Q}\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+
+（2） 若 $p\ne0$ 则根据[[MK430][性质1]]可得 $p$ 是素数，则根据[[MK431][性质3]]可得 $\mathbb{Z}_p$ 是[[MK338][域]]，又根据[[MK419][定理3]]可得 $\mathbb{Z}_p$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+
+显然 $\mathcal{Q}$ 与 $\mathbb{Z}_p$ 均为 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，定义 $\mathcal{L}_{\mathcal{A}_{\text{ACF}}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{N}_p$ 满足 $p=0$ 时 $\mathcal{N}_p=\mathcal{Q}$ 否则 $\mathcal{N}_p=\mathbb{Z}_p$
+
+则可得必有 $\mathcal{N}_p$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]且为[[MK338][域]]，则根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]] $\mathcal{M}'_p=\left<M'_p,I'_p\right>$ 与 $\mathcal{N}_p$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+由于 $\mathcal{N}_p\vDash T_\mathbb{F}$ 为[[MK338][域]]，则根据[[~/文档/note/数理逻辑/sllj.org::MK276][定理1]]以及[[~/文档/note/数理逻辑/sllj.org::MK169][推论]]易证 $\mathcal{M}'_p\vDash T_\mathbb{F}$ 亦为[[MK338][域]]，且显然 $\mathcal{M}$ 亦是[[MK338][域]]
+
+故 $\mathcal{M}$ 是 $\mathcal{M}'_p$ 的[[MK341][扩张域]]，又根据[[MK343][定理1]]可得 $\left<M,M'_p,I(f_+),I(f _\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK40][定理1]]可得 $\left<M,M'_p,I(f_+),I(f _\times)\right>$ 存在[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]
+
+该[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]定义为[[MK390][代数封闭域]] $\mathcal{M}$ 的基
+
+****** 性质1
+
+[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>$ 的[[MK339][特征]] $p=0$ 时：
+
+（1） 若 $M$ [[MK89][可数]]，则[[MK432][ $\mathcal{M}$ 的基]]为[[MK93][至多可数集]]
+
+（2） 若 $M$ [[MK99][不可数]]，则[[MK432][ $\mathcal{M}$ 的基]]与 $M$ [[MK29][等势]]
+
+******* 证明
+
+设 $\mathcal{M}$ 的基 $B$ 
+
+******** 证（1）
+
+根据[[MK432][定义]]可得 $\mathcal{M}$ 的基 $B$ 属于 $M$ 故根据[[MK33][定理5]]可得 $|B|\leq |M|$ ，故若 $|M|=|\mathbb{N}|$ 则根据[[MK327][定理6]]可得 $|B|\leq|\mathbb{N}|$ 即（1）成立
+
+******** 证（2）<<MK433>>
+
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK80][定理3]]可得任意 $a\in M$ 均可由 $B$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK12][线性表述]]，即存在有限个 $\{b_1,...,b_n\}\subset B$ 满足 $a=\sum_{i=1}^nk_ib_i$ ，其中 $k_i\in N'_p$ 为[[MK432][定义]]中的 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+则定义 $B^*=\bigcup_{n\in\mathbb{N}}\left(N'_p\times B\right)^n$ 定义 $\phi:M\to\rho(B^*)$ 满足对于任意 $a\in M$ 有 $a=\sum_{i=1}^nk_ib_i$
+
+则定义 $\phi(a)=\left\{\left<\left<k_{i_1},b_{i_1}\right>,...,\left<k_{i_n},b_{i_n}\right>\right>\big|i_j\in\mathbb{N}\land1\leq i_j\leq n\land((j_1\ne j_2)\to(i_{j_1}\ne i_{j_2}))\right\}$ 显然 $\phi$ 是[[MK175][函数]]且 $\phi(a)\subset B^*$
+
+对于任意 $\{a_1,a_2\}\subset M,a_1\ne a_2$ 有 $a_1=\sum_{i=1}^nk_ib_i,a_2=\sum_{i=1}^nk'_ib'_i$ 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK80][定理3]]可得表述不同，即必存在 $i^*$ 满足 $k_{i^*}\ne k'_{i^*}$ 或者 $b_{i^*}\ne b'_{i^*}$
+
+则易证必有 $\phi(a_1)\cap\phi(a_2)=\varnothing$ 。定义 $\Phi=\left\{\phi(a)\big|a\in M\right\}$ 则根据[[MK14][选择公理]]可得存在选择函数满足 $f(\phi(a))\in\phi(a)$
+
+定义 $\psi(a)=f(\phi(a))$ 显然 $\psi:M\to B^*$ 是[[MK175][函数]]，且由于对于任意 $\{a_1,a_2\}\subset M,a_1\ne a_2$ 有 $\phi(a_1)\cap\phi(a_2)=\varnothing$
+
+则必有 $\psi(a_1)\ne\psi(a_2)$ 即 $\psi$ 是[[MK176][单射]]，故根据[[MK29][定义]]可得 $|M|\leq|B^*|$
+
+假设 $|B|<|M|$ ，由于[[MK339][特征]] $p=0$ ，则根据[[MK432][定义]]可得 $\mathcal{N}'_p$ 与 $\mathcal{Q}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，则显然有 $|N'_p|=|\mathbb{Q}|$ 又根据[[MK96][推论1]]以及[[MK30][传递性]]可得 $|N'_p|=|\mathbb{N}|$ 
+
+则根据[[MK422][推论]]可得 $\left|N'_p\times B\right|=\max(|\mathbb{N}|,|B|)$ 即 $N'_p\times B$ 必为[[MK83][无限集]]，则根据[[MK88][定理5]]可得对于任意 $n\in\mathbb{N}$ 可得 $\left|\left(N'_p\times B\right)^n\right|=\left|N'_p\times B\right|$
+
+又[[MK86][定理3]]可得 $|B^*|=\left|\bigcup_{n\in\mathbb{N}}\left(N'_p\times B\right)^n\right|=\left|N'_p\times B\right|=\max(|\mathbb{N}|,|B|)$ 。由于 $M$ [[MK99][不可数]]即可得 $|M|>|\mathbb{N}|$ 结合假设有 $|M|>\max(|\mathbb{N}|,|B|)=|B^*|$
+
+根据[[MK328][定理4]]可得与 $|M|\leq|B^*|$ 矛盾，故假设不成立。即有 $|B|\geq|M|$
+
+又显然 $B\subset M$ 故根据[[MK33][定理5]]可得 $|B|\leq |M|$ 。最终根据[[MK34][伯恩斯坦定理]]可得 $|B|=|M|$ 
+
+****** 性质2
+
+[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>$ 的[[MK339][特征]] $p\ne0$ ，则[[MK432][ $\mathcal{M}$ 的基]]与 $M$ [[MK29][等势]]
+
+******* 证明
+
+设 $\mathcal{M}$ 的基 $B$ ，由于 $p\ne0$ 则根据[[MK432][定义]]以及[[MK433][之前证明]]同理可得 $|N'_p|=|Z_p|<\mathbb{N}$ ，则[[MK433][类似可证]] $|B|=|M|$ 
 
 **** 定理
 
@@ -9307,7 +9774,7 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 [[MK339][特征]]确定（设为 $p$ ）的[[MK411][代数封闭域理论]] $\mathcal{T}_{\test{ACF}_p}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}},T_{\test{ACF}_p},T^*_{\test{ACF}_p}\right>$
 
-则 [[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{T}_{\test{ACF}_p}$ 的[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
+则[[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{T}_{\test{ACF}_p}$ 的[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]
 
 ****** 证明
 
