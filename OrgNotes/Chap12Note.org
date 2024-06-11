@@ -2,7 +2,7 @@
 
 #+TITLE: 多元函数微分
 
-current mark: MK28
+current mark: MK32
 
 * 正定矩阵
 
@@ -304,7 +304,7 @@ a_{1n}&...&a_{n(j-1)}&b_n&a_{n(j+1)}&...&a_{nn}\\
 \frac{\partial \left[\frac{f(\vec{x}_0)}{g(\vec{x}_0)}\right]}{\partial x_i}=\frac{g(\vec{x}_0)\frac{\partial f(\vec{x}_0)}{x_i}-f(\vec{x}_0)\frac{\partial f(\vec{x}_0)}{x_i}}{g(\vec{x}_0)^2}\
 \end{aligned}
 
-*** 方向导数
+*** 方向导数<<MK30>>
 
 函数 $z=f(\vec{x})=f(x_1,x_2,...,x_n),\vec{x}\in D$ 为 $R^n$ 到 $R$ 的映射，向量 $\vec{v}\in R^n$ 为长度为 $1$ 与 $x_i$ 轴夹角为 $\cos \alpha_i$ 的单位向量 $i=1,2,...,n$
 
@@ -343,7 +343,7 @@ a_{1n}&...&a_{n(j-1)}&b_n&a_{n(j+1)}&...&a_{nn}\\
 
 ** 欧几里得空间连续，可导，可微及方向导数关系
 
-*** 可导与方向导数
+*** 可导与方向导数<<MK31>>
 
 若函数 $z=f(\vec{x})=f(x_1,x_2,...,x_n),\vec{x}\in D$ 为 $R^n$ 到 $R$ 的映射在 $\vec{x}_0=(x_{1_0},...,x_{n_0})\in D$ 点处存对于 $x_1$ 存在偏导函数
 
@@ -379,7 +379,7 @@ a_{1n}&...&a_{n(j-1)}&b_n&a_{n(j+1)}&...&a_{nn}\\
 
 \begin{aligned}
 \lim_{\vec{x}\to\vec{x}_0}\left\{f(\vec{x})-f(\vec{x}_0)\right\}&=\lim_{|\Delta \vec{x}|\to 0}\left\{f(\vec{x}_0+\Delta\vec{x})-f(\vec{x}_0)\right\}\\
-&=\lim_{|\Delta \vec{x}|\to 0}\left\{f\sum_{i=1}^n A_i \Delta x_i+o(|\Delta\vec{x}|)\right\}\\
+&=\lim_{|\Delta \vec{x}|\to 0}\left\{\sum_{i=1}^n A_i \Delta x_i+o(|\Delta\vec{x}|)\right\}\\
 &=0\\
 \end{aligned}
 
@@ -410,7 +410,7 @@ a_{1n}&...&a_{n(j-1)}&b_n&a_{n(j+1)}&...&a_{nn}\\
 
 即 $A_i=\frac{\partial f(\vec{x}_0)}{\partial x}$
 
-*** 可微与方向导数
+*** 可微与方向导数<<MK32>>
 
 若函数 $z=f(\vec{x})=f(x_1,x_2,...,x_n),\vec{x}\in D$ 为 $R^n$ 到 $R$ 的映射在 $\vec{x}_0=(x_{1_0},...,x_{n_0})\in D$ 点处可微，则方向导数必存在。
 
@@ -487,9 +487,7 @@ a_{1n}&...&a_{n(j-1)}&b_n&a_{n(j+1)}&...&a_{nn}\\
 
 根据极限四则运算  $\lim_{|\Delta \vec{x}|\to 0}o(|\Delta\vec{x}|)=\lim_{|\Delta \vec{x}|\to 0}\sum_{i=1}^n o_i(|\Delta\vec{x}|)\Delta x_i=0$
 
-** 梯度
-
-*** 定义
+** 梯度<<MK29>>
 
 若函数 $z=f(\vec{x})=f(x_1,x_2,...,x_n),\vec{x}\in D$ 为 $R^n$ 到 $R$ 的映射在 $\vec{x}_0=(x_{1_0},...,x_{n_0})\in D$ 向量 $grad(f(\vec{x}_0))=\nabla f(\vec{x}_0)=\left(\frac{\partial f(\vec{x}_0)}{\partial x_1},\frac{\partial f(\vec{x}_0)}{\partial x_2},...,\frac{\partial f(\vec{x}_0)}{\partial x_n}\right)$
 

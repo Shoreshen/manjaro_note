@@ -2,7 +2,7 @@
 
 #+TITLE: 数理逻辑
 
-currnet mark: 487
+currnet mark: 490
 
 free mark: 
   
@@ -3960,7 +3960,7 @@ $\left<\mathcal{M},v\right>\vDash(\exists x_i \psi)$ 的充要条件是 $\left<\
 
 故假设不成立，即 $\left<\mathcal{M},v\right>\vDash\phi$
 
-**** 推论<<MK467>>
+**** 推论1<<MK467>>
 
 对于[[MK151][语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 以及任意 $\mathcal{M}$ [[MK154][赋值]] $v,u$ 则对于任意[[MK129][表达式]] $\phi(x_1,...,x_n)\in\mathcal{L}_\mathcal{A}$ 若满足
 
@@ -4005,6 +4005,24 @@ $\left<\mathcal{M},v\right>\vDash(\exists x_i \psi)$ 的充要条件是 $\left<\
 [[MK150][可替换]]为 $x_1,...,x_n,\tau'_1,...\tau'_k$ ，根据[[MK176][替换定理]] $\left<\mathcal{M},v\right>\vDash\phi'$ 的充要条件是 $\left<\mathcal{M},\mu\right>\vDash\phi''$
 
 综上所述， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},u\right>\vDash\phi'$
+
+**** 推论2<<MK490>>
+
+对于[[MK151][语言]] $\mathcal{L}_\mathcal{A}$ 中的一组[[MK129][表达式]] $\Gamma$ 若存在[[MK129][表达式]] $\phi$ 满足 $\Gamma\vdash(\forall x_i\phi)$ 则对于任意 $\mathcal{L}_\mathcal{A}$ 的[[MK117][项]] $\tau$ 均有 $\Gamma\vdash\phi(\left<x_i\right>,\left<\tau\right>)$
+
+***** 证明
+
+根据[[MK257][完备性]]可得对于任意 $\mathcal{L}_\mathcal{A}$ 的[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[MK154][赋值]] $v$ 若有 $\left<\mathcal{M},v\right>\vDash\Gamma$ 则有 $\left<\mathcal{M},v\right>\vDash(\forall x_i\phi)$ 
+
+对于任意 $\tau$ 显然有 $\bar{v}(\tau)\in M$ ，则定义 $v'$ 满足 $v'(x_j)=\begin{cases}v(x_j)&j\ne i\\\bar{v}(\tau)&j=i\end{cases}$ 显然根据[[MK158][满足]]可得 $\left<\mathcal{M},v'\right>\vDash\phi$
+
+又由于对于任意 $\phi$ 中除 $x_i$ 的[[MK140][自由变元]] $x_j$ 均有 $v(x_j)=v'(x_j)$ 结合 $\left<\mathcal{M},v'\right>\vDash\phi$
+
+根据[[MK176][替换定理]]可得 $\left<\mathcal{M},v\right>\vDash\phi(\left<x_1,...,x_{i-1},x_i,x_{i+1},...,x_n\right>,\left<x_1,...,x_{i-1},\tau,x_{i+1},...,x_n\right>)$ 显然即 $\left<\mathcal{M},v\right>\vDash\phi(\left<x_i\right>,\left<\tau\right>)$
+
+综上所述，对于任意 $\mathcal{L}_\mathcal{A}$ 的[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 及其[[MK154][赋值]] $v$ 若有 $\left<\mathcal{M},v\right>\vDash\Gamma$ 则有 $\left<\mathcal{M},v\right>\vDash\phi(\left<x_i\right>,\left<\tau\right>)$
+
+即根据[[MK257][完备性]]可得 $\Gamma\vdash\phi(\left<x_i\right>,\left<\tau\right>)$
 
 *** [[MK139][子表达式]]替换定理<<MK179>>
 
@@ -9795,7 +9813,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 均存在[[MK329][根本型]] $\Gamma(x_1,...,x_n)\supset T$ 满足 $\phi\in\Gamma$ ，则称 $\mathcal{T}$ 是 $\mathcal{L}_\mathcal{A}$ 的根本型理论
 
-**** 最小典型[[MK221][模型]]
+**** 最小典型[[MK221][模型]]<<MK489>>
 
 [[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 是[[MK264][完全的]]且只有[[MK221][无限模型]]，若 $\mathcal{T}$ 的某个[[MK221][模型]] $\mathcal{M}$
 
@@ -12764,27 +12782,25 @@ $\mathcal{T}$ 的每一个[[MK221][可数模型]]均是[[MK394][可数饱和]]�
 
 则根据[[MK257][完备性]]可得 $T\vdash(\phi\leftrightarrow\psi)$
 
-**** 引理2
+**** 引理2<<MK488>>
 
-[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，对于任意 $\{\phi(x_1,...,x_n),\psi(x_1,...,x_m)\}\subset\mathcal{L}_\mathcal{A}$ 以下命题等价：
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，对于任意 $\phi(x_1,...,x_n)\in\mathcal{L}_\mathcal{A}$ 以下命题等价：
 
-（1） $T\vdash(\forall x_1(...(\forall x_{\max(m,n)}(\phi\leftrightarrow\psi))...))$
+（1） $T\vdash(\forall x_1(...(\forall x_n\phi)...))$
 
-（2） $T\vdash(\phi\leftrightarrow\psi)$
+（2） $T\vdash\phi$
 
 ***** 证明
 
 ****** （1）证（2）
 
-若有 $T\vdash(\forall x_1(...(\forall x_{\max(m,n)}(\phi\leftrightarrow\psi))...))$ 根据[[MK199][推论]]有限次使用[[MK197][特化公理]]可得 $T\vdash(\phi\leftrightarrow\psi)$
+若有 $T\vdash(\forall x_1(...(\forall x_n\phi)...))$ 根据[[MK199][推论]]有限次使用[[MK197][特化公理]]可得 $T\vdash\phi$
 
 ****** （2）证（1）
 
-若有 $T\vdash(\phi\leftrightarrow\psi)$ 则根据[[MK257][完备性]]可得对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\phi\leftrightarrow\psi)$
+若有 $T\vdash\phi$ 则根据[[MK257][完备性]]可得对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 及其[[MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash\phi$
 
-由于 $v$ 的任意性以及[[MK158][满足]]易证 $\mathcal{M}\vDash(\forall x_1(...(\forall x_{\max(m,n)}(\phi\leftrightarrow\psi))...))$
-
-又根据 $\mathcal{M}$ 的任意性以及[[MK257][完备性]]可得 $T\vdash(\forall x_1(...(\forall x_{\max(m,n)}(\phi\leftrightarrow\psi))...))$ 
+由于 $v$ 的任意性以及[[MK158][满足]]易证 $\mathcal{M}\vDash(\forall x_1(...(\forall x_n\phi)...))$ 又根据 $\mathcal{M}$ 的任意性以及[[MK257][完备性]]可得 $T\vdash(\forall x_1(...(\forall x_n\phi)...))$ 
 
 *** 定理
 

@@ -2072,7 +2072,7 @@ d\omega&=\left(\frac{\partial P(x,y,z)}{\partial y}dy+\frac{\partial P(x,y,z)}{\
 
 定义空间 $\Omega\in R^3$ ，函数 $f(x,y,z),(x,y,z)\in\Omega$ 在定义域内有连续一阶导数
 
-则根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-梯度-定义]]在点 $(x,y,z)$ 上的梯度为 $\nabla f(x,y,z)=\frac{\partial f(x,y,z)}{\partial x}\vec{i}+\frac{\partial f(x,y,z)}{\partial y}\vec{j}+\frac{\partial f(x,y,z)}{\partial z}\vec{k}$
+则根据[[~/文档/note/数学分析/Chap12Note.org::MK29][定义]]在点 $(x,y,z)$ 上的梯度为 $\nabla f(x,y,z)=\frac{\partial f(x,y,z)}{\partial x}\vec{i}+\frac{\partial f(x,y,z)}{\partial y}\vec{j}+\frac{\partial f(x,y,z)}{\partial z}\vec{k}$
 
 *** 性质及物理意义
 
@@ -2080,13 +2080,13 @@ d\omega&=\left(\frac{\partial P(x,y,z)}{\partial y}dy+\frac{\partial P(x,y,z)}{\
 
 **** 证明
 
-根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-偏导数，方向导数及全微分-方向导数]]可得方向导数 $\frac{\partial f(x,y,z)}{\partial \vec{v}}=\lim_{t\to 0^+}\frac{f(x+t\cos\alpha_x,y+t\cos\alpha_y,z+t\cos\alpha_z)-f(x,y,z)}{t}$
+根据[[~/文档/note/数学分析/Chap12Note.org::MK30][方向导数]]可得方向导数 $\frac{\partial f(x,y,z)}{\partial \vec{v}}=\lim_{t\to 0^+}\frac{f(x+t\cos\alpha_x,y+t\cos\alpha_y,z+t\cos\alpha_z)-f(x,y,z)}{t}$
 
 可定义为沿方向 $\vec{v}=(\cos\alpha_x,\cos\alpha_y,\cos\alpha_z)$ 的函数增长量
 
-又由于 $f(x,y,z)$ 在定义域内有连续一阶导数，则根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-可微条件]]，函数可微
+又由于 $f(x,y,z)$ 在定义域内有连续一阶导数，则根据[[~/文档/note/数学分析/Chap12Note.org::MK5][可微条件]]，函数可微
 
-又根据[[~/文档/note/数学分析/Chap12Note.org][偏导数与全微分-欧几里得空间连续，可导，可微及方向导数关系-可微与方向导数]]得方向导数 
+又根据[[~/文档/note/数学分析/Chap12Note.org::MK32][可微与方向导数]]得方向导数 
 
 \begin{aligned}
 \frac{\partial f(x,y,z)}{\partial \vec{v}}&=\frac{\partial f(x,y,z)}{\partial x}\cos\alpha_x+\frac{\partial f(x,y,z)}{\partial y}\cos\alpha_y+\frac{\partial f(x,y,z)}{\partial z}\cos\alpha_z\\

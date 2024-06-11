@@ -187,6 +187,14 @@ To fix this, do as follow:
    export XCURSOR_SIZE=16
    ```
 
+## Title bar
+
+Go to `Settings` and search `Title Bar Style`, select `custom`.
+
+## Status bar
+
+<img src="2024-06-11_12-23.png">
+
 # Snip tool
 
 Using <code>screenshooter</code>, in terminal:
