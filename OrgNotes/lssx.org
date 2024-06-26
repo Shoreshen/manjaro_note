@@ -1,10 +1,10 @@
-#+LATEX_HEADER:
+#][+LATEX_HEADER:
 
 #+TITLE: 离散数学概论
 
-currnet mark: 443
+currnet mark: 449
 
-free mark: 
+free mark: 438 443 444
  
 数理逻辑: P26
 
@@ -7947,7 +7947,7 @@ a_{i^*-1}&=a_{i^*-3}-n_{i^*-2}a_{i^*-2}=(v_{i^*-3}a_0+u_{i^*-3}p)-n_{i^*-2}(v_{i
 
 任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 由 $\vec{s}=\left<s_0,...,s_{n-1}\right>$ [[MK393][生成]]的[[MK341][扩张域]]为 $\mathcal{M}_{(\vec{s})}=\left<M_{(\vec{s})},I_{(\vec{s})}\right>$ 有对于任意 $a\in M_{(\vec{s})}$
 
-均存在 $\mathcal{M}$ 上关于 $\vec{x}=\{x_1,...,x_n\}$ 的[[MK436][多项式]] $f_1(\vec{x}),f_2(\vec{x})$ 满足其[[MK441][带入]] $\vec{s}$ 的解有 $a=I_{(\vec{s})}(f_\times)\left(f_1(\vec{s}),\left(f_2(\vec{s})\right)^{-1}\right)$
+均存在 $\mathcal{M}$ 上关于 $\vec{x}=\{x_0,...,x_{n-1}\}$ 的[[MK436][多项式]] $f_1(\vec{x}),f_2(\vec{x})$ 满足其[[MK441][带入]] $\vec{s}$ 的解有 $a=I_{(\vec{s})}(f_\times)\left(f_1(\vec{s}),\left(f_2(\vec{s})\right)^{-1}\right)$
 
 其中 $\left(f_2(\vec{s})\right)^{-1}$ 是 $f_2(\vec{s})$ 的乘法逆元
 
@@ -7955,13 +7955,11 @@ a_{i^*-1}&=a_{i^*-3}-n_{i^*-2}a_{i^*-2}=(v_{i^*-3}a_0+u_{i^*-3}p)-n_{i^*-2}(v_{i
 
 定义 $M_{(\vec{s}),\div}$ 为所有满足条件的元素，即对于任意 $a\in M_{(\vec{s}),\div}$ 均存在 $\mathcal{M}$ 上关于 $\vec{x}=\{x_1,...,x_n\}$ 的[[MK436][多项式]] $f_1(\vec{x}),f_2(\vec{x})$
 
-满足其[[MK441][带入]] $\vec{s}$ 的解有 $a=I_{(\vec{s})}(f_\times)\left(f_1(\vec{s}),\left(f_2(\vec{s})\right)^{-1}\right)$ 。对于任意 $a\in M_{(s),\div}$ 由于 $\mathcal{M}_{(\vec{s})}$ 是[[MK338][域]]且 $\vec{s}\in M^n_{(\vec{s})}$
+满足其[[MK441][带入]] $\vec{s}$ 的解有 $a=I_{(\vec{s})}(f_\times)\left(f_1(\vec{s}),\left(f_2(\vec{s})\right)^{-1}\right)$ 。对于任意 $a\in M_{(s),\div}$ 以及任意包含 $M\cup\{s_1,...,s_n\}$ 的[[MK338][域]] $\mathcal{N}=\left<N,J\right>$
 
-则根据加法封闭，乘法封闭，存在逆元易证必有 $a\in M_{(\vec{s})}$ ，即有 $M_{(\vec{s}),\div}\subset M_{(\vec{s})}$
+根据加法封闭，乘法封闭，存在逆元易证必有 $a\in N$ ，即对于任意包含 $M\cup\{s_1,...,s_n\}$ 的[[MK338][域]] $\mathcal{N}=\left<N,J\right>$ 均有 $M_{(\vec{s}),\div}\subset N$
 
-定义 $\mathcal{M}_{(\vec{s}),[\vec{x}]}=\left<M_{(\vec{s}),[\vec{x}]},I_{(\vec{s}),[\vec{x}]}\right>$ 是 $\mathcal{M}_{(\vec{s})}$ 对于 $\vec{x}$ 的[[MK439][多项式环]]
-
-则根据以下证明以及[[MK356][易证]]当 $M_{(\vec{s})}=M_{(\vec{s}),\div}$ 时 $\mathcal{M}_{(\vec{s})}\vDash T_{\mathbb{F}}$ 是[[MK338][域]]，又根据[[MK393][定义]]可得 $\mathcal{M}_{(\vec{s})}$ 是包含 $M,\vec{s}$ 的最小[[MK341][扩张域]]
+又根据以下证明以及[[MK356][易证]]当 $M_{(\vec{s})}=M_{(\vec{s}),\div}$ 时 $\mathcal{M}_{(\vec{s})}\vDash T_{\mathbb{F}}$ 是[[MK338][域]]，又根据[[MK393][定义]]可得 $\mathcal{M}_{(\vec{s})}$ 是包含 $M\cup\{s_1,...,s_n\}$ 的最小[[MK341][扩张域]]
 
 故可得 $M_{(\vec{s})}=M_{(\vec{s}),\div}$ ，即对于任意 $a\in M_{(\vec{s})}$ 均存在 $\mathcal{M}$ 上关于 $\vec{x}=\{x_1,...,x_n\}$ 的[[MK436][多项式]] $f_1(\vec{x}),f_2(\vec{x})$
 
@@ -7979,37 +7977,49 @@ I_{(\vec{s})}(f_\times)(a,b)&=I_{(\vec{s})}(f_\times)\left(I_{(\vec{s})}(f_\time
 &=I_{(\vec{s})}(f_\times)\left(I_{(\vec{s})}(f_\times)\left(f_1(\vec{s}),f_3(\vec{s})\right),\left(I_{(\vec{s})}(f_\times)\left(f_2(\vec{s}),f_4(\vec{s})\right)\right)^{-1}\right)
 \end{aligned}
 
-由0于 $\mathcal{M}$ 是[[MK338][域]]，则根据[[MK443][乘法封闭]]类似易证存在 $f_5(\vec{x})=\sum_{i=0}^{m_1}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ 满足：
+由于 $\mathcal{M}_{[\vec{x}]}=\left<M_{[\vec{x}]},I_{[\vec{x}]}\right>$ 是[[MK439][多项式环]]，故可得存在 $f_5(\vec{x})=\sum_{i=0}^{m_1}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ 满足 $f_5(\vec{x})=I_{[\vec{x}]}(f_\times)\left(f_1(\vec{x}),f_3(\vec{x})\right)$
 
-（1） $a_i\in M$ 即是 $\mathcal{M}$ 上关于 $\vec{x}=\{x_1,...,x_n\}$ 的[[MK436][多项式]] $f_5(\vec{x})\in M_{\vec{x}}$
-
-（2） $I_{(\vec{s}),[\vec{x}]}(f_\times)([f_1(\vec{x})] _\simeq,[f_3(\vec{x})] _\simeq)=[f_5(\vec{x})] _\simeq$
-
-根据[[MK442][推论]]可得在 $\mathcal{M}_{(\vec{s})}$ 下有 $I_{(\vec{s})}(f_\times)(f_1(\vec{s}),f_3(\vec{s}))=f_5(\vec{s})$ 同理可证存在 $f_5(\vec{x})$ 满足 $I_{(\vec{s})}(f_\times)(f_2(\vec{s}),f_4(\vec{s}))=f_6(\vec{s})$ 且 $f_6(\vec{s})\in M_\vec{x}$
+根据[[MK442][性质1]]可得 $f_5(\vec{s})=I_{(\vec{s})}(f_1(\vec{s}),f_3(\vec{s}))$ 同理可证存在 $f_6(\vec{x})=I_{[\vec{x}]}(f_\times)\left(f_2(\vec{x}),f_4(\vec{x})\right)$ 满足 $f_6(\vec{s})=I_{(\vec{s})}(f_2(\vec{s}),f_4(\vec{s}))$ 
 
 即有 $I_{(\vec{s})}(f_\times)(a,b)=I_{(\vec{s})}(f_\times)\left(f_5(\vec{s}),(f_6(\vec{s}))^{-1}\right)$ 即 $I_{(\vec{s})}(f_\times)(a,b)\in M_{(\vec{s}),\div}$
 
 ********* 乘法逆元封闭
 
-对于任意 $a=I_{(\vec{s})}(f_\times)\left(f_1(\vec{s}),\left(f_2(\vec{s})\right)^{-1}\right)$ 根据[[MK356][性质4]]易证 $I_{(\vec{s})}(f_\times)(a,I_{(\vec{s})}(f_\times)\left(f_2(\vec{s}),\left(f_1(\vec{s})\right)^{-1}\right))=I_{(\vec{s})}(c_1)$
+对于任意 $a=I_{(\vec{s})}(f_\times)\left(f_1(\vec{s}),\left(f_2(\vec{s})\right)^{-1}\right)$ 根据[[MK356][性质4]]易证 $I_{(\vec{s})}(f_\times)\left(a,I_{(\vec{s})}(f_\times)\left(f_2(\vec{s}),\left(f_1(\vec{s})\right)^{-1}\right)\right)=I_{(\vec{s})}(c_1)$
 
 即对于任意 $a\in M_{(\vec{s}),\div}$ 其乘法逆元 $a^{-1}$ 亦有 $a^{-1}\in M_{(\vec{s}),\div}$ 
 
 ******** 推论
 
-[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 由 $A=\{a_1,...,a_n\}$ [[MK393][生成]]的[[MK341][扩张域]]为 $\mathcal{M}_{(A)}=\left<M_{(A)},I_{(A)}\right>$ ，则定义：
+任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 由 $\vec{s}=\left<s_0,...,s_{n-1}\right>$ [[MK393][生成]]的[[MK341][扩张域]]为 $\mathcal{M}_{(\vec{s})}=\left<M_{(\vec{s})},I_{(\vec{s})}\right>$ ，则定义：
 
 （1） $\vec{x}=\left<x_0,...,x_{n-1}\right>$
 
 （2） $\mathcal{M}_{[\vec{x}]}=\left<M_{[\vec{x}]},I_{[\vec{x}]}\right>$ 是 $\mathcal{M}$ 对于 $\vec{x}$ 的[[MK439][多项式环]]
 
-（3） $\mathcal{M}_{(\vec{x})}=\left<M_{\left(\vec{x}\right)},I_{\left(\vec{x}\right)}\right>$ 是 $\mathcal{M}_{[\vec{x}]}$ 的[[MK339][分式幺环]]
+（3） $\mathcal{M}_{(\vec{x})}=\left<M_{\left(\vec{x}\right)},I_{\left(\vec{x}\right)}\right>$ 是 $\mathcal{M}_{[\vec{x}]}$ 的[[MK402][分式幺环]]
 
-则根据[[MK401][性质1]]可得 $\mathcal{M}_{(\vec{x})}$ 是[[MK338][域]]，则有 $\mathcal{M}_{(A)}$ 与 $\mathcal{M}_{[\vec{x}]}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+则根据[[MK401][性质1]]可得 $\mathcal{M}_{(\vec{x})}$ 是[[MK338][域]]，则有 $\mathcal{M}_{(\vec{s})}$ 与 $\mathcal{M}_{(\vec{x})}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
 ********* 证明
 
+对于任意 $\left[\frac{f_1(\vec{x})}{f_2(\vec{x})}\right]_\sim\in M_{(\vec{x})}$ 定义[[MK175][映射]] $e:M_{(\vec{x})}\to M_{(\vec{s})}$ 满足 $e\left(\left[\frac{f_1(\vec{x})}{f_2(\vec{x})}\right]_\sim\right)=I_{(\vec{s})}(f_\times)\left(f_1(\vec{s}),\left(f_2(\vec{s})\right)^{-1}\right)$
 
+********** 是[[MK176][单射]]
+
+对于任意 $\left\{\left[\frac{[f_1(\vec{x})]_\simeq}{[f_2(\vec{x})]_\simeq}\right]_\sim,\left[\frac{[f_3(\vec{x})]_\simeq}{[f_4(\vec{x})]_\simeq}\right]_\sim\right\}\subset M_{(\vec{x})}$ 满足 $\left[\frac{[f_1(\vec{x})]_\simeq}{[f_2(\vec{x})]_\simeq}\right]_\sim\ne\left[\frac{[f_3(\vec{x})]_\simeq}{[f_4(\vec{x})]_\simeq}\right]_\sim$ 必有 $\frac{[f_1(\vec{x})]_\simeq}{[f_2(\vec{x})]_\simeq}\not\sim\frac{[f_3(\vec{x})]_\simeq}{[f_4(\vec{x})]_\simeq}$
+
+则根据[[MK399][分式关系]]可得有 $I_{[\vec{x}]}(f_\times)\left([f_1(\vec{x})]_\simeq,[f_4(\vec{x})]_\simeq\right)\ne I_{[\vec{x}]}(f_\times)\left([f_3(\vec{x})]_\simeq,[f_2(\vec{x})]_\simeq\right)$
+
+取 $f_1(\vec{x}),f_2(\vec{x}),f_3(\vec{x}),f_4(\vec{x})$ 对应[[MK437][系数不相交]]的[[MK438][对应符号多项式]]为 $f'_1(\vec{x}),f'_2(\vec{x}),f'_3(\vec{x}),f'_4(\vec{x})$
+
+则根据[[MK437][定义]]可得对于任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$ 及其任意满足[[MK438][条件]]的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$
+
+均有
+
+则易证存在[[MK437][满足条件]]的 $\mathcal{M}$ 的任意[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 使得 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(\lnot(f_\times(f'_1(\vec{x}),f'_4(\vec{x}))\hat{=}f _\times(f'_3(\vec{x}),f'_2(\vec{x})))))$
+
+********** 是[[MK179][满射]]
 
 ***** [[MK341][扩张域]]的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK51][维数]]
 
@@ -8049,143 +8059,165 @@ I_{(\vec{s})}(f_\times)(a,b)&=I_{(\vec{s})}(f_\times)\left(I_{(\vec{s})}(f_\time
 
 ****** [[MK338][域]]上的多项式<<MK436>>
 
-对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 定义 $\mathcal{M}$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的 $m$ 次多项式为 $f(\vec{x})=\sum_{i=0}^m\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ 其中：
 
-（1） 对于任意 $0\leq i \leq m$ 有 $K_i\subset\{0,...,n-1\}$
+对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 定义 $\mathcal{M}$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的多项式为 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ 其中：
 
-（2） 对于任意 $0\leq i \leq m,j\in K_i$ 有 $k_{i,j}\in\mathbb{N}$
+（1） $P\subset\mathbb{N}$ 且 $|P|<\infty$ 是[[MK82][有限集]]
 
-（3） 对于任意 $0\leq i \leq m$ 有 $\sum_{j\in K_i}k_{i,j}\leq m$
+（2） 对于任意 $0\leq i \leq m$ 有 $K_i\subset\{0,...,n-1\}$
 
-（4） 存在 $0\leq i^*\leq m$ 使得 $\sum_{j\in K_{i^*}}k_{i^*,j}=m$
+（3） 对于任意 $0\leq i \leq m,j\in K_i$ 有 $k_{i,j}\in\mathbb{N}$
 
 定义 $\mathcal{M}$ 上所有关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的多项式为 $M_\vec{x}$
 
-******* 带入求解<<MK441>>
+******* 最简式<<MK446>>
 
-对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i=0}^m\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ 其对于以及任意 $\vec{s}=\left<s_0,...,s_{n-1}\right>\subset M$
+对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_\vec{x}$
 
-的带入求解为 $f(s_1,...,s_n)=f(\vec{s})=\sum_{i=1}^m\left(a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right)$
+定义 $f'(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$ 满足：
 
-由于 $\mathcal{M}$ 是[[MK338][域]]，故显然对于 $I(f_+),I(f_\times),I(f_-)$ 运算封闭，故易证存在 $a\in M$ 满足 $a=f(\vec{s})$
+（1） 对于任意 $i'\in P'$ 存在 $i\in P$ 满足 $a_i\ne I(c_0)$ ， $K'_{i'}=\left\{j\big|j\in K_i\land k_{i,j}\ne0\right\}$ 以及对于任意 $j\in K'_{i'}$ 均有 $k'_{i',j}=k_{i,j}$
 
-******** 性质1<<MK442>>
+（2） 对于任意 $i'\in P'$ 定义 $I_{i'}=\left\{i\big|K'_{i'}=\left\{j\big|K'_{i'}=\left\{j\big|j\in K_i\land k_{i,j}\ne0\right\}\land\left(\forall j\in K_i\left(k_{i,j}=k'_{i',j}\right)\right)\right\}$ 则定义 $a'_{i'}=\sum_{i\in I_{i'}}a_i$
 
-[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 定义 $\mathcal{M}$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f_1(\vec{x}),f_2(\vec{x})$ 若有 $f_1(\vec{x})\simeq f_2(\vec{x})$ 即[[MK437][多项式等价]]
+     其中 $\sum_{i\in I_{i'}}a_i$ 为 $\mathcal{M}$ 上的连续加法 $I(f_+)$
 
-则对于任意 $\vec{s}=\left<s_0,...,s_{n-1}\right>\in M^n$ 有 $f_1(\vec{s})=f_2(\vec{s})$
+（3） 若 $K'_{i'}=\varnothing$ 则 $a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)=a'_i$
+
+则定义 $f'(\vec{x})$ 是 $f(\vec{x})$ 的最简式
+
+******** 最简式相等<<MK447>>
+
+任意 $f'_1(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i\in Q'}\left(b'_i\left(\prod_{j\in L'_i}x_j^{l'_{i,j}}\right)\right)$ 是[[MK446][最简式]]
+
+则定义 $f'_1(\vec{x})=f'_2(\vec{x})$ 的充要条件是：
+
+（1） $P'=Q'$
+
+（2） 对于任意 $i\in P'$ 均有 $a'_i=b'_i$ 和 $L'_i=K'_i$ 以及对于任意 $j\in L'_i$ 均有 $k'_{i,j}=l'_{i,j}$
+
+******** 性质1<<MK449>>
+
+任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ [[MK447][相等]]的[[MK446][最简式]] $f'_1(\vec{x})=f'_2(\vec{x})$
+
+对于任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$ 以及任意 $\vec{s}=\left<s_1,...,s_n\right>\in N^n$ 均有其在 $\mathcal{N}$ 上的[[MK441][带入值]] $f'_1(\vec{s})=f'_2(\vec{s})$
 
 ********* 证明
 
-设 $f_1(\vec{x})=\sum_{i=0}^{m_1}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i=0}^{m_2}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)$
+根据[[MK447][定义]]可设 $f'_1(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$
 
-则取[[MK437][系数不相交]]的[[MK438][对应符号多项式]] $f'_1(\vec{x})=\sum_{i=0}^{m_1}\left(x_{u_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i=0}^{m_2}\left(x_{v_i}\left(\prod_{j\in L_i}x_j^{L_{i,j}}\right)\right)$
+则根据[[MK356][性质4]]中加法结合律、交换律，乘法结合律、交换律易证（以下 $J(f_+),J(f_\times)$ 简写）：
 
-其中 $U=\{u_1,...,u_{m_1}\},V=\{v_1,...,v_{m_2}\},Z=\{0,...,n-1\}$  有 $U\cap V=U\cap Z=V\cap Z=\varnothing$ 即系数不相交
+\begin{aligned}
+ f'_1(\vec{s})-f'_2(\vec{s})=&\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)-\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)\\
+=&\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)-a'_i\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)\\
+=&\sum_{i\in P'}\left((a'_i-a'_i)\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)\\
+=&\sum_{i\in P'}\left(J(c_0)\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)\\
+=&\sum_{i\in P'}\left(J(c_0)\right)\\
+=&J(c_0)
+\end{aligned}
 
-由于 $f_1(\vec{x})\simeq f_2(\vec{x})$ 故有对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_i)=\begin{cases}a_i&i\in U\\b_i&i\in V\end{cases}$ 均有 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(f'_1(\vec{x})\hat{=}f'_2(\vec{x})))$
+根据[[MK448][性质11]]可得 $f'_1(\vec{s})=f'_2(\vec{s})$
 
-根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]对于 $\mu=\begin{cases}v(x_i)&i\not\in Z\\s_i&i\in Z\end{cases}$ 有 $\left<\mathcal{M},\mu\right>\vDash(f'_1(\vec{x})\hat{=}f'_2(\vec{x}))$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\bar{\mu}(f_1(\vec{x})) =\bar{\mu}(f_2(\vec{x}))$
+******** 性质2
 
-根据[[~/文档/note/数理逻辑/sllj.org::MK155][项赋值]]易证 $\sum_{i=0}^{m_1}\left(\mu(x_{u_i})\left(\prod_{j\in K_i}(\mu(x_j))^{k_{i,j}}\right)\right)=\sum_{i=0}^{m_2}\left(\mu(x_{v_i})\left(\prod_{j\in L_i}(\mu(x_j))^{L_{i,j}}\right)\right)$
+对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_\vec{x}$
 
-即有 $f_1(\vec{s})=\sum_{i=0}^{m_1}\left(a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right)=\sum_{i=0}^{m_2}\left(b_i\left(\prod_{j\in L_i}s_j^{L_{i,j}}\right)\right)=f_2(\vec{s})$
+则其[[MK446][最简式]] $f'(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$ 亦为 $\mathcal{M}$ 上关于 $\vec{x}$ 的[[MK436][多项式]]，即 $f'(\vec{x})\in M _\vec{x}$
 
-********* 推论
+********* 证明
+
+根据[[MK466][定义]]可得对于任意 $i'\in P'$ 有 $a'_{i'}=\sum_{i\in I_{i'}}a_i$ 其中 $a_i\in M$ ，又由于 $\mathcal{M}$ 是[[MK338][域]]，故有 $a'_{i'}\in M$
+
+则根据[[MK436][定义]]可得 $f'(\vec{x})\in M_\vec{x}$
+
+******** 性质3<<MK437>>
+
+对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_\vec{x}$
+
+设其[[MK446][最简式]]为 $f'(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$ 则对于任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$ 以及任意 $\vec{s}=\left<s_1,...,s_n\right>\in N^n$
+
+均有 $f(\vec{x}),f'(\vec{x})$ 的[[MK441][带入值]]相等，即 $f(\vec{s})=f'(\vec{s})$
+
+********* 证明
+
+对于任意 $i\in P$ 定义 $K'_{i'}=\left\{j\big|j\in K_i\land k_{i,j}\ne0\right\}$ 则根据[[MK441][带入值]]定义、[[MK356][性质4]]以及 $J(c_1)=I(c_1)$ 易证：
+
+\begin{aligned}
+\prod_{j\in K_i}s_j^{k_{i,j}}=&J(f _\times)\left(\prod_{j\in K'_{i'}}s_j^{k_{i,j}},\prod_{j\in K_i-K'_{i'}}s_j^0\right)\\
+=&J(f _\times)\left(\prod_{j\in K'_{i'}}s_j^{k_{i,j}},\prod_{j\in K_i-K'_{i'}}I(c_1)\right)\\
+=&J(f _\times)\left(\prod_{j\in K'_{i'}}s_j^{k_{i,j}}，I(c_1)\right)\\
+=&\prod_{j\in K'_{i'}}s_j^{k_{i,j}}
+\end{aligned}
+
+即有 $\prod_{j\in K_i}s_j^{k_{i,j}}=\prod_{j\in K'_{i'}}s_j^{k_{i,j}}$ 对于任意 $i'\in P'$ 定义 $I_{i'}=\left\{i\big|K'_{i'}=\left\{j\big|K'_{i'}=\left\{j\big|j\in K_i\land k_{i,j}\ne0\right\}\land\left(\forall j\in K_i\left(k_{i,j}=k'_{i',j}\right)\right)\right\}$
+
+则又根据[[MK356][性质4]]中乘法结合律，加法交换律等易证
+
+\begin{aligned}
+\sum_{i\in I_{i'}}a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)=&\sum_{i\in I_{i'}}a_i\left(\prod_{j\in K'_{i'}}s_j^{k'_{i',j}}\right)\\
+=&\left(\sum_{i\in I_{i'}}a_i\right)\left(\prod_{j\in K'_{i'}}s_j^{k'_{i',j}}\right)\\
+=&a'_{i'}\left(\prod_{j\in K'_{i'}}s_j^{k'_{i',j}}\right)
+\end{aligned}
+
+则[[MK449][同理可证]] $f(\vec{s})=f'(\vec{s})$
+
+******* 带入值<<MK441>>
+
+对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i=0}^m\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ ，任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$
+
+以及任意 $\vec{s}=\left<s_0,...,s_{n-1}\right>\subset N^n$ 定义在 $\mathcal{N}$ 上对于 $\vec{s}$ 的带入值为 $f(s_0,...,s_{n-1})=f(\vec{s})=\sum_{i=1}^m\left(a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right)$
+
+其中对于任意 $k_{i,j}=0$ 定义 $s_j^{k_{i,j}}=I(c_1)$
+
+由于 $\mathcal{N}$ 是[[MK338][域]]，故显然对于 $I(f_+),I(f_\times),I(f_-)$ 运算封闭，故易证存在 $a\in N$ 满足 $a=f(\vec{s})$
+
+******** 性质1<<MK442>>
 
 [[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 定义 $\mathcal{M}$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f_1(\vec{x}),f_2(\vec{x}),f_2(\vec{x})$ ， $\mathcal{M}_{[\vec{x}]}=\left<M_{[\vec{x}]},I_{[\vec{x}]}\right>$ 是 $\mathcal{M}$ 对于 $\vec{x}$ 的[[MK439][多项式环]]
 
-则对于任意 $\vec{s}=\left<s_0,...,s_{n-1}\right>\in M^n$ 有：
+则对于任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$ 以及任意 $\vec{s}=\left<s_0,...,s_{n-1}\right>\in N^n$ 有：
 
-（1）若有 $I_{[\vec{x}]}(f_+)([f_1(\vec{x})] _\simeq,[f_2(\vec{x})] _\simeq)=[f_3(\vec{x})] _\simeq$ 则 $I(f _+)\left(f_1(\vec{s}),f_2(\vec{s})\right)=f_3(\vec{s})$
+（1） 若 $f_3(\vec{x})=I_{[\vec{x}]}(f_\times)\left(f_1(\vec{x}),f_2(\vec{x})\right)$ 则[[MK441][带入值]]有 $f_3(\vec{s})=J(f_\times)(f_1(\vec{s}),f_2(\vec{s}))$
 
-（2）若有 $I_{[\vec{x}]}(f_\times)([f_1(\vec{x})] _\simeq,[f_2(\vec{x})] _\simeq)=[f_3(\vec{x})] _\simeq$ 则 $I(f _\times)\left(f_1(\vec{s}),f_2(\vec{s})\right)=f_3(\vec{s})$
+（1） 若 $f_3(\vec{x})=I_{[\vec{x}]}(f_+)\left(f_1(\vec{x}),f_2(\vec{x})\right)$ 则[[MK441][带入值]]有 $f_3(\vec{s})=J(f_+)(f_1(\vec{s}),f_2(\vec{s}))$
 
-（1）若有 $I_{[\vec{x}]}(f_-)([f_1(\vec{x})] _\simeq)=[f_3(\vec{x})] _\simeq$ 则 $I(f _-)\left(f_1(\vec{s})\right)=f_3(\vec{s})$
+（1） 若 $f_3(\vec{x})=I_{[\vec{x}]}(f_-)\left(f_1(\vec{x})\right)$ 则[[MK441][带入值]]有 $f_3(\vec{s})=J(f_-)(f_1(\vec{s}))$
 
-********** 证明
+********* 证明
 
-与[[MK442][性质1]]同理可证
+仅证（1），其余同理可证
 
-******* 对应[[MK336][符号多项式]]<<MK438>>
+设 $f_1(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)$ 则根据[[MK356][性质4]]可得有
 
-对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i=0}^m\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$
+\begin{aligned}
+&J(f_\times)\left(\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right),\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}s_j^{l_{i,j}}\right)\right)\right)\\
+=&\sum_{\left<i,j\right>\in P\times Q}\left(I(f_\times)(a_i,b_j)\prod_{h\in K_i\cup L_j}s_p^{k'_{i,h}+l'_{j,h}}\right)
+\end{aligned}
 
-定义其对应的[[MK336][符号多项式]]为 $f'(\vec{x})=\sum_{i=0}^m\left(x_{z_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ 满足对于任意 $0\leq i\leq m$ 均有 $z_i\not\in \{0,...,n-1\}$
+又根据[[MK439][多项式环]]可得 $f_3(\vec{x})=I_{[\vec{x}]}(f_\times)\left(f_1(\vec{x}),f_2(\vec{x})\right)=\sum_{\left<i,j\right>\in P\times Q}\left(I(f_\times)(a_i,b_j)\prod_{h\in K_i\cup L_j}x_p^{k'_{i,h}+l'_{j,h}}\right)$
 
-******* 多项式[[MK132][等价关系]]<<MK437>>
-
-对任意[[MK338][域]] $\mathcal{M}$ 定义关系 $\simeq$ 满足对于任意 $\mathcal{M}$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f_1(\vec{x})=\sum_{i=0}^{m_1}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i=0}^{m_2}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)$
-
-其 $f_1(\vec{x})\simeq f_2(\vec{x})$ 的充要条件是取一 $f_1(\vec{x}),f_2(\vec{x})$ [[MK438][对应符号多项式]] $f'_1(\vec{x})=\sum_{i=0}^{m_1}\left(x_{u_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i=0}^{m_2}\left(x_v_i}\left(\prod_{j\in L_i}x_j^{L_{i,j}}\right)\right)$
-
-若满足 $U=\{u_1,...,u_{m_1}\},V=\{v_1,...,v_{m_2}\},Z=\{0,...,n-1\}$ 有 $U\cap V=U\cap Z=V\cap Z=\varnothing$ 即系数不相交
-
-则对于任意 $\mathcal{M}$ 的任意[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_i)=\begin{cases}a_i&i\in U\\b_i&i\in V\end{cases}$ 均有 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(f'_1(\vec{x})\hat{=}f'_2(\vec{x})))$
-
-则 $\simeq$ 是[[MK132][等价关系]]
-
-******** 证明
-
-********* [[MK124][自反性]]
-
-对于任意 $\mathcal{M}$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})$ 任取[[MK438][对应符号多项式]] $f'(\vec{x})$
-
-根据[[~/文档/note/数理逻辑/sllj.org::MK197][恒等律]]可得对于任意 $f(\vec{x})$ 均有 $T_\mathbb{F}\vdash(f'(\vec{x})\hat{=}f'(\vec{x}))$ 根据[[~/文档/note/数理逻辑/sllj.org::mk488][引理2]]可得 $T_\mathbb{F}\vdash(\vec{x}(f'(\vec{x})\hat{ =}f'(\vec{x})))$ 
-
-则根据[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]有对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(f'_1(\vec{x})\hat{=}f'_2(\vec{x})))$ 即有 $f(\vec{x})\simeq f(\vec{x})$
-
-********* [[MK126][对称性]]
-
-对于任意 $\mathcal{M}$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f_1(\vec{x}),f_2(\vec{x})$ 若有 $f_1(\vec{x})\simeq f_2(\vec{x})$ 
-
-则取[[MK437][系数不相交]]的[[MK438][对应符号多项式]] $f'_1(\vec{x}),f'_2(\vec{x})$ 有对于任意满足[[MK437][条件]]的 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 有 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(f'_1(\vec{x})\hat{=}f'_2(\vec{x})))$
-
-根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v'$ 满足对于任意 $i\not\in\{0,...,n-1\}$ 均有 $v(x_i)=v'(x_i)$ 有 $\left<\mathcal{M},v'\right>\vDash(f'_1(\vec{x})\hat{=}f'_2(\vec{x}))$
-
-进一步根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得 $\bar{v}(f'_1(\vec{x}))=\bar{v}(f'_2(\vec{x}))$ 则有 $\bar{v}(f'_2(\vec{x}))=\bar{v}(f'_1(\vec{x}))$ 即根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\left<\mathcal{M},v'\right>\vDash(f'_2(\vec{x})\hat{=}f'_1(\vec{x}))$
-
-则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]亦有 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(f'_2(\vec{x})\hat{=}f'_1(\vec{x})))$ 即 $f_2(\vec{x})\simeq f_1(\vec{x})$ 
-
-********* [[MK128][传递性]]
-
-对于任意 $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f_1(\vec{x}),f_2(\vec{x}),f_3(\vec{x})$ 若 $f_1(\vec{x})\simeq f_2(\vec{x}),f_2(\vec{x})\simeq f_3(\vec{x})$
-
-则取[[MK437][系数不相交]]的[[MK438][对应符号多项式]] $f'_1(\vec{x}),f'_2(\vec{x}),f'_3$ 有对于任意满足[[MK437][条件]]的 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$
-
-有 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(f'_1(\vec{x})\hat{=}f'_2(\vec{x})))$ 且 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(f'_2(\vec{x})\hat{ =}f'_3(\vec{x})))$
-
-根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v'$ 满足对于任意 $i\not\in\{0,...,n-1\}$ 均有 $v(x_i)=v'(x_i)$
-
-则有 $\left<\mathcal{M},v'\right>\vDash(f'_1(\vec{x})\hat{=}f'_2(\vec{x})), \left<\mathcal{M},v'\right>\vDash(f'_2(\vec{x})\hat{=}f'_3(\vec{x}))$ 即根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得 $\bar{v}(f'_1(\vec{x})) =\bar{v}(f'_2(\vec{x})) =\bar{v}(f'_3(\vec{x}))$
-
-即根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]亦可得 $\left<\mathcal{M},v'\right>\vDash(f'_1(\vec{x})\hat{=}f'_3(\vec{x}))$ 进一步有 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(f'_1(\vec{x})\hat{ =}f'_3(\vec{x})))$ 即 $f_1(\vec{x})\simeq f_3(\vec{x})$
+即可得 $f_3(\vec{s})=\sum_{\left<i,j\right>\in P\times Q}\left(I(f_\times)(a_i,b_j)\prod_{h\in K_i\cup L_j}s_p^{k'_{i,h}+l'_{j,h}}\right)$ 故可得 $f_3(\vec{s})=J(f _\times)(f_1(\vec{s}),f_2(\vec{s}))$
 
 ******* 多项式环<<MK439>>
 
-若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]对于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 定义 $M_{[\vec{x}]}=\left\{[f(\vec{x})]_\simeq\big|f(\vec{x})\in M_\vec{x}\right\}$ 其中：
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]对于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 定义 $M_{[\vec{x}]}$ 为 $\mathcal{M}$ 上所有关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]]
 
-（1） $M_\vec{x}$ 为 $\mathcal{M}$ 上所有关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]]
+且对于任意 $\{f_1(\vec{x}),f_2(\vec{x})\}\subset M_{[\vec{x}]}$ 有 $f_1(\vec{x})=f_2(\vec{x})$ 的充要条件是其[[MK446][最简式]]满足[[MK447][相等]]
 
-（2） $[f(\vec{x})]_\simeq$ 是 $f(\vec{x})$ 在[[MK437][多项式等价关系]]上的[[MK133][等价类]]
+定义 $I_{[\vec{x}]}$ 对于任意 $\left\{f_1(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)\right\}\subset M_{[\vec{x}]}$ 有
 
-定义 $I_{[\vec{x}]}$ 对于任意 $\left\{\left[f_1(\vec{x})\right]_\simeq, \left[f_1(\vec{x})\right]_\simeq\right\}\subset M_{[\vec{x}]}$
+（1） $I_{[\vec{x}]}(c_0)=I(c_0),I_{[\vec{x}]}(c_1)=I(c_1)$
 
-设 $f_1(\vec{x})=\sum_{i=0}^{m_1}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i=0}^{m_2}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)$
+（2） $I_{[\vec{x}]}(f_+)\left(f_1(\vec{x}),f_2(\vec{x})\right)=\sum_{i\in P\cup Q}\left(c_i\left(\prod_{j\in H_i}x_j^{h_{i,j}}\right)\right)$
 
-则取[[MK437][系数不相交]]的[[MK438][对应符号多项式]] $f'_1(\vec{x})=\sum_{i=0}^{m_1}\left(x_{u_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i=0}^{m_2}\left(x_{v_i}\left(\prod_{j\in L_i}x_j^{L_{i,j}}\right)\right)$ ：
+     其中 $c_i=\begin{cases}a_i&i\in P\\b_i&i\in Q\end{cases},H_i=\begin{cases}K_i&i\in P\\L_i&i\in Q\end{cases},h_{i,j}=\begin{cases}k_{i,j}&i\in P\\l_{i,j}&i\in Q\end{cases}$
 
-（1） $I_{[\vec{x}]}(c_0)=[I(c_0)]_\simeq,I_{[\vec{x}]}(c_1)=[I(c_1)]_\simeq$
+（3） $I_{[\vec{x}]}(f_\times)\left(f_1(\vec{x}),f_2(\vec{x})\right)=\sum_{\left<i,j\right>\in P\times Q}\left(I(f_\times)(a_i,b_j)\prod_{h\in K_i\cup L_j}x_p^{k'_{i,h}+l'_{j,h}}\right)$
 
-（2） 若存在 $f_3(\vec{x})=\sum_{i=0}^{m_3}\left(c_i\left(\prod_{j\in G_i}x_j^{g_{i,j}}\right)\right)$ 满足其[[MK437][系数不相交]]的[[MK438][对应符号多项式]] $f_3(\vec{x})=\sum_{i=0}^{m_3}\left(x_{w_i}\left(\prod_{j\in G_i}x_j^{g_{i,j}}\right)\right)$
+     其中 $k'_{i,p}=\begin{cases}k_{i,p}&p\in K_i\\0&p\not\in K_i\end{cases},l'_{i,p}=\begin{cases}l_{j,p}&p\in L_j\\0&p\not\in L_j\end{cases}$
 
-     定义 $W=\{w_1,...,w_{m_3}\}$ 则对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_i)=\begin{cases}a_i&i\in U\\b_i&i\in V\\c_i&i\in W\end{cases}$
-
-     若有 $\left<\mathcal{M},v\right>\vDash(\forall \vec{x}(f_+(f'_1(\vec{x}),f'_2(\vec{x}))\hat{=}f'_3(\vec{x})))$ 则定义 $I_{[\vec{x}]}(f_+)([f_1(\vec{x})] _\simeq,[f_2(\vec{x})] _\simeq)=[f_3(\vec{x})] _\simeq$
-
-     若有 $\left<\mathcal{M},v\right>\vDash(\forall \vec{x}(f_\times(f'_1(\vec{x}),f'_2(\vec{x}))\hat{=}f'_3(\vec{x})))$ 则定义 $I_{[\vec{x}]}(f _\times)([f_1(\vec{x})] _\simeq,[f_2(\vec{x})] _\simeq) =[f_3(\vec{x})] _\simeq$
-
-     若有 $\left<\mathcal{M},v\right>\vDash\left(\forall\vec{x}\left(f_-\left(f'_ 1(\vec{x})\right)\hat{=}f'_3(\vec{x})\right)$ 则定义 $I(f _-)([f_1(\vec{x})])=f_3(\vec{x})$
+（4） $I_{[\vec{x}]}(f_-)\left(f_1(\vec{x})\right)=\sum_{i\in P}\left(I(f_-)(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$
 
 则有：
 
@@ -8199,131 +8231,38 @@ I_{(\vec{s})}(f_\times)(a,b)&=I_{(\vec{s})}(f_\times)\left(I_{(\vec{s})}(f_\time
 
 ******** 证明
 
-对于任意 $f_1(\vec{x})=\sum_{i=0}^{m_1}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i=0}^{m_2}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right),f_3(\vec{x})=\sum_{i=0}^{m_3}\left(c_i\left(\prod_{j\in G_i}x_j^{g_{i,j}}\right)\right)$
-
-取其[[MK437][系数不相交]]的[[MK438][对应符号多项式]]
-
-设为 $f'_1(\vec{x})=\sum_{i=0}^{m_1}\left(x_{u_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i=0}^{m_2}\left(x_{v_i}\left(\prod_{j\in L_i}x_j^{L_{i,j}}\right)\right),f'_3(\vec{x})=\sum_{i=0}^{m_2}\left(x_{w_i}\left(\prod_{j\in L_i}x_j^{L_{i,j}}\right)\right)$
-
-以及 $U=\{u_1,...,u_{m_1}\},V=\{v_1,...,v_{m_2}\},W=\{w_1,...,w_{m_2}\},Z=\{0,...,n-1\}$ 满足任意两个集合的交集为空 
-
 ********* 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
 
-********** $I(f_+)$ 封闭
+由于 $\mathcal{M}$ 是[[MK338][域]]故是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，则对于任意 $\{a_i,b_i\}\subset M$ 均有 $I(f_+)(a_i,b_i)\in M,I(f_\times)(a_i,b_i)\in M,I(f_-)(a_i)\in M$
 
-若 $f_3(\vec{x})=\sum_{i=0}^{m_3}\left(c_i\left(\prod_{j\in G_i}x_j^{g_{i,j}}\right)\right)$ 满足
+故显然 $\mathcal{M}_{[\vec{x}]}$ 对 $I_{[\vec{x}]}(f_+),I_{[\vec{x}]}(f_\times),I_{[\vec{x}]}(f_-)$ 封闭，即为 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] 
 
-（1） $m_3=m_1+m_2$
+********* 证明（2）
 
-（2） $c_i=\begin{cases}a_i&0\leq i\leq m_1\\b_{i-m_1-1}&m_1+1\leq i\leq m_1+m_2+1\end{cases}$
+仅证乘法分配律，其余公理同理可证
 
-（3） $G_i=\begin{cases}K_i&0\leq i\leq m_1\\L_{i-m_1-1}&m_1+1\leq i\leq m_1+m_2+1\end{cases}$
+对于任意 $\left\{f_h(\vec{x})=\sum_{i\in P_h}\left(a_{h,i}\left(\prod_{j\in K_{h,i}}x_j^{k_{h,i,j}}\right)\right)\big|h=\{1,2,3\}\right\}\subset M_{[\vec{x}]}$
 
-（4） $g_{i,j}=\begin{cases}k_{i,j}&0\leq i\leq m_1\\l_{i-m_1-1,j}&m_1+1\leq i\leq m_1+m_2+1\end{cases}$
+有 $f_1(\vec{x})\left(f_2(\vec{x})+f_3(\vec{x})\right)=\left(\sum_{i\in P_1}\left(a_{1,i}\left(\prod_{j\in K_{1,i}}x_j^{k_{1,i,j}}\right)\right)\right)\left(\sum_{i\in P_2\cup P_3}\left(c_i\left(\prod_{j\in H_i}x_j^{h_{i,j}}\right)\right)\right)$
 
-即 $f_3(\vec{x})=\sum_{i=0}^{m_1}\left(x_{u_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)+\sum_{i=0}^{m_2}\left(x_{v_i}\left(\prod_{j\in L_i}x_j^{L_{i,j}}\right)\right)$ 则显然 $f _3(\vec{x})\in M _\vec{x}$ 是 $\mathcal{M}$ 上关于 $\vec{x}$ 的[[MK436][多项式]]
+其中 $c_i=\begin{cases}a_{2,i}&i\in P_2\\a_{3,i}&i\in P_3\end{cases},H_i=\begin{cases}K_{2,i}&i\in P\\K_{3,i}&i\in Q\end{cases},h_{i,j}=\begin{cases}k_{2,i,j}&i\in P\\k_{3,i,j}&i\in Q\end{cases}$
 
-由于 $f'_1(\vec{x}),f'_2(\vec{x}),f'_3(\vec{x})$ 均为[[~/文档/note/数理逻辑/sllj.org::MK117][项]]则根据[[MK337][域公理]]中加法结合律、交换律以及[[~/文档/note/数理逻辑/sllj.org::MK490][推论2]]易证 $T _\mathbb{F}\vdash(f_+(f'_1(\vec{x}),f'_2(\vec{x}))\hat{=}f'_3(\vec{x}))$
+进一步有 $f_1(\vec{x})\left(f_2(\vec{x})+f_3(\vec{x})\right)=\sum_{\left<i,j\right>\in P_1\times(P_2\cup P_3)}\left(I(f_\times)(a_{1,i},c_j)\prod_{p\in K_{1,i}\cup H_i}x_j^{k'_{1,i,p}+h'_{j,p}}\right)$
 
-又根据[[~/文档/note/数理逻辑/sllj.org::MK488][引理2]]可得 $T _\mathbb{F}\vdash(\forall \vec{x}(f_+(f'_1(\vec{x}),f'_2(\vec{x}))\hat{=}f'_3(\vec{x})))$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]可得对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\forall \vec{x}(f_+(f'_1(\vec{x}),f'_2(\vec{x}))\hat{ =}f'_3(\vec{x})))$
+其中 $k'_{1,i,p}=\begin{cases}k_{1,i,p}&p\in K_{1,i}\\0&p\not\in K_{1,i}\end{cases},h'_{j,p}=\begin{cases}h_{j,p}&p\in H_j\\0&p\not\in H_j\end{cases}$
 
-显然满足[[MK437][条件]]，根据[[MK439][定义]]可得对于任意 $\left\{\left[f_1(\vec{x})\right]_\simeq, \left[f_1(\vec{x})\right]_\simeq\right\}\subset M_{[\vec{x}]}$ 存在 $[f_3(\vec{x})]_\simeq\in M_{[\vec{x}]}$ 使得 $I_{[\vec{x}]}(f_+)([f_1(\vec{x})] _\simeq,[f_2(\vec{x})] _\simeq)=[f_3(\vec{x})] _\simeq$
+则定义 $k'_{1,i,p}=\begin{cases}k_{1,i,p}&p\in K_{1,i}\\0&p\not\in K_{1,i}\end{cases},k'_{2,j,p}=\begin{cases}k_{2,j,p}&p\in K_{2,i}\\0&p\not\in K_{2,i}\end{cases},k'_{3,j,p}=\begin{cases}k_{3,j,p}&p\in K_{3,i}\\0&p\not\in K_{3,i}\end{cases}$ 则有：
 
-********** $I(f_\times)$ 封闭<<MK443>>
+\begin{aligned}
+&f_1(\vec{x})\left(f_2(\vec{x})+f_3(\vec{x})\right)\\
+=&\sum_{\left<i,j\right>\in P_1\times P_2}\left(I(f_\times)(a_{1,i},a_{2,j})\prod_{p\in K_{1,i}\cup K_{2,i}}x_j^{k'_{1,i,p}+k'_{2,j,p}}\right)+\sum_{\left<i,j\right>\in P_1\times P_3}\left(I(f _\times)(a_{1,i},a_{3,j})\prod_{p\in K_{1,i}\cup K_{3,i}}x_j^{k'_{1,i,p}+k'_{3,j,p}}\right)\\
+=&\left(\sum_{i\in P_1}\left(a_{1,i}\left(\prod_{j\in K_{1,i}}x_j^{k_{1,i,j}}\right)\right)\right)\left(\sum_{i\in P_2}\left(a_{2,i}\left(\prod_{j\in K_{2,i}}x_j^{k_{2,i,j}}\right)\right)\right)+\left(\sum_{i\in P_1}\left(a_{1,i}\left(\prod_{j\in K_{1,i}}x_j^{k_{1,i,j}}\right)\right)\right)\left(\sum_{i\in P_3}\left(a_{3,i}\left(\prod_{j\in K_{3,i}}x_j^{k_{3,i,j}}\right)\right)\right)\\
+=&f_1(\vec{x})f_2(\vec{x})+f_1(\vec{x})f_3(\vec{x})
+\end{aligned}
 
-若 $f_3(\vec{x})=\sum_{i=0}^{m_3}\left(c_i\left(\prod_{j\in G_i}x_j^{g_{i,j}}\right)\right)$ 满足
+即对于任意 $\left\{f_1(\vec{x}),f_2(\vec{x}),f_3(\vec{x})\right\}\subset M_{[\vec{x}]}$ 均有 $f_1(\vec{x})\left(f_2(\vec{x})+f_3(\vec{x})\right)=f_1(\vec{x})f_2(\vec{x})+f_1(\vec{x})f_3(\vec{x})$
 
-（1） $m_3=(m_1+1)\cdot(m_2+1)$
-
-（2） $c_i=I(f_\times)\left(a_{i\mod (m_1+1)}, b_{\frac{i-(i\mod (m_1+1))}{m_1+1}}\right)$
-
-（3） $G_i=K_{i\mod (m_1+1)}\cup L_{\frac{i-(i\mod(m_1+1))}{m_1+1}}$
-
-（4） $g_{i,j}=\begin{cases}k_{i\mod (m_1+1),j}+l_{\frac{i-(i\mod (m_1+1))}{m_1},j}&j\in K_i\cap L_i\\l_{\frac{i-(i\mod (m_1+1))}{m_1+1},j}&j\in L_i\\k_{i\mod (m_1+1),j}&j\in K_i\end{cases}$
-
-即 $f_3(\vec{x})=\sum_{i=1}^{m_1}\left(\sum_{j=1}^{m_2}\left(a_ib_j\prod_{p\in K_i\cup L_j}x_p^{k'_{i,p}+l'_{j,p}}\right)\right)$ 其中 $k'_{i,p}=\begin{cases}k_{i,p}&p\in K_i\\0&p\not\in K_i\end{cases},l'_{i,p}=\begin{cases}l_{j,p}&p\in L_j\\0&p\not\in L_j\end{cases}$
-
-显然 $f_3(\vec{x})\in M_\vec{x}$ 是 $\mathcal{M}$ 上关于 $\vec{x}$ 的[[MK436][多项式]]，定义特殊 $f_3(\vec{x})$ [[MK438][对应的符号多项式]] $f''_ 3(\vec{x})=\sum_{i=1}^{m_1}\left(\sum_{j=1}^{m_2}\left(f_\times(x_{u_i},x_{v_j})\prod_{p\in K_i\cup L_j}x_p^{k'_{i,p}+l'_{j,p}}\right)\right)$ 
-
-显然 $f'_1(\vec{x}),f'_2(\vec{x}),f''_3(\vec{x})$ 均为[[~/文档/note/数理逻辑/sllj.org::MK117][项]]则根据[[MK337][域公理]]中乘法结合律、交换律、分配律以及[[~/文档/note/数理逻辑/sllj.org::MK490][推论2]]易证 $T _\mathbb{F}\vdash(f_+(f'_1(\vec{x}),f'_2(\vec{x}))\hat{=}f''_3(\vec{x}))$
-
-又根据[[~/文档/note/数理逻辑/sllj.org::MK488][引理2]]可得 $T _\mathbb{F}\vdash(\forall \vec{x}(f _\times(f'_1(\vec{x}),f'_2(\vec{x}))\hat{=}f''_3(\vec{x})))$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]可得对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\forall \vec{x}(f _\times(f'_1(\vec{x}),f'_2(\vec{x}))\hat{ =}f''_3(\vec{x})))$
-
-则对于任意 $v(x_i)=\begin{cases}a_i&i\in U\\b_i&i\in V\\c_i&i\in W\end{cases}$ 亦有 $\left<\mathcal{M},v\right>\vDash(\forall \vec{x}(f _\times(f'_1(\vec{x}),f'_2(\vec{x}))\hat{ =}f''_3(\vec{x})))$
-
-此时显然有 $v(x_{w_i})=c_i=I(f _\times)(a_i,b_j)=I(f _\times)(v(x_{u_i},v(x_{v_i}))=\bar{v}(f _\times(x_{u_i},x_{v_i}))$
-
-则根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]]可得 $\left<\mathcal{M},v\right>\vDash(\forall \vec{x}(f _\times(f'_1(\vec{x}),f'_2(\vec{x}))\hat{ =}f''_3(\vec{x})))\left(\left<f _\times(a_0,b_0),...,f _\times(a_{m_1},b_{m_2})\right>,\left<x_{w_1},...,x_{w_{(m_1+1)\cdot(m_2+1)}}\right>\right)$
-
-显然替换后 $f''_3(\vec{x})=f'_3(\vec{x})$ 简写可得 $\left<\mathcal{M},v\right>\vDash(\forall \vec{x}(f _\times(f'_1(\vec{x}),f'_2(\vec{x}))\hat{ =}f'_3(\vec{x})))$
-
-根据[[MK439][定义]]可得对于任意 $\left\{\left[f_1(\vec{x})\right]_\simeq, \left[f_1(\vec{x})\right]_\simeq\right\}\subset M_{[\vec{x}]}$ 存在 $[f_3(\vec{x})]_\simeq\in M_{[\vec{x}]}$ 使得 $I_{[\vec{x}]}(f_\times)([f_1(\vec{x})] _\simeq,[f_2(\vec{x})] _\simeq)=[f_3(\vec{x})] _\simeq$
-
-********** $I(f_-)$ 封闭
-
-根据[[MK434][性质14]]以及[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]易证 $T_\mathbb{F}\vdash(\forall x_1(\forall x_2(f_-(f_+(x_1,x_2))\hat{=}f_+(f_-(x_1),f_-(x_2)))))$ ，则根据[[~/文档/note/数理逻辑/sllj.org::MK490][推论2]]
-
-易证 $T_\mathbb{F}\vdash\left(f_-\left(f_+\left(x_{u_0}\left(\prod_{j\in K_i}x_j^{k_{0,j}}\right),\sum_{i=1}^{m_1}\left(x_{u_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right)\right)\hat{=}f_+\left(f_-\left(x_{u_0}\left(\prod_{j\in K_i}x_j^{k_{0,j}}\right)\right),f_-\left(\sum_{i=1}^{m_1}\left(x_{u_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right)\right)\right)$
-
-显然 $f_+\left(x_{u_0}\left(\prod_{j\in K_i}x_j^{k_{0,j}}\right),\sum_{i=1}^{m_1}\left(x_{u_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right)$ 即为 $f'_1(\vec{x})$
-
-故 $T _\mathbb{F}\vdash\left(f _-\left(f'_1(\vec{x}))\right)\hat{=}f_+\left(f _-\left(x_{u_0}\left(\prod_{j\in K_i}x_j^{k_{0,j}}\right)\right),f _-\left(\sum_{i=1}^{m_1}\left(x_{u_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right)\right)\right)$
-
-根据[[MK440][性质15]]以及[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]易证 $T_\mathbb{F}\vdash(\forall x_1(\forall x_2(f_-(f_\times(x_1,x_2))\hat{=}f_\times(f_-(x_1),x_2))))$
-
-则根据[[~/文档/note/数理逻辑/sllj.org::MK490][推论2]] $T_\mathbb{F}\vdash\left(f_-\left(x_{u_0}\left(\prod_{j\in K_i}x_j^{k_{0,j}}\right)\right)\hat{ =}f_-(x_{u_0})\left(\prod_{j\in K_i}x_j^{k_{0,j}}\right)\right)$
-
-最终结合[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]易证 $T_\mathbb{F}\vdash\left(f_-\left(f'_ 1(\vec{x})\right)\hat{=}f_+\left(f_-(x_{u_0})\left(\prod_{j\in K_i}x_j^{k_{0,j}}\right),f_-\left(\sum_{i=1}^{m_1}\left(x_{u_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right)\right)\right)$
-
-结合 $m_1<\infty$ 易证 $T_\mathbb{F}\vdash\left(f_-\left(f'_ 1(\vec{x})\right)\hat{=}\sum_{i=0}^{m_1}\left(f_-(x_{u_i})\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right)$
-
-根据[[~/文档/note/数理逻辑/sllj.org::MK488][引理2]]可得 $T_\mathbb{F}\vdash\left(\forall\vec{x}\left(f_-\left(f'_ 1(\vec{x})\right)\hat{=}\sum_{i=0}^{m_1}\left(f_-(x_{u_i})\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right)\right)$
-
-根据[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]可得 $\mathcal{M}\vDash\left(\forall\vec{x}\left(f_-\left(f'_ 1(\vec{x})\right)\hat{=}\sum_{i=0}^{m_1}\left(f_-(x_{u_i})\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right)\right)$
-
-则定义 $f_2(\vec{x})=\sum_{i=0}^{m_1}\left(b_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ 满足 $b_i=I(f_-)(a_i)$ 是 $a_i$ 的加法逆元，由于 $\mathcal{M}$ 是[[MK338][域]]，故可得 $b_i\in M$
-
-则显然 $f_2(\vec{x})\in M_{\vec{x}}$ 是 $\mathcal{M}$ 上关于 $\vec{x}$ 的[[MK436][多项式]]。则取其[[MK437][系数不相交]]的[[MK438][对应符号多项式]] $f'_2(\vec{x})=\sum_{i=0}^{m_1}\left(x_{v_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$
-
-则对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_i)=\begin{cases}a_i&i\in U\\b_i&i\in V\end{cases}$ 亦有 $\left<\mathcal{M},v\right>\vDash\left(\forall\vec{x}\left(f_-\left(f'_ 1(\vec{x})\right)\hat{=}\sum_{i=0}^{m_1}\left(f_-(x_{u_i})\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right)\right)$
-
-此时显然有 $\bar{v}(f_-(x_{u_i}))=I(f_-)(a_i)=b_i=v(x_{v_i})$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]]可得 $\left<\mathcal{M},v\right>\vDash\left(\forall\vec{x}\left(f_-\left(f'_ 1(\vec{x})\right)\hat{=}\sum_{i=0}^{m_1}\left(x_{v_i}\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right)\right)$
-
-即有 $\left<\mathcal{M},v\right>\vDash\left(\forall\vec{x}\left(f_-\left(f'_ 1(\vec{x})\right)\hat{=}f'_2(\vec{x})\right)$ 根据[[MK439][定义]]可得对于任意 $[f_1(\vec{x})]\in M_{[\vec{x}]}$ 均有 $[f_2(\vec{x})]\in M_{[\vec{x}]}$ 满足 $I(f _-)([f_1(\vec{x})])=f_2(\vec{x})$
-
-********* 是[[MK362][非零幺环]]
-
-根据上一步可得加法、乘法封闭，故存在 $\{f_4(\vec{x}),f_5(\vec{x})\}\subset M_\vec{x}$ 满足：
-
-（1） $I_{[\vec{x}]}(f_\times)([f_1(\vec{x})] _\simeq,I_{[\vec{x}]}(f_+)([f_2(\vec{x})] _\simeq,[f_3(\vec{x})] _\simeq))=[f_4(\vec{x})] _\simeq$
-
-（2） $I_{[\vec{x}]}(f_+)(I_{[\vec{x}]}(f _\times)([f_1(\vec{x})] _\simeq,[f_2(\vec{x})] _\simeq),I_{[\vec{x}]}(f _\times)([f_1(\vec{x})] _\simeq,[f_3(\vec{x})] _\simeq))=[f_5(\vec{x})] _\simeq$
-
-设其[[MK437][系数不相交]]的[[MK438][对应符号多项式]]为 $f'_4(\vec{x}),f'_5(\vec{x})$ 则根据[[MK437][定义]]易证对于任意满足[[MK437][条件]]的 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 均有：
-
-（1） $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(f_\times(f'_1(\vec{x}),f_+(f'_2(\vec{x}),f'_3(\vec{x})))\hat{=}f'_4(\vec{x})))$
-
-（2） $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(f_+(f _ \times(f'_1(\vec{x}),f'_2(\vec{x})),f _\times(f'_1(\vec{x}),f'_3(\vec{x})))\hat{=}f'_5(\vec{x})))$
-
-根据[[MK337][公理]]中乘法分配律以及[[~/文档/note/数理逻辑/sllj.org::MK490][推论2]]易证 $T_\mathbb{F}\vdash((f_\times(f'_1(\vec{x}),f_+(f'_2(\vec{x}),f'_3(\vec{x})))\hat{=}f_+(f _ \times(f'_1(\vec{x}),f'_2(\vec{x})),f _\times(f'_1(\vec{x}),f'_3(\vec{x})))))$
-
-则根据[[~/文档/note/数理逻辑/sllj.org::MK488][引理2]]可得 $T_\mathbb{F}\vdash(\forall\vec{x}((f_\times(f'_1(\vec{x}),f_+(f'_2(\vec{x}),f'_3(\vec{x})))\hat{=}f_+(f _ \times(f'_1(\vec{x}),f'_2(\vec{x})),f _\times(f'_1(\vec{x}),f'_3(\vec{x}))))))$
-
-则根据[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]可得 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}((f_\times(f'_1(\vec{x}),f_+(f'_2(\vec{x}),f'_3(\vec{x})))\hat{=}f_+(f _ \times(f'_1(\vec{x}),f'_2(\vec{x})),f _\times(f'_1(\vec{x}),f'_3(\vec{x}))))))$
-
-根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\mu$ 满足对于任意 $i\not\in\{0,...,n-1\}$ 均有 $\mu(x_i)=v(x_i)$ 
-
-则有 $\bar{\mu}(f'_4(\vec{x}))=\bar{\mu}(f_\times(f'_1(\vec{x}),f_+(f'_2(\vec{x}),f'_3(\vec{x}))))=\bar{\mu}(f_+(f _ \times(f'_1(\vec{x}),f'_2(\vec{x})),f _\times(f'_1(\vec{x}),f'_3(\vec{x}))))=\bar{\mu}(f'_5(\vec{x}))$
-
-即有对于任意 $\mu$ 均可得 $\left<\mathcal{M},\mu\right>\vDash(f'_4(\vec{x})\hat{=}f'_5(\vec{x}))$ ，根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},v\right>\vDash(\vec{x}(f'_4(\vec{x})\hat{ =}f'_5(\vec{x})))$
-
-综上所述，对于任意满足[[MK437][条件]]的 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 均有 $\left<\mathcal{M},v\right>\vDash(\vec{x}(f'_4(\vec{x})\hat{ =}f'_5(\vec{x})))$ 即 $[f_4(\vec{x})] _\simeq =[f_5(\vec{x})] _\simeq$
-
-即可得 $I_{[\vec{x}]}(f_\times)([f_1(\vec{x})] _\simeq,I_{[\vec{x}]}(f_+)([f_2(\vec{x})] _\simeq,[f_3(\vec{x})] _\simeq))=I_{[\vec{x}]}(f_+)(I_{[\vec{x}]}(f _\times)([f_1(\vec{x})] _\simeq,[f_2(\vec{x})] _\simeq),I_{[\vec{x}]}(f _\times)([f_1(\vec{x})] _\simeq,[f_3(\vec{x})] _\simeq))$
-
-根据 $f_1(\vec{x}),f_2(\vec{x}),f_2(\vec{x})$ 的任意性以及[[MK356][性质4]]可得 $\mathcal{M}_{[\vec{x}]}\vDash((f _\times(f'_1(\vec{x}),f_+(f'_2(\vec{x}),f'_3(\vec{x})))\hat{=}f_+(f _ \times(f'_1(\vec{x}),f'_2(\vec{x})),f _\times(f'_1(\vec{x}),f'_3(\vec{x})))))$ 
-
-其余公理同理可证，证毕可得 $\mathcal{M}_{[\vec{x}]}\vDash T_{\mathcal{R}_e}$ 是[[MK362][非零幺环]]
+根据[[MK356][性质4]]可得 $\mathcal{M}_{[\vec{x}]}\vDash(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$
 
 ***** 一元多项式环<<MK374>>
 
@@ -8530,9 +8469,51 @@ $\mathcal{Q}\vDash T_\mathbb{F}$ 即 $\mathcal{Q}$ 是[[MK338][域]]
 
 则根据[[MK356][性质4]]可得 $\mathcal{Q}\vDash T_\mathbb{F}$ 是[[MK338][域]]
 
-***** 代数无关
+***** 代数相关/无关<<MK445>>
 
-若 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，对于任意 $S\subset N$ 满足对于任意 $n<|S|$ 任取 $$
+$\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，对于任意 $S\subset N$ 若存在 $S$ 的有限子集 $\{s_1,...,s_n\}\subset S$
+
+满足存在 $\mathcal{M}$ 上关于 $\vec{x}=\left<x_1,...,x_n\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ 使得：
+
+（1） $f(\vec{x})$ 的[[MK446][最简式]] $f'(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$ 存在 $i^*\in P'$ 使得 $a'_{i^*}\ne0$
+
+（2） [[MK441][带入值]] $f(s_1,...,s_n)=I(c_0)$
+
+则称 $S$ 代数相关，否则则称 $S$ 代数不相关
+
+****** 性质
+
+若 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，若 $S\subset N$ [[MK445][代数无关]]，则对任意[[MK338][域]] $\mathcal{M}$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$
+
+的[[MK436][多项式]] $f_1(\vec{x}),f_2(\vec{x})$ 若有其[[MK446][最简式]]不[[MK447][相等]]则对于任意 $\vec{s}=\{s_0,...,s_{n-1}\}\subset S$ 均有 $f_1(\vec{s})\ne f_2(\vec{s})$
+
+******* 证明
+
+设 $f_1(\vec{x}),f_2(\vec{x})$ 的[[MK446][最简式]]为 $f'_1(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i\in Q'}\left(b'_i\left(\prod_{j\in L'_i}x_j^{l'_{i,j}}\right)\right)$
+
+假设[[MK441][带入值]] $f_1(\vec{s})=f_2(\vec{s})$ 则根据[[MK437][性质3]]可得 $f'_1(\vec{s})=f_1(\vec{s})=f_2(\vec{s})=f'_2(\vec{s})$ 
+
+根据[[MK442][性质1]]连用两次可得若 $f_3(\vec{x})=I_{[\vec{x}]}(f_+)\left(f'_1(\vec{x}),I_{[\vec{x}]}(f' _-)\left(f_2(\vec{x})\right)\right)=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)+\sum_{i\in Q'}\left(-b'_i\left(\prod_{j\in L'_i}x_j^{l'_{i,j}}\right)\right)$
+
+则有 $J(f_{_+})(f'_1(\vec{s}),J(f _-)(f'_2(\vec{s})))=f_3(\vec{s})$ 又根据[[MK434][性质14]]可得 $f_3(\vec{s})=J(f_{_+})(f'_1(\vec{s}),J(f _-)(f'_2(\vec{s})))=J(c_0)$ 
+
+根据[[MK446][最简式]]不[[MK447][相等]]可得存在 $i$ 使得：
+
+（1） $i\in P'\land i\not\in Q'$ 或
+
+（2） $i\not\in P'\land i\in Q'$ 或
+
+（3） $a_i\ne b_i$ 或
+
+（4） $L'_i\ne K'_i$
+
+（5） 存在 $j\in L'_i$ 使得 $k'_{i,j}\ne l'_{i,j}$
+
+易证 $f_3(\vec{x})$ 的[[MK446][最简式]] $f'_3(\vec{x})=\sum_{i\in O'}\left(c'_i\left(\prod_{j\in H'_i}x_j^{h'_{i,j}}\right)\right)$ 必存在 $i\in O$ 满足 $c'_i\ne I(c_0)$
+
+综上所述，存在 $f_3(\vec{x})$ 其的[[MK446][最简式]] $f'_3(\vec{x})=\sum_{i\in O'}\left(c'_i\left(\prod_{j\in H'_i}x_j^{h'_{i,j}}\right)\right)$ 存在 $i^*\in O'$ 使得 $c'_{i^*}\ne0$ 即 $S$ [[MK445][代数相关]]
+
+与 $S$ [[MK445][代数无关]]矛盾，故假设不成立，即[[MK441][带入值]] $f_1(\vec{s})\ne f_2(\vec{s})$ 
 
 **** 性质
 
@@ -8886,9 +8867,9 @@ r_{n+2}(x)=&r_n(x)+(-h_{n+2}(x))r_{n+1}(x)\\
 
 根据[[~/文档/note/数理逻辑/sllj.org::MK255][完备性]]有 $\left\{(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)))\right\}\vdash(\forall x_1(\exists x_2(f_+(x_1,x_2)\hat{ =}c_0)))$
 
-***** 性质11
+***** 性质11<<MK448>>
 
-若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]则 $\mathcal{M}\vDash(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)\to(x_1\hat{=}x_2)))$
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]则 $\mathcal{M}\vDash(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)\leftrightarrow(x_1\hat{=}x_2)))$
 
 ****** 证明
 
@@ -8899,6 +8880,10 @@ r_{n+2}(x)=&r_n(x)+(-h_{n+2}(x))r_{n+1}(x)\\
 等式左侧： $I(f_+)(I(f_+)(a,I(f_-)(b)),b)=I(f_+)(a,I(f_+)(I(f_-)(b),b))=I(f_+)(a,I(c_0))=a$
 
 即有 $a=b$ ，又根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)\to(x_1\hat{=}x_2)))$
+
+对于任意 $a\in M$ 根据[[MK356][性质4]]可得 $I(f_+)(a,I(f_-)(a))=I(c_0)$ 即根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\mathcal{M}\vDash(\forall x_1((x_1\hat{=}x_2)\to(f_+(x_1,f_-(x_2))\hat{=}c_0)))$
+
+综上所述 $\mathcal{M}\vDash(\forall x_1((f_+(x_1,f_-(x_2))\hat{=}c_0)\leftrightarrow(x_1\hat{=}x_2)))$
 
 ***** 性质12<<MK425>>
 

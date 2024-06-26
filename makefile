@@ -34,6 +34,8 @@ installall:
 
 connect:
 	echo $(PW) | sudo -S openvpn --config ~/文档/conf/str-phx304_s481274_account.ovpn --auth-user-pass ~/文档/conf/auth.txt
+conn_yizhu:
+	echo $(PW) | sudo -S openvpn --config ~/文档/work/亿铸/yz.ovpn --auth-user-pass /home/shore/文档/work/亿铸/auth.txt --askpass /home/shore/文档/work/亿铸/privatepass.txt
 set_dns:  
 ifeq ($(DIF),)
 	cat /etc/resolv.conf

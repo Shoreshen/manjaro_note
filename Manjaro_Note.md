@@ -84,6 +84,33 @@ pactree <pkg name>
 pacman -Sc
 ```
 
+## AUR
+
+### Enable
+
+1. Open <code>pamac-manager</code>
+   ```shell
+   pamac-manager
+   ```
+2. Select [首选项] from top right corner
+   <img src="截图_2020-04-04_08-13-53.png">
+3. Select [AUR] tab, tick the enable option
+   <img src="截图_2020-04-04_08-14-35.png">
+
+### Downgrade AUR package
+
+1. Goto AUR page for the package:
+   <img src="2024-06-21_15-43.png">
+2. Click `View Changes`
+   <img src="2024-06-21_15-44.png">
+3. Pick target published version:
+   <img src="2024-06-21_15-45.png">
+4. Click `download`:
+   <img src="2024-06-21_15-47.png">
+5. Unzip the downloaded file
+6. CD into the unzipped directory, run `makepkg -si`
+   
+
 # NordVPN
 
 Using openvpn(installed already):
@@ -973,17 +1000,6 @@ sudo ./univpn-linux-64-10781.9.0.1229.run
 Open <code>Manjaro-Settings-Manager</code>, double click <code>时间和日期</code>. Make sure settings are as following:
 
 <img src="截图_2020-03-09_12-27-33.png">
-
-# Enable AUR
-
-1. Open <code>pamac-manager</code>
-   ```shell
-   pamac-manager
-   ```
-2. Select [首选项] from top right corner
-   <img src="截图_2020-04-04_08-13-53.png">
-3. Select [AUR] tab, tick the enable option
-   <img src="截图_2020-04-04_08-14-35.png">
 
 # Teamviewer
 
