@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 471
+currnet mark: 475
 
 free mark: 
  
@@ -8125,41 +8125,6 @@ I_{(\vec{s})}(f_\times)(a,b)&=I_{(\vec{s})}(f_\times)\left(I_{(\vec{s})}(f_\time
 
 即对于任意 $a\in M_{(\vec{s}),\div}$ 其乘法逆元 $a^{-1}$ 亦有 $a^{-1}\in M_{(\vec{s}),\div}$ 
 
-******** 推论
-
-任意[[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 由 $\vec{s}=\left<s_0,...,s_{n-1}\right>$ [[MK393][生成]]的[[MK341][扩张域]]为 $\mathcal{M}_{(\vec{s})}=\left<M_{(\vec{s})},I_{(\vec{s})}\right>$ ，则定义：
-
-（1） $\vec{x}=\left<x_0,...,x_{n-1}\right>$
-
-（2） $\mathcal{M}_{[\vec{x}]}=\left<M_{[\vec{x}]},I_{[\vec{x}]}\right>$ 是 $\mathcal{M}$ 对于 $\vec{x}$ 的[[MK439][多项式环]]
-
-（3） $\mathcal{M}_{(\vec{x})}=\left<M_{\left(\vec{x}\right)},I_{\left(\vec{x}\right)}\right>$ 是 $\mathcal{M}_{[\vec{x}]}$ 的[[MK402][分式幺环]]
-
-则根据[[MK401][性质1]]可得 $\mathcal{M}_{(\vec{x})}$ 是[[MK338][域]]，则有 $\mathcal{M}_{(\vec{s})}$ 与 $\mathcal{M}_{(\vec{x})}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
-
-********* 证明
-
-对于任意 $\left[\frac{f_1(\vec{x})}{f_2(\vec{x})}\right]_\sim\in M_{(\vec{x})}$ 定义[[MK175][映射]] $e:M_{(\vec{x})}\to M_{(\vec{s})}$ 满足 $e\left(\left[\frac{f_1(\vec{x})}{f_2(\vec{x})}\right]_\sim\right)=I_{(\vec{s})}(f_\times)\left(f_1(\vec{s}),\left(f_2(\vec{s})\right)^{-1}\right)$
-
-********** 是[[MK176][单射]]
-
-对于任意 $\left\{\left[\frac{[f_1(\vec{x})]_\simeq}{[f_2(\vec{x})]_\simeq}\right]_\sim,\left[\frac{[f_3(\vec{x})]_\simeq}{[f_4(\vec{x})]_\simeq}\right]_\sim\right\}\subset M_{(\vec{x})}$ 满足 $\left[\frac{[f_1(\vec{x})]_\simeq}{[f_2(\vec{x})]_\simeq}\right]_\sim\ne\left[\frac{[f_3(\vec{x})]_\simeq}{[f_4(\vec{x})]_\simeq}\right]_\sim$ 必有 $\frac{[f_1(\vec{x})]_\simeq}{[f_2(\vec{x})]_\simeq}\not\sim\frac{[f_3(\vec{x})]_\simeq}{[f_4(\vec{x})]_\simeq}$
-
-则根据[[MK399][分式关系]]可得有 $I_{[\vec{x}]}(f_\times)\left([f_1(\vec{x})]_\simeq,[f_4(\vec{x})]_\simeq\right)\ne I_{[\vec{x}]}(f_\times)\left([f_3(\vec{x})]_\simeq,[f_2(\vec{x})]_\simeq\right)$
-
-取 $f_1(\vec{x}),f_2(\vec{x}),f_3(\vec{x}),f_4(\vec{x})$ 对应[[MK437][系数不相交]]的[[MK438][对应符号多项式]]为 $f'_1(\vec{x}),f'_2(\vec{x}),f'_3(\vec{x}),f'_4(\vec{x})$
-
-则根据[[MK437][定义]]可得对于任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$ 及其任意满足[[MK438][条件]]的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$
-
-均有
-
-则易证存在[[MK437][满足条件]]的 $\mathcal{M}$ 的任意[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 使得 $\left<\mathcal{M},v\right>\vDash(\forall\vec{x}(\lnot(f_\times(f'_1(\vec{x}),f'_4(\vec{x}))\hat{=}f _\times(f'_3(\vec{x}),f'_2(\vec{x})))))$
-
-********** 是[[MK179][满射]]
-
-
-
-
 ****** [[MK341][扩张域]]的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK51][维数]]<<MK454>>
 
 若 $\mathcal{N}=\left<N,J\right>$ 是 $\mathcal{M}=\left<M,I\right>$ 的[[MK341][扩张域]]，则根据[[MK343][定理1]]可得 $\left<N,M,J(f_+),J(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK40][定理1]]可得存在[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]
@@ -8220,7 +8185,83 @@ $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][�
 
 则称 $a$ 是 $\mathcal{M}$ 上的代数元。任意 $b\in N$ 不是代数元的，均为超越元
 
-******* 定理<<MK465>>
+******* 代数相关/无关<<MK445>>
+
+$\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，对于任意 $S\subset N$ 若存在：
+
+（1） $S$ 的有限子集 $\{s_1,...,s_n\}\subset S$
+
+（2） $\mathcal{M}$ 上关于 $\vec{x}=\left<x_1,...,x_n\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$
+
+     其中 $\mathcal{M}[\vec{x}]=\left<M[\vec{x}],I[\vec{x}]\right>$ 是 $\mathcal{M}$ 是[[MK338][域]]对于 $\vec{x}=\left<x_1,...,x_n\right>$ 的[[MK439][多项式环]]
+     
+满足：
+
+（1） 对于任意 $i\ne j$ 有 $s_i\ne s_j$
+
+（2） $f(\vec{x})\ne I[\vec{x}](c_0)$
+
+（3） [[MK441][带入值]] $f(s_1,...,s_n)=I(c_0)$
+
+则称 $S$ 代数相关，否则则称 $S$ 代数不相关
+
+******** 性质1<<MK450>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]且有 $S\subset\rho(N)$ 满足：
+
+（1） 任意 $s\subset S$ [[MK445][代数无关]]
+
+（2） 任意 $\{s_1,s_2\}\subset S$ 有 $(s_1\subset s_2)\lor(s_2\subset s_1)$
+
+则 $\bigcup_{s\in S}s$ 亦[[MK445][代数无关]]
+
+********* 证明
+
+假设[[MK445][代数相关]]，则存在一组满足[[MK445][条件]]的有限子集 $\{a_1,...,a_n\}\subset\bigcup_{s\in S}s$ 则必有有限的 $\{s_1,...,s_m\}\subset S$
+
+满足对于任意 $a_i\in\{a_1,...,a_n\}$ 有 $s_{\mu(i)}\in\{s_1,...,s_m\}$ 满足 $a_i\in s_{\mu(i)}$
+
+根据条件（2）可得 $(s_1\subset s_2)\lor(s_2\subset s_1)$ 设 $s_1\subset s_2$ 则取 $s_2$ 与 $s_3$ 对比，又由于 $m<\infty$ 以及数学归纳易证
+
+存在 $s^*$ 满足对于任意 $s_i\in\{s_1,...,s_m\}$ 均有 $s_i\subset s^*$ ，则有 $\{a_1,...,a_n\}\subset s^*$ 显然[[MK445][代数相关]]
+
+又由于 $s^*\in S$ [[MK445][代数无关]]，故矛盾。则假设不成立， $\bigcup_{s\in S}s$ [[MK445][代数无关]]
+
+******* 超越基<<MK438>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，定义 $N$ 中所有在 $\mathcal{M}$ 上的[[MK395][代数元]]集合为 $K$
+
+（1） 若 $K=\varnothing$ 则定义 $\varnothing$ 是 $\mathcal{N}$ 在 $\mathcal{M}$ 上的超越基
+
+（2） 若 $K\ne\varnothing$ 则超越基为 $K$ 的[[MK144][极大]]的[[MK445][代数无关]]子集
+
+******** 存在性
+
+任意 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]均存在[[MK438][超越基]]
+
+********* 证明
+
+若 $K=\varnothing$ 则显然 $\varnothing$ 是 $\mathcal{N}$ 在 $\mathcal{M}$ 上的[[MK438][超越基]]
+
+若 $K\ne\varnothing$ 则定义 $\rho'(K)$ 为 $K$ 上所有的[[MK445][代数无关]]子集的集合，定义 $L=\left<\rho'(K),\subset\right>$ 为 $\rho'(K)$ 上关于 $\subset$ 的[[MK143][偏序关系]]
+
+则对于 $L$ 上的任意[[MK153][链]] $T$ 定义 $t^*=\bigcup_{t\in T}t$ 显然 $t^*$ 中所有元素均为 $\mathcal{M}$ 上的[[MK395][代数元]]，即 $t^*\subset K$
+
+又根据 $T$ 是[[MK153][链]]，任意 $t\in T\subset \rho'(K)$ [[MK445][代数无关]]，则根据[[MK450][性质1]]可得 $t^*$ [[MK445][代数无关]]，即 $t^*\in\rho'(K)$
+
+又根据 $t^*$ 定义可得对于任意 $t\in T$ 均有 $t\subset t^*$ 。即 $t^*$ 是 $T$ 的[[MK145][上界]]
+
+又根据 $T$ 的任意性以及[[MK162][佐恩引理]]可得存在 $\rho'(K)$ 上的[[MK144][极大元]]，即为[[MK438][超越基]]
+
+******** [[MK29][等势]]
+
+任意 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，则 $\mathcal{N}$ 在 $\mathcal{M}$ 上的任意[[MK438][超越基]]均[[MK29][等势]]
+
+********* 证明
+
+
+
+******* 定理1<<MK465>>
 
 $\mathcal{N}=\left<N,J\right>$ 是 $\mathcal{M}=\left<M,I\right>$ 的[[MK451][代数扩张]]， $\mathcal{K}=\left<K,L\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK451][代数扩张]]
 
@@ -8245,6 +8286,175 @@ $\mathcal{N}=\left<N,J\right>$ 是 $\mathcal{M}=\left<M,I\right>$ 的[[MK451][�
 即存在 $\mathcal{M}$ 上的[[MK374][一元多项式]] $g(x)\in M[x]$ 使得 $\mathcal{M}_{(B\cup\{a\})}$ 上[[MK441][带入值]] $g(a)=I_{(B)}(c_0)$
 
 则显然易证在 $\mathcal{K}$ 上的[[MK441][带入值]] $g(a)=L(c_0)$ 即 $a$ 是 $\mathcal{K}$ 在 $\mathcal{M}$ 上的[[MK395][代数元]]
+
+******* 定理2<<MK476>>
+
+$\mathcal{M}_1=\left<M_1,I_1\right>,\mathcal{M}_2=\left<M_2,I_2\right>$ 是[[MK338][域]]满足：
+
+（1） [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，设[[~/文档/note/数理逻辑/sllj.org::MK274][同构函数]] $e:M_1\to M_2$
+
+（2） 有 $S_1,S_2$ 分别是 $\mathcal{M}_1,\mathcal{M}_2$ 上的[[MK445][代数无关]]集合且[[MK29][等势]] $|S_1|=|S_2|$
+
+则[[MK393][生成扩张]] $\mathcal{M}_{1,(S_1)}=\left<M_{1,(S_1)},I_{1,(S_1)}\right>,\mathcal{M}_{2,(S_2)}=\left<M_{2,(S_2)},I_{2,(S_2)}\right>$ 亦[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+******** 证明
+
+根据一下证明以及[[MK468][性质16]]可得 $\mathcal{M}_{1,(S_1)}=\left<M_{1,(S_1)},I_{1,(S_1)}\right>,\mathcal{M}_{2,(S_2)}=\left<M_{2,(S_2)},I_{2,(S_2)}\right>$ 亦[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+********* 定义 $e^*:M_{1,(S_1)}\to M_{2,(S_2)}$ 
+
+由于 $|S_1|=|S_2|$ 故存在[[MK181][双射]] $\phi:S_1\to S_2$ ，对于任意 $a\in M_{1,(S_1)}$ 根据[[MK455][定理2]]可得存在
+
+（1） 有限个 $\{s_1,...,s_n\}\subset S_1$
+
+（2） $\mathcal{M}_1$ 上关于 $\vec{x}=\left<x_1,...,x_n\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_1[\vec{x}]$ 
+
+满足满足[[MK441][带入值]] $f(s_1,...,s_n)=a$ ，即在 $\mathcal{M}_{1,(S_1)}$ 上有 $\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right)=a$
+
+则定义[[MK175][映射]] $e^*:M_{1,(S_1)}\to M_{2,(S_2)}$ 满足 $e^*(a)=\sum_{i\in P}\left(e(a_i)\left(\prod_{j\in K_i}\phi(s_j)^{k_{i,j}}\right)\right)$
+
+********* 是[[MK175][函数]]<<MK475>>
+
+假设存在 $\{s_1,...,s_n\}\subset S_1,\{s'_1,...,s'_m\}\subset S_1$ 以及 $f(\vec{x})\in M_1[\vec{x}] f'(\vec{x}')\in M_1[\vec{x}']$ 在 $\mathcal{M}_{1,(S_1)}$ 下：
+
+（1） [[MK441][带入值]] $f(s_1,...,s_n)=f'(s_1,...,s_m)=a$
+
+（2） $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f'(\vec{x}')=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$
+
+（3） $\sum_{i\in P}\left(e(a_i)\left(\prod_{j\in K_i}\phi(s_j)^{k_{i,j}}\right)\right)\ne\sum_{i\in P'}\left(e(a'_i)\left(\prod_{j\in K'_i}\phi(s'_j)^{k'_{i,j}}\right)\right)$
+
+则定义：
+
+（1） $\{s^*_1,...,s^*_n,s^*_{n+1},...,s^*_{n+m}\}$ 满足 $s^*_i=\begin{cases}s_i&i\leq n\\s'_{i-n}&i>n\end{cases}$ 显然 $\{s^*_1,...,s^*_n,s^*_{n+1},...,s^*_{n+m}\}\subset S_1$ 
+
+（2） 关于 $\vec{x}^*=\left<x_1,...,x_{n+m}\right>$ 的[[MK439][多项式环]] $\mathcal{M}_1[\vec{x}^*]=\left<M_1[\vec{x}^*],I_1[\vec{x}^*]\right>,\mathcal{M}_2[\vec{x}^*]=\left<M_2[\vec{x}^*],I_2[\vec{x}^*]\right>$
+
+（3） $f^*(\vec{x}^*)=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f'^*(\vec{x}^*)=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$
+
+（4） 对于任意 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_1[\vec{x}^*]$ 定义 $e'(f(\vec{x}))=\left(e(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$
+
+     显然 $e'(f(\veec{x}))\in M_2[\vec{x}^*]$ 且则根据[[MK474][推论2]]可得 $e'$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]
+
+（5） $g(\vec{x}^*)=e'(f^*(\ve{x}^*))\in M_2[\vec{x}^*],g'(\vec{x}^*)=e'(f'^*(\ve{x}^*))\in M_2[\vec{x}^*]$
+
+则显然有
+
+（1） $\left\{f^*(\vec{x}^*),f'^*(\vec{x}^*)\right\}\subset M_1[\vec{x}^*]$
+
+（2） $f^*(s^*_1,...,s^*_{m+n})=f'^*(s^*_1,...,s^*_{m+n})=a$
+
+（3） $g(s^*_1,...,s^*_{m+n})\ne g'(s^*_1,...,s^*_{m+n})$ 
+
+根据[[MK437][定理]]易证 $g(\vec{x})\ne g'(\vec{x}')$ （自己亦为自己的[[MK341][扩张域]]）。进一步 $I_2[\vec{x}^*](f_+)\left(g(\vec{x}),I_2[\vec{x}^*](f_-)(g'(\vec{x}'))\right)\ne I_2[\vec{x}^*](c_0)$
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK275][引理]]有逆同构 $e'^{-1}$ 则可得
+
+\begin{aligned}
+I_1[\vec{x}^*](c_0)=&e'(I_2[\vec{x}^*](c_0))\\
+\ne&e'^{-1}\left(I_2[\vec{x}^*](f_+)\left(g(\vec{x}),I_1[\vec{x}^*](f_-)(g'(\vec{x}^*))\right)\right)\\
+=&I_1[\vec{x}^*](f_+)\left(e'^{-1}(g(\vec{x})),I_1[\vec{x}^*](f_-)(e'^{-1}(g'(\vec{x}^*)))\right)\\
+=&I_1[\vec{x}^*](f_+)\left(f(\vec{x}),I_1[\vec{x}^*](f_-)(f'^*(\vec{x}^*))\right)
+\end{aligned}
+
+定义 $h(\vec{x}^*)=I_1[\vec{x}^*](f_+)\left(f(\vec{x}),I_1[\vec{x}^*](f_-)(f'^*(\vec{x}^*))\right)$ 根据[[MK442][性质1]]以及[[MK356][性质4]]可得
+
+\begin{aligned}
+h(s^*_1,...,s^*_{m+n})=&I_1(f_+)\left(f(s^*_1,...,s^*_{m+n}),I_1(f_-)(f'^*(s^*_1,...,s^*_{m+n}))\right)\\
+=&I_1(f_+)\left(a,I_1(f_-)(a)\right)\\
+=&I_1(c_0)
+\end{aligned}
+
+由于 $\{s^*_1,...,s^*_n,s^*_{n+1},...,s^*_{n+m}\}\subset S_1$ 且 $h(\vec{x}^*)\in M_1[\vec{x}^*]$ ，即与 $S_1$ 在 $\mathcal{M}_1$ 上[[MK445][代数无关]]矛盾
+
+故假设不成立，即对于任意 $\{s_1,...,s_n\}\subset S_1,\{s'_1,...,s'_m\}\subset S_1$ 以及 $f(\vec{x})\in M_1[\vec{x}] f'(\vec{x}')\in M_1[\vec{x}']$
+
+若在 $\mathcal{M}_{1,(S_1)}$ 下有 $f(s_1,...,s_n)=f'(s_1,...,s_m)=a$
+
+则有 $\sum_{i\in P}\left(e(a_i)\left(\prod_{j\in K_i}\phi(s_j)^{k_{i,j}}\right)\right)=\sum_{i\in P'}\left(e(a'_i)\left(\prod_{j\in K'_i}\phi(s'_j)^{k'_{i,j}}\right)\right)$
+
+即 $e^*$ 是[[MK175][函数]]
+
+********* 是[[MK176][单射]]
+
+假设 $\{a_1,a_2\}\subset M_{1,(S_1)}$ 且 $a_1\ne a_2$ 根据[[MK455][定理2]]定义：
+
+（1） $f_1(\vec{x}_1)=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_1[\vec{x}_1],f_2(\vec{x}_2)=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)\in M_1[\vec{x_2}]$
+
+（2） $\{s_1,...,s_n\}\subset S_1,\{s'_1,...,s'_m\}\subset S_1$ 
+
+满足 $f_1(s_1,...,s_n)=a_1,f_2(s'_1,...,s'_m)=a_2$ 假设 $e^*(a_1)=e^*(a_2)$
+
+则有 $\sum_{i\in P}\left(e(a_i)\left(\prod_{j\in K_i}\phi(s_j)^{k_{i,j}}\right)\right)=\sum_{i\in P'}\left(e(a'_i)\left(\prod_{j\in K'_i}\phi(s'_j)^{k'_{i,j}}\right)\right)$
+
+以及 $\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right)\ne\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}s'_j^{k'_{i,j}}\right)\right)$
+
+则定义 $g_1(\vec{x}_1)=\sum_{i\in P}\left(e(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_2[\vec{x}_1],g_2(\vec{x}_2)=\sum_{i\in P'}\left(e(a'_i)\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)\in M_2[\vec{x}_2]$
+
+由于 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]，根据[[~/文档/note/数理逻辑/sllj.org::MK275][引理]]有逆同构 $e^{-1}$ ，由于 $\phi$ [[MK181][双射]]则有[[MK188][逆函数]] $\phi^{-1}$ 显然有：
+
+（1） [[MK441][带入值]] $g_1(\phi(s_1),...,\phi(s_n))=g_2(\phi(s_1),...,\phi(s_m)$
+
+（2） $g_1(\vec{x}_1)=\sum_{i\in P}\left(e(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),g_2(\vec{x}_2)=\sum_{i\in P'}\left(e(a'_i)\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$
+
+（3） $\sum_{i\in P}\left(e^{-1}(e(a_i))\left(\prod_{j\in K_i}\phi^{-1}(\phi(s_j))^{k_{i,j}}\right)\right)\ne\sum_{i\in P'}\left(e^{-1}(e(a'_i))\left(\prod_{j\in K'_i}\phi^{-1}(\phi(s'_j))^{k'_{i,j}}\right)\right)$
+
+则根据[[MK475][上一步]]同理可推出矛盾，即假设不成立，即对于任意 $a_1\ne a_2$ 有 $e^*(a_1)\ne e^*(a_2)$
+
+********* 是[[MK179][满射]]
+
+由于 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]，根据[[~/文档/note/数理逻辑/sllj.org::MK275][引理]]有逆同构 $e^{-1}$ ，由于 $\phi$ [[MK181][双射]]则有[[MK188][逆函数]] $\phi^{-1}$ ，则对于任意 $b\in M_{2,(S_2)}$
+
+根据[[MK455][定理2]]可得存在
+
+（1） 有限个 $\{s_1,...,s_n\}\subset S_2$
+
+（2） $\mathcal{M}_2$ 上关于 $\vec{x}=\left<x_1,...,x_n\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(b_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_2[\vec{x}]$
+
+满足 $\sum_{i\in P}\left(b_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right)$ 则显然 $\sum_{i\in P}\left(e^{-1}(b_i)\left(\prod_{j\in K_i}\phi^{-1}(s_j)^{k_{i,j}}\right)\right)\in M_2[\vec{x}]\in M_{1,(S_1)}$
+
+且有 $e^*\left(\sum_{i\in P}\left(e^{-1}(b_i)\left(\prod_{j\in K_i}\phi^{-1}(s_j)^{k_{i,j}}\right)\right)\right)=b$
+
+********* [[MK344][同态]]
+
+对于任意 $\{a_1,a_2\}\subset M_{1,(S_1)}$ 根据[[MK455][定理2]]定义：
+
+（1） $f_1(\vec{x}_1)=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_1[\vec{x}_1],f_2(\vec{x}_2)=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)\in M_1[\vec{x_2}]$
+
+（2） $\{s_1,...,s_n\}\subset S_1,\{s'_1,...,s'_m\}\subset S_1$
+
+满足 $f_1(s_1,...,s_n)=a_1,f_2(s'_1,...,s'_m)=a_2$
+
+根据[[MK475][之前步骤]]同样定义：
+
+（1） $\{s^*_1,...,s^*_n,s^*_{n+1},...,s^*_{n+m}\}$ 满足 $s^*_i=\begin{cases}s_i&i\leq n\\s'_{i-n}&i>n\end{cases}$ 显然 $\{s^*_1,...,s^*_n,s^*_{n+1},...,s^*_{n+m}\}\subset S_1$ 
+
+（2） 关于 $\vec{x}^*=\left<x_1,...,x_{n+m}\right>$ 的[[MK439][多项式环]] $\mathcal{M}_1[\vec{x}^*]=\left<M_1[\vec{x}^*],I_1[\vec{x}^*]\right>,\mathcal{M}_2[\vec{x}^*]=\left<M_2[\vec{x}^*],I_2[\vec{x}^*]\right>$
+
+（3） $f^*_1(\vec{x}^*)=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f^*_2(\vec{x}^*)=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$
+
+（4） 对于任意 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_1[\vec{x}^*]$ 定义 $e'(f(\vec{x}))=\left(e(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$
+
+     显然 $e'(f(\veec{x}))\in M_2[\vec{x}^*]$ 且则根据[[MK474][推论2]]可得 $e'$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]
+
+显然有：
+
+（1） $f^*_1(s^*_1,...,s^*_{m+n})=a_1,f^*_2(s^*_1,...,s^*_{m+n})=a_2$
+
+（2） $e'(I_1[\vec{x}^*](f_+)\left(f^*_1(\vec{x}^*),f^*_2(\vec{x}^*)\right))=I_2[\vec{x}^*](f_+)\left(e'(f^*_1(\vec{x}^*)),e'(f^*_2(\vec{x}^*))\right)$
+
+（3） $e'(I_1[\vec{x}^*](f_\times)\left(f^*_1(\vec{x}^*),f^*_2(\vec{x}^*)\right))=I_2[\vec{x}^*](f_\times)\left(e'(f^*_1(\vec{x}^*)),e'(f^*_2(\vec{x}^*))\right)$
+
+定义 $g(\vec{x}^*)=I_1[\vec{x}^*](f_+)\left(f^*_1(\vec{x}^*),f^*_2(\vec{x}^*)\right)$ 则根据 $e'$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]可得 $e'(g(\vec{x}^*))=I_2[\vec{x}^*](f_+)\left(e'(f^*_1(\vec{x}^*)),e'(f^*_2(\vec{x}^*))\right)$ 
+
+则根据[[MK442][性质1]]有：
+
+（1） $g(s^*_1,...,s^*_{m+n})=I_1(f_+)(f^*_1(s^*_1,...,s^*_{m+n}),f^*_2(s^*_1,...,s^*_{m+n}))=I_1(f_+)(a_1,a_2)$
+
+（2） $e'(g(\vec{x}^*))(\phi(s^*_1),...,\phi(s^*_{m+n}))=I_2(f_+)(e'(f^*_1(\vec{x}^*))(\phi(s^*_1),...,\phi(s^*_{m+n}),e'(f^*_2(\vec{x}^*))(\phi(s^*_1),...,\phi(s^*_{m+n}))=I_2(f_+)(e^*(a_1),e^*(a_2))$
+
+又显然 $e^*(g(s^*_1,...,s^*_{m+n}))=e'(g(\vec{x}^*))(\phi(s^*_1),...,\phi(s^*_{m+n}))$ 即有 $e^*(I_1(f_+)(a_1,a_2))=I_2(f_+)(e^*(a_1),e^*(a_2))$
+
+同理可证 $f_\times,f_-$ ，即可得 $e^*$ 是[[MK344][同态映射]]
 
 ****** 分裂域<<MK452>>
 
@@ -8580,37 +8790,94 @@ $\mathcal{Q}\vDash T_\mathbb{F}$ 即 $\mathcal{Q}$ 是[[MK338][域]]
 
 （3） 对于任意 $0\leq i \leq m,j\in K_i$ 有 $k_{i,j}\in\mathbb{N}$
 
-定义 $\mathcal{M}$ 上所有关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的多项式为 $M_\vec{x}$
+（4） 若 $K_i=\varnothing$ 则 $a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)=a_i$
+
+定义 $\mathcal{M}$ 上所有关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的多项式为 $M[\vec{x}]$
 
 ******* 最简式<<MK446>>
 
-对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_\vec{x}$
+对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$ 若满足
 
-定义 $f'(\vec{x})=\sum_{i'\in P'}\left(a'_{i'}\left(\prod_{j\in K'_{i'}}x_j^{k'_{i',j}}\right)\right)$ 满足：
+（1） 不存在 $\{i_1,i_2\}\subset P$ 满足 $K_{i_1}=K_{i_2}$ 且对于任意 $j\in K_{i_1}$ 均有 $k_{i_1,j}=k_{i_2,j}$
 
-（1） 对于任意 $i'\in P'$ 存在 $i\in P$ 满足 $a_i\ne I(c_0)$
+（2） 不存在 $i\in P$ 满足 $a_{i}=I(c_0)$
 
-（2） 定义 $K'_{i'}=\left\{j\big|j\in K_i\land k_{i,j}\ne0\right\}$ 以及对于任意 $j\in K'_{i'}$ 定义 $k'_{i',j}=k_{i,j}$
+（3） 对于任意 $i\in P,j\in K_{i,j}$ 均有 $k_{i,j}\ne 0$
 
-（3） 对于任意 $i'\in P'$ 定义 $I_{i'}=\left\{i\big|K'_{i'}=\left\{j\big|K'_{i'}=\left\{j\big|j\in K_i\land k_{i,j}\ne0\right\}\land\left(\forall j\in K_i\left(k_{i,j}=k'_{i',j}\right)\right)\right\}$ 则定义 $a'_{i'}=\sum_{i\in I_{i'}}a_i$
-
-     其中 $\sum_{i\in I_{i'}}a_i$ 为 $\mathcal{M}$ 上的连续加法 $I(f_+)$
-
-（4） 若 $K'_{i'}=\varnothing$ 则 $a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)=a'_i$
-
-（5） 若 $P'=\varnothing$ 则 $f'(\vec{x})=I(c_0)$
-
-则定义 $f'(\vec{x})$ 是 $f(\vec{x})$ 的最简式
+则称 $f(\vec{x})$ 是 $M_\vec{x}$ 上的最简式
 
 ******** 最简式相等<<MK447>>
 
 任意 $f'_1(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i\in Q'}\left(b'_i\left(\prod_{j\in L'_i}x_j^{l'_{i,j}}\right)\right)$ 是[[MK446][最简式]]
 
-则定义 $f'_1(\vec{x})=f'_2(\vec{x})$ 的充要条件是：
+则定义 $f'_1(\vec{x})=f'_2(\vec{x})$ 的充要条件是存在[[MK181][双射]] $\phi:P'\to Q'$
 
-（1） $P'=Q'$
+满足对于任意 $i\in P'$ 均有 $a'_i=b'_{\phi(i)}$ 和 $K'_i=L'_{\phi(i)}$ 以及对于任意 $j\in L'_i$ 均有 $k'_{i,j}=l'_{\phi(i),j}$
 
-（2） 对于任意 $i\in P'$ 均有 $a'_i=b'_i$ 和 $L'_i=K'_i$ 以及对于任意 $j\in L'_i$ 均有 $k'_{i,j}=l'_{i,j}$
+******** 定理（唯一对应）<<MK437>>
+
+对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$
+
+存在唯一[[MK446][最简式]]为 $f'(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$ 则对于任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$ 以及任意 $\vec{s}=\left<s_1,...,s_n\right>\in N^n$
+
+均有 $f(\vec{x}),f'(\vec{x})$ 的[[MK441][带入值]]相等，即 $f(\vec{s})=f'(\vec{s})$
+
+********* 证明
+
+********** 存在性<<MK473>>
+
+第一步，定义 $K'_{i'}=\left\{j\big|j\in K_i\land k_{i,j}\ne0\right\}$ 则有函数 $f_1(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$
+
+根据[[MK441][带入值]]定义、[[MK356][性质4]]以及 $J(c_1)=I(c_1)$ 易证：
+
+\begin{aligned}
+\prod_{j\in K_i}s_j^{k_{i,j}}=&J(f _\times)\left(\prod_{j\in K'_{i'}}s_j^{k_{i,j}},\prod_{j\in K_i-K'_{i'}}s_j^0\right)\\
+=&J(f _\times)\left(\prod_{j\in K'_{i'}}s_j^{k_{i,j}},\prod_{j\in K_i-K'_{i'}}I(c_1)\right)\\
+=&J(f _\times)\left(\prod_{j\in K'_{i'}}s_j^{k_{i,j}}，I(c_1)\right)\\
+=&\prod_{j\in K'_{i'}}s_j^{k_{i,j}}
+\end{aligned}
+
+则显然易证 $f(s_1,...,s_n)=f_1(s_1,...,s_n)$ 且 $f_1(\vec{x})$ 满足[[MK446][条件（3）]]
+
+第二步，对于任意 $i\in P$ 定义 $I_{i}=\left\{p\big|K'_p=K'_i\land\left(\forall j\in K_i\left(k_{i,j}=k_{p,j}\right)\right)\right\}$ 则定义 $a'_{i}=\sum_{p\in I_{i}}a_p\in M$
+
+以及定义 $P^*=\left\{I_i\big|i\in P\right\}$ 由于 $|P|<\infty$ 则显然 $|P^*|<\infty$ ，则显然可构建[[MK176][单射]] $\phi:P^*\to\mathbb{N}$ 则定义 $P_0=\left\{\phi(p)\big|p\in P^*\right\}$
+
+则定义 $f_2(\vec{x})=\sum_{i\in P_0}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$ 显然满足[[MK446][条件（1）、（3）]]
+
+根据[[MK441][带入值]]定义、[[MK356][性质4]]以及 $J(c_1)=I(c_1)$ 易证 $\sum_{p\in I_i}\left(a_p\prod_{j\in K'_i}s_j^{k_{i,j}}\right)=\left(\sum_{p\in I_i}a_p\right)\prod_{j\in K'_i}s_j^{k_{i,j}}=a'\prod_{j\in K'_i}s_j^{k_{i,j}}$
+
+则进一步易证 $f_1(s_1,...,s_n)=f_2(s_1,...,s_n)$
+
+第三步，定义 $P'=\left\{p\big|p\in P_0\land a'_p\ne I(c_0)\right\}$ 则有 $f_3(\vec{x}) =\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$ 显然满足所有三个[[MK446][条件]]
+
+根据[[MK441][带入值]]定义、[[MK356][性质4]]以及 $J(c_1)=I(c_1),J(c_0)=I(c_0)$ 易证：
+
+\begin{aligned}
+\sum_{i\in P_0}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right)=&J(f_+)\left(\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right),\sum_{i\in P_0-P'}\left(I(c_0)\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right)\right)\\
+=&J(f_+)\left(\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right),\sum_{i\in P_0-P'}\left(J(c_0)\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right)\right)\\
+=&J(f_+)\left(\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right),\sum_{i\in P_0-P'}J(c_0)\right)\\
+=&J(f_+)\left(\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right),J(c_0)\right)\\
+=&\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right)
+\end{aligned}
+
+则进一步易证 $f_2(s_1,...,s_n)=f_3(s_1,...,s_n)$
+
+综上所述 $f_3(\vec{x})$ 是[[MK446][最简式]]且对于任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$ 以及任意 $\vec{s}=\left<s_1,...,s_n\right>\in N^n$ 均有 $f(s_1,...,s_n)=f_3(s_1,...,s_n)$ 
+
+********** 唯一性
+
+假设存在 $f'_1(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i\in Q'}\left(b'_i\left(\prod_{j\in L'_i}x_j^{l'_{i,j}}\right)\right)$ 均为[[MK446][最简式]]且不[[MK447][相等]]
+
+若不存在[[MK181][双射]] $\phi:P'\to Q'$ 由于 $|P'|<\infty,|Q'|<\infty$ 易证必有 $|P'|\ne |Q'|$ 由于所有相同的 $x_j$ 乘积项均合并
+
+则必有 $i\in P'$ 满足不存在 $i'\in Q'$ 使得 $K'_i=L'_{i'}$ 且对于任意 $j\in K'_i$ 均有 $k'_{i,j}=l'_{i',j}$ 或反之
+
+则根据[[MK356][性质4]]以及 $I(f_\times)(I(f_+)(I(c_1),I(c_1)),I(f_+)(I(c_1),I(c_1)))=\sum_{i=1}^4I(c_1)\ne I(f_+)(I(c_1),I(c_1))$
+
+易证存在 $\{s_1,...,s_n\}\subset M$ 满足 $f'_1(s_1,...,s_n)\ne f_2'(s_1,...,s_n)$
+
+其余情况同理可证，故唯一
 
 ******** 性质1<<MK449>>
 
@@ -8649,36 +8916,37 @@ $\mathcal{Q}\vDash T_\mathbb{F}$ 即 $\mathcal{Q}$ 是[[MK338][域]]
 
 则根据[[MK436][定义]]可得 $f'(\vec{x})\in M_\vec{x}$
 
-******** 性质3<<MK437>>
+******** 性质3<<MK472>>
 
-对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M_\vec{x}$
+若 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK338][域]]且[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，设同构映射为 $e$
 
-设其[[MK446][最简式]]为 $f'(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$ 则对于任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$ 以及任意 $\vec{s}=\left<s_1,...,s_n\right>\in N^n$
+定义 $\mathcal{M},\mathcal{N}$ 上关于 $\vec{x}=\left<x_1,...,x_n\right>$ 的[[MK439][多项式环]]为 $\mathcal{M}[\vec{x}]=\left<M[\vec{x}],I[\vec{x}]\right>,\mathcal{N}[\vec{x}]=\left<N[\vec{x}],J[\vec{x}]\right>$
 
-均有 $f(\vec{x}),f'(\vec{x})$ 的[[MK441][带入值]]相等，即 $f(\vec{s})=f'(\vec{s})$
+若 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$ [[MK437][唯一对应]]的[[MK446][最简式]]为 $f'(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$
+
+则 $g(\vec{x})=\sum_{i\in P}\left(e(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in N[\vec{x}]$ [[MK437][唯一对应]]的[[MK446][最简式]]为 $g'(\vec{x})=\sum_{i\in P'}\left(e(a'_i)\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$
 
 ********* 证明
 
-对于任意 $i\in P$ 定义 $K'_{i'}=\left\{j\big|j\in K_i\land k_{i,j}\ne0\right\}$ 则根据[[MK441][带入值]]定义、[[MK356][性质4]]以及 $J(c_1)=I(c_1)$ 易证：
+基于 $f(\vec{x})$ 的[[MK446][最简式]]为 $f'(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$ 则根据[[MK473][步骤]]有如下定义
 
-\begin{aligned}
-\prod_{j\in K_i}s_j^{k_{i,j}}=&J(f _\times)\left(\prod_{j\in K'_{i'}}s_j^{k_{i,j}},\prod_{j\in K_i-K'_{i'}}s_j^0\right)\\
-=&J(f _\times)\left(\prod_{j\in K'_{i'}}s_j^{k_{i,j}},\prod_{j\in K_i-K'_{i'}}I(c_1)\right)\\
-=&J(f _\times)\left(\prod_{j\in K'_{i'}}s_j^{k_{i,j}}，I(c_1)\right)\\
-=&\prod_{j\in K'_{i'}}s_j^{k_{i,j}}
-\end{aligned}
+（1） $K'_{i'}=\left\{j\big|j\in K_i\land k_{i,j}\ne0\right\}$
 
-即有 $\prod_{j\in K_i}s_j^{k_{i,j}}=\prod_{j\in K'_{i'}}s_j^{k_{i,j}}$ 对于任意 $i'\in P'$ 定义 $I_{i'}=\left\{i\big|K'_{i'}=\left\{j\big|K'_{i'}=\left\{j\big|j\in K_i\land k_{i,j}\ne0\right\}\land\left(\forall j\in K_i\left(k_{i,j}=k'_{i',j}\right)\right)\right\}$
+（2） 对于任意 $i\in P$ 有 $I_{i}=\left\{p\big|K'_p=K'_i\land\left(\forall j\in K_i\left(k_{i,j}=k_{p,j}\right)\right)\right\}$ ， $P^*=\left\{I_i\big|i\in P\right\}$ ，[[MK176][单射]] $\phi:P^*\to\mathbb{N}$
 
-则又根据[[MK356][性质4]]中乘法结合律，加法交换律等易证
+     以及 $P_0=\left\{\phi(p)\big|p\in P^*\right\}$
 
-\begin{aligned}
-\sum_{i\in I_{i'}}a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)=&\sum_{i\in I_{i'}}a_i\left(\prod_{j\in K'_{i'}}s_j^{k'_{i',j}}\right)\\
-=&\left(\sum_{i\in I_{i'}}a_i\right)\left(\prod_{j\in K'_{i'}}s_j^{k'_{i',j}}\right)\\
-=&a'_{i'}\left(\prod_{j\in K'_{i'}}s_j^{k'_{i',j}}\right)
-\end{aligned}
+（3） $P'=\left\{p\big|p\in P_0\land a'_p\ne I(c_0)\right\}$ 
 
-则[[MK449][同理可证]] $f(\vec{s})=f'(\vec{s})$
+由于 $\mathcal{N}$ 亦为[[MK338][域]]且 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]，故有：
+
+（1） $e(a'_i)=e(\sum_{p\in I_{i}}a_p)=\sum_{p\in I_{i}}e(a_p)\in N$
+
+（2） $e(I(c_0))=J(I(c_0))$ 且任意 $a\ne b$ 均有 $e(a)\ne e(b)$ ，即可得 $P'=\left\{p\big|p\in P_0\land e(a'_p)\ne J(c_0)\right\}$
+
+综上所述，根据对应最简式生成[[MK473][步骤]]可得 $g'(\vec{x}) =\sum_{i\in P'}\left(e(a'_i)\left(\prod_{j\in K'_i}x_j^{k_{i,j}}\right)\right)\in N[\vec{x}]$
+
+以及[[MK437][定理]]易证 $g'(\vec{x})$ 是 $g(\vec{x})$ 的[[MK437][唯一对应]]的[[MK446][最简式]]
 
 ******* 带入值<<MK441>>
 
@@ -8686,7 +8954,7 @@ $\mathcal{Q}\vDash T_\mathbb{F}$ 即 $\mathcal{Q}$ 是[[MK338][域]]
 
 以及任意 $\vec{s}=\left<s_0,...,s_{n-1}\right>\subset N^n$ 定义在 $\mathcal{N}$ 上对于 $\vec{s}$ 的带入值为 $f(s_0,...,s_{n-1})=f(\vec{s})=\sum_{i=1}^m\left(a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right)$
 
-其中对于任意 $k_{i,j}=0$ 定义 $s_j^{k_{i,j}}=I(c_1)$
+其中对于任意 $k_{i,j}=0$ 定义 $s_j^{k_{i,j}}=I(c_1)$ ，对于任意 $K_i=\varnothing$ 则定义 $\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)=I(c_1)$
 
 由于 $\mathcal{N}$ 是[[MK338][域]]，故显然对于 $I(f_+),I(f_\times),I(f_-)$ 运算封闭，故易证存在 $a\in N$ 满足 $a=f(\vec{s})$
 
@@ -8719,33 +8987,33 @@ $\mathcal{Q}\vDash T_\mathbb{F}$ 即 $\mathcal{Q}$ 是[[MK338][域]]
 
 ******* 多项式环<<MK439>>
 
-若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]对于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 定义 $M_{[\vec{x}]}$ 为 $\mathcal{M}$ 上所有关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]]
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]对于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 定义 $M{[\vec{x}]}$ 为 $\mathcal{M}$ 上所有关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]]
 
-且对于任意 $\{f_1(\vec{x}),f_2(\vec{x})\}\subset M_{[\vec{x}]}$ 有 $f_1(\vec{x})=f_2(\vec{x})$ 的充要条件是其[[MK446][最简式]]满足[[MK447][相等]]
+且对于任意 $\{f_1(\vec{x}),f_2(\vec{x})\}\subset M{[\vec{x}]}$ 有 $f_1(\vec{x})=f_2(\vec{x})$ 的充要条件是其[[MK437][唯一对应]]的[[MK446][最简式]]满足[[MK447][相等]]
 
-定义 $I_{[\vec{x}]}$ 对于任意 $\left\{f_1(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)\right\}\subset M_{[\vec{x}]}$ 有
+定义 $I_{[\vec{x}]}$ 对于任意 $\left\{f_1(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)\right\}\subset M{[\vec{x}]}$ 有
 
-（1） $I_{[\vec{x}]}(c_0)=I(c_0),I_{[\vec{x}]}(c_1)=I(c_1)$
+（1） $I{[\vec{x}]}(c_0)=I(c_0),I_{[\vec{x}]}(c_1)=I(c_1)$
 
-（2） $I_{[\vec{x}]}(f_+)\left(f_1(\vec{x}),f_2(\vec{x})\right)=\sum_{i\in P\cup Q}\left(c_i\left(\prod_{j\in H_i}x_j^{h_{i,j}}\right)\right)$
+（2） $I{[\vec{x}]}(f_+)\left(f_1(\vec{x}),f_2(\vec{x})\right)=\sum_{i\in P\cup Q}\left(c_i\left(\prod_{j\in H_i}x_j^{h_{i,j}}\right)\right)$
 
      其中 $c_i=\begin{cases}a_i&i\in P\\b_i&i\in Q\end{cases},H_i=\begin{cases}K_i&i\in P\\L_i&i\in Q\end{cases},h_{i,j}=\begin{cases}k_{i,j}&i\in P\\l_{i,j}&i\in Q\end{cases}$
 
-（3） $I_{[\vec{x}]}(f_\times)\left(f_1(\vec{x}),f_2(\vec{x})\right)=\sum_{\left<i,j\right>\in P\times Q}\left(I(f_\times)(a_i,b_j)\prod_{h\in K_i\cup L_j}x_p^{k'_{i,h}+l'_{j,h}}\right)$
+（3） $I{[\vec{x}]}(f_\times)\left(f_1(\vec{x}),f_2(\vec{x})\right)=\sum_{\left<i,j\right>\in P\times Q}\left(I(f_\times)(a_i,b_j)\prod_{h\in K_i\cup L_j}x_p^{k'_{i,h}+l'_{j,h}}\right)$
 
      其中 $k'_{i,p}=\begin{cases}k_{i,p}&p\in K_i\\0&p\not\in K_i\end{cases},l'_{i,p}=\begin{cases}l_{j,p}&p\in L_j\\0&p\not\in L_j\end{cases}$
 
-（4） $I_{[\vec{x}]}(f_-)\left(f_1(\vec{x})\right)=\sum_{i\in P}\left(I(f_-)(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$
+（4） $I{[\vec{x}]}(f_-)\left(f_1(\vec{x})\right)=\sum_{i\in P}\left(I(f_-)(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$
 
 则有：
 
-（1） $\mathcal{M}_{[\vec{x}]}=\left<M_{[\vec{x}]},I_{[\vec{x}]}\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+（1） $\mathcal{M}{[\vec{x}]}=\left<M_{[\vec{x}]},I_{[\vec{x}]}\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
 
-（2） $\mathcal{M}_{[\vec{x}]}\vDash T_{\mathcal{R}_e}$ 是[[MK362][非零幺环]]且满足：
+（2） $\mathcal{M}{[\vec{x}]}\vDash T_{\mathcal{R}_e}$ 是[[MK362][非零幺环]]且满足：
 
-     （a） $\mathcal{M}_{[\vec{x}]}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换
+     （a） $\mathcal{M}{[\vec{x}]}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换
 
-     （b） $\mathcal{M}_{[\vec{x}]}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$ 
+     （b） $\mathcal{M}{[\vec{x}]}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$ 
 
 ******** 证明
 
@@ -10003,7 +10271,7 @@ p(x)&=I[x](f_+)(I[x](f_\times)(h_1(x),r_0(x)),r_1(x))\\
 
 定义映射 $e':M[x]\to N[x]$ 满足对于任意 $f(x)=\sum_{i=1}^n a_ix^i\in M[x]$
 
-有 $e'(f(x))=\sum_{i=0}^ne(a_i)x^i\in N[x]$ 根据以下证明可得 $e'$ 是 $\mathcal{M}[x]$ 到 $\mathcal{N}[x]$ 的[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]
+有 $e'(f(x))=\sum_{i=0}^ne(a_i)x^i\in N[x]$ 根据以下证明以及[[MK468][性质16]]可得 $e'$ 是 $\mathcal{M}[x]$ 到 $\mathcal{N}[x]$ 的[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]
 
 ******** 是[[MK176][单射]]
 
@@ -10144,7 +10412,7 @@ p(x)&=I[x](f_+)(I[x](f_\times)(h_1(x),r_0(x)),r_1(x))\\
 
 （4） $e^*(I'(f_+)([p(x)]_\sim,[q(x)]_\sim))=e^*([I[x](f_+)(p(x),q(x))]_\sim)=&[e'(I[x](f_\times)(p(x),q(x)))]_\sim\\=[J[x](f_+)(e'(p(x))),e'(q(x))]_\sim=J'(f_+)([e'(p(x))]_\sim,[e'(q(x))]_\sim)=J'(f_+)(e^*([p(x)]_\sim),e^*([q(x)]_\sim))$
 
-****** 推论<<MK471>>
+****** 推论1<<MK471>>
 
 若 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK338][域]]且[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，设同构映射为 $e$ 。则对于任意 $f(x)=\sum_{i\in P}^na_ix^i\in M[x]$ 显然有 $e'(f(x))=\sum_{i\in P}e(a_i)x^i$
 
@@ -10155,6 +10423,75 @@ p(x)&=I[x](f_+)(I[x](f_\times)(h_1(x),r_0(x)),r_1(x))\\
 根据[[MK408][定理5]]可得 $\mathcal{M}_{(a)}$ 与 $\mathcal{M}'$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]， $\mathcal{N}_{(b)}$ 与 $\mathcal{N}'$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]。又根据[[MK409][定理6]]可得 $\mathcal{M}',\mathcal{N}'$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
 即 $\mathcal{M}_{(a)},\mathcal{N}_{(b)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+****** 推论2<<MK474>>
+
+若 $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 是[[MK338][域]]且[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，设同构映射为 $e$
+
+定义 $\mathcal{M},\mathcal{N}$ 上关于 $\vec{x}=\left<x_1,...,x_n\right>$ 的[[MK439][多项式环]]为 $\mathcal{M}[\vec{x}]=\left<M[\vec{x}],I[\vec{x}]\right>,\mathcal{N}[\vec{x}]=\left<N[\vec{x}],J[\vec{x}]\right>$
+
+则 $\mathcal{M}[\vec{x}],\mathcal{N}[\vec{x}]$ 亦[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+******* 证明
+
+定义映射 $e':M[\vec{x}]\to N[\vec{x}]$ 满足对于任意 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$ 满足 $e'(f(\vec{x}))=\left(e(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$
+
+根据[[MK437][定理]]可得 $f(\vec{x})$ 有唯一对应[[MK446][最简式]] $f'(\vec{x})$ ，根据[[MK472][性质3]]可得 $e'(f'(\vec{x}))$ 亦为[[MK446][最简式]]
+
+由于 $e:M\to N$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]则根据[[MK472][性质3]]可得 $e(f(\vec{x}))$ 可以根[[MK446][最简式]]，故 $e'$ 是[[MK175][函数]]
+
+根据以下证明以及[[MK468][性质16]]可得 $e'$ 是 $\mathcal{M}[\vec{x}]$ 到 $\mathcal{N}[\vec{x}]$ 的[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]
+
+******** 是[[MK175][函数]]
+
+根据[[MK446][最简式]]对应的[[MK437][唯一性]]以及[[MK472][性质3]]可得 $e'$ 是[[MK175][函数]]
+
+******** 是[[MK176][单射]]
+
+对于任意 $\{f(\vec{x}),g(\vec{x})\}\subset M[\vec{x}]$ 满足 $f(\vec{x})\ne g(\vec{x})$ 根据[[MK439][多项式环]]可得其[[MK446][最简式]]不[[MK446][相等]]。不妨设 $f(\vec{x}),g(\vec{x})$ 是[[MK446][最简式]]
+
+设 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),g(\vec{x})=\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)$
+
+则有 $e'(f(\vec{x}))=\sum_{i\in P}\left(e(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),e'(g(\vec{x}))=\sum_{i\in Q}\left(e(b_i)\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)$
+
+根据[[MK447][条件]]若不存在[[MK181][双射]] $\phi:P\to Q$ 满足对于任意存在 $i\in P$ 有 $K_i=L_{\phi(i)}$ 且对于任意 $i\in P,j\in K_i$ 有 $k_{i,j}=l_{\phi(i),j}$
+
+则显然有 $e'(f(\vec{x}))\ne e'(g(\vec{x}))$ 。若存在双射满足上述条件，但存在 $i\in P$ 使得 $a_i\ne b_{\phi(i)}$
+
+则由于 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]即有 $e(a_i)\ne e(b_{\phi(i)})$ 进而有 $e'(f(\vec{x}))\ne e'(g(\vec{x}))$ 
+
+******** 是[[MK179][满射]]
+
+由于 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]，故是[[MK181][双射]]，则存在[[MK188][逆函数]] $e^{-1}:N\to M$ 则对于任意 $f(\vec{x})=\sum_{i\in P}\left(b_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in N[\vec{x}]$
+
+显然有 $f'(\vec{x})=\sum_{i\in P}\left(e^{-1}(b_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in N[\vec{x}]$ 满足 $e'(f'(\vec{x}))=\sum_{i\in P}\left(e(e^{-1}(b_i))\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)=f(\vec{x})\in N[\vec{x}]$
+
+即对于任意 $f(\vec{x})\in N[\vec{x}]$ 存在 $f'(\vec{x})\in M[\vec{x}]$ 满足 $e'(f'(\vec{x}))=f(\vec{x})$
+
+******** [[MK344][同态]]
+
+对于任意 $\{f(\vec{x}),g(\vec{x})\}\subset M[\vec{x}]$ 设 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),g(\vec{x})=\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)$
+
+则根据[[MK439][定义]]
+
+\begin{aligned}
+&e'\left(I[\vec{x}](f_+)\left(f(\vec{x}),g(\vec{x}))\right)\\
+=&e'\left(I[\vec{x}](f_+)\left(\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)\right)\right)\\
+=&J[\vec{x}](f_+)\left(\sum_{i\in P}\left(e(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),\sum_{i\in Q}\left(e(b_i)\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)\right)\\
+=&J[\vec{x}](f_+)\left(e'\left(\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\right),e'\left(\sum_{i\in Q}\left(e(b_i)\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)\right)\right)\\
+=&J[\vec{x}](f_+)\left(e'(f(\vec{x})),e'(g(\vec{x}))\right)
+\end{aligned}
+
+又根据 $e$ 是[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]，则对于任意 $\{a,b\}\subset M$ 均有 $e(I(f_\times)(a,b))=J(f_\times)(e(a),e(b))$ ：
+
+\begin{aligned}
+&e'\left(I[\vec{x}](f_\times)\left(f(\vec{x}),g(\vec{x}))\right)\\
+=&e'\left(\sum_{\left<i,j\right>\in P\times Q}\left(I(f_\times)(a_i,b_j)\prod_{h\in K_i\cup L_j}x_p^{k'_{i,h}+l'_{j,h}}\right)\right)\\
+=&\sum_{\left<i,j\right>\in P\times Q}\left(e(I(f _\times)(a_i,b_j))\prod_{h\in K_i\cup L_j}x_p^{k'_{i,h}+l'_{j,h}}\right)\\
+=&\sum_{\left<i,j\right>\in P\times Q}\left(J(f _\times)(e(a_i),e(b_j))\prod_{h\in K_i\cup L_j}x_p^{k'_{i,h}+l'_{j,h}}\right)\\
+=&J[\vec{x}](f_\times)\left(\sum_{i\in P}\left(e(a_i)\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),\sum_{i\in Q}\left(e(b_i)\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)\right)\right)\\
+=&J[\vec{x}](f_\times)\left(e'(f(\vec{x})),e'(g(\vec{x}))\right)
+\end{aligned}
 
 ***** 定理7<<MK429>>
 
