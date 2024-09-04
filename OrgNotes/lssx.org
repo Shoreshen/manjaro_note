@@ -11327,7 +11327,7 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ [[MK339][特征]]均为 $p$ ，由于是[[MK390][代数封闭域]]，故为[[MK338][域]]，则：
 
-（1） 根据[[MK430][性质1]]可得 $p$ 是素数根据[[MK419][定理3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+（1） 根据[[MK430][性质1]]可得 $p$ 是素数，根据[[MK431][性质3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是[[MK338][域]]，进一步根据[[MK419][定理3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
 
 （2） 根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ 分别是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且与[[MK417][ $\mathbb{Z}_p$ ]]有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
@@ -11335,7 +11335,7 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 ****** 证明
 
-显然由于 $\mathcal{M}',\mathcal{N}'$ 均与[[MK417][ $\mathbb{Z}_p$ ]]有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，故可得 $\mathcal{M}',\mathcal{N}'$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，由于是[[MK438][超越基]]，故[[MK445][代数无关]]
+显然由于 $\mathcal{M}',\mathcal{N}'$ 均与[[MK417][ $\mathbb{Z}_p$ ]]有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，故可得 $\mathcal{M}',\mathcal{N}'$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，且均为[[MK338][域]]。由于是[[MK438][超越基]]，故[[MK445][代数无关]]
 
 则根据[[MK476][定理2]]可得 $\mathcal{M}'_{(S)},\mathcal{N}'_{(T)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，且 $\mathcal{M},\mathcal{N}$ 分别是 $\mathcal{M}'_{(S)},\mathcal{N}'_{(T)}$ 上的[[MK451][代数扩张]]
 
