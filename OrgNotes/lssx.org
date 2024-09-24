@@ -1,10 +1,10 @@
-#+LATEX_HEADER:
+[]\#+LATEX_HEADER:
 
 #+TITLE: 离散数学概论
 
-currnet mark: 480
+currnet mark: 488
 
-free mark: 444 
+free mark: 
  
 数理逻辑: P26
 
@@ -7923,6 +7923,8 @@ a_{i^*-1}&=a_{i^*-3}-n_{i^*-2}a_{i^*-2}=(v_{i^*-3}a_0+u_{i^*-3}p)-n_{i^*-2}(v_{i
 
 [[MK338][域结构]] $\mathcal{M},\mathcal{N}$ 满足 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且 $\mathcal{M}\vDash T_\mathbb{F},\mathcal{N}\vDash T_\mathbb{F}$ ，则称 $\mathcal{M}$ 是 $\mathcal{N}$ 的子域， $\mathcal{N}$ 是 $\mathcal{M}$ 的扩张域
 
+记作 $\mathcal{M}\prec\mathcal{N}$
+
 ****** 生成[[MK341][扩张域]]<<MK393>>
 
 [[MK338][域结构]] $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，若有 $A\subset N-M$
@@ -7939,27 +7941,9 @@ a_{i^*-1}&=a_{i^*-3}-n_{i^*-2}a_{i^*-2}=(v_{i^*-3}a_0+u_{i^*-3}p)-n_{i^*-2}(v_{i
 
 即 $\mathcal{N}$ 下包含 $M\cup A$ 的最小[[MK341][扩张域]]
 
-******* 定理1<<MK459>>
+******* 定理1<<MK455>>
 
-任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 对于集合 $S$ 的[[MK393][生成扩张]] $\mathcal{M}_{(S)}=\left<M_{(S)},I_{(S)}\right>$ 若[[MK454][维数]] $[\mathcal{M}_{(S)}:\mathcal{M}]<\infty$ 是有限维
-
-则 $\mathcal{M}_{(S)}$ 是 $\mathcal{M}$ 的[[MK451][代数扩张]]
-
-******** 证明
-
-根据[[MK343][定理1]]可得 $\left<M_{(S)},M,I_{(S)}(f_+),I_{(S)}(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，设若[[MK454][维数]] $[\mathcal{M}_{(S)}:\mathcal{M}]=n<\infty$ 则对于任意 $a\in M_{(s)}$
-
-显然 $\{I_{(S)}(c_1),a^1,...,a^n\}\subset M_{(S)}$ 则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK39][命题1]]可得 $\{I_{(S)}(c_1),a,a^1,...,a^{n-1}\}$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性相关]]
-
-即存在 $\{b_0,b_1,...,b_n\}\subset M$ 满足在 $I_{(S)}(f_+),I_{(S)}(f_\times)$ 下有 $\sum_{i=0}^nb_ia^i=I_{(S)}(c_0)$ 则显然在 $\mathcal{M}$ 下 $f(x)=\sum_{i=0}^nb_ix^i\in M_{[x]}$
-
-是 $\mathcal{M}$ 上的[[MK374][一元多项式]]且为[[MK446][最简式]]，且其在 $\mathcal{M}_{(S)}$ 上对于 $a$ 的[[MK441][带入值]]为 $I_{(S)}(c_0)$ 即 $a$ 是 $\mathcal{M}$ 上的[[MK395][代数元]]
-
-由 $a$ 的任意性可得 $\mathcal{M}_{(S)}$ 是 $\mathcal{M}$ 的[[MK451][代数扩张]]
-
-******* 定理2<<MK455>>
-
-任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 对于集合 $S$ 的[[MK393][生成扩张]] $\mathcal{M}_{(S)}=\left<M_{(S)},I_{(S)}\right>$ 任意 $a\in M_{(S)}$ 的冲要条件是：
+任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 对于集合 $S$ 的[[MK393][生成扩张]] $\mathcal{M}_{(S)}=\left<M_{(S)},I_{(S)}\right>$ 任意 $a\in M_{(S)}$ 的充要条件是：
 
 （1） 有限个 $\{s_1,...,s_n\}\subset S,\{s'_1,...,s'_m\}\subset S$
 
@@ -8039,7 +8023,7 @@ a_{i^*-1}&=a_{i^*-3}-n_{i^*-2}a_{i^*-2}=(v_{i^*-3}a_0+u_{i^*-3}p)-n_{i^*-2}(v_{i
 
 与上一步类似可证，不再赘述
 
-******* 定理3<<MK461>>
+******* 定理2<<MK461>>
 
 任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 对于集合 $S$ 的[[MK393][生成扩张]] $\mathcal{M}_{(S)}=\left<M_{(S)},I_{(S)}\right>$ 若任意 $s\in S$ 均为 $\mathcal{M}$ 上的[[MK395][代数元]]
 
@@ -8065,7 +8049,7 @@ a_{i^*-1}&=a_{i^*-3}-n_{i^*-2}a_{i^*-2}=(v_{i^*-3}a_0+u_{i^*-3}p)-n_{i^*-2}(v_{i
 
 即对于任意 $a\in M_{(S)}$ 均是 $\mathcal{M}$ 上的[[MK395][代数元]]，则 $\mathcal{M}_{(S)}$ 是 $\mathcal{M}$ 的[[MK451][代数扩张]]
 
-******* 定理4<<MK464>>
+******* 定理3<<MK464>>
 
 任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 对于集合 $S$ 的[[MK393][生成扩张]] $\mathcal{M}_{(S)}=\left<M_{(S)},I_{(S)}\right>$ 若 $s\in S$ 均为 $\mathcal{M}$ 上的[[MK395][代数元]]且 $|S|<\infty$
 
@@ -8709,6 +8693,64 @@ h(s^*_1,...,s^*_{m+n})=&I_1(f_+)\left(f(s^*_1,...,s^*_{m+n}),I_1(f_-)(f'^*(s^*_1
 
 同理可证 $f_\times,f_-$ ，即可得 $e^*$ 是[[MK344][同态映射]]
 
+******* 定理3<<MK459>>
+
+$\mathcal{N}=\left<N,J\right>$ 是 $\mathcal{M}=\left<M,I\right>$ 的[[MK341][扩张域]]，若[[MK454][维数]] $[\mathcal{N}:\mathcal{M}]<\infty$ 是有限维则 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK451][代数扩张]]
+
+******** 证明
+
+根据[[MK343][定理1]]可得 $\left<N,M,J(f_+),J(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，设若[[MK454][维数]] $[\mathcal{N}:\mathcal{M}]=n<\infty$ 则对于任意 $a\in N$
+
+显然 $\{J(c_1),a^1,...,a^n\}\subset N$ 则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK39][命题1]]可得 $\{J(c_1),a,a^1,...,a^{n-1}\}$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性相关]]
+
+即存在不全为 $I(c_0)$ 的 $\{b_0,b_1,...,b_n\}\subset M$ 满足在 $J(f_+),J(f_\times)$ 下有 $\sum_{i=0}^nb_ia^i=J(c_0)$ 则显然在 $\mathcal{M}$ 下 $f(x)=\sum_{i=0}^nb_ix^i\in M_{[x]}$
+
+是 $\mathcal{M}$ 上的[[MK374][一元多项式]]且易证 $f(x)\ne I[x](c_0)$ ，且其在 $\mathcal{N}$ 上对于 $a$ 的[[MK441][带入值]]为 $I_{(S)}(c_0)$ 即 $a$ 是 $\mathcal{M}$ 上的[[MK395][代数元]]
+
+由 $a$ 的任意性可得 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK451][代数扩张]]
+
+******* 定理4<<MK486>>
+
+$\mathcal{N}=\left<N,J\right>$ 是 $\mathcal{M}=\left<M,I\right>$ 的[[MK451][代数扩张]]，且 $M$ 是[[MK83][无限集]]则 $|M|=|N|$
+
+******** 证明
+
+********* $|M|=\left|M[x_1]\right|$ 
+
+根据[[MK484][定理6]]可得存在 $\mathcal{K}=\left<K,L\right>$ 是 $\mathcal{N}$ 的[[MK451][代数扩张]]且为[[MK390][代数封闭域]]，即有 $N\subset K$
+
+根据[[MK444][性质1]]， $M$ 是[[MK83][无限集]]以及[[MK329][推论]]易证 $|M|=\left|\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]\right|$ ，显然 $M[x_1]\subset \bigcup_{n\in\mathbb{N}}M[\vec{x}_n]$ 根据[[MK33][定理5]]可得 $|M[x_1]|\leq|\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]|$
+
+又根据[[MK327][定理6]]可得 $|M[x_1]|\leq|M|$ 显然对于任意 $a\in M$ 亦有 $f(x_1)=a\in M[x_1]$ 故同理可得 $|M|\leq\left|M[x_1]\right|$
+
+即根据[[MK34][伯恩斯坦定理]]可得 $|M|=\left|M[x_1]\right|$ ，根据[[MK29][等势]]存在[[MK181][双射]] $\psi:M\to M[x_1]$
+
+********* $|N-M|\leq|M[x_1]\times\mathbb{N}|$
+
+又根据[[MK410][推论]]可得任意[[MK374][一元多项式]]的[[MK389][根]]的个数为有限个，则对于任意 $f(x_1)\in M[x_1]$ 定义 $R_{f(x_1)}=\{a_1,...,a_{f(x_1)}\}$ 为其所有[[MK389][根]]的集合
+
+由于是[[MK451][代数扩张]]，故可得任意 $a\in N-M$ 均存在 $f(x_1)\in M[x_1]$ 满足 $a$ 是 $f(x_1)$ 的[[MK389][根]]，即 $a\in R_{f(x_1)}$
+
+又定义[[MK175][函数]] $v_{f(x_1)}:(N-M)\to\mathbb{N}$ 满足任意 $a\in N-M$ 且 $a$ 是 $f(x_1)$ 的[[MK389][根]]，则 $a$ 是该[[MK436][多项式]]的第 $v_{f_(x_1)}(a)$ 个[[MK389][根]]
+
+则定义 $U_a=\left\{\left<f(x_1),v_{f(x_1)}(a)\right>\big|a\in R_{f(x_1)}\right\}$ 根据[[MK14][选择公理]]存在选择函数满足 $s(U_a)\in U_a$
+
+最终定义 $\phi(a)=s(U_a)$ ，对于任意 $\{a_1,a_2\}\subset N-M$ 且 $a_1\ne a_2$ 设 $\phi(a_1)=\left<f_1(x_1),v_{f_1(x_1)}(a_1)\right>,\phi(a_2)=\left<f_2(x_1),v_{f_2(x_1)}(a_2)\right>$
+
+若 $f_1(x_1)\ne f_2(x_1)$ 则 $\phi(a_1)\ne\phi(a_2)$ ，若 $f_1(x_1)=f_2(x_1)$ 则显然 $v_{f_1(x_1)}(a_1)\ne v_{f_1(x_1)}(a_2)$ 即亦有 $\phi(a_1)\ne\phi(a_2)$ 
+
+综上所述易证 $\phi$ 是[[MK176][单射]]，显然任意 $a\in N-M$ 均有 $\phi(a)\in M[x_1]\times\mathbb{N}$ 根据[[MK29][等势]] $|N-M|\leq|M[x_1]\times\mathbb{N}|$
+
+********* 证明结论
+
+根据上上步可得 $|M|=\left|M[x_1]\right|$ 根据[[MK422][推论]]可得 $|M[x_1]\times\mathbb{N}|=\max\left(|M[x_1]|,|\mathbb{N}|\right)$ 根据 $M$ 是[[MK83][无限集]]以及[[MK329][推论]]易证 $|M[x_1]\times\mathbb{N}|=|M[x_1]|$ 
+
+根据[[MK30][定理1]]可得 $|M[x_1]\times\mathbb{N}|=|M[x_1]|=|M|$ 根据[[MK327][定理6]]可得 $|N-M|\leq|M|$ 
+
+又由于 $N=(N-M)\cup M$ 即有 $|N|=|(N-M)\cup M|$ 根据[[MK86][定理3]]易证 $|(N-M)\cup M|=\max(|N-M|,|M|)$
+
+又根据[[MK30][定理1]]以及 $|N-M|\leq|M|$ 可得 $|N|=|(N-M)\cup M|=\max(|N-M|,|M|)=|M|$
+
 ****** 分裂域<<MK452>>
 
 任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 定义：
@@ -8775,9 +8817,15 @@ $\mathcal{N}$ 对于任意 $f(x)\in F$ 在 $\mathcal{M}$ 上[[MK394][可分裂]]
 
 根据[[MK347][性质4]]可得对于任意 $b_i,1\leq i\leq n$ 均有 $f(x)$ 的[[MK441][带入值]] $f(b_i)=L(c_0)$ 即 $b_i\in S\subset N$
 
-设 $\mathcal{N}[x]=\left<N[x],J[x]\right>$ 是 $\mathcal{N}$ 上的[[MK374][一元多项式环]]，即有 $x+(-b_i)\in N[x]$ 。定义 $h(x)$ 的[[MK446][最简式]]为 $h'(x)$
+设 $\mathcal{N}[x]=\left<N[x],J[x]\right>$ 是 $\mathcal{N}$ 上的[[MK374][一元多项式环]]，即有 $x+(-b_i)\in N[x]$ 。
 
-且易证用 $\mathcal{N}[x]$ 上的连续乘法求 $b_0\prod_{i=1}^n(x+(-b_i))$ 及其[[MK446][最简式]]与 $h'(x)$ [[MK447][相等]]
+根据[[MK439][多项式环]]乘加法易证在 $\mathcal{K}[x]$ 上有 $f(x)=b_0\prod_{i=1}^n(x+(-b_i))=b_0x^n+\sum_{i=1}^{n-1}b'_ix^i$
+
+假设 $f(x)=\sum_{i\in P}a_ix^{k_i}$ 设 $P'=\left\{i\big|i\in P\land k_i=n\right\}$ 
+
+由于 $b_0$ 是仅有的最高次项系数且 $b_0\ne L(c_0)$ 故显然有 $b_0=\sum_{i\in P'}a_i$ 根据封闭性必有 $b_0\in M$
+
+定义 $h(x)$ 的[[MK446][最简式]]为 $h'(x)$ 则易证用 $\mathcal{N}[x]$ 上的连续乘法求 $b_0\prod_{i=1}^n(x+(-b_i))$ 及其[[MK446][最简式]]与 $h'(x)$ [[MK447][相等]]
 
 则根据[[MK439][多项式环]]定义显然可得在 $\mathcal{N}[x]$ 下亦有 $f(x)=b_0\prod_{i=1}^n(x+(-b_i))$ 其中 $\prod$ 为 $\mathcal{N}[x]$ 上的连续乘法
 
@@ -8971,6 +9019,32 @@ $\mathcal{N}$ 对于任意 $f(x)\in F$ 在 $\mathcal{M}$ 上[[MK394][可分裂]]
 
 即可得 $v^*$ 是 $\mathcal{N}_{|S}$ 与 $\mathcal{M}_{|S'}$ 的[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]
 
+****** 性质
+
+******* [[MK143][偏序性]]<<MK483>>
+
+定义所有[[MK338][域]]的集合为 $K$ ，则定义 $K$ 上的关系 $\prec$ 满足对于任意 $\{\mathcal{N}_1,\mathcal{N}_2\}\subset K$ 若有 $\mathcal{N}_1\prec\mathcal{N}_2$ 则 $\mathcal{N}_1$ 是 $\mathcal{N}_2$ 的[[MK341][子域]]
+
+则 $\prec$ 是[[MK143][偏序关系]]
+
+******** 证明
+
+********* [[MK124][自反性]]
+
+显然对于任意 $\mathcal{N}\in K$ 自身是自身的[[MK341][子域]]
+
+********* [[MK127][反对称性]]
+
+对于任意 $\{\mathcal{N}_1,\mathcal{N}_2\}\subset K$ 若有 $\mathcal{N}_1\prec\mathcal{N}_2$ 以及 $\mathcal{N}_2\prec\mathcal{N}_1$ 则可得 $\mathcal{N}_1$ 是 $\mathcal{N}_2$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+且 $\mathcal{N}_2$ 是 $\mathcal{N}_1$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，则根据[[~/文档/note/数理逻辑/sllj.org::MK283][子结构偏序性]]易证 $\mathcal{N}_1=\mathcal{N}_2$
+
+********* [[MK128][传递性]]
+
+对于任意 $\{\mathcal{N}_1,\mathcal{N}_2,\mathcal{N}_3\}\subset K$ 若有 $\mathcal{N}_1\prec\mathcal{N}_2$ 以及 $\mathcal{N}_2\prec\mathcal{N}_3$ ，则显然有 $\mathcal{N}_1\vDash T_\mathbb{F},\mathcal{N}_2\vDash T_\mathbb{F}$ 均为[[MK338][域]]
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK283][子结构偏序性]]可得 $\mathcal{N}_1$ 是 $\mathcal{N}_3$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，即 $\mathcal{N}_1\prec\mathcal{N}_3$
+
 ***** 有理数[[MK338][域]]<<MK424>>
 
 若 $\mathcal{Q}=\left<\mathbb{Q},I_\mathbb{Q}\right>$ 满足：
@@ -9140,13 +9214,17 @@ $\mathcal{Q}\vDash T_\mathbb{F}$ 即 $\mathcal{Q}$ 是[[MK338][域]]
 
 ********* 证明
 
-根据[[MK447][定义]]可设 $f'_1(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$
+根据[[MK447][定义]]可设 $f'_1(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right),f'_2(\vec{x})=\sum_{i\in Q'}\left(b'_i\left(\prod_{j\in L'_i}x_j^{l'_{i,j}}\right)\right)$
+
+根据[[MK447][相等]]可得存在[[MK181][双射]] $\phi:P'\to Q'$
+
+满足对于任意 $i\in P'$ 均有 $a'_i=b'_{\phi(i)}$ 和 $K'_i=L'_{\phi(i)}$ 以及对于任意 $j\in L'_i$ 均有 $k'_{i,j}=l'_{\phi(i),j}$
 
 则根据[[MK356][性质4]]中加法结合律、交换律，乘法结合律、交换律易证（以下 $J(f_+),J(f_\times)$ 简写）：
 
 \begin{aligned}
- f'_1(\vec{s})-f'_2(\vec{s})=&\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)-\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)\\
-=&\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)-a'_i\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)\\
+ f'_1(\vec{s})-f'_2(\vec{s})=&\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)-\sum_{i\in Q'}\left(b'_i\left(\prod_{j\in L'_i}s_j^{l'_{i,j}}\right)\right)\\
+=&\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)-b'_{\phi(i)}\left(\prod_{j\in L'_{\phi(i)}}s_j^{l'_{\phi(i),j}}\right)\right)\\
 =&\sum_{i\in P'}\left((a'_i-a'_i)\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)\\
 =&\sum_{i\in P'}\left(J(c_0)\left(\prod_{j\in K'_i}s_j^{k'_{i,j}}\right)\right)\\
 =&\sum_{i\in P'}\left(J(c_0)\right)\\
@@ -9310,6 +9388,74 @@ $\mathcal{Q}\vDash T_\mathbb{F}$ 即 $\mathcal{Q}$ 是[[MK338][域]]
 则对于任意 $f(\vec{x})=\sum_{i=0}^m\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ 若存在 $\{b_1,...,b_n\}\subset M$ 满足 $f(b_1,...,b_n)=I(c_0)$
 
 即 $f(\vec{x})$ 对于 $\left<b_1,...,b_n\right>$ 的[[MK441][带入值]]为 $I(c_0)$ 则称 $\left<b_1,...,b_n\right>$ 是 $f(\vec{x})$ 的一个根
+
+******* 性质
+
+******** 性质1<<MK444>>
+
+任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 定义其上关于 $\vec{x}_n=\left<x_1,...,x_n\right>$ 的[[MK436][多项式]]集合为 $M[\vec{x}_n]$
+
+则所有 $\mathcal{M}$ 上的[[MK436][多项式]]集合为 $\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]$ ，则有 $\max\left(|\mathbb{N}|,|M|\right)=\left|\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]\right|$
+ 
+********* 证明
+
+对于任意 $\prod_{j\in K_i}x_j^{k_{i,j}}$ 由于 $|K_i|<\infty$ 不妨设 $K_i=\{j_1,...,j_{|K_i|}\}$ 进一步设 $\vec{k}_i=\left<k_{i,j_1},...,k_{i,j_{|K_i|}}\right>$
+
+对于任意 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in \bigcup_{n\in\mathbb{N}}M[\vec{x}_n]$ 同理可定义 $P=\{i_1,...,i_{|P|}\}$
+
+定义 $\phi(f(\vec{x}))=\left<\left<i_1,a_{i_1},\vec{k}_{i_1}\right>,...,\left<i_{|P|},a_{i_{|P|}},\vec{k}_{i_{|P|}}\right>\right>$ 显然对于任意 $f_1(\vec{x})\ne f_2(\vec{x})$ 易证 $\phi(f_1(\vec{x}))\ne\phi(f_2(\vec{x}))$
+
+显然有 $\left<\left<i_1,a_{i_1},\vec{k}_{i_1}\right>,...,\left<i_{|P|},a_{i_{|P|}},\vec{k}_{i_{|P|}}\right>\right>\in\bigcup_{n\in\mathbb{N}}\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n$ 即 $\phi:\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]\to\bigcup_{n\in\mathbb{N}}\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n$
+
+显然 $\phi$ 是[[MK175][函数]]且易证对于任意 $f_1(\vec{x})\ne f_2(\vec{x})$ 易证 $\phi(f_1(\vec{x}))\ne\phi(f_2(\vec{x}))$ 即 $\phi$ 是[[MK176][单射]]
+
+根据[[MK29][等势]]有 $\left|\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]\right|\leq\left|\bigcup_{n\in\mathbb{N}}\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n\right|$ 显然 $\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n$ 是[[MK83][无限集]]
+
+故根据[[MK86][定理3]]可得 $\left|\bigcup_{n\in\mathbb{N}}\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n\right|=\max\left(\left\{\left|\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n\right|\big|n\in\mathbb{N}\right\}\right)$
+
+显然 $\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)$ 是[[MK83][无限集]]，根据[[MK88][定理5]]易证对于任意 $n\in\mathbb{N}$ 均有 $\left|\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n\right|=\left|\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right|$
+
+又根据[[MK422][推论]]可得 $\left|\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right|=\max\left(|\mathbb{N}^n|,|M|,\left|\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right|\right)$
+
+同理结合[[MK86][定理3]]以及[[MK88][定理5]]可得 $\left|\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right|=|\mathbb{N}|$ 即有 $\left|\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right|=\max\left(|\mathbb{N}|,|M|\right)$
+ 
+根据[[MK30][等势等价]]可得 $\left|\bigcup_{n\in\mathbb{N}}\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n\right|=\max\left(|\mathbb{N}^n|,|M|\right)$ 根据[[MK327][定理6]]有 $\left|\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]\right|\leq\max\left(|\mathbb{N}|,|M|\right)$ 
+
+显然有 $|\mathbb{N}|\leq\left|\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]\right|,|M|\leq\left|\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]\right|$ 即亦有 $\max\left(|\mathbb{N}|,|M|\right)\leq\left|\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]\right|$
+
+根据[[MK34][伯恩斯坦定理]] $\max\left(|\mathbb{N}|,|M|\right)=\left|\bigcup_{n\in\mathbb{N}}M[\vec{x}_n]\right|$
+
+******** 性质2<<MK485>>
+
+任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 定义其上关于 $\vec{x}_n=\left<x_1,...,x_n\right>$ 的[[MK436][多项式]]集合为 $M[\vec{x}_n]$
+
+则有 $\max\left(|\mathbb{N}|,|M|\right)=\left|M[\vec{x}_n]\right|$
+
+********* 证明
+
+对于任意 $\prod_{j\in K_i}x_j^{k_{i,j}}$ 由于 $|K_i|<\infty$ 不妨设 $K_i=\{j_1,...,j_{|K_i|}\}$ 进一步设 $\vec{k}_i=\left<k_{i,j_1},...,k_{i,j_{|K_i|}}\right>$
+
+对于任意 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}_n]$ 同理可定义 $P=\{i_1,...,i_{|P|}\}$
+
+定义 $\phi(f(\vec{x}))=\left<\left<i_1,a_{i_1},\vec{k}_{i_1}\right>,...,\left<i_{|P|},a_{i_{|P|}},\vec{k}_{i_{|P|}}\right>\right>$ 显然对于任意 $f_1(\vec{x})\ne f_2(\vec{x})$ 易证 $\phi(f_1(\vec{x}))\ne\phi(f_2(\vec{x}))$
+
+显然有 $\left<\left<i_1,a_{i_1},\vec{k}_{i_1}\right>,...,\left<i_{|P|},a_{i_{|P|}},\vec{k}_{i_{|P|}}\right>\right>\in\bigcup_{n\in\mathbb{N}}\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n$ 即 $\phi:M[\vec{x}_n]\to\bigcup_{n\in\mathbb{N}}\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n$
+
+显然 $\phi$ 是[[MK175][函数]]且易证对于任意 $f_1(\vec{x})\ne f_2(\vec{x})$ 易证 $\phi(f_1(\vec{x}))\ne\phi(f_2(\vec{x}))$ 即 $\phi$ 是[[MK176][单射]]
+
+根据[[MK29][等势]]有 $\left|M[\vec{x}_n]\right|\leq\left|\bigcup_{n\in\mathbb{N}}\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n\right|$ 显然 $\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n$ 是[[MK83][无限集]]
+
+故根据[[MK86][定理3]]可得 $\left|\bigcup_{n\in\mathbb{N}}\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n\right|=\max\left(\left\{\left|\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n\right|\big|n\in\mathbb{N}\right\}\right)$
+
+显然 $\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)$ 是[[MK83][无限集]]，根据[[MK88][定理5]]易证对于任意 $n\in\mathbb{N}$ 均有 $\left|\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n\right|=\left|\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right|$
+
+又根据[[MK422][推论]]可得 $\left|\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right|=\max\left(|\mathbb{N}^n|,|M|,\left|\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right|\right)$
+
+同理结合[[MK86][定理3]]以及[[MK88][定理5]]可得 $\left|\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right|=|\mathbb{N}|$ 即有 $\left|\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right|=\max\left(|\mathbb{N}|,|M|\right)$
+ 
+根据[[MK30][等势等价]]可得 $\left|\bigcup_{n\in\mathbb{N}}\left(\mathbb{N}\times M\times\left(\bigcup_{n\in\mathbb{N}}\mathbb{N}^n\right)\right)^n\right|=\max\left(|\mathbb{N}^n|,|M|\right)$ 根据[[MK327][定理6]]有 $\left|M[\vec{x}_n]\right|\leq\max\left(|\mathbb{N}|,|M|\right)$ 
+
+显然有 $|\mathbb{N}|\leq\left|M[\vec{x}_n]\right|,|M|\leq\left|M[\vec{x}_n]\right|$ 即亦有 $\max\left(|\mathbb{N}|,|M|\right)\leq\left|[\vec{x}_n]\right|$ 根据[[MK34][伯恩斯坦定理]] $\max\left(|\mathbb{N}|,|M|\right)=\left|M[\vec{x}_n]\right|$
 
 ******* 一元多项式环<<MK374>>
 
@@ -10087,7 +10233,7 @@ $T_\mathbb{F}\vdash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_
 
 根据[[MK356][性质4]]可得 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
 
-***** 定理3
+***** 定理3<<MK481>>
 
 若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]其[[MK374][多项式环]]为 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ ，则对于任意[[MK377][首一不可约]]多项式 $f(x)\in M[x]$ 存在 $\mathcal{N}=\left<N,J\right>$ 满足：
 
@@ -10165,9 +10311,91 @@ $T_\mathbb{F}\vdash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_
 
 综上所述 $[x]_\sim\in M[x]/(f(x))$ 是 $f(x)$ 在 $\mathcal{N}$ 下的[[MK389][根]]
 
+****** 推论<<MK482>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]则对于任意[[MK377][首一不可约]]多项式 $f(x)\in M[x]$ 其[[MK378][次数]]为 $n$ 存在 $\mathcal{N}'=\left<N',J'\right>$ 满足
+
+（1） $\mathcal{N}'\vDash T_\mathbb{F}$ 是[[MK338][域]]
+
+（2） $\mathcal{M}$ 是 $\mathcal{N}'$ 的[[MK341][子域]]
+
+（3） 存在 $a\in N$ 是 $f(x)$ 在 $\mathcal{N}'$ 下的[[MK389][根]]
+
+（4） $\left<N',M,J'(f_+),J'(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
+
+（5） $I(c_1),[x]_\sim,...,[x^{n-1}]_\sim$ 为（4）中[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]的一组[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]
+
+******* 证明
+
+根据[[MK481][定理3]]可得存在 $\mathcal{N}=\left<N,J\right>$ 满足：
+
+（1） $\mathcal{N}\vDash T_\mathbb{F}$ 是[[MK338][域]]
+
+（2） $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入结构]]，设嵌入映射为 $e$
+
+（3） 存在 $a\in N$ 是 $f(x)$ 在 $\mathcal{N}$ 下的[[MK389][根]]
+
+******** 证明（1~3）
+
+定义 $N'=\left(N-\left\{e(a)\big|a\in M\right\}\right)\cup M$ 显然有 $M\subset N'$ ，定义 $g:N\to N'$ 满足任意 $a\in N'$ 有 $g(a) =\begin{cases}e(a)&a\in M\\a&a\not\in M\end{cases}$
+
+显然 $f$ 是[[MK181][双射]]，根据[[MK188][求逆]]可得存在[[MK188][逆函数]] $g^{-1}:N\to N'$ ，定义 $J'$ 满足：
+
+（1） $J'(c_1)=g(J(c_1)),J'(c_0)=g(J(c_0))$
+
+（2） 对于任意 $\{a,b\}\in N'$
+
+     有 $J'(f_+)(a,b)=g(J(f_+)(g^{-1}(a),g^{-1}(b))),J'(f_\times)(a,b)=g(J(f_\times)(g^{-1}(a),g^{-1}(b))),J'(f_-)(a,b)=g(J(f_-)(g^{-1}(a)))$
+
+则显然对于任意 $\{a,b\}\in N'$ 均有 $J'(f_+)(a,b)\in N',J'(f_\times)(a,b)\in N',J'(f_-)(a,b)\in N'$
+
+进一步可得 $\mathcal{N}'=\left<N',J'\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 上的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，进一步易证 $\mathcal{N}',\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，即有：
+
+（1） $\mathcal{N}\vDash T_\mathbb{F}$ 是[[MK338][域]]，则有 $\mathcal{N}'\vDash T_\mathbb{F}$
+
+（2） $\mathcal{N}\vDash(\exists x_1(f(x_1)\hat{=}c_0))$ 则有 $\mathcal{N}'\vDash(\exists x_1(f(x_1)\hat{ =}c_0))$
+
+又由于 $M\subset N'$ 则显然 $\mathcal{M}$ 是 $\mathcal{N}'$ 的[[MK341][子域]]
+
+******** 证明（4）
+
+根据[[MK343][定理1]]可得 $\left<N',M,J'(f_+),J'(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
+
+******** 证明（5）
+
+根据[[MK456][定理4]]可得：
+
+（1） $\left<M[x]/(f(x)),M^*,J(f_+),J(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，其中 $M^*=\left\{[a]_\sim\big|a\in M\right\}$ 
+
+（2） $[I(c_1)]_\sim,[x]_\sim,...,[x^{n-1}]_\sim$ 为（1）中[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]的一组[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]
+
+根据[[MK481][定理3]]证明过程可得 $\mathcal{N}=\left<M[x]/(f(x)),J\right>$ 根据上上步可得 $\mathcal{N}',\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，设同构映射为 $e$
+
+同样根据 $\mathcal{N}'$ 定义易证若 $a\in M$ 则 $e(a)=[a]_\sim\in M^*,e(I(c_1))=[I(c_1)]_\sim$
+
+且由于 $[x]_\sim\not\in M^*$ 故可得 $e([x^n]_\sim)=[x^n]_\sim$
+
+********* [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]
+
+假设 $I(c_1),[x]_\sim,...,[x^{n-1}]_\sim$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性相关]]，则存在 $\{b_0,...,b_n\}\subset M$ 使得 $\sum_{i=1}^nb_i[x^n]_\sim+b_0[I(c_1)]_\sim=J'(c_0)$
+
+即定义[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]] $\phi=\sum_{i=0}^nf_\times(x_i,x_{n+i+1})$ （其中 $\sum$ 为连续 $f_+$ ）定义 $\mathcal{N}'$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v'$ 满足 $v'(x_i)=\begin{cases}b_i&0\leq i\leq n\\ [x^{i-n-1}]_\sim&i>n\end{cases}$
+
+则显然 $\left<\mathcal{N}',v\right>\vDash(\phi\hat{=}c_0)$ 由于 $\mathcal{N}',\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，故根据[[~/文档/note/数理逻辑/sllj.org::MK276][定理1]]可得 $\left<\mathcal{N},v\cdot e\right>\vDash(\phi\hat{ =}c_0$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证在 $\mathcal{N}$ 下有 $\sum_{i=1}^ne(b_i)e([x^n]_\sim)+e(b_0)e(I(c_1))=J'(c_0)$
+
+进一步有 $\sum_{i=1}^ne(b_i)[x^n]_\sim+e(b_0)[I(c_1)]_\sim=J'(c_0)$ 即与 $[I(c_1)]_\sim,[x]_\sim,...,[x^{n-1}]_\sim$ 为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]矛盾
+
+故假设不成立，即 $I(c_1),[x]_\sim,...,[x^{n-1}]_\sim$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]
+
+********* [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK12][线性表述]]所有元素
+
+同上一步类似可证
+
 ***** 定理4<<MK456>>
 
-若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]其[[MK374][多项式环]]为 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 对于任意[[MK377][首一不可约]]多项式 $f(x)\in M[x]$
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]其[[MK374][多项式环]]为 $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 对于任意[[MK377][首一不可约]]多项式 $f(x)\in M[x]$ 其[[MK378][次数]]为 $n$
 
 取 $\mathcal{M}[x]$ 中包含 $f(x)$ 的最小[[MK348][理想]] $(f(x))\subset M[x]$ 取 $\mathcal{M}[x]$ 在[[MK348][理想]] $(f(x))$ 上的[[MK369][幺环商环]] $\mathcal{N}=\left<M[x]/(f(x)),J\right>$
 
@@ -10927,7 +11155,7 @@ f(x)=&p_n(x)\prod_{i=1}^{n-1}h_i(x)\\
 
 若 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]（显然亦为[[MK338][域]]）其[[MK374][多项式环]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 则对于任意 $f(x)\in M[x]$
 
-其[[MK389][根]]的数量为有限个
+若其[[MK378][次数]]为 $n>0$ 则其[[MK389][根]]的数量最多为 $n$ 个
 
 ******* 证明
 
@@ -10958,6 +11186,60 @@ f(x)=&p_n(x)\prod_{i=1}^{n-1}h_i(x)\\
 故假设不成立，即 $M$ 是[[MK83][无限集]]
 
 $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
+
+***** 性质4<<MK487>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]的[[MK339][特征]]均为 $p$ 由于是[[MK390][代数封闭域]]，故为[[MK338][域]]，则：
+
+（1） 根据[[MK430][性质1]]可得 $p$ 是素数，根据[[MK431][性质3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是[[MK338][域]]，进一步根据[[MK419][定理3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+
+（2） 若 $p=0$ 则根据[[MK429][定理7]]可得[[MK424][有理数域]] $\mathcal{Q}=\left<\mathbb{Q},I_\mathbb{Q}\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+
+（3） 根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M}'=\left<M',I'\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+则若 $\mathcal{M}$ 关于 $\mathcal{M}'$ 的[[MK438][超越基]]为 $S$ ，则设 $\mathcal{M}'$ 基于 $S$ 的[[MK393][生成扩张]]为 $\mathcal{M}'_{(S)}=\left<M'_{(S)},I'_{(S)}\right>$ 则有
+
+（1） $\left|M'_{(S)}\right|\leq\max(|\mathbb{N}|,|S|)$
+
+（2） 若 $|\mathbb{N}|\leq |S|$ 则有 $|M|=|S|$ 
+
+****** 证明
+
+******* 证明（1）
+
+根据[[MK455][定理1]]可得对于任意 $a\in M'_{(S)}$ 存在：
+
+（1） 有限个 $\{s_1,...,s_n\}\subset S,\{s'_1,...,s'_m\}\subset S$
+
+（2） $\mathcal{M}$ 上关于 $\vec{x}=\left<x_1,...,x_n\right>$ 的[[MK436][多项式]] $f(\vec{x})\in M[\vec{x}]$ 关于 $\vec{y}=\left<y_1,...,y_m\right>$ 的[[MK436][多项式]] $g(\vec{y})\in M[\vec{y}]$ 
+
+满足 $a=f(s_1,...,s_n)\left(g(y_1,...,y_m)\right)^{-1}$ 则对于任意 $a\in M'_{(S)}$
+
+定义 $U_a=\left\{\left<f(\vec{x}),g(\vec{y}),s_1,...,s_n,s'_1,...,s'_m\right>\big|a=f(s_1,...,s_n)\left(g(y_1,...,y_m)\right)^{-1}\land f(\vec{x})\in M'[\vec{x}]\land g(\vec{y})\in M'[\vec{y}]\land\left<s_1,...,s_n\right>\in S^n\land\left<s'_1,...,s'_m\right>\in S^m\right\}$
+
+根据[[MK14][选择公理]]可得存在选择函数满足 $\psi(U_a)\in U_a$ 则对于任意 $a$ 定义 $\phi(a)=\psi(U_a)$ 以及 $\vec{x}_n=\left<x_1,...,x_n\right>,\vec{y}_m=\left<y_1,...,y_m\right>$
+
+显然 $\phi$ 是 $M'_{(S)}$ 到 $\left(\bigcup_{n\in\mathbb{N}}\left(M'[\vec{x}_n]\times S^n\right)\right)\times\left(\bigcup_{m\in\mathbb{N}}\left(M'[\vec{y}_m]\times S^m\right)\right)$ 的[[MK175][函数]]，对于任意 $a\ne b$ 且 $\{a,b\}\subset M'$
+
+假设 $\phi(a)=\phi(b)$ 则有 $a=f(s_1,...,s_n)\left(g(y_1,...,y_m)\right)^{-1}=b$ 显然矛盾，故假设不成立。即 $a\ne b$ 必有 $\phi(a)\ne\phi(b)$
+
+即 $\phi$ 是[[MK176][单射]]。故可得 $\left|M'_{(S)}\right|\leq\left|\left(\bigcup_{n\in\mathbb{N}}\left(M'[\vec{x}_n]\times S^n\right)\right)\times\left(\bigcup_{m\in\mathbb{N}}\left(M'[\vec{y}_m]\times S^m\right)\right)\right|$ 显然易证 $\left|\left(\bigcup_{n\in\mathbb{N}}\left(M'[\vec{x}_n]\times S^n\right)\right)\right|=\left|\left(\bigcup_{m\in\mathbb{N}}\left(M'[\vec{y}_m]\times S^m\right)\right)\right|$
+
+根据[[MK422][推论]]可得 $\left|\left(\bigcup_{n\in\mathbb{N}}\left(M'[\vec{x}_n]\times S^n\right)\right)\times\left(\bigcup_{m\in\mathbb{N}}\left(M'[\vec{y}_m]\times S^m\right)\right)\right|=\left|\left(\bigcup_{n\in\mathbb{N}}\left(M'[\vec{x}_n]\times S^n\right)\right)\right|$
+
+根据[[MK485][性质2]]可得对于任意 $n\in\mathbb{N}$ 有 $|M'[\vec{x}_n]|=\max(|M'|,|\mathbb{N}|)$ 由于 $\mathcal{M}'$ 与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，故存在[[MK181][双射]] $e:M'\to Z_p$ 或 $e:M'\to\mathbb{Q}$
+
+结合[[MK96][推论]]以及[[MK29][等势]]可得 $|M'|\leq|\mathbb{N}|$ 即有 $|M'[\vec{x}_n]|=|\mathbb{N}|$ ，又根据[[MK422][推论]]以及[[MK30][等价性]]可得对于任意 $n\in\mathbb{N}$ 均有 $\left|M'[\vec{x}_n]\times S^n\right|=\max\left(|\mathbb{N}|,|S|\right)$
+
+显然 $M'[\vec{x}_n]\times S^n$ 是[[MK83][无限集]]，则根据[[MK86][定理3]]可得 $\left|\left(\bigcup_{n\in\mathbb{N}}\left(M'[\vec{x}_n]\times S^n\right)\right)\right|=\max(|\mathbb{N}|,|S|)$ 最终可得 $\left|M'_{(S)}\right|\leq\max(|\mathbb{N}|,|S|)$ 
+
+******* 证明（2）
+
+根据结论（1）可得 $\left|M'_{(S)}\right|\leq|S|$ 显然有 $S\subset M_{(S)}$ 则根据[[MK33][定理5]]可得 $|S|\leq\left|M'_{(S)}\right|$ 根据[[MK34][伯恩斯坦定理]]有 $|S|=\left|M'_{(S)}\right|$
+
+根据[[MK477][性质1]]可得 $\mathcal{M}$ 是 $\mathcal{M}'_{(S)}$ 的[[MK451][代数扩张]]，由于 $|\mathbb{N}|\leq |S|$ 故 $S$ 是[[MK83][无限集]]，进一步易证 $M'_{(S)}$ 亦为[[MK83][无限集]]
+
+则根据[[MK486][定理4]]可得 $|M|=|M_{(S)}|$ 根据[[MK30][等价性]]有 $|M|=|S|$ 
 
 **** 相关定义
 
@@ -11197,6 +11479,14 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 与[[MK415][定理2]]同理可证
 
+****** 推论2
+
+[[MK411][代数封闭域理论]] $\mathcal{T}_\test{ACF}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}},T_\test{ACF},T^*_\test{ACF}\right>$ 具有[[~/文档/note/数理逻辑/sllj.org::MK485][模型完全]]性
+
+******* 证明
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK487][定理5]]以及 $\mathcal{T}_\test{ACF}$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]直接可得
+
 ***** 定理3<<MK419>>
 
 [[MK339][特征]]确定（设为 $p$ ）的[[MK411][代数封闭域理论]] $\mathcal{T}_{\test{ACF}_p}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}},T_{\test{ACF}_p},T^*_{\test{ACF}_p}\right>$
@@ -11323,13 +11613,15 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 根据[[MK416][推论]]可得 $\mathcal{T}_{\test{ACF}_p}$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]，根据[[MK419][定理3]]可得 $\mathcal{T}_{\test{ACF}_p}$ 存在[[~/文档/note/数理逻辑/sllj.org::MK460][极小结构]]。则根据[[~/文档/note/数理逻辑/sllj.org::MK484][定理3]]可得 $\mathcal{T}_{\test{ACF}_p}$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]
 
-***** 定理5
+***** 定理5<<MK488>>
 
 对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ [[MK339][特征]]均为 $p$ ，由于是[[MK390][代数封闭域]]，故为[[MK338][域]]，则：
 
 （1） 根据[[MK430][性质1]]可得 $p$ 是素数，根据[[MK431][性质3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是[[MK338][域]]，进一步根据[[MK419][定理3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
 
-（2） 根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ 分别是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且与[[MK417][ $\mathbb{Z}_p$ ]]有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+（2） 若 $p=0$ 则根据[[MK429][定理7]]可得[[MK424][有理数域]] $\mathcal{Q}=\left<\mathbb{Q},I_\mathbb{Q}\right>$ 是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+
+（2） 根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ 分别是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
 则若 $\mathcal{M}$ 关于 $\mathcal{M}'$ 的[[MK438][超越基]] $S$ 与 $\mathcal{N}$ 关于 $\mathcal{N}'$ 的[[MK438][超越基]] $T$ [[MK29][等势]]，则有 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
@@ -11342,6 +11634,118 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 又由于 $\mathcal{M},\mathcal{N}$ 是[[MK390][代数封闭域]]，故根据[[MK480][性质2]]可得 $\mathcal{M},\mathcal{N}$ 分别是 $\mathcal{M}'_{(S)},\mathcal{N}'_{(T)}$ 上的所有[[MK374][一元多项式]] $M'_{(S)}[x],N'_{(T)}[x]$ 的[[MK394][分裂域]]
 
 则根据[[MK443][定理]]可得 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+****** 推论
+
+同[[MK488][定理5]]中符号定义，若 $\mathcal{M}$ 关于 $\mathcal{M}'$ 的[[MK438][超越基]] $S$  $\mathcal{N}$ 关于 $\mathcal{N}'$ 的[[MK438][超越基]] $T$ 均为[[MK83][无限集]]
+
+则若 $|N|=|M|$ 则有 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+******* 证明
+
+由于[[MK339][特征]]均为 $p$ 且 $S$ 为[[MK83][无限集]]，则根据[[MK487][性质4]]可得 $|S|=|M|$ 同理可证 $|T|=|N|$ 根据[[MK30][等价性]]可得 $|S|=|T|$
+
+则根据[[MK488][定理5]]可得 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+***** 定理6<<MK484>>
+
+任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 存在 $\mathcal{N}=\left<N,J\right>$ 满足：
+
+（1） $\mathcal{N}$ 是[[MK390][代数封闭域]]
+
+（2） $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK451][代数扩张]]
+
+****** 证明
+
+******* 定义 $\left<K,\prec\right>$ 
+
+定义 $K$ 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 上的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]且为 $\mathcal{M}$ 的[[MK451][代数扩张域]]的集合，定义[[M143][关系]] $\prec$ 满足对于任意 $\{\mathcal{N}_1,\mathcal{N}_2\}\subset K$
+
+有 $\mathcal{N}_1\prec\mathcal{N}_2$ 的充要条件是 $\mathcal{N}_2$ 是 $\mathcal{N}_1$ 的[[MK451][代数扩张]]
+
+由于任意 $\mathcal{O}\in K$ 均为[[MK338][域]]，故则根据[[MK483][偏序性]]易证 $\left<K,\prec\right>$ 是[[MK143][偏序集]]（显然自身是自身的[[MK451][代数扩张]]）
+
+******* $\left<K,\prec\right>$ 上任意[[MK153][链]]都有[[MK145][上界]]
+
+对于任意 $\left<K,\prec\right>$ 上的[[MK153][链]] $T\subset K$ 根据以下证明可得存在 $\mathcal{M}_T$ 满足任意 $\mathcal{O}\in T$ 均为 $\mathcal{M}_T$ 的[[MK341][子域]]
+
+即 $\mathcal{M}_T$ 是 $T$ 上关于 $\prec$ 的[[MK145][上界]]
+
+******** 定义 $\mathcal{M}_T=\left<M_T,I_T\right>$ 
+
+定义 $M_T=\left\{a\big|\mathcal{O}\in K\land \mathcal{O}=\left<O,L\right>\land a\in O\right\}$
+
+定义 $I_T$ 满足：
+
+（1） $I_T(c_0)=I(c_0),I_T(c_1)=I(c_1)$
+
+（2） 对于任意 $\{a_1,a_2\}\subset M_T$ 根据 $M_T$ 定义必有 $\{\mathcal{O}_1=\left<O_1,L_1\right>,\mathcal{O}_2=\left<O_2,L_2\right>\}\subset K$ 满足 $a_1\in O_1,a_2\in O_2$
+
+     由于是[[MK153][链]]，故不妨设 $\mathcal{O}_1\prec\mathcal{O}_2$ ，则有 $\{a_1,a_2\}\subset O_2$
+
+     则定义 $I_T(f_+)(a_1,a_2)=L_2(f_+)(a_1,a_2),I_T(f_\times)(a_1,a_2)=L_2(f_\times)(a_1,a_2),I_T(f_-)(a_1)=L_2(f_-)(a_1)$
+
+对于任意 $\mathcal{O}=\left<O,L\right>\in T$ 必有 $\mathcal{O}\prec\mathcal{O}_2$ 或 $\mathcal{O}_2\prec\mathcal{O}$ ，则易证若 $\{a_1,a_2\}\subset O$
+
+则有 $L(f_+)(a_1,a_2)=L_2(f_+)(a_1,a_2),L(f_\times)(a_1,a_2)=L_2(f_\times)(a_1,a_2),L(f_-)(a_1)=L_2(f_-)(a_1)$ 故 $L_T$ 结果一致
+
+则易证 $\mathcal{M}_T=\left<M_T,I_T\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 上的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，又根据 $L_T$ 定义可得任意 $\mathcal{O}\in T$ 均为 $\mathcal{M}_T$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+******** 任意 $\mathcal{O}\in T$ 均为 $\mathcal{M}_T$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+任意 $\mathcal{O}=\left<O,L\right>\in T$ 对于任意 $\{a_1,a_2\}\subset O$ 根据上一步 $L_T$ 定义可得
+
+（1） $I_T(c_0)=L(c_0),I_T(c_1)=L(c_1)$
+
+（2） $I_T(f_+)(a_1,a_2)=L(f_+)(a_1,a_2),I_T(f_\times)(a_1,a_2)=L(f_\times)(a_1,a_2),I_T(f_-)(a_1)=L(f_-)(a_1)$
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]定义可得 $\mathcal{O}$ 为 $\mathcal{M}_T$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+******** $\mathcal{M}_T$ 是[[MK338][域]]
+
+仅证[[MK337][乘法交换律]]，其余同理可证，对于任意 $\{a_1,a_2\}\subset M_T$ 必有 $\{\mathcal{O}_1=\left<O_1,L_1\right>,\mathcal{O}_2=\left<O_2,L_2\right>\}\subset K$
+
+满足 $a_1\in O_1,a_2\in O_2$ 由于是[[MK153][链]]，故不妨设 $\mathcal{O}_1\prec\mathcal{O}_2$ ，显然 $\mathcal{O}_2$ 是[[MK338][域]]
+
+故可得 $\mathcal{O}_2\vDash(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))[a_1,a_2]$ 根据上一步可得 $\mathcal{O}_2\prec\mathcal{M}_T$
+
+故亦有 $\mathcal{M}_T\vDash(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))[a_1,a_2]$ 又根据 $a_1,a_2$ 的任意性可得 $\mathcal{M}_T\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{ =}f_\times(x_2,x_1))))$
+
+同理可证 $\mathcal{M}_T\vDash T_\mathbb{F}$ 即是[[MK338][域]]
+
+******** 任意 $\mathcal{O}\in T$ 均有 $\mathcal{M}_T$ 是 $\mathcal{O}$ 的[[MK451][代数扩张]]
+
+对于任意 $\mathcal{O}=\left<O,L\right>\in T$ 任取 $a\in M_T-O$ 则根据 $M_T$ 定义存在 $\mathcal{O}'=\left<O',L'\right>\in T$ 满足 $a\in O'$
+
+显然由于 $a\not\in O$ 则有 $\mathcal{O}\prec\mathcal{O}'$ 即 $\mathcal{O}'$ 是 $\mathcal{O}$ 的[[MK451][代数扩张]]，即 $a$ 是 $\mathcal{O}$ 上的[[MK395][代数元]]
+
+又由于 $a$ 的任意性可得 $\mathcal{M}_T$ 是 $\mathcal{O}$ 的[[MK451][代数扩张]]
+
+******* 证明结论
+
+根据上述证明以及[[MK162][佐恩引理]]，可得 $\left<K,\prec\right>$ 上存在[[MK144][极大元]] $\mathcal{N}=\left<N,J\right>$ 由于 $\mathcal{N}\in K$ 故为 $\mathcal{M}$ 的[[MK451][代数扩张]]
+
+假设不为[[MK390][代数封闭域]]
+
+则存在 $\mathcal{N}$ 上的[[MK374][一元多项式]] $f(x)$ 在 $N$ 上没有[[MK389][根]]，根据[[MK462][性质]]易证存在[[MK377][首一不可约]]的[[MK374][多项式]] $f'(x)$ 在 $N$ 上没有[[MK389][根]]
+
+进一步根据[[MK482][推论]]可得有 $\mathcal{N}'=\left<N',J'\right>$ 满足：
+
+（1） $\mathcal{N}'\vDash T_\mathbb{F}$ 是[[MK338][域]]
+
+（2） $\mathcal{M}$ 是 $\mathcal{N}'$ 的[[MK341][子域]]
+
+（3） 存在 $a\in N$ 是 $f(x)$ 在 $\mathcal{N}'$ 下的[[MK389][根]]
+
+（4） $\left<N',M,J'(f_+),J'(f_\times)\right>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
+
+（5） $I(c_1),[x]_\sim,...,[x^{n-1}]_\sim$ 为（4）中[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]的一组[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]
+
+又根据[[MK459][定理3]]以及上述（5）可得 $\mathcal{N}'$ 是 $\mathcal{N}$ 的[[MK451][代数扩张]]，又根据[[MK465][定理1]]以及 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK451][代数扩张]] 
+
+可得 $\mathcal{N}'$ 亦为 $\mathcal{M}$ 的[[MK451][代数扩张]]，即有 $\mathcal{N}'\in K$ 且 $\mathcal{N}\prec\mathcal{N}'$ 。与 $\mathcal{N}$ 是 $\left<K,\prec\right>$ 上存在[[MK144][极大元]]矛盾
+
+故假设不成立，即 $\mathcal{N}=\left<N,J\right>$ 是[[MK390][代数封闭域]]
 
 * 电路设计
 

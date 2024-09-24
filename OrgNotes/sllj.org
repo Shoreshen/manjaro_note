@@ -2,7 +2,7 @@
 
 #+TITLE: 数理逻辑
 
-currnet mark: 490
+currnet mark: 493
 
 free mark: 
   
@@ -6826,6 +6826,24 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 
 则假设不成立，即 $T$ [[MK222][一致]]
 
+***** 引理9<<MK493>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 对于任意[[MK144][语句]] $\theta$ 满足存在 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 满足 $\mathcal{M}\vDash \theta$ 
+
+则任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{N}$ 满足 $\mathcal{N}\vDash \theta$ 。则 $\mathcal{T}$ 是[[MK264][完全的]]
+ 
+****** 证明
+
+任取 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}_0$ ，对于任意[[MK144][语句]] $\theta$ 若有 $T\vdash\theta$ 则根据[[MK257][完备性]] $\mathcal{M}_0\vDash\theta$ ，则根据[[MK158][满足]]可得 $\mathcal{M}_0\not\vDash(\lnot\theta)$
+
+根据条件（2）易证任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 均有 $\mathcal{M}\not\vDash(\lnot\theta)$ ，则根据[[MK257][完备性]]可得 $T\not\vdash(\lnot\theta)$
+
+若 $T\not\vdash(\lnot\theta)$ 则根据[[MK257][完备性]] $\mathcal{M}_0\not\vDash(\lnot\theta)$ ，则根据[[MK158][满足]]可得 $\mathcal{M}_0\vDash\theta$ 同理对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 均有 $\mathcal{M}\vDash\theta$
+
+则根据[[MK257][完备性]]可得 $T\vdash\theta$
+
+综上所述 $\mathcal{T}$ 是[[MK264][完全的]]
+
 *** 紧致性
 
 **** 第一紧致性定理<<MK271>>
@@ -7059,6 +7077,46 @@ $\Gamma$ 亦为 $\mathcal{L}_{\mathcal{A}^*}$ 下[[MK322][关于 $x_1,...,x_n$ �
 [[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]，若对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$
 
 满足 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK282][子结构]]，则 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK287][同质子结构]]，则称 $\mathcal{T}$ 是[[MK221][模型]]完全的
+
+**** 极小模型<<MK491>>
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]若存在 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>$ 满足对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{N}=\left<N,J\right>$ 
+
+有 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK300][嵌入]]，则称 $\mathcal{M}$ 是 $\mathcal{T}$ 的极小模型
+
+**** 定理1
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 是[[MK485][模型完全]]且具有[[MK491][极小模型]]，则 $\mathcal{T}$ 是[[MK264][完全的]]
+
+***** 证明
+
+设[[MK491][极小模型]]为 $\mathcal{M}_0=\left<M_0.I_0\right>$ ，对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>$ 据[[MK312][定理]]可得 $\mathcal{M}$ 中有与 $\mathcal{M}_0$ [[MK274][同构]]的[[MK282][子结构]] $\mathcal{M}'=\left<M',I'\right>$
+
+又根据[[MK485][模型完全]]故 $\mathcal{M}'$ 是 $\mathcal{M}$ 的[[MK287][同质子结构]]，根据[[MK492][定理1]]可得 $\mathcal{M}_0$ 是 $\mathcal{M}$ 的[[MK301][同质嵌入]]，设[[MK301][同质嵌入映射]]为 $e:M_0\to M$
+
+对于任意[[MK144][语句]] $\theta$ 若有 $\mathcal{M}_0\vDash\theta$ 则根据[[MK169][推论]]任取 $\mathcal{M}_0$ 的[[MK154][赋值]] $v$ 有 $\left<\mathcal{M}_0,v\right>\vDash\theta$ ，根据[[MK301][同质嵌入]]可得有 $\left<\mathcal{M},v\cdot e\right>\vDash\theta$ 
+
+又根据[[MK169][推论]] $\mathcal{M}\vDash\theta$ 。
+
+综上所述，对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}$ 以及[[MK144][语句]] $\theta$ ，若有 $\mathcal{M}_0\vDash\theta$ 则有 $\mathcal{M}\vDash \theta$ ，即根据[[MK493][引理9]]可得 $\mathcal{T}$ 是[[MK264][完全的]]
+
+**** 定理2
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 是[[MK485][模型完全]]且任意两 $\mathcal{T}$ 的[[MK221][模型]]均可[[MK300][嵌入]]到同一个 $\mathcal{T}$ 的[[MK221][模型]]，则 $\mathcal{T}$ 是[[MK264][完全的]]
+
+***** 证明
+
+对于任意 $\mathcal{L}_\mathcal{A}$ 的[[MK144][语句]] $\theta$ 假设存在 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ 满足 $\mathcal{M}\vDash\theta, \mathcal{N}\not\vDash\theta$
+
+根据条件设 $\mathcal{M},\mathcal{N}$ 均可[[MK300][嵌入]] $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}_0=\left<M_0.I_0\right>$ 据[[MK312][定理]]可得 $\mathcal{M}_0$ 中有与 $\mathcal{M},\mathcal{N}$ [[MK274][同构]]的[[MK282][子结构]]
+
+又根据[[MK485][模型完全]]可得上述[[MK282][子结构]]均为[[MK287][同质子结构]]，即 $\mathcal{M},\mathcal{N}$ 为 $\mathcal{M}_0$ 的[[MK287][同质子结构]]，设[[MK301][同质嵌入映射]]为 $e_1:N\to M_0,e_2:M\to M_0$
+
+则根据[[MK169][推论]]任取 $\mathcal{M}$ 的[[MK154][赋值]] $v$ 有 $\left<\mathcal{M},v\right>\vDash\theta$ 根据[[MK301][同质嵌入]]可得有 $\left<\mathcal{M},v\cdot e\right>\vDash\theta$ ，又根据[[MK169][推论]] $\mathcal{M}_0\vDash\theta$
+
+同理根据 $\mathcal{N}\not\vDash\theta$ 可得 $\mathcal{M}_0\not\vDash\theta$ 故假设不成立，即不存在 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M},\mathcal{N}$ 满足 $\mathcal{M}\vDash\theta, \mathcal{N}\not\vDash\theta$
+
+即若存在 $\mathcal{M}\vDash\theta$ 则对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{N}$ 均有 $\mathcal{N}\vDash\theta$ ，根据[[MK493][引理9]]可得 $\mathcal{T}$ 是[[MK264][完全的]]
 
 ** 一阶结构关系
 
@@ -7444,27 +7502,39 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 若 $\left<N,I_N\right>$ 是 $\mathcal{M}$ 的[[MK282][子结构]]，则根据定义显然对于任意 $\left<a_1,...,a_n\right>\in N^n$ 有 $I_N(f)(a_1,...,a_n)\in N$
 
-**** 传递性<<MK283>>
+**** [[~/文档/note/离散数学/lssx.org::MK143][偏序]]性<<MK283>>
 
-[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M}_1=\left<M_1,I_1\right>,\mathcal{M}_2=\left<M_2,I_2\right>,\mathcal{M}_3=\left<M_3,I_3\right>$ 三个[[MK153][结构]]
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 上的所有[[MK153][结构]]集合为 $K$ 对于任意 $\{\mathcal{M},\mathcal{N}\}\subset K$ 设[[~/文档/note/离散数学/lssx.org::MK111][关系]] $\mathcal{M}\prec\mathcal{N}$ 为 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK282][子结构]]
 
-若有 $\mathcal{M}_1\subset\mathcal{M}_2,\mathcal{M}_2\subset\mathcal{M}_3$ 则有 $\mathcal{M}_1\subset\mathcal{M}_3$
+则 $\left<K,\prec\right>$ 是[[~/文档/note/离散数学/lssx.org::MK143][偏序关系]]
 
 ***** 证明
 
-显然 $M_1\subset M_2\subset M_3$ ，根据以下证明可得 $\mathcal{M}_1\subset\mathcal{M}_3$
+****** [[~/文档/note/离散数学/lssx.org::MK124][自反性]]
 
-****** [[MK108][常元符号]]
+显然对于任意 $\mathcal{M}\in K$ 自己是自己的[[MK282][子结构]]，故有 $\mathcal{M}\prec\mathcal{M}$
+
+****** [[~/文档/note/离散数学/lssx.org::MK127][反对称性]]
+
+对于任意 $\{\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<K,J\right>\}\subset K$ 若有 $\mathcal{M}\prec\mathcal{N}$ 以及 $\mathcal{N}\prec\mathcal{M}$ 则根据[[MK282][定义]]可得 $M\subset N,N\subset M$
+
+则根据[[~/文档/note/离散数学/lssx.org::MK34][伯恩斯坦定理]]可得 $M=N$ ，则显然有 $\mathcal{M}=\mathcal{N}$
+
+****** [[~/文档/note/离散数学/lssx.org::MK128][传递性]]
+
+若有 $\{\mathcal{M}_1,\mathcal{M}_2,\mathcal{M}_3\}\subset K$ 满足 $\mathcal{M}_1\prec\mathcal{M}_2,\mathcal{M}_2\prec\mathcal{M}_3$
+
+******* [[MK108][常元符号]]
 
 对于任意 $c\in\mathcal{L}_\mathcal{A}$ 有 $I_1(c)=I_2(c)=I_3(c)$
 
-****** [[MK109][函数符号]]
+******* [[MK109][函数符号]]
 
 对于任意 $f\in\mathcal{L}_\mathcal{A}$ 且 $\pi_F(f)=n$ 以及任意 $\left<a_1,...,a_n\right>\in M_1^n$
 
 有 $I_1(f)(a_1,...,a_n)=I_2(f)(a_1,...,a_n)=I_3(f)(a_1,...,a_n)$
 
-****** [[MK110][谓词符号]]
+******* [[MK110][谓词符号]]
 
 对于任意 $p\in\mathcal{L}_\mathcal{A}$ 且 $\pi_F(p)=n$ 以及任意 $\left<a_1,...,a_n\right>\in M_1^n$
 
@@ -8254,7 +8324,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 则有 $\mathcal{M}_1\prec\mathcal{M}_3$
 
-***** 定理1
+***** 定理1<<MK492>>
 
 [[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK153][结构]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$
 
@@ -13483,9 +13553,7 @@ $\mathcal{L}_{\mathcal{A}\cup D}$ 下 $T\not\vdash\phi^*$
 
 **** 定理5<<MK487>>
 
-[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]且 $\mathcal{T}$ [[MK397][适合量词消去]]，则对于任意 $\mathcal{T}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$
-
-满足 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK282][子结构]]，则 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK287][同质子结构]]
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 满足 $T$ [[MK222][一致]]且 $\mathcal{T}$ [[MK397][适合量词消去]]，则 $\mathcal{T}$ 是[[MK485][模型完全]]的
 
 ***** 证明
 
