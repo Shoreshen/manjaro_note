@@ -12066,6 +12066,11 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 ******* 充分
 
+
+$(\forall x_1(\forall x_2(\forall x_3(P_\times(x_1,x_2,x_3))\land P_\cdot(x_3,x_4,x_5))))$
+
+
+
 * 电路设计
 
 ** DFG（数据流图）
