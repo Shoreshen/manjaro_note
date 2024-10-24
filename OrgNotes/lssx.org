@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 499
+currnet mark: 505
 
 free mark: 
  
@@ -652,7 +652,7 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
 
 则显然 $g(c)=\eta(\sigma(c)),c\in C$ 是 $C\to B$ 的[[MK176][单射函数]]，故有 $|C|\leq|B|$
 
-***** 推论<<MK420>>
+***** 推论1<<MK420>>
 
 若有 $|A|\leq|B|$ 以及 $|B|\leq|C|$ 则有 $|A|\leq|C|$ 
 
@@ -661,6 +661,16 @@ $X$ 是[[MK24][序数]]，则有 $\varnothing\in X$
 根据定义存在[[MK176][单射]] $f_{A,B}:A\to B, f_{B,C}:B\to C$ 对于任意 $\{a_1,a_2\}\subset A\land a_1\ne a_2$ 可得 $f_{A,B}(a_2)\ne f_{A,B}(a_2)$
 
 同理可得 $f_{B,C}(f_{A,B}(a_2))\ne f_{B,C}(f_{A,B}(a_2))$ 又根据[[MK187][复合]]可得 $f_{B,C}\cdot f_{A,B}$ 以为[[MK175][函数]]，故可得 $f_{B,C}\cdot f_{A,B}$ 是 $A$ 到 $C$ 的[[MK176][单射]]
+
+**** 定理7<<MK503>>
+
+若 $|A|<|B|$ 以及 $|B|\leq|C|$ 则有 $|A|<|C|$
+
+***** 证明
+
+假设 $|A|=|C|$ 则根据[[MK327][定理6]]有 $|B|\leq|A|$ ，有根据[[MK328][定理4]]有 $|A|\not<|B|$ 即与条件矛盾
+
+故假设不成立，即 $|A|<|C|$
 
 **** 伯恩斯坦定理<<MK34>>
 
@@ -8512,7 +8522,7 @@ f^*(\vec{s}^*)&=\sum_{i\in P}\left(\left(f^*_i(\vec{s}'')\prod_{z\in P\land z\ne
 
 与 $S$ 是[[MK438][超越基]]矛盾
 
-******** [[MK29][等势]]
+******** 性质2（[[MK29][等势]]）<<MK504>>
 
 任意 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]，则 $\mathcal{N}$ 在 $\mathcal{M}$ 上的任意[[MK438][超越基]]均[[MK29][等势]]
 
@@ -8621,6 +8631,16 @@ f^*(\vec{s}^*)&=\sum_{i\in P}\left(\left(f^*_i(\vec{s}'')\prod_{z\in P\land z\ne
 *********** 证明 $|T|=|S|$ 
 
 根据上面步骤同理可证 $|S|\leq|T|$ ，则根据[[MK34][伯恩斯坦定理]]可得 $|T|=|S|$ [[MK29][等势]]
+
+********* 推论<<MK505>>
+
+任意 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]其[[MK438][超越基]]为 $S$ 。则任意 $K\subset N$ 满足 $|S|<|K|$ 均有 $K$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]
+
+********** 证明
+
+假设 $K$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]，则根据[[MK495][存在性]]易证存在 $K^*\subset N$ 满足 $K\subset K^*$ 且 $K^*$ 是 $\mathcal{M}$ 上[[MK144][极大]]的[[MK445][代数无关]]集
+
+则 $K^*$ 亦为[[MK495][超越基]]，根据[[MK503][定理7]]可得 $|S|<|K^*|$ 与[[MK504][性质2]]矛盾，故假设不成立。即 $K$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]
 
 ******* 定理1<<MK465>>
 
@@ -11354,13 +11374,7 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 ***** 性质4<<MK487>>
 
-若 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]的[[MK339][特征]]均为 $p$ 由于是[[MK390][代数封闭域]]，故为[[MK338][域]]，则：
-
-（1） 根据[[MK430][性质1]]可得 $p$ 是素数，根据[[MK431][性质3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是[[MK338][域]]，进一步根据[[MK419][定理3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
-
-（2） 若 $p=0$ 则根据[[MK429][定理7]]可得[[MK424][有理数域]] $\mathcal{Q}=\left<\mathbb{Q},I_\mathbb{Q}\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
-
-（3） 根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M}'=\left<M',I'\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]的[[MK339][特征]]均为 $p$ 则根据[[MK501][定理]]可得存在 $\mathcal{M}'=\left<M',I'\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
 则若 $\mathcal{M}$ 关于 $\mathcal{M}'$ 的[[MK438][超越基]]为 $S$ ，则设 $\mathcal{M}'$ 基于 $S$ 的[[MK393][生成扩张]]为 $\mathcal{M}'_{(S)}=\left<M'_{(S)},I'_{(S)}\right>$ 则有
 
@@ -11482,17 +11496,15 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 设 $\mathcal{M}$ 的基 $B$ ，由于 $p\ne0$ 则根据[[MK432][定义]]以及[[MK433][之前证明]]同理可得 $|N'_p|=|Z_p|<\mathbb{N}$ ，则[[MK433][类似可证]] $|B|=|M|$
 
-***** [[MK390][代数封闭域]]的超越基/超越度<<M5496>>
+***** [[MK390][代数封闭域]]的超越基/超越度<<MK496>>
 
-任意 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]的[[MK339][特征]]均为 $p$ 由于是[[MK390][代数封闭域]]，故为[[MK338][域]]，则：
+任意 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]的[[MK339][特征]]均为 $p$ ，根据[[MK501][推论]]可得存在 $\mathcal{M}'$ 满足：
 
-（1） 根据[[MK430][性质1]]可得 $p$ 是素数，根据[[MK431][性质3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是[[MK338][域]]，进一步根据[[MK419][定理3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+（1） $\mathcal{M}'$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
 
-（2） 若 $p=0$ 则根据[[MK429][定理7]]可得[[MK424][有理数域]] $\mathcal{Q}=\left<\mathbb{Q},I_\mathbb{Q}\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+（2） $\mathcal{M}'$ 与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
-（3） 根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M}'=\left<M',I'\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，进一步可得 $\mathcal{M}'$ 亦为[[MK338][域]]
-
-即 $\mathcal{M}'$ 是 $\mathcal{M}$ 的[[MK341][子域]]，则根据[[MK495][存在性]]可得有 $S$ 是 $\mathcal{M}$ 关于 $\mathcal{M}'$ [[MK341][域扩张]]的[[MK438][超越基]]
+则根据[[MK495][存在性]]可得有 $S$ 是 $\mathcal{M}$ 关于 $\mathcal{M}'$ [[MK341][域扩张]]的[[MK438][超越基]]
 
 则定义 $S$ 为[[MK390][代数封闭域]] $\mathcal{M}$ 的超越基， $|S|$ 为 $\mathcal{M}$ 的超越度
 
@@ -11798,7 +11810,25 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 故可得 $e(I_p(f_-)(i))=J(f_-)(t_i)$
 
-***** 定理4
+****** 推论<<MK501>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK390][代数封闭域]]的[[MK339][特征]]均为 $p$ 则存在 $\mathcal{M}'$ 满足：
+
+（1） $\mathcal{M}'$ 是 $\mathcal{M}$ 的[[MK341][子域]]
+
+（2） $\mathcal{M}'$ 与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+******* 证明
+
+根据[[MK430][性质1]]可得 $p$ 是素数，根据[[MK431][性质3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是[[MK338][域]]，又由于 $\mathcal{M}$ 是[[MK390][代数封闭域]]，故为[[MK338][域]]
+
+则若 $p=0$ 则根据[[MK429][定理7]]可得[[MK424][有理数域]] $\mathcal{Q}=\left<\mathbb{Q},I_\mathbb{Q}\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+
+若 $p\ne0$ 则根据[[MK419][定理3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M}'=\left<M',I'\right>$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+***** 定理4<<MK502>>
 
 [[MK339][特征]]确定（设为 $p$ ）的[[MK411][代数封闭域理论]] $\mathcal{T}_{\test{ACF}_p}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}},T_{\test{ACF}_p},T^*_{\test{ACF}_p}\right>$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]
 
@@ -11978,23 +12008,29 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 ****** 证明
 
-******* 必要
+******* 必要<<MK500>>
 
 对于任意 $X\subset M$ 满足 $|X|<|M|$ 由于 $|M|=|\mathbb{N}|$ 故可得 $X$ 是[[MK82][有限集]]
 
-以 $X$ 对 $\mathcal{L}_{\mathcal{A}_{\test{ACF}}},\mathcal{M}$ 进行[[~/文档/note/数理逻辑/sllj.org::MK406][常元扩张]]可得 $\mathcal{L}_{\mathcal{A}_{\test{ACF}\cup X}},\mathcal{M}_X=\left<M,I_X\right>$ 并定义 $\text{Th}(\mathcal{M}_X)=\left\{\theta\big|\theta\in\Theta_X\land\mathcal{M}_X\vDash\theta\right\}$
+以 $X$ 对 $\mathcal{L}_{\mathcal{A}_{\test{ACF}}},\mathcal{M}$ 引入[[~/文档/note/数理逻辑/sllj.org::MK108][常元符号]] $C_X=\left\{c_x\big|x\in X\right\}$ 进行[[~/文档/note/数理逻辑/sllj.org::MK406][常元扩张]]可得 $\mathcal{L}_{\mathcal{A}_{\test{ACF}\cup C_X}},\mathcal{M}_X=\left<M,I_X\right>$
 
-其中 $\Theta$ 为 $\mathcal{L}_{\mathcal{A}_{\test{ACF}\cup X}}$ 下的所有[[~/文档/note/数理逻辑/sllj.org::MK144][语句]]，对于任意[[~/文档/note/数理逻辑/sllj.org::MK322][ $1$ 元类型]] $\Gamma(x_1)$ 满足 $\text{Th}(\mathcal{M}_X)\subset\Gamma(x_1)$ 可得存在 $b\in M$
+并定义 $\text{Th}(\mathcal{M}_X)=\left\{\theta\big|\theta\in\Theta_X\land\mathcal{M}_X\vDash\theta\right\}$
+
+其中 $\Theta$ 为 $\mathcal{L}_{\mathcal{A}_{\test{ACF}\cup C_X}}$ 下的所有[[~/文档/note/数理逻辑/sllj.org::MK144][语句]]，对于任意[[~/文档/note/数理逻辑/sllj.org::MK322][ $1$ 元类型]] $\Gamma(x_1)$ 满足 $\text{Th}(\mathcal{M}_X)\subset\Gamma(x_1)$ 可得存在 $b\in M$
 
 满足 $\mathcal{M}_X\vDash\Gamma[b]$ ，即 $\mathcal{M}$ 是[[~/文档/note/数理逻辑/sllj.org::MK394][饱和模型]]
 
 ******** 存在 $\left<\mathcal{N}_X,v\right>\vDash\Gamma$ 是[[~/文档/note/数理逻辑/sllj.org::MK301][同质嵌入]]，其[[~/文档/note/数理逻辑/sllj.org::MK287][同质子结构]] $\mathcal{N}'_X=\left<N',J'_X\right>$ 与 $\mathcal{M}_X$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]<<MK498>>
 
-根据[[~/文档/note/数理逻辑/sllj.org::MK242][引理11]]以及[[~/文档/note/数理逻辑/sllj.org::MK497][引理1]]可得存在 $\mathcal{N}_X=\left<N,J_X\right>$ 满足
+根据[[~/文档/note/数理逻辑/sllj.org::MK242][引理11]]以及[[~/文档/note/数理逻辑/sllj.org::MK497][引理1]]可得存在 $\mathcal{N}=\left<N,J\right>$ 满足
 
-（1） [[MK323][实现]] $\Gamma$
+（1） $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK301][同质嵌入]]，设[[~/文档/note/数理逻辑/sllj.org::MK301][同质嵌入映射]]为 $e$
 
-（2） $\mathcal{M}_X$ 是 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK301][同质嵌入]]，设[[~/文档/note/数理逻辑/sllj.org::MK301][同质嵌入映射]]为 $e$
+（2） $J_X=J\cup\left\{\left<c_x,e(x)\right>\big|x\in X\right\}$ 
+
+（3） $\mathcal{N}_X=\left<N,J_X\right>$ [[MK323][实现]] $\Gamma$
+
+（4） $\mathcal{M}_X$ 是 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK301][同质嵌入]]，设[[~/文档/note/数理逻辑/sllj.org::MK301][同质嵌入映射]]亦为 $e$
 
 则有：
 
@@ -12002,7 +12038,7 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 （2） 根据[[~/文档/note/数理逻辑/sllj.org::MK296][定理1]]可得 $T_{\text{ACF}}\subset \text{Th}(\mathcal{M}_X)$ 则有 $\mathcal{N}_X\vDash T_{\text{ACF}}\subset\text{Th}(\mathcal{M}_X)\subset\Gamma(x_1)$
 
-（3） 根据[[~/文档/note/数理逻辑/sllj.org::MK492][定理1]]存在 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK287][同质子结构]]与 $\mathcal{M}_X$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，定义为 $\mathcal{N}'_X=\left<N',J'_X\right>$ 以及[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]为 $e:M\to N'$
+（3） 根据[[~/文档/note/数理逻辑/sllj.org::MK492][定理1]]存在 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK287][同质子结构]]与 $\mathcal{M}_X$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，定义为 $\mathcal{N}'_X=\left<N',J'_X\right>$ 以及[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]] $e:M\to N'$
 
 ******** 若 $a\in N'$
 
@@ -12012,9 +12048,9 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 ******** 若 $a\not\in N'$
 
-********* 定义 $\mathcal{M}^*_{(X)}$ 与 $\mathcal{N}^*_{(X)}$ 证明[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+********* 在 $\mathcal{L}_{\mathcal{A}_{\test{ACF}}}$ 下定义 $\mathcal{M}^*_{(X)}$ 与 $\mathcal{N}^*_{(X)}$ 证明[[~/文档/note/数理逻辑/sllj.org::MK274][同构]] $\mathcal{M}^*_{(X)}\vDash T_{\text{ACF}_p}$ 且 $\mathcal{N}^*_{(X)}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
 
-根据[[MK487][性质4]]可得存在 $\mathcal{M}'=\left<M',I'\right>$ 是：
+在 $\mathcal{L}_{\mathcal{A}_{\test{ACF}}}$ 下根据[[MK487][性质4]]可得存在 $\mathcal{M}'=\left<M',I'\right>$ 是：
 
 （1） $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
 
@@ -12022,54 +12058,111 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 （3） $\mathcal{M}'$ 为[[MK338][域]]
 
-进一步定义 $\mathcal{M}'_{(X)}=\left<M'_{(X)},I'_{(X)}\right>$ 为 $\mathcal{M}'$ 对于 $X$ 的[[MK341][扩张域]]，进一步定义 $\mathcal{M}^*_{(X)}=\left<M^*_{(X)},I^*_{(X)}\right>$ 为 $\mathcal{M}'_{(X)}$ 的[[MK497][代数闭包]]
+进一步定义 $\mathcal{M}'_{(X)}=\left<M'_{(X)},I'_{(X)}\right>$ 为 $\mathcal{M}'$ 对于 $X$ 的[[MK393][生成扩张域]]，进一步定义 $\mathcal{M}^*_{(X)}=\left<M^*_{(X)},I^*_{(X)}\right>$ 为 $\mathcal{M}'_{(X)}$ 的[[MK497][代数闭包]]
 
-显然 $\mathcal{M}^*_{(X)}$ 是 $\mathcal{M}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，则根据的[[~/文档/note/数理逻辑/sllj.org::MK503][引理2]]存在 $\mathcal{N}^*_{(X)}$ 是 $\mathcal{N}'_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且域 $\mathcal{M}^*_{(X)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，易证亦是[[MK390][代数封闭域]]
+显然 $\mathcal{M}^*_{(X)}$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且 $\mathcal{M}^*_{(X)}\vDash T_{\text{ACF}_p}$ ，则根据的[[~/文档/note/数理逻辑/sllj.org::MK503][引理2]]存在 $\mathcal{N}^*_{(X)}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且与 $\mathcal{M}^*_{(X)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
-********* 定义 $\mathcal{M}^{**}_{\left(X\cup\{b\}\right)},\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}$ 证明[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+********* 在 $\mathcal{L}_{\mathcal{A}_{\test{ACF}}}$ 下 $a$ 在 $\mathcal{N}^*_X$ 上[[MK445][代数无关]]
+
+假设 $a$ 在 $\mathcal{N}^*_X$ 上[[MK445][代数相关]]，则存在 $f(x_1)\in N^*_X[x_1]$ 满足 $a$ 是 $f(x_1)$ 的[[MK389][根]]，由于$\mathcal{M}^*_{(X)},\mathcal{N}^*_{(X)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，设[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]] $e^*$
+
+则[[~/文档/note/数理逻辑/sllj.org::MK275][引理]]易证 $(e^*)^{-1}(a)\in M^*_{(X)}$ 且存在 $g(x_1)\in M^*_X[x_1]$ 满足 $a$ 是 $g(x_1)$ 的[[MK389][根]]
+
+根据上一步 $\mathcal{M}^*_{(X)}$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，故有 $(e^*)^{-1}(a)\in M$ 且存在 $g(x_1)\in M[x_1]$ 同样满足 $a$ 是 $g(x_1)$ 的[[MK389][根]]
+
+即对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_1)=(e^*)^{-1}(a)$ 均有 $\left<\mathcal{M},v\right>\vDash(g(x_1)\hat{=}c_0)$
+
+显然 $\mathcal{M}$ 是 $\mathcal{M}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK295][裁剪结构]]，根据[[~/文档/note/数理逻辑/sllj.org::MK296][定理1]]可得 $\left<\mathcal{M}_X,v\right>\vDash(g(x_1)\hat{=}c_0)$ ，又由于 $\mathcal{N}'_X$ 与 $\mathcal{M}_X$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+故有 $\left<\mathcal{N}'_X,v\cdot e\right>\vDash(g(x_1)\hat{=}c_0)$ ，即 $v\cdot e(x_1)\in N'$ ，又根据上一步有 $v\cdot e=e((e^*)^{-1}(a))=e(e^{-1}(a))=a$
+
+即有 $a\in N'$ 矛盾，故假设不成立，即 $a$ 在 $\mathcal{N}^*_X$ 上[[MK445][代数无关]]
+
+********* 在 $\mathcal{L}_{\mathcal{A}_{\test{ACF}}}$ 下定义 $\mathcal{M}^{**}_{\left(X\cup\{b\}\right)},\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}$ 证明[[~/文档/note/数理逻辑/sllj.org::MK274][同构]] $\mathcal{M}^{ * *}_{(X)}\vDash T_{\text{ACF}_p}$ 且 $\mathcal{N}^*_{\left(X\cup\{a\}\right)}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
 
 根据[[MK487][性质4]] $\mathcal{M}^*_{(X)}$ 存在[[MK496][超越基]] $S_X$ 由于 $X$ 是[[MK82][有限集]]，则 $S_X$ 亦为[[MK82][有限集]]。结合 $|S|=|\mathbb{N}|$ 可得存在 $b\in S$ 满足 $b\not\in S_X$
 
-显然易证 $b$ 在 $\mathcal{M}^*_{(X)}$ 上[[MK445][代数无关]]。根据[[~/文档/note/数理逻辑/sllj.org::MK296][定理1]]可得 $T_{\text{ACF}}\subset \text{Th}(\mathcal{M}_X)$ 则有 $\mathcal{M}_X\vDash T_\text{ACF}$ 根据[[~/文档/note/数理逻辑/sllj.org::MK274][同构]] $\mathcal{N}'_X\vDash T _\text{ACF}$ 即 $\mathcal{N}'_X$ 是[[MK390][代数封闭域]]
-
-由于 $a\not\in N'$ 故显然 $a$ 不是 $\mathcal{N}_X$ 上的[[MK395][代数元]]，即 $a$ 在 $\mathcal{N}_X$ 上[[MK445][代数无关]]，易证 $a$ 在 $\mathcal{N}^*_{(X)}$ 上[[MK445][代数无关]]
+显然易证 $b$ 在 $\mathcal{M}^*_{(X)}$ 上[[MK445][代数无关]]。有根据上一步有 $a$ 在 $\mathcal{N}^*_{(X)}$ 上[[MK445][代数无关]]
 
 则根据[[MK476][定理2]]可得 $\left(\mathcal{M}^*_{(X)}\right)_{(\{b\})}$ 与 $\left(\mathcal{N}^*_{(X)}\right)_{(\{a\})}$  [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，根据[[MK463][推论]]易证 $\mathcal{M}^*_{\left(X\cup\{b\}\right)}$ 与 $\mathcal{N}^*_{\left(X\cup\{a\}\right)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
-取 $\mathcal{M}^{**}_{\left(X\cup\{b\}\right)}$ 与 $\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}$ 分别为 $\mathcal{M}^*_{\left(X\cup\{b\}\right)}$ 与 $\mathcal{N}^*_{\left(X\cup\{a\}\right)}$ 的[[MK497][代数闭包]]
+取 $\mathcal{M}^{**}_{\left(X\cup\{b\}\right)}$ 与 $\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}$ 分别为 $\mathcal{M}^*_{\left(X\cup\{b\}\right)}$ 与 $\mathcal{N}^*_{\left(X\cup\{a\}\right)}$ 的[[MK497][代数闭包]]，即易证 $\mathcal{M}^{ * *}_{(X)}\vDash T_{\text{ACF}_p}$ 
 
 故根据[[MK480][性质2]]可得 $\mathcal{M}^{**}_{\left(X\cup\{b\}\right)},\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}$ 分别是 $\mathcal{M}^*_{\left(X\cup\{b\}\right)},\mathcal{N}^*_{\left(X\cup\{a\}\right)}$ 上的所有[[MK374][一元多项式]] $\mathcal{M}^*_{\left(X\cup\{b\}\right)}[x],\mathcal{N}^*_{\left(X\cup\{a\}\right)}[x]$ 的[[MK394][分裂域]]
 
 则根据[[MK443][定理]]可得 $\mathcal{M}^{**}_{\left(X\cup\{b\}\right)},\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，定义同构映射为 $e^{ * *}$ 满足 $e^{ * *}(z)=\begin{cases}e(z)&z\ne b\\a&z=b\end{cases}$
 
-********* 证明 $\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}\vDash\Gamma[a]$ <<MK499>>
+由于 $\mathcal{N}^*_{(X)}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且 $a\in N$ 故易证 $\mathcal{N}^*_{\left(X\cup\{a\}\right)}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+********* 在 $\mathcal{L}_{\mathcal{A}_{\test{ACF}\cup C_X}}$ 下定义 $\mathcal{M}_{\left(X\cup\{b\}\right)},\mathcal{N}_{\left(X\cup\{a\}\right)}$ 证明[[~/文档/note/数理逻辑/sllj.org::MK274][同构]] $\mathcal{M}_{\left(X\cup\{b\}\right)}\vDash T_{\text{ACF}}$ 且 $\mathcal{N}_{\left(X\cup\{a\}\right)}$ 是 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+根据上一步证明在 $\mathcal{L}_{\mathcal{A}_{\test{ACF}}}$ 下有 $\mathcal{M}^{**}_{\left(X\cup\{b\}\right)}=\left<M^{ * *}_{(X\cup\{b\})},I^{ * *}_{(X\cup\{b\})}\right>,\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}=\left<N^{ * *}_{(X\cup\{b\})},J^{ * *}_{(X\cup\{b\})}\right>$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]为 $e^{ * *}$
+
+定义 $I_{(X\cuo\{b\})}=I^{ * *}_{(X\cuo\{b\})}\cup\left\{\left<c_x,x\right>\big|c_x\in C_X\right\}$ 以及 $J_{(X\cuo\{b\})}=J^{ * *}_{(X\cuo\{b\})}\cup\left\{\left<c_x,e^**(x)\right>\big|c_x\in C_X\right\}$
+
+则显然 $\mathcal{M}_{\left(X\cup\{b\}\right)}=\left<M^{ * *}_{(X\cup\{b\})},I_{(X\cup\{b\})}\right>,\mathcal{N}_{\left(X\cup\{a\}\right)}=\left<N^{ * *}_{(X\cup\{b\})},J_{(X\cup\{b\})}\right>$ 是 $\mathcal{L}_{\mathcal{A}_{\test{ACF}\cup C_X}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK154][结构]]
+
+且对于任意 $c_x\in C_X$ 有 $e^{ * *}\left(I_{(X\cup\{b\})}(c_x)\right)=J_{(X\cup\{b\})}(c_x)$ 结合 $\mathcal{L}_{\mathcal{A}_{\test{ACF}}}$ 下 $\mathcal{M}^{ * *}_{\left(X\cup\{b\}\right)},\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+易证 $\mathcal{L}_{\mathcal{A}_{\test{ACF}\cup C_X}}$ 下 $\mathcal{M}_{\left(X\cup\{b\}\right)},\mathcal{N}_{\left(X\cup\{a\}\right)}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+显然 $\mathcal{M}^{**}_{\left(X\cup\{b\}\right)}$ 是 $\mathcal{M}_{\left(X\cup\{b\}\right)}$ 的[[~/文档/note/数理逻辑/sllj.org::MK295][裁剪结构]]，由于 $\mathcal{M}^{ * *}_{(X)}\vDash T_{\text{ACF}_p}$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK296][定理1]]可得 $\mathcal{M}_{(X)}\vDash T_{\text{ACF}_p}$
+
+根据上一步 $\mathcal{N}^*_{\left(X\cup\{a\}\right)}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]，且显然 $\mathcal{N}^*_{\left(X\cup\{a\}\right)}$ 是 $\mathcal{N}_{\left(X\cup\{b\}\right)}$ 的[[~/文档/note/数理逻辑/sllj.org::MK295][裁剪结构]]， $\mathcal{N}$ 是 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK295][裁剪结构]]
+
+且易证均满足[[~/文档/note/数理逻辑/sllj.org::MK299][定理2]]，则根据[[~/文档/note/数理逻辑/sllj.org::MK474][引理]]可得 $\mathcal{N}_{\left(X\cup\{a\}\right)}$ 是 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+********* $\mathcal{L}_{\mathcal{A}_{\test{ACF}\cup C_X}}$ 下 $\mathcal{N}_{\left(X\cup\{a\}\right)}\vDash\Gamma[a]$ <<MK499>>
 
 由于：
 
-（1） $\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}$ 是 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+（1） $\mathcal{N}_{\left(X\cup\{a\}\right)}$ 是 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
 
-（2） $\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}\vDash T_\text{ACF}$ 是 $\mathcal{N}_X\vDash T_\text{ACF}$ 均为[[MK390][代数封闭域]]
+（2） $\mathcal{N}_{\left(X\cup\{a\}\right)}\vDash T_{\text{ACF}_p}$ 且 $\mathcal{N}_X\vDash T_{\text{ACF}_p}$ 均为[[MK390][代数封闭域]]
 
 （3） $\mathcal{T}_{\test{ACF}_p}$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
 
-根据[[~/文档/note/数理逻辑/sllj.org::MK502][引理3]]可得 $\mathcal{T}'_{\test{ACF}_p}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}\cup X}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}\cup C_X},T_{\test{ACF}_p},T^*_{\test{ACF}_p}\right>$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
+根据[[~/文档/note/数理逻辑/sllj.org::MK502][引理3]]可得 $\mathcal{T}'_{\test{ACF}_p}=\left<\mathcal{L}_{\mathcal{A}_{\text{ACF}\cup C_X}},\mathbb{L}\cap\mathcal{L}_{\mathcal{A}_{\text{ACF}}\cup C_X},T_{\test{ACF}_p},T^*_{\test{ACF}_p}\right>$ 适合[[~/文档/note/数理逻辑/sllj.org::MK397][量词消去]]
 
-则根据[[~/文档/note/数理逻辑/sllj.org::MK498][推论2]]可得 $\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}$ 是 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK287][同质子结构]]，则任取 $\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_1)=a$ ，显然亦为 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]]
+则根据[[~/文档/note/数理逻辑/sllj.org::MK498][推论2]]可得 $\mathcal{N}_{\left(X\cup\{a\}\right)}$ 是 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK287][同质子结构]]，则任取 $\mathcal{N}_{\left(X\cup\{a\}\right)}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_1)=a$ ，显然亦为 $\mathcal{N}_X$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]]
 
-根据[[MK498][之前证明]]可得 $\left<\mathcal{N}_X,v\right>\vDash\Gamma$ ，故根据[[~/文档/note/数理逻辑/sllj.org::MK287][同质子结构]] $\left<\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)},v\right>\vDash\Gamma$ 根据[[~/文档/note/数理逻辑/sllj.org::MK168][局部确定]] $\mathcal{N}^{ * *}_{\left(X\cup\{a\}\right)}\vDash\Gamma[a]$
+根据[[MK498][之前证明]]可得 $\left<\mathcal{N}_X,v\right>\vDash\Gamma$ ，故根据[[~/文档/note/数理逻辑/sllj.org::MK287][同质子结构]] $\left<\mathcal{N}_{\left(X\cup\{a\}\right)},v\right>\vDash\Gamma$ 根据[[~/文档/note/数理逻辑/sllj.org::MK168][局部确定]] $\mathcal{N}_{\left(X\cup\{a\}\right)}\vDash\Gamma[a]$
 
 ********* 证明 $\mathcal{M}_X\vDash\Gamma[b]$ 
 
-根据[[~/文档/note/数理逻辑/sllj.org::MK275][引理]]可得存在 $e^{**}$ 的[[MK188][逆函数]] $\left(e^{ * *}\right)^{-1}$ 为逆[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]，根据[[~/文档/note/数理逻辑/sllj.org::MK276][定理1]]可得 $\left<\mathcal{M}^{ * *}_{\left(X\cup\{a\}\right)},v\cdot \left(e^{ * *}\right)^{-1}\right>\vDash\Gamma$
+根据[[~/文档/note/数理逻辑/sllj.org::MK275][引理]]可得存在 $e^{**}$ 的[[MK188][逆函数]] $\left(e^{ * *}\right)^{-1}$ 为逆[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]，根据[[~/文档/note/数理逻辑/sllj.org::MK276][定理1]]可得 $\left<\mathcal{M}_{\left(X\cup\{a\}\right)},v\cdot \left(e^{ * *}\right)^{-1}\right>\vDash\Gamma$
 
 [[MK499][同理可证]] $\left<\mathcal{M}_X,v\cdot \left(e^{ * *}\right)^{-1}\right>\vDash\Gamma$ 根据 $v,e^{ * *}$ 定义以及[[~/文档/note/数理逻辑/sllj.org::MK168][局部确定]]易证 $\mathcal{M}_X\vDash\Gamma[b]$ 
 
 ******* 充分
 
+任意 $\mathcal{N}=\left<N,J\right>$ 满足：
 
-$(\forall x_1(\forall x_2(\forall x_3(P_\times(x_1,x_2,x_3))\land P_\cdot(x_3,x_4,x_5))))$
+（1） [[MK496][超越度]]为[[MK82][有限]]，设 $T=\{t_1,...,t_n\}$ 是[[MK496][超越基]]
 
+（2） [[MK339][特征]]为 $p$ 的[[MK390][代数封闭域]]
 
+假设 $\mathcal{N}$ 是[[~/文档/note/数理逻辑/sllj.org::MK394][饱和模型]]
+
+任取若 $\mathcal{M}$ 是[[MK496][超越度]]为[[MK89][可数]]的[[MK390][代数封闭域]]，其[[MK496][超越基]]为 $S$ ，则根据[[MK500][之前证明]]可得 $\mathcal{M}$ 是[[~/文档/note/数理逻辑/sllj.org::MK394][饱和模型]]，
+
+根据[[MK487][性质4]]可得 $|N|=|\mathbb{N}|=|M|$ 即 $\mathcal{M},\mathcal{N}$ 均为[[~/文档/note/数理逻辑/sllj.org::MK394][可数饱和模型]]，显然 $\mathcal{M},\mathcal{N}$ 均为 $\mathcal{T}_{\test{ACF}_p}$ 的[[~/文档/note/数理逻辑/sllj.org::MK221][模型]]
+
+定义 $\text{Th}(\mathcal{M})=\left\{\theta\big|\theta\in\Theta\land\mathcal{M}\vDash\theta\right\}$ 其中 $\Theta$ 为 $\mathcal{L}_{\mathcal{A}_\test{ACF}}$ 下的所有[[~/文档/note/数理逻辑/sllj.org::MK144][语句]]
+
+根据[[MK502][定理4]]可得 $\mathcal{T}_{\test{ACF}_p}$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]，即对于任意 $\theta\in\Theta$ 有 $T_{\text{ACF}_p}\vdash\theta$ 或 $T_{\text{ACF}_p}\vdash(\lnot\theta)$
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK255][完备性]]易证 $\text{Th}(\mathcal{M})=\text{Th}(\mathcal{N})$ 即[[~/文档/note/数理逻辑/sllj.org::MK281][同样]]，又根据[[~/文档/note/数理逻辑/sllj.org::MK438][唯一性]]可得 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]设[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]] $e:M\to N$
+
+任取 $\{s_1,...,s_{n+1}\}\subset S$ ，则有 $\{e(s_1),...,e(s_{n+1})\}\subset N$
+
+根据[[MK504][性质2]]易证 $\{e(s_1),...,e(s_{n+1})\}$ 在 $\mathcal{N}$ 上[[MK445][代数相关]]，
+
+则定义 $\vec{x}=\left<x_1,...,x_{n+1}\right>,e(\vec{s})=\left<e(s_1),...,e(s_{n+1})\right>,\vec{s}=\left<s_1,...,s_{n+1}\right>$
+
+则存在 $f(\vec{x})\in N[\vec{x}]$ 满足 $\mathcal{N}\vDash(f(\vec{x})\hat{=}c_0)[e(\vec{s})]$ ，则根据[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]易证 $\mathcal{M}\vDash(f(\vec{x})\hat{ =}c_0)[\vec{s}]$
+
+即 $\{s_1,...,s_{n+1}\}$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]，显然矛盾。故假设不成立，即 $\mathcal{N}$ 不是[[~/文档/note/数理逻辑/sllj.org::MK394][饱和模型]]
 
 * 电路设计
 

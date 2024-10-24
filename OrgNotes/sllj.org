@@ -9991,7 +9991,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 则对于任意 $X\subset M$ 对于 $\mathcal{M}$ 进行[[MK406][常元扩展]]可得 $\mathcal{L}_{\mathcal{A}_{C_X}}$ 以及 $\mathcal{M}_X=\left<M,I_X\right>$
 
-则进一步定义 $J_X=J\cap\left\{\left<c_a,e(a)\right>\big|a\in X\right\}$ 进一步定义 $\mathcal{N}_X=\left<N,J_X\right>$
+则进一步定义 $J_X=J\cap\left\{\left<c_a,e(a)\right>\big|a\in X\right\}$ 和 $\mathcal{N}_X=\left<N,J_X\right>$
 
 则有 $\mathcal{M}_X$ 亦为 $\mathcal{N}_X$ 的[[MK301][同质嵌入]]且[[MK301][同质嵌入映射]]仍为 $e$
 
@@ -10013,7 +10013,7 @@ $\mathcal{N}=\left<N,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 ***** 引理3<<MK501>>
 
-[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$对于任意 $\mathcal{L}_\mathcal{A}$ 的[[MK406][常元扩张]]语言 $\mathcal{L}_{\mathcal{A}_{C_X}}$ 其中 $C_X$ 为扩张的[[MK108][常元符号]]
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 对于任意 $\mathcal{L}_\mathcal{A}$ 的[[MK406][常元扩张]]语言 $\mathcal{L}_{\mathcal{A}_{C_X}}$ 其中 $C_X$ 为扩张的[[MK108][常元符号]]
 
 其扩张[[MK220][一阶理论]] $\mathcal{T}_{C_X}=\left<\mathcal{L}_{\mathcal{A}_{C_X}},\mathbb{L}_{\mathcal{A}_{C_X}},T,T^*\right>$ 则：
 
