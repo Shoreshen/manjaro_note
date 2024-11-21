@@ -4642,6 +4642,20 @@ $\Gamma=\left\{(\lnot(c\hat{=}f(c)))\big|c\in C\right\}\cup\{(\exists x_1(x_1\ha
 
 若 $\Gamma\vdash\psi_2$ 则根据[[MK197][第一宽容]]有 $\Gamma\vdash(\psi_2\to((\lnot\psi_1)\to\psi_2))$ 根据[[MK210][导出引理]] $\Gamma\vdash((\lnot\psi_1)\to\psi_2)$
 
+***** 推论
+
+[[MK220][一阶理论]] $\mathcal{T}=\left<\mathcal{L}_\mathcal{A},\mathbb{L}_\mathcal{A},T,T^*\right>$ 是[[MK222][一致的]]，且满足对于[[MK144][语句]] $\{\theta_1,\theta_2\}\subset\mathcal{L}_\mathcal{A}$ 均有 $T\vdash(\theta_1\lor\theta_2)$ 有 $\Gamma\vdash\theta_1$ 或 $\Gamma\vdash\theta_2$
+
+则 $\mathcal{T}$ 是[[MK264][完全的]]
+
+****** 证明
+
+对于任意[[MK144][语句]] $\theta\in\mathcal{L}_\mathcal{A}$ 根据[[MK171][等价表述]]可得 $\Gamma\vdash(\lnot\theta\lor\theta)$ 等价于 $\Gamma\vdash((\lnot(\lnot\theta))\to\theta)$
+
+根据[[MK198][推论（4）]]可得成立 $\Gamma\vdash((\lnot(\lnot\theta))\to\theta)$ 即有 $\Gamma\vdash(\lnot\theta\lor\theta)$ 根据条件即有 $T\vdash\theta$ 或者 $T\vdash\lnot\theta$
+
+则根据[[MK222][一致性]]则有 $T\vdash\theta$ 会导出 $T\not\vdash\lnot\theta$ 反之亦然，即 $\mathcal{T}$ 是[[MK264][完全的]]
+
 **** 双向蕴含<<MK203>>
 
 若 $\phi=(\psi_1\leftrightarrow\psi_2)\in\mathcal{L}_\mathcal{A}$ 则 $\Gamma\vdash\phi$ 的充要条件是 $\Gamma\vdash(\psi_1\to\psi_2)$ 且 $\Gamma\vdash(\psi_2\to\psi_1)$

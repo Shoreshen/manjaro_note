@@ -2,7 +2,7 @@
 
 #+TITLE: 离散数学概论
 
-currnet mark: 505
+currnet mark: 506
 
 free mark: 
  
@@ -8311,17 +8311,15 @@ $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][�
 
 ******** 性质2<<MK476>>
 
-若 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]满足：
+若 $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][子域]]且有 $S\subset N$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]
 
-（1） 有 $S\subset N$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]
-
-（2） 有 $S'\subset N$ 满足在 $\mathcal{M}_{(S)}=\left<M_{(S)},I_{(S)}\right>$ 上[[MK445][代数无关]]
-
-则 $S\cup S'$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]
+则 $S'\subset N$ 满足在 $\mathcal{M}_{(S)}=\left<M_{(S)},I_{(S)}\right>$ 上[[MK445][代数无关]]的充要条件是 $S\cup S'$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]
 
 ********* 证明
 
-********** 假设 $S\cup S'$ [[MK445][代数相关]]
+********** 充分
+
+*********** 假设 $S\cup S'$ [[MK445][代数相关]]
 
 假设在 $\mathcal{M}$ 上[[MK445][代数相关]]，则显然存在：
 
@@ -8329,61 +8327,67 @@ $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][�
 
 （2） 关于 $\vec{x}=\left<x_1...,x_n\right>$ 在 $\mathcal{M}$ 上的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$
 
-使得 $f(s_1,...,s_n)=J(c_0)$ 且 $f(\vec{x})\ne I[\vec{x}](c_0)$ 。不妨设 $f(\vec{x})$ 是[[MK446][最简式]]
+使得 $f(s_1,...,s_n)=J(c_0)$ 且 $f(\vec{x})\ne I[\vec{x}](c_0)$ 。根据[[MK437][存在性]]不妨设 $f(\vec{x})$ 是[[MK446][最简式]]，显然有 $P\ne\varnothing$
 
 由于 $S$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]，故显然存在 $\{s_1,...,s_n\}\not\subset S$ 即存在 $\{s_{i_1},...,s_{i_m}\}= S'\cap\{s_1,...,s_n\}$
 
-********** 定义 $f'(\vec{x}),f^*(\vec{x})$
+*********** 定义 $f'(\vec{x})$
 
 （1） $S^*=\{i_1,...,i_m\}$
 
-（1） $P^*=\left\{i\in P\big|K_i\cap S^*=\varnothing\right\}$
+（2） $f'(\vec{x})=\sum_{i\in P}\left(\left(a_i\left(\prod_{j\in K_i-S^*}s_j^{k_{i,j}}\right)\right)\left(\prod_{j\in K_i\cap S^*}x_j^{k_{i,j}}\right)\right)$
 
-（2） $f'(\vec{x})=\sum_{i\in P-P^*}\left(\left(a_i\left(\prod_{j\in K_i-S^*}s_j^{k_{i,j}}\right)\right)\left(\prod_{j\in K_i\cap S^*}x_j^{k_{i,j}}\right)\right)+\sum_{i\in P^*}a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)$
+显然 $f'(\vec{x})\in M_{(S)}[\vec{x}]$ 
 
-显然 $f'(\vec{x})\in M_{(S)}[\vec{x}]$ 又定义 $f^*(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i-S^*}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$
+*********** 证明 $f'(\vec{x})\ne I_{(S)}[\vec{x}](c_0)$
 
-********** 证明 $f'(\vec{x})\ne I_{(S)}[\vec{x}](c_0)$ 或 $f^*(\vec{x})\ne I[\vec{x}](c_0)$
+假设 $f'(\vec{x})=I_{(S)}[\vec{x}](c_0)$ 则 $f'(\vec{x})$ 的[[MK446][最简式]]为 $I(c_0)$ 
 
-假设 $f'(\vec{x})=I_{(S)}[\vec{x}](c_0)$ 且 $f^*(\vec{x})=I[\vec{x}](c_0)$ 则 $f^*(\vec{x})$ 的[[MK446][最简式]]为 $I(c_0)$ ，
+则对于任意 $i\in P$ 定义 $I_{i}=\left\{p\big|p\in P\land (K_p\cap S^*)=(K_i\cap S^*)\land\left(\forall j\in (K_i\cap S^*)\left(k_{i,j}=k_{p,j}\right)\right)\right\}$
 
-对于任意 $i\in P$ 定义 $I_{i}=\left\{p\big|p\in P\land (K_p-S^*)=(K_i-S^*)\land\left(\forall j\in K_i-S^*\left(k_{i,j}=k_{p,j}\right)\right)\right\}$ 
+则显然有 $\sum_{p\in I'_{i}}a_p\left(\prod_{j\in K_p-S^*}s_j^{k_{p,j}}\right)=I_{(S)}(c_0)$ 。由于 $f(\vec{x})$ 是[[MK446][最简式]]，故可得任意 $a_p\ne I(c_0),p\in P$ 
 
-则显然有 $a'_{i}=\sum_{p\in I_{i}}a_p=I(c_0)$ 又由于 $f(\vec{x})$ 是[[MK446][最简式]]，故可得任意 $a_p\ne I(c_0),p\in P$
+由于 $S$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]，故显然任意 $s\in S$ 均有 $s\ne I(c_0)$ 结合[[MK340][性质2]]可得任意 $p\in I'_i$ 均有 $a_p\left(\prod_{j\in K_p-S^*}s_j^{k_{p,j}}\right)\ne I(c_0)$
 
-故可得对于任意 $i\in P$ 必有 $|I_i|>1$ 。
+故可得对于任意 $i\in P$ 必有 $|I_i|>1$ ，则任取 $i\in P$ 有 $\sum_{p\in I'_{i}}a_p\left(\prod_{j\in K_p-S^*}s_j^{k_{p,j}}\right)=I_{(S)}(c_0)$
 
-又由于 $f'(\vec{x})=I_{(S)}[\vec{x}](c_0)$ 则对于任意 $i\in P-P^*$ 可定义 $I'_{i}=\left\{p\big|p\in P-P^*\land (K_p\cap S^*)=(K_i\cap S^*)\land\left(\forall j\in (K_i\cap S^*)\left(k_{i,j}=k_{p,j}\right)\right)\right\}$
+定义 $g(\vec{x})=\sum_{p\in I_{i}}a_p\left(\prod_{j\in K_p-S^*}x_j^{k_{p,j}}\right)\in M[\vec{x}]$
 
-同理可得对于任意 $i\in P-P^*$ 必有 $a^*_{i}=\sum_{p\in I'_{i}}a_p\left(\prod_{j\in K_i-S^*}s_j^{k_{i,j}}\right)=I_{(S)}(c_0)$ 以及 $|I'_i|>1$ 。
+若 $g(\vec{x})\ne I[\vec{x}](c_0)$ ，则有 $\forall j\in K_i-S^*$ 均有 $s_j\in S$ 显然与 $S$ 在在 $\mathcal{M}$ 上[[MK445][代数无关]]矛盾
 
-若存在 $i\in P-P^*$ 满足 $|I'_i\cap I_i|>1$ 则对于任意 $p\in I_i\cap I'_i$ 均有 $K_p\cap S^*=K_i\cap S^*,K_p-S^*=K_i-S^*$ 显然 $K_p=K_i$
+若 $g(\vec{x})=I[\vec{x}](c_0)$ ，则对于任意 $z\in I_i$ 定义 $I'_z=\left\{p\big|p\in I_i\land (K_p-S^*)=(K_z-S^*)\land\left(\forall j\in (K_z-S^*)\left(k_{i,j}=k_{p,j}\right)\right)\right\}$
 
-结合 $|I'_i\cap I_i|>1$ 易证与 $f(\vec{x})$ 是[[MK446][最简式]]矛盾
+同理由于 $f(\vec{x})$ 是[[MK446][最简式]]，故可得任意 $a_p\ne I(c_0),p\in P$ 对于任意 $z\in I_i\subset P$ 必有 $|I'_z|>1$ ，即任取 $z_1\ne z_2$ 且 $\{z_1,z_2\}\subset I'_z$
 
-若不存在 $i\in P-P^*$ 满足 $|I'_i\cap I_i|>1$ ，则任取 $i\in P-P^*$ 则有 $|I'_i\cap I_i|=1$ 以及 $\sum_{p\in I'_{i}}a_p\left(\prod_{j\in K_i-S^*}s_j^{k_{i,j}}\right)=I_{(S)}(c_0)$
+均有：
 
-定义 $g(\vec{x})=\sum_{p\in I'_{i}}a_p\left(\prod_{j\in K_i-S^*}x_j^{k_{i,j}}\right)\in M[\vec{x}]$ 显然有 $i\in I_i,i\in I'_i$ 又根据 $|I'_i\cap I_i|=1$ 可得对于任意 $z\in I'_i-i$
+（1） $(K_{z_1}-S^*)=(K_{z_2}-S^*)\land\left(\forall p\in(K_{z_1}-S^*)\left(k_{z_1,j}=k_{z_2,j}\right)\right)$
 
-根据 $I_i$ 定义均有 $(K_p-S^*)\ne(K_i-S^*)$ 或 $(K_p-S^*)=(K_i-S^*)\land (\exists j\in K_p-S^*(k_{i,j}=k_{z,j}))$
+（2） 又由于 $I'_z\subset I_i$ 故有 $(K_{z_1}\cap S^*)=(K_{z_2}\cap S^*)\land\left(\forall p\in(K_{z_1}\cap S^*)\left(k_{z_1,j}=k_{z_2,j}\right)\right)$
 
-又 $f(\vec{x})$ 是[[MK446][最简式]]，故可得任意 $a_i\ne I(c_0)$ ，故根据[[MK473][生成步骤]]以及[[MK437][唯一性]]易证 $g(\vec{x})\ne I[\vec{x}](c_0)$
+综上所述 $K_{z_1}=K_{z_2}$ 且 $\forall j\in K_{z_1}(k_{z_1,j}=k_{z_2,j})$ 由于 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$
 
-又根据 $\sum_{p\in I'_{i}}a_p\left(\prod_{j\in K_i-S^*}s_j^{k_{i,j}}\right)=I_{(S)}(c_0)$ 显然可得 $g(\vec{x})$ 的[[MK441][带入值]]为 $I_{(S)}(c_0)$ 又由于 $\{s_1,...,s_n\}-\{s_{i_1},...,s_{i_m}\}\subset S$
+显然有 $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)=\sum_{i\in P-\{z_1,z_2\}}}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)+\left((a_{z_1}+a_{z_2})\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$
 
-故与 $S$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]矛盾，故假设不成立，即 $f'(\vec{x})\ne I_{(S)}[\vec{x}](c_0)$ 或 $f^*(\vec{x})\ne I[\vec{x}](c_0)$
+显然与 $f(\vec{x})$ 为[[MK446][最简式]]矛盾
 
-********** 推出矛盾
+综上所述，假设不成立，即 $f'(\vec{x})\ne I_{(S)}[\vec{x}](c_0)$
 
-若 $f'(\vec{x})\ne I_{(S)}[\vec{x}](c_0)$ ，则显然与 $S'$ 满足在 $\mathcal{M}_{(S)}$ 上[[MK445][代数无关]]矛盾
+*********** 结论
 
-若 $f'(\vec{x})=I_{(S)}[\vec{x}](c_0)$ 且 $f^*(\vec{x})\ne I[\vec{x}](c_0)$ 则根据[[MK437][定理]]可得对于任意 $\{z_1,...,z_n\}\subset N$ 均有 $f'(z_1,...,z_n)=J(c_0)$
+由于 $f'(s_1,...,s_n)=\sum_{i\in P}\left(\left(a_i\left(\prod_{j\in K_i-S^*}s_j^{k_{i,j}}\right)\right)\left(\prod_{j\in K_i\cap S^*}s_j^{k_{i,j}}\right)\right)=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right)=I_{(S)}(c_0)=J(c_0)$
 
-进一步定义 $z_i=\begin{cases}s_i&i\not\in S^*\\J(c_1)&i\in S^*\end{cases}$ 则显然有 $f^*(a_1,...,a_n)=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i-S^*}z_j^{k_{i,j}}\right)\right)$
+结合 $f'(\vec{x})\ne I_{(S)}[\vec{x}](c_0)$ 显然与 $S'$ 满足在 $\mathcal{M}_{(S)}$ 上[[MK445][代数无关]]矛盾
 
-显然对于任意 $s_i,i\not\in S^*$ 有 $s_i\in S$ 且 $J*(c_1)=I(c_1)\in M$ ，则易证与 $S$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]矛盾
+故假设不成立，即 $S\cup S'$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]
 
-综上所述，假设不成立，即 $S\cup S'$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]
+********** 必要
+
+若 $S\cup S'$ 在 $\mathcal{M}$ 上[[MK445][代数无关]]，则假设 $S'$ 在 $\mathcal{M}_{(S)}=\left<M_{(S)},I_{(S)}\right>$ 上[[MK445][代数相关]]
+
+则根据[[MK478][性质3]]可得若 $S\cup S'$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]，即矛盾，故假设不成立
+
+即 $S'$ 在 $\mathcal{M}_{(S)}=\left<M_{(S)},I_{(S)}\right>$ 上[[MK445][代数无关]]
 
 ******** 性质3<<MK478>>
 
@@ -8405,7 +8409,15 @@ $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][�
 
 （2） $\{s_1,...,s_n\}\subset S'$
 
-满足 $f(s_1,...,s_n)=J(c_0)$ 且 $f(\vec{x})\ne I_{(S)}[\vec{x}](c_0)$ 根据[[MK445][定理2]]可得对于任意 $a_i$ 存在：
+满足：
+
+（1） $f(s_1,...,s_n)=J(c_0)$
+
+（2） $f(\vec{x})\ne I_{(S)}[\vec{x}](c_0)$
+
+（3） 对于任意 $i\ne j$ 均有 $s_i\ne s_j$
+
+根据[[MK445][定理2]]可得对于任意 $a_i$ 存在：
 
 （1） 有限个 $\{s_{i,1},...,s_{i,n_i}\}\subset S,\{s'_{i,1},...,s'_{i,m_i}\}\subset S$
 
@@ -8430,9 +8442,21 @@ $\mathcal{M}=\left<M,I\right>$ 是 $\mathcal{N}=\left<N,J\right>$ 的[[MK341][�
 
 对于任意 $i\in P,1\leq j\leq n_i$ 定义 $\phi(i,j)$ 满足 $s_{i,j}=s''_{\phi(i,j)}$ ，对于任意 $i\in P,1\leq j\leq m_i$ 定义 $\phi'(i,j)$ 满足 $s'_{i,j}=s''_{\phi'(i,j)}$
 
-定义 $\vec{z}^*=\left<z_1,...,z_{n''},z_{n''+1},...,z_{n''+n}\right>$ 以及 $\vec{s}''=\left<s''_1,...,s''_{n''},s_1,...,s_n\right>$ 则扩展未知数后易证 $\left\{f_i^*(\vec{z}),g_i^*(\vec{z})\big|i\in P\right\}\subset M[\vec{z}]$
+定义 $\vec{z}^*=\left<z_1,...,z_{n''},z_{n''+1},...,z_{n''+n}\right>$ 以及 $\vec{s}''=\left<s''_1,...,s''_{n''},s''_{n''+1},...,s''_{n''+n}\right>$ 满足 $s''_{n''+i}=s_i$ 则有：
 
-以及 $f^*_i(\vec{s}'')=f_i(s''_{\phi(i,1)},...,s''_{\phi(i,n_i)})=f_i(s_{i,1},...,s_{i,n_i}),g^*_i(\vec{s}'')=g_i(s''_{\phi'(i,1)},...,s''_{\phi'(i,m_i)})=g_i(s'_{i,1},...,s'_{i,m_i})$
+（1） 由于 $S''$ 定义可得对于任意 $i\ne j$ 均有 $s''_i\ne s''_j$
+
+（2） 根据上一步可得对于任意 $i\ne j$ 均有 $s_i\ne s_j$
+
+（3） 由于 $S'\cap S=\varnothing$ 故可得对于任意 $i,j$ 均有 $s''_i\ne s_j$
+
+总上所述，对于任意 $i\ne j$ 均有 $s''_{i}\ne s''_j$ 。
+
+扩展未知数后易证：
+
+（1） $\left\{f_i^*(\vec{z}),g_i^*(\vec{z})\big|i\in P\right\}\subset M[\vec{z}]$
+
+（2） $f^*_i(\vec{s}'')=f_i(s''_{\phi(i,1)},...,s''_{\phi(i,n_i)})=f_i(s_{i,1},...,s_{i,n_i}),g^*_i(\vec{s}'')=g_i(s''_{\phi'(i,1)},...,s''_{\phi'(i,m_i)})=g_i(s'_{i,1},...,s'_{i,m_i})$
 
 进一步定义 $f^*(\vec{z})=\sum_{i\in P}\left(\left(f^*_i(\vec{z})\prod_{p\in P\land p\ne i}g^*_p(\vec{z})\right)\left(\prod_{j\in K_i}z_{j+n''}^{k_{i,j}}\right)\right)$ 显然 $f^*(\vec{z})$ 对于 $\vec{s}''$ 的[[MK441][带入值]]
 
@@ -8464,9 +8488,15 @@ f^*(\vec{s}^*)&=\sum_{i\in P}\left(\left(f^*_i(\vec{s}'')\prod_{z\in P\land z\ne
 
 ********** 证明矛盾
 
-综上所述，有 $f^*(\vec{s}'')=J(c_0)$ 且 $f^*(\vec{z})\in M[\vec{z}],f^*(\vec{z})\ne I_{(S)}[\vec{z}](c_0)$ 即 $S\cup S'$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]，与假设矛盾
+综上所述，存在 $f^*(\vec{z})\in M[\vec{z}]$ 以及 $\vec{s}''=\left<s''_1,...,s''_{n''}\right>\in (S\cup S')^{n''}$ 满足
 
-故假设不成立，即 $S\cup S'$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]
+（1） $f^*(\vec{s}'')=J(c_0)$
+
+（2） 对于任意 $i\ne j$ 均有 $s''_i\ne s''_j$
+
+（3） $f^*(\vec{z})\ne I_{(S)}[\vec{z}](c_0)$ 
+
+ 即 $S\cup S'$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]，与假设矛盾，故假设不成立，即 $S\cup S'$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]
 
 ******* 超越基<<MK438>>
 
@@ -10136,6 +10166,26 @@ $T_\mathbb{F}\vdash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_
 ****** 证明
 
 [[MK349][同理可证]]
+
+***** 性质5<<MK506>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]]
+
+则 $\mathcal{M}\vDash(\forall x_1(...(\forall x_6(((f_\times(x_1,x_2)\hat{=}c_1)\land(f_\times(x_3,x_4)\hat{=}c_1))\to(f_+(f_\times(x_5,x_2),f_\times(x_6,x_4))\hat{=}f_\times(f_+(f_\times(x_5,x_3),f_\times(x_6,x_1)),f_\times(x_2,x_4)))))...))$
+
+****** 证明
+
+任取 $\{a_1,...,a_6\}\subset M$ 其中 $I(f_\times)(a_1,a_2)=I(f_\times)(a_3,a_4)=I(c_1)$
+
+\begin{aligned}
+&a_5\times a_2+a_6\times a_4\\
+=&a_5\times a_2\times 1+a_6\times a_4\times 1\\
+=&a_5\times a_2\times a_3\times a_4+a_6\times a_4\times a_1\times a_2\\
+=&(a_5\times a_3)\times(a_2\times a_4)+(a_6\times a_1)\times(a_4\times a_2)\\
+=&(a_5\times a_3+a_6\times a_1)\times(a_4\times a_2)
+\end{aligned}
+
+即有 $\mathcal{M}\vDash(\forall x_1(...(\forall x_6(((f_\times(x_1,x_2)\hat{=}c_1)\land(f_\times(x_3,x_4)\hat{=}c_1))\to(f_+(f_\times(x_5,x_2),f_\times(x_6,x_4))\hat{=}f_\times(f_+(f_\times(x_5,x_3),f_\times(x_6,x_1)),f_\times(x_2,x_4)))))...))$
 
 ***** 性质10
 
@@ -11838,17 +11888,17 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 ***** 定理5<<MK488>>
 
-对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ [[MK339][特征]]均为 $p$ ，由于是[[MK390][代数封闭域]]，故为[[MK338][域]]，则：
+对于任意[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$ [[MK339][特征]]均为 $p$ ，根据[[MK501][推论]]可得有 $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ 满足
 
-（1） 根据[[MK430][性质1]]可得 $p$ 是素数，根据[[MK431][性质3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是[[MK338][域]]，进一步根据[[MK419][定理3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+（1） 分别是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
 
-（2） 若 $p=0$ 则根据[[MK429][定理7]]可得[[MK424][有理数域]] $\mathcal{Q}=\left<\mathbb{Q},I_\mathbb{Q}\right>$ 是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入]]
+（2） 与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
-（2） 根据[[~/文档/note/数理逻辑/sllj.org::MK312][定理]]可得存在 $\mathcal{M}'=\left<M',I'\right>,\mathcal{N}' =\left<N',J'\right>$ 分别是 $\mathcal{M},\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]且与[[MK417][ $\mathbb{Z}_p$ ]]或 $\mathcal{Q}$ 有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
-
-则若 $\mathcal{M}$ 关于 $\mathcal{M}'$ 的[[MK438][超越基]] $S$ 与 $\mathcal{N}$ 关于 $\mathcal{N}'$ 的[[MK438][超越基]] $T$ [[MK29][等势]]，则有 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+则若 $\mathcal{M}$ 关于 $\mathcal{M}'$ 的[[MK438][超越基]] $S$ 与 $\mathcal{N}$ 关于 $\mathcal{N}'$ 的[[MK438][超越基]] $T$ [[MK29][等势]]的充要条件是 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
 ****** 证明
+
+******* 充分
 
 显然由于 $\mathcal{M}',\mathcal{N}'$ 均与[[MK417][ $\mathbb{Z}_p$ ]]有[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，故可得 $\mathcal{M}',\mathcal{N}'$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]，且均为[[MK338][域]]。由于是[[MK438][超越基]]，故[[MK445][代数无关]]
 
@@ -11857,6 +11907,22 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 又由于 $\mathcal{M},\mathcal{N}$ 是[[MK390][代数封闭域]]，故根据[[MK480][性质2]]可得 $\mathcal{M},\mathcal{N}$ 分别是 $\mathcal{M}'_{(S)},\mathcal{N}'_{(T)}$ 上的所有[[MK374][一元多项式]] $M'_{(S)}[x],N'_{(T)}[x]$ 的[[MK394][分裂域]]
 
 则根据[[MK443][定理]]可得 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
+
+******* 必要
+
+若 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]]为 $e:N\to M$ ，假设 $|S|\ne|T|$ 不妨设 $|S|<|T|$ 则定义 $e(T)=\left\{e(t)\big|t\in T\right\}$
+
+显然 $|T|=|e(T)|$ ，由于 $|S|<|T|$ 根据[[MK503][定理7]]可得 $|S|<|e(T)|$ 根据[[MK505][推论]]可得 $e(T)$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]，即存在：
+
+（1） 设 $\vec{x}=\left<x_1,...,x_n\right>$ 则有 $f(\vec{x})\in M[\vec{x}]$
+
+（3） 互不相同的 $\{s_1,...,s_n\}\subset e(T)$ ，设 $\vec{s}=\left<s_1,...,s_n\right>$
+
+满足 $\mathcal{M}\vDash(f(\vec{x})\hat{=}c_0)[s_1,...,s_n]$ 根据[[~/文档/note/数理逻辑/sllj.org::MK275][引理]]以及[[~/文档/note/数理逻辑/sllj.org::MK276][定理1]]可得 $\mathcal{N}\vDash(f(\vec{x})\hat{ =}c_0)[e^{-1}(s_1),...,e^{-1}(s_n)]$
+
+显然有 $e^{-1}(s_i)\in T$ ，即可得 $T$ 在 $\mathcal{N}$ 上[[MK445][代数相关]]，矛盾。故假设不成立
+
+即有 $|S|=|T|$ 
 
 ****** 推论1
 
@@ -12152,17 +12218,9 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 根据[[MK502][定理4]]可得 $\mathcal{T}_{\test{ACF}_p}$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]，即对于任意 $\theta\in\Theta$ 有 $T_{\text{ACF}_p}\vdash\theta$ 或 $T_{\text{ACF}_p}\vdash(\lnot\theta)$
 
-则根据[[~/文档/note/数理逻辑/sllj.org::MK255][完备性]]易证 $\text{Th}(\mathcal{M})=\text{Th}(\mathcal{N})$ 即[[~/文档/note/数理逻辑/sllj.org::MK281][同样]]，又根据[[~/文档/note/数理逻辑/sllj.org::MK438][唯一性]]可得 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]设[[~/文档/note/数理逻辑/sllj.org::MK274][同构映射]] $e:M\to N$
+则根据[[~/文档/note/数理逻辑/sllj.org::MK255][完备性]]易证 $\text{Th}(\mathcal{M})=\text{Th}(\mathcal{N})$ 即[[~/文档/note/数理逻辑/sllj.org::MK281][同样]]，又根据[[~/文档/note/数理逻辑/sllj.org::MK438][唯一性]]可得 $\mathcal{M},\mathcal{N}$ [[~/文档/note/数理逻辑/sllj.org::MK274][同构]]
 
-任取 $\{s_1,...,s_{n+1}\}\subset S$ ，则有 $\{e(s_1),...,e(s_{n+1})\}\subset N$
-
-根据[[MK504][性质2]]易证 $\{e(s_1),...,e(s_{n+1})\}$ 在 $\mathcal{N}$ 上[[MK445][代数相关]]，
-
-则定义 $\vec{x}=\left<x_1,...,x_{n+1}\right>,e(\vec{s})=\left<e(s_1),...,e(s_{n+1})\right>,\vec{s}=\left<s_1,...,s_{n+1}\right>$
-
-则存在 $f(\vec{x})\in N[\vec{x}]$ 满足 $\mathcal{N}\vDash(f(\vec{x})\hat{=}c_0)[e(\vec{s})]$ ，则根据[[~/文档/note/数理逻辑/sllj.org::MK274][同构]]易证 $\mathcal{M}\vDash(f(\vec{x})\hat{ =}c_0)[\vec{s}]$
-
-即 $\{s_1,...,s_{n+1}\}$ 在 $\mathcal{M}$ 上[[MK445][代数相关]]，显然矛盾。故假设不成立，即 $\mathcal{N}$ 不是[[~/文档/note/数理逻辑/sllj.org::MK394][饱和模型]]
+则根据[[MK488][定理5]]可得两个模型[[MK496][超越度]]相等，矛盾。故假设不成立，即 $\mathcal{N}$ 不是[[~/文档/note/数理逻辑/sllj.org::MK394][饱和模型]]
 
 * 电路设计
 
