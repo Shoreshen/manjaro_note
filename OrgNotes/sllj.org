@@ -2,7 +2,7 @@
 
 #+TITLE: 数理逻辑
 
-currnet mark: 503
+currnet mark: 504
 
 free mark: 
   
@@ -531,7 +531,7 @@ $\bar{v}$ 是 $\mathcal{L}_0$ 到 $\{T,F\}$ 的[[~/文档/note/离散数学/lssx
 
 根据[[MK29][定理1]]可得 $\bar{v}$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]，则结果唯一
 
-***** 推论2
+***** 推论2<<MK504>>
 
 素数有无限个
 
@@ -4458,7 +4458,7 @@ $\left<\mathcal{M},v\right>\vDash(\exists x_i \psi)$ 的充要条件是 $\left<\
 
 ** 证明和定理<<MK196>>
 
-[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK129][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ ，对于一个表达式[[~/文档/note/离散数学/lssx.org::MK105][序列]] $\left<\phi_1,...,\phi_n\right>$ 满足 $n<\infty$ 且若对于任意 $1\leq i\leq n$ 有
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK129][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ ，对于一个表达式[[~/文档/note/离散数学/lssx.org::MK105][序列]] $\left<\phi_1,...,\phi_n\right>$ 满足 $n<\infty$ 且若对于任意 $1\leq i\leq n$ 满足以下两条中任意一条
 
 （1） $\phi_i$ 是[[MK197][公理]]或 $\phi_i\in\Gamma$
 
@@ -9559,7 +9559,7 @@ $\mathcal{M}=\left<M,I\right>$ 是 $\left\{\mathcal{M}_a=\left<M_a,I_a\right>\bi
 
 则对于任意[[~/文档/note/离散数学/lssx.org::MK14][选择函数]] $\eta$ 有
 
-（1） 对于任意 $\tau_1,\tau_2$ 为 $\mathcal{L}_\mathcal{A}$ 的[[MK117][项]] $\bar{v}(\tau_1)=\bar{v}(\tau_2)$ 当且仅当 $K$ $\left\{a\big|a\in X\land \bar{v}_{a,\eta}(\tau_1)=\bar{v}_{a,\eta}(\tau_2)\right\}\in U$
+（1） 对于任意 $\tau_1,\tau_2$ 为 $\mathcal{L}_\mathcal{A}$ 的[[MK117][项]] $\bar{v}(\tau_1)=\bar{v}(\tau_2)$ 当且仅当 $\left\{a\big|a\in X\land \bar{v}_{a,\eta}(\tau_1)=\bar{v}_{a,\eta}(\tau_2)\right\}\in U$
 
 （2） 对于任意 $\tau_1,...,\tau_n$ 为 $\mathcal{L}_\mathcal{A}$ 的[[MK117][项]]， $p$ 为 $n$ 元[[MK110][谓词符号]] $\left<\bar{v}(\tau_1),...,\bar{v}(\tau_n)\right>\in I(p)$
 
