@@ -6356,6 +6356,61 @@ $a_i\in M$ 均有 $\mathcal{M}\vDash(f_+(x_i),x_0)$
 
 综上所述，对于任意 $\vec{b}\in N^n$ 均存在 $\vec{a}\in N^n$ 使得 $P(\vec{a})=\vec{b}$ ，即 $P$ 是[[~/文档/note/离散数学/lssx.org::MK179][满射]]
 
+**** 定理11
+
+若 $\mathbb{C}$ 为复数集合，根据[[~/文档/note/高等代数/Algb-4-Multi-equ.org::MK74][代数基本定理]]易证 $\mathcal{C}=\left<\mathbb{C},I_\mathbb{C}\right>$ 是[[MK339][特征]]为 $0$ 的[[MK411][代数封闭域理论]]
+
+定义 $\vec{x}=\left<x_1,...,x_n\right>$ 则设 $\left<f_1(\vec{x}),...,f_n(\vec{x})\right>\in \mathbb{C}[\vec{x}]$ 是 $\mathcal{C}$ 上关于 $\vec{x}$ 的[[MK436][多项式]]
+
+设 $P:\mathbb{C}^n\to \mathbb{C}^n$ 满足对于任意 $\vec{a}=\left<a_1,...,a_n\right>\in \mathbb{C}^n$ 均有 $P(\vec{a})=\vec{b}=\left<b_1,...,b_2\right>$ 使得 $f_i(\vec{a})=b_i$
+
+若 $P$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射]]，可得 $P$ 是[[~/文档/note/离散数学/lssx.org::MK179][满射]]
+
+***** 证明
+
+任取给定的 $P$ 以及 $\left<f_1(\vec{x}),...,f_n(\vec{x})\right>\in \mathbb{C}[\vec{x}]$ ，根据以下证明可得 $P$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射]]，可得 $P$ 是[[~/文档/note/离散数学/lssx.org::MK179][满射]]
+
+****** 公理化 $\varphi$ 
+
+若 $P$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射]]，则对于任意 $\{\vec{a},\vec{b}\}\subset\mathbb{C}^n$ 均有 $P(\vec{a})=P(\vec{b})$ 当且仅当 $\vec{a}=\vec{b}$ 设 $f_l(\vec{x})=\sum_{i\in P_l}\left(a_{i,l}\left(\prod_{j\in K_{i,l}}x_j^{k_{i,j,l}}\right)\right)$
+
+则定义对应[[MK336][符号多项式]] $f_l(\vec{x})=\sum_{i\in P_l}\left(\alpha_{\eta(i,l)}\left(\prod_{j\in K_{i,l}}x_j^{k_{i,j,l}}\right)\right),f_l(\vec{y})=\sum_{i\in P_l}\left(\alpha_{\eta(i,l)}\left(\prod_{j\in K_{i,l}}y_j^{k_{i,j,l}}\right)\right)$ 其中：
+
+（1） $\alpha_{\eta(i,l)},x_j,y_j$ 均是不同的[[~/文档/note/数理逻辑/sllj.org::MK107][变元符号]]
+
+（2） $\eta:\mathbb{N}\times\mathbb{N}\to\mathbb{N}$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射]]，且 $m=\max\left(\left\{\phi(i,l)\big|i\in P_l\right\}\right)$
+
+则
+
+（1） 定义 $\phi=\left(\forall x_1...\forall x_n\forall y_1...\forall y_n\left(\bigwedge_{l=1}^n(f_l(\vec{x})\hat{=}f_l(\vec{y}))\right)\leftrightarrow\left(\bigwedge_{j=1}^n(x_j\hat{ =}y_j)\right)$ 描述是[[~/文档/note/离散数学/lssx.org::MK176][单射]]
+
+（2） 定义 $z_1,...,z_n$ 为与 $\alpha_{\eta(i,l)},x_j,y_j$ 不同的[[~/文档/note/数理逻辑/sllj.org::MK107][变元符号]] $\psi=\left(\forall z_1...\forall z_n\exists x_1...\exists x_n\left(\bigwedge_{l=1}^n(f_l(\vec{x})=z_l)\right)\right)$ 描述是[[~/文档/note/离散数学/lssx.org::MK179][满射]]
+
+（3） 定义 $\varphi=\left(\forall \alpha_1...\forall\alpha_m(\phi\to\psi)\right)$ 变为[[~/文档/note/数理逻辑/sllj.org::MK144][语句]]
+
+显然有：
+
+（1） $\varphi$ 是[[~/文档/note/数理逻辑/sllj.org::MK144][语句]]
+
+（2） 若 $\mathcal{C}\vDash\varphi$ 则说明对于任意 $P':\mathbb{C}^n\to \mathbb{C}^n$ 若满足：
+
+     （a） 对于任意 $\vec{a}=\left<a_1,...,a_n\right>\in \mathbb{C}^n$ 均有 $P(\vec{a})=\vec{b}=\left<b_1,...,b_2\right>$ 使得 $f'_i(\vec{a})=b_i$
+
+     （b） 任意 $f'_l(\vec{x})=\sum_{i\in P_l}\left(b_{i,l}\left(\prod_{j\in K_{i,l}}x_j^{k_{i,j,l}}\right)\right)$ 即仅与 $f_l(\vec{x})$ 系数不同
+
+     则有若 $P'$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射]]，可得 $P'$ 是[[~/文档/note/离散数学/lssx.org::MK179][满射]]。则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得对于 $P$ 亦成立
+
+****** 证明结论
+
+对于任意素数 $p$ 构建[[MK417][ $\mathbb{Z}_p$ ]]，根据[[MK431][性质3]]可得[[MK417][ $\mathbb{Z}_p$ ]]是[[MK338][域]]，根据[[MK484][定理6]]可得存在[[MK390][代数封闭域]] $\mathcal{M}=\left<M,I\right>$ 是[[MK417][ $\mathbb{Z}_p$ ]]的[[MK451][代数扩张]]且[[MK339][特征]]为 $p$ 
+
+显然由于 $|Z_p|<\infty$ 故根据上一步 $\varphi$ 定义以及[[MK515][定理10]]可得 $\mathcal{M}\vDash\varphi$
+
+根据[[MK502][定理4]]可得 $\mathcal{T}_{\test{ACF}_p}$ 是[[~/文档/note/数理逻辑/sllj.org::MK264][完全理论]]，由于 $\mathcal{M}$ 是[[MK339][特征]]为 $p$ 的[[MK390][代数封闭域]]，则根据[[~/文档/note/数理逻辑/sllj.org::MK267][引理3]]以及 $\mathcal{M}\vDash\varphi$ 可得 $T_{\test{ACF}_p}\vdash\varphi$
+
+综上所述，对于任意素数 $p$ 均有 $T_{\test{ACF}_p}\vdash\varphi$ ，则根据[[MK516][定理9]]可得 $\mathcal{C}\vDash\varphi$
+
+又根据上一步证明中 $\mathcal{C}\vDash\varphi$ 的阐述可得若 $P$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射]]，可得 $P$ 是[[~/文档/note/离散数学/lssx.org::MK179][满射]]
 
 
 

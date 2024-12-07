@@ -6622,7 +6622,7 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 
 （2） $\mathcal{T}$ 是[[MK264][完全理论]]当且仅当任意两个 $\mathcal{T}$ 的[[MK195][模型]]是[[MK281][同样]]的
 
-（3） $\mathcal{T}$ 是[[MK264][完全理论]]的充要条件是存在 $\mathcal{T}$ 的[[MK195][模型]] $\mathcal{M}\vDash T$ ，对任意[[MK144][语句]] $\theta$ 有 $T\vdash \theta$ 的充要条件是 $\mathcal{M}\vDash\theta$
+（3） $\mathcal{T}$ 是[[MK264][完全理论]]的充要条件是对于任意 $\mathcal{T}$ 的[[MK195][模型]] $\mathcal{M}\vDash T$ 有对任意[[MK144][语句]] $\theta$ 有 $T\vdash \theta$ 的充要条件是 $\mathcal{M}\vDash\theta$
 
      即 $\theta$ 在 $\mathcal{M}$ 下是[[MK191][真实的]]
 
