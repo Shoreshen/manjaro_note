@@ -286,6 +286,12 @@ Copy content of <code>tt.txt.pub</code> and press <code>Add SSH key</code>:
 
 <img src="20180428105938922.png">
 
+## SSH without password
+
+```
+ssh-copy-id <user>@<ip>
+```
+
 ## Clong Repository
 
 Create new repository or find url for existting one under the account, using git clone to clone the repository:

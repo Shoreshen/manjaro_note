@@ -67,10 +67,12 @@ split_scrn:
 split_scrn_left:
 	xrandr --output HDMI-0 --auto --left-of DP-2
 
-update:
+pacman_update:
 	- echo $(PW) | sudo -S pacman -Syy
 	- sudo pacman -Syu
-	- sudo pamac update
+pamac_update:
+	- pamac update
+update: pacman_update pamac_update
 
 version:
 	cat /etc/lsb-release 
