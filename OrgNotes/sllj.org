@@ -2,7 +2,7 @@
 
 #+TITLE: 数理逻辑
 
-currnet mark: 504
+currnet mark: 507
 
 free mark: 
   
@@ -5373,6 +5373,16 @@ $\Gamma\vdash(\psi_1\leftrightarrow\psi_2)$ 的充要条件亦可为：
 假设 $\Gamma\vdash(\lnot\phi)$ 则同理可得 $<\mathcal{M},v>\vDash(\lnot\phi)$ 根据[[MK158][满足]]可得 $<\mathcal{M},v>\not\vDash\phi$ 矛盾
 
 故假设不成立，即有 $\Gamma\not\vdash(\lnot\phi)$ 
+
+***** 推论<<MK507>>
+
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK129][表达式]]集合 $\Gamma\subset\mathcal{L}_\mathcal{A}$ [[MK222][一致]]，则任意 $\Gamma^*\subset\Gamma$ 亦[[MK222][一致]]
+
+****** 证明
+
+根据[[MK189][可满足]]可得存在[[MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 以及[[MK154][赋值]] $v$ 使得任意 $\gamma\in \Gamma$ 均有 $\left<\mathcal{M},v\right>\vDash\gamma$
+
+则显然对于任意 $\gamma\in\Gamma^*\subset\Gamma$ 亦有 $\left<\mathcal{M},v\right>\vDash\gamma$ ，即 $\Gamma^*$ [[MK189][可满足]]，则根据[[MK226][定理1]]可得 $\Gamma^*$ [[MK222][一致]]
 
 **** 定理2<<MK227>>
 
@@ -15028,107 +15038,3 @@ T_\text{odl}&\vdash(\forall x_1(\forall x_2(p_<(x_2,x_1)\leftrightarrow((\lnot p
 根据[[MK486][之前证明]]可得 $\mathcal{T}_{\text{odl}}$ [[MK397][适合量词消去]]，又根据[[MK487][定理5]]可得对于任意 $\mathcal{T}_{\text{old}}$ 的[[MK221][模型]] $\mathcal{M}=\left<M,I\right>,\mathcal{N}=\left<N,J\right>$
 
 满足 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK282][子结构]]，则 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK287][同质子结构]]，即可得 $\mathcal{T}_{\text{odl}}$ 是[[MK485][模型完全]]的
-
-** 自然数算数理论模型
-
-*** 语言<<MK367>>
-
-除[[MK105][固定符号]]外仅有：
-
-（1） [[MK110][谓词符号]] $p_<$ 用于表示小于关系，
-
-（2） [[MK109][函数符号]] $f_\times,f_+, f_s$ 分别表示乘法，加法和后继运算符
-
-（3） [[MK108][常元符号]] $c_0$
-
-则有 $\mathcal{A}_\mathbb{N}=\{p_<,f_\times,f_+,f_s,c_0\}$ 进一步有 $\mathcal{L}_{\mathcal{A}_\mathbb{N}}$ 是自然数算数模型的[[MK151][语言]]
-
-另定义 $\tau_n=f_s(\tau_{n-1})$ 以及 $\tau_0=c_0$
-
-*** 标准[[MK153][结构]]
-
-$\mathcal{N}=\left<\mathbb{N},I\right>$ 其中 $I=\{\left<p_<,<\right>,\left<f_\times,\times\right>,\left<f_+,+\right>,\left<f_s,S\right>,\left<c_0,0\right>\}$ 即
-
-（1） $\mathbb{N}$ 是自然数
-
-（2） $<$ 是 $\mathbb{N}$ 上的小于关系
-
-（3） $\times$ 是 $\mathbb{N}$ 上的乘法
-
-（4） $+$ 是 $\mathbb{N}$ 上的加法
-
-（5） $S$ 是 $\mathbb{N}$ 上的后继（即 $+1$ ）
-
-*** 定理
-
-[[MK367][自然数算数语言]] $\mathcal{L}_{\mathcal{A}_\mathbb{N}}$ 定义[[MK153][结构]] $\mathcal{N}=\left<\mathbb{N},I\right>$ 其中 $I=\{\left<p_<,<\right>,\left<f_\times,\times\right>,\left<f_+,+\right>,\left<f_s,S\right>,\left<c_0,0\right>\}$
-
-则存在[[MK153][结构]] $\mathcal{N}^*=\left<N^*,I^*\right>$ 其中 $I^*=\{\left<p_<,<^*\right>,\left<f_\times,\times^*\right>,\left<f_+,+^*\right>,\left<f_s,S^*\right>,\left<c_0,0^*\right>\}$ ：
-
-（1） $\mathcal{N}$ 是 $\mathcal{N}^*$ 的[[MK301][同质嵌入]]，且[[MK300][嵌入映射]]为 $e:\mathbb{N}\to N^*$ 满足 $e(n)=\bar{\mu}(\tau_n)$
-
-（2） $N^*-\left\{e(n)\big|n\in\mathbb{N}\right\}\ne\varnothing$
-
-（3） 对于任意 $a\in N^*-\left\{e(n)\big|n\in\mathbb{N}\right\},b\in\mathbb{N}$ 均有 $e(b)<^*a$
-
-**** 证明
-
-定义 $\Theta$ 为 $\mathcal{L}_{\mathcal{A}_\mathbb{N}}$ 中所有[[MK144][语句]]集合，进一步定义 $T=\left\{\theta\big|\theta\in\Theta\land\mathcal{N}\vDash\theta\right\}$
-
-定义 $\tau_0=c_0$ 以及 $\tau_{i+1}=f_s(\tau_i)$ 故显然 $I(\tau_i)=i\in\mathbb{N}$ ，进一步定义 $\Gamma=T\cup\left\{p_<(\tau_n,x_i)\big|n\in\mathbb{N}\right\}$
-
-***** $\Gamma$ [[MK222][一致]]并存在[[MK153][结构]] $\mathcal{N}^*=\left<N^*,I^*\right>$ 及其[[MK154][赋值]] $\mu$ 满足 $\left<\mathcal{N}^*,\mu\right>\vDash\Gamma$ <<MK368>>
-
-任取 $\Gamma_0\subset\Gamma$ 为[[~/文档/note/离散数学/lssx.org::MK82][有限集]]，则可取 $m$ 满足对于所有 $p_<(\tau_i,x_j)\in\Gamma_0-T$ 均有 $i<m$
-
-则定义 $\mathcal{N}$ 的[[MK154][赋值]] $v(x_i)=m+i$ 则由于 $T$ 的定义显然有 $\left<\mathcal{N},v\right>\vDash\Gamma_0\cap T$
-
-显然对于任意 $\theta=p_<(\tau_i,x_j)\in\Gamma_0-T$ 有 $\left<I(\tau_i),v(x_j)\right>=\left<i,m+j\right>\in I(p_<)$ 故有 $\left<\mathcal{N},v\right>\vDash\Gamma_0-T$
-
-综上所述，对于任意 $\Gamma$ 的[[~/文档/note/离散数学/lssx.org::MK82][有限子集]] $\Gamma_0$ 均存在 $\mathcal{N}$ 的[[MK154][赋值]]满足 $\left<\mathcal{N},v\right>\vDash\Gamma_0$ 根据[[MK254][完备性定理]]可得 $\Gamma_0$ [[MK222][一致]]
-
-根据[[MK271][紧致性定理]]可得 $\Gamma$ [[MK222][一致]]，又根据[[MK254][完备性定理]]可得存在[[MK153][结构]] $\mathcal{N}^*=\left<N^*,I^*\right>$ 及其[[MK154][赋值]] $\mu$
-
-满足 $\left<\mathcal{N}^*,\mu\right>\vDash\Gamma$
-
-***** 证明（1）
-
-定义 $e:\mathbb{N}\to N^*$ 为 $e(n)=\bar{\mu}(\tau_n)$
-
-对于任意[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 设有 $x_{i_1},...,x_{i_n}$ 个[[MK140][自由变元]]，则对于任意 $\mathcal{N}$ 的[[MK154][赋值]] $v$ 有 $\left<\mathcal{N},v\right>\vDash\phi$
-
-由于 $v(x_{i_j})\in\mathbb{N}$ 且根据 $\tau_n$ 的定义可得任意 $v(x_{i_j})\in\mathbb{N}$ 均有 $\tau_{k_j}$ 满足 $\bar{v}(\tau_{k_j})=v(x_{i_j})$ 
-
-故 $\left<\mathcal{N},v\right>\vDash\phi$ 的充要条件是 $\mathcal{N}\vDash\phi(\left<x_{i_1},...x_{i_n}\right>,\left<\tau_{k_1},...,\tau_{k_n}\right>)$ 
-
-则根据 $T$ 定义可得充要条件为 $\phi(\left<x_{i_1},...x_{i_n}\right>,\left<\tau_{k_1},...,\tau_{k_n}\right>)\in T$
-
-又由于 $\left<\mathcal{N}^*,\mu\right>\vDash\Gamma$ 且 $T\subset\Gamma$ 则充要条件为 $\left<\mathcal{N}^*,\mu\right>\vDash\phi(\left<x_{i_1},...x_{i_n}\right>,\left<\tau_{k_1},...,\tau_{k_n}\right>)$
-
-又由于 $v\cdot e(x_{i_j})=e(v(x_{i_j}))=e(I(\tau_{k_j}))=e(k_j)=\bar{\mu}(\tau_{k_j})$
-
-故根据[[MK168][局部确定性定理]]可得充要条件为 $\left<\mathcal{N}^*,v\cdot e\right>\vDash\phi$
-
-综上所述，对于任意[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 任意 $\mathcal{N}$ 的[[MK154][赋值]] $v$ ， $\left<\mathcal{N},v\right>\vDash\phi$ 的充要条件为 $\left<\mathcal{N}^*,v\cdot e\right>\vDash\phi$
-
-即可得 $\mathcal{N}$ 是 $\mathcal{N}^*$ 的[[MK301][同质嵌入]]。又根据[[MK302][引理]]可得 $e$ 为[[MK300][嵌入映射]]
-
-***** 证明（2）（3）
-
-显然对于任意 $n\in\mathbb{N}$ 有 $\mathcal{N}\vDash(\forall x_1(p_<(x_1,\tau_n)\to((x_1\hat{=}\tau_0)\lor...\lor(x_1\hat{ =}\tau_{n-1}))))$
-
-则根据结论（1）以及[[MK169][推论]]有 $\mathcal{N}^*\vDash(\forall x_1(p_<(x_1,\tau_n)\to((x_1\hat{=}\tau_0)\lor...\lor(x_1\hat{ =}\tau_{n-1}))))$
-
-根据[[MK368][之前证明]]可得对于任意 $n\in\mathbb{N}$ 有 $\left<\mathcal{N}^*,\mu\right>\vDash p_<(\tau_n,x_1)$ 根据[[MK158][满足]]定义可得 $\mu(\tau_n)<^*\mu(x_1)$
-
-假设存在 $n\in\mathbb{N}$ 满足 $e(n)=\mu(x_1)=\bar{\mu}(\tau_n)$ ，则显然 $\mathcal{N}\vDash(\lnot(p_<(\tau_{n+1},\tau_n)))$
-
-则根据（1）以及[[MK169][推论]]有 $\left<\mathcal{N}^*,\mu\right>\vDash(\lnot(p_<(\tau_{n+1},\tau_n)))$ 根据[[MK158][满足]]定义可得 $\mu(\tau_{n+1})\not<^*\mu(\tau_n)$
-
-即 $\mu(\tau_{n+1})\not<^*\mu(x_1)$ 。又根据 $n$ 的任意性可得有 $\left<\mathcal{N}^*,\mu\right>\vDash p_<(\tau_{n+1},x_1)$
-
-同理根据[[MK158][满足]]定义可得 $\mu(\tau_{n+1})<^*\mu(\tau_n)$ 与上一步结论矛盾。故假设不成立
-
-即不存在 $n\in\mathbb{N}$ 满足 $e(n)=\mu(x_1)=\bar{\mu}(\tau_n)$ ，最终可得 $\mu(x_1)\in N^*-\left\{e(n)\big|n\in\mathbb{N}\right\}$
-
-对于任意 $b\in\mathbb{N}$ 有 $\left<\mathcal{N}^*,\mu\right>\vDash p_<(\tau_b,x_1)$ 根据[[MK158][满足]]定义可得 $e(b)=\mu(\tau_b)<^*\mu(x_1)$

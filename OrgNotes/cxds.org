@@ -2,7 +2,7 @@
 
 #+TITLE: 抽象代数
 
-currnet mark: 516
+currnet mark: 517
 
 free mark:
 
@@ -1730,6 +1730,24 @@ a_{i^*-1}&=a_{i^*-3}-n_{i^*-2}a_{i^*-2}=(v_{i^*-3}a_0+u_{i^*-3}p)-n_{i^*-2}(v_{i
 则显然有 $I(c_1)\in N'\subset N^*$ ，又根据[[MK359][定理1]]可得 $N^*=M$ 矛盾
 
 故假设不成立，即不存在[[MK348][理想]] $N^*$ 满足 $N\subset N^*$ 且 $N^*\ne N,N^*\ne M$ ，即 $N$ 是 $\mathcal{M}$ 的[[MK360][极大理想]]
+
+**** 定理3<<MK517>>
+
+定义：
+
+（1） $\mathbb{Z}$ 为整数集合
+
+（2） $I$ 满足：
+
+     （a） $I(f_+),I(f_\times),I(f_-)$ 分别问整数加法、乘法、取负
+
+     （b） $I(c_0)=0,I(c_1)=1$
+
+则 $\mathcal{Z}=\left<\mathbb{Z},I\right>$ 是[[MK362][非零幺环]]且[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{ =}f_\times(x_2,x_1))))$ 乘法交换
+
+***** 证明
+
+根据[[MK363][性质1]]显然易证
 
 ** 域<<MK338>>
 
