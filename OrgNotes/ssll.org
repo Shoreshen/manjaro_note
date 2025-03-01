@@ -2,7 +2,7 @@
 
 #+TITLE: 算数理论
 
-currnet mark: 21
+currnet mark: 28
 
 free mark: 
 
@@ -24,7 +24,7 @@ free mark:
 
 以下所有逻辑公理集合定义为 $T_N$
 
-（1） $(\forall x_1(\lnot(f_s(x_1))\hat{=}c_0))$
+（1） $(\forall x_1(\lnot(f_s(x_1)\hat{=}c_0)))$
 
 （2） $(\forall x_1((\lnot(x_1\hat{= }c_0))\to(\exists x_2(x_1\hat{=}f_s(x_2)))))$
 
@@ -614,7 +614,7 @@ $T_{PA}\vdash(\forall x_1(\exists x_2((\lnot p_<(x_1,x_2))\land((f_+(x_2,x_2)\ha
 
 即有 $\left<\mathcal{M},\eta\right>\vDash(f_+(f_s(x_2),f_s(x_2))\hat{=}f_s(x_1))$
 
-* 自然数标准[[~/文档/note/数理逻辑/sllj.org::MK221][模型]]
+* 自然数标准[[~/文档/note/数理逻辑/sllj.org::MK221][模型]]<<MK27>>
 
 定义[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{N}=\left<\mathbb{N},I\right>$ 其中 $I$ 为：
 
@@ -625,6 +625,12 @@ $T_{PA}\vdash(\forall x_1(\exists x_2((\lnot p_<(x_1,x_2))\land((f_+(x_2,x_2)\ha
 （3） $I(c_0)=0$
 
 显然 $\mathcal{N}\vDash T_N$ 且 $\mathcal{N}\vDash T_{PA}$
+
+** 相关定义
+
+*** 整除<<MK24>>
+
+自然数 $a$ 被自然数 $b$ 整除意味着存在自然数 $c$ 满足 $a=c\cdot b$
 
 ** 自然数引理
 
@@ -735,6 +741,70 @@ c&=d_i\left(\sum_{j\ne i,j=1}^nx_ja_j\frac{D_j}{d_i}\right)+x_ia_iD_i\\
 \end{aligned}
 
 即 $c$ 对于任意 $i$ 均有 $c=m_id_i+a_i$ 由于均为自然数，即易证 $m_i\in\mathbb{N}$
+
+*** 欧几里得引理<<MK22>>
+
+若质数 $p$ 整除 $ab$ 其中 $\{a,b\}\subset\mathbb{N}$ 则有 $p$ 整除 $a$ 或 $p$ 整除 $b$
+
+**** 证明
+
+由于 $p$ 是质数，故仅被自己和 $1$ 整除。假设 $p$ 不整除 $a$ 则有 $\text{gcd}(p,a)=1$
+
+根据[[MK20][贝祖引理]]可得存在 $\{x,y\}\in\mathbb{Z}$ 使得 $ax+py=1$
+
+两边乘以 $b$ 得 $abx+pby=b$ 由于 $p$ 整除 $ab$ ，即有 $c\in\mathbb{Z}$ 使得 $ab=cp$
+
+即有 $pcx+pby=p(cx+by)=b$ 由于 $\{c,x,y,b\}\subset\mathbb{Z}$ 故有 $cx+by\in\mathbb{Z}$
+
+又由于 $\{p,b\}\subset\mathbb{N}$ 故显然 $cx+by$ 非负。故可得 $cx+by\in\mathbb{N}$ 。即有 $p$ 整除 $b$
+
+由于自然数加乘法满足交换律，故若 $p$ 不整除 $b$ 同理可证 $p$ 整除 $a$
+
+**** 推论<<MK23>>
+
+若质数 $p$ 整除 $\prod_{i=1}^na_i$ 其中 $a_i\in\mathbb{N}$ 则存在 $a_j,1\leq j\leq n$ 满足 $p$ 整除 $a_j$
+
+***** 证明
+
+根据[[MK22][欧几里得引理]]有 $p$ 整除 $a_1$ 或者 $\prod_{i=2}^na_i$ ，若 $p$ 不整除 $a_1$ 则有 $p$ 整除 $\prod_{i=2}^na_i$
+
+同样根据[[MK22][欧几里得引理]]有 $p$ 整除 $a_2$ 或者 $\prod_{i=3}^na_i$ ，以此类推即可证明
+
+*** 质因数分解唯一
+
+任意自然数的质因数分解唯一
+
+**** 证明
+
+假设 $n\in\mathbb{N}$ 有 $n=\prod_{i=1}^np_i=\prod_{j=1}^mq_j$ 其中 $p_i,q_j$ 均为质数，即有 $p_1$ 整除 $\prod_{j=1}^mq_j$
+
+根据[[MK23][推论]]可得存在 $q_k$ 满足 $p_1$ 整除 $q_k$ 由于 $q_k$ 亦为质数，故只被自身或 $1$ 整除
+
+显然 $p_1\ne 1$ 即有 $p_1=q_k$ 。以此类推，即可证明 $p_i$ 与 $q_j$ 是相同的质因数分解
+
+*** 引理<<MK25>>
+
+任意一组不为 $1$ 的自然数 $\{a_1,...,a_n\}\subset\mathbb{N}$ 对于任意 $1\leq i\leq n$ 均有 $a_i$ 不[[MK24][整除]] $\prod_{j=1}^na_j+1$
+
+**** 证明
+
+假设存在 $a_i$ [[MK24][整除]] $\prod_{j=1}^na_j+1$ 则存在 $c\in\mathbb{N}$ 使得 $\prod_{j=1}^na_j+1=a_ic$ 又由于 $\prod_{j=1}^na_j=a_i\prod_{1\leq j\leq n\land j\ne i}a_j=a_ib$
+
+故可得 $a_ib+1=a_ic$ 即有 $1=a_i(b-c)$ 显然仅有可能 $a_i=1$ 与不为 $1$ 矛盾
+
+故假设不成立，即不存在 $a_i$ [[MK24][整除]] $\prod_{j=1}^na_j+1$
+
+*** 素数无穷
+
+自然数中有无穷素数
+
+**** 证明
+
+假设素数有限，即为 $\{a_1,...,a_n\}\subset\mathbb{N}$ 则定义 $k=\prod_{j=1}^na_j+1$ 若 $k$ 是素数，则与 $\{a_1,...,a_n\}$ 是所有素数矛盾
+
+若 $k$ 不是素数，则根据[[MK25][引理]]可得 $\{a_1,...,a_n\}$ 均无法整除 $k$ 则必定存在其他素数整除 $k$
+
+即又与 $\{a_1,...,a_n\}$ 是所有素数矛盾。综上所述，假设不成立，即素数个数无限
 
 ** 自然数定理
 
@@ -952,25 +1022,51 @@ $I^*(f_s)(e(n))=I^*(f_s)(\bar{I}(\tau_n))=\bar{I}(f_s(\tau_n))=\bar{I}(\tau_{n+1
 
 *** $\mu$ 算子
 
-**** 无界 $\mu$ 算子
+对于任意 $\phi(x_1,...,x_n)\in\mathcal{L}_{\mathcal{A}_{PA}}$ 以及任意 $\mathcal{L}_{\mathcal{A}_{PA}}$ 的任意[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{PA}$ 
 
-对于任意 $\phi(x_1)\in\mathcal{L}_{\mathcal{A}_{PA}}$ 以及任意 $\mathcal{L}_{\mathcal{A}_{PA}}$ 的任意[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{PA}$ 若有 $\mathcal{M}\vDash(\exists x_1\phi(x_1))$
+**** 无界 $\mu$ 算子<<MK26>>
 
-定义 $V=\left\{a\big|a\in M\land\mathcal{M}\vDash\phi(x_1)[a]\right\}$ ，则 $\mu(\phi(x))$ 满足：
+对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 定义 $V=\left\{a\big|a\in M\land\mathcal{M}\vDash\phi(x_1,...,x_n)[a,v(x_2),...,v(x_n)]\right\}$ 若有 $V\ne\varnothing$ ，则 $\mu(\mathcal{M},v,(\exists x_1\phi))$ 满足：
 
-（1） $\mu(\phi(x))\in V$
+（1） $\mu(\mathcal{M},v,(\exists x_1\phi))\in V$
 
-（2） 任意 $v\in V$ 均有 $\left<v, \mu(\phi(x))\right>\not\in I(p_<)$
+（2） 任意 $v\in V$ 均有 $\left<v, \mu(\mathcal{M},v,(\exists x_1\phi))\right>\not\in I(p_<)$
+
+***** 性质<<MK28>>
+
+$\mu$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
+
+****** 证明
+
+给定 $\mathcal{M},v,(\exists x_1\phi)$ 且 $V\ne\varnothing$ 若 $\mu$ 不是[[~/文档/note/离散数学/lssx.org::MK175][函数]]，假设存在两个及以上 $v^*\in V$ 满足任意 $v\in V$ 均有 $\left<v,v^*\right>\not\in I(p_<)$
+
+任取其中两个 $v_1,v_2$ ，则满足 $v_1\ne v_2$ 且 $\left<v_2,v_1\right>\not\in I(p_<),\left<v_1,v_2\right>\not\in I(p_<)$
+
+即 $\mathcal{M}\vDash(\exists x_1(\exists x_2((\lnot(x_1\hat{=}x_2))\land((\lnot(p_<(x_1,x_2)))\land(\lnot(p_<(x_2,x_1)))))))$
+
+显然与 $\mathcal{M}$ [[~/文档/note/数理逻辑/sllj.org::MK158][满足]]包含[[MK2][公理（13）]]矛盾。故假设不成立，即有且仅有一个 $v^*\in V$ 满足任意 $v\in V$ 均有 $\left<v,v^*\right>\not\in I(p_<)$
+
+即对于给定 $\mathcal{M},v,(\exists x_1\phi)$ 有 $\mu(\mathcal{M},v,(\exists x_1\phi))$ 有且仅有一个值
 
 **** 有界 $\mu$ 算子
 
-对于任意 $\phi(x_1)\in\mathcal{L}_{\mathcal{A}_{PA}}$ 以及任意 $\mathcal{L}_{\mathcal{A}_{PA}}$ 的任意[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{PA}$ 若有 $\mathcal{M}\vDash(\exists x_1\phi(x_1))$
+对于任意 $b\in M$ 以及任意[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_{n+1})=b$ 若有 $\left<\mathcal{M},v\right>\vDash(\exists x_1\phi(x_1,...,x_n))$
 
-定义 $V=\left\{a\big|a\in M\land\mathcal{M}\vDash(\phi(x_1)\lor(x_1=\tau))[a]\right\}$ ，则对于任意 $\mathcal{L}_{\mathcal{A}_{PA}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK117][项]] $\tau$ 有 $\mu_{x_1<\tau}(\phi(x_1))$ 满足：
+定义 $V=\left\{a\big|a\in M\land\mathcal{M}\vDash(\phi(x_1,...,x_n)\lor(x_1\hat{=}x_{n+1}))[a,v(x_1),...,v(x_n),b]\right\}$ 若有 $V\ne\varnothing$
 
-（1） $\mu(\phi(x))\in V$
+则 $\mu_{x_1\leq b}(\mathcal{M},v,(\exists x_1\phi))$ 满足：
 
-（2） 任意 $v\in V$ 均有 $\left<v, \mu(\phi(x))\right>\not\in I(p_<)$
+（1） $\mu_{x_1\leq b}(\mathcal{M},v,(\exists x_1\phi))\in V$
+
+（2） 任意 $v\in V$ 均有 $\left<v, \mu_{x_1\leq b}(\mathcal{M},v,\phi(x))\right>\not\in I(p_<)$
+
+***** 性质
+
+$\mu_{x_1<\tau}$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
+
+****** 证明
+
+由于 $V\subset M$ ，故与[[MK28][性质]]同理可证
 
 *** 界内量词
 
@@ -984,9 +1080,76 @@ $I^*(f_s)(e(n))=I^*(f_s)(\bar{I}(\tau_n))=\bar{I}(f_s(\tau_n))=\bar{I}(\tau_{n+1
 
 *** 字符函数
 
-对于任意
+对于任意 $\mathcal{L}_{\mathcal{A}_{PA}}$ 的任意[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{PA}$
+
+**** 非负减
+
+$\text{Sub}(a,b)$ 等价与 $\mu(\mathcal{M},v,(\exists x_1((f_+(x_3,x_1)\hat{=}x_2)\lor p_<(x_2,x_3))))$ 其中：
+
+（1） $\mu$ 是[[MK26][无界算子]]
+
+（2） $v$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]]满足 $v(x_2)=a\in M,v(x_3)=b\in M$
+
+***** 性质
+
+若 $\left<a,b\right>\in I(p_<)$ 则有 $\text{Sub}(a,b)=I(c_0)$
+
+****** 证明
+
+定义 $\phi(x_1,x_2,x_3)=((f_+(x_3,x_1)\hat{=}x_2)\lor p_<(x_2,x_3))$ 若 $\left<a,b\right>\in I(p_<)$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\mu$
+
+满足 $u(x_2)=a=v(x_2),u(x_3)=b=v(x_3)$ 均有 $\left<\mathcal{M},u\right>\vDash\phi$ 进一步有 $V=\left\{c\big|c\in M\land\mathcal{M}\vDash\phi(x_1,x_2,x_3)[c,v(x_2),v(x_3)]\right\}=M$
+
+显然 $I(c_0)\in M=V$ 又根据 $\mathcal{M} =\left<M,I\right>\vDash T_{PA}$ 以及[[MK2][公理（8）]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得任意 $c\in M$ 且 $c\ne I(c_0)$ 必有 $\left<c,I(c_0)\right>\not\in I(p_<)$
+
+满足 $\mu(\mathcal{M},v,(\exists x_1\phi))=I(c_0)$ 又根据[[MK28][性质]]可得 $\mu$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]，故不存在其他元素 $c\in M$ 满足 $\mu(\mathcal{M},v,(\exists x_1\phi))=c$
+
+即可得 $\left<a,b\right>\in I(p_<)$ 则有 $\text{Sub}(a,b)=\mu(\mathcal{M},v,(\exists x_1\phi))=I(c_0)$1
 
 **** 整除
 
-$\text{Div}(a,b)$ 等价于 $(\exists x_1(x_2))$
+$\text{Div}(a,b)$ 等价于 $\mu\left(\mathcal{M},v,(\exists x_1(x_2\hat{=}f_\times(x_1,x_3))\right)$ 其中：
 
+（1） $\mu$ 是[[MK26][无界算子]]
+
+（2） $v$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]]满足 $v(x_2)=a\in M,v(x_3)=b\in M$
+
+**** 配对
+
+$\text{OP}(a,b)$ 等价于 $\mu(\mathcal{M},v,(\exists x_1(x_1\hat{=}f_+(f_+(f_\times(f_+(x_2,x_3),f_+(x_2,x_3)),x_2)),\tau_1))$ 其中
+
+（1） $\mu$ 是[[MK26][无界算子]]
+
+（2） $v$ 是 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]]满足 $v(x_2)=a\in M,v(x_3)=b\in M$
+
+（3） $\tau_1$ 遵循[[MK13][ $\tau_n$ 定义]]
+
+***** 性质
+
+若 $\mathcal{M}=\mathcal{N}$ 是[[MK27][自然数模型]]，则 $\text{OP}(a,b)$ 是 $\mathbb{N}\times\mathbb{N}\to\mathbb{N}$ 的[[~/文档/note/离散数学/lssx.org::MK176][单射函数]]
+
+****** 证明
+
+对于任意 $\text{OP}(a_1,b_1)=\text{OP}(a_2,b_2)$ 有 $(a_1+b_1)^2+a_1+1=(a_2+b_2)^2+a_2+1$ 即有 $s_1^2+a_1=s_2^2+a_2$
+
+其中 $s_1\geq a_1,s_2\geq a_2$ 。假设 $s_1\ne s_2$ 不妨设 $s_1>s_2$ 则有 $s_1-s_2\geq a_1-a_2$
+
+由于均为自然数，且 $s_1^2-s_2^2>0$ ，故可得 $s_1^2-s_2^2\geq a_2^2-a_1^2=(a_2+a_1)(a_2-a_1)$
+
+若 $a_1+a_2=0$ ，则根据 $s_1^2+a_1=s_2^2+a_2$ 以及均为自然数有 $s_1^2=s_2^2$ 即有 $s_1=s_2$ 与假设矛盾。故 $a_1+a_2>0$
+
+若 $a_1+a_2=1$ ，由于均为自然数，必有 $a_1=0,a_2=1$ 或者 $a_1=1,a_2=0$ ，不妨设前者
+
+则有 $s_1^2=s_2^2+1$ 由于均为自然数，则必有 $s_1^2=1,s_2^2=0$ 进而 $1+b_2=a_2+b_2=0$ 显然 $b_2$ 不为自然数，矛盾。
+
+同理可退出当 $a_1=1,a_2=0$ 时亦有矛盾。即有 $a_1+a_2\ne1$ 。结合 $a_1+a_2>0$ 可得 $a_1+a_2>1$
+
+则有 $(a_2+a_1)(a_2-a_1)> a_2-a_1$ 即有 $s_1^2-s_2^2>a_2-a_1$ 即 $s_1^2+a_1>s_2^2+a_2$ 显然与 $s_1^2+a_1=s_2^2+a_2$ 矛盾
+
+同理可证若 $s_2>s_1$ 亦矛盾。故综上所述，假设不成立，即若 $\text{OP}(a_1,b_1)=\text{OP}(a_2,b_2)$ 必有 $s_1=s_2$
+
+进一步有 $a_1=a_2$ ，又根据 $s_1=a_1+b_1,s_2=a_2+b_2$ 有 $b_1=b_2$
+
+**** $\beta$ 函数
+
+$\beta(a,i)$ 等价于 $\mu_{x_1<\text{Sub}\left(a,I(f_s)(I(c_0))\right)}\left(\mathcal{M},v,()\right)$
