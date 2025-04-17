@@ -1075,7 +1075,7 @@ sudo usermod -aG docker $USER
 docker login -u="shoreshen" -p="password generated on web" quay.io
 ```
 
-To generate a new cli password, goto [this web](#https://quay.io/) and login
+To generate a new cli password, goto [this web](https://quay.io/) and login
 
 <img src="2023-12-07_15-07.png">
 

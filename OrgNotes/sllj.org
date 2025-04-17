@@ -2,7 +2,7 @@
 
 #+TITLE: 数理逻辑
 
-currnet mark: 507
+currnet mark: 508
 
 free mark: 
   
@@ -2818,7 +2818,7 @@ d. 若为情况（4）则 $\phi$ 中包含 $\to$ 与（1）冲突
 
 ****** 归纳假设
 
-对于任意 $1<z(\phi)\leq n$ 唯一性均成立
+对于任意 $1<z(\phi)<n$ 唯一性均成立
 
 ****** $z(\phi)=n$ 时
 
@@ -7710,9 +7710,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 ***** 推论1<<MK461>>
 
-[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M},\mathcal{N}$ 两个[[MK153][结构]]且 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK282][子结构]]，则任意不带[[MK106][量词]]的[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M},\mathcal{N}$ 两个[[MK153][结构]]且 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK282][子结构]]，则任意不带[[MK106][量词]]
 
-均有对于任意 $\mathcal{M}$ [[MK154][赋值]] $v$ ， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N},v\right>\vDash\phi$
+的[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 均有对于任意 $\mathcal{M}$ [[MK154][赋值]] $v$ ， $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N},v\right>\vDash\phi$
 
 ****** 证明
 
@@ -7763,6 +7763,46 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 综上所述，对于任意 $\phi\in\mathcal{L}_\mathcal{A}$ 均有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{N},v\right>\vDash\phi$
 
 结合 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK282][子结构]]可得 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK287][同质子结构]]
+
+***** 推论3<<MK508>>
+
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M},\mathcal{N}$ 两个[[MK153][结构]]且 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK282][子结构]]，任意[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 及其[[~/文档/note/数理逻辑/sllj.org::MK139][子表达式]] $\psi$ 满足：
+
+（1） 对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 有 $\left<\mathcal{N},v\right>\vDash\psi$ 充要条件是 $\left<\mathcal{M},v\cdot e\right>\vDash\psi$
+
+（2） $\phi$ 中除 $\psi$ 占据的位置外不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]
+
+则任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 有 $\left<\mathcal{N},v\right>\vDash\phi$ 充要条件是 $\left<\mathcal{M},v\cdot e\right>\vDash\phi$
+
+****** 证明
+
+定义 $z(\phi)$ 为 $\phi$ 中去除所 $\psi$ 和不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]的[[~/文档/note/数理逻辑/sllj.org::MK139][子表达式]]后 $($ 和 $)$ 的对数
+
+******* $z(\phi)=0$
+
+此时 $\phi=\psi$ 或 $\phi$ 不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]，若前者则根据条件（1）直接得 $\left<\mathcal{N},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi$
+
+若后者，则根据[[MK60][引理4]]可证 $\left<\mathcal{N},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi$
+
+******* 归纳假设
+
+任意满足条件（1）（2）的 $\phi\in\mathcal{L}_{\mathcal{A}}$ 若 $1\leq z(\phi)<n$ 均有 $\left<\mathcal{N},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi$
+
+******* $z(\phi)=n$
+
+根据[[MK137][可读性]]以及条件（2）可得 $\phi\in\mathcal{L}_{\mathcal{A}_<}$ 有且仅有以下两种形式
+
+******** $\phi=(\lnot\psi)$
+
+根据[[MK158][满足]] $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\not\vDash\psi$ ，显然 $z(\psi)<n$
+
+根据归纳假设充要条件为 $\left<\mathcal{N},v\right>\not\vDash\psi$ ，根据[[MK158][满足]]充要条件为 $\left<\mathcal{N},v\right>\vDash\phi$
+
+******** $\phi=(\psi_1\to\psi_2)$
+
+根据[[MK158][满足]] $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\not\vDash\psi_1$ 或 $\left<\mathcal{M},v\right>\not\vDash\psi_2$ ，显然 $z(\psi_1)<n,z(\psi_2)<n$
+
+根据归纳假设充要条件为 $\left<\mathcal{N},v\right>\not\vDash\psi_1$ 或 $\left<\mathcal{N},v\right>\not\vDash\psi_2$ 根据[[MK158][满足]]充要条件为 $\left<\mathcal{N},v\right>\vDash\phi$
 
 **** 同质子结构<<MK287>>
 
