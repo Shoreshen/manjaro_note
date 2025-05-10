@@ -33,7 +33,7 @@ installall:
 # 	fi
 
 connect:
-	echo $(PW) | sudo -S openvpn --config ~/文档/conf/str-mia308_s663348_account.ovpn --auth-user-pass ~/文档/conf/auth.txt
+	echo $(PW) | sudo -S openvpn --config ~/文档/conf/str-sfo301_s170105_account.ovpn --auth-user-pass ~/文档/conf/auth.txt
 conn_yizhu:
 	echo $(PW) | sudo -S openvpn --config ~/文档/work/亿铸/VPN/yz.ovpn --auth-user-pass /home/shore/文档/work/亿铸/VPN/auth.txt --askpass /home/shore/文档/work/亿铸/VPN/privatepass.txt
 set_dns:  
