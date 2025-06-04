@@ -1,8 +1,8 @@
-#+LATEX_HEADER:
+#+LATEX_HEADER: \usepackage{mathrsfs}
 
 #+TITLE: 算数理论
 
-currnet mark: 70
+currnet mark: 90
 
 free mark: 
 
@@ -652,13 +652,13 @@ $T_{PA}\vdash(\forall x_1(\exists x_2((\lnot p_<(x_1,x_2))\land((f_+(x_2,x_2)\ha
 
 * 自然数标准[[~/文档/note/数理逻辑/sllj.org::MK221][模型]]<<MK27>>
 
-定义[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{N}=\left<\mathbb{N},I\right>$ 其中 $I$ 为：
+定义[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathfrak{N}=\left<\mathbb{N},\mathfrak{J}\right>$ 其中 $\mathfrak{J}$ 为：
 
-（1） $I(p_<),I(f_+),I(f_\times)$ 为自然数上的小于关系，加法，乘法
+（1） $\mathfrak{J}(p_<),\mathfrak{J}(f_+),\mathfrak{J}(f_\times)$ 为自然数上的小于关系，加法，乘法
 
-（2） 对于任意 $a\in\mathbb{N}$ 定义 $I(f_s)(a)=a+1$
+（2） 对于任意 $a\in\mathbb{N}$ 定义 $\mathfrak{J}(f_s)(a)=a+1$
 
-（3） $I(c_0)=0$
+（3） $\mathfrak{J}(c_0)=0$
 
 显然 $\mathcal{N}\vDash T_N$ 且 $\mathcal{N}\vDash T_{PA}$
 
@@ -880,56 +880,6 @@ c&=d_i\left(\sum_{j\ne i,j=1}^nx_ja_j\frac{D_j}{d_i}\right)+x_ia_iD_i\\
 
 即又与 $\{a_1,...,a_n\}$ 是所有素数矛盾。综上所述，假设不成立，即素数个数无限
 
-*** 引理3<<MK39>>
-
-$J(a,b)=\frac{(a+b)(a+b+1)}{2}+a$ 满足：
-
-（1） $J(a,b)>a$
-
-（2） $\mathbb{N}\times\mathbb{N}\to\mathbb{N}-\{1\}$ 的[[~/文档/note/离散数学/lssx.org::MK181][双射]]
-
-**** 证明
-
-结论（1）显然，定义函数 $g(s)=\frac{s(s+1)}{2}$ 则显然：
-
-（1） $g(s)$ 严格递增
-
-（2） $g(s+1)-g(s)=\frac{s(s+1)+2(s+1)-s(s+1)}{2}=s+1$
-
-（3） 当 $s>0\land s\in\mathbb{N}$ 时 $g(s)\in\mathbb{N}$
-
-（4） 当 $s=1$ 时 $g(s)=1$
-
-***** 是[[~/文档/note/离散数学/lssx.org::MK176][单射]]
-
-对于任意 $\left<a_1,b_1\right>\ne\left<a_2,b_2\right>$ 有 $J(a_1,b_1)=\frac{(a_1+b_1)(a_1+b_1+1)}{2}+a_1=\frac{s_1(s_1+1)}{2}+a_1,J(a_1,b_1)=\frac{s_2(s_2+1)}{2}+a_2$
-
-假设 $J(a_1,b_1)=J(a_2,b_2)$ ，则若 $s_1\ne s_2$ ，不妨设 $s_1>s_2$ 则有 $J(a_1,b_1)-J(a_2,b_2)=g(s_1)-g(s_2)+a_1-a_2$
-
-根据 $g(s)$ 性质（2）有 $g(s_1)-g(s_2)+a_1-a_2\geq s_1+1+a_1-a_2$
-
-又由于 $s_1>s_2\geq0,\{a_1,b_1,a_2,b_2\}\subset\mathbb{N}$ 则根据 $s_i=a_i+b_i$ 有 $s_1>s_2\geq a_2$ 即 $s_1-a_2>0$
-
-故有 $J(a_1,b_1)-J(a_2,b_2)\geq s_1-a_2+1+a_1>a_1+1>0$ 即有 $J(a_1,b_1)\ne J(a_2,b_2)$ 矛盾
-
-故有 $s_1=s_2$ 根据 $J(a_1,b_1)=J(a_2,b_2)$ 可得 $\frac{s_1(s_1+1)}{2}+a_1=\frac{s_2(s_2+1)}{2}+a_2$ 进一步有 $a_1=a_2,b_1=s_1-a_1=s_2-a_2=b_2$
-
-显然与 $\left<a_1,b_1\right>\ne\left<a_2,b_2\right>$ 矛盾，故假设不成立，即对于任意 $\left<a_1,b_1\right>\ne\left<a_2,b_2\right>$ 有 $J(a_1,b_1)\ne J(a_2,b_2)$
-
-即是[[~/文档/note/离散数学/lssx.org::MK176][单射]]
-
-***** 是[[~/文档/note/离散数学/lssx.org::MK179][满射]]
-
-对于任意 $n\in \mathbb{N}-1$ 可得 $n\geq 1$ 由于 $g(s)$ 在值域 $\mathbb{N}-\{1\}$ 上严格递增且 $g(1)=1$
-
-故显然存在 $s\in\mathbb{N}$ 满足 $g(s)\leq n< g(s+1)$ 则根据 $g(s)$ 性质（2）有 $n-g(s)< g(s+1)-g(s)=s+1$
-
-即有 $n-g(s)\leq s$ 则取 $a=n-g(s)$ 由于 $n\geq g(s)$ 显然 $a\in\mathbb{N}$
-
-取 $b=s-a=s-(n-g(s))$ 由于 $n-g(s)\leq s$ 根据 $g(s)$ 性质（3）易证 $g(s)\in\mathbb{N}$
-
-故可得 $b\in\mathbb{N}$ 。综上所述，对于任意 $n\in \mathbb{N}-1$ 均存在 $\{a,b\}\subset\mathbb{N}$ 使得 $J(a,b)=n$ 即是[[~/文档/note/离散数学/lssx.org::MK179][满射]]
-
 *** 引理4<<MK60>>
 
 定义 $\mathcal{N}=\left<\mathbb{N},J\right>$ 是[[MK27][自然数标准模型]]，则对于任意 $\mathcal{L}_{\mathcal{A}_{N}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{N}$ 任意 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$
@@ -982,7 +932,7 @@ $J(a,b)=\frac{(a+b)(a+b+1)}{2}+a$ 满足：
 
 *** 定理2<<MK16>>
 
-$\mathcal{N}$ 是 $\mathcal{L}_{\mathcal{A}_N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，且有 $\mathcal{N}\vDash T_N$
+$\mathfrak{N}$ 是 $\mathcal{L}_{\mathcal{A}_N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，且有 $\mathfrak{N}\vDash T_N$
 
 **** 证明
 
@@ -1174,7 +1124,7 @@ $I^*(f_s)(e(n))=I^*(f_s)(\bar{I}(\tau_n))=\bar{I}(f_s(\tau_n))=\bar{I}(\tau_{n+1
 
 若有 $T_N\vdash\phi$ 由于 $\mathcal{N}\vDash T_N$ 根据[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]有 $\mathcal{N}\vDash\phi$ 
 
-**** 推论
+**** 推论<<MK72>>
 
 定义 $\mathcal{N}=\left<\mathbb{N},J\right>$ 是[[MK27][自然数标准模型]]，则对于任意 $\mathcal{L}_{\mathcal{A}_{N}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{N}$ 
 
@@ -1394,7 +1344,7 @@ $\mu_{x_1}$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
 
 **** 有界 $\mu$ 算子<<MK29>>
 
-对于任意 $b\in M$ 以及任意[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 定义 $V=\left\{a\big|a\in M\land\mathcal{M}\vDash(\phi(x_1,...,x_n)\lor(x_1\hat{=}x_{n+1}))[a,v(x_1),...,v(x_n),b]\right\}$
+对于任意 $b\in M$ 以及任意[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 定义 $V=\left\{a\big|a\in M\land\mathcal{M}\vDash(\phi(x_1,...,x_n)\land (x_1\hat{=}x_{n+1}))[a,v(x_1),...,v(x_n),b]\right\}$
 
 若有 $V\ne\varnothing$ 则 $\mu_{x_1\leq b}(\mathcal{M},v,\phi)$ 满足：
 
@@ -1404,7 +1354,7 @@ $\mu_{x_1}$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
 
 其中 $\phi$ 称为有界 $\mu$ 算子对应的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]。若 $V$ 是空集，则称算子不被满足
 
-***** 性质1
+***** 性质1<<MK71>>
 
 $\mu_{x_1<\tau}$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
 
@@ -1666,9 +1616,11 @@ $\text{Sub}(\mathcal{M},a,b)$ 是[[~/文档/note/离散数学/lssx.org::MK175][�
 
 即 $\left<\text{Sub}(\mathcal{M},a,b),\bar{v}(\tau_a)\right>\in I(p_<)$
 
-**** 配对
+**** 配对<<MK88>>
 
-$\text{OP}(\mathcal{M},a,b)$ 等价于 $I(f_+)(I(f_+)(I(f_\times)(I(f_+)(a,b),I(f_+)(a,b)),a),\bar{I}(\tau_1))$ 其中
+$\text{OP}(\mathcal{M},a,b)$ 等价于 $I(f_+)(I(f_+)(I(f_\times)(I(f_+)(a,b),I(f_+)(a,b)),a),\bar{I}(\tau_1))$ ，
+
+即简写为 $(a+b)(a+b)+a+1$ 其中
 
 （1） $a\in M,b\in M$
 
@@ -1736,15 +1688,15 @@ $\text{OP}(\mathcal{M},a,b)$ 等价于 $I(f_+)(I(f_+)(I(f_\times)(I(f_+)(a,b),I(
 
 定义 $\phi(x_1,x_2,x_3,x_4)=div(x_1,f_+(\tau_1,f_\times(f_+(op(x_2,x_3),\tau_1),x_4)))$
 
-$\beta(\mathcal{M},a,i)$ 等价于 $\mu_{x_1<\text{Sub}\left(\mathcal{M},a,I(f_s)(I(c_0))\right)}\left(\mathcal{M},v,\left(\exists x_{4<\tau_a}\left(\exists x_{5<\tau_a}\left((\tau_a\hat{=}op(x_4,x_5))\land\phi(x_4,x_1,\tau_i,x_5)\right)\right)\right)\right)$
+$\beta(\mathcal{M},a,i)$ 等价于 $\mu_{x_1<\text{Sub}\left(\mathcal{M},a,\bar{I}(\tau_1)\right)}\left(\mathcal{M},v,\left(\exists x_{4<\tau_a}\left(\exists x_{5<\tau_a}\left((\tau_a\hat{=}op(x_4,x_5))\land\phi(x_4,x_1,\tau_i,x_5)\right)\right)\right)\right)$
 
 其中：
 
 （1） $\{a,i\}\subset\mathbb{N}$
 
-（2） $\text{Sub}\left(\mathcal{M},a,I(f_s)(I(c_0))\right)$ 为[[MK30][非负减]]
+（2） $\text{Sub}\left(\mathcal{M},a,\bar{I}(\tau_1)\right)$ 为[[MK30][非负减]]
 
-（3） $\mu_{x_1<\text{Sub}\left(a,I(f_s)(I(c_0))\right)}$ 为[[MK29][有界算子]]
+（3） $\mu_{x_1<\text{Sub}\left(\mathcal{M},a,\bar{I}(\tau_1)\right)}$ 为[[MK29][有界算子]]
 
 （4） $\tau_1$ 同[[MK13][之前定义]]
 
@@ -1858,7 +1810,7 @@ $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数
 
 根据[[MK42][性质2]]可得 $\text{Sub}\left(\mathcal{M},a,I(f_s)(I(c_0))\right)$ 值确定
 
-又根据[[MK28][性质]]可得 $\mu_{x_1<\text{Sub}\left(a,I(f_s)(I(c_0))\right)}\left(\mathcal{M},v,\left(\exists x_{4<x_2}\left(\exists x_{5<x_2}\left((x_2\hat{=}op(x_4,x_5))\land\phi(x_4,x_1,x_3,x_5)\right)\right)\right)\right)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
+又根据[[MK71][性质]]可得 $\mu_{x_1<\text{Sub}\left(a,I(f_s)(I(c_0))\right)}\left(\mathcal{M},v,\left(\exists x_{4<x_2}\left(\exists x_{5<x_2}\left((x_2\hat{=}op(x_4,x_5))\land\phi(x_4,x_1,x_3,x_5)\right)\right)\right)\right)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
 
 故 $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
 
@@ -1872,7 +1824,7 @@ $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数
 
 根据[[MK33][定义]]以及[[MK65][性质2]]可得 $\left<\text{Sub}\left(\mathcal{M},a,\bar{I}(\tau_1)\right),\beta(\mathcal{M},a,i)\right>\not\in I(p_<)$ 
 
-则有 $\left<\beta(\mathcal{M},a,i) ,\text{Sub}\left(\mathcal{M},a,\bar{I}(\tau_1)\right)\right>\in I(p_<)$ 或 $\beta(\mathcal{M},a,i)=\text{Sub}\left(\mathcal{M},a,\bar{I}(\tau_1)\right)$
+则根据[[MK2][公理（13）]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\left<\beta(\mathcal{M},a,i) ,\text{Sub}\left(\mathcal{M},a,\bar{I}(\tau_1)\right)\right>\in I(p_<)$ 或 $\beta(\mathcal{M},a,i)=\text{Sub}\left(\mathcal{M},a,\bar{I}(\tau_1)\right)$
 
 又根据[[MK67][性质3]]可得 $\left<\text{Sub}\left(\mathcal{M},a,\bar{I}(\tau_1)\right),a\right>\in I(p_<)$ 或者 $\text{Sub}\left(\mathcal{M},a,\bar{I}(\tau_1)\right)=I(c_0)$
 
@@ -1906,7 +1858,7 @@ $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数
 
 （1） 对于任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $\beta(\mathcal{N},a,i)=a_i$
 
-（2） 对于任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $a_i<a$
+（2） 对于任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $a_i<a-1$
 
 其中 $\mathcal{N}=\left<\mathbb{N},I\right>$ 为[[MK27][自然数模型]]
 
@@ -1916,7 +1868,7 @@ $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数
 
 ******* 证明（1）
 
-易证 $op^*(a,b)=\mu_{x_1}(\mathcal{N},v,(\exists x_1(x_1\hat{=}op(x_2,x_3))))$ 其中 $v(x_2)=a,v(x_3)=b$
+易证 $op^*(a,b)=\mu_{x_1}(\mathcal{N},v,(x_1\hat{=}op(x_2,x_3)))$ 其中 $v(x_2)=a,v(x_3)=b$
 
 定义 $c=\max\left(\left\{op^*(a_i,i)+1\big|1\leq i\leq n\right\}\right)$ 定义 $z=\prod_{i=1}^{c-1}i$ 则根据[[MK31][引理2]]可得对于任意 $u<c,v<c$ 且 $u\ne v$ 均有 $1+u\cdot z,1+v\cdot z$ 互质
 
@@ -1952,7 +1904,7 @@ $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数
 
 由于 $y$ 被任意 $\left\{1+u\cdot z\big|u=op^*(a_i,i)+1\right\}$ 中元素整除，故显然对于任意 $i$ 均有 $y>op^*(a_i,i)>a_i$
 
-又由于 $a=op(y,z)$ 故对于任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $a>y>a_i$
+又由于 $a=op(y,z)=(y+z)^2+y+1>y+1$ 故对于任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $a-1>y>a_i$
 
 ****** 推论1<<MK36>>
 
@@ -1962,9 +1914,13 @@ $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数
 
 （2） $\beta(\mathcal{N},a,0)=n$
 
-（3） 对于任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $a_i<a$ 且 $n<a$
+（3） 对于任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $a_i<a-1$
+
+（4） $n<a-1$
 
 ******* 证明
+
+******** 证明（1）~（3）
 
 定义 $c=\max\left(\left\{op^*(a_i,i)+1\big|1\leq i\leq n\right\}\cup\{op^*(n,0)+1\}\right)$ 同[[MK35][定理]]的证明定义：
 
@@ -1973,6 +1929,116 @@ $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数
 （2） $B=\left\{1+u\cdot z\big|1\leq u< c\right\}-A$ 
 
 则[[MK35][同理可证]]存在 $a$ 满足对于任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $\beta(\mathcal{N},a,i)=a_i$ 且 $\beta(\mathcal{N},a,0)=n$
+
+且任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $a_i<a-1$
+
+******** 证明（4）
+
+由于 $1+(op^*(n,0)+1)\cdot z\in A$ 故根据[[MK35][定理证明]]可得 $y$ 被 $1+(op^*(n,0)+1)\cdot z$ [[MK24][整除]]
+
+进一步有 $y>1+(op^*(n,0)+1)\cdot z>n$
+
+又由于 $a=op(y,z)=(y+z)^2+y+1>y+1$ 故对于任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $a-1>y>n$
+
+**** $J$ 函数<<MK73>>
+
+对于任意 $\mathcal{L}_{\mathcal{A}_{N}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{N}$ 定义 $J(a,b)=\frac{(a+b)(a+b+1)}{2}+a$ 为 $J$ 函数，其中：
+
+（1） 加法，乘法分别为 $I(f_+),I(f_\times)$
+
+（2） 对于任意 $u\in M$ 定义 $U=\left\{c\big|I(f_\times)(\bar{I}(\tau_2),c)=u\right\}$ 则定义 $\frac{u}{2}$ 满足 $\frac{u}{2}\in U$ 且任意 $u'\in U$ 均有 $\left<u',u\right>\not\in I(p_<)$
+
+***** 等价表达
+
+对于任意 $\mathcal{L}_{\mathcal{A}_N}$ 的任意[[~/文档/note/数理逻辑/sllj.org::MK117][项]] $\tau_a,\tau_b$ 不妨设 $\tau_a,\tau_b$ 中不含 $x_2,x_1$
+
+定义 $\phi_1=(f_\times(x_2,\tau_2)\hat{=}f_\times(f_+(\tau_a,\tau_b),f_+(f_+(\tau_a,\tau_b),\tau_1)))$ 以及 $\phi_2=(x_1\hat{ =}f_+(x_2,\tau_a))$
+
+定义 $\text{J}(x_1,\tau_a,\tau_b)=(\exists x_2(\mu(\phi_1,x_2)\land\phi_2))$ 其中 $\mu(\phi_1,x_2)$ 为[[MK26][无界算子]]的[[MK52][等价表达]]
+
+则对于任意 $\mathcal{L}_{\mathcal{A}_{N}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{N}$ 及其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 有 $\bar{v}(\tau_a)=a\in M,\bar{v}(\tau_b)=b\in M$
+
+有 $\left<\mathcal{M},v\right>\vDash\text{J}(x_1,\tau_a,\tau_b)$ 的充要条件是 $v(x_7)=J(a,b)$
+
+****** 证明
+
+******* 充分
+
+若有 $\left<\mathcal{M},v\right>\vDash\text{J}(x_j,\tau_a,\tau_b)$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]存在 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足 $\eta(x_i)=v(x_i),i\ne2$
+
+使得 $\left<\mathcal{M},\eta\right>\vDash\mu(\phi_1,x_2)$ 且 $\left<\mathcal{M},\eta\right>\vDash\phi_2(x_1)$
+
+根据[[MK52][等价表达]]可得 $\mu(\mathcal{M},v,(f_\times(x_2,\tau_2)\hat{=}f_\times(f_+(\tau_a,\tau_b),f_+(f_+(\tau_a,\tau_b),\tau_1)))) =\eta(x_2)$
+
+由于 $\tau_a,\tau_b$ 中不含 $x_2,x_1$ 以及 $\eta(x_i)=v(x_i),i\ne2$ 故根据[[~/文档/note/数理逻辑/sllj.org::MK155][局部确定]]可得 $\bar{\eta}(\tau_a)=a\in M,\bar{\eta}(\tau_b)=b\in M$ 
+
+则根据[[MK26][定义]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $I(f_\times)(2, \eta(x_2))=(a+b)(a+b+1)$ ，又根据[[MK73][定义]]可得 $v(x_2)=\frac{(a+b)(a+b+1)}{2}$
+
+又由于 $\phi_2=(x_j\hat{ =}f_+(x_2,\tau_a))$ 以及 $\left<\mathcal{M},\eta\right>\vDash\phi_2(x_1)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $v(x_1) =\eta(x_1) =\eta(x_2)+a =\frac{(a+b)(a+b+1)}{2}+a$
+
+******* 必要
+
+若有 $v(x_1)=\frac{(a+b)(a+b+1)}{2}+a$ 则由于 $\{a,b\}\subset M$ 易证 $(a+b)(a+b+1)\in M$ 且存在 $c\in M$ 满足 $c=\frac{(a+b)(a+b+1)}{2}$
+
+定义 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足 $\eta(x_i)=v(x_i),i\ne2$ 以及 $\eta(x_2)=c$ 。由于 $\tau_a,\tau_b$ 中不含 $x_2,x_1$ 以及 $\eta(x_i)=v(x_i),i\ne2$
+
+故根据[[~/文档/note/数理逻辑/sllj.org::MK155][局部确定]]可得 $\bar{\eta}(\tau_a)=a\in M,\bar{\eta}(\tau_b)=b\in M$ 。则根据[[MK73][定义]]以及 $\mu$ 算子[[MK26][定义]]易证 $\mu(\mathcal{M},\eta,\phi_2)=\eta(x_2)$
+
+又根据[[MK52][等价表达]]可得 $\left<\mathcal{M},\eta\right>\vDash\mu(\phi_1,x_2)$ 。进一步由于 $\eta(x_1)=v(x_1)=\frac{(a+b)(a+b+1)}{2}+a=\eta(x_2)+a$
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\left<\mathcal{M},\eta\right>\vDash\phi_2(x_1)$ ，即有 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足 $\eta(x_i)=v(x_i),i\ne2$ 且 $\left<\mathcal{M},\eta\right>\vDash(\mu(\phi_1,x_2)\land\phi_2)$
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},\eta\right>\vDash(\exists x_2(\mu(\phi_1,x_2)\land\phi_2))$ 
+
+***** 引理1<<MK39>>
+
+若 $\{a,b\}\subset\mathbb{N}$ 则 $J(a,b)=\frac{(a+b)(a+b+1)}{2}+a$ 满足：
+
+（1） $J(a,b)>a$
+
+（2） $\mathbb{N}\times\mathbb{N}\to\mathbb{N}-\{1\}$ 的[[~/文档/note/离散数学/lssx.org::MK181][双射]]
+
+****** 证明
+
+结论（1）显然，定义函数 $g(s)=\frac{s(s+1)}{2}$ 则显然：
+
+（1） $g(s)$ 严格递增
+
+（2） $g(s+1)-g(s)=\frac{s(s+1)+2(s+1)-s(s+1)}{2}=s+1$
+
+（3） 当 $s>0\land s\in\mathbb{N}$ 时 $g(s)\in\mathbb{N}$
+
+（4） 当 $s=1$ 时 $g(s)=1$
+
+******* 是[[~/文档/note/离散数学/lssx.org::MK176][单射]]
+
+对于任意 $\left<a_1,b_1\right>\ne\left<a_2,b_2\right>$ 有 $J(a_1,b_1)=\frac{(a_1+b_1)(a_1+b_1+1)}{2}+a_1=\frac{s_1(s_1+1)}{2}+a_1,J(a_1,b_1)=\frac{s_2(s_2+1)}{2}+a_2$
+
+假设 $J(a_1,b_1)=J(a_2,b_2)$ ，则若 $s_1\ne s_2$ ，不妨设 $s_1>s_2$ 则有 $J(a_1,b_1)-J(a_2,b_2)=g(s_1)-g(s_2)+a_1-a_2$
+
+根据 $g(s)$ 性质（2）有 $g(s_1)-g(s_2)+a_1-a_2\geq s_1+1+a_1-a_2$
+
+又由于 $s_1>s_2\geq0,\{a_1,b_1,a_2,b_2\}\subset\mathbb{N}$ 则根据 $s_i=a_i+b_i$ 有 $s_1>s_2\geq a_2$ 即 $s_1-a_2>0$
+
+故有 $J(a_1,b_1)-J(a_2,b_2)\geq s_1-a_2+1+a_1>a_1+1>0$ 即有 $J(a_1,b_1)\ne J(a_2,b_2)$ 矛盾
+
+故有 $s_1=s_2$ 根据 $J(a_1,b_1)=J(a_2,b_2)$ 可得 $\frac{s_1(s_1+1)}{2}+a_1=\frac{s_2(s_2+1)}{2}+a_2$ 进一步有 $a_1=a_2,b_1=s_1-a_1=s_2-a_2=b_2$
+
+显然与 $\left<a_1,b_1\right>\ne\left<a_2,b_2\right>$ 矛盾，故假设不成立，即对于任意 $\left<a_1,b_1\right>\ne\left<a_2,b_2\right>$ 有 $J(a_1,b_1)\ne J(a_2,b_2)$
+
+即是[[~/文档/note/离散数学/lssx.org::MK176][单射]]
+
+******* 是[[~/文档/note/离散数学/lssx.org::MK179][满射]]
+
+对于任意 $n\in \mathbb{N}-1$ 可得 $n\geq 1$ 由于 $g(s)$ 在值域 $\mathbb{N}-\{1\}$ 上严格递增且 $g(1)=1$
+
+故显然存在 $s\in\mathbb{N}$ 满足 $g(s)\leq n< g(s+1)$ 则根据 $g(s)$ 性质（2）有 $n-g(s)< g(s+1)-g(s)=s+1$
+
+即有 $n-g(s)\leq s$ 则取 $a=n-g(s)$ 由于 $n\geq g(s)$ 显然 $a\in\mathbb{N}$
+
+取 $b=s-a=s-(n-g(s))$ 由于 $n-g(s)\leq s$ 根据 $g(s)$ 性质（3）易证 $g(s)\in\mathbb{N}$
+
+故可得 $b\in\mathbb{N}$ 。综上所述，对于任意 $n\in \mathbb{N}-1$ 均存在 $\{a,b\}\subset\mathbb{N}$ 使得 $J(a,b)=n$ 即是[[~/文档/note/离散数学/lssx.org::MK179][满射]]
 
 *** 哥德尔数
 
@@ -1983,6 +2049,10 @@ $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数
 （1） 对于任意 $i\in\mathbb{N}\land i<n$ 均有 $\beta(\mathcal{N},a,i)=a_i$
 
 （2） $\beta(\mathcal{N},a,0)=n$
+
+（3） 对于任意 $i\in\mathbb{N}\land1\leq i\leq n$ 均有 $a_i<a-1$
+
+（4） $n<a-1$
 
 其中 $\mathcal{N}=\left<\mathbb{N},J\right>$ 是[[MK27][自然数标准模型]]
 
@@ -2022,9 +2092,19 @@ $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数
 
 定义 $\text{Seq}=\left\{\prec a_1,...,a_n\succ\big|\left<a_1,...,a_n\right>\in\mathbb{N}^n\land n\in\mathbb{N}\right\}$ 以及 $\mathcal{N}=\left<\mathbb{N},J\right>$ 是[[MK27][自然数标准模型]]
 
-对于任意 $\mathcal{L}_{\mathcal{A}_N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 以及任意 $a\in\mathbb{N}$ 有 $a\in\text{Seq}$ 的充要条件
+定义：
 
-是 $\mathcal{M}\vDash\left(\left(\exists x_1\left(b(x_1,\tau_a,c_0)\land\left(\forall x_2_{\leq x_1}(\exists x_3(b(x_3,\tau_a,x_2)))\right)\right)\right)\lor(\tau_a\hat{=}c_0)\right)$
+（1） $\phi_1(x_1)=b(x_1,\tau_a,c_0)$
+
+（2） $\phi_2(x_1)=\land(\lnot(x_1\hat{=}c_0))$
+
+（3） $\phi_3(x_2)=sub(x_2,\tau_a,\tau_1)$
+
+（4） $\phi_4(x_1,x_2)=p_<(x_1,x_2)$
+
+（5） $\phi_5(x_1,x_2)=(\forall x_3(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2)))))$
+
+（6） $\text{IsSeq}(\tau_a)=((\exists x_1(\exists x_2(\phi_1(x_1)\land\phi_2(x_1)\land\phi_3(x_2)\land\phi_4(x_1,x_2)\land\phi_5(x_1,x_2))))\lor(\tau_a\hat{=}c_0))$
 
 其中：
 
@@ -2032,111 +2112,185 @@ $\beta(\mathcal{M},a,i)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数
 
 （2） $\bar{J}(\tau_a)=a\in\mathbb{N}$ 为[[MK13][ $\tau_n$ 定义]]与[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]]无关
 
+则对于任意 $\mathcal{L}_{\mathcal{A}_N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M}=\left<M,I\right>$ 以及任意 $a\in\mathbb{N}$ 有 $a\in\text{Seq}$ 的充要条件是 $\mathcal{M}\vDash\text{IsSeq}(\tau_a)$
+
 ****** 证明
+
+******* $a=0$
 
 定义 $\mathcal{N}=\left<\mathbb{N},J\right>$ 是[[MK27][自然数标准模型]]，若 $a=0$ 充要条件为 $\mathcal{N}\vDash(\tau_a\hat{=}c_0)$
 
-根据[[MK60][引理4]]可得充要条件为 $\mathcal{M}\vDash(\tau_a\hat{ =}c_0)$
+根据[[MK60][引理4]]可得充要条件为 $\mathcal{M}\vDash(\tau_a\hat{ =}c_0)$ 即 $a=0,\mathcal{N}\vDash(\tau_a\hat{ =}c_0),\mathcal{M}\vDash(\tau_a\hat{ =}c_0)$ 等价且 $0\in\text{Seq}$
 
-即成立若 $a\ne0$ 且 $a\in\text{Seq}$ 则根据[[MK38][定义]]存在 $\left<a_1,...,a_n\right>\in\mathbb{N}^n$ 满足 $a=\prec a_1,...,a_n\succ$
+故易证当 $a=0$ 时性质成立
 
-根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]以及[[MK56][等价表达]]可得其充要条件是存在 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $v(x_1)=n$ 以及 $v(x_{i+i})=a_i$
+******* $a\ne 0$
 
-使得 $\left<\mathcal{N},v\right>\vDash b(x_1,\tau_a,c_0),\left<\mathcal{N},v\right>\vDash b(x_{1+i},\tau_a,\tau_i),i\leq n$
+******** 充分
 
-******* 充分
+********* 转换条件
 
-******** $\left<\mathcal{M},e\cdot v\right>\vDash b(x_1,\tau_a,c_0)$ 以及 $\left<\mathcal{M},e\cdot v\right>\vDash b(x_{1+i},\tau_a,\tau_i),i\leq n$ 
+若 $a\ne0$ 且 $a\in\text{Seq}$ 则根据[[MK38][定义]]存在 $\left<a_1,...,a_n\right>\in\mathbb{N}^n$ 满足 $a=\prec a_1,...,a_n\succ$
 
-根据[[MK64][推论]]可得 $\left<\mathcal{M},e\cdot v\right>\vDash b(x_1,\tau_a,c_0),\left<\mathcal{M},e\cdot v\right>\vDash b(x_{1+i},\tau_a,\tau_i),i\leq n$
+则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]以及[[MK56][等价表达]]可得其充要条件是存在 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 
 
-******** 定义 $\mu$
+使得 $\left<\mathcal{N},v\right>\vDash(b(x_1,\tau_a,c_0)\land(\lnot(x_1\hat{=}c_0))\land sub(x_2,\tau_a,\tau_1)\land p_<(x_1,x_2)\land(\forall x_3(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2))))))$
 
-根据 $\left<\mathcal{M},e\cdot v\right>\vDash b(x_1,\tau_a,c_0)$ 以及[[MK56][等价表达]]可得 $\beta(\mathcal{M},\bar{I}(\tau_a),I(c_0))=e\cdot v(x_1)=\mu(x_1)$
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有：
 
-根据 $\bar{I}(\tau_a)\ne I(c_0)$ 以及[[MK69][性质3]]可得 $\left<\mu(x_1),\bar{I}(\tau_a)\right>\in I(p_<)$ 根据[[MK58][前段定理]]可得必有 $\mu(x_1)\in Z=\left\{\bar{I}(\tau_k)\big|k\in\mathbb{N}\right\}$
+（1） $\left<\mathcal{N},v\right>\vDash b(x_1,\tau_a,c_0)$
 
-即存在 $n_1\in\mathbb{N}$ 满足 $\mu(x_1)=\bar{I}(\tau_{n_1})$ ，又根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]以及[[MK60][引理4]]易证 $\mathcal{N}\vDash p_<(\tau_{n_1},\tau_a)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $n_1<a$
+（2） $\left<\mathcal{N},v\right>\vDash sub(x_2,\tau_a,\tau_1)$
 
-若有 $\left<\mathcal{M},\mu\right>\vDash(p_<(x_2,x_1)\lor(x_2\hat{=}x_1))$ ，则根据[[MK60][引理4]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]类似易证存在 $n_2\in\mathbb{N}$ 满足 $\mu(x_2) =\bar{I}(\tau_{n_2})$ 且 $n_2\leq n_1$
+（3） $\left<\mathcal{N},v\right>\vDash p_<(x_1,x_2)$
 
-总上所述，对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\mu$ 满足 $\mu(x_i)=e\cdot v(x_i),i\ne 2$ 均有：
+（4） $\left<\mathcal{N},v\right>\vDash(\lnot(x_1\hat{=}c_0))$
 
-（1） $\left<\mathcal{M},\mu\right>\not\vDash (p_<(x_2,x_1)\lor(x_2\hat{=}x_1))$
+（5） $\left<\mathcal{N},v\right>\vDash(\forall x_3(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2)))))$
 
-（2） 存在 $n_2\in\mathbb{N}$ 满足 $\mu(x_2) =\bar{I}(\tau_{n_2})$ 且 $n_2\leq n_1$
+********* 证明（1）~（4）
 
-******** 定义 $\eta$
+根据根据[[MK64][推论1]]、[[MK63][推论]]、（3）不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]以及[[MK60][引理4]]易证
 
-则定义 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足 $\eta(x_i)=\mu(x_i),i\ne 3$ 以及 $\eta(x_3)=e\cdot v(x_{1+n_2})$
+（1） $\left<\mathcal{M},e\cdot v\right>\vDash b(x_1,\tau_a,c_0)$
 
-根据 $\eta(x_2)=\mu(x_2)=\bar{I}(\tau_{n_2}),n_2<n_1$ 可得 $\left<\mathcal{M},e\cdot v\right>\vDash b(x_{1+n_2},\tau_a,\tau_{n_2})$
+（2） $\left<\mathcal{M},e\cdot v\right>\vDash sub(x_2,\tau_a,\tau_1)$
 
-又根据 $\eta(x_3)=e\cdot v(x_{1+n_2}),\eta(x_2)=\bar{I}(\tau_{n_2})=\overline{e\cdot v}(\tau_{n_2})$ 以及[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]]可得 $\left<\mathcal{M},\eta\right>\vDash b(x_3,\tau_a,x_2)$
+（3） $\left<\mathcal{M},e\cdot v\right>\vDash p_<(x_1,x_2)$
 
-******** 结论
+（4） $\left<\mathcal{M},e\cdot v\right>\vDash(\lnot(x_1\hat{=}c_0))$
 
-根据[[MK68][定义]]可得 $\left<\mathcal{M},e\cdot v\right>\vDash\left(\forall x_2_{\leq x_1}(\exists x_3(b(x_3,\tau_a,x_2)))\right)\right)$ 等价于 $\left<\mathcal{M},e\cdot v\right>\vDash\left(\forall x_2(((p_<(x_2,x_1)\lor(x_2\hat{=}x_1))\to(\exists x_3(b(x_3,\tau_a,x_2)))\right)$
+********* 证明（5）
 
-即任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\mu$ 满足 $\mu(x_i)=e\cdot v(x_i),i\ne 2$ 均有 
+根据 $\left<\mathcal{M},e\cdot v\right>\vDash b(x_1,\tau_a,c_0)$ 以及[[MK56][等价表达]]可得 $\beta(\mathcal{M},\bar{I}(\tau_a),I(c_0))=e\cdot v(x_1)$
 
-（1） $\left<\mathcal{M},\mu\right>\not\vDash (p_<(x_2,x_1)\lor(x_2\hat{=}x_1))$
+根据 $\bar{I}(\tau_a)\ne I(c_0)$ 以及[[MK69][性质3]]可得 $\left<e\cdot v(x_1),\bar{I}(\tau_a)\right>\in I(p_<)$ 根据[[MK58][前段定理]]可得必有 $e\cdot v(x_1)\in Z=\left\{\bar{I}(\tau_k)\big|k\in\mathbb{N}\right\}$
 
-（2） $\left<\mathcal{M},\mu\right>\vDash(p_<(x_2,x_1)\lor(x_2\hat{=}x_1))$ 且 $\left<\mathcal{M},\mu\right>\vDash(\exists x_3(b(x_3,\tau_a,x_2)))$
+对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足 $\eta(x_i)=e\cdot v(x_i),i\ne3$
 
-     即存在 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足 $\eta(x_i)=\mu(x_i),i\ne 3$ 以及 $\eta(x_3)=e\cdot v(x_{1+n_2})$ 使得 $\left<\mathcal{M},\eta\right>\vDash b(x_3,\tau_a,x_2)$
+********** $\left<\mathcal{M},\eta\right>\not\vDash p_<(x_3,x_1)$ 
 
-综上所述，根据前两部证明可得 $\left<\mathcal{M},e\cdot v\right>\vDash\left(b(x_1,\tau_a,c_0)\land\left(\forall x_2_{\leq x_1}(\exists x_3(b(x_3,\tau_a,x_2)))\right)\right)$
+若 $\left<\mathcal{M},\eta\right>\not\vDash p_<(x_3,x_1)$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]直接有 $\left<\mathcal{M},\eta\right>\vDash(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_3,x_2))))$
 
-即根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\mathcal{M}\vDash\left(\exists x_1\left(b(x_1,\tau_a,c_0)\land\left(\forall x_2_{\leq x_1}(\exists x_3(b(x_3,\tau_a,x_2)))\right)\right)\right)$
+********** $\left<\mathcal{M},\eta\right>\vDash p_<(x_3,x_1)$ 
 
-******* 必要
+若 $\left<\mathcal{M},\eta\right>\vDash p_<(x_3,x_1)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\left<\eta(x_3),\eta(x_1)\right>\in I(p_<)$ 又由于 $\eta(x_1)=e\cdot v(x_1)\in Z$ 则又根据[[MK58][前段定理]] $\eta(x_3)\in Z$
 
-******** $\mathcal{N}\vDash b(\tau_n,\tau_a,c_0)$
+由于 $\eta(x_i)=e\cdot v(x_i),i\ne3$ 且 $\eta(x_3)\in Z$ 则易证存在 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta'$ 满足 $e(\eta'(x_i))=\eta(x_i)$ 以及 $\eta'(x_i)=v(x_i),i\ne3$
 
-若有 $\mathcal{M}\vDash\left(\exists x_1\left(b(x_1,\tau_a,c_0)\land\left(\forall x_2_{\leq x_1}(\exists x_3(b(x_3,\tau_a,x_2)))\right)\right)\right)$ 则存在 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\mu$
+故有 $\left<\mathcal{N},\eta'\right>\vDash(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2))))$ 由于 $p_<(x_3,x_1)$ 不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]，则根据[[MK60][引理4]]可得 $\left<\mathcal{N},\eta'\right>\vDashp_<(x_3,x_1)$
 
-满足 $\left<\mathcal{M},\mu\right>\vDash\left(b(x_1,\tau_a,c_0)\land\left(\forall x_2_{\leq x_1}(\exists x_3(b(x_3,\tau_a,x_2)))\right)\right)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]
+结合[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得 $\left<\mathcal{N},\eta'\right>\vDash(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2)))$ ，由于 $\eta'$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]]，故可得 $\{\eta'(x_3),\eta'(x_2)\}\subset Z$
 
-（1） $\left<\mathcal{M},\mu\right>\vDash b(x_1,\tau_a,c_0)$
+即存在 $\tau_b,\tau_c$ 满足 $\eta'(x_3)=\bar{J}(\tau_b),\eta'(x_2)=\bar{J}(\tau_c)$ 根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]] $\left<\mathcal{N},\eta'\right>\vDash(\exists x_4(b(x_4,\tau_a,\tau_b)\land p_<(x_4,\tau_c)))$
 
-（2） $\left<\mathcal{M},\mu\right>\vDash\left(\forall x_2_{\leq x_1}(\exists x_3(b(x_3,\tau_a,x_2)))\right)$ 
+根据[[MK64][推论]]， $p_<(x_4,x_2)$ 不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]以及[[MK60][引理4]]易证对于任意 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta''$ 有 $\left<\mathcal{N},\eta''\right>\vDash(b(x_4,\tau_a,\tau_b)\land p_<(x_4,\tau_c))$
 
-根据[[MK56][等价表达]]可得 $\beta(\mathcal{M},\bar{I}(\tau_a),I(c_0))=\mu(x_1)$ ，根据 $\bar{I}(\tau_a)\ne I(c_0)$ 以及[[MK69][性质3]]可得 $\left<\mu(x_1),\bar{I}(\tau_a)\right>\in I(p_<)$
+的充要条件是 $\left<\mathcal{M},e\cdot\eta''\right>\vDash(b(x_4,\tau_a,\tau_b)\land p_<(x_4,\tau_c))$ 。结合 $\left<\mathcal{N},\eta'\right>\vDash(\exists x_4(b(x_4,\tau_a,\tau_b)\land p_<(x_4,\tau_c)))$
 
-由于 $\tau_a\in Z=\left\{\bar{I}(\tau_k)\big|k\in\mathbb{N}\right\}$ 故根据[[MK58][前段定理]]可得必有 $\mu(x_1)\in Z$ ，即存在 $n\in \mathbb{N}$ 满足 $\mu(x_1)=\bar{I}(\tau_{n})$
+根据[[MK72][推论]]即可得 $\left<\mathcal{M},e\cdot\eta'\right>\vDash(\exists x_4(b(x_4,\tau_a,\tau_b)\land p_<(x_4,\tau_c)))$ 即 $\left<\mathcal{M},\eta\right>\vDash(\exists x_4(b(x_4,\tau_a,\tau_b)\land p_<(x_4,\tau_c)))$
 
-根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]] $\mathcal{M}\vDash b(\tau_n,\tau_a,c_0)$ 则根据[[MK64][推论]]可得 $\mathcal{N}\vDash b(\tau_n,\tau_a,c_0)$
+又由于 $\eta(x_3)=e(\eta'(x_3))=e(\bar{J}(\tau_b))$ 根据[[MK18][定理3]]可得 $e$ 为[[~/文档/note/数理逻辑/sllj.org::MK300][嵌入映射]]。则根据 $\tau_b$ 的[[MK13][定义]]易证 $e(\bar{J}(\tau_b))=\bar{I}(\tau_b)$
 
-******** 对于任意 $i\leq n$ 有 $a_i\in\mathbb{N}$ 使得 $\mathcal{N}\vDash b(\tau_{a_i},\tau_a,\tau_n)$
+类似亦可证 $\eta(x_2)=\bar{I}(\tau_c)$ ，根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]] $\left<\mathcal{M},\eta\right>\vDash(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2)))$
 
-显然有 $\mathcal{N}\vDash(p_<(\tau_i,\tau_n)\lor(\tau_i\hat{=}\tau_n))$ 根据[[MK60][引理4]] $\mathcal{M}\vDash(p_<(\tau_i,\tau_n)\lor(\tau_i\hat{ =}\tau_n))$
+又根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]，$\eta$ 的任意性以及 $\eta(x_i)=e\cdot v(x_i),i\ne3$ 可得 $\left<\mathcal{M},e\cdot v\right>\vDash(\forall x_3(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2)))))$
 
-则定义 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足 $\eta(x_1)=\bar{I}(\tau_n)=\mu(x_1)$ 且 $\eta(x_2)=\bar{I}\tau_n$ 根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]] $\left<\mathcal{M},\eta\right>\vDash(p_<(x_2,x_1)\lor(x_2\hat{ =}x_1))$
+********* 结论
 
-显然 $\eta$ 亦满足 $\eta(x_i)=\mu(x_i),i\ne 2$ 。根据[[MK68][定义]]可得 $\left<\mathcal{M},\mu\right>\vDash\left(\forall x_2_{\leq x_1}(\exists x_3(b(x_3,\tau_a,x_2)))\right)\right)$ 
+综上所述，即有
 
-等价于 $\left<\mathcal{M},\mu\right>\vDash\left(\forall x_2(((p_<(x_2,x_1)\lor(x_2\hat{=}x_1))\to(\exists x_3(b(x_3,\tau_a,x_2)))\right)$
+（1） $\left<\mathcal{M},e\cdot v\right>\vDash b(x_1,\tau_a,c_0)$
 
-则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\left<\mathcal{M},\eta\right>\vDash((p_<(x_2,x_1)\lor(x_2\hat{=}x_1))\to(\exists x_3(b(x_3,\tau_a,x_2))))$
+（2） $\left<\mathcal{M},e\cdot v\right>\vDash sub(x_2,\tau_a,\tau_1)$
 
-又由于 $\left<\mathcal{M},\eta\right>\vDash(p_<(x_2,x_1)\lor(x_2\hat{ =}x_1))$ 故根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]必有 $\left<\mathcal{M},\eta\right>\vDash(\exists x_3(b(x_3,\tau_a,x_2)))$
+（3） $\left<\mathcal{M},e\cdot v\right>\vDash p_<(x_1,x_2)$
 
-即存在 $\eta'$ 满足 $\eta'(x_i)=\eta(x_i),i\ne 3$ 使得 $\left<\mathcal{M},\eta'\right>\vDash b(x_3,\tau_a,x_2)$ 根据[[MK56][等价表达]]可得 $\beta(\mathcal{M},\bar{I}(\tau_a),\eta'(x_2))=\eta'(x_3)$
+（4） $\left<\mathcal{M},e\cdot v\right>\vDash(\lnot(x_1\hat{=}c_0))$
 
-根据[[MK69][性质3]]可得 $\left<\eta'(x_3),\bar{I}(\tau_a)\right>\in I(p_<)$ ，根据[[MK58][前段定理]]可得必有 $\eta'(x_3)\in Z$ 即有 $a_i\in\mathbb{N}$ 满足 $\eta'(x_3)=\bar{I}(\tau_{a_i})$
+（5） $\left<\mathcal{M},e\cdot v\right>\vDash(\forall x_3(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2)))))$
 
-则根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]] $\mathcal{M}\vDash b(\tau_{a_i},\tau_a,\tau_n)$
+即 $\left<\mathcal{M},e\cdot v\right>\vDash(b(x_1,\tau_a,c_0)\land(\lnot(x_1\hat{=}c_0))\land sub(x_2,\tau_a,\tau_1)\land p_<(x_1,x_2)\land(\forall x_3(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2))))))$
 
-综上所述，对于任意 $i\leq n$ 均有 $a_i\in\mathbb{N}$ 满足 $\mathcal{M}\vDash b(\tau_{a_i},\tau_a,\tau_n)$ 则根据[[MK64][推论]]可得 $\mathcal{N}\vDash b(\tau_{a_i},\tau_a,\tau_n)$
+即 $\mathcal{M}\vDash(\exists x_1(\exists x_2((b(x_1,\tau_a,c_0)\land(\lnot(x_1\hat{=}c_0))\land sub(x_2,\tau_a,\tau_1)\land p_<(x_1,x_2)\land(\forall x_3(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2)))))))))$
 
-******** 结论
+******** 必要
 
-根据上上步有 $\mathcal{N}\vDash b(\tau_n,\tau_a,c_0)$ 即根据[[MK56][等价表达]]可得 $\beta(\mathcal{N},a,0)=n$
+********* 转换条件
 
-根据上一步有对于任意 $i\leq n$ 有 $a_i\in\mathbb{N}$ 使得 $\mathcal{N}\vDash b(\tau_{a_i},\tau_a,\tau_n)$ 同理 $\beta(\mathcal{N},a,i)=a_i$
+若有 $\mathcal{M}\vDash(\exists x_1(\exists x_2((b(x_1,\tau_a,c_0)\land(\lnot(x_1\hat{=}c_0))\land sub(x_2,\tau_a,\tau_1)\land p_<(x_1,x_2)\land(\forall x_3(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2)))))))))$
 
-即根据[[MK38][定义]]可得 $a=\prec a_1,...,a_n\succ$ ，故有 $a\in\text{Seq}$ 
+即存在 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$
+
+使得 $\left<\mathcal{M},v\right>\vDash(b(x_1,\tau_a,c_0)\land(\lnot(x_1\hat{=}c_0))\land sub(x_2,\tau_a,\tau_1)\land p_<(x_1,x_2)\land(\forall x_3(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2))))))$
+
+即有：
+
+（1） $\left<\mathcal{M},v\right>\vDash b(x_1,\tau_a,c_0)$
+
+（2） $\left<\mathcal{M},v\right>\vDash sub(x_2,\tau_a,\tau_1)$
+
+（3） $\left<\mathcal{M},v\right>\vDash p_<(x_1,x_2)$
+
+（4） $\left<\mathcal{M},v\right>\vDash(\lnot(x_1\hat{=}c_0))$
+
+（5） $\left<\mathcal{M},v\right>\vDash(\forall x_3(p_<(x_3,x_1)\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,x_2)))))$
+
+根据[[MK56][等价表达]]可得 $\beta(\mathcal{M},\bar{I}(\tau_a),I(c_0))=v(x_1)$ ，根据 $\bar{I}(\tau_a)\ne I(c_0)$ 以及[[MK69][性质3]]可得 $\left<v(x_1),\bar{I}(\tau_a)\right>\in I(p_<)$
+
+由于 $\tau_a\in Z=\left\{\bar{I}(\tau_k)\big|k\in\mathbb{N}\right\}$ 故根据[[MK58][前段定理]]可得必有 $v(x_1)\in Z$ ，即存在 $n_1\in \mathbb{N}$ 满足 $v(x_1)=\bar{I}(\tau_{n_1})$
+
+类似根据[[MK53][等价表达]]、[[MK64][推论]]、[[MK67][性质3]]以及[[MK58][前段定理]]易证存在 $n_2\in\mathbb{N}$ 满足 $v(x_2)=\bar{I}(\tau_{n_2})$ ，则根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]]：
+
+（1） $\mathcal{M}\vDash b(\tau_{n_1},\tau_a,c_0)$
+
+（2） $\mathcal{M}\vDash sub(\tau_{n_2},\tau_a,\tau_1)$
+
+（3） $\mathcal{M}\vDash p_<(\tau_{n_1},\tau_{n_2})$
+
+（4） $\mathcal{M}\vDash(\lnot(\tau_{n_1}\hat{=}c_0))$
+
+（5） $\mathcal{M}\vDash(\forall x_3(p_<(x_3,\tau_{n_1})\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,\tau_{n_2})))))$
+
+********* $\beta(\mathcal{N},a,0)=n_1\in\mathbb{N},\text{Sub}(\mathcal{N},a,1)=n_2\in\mathbb{N},n_1<n_2,n_1\ne 0$
+
+根据根据[[MK64][推论1]]、[[MK63][推论]]、（3）不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]以及[[MK60][引理4]]易证
+
+（1） $\mathcal{N}\vDash b(\tau_{n_1},\tau_a,c_0)$
+
+（2） $\mathcal{N}\vDash sub(\tau_{n_2},\tau_a,\tau_1)$
+
+（3） $\mathcal{N}\vDash p_<(\tau_{n_1},\tau_{n_2})$
+
+（4） $\mathcal{N}\vDash(\lnot(\tau_{n_1}\hat{=}c_0))$
+
+即根据[[MK56][等价表达]]可得 $\beta(\mathcal{N},a,0)=n_1,\text{Sub}(\mathcal{N},a,1)=n_2,n_1<n_2,n_1\ne 0$
+
+********* 任意 $i<n_1$ 有 $\beta(\mathcal{N},a,i)=n_4\in\mathbb{N},n_4<n_2$
+
+对于任意 $i<n_1$ 定义 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足 $\eta(x_3)=\bar{I}(\tau_i)$ 根据 $\mathcal{M}\vDash(\forall x_3(p_<(x_3,\tau_{n_1})\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,\tau_{n_2})))))$
+
+以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},\eta\right>\vDash(p_<(x_3,\tau_{n_1})\to(\exists x_4(b(x_4,\tau_a,x_3)\land p_<(x_4,\tau_{n_2}))))$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]] $\mathcal{M}\vDash(p_<(\tau_i,\tau_{n_1})\to(\exists x_4(b(x_4,\tau_a,\tau_i)\land p_<(x_4,\tau_{n_2}))))$ 由于 $i<n_1$ 即有 $\mathcal{N}\vDash p_<(\tau_i,\tau_{n_1})$
+
+由于不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]以及[[MK60][引理4]]可得 $\mathcal{M}\vDash p_<(\tau_i,\tau_{n_1})$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\mathcal{M}\vDash(\exists x_4(b(x_4,\tau_a,\tau_i)\land p_<(x_4,\tau_{n_2})))$
+
+即根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]存在 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta'$ 使得 $\left<\mathcal{M},\eta'\right>\vDash(b(x_4,\tau_a,\tau_{n_3})\land p_<(x_4,\tau_{n_2}))$ 
+
+又由于 $\left<\mathcal{M},\eta'\right>\vDash p_<(x_4,\tau_{n_2})$ 以及[[MK58][前段定理]]即有 $\eta'(x_4)\in Z$ ，即有 $n_4\in\mathbb{N}$ 使得 $\eta'(x_4)=\bar{I}(\tau_{n_4})$
+
+则根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]] $\mathcal{M}\vDash b(\tau_{n_4},\tau_a,\tau_{n_2})$ 以及 $\mathcal{M}\vDash p_<(\tau_{n_4},\tau_{n_2})$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK169][推论]]以及[[MK60][引理4]]易证 $\mathcal{N}\vDash b(\tau_{n_4},\tau_a,\tau_{n_2})$ 以及 $\mathcal{N}\vDash p_<(\tau_{n_4},\tau_{n_2})$
+
+根据根据[[MK64][推论1]]以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\beta(\mathcal{N},a,i)=n_4,n_4<n_2$
+
+********* 结论
+
+综上所述，即有 $n_1,n_2$ 满足 $\beta(\mathcal{N},a,0)=n_1,\text{Sub}(\mathcal{N},a,1)=n_2,n_1<n_2,n_1\ne 0$
+
+且对于任意 $i<n_1$ 均有 $a_i$ 满足 $\beta(\mathcal{N},a,i)=a_i,a_i<n_2$ 即 $a=\prec a_1,...,a_{n_1}\succ$ 故 $a\in\text{Seq}$
 
 **** [[~/文档/note/数理逻辑/sllj.org::MK105][符号]]的哥德尔数<<MK40>>
 
@@ -2321,5 +2475,568 @@ $SN$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射函数]]
 
 ***** $\text{Vrble(a)}$
 
-$b(x_1,\tau_a,\tau_0)\land(x_1\hat{=}c_0)\land b(x_2,\tau_a,\tau_1)\land(\exists x_3())$
+对于任意 $a\in\mathbb{N}$ 若 $a=\prec\lceil x_i\rceil\succ$ 即 $a=\prec J(7,i)\succ$ 则 $a$ 是[[~/文档/note/数理逻辑/sllj.org::MK107][变元符号]]的哥德尔数。则 $\text{Vrble}(a)$ 为真
 
+$(b(\tau_1,\tau_a,c_0)\land b(x_1,\tau_a,\tau_1)\land(\exists x_2\text{J}(x_1,\tau_7,x_2)))$
+
+** [[MK27][自然数]]递归函数/关系<<MK81>>
+
+定义递归函数集 $\mathscr{R}$ 为包含如下[[~/文档/note/离散数学/lssx.org::MK175][函数]]的最小[[~/文档/note/离散数学/lssx.org::MK175][函数]]集合：
+
+（1） 基本函数：
+
+     a） 包含[[MK27][自然数标准模型中]] $\{\mathfrak{J}(f_+),\mathfrak{J}(f_\times),\mathfrak{J}(f_s),\chi_{\mathfrak{J}(p_<)}\}$ 其中 $\chi_{\mathfrak{J}(p_<)}$ 为[[~/文档/note/离散数学/lssx.org::MK514][关系]] $\mathfrak{J}(p_<)$ 的[[MK74][特征函数]]
+
+         为方便，以下用 $+,\times$ 表示 $\mathfrak{J}(f_+),\mathfrak{J}(f_\times)$
+
+     b） 包含所有[[MK75][投影函数]] $\pi_i^n,\{i,n\}\subset\mathbb{N}$
+
+（2） 生成函数：
+
+     a） 任意 $f:\mathbb{N}^k\to\mathbb{N}$ 以及 $g_1,...,g_k:\mathbb{N}^n\to\mathbb{N}$ 满足 $\{f,g_1,...,g_k\}\subset\mathscr{R}$ 则有其[[~/文档/note/离散数学/lssx.org::MK515][复合]] $f\cdot(g_1,...,g_k)\in\mathscr{R}$
+
+     b） 任意 $g:\mathbb{N}^{n+1}\to\mathbb{N}$ 满足 $g\in\mathscr{R}$ 且对于 $\vec{a}\in\mathbb{N}$ 存在 $b\in\mathbb{N}$ 满足 $g(\vec{a},b)=0$
+
+         则其[[MK76][全域 $\mu$ 算子]] $f=\mu_x(g(\vec{a},x)=0)$ 亦满足 $f\in\mathscr{R}$
+
+对于任意 $n$ 元[[~/文档/note/离散数学/lssx.org::MK514][关系]] $R\subset\mathbb{N}^n$ 若有 $\chi_R\in\mathscr{R}$ 则称 $R$ 是递归关系
+
+*** 相关定义
+
+**** 投影函数<<MK75>>
+
+定义 $\pi_i^n:\mathbb{N}^n\to\mathbb{N}$ 为对于任意 $\left<a_1,...,a_n\right>\in\mathbb{N}^n$ 有 $\pi_i^n(a_1,...,a_i,...,a_n)=a_i$ 为投影函数
+
+**** 全域 $\mu$ 算子<<MK76>>
+
+任意[[~/文档/note/离散数学/lssx.org::MK175][函数]] $g:\mathbb{N}^{n+1}\to\mathbb{N}$ 存在 $f:\mathbb{N}^n\to\mathbb{N}$ 满足：
+
+（1） 任意 $\vec{a}\in\mathbb{N}^n$ 均存在 $b\in\mathbb{N}$ 满足 $g(\vec{a},b)=0$ ，即 $Z(\vec{a})=\left\{b\big|b\in\mathbb{N}\land g(\vec{a},b)=0\right\}\ne\varnothing$
+
+（2） $f(\vec{a})\in Z(\vec{a})$ 且任意 $b'\in Z(\vec{a})$ 均有 $\left<b',f(\vec{a})\right>\not\in\mathfrak{J}(p_<)$
+
+则称 $f$ 是 $g$ 的全域 $\mu$ 算子，记作 $f(\vec{a})=\mu_x(g(\vec{a},x)=0)$
+
+**** 特征函数<<MK74>>
+
+对于任意 $\mathbb{N}$ 上的[[~/文档/note/离散数学/lssx.org::MK514][关系]] $R\subset\mathbb{N}^n$ 定义 $\chi_{R}:\mathbb{N}^n\to\{0,1\}$ 为对于任意 $\vec{a}\in\mathbb{N}$ 有 $\chi_R(\vec{a})=\begin{cases}1&\vec{a}\in R\\0&\vec{a}\not\in R\end{cases}$
+
+则称 $\chi_R$ 是[[~/文档/note/离散数学/lssx.org::MK514][关系]] $R\subset\mathbb{N}^n$ 的特征函数
+
+**** [[~/文档/note/离散数学/lssx.org::MK514][关系]]的布尔组合<<MK86>>
+
+对于任意 $R\subset\mathbb{N}^m,Q\subset\mathbb{N}^n$ 对于任意 $z\in\mathbb{N}$ 任意[[~/文档/note/离散数学/lssx.org::MK175][函数]] $p:\{1,..m+n\}\to\{1,...,z\}$ 以及任意 $\vec{a}\in\mathbb{N}^n$ 定义如下：
+
+（1） $(\vec{a}\in R\land_p Q)$ 等价于 $\left<a_{p(1)},...,a_{p(m)}\right>\in R$ 并且 $\left<a_{p(m+1)},...,a_{p(m+n)}\right>\in Q$
+
+（2） $(\vec{a}\in R\lor_p Q)$ 等价于 $\left<a_{p(1)},...,a_{p(m)}\right>\in R$ 或者 $\left<a_{p(m+1)},...,a_{p(m+n)}\right>\in Q$
+
+（3） $(\vec{a}\in R\to_p Q)$ 等价于 $\left<a_{p(1)},...,a_{p(m)}\right>\not\in R$ 或者 $\left<a_{p(m+1)},...,a_{p(m+n)}\right>\in Q$
+
+（4） $(\vec{a}\in R\leftrightarrow_p Q)$ 等价 $(\vec{a}\in R\to_p Q)$ 且 $(\vec{a}\in Q\to_p R)$ 
+
+以上三种均为关系在 $p$ 下的布尔组合，并称 $p$ 为 $\left<a_{p(1)},...,a_{p(m)},a_{p(m+1)},...,a_{p(m+n)}\right>$ 到 $\vec{a}$ 的投影。
+
+特别的，当 $z=n$ 且 $p(i)=\begin{cases}i&i\leq n\\i-n&else\end{cases}$ 时省略 $p$ 记作 $R\land Q,R\lor Q,R\to Q,R\leftrightarrow Q$ 
+
+另对于任意 $a\in\mathbb{N}^m$ ：
+
+（5） $\vec{a}\in \lnot R$ 等价于 $\vec{a}\not\in R$ 即 $\lnot R$ 为 $R$ 的[[~/文档/note/离散数学/lssx.org::MK63][补集]]
+
+***** 性质4（补集）<<MK82>>
+
+任意 $R\in\mathbb{N}^{n}$ 且满足 $\chi_R\in\mathscr{R}$ 是[[MK81][递归关系]]，则其[[MK86][补集]] $\lnot R$ 亦是[[MK81][递归关系]]
+
+****** 证明
+
+[[MK81][基本函数]] $\mathfrak{J}(f_-)\in\mathscr{R}$ 定义 $f(\vec{a})=\mathfrak{J}(f_-)(1,\chi_R(\vec{a}))$ 若 $\vec{a}\in R$ 则有 $\chi_R(\vec{a})=1$ 进一步 $f(\vec{a})=\mathfrak{J}(f_-)(1,1)=0$
+
+若 $\vec{a}\not\in R$ 则有 $\chi_R(\vec{a})=0$ 进一步 $f(\vec{a})=\mathfrak{J}(f_-)(1,0)=1$
+
+综上所述，对于任意 $\vec{a}\in R$ 有 $f(\vec{a})=0$ ，任意 $\vec{a}\not\in R$ 有 $f(\vec{a})=1$ 即 $f=\chi_{(\lnot R)}$
+
+即根据[[MK81][定义]]有 $\lnot R$ 是[[MK81][递归关系]]
+
+****** 推论<<MK85>>
+
+若 $R$ 是 $n+1$ 元[[MK81][递归关系]]则[[MK76][ $\mu$ 算子]] $f(\vec{a})=\mu_x(\chi_{R}(\vec{a},x)=1)$ 是[[MK81][递归函数]]
+
+******* 证明
+
+根据[[MK74][特征函数]]定义可得 $\chi_R(\vec{a},x)=1$ 等价与 $\chi_{\overline{R}}(\vec{a},x)=0$ ，反之亦然
+
+根据[[MK82][性质4]]可得 $\overline{R}$ 是[[MK81][递归关系]]故可得 $\chi_{\overline{R}}\in\mathscr{R}$ 是[[MK81][递归函数]]
+
+则根据[[MK81][定义]]可得 $f'(\vec{a})=\mu_x(\chi_{\overline{R}}(\vec{a},x)=0)\in\mathscr{R}$
+
+由于等价即有 $f'(\vec{a})=f(\vec{a})$ 即 $f(\vec{a})=\mu_x(\chi_{R}(\vec{a},x)=1)$ 是[[MK81][递归函数]]
+
+***** 性质5<<MK83>>
+
+若 $R$ 为 $n$ 元[[MK81][递归关系]] $Q$ 为 $m$ 元[[MK81][递归关系]]，对于任意 $z\in\mathbb{N}$ 任意[[~/文档/note/离散数学/lssx.org::MK175][函数]] $p:\{1,..m+n\}\to\{1,...,z\}$
+
+则其 $p$ 下的[[MK86][布尔组合]] $R\land_p Q,R\lor_p Q,R\to_p Q,R\leftrightarrow_p Q$ 亦为 $z$ 元[[MK81][递归关系]]
+
+****** 证明
+
+对于任意 $\vec{a}=\left<a_1,...,a_z\right>\in\mathbb{N}^z$ 定义 $\vec{a}_1=\left<a_{p(1)},...,a_{p(m)}\right>,\vec{a}_2=\left<a_{p(m+1)},...,a_{p(m+n)}\right>$
+
+******* $R\land_p Q$
+
+根据[[MK81][定义]]可得 $\{\chi_R,\chi_Q\}\subset\mathscr{R}$ ，则根据[[MK89][性质0]]可得[[~/文档/note/离散数学/lssx.org::MK175][函数]] $f$ 满足 $f(\vec{a})=\mathfrak{J}(f_\times)(\chi_R(\vec{a}_1),\chi_Q(\vec{a}_2))\in\mathscr{R}$
+
+显然 $f(\vec{a})=\begin{cases}1&\chi_R(\vec{a}_1)=\chi_Q(\vec{a}_2)=1\\0&else\end{cases}$
+
+即可得 $f=\chi_{(R\land_p Q)}$ 故根据[[MK81][定义]]可得 $R\land_p Q$ 亦为 $z$ 元[[MK81][递归关系]]
+
+******* $R\lor_p Q$
+
+根据[[MK82][性质4]]可得[[~/文档/note/离散数学/lssx.org::MK63][补集]] $\overline{R},\overline{Q}$ 亦分别为 $m,n$ 元[[MK81][递归关系]]，则根据上一步同理可证 $\chi_{\left(\overline{R}\land_p\overline{Q}\right)}\in\mathscr{R}$ 以及 $\chi_{\left(\overline{\overline{R}\land_p\overline{Q}}\right)}\in\mathscr{R}$ 
+
+显然易证 $\overline{\overline{R}\land_p\overline{Q}}=\lnot((\lnot R)\land_p(\lnot Q))=(R\lor_p Q)$ 即有 $\chi_{(R\lor_p Q)}\in\mathscr{R}$ 即 $R\lor_p Q$ 亦为 $z$ 元[[MK81][递归关系]]
+
+******* $R\to_p Q$
+
+同理[[~/文档/note/离散数学/lssx.org::MK515][复合函数]] $f(\vec{a})=\mathfrak{J}(f_\times)(\chi_{\overline{R}}(\vec{a}_1),\chi_Q(\vec{a}_2))\in\mathscr{R}$ 显然 $f(\vec{a})=\begin{cases}1&\chi_R(\vec{a}_1)=0\lor\chi_Q(\vec{a}_2)=1\\0&else\end{cases}$ 即 $f=\chi_{R\to_p Q}$
+
+即根据[[MK81][定义]] $R\to_p Q$ 亦为 $z$ 元[[MK81][递归关系]]
+
+******* $R\leftrightarrow_p Q$
+
+根据上一步 $R\to_p Q,Q\to_p R$ 均为 $z$ 元[[MK81][递归关系]]，又根据前述证明有 $(R\to_p Q)\land (Q\to_p R)$ 亦为 $z$ 元[[MK81][递归关系]]
+
+显然 $(R\to_p Q)\land (Q\to_p R)=R\leftrightarrow_p Q$ 故 $R\leftrightarrow_p Q$ 亦为 $z$ 元[[MK81][递归关系]]
+
+**** [[~/文档/note/离散数学/lssx.org::MK514][关系]]的量词计算<<MK87>>
+
+对于任意 $R\in\mathbb{N}^n$ 以及任意 $\vec{a}\in\mathbb{N}^k,k\leq n$ 定义如下：
+
+（1） $\vec{a}\in(\exists x_1...x_{n-k}(\left<\vec{a},x_1,...,x_{n-k}\right>\in R))$ 等价于 $\left\{\left<x_1,...,x_{n-k}\right>\big|\left<x_1,...,x_{n-k}\right>\in\mathbb{N}^{n-k}\land\left<\vec{a},x_1,...,x_{n-k}\right>\in R\right\}\ne\varnothing$
+
+（2） $\vec{a}\in(\forall x_1...x_{n-k}(\left<\vec{a},x_1,...,x_{n-k}\right>\in R))$ 等价于 $\left\{\left<x_1,...,x_{n-k}\right>\big|\left<x_1,...,x_{n-k}\right>\in\mathbb{N}^{n-k}\land\left<\vec{a},x_1,...,x_{n-k}\right>\in R\right\}=\mathbb{N}^{n-k}$
+
+*** 性质
+
+**** 性质0<<MK89>>
+
+任意 $f:\mathbb{N}^k\to\mathbb{N}$ 以及 $g_i:\mathbb{N}^{n_i}\to\mathbb{N}$ 满足 $\{f,g_1,...,g_k\}\subset\mathscr{R}$ 对于任意 $z\in\mathbb{N}$ 定义：
+
+（1） $P_1=\left\{\left<u,v\right>\big|\{a,b\}\subset\mathbb{N},1\leq u\leq k,1\leq v\leq n_u\right\}$
+
+（2） $P_2=\{1,...,z\}$
+
+任意[[~/文档/note/离散数学/lssx.org::MK175][函数]] $p:P_1\to P_2$ 定义[[~/文档/note/离散数学/lssx.org::MK175][函数]] $h$ 满足对于任意 $\vec{a}=\left<a_1,...,a_z\right>\in\mathbb{N}^z$ 有 $h(\vec{a})=f\left(g_1(a_{p(1,1)},...,a_{p(1,n_1)}),...,g_k(a_{p(k,1)},...,a_{p(k,n_k)})\right)$
+
+则 $h\in\mathscr{R}$
+
+***** 证明
+
+定义 $m(j)=\sum_{i=1}^jn_i$ 则[[MK75][投影函数]] $\pi^{m(k)}_i\in\mathscr{R}$ 定义 $g'_i=g_i\cdot\left(\pi^m_{m(i-1)+1},...,\pi^m_{m(i-1)+n_i}\right)$ 根据[[MK81][定义]]可得 $g'_i:\mathbb{N}^{m(k)}\to\mathbb{N}$ 且 $g'_i\in\mathscr{R}$
+
+同理 $\pi^z_i\in\mathscr{R}$ 则定义 $g''_i=g'_i\cdot\left(\pi^z_{p(1,1)},...,\pi^z_{p(1,n_1)},\pi^z_{p(2,1)},...,\pi^z_{p(2,n_2)},...,\pi^z_{p(k,1)},...,\pi^z_{p(k,n_k)}\right)$ 显然 $g''_i:\mathbb{N}^{z}\to\mathbb{N}$ 且 $g''_i\in\mathscr{R}$
+
+则 $h'=f\cdot\left(g''_1,...,g''_k\right)\in\mathscr{R}$ 显然易证对于任意 $\vec{a}\in\mathbb{N}^z$ 均有 $h(\vec{a})=h'(\vec{a})$ 即有 $h\in\mathscr{R}$
+
+**** 性质1
+
+任意 $Q\subset\mathbb{N}^k$ 以及 $h_i:\mathbb{N}^n\to\mathbb{N},1\leq i \leq k$ 若 $Q$ 是[[MK81][递归关系]] $h_i,1\leq i\leq k$ 是[[MK81][递归函数]]
+
+则定义 $R=\left\{\vec{a}\big|\vec{a}\in\mathbb{N}^n\land\left<h_1(\vec{a}),...,h_k(\vec{a})\right>\in Q\subset\mathbb{N}^k\right\}$ 亦为[[MK81][递归关系]]
+
+***** 证明
+
+根据条件 $\{\chi_Q,h_1,...,h_k\}\subset\mathscr{R}$ 则定义[[~/文档/note/离散数学/lssx.org::MK515][复合]] $f=\chi_Q\cdot(h_1,...,h_k)$ 根据[[MK81][定义]]可得 $f\in\mathscr{R}$
+
+对于任意 $\vec{a}\in R$ 可得其充要条件为 $\left<h_1(\vec{a}),...,h_k(\vec{a})\right>\in Q$ 根据 $\chi_Q$ 定义可得充要条件为 $\chi_Q(h_1(\vec{a}),...,h_k(\vec{a}))=1$
+
+即可得 $\vec{a}\in R$ 的充要条件为 $f(\vec{a})=1$ 即根据[[MK81][定义]]可得 $f$ 即为 $\chi_R$ 。则有 $\chi_R\in\mathscr{R}$ 故 $R$ 是[[MK81][递归关系]]
+
+**** 性质2
+
+任意 $R\in\mathbb{N}^{n+1}$ 且满足 $\chi_R\in\mathscr{R}$ 。若对于任意 $\vec{a}\in\mathbb{N}$ 满足存在 $b\in\mathbb{N}$ 使得 $\left<\vec{a},b\right>\in R$
+
+则定义 $Z(\vec{a})=\left\{b\big|\left<\vec{a},b\right>\in R\land b\in\mathbb{R}\right\}$ 以及 $f:\mathbb{N}^n\to\mathbb{N}$ 满足 $f(\vec{a})=\min(Z(\vec{a}))$
+
+则 $f\in\mathscr{R}$ 是[[MK81][递归函数]]记作 $f(\vec{a})=\mu_x(\left<\vec{a},b\right>\in R)$
+
+***** 证明
+
+根据[[MK82][性质4]]可得 $\chi_{(\mathbb{N}^{n+1}-R)}\in\mathscr{R}$ 则定义 $g(\vec{a})=\mu_x(\chi_{(\mathbb{N}^{n+1}-R)}(\vec{a},x)=0)$ 根据[[MK81][定义]]可得 $g\in\mathscr{R}$
+
+根据[[MK76][算子定义]]：
+
+（1） 任意 $\vec{a}\in\mathbb{N}^n$ 均存在 $b\in\mathbb{N}$ 满足 $\chi_{(\mathbb{N}^{n+1}-R)}(\vec{a},b)=0$ ，即 $K(\vec{a})=\left\{b\big|b\in\mathbb{N}\land \chi_{(\mathbb{N}^{n+1}-R)}(\vec{a},b)=0\right\}\ne\varnothing$
+
+（2） $g(\vec{a})\in K(\vec{a})$ 且任意 $b'\in K(\vec{a})$ 均有 $\left<b',g(\vec{a})\right>\not\in\mathfrak{J}(p_<)$
+
+根据[[MK74][特征函数]]定义可得当 $\chi_{(\mathbb{N}^{n+1}-R)}(\vec{a},x)=0$ 的充要条件为 $\left<\vec{a},x\right>\not\in\mathbb{N}^{n+1}-R$
+
+由于是补集则 $\left<\vec{a},x\right>\not\in\mathbb{N}^{n+1}-R$ 的充要条件为 $\left<\vec{a},x\right>\in R$ ，即 $K(\vec{a})=\left\{b\big|b\in\mathbb{N}\land \left<\vec{a},b\right>\in R\right\}=Z(\vec{a})$
+
+则进一步可得 $g(\vec{a})=\min(K(\vec{a}))=\min(Z(\vec{a}))=f$ 即有 $f=g\in\mathscr{R}$ 是[[MK81][递归函数]]
+
+**** 性质3
+
+任意常值函数均为[[MK81][递归函数]]
+
+***** 证明
+
+任意 $\vec{a}\in\mathbb{N}^n$ 有[[MK75][投影函数]] $\pi_{n+1}^{n+1}$ 的[[MK76][ $\mu$ 算子]] $f=\mu_x(\pi_{n+1}^{n+1}(\vec{a},x)=0)$ 由于 $x\in\mathbb{N}$ 故有 $f(\vec{a})=0$
+
+根据[[MK81][定义]]可得 $f\in\mathscr{R}$ 对于任意 $n\in\mathbb{N}$ 有常值函数 $f(\vec{a})=0,a\in\mathbb{N}^n$ 是[[MK81][递归函数]]
+
+假设对于任意 $n\in\mathbb{N}$ 有常值函数 $f(\vec{a})=k\in\mathbb{N},a\in\mathbb{N}^n$ 是[[MK81][递归函数]]
+
+根据[[MK81][定义]] $\pi_{i}^{n+1}\in\mathscr{R}$ 显然[[~/文档/note/离散数学/lssx.org::MK515][复合函数]] $g=f\cdot\left(\pi_{1}^{n+1},...,\pi_n^{n+1}\right)\in\mathscr{R}$ 且对于任意 $\left<\vec{a},b\right>\in\mathbb{N}^{n+1}$ 均有
+
+（1） $g(\left<\vec{a},b\right>)=f(\vec{a})$
+
+（2） $\pi_{n+1}^{n+1}(\left<\vec{a},b\right>)=b$
+
+又根据[[MK81][定义]] $\chi_{\mathfrak{J}(p_<)}\in\mathscr{R}$ 即 $\mathfrak{J}(p_<)$ 是[[MK81][递归关系]]，则根据[[MK82][性质4]]可得其[[~/文档/note/离散数学/lssx.org::MK63][补集]] $\overline{\mathfrak{J}(p_<)}$ 亦是[[MK81][递归关系]]
+
+即 $\chi_{\overline{\mathfrak{J}(p_<)}}\in\mathscr{R}$ 则根据[[MK81][定义]]有[[~/文档/note/离散数学/lssx.org::MK515][复合函数]] $h=\chi_{\overline{\mathfrak{J}(p_<)}}\cdot\left(g,\pi_{n+1}^{n+1}\right)\in\mathscr{R}$
+
+则其[[MK76][ $\mu$ 算子]] $h'=\mu_x(h(\vec{a},x)=0)\in\mathscr{R}$ 根据[[MK76][定义]]
+
+\begin{aligned}
+Z(\vec{a})&=\left\{b\big|b\in\mathbb{N}\land h'(\vec{a},b)=0\right\}\\
+&=\left\{b\big|b\in\mathbb{N}\land \chi_{\overline{\mathfrak{J}(p_<)}}\left(g(\vec{a},b),\pi_{n+1}^{n+1}(\vec{a},b)\right)=0\right\}\\
+&=\left\{b\big|b\in\mathbb{N}\land \chi_{\overline{\mathfrak{J}(p_<)}}\left(f(\vec{a},b)\right)=0\right\}\\
+&=\left\{b\big|b\in\mathbb{N}\land \chi_{\overline{\mathfrak{J}(p_<)}}\left(k,b)\right)=0\right\}
+\end{aligned}
+
+显然对于任意 $\vec{a}\in\mathbb{N}^n$ 均有 $h'(\vec{a})=\min(Z(\vec{a}))=k+1$
+
+综上所述，根据数学归纳法，对于任意 $\{n,k\}\subset\mathbb{N}$ 均有有常值函数 $f(\vec{a})=k\in\mathscr{R}$ 是[[MK81][递归函数]]
+
+**** 性质6<<MK84>>
+
+自然数上的 $=,>,\geq,<,\leq$ 均为[[MK81][递归关系]]
+
+***** 证明
+
+****** $<$ 与 $\geq$
+
+显然根据[[MK81][定义]] $\chi_{\mathfrak{J}(p_<)}\in\mathscr{R}$ ，根据[[MK82][性质4]]可得 $\chi_{\overline{\mathfrak{J}(p_<)}}\in\mathscr{R}$ 显然 $\overline{\mathfrak{J}(p_<)}$ 即自然数上 $\geq$ 关系
+
+即有 $\chi_\geq\in\mathscr{R}$
+
+****** $>$ 与 $\leq$
+
+根据[[MK81][定义]]可得 $\{\pi^2_1,\pi^2_2\}\subset\mathscr{R}$ 则[[~/文档/note/离散数学/lssx.org::MK515][复合函数]] $f=\chi_{\mathfrak{J}(p_<)}\cdot(\pi^2_2,\pi^2_1)\in\mathscr{R}$ 显然对于任意 $\left<a,b\right>\in\mathbb{N}^2$
+
+有 $f(a,b)=\begin{cases}1&b<a\\0&b\geq a\end{cases}$ 即 $f(a,b)=\begin{cases}1&a>b\\0&a\leq b\end{cases}$ 即自然数 $>$ 关系的[[MK74][特征函数]] $\chi_>\in\mathscr{R}$
+
+与上一步同理可证 $\chi_\leq\in\mathscr{R}$
+
+****** $=$
+
+根据上两部证明可得 $\chi_\leq\in\mathscr{R}$ 及以 $\chi_\geq\in\mathscr{R}$ 根据[[MK83][性质5]]可得 $\chi_{(\geq\land\leq)}\in\mathscr{R}$
+
+显然 $\geq\land\leq$ 即为自然数等于关系，即 $\chi_{=}\in\mathscr{R}$
+
+**** 性质7
+
+若 $R$ 是 $n+1$ 元[[MK81][递归关系]]则定义 $f$ 对于任意 $m\in\mathbb{N},\vec{a}\in\mathbb{N}^n$ 有 $f(\vec{a},m)=\mu_x\left(\chi_{(x<m\land \left<\vec{a},m\right>\in R)\lor(x=m))}(\vec{a},m,x)=1\right)$
+
+则 $f$ 是[[MK81][递归函数]]
+
+***** 证明
+
+根据[[MK83][推论]]、[[MK84][性质6]]、 $R$ 是[[MK81][递归关系]]易证 $(x<m\land R(\vec{a},m))\lor(x=m)$ 亦为[[MK81][递归关系]]
+
+又根据[[MK85][推论]]可得 $f(\vec{a},m)=\mu_x\left(\chi_{(x<m\land \left<\vec{a},m\right>\in R)\lor(x=m))}(\vec{a},m,x)=1\right)\in\mathscr{R}$
+
+**** 性质8
+
+若 $U$ 是 $n+1$ 元[[MK81][递归关系]]定义 $Q\subset\mathbb{N}^{n+1},R\subset\mathbb{N}^{n+1}$ 满足对于任意 $\vec{a}\in\mathbb{N}^n,m\in\mathbb{N}$ 有：
+
+（1） $\left<\vec{a},m\right>\in Q\leftrightarrow(\exists x(((x<m)\land(\left<\vec{a},x\right>\in U))))$
+
+（2） $\left<\vec{a},m\right>\in R\leftrightarrow(\forall x(((x<m)\to(\left<\vec{a},x\right>\in U))))$
+
+其中上述计算为[[~/文档/note/离散数学/lssx.org::MK514][关系]]的[[MK86][布尔组合]]和[[MK87][量词计算]]。则 $R,Q$ 亦为[[MK81][递归关系]]
+
+***** 证明
+
+****** $Q$
+
+根据[[MK83][推论]]可得 $((x<m)\land(\left<\vec{a},x\right>\in U))\lor(x=m)$ 是[[MK81][递归关系]]，即根据[[MK81][定义]]有 $\chi_{\left(((x<m)\land(\left<\vec{a},x\right>\in U))\lor(x=m)\right)}\in\mathscr{R}$
+
+进一步根据[[MK86][推论]]可得 $f(\vec{a},m)=\mu_x\left(\chi_{\left(((x<m)\land(\left<\vec{a},x\right>\in U))\lor(x=m)\right)}(\vec{a},m,x)=1\right)\in\mathscr{R}$
+
+根据[[MK74][定义]]易证 $Z(\vec{a})=\left\{b\big|b\in\mathbb{N}\land \chi_{\left(((x<m)\land(\left<\vec{a},x\right>\in U))\lor(x=m)\right)}(\vec{a},m,x)=1\right\}=\left\{b\big|b\in\mathbb{N}\land \left(((x<m)\land(\left<\vec{a},x\right>\in U))\lor(x=m)\right)\right\}$
+
+显然 $m\in Z(\vec{a})$ 即 $Z(\vec{a})\ne\varnothing$ ，定义 $K(\vec{a})=\left\{b\big|b\in\mathbb{N}\land \left(((x<m)\land(\left<\vec{a},x\right>\in U))\right)\right\}$
+
+根据[[MK87][定义]]可得 $\left<\vec{a},m\right>\in Q$ 等价于 $K(\vec{a})\ne\varnothing$ ，则存在 $b\in Z(\vec{a})$ 满足 $b<m$ 反之可得 $Z(\vec{a})=\{m\}$
+
+即 $\left<\vec{a},m\right>\in Q$ 等价于 $f(\vec{a},m)<m$ ，显然 $\chi_Q=\chi_{<}\cdot\left(f,\pi_{n+1}^{n+1}\right)$ 由于 $\{\chi_<,f,\pi_{n+1}^{n+1}\}\subset\mathscr{R}$
+
+则根据[[MK81][定义]]有[[~/文档/note/离散数学/lssx.org::MK515][复合函数]] $\chi_Q\in\mathscr{R}$
+
+****** $R$
+
+易证 $(\forall x(((x<m)\to(\left<\vec{a},x\right>\in U))))$ 等价于 $(\lnot(\exists x(\lnot((x<m)\to(\left<\vec{a},x\right>\in U))))))$
+
+根据上一步类似可证 $(\exists x(\lnot((x<m)\to(\left<\vec{a},x\right>\in U)))))$ 是[[MK81][递归关系]]
+
+又根据[[MK82][性质4]]可得 $(\lnot(\exists x(\lnot((x<m)\to(\left<\vec{a},x\right>\in U))))))$ 是[[MK81][递归关系]]
+
+**** 性质9<<MK90>>
+
+[[~/文档/note/离散数学/lssx.org::MK175][函数]] $f(a,b)=\mu_x(\chi_{((b+x=a)\lor_p(a<b))}(a,b,x)=1)$ 是[[MK81][递归函数]]
+
+其中 $p$ 是满足 $\left<b,c,a,a,b\right>$ 到 $\left<a,b,c\right>$ 位置的[[MK81][投影]]
+
+***** 证明
+
+根据[[MK81][定义]]可得 $+$ 是[[MK81][递归函数]]，根据[[MK84][性质6]]可得 $=$ 是[[MK81][递归关系]]故 $\chi_=\in\mathscr{R}$
+
+根据[[MK89][性质0]]易证 $f(a,b,c)=\chi_=(b+c,a)\in\mathscr{R}$ 即 $b+c=a$ 是[[MK81][递归关系]]
+
+同理 $<$ 亦是[[MK81][递归关系]]。故根据[[MK83][性质5]]可得 $((b+c=a)\lor_p(a<b))$ 亦为[[MK81][递归关系]]
+
+则根据[[MK85][推论]]可得 $f(a,b)=\mu_x(\chi_{((b+x=a)\lor_p(a<b))}(a,b,x)=1)$ 是[[MK81][递归函数]]
+
+**** 性质10
+
+若 $g_1,...,g_k$ 均为 $n$ 元[[MK81][递归函数]] $R_1,...,R_k$ 均为 $n$ 元[[MK81][递归关系]]并且形成 $\mathbb{N}^n$ 上的[[~/文档/note/离散数学/lssx.org::MK136][划分]]
+
+对于任意 $\vec{a}\in\mathbb{N}^n$ 则[[~/文档/note/离散数学/lssx.org::MK175][函数]] $f(\vec{a})=\begin{cases}g_1(\vec{a})&\vec{a}\in R_1\\...\\g_k(\vec{a})&\vec{a}\in R_k\end{cases}$ 亦为 $n$ 元[[MK81][递归函数]]
+
+***** 证明
+
+显然 $\chi_{R_i}\in\mathscr{R}$ 且根据[[MK81][定义]]可得 $\{\mathfrak{J}(f_+),\mathfrak{J}(f_\times)\}\subset\mathscr{R}$ ，则[[~/文档/note/离散数学/lssx.org::MK515][复合函数]] $g'_i=\mathfrak{J}(f_\times)\cdot(\chi_{R_i},g_i)\in\mathscr{R}$
+
+定义 $f_1=g'_1$ 以及 $f_i=\mathfrak{J}(f_+)(f_{i-1},g'_i)$ 根据数学归纳法易证 $f_k=\mathfrak{J}(f_+)\cdot(f_{k-1},g'_k)\in\mathscr{R}$
+
+显然 $f_k(\vec{a})=f(\vec{a})$ 即可得 $f(\vec{a})\in\mathscr{R}$
+
+**** 性质11
+
+若 $Q_1,...,Q_k$ 均为 $n$ 元[[MK81][递归关系]] $R_1,...,R_k$ 均为 $n$ 元[[MK81][递归关系]]并且形成 $\mathbb{N}^n$ 上的[[~/文档/note/离散数学/lssx.org::MK136][划分]]
+
+则 $P=(Q_1\land R_1)\lor...\lor(Q_k\land R_k)$ 亦是 $n$ 元[[MK81][递归关系]]
+
+***** 证明
+
+根据[[MK83][性质5]]以及数学归纳法易证
+
+**** 性质12
+
+[[MK50][整除]] $\text{Div}(\mathfrak{N},a,b)$ [[MK30][非负减]] $\text{Sub}(\mathfrak{N},a,b)$ [[MK88][配对]] $\text{OP}(\mathfrak{N},a,b)$ [[MK33][ $\beta$ 函数]] $\beta(\mathfrak{N},a,b)$ 均为[[MK81][递归函数]]
+
+***** 证明
+
+****** [[MK30][非负减]]
+
+根据[[MK30][定义]]以及[[MK66][性质1]]可得 $\text{Sub}(\mathfrak{N},a,b)=\begin{cases}b-a&a<b\\0&else\end{cases}$ 根据[[MK90][性质9]] $f(a,b)=\mu_x(\chi_{((b+x=a)\lor_p(a<b))}(a,b,x)=1)$ 是[[MK81][递归函数]]
+
+当 $a<b$ 时对于任意 $x\in\mathbb{N}$ 均有 $\chi_{((b+x=a)\lor_p(a<b))}(a,b,x)=1$
+
+则根据[[MK76][定义]]可得 $Z(a,b)=\left\{x\big|x\in\mathbb{N}\land \chi_{((b+x=a)\lor_p(a<b))}(a,b,x)=1\right\}=\mathbb{N}$ 则显然 $\min(Z(a,b))=0$
+
+综上所述，$f(a,b)=\text{Sub}(\mathfrak{N},a,b)$
+
+
+
+
+
+
+*** 定理
+
+**** 定理1（对应[[MK139][表达式]]）<<MK77>>
+
+对于任意 $f\in\mathscr{R}$ 满足 $f:\mathbb{N}^n\to\mathbb{N}$ 存在[[MK139][表达式]] $\phi(x_1,...,x_{n+1})$ 使得对于[[MK27][自然数标准模型]] $\mathfrak{N}$ 及其任意[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$
+
+有 $\left<\mathfrak{N},v\right>\vDash\phi$ 的充要条件是 $f(v(x_1),...,v(x_n))=v(x_{n+1})$
+
+为方便，称 $\phi$ 为[[~/文档/note/离散数学/lssx.org::MK175][函数]] $f$ 的对应[[MK139][表达式]]
+
+***** 证明
+
+****** 基本函数<<MK78>>
+
+（1） 显然[[MK139][表达式]] $(f_+(x_1,x_2)\hat{=}x_3),(f_\times(x_1,x_2)\hat{=}x_3),(f_s(x_1)\hat{=}x_2)$ 分别是[[~/文档/note/离散数学/lssx.org::MK175][函数]] $\mathfrac{J}(f_+),\mathfrac{J}(f_\times),\mathfrac{J}(f_s)$ 的对应[[MK139][表达式]]
+
+（2） 显然[[MK139][表达式]] $((p_<(x_1,x_2)\land(x_3\hat{=}c_0))\lor((\lnot p_<(x_1,x_2))\land(x_3\hat{=}f_s(c_0))))$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]] $\chi_{\mathfrak{J}(p_<)}$ 的对应[[MK139][表达式]]
+
+（3） 显然[[MK139][表达式]] $(x_{n+1}\hat{=}x_i)$ 是[[MK75][投影函数]] $\pi_i^n$ 对应[[MK139][表达式]]
+
+****** 生成函数
+
+根据以下证明以及数学归纳法可得任意生成函数 $f\in\mathscr{R}$ 均有对应[[MK139][表达式]] $\phi$
+
+满足 $\left<\mathfrak{N},v\right>\vDash\phi$ 的充要条件是 $f(v(x_1),...,v(x_n))=v(x_{n+1})$
+
+******* 复合<<MK79>>
+
+若 $f\cdot(g_1,...,g_k)\in\mathscr{R}$ 则有 $\{f,g_1,...,g_k\}\subset\mathscr{R}$ ，假设存在
+
+（1） $\psi_i(x_{1},...,x_{n},y_i)$ 是 $g_i$ 的对应[[MK139][表达式]]
+
+（2） $\phi(y_1,...,y_k,z)$ 是 $f$ 的对应[[MK139][表达式]]
+
+则定义 $\phi^*=\left(\exists y_1,...,y_k\left(\left(\wedge_{i=1}^k\psi_i\right)\land\phi\right)\right)$ 根据以下证明可得 $\phi$ 为[[~/文档/note/离散数学/lssx.org::MK175][函数]] $f\cdot(g_1,...,g_k)$ 的对应[[MK139][表达式]]
+
+******** 充分
+
+若有 $\left<\mathfrak{N},v\right>\vDash\phi^*$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]可得存在 $\mathfrak{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足：
+
+（1） $\eta(u)=v(u),u\not\in\{y_1,...,y_k\}$
+
+（2） $\left<\mathfrak{N},\eta\right>\vDash\left(\left(\wedge_{i=1}^k\psi_i\right)\land\phi\right)$
+
+又根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有
+
+（3） $\left<\mathfrak{N},\eta\right>\vDash\psi_i,1\leq i\leq k$
+
+（4） $\left<\mathfrak{N},\eta\right>\vDash\phi$
+
+根据 $\psi_i(x_1,...,x_n,y_i)$ 是 $g_i$ 的对应[[MK139][表达式]]以及（1）可得 $g_i(v(x_1),...,v(x_n))=\eta(y_i)$
+
+根据 $\phi(y_1,...,y_k,z)$ 是 $f$ 的对应[[MK139][表达式]]以及（1）可得 $f(\eta(y_1),...,\eta(y_n))=v(z)$
+
+则有 $f\left(g_i(v(x_1),...,v(x_n)),...,g_k(v(x_1),...,v(x_n))\right)=f(\eta(y_1),...,\eta(y_n))=v(z)$
+
+******** 必要
+
+若有 $f\cdot(g_1,...,g_k)(v(x_1),...,v(x_k))=v(z)$ 则有 $f\left(g_i(v(x_1),...,v(x_n)),...,g_k(v(x_1),...,v(x_n))\right)=v(z)$
+
+定义 $\mathfrak{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足：
+
+（1） $\eta(u)=v(u),u\not\in\{y_1,...,y_k\}$
+
+（2） $\eta(y_i)=g_i(v(x_1),...,v(x_n)),1\leq i\leq k$
+
+则根据 $\psi_i(x_1,...,x_n,y_i)$ 是 $g_i$ 的对应[[MK139][表达式]]可得 $\left<\mathfrak{N},\eta\right>\vDash\psi_i,1\leq i\leq k$
+
+又根据 $\phi(y_1,...,y_k,z)$ 是 $f$ 的对应[[MK139][表达式]]可得 $\left<\mathfrak{N},\eta\right>\vDash\phi$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\left<\mathfrak{N},\eta\right>\vDash\left(\left(\wedge_{i=1}^k\psi_i\right)\land\phi\right)$ 又根据 $\eta$ 定义以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathfrak{N},v\right>\vDash\phi^*$ 
+
+******* [[MK76][ $\mu$ 算子]]<<MK80>>
+
+任意 $g:\mathbb{N}^{n+1}\to\mathbb{N}$ 满足 $g\in\mathscr{R}$ ，假设存在 $\psi(x_1,...,x_{n+1},x_{n+2})$ 是 $g$ 的对应[[MK139][表达式]]，定义：
+
+（1） $\psi_0=\psi(\left<x_1,...,x_{n+1},x_{n+2}\right>;\left<x_1,...,x_{n+1},c_0\right>)$
+
+（2） $\psi_{x_{n+3},0}=\psi(\left<x_1,...,x_n,x_{n+1},x_{n+2}\right>;\left<x_1,...,x_n,x_{n+3},c_0\right>)$
+
+（3） $\phi=(\psi_0\land(\forall x_{n+3}(\psi_{x_{n+3},0}\to(\lnot p_<(x_{n+3},x_{n+1})))))$
+
+根据以下证明可得 $\phi$ 为[[~/文档/note/离散数学/lssx.org::MK175][函数]] $f$ 的对应[[MK139][表达式]]
+
+******** 充分
+
+若有 $\left<\mathfrak{N},v\right>\vDash\phi$ 根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有
+
+（1） $\left<\mathfrak{N},v\right>\vDash\psi_0$
+
+（2） $\left<\mathfrak{N},v\right>\vDash(\forall x_{n+3}(\psi_{x_{n+3},0}\to(\lnot p_<(x_{n+3},x_{n+1}))))$
+
+由于 $\psi$ 是 $g$ 的对应[[MK139][表达式]]，则根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]]以及（1）易证 $g(v(x_1),...,v(x_n),v(x_{n+1}))=0$
+
+根据（2）以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\mathfrak{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足 $\eta(x_i)=v(x_i),i\ne n+3$ 成立以下一项
+
+（3） $\left<\mathfrak{N},\eta\right>\not\vDash\psi_{x_{n+3},0}$ 即 $\left<\mathfrak{N},\eta\right>\vDash(\lnot\psi_{x_{n+3},0})$
+
+（4） $\left<\mathfrak{N},\eta\right>\vDash\psi_{x_{n+3},0}$ 且 $\left<\mathfrak{N},\eta\right>\vDash (\lnot p_<(x_{n+3},x_{n+1}))$
+
+若（3）成立，则根据 $\psi$ 是 $g$ 的对应[[MK139][表达式]]以及[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]]易证 $g(v(x_1),...,v(x_{n}),\eta(x_{n+3}))\ne 0$
+
+即有 $\eta(x_{n+3})\not\in Z=\left\{b\big|b\in\mathbb{N}\land g(v(x_1),...,v(x_n),b)=0\right\}$
+
+若（4）成立，同理易证 $\eta(x_{n+3})\in Z$ ，同时根据 $\left<\mathfrak{N},\eta\right>\vDash (\lnot p_<(x_{n+3},x_{n+1}))$ 以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]
+
+可得 $\left<\eta(x_{n+3},v(x_{n+1}))\right>\not\in\mathfrak{J}(p_<)$
+
+结合 $\eta$ 的任意性可得 $v(x_{n+1})=\min\left(Z\right)=\mu_x(g(v(x_1),...,v(x_n),x)=0)=f(v(x_1),...,v(x_n))$
+
+******** 必要
+
+若有 $v(x_{n+1})=f(v(x_1),...,v(x_n))$ 则定义 $Z=\left\{b\big|b\in\mathbb{N}\land g(v(x_1),...,v(x_n),b)=0\right\}$
+
+显然根据[[MK76][定义]] $v(x_{n+1})=f(v(x_1),...,v(x_n))=\min(Z)$ 即对于任意 $b\in Z$ 均有 $\left<b,v(x_{n+2})\right>\not\in\mathfrak{J}(p_<)$
+
+任取 $b\in\mathbb{N}$ 定义 $\mathfrak{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta=\begin{cases}v(x_i)&i\ne n+3\\b& i=n+3\end{cases}$ 则有：
+
+（1） 若 $\eta(x_{n+3})\not\in Z$ 则 $g(v(x_1),...,v(x_n),\eta(x_{n+3}))\ne0$
+
+（2） 若 $\eta(x_{n+3})\in Z$ 则 $g(v(x_1),...,v(x_n),\eta(x_{n+3}))=0$ 且 $\left<\eta(x_{n+3}),v(x_{n+1})\right>\not\in\mathfrak{J}(p_<)$
+
+根据 $\psi$ 是 $g$ 的对应[[MK139][表达式]]以及[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]]可得
+
+（3） 若 $\eta(x_{n+3})\not\in Z$ 则 $\left<\mathfrak{N},\eta\right>\not\vDash\psi_{x_{n+3},0}$
+
+（4） 若 $\eta(x_{n+3})\in Z$ 则 $\left<\mathfrak{N},\eta\right>\vDash\psi_{x_{n+3},0}$ 且 $\left<\mathfrak{N},\eta\right>\vDash (\lnot p_<(x_{n+3},x_{n+1}))$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\left<\mathfrak{N},\eta\right>\vDash(\psi_{x_{n+3},0}\to(\lnot p_<(x_{n+3},x_{n+1})))$
+
+又结合 $\eta$ 定义及其对 $x_{n+3}$ 的任意性可得 $\left<\mathfrak{N},v\right>\vDash(\forall x_{n+3}(\psi_{x_{n+3},0}\to(\lnot p_<(x_{n+3},x_{n+1}))))$
+
+又根据 $v(x_{n+1})=f(v(x_1),...,v(x_n))$ 以及[[MK76][定义]]可得 $g(v(x_1),...,v(x_n),v(x_{n+1}))=0$
+
+根据 $\psi$ 是 $g$ 的对应[[MK139][表达式]]以及[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]]可得 $\left<\mathfrak{N},v\right>\vDash\psi_0$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]即可得 $\left<\mathfrak{N},v\right>\vDash\phi$
+
+**** 定理2
+
+对于任意 $f\in\mathscr{R}$ 其[[MK77][对应表达式]] $\phi$ 满足对于[[MK27][自然数标准模型]] $\mathfrak{N}$ 的任意[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 以及任意 $\mathcal{L}_{\mathcal{A}_{N}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{N}$
+
+均有 $\left<\mathfrak{N},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\cdot e\right>\vDash\phi$ ，其中 $e$ 是[[MK18][标准嵌入映射]]
+
+***** 证明
+
+****** 基本函数
+
+根据[[MK78][之前证明]]可得基本函数的[[MK77][对应表达式]]不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]，则根据[[MK60][引理4]]
+
+可得 $\left<\mathcal{N},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\cdot e\right>\vDash\phi$
+
+****** 生成函数
+
+******* 复合
+
+若 $f\cdot(g_1,...,g_k)\in\mathscr{R}$ 则有 $\{f,g_1,...,g_k\}\subset\mathscr{R}$ 假设：
+
+（1） $\psi_i(x_{1},...,x_{n},y_i)$ 是 $g_i$ 的[[MK77][对应表达式]]
+
+（2） $\phi(y_1,...,y_k,z)$ 是 $f$ 的[[MK77][对应表达式]]
+
+（3） $\varphi$ 为（1）（2）中任意[[MK77][对应表达式]]，则对于 $\mathfrak{N}$ 的任意[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 以及任意 $\mathcal{L}_{\mathcal{A}_{N}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{N}$
+
+     有 $\left<\mathfrak{N},v\right>\vDash\varphi$ 的充要条件是 $\left<\mathcal{M},v\cdot e\right>\vDash\varphi$
+
+则根据（3）以及[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证 $\left<\mathfrak{N},v\right>\vDash\left(\left(\wedge_{i=1}^k\psi_i\right)\land\phi\right)$ 的充要条件是 $\left<\mathcal{M},v\cdot e\right>\vDash\left(\left(\wedge_{i=1}^k\psi_i\right)\land\phi\right)$ 
+
+又根据[[MK79][之前证明]]可得 $\phi^*=\left(\exists y_1,...,y_k\left(\left(\wedge_{i=1}^k\psi_i\right)\land\phi\right)\right)$ 为其[[MK77][对应表达式]]
+
+则根据[[MK72][推论]]以及 $k<\infty$ 易证 $\left<\mathfrak{N},v\right>\vDash\phi^*$ 的充要条件是 $\left<\mathcal{M},v\cdot e\right>\vDash\phi^*$
+
+******* [[MK76][ $\mu$ 算子]]
+
+任意 $g:\mathbb{N}^{n+1}\to\mathbb{N}$ 满足 $g\in\mathscr{R}$ ，假设存在 $\psi(x_1,...,x_{n+1},x_{n+2})$ 是 $g$ 的对应[[MK139][表达式]]，定义：
+
+（1） $\psi_0=\psi(\left<x_1,...,x_{n+1},x_{n+2}\right>;\left<x_1,...,x_{n+1},c_0\right>)$
+
+（2） $\psi_{x_{n+3},0}=\psi(\left<x_1,...,x_n,x_{n+1},x_{n+2}\right>;\left<x_1,...,x_n,x_{n+3},c_0\right>)$
+
+则根据[[MK80][之前证明]]可得 $f$ 的[[MK77][对应表达式]]为 $\phi=(\psi_0\land(\forall x_{n+3}(\psi_{x_{n+3},0}\to(\lnot p_<(x_{n+3},x_{n+1})))))$
+
+根据[[MK52][等价表达]]易证 $\mu(\psi_0,x_{n+1})=(\psi_0\land(\forall x_{n+2}(\psi_0(\left<x_{n+1}\right>,\left<x_{n+2}\right>)\to(\lnot p_<(x_{n+1},x_{n+1})))))$
+
+即 $\mu(\psi_0,x_{n+1})$ 为对 $\phi$ 中 $x_{n+3}$ 进行[[~/文档/note/数理逻辑/sllj.org::MK147][受限替换]]为 $x_{n+2}$ ，则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]易证对于任意 $\mathcal{L}_{\mathcal{A}_{N}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>$
+
+及其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 有 $\left<\mathcal{M},v\right>\vDash\phi$ 的充要条件为 $\left<\mathcal{M},v\right>\vDash\mu(\psi_0,x_{n+1})$
+
+即可得 $\left<\mathfrak{N},v\right>\vDash\phi$ 的充要条件为 $\left<\mathfrak{N},v\right>\vDash\mu(\psi_0,x_{n+1})$
+
+又根据[[MK61][推论]]可得 $\left<\mathfrak{N},v\right>\vDash\mu(\psi_0,x_{n+1})$ 的充要条件是 $\left<\mathcal{M},v\cdot e\right>\vDash\mu(\psi_0,x_{n+1})$
+
+同理又有 $\left<\mathcal{M},v\cdot e\right>\vDash\mu(\psi_0,x_{n+1})$ 的充要条件为 $\left<\mathcal{M},v\cdot e\right>\vDash\phi$
+
+综上所述， $\left<\mathfrak{N},v\right>\vDash\phi$ 的充要条件为 $\left<\mathcal{M},v\cdot e\right>\vDash\phi$
