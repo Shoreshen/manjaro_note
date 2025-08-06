@@ -7766,7 +7766,9 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 ***** 推论3<<MK508>>
 
-[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M},\mathcal{N}$ 两个[[MK153][结构]]且 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK282][子结构]]，任意[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 及其[[~/文档/note/数理逻辑/sllj.org::MK139][子表达式]] $\psi$ 满足：
+[[MK151][一阶语言]] $\mathcal{L}_\mathcal{A}$ 存在 $\mathcal{M},\mathcal{N}$ 两个[[MK153][结构]]且 $\mathcal{M}$ 是 $\mathcal{N}$ 的[[MK282][子结构]]，任意[[MK129][表达式]] $\phi\in\mathcal{L}_\mathcal{A}$ 及其[[~/文档/note/数理逻辑/sllj.org::MK139][子表达式]] $\psi$
+
+满足 $\phi$ 中除 $\psi$ 占据的位置外不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]，则对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 有 
 
 （1） 对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 有 $\left<\mathcal{N},v\right>\vDash\psi$ 充要条件是 $\left<\mathcal{M},v\cdot e\right>\vDash\psi$
 
@@ -7782,7 +7784,7 @@ $<\mathcal{M},v>\vDash\phi$ 的充要条件是 $<\mathcal{N},u>\vDash\phi$
 
 此时 $\phi=\psi$ 或 $\phi$ 不含[[~/文档/note/数理逻辑/sllj.org::MK106][量词]]，若前者则根据条件（1）直接得 $\left<\mathcal{N},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi$
 
-若后者，则根据[[MK60][引理4]]可证 $\left<\mathcal{N},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi$
+若后者，则根据[[MK284][特征定理]]可证 $\left<\mathcal{N},v\right>\vDash\phi$ 的充要条件是 $\left<\mathcal{M},v\right>\vDash\phi$
 
 ******* 归纳假设
 
