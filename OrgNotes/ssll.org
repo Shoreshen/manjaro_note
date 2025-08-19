@@ -2,9 +2,9 @@
 
 #+TITLE: 算数理论
 
-currnet mark: 165
+currnet mark: 177
 
-free mark: 142
+free mark: 
 
 * 初等算数理论
 
@@ -3305,7 +3305,27 @@ $SN$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射函数]]
 
 则根据[[MK153][性质1]]可得 $2\cdot x=(a+b)\cdot(a+b+1))+2\cdot a\in\mathscr{R}$
 
-则根据[[MK85][性质1]]可得 $f(a,b)=\mu_x\left(\chi_{2\cdot x=(a+b)\cdot(a+b+1))+2\cdot a}(x,a,b)=1\right)\in\mathscr{R}$ 
+则根据[[MK85][性质1]]可得 $f(a,b)=\mu_x\left(\chi_{2\cdot x=(a+b)\cdot(a+b+1))+2\cdot a}(x,a,b)=1\right)\in\mathscr{R}$
+
+**** 性质17<<MK171>>
+
+$\max(a,b)$ 是[[MK81][递归函数]]
+
+***** 证明
+
+定义 $f(a,b)=\begin{cases}\pi^2_1(a,b)&b<a\\\pi^2_2(a,b)&\lnot(b<a)\end{cases}$ 根据[[MK84][性质6]]可得 $<$ 是[[MK81][递归关系]]，则有 $b<a$ 是[[MK81][递归关系]]
+
+根据[[MK83][性质]]可得 $\lnot(b<a)$ 亦为[[MK81][递归关系]]，又根据[[MK81][定义]]可得[[MK75][投影函数]]亦为[[MK81][递归函数]]
+
+则根据[[MK159][性质10]]可得 $f\in\mathscr{R}$
+
+***** 推论<<MK172>>
+
+任意 $n\in\mathbb{N}$ 有 $\max(a_1,...,a_n)$ 是[[MK81][递归函数]]
+
+****** 证明
+
+根据[[MK171][性质17]]以及[[MK89][性质0]]可直接证明
 
 *** 定理
 
@@ -3469,7 +3489,7 @@ $SN$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射函数]]
 
 由于 $\chi_R$ 是 $R$ 的[[MK74][特征函数]]，故可得 $\left<v(x_1),...,v(x_n)\right>\in R$
 
-**** 定理2（可表示性）
+**** 定理2（可表示性）<<MK175>>
 
 对于任意 $f\in\mathscr{R}$ 其[[MK77][对应表达式]] $\phi(x_1,...,x_n,y)$ 若存在[[MK27][自然数标准模型]] $\mathfrak{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$ 满足 $\left<\mathfrak{N},v\right>\vDash\phi$
 
@@ -3785,6 +3805,26 @@ $SN$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射函数]]
 
 （6） $R_{\phi,\forall}=\left\{a\big|\{a_1,a_2\}\subset\mathbb{N}\land a=\prec SN((),SN(\forall),a_1,SN((),a_2,SN()),SN())\succ\right\}$
 
+推导[[~/文档/note/离散数学/lssx.org::MK514][关系]]：
+
+（1） 逻辑与 $R_{\phi,\land}=\left\{a\big|a\in R_{\phi,\lnot}\land(a)_3\in R_{\phi,\to}\land((a)_3)_4\in R_{\phi,\lnot}\right\}$ 并定义 $f_{\land,1}(a)=((a)_3)_2,f_{\land,2}(a)=(((a)_3)_4)_3$
+
+     显然若有 $\phi=(\phi_1\land\phi_2)=(\lnot(\phi_1\to(\lnot\phi_2)))$ 则 $f_{\land,1}(\lceil\phi\rceil)=\lceil\phi_1\rceil,f_{\land,2}(\lceil\phi\rceil)=\lceil\phi_2\rceil$
+
+（2） 逻辑或 $R_{\phi,\lor}=\left\{a\big|a\in R_{\phi,\to}\land (a)_2\in R_{\phi,\lnot}\right\}$ 并定义 $f_{\lor,1}(a)=((a)_2)_3,f_{\lor,2}(a)=(a)_4$
+
+     显然若有 $\phi=(\phi_1\lor\phi_2)=((\lnot\phi_1)\to\phi_2)$ 则 $f_{\lor,1}(\lceil\phi\rceil)=\lceil\phi_1\rceil,f_{\lor,2}(\lceil\phi\rceil)=\lceil\phi_2\rceil$
+
+（3） 存在量词 $R_{\phi,\exists}=\left\{a\big|a\in R_{\phi,\lnot}\land (a)_3\in R_{\phi,\forall}\land ((a)_3)_3\in R_{\phi,\lnot}\right\}$ 并定义 $f_{\forall,1}(a)=((a)_3)_3,f_{\land,2}(a)=(((a)_3)_4)_3$
+
+     显然若有 $\phi=(\lnot(\forall x_i(\lnot\phi_1)))$ 则 $f_{\forall,1}(\lceil\phi\rceil)=\lceil x_i\rceil,f_{\forall,2}(\lceil\phi\rceil)=\lceil\phi_1\rceil$
+
+其中：
+
+（1） $(a)_i=\beta(\mathfrak{N},a,i)$
+
+（2） $\land$ 为[[MK108][布尔组合]]
+
 **** 性质1<<MK97>>
 
 所有[[MK96][拆分关系]]均为[[MK81][递归关系]]
@@ -3812,6 +3852,22 @@ $SN$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射函数]]
 满足 $a=\prec V\succ=\prec U\succ$ 且 $V\ne U$ 结合[[MK39][引理1]]以及[[MK45][性质2]]易证矛盾。
 
 故假设不成立，即不存在两个[[MK96][拆分集合]] $S_1,S_2$ 满足 $a\in S_1,a\in S_2$ 
+
+**** 性质3<<MK166>>
+
+[[MK96][推导关系]]亦为[[MK81][递归关系]]
+
+***** 证明
+
+根据[[MK97][性质1]]可得 $R_{\phi,\to},R_{\phi,\lnot},R_{\phi,\forall}$ 均为[[MK81][递归关系]]，则根据[[MK152][性质]]可得 $R_{\phi,\land},R_{\phi,\lor},R_{\phi,\exists}$ 亦为[[MK81][递归关系]]
+
+**** 性质4<<MK142>>
+
+[[MK96][推到关系]]中 $f_{\land,1},f_{\land,2},f_{\lor,1},f_{\lor,2},f_{\forall,1},f_{\forall,2}$ 均为[[MK81][递归函数]]
+
+***** 证明
+
+根据[[MK92][性质12]]可得 $\beta(\mathfrak{N},a,i)\in\mathscr{R}$ ，有根据[[MK81][定义]]以及[[MK89][性质0]]易证结论
 
 *** 基础判断关系<<MK162>>
 
@@ -3909,13 +3965,13 @@ $SN$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射函数]]
 
 显然 $a\in\text{Frml}$ 的充要条件是存在 $\mathcal{L}_{\mathcal{A}_{N}}$ 的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]] $\phi$ 满足 $a=\lceil\phi\rceil$
 
-**** $\text{Free}$
+**** $\text{Free}$ <<MK169>>
 
 递归定义 $2$ 元[[~/文档/note/离散数学/lssx.org::MK514][关系]] $\text{Free}$ 满足 $\left<a,b\right>\in\text{Free}$ 的充要条件为满足以下一条：
 
 （1） $a\in\text{Vrble}$ 且 $a=b$
 
-（2） 存在 $a_1\in\mathbb{N}$ 满足 $\prec SN(f_s),SN((),a_1,SN())\succ$ 且 $\left<a_1,b\right>\in\text{Free}$
+（2） 存在 $a_1\in\mathbb{N}$ 满足 $a=\prec SN(f_s),SN((),a_1,SN())\succ$ 且 $\left<a_1,b\right>\in\text{Free}$
 
 （3） 存在 $\{a_1,a_2\}\subset\mathbb{N}$ 满足 $a=\prec SN(f_+),SN((),a_1,SN(,),a_2,SN())\succ$ 且 $\left<a_1,b\right>\in\text{Free}\lor \left<a_2,b\right>\in\text{Free}$ 
 
@@ -3961,13 +4017,7 @@ $SN$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射函数]]
 
 **** $\text{MP}$ <<MK126>>
 
-递归定义 $3$ 元[[~/文档/note/离散数学/lssx.org::MK514][关系]] $\text{MP}$ 满足 $\left<a,b,c\right>\in\text{MP}$ 的充要条件是：
-
-（1） $\left\{a,b,c\right\}\subset\text{Frml}$
-
-（2） $b=\prec SN((),a,SN(\to),b,SN())\succ$
-
-其中 $\text{Frml}$ 为[[MK120][判断关系]]
+递归定义 $3$ 元[[~/文档/note/离散数学/lssx.org::MK514][关系]] $\text{MP}$ 满足 $\left<a,b,c\right>\in\text{MP}$ 的充要条件是 $b=\prec SN((),a,SN(\to),b,SN())\succ$
 
 *** [[~/文档/note/数理逻辑/sllj.org::MK197][逻辑公理]]关系<<MK118>>
 
@@ -4013,7 +4063,9 @@ $SN$ 是[[~/文档/note/离散数学/lssx.org::MK176][单射函数]]
 
 （2） $\text{Vrble}$ 是用到的[[MK95][判断关系]]
 
-*** $\text{Subst}(a,b,c)$ <<MK125>>
+*** [[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]函数
+
+**** $\text{Subst}(a,b,c)$ <<MK125>>
 
 递归定义
 
@@ -4040,15 +4092,17 @@ a&else
 
 （4） $(a)_i=\beta(\mathfrak{N},a,i)$
 
-（5） $R_{\tau,f_i},R_{\phi,p_i}$ 均为[[MK96][拆分关系]]
+（5） $R_{\tau,f_i},R_{\phi,p_i}$ 等均为[[MK96][拆分关系]]
+
+（6） $f_i,p_i$ 分别为第 $i$ 个[[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]]和[[~/文档/note/数理逻辑/sllj.org::MK110][谓词符号]]
 
 显然 $\text{Subst}(\lceil\phi\rceil,\lceil x_i\rceil,\lceil\tau\rceil)=\lceil \phi(\left<x_i\right>;\left<\tau\right>)\rceil$ 其中 $\phi(\left<x_i\right>;\left<\tau\right>)$ 为 $\phi$ 用 $\tau$ 对 $x_i$ 的[[~/文档/note/数理逻辑/sllj.org::MK145][自由替换]]
 
-**** 性质1
+***** 性质1
 
 $\text{Subst}(a,b,c)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
 
-***** 证明
+****** 证明
 
 显然，可能使 $\text{Subst}(a,b,c)=v_1\ne v_2=\text{Subst}(a,b,c)$ 的情况为存在 $v_1\ne v_2$ 同时属于[[MK96][拆分集合]]
 
@@ -4056,27 +4110,27 @@ $\text{Subst}(a,b,c)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
 
 又根据[[MK38][定义]]可得 $a_1<a,a_2<a$ 结合 $a<\infty$ 以及数学归纳法易证 $\text{Subst}(a,b,c)$ 是[[~/文档/note/离散数学/lssx.org::MK175][函数]]
 
-**** 性质2
+***** 性质2<<MK167>>
 
 若[[~/文档/note/数理逻辑/sllj.org::MK110][谓词符号]]、[[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]]均有限，则 $\text{Subst}(a,b,c)$ 是[[MK81][递归关系]]
 
-***** 证明
+****** 证明
 
 定义
 
 \begin{aligned}
 g(u,a,b,c)=\begin{cases}
 c&a\in\text{Vrble}\land b=a\\
-\prec SN(f_1),SN((),(u)_{((a)_3},SN(,),(u)_{(a)_5},...,SN(,),(u)_{(a)_{2\pi_F(f_1)+1}},SN())\succ&a\in R_{\tau,f_1}\\
+\prec SN(f_1),SN((),(u)_{((a)_3+1},SN(,),(u)_{(a)_5+1},...,SN(,),(u)_{(a)_{2\pi_F(f_1)+1}+1},SN())\succ&a\in R_{\tau,f_1}\\
 ...\\
-\prec SN(f_{n_f}),SN((),(u)_{(a)_3},SN(,),(u)_{(a)_5},...,SN(,),(u)_{(a)_{2\pi_F(f_{n_f})+1}},SN())\succ&a\in R_{\tau,f_{n_f}}\\
+\prec SN(f_{n_f}),SN((),(u)_{(a)_3+1},SN(,),(u)_{(a)_5+1},...,SN(,),(u)_{(a)_{2\pi_F(f_{n_f})+1}+1},SN())\succ&a\in R_{\tau,f_{n_f}}\\
 \prec SN(p_1),SN((),(u)_{(a)_3},SN(,),(u)_{(a)_5},...,SN(,),(u)_{(a)_{2\pi_P(p_1)+1}},SN())\succ&a\in R_{\phi,p_1}\\
 ...\\
-\prec SN(p_{n_p}),SN((),(u)_{(a)_3},SN(,),(u)_{(a)_5},...,SN(,),(u)_{(a)_{2\pi_P(p_{n_p})+1}},SN())\succ&a\in R_{\phi,p_{n_p}}\\
-\prec SN((),(u)_{(a)_2},a_1,SN(\hat{=}),(u)_{(a)_4},SN())\succ&a\in R_{\tau,=}(a)\\
-\prec SN((),SN(\lnot),(u)_{(a)_3},SN())\succ&a\in R_{\phi,\lnot}(a)\\
-\prec SN((),(u)_{(a)_2},a_1,SN(\to),(u)_{(a)_3},SN())\succ&a\in R_{\phi,\to}(a)\\
-\prec SN((),SN(\forall),(a)_3,SN((),(u)_{(a)_4},SN()),SN())\succ&a\in R_{\phi,\forall}(a)\land (a)_3\in\text{Vrble}\\
+\prec SN(p_{n_p}),SN((),(u)_{(a)_3+1},SN(,),(u)_{(a)_5+1},...,SN(,),(u)_{(a)_{2\pi_P(p_{n_p})+1}+1},SN())\succ&a\in R_{\phi,p_{n_p}}\\
+\prec SN((),(u)_{(a)_2+1},a_1,SN(\hat{=}),(u)_{(a)_4+1},SN())\succ&a\in R_{\tau,=}(a)\\
+\prec SN((),SN(\lnot),(u)_{(a)_3+1},SN())\succ&a\in R_{\phi,\lnot}(a)\\
+\prec SN((),(u)_{(a)_2+1},a_1,SN(\to),(u)_{(a)_3+1},SN())\succ&a\in R_{\phi,\to}(a)\\
+\prec SN((),SN(\forall),(a)_3,SN((),(u)_{(a)_4+1},SN()),SN())\succ&a\in R_{\phi,\forall}(a)\land (a)_3\in\text{Vrble}\\
 a&else
 \end{cases}
 \end{aligned}
@@ -4104,13 +4158,70 @@ a&else
 
 显然 $f=\text{Subst}$ 故 $\text{Subst}\in\mathscr{R}$
 
+**** $\text{MaxVr}$ <<MK170>>
+
+递归定义
+
+\begin{aligned}
+\text{MaxVr}(a)=\begin{cases}
+a&a\in\text{Vrble}\\
+\max\left(\text{MaxVr}((a)_3),\text{MaxVr}((a)_5),...,\text{MaxVr}\left((a)_{2\pi_F(f_i)+1}\right)\right)&a\in R_{\tau,f_i}\\
+\max\left(\text{MaxVr}((a)_3),\text{MaxVr}((a)_5),...,\text{MaxVr}\left((a)_{2\pi_P(p_i)+1}\right)\right)&a\in R_{\phi,p_i}\\
+\max\left(\text{MaxVr}((a)_2),\text{MaxVr}((a)_4)\right)&a\in R_{\tau,=}(a)\\
+\text{MaxVr}((a)_3)&a\in R_{\phi,\lnot}(a)\\
+\max\left(\text{MaxVr}((a)_2),\text{MaxVr}((a)_4)\right)&a\in R_{\phi,\to}(a)\\
+\max\left((a)_3,\text{MaxVr}((a)_4)\right)&a\in R_{\phi,\forall}(a)\land (a)_3\in\text{Vrble}\\
+0&else
+\end{cases}
+\end{aligned}
+
+其中
+
+（1） $\prec\cdot\succ$ 表示数列的[[MK38][哥德尔数]]
+
+（2） $\text{Vrble}$ 为[[MK95][ $\text{Vrble}$ 关系]]
+
+（3） $(a)_i=\beta(\mathfrak{N},a,i)$
+
+（4） $R_{\tau,f_i},R_{\phi,p_i}$ 等均为[[MK96][拆分关系]]
+
+（5） $f_i,p_i$ 分别为第 $i$ 个[[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]]和[[~/文档/note/数理逻辑/sllj.org::MK110][谓词符号]]
+
+显然 $\text{MaxVr}(\lceil\phi\rceil)=\lceil x_{i^*}\rceil$ 其中 $i^*$ 为 $\phi$ 中所有[[~/文档/note/数理逻辑/sllj.org::MK107][变元符号]]的最高序号
+
+***** 性质<<MK168>>
+
+若[[~/文档/note/数理逻辑/sllj.org::MK110][谓词符号]]、[[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]]均有限，则 $\text{MaxVr}$ 是[[MK81][递归函数]]
+
+****** 证明
+
+根据[[MK172][推论]]可得 $\max(a_1,...,a_n)\in\mathscr{R}$ 则[[MK172][类似可证]] $\text{MaxVr}$ 是[[MK81][递归函数]]
+
+**** $\text{t}$ <<MK176>>
+
+定义 $\text{t}(a)=\begin{cases}\prec SN(c_0)&a=0\\\prec SN(f_s),SN((),\text{t}(a-1),SN())\succ&a>0\end{cases}$ 其中
+
+（1） $\prec\cdot\succ$ 表示数列的[[MK38][哥德尔数]]
+
+（2） $SN$ 是[[MK40][符号函数]]
+
+***** 性质<<MK177>>
+
+$\text{t}$ 是[[MK81][递归函数]]
+
+****** 证明
+
+定义 $g(u,a)=\begin{cases}\prec SN(c_0)&a=0\\\prec SN(f_s),SN((),(u)_{a-1},SN())\succ&a>0\end{cases}$ 其中 $(a)_i=\beta(\mathfrak{N},a,i)$
+
+则[[MK172][类似可证]] $\text{t}$ 是[[MK81][递归函数]]
+
 *** 有效[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]集合<<MK141>>
 
-对于任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]集合 $\Gamma$ 若存在 $\mathcal{L}_{\mathcal{A}_{N}}$ 上的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]] $\phi(x_1)$ 满足 $\left<\mathfrak{N},v\right>\vDash\phi$ 的充要条件是存在 $\psi\in\Gamma\cup\mathbb{L}$
+对于任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 的[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]集合 $\Gamma$ 若存在[[MK81][递归关系]] $\text{NLAX}_\Gamma$ 满足 $a\in\text{NLAX}_\Gamma$ 的充要条件是
 
-使得 $\lceil\psi\rceil=v(x_1)$ ，则称 $\Gamma$ 为有效[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]集合。其中 $\mathbb{L}$ 表示[[~/文档/note/数理逻辑/sllj.org::MK197][逻辑公理]]
+存在 $\psi\in\Gamma$ 使得 $\lceil\psi\rceil=a$ ，则称 $\Gamma$ 为有效[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]集合
 
-**** 性质<<MK140>>
+**** 性质1<<MK140>>
 
 任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 及其任意[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]]集合 $\Gamma$ 满足：
 
@@ -4140,11 +4251,7 @@ a&else
 
 根据[[MK99][性质3]]、[[MK84][性质6]]以及[[MK153][性质1]]可得 $a=\lceil\phi_i\rceil$ 是[[MK81][递归关系]]，根据[[MK159][性质10]]可得 $f\in\mathscr{R}$
 
-则根据[[MK77][定理1]]可得存在[[MK102][等价表达式]] $\phi_f(x,y)$ 满足 $\left<\mathfrak{N},v\right>\vDash\phi_f$ 的充要条件是 $f(v(x))=v(y)$
-
-显然 $f(v(x_1))=1$ 的充要条件是存在 $\psi\in\Gamma\cup\mathbb{L}$ 且 $v(x_1)=\lceil\psi\rceil$
-
-则定义 $\phi=(\phi_f\land(y\hat{=}f_s(c_0)))$ 则显然 $\left<\mathfrak{N},v\right>\vDash\phi$ 的充要条件是 $f(v(x))=1$ 即存在 $\psi\in\Gamma\cup\mathbb{L}$ 且 $v(x_1) =\lceil\psi\rceil$
+显然 $f$ 是关系 $\text{NLAX}_\Gamma$ 的[[MK74][特征函数]]，故可得 $\text{NLAX}_\Gamma$ 是[[MK81][递归关系]]
 
 **** [[MK2][初等算数公理]]关系
 
@@ -4178,26 +4285,145 @@ $\text{NLAX}_{PA}$ 是[[MK141][有效表达式集]]
 
 ******* [[MK3][数学归纳法公理]]
 
-******** $((\phi(\left<x_1\right>,\left<c_0\right>)\land(\forall x_1(\phi\to\phi(\left<x_1\right>,\left<f_s(x_1)\right>))))\to(\forall x_1\phi))$
+******** $\phi=((\psi(\left<x_1\right>,\left<c_0\right>)\land(\forall x_1(\psi\to\psi(\left<x_1\right>,\left<f_s(x_1)\right>))))\to(\forall x_1\psi))$
 
+定义：
 
-******** 处理 $(\forall x_2...x_n(\phi^*))$
+（1） $a\in R_1$ 等价于 $a\in R_{\phi,\to}$
 
+（2） $a\in R_2$ 等价于 $(a)_4\in R_{\phi,\forall}\land ((a)_4)_3=\lceil x_1\rceil\land((a)_4)_4\in\text{Frml}$
 
+（3） $a\in R_3$ 等价于 $(a)_2\in R_{\phi,\land}\land f_{\land,1}((a)_2)\in\text{Frml}\land f_{\land,2}((a)_2)\in R_{\phi,\forall}$
+
+（4） $a\in R_4$ 等价于 $\left(f_{\land,2}((a)_2)\right)_3=\lceil x_1\rceil\land\left(f_{\land,2}((a)_2)\right)_4\in R_{\phi,\to}$
+
+（5） $a\in R_5$ 等价于 $\left(\left(f_{\land,2}((a)_2)\right)_4\right)_2\in\text{Frml}\land\left(\left(f_{\land,2}((a)_2)\right)_4\right)_4\in\text{Frml}$
+
+（6） $a\in R_6$ 等价于 $f_{\land,1}((a)_2)=\text{Subst}(((a)_4)_4,\lceil x_1\rceil, \lceil c_0\rceil)\land \left(\left(f_{\land,2}((a)_2)\right)_4\right)_2=((a)_4)_4\land\left(\left(f_{\land,2}((a)_2)\right)_4\right)_4=\text{Subst}(((a)_4)_4,\lceil x_1\rceil, \lceil f_s(x_1)\rceil)$
+
+其中：
+
+（1） $(a)_i=\beta(\mathfrak{N},a,i)$
+
+（2） $R_{\phi,\to},R_{\phi,\forall},R_{\phi,\land}$ 为[[MK96][拆分关系]]或其推导关系
+
+（3） $f_{\land,1},f_{\land,2}$ 于[[MK96][拆分关系]]中定义
+
+（4） $\land$ 是[[MK108][关系的布尔组合]]
+
+根据[[MK97][性质1]]、[[MK166][性质3]]、[[MK142][性质4]]、[[MK167][性质2]]以及 $\mathcal{L}_{\mathcal{A}_{PA}}$ 中[[~/文档/note/数理逻辑/sllj.org::MK110][谓词符号]]于[[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]]均有限易证上述用到的[[~/文档/note/离散数学/lssx.org::MK514][关系]]均为[[MK81][递归关系]]、[[~/文档/note/离散数学/lssx.org::MK175][函数]]均为[[MK81][递归函数]]
+
+根据[[MK153][性质1]]、[[MK84][性质6]]以及[[MK152][性质]]易证 $R_1$ 到 $R_6$ 均为[[MK81][递归关系]]，则又根据[[MK152][性质]]可得 $R=\bigwedge_{i=1}^6R_i$ 亦为[[MK81][递归关系]]
+
+根据 $R$ 的定义易证 $a\in R$ 等价于存在 $\phi$ 有形式 $\phi=((\psi(\left<x_1\right>,\left<c_0\right>)\land(\forall x_1(\psi\to\psi(\left<x_1\right>,\left<f_s(x_1)\right>))))\to(\forall x_1\psi))$ 其中 $\psi\in\mathcal{L}_{\mathcal{A}_{PA}}$
+
+满足 $a=\lceil\phi\rceil$
+
+******** 处理 $(\forall x_2...x_n(\phi))$
+
+定义 $Q$ 满足 $a\in Q$ 等价与存在 $n\in\mathbb{N}$ 以及 $\phi\in\mathcal{L}_{\mathcal{A}_{PA}}$ 满足 $\lceil\phi\rceil\in R$ 且 $a=\lceil(\forall x_2...x_n\phi)\rceil$
+
+定义 $g(u,a)=\begin{cases}1&a\in R\\(u)_{(a)_4+1}&a\in R_{\phi,\forall}\\0&else\end{cases}$ 其中：
+
+（1） $(a)_i=\beta(\mathfrak{N},a,i)$
+
+（2） $R$ 为上一步证明的[[MK81][递归关系]]
+
+（3） $R_{\phi,\forall}$ 为[[MK96][拆分关系]]
+
+定义 $R'=\lnot(R\lor R_{\phi,\forall})$ 根据[[MK97][性质1]]、[[MK83][性质5]]易证 $R'$ 亦为[[MK81][递归关系]]，故 $g(u,a) =\begin{cases}1&a\in R\\(u)_{(a)_4+1}&a\in R_{\phi,\forall}\\0&R'\end{cases}$
+
+根据[[MK92][性质12]]可得 $\beta(\mathfrak{N},a,b)\in\mathscr{R}$ 根据[[MK159][性质10]]可得 $g\in\mathscr{R}$
+
+根据[[MK160][定理]]以及[[MK161][引理]]可得存在 $f\in\mathscr{R}$ 满足 $f(a)=g\left(\prec f(0),...,f(a-1)\succ,a\right)$
+
+即可得 $f(a)=\begin{cases}1&a\in R\\f((a)_4)&a\in R_{\phi,\forall}\\0&a\in R'\end{cases}$ 显然 $f$ 是 $Q$ 的[[MK74][特征函数]]，故可得 $Q$ 亦为[[MK81][递归关系]]
+
+******** [[~/文档/note/数理逻辑/sllj.org::MK144][语句]]
+
+根据[[MK173][性质7]]可得存在[[MK81][递归关系]] $\text{Cent}$ 满足任意 $a\in\text{Cent}$ 满足若存在 $\phi\in\mathcal{L}_\mathcal{A}$ 满足 $a=\lceil\phi\rceil$ 则 $\phi$ 是[[~/文档/note/数理逻辑/sllj.org::MK144][语句]]
+
+又根据上一步可得任意 $a\in Q$ 均有 $\psi\in\mathcal{L}_\mathcal{A}$ 满足 $a=\lceil(\forall x_2...x_n((\psi(\left<x_1\right>,\left<c_0\right>)\land(\forall x_1(\psi\to\psi(\left<x_1\right>,\left<f_s(x_1)\right>))))\to(\forall x_1\psi)))\rceil$
+
+进一步定义 $R^*=Q\land\text{Cent}$ 根据[[MK83][性质8]]可得 $R^*$ 亦为[[MK81][递归关系]]
 
 ******* $\text{NLAX}_{PA}$ 
 
-******** 证明[[MK141][条件（1）]]
+根据[[MK124][性质]]可得 $\text{NLAX}_N$ 是[[MK81][递归关系]]，显然 $a\in\text{NLAX}_{PA}$ 的充要条件是 $a\in\text{NLAX}_{N}\lor R^*$
 
-最终定义 $\phi_{\text{NLAX}_{PA}}(x_1)=\left(\phi^*\lor\phi_{\text{NLAX}_N}(x_1)\right)$
+其中 $R^*$ 为上一步证明所得亦为[[MK81][递归关系]]，则根据[[MK83][性质5]]可得 $\text{NLAX}_{PA}$ 亦为[[MK81][递归关系]]
 
-其中 $\phi_{\text{NLAX}_N}$ 为根据[[MK124][性质4]]的 $\text{NLAX}_N$ 的[[MK105][等价表达]]，则易证 $\phi_{\text{NLAX}_{PA}}$ 是 $\text{NLAX}_N$ 的[[MK105][等价表达]]
+*** 证明关系
+
+**** $\text{PRF}_T$ <<MK174>>
+
+对于任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 的[[~/文档/note/数理逻辑/sllj.org::MK144][语句]]集合 $T$ 定义 $a\in\text{PRF}_T$ 的充要条件是满足以下所有条件：
+
+（1） $a\in\text{Seq}$
+
+（2） $(a)_0>0$
+
+（3） $\left(\forall x\left(\left(x<(a)_0\right)\to\left((a)_x\in\text{LAX}\lor(a)_x\in\text{NLAX}_T\lor(\exists y_1((y_1<x)\land(\exists y_2((y_2<y_1)\land\left<(a)_{y_1},(a)_{y_2},(a)_x\right>\in\text{MP}))))\right)\right)\right)$
+
+其中：
+
+（1） $(a)_i=\beta(\mathfrak{N},a,i)$
+
+（2） $\text{Seq}$ 为[[MK38][自然数哥德尔数]]集合
+
+（3） $a\in\text{NLAX}_T$ 的充要条件是存在 $\phi\in T$ 使得 $a=\lceil\phi\rceil$
+
+（4） $\text{LAX}$ 为[[MK118][逻辑公理关系]]
+
+（5） $\text{MP}$ 为[[MK126][基础判断]]
+
+***** 性质
+
+若 $\text{LAX},\text{NLAX}_T$ 为[[MK81][递归关系]]，则 $\text{PRF}_T$ 亦为[[MK81][递归关系]]
+
+****** 证明
+
+根据[[MK92][性质12]]可得 $(a)_i=\beta(\mathfrak{N},a,i)\in\mathscr{R}$ ，根据[[MK158][性质1]]可得[[MK126][ $\text{MP}$ ]]为[[MK81][递归关系]]
+
+则根据[[MK153][性质1]]可得 $\left<y_1,y_2,x,a\right>\in R_0\leftrightarrow\left<(a)_{y_1},(a)_{y_2},(a)_x\right>\in\text{MP}$ 是[[MK81][递归关系]]
+
+则根据[[MK91][性质8]]可得 $\left<y_1,a\right>\in R_1\leftrightarrow(\exists y_2((y_2<y_1)\land\left<y_1,y_2,x,a\right>\in R_0))$ 亦为[[MK81][递归关系]]
+
+同理可证 $\left<x,a\right>\in R_2\leftrightarrow\left(\exists y_1((y_1<x)\land\left<y_1,a\right>\in R_1)\right)$ 亦为[[MK81][递归关系]]。又根据[[MK92][性质12]]可得 $(a)_i=\beta(\mathfrak{N},a,i)\in\mathscr{R}$
+
+则由于 $\text{LAX},\text{NLAX}_T$ 为[[MK81][递归关系]]则根据[[MK152][性质]]可得 $\left<x,a\right>\in R_3\leftrightarrow(a)_x\in\text{LAX}\lor(a)_x\in\text{NLAX}_T\lor\left<x,a\right>\in R_2$ 亦为[[MK81][递归关系]]
+
+则根据[[MK91][性质8]] $a\in R_4\leftrightarrow\left(\forall x\left((x<(a)_0)\to\left<x,a\right>\in R_3\right)\right)$ 亦为[[MK81][递归关系]]，显然 $R_4$ 即为[[MK174][条件（3）]]
+
+根据[[MK150][性质14]]以及[[MK84][性质6]]易证 $\text{Seq},(a)_0>0$ 均为[[MK81][递归关系]]
+
+则根据[[MK152][性质]]可得 $a\in\text{PRF}_T\leftrightarrow a\in\text{Seq}\land(a)_0>0\land a\in R_4$ 亦为[[MK81][递归关系]]
+
+**** $\text{PRV}_T$
+
+对于任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 的[[~/文档/note/数理逻辑/sllj.org::MK144][语句]]集合 $T$ 定义 $\left<a,b\right>\in\text{PRV}_T$ 的充要条件是 $a\in\text{PRF}_T\land(a)_{(a)_0}=b$ 其中：
+
+（1） $(a)_i=\beta(\mathfrak{N},a,i)$
+
+（2） $\text{PRF}_T$ 是基于 $T$ 的[[MK174][证明关系]]
+
+***** 性质
+
+若 $\text{PRF}_T$ 为[[MK81][递归关系]]，则 $\text{PRV}_T$ 亦为[[MK81][递归关系]]
+
+****** 证明
+
+根据[[MK92][性质12]]可得 $(a)_i=\beta(\mathfrak{N},a,i)\in\mathscr{R}$ ，根据[[MK81][复合]]易证 $(a)_{(a)_0}=\beta(\mathfrak{N},a,\beta(\mathfrak{N},a,0))\in\mathscr{R}$
+
+则根据[[MK153][性质1]]以及[[MK84][性质6]]易证 $(a)_{(a)_0}=b$ 亦为[[MK81][递归关系]]
+
+最终根据条件以及[[MK152][性质]]可得 $\left<a,b\right>\in\text{PRV}_T\leftrightarrow a\in\text{PRF}_T\land(a)_{(a)_0}=b$ 亦为[[MK81][递归关系]]
 
 *** 性质
 
 **** 性质1<<MK158>>
 
-[[MK95][ $\text{Vrble}$ ]]、[[MK128][ $\text{Cnst}$ ]]均为[[MK81][递归关系]]
+任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 有[[MK95][ $\text{Vrble}$ ]]、[[MK128][ $\text{Cnst}$ ]]、[[MK126][ $\text{MP}$ ]]均为[[MK81][递归关系]]
 
 ***** 证明
 
@@ -4215,7 +4441,7 @@ $\text{NLAX}_{PA}$ 是[[MK141][有效表达式集]]
 
 即可得 $a\in\text{Vrble}$ 。即可得 $R=\text{Vrble}$ ，进一步可得 $\text{Vrble}$ 是[[MK81][递归关系]]
 
-同理可证 $\text{Cnst}$ 亦为[[MK81][递归关系]]
+同理可证 $\text{Cnst},\text{MP}$ 亦为[[MK81][递归关系]]
 
 **** 性质2<<MK163>>
 
@@ -4229,7 +4455,7 @@ $\text{NLAX}_{PA}$ 是[[MK141][有效表达式集]]
 
 ****** $\text{Term}$ <<MK165>>
 
-假设有[[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_1,...,f_{n_f}$ 则定义 $g(u,a)=\begin{cases}\prod_{i=2}^{\pi_F(f_1)}\beta(\mathfrak{N},u,(a)_{2i-1})&a\in R_{\tau,f_1}\\...\\\prod_{i=2}^{\pi_F(f_{n_f})}\beta(\mathfrak{N},u,(a)_{2i-1})&a\in R_{\tau,f_{n_f}}\\1&a\in\text{Vrble}\lor\text{Cnst}\\0&else\end{cases}$
+假设有[[~/文档/note/数理逻辑/sllj.org::MK109][函数符号]] $f_1,...,f_{n_f}$ 则定义 $g(u,a)=\begin{cases}\prod_{i=2}^{\pi_F(f_1)}\beta(\mathfrak{N},u,(a)_{2i-1}+1)&a\in R_{\tau,f_1}\\...\\\prod_{i=2}^{\pi_F(f_{n_f})}\beta(\mathfrak{N},u,(a)_{2i-1}+1)&a\in R_{\tau,f_{n_f}}\\1&a\in\text{Vrble}\lor\text{Cnst}\\0&else\end{cases}$
 
 其中：
 
@@ -4253,7 +4479,7 @@ $\text{NLAX}_{PA}$ 是[[MK141][有效表达式集]]
 
 \begin{aligned}
 f(a)=\begin{cases}
-\prod_{i=2}^{\pi_F(f_1)}f((a)_{2i-1})&a\in R_{\tau,f_1}\\...\\\prod_{i=2}^{\pi_F(f_{n_f})}f((a)_{2i-1})&a\in R_{\tau,f_{n_f}}\\1&a\in\text{Vrble}\lor\text{Cnst}\\0&a\in R^*\end{cases}
+\prod_{i=2}^{\pi_F(f_1)}f((a)_{2i-1}+1)&a\in R_{\tau,f_1}\\...\\\prod_{i=2}^{\pi_F(f_{n_f})}f((a)_{2i-1}+1)&a\in R_{\tau,f_{n_f}}\\1&a\in\text{Vrble}\lor\text{Cnst}\\0&a\in R^*\end{cases}
 \end{aligned}
 
 显然易证 $f$ 是 $\text{Term}$ 的[[MK74][特征函数]]，故可得[[MK92][ $\text{Term}$ ]]是[[MK81][递归关系]]
@@ -4269,7 +4495,7 @@ f(a)=\begin{cases}
 
 **** 性质3<<MK164>>
 
-若[[MK92][ $\text{Term}$ ]]、[[MK94][ $\text{AFrml}$ ]]均为[[MK81][递归关系]]，则所有[[MK162][基础判断]]均为[[MK81][递归关系]]
+任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 若[[MK92][ $\text{Term}$ ]]、[[MK94][ $\text{AFrml}$ ]]均为[[MK81][递归关系]]，则所有[[MK162][基础判断]]均为[[MK81][递归关系]]
 
 ***** 证明
 
@@ -4279,7 +4505,7 @@ f(a)=\begin{cases}
 
 **** 性质4<<MK121>>
 
-若[[MK92][ $\text{Term}$ ]]、[[MK94][ $\text{AFrml}$ ]]均为[[MK81][递归关系]]，则[[MK118][逻辑公理关系]]（1）~（12）是[[MK81][递归关系]]
+任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 若[[MK92][ $\text{Term}$ ]]、[[MK94][ $\text{AFrml}$ ]]均为[[MK81][递归关系]]，则[[MK118][逻辑公理关系]]（1）~（12）是[[MK81][递归关系]]
 
 ***** 证明
 
@@ -4309,7 +4535,7 @@ f(a)=\begin{cases}
 
 **** 性质5<<MK122>>
 
-若[[MK92][ $\text{Term}$ ]]、[[MK94][ $\text{AFrml}$ ]]均为[[MK81][递归关系]]，则 $\text{LAX}_0$ 是[[MK81][递归关系]]
+任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 若[[MK92][ $\text{Term}$ ]]、[[MK94][ $\text{AFrml}$ ]]均为[[MK81][递归关系]]，则 $\text{LAX}_0$ 是[[MK81][递归关系]]
 
 ***** 证明
 
@@ -4317,7 +4543,7 @@ f(a)=\begin{cases}
 
 **** 性质6<<MK123>>
 
-若[[MK92][ $\text{Term}$ ]]、[[MK94][ $\text{AFrml}$ ]]均为[[MK81][递归关系]]，则 $\text{GLB},\text{LAX}$ 是[[MK81][递归关系]]
+任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 若[[MK92][ $\text{Term}$ ]]、[[MK94][ $\text{AFrml}$ ]]均为[[MK81][递归关系]]，则 $\text{GLB},\text{LAX}$ 是[[MK81][递归关系]]
 
 ***** 证明
 
@@ -4332,6 +4558,94 @@ f(a)=\begin{cases}
 则根据[[MK92][性质12]]、[[MK159][性质10]]、[[MK152][性质]]以及[[MK153][性质1]]易证 $\text{GLB}$ 亦为[[MK81][递归关系]]
 
 又根据[[MK152][性质]]可得 $\text{LAX}=\text{LAX}_0\lor\text{GLB}$ 亦为[[MK81][递归关系]]
+
+**** 性质7<<MK173>>
+
+任意[[~/文档/note/数理逻辑/sllj.org::MK151][可数语言]] $\mathcal{L}_\mathcal{A}$ 若[[MK92][ $\text{Term}$ ]]、[[MK94][ $\text{AFrml}$ ]]均为[[MK81][递归关系]]，则存在[[MK81][递归关系]] $\text{Cent}$ 满足任意 $a\in\text{Cent}$
+
+有若存在 $\phi\in\mathcal{L}_\mathcal{A}$ 满足 $a=\lceil\phi\rceil$ 则 $\phi$ 是[[~/文档/note/数理逻辑/sllj.org::MK144][语句]]
+
+***** 证明
+
+根据[[MK164][性质3]]、[[MK158][性质1]]可得[[MK169][ $\text{Free}$ ]]、[[MK95][ $\text{Vrble}$ ]]是[[MK81][递归关系]]，则根据[[MK83][性质5]]以及[[MK152][性质]]可得 $\lnot\text{Free},\lnot\text{Vrble}$ 亦为[[MK81][递归关系]]，根据
+
+根据[[MK87][量词计算]]定义关系 $R$ 满足 $\left<a,m\right>\in R\leftrightarrow(\forall x(((x<m)\to(\left<a,x\right>\in\lnot\text{Free}\lor x\in\lnot\text{Vrble}))))$
+
+根据[[MK91][性质8]]以及[[MK152][性质]]易证 $R$ 亦为[[MK81][递归关系]]
+
+进一步定义 $a\in R^*\leftrightarrow\left<a,\text{MaxVr}(a)\right>\in R$ ，根据[[MK168][性质]]可得[[MK170][ $\text{MaxVr}$ ]]是[[MK81][递归关系]]则根据[[MK153][性质1]]可得 $R^*$ 是[[MK81][递归关系]]
+
+显然对于任意[[~/文档/note/数理逻辑/sllj.org::MK129][表达式]] $\phi$ 有 $\text{MaxVr}(\lceil\phi\rceil)=\lceil x_{i^*}\rceil$ 其中 $i^*$ 为 $\phi$ 中所有[[~/文档/note/数理逻辑/sllj.org::MK107][变元符号]]的最高序号
+
+则 $\left<a,\text{MaxVr}(a)\right>\in R$ 等价与 $(\forall x(((x<\text{MaxVr}(a))\to(\left<a,\text{MaxVr}(a)\right>\in\lnot\text{Free}\lor x\in\lnot\text{Vrble})))))$
+
+即对于任意 $x\in\mathbb{N}$ 均有 $x\in(((x<\text{MaxVr}(a))\to(\left<a,x\right>\in\lnot\text{Free}\lor x\in\lnot\text{Vrble}))))$
+
+显然若 $x\geq \text{MaxVr}(a)$ 则根据[[MK108][定义]]满足
+
+若 $x<\text{MaxVr}(a)$ 则 $(\left<a,x\right>\in\lnot\text{Free}\lor x\in\lnot\text{Vrble}))$ 即若不存在 $i\in\mathbb{N}$ 满足 $x=\lceil x_i\rceil$
+
+反之若存在 $x=\lceil x_i\rceil$ 则必有 $\left<a,x\right>\in\lnot\text{Free}$ 根据得[[MK169][ $\text{Free}$ ]]定义易证若 $a=\lceil\phi\rceil$ 则有 $x_i$ 不是 $\phi$ 中的[[~/文档/note/数理逻辑/sllj.org::MK140][自由变元]]
+
+综上所述，若 $a=\lceil\phi\rceil$ 则对于任意[[~/文档/note/数理逻辑/sllj.org::MK107][变元符号]] $x_i,i<i^*$ 均有 $x_i$ 不是 $\phi$ 中的[[~/文档/note/数理逻辑/sllj.org::MK140][自由变元]]
+
+又由于 $i^*$ 为 $\phi$ 中所有[[~/文档/note/数理逻辑/sllj.org::MK107][变元符号]]的最高序号故可得 $\phi$ 中不含[[~/文档/note/数理逻辑/sllj.org::MK140][自由变元]]，即 $\phi$ 是[[~/文档/note/数理逻辑/sllj.org::MK144][语句]]
+
+** 不动点定理
+
+任意 $\phi(x_i)\in\mathcal{L}_{\mathcal{A}_N}$ 存在[[~/文档/note/数理逻辑/sllj.org::MK144][语句]] $\sigma\in\mathcal{L}_{\mathcal{A}_N}$ 满足 $T_N\vdash\left(\sigma\leftrightarrow\phi\left(\tau_{\lceil\sigma\rceil}\right)\right)$
+
+*** 证明
+
+定义 $f(a,b)=\text{Subst}(a,SN(x_0),\text{t}(b))$ 其中 $\text{t}$ 为[[MK176][函数]]，根据[[MK168][性质1]]可得 $\text{Subst}(a,b,c)\in\mathscr{R}$
+
+根据[[MK99][性质]]可得常值函数均为[[MK81][递归函数]]，又根据[[MK177][性质]]可得 $t\in\mathscr{R}$ 。最终根据[[MK89][性质0]]可得 $f\in\mathscr{R}$
+
+根据[[MK77][定理1]]即有 $\phi_f(x_0,x_1,x_2)$ 满足 $\left<\mathfrak{N},v\right>\vDash\phi_f$ 等价于 $f(v(x_0),v(x_1))=v(x_2)$
+
+定义 $\theta=\left(\forall x_2\left(\phi_f(\left<x_1\right>,\left<x_0\right>)\to\phi(\left<x_i\right>,\left<x_2\right>)\right)\right)$
+
+定义 $\sigma=\left(\forall x_2\left(\phi_f\(\left<x_1\right>,\left<x_0\right>)\left(\left<x_0\right>,\left<\tau_{\lceil\theta\rceil}\right>\right)\to\phi(\left<x_i\right>,\left<x_2\right>)\right)\right)=\left(\forall x_2\left(\phi_f\left(\left<x_0,x_1\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil}\right>\right)\to\phi(\left<x_i\right>,\left<x_2\right>)\right)\right)$
+
+即有 $\lceil\sigma\rceil=\text{Subst}\left(\lceil\theta\rceil,\lceil x_0\rceil,\lceil\tau_{\lceil\theta\rceil}\rceil\right)$ 即有 $\lceil\sigma\rceil=f\left(\lceil\theta\rceil,\lceil\theta\rceil\right)$
+
+**** $T\vdash\left(\sigma\to\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)\right)$
+
+根据[[MK175][定理2]] $T\vdash\phi_f\left(\left<x_1,x_2,x_3\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil},\tau_{\lceil\sigma\rceil}\right>\right)$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK197][特化公理]] $T\vdash\left(\sigma\to\left(\phi_f\left(\left<x_0,x_1,x_2\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil},\tau_{\lceil\sigma\rceil}\right>\right)\to\phi(\left<x_i\right>,\left<x_2\right>)\left(\left<x_2\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)\right)\right)$
+
+即 $T\vdash\left(\sigma\to\left(\phi_f\left(\left<x_0,x_1,x_2\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil},\tau_{\lceil\sigma\rceil}\right>\right)\to\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)\right)\right)$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK210][导出引理]] $T\cup\{\sigma\}\vdash\left(\phi_f\left(\left<x_0,x_1,x_2\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil},\tau_{\lceil\sigma\rceil}\right>\right)\to\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)\right)$
+
+同理结合 $T\vdash\phi_f\left(\left<x_0,x_1,x_2\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil},\tau_{\lceil\sigma\rceil}\right>\right)$ 即有 $T\cup\{\sigma\}\vdash\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)$
+
+根据[[~/文档/note/数理逻辑/sllj.org::MK211][演绎定理]]即有 $T\vdash\left(\sigma\to\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)\right)$
+
+**** $T\vdash\left(\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)\to\sigma\right)$
+
+对于任意 $\mathcal{L}_{\mathcal{A}_N}$ 上的的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] $\mathcal{M} =\left<M,I\right>\vDash T_{N}$ 及其[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $v$
+
+若有 $\left<\mathcal{M},v\right>\not\vDash\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},v\right>\vDash\left(\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)\to\sigma\right)$ 
+
+若有 $\left<\mathcal{M},v\right>\vDash\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)$ 则由于 $\sigma=\left(\forall x_2\left(\phi_f\left(\left<x_0,x_1\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil}\right>\right)\to\phi(\left<x_i\right>,\left<x_2\right>)\right)\right)$ 
+
+则对于任意 $\mathcal{M}$ 的[[~/文档/note/数理逻辑/sllj.org::MK154][赋值]] $\eta$ 满足 $\eta(x_i)=v(x_i),i\ne2$
+
+若有 $\left<\mathcal{M},\eta\right>\not\vDash\phi_f\left(\left<x_0,x_1\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil}\right>\right)$ 则根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]]有 $\left<\mathcal{M},\eta\right>\vDash\left(\phi_f\left(\left<x_0,x_1\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil}\right>\right)\to\phi(\left<x_i\right>,\left<x_2\right>)\right)$ 
+
+若有 $\left<\mathcal{M},\eta\right>\vDash\phi_f\left(\left<x_0,x_1\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil}\right>\right)$ 则根据[[MK175][定理2]]有 $T\vdash\left(\phi_f\left(\left<x_0,x_1\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil}\right>\right)\to\left(x_2\hat{=}\tau_{\lceil\sigma\rceil}\right)\right)$
+
+根据 $\mathcal{M}\vDash T_{N}$ 可得 $\left<\mathcal{M},\eta\right>\vDash\left(\phi_f\left(\left<x_0,x_1\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil}\right>\right)\to\left(x_2\hat{=}\tau_{\lceil\sigma\rceil}\right)\right)$ 又根据[[~/文档/note/数理逻辑/sllj.org::MK158][满足]] $\left<\mathcal{M},\eta\right>\vDash\left(x_2\hat{ =}\tau_{\lceil\sigma\rceil}\right)$ 
+
+又根据[[~/文档/note/数理逻辑/sllj.org::MK176][替换定理]]以及 $\left<\mathcal{M},v\right>\vDash\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)$ 易证 $\left<\mathcal{M},v\right>\vDash\phi\left(\left<x_i\right>,\left<x_2\right>\right)$
+
+亦有 $\left<\mathcal{M},\eta\right>\vDash\left(\phi_f\left(\left<x_0,x_1\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil}\right>\right)\to\phi(\left<x_i\right>,\left<x_2\right>)\right)$
+
+结合 $\eta$ 任意性可得 $\left<\mathcal{M},\eta\right>\vDash\left\forall x_2\left(\phi_f\left(\left<x_0,x_1\right>,\left<\tau_{\lceil\theta\rceil},\tau_{\lceil\theta\rceil}\right>\right)\to\phi(\left<x_i\right>,\left<x_2\right>)\right)\right)=\sigma$
+
+综上所述有 $\left<\mathcal{M},v\right>\vDash\left(\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)\to\sigma\right)$ ，结合 $\mathcal{M},v$ 任意性以及[[~/文档/note/数理逻辑/sllj.org::MK257][完备性]]即有 $T\vdash\left(\phi\left(\left<x_i\right>,\left<\tau_{\lceil\sigma\rceil}\right>\right)\to\sigma\right)$
 
 ** 拆分集合
 
