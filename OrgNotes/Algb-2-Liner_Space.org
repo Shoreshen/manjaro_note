@@ -2,7 +2,7 @@
 
 #+TITLE: 线性空间
 
-current mark: 116
+current mark: 117
 
 * 映射
 
@@ -558,7 +558,7 @@ $\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]，其有限次幂空间 $\
 
 以下四个条件：
 
-（1） $\mahtcal{V}_1+\mahtcal{V}_2$ 为直和
+（1） $\mathcal{V}_1+\mathcal{V}_2$ 为直和
 
 （2） $\vec{0}$ 在 $V_1+V_2$ 中的表述唯一是 $\vec{0}+\vec{0}$
 
@@ -688,7 +688,7 @@ $\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]，其有限次幂空间 $\
 
 故根据[[MK69][性质1]]（4）可得 $<\text{span}(S_1),K,+,\cdot>+<\text{span}(S_2),K, +,\cdot>$ 是直和
 
-**** 多个子空间直和
+**** 多个子空间直和<<MK117>>
 
 若 $\mathcal{V}_i=<V_i,K,+,\cdot>$ 其中 $1\leq i \leq n$ 是 $\mathcal{V}=<V,K,+,\cdot>$ 的子空间
 

@@ -4,7 +4,7 @@
 
 current video: P102
 
-current mark: 58
+current mark: 60
 
 * 线性映射<<MK4>>
 
@@ -528,7 +528,7 @@ $\forall\{l,k\}\subset K$ 均有 $(lk)\sigma=l(k\sigma)$
 
 ** 特殊映射
 
-*** 投影<<MK28>>
+*** 投影<<MK59>>
 
 [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\mathcal{V}=<V,K,+,\cdot>$ 有 $S=S_1\cup S_2$ 是 $\mathcal{V}$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]且 $S_1\cap S_2=\varnothing$
 
@@ -536,13 +536,13 @@ $\forall\{l,k\}\subset K$ 均有 $(lk)\sigma=l(k\sigma)$
 
 则对于任意 $a\in V$ 有 $a=a_1+a_2$ 其中 $a_1\in\text{span}(S_1)\land a_2\in\text{span}(S_2)$
 
-则定义 $\sigma:\mathcal{V}\to\mathcal{V}_1$ 为 $\sigma(a)=a_1$ 为 $\mathcal{V}$ 到 $\mathcal{V}_1$ 的投影
+则定义 $\sigma:\mathcal{V}\to\mathcal{V}_1$ 为 $\sigma(a)=a_1$ 为 $\mathcal{V}$ 到 $\mathcal{V}_1$ 的[[MK59][投影]]
 
 **** 定理
 
 ***** 定理1
 
-投影是[[MK4][线性映射]]
+[[MK59][投影]]是[[MK4][线性映射]]
 
 ****** 证明
 
@@ -568,7 +568,7 @@ $\forall\{l,k\}\subset K$ 均有 $(lk)\sigma=l(k\sigma)$
 
 对于任意 $\mathcal{V}$ 上的[[MK4][线性变换]] $\gamma$ 满足 $\gamma(a)=\begin{cases}\vec{0}&a\in\mathcal{V}_2\\a&a\in\mathcal{V}_1\end{cases}$ 则有 $\forall a\in V\rightarrow \gamma(a)=\sigma(a)$
 
-即映射 $\gamma$ 为 $\mathcal{V}$ 到 $\mathcal{V}_1$ 的[[MK25][投影]]
+即映射 $\gamma$ 为 $\mathcal{V}$ 到 $\mathcal{V}_1$ 的[[MK59][投影]]
 
 ****** 证明
 
@@ -582,7 +582,7 @@ $\forall\{l,k\}\subset K$ 均有 $(lk)\sigma=l(k\sigma)$
 
 ***** 性质1
 
-投影是[[MK21][幂等变换]]
+[[MK59][投影]]是[[MK21][幂等变换]]
 
 ****** 证明
 
@@ -594,19 +594,19 @@ $\forall\{l,k\}\subset K$ 均有 $(lk)\sigma=l(k\sigma)$
 
 ***** 性质2
 
-投影的[[MK37][核]] $ker(\sigma)=\text{span}(S_2)$
+[[MK59][投影]]的[[MK37][核]] $ker(\sigma)=\text{span}(S_2)$
 
 ****** 证明
 
 显然对于任意 $a\in\text{span}(S_2)$ 显然还有 $a=\vec{0}+a$ 满足 $\vec{0}\in\text{span}(S_1)\land a\in\text{span}(S_2)$
 
-根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK89][性质3]]可得 $a$ 表述唯一，即得投影 $\sigma(a)=\vec{0}$
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK89][性质3]]可得 $a$ 表述唯一，即得[[MK59][投影]] $\sigma(a)=\vec{0}$
 
 显然 $\vec{0}\in\text{span}(S_1)$ 是 $\mathcal{V}_1=<\text{span}(S_1),K,+,\cdot>$ 的加法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]，即 $a\in ker(\sigma)$
 
 即有 $\text{span}(S_2)\subset ker(\sigma)$
 
-对于任意 $a\in ker(\sigma)$ 有 $a\in V\land\sigma(a)=\vec{0}$ 则有 $a=a_1+a_2$ 根据投影定义可得 $a_1=0$
+对于任意 $a\in ker(\sigma)$ 有 $a\in V\land\sigma(a)=\vec{0}$ 则有 $a=a_1+a_2$ 根据[[MK59][投影]]定义可得 $a_1=0$
 
 即 $a=a_2$ 且 $a_2\in\text{span}(S_2)$ 即有 $ker(\sigma)\subset\text{span}(S_2)$
 
@@ -668,13 +668,13 @@ $\sigma$ 是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射]]的充要
 
 设 $\mathcal{V}=<V,K,+,\cdot>,\mathcal{V}'=<V',K,\bar{+},\bar{\cdot}>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，有[[MK4][线性映射]] $\sigma:V\to V'$
 
-存在 $\{a_1,...,a_n\},\{b_1,...,b_m\}$ 分别为 $\mathcal{V},\mathcal{V}'$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]，若有 $\{a_{ij}\}$ 满足 $\begin{cases}\sigma(a_1)=a_{11}b_1+...+a_{m1}b_m\\\sigma(a_2)=a_{12}b_1+...+a_{m2}b_m\\...\\\sigma(a_n)=a_{1n}b_1+...+a_{mn}b_m\\\end{cases}$
+存在 $\{a_1,...,a_n\},\{b_1,...,b_m\}$ 分别为 $\mathcal{V},\mathcal{V}'$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]，若有 $\{a_{ij}\}\subset K$ 满足 $\begin{cases}\sigma(a_1)=a_{11}b_1+...+a_{m1}b_m\\\sigma(a_2)=a_{12}b_1+...+a_{m2}b_m\\...\\\sigma(a_n)=a_{1n}b_1+...+a_{mn}b_m\\\end{cases}$ 
 
 则定义 $M_\sigma=\left[\begin{matrix}a_{11}&a_{12}&...&a_{1n}\\a_{21}&a_{22}&...&a_{2n}\\...&...&...&...\\a_{m1}&a_{m2}&...&a_{mn}\end{matrix}\right]$ 为线性映射 $\sigma$ 在基 $\{a_1,...,a_n\}$ 到 $\{b_1,...,b_m\}$ 下的映射矩阵
 
 进一步定义 $\sigma\left(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]\right)=\left[\begin{matrix}\sigma(a_1)&\sigma(a_2)&...&\sigma(a_n)\end{matrix}\right]$
 
-则根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK49][矩阵运算]]可得 $\sigma\left(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]\right)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\right]M$
+则根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK49][矩阵运算]]可得 $\sigma\left(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]\right)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\right]M_\sigma$
 
 ** 性质
 
@@ -824,7 +824,7 @@ $\sigma$ 是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射]]的充要
 
 若 $\{a_1,...,a_n\},\{b_1,...,b_m\}$ 分别为 $\mathcal{V},\mathcal{V}'$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]，[[MK4][线性映射]] $\sigma$ 在该组基上的映射矩阵为 $M$
 
-则对于任意 $n$ 行矩阵 $X$ 有 $\sigma_1(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]X)=\sigma_1(a_1,a_2,...,a_n))X=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\right](MX)$
+则对于任意 $n$ 行矩阵 $X$ 有 $\sigma(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]X)=\sigma([a_1,a_2,...,a_n])X=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\right](MX)$
 
 **** 证明
 
@@ -833,7 +833,7 @@ $\sigma$ 是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射]]的充要
 \begin{aligned}
 \sigma\left(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]X\right)=&\sigma\left(\left[\begin{matrix}\sum_{i=1}^nx_{i1}a_i&\sum_{i=1}^nx_{i2}a_i&...&\sum_{i=1}^nx_{in}a_i\end{matrix}\right]\right)\\
 =&\left[\begin{matrix}\sum_{i=1}^nx_{i1}\sigma(a_i)&\sum_{i=1}^nx_{i2}\sigma(a_i)&...&\sum_{i=1}^nx_{in}\sigma(a_i)\end{matrix}\right]\\
-=&\left[\begin{matrix}\sigma(a_i)&\sigma(a_i)&...&\sigma(a_i)\end{matrix}\right]X\\
+=&\left[\begin{matrix}\sigma(a_1)&\sigma(a_2)&...&\sigma(a_n)\end{matrix}\right]X\\
 =&\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\right]MX
 \end{aligned}
 
@@ -951,7 +951,7 @@ $\sigma$ 是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射]]的充要
 
 （2） $S$ 是[[~/文档/note/高等代数/Algb-3-Matrix.org::MK28][可逆]]矩阵
 
-（3） $B=S^{-1}AS$ 即 $A$ 与 $B$ [[~/文档/note/高等代数/Algb-3-Matrix.org::MK64][相似]]
+（3） $B=SAS^{-1}$ 即 $A$ 与 $B$ [[~/文档/note/高等代数/Algb-3-Matrix.org::MK64][相似]]
  
 **** 证明
 
@@ -975,19 +975,27 @@ $\sigma$ 是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射]]的充要
 
 ***** 证明相似
 
-根据[[MK28][映射矩阵]]定义可的 $\sigma\left(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]\right)=\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]A$
+根据[[MK28][映射矩阵]]定义可的 $\sigma\left(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]\right)=\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]A$ 即有 $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]S\right)=\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]A$
 
-则有 $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]S\right)=\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]A$
+ $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]S\right)=\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)S$
 
-根据[[MK35][性质6]] $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)=\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]AS$
+根据[[MK35][性质6]] $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]S\right)=\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)S$ 即 $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)S=\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]A$
 
-根据 $S$ [[MK36][可逆]]以及[[~/文档/note/高等代数/Algb-3-Matrix.org::MK22][单位阵性质]] $\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]S^{-1}=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]$
+根据 $S$ [[MK36][可逆]]、[[~/文档/note/高等代数/Algb-3-Matrix.org::MK22][单位阵性质]]以及[[~/文档/note/高等代数/Algb-3-Matrix.org::MK21][结合律]]可得 $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)=\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right]AS^{-1}$
 
-故有 $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]S^{-1}AS$
+又根据条件 $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]SAS^{-1}$
 
-故有  $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]B$ 且根据[[
+根据条件有 $\sigma\left(\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]\right)=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]B$
 
-又根据[[MK34][定理1]]在同一组基上的线性映射与同构矩阵一一对应，故必有 $B=S^{-1}AS$
+假设 $SAS^{-1}\ne B$ 根据[[MK34][定理1]]定义 $\delta:\text{Hom}(\mathcal{V},\mathcal{V}')\to M_{m\times n}(K)$ 为对于任意 $f\in\text{Hom}(\mathcal{V},\mathcal{V}')$
+
+若有 $f(\left[\begin{matrix}a_1&a_2&...&a_n\end{matrix}\right])=\left[\begin{matrix}b_1&b_2&...&b_n\end{matrix}\right]M$ 则有 $\delta(f)=M$
+
+显然 $B,SAS^{-1}$ 均满足 $\delta(\sigma)=B,\delta(\sigma)=SAS^{-1}$ ，结合 $SAS^{-1}\ne B$ 可得 $\delta$ 不是[[MK194][函数]]
+
+又根据[[MK34][定理1]]可得 $\delta$ 是 $\mathcal{V}_1=<\text{Hom}(\mathcal{V},\mathcal{V}'),K,+,\cdot>$ 到 $\mathcal{V}_2=<M_{m\times n}(K),K,+,\cdot>$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK75][同构映射]]
+
+则 $\delta$ 必为[[~/文档/note/离散数学/lssx.org::MK181][双射函数]]，显然矛盾。故假设不成立，即有 $SAS^{-1}=B$ 
 
 * 秩<<MK38>>
 
@@ -1191,7 +1199,7 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 若存在一组[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]] $A=\{a_1,...,a_n\}$ 使得 $\sigma$ 从 $A$ 到 $A$ 的[[MK28][映射矩阵]]是[[~/文档/note/高等代数/Algb-3-Matrix.org::MK70][对角矩阵]]
 
-则称 $\sigma$ 可对角化 $A$ 是对角[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]
+则称 $\sigma$ 可对角化， $A$ 是对角[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]
 
 ** 定理
 
@@ -1502,55 +1510,57 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 则称 $\mathcal{V}'$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\mathcal{V}$ 在 $\sigma$ 下的不变子空间
 
-** 性质1
+** 性质
+
+*** 性质1
 
 设 $\mathcal{V}=<V,K,+,\cdot>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma$ 是 $\mathcal{V}$ 上的[[MK4][线性变换]]
 
 则其[[MK49][特征子空间]] $\mathcal{V}_\lambda=<V_\lambda,K,+,\cdot>$ 是 $\sigma$ 下的[[MK57][不变子空间]]
 
-*** 证明
+**** 证明
 
 根据[[MK49][特征子空间]]定义，对于任意 $a\in V_\lambda$ 均有 $\sigma(a)=\lambda a$ 其中 $\lambda\in K$
 
 则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][数乘封闭]]可得 $\lambda a\in V_\lambda$
 
-** 性质2
+*** 性质2
 
 设 $\mathcal{V}=<V,K,+,\cdot>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
 
 则 $\mathcal{V}_0=<\{\vec{0}\},K,+,\cdot>$ 是任意[[MK4][线性变换]]下的[[MK57][不变子空间]]
 
-*** 证明
+**** 证明
 
 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK60][定理1]]易证 $\mathcal{V}_0=<\{\vec{0}\},K,+,\cdot>$ 亦是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
 
 则对于任意 $\lambda\in K$ 均有 $\lambda\vec{0}=\vec{0}$
 
-** 性质3
+*** 性质3
 
 设 $\mathcal{V}=<V,K,+,\cdot>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma$ 是 $\mathcal{V}$ 上的[[MK4][线性变换]]
 
 [[MK22][核空间]] $\mathcal{V}_k=<ker(\sigma),K,+,\cdot>$ 是 $\sigma$ 下的[[MK57][不变子空间]]
 
-*** 证明
+**** 证明
 
 根据[[MK2][零元映射]]可得 $\sigma(\vec{0})=\vec{0}$ 即说明 $\vec{0}\in ker(\sigma)$
 
 又根据[[MK37][定义]]可得故对于任意 $a\in ker(\sigma)$ 均有 $\sigma(a)=\vec{0}\in ker(\sigma)$
 
-** 性质4
+*** 性质4
 
 设 $\mathcal{V}=<V,K,+,\cdot>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma$ 是 $\mathcal{V}$ 上的[[MK4][线性变换]]
 
 则[[MK23][相空间]] $\mathcal{V}_{Im}=<V_{Im},K,+,\cdot>$ 是 $\sigma$ 下的[[MK57][不变子空间]]
 
-*** 证明<<MK58>>
+**** 证明<<MK58>>
 
 由于 $\sigma:V\to V_{Im}$ ，故对于任意 $a\in V$ 均有 $\sigma(a)\in V_{Im}$
 
 又由于[[MK23][相空间]]是 $\mathcal{V}'$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK44][子空间]]，故对于任意 $a\in V_{Im}$ 均有 $a\in V$ ，即 $\sigma(a)\in V_{Im}$
 
-** 性质5
+*** 性质5
 
 设 $\mathcal{V}=<V,K,+,\cdot>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma_1,\sigma_2$ 是 $\mathcal{V}$ 上的[[MK4][线性变换]]
 
@@ -1560,27 +1570,27 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 以及[[MK49][特征子空间]] $\mathcal{V}_{\lambda,2}=<V_{\lambda,2},K,+,\cdot>$ 均是 $\sigma_1$ 下的[[MK57][不变子空间]]
 
-*** 证明
+**** 证明
 
-**** 核空间
+***** 核空间
 
 对于任意 $a\in ker(\sigma_2)$ 有 $\sigma_2(a)=\vec{0}$ 根据[[MK2][零元映射]]可得 $\vec{0}=\sigma_1(\vec{0})=\sigma_1(\sigma_2(a))=\sigma_2(\sigma_1(a))$
 
 综上所述，对于任意 $a\in ker(\sigma_2)$ 均有 $\sigma_2(\sigma_1(a))=\vec{0}\rightarrow\sigma_1(a)\in ker(\sigma_2)$
 
-**** 相空间
+***** 相空间
 
 对于任意 $a\in V_{Im,2}$ 存在 $a'\in V$ 满足 $\sigma_2(a')=a$ 则有 $\sigma_1(a)=\sigma_1(\sigma_2(a'))=\sigma_2(\sigma_1(a'))$
 
 根据[[MK58][之前证明]]可得 $\sigma_2(\sigma_1(a'))\in V_{Im,2}$
 
-**** 特征子空间
+***** 特征子空间
 
 对于任意 $a\in V_{\lambda,2}$ 满足 $\sigma_2(a)=\lambda a$ 则根据[[MK4][线性映射]] $\sigma_1(a)=\sigma_1\left(\frac{1}{\lambda}\sigma_2(a)\right)=\frac{1}{\lambda}\sigma_1(\sigma_2(a))=\frac{1}{\lambda}\sigma_2(\sigma_1(a))$
 
 即 $\sigma_2(\sigma_1(a))=\lambda\sigma_1(a)$ 即 $\sigma_1(a)\in V_{\lambda,2}$
 
-** 性质6
+*** 性质6
 
 设 $\mathcal{V}=<V,K,+,\cdot>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma$ 是 $\mathcal{V}$ 上的[[MK4][线性变换]]
 
@@ -1588,7 +1598,7 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 则其[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK114][交]] $\mathcal{V}_1\cap\mathcal{V}_2$ 与[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK86][和]] $\mathcal{V}_1+\mathcal{V}_2$ 仍为 $\sigma$ 下的[[MK57][不变子空间]]
 
-*** 证明
+**** 证明
 
 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK64][交空间]]与[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK72][和空间]]可得 $\mathcal{V}_1,\mathcal{V}_2$ 均为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK44][子空间]]
 
@@ -1600,7 +1610,7 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 根据[[MK4][线性映射]]有 $\sigma(a)=\sigma(b+c)=\sigma(b)+\sigma(c)\in V_1+V_2$
 
-** 性质7
+*** 性质7<<MK60>>
 
 设 $\mathcal{V}=<V,K,+,\cdot>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma$ 是 $\mathcal{V}$ 上的[[MK4][线性变换]]
 
@@ -1608,18 +1618,98 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 的充要条件是 $\sigma(a_i)\in\text{span}(S),1\leq i\leq n$
 
-*** 证明
+**** 证明
 
-**** 充分
+***** 充分
 
 若 $\mathcal{V}'$ 是 $\sigma$ 下的[[MK57][不变子空间]]，则对于任意 $a\in\text{span}(S)$ 均有 $\sigma(a)\in\text{span}(S)$
 
-显然 $a\in S\rightarrow a\in\text{span}(S)$ 即有 $\sigma(a)\in\text{span}(S)$
+显然 $a_i\in S\rightarrow a\in\text{span}(S)$ 即有 $\sigma(a_i)\in\text{span}(S)$
 
-**** 必要
+***** 必要
 
 若有 $\sigma(a_i)\in\text{span}(S)$ ，对于任意 $a\in\text{span}(S)$ 均有 $a=\sum_{i=1}^nk_ia_i$ 其中 $\{a_1,...,a_n\}\subset S$
 
 根据[[MK4][线性映射]]有 $\sigma(a)=\sum_{i=1}^n k_i\sigma(a_i)$
 
 由于 $\mathcal{V}'$ 是 $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，故有 $\sigma(a)=\sum_{i=1}^n k_i\sigma(a_i)\in\text{span}(S)$
+
+*** 性质8
+
+设 $\mathcal{V}=\left<V,K,+,\cdot\right>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma$ 是 $\mathcal{V}$ 上的[[MK4][线性变换]]
+
+对于其任意[[MK57][不变子空间]] $\mathcal{V}'=\left<V',K,+,\cdot\right>$ 定义 $\sigma_{|V'} =\left\{\left<a,\sigma(a)\right>\big|a\in V'\right\}$
+
+则 $\sigma_{|V'}$ 是 $\mathcal{V}'$ 的[[MK4][线性变换]]
+
+**** 证明
+
+由于是[[MK57][不变子空间]]则对于任意 $a\in V'$ 均有 $\sigma_{|V'}(a)=\sigma(a)\in V'$
+
+又由于 $\sigma$ 是[[MK4][线性变换]]故对于任意 $\{a,b\}\subset V'\subset V,k\in K$ 均保持加法及数乘
+
+故可得：
+
+（1） $\sigma_{|V'}(a+b)=\sigma(a+b)=\sigma(a)+\sigma(b)=\sigma_{|V'}(a)+\sigma_{|V'}(b)$
+
+（2） $\sigma_{|V'}(ka)=\sigma(ka)=k\sigma(a)=k\sigma_{|V'}(a)$
+
+故可得 $\sigma_{|V'}$ 是 $\mathcal{V}'$ 上的[[MK4][线性变换]]
+
+** 定理
+
+设 $\mathcal{V}=\left<V,K,+,\cdot\right>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma$ 是 $\mathcal{V}$ 上的[[MK4][线性变换]]，对于任意[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]] $B=\{\vec{v}_{1},...,\vec{v}_{n}\}$
+
+存在 $N=\{n_1,...,n_k\}$ 满足 $\sigma$ 关于 $B$ 的[[MK28][映射矩阵]]为[[~/文档/note/高等代数/Algb-3-Matrix.org::MK72][分块对角矩阵]] $A=[a_{ij}]^N_{n\times n}$ （即 $\sigma(B)=BA$ ）
+
+的充要条件是存在[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK46][生成空间]] $\mathcal{V}_i=\left<\text{span}(\vec{v}_{n_i},...,\vec{v}_{n_{i+1}-1}),K,+,\cdot\right>,1\leq i\leq k$ 满足：
+
+（1） $\mathcal{V}_i$ 是 $\mathcal{V}$ 的[[MK57][不变子空间]]
+
+（2） $\mathcal{V}=\sum_{i=1}^k\mathcal{V}_i$ 其中加法为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK83][直和]]
+
+*** 证明
+
+**** 充分
+
+若存在 $N=\{n_1,...,n_k\}$ 满足 $\sigma$ 关于 $B$ 的[[MK28][映射矩阵]]为[[~/文档/note/高等代数/Algb-3-Matrix.org::MK72][分块对角矩阵]] $A=[a_{ij}]^N_{n\times n}$
+
+则定义 $\mathcal{V}_i=\left<\text{span}(\vec{v}_{n_i},...,\vec{v}_{n_{i+1}-1}),K,+,\cdot\right>,1\leq i\leq k$
+
+***** [[MK57][不变子空间]]
+
+由于是[[MK28][映射矩阵]]，则有 $\sigma(B)=BA$ 根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK72][分块对角矩阵]]与[[~/文档/note/高等代数/Algb-3-Matrix.org::MK5][矩阵乘法]]
+
+易证 $\sigma\left(\left[\begin{matrix}\vec{v}_{n_i}&...&\vec{v}_{n_{i+1}-1}\end{matrix}\right]\right)=\left[\begin{matrix}\vec{v}_{n_i}&...&\vec{v}_{n_{i+1}-1}\end{matrix}\right]\left[\begin{matrix}a_{n_in_i}&...&a_{n_i(n_{i+1}-1)}\\...&...&...\\a_{(n_{i+1}-1)n_i}&...&a_{(n_{i+1}-1)(n_{i+1}-1)}\end{matrix}\right]$
+
+进一步有 $\sigma(\vec{v}_k)=\sum_{j=n_i}^{n_{i+1}-1}a_{j,k}\vec{v}_j,n_i\leq k< n_{i+1}$ 显然 $\sigma(\vec{v}_k)\in\text{span}(\vec{v}_{n_i},...,\vec{v}_{n_{i+1}-1})$
+
+则根据[[MK60][性质7]]可得 $\mathcal{V}_i$ 是 $\mathcal{V}$ 的[[MK57][不变子空间]]
+
+***** [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK83][直和]]
+
+显然 $B=\bigcup_{i=1}^k\{\vec{v}_{n_i},...,\vec{v}_{n_{i+1}-1}\}$ 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK69][性质1]]可得 $\sum_{i=1}^k\mathcal{V}_i$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]为 $B$ 中的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK15][极大线性无关集]]
+
+由于 $B$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]故 $B$ 本身[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]，即有 $\sum_{i=1}^k\mathcal{V}_i$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]为 $B$ 。根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK117][直和定义]]易证 $\sum_{i=1}^k\mathcal{V}_i=\left<\sum_{i=1}^k V_i,K,+,\cdot\right>$
+
+其中 $\sum_{i=1}^k V_i$ 为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK86][子空间加法]]，又由于 $\mathcal{V},\sum_{i=1}^k\mathcal{V}_i$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]均为 $B$ ，则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK100][定理4]]可得 $\sum_{i=1}^k V_i=V$
+
+即有 $\mathcal{V}=\sum_{i=1}^k\mathcal{V}_i$ 
+
+**** 必要
+
+若有：
+
+（1） $\mathcal{V}_i$ 是 $\mathcal{V}$ 的[[MK57][不变子空间]]
+
+（2） $\mathcal{V}=\sum_{i=1}^k\mathcal{V}_i$ 其中加法为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK83][直和]]
+
+由于 $B$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]故 $B$ 本身[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]，根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK10][性质2]]可得 $\{\vec{v}_{n_i},...,\vec{v}_{n_{i+1}-1}\}\subset B$ 亦[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK8][线性无关]]
+
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK88][性质1]]可得 $\{\vec{v}_{n_i},...,\vec{v}_{n_{i+1}-1}\}$ 是 $\mathcal{V}_i$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK36][基]]，由于是[[MK57][不变子空间]]，故可得 $\sigma(\vec{v}_j)\in\text{span}(\vec{v}_{n_i},...,\vec{v}_{n_{i+1}-1}),n_i\leq j<n_{i+1}$
+
+故 $\sigma(\vec{v}_j)$ 可由 $\{\vec{v}_{n_i},...,\vec{v}_{n_{i+1}-1}\}$ [[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK12][线性表述]]，即 $\sigma(\vec{v}_j)=\sum_{j=n_i}^{n_{i+1}-1}a_{ij}\vec{v}_j,a_{ij}\in K$
+
+根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK5][矩阵乘法]]易证 $\sigma\left(\left[\begin{matrix}\vec{v}_{n_i}&...&\vec{v}_{n_{i+1}-1}\end{matrix}\right]\right)=\left[\begin{matrix}\vec{v}_{n_i}&...&\vec{v}_{n_{i+1}-1}\end{matrix}\right]\left[\begin{matrix}a_{n_in_i}&...&a_{n_i(n_{i+1}-1)}\\...&...&...\\a_{(n_{i+1}-1)n_i}&...&a_{(n_{i+1}-1)(n_{i+1}-1)}\end{matrix}\right]$
+
+则为[[~/文档/note/高等代数/Algb-3-Matrix.org::MK72][分块对角矩阵]]根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK5][矩阵乘法]]易证 $\sigma(B)=B[a_{ij}]^N_{n\times n}$ ，即 $\sigma(B)=BA$

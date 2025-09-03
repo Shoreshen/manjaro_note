@@ -2,7 +2,7 @@
 
 #+TITLE: 矩阵运算
 
-current mark: 71
+current mark: 72
 
 * 矩阵基础
 
@@ -223,6 +223,12 @@ I_nA_{n\times s}&= A_{s\times n}\\
 **** 乘法封闭
 
 定义 $A_n,B_n$ 为对角阵，则 $A_nB_n$ 根据[[MK5][矩阵乘法]]亦为对角阵
+
+** 分块对角矩阵<<MK72>>
+
+定义分块对角矩阵为 $A_n=[D(i,j)]_{n\times n}$ 满足存在 $1\leq n_1<...<n_k\leq n$ 使得
+
+其中 $D(i,j)=\begin{cases}a_{ij}&(\exists u((n_u\leq i<n_{u+1})\land(n_u\leq j<n_{u+1})))\\0&else\end{cases}$ 定义 $N=\{n_1,...,n_k\}$ 则分块对角矩阵记作 $\left[a_{ij}\right]^N_{n\times n}$
 
 ** 数量矩阵
 
