@@ -217,7 +217,7 @@ $\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]，其有限次幂空间 $\
 
 ** 向量组生成子空间<<MK46>>
 
-线性空间 $\mathcal{V}=<V,K,+,\cdot>$ ，若存在 $S\subset V$ 定义 $\text{span}(S)=\left\{\sum_{i=1}^n k_i\vec{a}_i\big|k_i\in K^n\land\vec{a}_i\in S\land n\in\mathbb{N}\right\}$ 
+线性空间 $\mathcal{V}=<V,K,+,\cdot>$ ，若存在 $S\subset V,S\ne\varnothing$ 定义 $\text{span}(S)=\left\{\sum_{i=1}^n k_i\vec{a}_i\big|k_i\in K\land\vec{a}_i\in S\land n\in\mathbb{N}\right\}$ 
 
 则 $\mathcal{V}'=<\text{span}(S),K,+,\cdot>$ 为 $\mathcal{V}$ 的线性子空间，称为 $S$ 生成的子空间 
 

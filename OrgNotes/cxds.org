@@ -2,7 +2,7 @@
 
 #+TITLE: 抽象代数
 
-currnet mark: 517
+currnet mark: 518
 
 free mark:
 
@@ -1496,6 +1496,12 @@ a_{i^*-1}&=a_{i^*-3}-n_{i^*-2}a_{i^*-2}=(v_{i^*-3}a_0+u_{i^*-3}p)-n_{i^*-2}(v_{i
 （2） $\mathcal{M}\vDash(\forall x_1(f_\times(c_1,x_1)\hat{=}x_1))$ 的充要条件是对于任意 $a\in M,a\ne I(c_0)$ 有 $I(f_\times)(a,I(c_1))=a$
 
 （3） $\mathcal{M}\vDash(\lnot(c_0\hat{=}c_1))$ 的充要条件是 $I(c_0)\ne I(c_1)$
+
+（4） $\mathcal{M}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 的充要条件是任意 $\{a,b\}\subset M$ 有 $I(f_\times)(a,b)=I(f_\times)(b,a)$
+
+（5） $\mathcal{M}\vDash(\forall x_1(\forall x_2((f_\times(x_1,x_2)\hat{=}c_0)\to((x_1\hat{=}c_0)\lor(x_2\hat{=}c_0)))))$ 的充要条件是任意 $\{a,b\}\subset M$
+
+     有若 $I(f_\times)(a,b)=I(c_0)$ 则有 $a=I(c_0)$ 或 $b=I(c_0)$
 
 ***** 证明
 
@@ -3277,7 +3283,7 @@ $\mathcal{Q}\vDash T_\mathbb{F}$ 即 $\mathcal{Q}$ 是[[MK338][域]]
 
 对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)\in M[\vec{x}]$
 
-存在唯一[[MK446][最简式]] $f'(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$ 对于任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$ 以及任意 $\vec{s}=\left<s_1,...,s_n\right>\in N^n$
+存在唯一[[MK446][最简式]] $f'(\vec{x})=\sum_{i\in P'}\left(a'_i\left(\prod_{j\in K'_i}x_j^{k'_{i,j}}\right)\right)$ 对于任意 $\mathcal{M}$ 的[[MK518][扩张交换环]] $\mathcal{N}=\left<N,J\right>$ 以及任意 $\vec{s}=\left<s_1,...,s_n\right>\in N^n$
 
 均有 $f(\vec{x}),f'(\vec{x})$ 的[[MK441][带入值]]相等，即 $f(\vec{s})=f'(\vec{s})$
 
@@ -3479,15 +3485,27 @@ f(s_1,...,s_{n-1},a)&=\sum_{z\in K}\left(\left(\sum_{i\in P_z}a_i\left(\prod_{j\
 
 即存在 $\vec{s}=\left<s_1,...,s_{n-1},b\right>\in M^n$ 使得 $f(\vec{s})\ne I[\vec{x}](c_0)$
 
+****** 扩张交换环<<MK518>>
+
+[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 若有任意[[MK362][非零幺环]] $\mathcal{N}=\left<N,J\right>$ 满足：
+
+（1） $\mathcal{M}$ 是 $\mathcal{N}$ 的[[~/文档/note/数理逻辑/sllj.org::MK282][子结构]]
+
+（2） 满足 $\mathcal{N}\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 乘法交换
+
+则称 $\mathcal{N}$ 是 $\mathcal{M}$ 的扩张交换环
+
 ****** 带入值<<MK441>>
 
-对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ ，任意 $\mathcal{M}$ 的[[MK341][扩张域]] $\mathcal{N}=\left<N,J\right>$
+对于任意[[MK338][域]] $\mathcal{M}=\left<M,I\right>$ 上关于 $\vec{x}=\left<x_0,...,x_{n-1}\right>$ 的[[MK436][多项式]] $f(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right)$ 对于任意 $\mathcal{M}$ 的[[MK518][扩张交换环]] $\mathcal{N}=\left<N,J\right>$ 
 
 以及任意 $\vec{s}=\left<s_0,...,s_{n-1}\right>\subset N^n$ 定义在 $\mathcal{N}$ 上对于 $\vec{s}$ 的带入值为 $f(s_0,...,s_{n-1})=f(\vec{s})=\sum_{i=1}^m\left(a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right)$
 
-其中对于任意 $k_{i,j}=0$ 定义 $s_j^{k_{i,j}}=I(c_1)$ ，对于任意 $K_i=\varnothing$ 则定义 $\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)=I(c_1)$
+其中对于任意 $k_{i,j}=0$ 定义 $s_j^{k_{i,j}}=I(c_1)$ ，对于任意 $K_i=\varnothing$ 则定义 $\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)=I(c_1)$ 显然：
 
-由于 $\mathcal{N}$ 是[[MK338][域]]，故显然对于 $I(f_+),I(f_\times),I(f_-)$ 运算封闭，故易证存在 $a\in N$ 满足 $a=f(\vec{s})$
+（1） 由于 $\mathcal{N}$ 是[[MK362][非零幺环]]，故显然对于 $I(f_+),I(f_\times),I(f_-)$ 运算封闭，故易证存在 $a\in N$ 满足 $a=f(\vec{s})$
+
+（2） 若 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK341][扩张域]]，则有 $\mathcal{N}$ 是 $\mathcal{M}$ 的[[MK518][扩张交换环]]
 
 ******* 性质1<<MK442>>
 
@@ -3505,7 +3523,7 @@ f(s_1,...,s_{n-1},a)&=\sum_{z\in K}\left(\left(\sum_{i\in P_z}a_i\left(\prod_{j\
 
 仅证（1），其余同理可证
 
-设 $f_1(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)$ 则根据[[MK356][性质4]]可得有
+设 $f_1(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)$ 则根据[[MK363][性质1]]可得有
 
 \begin{aligned}
 &J(f_\times)\left(\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}s_j^{k_{i,j}}\right)\right),\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}s_j^{l_{i,j}}\right)\right)\right)\\
