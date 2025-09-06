@@ -1,10 +1,10 @@
-#+LATEX_CLASS:
+#+LATEX_CLASS: ctexart
 
 #+TITLE: 线性映射
 
 current video: P102
 
-current mark: 66
+current mark: 67
 
 * 线性映射<<MK4>>
 
@@ -258,7 +258,7 @@ current mark: 66
 
 设 $\mathcal{V}=<V,K,+,\cdot>,\mathcal{V}'=<V',K,\bar{+},\bar{\cdot}>$ 是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma:V\to V'$ 是[[MK4][线性映射]]
 
-定义 $\mathcal{V}_1=<ker(\sigma),K,+,\cdot>$ 根据[[MK22][性质1]]是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
+定义 $\mathcal{V}_1=<\ker(\sigma),K,+,\cdot>$ 根据[[MK22][性质1]]是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
 
 定义 $\mathcal{V}_2=<\left\{\sigma(a)\big|a\in V\right\},K,\bar{+},\bar{\cdot}>$ 根据[[MK23][相空间]]可得是[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]
 
@@ -266,43 +266,43 @@ current mark: 66
 
 **** 证明
 
-定义 $\gamma:\mathcal{V}/\mathcal{V}_1\to\mathcal{V}_2$ 为对于任意 $[v]_{ker(\sigma)}$ 有 $\gamma([v]_{ker(\sigma)})=\sigma(v)$
+定义 $\gamma:\mathcal{V}/\mathcal{V}_1\to\mathcal{V}_2$ 为对于任意 $[v]_{\ker(\sigma)}$ 有 $\gamma([v]_{\ker(\sigma)})=\sigma(v)$
 
 根据下列证明可得 $\gamma$ 为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK75][同构映射]]
 
 ***** 充要条件<<MK24>>
 
-根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK94][性质3]]对于任意 $[u]_{ker(\sigma)}=[v]_{ker(\sigma)}$ 充要条件为 $u-v\in ker(\sigma)$
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK94][性质3]]对于任意 $[u]_{\ker(\sigma)}=[v]_{\ker(\sigma)}$ 充要条件为 $u-v\in \ker(\sigma)$
 
 即 $\sigma(u-v)=\vec{0}'\in V'$ 是 $\mathcal{V}'$ 的加法幺元，由于 $\sigma$ 是[[MK4][线性映射]]，则有 $\sigma(u)-\sigma(v)=\vec{0}'\leftrightarrow\sigma(u)=\sigma(v)$
 
-进一步 $\sigma(v)=\sigma(u)$ 的充要条件为 $\gamma([v]_{ker(\sigma)})=\sigma(v)=\sigma(u)=\sigma([u]_{ker(\sigma)})$
+进一步 $\sigma(v)=\sigma(u)$ 的充要条件为 $\gamma([v]_{\ker(\sigma)})=\sigma(v)=\sigma(u)=\sigma([u]_{\ker(\sigma)})$
 
-即对于任意 $\{[u]_{ker(\sigma)},[v]_{ker(\sigma)}\}\subset\mathcal{Q}(\mathcal{V},\mathcal{V}_1)$ 有 $[u]_{ker(\sigma)}=[v]_{ker(\sigma)}\leftrightarrow\gamma([v]_{ker(\sigma)})=\gamma([u]_{ker(\sigma)})$
+即对于任意 $\{[u]_{\ker(\sigma)},[v]_{\ker(\sigma)}\}\subset\mathcal{Q}(\mathcal{V},\mathcal{V}_1)$ 有 $[u]_{\ker(\sigma)}=[v]_{\ker(\sigma)}\leftrightarrow\gamma([v]_{\ker(\sigma)})=\gamma([u]_{\ker(\sigma)})$
 
 ***** 是[[~/文档/note/离散数学/Disc_Math.org::MK200][双射]]
 
-根据[[MK24][之前证明]]对于任意 $\{[u]_{ker(\sigma)},[v]_{ker(\sigma)}\}\subset\mathcal{Q}(\mathcal{V},\mathcal{V}_1)$ 有 $[u]_{ker(\sigma)}=[v]_{ker(\sigma)}\rightarrow\gamma([v]_{ker(\sigma)})=\gamma([u]_{ker(\sigma)})$
+根据[[MK24][之前证明]]对于任意 $\{[u]_{\ker(\sigma)},[v]_{\ker(\sigma)}\}\subset\mathcal{Q}(\mathcal{V},\mathcal{V}_1)$ 有 $[u]_{\ker(\sigma)}=[v]_{\ker(\sigma)}\rightarrow\gamma([v]_{\ker(\sigma)})=\gamma([u]_{\ker(\sigma)})$
 
 即 $\gamma$ 是[[~/文档/note/离散数学/Disc_Math.org::MK194][映射]]。
 
-又由于对于任意 $\gamma([v]_{ker(\sigma)})=\gamma([u]_{ker(\sigma)})\rightarrow[u]_{ker(\sigma)}=[v]_{ker(\sigma)}$ 则显然若 $[u]_{ker(\sigma)}\ne[v]_{ker(\sigma)}$
+又由于对于任意 $\gamma([v]_{\ker(\sigma)})=\gamma([u]_{\ker(\sigma)})\rightarrow[u]_{\ker(\sigma)}=[v]_{\ker(\sigma)}$ 则显然若 $[u]_{\ker(\sigma)}\ne[v]_{\ker(\sigma)}$
 
-有 $\gamma([v]_{ker(\sigma)})\ne\gamma([u]_{ker(\sigma)})$ 即是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射]]
+有 $\gamma([v]_{\ker(\sigma)})\ne\gamma([u]_{\ker(\sigma)})$ 即是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射]]
 
-根据[[MK4][线性映射]]定义对于任意 $\sigma(a)$ 有 $a\in V$ 则有 $\gamma([a]_{ker(\sigma)})=\sigma(a)$ 由于值域为 $\left\{\sigma(a)\big|a\in V\right\}$
+根据[[MK4][线性映射]]定义对于任意 $\sigma(a)$ 有 $a\in V$ 则有 $\gamma([a]_{\ker(\sigma)})=\sigma(a)$ 由于值域为 $\left\{\sigma(a)\big|a\in V\right\}$
 
 故显然 $\gamma$ 是[[~/文档/note/离散数学/Disc_Math.org::MK196][满射]]，综上所述 $\gamma$ 是双射函数
 
 ***** 是线性映射
 
-对于任意 $\{a,b\}\subset V$ 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK96][加法]]有 $\gamma([a]_{ker(\sigma)}+[b]_{ker(\sigma)})=\gamma([a+b]_{ker(\sigma)}=\sigma(a+b)$
+对于任意 $\{a,b\}\subset V$ 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK96][加法]]有 $\gamma([a]_{\ker(\sigma)}+[b]_{\ker(\sigma)})=\gamma([a+b]_{\ker(\sigma)}=\sigma(a+b)$
 
-由于 $\sigma$ 是[[MK4][线性映射]] $\sigma(a+b)=\sigma(a)+\sigma(b)=\gamma([a]_{ker(\sigma)})+\gamma([a]_{ker(\sigma)})$
+由于 $\sigma$ 是[[MK4][线性映射]] $\sigma(a+b)=\sigma(a)+\sigma(b)=\gamma([a]_{\ker(\sigma)})+\gamma([a]_{\ker(\sigma)})$
 
-对于任意 $a\in V\land k\in K$ 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK95][数乘]]有 $\gamma(k[a]_{ker(\sigma)})=\gamma([ka]_{ker(\sigma)})=\sigma(ka)$
+对于任意 $a\in V\land k\in K$ 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK95][数乘]]有 $\gamma(k[a]_{\ker(\sigma)})=\gamma([ka]_{\ker(\sigma)})=\sigma(ka)$
 
-同理可得 $\sigma(ka)=k\sigma(a)=k\gamma([a]_{ker(\sigma)})$
+同理可得 $\sigma(ka)=k\sigma(a)=k\gamma([a]_{\ker(\sigma)})$
 
 **** 推论1<<MK27>>
 
@@ -324,9 +324,9 @@ current mark: 66
 
 ***** 证明
 
-根据[[MK26][性质2]]可得 $\sigma$ 为单射的充要条件是 $ker(\sigma)=\{\vec{0}\}$
+根据[[MK26][性质2]]可得 $\sigma$ 为单射的充要条件是 $\ker(\sigma)=\{\vec{0}\}$
 
-又根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK51][定义]]易证 $ker(\sigma)=\{\vec{0}\}$ 的充要条件为 $\dim(\mathcal{V}_1)=0$
+又根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK51][定义]]易证 $\ker(\sigma)=\{\vec{0}\}$ 的充要条件为 $\dim(\mathcal{V}_1)=0$
 
 根据[[MK27][推论1]]以及条件可得 $\dim(\mathcal{V}_1)=0$ 的充要条件为 $\dim(\mathcal{V}')=\dim(\mathcal{V})=\dim(\mathcal{V}_2)$
 
@@ -698,7 +698,7 @@ $\forall\{l,k\}\subset K$ 均有 $(lk)\sigma=(kl)\sigma$
 
 ***** 性质2
 
-[[MK59][投影]]的[[MK37][核]] $ker(\sigma)=\text{span}(S_2)$
+[[MK59][投影]]的[[MK37][核]] $\ker(\sigma)=\text{span}(S_2)$
 
 ****** 证明
 
@@ -706,15 +706,15 @@ $\forall\{l,k\}\subset K$ 均有 $(lk)\sigma=(kl)\sigma$
 
 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK89][性质3]]可得 $a$ 表述唯一，即得[[MK59][投影]] $\sigma(a)=\vec{0}$
 
-显然 $\vec{0}\in\text{span}(S_1)$ 是 $\mathcal{V}_1=<\text{span}(S_1),K,+,\cdot>$ 的加法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]，即 $a\in ker(\sigma)$
+显然 $\vec{0}\in\text{span}(S_1)$ 是 $\mathcal{V}_1=<\text{span}(S_1),K,+,\cdot>$ 的加法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]，即 $a\in \ker(\sigma)$
 
-即有 $\text{span}(S_2)\subset ker(\sigma)$
+即有 $\text{span}(S_2)\subset \ker(\sigma)$
 
-对于任意 $a\in ker(\sigma)$ 有 $a\in V\land\sigma(a)=\vec{0}$ 则有 $a=a_1+a_2$ 根据[[MK59][投影]]定义可得 $a_1=0$
+对于任意 $a\in \ker(\sigma)$ 有 $a\in V\land\sigma(a)=\vec{0}$ 则有 $a=a_1+a_2$ 根据[[MK59][投影]]定义可得 $a_1=0$
 
-即 $a=a_2$ 且 $a_2\in\text{span}(S_2)$ 即有 $ker(\sigma)\subset\text{span}(S_2)$
+即 $a=a_2$ 且 $a_2\in\text{span}(S_2)$ 即有 $\ker(\sigma)\subset\text{span}(S_2)$
 
-综上所述，根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $ker(\sigma)=\text{span}(S_2)$
+综上所述，根据[[~/文档/note/离散数学/Disc_Math.org::MK21][自反性]]可得 $\ker(\sigma)=\text{span}(S_2)$
 
 *** 幂等变换<<MK21>>
 
@@ -728,25 +728,25 @@ $\forall\{l,k\}\subset K$ 均有 $(lk)\sigma=(kl)\sigma$
 
 设 $\mathcal{V}=<V,K,+,\cdot>,\mathcal{V}'=<V',K,\bar{+},\bar{\cdot}>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，[[MK4][线性映射]] $\sigma:V\to V'$ 
 
-定义 $ker(\sigma)=\left\{a\in V\big|\sigma(a)=\vec{0}'\right\}$ 为线性映射 $\sigma$ 的核，其中 $\vec{0}'$ 是 $\mathcal{V}'$ 的加法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]
+定义 $\ker(\sigma)=\left\{a\in V\big|\sigma(a)=\vec{0}'\right\}$ 为线性映射 $\sigma$ 的核，其中 $\vec{0}'$ 是 $\mathcal{V}'$ 的加法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]
 
 ** 核空间<<MK22>>
 
-$\mathcal{V}_k=<ker(\sigma),K,+,\cdot>$ 是 $\mathcal{V}$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK44][子空间]]
+$\mathcal{V}_k=<\ker(\sigma),K,+,\cdot>$ 是 $\mathcal{V}$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK44][子空间]]
 
 *** 证明
 
-根据[[MK2][保持零元]]有 $\sigma(\vec{0})=\vec{0}'$ 即 $\vec{0}\in ker(\sigma)$ 故非空
+根据[[MK2][保持零元]]有 $\sigma(\vec{0})=\vec{0}'$ 即 $\vec{0}\in \ker(\sigma)$ 故非空
 
-对于任意 $\{a,b\}\subset ker(\sigma)$ 满足 $\sigma(a)=\vec{0}'\land\sigma(b)=\vec{0}'$ 则根据[[MK4][保持加法]]有 $\sigma(a+b)=\sigma(a)+\sigma(b)=\vec{0}'$
+对于任意 $\{a,b\}\subset \ker(\sigma)$ 满足 $\sigma(a)=\vec{0}'\land\sigma(b)=\vec{0}'$ 则根据[[MK4][保持加法]]有 $\sigma(a+b)=\sigma(a)+\sigma(b)=\vec{0}'$
 
-则 $a+b\in ker(\sigma)$ 即加法封闭，同理易证 $ka\in ker(\sigma),k\in K$ 即数乘封闭
+则 $a+b\in \ker(\sigma)$ 即加法封闭，同理易证 $ka\in \ker(\sigma),k\in K$ 即数乘封闭
 
-根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK60][子空间充要条件]]可得 $<ker(\sigma),K,+,\cdot>$ 是 $\mathcal{V}$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK44][子空间]]
+根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK60][子空间充要条件]]可得 $<\ker(\sigma),K,+,\cdot>$ 是 $\mathcal{V}$ 的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK44][子空间]]
 
 ** 性质2<<MK26>>
 
-$\sigma$ 是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射]]的充要条件为 $ker(\sigma)=\{\vec{0}\}$ 其中 $\vec{0}$ 是 $\mathcal{V}$ 的加法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]
+$\sigma$ 是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射]]的充要条件为 $\ker(\sigma)=\{\vec{0}\}$ 其中 $\vec{0}$ 是 $\mathcal{V}$ 的加法[[~/文档/note/离散数学/Disc_Math.org::MK311][幺元]]
 
 *** 证明
 
@@ -754,13 +754,13 @@ $\sigma$ 是[[~/文档/note/离散数学/Disc_Math.org::MK195][单射]]的充要
 
 根据[[MK2][保持零元]]有 $\sigma(\vec{0})=\vec{0}'$ ，又由于 $\sigma$ 是单射故得 $\forall a\ne\vec{0}\land a\in V\rightarrow \sigma(a)\ne\vec{0}'$
 
-即得 $ker(\sigma)=\{\vec{0}\}$
+即得 $\ker(\sigma)=\{\vec{0}\}$
 
 **** 必要
 
 假设存在 $\{a,b\}\subset V\land a\ne b$ 满足 $\sigma(a)=\sigma(b)$ 则根据[[MK4][线性映射]]有 $\sigma(a-b)=\sigma(a)-\sigma(b)=\vec{0}'$
 
-即有 $a-b\in ker(\sigma)$ 由于 $ker(\sigma)=\{\vec{0}\}$ 故有 $a-b=\vec{0}$ 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]中负元，加法幺元
+即有 $a-b\in \ker(\sigma)$ 由于 $\ker(\sigma)=\{\vec{0}\}$ 故有 $a-b=\vec{0}$ 根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]中负元，加法幺元
 
 可得 $a-b+b=\vec{0}+b\rightarrow a+\vec{0}=b\rightarrow a=b$ 与条件冲突
 
@@ -1638,13 +1638,13 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 设 $\mathcal{V}=<V,K,+,\cdot>$ 是[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]] $K$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]] $\sigma$ 是 $\mathcal{V}$ 上的[[MK4][线性变换]]
 
-[[MK22][核空间]] $\mathcal{V}_k=<ker(\sigma),K,+,\cdot>$ 是 $\sigma$ 下的[[MK57][不变子空间]]
+[[MK22][核空间]] $\mathcal{V}_k=<\ker(\sigma),K,+,\cdot>$ 是 $\sigma$ 下的[[MK57][不变子空间]]
 
 **** 证明
 
-根据[[MK2][零元映射]]可得 $\sigma(\vec{0})=\vec{0}$ 即说明 $\vec{0}\in ker(\sigma)$
+根据[[MK2][零元映射]]可得 $\sigma(\vec{0})=\vec{0}$ 即说明 $\vec{0}\in \ker(\sigma)$
 
-又根据[[MK37][定义]]可得故对于任意 $a\in ker(\sigma)$ 均有 $\sigma(a)=\vec{0}\in ker(\sigma)$
+又根据[[MK37][定义]]可得故对于任意 $a\in \ker(\sigma)$ 均有 $\sigma(a)=\vec{0}\in \ker(\sigma)$
 
 *** 性质4
 
@@ -1664,7 +1664,7 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 若对于任意 $a\in V$ 均有 $\sigma_1(\sigma_2(a))=\sigma_2(\sigma_1(a))$
 
-则 $\sigma_2$ 的[[MK22][核空间]] $\mathcal{V}_{k_2}=<ker(\sigma_2),K,+,\cdot>$ ，[[MK23][相空间]] $\mathcal{V}_{Im,\sigma_2}=<V_{Im,\sigma_2},K,+,\cdot>$ 
+则 $\sigma_2$ 的[[MK22][核空间]] $\mathcal{V}_{k_2}=<\ker(\sigma_2),K,+,\cdot>$ ，[[MK23][相空间]] $\mathcal{V}_{Im,\sigma_2}=<V_{Im,\sigma_2},K,+,\cdot>$ 
 
 以及[[MK49][特征子空间]] $\mathcal{V}_{\lambda,2}=<V_{\lambda,2},K,+,\cdot>$ 均是 $\sigma_1$ 下的[[MK57][不变子空间]]
 
@@ -1672,9 +1672,9 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 ***** 核空间
 
-对于任意 $a\in ker(\sigma_2)$ 有 $\sigma_2(a)=\vec{0}$ 根据[[MK2][零元映射]]可得 $\vec{0}=\sigma_1(\vec{0})=\sigma_1(\sigma_2(a))=\sigma_2(\sigma_1(a))$
+对于任意 $a\in \ker(\sigma_2)$ 有 $\sigma_2(a)=\vec{0}$ 根据[[MK2][零元映射]]可得 $\vec{0}=\sigma_1(\vec{0})=\sigma_1(\sigma_2(a))=\sigma_2(\sigma_1(a))$
 
-综上所述，对于任意 $a\in ker(\sigma_2)$ 均有 $\sigma_2(\sigma_1(a))=\vec{0}\rightarrow\sigma_1(a)\in ker(\sigma_2)$
+综上所述，对于任意 $a\in \ker(\sigma_2)$ 均有 $\sigma_2(\sigma_1(a))=\vec{0}\rightarrow\sigma_1(a)\in \ker(\sigma_2)$
 
 ***** 相空间
 
@@ -1826,17 +1826,29 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 （2） 不存在 $\{f_4(x),f_5(x),f_6(x)\}\subset M_1[x]$ 满足 $f_1(x)=f_4(x)\cdot f_5(x)$ 且 $f_2(x)=f_4(x)\cdot f_5(x)$ 且 $f_4(x)\ne I{|M_1}[x](c_1)$ 
 
-则有 $ker(f(\sigma))=ker(f_1(\sigma))\bar{+}ker(f_2(\sigma))$ 其中
+则有：
+
+（1） $\ker(f(\sigma))=\ker(f_1(\sigma))\bar{+}\ker(f_2(\sigma))$
+
+（2） [[MK22][核空间]] $\mathcal{V}_{f(\sigma)}=\left<\ker(f(\sigma)),K,\hat{ +},\hat{\cdot})\right>,\mathcal{V}_{f_1(\sigma)}=\left<\ker(f_1(\sigma)),K,\hat{ +},\hat{\cdot})\right>,\mathcal{V}_{f_2(\sigma)}=\left<\ker(f_2(\sigma)),K,\hat{ +},\hat{\cdot})\right>$
+
+     有 $\mathcal{V}_{f(\sigma)}=\mathcal{V}_{f_1(\sigma)}\oplus\mathcal{V}_{f_2(\sigma)}$
+
+其中
 
 （1） $\cdot$ 为 $I_{|M_1}[x](f_\times)$ ， $+$ 为 $I_{|M_1}[x](f_+)$
 
-（2） $ker(\delta),\delta\in\text{Hom}(\mathcal{V},\mathcal{V})$ 是 $\delta$ 的[[MK37][核]]
+（2） $\ker(\delta),\delta\in\text{Hom}(\mathcal{V},\mathcal{V})$ 是 $\delta$ 的[[MK37][核]]
 
 （3） $\bar{+}$ 为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK86][子空间加法]]
 
 （4） $f(\sigma)$ 为 $f(x)$ 对 $\sigma$ 的[[~/文档/note/抽象代数/cxds.org::MK441][带入值]]
 
+（5） $\oplus$ 为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK83][直和]]
+
 **** 证明
+
+***** 证明（1）
 
 根据[[MK66][定理4]]可得[[MK65][一元结构]] $\mathcal{M}_\sigma=\left<M_\sigma,I\right>$ 是[[~/文档/note/抽象代数/cxds.org::MK362][非零幺元]]且 $\mathcal{M}_\sigma\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
 
@@ -1844,25 +1856,25 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 由于 $f(x)=f_1(x)\cdot f_2(x)$ 则根据[[~/文档/note/抽象代数/cxds.org::MK442][性质1]]可得 $f(\sigma)=I(f_\times)(f_1(\sigma), f_2(\sigma))$ 
 
-***** $ker(f_1(\sigma))\bar{+}ker(f_2(\sigma))\subset ker(f(\sigma))$
+****** $\ker(f_1(\sigma))\bar{+}\ker(f_2(\sigma))\subset \ker(f(\sigma))$
 
-对于任意 $a\in ker(f_1(\sigma))$ 可得 $f_1(\sigma)(a)=0\in V$ ，根据[[MK17][定义]]、[[MK2][零元映射]]有 $I(f_\times)(f_2(\sigma),f_1(\sigma))(a)=f_2(\sigma)(f_1(\sigma)(a))=f_2(\sigma)(0)=0$
+对于任意 $a\in \ker(f_1(\sigma))$ 可得 $f_1(\sigma)(a)=0\in V$ ，根据[[MK17][定义]]、[[MK2][零元映射]]有 $I(f_\times)(f_2(\sigma),f_1(\sigma))(a)=f_2(\sigma)(f_1(\sigma)(a))=f_2(\sigma)(0)=0$
 
 又根据 $\mathcal{M}_\sigma\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 可得 $I(f_\times)(f_2(\sigma),f_1(\sigma))=I(f_\times)(f_1(\sigma),f_2(\sigma))=f(\sigma)$
 
-故根据[[MK9][相等]]可得对于任意 $a\in ker(f_1(\sigma))$ 有 $f(\sigma)=0$ 即 $a\in ker(f(\sigma))$ 。同理可证对于任意 $a\in ker(f_2(\sigma))$ 有 $a\in ker(f(\sigma))$
+故根据[[MK9][相等]]可得对于任意 $a\in \ker(f_1(\sigma))$ 有 $f(\sigma)=0$ 即 $a\in \ker(f(\sigma))$ 。同理可证对于任意 $a\in \ker(f_2(\sigma))$ 有 $a\in \ker(f(\sigma))$
 
-对于任意 $a\in ker(f_1(\sigma))\bar{ +}ker(f_2(\sigma))$ 有 $a_1\in ker(f_1(\sigma)),a_2\in ker(f_2(\sigma))$ 满足 $a=a_1\hat{ +}a_2$ 根据上述证明有 $\{a_1,a_2\}\in ker(f(\sigma))$
+对于任意 $a\in \ker(f_1(\sigma))\bar{ +}\ker(f_2(\sigma))$ 有 $a_1\in \ker(f_1(\sigma)),a_2\in \ker(f_2(\sigma))$ 满足 $a=a_1\hat{ +}a_2$ 根据上述证明有 $\{a_1,a_2\}\in \ker(f(\sigma))$
 
-由于 $ker(f(\sigma))$ 对于 $\hat{+}$ 封闭，故可得 $a=a_1\hat{ +}a_2\in ker(f(\sigma))$
+由于 $\ker(f(\sigma))$ 对于 $\hat{+}$ 封闭，故可得 $a=a_1\hat{ +}a_2\in \ker(f(\sigma))$
 
-***** $ker(f(\sigma))\subset ker(f_1(\sigma))\bar{+}ker(f_2(\sigma))$ 
+****** $\ker(f(\sigma))\subset \ker(f_1(\sigma))\bar{+}\ker(f_2(\sigma))$ <<MK67>>
 
 根据条件（2）以及[[~/文档/note/抽象代数/cxds.org::MK384][性质8]]可得存在 $\{u(x),v(x)\}\subset M_1[x]$ 满足 $\sigma_1=I_{|M_1}[x](c_1)=u(x)\cdot f_1(x)+v(x)\cdot f_2(x)$
 
 根据[[~/文档/note/抽象代数/cxds.org::MK442][性质1]]易证 $\sigma_1=I_{|M_1}[x](c_1)=I(f_+)(I(f_\times)(u(\sigma), f_1(\sigma)),I(f_\times)(v(\sigma), f_2(\sigma)))$ 。
 
-则对于任意 $a\in ker(f(\sigma))$ 根据[[MK9][相等]]以及[[MK5][加法]]可得 $a=\sigma_1(a)=I(f_\times)(u(\sigma), f_1(\sigma))(a)\hat{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)$
+则对于任意 $a\in \ker(f(\sigma))$ 根据[[MK9][相等]]以及[[MK5][加法]]可得 $a=\sigma_1(a)=I(f_\times)(u(\sigma), f_1(\sigma))(a)\hat{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)$
 
 根据 $\mathcal{M}_\sigma$ 是[[~/文档/note/抽象代数/cxds.org::MK362][非零幺元]]且 $\mathcal{M}_\sigma\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 可得 $I(f_\times)(f_2(\sigma),I(f_\times)(u(\sigma), f_1(\sigma)))=I(f_\times)(u(\sigma),I(f_\times)(f_1(\sigma), f_2(\sigma)))$
 
@@ -1872,11 +1884,22 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 根据[[MK9][相等]]、[[MK2][零元映射]]可得 $f_2(\sigma)(I(f_\times)(u(\sigma), f_1(\sigma))(a))=I(f_\times)(u(\sigma),f(\sigma))(a)=u(\sigma)(f(\sigma)(a))=u(\sigma)(0)=0$
 
-即 $I(f_\times)(u(\sigma), f_1(\sigma))(a)\in ker(f_2(\sigma))$ 同理可证 $I(f_\times)(v(\sigma), f_2(\sigma))(a)\in ker(f_1(\sigma))$
+即 $I(f_\times)(u(\sigma), f_1(\sigma))(a)\in \ker(f_2(\sigma))$ 同理可证 $I(f_\times)(v(\sigma), f_2(\sigma))(a)\in \ker(f_1(\sigma))$
 
-综上所述，对于任意 $a\in ker(f(\sigma))$ 有 $I(f_\times)(u(\sigma), f_1(\sigma))(a)\in ker(f_2(\sigma)),I(f_\times)(v(\sigma), f_2(\sigma))(a)\in ker(f_1(\sigma))$
+综上所述，对于任意 $a\in \ker(f(\sigma))$ 有 $I(f_\times)(u(\sigma), f_1(\sigma))(a)\in \ker(f_2(\sigma)),I(f_\times)(v(\sigma), f_2(\sigma))(a)\in \ker(f_1(\sigma))$
 
-满足 $I(f_\times)(u(\sigma), f_1(\sigma))(a)\hat{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)=a$ 即 $a\in ker(f_1(\sigma))\bar{ +}ker(f_2(\sigma))$
+满足 $I(f_\times)(u(\sigma), f_1(\sigma))(a)\hat{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)=a$ 即 $a\in \ker(f_1(\sigma))\bar{ +}\ker(f_2(\sigma))$
 
-故有 $ker(f(\sigma))\subset ker(f_1(\sigma))\bar{+}ker(f_2(\sigma))$ 
+故有 $\ker(f(\sigma))\subset \ker(f_1(\sigma))\bar{+}\ker(f_2(\sigma))$ 
 
+***** 证明（2）
+
+对于任意 $a\in\ker(f_1(\sigma)\cap f_2(\sigma))$ 根据[[MK67][之前证明]]可得 $\sigma_1=I(f_+)(I(f_\times)(u(\sigma), f_1(\sigma)),I(f_\times)(v(\sigma), f_2(\sigma)))$ 其中 $\sigma_1$ 为恒等变换
+
+则根据[[MK9][相等]]以及[[MK5][加法]]有 $a=\sigma_1(a)=I(f_\times)(u(\sigma), f_1(\sigma))(a)\hat{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)$
+
+根据[[MK9][相等]]、[[MK17][乘法]]可得 $a=\sigma_1(a)=u(\sigma)(f_1(\sigma)(a))\hat{+}v(\sigma)(f_2(\sigma)(a))$ 由于 $a\in\ker(f_1(\sigma)\cap f_2(\sigma))$
+
+故根据[[MK22][零元映射]]有 $a=\sigma_1(a)=u(\sigma)(0)\hat{+}v(\sigma)(0)=0\hat{ +}0=0$ 即 $\ker(f_1(\sigma)\cap f_2(\sigma))=\{0\}$
+
+则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK69][性质1]]可得 $\mathcal{V}_{f_1(\sigma)}\bar{+}\mathcal{V}_{f_2(\sigma)}$ 为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK83][直和]]，结合结论（1）有 $\mathcal{V}_{f(\sigma)}=\mathcal{V}_{f_1(\sigma)}\oplus\mathcal{V}_{f_2(\sigma)}$

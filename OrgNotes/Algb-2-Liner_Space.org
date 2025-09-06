@@ -552,7 +552,7 @@ $\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]，其有限次幂空间 $\
 
 若满足对于任意 $a\in V_1+V_2$ 可表述为唯一的 $\vec{a}=\vec{b}+\vec{c}$ 其中 $\vec{b}\in V_1,\vec{c}\in V_2$
 
-则称 $\mathcal{V}_1+\mathcal{V}_2$ 为直和，记为 $\mathcal{V}_1\textcircled{+}\mahtcal{V}_2$
+则称 $\mathcal{V}_1+\mathcal{V}_2$ 为直和，记为 $\mathcal{V}_1\oplus\mahtcal{V}_2$
 
 **** 性质1<<MK69>>
 
@@ -588,9 +588,9 @@ $\mathcal{V}=<V,K,+,\times>$ 是[[MK1][线性空间]]，其有限次幂空间 $\
 
 若存在两种表述方式，则有 $\vec{a}=\vec{b}_1+\vec{b}_2=\vec{c}_1+\vec{c}_2$ 其中 $\{\vec{b}_1,\vec{c}_1\}\subset V_1,\{\vec{b}_2,\vec{c}_2\}\subset V_2$
 
-移项得 $\vec{b}_1-\vec{c}_1=\vec{c}_2-\vec{b}_2$ 显然 $\vec{b}_1-\vec{c}_1\in V_1,\vec{c}_2-\vec{b}_2\in V_2$ 且 $V_1\cap V_2=\{\vec{0}\}$
+移项得 $\vec{v}=\vec{b}_1-\vec{c}_1=\vec{c}_2-\vec{b}_2$ 显然 $\vec{b}_1-\vec{c}_1\in V_1,\vec{c}_2-\vec{b}_2\in V_2$ 即有 $\vec{v}\in V_1\cap V_2$
 
-故得 $\vec{b}_1-\vec{c}_1=\vec{c}_2-\vec{b}_2=\vec{0}$ 故有 $\vec{b}_1=\vec{c}_1,\vec{c}_2=\vec{b}_2$ 即表述唯一
+根据 $V_1\cap V_2=\{\vec{0}\}$ 即有 $\vec{0}=\vec{v}=\vec{b}_1-\vec{c}_1=\vec{c}_2-\vec{b}_2$ 故有 $\vec{b}_1=\vec{c}_1,\vec{c}_2=\vec{b}_2$ 即表述唯一
 
 ****** （2）与（4）充要条件
 
