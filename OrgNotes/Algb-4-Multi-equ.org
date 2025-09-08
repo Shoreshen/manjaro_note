@@ -480,9 +480,7 @@ $f(x)-g(x)=0(x)\rightarrow f(x)=g(x)$
 
 则 $kf(x)=k\sum_{i=1}^na_ix^i=\sum_{i=1}^nka_ix^i$
 
-*** 整除
-
-**** 定义<<MK19>>
+*** 整除<<MK19>>
 
 对于 $\{f(x),g(x)\}\subset K[x]$ 若存在 $h(x)\in K[x]$ 满足 $f(x)=h(x)g(x)$ 则称 $g(x)$ 可以整除 $f(x)$ 记作 $g(x)\mid f(x)$
 

@@ -4,7 +4,7 @@
 
 current video: P102
 
-current mark: 67
+current mark: 68
 
 * 线性映射<<MK4>>
 
@@ -1814,9 +1814,9 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 则为[[~/文档/note/高等代数/Algb-3-Matrix.org::MK72][分块对角矩阵]]根据[[~/文档/note/高等代数/Algb-3-Matrix.org::MK5][矩阵乘法]]易证 $\sigma(B)=B[a_{ij}]^N_{n\times n}$ ，即 $\sigma(B)=BA$
 
-*** 定理2
+*** 定理2<<MK68>>
 
-设 $\mathcal{V}=\left<V,K,\hat{+},\hat{\cdot}\right>$ 是[[~/文档/note/抽象代数/cxds.org::MK338][域]] $\mathcal{K}=\left<K,\mathfrak{g}\right>$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，对于任意 $\sigma\in\text{Hom}(\mathcal{V},\mathcal{V})$ [[MK4][线性变换]]
+设 $\mathcal{V}=\left<V,K,\pmb{+},\pmb{\cdot}\right>$ 是[[~/文档/note/抽象代数/cxds.org::MK338][域]] $\mathcal{K}=\left<K,\mathfrak{g}\right>$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，对于任意 $\sigma\in\text{Hom}(\mathcal{V},\mathcal{V})$ [[MK4][线性变换]]
 
 根据[[MK66][定理4]]可得其[[MK65][单位结构]] $\mathcal{M}_1=\left<M_1,I_{|M_1}\right>$ 是[[~/文档/note/抽象代数/cxds.org::MK338][域]]，定义 $\mathcal{M}_{1}[x]=\left<M_1[x],I_{|M_1}[x]\right>$ 为 $\mathcal{M}_1$ 上的[[~/文档/note/抽象代数/cxds.org::MK374][一元多项式环]]
 
@@ -1828,9 +1828,9 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 则有：
 
-（1） $\ker(f(\sigma))=\ker(f_1(\sigma))\bar{+}\ker(f_2(\sigma))$
+（1） $\ker(f(\sigma))=\ker(f_1(\sigma))\dotplus\ker(f_2(\sigma))$
 
-（2） [[MK22][核空间]] $\mathcal{V}_{f(\sigma)}=\left<\ker(f(\sigma)),K,\hat{ +},\hat{\cdot})\right>,\mathcal{V}_{f_1(\sigma)}=\left<\ker(f_1(\sigma)),K,\hat{ +},\hat{\cdot})\right>,\mathcal{V}_{f_2(\sigma)}=\left<\ker(f_2(\sigma)),K,\hat{ +},\hat{\cdot})\right>$
+（2） [[MK22][核空间]] $\mathcal{V}_{f(\sigma)}=\left<\ker(f(\sigma)),K,\pmb{+},\pmb{\cdot})\right>,\mathcal{V}_{f_1(\sigma)}=\left<\ker(f_1(\sigma)),K,\pmb{+},\pmb{\cdot})\right>,\mathcal{V}_{f_2(\sigma)}=\left<\ker(f_2(\sigma)),K,\pmb{+},\pmb{\cdot})\right>$
 
      有 $\mathcal{V}_{f(\sigma)}=\mathcal{V}_{f_1(\sigma)}\oplus\mathcal{V}_{f_2(\sigma)}$
 
@@ -1840,7 +1840,7 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 （2） $\ker(\delta),\delta\in\text{Hom}(\mathcal{V},\mathcal{V})$ 是 $\delta$ 的[[MK37][核]]
 
-（3） $\bar{+}$ 为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK86][子空间加法]]
+（3） $\dotplus$ 为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK86][子空间加法]]
 
 （4） $f(\sigma)$ 为 $f(x)$ 对 $\sigma$ 的[[~/文档/note/抽象代数/cxds.org::MK441][带入值]]
 
@@ -1856,7 +1856,7 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 由于 $f(x)=f_1(x)\cdot f_2(x)$ 则根据[[~/文档/note/抽象代数/cxds.org::MK442][性质1]]可得 $f(\sigma)=I(f_\times)(f_1(\sigma), f_2(\sigma))$ 
 
-****** $\ker(f_1(\sigma))\bar{+}\ker(f_2(\sigma))\subset \ker(f(\sigma))$
+****** $\ker(f_1(\sigma))\dotplus\ker(f_2(\sigma))\subset \ker(f(\sigma))$
 
 对于任意 $a\in \ker(f_1(\sigma))$ 可得 $f_1(\sigma)(a)=0\in V$ ，根据[[MK17][定义]]、[[MK2][零元映射]]有 $I(f_\times)(f_2(\sigma),f_1(\sigma))(a)=f_2(\sigma)(f_1(\sigma)(a))=f_2(\sigma)(0)=0$
 
@@ -1864,17 +1864,17 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 故根据[[MK9][相等]]可得对于任意 $a\in \ker(f_1(\sigma))$ 有 $f(\sigma)=0$ 即 $a\in \ker(f(\sigma))$ 。同理可证对于任意 $a\in \ker(f_2(\sigma))$ 有 $a\in \ker(f(\sigma))$
 
-对于任意 $a\in \ker(f_1(\sigma))\bar{ +}\ker(f_2(\sigma))$ 有 $a_1\in \ker(f_1(\sigma)),a_2\in \ker(f_2(\sigma))$ 满足 $a=a_1\hat{ +}a_2$ 根据上述证明有 $\{a_1,a_2\}\in \ker(f(\sigma))$
+对于任意 $a\in \ker(f_1(\sigma))\dotplus\ker(f_2(\sigma))$ 有 $a_1\in \ker(f_1(\sigma)),a_2\in \ker(f_2(\sigma))$ 满足 $a=a_1\pmb{+}a_2$ 根据上述证明有 $\{a_1,a_2\}\in \ker(f(\sigma))$
 
-由于 $\ker(f(\sigma))$ 对于 $\hat{+}$ 封闭，故可得 $a=a_1\hat{ +}a_2\in \ker(f(\sigma))$
+由于 $\ker(f(\sigma))$ 对于 $\pmb{+}$ 封闭，故可得 $a=a_1\pmb{ +}a_2\in \ker(f(\sigma))$
 
-****** $\ker(f(\sigma))\subset \ker(f_1(\sigma))\bar{+}\ker(f_2(\sigma))$ <<MK67>>
+****** $\ker(f(\sigma))\subset \ker(f_1(\sigma))\dotplus\ker(f_2(\sigma))$ <<MK67>>
 
 根据条件（2）以及[[~/文档/note/抽象代数/cxds.org::MK384][性质8]]可得存在 $\{u(x),v(x)\}\subset M_1[x]$ 满足 $\sigma_1=I_{|M_1}[x](c_1)=u(x)\cdot f_1(x)+v(x)\cdot f_2(x)$
 
 根据[[~/文档/note/抽象代数/cxds.org::MK442][性质1]]易证 $\sigma_1=I_{|M_1}[x](c_1)=I(f_+)(I(f_\times)(u(\sigma), f_1(\sigma)),I(f_\times)(v(\sigma), f_2(\sigma)))$ 。
 
-则对于任意 $a\in \ker(f(\sigma))$ 根据[[MK9][相等]]以及[[MK5][加法]]可得 $a=\sigma_1(a)=I(f_\times)(u(\sigma), f_1(\sigma))(a)\hat{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)$
+则对于任意 $a\in \ker(f(\sigma))$ 根据[[MK9][相等]]以及[[MK5][加法]]可得 $a=\sigma_1(a)=I(f_\times)(u(\sigma), f_1(\sigma))(a)\pmb{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)$
 
 根据 $\mathcal{M}_\sigma$ 是[[~/文档/note/抽象代数/cxds.org::MK362][非零幺元]]且 $\mathcal{M}_\sigma\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 可得 $I(f_\times)(f_2(\sigma),I(f_\times)(u(\sigma), f_1(\sigma)))=I(f_\times)(u(\sigma),I(f_\times)(f_1(\sigma), f_2(\sigma)))$
 
@@ -1888,18 +1888,49 @@ z&=\sum_{i=1}^nk_i\sigma(a_i)=\left[\begin{matrix}b_1&b_2&...&b_m\end{matrix}\ri
 
 综上所述，对于任意 $a\in \ker(f(\sigma))$ 有 $I(f_\times)(u(\sigma), f_1(\sigma))(a)\in \ker(f_2(\sigma)),I(f_\times)(v(\sigma), f_2(\sigma))(a)\in \ker(f_1(\sigma))$
 
-满足 $I(f_\times)(u(\sigma), f_1(\sigma))(a)\hat{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)=a$ 即 $a\in \ker(f_1(\sigma))\bar{ +}\ker(f_2(\sigma))$
+满足 $I(f_\times)(u(\sigma), f_1(\sigma))(a)\pmb{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)=a$ 即 $a\in \ker(f_1(\sigma))\dotplus\ker(f_2(\sigma))$
 
-故有 $\ker(f(\sigma))\subset \ker(f_1(\sigma))\bar{+}\ker(f_2(\sigma))$ 
+故有 $\ker(f(\sigma))\subset \ker(f_1(\sigma))\dotplus\ker(f_2(\sigma))$ 
 
 ***** 证明（2）
 
 对于任意 $a\in\ker(f_1(\sigma)\cap f_2(\sigma))$ 根据[[MK67][之前证明]]可得 $\sigma_1=I(f_+)(I(f_\times)(u(\sigma), f_1(\sigma)),I(f_\times)(v(\sigma), f_2(\sigma)))$ 其中 $\sigma_1$ 为恒等变换
 
-则根据[[MK9][相等]]以及[[MK5][加法]]有 $a=\sigma_1(a)=I(f_\times)(u(\sigma), f_1(\sigma))(a)\hat{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)$
+则根据[[MK9][相等]]以及[[MK5][加法]]有 $a=\sigma_1(a)=I(f_\times)(u(\sigma), f_1(\sigma))(a)\pmb{+}I(f_\times)(v(\sigma), f_2(\sigma))(a)$
 
-根据[[MK9][相等]]、[[MK17][乘法]]可得 $a=\sigma_1(a)=u(\sigma)(f_1(\sigma)(a))\hat{+}v(\sigma)(f_2(\sigma)(a))$ 由于 $a\in\ker(f_1(\sigma)\cap f_2(\sigma))$
+根据[[MK9][相等]]、[[MK17][乘法]]可得 $a=\sigma_1(a)=u(\sigma)(f_1(\sigma)(a))\pmb{+}v(\sigma)(f_2(\sigma)(a))$ 由于 $a\in\ker(f_1(\sigma)\cap f_2(\sigma))$
 
-故根据[[MK22][零元映射]]有 $a=\sigma_1(a)=u(\sigma)(0)\hat{+}v(\sigma)(0)=0\hat{ +}0=0$ 即 $\ker(f_1(\sigma)\cap f_2(\sigma))=\{0\}$
+故根据[[MK22][零元映射]]有 $a=\sigma_1(a)=u(\sigma)(0)\pmb{+}v(\sigma)(0)=0\pmb{+}0=0$ 即 $\ker(f_1(\sigma)\cap f_2(\sigma))=\{0\}$
 
-则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK69][性质1]]可得 $\mathcal{V}_{f_1(\sigma)}\bar{+}\mathcal{V}_{f_2(\sigma)}$ 为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK83][直和]]，结合结论（1）有 $\mathcal{V}_{f(\sigma)}=\mathcal{V}_{f_1(\sigma)}\oplus\mathcal{V}_{f_2(\sigma)}$
+则根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK69][性质1]]可得 $\mathcal{V}_{f_1(\sigma)}\dotplus\mathcal{V}_{f_2(\sigma)}$ 为[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK83][直和]]，结合结论（1）有 $\mathcal{V}_{f(\sigma)}=\mathcal{V}_{f_1(\sigma)}\oplus\mathcal{V}_{f_2(\sigma)}$
+
+**** 推论
+
+设 $\mathcal{V}=\left<V,K,\pmb{+},\pmb{\cdot}\right>$ 是[[~/文档/note/抽象代数/cxds.org::MK338][域]] $\mathcal{K}=\left<K,\mathfrak{g}\right>$ 上的[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK1][线性空间]]，对于任意 $\sigma\in\text{Hom}(\mathcal{V},\mathcal{V})$ [[MK4][线性变换]]
+
+根据[[MK66][定理4]]可得其[[MK65][单位结构]] $\mathcal{M}_1=\left<M_1,I_{|M_1}\right>$ 是[[~/文档/note/抽象代数/cxds.org::MK338][域]]，定义 $\mathcal{M}_{1}[x]=\left<M_1[x],I_{|M_1}[x]\right>$ 为 $\mathcal{M}_1$ 上的[[~/文档/note/抽象代数/cxds.org::MK374][一元多项式环]]
+
+对于任意 $\{f(x),f_1(x),...,f_n(x)\}\subset M_1[x]$ 若满足：
+
+（1） $f(x)=f_1(x)\cdot...\cdot f_n(x)$
+
+（2） 任意 $f_i(x),f_j(x),i\ne j$ 不存在 $\{g(x),g_1(x),g_2(x)\}\subset M_1[x]$ 满足 $f_i(x)=g(x)\cdot g_1(x)$ 且 $f_j(x)=g(x)\cdot g_2(x)$ 且 $g(x)\ne I{|M_1}[x](c_1)$ 
+
+则定义[[MK22][核空间]] $\mathcal{V}_{f(\sigma)}=\left<\ker(f(\sigma)),K,\pmb{+},\pmb{\cdot})\right>,\mathcal{V}_{f_i(\sigma)}=\left<\ker(f_i(\sigma)),K,\pmb{+},\pmb{\cdot})\right>$
+
+故有 $\mathcal{V}_{f(\sigma)}=\mathcal{V}_{f_1(\sigma)}\oplus...\oplus\mathcal{V}_{f_2(\sigma)}$
+
+***** 证明
+
+对于 $f_1(x)$ 假设存在 $\{g(x),g_1(x),g_2(x)\}\subset M_1[x]$ 满足 $f_1(x)=g(x)\cdot g_1(x)$ 且 $f_2(x)\cdot...\cdot f_n(x)=g(x)\cdot g_2(x)$ 且 $\deg(g(x))>0$
+
+则根据[[~/文档/note/抽象代数/cxds.org::MK522][唯一因式分解]]易证存在[[~/文档/note/抽象代数/cxds.org::MK377][首一不可约]] $g'(x)$ 满足 $g(x)=g'(x)\cdot h(x)$ 则有 $f_1(x)=g'(x)\cdot g_1'(x)$ 且 $f_2(x)\cdot...\cdot f_n(x)=g'(x)\cdot g_2'(x)$
+
+又根据[[~/文档/note/抽象代数/cxds.org::MK521][性质1]]以及数学归纳法可得存在 $2\leq u\leq n$ 满足存在 $h'(x)\in M[x]$ 使得 $f_u(x)=h'(x)g'(x)$
+
+由于 $g'(x)$ [[~/文档/note/抽象代数/cxds.org::MK377][首一不可约]]故 $\deg(g'(x))>0$ 与条件（2）矛盾。故假设不成立
+
+即不存在 $\{g(x),g_1(x),g_2(x)\}\subset M_1[x]$ 满足 $f_1(x)=g(x)\cdot g_1(x)$ 且 $f_2(x)\cdot...\cdot f_n(x)=g(x)\cdot g_2(x)$ 且 $\deg(g(x))>0$
+
+则根据[[MK68][定理2]]以此类推可得 $\mathcal{V}_{f(\sigma)}=\mathcal{V}_{f_1(\sigma)}\oplus...\oplus\mathcal{V}_{f_2(\sigma)}$
+

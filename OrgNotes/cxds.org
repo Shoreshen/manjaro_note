@@ -2,7 +2,7 @@
 
 #+TITLE: 抽象代数
 
-currnet mark: 518
+currnet mark: 522
 
 free mark:
 
@@ -3542,7 +3542,7 @@ f(s_1,...,s_{n-1},a)&=\sum_{z\in K}\left(\left(\sum_{i\in P_z}a_i\left(\prod_{j\
 
 定义 $I_{[\vec{x}]}$ 对于任意 $\left\{f_1(\vec{x})=\sum_{i\in P}\left(a_i\left(\prod_{j\in K_i}x_j^{k_{i,j}}\right)\right),f_2(\vec{x})=\sum_{i\in Q}\left(b_i\left(\prod_{j\in L_i}x_j^{l_{i,j}}\right)\right)\right\}\subset M{[\vec{x}]}$ 有
 
-（1） $I{[\vec{x}]}(c_0)=I(c_0),I_{[\vec{x}]}(c_1)=I(c_1)$
+（1） $I{[\vec{x}]}(c_0)=I(c_0),I[\vec{x}](c_1)=I(c_1)$
 
 （2） $I{[\vec{x}]}(f_+)\left(f_1(\vec{x}),f_2(\vec{x})\right)=\sum_{i\in P\cup Q}\left(c_i\left(\prod_{j\in H_i}x_j^{h_{i,j}}\right)\right)$
 
@@ -3556,7 +3556,7 @@ f(s_1,...,s_{n-1},a)&=\sum_{z\in K}\left(\left(\sum_{i\in P_z}a_i\left(\prod_{j\
 
 则有：
 
-（1） $\mathcal{M}{[\vec{x}]}=\left<M_{[\vec{x}]},I_{[\vec{x}]}\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
+（1） $\mathcal{M}{[\vec{x}]}=\left<M{[\vec{x}]},I{[\vec{x}]}\right>$ 是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]
 
 （2） $\mathcal{M}{[\vec{x}]}\vDash T_{\mathcal{R}_e}$ 是[[MK362][非零幺环]]且满足：
 
@@ -3570,13 +3570,13 @@ f(s_1,...,s_{n-1},a)&=\sum_{z\in K}\left(\left(\sum_{i\in P_z}a_i\left(\prod_{j\
 
 由于 $\mathcal{M}$ 是[[MK338][域]]故是 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]，则对于任意 $\{a_i,b_i\}\subset M$ 均有 $I(f_+)(a_i,b_i)\in M,I(f_\times)(a_i,b_i)\in M,I(f_-)(a_i)\in M$
 
-故显然 $\mathcal{M}_{[\vec{x}]}$ 对 $I_{[\vec{x}]}(f_+),I_{[\vec{x}]}(f_\times),I_{[\vec{x}]}(f_-)$ 封闭，即为 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] 
+故显然 $\mathcal{M}{[\vec{x}]}$ 对 $I{[\vec{x}]}(f_+),I{[\vec{x}]}(f_\times),I{[\vec{x}]}(f_-)$ 封闭，即为 $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 下的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]] 
 
 ******** 证明（2）
 
 仅证乘法分配律，其余公理同理可证
 
-对于任意 $\left\{f_h(\vec{x})=\sum_{i\in P_h}\left(a_{h,i}\left(\prod_{j\in K_{h,i}}x_j^{k_{h,i,j}}\right)\right)\big|h=\{1,2,3\}\right\}\subset M_{[\vec{x}]}$
+对于任意 $\left\{f_h(\vec{x})=\sum_{i\in P_h}\left(a_{h,i}\left(\prod_{j\in K_{h,i}}x_j^{k_{h,i,j}}\right)\right)\big|h=\{1,2,3\}\right\}\subset M{[\vec{x}]}$
 
 有 $f_1(\vec{x})\left(f_2(\vec{x})+f_3(\vec{x})\right)=\left(\sum_{i\in P_1}\left(a_{1,i}\left(\prod_{j\in K_{1,i}}x_j^{k_{1,i,j}}\right)\right)\right)\left(\sum_{i\in P_2\cup P_3}\left(c_i\left(\prod_{j\in H_i}x_j^{h_{i,j}}\right)\right)\right)$
 
@@ -3595,9 +3595,9 @@ f(s_1,...,s_{n-1},a)&=\sum_{z\in K}\left(\left(\sum_{i\in P_z}a_i\left(\prod_{j\
 =&f_1(\vec{x})f_2(\vec{x})+f_1(\vec{x})f_3(\vec{x})
 \end{aligned}
 
-即对于任意 $\left\{f_1(\vec{x}),f_2(\vec{x}),f_3(\vec{x})\right\}\subset M_{[\vec{x}]}$ 均有 $f_1(\vec{x})\left(f_2(\vec{x})+f_3(\vec{x})\right)=f_1(\vec{x})f_2(\vec{x})+f_1(\vec{x})f_3(\vec{x})$
+即对于任意 $\left\{f_1(\vec{x}),f_2(\vec{x}),f_3(\vec{x})\right\}\subset M{[\vec{x}]}$ 均有 $f_1(\vec{x})\left(f_2(\vec{x})+f_3(\vec{x})\right)=f_1(\vec{x})f_2(\vec{x})+f_1(\vec{x})f_3(\vec{x})$
 
-根据[[MK356][性质4]]可得 $\mathcal{M}_{[\vec{x}]}\vDash(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$
+根据[[MK356][性质4]]可得 $\mathcal{M}{[\vec{x}]}\vDash(\forall x_1(\forall x_2(\forall x_3((f_\times(x_1,f_+(x_2,x_3))\hat{=}f_+(f_\times(x_1,x_2),f_\times(x_1,x_3)))))))$
 
 ****** 根<<MK389>>
 
@@ -3691,7 +3691,7 @@ f(s_1,...,s_{n-1},a)&=\sum_{z\in K}\left(\left(\sum_{i\in P_z}a_i\left(\prod_{j\
 
 若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，则对于任意 $f(x)\in M[x]$ 其[[MK446][最简式]]为 $f'(x)=\sum_{i\in P}a_ix^{k_i}$
 
-定义 $\max\left(\left\{k_i\big|i\in P\right\}\right)$ 为多项式的次数，若 $f'(x)=I(c_0)$ 则定义次数为 $-1$
+定义 $\deg(f(x))=\max\left(\left\{k_i\big|i\in P\right\}\right)$ 为多项式的次数，若 $f'(x)=I(c_0)$ 则定义次数为 $-1$
 
 ******** 性质1<<MK387>>
 
@@ -3752,23 +3752,129 @@ f(s_1,...,s_{n-1},a)&=\sum_{z\in K}\left(\left(\sum_{i\in P_z}a_i\left(\prod_{j\
 
 其中 $a'_i=\begin{cases}a_i&i\leq n\\I(c_0)&i>n\end{cases},b'_i=\begin{cases}b_i&i\leq m\\I(c_0)&i>m\end{cases}$
 
-显然 $x^{\max(n_1,n_2)}$ 的系数不为 $I(c_0)$ 
+显然 $x^{\max(n_1,n_2)}$ 的系数不为 $I(c_0)$
+
+******* 可约<<MK519>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，任意 $f(x)\in M[x]$ 存在[[MK378][次数]]大于 $0$ 的 $\{g(x),h(x)\}\subset M[x]$
+
+使得 $f(x)=I[x](f_\times)(g(x),h(x))$ ，则称 $f(x)$ 可约。若不存在，则称 $f(x)$ 不可约
+
+******** 性质<<MK521>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，任意 $\{f_1(x),f_2(x),g(x),h(x)\}\in M[x]$ 满足：
+
+（1） $g(x)$ 为[[MK519][不可约]]多项式
+
+（2） $I[x](f_\times)(g(x),h(x))=I[x](f_\times)(f_1(x),f_2(x))$
+
+则存在 $h'(x)\in M[x]$ 满足 $f_1(x)=I[x](f_\times)(h'_1(x),g(x))$ 或 $f_2(x)=I[x](f _\times)(h'_1(x),g(x))$
+
+********* 证明
+
+以下用 $\times$ 表示 $I[x](f_\times)$ ，用 $+$ 表示 $I[x](f_+)$
+
+若不存在 $h'(x)\in M[x]$ 满足 $f_1(x)=h'(x)\times g(x)$ 则对于任意 $\{\delta(x),\delta_1(x),\delta_2(x)\}\subset M[x]$ 满足 $f_1(x)=\delta(x)\times\delta_1(x),g(x)=\delta(x)\times\delta_2(x)$
+
+由于 $g(x)$ [[MK519][不可约]]，则有 $\deg(\delta(x))\leq 0$ 或者 $\deg(\delta_1(x))\leq 0$ ，若 $\deg(\delta_1(x))\leq 0$ 则显然 $\delta(x)=f(x)$
+
+显然与不存在 $h'(x)\in M[x]$ 满足 $f_1(x)=h'(x)\times g(x)$ 矛盾，故必有 $\deg(\delta(x))\leq 0$ 即有 $\delta(x)=c\in M$
+
+故根据[[MK384][性质8]]可得存在 $\{u(x),v(x)\}\subset M[x]$ 满足 $u(x)\times f_1(x)+v(x)\times g(x)=I[x](c_1)$
+
+两边同乘 $f_2(x)$ 根据[[MK376][定理2]]可得 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 根据[[MK363][性质1]]
+
+\begin{aligned}
+f_2(x)&=f_2(x)\times I[x](c_1)=u(x)\times f_1(x)\times f_2(x)+f_2(x)\times v(x)\times g(x)\\
+&=u(x)\times g(x)\times h(x)+f_2(x)\times v(x)\times g(x)\\
+&=g(x)\times(u(x)\times h(x)+f_2(x)\times v(x))
+\end{aligned}
+
+即存在 $h^*(x)=u(x)\times h(x)+f_2(x)\times v(x)$ 满足 $f_2(x)=I[x](f _\times)(h^*_1(x),g(x))$
+
+同理可证若若不存在 $h'(x)\in M[x]$ 满足 $f_2(x)=h'(x)\times g(x)$ 则存在 $h^*(x)\in M[x]$ 使得 $f_1(x)=I[x](f_\times)(h^*_1(x),g(x))$ 
+
+******** 唯一因式分解定理<<MK522>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，任意 $f(x)\in M[x]$ 满足 $\deg(f(x))>0$ 存在唯一有限 $\{p_1(x),...,p_n(x)\}\subset M[x]$
+
+满足 $f(x)=a\prod_{i=1}^n p_i(x)$ 其中 $p_i(x)$ 为[[MK377][首一不可约]]多项式 $a\in M$ 为 $1$ [[MK378][次]]，乘法 $\times$ 为 $I[x](f_\times)$
+
+********* 证明
+
+********** 存在
+
+若 $f(x)$ [[MK519][不可约]]，则 $\{p_1(x)\}$ 满足条件，否则即存在[[MK378][次数]]大于 $0$ 的 $\{g(x),h(x)\}\subset M[x]$ 满足 $f(x)=g(x)\times h(x)$
+
+根据[[MK520][性质2]]以及[[MK356][性质4]]易证存在 $a_1,a_2,g'(x),h'(x)$ 满足 $f(x)=(a_1a_2)(g'(x)\times h'(x))$
+
+又根据[[MK378][性质1]]可得 $\deg(f(x))=\deg(g(x))+\deg(h(x))$ 即有 $\deg(g(x))<\deg(f(x)),\deg(h(x))<\deg(f(x))$
+
+依次对 $g(x),h(x)$ 进一步分解，由于[[MK378][次数]]下降以及必须大于 $0$ 易证存在有限[[MK519][不可约]]多项式 $\{p_1(x),...,p_n(x)\}\subset M[x]$
+
+满足 $f(x)=a\prod_{i=1}^n p_i(x)$ 
+
+********** 唯一
+
+假设 $f(x)=a\prod_{i=1}^n p_i(x)=b\prod_{i=1}^m q_i(x)$ 其中 $q_i(x),p_i(x)$ 均为[[MK377][首一不可约]]多项式且均为[[MK446][最简式]]
+
+根据以下证明以及数学归纳法可得 $m=n,a=b$ 对于任意 $1\leq i\leq n$ 存在 $1\leq j\leq n$ 满足 $p_i(x)=q_j(x)$
+
+即表述唯一
+
+*********** $n=1$
+
+此时 $f(x)=ap_1(x)=b\prod_{i=1}^m q_i(x)$ 假设存在多个 $1\leq u_i\leq m$ 满足 $\deg(q_{u_i}(x))>0$ 则显然与 $p_1(x)$ [[MK377][首一不可约]]矛盾
+
+故显然有且仅有一个 $1\leq u\leq m$ 满足 $\deg(q_u(x))>0$ 即根据[[MK439][多项式环乘法]]有 $ap_1(x)=bq_u(x)$ 其中 $b=\prod_{1\leq i\leq m\land i\ne u}q_i(x)$
+
+假设 $a\ne b$ ，由于 $a\in M$ 以及 $\mathcal{M}$ 是[[MK338][域]]即存在 $a^{-1}\in M$ 满足 $I(f_\times)(a,a^{-1})=I(c_1)$
+
+则有 $p_1(x)=cq_u(x)$ 其中 $c=I(f_\times)(a^{-1},b)$ 由于 $a\ne b$ 以及[[MK425][逆元唯一]]可得 $c\ne I(c_1)$
+
+若 $\deg(p_1(x))\ne\deg(cq_u(x))$ 显然与 $p_1(x)=cq_u(x)$ 矛盾。
+
+若 $\deg(p_1(x))=\deg(cq_u(x))$ 则由于 $q_i(x),p_i(x)$ 均为[[MK377][首一不可约]]多项式且均为[[MK446][最简式]]，则设 $p_1(x)=\sum_{i\in P}a_ix^{k_i},q_u(x)=\sum_{i\in Q}b_ix^{l_i}$
+
+则对于 $i\in P$ 满足 $k_i=\deg(p_1(x))$ 有 $a_i=I(c_1)$ ，对于 $j\in Q$ 满足 $k_j=\deg(q_u(x))$ 有 $b_i=I(c_1)$
+
+则根据[[MK439][多项式环乘法]]显然 $cq_u(x)$ 的最高[[MK378][次]]系数为 $c\ne I(c_1)$ 根据[[MK447][最简式相等]]以及[[MK439][环相等定义]]可得 $p_1(x)\ne cq_u(x)$
+
+即矛盾，故可得假设不成立，即有 $a=b$ ，则进一步有 $p_1(x)=q_u(x)$
+
+*********** 若 $n-1$ 成立，则 $n$ 成立
+
+设 $f'(x)=\prod_{i=1}^{n-1}p_i(x)$ 则有 $f(x)=p_n\times \left(a\times f'(x)\right)=b\prod_{i=1}^mq_i(x)=q_1(x)\times\left(b\prod_{i=2}^m q_i(x)\right)$
+
+由于 $p_n(x)$ [[MK519][不可约]]，则根据[[MK521][性质]]必有 $h'(x)\in M[x]$ 满足 $q_1(x)=h'(x)\times p_1(x)$ 或 $\left(b\prod_{i=2}^m q_i(x)\right)=h'(x)\times q_1(x)$
+
+依次类推，由于 $m<\infty$ 故要么存在 $1\leq u\leq m$ 满足存在 $h'(x)\in M[x]$ 使得 $q_u(x)=h'(x)\times p_n(x)$ 要么 $b=h'(x)\times p_1(x)$
+
+假设后者成立，由于 $\deg(f(x))>0$ 可得显然 $b\ne I[x](c_0)$ 故可得 $\deg(b)=0$
+
+由于 $p_n(x)$ [[MK377][首一不可约]]故 $\deg(p_n(x))>0$ ，若 $\deg(h'(x))=-1$ 则根据[[MK387][性质1]]可得 $\deg(b)=-1$ 矛盾
+
+若 $\deg(h'(x))\geq 0$ 则有 $\deg(b)=\deg(h'(x))+\deg(p_n(x))>0$ 亦矛盾。故 $b\ne h'(x)\times p_n(x)$
+
+即可得存在 $1\leq u\leq m$ 满足存在 $h'(x)\in M[x]$ 使得 $q_u(x)=h'(x)\times p_n(x)$ 由于均为[[MK377][首一不可约]]
+
+显然易证 $q_u(x)=p_n(x)$ 则有 $f'(x)=a\times \prod_{i=1}^{n-1}p_i(x)=b\times\prod_{1\leq i\leq m\land i\ne u}q_i(x)$
+
+则根据归纳假设可得 $m=n,a=b$ 对于任意 $1\leq i\leq n$ 存在 $1\leq j\leq n$ 满足 $p_i(x)=q_j(x)$
 
 ******* 首一不可约<<MK377>>
 
-若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，则对于任意 $\sum_{i=0}^{n}a_ix^i\in M[x]$ 若满足
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，则对于任意 $f(x)\in M[x]$ 若满足其[[MK446][最简式]] $f'(x)=\sum_{i\in P}a_ix^{k_i}$ 有：
 
-（1） $a_n=I(c_1)$
+（1） 若 $k_i=\deg(f(x))$ 则 $a_i=I(c_1)$ 即首一
 
-（2） 其[[MK378][次数]] $n>0$
+（2） 其[[MK378][次数]] $k_i=\deg(f(x))>0$
 
-（3） 不存在 $\left\{\sum_{i=0}^{n_1}b_ix^i,\sum_{i=0}^{n_2}c_ix^i\right\}\subset M[x]$ 其[[MK378][次数]]为 $n_1,n_2$ 满足 $n_1>0,n_2>0$
+（3） $f(x)$ [[MK519][不可约]]
 
-     且 $\sum_{i=0}^{n}a_ix^i=I[x](f_\times)\left(\sum_{i=0}^{n_1}b_ix^i,\sum_{i=0}^{n_2}c_ix^i\right)$
+则称 $f(x)\in M[x]$ 为 $\mathcal{M}[x]$ 的首一不可约多项式 
 
-则称 $\sum_{i=0}^{n}a_ix^i\in M[x]$ 为 $\mathcal{M}[x]$ 的首一不可约多项式 
-
-******** 性质<<MK462>>
+******** 性质1<<MK462>>
 
 任意 $\mathcal{N}=\left<N,J\right>$ 是 $\mathcal{M}=\left<M,I\right>$ 的[[MK341][扩张域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是 $\mathcal{M}$ 的[[MK374][多项式环]]，则对于任意 $f(x)=\sum_{i\in P}a_ix^i\in M[x]$
 
@@ -3789,6 +3895,20 @@ f(s_1,...,s_{n-1},a)&=\sum_{z\in K}\left(\left(\sum_{i\in P_z}a_i\left(\prod_{j\
 由于 $f(x)$ [[MK378][次数]]有限，故经过多轮上述操作后可得到 $\mathcal{M}_{(S_{i})}$ 上的[[MK377][首一不可约]]的[[MK374][一元多项式]] $f'(x)\in\mathcal{M}[x]$
 
 满足在 $\mathcal{N}$ 上的[[MK441][带入值]] $J(c_0)=f'(a)$ 。
+
+******** 性质2<<MK520>>
+
+若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，任意 $f(x)\in M[x]$ 存在 $g(x)\in M[x]$ 满足 $g(x)$ [[MK377][首一]]
+
+且 $f(x)=ag(x)$ 且 $\deg(f(x))=\deg(g(x))$
+
+********* 证明
+
+设 $f(x)$ 的[[MK446][最简式]]为 $f'(x)=\sum_{i\in P}a_ix^{k_i}$ 定义 $a=a_i,k_i=\deg(f(x))$ 由于 $\mathcal{M}$ 是[[MK338][域]]且 $a\in M$
+
+根据[[MK356][性质4]]可得存在 $b\in M$ 满足 $I(f_\times)(a,b)=I(c_1)$ 且对于任意 $a_i$ 有 $I(f_\times)(b,a_i)\in M$
+
+进一步根据[[MK356][性质4]] $f'(x)=\sum_{i\in P}a_ix^{k_i}=a\left(\sum_{i\in P}ba_ix^{k_i}\right)$ 根据[[MK439][多项式环相等]]可得 $f(x)=a\left(\sum_{i\in P}ba_ix^{k_i}\right)$
 
 ******* 性质
 
@@ -3989,7 +4109,7 @@ h(x)q(x)+(-h'(x))q(x)=&r'(x)+(-r(x))+(h'(x)+(-h'(x)))q(x)\\
 
 若 $\mathcal{M}=\left<M,I\right>$ 是[[MK338][域]] $\mathcal{M}[x]=\left<M[x],I[x]\right>$ 是其[[MK374][多项式环]]，对于任意 $\left\{p(x),q(x)\right\}\subset M[x]$
 
-若不存在 $\left\{f(x),f_1(x),f_2(x)\right\}\subset M[x],f(x)\ne I[x](c_1)$ 满足 $p(x)=I[x](f_\times)(f(x),f_1(x)),q(x)=I[x](f_\times)(f(x),f_2(x))$
+若不存在 $\left\{f(x),f_1(x),f_2(x)\right\}\subset M[x],\deg(f(x))>0$ 满足 $p(x)=I[x](f_\times)(f(x),f_1(x)),q(x)=I[x](f_\times)(f(x),f_2(x))$
 
 则存在 $\left\{h(x),s(x)\right\}\subset M[x]$ 满足 $I[x](f_+)(I[x](f_\times)(p(x),h(x)),I[x](f_\times)(q(x),s(x)))=I[x](c_1)$
 
@@ -4009,7 +4129,7 @@ r_{n+1}(x)=&h_{n+3}(x)r_{n+2}(x)\\
 
 由于[[MK383][性质7]]可得 $r_i$ 的[[MK378][次数]]大于 $r_{i+1}$ 故可得存在 $n<\infty$ 满足 $r_{n+3}=I[x](c_0)$ 即[[MK378][次数]]为 $-1$
 
-假设 $r_{n+2}(x)\ne I[x](c_1)$ 则有（以 $I[x](f_+),I[x](f_\times)$ 下简写）
+假设 $\deg(r_{n+2}(x))>0$ 则有（以 $I[x](f_+),I[x](f_\times)$ 下简写）
 
 \begin{aligned}
 r_{n+1}(x)=&h_{n+3}(x)r_{n+2}(x)\\
@@ -4035,9 +4155,9 @@ p(x)=&h_1(x)h'_2(x)r_{n+2}(x)+h'_3(x)r_{n+2}(x)\\
 =&h'_1(x)r_{n+2}(x)
 \end{aligned}
 
-即存在 $f(x)=r_{n+2}(x)\ne I[x](c_1)$ 满足 $q(x)=I[x](f_\times)(f(x),h'_2(x)),p(x)=I[x](f _\times)(f(x),h'_1(x))$
+即存在 $f(x)=r_{n+2}(x)$ 满足 $\deg(r_{n+2}(x))>0$ 且 $q(x)=I[x](f_\times)(f(x),h'_2(x)),p(x)=I[x](f _\times)(f(x),h'_1(x))$
 
-与假设不符，故必有 $r_{n+2}(x)=I[x](c_1)$
+与假设不符，故必有 $\deg(r_{n+2}(x))\leq 0$ 即 $r_{n+2}(x)=a\in M$ 由于 $\mathcal{M}$ 是[[MK338][域]]，根据[[MK356][性质4]]可得存在 $a^{-1}\in M$ 满足 $I(f_\times)(a,a^{-1})=I(c_1)$
 
 则有（以 $I[x](f_+),I[x](f_\times)$ 下简写，对于任意 $f(x)\in M[x]$ 的加法逆元用 $(-f(x))$ 表示）：
 
@@ -4057,11 +4177,25 @@ r_{n+2}(x)=&r_n(x)+(-h_{n+2}(x))r_{n+1}(x)\\
 =&u_{n+2}(x)p(x)+v_{n+2}(x)q(x)
 \end{aligned}
 
-最终有 $I[x](f_+)(I[x](f_\times)(p(x),u_{n+2}(x)),I[x](f_\times)(q(x),v_{n+2}(x)))=r_{n+2}(x)=I[x](c_1)$
+最终有 $I[x](f_+)(I[x](f_\times)(p(x),u_{n+2}(x)),I[x](f_\times)(q(x),v_{n+2}(x)))=r_{n+2}(x)=a$
 
-又根据[[MK376][定理2]]可得 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+进一步有 $I[x](f_\times)\left(a^{-1},I[x](f_+)(I[x](f_\times)(p(x),u_{n+2}(x)),I[x](f_\times)(q(x),v_{n+2}(x)))\right)=I[x](f_\times)(a^{-1},a)$
 
-则根据[[MK356][性质4]]易证 $I[x](f_+)(I[x](f_\times)(p(x),u_{n+2}(x)),I[x](f_\times)(q(x),v_{n+2}(x)))=I[x](c_1)$
+根据[[MK376][定理2]]可得 $\mathcal{M}[x]\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$ 根据[[MK363][性质1]]可得 $I[x](f_\times)(a^{-1},a)=I[x](f_\times)(a,a^{-1})$
+
+根据[[MK439][多项式环乘法]]可得 $I[x](f_\times)(a,a^{-1})=I(f_\times)(a,a^{-1})=I(c_1)=I[x](c_1)$
+
+根据[[MK363][性质1]]中分配律、乘法交换律，乘法结合律可得
+
+\begin{aligned}
+&I[x](f_\times)\left(a^{-1},I[x](f_+)(I[x](f_\times)(p(x),u_{n+2}(x)),I[x](f_\times)(q(x),v_{n+2}(x)))\right)$\\
+=&I[x](f_+)\left(I[x](f_\times)\left(a^{-1},I[x](f_\times)(p(x),u_{n+2}(x))\right),I[x](f_\times)\left(a^{-1},I[x](f_\times)(q(x),v_{n+2}(x))\right)\right)\\
+=&I[x](f_+)\left(I[x]\left(f_\times)(p(x),I[x](f_\times)\left(a^{-1},u_{n+2}(x)\right)\right),I[x](f_\times)\left(q(x),I[x](f_\times)\left(a^{-1},v_{n+2}(x)\right)\right)\right)\\
+\end{aligned}
+
+显然 $\left\{I[x](f_\times)\left(a^{-1},u_{n+2}(x)\right),I[x](f_\times)\left(a^{-1},v_{n+2}(x)\right)\right\}\subset M[x]$ 则定义 $u(x)=I[x](f_\times)\left(a^{-1},u_{n+2}(x)\right),v(x)=I[x](f_\times)\left(a^{-1},v_{n+2}(x)\right)$
+
+即有$I[x](f_+)(I[x](f_\times)(p(x),u(x)),I[x](f_\times)(q(x),v(x)))=I[x](c_1)$
 
 ******** 性质9<<MK386>>
 
