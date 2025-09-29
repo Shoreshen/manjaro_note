@@ -2,7 +2,7 @@
 
 #+TITLE: 矩阵运算
 
-current mark: 72
+current mark: 80
 
 * 矩阵基础
 
@@ -168,6 +168,74 @@ $A=\sum_{l=1}^s\left\{\sum_{k=1}^n[D(i,j,l,k)]_{s\times n}\right\}$ 其中 $D(i,
 
 故对于任意 $A\in M_{n\times n}(K)$ 可得 $A\in S+S'$ 由于线性空间本身为集合，则根据[[~/文档/note/离散数学/Disc_Math.org][集合论-集合定义-ZFC公理化集合论-外延公理]]可得 $M_{n\times n}(K)=S+S'$
 
+* 方阵环<<MK75>>
+
+任意 $A=[a_{ij}]_{n\times n}$ 为[[~/文档/note/抽象代数/cxds.org::MK338][域]] $\mathcal{K}=\left<K,\mathfrak{g}\right>$ 上的方阵，定义：
+
+（1） 任意 $k\in K$ 定义 $E(k)=[e(i,j)]_{n\times n}$ 其中 $e(i,j)=\begin{cases}k&i=j\\\mathfrak{g}(c_0)&i\ne j\end{cases}$
+
+（2） $I_A(f_\times)$ 为[[MK5][矩阵乘法]]
+
+（3） $I_A(f_+)$ 为[[MK2][矩阵加法]]
+
+（4） 任意 $[a'_ {ij}]_{n\times n}\in M_A$ 定义 $I_A(f_-)([a'_ {ij}]_{n\times n})=\left[\mathfrak{g}(f_\times)(\mathfrak{g}(f_-)(\mathfrak{g}(c_1)),a_{ij})\right]_{n\times n}$
+
+（5） $I_A(c_0)=[\mathfrak{g}(c_0)]_{n\times n}$
+
+（6） $I_A(c_1)=[e(i,j)]_{n\times n}$ 其中 $e(i,j)=\begin{cases}\mathfrak{g}(c_1)&i=j\\\mathfrak{g}(c_0)&i\ne j\end{cases}$
+
+（7） $M_A=\left\{\sum_{i=1}^n E(k_i)A^i\big|k_i\in K\land n\in\mathbb{N}\right\}$ 其中加法为 $I_A(f_\times)$ ，乘法为 $I_A(f_+)$ 
+
+则结构 $\mathcal{M}_A=\left<M_A,I_A\right>$ 为[[~/文档/note/抽象代数/cxds.org::MK362][非零幺元]]且 $\mathcal{M}_A\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+** 证明
+
+根据[[MK50][加法交换律、结合律]]以及[[MK21][乘法结合律]]、[[MK54][乘法分配律]]以及 $I_A(c_0),I_A(c_1)$ 相关性质易证 $\mathcal{M}_A=\left<M_A,I_A\right>$ 为[[~/文档/note/抽象代数/cxds.org::MK362][非零幺元]]
+
+显然根据[[MK5][乘法]]可得 $E(k)[a'_ {ij}]_{n\times n}=[ka'_ {ij}]_{n\times n}$ ，则根据[[MK74][幂性质]]以及[[MK54][乘法分配律]]、[[MK50][加法交换律]]易证：
+
+\begin{aligned}
+\left(\sum_{i=1}^{n_1}E(k_{i,1})A^i\right)\left(\sum_{j=1}^{n_2}E(k_{j,2})A^j\right)=&\sum_{i=1}^{n_1}\left(E(k_{i,1})A^i\left(\sum_{j=1}^{n_2}E(k_{j,2})A^j\right)\right)
+=\sum_{i=1}^{n_1}\left(\sum_{j=1}^{n_2}\left(E(k_{i,1})A^iE(k_{j,2})A^j\right)\right)\\
+=&\sum_{i=1}^{n_1}\left(\sum_{j=1}^{n_2}\left((E(k_{i,1})E(k_{j,2}))(A^i A^j)\right)\right)
+=\sum_{i=1}^{n_1}\left(\sum_{j=1}^{n_2}\left((E(k_{j,2})E(k_{i,1}))(A^j A^i)\right)\right)\\
+=&\sum_{i=1}^{n_1}\left(\sum_{j=1}^{n_2}\left(E(k_{j,2})A^j E(k_{i,1})A^i\right)\right)
+=\sum_{j=1}^{n_2}\left(\sum_{i=1}^{n_1}\left(E(k_{j,2})A^j E(k_{i,1})A^i\right)\right)\\
+=&\sum_{j=1}^{n_2}\left(\sum_{i=1}^{n_1}\left(E(k_{j,2})A^j E(k_{i,1})A^i\right)\right)
+=\sum_{j=1}^{n_2}\left(E(k_{j,2})A^j\left(\sum_{i=1}^{n_1} E(k_{i,1})A^i\right)\right)\\
+=&\left(\sum_{j=1}^{n_2}E(k_{j,2})A^j\right)\left(\sum_{i=1}^{n_1} E(k_{i,1})A^i\right)
+\end{aligned}
+
+** 单位[[~/文档/note/抽象代数/cxds.org::MK338][域]]<<MK76>>
+
+定义：
+
+（1） 任意 $k\in K$ 定义 $E(k)=[e(i,j)]_{n\times n}$ 其中 $e(i,j)=\begin{cases}k&i=j\\\mathfrak{g}(c_0)&i\ne j\end{cases}$
+
+（2） $I_E(f_\times)$ 为[[MK5][矩阵乘法]]
+
+（3） $I_E(f_+)$ 为[[MK2][矩阵加法]]
+
+（4） 任意 $[a'_ {ij}]_{n\times n}\in M_A$ 定义 $I_E(f_-)([a'_ {ij}]_{n\times n})=\left[\mathfrak{g}(f_\times)(\mathfrak{g}(f_-)(\mathfrak{g}(c_1)),a_{ij})\right]_{n\times n}$
+
+（5） $I_E(c_0)=[\mathfrak{g}(c_0)]_{n\times n}$
+
+（6） $I_E(c_1)=[e(i,j)]_{n\times n}$ 其中 $e(i,j)=\begin{cases}\mathfrak{g}(c_1)&i=j\\\mathfrak{g}(c_0)&i\ne j\end{cases}$
+
+（7） $M_E=\left\{E(k_i)\big|k_i\in K\right\}$ 其中加法为 $I_E(f_\times)$ ，乘法为 $I_E(f_+)$ 
+
+则结构 $\mathcal{M}_E=\left<M_1,I_E\right>$ 为[[~/文档/note/抽象代数/cxds.org::MK338][域]]
+
+*** 证明
+
+显然根据[[MK5][矩阵乘法]]，[[MK2][矩阵加法]]易证对于任意 $\{A_1,A_2\}\subset M_E$ 有 $I_E(f_+)(A_1,A_2)\in M_E,I_E(f_\times)(A_1,A_2)\in M_E,I_E(f_-)(A_1)\in M_E$
+
+故可得 $\mathcal{M}_E$ 是[[~/文档/note/抽象代数/cxds.org::MK335][域语言]] $\mathcal{L}_{\mathcal{A}_\mathcbb{F}}$ 上的[[~/文档/note/数理逻辑/sllj.org::MK153][结构]]。[[MK75][同理可证]] $\mathcal{M}_E$ 为[[~/文档/note/抽象代数/cxds.org::MK362][非零幺元]]且 $\mathcal{M}_E\vDash(\forall x_1(\forall x_2(f_\times(x_1,x_2)\hat{=}f_\times(x_2,x_1))))$
+
+显然对于任意 $E(k)$ 由于 $k\in K$ 故存在 $k^{-1}\in K$ 使得 $\mathfrak{g}(f_\times)(k,k^{-1})=\mathfrak{g}(c_1)$
+
+则根据[[MK5][矩阵乘法]]易证 $E(k)E(k^{-1})=I_E(c_1)$ 即根据[[~/文档/note/抽象代数/cxds.org::MK356][性质4]]有 $\mathcal{M}_E\vDash(\forall x_1((\lnot(x_1\hat{=}c_0))\to(\exists x_2(f_\times(x_1,x_2)\hat{ =}c_1))))$
+
 * 特殊矩阵
 
 ** 单位矩阵<<MK4>>
@@ -223,6 +291,12 @@ I_nA_{n\times s}&= A_{s\times n}\\
 **** 乘法封闭
 
 定义 $A_n,B_n$ 为对角阵，则 $A_nB_n$ 根据[[MK5][矩阵乘法]]亦为对角阵
+
+** 伴随矩阵<<MK73>>
+
+若 $A_n=[a_{ij}]_{n\times n}$ 为 $n$ 阶方阵，定义 $B=[U_{ij}]^T_{n\times n}$ ，其中 $U_{ij}$ 定义为 $A_n$ 对于元素 $a_{ij}$ 的[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK25][代数余子式]]
+
+则称 $B$ 为 $A_n$ 的伴随矩阵，记作 $B=\text{adj}(A_n)$
 
 ** 分块对角矩阵<<MK72>>
 
@@ -323,8 +397,6 @@ I_nA_{n\times s}&= A_{s\times n}\\
 故有 $a_{ij}=-a_{ji}$ 则对角线上的元素有 $a_{ii}=-a_{ii}=0$
 
 ** 初等矩阵<<MK13>>
-
-*** 定义
 
 以[[MK4][单位矩阵]]为基础，初等矩阵主要包含一下三种
 
@@ -561,6 +633,18 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 若[[MK4][单位矩阵]] $I_n$ 与矩阵 $A=[a_{ij}]_{n\times s},B=[b_{ij}]_{s\times n}$ 则有 $I_nA=A,BI_n=B$
 
+**** 特殊可交换<<MK79>>
+
+若 $A=aI_{n\times n}$ 其中 $a\in K$ 且 $I_{n\times n}$ 为[[MK4][单位矩阵]]，则对于任意 $B=[b_{ij}]_{n\times n}$ 有 $AB=BA$
+
+***** 证明
+
+定义 $AB=[c_{ij}]_{n\times n}$ 则 $c_{ij}=\sum_{k=1}^na_{ik}b_{kj}$ 由于任意 $k\ne i$ 均有 $a_{ik}=0$ 故可得 $c_{ij}=a_{ii}b_{ij}$
+
+定义 $BA=[d_{ij}]_{n\times n}$ 则 $d_{ij}=\sum_{k=1}^nb_{ik}a_{kj}$ 由于任意 $k\ne j$ 均有 $a_{kj}=0$ 故可得 $d_{ij}=b_{ij}a_{jj}$
+
+根据 $A$ 的定义显然有 $a_{ii}=a_{jj}$ 故可得 $c_{ij}=d_{ij}$
+
 **** 矩阵秩的关系<<MK24>>
 
 若矩阵 $A,B$ 可以相乘，则有 $rank(AB)\leq\min\left\{rank(A),rank(B)\right\}$ 
@@ -591,7 +675,7 @@ $P_n(ki)$ 左乘矩阵 $A_{s\times n}$ 相当于 $A\xrightarrow[k\textcircled{i}
 
 若 $k\in K$ 其中 $K$ 为[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK24][数域]]， $A,B$ 为可相乘的矩阵，则有 $(kA)B=k(AB)=A(kB)$
 
-*** 幂
+*** 幂<<MK74>>
 
 由定义可的
 
@@ -690,7 +774,7 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 若 $A_n=[a_{ij}]_{n\times n}$ 可逆，则 $A^{-1}_n=\frac{1}{|A_n|}\left([U_{ij}]^T_{n\times n}\right)$ ，其中 $U_{ij}$ 定义为 $a_{ij}$ 的[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK25][代数余子式]]
 
-证明与[[MK27][之前]]同理。进一步定义 $A^*=[U_{ij}]^T_{n\times n}$ 成为矩阵 $A$ 的伴随矩阵
+证明与[[MK27][之前]]同理。显然 $A^*=[U_{ij}]^T_{n\times n}$ 成为矩阵 $A$ 的[[MK73][伴随矩阵]]
 
 *** 定理2<<MK31>>
 
@@ -826,9 +910,7 @@ B^TA^T&=\left[b'_{ij}=b_{ji}\right]_{m\times n}\left[a'_{ij}=a_{ji}\right]_{n\ti
 
 由于 $[A_n\ I]$ 矩阵中所有初等行变换同样操作与 $A_n$ 和 $I$ 上。故若初等行变换 $\prod_{i=1}^z P_i$ 能使 $A_n$ 成为 $I$ 则根据上述证明能使 $I$ 成为 $A^{-1}_n$
 
-* 矩阵分块
-
-** 定义<<MK38>>
+* 矩阵分块<<MK38>>
 
 定义矩阵 $A=[a_{ij}]_{s\times n}$ 定义 $0=x_1\leq...\leq x_u=s$ 以及 $0=y_1\leq...\leq y_v=n$
 
@@ -1196,6 +1278,114 @@ $|I\lambda-A|=(-1)^n|A|+\sum_{k=1}^{n-1}\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\
 \end{aligned}
 
 最终根据[[MK69][定理2]]可得$|I\lambda-A|=\sum_{k=0}^n\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\overline{M}^*\left(\begin{matrix}j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\\j_{n,i,1}&j_{n,i,2}&...&j_{n,i,k}\end{matrix}\right)\right)$
+
+**** 推论<<MK77>>
+
+设 $A=[a_{ij}]_{n\times n}\in M_{n\times n}(K)$ 是[[~/文档/note/抽象代数/cxds.org::MK338][域]] $\mathcal{K}=\left<K,\mathfrak{g}\right>$ 上的 $n$ 阶矩阵，
+
+则其[[MK67][特征多项式]] $f(\lambda)$ 的最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]为 $n$ 且 $\lambda^{n$ 的系数为 $\mathfrak{g}(c_1)$
+
+***** 证明
+
+显然根据 $f(\lambda)=|I\lambda-A|=(-1)^n|A|+\sum_{k=1}^{n-1}\left((-1)^k\sum_{i=1}^{C_n^k}\lambda^k\overline{M}^*_{ij}\right)+\lambda^n$ 可得 
+
+*** 定理4<<MK80>>
+
+设 $A=[a_{ij}]_{n\times n}\in M_{n\times n}(K)$ 是[[~/文档/note/抽象代数/cxds.org::MK338][域]] $\mathcal{K}=\left<K,\mathfrak{g}\right>$ 上的 $n$ 阶矩阵，定义 $f(x)=|Ix-A|$ 为 $A$ 的[[MK67][特征多项式]]
+
+显然 $f(x)\in M_E[x]$ 是[[MK76][单位域]]上的[[~/文档/note/抽象代数/cxds.org::MK436][多项式]]，且[[MK75][方阵环]]为[[MK76][单位域]]的[[~/文档/note/抽象代数/cxds.org::MK518][扩张交换环]]
+
+则[[~/文档/note/抽象代数/cxds.org::MK441][带入值]] $f(A)=\sum_{i=1}^nk_iA^i=[\mathfrak{g}(c_0)]_{n\times n}$
+
+**** 证明
+
+对于 $I\lambda-A$ 定义[[MK73][伴随矩阵]]为 $\text{adj}(I\lambda-A)=[b_{ij}]_{n\times n}$ 显然 $b_{ij}=\sum_{z=0}^{n_{ij}}k_{ij,z}\lambda^z$ 亦为 $\lambda$ 的多项式
+
+则定义 $B_z=\left[k_{ij,z}\right]$ 则有 $\adj(I\lambda-A)=\sum_{z=0}^{\max\left(\left\{n_{ij}\big|1\leq i\leq n,1\leq j\leq n\right\}\right)}B_z\lambda^z$ ，根据[[MK78][引理]]易证 $\max\left(\left\{n_{ij}\big|1\leq i\leq n,1\leq j\leq n\right\}\right)=n-1$
+
+根据[[MK5][矩阵乘法]]可得 $(Ix-A)\cdot\text{adj}(Ix-A)=\left[t_{ij}(x)=\sum_{k=1}^n a_{ik}(x)U_{jk}(x)\right]_{n\times n}$ ，根据[[~/文档/note/高等代数/Algb-2-Liner_Space.org::MK107][推论2]]可得 $t_{ij}(x)=\begin{cases}|Ix-A|&i=j\\\mathfrak{g}(c_0)&i\ne j\end{cases}$
+
+即有 $(I\lambda-A)\cdot\text{adj}(I\lambda-A)=f(\lambda)I$ 其中 $f(\lambda)$ 为 $A$ 的[[MK67][特征多项式]]，则进一步定义 $n^*=\max(\left\{n_{ij}\big|1\leq i\leq n,1\leq j\leq n\right\})$ 则1有
+
+\begin{aligned}
+(I\lambda-A)\cdot\text{adj}(I\lambda-A)=&(I\lambda-A)\left(\sum_{z=0}^{n-1}B_z\lambda^z\right)\\
+=&\sum_{z=0}^{n-1}B_z\lambda^{z+1}-\sum_{z=0}^{n-1}AB_z\lambda^z\\
+=&B_{n-1}\lambda^{n}+\sum_{z=1}^{n-1}(B_{z-1}-AB_z)\lambda^z-B_0
+\end{aligned}
+
+根据[[MK77][推论]]可得 $f(\lambda)$ 最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]为 $n$ 故有 $f(\lambda)=\sum_{z=0}^{n}k_z I\lambda$ 根据[[MK79][特殊可交换]]可得任意 $z$ 均有 $A^z(B_{z-1}-AB)=(B_{z-1}-AB)A^z$
+
+则带入 $A$ 可得 $f(A)=\sum_{z=0}^nk_zA=\sum_{z=0}^nk_zIA=\left(\sum_{z=0}^nk_zA\right)I=f(A)I$ 则进一步
+
+\begin{aligned}
+f(A)=&f(A)I=B_{n-1}A^{n}+\sum_{z=1}^{n-1}(B_{z-1}-AB_z)A^z-B_0\\
+=&A^{n}B_{n-1}+\sum_{z=1}^{n-1}A^z(B_{z-1}-AB_z)-B_0\\
+=&A^{n}B_{n-1}+\sum_{z=1}^{n-1}(A^zB_{z-1}-A^{z+1}B_z)-B_0\\
+=&A^{n}B_{n-1}+\sum_{z=1}^{n-1}A^zB_{z-1}-\sum_{z=1}^{n-1}A^{z+1}B_z-B_0\\
+=&A^{n}B_{n-1}+\sum_{z=0}^{n-2}A^{z+1}B_{z}-\sum_{z=1}^{n-1}A^{z+1}B_z-B_0\\
+=&\sum_{z=0}^{n-1}A^{z+1}B_{z}-\sum_{z=0}^{n-1}A^{z+1}B_z\\
+=&[\mathfrak{g}(c_0)]_{n\times n}
+\end{aligned}
+
+**** 引理<<MK78>>
+
+设 $A=[a_{ij}]_{n\times n}\in M_{n\times n}(K)$ 是[[~/文档/note/抽象代数/cxds.org::MK338][域]] $\mathcal{K}=\left<K,\mathfrak{g}\right>$ 上的 $n$ 阶矩阵，定义其[[MK73][伴随矩阵]]为 $\text{adj}(I\lambda-A)=[b_{ij}]_{n\times n}$
+
+显然有 $b_{ij}$ 均为 $\lambda$ 的[[~/文档/note/抽象代数/cxds.org::MK436][多项式]]，则有：
+
+（1） $b_{ii}$ 最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]为 $n-1$ 且 $\lambda^{n-1}$ 的系数为 $\mathfrak{g}(c_1)$
+
+（2） 任意 $b_{ij}$ 满足 $i\ne j$ 最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]均小于 $n-1$
+
+***** 证明
+
+定义 $M(A,i,j)$ 为矩阵 $A$ 取出第 $i$ 行 $j$ 列的子矩阵
+
+定义 $E(A,i,j)$ 为矩阵 $A$ 的第 $i$ 行 $j$ 列的元素
+
+则根据以下步骤以及数学归纳法可得结论
+
+****** $n=2$
+
+显然当 $n=2$ 时根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK26][拉普拉斯定理]] $b_{11}=|M(A,1,1)|=\left|\lambda-a_{22}\right|=\lambda-a_{22}$ 即有 $k_1=1$
+
+同理可证 $b_{22}$ 亦满足条件。且对于 $b_{12},b_{21}$ 显然易证最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]均小于 $1$
+
+****** 归纳假设
+
+对于任意 $n<N$ 均有：
+
+（1） $b_{ii}$ 最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]为 $n-1$ 且 $\lambda^{n-1}$ 的系数为 $\mathfrak{g}(c_1)$
+
+（2） 任意 $b_{ij}$ 满足 $i\ne j$ 最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]均小于 $n-1$
+
+****** $n=N$
+
+******* 证明（1）
+
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK26][拉普拉斯定理]]有 $b_{ii}=|M(A,i,i)|=\sum_{z=2}^nE(M(A,i,i),1,z)\cdot\det\left(M(M(A,i,i),1,z)\right)$
+
+当 $z=1$ 时有 $\det\left(M(M(A,i,i),1,1)\right)$ 为 $M(A,i,i)$ 的[[MK73][伴随矩阵]] $E(\text{adj}(M(A,i,i)),1,1)$
+
+由于 $M(A,i,i)$ 为 $n-1$ 阶方阵，则根据归纳假设可得为最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]为 $n-2$ 且 $\lambda^{n-2}$ 的系数为 $\mathfrak{g}(c_1)$ 的[[~/文档/note/抽象代数/cxds.org::MK436][多项式]]
+
+由于 $E(M(A,i,i),1,1)=\begin{cases}\lambda-a_{11}&i\ne 1\\\lambda-a_{22}&i=1\end{cases}$ 故可得 $E(M(A,i,i),1,1)\cdot\det\left(M(M(A,i,i),1,1)\right)$
+
+为最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]为 $n-1$ 且 $\lambda^{n-2}$ 的系数为 $\mathfrak{g}(c_1)$ 的[[~/文档/note/抽象代数/cxds.org::MK436][多项式]]
+
+当 $z\ne 1$ 时有 $E(M(A,i,i),1,z)=\begin{cases}\lambda-a_{1z}&i\ne 1\\\lambda-a_{2z}&i=1\end{cases}$ 由于 $M(A,i,i)$ 为 $n-1$ 阶方阵
+
+则根据归纳假设可得 $\det\left(M(M(A,i,i),1,z)\right)$ 最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]均小于 $n-2$
+
+则显然 $E(M(A,i,i),1,z)\cdot\det\left(M(M(A,i,i),1,z)\right),z\ne1$ 为最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]均小于 $n-2$ 的[[~/文档/note/抽象代数/cxds.org::MK436][多项式]]
+
+综上所述 $b_{ii}$ 最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]为 $n-1$ 且 $\lambda^{n-2}$ 的系数为 $\mathfrak{g}(c_1)$ 的[[~/文档/note/抽象代数/cxds.org::MK436][多项式]]
+
+******* 证明（2）
+
+根据[[~/文档/note/高等代数/Algb-1-Liner_sys_func.org::MK26][拉普拉斯定理]]有 $b_{ij}=|M(A,i,j)|=\sum_{z=2}^nE(M(A,i,j),1,z)\cdot\det\left(M(M(A,i,j),1,z)\right)$
+
+根据上一步以及归纳假设类似可证其最高[[~/文档/note/抽象代数/cxds.org::MK519][次]]均小于 $n-1$
 
 ** 性质
 
