@@ -87,7 +87,7 @@ serv_sun:
 st_docker:
 	echo $(PW) | sudo -S systemctl start docker	
 
-commit: cporg
+commit:
 	git add -A
 	@echo "Please type in commit comment: "; \
 	read comment; \
