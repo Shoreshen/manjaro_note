@@ -102,6 +102,9 @@ ipsec_restart:
 conn: 
 	echo $(PW) | sudo -S wg-quick up $(SERVER)
 
+clash_conn:
+	echo $(PW) | sudo -S clash-meta -d ~/.config/clash
+
 disip:
 	echo $(PW) | sudo -S ipsec down NordVPN
 
