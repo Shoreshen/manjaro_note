@@ -9,6 +9,57 @@ cat /etc/lsb-release
 
 In control pannel, power management.
 
+# Clash
+
+## Install clash-meta
+
+```shell
+sudo pacman -S clash-meta
+```
+
+## Download clash config file
+
+Using `<url>` provided by service provider, download the config file:
+
+```shell
+wget -O ~/.config/clash/config.yaml "<url>"
+```
+
+If downloaded file is not in yaml format, try with suffix `<url>?clash=1` or `<url>?flag=clash` or `<url>?sub=clash` or `<url>?clash=true`.
+
+Download MMDB file:
+
+```shell
+wget -O ~/.config/clash/Country.mmdb "https://github.com/Dreamacro/maxmind-geoip/raw/release/Country.mmdb"
+```
+
+If cannot download, use another device has access to download and copy to `~/.config/clash/` directory.
+
+## Enable TUN mode
+
+In `~/.config/clash/config.yaml`, add TUN config after line `log-level: info`:
+
+```yaml
+...
+log-level: info
+# Add the following TUN config
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
+# End of TUN config, continue with the origin existing config
+...
+```
+
+## Start clash
+
+```shell
+sudo clash-meta -d ~/.config/clash
+```
+
 # pacman
 
 ## Mirrors
