@@ -95,8 +95,7 @@ Manjaro mirror list can be obtained from [web](https://repo.manjaro.org/)
 4. At the end, type in:
    ```shell
    [archlinuxcn]
-   SigLevel = TrustAll //remove after install archlinuxcn-keyring
-   Server = http://repo.archlinuxcn.org/$arch
+   Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
    ```
 
 5. Update package list:
@@ -668,11 +667,44 @@ Mount onedrive to local file directory:
 rclone --vfs-cache-mode full mount onedrive: ~/OneDrive
 ```
 
-# Install Fcitx (Chinese input method)
-   
-```shell
-sudo pacman -S fcitx-lilydjwg-git fcitx-configtool fcitx-sogoupinyin
-```
+# Install Fcitx5 (Chinese input method)
+
+1. Install packages
+   ```shell
+   sudo pacman -S fcitx5-im fcitx5-rime fcitx5-configtool fcitx5-chinese-addons
+   pamac install rime-wanxiang-pinyin
+   ```
+2. Enable wanxiang:
+    ```shell
+    mkdir ~/.local/share/fcitx5/rime
+    touch ~/.local/share/fcitx5/rime/default.custom.yaml
+    cat > ~/.local/share/fcitx5/rime/default.custom.yaml <<'EOF'
+    patch:
+      __include: wanxiang_suggestion:/
+      
+      schema_list:
+        - schema: wanxiang
+        - schema: luna_pinyin
+        - schema: luna_pinyin_simp
+        - schema: luna_pinyin_fluency
+        - schema: bopomofo
+        - schema: bopomofo_tw
+        - schema: cangjie5
+        - schema: stroke
+        - schema: terra_pinyin
+    EOF
+    ```
+3. Enable fcitx5 in system
+   ```shell
+   cat > ~/.profile <<'EOF'
+   export LC_CTYPE=zh_CN.UTF-8
+   export XMODIFIERS="@im=fcitx"
+   export GTK_IM_MODULE=fcitx
+   export QT_IM_MODULE=fcitx
+   export SDL_IM_MODULE=fcitx
+   export GLFW_IM_MODULE=fcitx
+   EOF
+   ```
 
 # Emacs
 
