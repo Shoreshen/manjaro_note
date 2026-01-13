@@ -1,0 +1,155 @@
+Info: Starting NoMachine version 9.3.7.
+Info: Loading settings from '/home/shore/.nx/config/player.cfg'.
+Info: Loaded translation files for 'English'.
+134952 134952 2026-01-12 16:53:24 101.637 Main: Creating the client session.
+134952 134952 2026-01-12 16:53:24 101.688 ClientSession: Initializing session at 0x40c785a0.
+134952 134952 2026-01-12 16:53:24 216.734 ClientSession: Initialized session at 0x40c785a0.
+134952 134952 2026-01-12 16:53:24 218.430 ClientSession: Starting session at 0x40c785a0.
+134952 134952 2026-01-12 16:53:24 226.178 ClientSession: Going to start session '/home/shore/文档/NoMachine/shore.nxs'.
+134952 134952 2026-01-12 16:53:24 232.698 Connection: Initializing connection at 0x40ce8940.
+134952 134952 2026-01-12 16:53:24 232.780 Connection: Initialized connection at 0x40ce8940.
+134952 134952 2026-01-12 16:53:24 232.788 Connection: Starting connection at 0x40ce8940.
+134952 134952 2026-01-12 16:53:24 232.797 ClientDaemonConnector: Starting a new connection to host '10.69.68.113' on port '4000'.
+134952 134952 2026-01-12 16:53:24 232.886 Connection: Started connection at 0x40ce8940.
+Info: Connection to 10.69.68.113 port 4000 started at 16:53:24 233.998.
+134952 134952 2026-01-12 16:53:24 235.303 ClientSession: Started session at 0x40c785a0.
+Info: Slave server running with pid 134967.
+Info: Listening to slave connections on port 55474.
+134952 134952 2026-01-12 16:53:24 237.223 Main: Entering the GUI event loop.
+134979 134979 2026-01-12 16:53:24 266.284 Thread: ERROR! Thread signal failed. Error is 22 '无效的参数'.
+134986 134986 2026-01-12 16:53:24 287.376 Thread: ERROR! Thread signal failed. Error is 22 '无效的参数'.
+134989 134989 2026-01-12 16:53:24 295.049 Thread: ERROR! Thread signal failed. Error is 22 '无效的参数'.
+134952 134964 2026-01-12 16:53:24 429.193 ClientSession: A valid certificate for this server was found.
+134952 134952 2026-01-12 16:53:25 001.993 ClientSession: Going to query the server for available services.
+134952 134952 2026-01-12 16:53:25 080.674 ClientSession: Going to query the node for available services.
+134952 134952 2026-01-12 16:53:25 087.061 ClientSession: Going to attach session at index '0'.
+134952 134952 2026-01-12 16:53:25 087.411 Keyboard: Current model 'evdev' session model 'evdev' layout 'us' variant '(empty)' options '(empty)'.
+134952 134952 2026-01-12 16:53:25 709.235 ClientSession: Creating display client.
+Info: Display client started with pid 135063.
+Info: Slave server running with pid 135065.
+Info: Listening to slave connections on port 13002.
+134952 134952 2026-01-12 16:53:25 712.881 ClientSession: Stopping the connector before creating the proxy.
+134952 134952 2026-01-12 16:53:25 712.909 ClientDaemonConnector: Stopping the current connection.
+Info: Display running with pid 135069.
+Session: Starting session at Mon Jan 12 16:53:25 2026.
+"The XKEYBOARD keymap compiler (nxkb) reports:"
+"> "Warning:          Unsupported high keycode 372 for name <I372> ignored
+"> "                  X11 cannot support keycodes above 255.
+"> "                  This warning only shows for the first high keycode.
+"Errors from nxkb are not fatal to the X server"
+"The XKEYBOARD keymap compiler (nxkb) reports:"
+"> "Warning:          Unsupported high keycode 372 for name <I372> ignored
+"> "                  X11 cannot support keycodes above 255.
+"> "                  This warning only shows for the first high keycode.
+"Errors from nxkb are not fatal to the X server"
+134952 134952 2026-01-12 16:53:25 753.881 Connection: Stop reading after switching the connection.
+134952 134952 2026-01-12 16:53:28 808.518 ClientSession: Enabling scaled mode.
+134952 134952 2026-01-12 16:53:29 378.171 DialogTemplate: Should replace the dialog going to be removed.
+134952 135073 2026-01-12 16:53:42 812.887 ProxySession/ProxySession: ERROR! Session failure in stage 'StageWaitingProxyVersion'.
+Error: Session negotiation failure.
+134952 135073 2026-01-12 16:53:42 812.924 ProxySession/ProxySession: ERROR! We possibly provided a wrong version
+134952 135073 2026-01-12 16:53:42 812.928 ProxySession/ProxySession: ERROR! or an invalid session authentication cookie.
+Error: Connection closed by the remote peer.
+Session: Session terminated at Mon Jan 12 16:53:42 2026.
+134952 135069 2026-01-12 16:53:42 813.915 Encryptor/Encryptor: WARNING! Destroying pending buffer with 88 bytes.
+134952 134952 2026-01-12 16:53:42 853.305 ClientSession: Exiting from the client transport loop.
+134952 134952 2026-01-12 16:53:42 853.336 ClientSession: The transport closed with reset '1' error '104'.
+134952 134952 2026-01-12 16:53:42 853.398 ClientSession: Session at 0x40c785a0 failed.
+134952 134952 2026-01-12 16:53:42 853.401 ClientSession: Failing reason is 'The connection with the server was lost.
+
+Error is 104: 连接被对方重置.'.
+134952 134952 2026-01-12 16:53:42 853.418 ClientSession: Going to start the automatic reconnection procedure.
+134952 134952 2026-01-12 16:53:42 853.450 ClientSession: Stopping session at 0x40c785a0.
+134952 134952 2026-01-12 16:53:42 859.141 ClientSession: Destroying display client.
+Info: Slave server running with pid 135472.
+Info: Listening to slave connections on port 36597.
+134952 134952 2026-01-12 16:53:42 861.948 Connection: Stopping connection at 0x40ce8940.
+134952 134952 2026-01-12 16:53:42 861.959 ClientDaemonConnector: Stopping the current connection.
+134952 134952 2026-01-12 16:53:42 861.982 Connection: Stopped connection at 0x40ce8940.
+134952 134952 2026-01-12 16:53:42 865.023 ClientSession: Stopped session at 0x40c785a0.
+134952 134952 2026-01-12 16:53:42 872.998 Connection: Finishing connection at 0x40ce8940.
+134952 134952 2026-01-12 16:53:42 873.007 ClientDaemonConnector: Stopping the current connection.
+134952 134952 2026-01-12 16:53:42 873.019 Connection: Finished connection at 0x40ce8940.
+134952 134952 2026-01-12 16:53:42 873.027 Connection: Initializing connection at 0x40ce8940.
+134952 134952 2026-01-12 16:53:42 873.084 Connection: Initialized connection at 0x40ce8940.
+134952 134952 2026-01-12 16:53:42 873.090 Connection: Starting connection at 0x40ce8940.
+134952 134952 2026-01-12 16:53:42 873.096 ClientDaemonConnector: Starting a new connection to host '10.69.68.113' on port '4000'.
+134952 134952 2026-01-12 16:53:42 873.162 Connection: Started connection at 0x40ce8940.
+Info: Connection to 10.69.68.113 port 4000 started at 16:53:42 873.870.
+134952 135479 2026-01-12 16:53:42 969.917 ClientSession: A valid certificate for this server was found.
+134952 134952 2026-01-12 16:53:43 301.929 ClientSession: Going to query the server for available services.
+134952 134952 2026-01-12 16:53:43 404.943 ClientSession: Automatic reconnection procedure is looking for session with ID 'B804E0B0B9F1302811DD1FF0ABC836E6'.
+134952 134952 2026-01-12 16:53:43 404.969 ClientSession: Lost session replaced by physical desktop with ID '142375637CB79F1D3C336C2479539D73'.
+134952 134952 2026-01-12 16:53:43 404.974 ClientSession: Reconnecting lost session at '0'.
+134952 134952 2026-01-12 16:53:43 414.077 ClientSession: Going to query the node for available services.
+134952 134952 2026-01-12 16:53:43 419.586 ClientSession: Going to attach session at index '0'.
+134952 134952 2026-01-12 16:53:43 419.808 Keyboard: Current model 'evdev' session model 'evdev' layout 'us' variant '(empty)' options '(empty)'.
+134952 134952 2026-01-12 16:53:43 796.543 ClientSession: Creating display client.
+Info: Display client started with pid 135508.
+Info: Slave server running with pid 135510.
+Info: Listening to slave connections on port 13002.
+134952 134952 2026-01-12 16:53:43 798.886 ClientSession: Stopping the connector before creating the proxy.
+134952 134952 2026-01-12 16:53:43 798.913 ClientDaemonConnector: Stopping the current connection.
+Session: Starting session at Mon Jan 12 16:53:44 2026.
+"The XKEYBOARD keymap compiler (nxkb) reports:"
+"> "Warning:          Unsupported high keycode 372 for name <I372> ignored
+"> "                  X11 cannot support keycodes above 255.
+"> "                  This warning only shows for the first high keycode.
+"Errors from nxkb are not fatal to the X server"
+134952 134952 2026-01-12 16:53:44 222.169 ClientSession: Going to stop the automatic reconnection procedure.
+134952 134952 2026-01-12 16:53:44 222.208 Connection: Stop reading after switching the connection.
+"The XKEYBOARD keymap compiler (nxkb) reports:"
+"> "Warning:          Unsupported high keycode 372 for name <I372> ignored
+"> "                  X11 cannot support keycodes above 255.
+"> "                  This warning only shows for the first high keycode.
+"Errors from nxkb are not fatal to the X server"
+134952 135518 2026-01-12 16:54:00 004.916 ProxySession/ProxySession: ERROR! Session failure in stage 'StageWaitingProxyVersion'.
+Error: Session negotiation failure.
+134952 135518 2026-01-12 16:54:00 004.960 ProxySession/ProxySession: ERROR! We possibly provided a wrong version
+134952 135518 2026-01-12 16:54:00 004.964 ProxySession/ProxySession: ERROR! or an invalid session authentication cookie.
+Error: Connection closed by the remote peer.
+Session: Session terminated at Mon Jan 12 16:54:00 2026.
+134952 135069 2026-01-12 16:54:00 005.217 Encryptor/Encryptor: WARNING! Destroying pending buffer with 88 bytes.
+134952 134952 2026-01-12 16:54:00 024.738 ClientSession: Exiting from the client transport loop.
+134952 134952 2026-01-12 16:54:00 024.757 ClientSession: The transport closed with reset '1' error '104'.
+134952 134952 2026-01-12 16:54:00 024.931 ClientSession: Session at 0x40c785a0 failed.
+134952 134952 2026-01-12 16:54:00 024.947 ClientSession: Failing reason is 'The connection with the server was lost.
+
+Error is 104: 连接被对方重置.'.
+134952 134952 2026-01-12 16:54:00 024.970 ClientSession: Going to start the automatic reconnection procedure.
+134952 134952 2026-01-12 16:54:00 025.010 ClientSession: Stopping session at 0x40c785a0.
+134952 134952 2026-01-12 16:54:00 025.701 ClientSession: Destroying display client.
+Info: Slave server running with pid 135906.
+Info: Listening to slave connections on port 40994.
+134952 134952 2026-01-12 16:54:00 029.135 Connection: Stopping connection at 0x40ce8940.
+134952 134952 2026-01-12 16:54:00 029.152 ClientDaemonConnector: Stopping the current connection.
+134952 134952 2026-01-12 16:54:00 029.183 Connection: Stopped connection at 0x40ce8940.
+134952 134952 2026-01-12 16:54:00 034.456 ClientSession: Stopped session at 0x40c785a0.
+134952 134952 2026-01-12 16:54:00 034.579 Connection: Finishing connection at 0x40ce8940.
+134952 134952 2026-01-12 16:54:00 034.587 ClientDaemonConnector: Stopping the current connection.
+134952 134952 2026-01-12 16:54:00 034.599 Connection: Finished connection at 0x40ce8940.
+134952 134952 2026-01-12 16:54:00 034.610 Connection: Initializing connection at 0x40ce8940.
+134952 134952 2026-01-12 16:54:00 034.685 Connection: Initialized connection at 0x40ce8940.
+134952 134952 2026-01-12 16:54:00 034.693 Connection: Starting connection at 0x40ce8940.
+134952 134952 2026-01-12 16:54:00 034.703 ClientDaemonConnector: Starting a new connection to host '10.69.68.113' on port '4000'.
+134952 134952 2026-01-12 16:54:00 034.807 Connection: Started connection at 0x40ce8940.
+Info: Connection to 10.69.68.113 port 4000 started at 16:54:00 035.477.
+134952 135913 2026-01-12 16:54:00 098.829 ClientSession: A valid certificate for this server was found.
+134952 134952 2026-01-12 16:54:00 309.762 ClientSession: Going to query the server for available services.
+134952 134952 2026-01-12 16:54:00 376.334 ClientSession: Automatic reconnection procedure is looking for session with ID '142375637CB79F1D3C336C2479539D73'.
+134952 134952 2026-01-12 16:54:00 376.350 ClientSession: Lost session with ID '142375637CB79F1D3C336C2479539D73' could not be found, aborting reconnection.
+134952 134952 2026-01-12 16:54:00 376.356 ClientSession: WARNING! Going to abort the automatic reconnection procedure.
+134952 134952 2026-01-12 16:54:00 376.361 ClientSession: Session at 0x40c785a0 failed.
+134952 134952 2026-01-12 16:54:00 376.367 ClientSession: Failing reason is 'The connection with the server was lost.
+
+Error is 104: 连接被对方重置.'.
+134952 134952 2026-01-12 16:54:00 376.379 ClientSession: Going to stop the automatic reconnection procedure.
+134952 134952 2026-01-12 16:54:00 378.994 ClientSession: Stopping session at 0x40c785a0.
+134952 134952 2026-01-12 16:54:00 379.872 ClientSession: Destroying display client.
+Info: Slave server running with pid 135921.
+Info: Listening to slave connections on port 22866.
+134952 134952 2026-01-12 16:54:00 382.667 Connection: Stopping connection at 0x40ce8940.
+134952 134952 2026-01-12 16:54:00 382.698 ClientDaemonConnector: Stopping the current connection.
+134952 134952 2026-01-12 16:54:00 383.027 Connection: Stopped connection at 0x40ce8940.
+134952 134952 2026-01-12 16:54:00 389.809 ClientSession: Stopped session at 0x40c785a0.
+134952 136128 2026-01-12 16:54:09 236.262 FileBrowser: WARNING! Could not locate kdialog.

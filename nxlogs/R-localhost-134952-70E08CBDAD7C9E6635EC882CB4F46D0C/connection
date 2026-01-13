@@ -1,0 +1,445 @@
+HELLO NXSERVER - Version 9.3.7 - NoMachine
+NX> 105 
+Hello NXCLIENT - Version 9.3.7 - Language en_US - UUID 3e5fccc0-6b47-435a-8d2a-8ea563c73fb2
+NX> 134 Accepted protocol: 9.3.7
+NX> 178 Guests allowed: desktop-sharing
+NX> 105 Set shell_mode: shell
+NX> 105 Set auth_mode: password
+NX> 105 Login 
+NX> 250 Properties: username required for shore-systemproductname port: 4000 service login: shore
+NX> 250 Properties: password required for shore-systemproductname port: 4000 service login: ********
+NX> 103 Hello on board shore (admin).
+NX> 106 NXSERVER-9.3.7 LS OS: Manjaro Linux HW: ASUS System Product Name CPU: AMD Ryzen 9 9950X 16-Core Processor             RAM: 134684057600
+NX> 138 Token ID: 8453D4D881F4EA9EC0E59C481673338A
+NX> 105 Connectpolicy 
+NX> 164 Connection policy:
+
+Type                       Value
+-----------------------    ------
+autocreate                  yes   
+autoconnect                 yes   
+automigrate                 yes   
+desktop                     no    
+dialog                      no    
+xsessions                   no    
+udp                         yes   
+NX> 105 Resourcelist 
+NX> 104 Resource list:
+
+Class   Type                                 Value
+------- ------------------------------------ -----
+session windows                              no   
+session nxvfb                                no   
+session unix-cde                             no   
+session unix-application                     no   
+session vnc                                  no   
+session shadow                               no   
+session unix-kde                             no   
+session unix-console                         no   
+session nx-console                           no   
+session unix-desktop                         no   
+session unix-gnome                           no   
+session connection-only                      no   
+session unix-default                         no   
+session vpn                                  no   
+session nx-console-shadow                    no   
+session unix-xsession-default                no   
+session unix-xdm                             no   
+session vms                                  no   
+session unix-remote                          yes  
+session physical-desktop                     yes  
+session unix-remote-custom                   no   
+session unix-script                          no   
+session virtual-desktops-limit               no   
+session connections-limit                    no   
+service client-printer-sharing               yes  
+service server-disk-sharing                  yes  
+service server-usb-sharing                   yes  
+service microphone                           yes  
+service session-recording                    yes  
+service server-file-transfer                 yes  
+service interactive-mode                     yes  
+service server-network-sharing               yes  
+service client-usb-sharing                   yes  
+service client-disk-sharing                  yes  
+service server-printer-sharing               yes  
+service client-file-transfer                 yes  
+service client-smartcard-sharing             yes  
+service audio                                yes  
+service client-network-sharing               yes  
+service local-recording                      yes  
+feature enable-logout-on-disconnect          yes  
+feature manual-node-selection                yes  
+feature enable-foreign-servers               no   
+feature enable-multinode                     no   
+feature client-clipboard                     yes  
+feature logout-on-disconnect-timeout         yes  
+feature guest-physical-auto-attach           yes  
+feature enable-multiserver                   no   
+feature node-load-balancing                  yes  
+feature server-clipboard                     yes  
+feature bandwidth                            no   
+feature client-clipboard-limit               no   
+feature server-clipboard-limit               no   
+node    ed8439ea-cac5-47b0-a726-d1a6681c9c84 no   
+node    connections-limit                    no   
+node    virtual-desktops-limit               no   
+NX> 105 Listsession --status="disconnected\054connected" --type="all" --shadowable="yes" 
+NX> 127 Session list of user 'shore':
+
+Display Type                  Session ID                       Services  Depth Screensize Status       Session name               Username Platform Users Create               Node           
+------- --------------------- -------------------------------- --------- ----- ---------- ------------ -------------------------- -------- -------- ----- -------------------- -------------- 
+1       physical-desktop      B804E0B0B9F1302811DD1FF0ABC836E6 --D--PSAD N/A   N/A        Disconnected Local display on localhost shore    Linux    0     1768203098           localhost:4000
+NX> 147 Server capacity: reached for user: shore
+NX> 105 Setsession --id="B804E0B0B9F1302811DD1FF0ABC836E6" 
+NX> 754 Selected node: localhost:4000
+NX> 105 Resourcelist --node="localhost\0724000" 
+NX> 104 Resource list:
+
+Class   Type                                 Value
+------- ------------------------------------ -----
+session unix-remote-custom                   no   
+session physical-desktop                     yes  
+session unix-remote                          yes  
+session vms                                  no   
+session unix-xdm                             no   
+session unix-xsession-default                no   
+session nx-console-shadow                    no   
+session vpn                                  no   
+session unix-default                         no   
+session connection-only                      no   
+session unix-gnome                           no   
+session unix-console                         no   
+session nx-console                           no   
+session unix-desktop                         no   
+session unix-kde                             no   
+session shadow                               no   
+session vnc                                  no   
+session unix-application                     no   
+session unix-cde                             no   
+session nxvfb                                no   
+session windows                              no   
+session unix-script                          no   
+session virtual-desktops-limit               no   
+session connections-limit                    no   
+service local-recording                      yes  
+service client-network-sharing               yes  
+service client-smartcard-sharing             yes  
+service client-file-transfer                 yes  
+service audio                                yes  
+service client-disk-sharing                  yes  
+service client-usb-sharing                   yes  
+service server-printer-sharing               yes  
+service interactive-mode                     yes  
+service server-network-sharing               yes  
+service session-recording                    yes  
+service microphone                           yes  
+service server-file-transfer                 yes  
+service client-printer-sharing               yes  
+service server-usb-sharing                   yes  
+service server-disk-sharing                  yes  
+feature server-clipboard                     yes  
+feature node-load-balancing                  yes  
+feature guest-physical-auto-attach           yes  
+feature enable-multiserver                   no   
+feature logout-on-disconnect-timeout         yes  
+feature enable-multinode                     no   
+feature client-clipboard                     yes  
+feature enable-foreign-servers               no   
+feature enable-logout-on-disconnect          yes  
+feature manual-node-selection                yes  
+feature client-clipboard-limit               no   
+feature server-clipboard-limit               no   
+feature bandwidth                            no   
+node    ed8439ea-cac5-47b0-a726-d1a6681c9c84 no   
+node    virtual-desktops-limit               no   
+node    connections-limit                    no   
+NX> 105 Attachsession --type="physical-desktop" --session="shore" --encryption="1" --link="5" --backingstore="1" --cache="16M" --images="64M" --shmem="1" --shpix="1" --composite="1" --audioin="5\0725\072opus\072\0721" --voiceout="5\07211\072speex\072\0721" --volume="0" --audiomute="1" --render="1" --slave="1" --geometry="N\057A" --keyboard="evdev\057us" --save="0" --load="0" --silence="0" --multipass="1" --networkadaptive="1" --mode="1" --downsampling="0" --deblock="1" --tracking="0" --client="linux" --rtremoteport="4833" --rtkey="971CA36C4667DC1F1F4C8CFB877D626C" --rtiv="D4A4958792A8D6678DFE9565C41A3667" --rekey="32G" --id="B804E0B0B9F1302811DD1FF0ABC836E6" --display="1" 
+NX> 777 Main Session Display: 1
+NX> 778 Main Session Id: B804E0B0B9F1302811DD1FF0ABC836E6
+NX> 700 Session id: shore-systemproductname-1002-45717049E1D1F3539DCA1DD75C7E7FA6
+NX> 705 Session display: 1002
+NX> 701 Proxy cookie: 11BC00CEE26754B8F03D3406E57058B8
+NX> 702 Proxy IP: 10.69.68.113
+NX> 706 Agent cookie: 11BC00CEE26754B8F03D3406E57058B8
+NX> 704 Session cache: physical-desktop
+NX> 722 UDP port: 4000
+NX> 907 UDP channel: 66
+NX> 908 Node UDP port: 4011
+NX> 742 Desktop view mode: Interactive
+NX> 728 Session caption: NX - shore@shore-systemproductname:1002 - shore
+NX> 707 SSL tunneling: 1
+NX> 708 Subscription: LS/None
+NX> 719 UUID: ed8439ea-cac5-47b0-a726-d1a6681c9c84
+NX> 884 Agent mode: Wayland
+NX> 710 Session status: running
+NX> 734 Automatic reconnection: 1
+NX> 105 Bye 
+NX> 999 Bye.
+HELLO NXSERVER - Version 9.3.7 - NoMachine
+NX> 105 
+SET FORWARDED USER=shore TOKEN=8453D4D881F4EA9EC0E59C481673338A
+NX> 134 Accepted protocol: 9.3.7
+NX> 178 Guests allowed: desktop-sharing
+NX> 105 Set shell_mode: shell
+NX> 105 Set auth_mode: token
+NX> 105 Login 
+NX> 103 Hello on board shore (admin).
+NX> 106 NXSERVER-9.3.7 LS OS: Manjaro Linux HW: ASUS System Product Name CPU: AMD Ryzen 9 9950X 16-Core Processor             RAM: 134684057600
+NX> 138 Token ID: 36727D78F22593143497E0095B32C9C6
+NX> 105 Connectpolicy 
+NX> 164 Connection policy:
+
+Type                       Value
+-----------------------    ------
+autocreate                  yes   
+autoconnect                 yes   
+automigrate                 yes   
+desktop                     no    
+dialog                      no    
+xsessions                   no    
+udp                         yes   
+NX> 105 Resourcelist 
+NX> 104 Resource list:
+
+Class   Type                                 Value
+------- ------------------------------------ -----
+session nxvfb                                no   
+session unix-default                         no   
+session unix-desktop                         no   
+session vpn                                  no   
+session unix-remote                          yes  
+session unix-xdm                             no   
+session connection-only                      no   
+session physical-desktop                     yes  
+session unix-application                     no   
+session unix-kde                             no   
+session shadow                               no   
+session nx-console                           no   
+session vms                                  no   
+session unix-cde                             no   
+session unix-gnome                           no   
+session unix-remote-custom                   no   
+session vnc                                  no   
+session nx-console-shadow                    no   
+session windows                              no   
+session unix-xsession-default                no   
+session unix-console                         no   
+session virtual-desktops-limit               no   
+session unix-script                          no   
+session connections-limit                    no   
+service interactive-mode                     yes  
+service microphone                           yes  
+service client-printer-sharing               yes  
+service client-usb-sharing                   yes  
+service audio                                yes  
+service local-recording                      yes  
+service client-disk-sharing                  yes  
+service client-network-sharing               yes  
+service server-file-transfer                 yes  
+service server-printer-sharing               yes  
+service server-usb-sharing                   yes  
+service session-recording                    yes  
+service client-file-transfer                 yes  
+service server-network-sharing               yes  
+service server-disk-sharing                  yes  
+service client-smartcard-sharing             yes  
+feature enable-multinode                     no   
+feature enable-multiserver                   no   
+feature manual-node-selection                yes  
+feature node-load-balancing                  yes  
+feature guest-physical-auto-attach           yes  
+feature client-clipboard                     yes  
+feature logout-on-disconnect-timeout         yes  
+feature enable-foreign-servers               no   
+feature enable-logout-on-disconnect          yes  
+feature server-clipboard                     yes  
+feature bandwidth                            no   
+feature server-clipboard-limit               no   
+feature client-clipboard-limit               no   
+node    ed8439ea-cac5-47b0-a726-d1a6681c9c84 no   
+node    connections-limit                    no   
+node    virtual-desktops-limit               no   
+NX> 105 Listsession --status="disconnected\054connected" --type="all" --shadowable="yes" 
+NX> 127 Session list of user 'shore':
+
+Display Type                  Session ID                       Services  Depth Screensize Status       Session name               Username Platform Users Create               Node           
+------- --------------------- -------------------------------- --------- ----- ---------- ------------ -------------------------- -------- -------- ----- -------------------- -------------- 
+1       physical-desktop      142375637CB79F1D3C336C2479539D73 --D--PSAD N/A   N/A        Disconnected Local display on localhost shore    Linux    0     1768208022           localhost:4000
+NX> 147 Server capacity: reached for user: shore
+NX> 105 Setsession --id="142375637CB79F1D3C336C2479539D73" 
+NX> 754 Selected node: localhost:4000
+NX> 105 Resourcelist --node="localhost\0724000" 
+NX> 104 Resource list:
+
+Class   Type                                 Value
+------- ------------------------------------ -----
+session nxvfb                                no   
+session unix-remote                          yes  
+session unix-xdm                             no   
+session vpn                                  no   
+session unix-application                     no   
+session connection-only                      no   
+session physical-desktop                     yes  
+session unix-desktop                         no   
+session unix-default                         no   
+session unix-cde                             no   
+session unix-gnome                           no   
+session unix-remote-custom                   no   
+session shadow                               no   
+session unix-kde                             no   
+session vms                                  no   
+session nx-console                           no   
+session unix-xsession-default                no   
+session unix-console                         no   
+session windows                              no   
+session nx-console-shadow                    no   
+session vnc                                  no   
+session virtual-desktops-limit               no   
+session unix-script                          no   
+session connections-limit                    no   
+service client-usb-sharing                   yes  
+service audio                                yes  
+service client-printer-sharing               yes  
+service interactive-mode                     yes  
+service microphone                           yes  
+service client-disk-sharing                  yes  
+service client-network-sharing               yes  
+service local-recording                      yes  
+service server-file-transfer                 yes  
+service server-usb-sharing                   yes  
+service server-printer-sharing               yes  
+service client-smartcard-sharing             yes  
+service client-file-transfer                 yes  
+service server-disk-sharing                  yes  
+service server-network-sharing               yes  
+service session-recording                    yes  
+feature logout-on-disconnect-timeout         yes  
+feature client-clipboard                     yes  
+feature node-load-balancing                  yes  
+feature guest-physical-auto-attach           yes  
+feature manual-node-selection                yes  
+feature enable-multinode                     no   
+feature enable-multiserver                   no   
+feature server-clipboard                     yes  
+feature enable-logout-on-disconnect          yes  
+feature enable-foreign-servers               no   
+feature bandwidth                            no   
+feature client-clipboard-limit               no   
+feature server-clipboard-limit               no   
+node    ed8439ea-cac5-47b0-a726-d1a6681c9c84 no   
+node    connections-limit                    no   
+node    virtual-desktops-limit               no   
+NX> 105 Attachsession --type="physical-desktop" --session="shore" --encryption="1" --link="5" --backingstore="1" --cache="16M" --images="64M" --shmem="1" --shpix="1" --composite="1" --audioin="5\0725\072opus\072\0721" --voiceout="5\07211\072speex\072\0721" --volume="0" --audiomute="1" --render="1" --slave="1" --geometry="N\057A" --keyboard="evdev\057us" --save="0" --load="0" --silence="0" --multipass="1" --networkadaptive="1" --mode="1" --downsampling="0" --deblock="1" --tracking="0" --client="linux" --rtremoteport="4732" --rtkey="10ED77EDFAEEF7D7EAAA4503A24940C0" --rtiv="D884A65AFB92DEE79A8E11FDF977418A" --rekey="32G" --id="142375637CB79F1D3C336C2479539D73" --display="1" 
+NX> 777 Main Session Display: 1
+NX> 778 Main Session Id: 142375637CB79F1D3C336C2479539D73
+NX> 700 Session id: shore-systemproductname-1002-2A7D298A60F742CE64F4761B04EB8506
+NX> 705 Session display: 1002
+NX> 701 Proxy cookie: 299382E34C64561A4358B6830753361D
+NX> 702 Proxy IP: 10.69.68.113
+NX> 706 Agent cookie: 299382E34C64561A4358B6830753361D
+NX> 704 Session cache: physical-desktop
+NX> 722 UDP port: 4000
+NX> 907 UDP channel: 67
+NX> 908 Node UDP port: 4011
+NX> 742 Desktop view mode: Interactive
+NX> 728 Session caption: NX - shore@shore-systemproductname:1002 - shore
+NX> 707 SSL tunneling: 1
+NX> 708 Subscription: LS/None
+NX> 719 UUID: ed8439ea-cac5-47b0-a726-d1a6681c9c84
+NX> 884 Agent mode: Wayland
+NX> 710 Session status: running
+NX> 734 Automatic reconnection: 1
+NX> 105 Bye 
+NX> 999 Bye.
+HELLO NXSERVER - Version 9.3.7 - NoMachine
+NX> 105 
+SET FORWARDED USER=shore TOKEN=36727D78F22593143497E0095B32C9C6
+NX> 134 Accepted protocol: 9.3.7
+NX> 178 Guests allowed: desktop-sharing
+NX> 105 Set shell_mode: shell
+NX> 105 Set auth_mode: token
+NX> 105 Login 
+NX> 103 Hello on board shore (admin).
+NX> 106 NXSERVER-9.3.7 LS OS: Manjaro Linux HW: ASUS System Product Name CPU: AMD Ryzen 9 9950X 16-Core Processor             RAM: 134684057600
+NX> 138 Token ID: A962BFFF54D579228BECA673F0C22E1F
+NX> 105 Connectpolicy 
+NX> 164 Connection policy:
+
+Type                       Value
+-----------------------    ------
+autocreate                  yes   
+autoconnect                 yes   
+automigrate                 yes   
+desktop                     no    
+dialog                      no    
+xsessions                   no    
+udp                         yes   
+NX> 105 Resourcelist 
+NX> 104 Resource list:
+
+Class   Type                                 Value
+------- ------------------------------------ -----
+session nxvfb                                no   
+session unix-default                         no   
+session unix-remote-custom                   no   
+session vms                                  no   
+session unix-gnome                           no   
+session nx-console-shadow                    no   
+session shadow                               no   
+session windows                              no   
+session nx-console                           no   
+session unix-kde                             no   
+session connection-only                      no   
+session unix-console                         no   
+session unix-desktop                         no   
+session unix-application                     no   
+session unix-xdm                             no   
+session unix-remote                          yes  
+session vpn                                  no   
+session unix-cde                             no   
+session unix-xsession-default                no   
+session physical-desktop                     yes  
+session vnc                                  no   
+session connections-limit                    no   
+session virtual-desktops-limit               no   
+session unix-script                          no   
+service client-file-transfer                 yes  
+service client-smartcard-sharing             yes  
+service client-printer-sharing               yes  
+service server-network-sharing               yes  
+service server-disk-sharing                  yes  
+service local-recording                      yes  
+service client-usb-sharing                   yes  
+service microphone                           yes  
+service server-usb-sharing                   yes  
+service audio                                yes  
+service client-network-sharing               yes  
+service server-printer-sharing               yes  
+service client-disk-sharing                  yes  
+service session-recording                    yes  
+service interactive-mode                     yes  
+service server-file-transfer                 yes  
+feature enable-logout-on-disconnect          yes  
+feature client-clipboard                     yes  
+feature enable-multinode                     no   
+feature manual-node-selection                yes  
+feature guest-physical-auto-attach           yes  
+feature logout-on-disconnect-timeout         yes  
+feature enable-multiserver                   no   
+feature enable-foreign-servers               no   
+feature server-clipboard                     yes  
+feature node-load-balancing                  yes  
+feature server-clipboard-limit               no   
+feature bandwidth                            no   
+feature client-clipboard-limit               no   
+node    ed8439ea-cac5-47b0-a726-d1a6681c9c84 no   
+node    connections-limit                    no   
+node    virtual-desktops-limit               no   
+NX> 105 Listsession --status="disconnected\054connected" --type="all" --shadowable="yes" 
+NX> 127 Session list of user 'shore':
+
+Display Type                  Session ID                       Services Depth Screensize Status       Session name Username Platform Users Create               Node 
+------- --------------------- -------------------------------- -------- ----- ---------- ------------ ------------ -------- -------- ----- -------------------- ---- 
+NX> 147 Server capacity: reached for user: shore
+NX> 105 

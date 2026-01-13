@@ -1,0 +1,17 @@
+Info: Starting NoMachine version 9.3.7.
+Info: Loading settings from '.nx/config/player.cfg'.
+Info: Loaded translation files for 'English'.
+2049 2049 2026-01-12 15:28:48 542.664 Main: Creating the client session.
+2049 2049 2026-01-12 15:28:48 543.777 ClientSession: Initializing session at 0x12af3700.
+2049 2049 2026-01-12 15:28:48 599.584 RecentModel: Initializing recent connection providers.
+2049 2049 2026-01-12 15:28:48 621.060 MainPanelView: State changed to 'Initialized'.
+2049 2049 2026-01-12 15:28:48 621.078 ClientSession: Initialized session at 0x12af3700.
+Info: Slave server running with pid 2238.
+Info: Listening to slave connections on port 36041.
+2049 2049 2026-01-12 15:28:48 624.000 ClientSession: Going to add child with pid '2254'.
+2049 2049 2026-01-12 15:28:48 624.027 ClientSession: Now there are 1 running child processes.
+2049 2049 2026-01-12 15:28:48 624.160 Main: Entering the GUI event loop.
+Info: Slave server running with pid 3119.
+Info: Listening to slave connections on port 42849.
+2049 2049 2026-01-12 16:53:24 024.353 ClientSession: Going to add child with pid '134952'.
+2049 2049 2026-01-12 16:53:24 024.436 ClientSession: Now there are 1 running child processes.

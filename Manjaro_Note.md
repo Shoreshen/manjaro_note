@@ -699,10 +699,6 @@ rclone --vfs-cache-mode full mount onedrive: ~/OneDrive
    cat > ~/.profile <<'EOF'
    export LC_CTYPE=zh_CN.UTF-8
    export XMODIFIERS="@im=fcitx"
-   export GTK_IM_MODULE=fcitx
-   export QT_IM_MODULE=fcitx
-   export SDL_IM_MODULE=fcitx
-   export GLFW_IM_MODULE=fcitx
    EOF
    ```
 
