@@ -60,6 +60,24 @@ tun:
 sudo clash-meta -d ~/.config/clash
 ```
 
+## UFW Firewall Rules
+
+When UFW is enabled, Clash TUN mode traffic will be blocked by default. Add the following rules to allow Clash virtual network:
+
+```shell
+# Allow traffic from/to Clash TUN virtual network segment
+sudo ufw allow in on Meta
+sudo ufw allow out on Meta
+
+# Reload firewall
+sudo ufw reload
+```
+
+These rules are persistent across reboots. Verify with:
+```shell
+sudo ufw status numbered
+```
+
 # pacman
 
 ## Mirrors

@@ -132,6 +132,3 @@ brightness:
 reset_hard:
 	git fetch && git reset --hard origin/$(BRANCH)
 
-# quit full screen: Ctrl+Alt+Enter
-remote_desk:
-	xfreerdp /v:10.69.68.113:3389 /u:shore /p:'$(PW)' /cert:ignore /gfx /gfx:avc420 /clipboard /smart-sizing /f
