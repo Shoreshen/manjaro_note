@@ -103,7 +103,7 @@ Manjaro mirror list can be obtained from [web](https://repo.manjaro.org/)
    ```
 
 2. Choose "tsinghua" mirror in poped out window:
-   <img src="截图_2020-02-10_15-23-44.png">
+   <img src="pic/截图_2020-02-10_15-23-44.png">
 
 3. Open <code>/etc/pacman.conf</code>:
    ```shell
@@ -161,20 +161,20 @@ pacman -Sc
    pamac-manager
    ```
 2. Select [首选项] from top right corner
-   <img src="截图_2020-04-04_08-13-53.png">
+   <img src="pic/截图_2020-04-04_08-13-53.png">
 3. Select [AUR] tab, tick the enable option
-   <img src="截图_2020-04-04_08-14-35.png">
+   <img src="pic/截图_2020-04-04_08-14-35.png">
 
 ### Downgrade AUR package
 
 1. Goto AUR page for the package:
-   <img src="2024-06-21_15-43.png">
+   <img src="pic/2024-06-21_15-43.png">
 2. Click `View Changes`
-   <img src="2024-06-21_15-44.png">
+   <img src="pic/2024-06-21_15-44.png">
 3. Pick target published version:
-   <img src="2024-06-21_15-45.png">
+   <img src="pic/2024-06-21_15-45.png">
 4. Click `download`:
-   <img src="2024-06-21_15-47.png">
+   <img src="pic/2024-06-21_15-47.png">
 5. Unzip the downloaded file
 6. CD into the unzipped directory, run `makepkg -si`
    
@@ -240,7 +240,7 @@ nameserver 192.168.0.1
 
 After insalling <code>archlinuxcn-keyring</code> each time open chromium first time will asking for password:
 
-<img src="20140308172646281.png">
+<img src="pic/20140308172646281.png">
 
 The following are steps to disable this:
 
@@ -249,7 +249,7 @@ The following are steps to disable this:
       sudo pacman -S seahorse
    ```
 2. Open seahorse and <code>mouse-right</code> "默认秘钥环" and choose "更改密码"：
-   <img src="截图_2020-02-08_10-50-37.png">
+   <img src="pic/截图_2020-02-08_10-50-37.png">
 3. Type in old pass word, and input nothing in the new password setting.
 4. Press OK for non password setting, and reboot.
 
@@ -269,8 +269,8 @@ The following are steps to disable this:
 ## Mouse Cursor size
 
 VS-Code mouse cursor size will be different with the system one shows as follow:
-<img src="2024-01-13_13-56_1.png">
-<img src="2024-01-13_13-56.png">
+<img src="pic/2024-01-13_13-56_1.png">
+<img src="pic/2024-01-13_13-56.png">
 
 To fix this, do as follow:
 1. Open <code>~/.profile</code>:
@@ -288,7 +288,7 @@ Go to `Settings` and search `Title Bar Style`, select `custom`.
 
 ## Status bar
 
-<img src="2024-06-11_12-23.png">
+<img src="pic/2024-06-11_12-23.png">
 
 # Snip tool
 
@@ -352,7 +352,7 @@ Login GitHub and navigate to personal settings. Click on <code>SSH and GPG keys<
 
 Copy content of <code>tt.txt.pub</code> and press <code>Add SSH key</code>:
 
-<img src="20180428105938922.png">
+<img src="pic/20180428105938922.png">
 
 ## SSH without password
 
@@ -892,7 +892,7 @@ manjaro-settings-manager
 
 And pick select the correct drive:
 
-<img src="截图_2020-02-21_09-50-18.png">
+<img src="pic/截图_2020-02-21_09-50-18.png">
 
 Or use the following command:
 
@@ -910,7 +910,7 @@ Need to set performance mode of GPU, which can be done by:
 
 To avoid operating every boot, add this into the bootup option:
 
-<img src="截图_2020-07-17_09-35-30.png">
+<img src="pic/截图_2020-07-17_09-35-30.png">
 
 ## Configuration
 
@@ -945,7 +945,7 @@ sudo nvidia-settings
 
 Select "X Server Display Configuration", pick the second screen and press "Save to X Configuration File":
 
-<img src="截图_2020-02-21_10-05-26.png">
+<img src="pic/截图_2020-02-21_10-05-26.png">
 
 # Softwares
 
@@ -1102,7 +1102,7 @@ sudo ./univpn-linux-64-10781.9.0.1229.run
 
 Open <code>Manjaro-Settings-Manager</code>, double click <code>时间和日期</code>. Make sure settings are as following:
 
-<img src="截图_2020-03-09_12-27-33.png">
+<img src="pic/截图_2020-03-09_12-27-33.png">
 
 # Teamviewer
 
@@ -1174,7 +1174,7 @@ docker login -u="shoreshen" -p="password generated on web" quay.io
 
 To generate a new cli password, goto [this web](https://quay.io/) and login
 
-<img src="2023-12-07_15-07.png">
+<img src="pic/2023-12-07_15-07.png">
 
 ## Command
 
